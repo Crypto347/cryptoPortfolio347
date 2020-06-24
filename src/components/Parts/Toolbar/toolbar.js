@@ -52,8 +52,6 @@ import * as Selectors from '../../../reducers/selectors';
 * Images
 */
 
-// import MyLogo from '../../../images/FinalLogo.png';
-// import MyLogoText from '../../../images/crypto.png';
 
 /**
 * Constants
@@ -81,34 +79,35 @@ export const Toolbar = (props) => {
 
     useEffect(() => {
         props.initMenuItems(menuItemsArray);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        // window.addEventListener('scroll', handleScroll);
+        // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
-    const handleScroll = () => {
-        setMenuIsShown(false);
-    }
+    // const handleScroll = () => {
+    //     setMenuIsShown(false);
+    // }
 
-    const toolbarOnClick = (path, id) => {
-        props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        props.activateMenuItem(id);
-    }
+    // const toolbarOnClick = (path, id) => {
+    //     props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+    //     props.activateMenuItem(id);
+    // }
 
-    const toggleMenuButton = () => {
-        setMenuIsShown(!menuIsShown);
-    }
+    // const toggleMenuButton = () => {
+    //     setMenuIsShown(!menuIsShown);
+    // }
 
     const renderToolbarItems = () => {
         return(
-            <>{props.menuItems.map((el) => {
+            <>{props.menuItems.map((el,i) => {
                 return(
-                    <ToolbarItem 
-                        key={el.id}
-                        text={el.text}
-                        active={el.active}
-                        menuIsShown={menuIsShown}
-                        onClick={() => toolbarOnClick(el.path, el.id)}
-                    />
+                <div key={i}>kj</div>
+                    // <ToolbarItem 
+                    //     key={el.id}
+                    //     text={el.text}
+                    //     active={el.active}
+                    //     menuIsShown={menuIsShown}
+                    //     onClick={() => toolbarOnClick(el.path, el.id)}
+                    // />
                 )
             })}</>
         )
@@ -119,46 +118,12 @@ export const Toolbar = (props) => {
     */
 
     return(
-        <>
-            <div className="toolbar-visible-part">
-                <div className="toolbar-wrapper">
-                    <div className="toolbar-image-logo">
-                        <img src={MyLogo}/>
-                    </div>
-                    <div className="toolbar-text-logo">
-                        <img src={MyLogoText}/>
-                    </div>
-                </div>
-                <div className="toolbar-menu" onClick={toggleMenuButton}>
-                    <div className="toolbar-menu-line"/>
-                    <div className="toolbar-menu-line"/>
-                    <div className="toolbar-menu-line"/>
-                </div>
+        <div className="toolbar">
+            {/* <img src={}/> */}
+            <div>
+                {renderToolbarItems()}
             </div>
-            <CSSTransition 
-                in={menuIsShown} 
-                timeout={285}
-                // mountOnEnter
-                unmountOnExit
-                classNames={{
-                    enter: '',
-                    enterActive: 'toolbar-invisible-part-open',
-                    exit: '',
-                    exitActive: 'toolbar-invisible-part-close'
-                }}
-            > 
-                <div className={"toolbar-invisible-mounted"}>
-                    {renderToolbarItems()}
-                </div> 
-            </CSSTransition>
-            {menuIsShown ? 
-                <Backdrop 
-                    show 
-                    className={"backdrop-home"}
-                    onClick={() => setMenuIsShown(false)}
-                /> 
-            : null}
-        </>
+        </div>
     );
 }
 
@@ -171,7 +136,7 @@ export default connect(
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
 )(withRouter(Toolbar));

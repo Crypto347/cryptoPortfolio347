@@ -141,13 +141,13 @@ export const Sidebar = (props) => {
 export default connect(
     (state) => {
         return {
-            menuItems: Selectors.getMenuItemsState(state)
+            // menuItems: Selectors.getMenuItemsState(state)
         };
     },
     (dispatch) => {
         return {
-            initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch)
+            // initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
+            // activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
 )(withRouter(Sidebar));

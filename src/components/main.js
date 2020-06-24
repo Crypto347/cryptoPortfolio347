@@ -81,7 +81,7 @@ export const Main = (props) => {
     */
 
     return(
-        <div className={props.gallery.show ? "main-scrolling-hidden" : "main"}>
+        <div>
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
@@ -138,16 +138,16 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            gallery: Selectors.getGalleryState(state)
+            // gallery: Selectors.getGalleryState(state)
         };
     },
     (dispatch) => {
         return {
-            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
-            initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
-            startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
-            startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
-            startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch)
+            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            // initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
+            // startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
+            // startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
+            // startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch)
         };
     }
 )(Main);

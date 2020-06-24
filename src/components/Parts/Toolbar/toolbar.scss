@@ -1,164 +1,75 @@
-.toolbar-visible-part {
-    display: none;
+.toolbar {
+    // display: none;
 }
 
-.toolbar-invisible-part-open {
-    display: none;
-}
-
-.toolbar-invisible-part-close {
-    display: none;
-}
-
-.toolbar-invisible-mounted {
-    display: none;
-}
 
 @media only screen and (max-width: 1120px){
-    .toolbar-visible-part {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: calc(100% + 18px);
-        background-color: rgb(51, 51, 51);
-        position: relative;
-        z-index: 100;
-        .toolbar-wrapper {
-            display: flex;
-            align-items: center;
-            padding-left: 25px;
-            .toolbar-image-logo {
-                width: 100px;
-                height: 100px;
-                >img {
-                    width: 100px;
-                    height: 100px;
-                }
-            }
-            .toolbar-text-logo {
-                width: 100px;
-                height: 130px;
-                >img {
-                    width: 130px;
-                    height: 130px;
-                }
-            }
-        }
-        .toolbar-menu {
-            padding-right: 25px;
-            cursor: pointer;
-            .toolbar-menu-line {
-                width: 20px;
-                border: 2px solid rgb(180, 139, 62);
-                background-color: rgb(180, 139, 62);
-                border-radius: 3px;
-                margin: 4.5px;
-            }
-        }
-    }
-    
-    .toolbar-invisible-part-open {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% + 18px);
-        background-color: rgb(51, 51, 51);
-        border-top: 1px solid rgb(82, 78, 76);
-        -webkit-animation: open 0.3s linear;
-        -moz-animation: open 0.3s linear;
-        -o-animation: open 0.3s linear;
-        animation: open 0.3s linear;
-    }
-
-    .toolbar-invisible-part-close {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% + 18px);
-        height: 0px;
-        background-color: rgb(51, 51, 51);
-        border-top: 1px solid rgb(82, 78, 76);
-        -webkit-animation: close 0.3s linear;
-        -moz-animation: close 0.3s linear;
-        -o-animation: close 0.3s linear;
-        animation: close 0.3s linear;
-        position: relative;
-        z-index: 100;
-    }
-
-    .toolbar-invisible-mounted {
-        display: flex;
-        flex-direction: column;
-        width: calc(100% + 18px);
-        background-color: rgb(51, 51, 51);
-        border-top: 1px solid rgb(82, 78, 76);
-        height: 314px;
-        position: relative;
-        z-index: 100;
-    }
+  
 }
 
-@-webkit-keyframes open {
-    from{
-        height: 0;
-    }
-    to {
-        height: 314px;
-    }
-  }
-@-moz-keyframes open {
-    from{
-        height: 0;
-    }
-    to {
-        height: 314px;
-    }
-}
-@-o-keyframes open {
-    from{
-        height: 0;
-    }
-    to {
-        height: 314px;
-    }
-}
+// @-webkit-keyframes open {
+//     from{
+//         height: 0;
+//     }
+//     to {
+//         height: 314px;
+//     }
+//   }
+// @-moz-keyframes open {
+//     from{
+//         height: 0;
+//     }
+//     to {
+//         height: 314px;
+//     }
+// }
+// @-o-keyframes open {
+//     from{
+//         height: 0;
+//     }
+//     to {
+//         height: 314px;
+//     }
+// }
 
-@keyframes open {
-    from{
-        height: 0;
-    }
-    to {
-        height: 314px;
-    }
-}
+// @keyframes open {
+//     from{
+//         height: 0;
+//     }
+//     to {
+//         height: 314px;
+//     }
+// }
 
-@-webkit-keyframes close {
-    from{
-        height: 314px;
-    }
-    to {
-        height: 0px;
-    }
-}
-@-moz-keyframes close {
-    from{
-        height: 314px;
-    }
-    to {
-        height: 0px;
-    }
-}
-@-o-keyframes close {
-    from{
-        height: 314px;
-    }
-    to {
-        height: 0px;
-    }
-}
-@keyframes close {
-    from{
-        height: 314px;
-    }
-    to {
-        height: 0px;
-    }
-}
+// @-webkit-keyframes close {
+//     from{
+//         height: 314px;
+//     }
+//     to {
+//         height: 0px;
+//     }
+// }
+// @-moz-keyframes close {
+//     from{
+//         height: 314px;
+//     }
+//     to {
+//         height: 0px;
+//     }
+// }
+// @-o-keyframes close {
+//     from{
+//         height: 314px;
+//     }
+//     to {
+//         height: 0px;
+//     }
+// }
+// @keyframes close {
+//     from{
+//         height: 314px;
+//     }
+//     to {
+//         height: 0px;
+//     }
+// }

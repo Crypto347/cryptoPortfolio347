@@ -16,9 +16,13 @@ import './home.scss';
 * Components
 */
 
+import Toolbar from '../../Parts/Toolbar/toolbar';
+
 /**
 * Images
 */
+
+import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
 
 /**
 * Home component definition and export
@@ -41,6 +45,8 @@ export const Home = () => {
     return(
         <div className="home">
             <div className="home-main-background">
+                <Toolbar/>
+                <img src={Image1}/>
             
             </div>
         </div>

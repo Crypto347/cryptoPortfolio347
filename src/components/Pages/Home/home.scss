@@ -7,6 +7,10 @@
     background-size: 100% 100vh;
     width: calc(100% + 18px);
     height: 100vh;
+    >img {
+        width: 770px;
+        height: 510px;
+    }
 }
 
 // @media only screen and (max-width: 1120px){
