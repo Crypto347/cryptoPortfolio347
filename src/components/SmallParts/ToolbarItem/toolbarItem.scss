@@ -1,0 +1,165 @@
+.toolbar-item {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 1;
+    -webkit-animation: appearText 2s linear;
+    -moz-animation: appearText 2s linear;
+    -o-animation: appearText 2s linear;
+    animation: appearText 2s linear;
+    cursor: pointer;
+    &:hover {
+        color: rgb(180, 139, 62);
+        background-color: rgba(104, 97, 95, 0.5);
+    }
+}
+
+.toolbar-item-active {
+    border-bottom: 1px solid rgb(180, 139, 62);
+    border-top: 1px solid rgb(180, 139, 62);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: rgb(180, 139, 62);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 1;
+    -webkit-animation: appearText 2s linear;
+    -moz-animation: appearText 2s linear;
+    -o-animation: appearText 2s linear;
+    animation: appearText 2s linear;
+    cursor: pointer;
+}
+
+.toolbar-item-disappear {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 0;
+    -webkit-animation: disappearText 0.3s linear;
+    -moz-animation: disappearText 0.3s linear;
+    -o-animation: disappearText 0.3s linear;
+    animation: disappearText 0.3s linear;
+}
+
+.toolbar-item-active-disappear {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: rgb(180, 139, 62);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 0;
+    -webkit-animation: disappearText 0.3s linear;
+    -moz-animation: disappearText 0.3s linear;
+    -o-animation: disappearText 0.3s linear;
+    animation: disappearText 0.3s linear;
+}
+
+@-webkit-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-moz-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-o-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+
+@-webkit-keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-o-keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
+@-o-keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
+@keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
