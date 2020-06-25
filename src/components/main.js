@@ -81,7 +81,7 @@ export const Main = (props) => {
     */
 
     return(
-        <div>
+        <div className="main">
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
