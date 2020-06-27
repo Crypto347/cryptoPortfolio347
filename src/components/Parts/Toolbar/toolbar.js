@@ -85,7 +85,7 @@ export const Toolbar = (props) => {
 
     const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    const [isHovering, setIsHovering] = useState(false);
+    const [isHovering, setIsHovering] = useState(null);
 
     /**
     * Methods
@@ -143,9 +143,27 @@ export const Toolbar = (props) => {
             <>{menuDots.map((el,i) => {
                 if(el === 1 || el === 2 || el === 4){
                     return(
-                        <div key={i}
-                            className={isHovering ? `toolbar-menu-dot-with-animation-${el}` : "toolbar-menu-dot"}
-                        />
+                        <div key={i}>
+                            <CSSTransition
+                                in={isHovering} 
+                                timeout={7000}
+                                mountOnEnter
+                                unmountOnExit
+                                classNames={{
+                                    enter: '',
+                                    enterActive: `toolbar-menu-dot-with-animation-open-${el}`,
+                                    exit: '',
+                                    exitActive: `toolbar-menu-dot-with-animation-close-${el}`
+                                }}
+                            > 
+                                <div
+                                    className="toolbar-menu-dot"
+                                />
+                            </CSSTransition>
+                            <div
+                                className={isHovering === null ? "toolbar-menu-dot" : "toolbar-menu-dot-hide"}
+                            />
+                        </div>
                         // <ToolbarItem 
                         //     key={el.id}
                         //     text={el.text}

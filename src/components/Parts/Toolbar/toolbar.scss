@@ -29,7 +29,10 @@
                 margin: 1px;
                 opacity: 1;
             }
-            .toolbar-menu-dot-with-animation-1 {
+            .toolbar-menu-dot-hide {
+                display: none;
+            }
+            .toolbar-menu-dot-with-animation-open-1 {
                 border: 1px solid black;
                 border-radius: 50%;
                 background: black;
@@ -42,7 +45,7 @@
                 -o-animation: disappear1 1s ease;
                 animation: disappear1 1s ease;
             }
-            .toolbar-menu-dot-with-animation-2 {
+            .toolbar-menu-dot-with-animation-open-2 {
                 border: 1px solid black;
                 border-radius: 50%;
                 background: black;
@@ -55,7 +58,7 @@
                 -o-animation: disappear2 1s ease ;
                 animation: disappear2 1s ease ;
             }
-            .toolbar-menu-dot-with-animation-4 {
+            .toolbar-menu-dot-with-animation-open-4 {
                 border: 1px solid black;
                 border-radius: 50%;
                 background: black;
@@ -67,6 +70,45 @@
                 -moz-animation: disappear4 1s ease;
                 -o-animation: disappear4 1s ease;
                 animation: disappear4 1s ease;
+            }
+            .toolbar-menu-dot-with-animation-close-1 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+                -webkit-animation: appear1 1s ease;
+                -moz-animation: appear1 1s ease;
+                -o-animation: appear1 1s ease;
+                animation: appear1 1s ease;
+            }
+            .toolbar-menu-dot-with-animation-close-2 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+                -webkit-animation: appear2 1s ease;
+                -moz-animation: appear2 1s ease ;
+                -o-animation: appear2 1s ease ;
+                animation: appear2 1s ease ;
+            }
+            .toolbar-menu-dot-with-animation-close-4 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+                -webkit-animation: appear4 1s ease;
+                -moz-animation: appear4 1s ease;
+                -o-animation: appear4 1s ease;
+                animation: appear4 1s ease;
             }
         }
     }
@@ -180,69 +222,104 @@
     }
 }
 
-@-webkit-keyframes appear {
-    from{
+@-webkit-keyframes appear1 {
+    0%{
         opacity: 0;
     }
-    to {
+    60% {
         opacity: 1;
     }
 }
-@-moz-keyframes appear {
-    from{
+@-moz-keyframes appear1 {
+    0%{
         opacity: 0;
     }
-    to {
+    60% {
         opacity: 1;
     }
 }
-@-o-keyframes appear {
-    from{
+@-o-keyframes appear1 {
+    0%{
         opacity: 0;
     }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes appear {
-    from{
-        opacity: 0;
-    }
-    to {
+    60% {
         opacity: 1;
     }
 }
 
-// @-webkit-keyframes close {
-//     from{
-//         height: 314px;
-//     }
-//     to {
-//         height: 0px;
-//     }
-// }
-// @-moz-keyframes close {
-//     from{
-//         height: 314px;
-//     }
-//     to {
-//         height: 0px;
-//     }
-// }
-// @-o-keyframes close {
-//     from{
-//         height: 314px;
-//     }
-//     to {
-//         height: 0px;
-//     }
-// }
-// @keyframes close {
-//     from{
-//         height: 314px;
-//     }
-//     to {
-//         height: 0px;
-//     }
-// }
+@keyframes appear1 {
+    0%{
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes appear2 {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes appear2 {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-o-keyframes appear2 {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear2 {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes appear4 {
+    0%{
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes appear4 {
+    0%{
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+@-o-keyframes appear4 {
+    0%{
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear4 {
+    0%{
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+}
