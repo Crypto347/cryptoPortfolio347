@@ -84,6 +84,8 @@ export const Toolbar = (props) => {
     */
 
     const [menuIsShown, setMenuIsShown] = useState(false);
+    const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
+    const [isHovering, setIsHovering] = useState(false);
 
     /**
     * Methods
@@ -95,6 +97,13 @@ export const Toolbar = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    }
     // const handleScroll = () => {
     //     setMenuIsShown(false);
     // }
@@ -129,6 +138,34 @@ export const Toolbar = (props) => {
         )
     }
 
+    const renderMenuDots = () => {
+        return(
+            <>{menuDots.map((el,i) => {
+                if(el === 1 || el === 2 || el === 4){
+                    return(
+                        <div key={i}
+                            className={isHovering ? `toolbar-menu-dot-with-animation-${el}` : "toolbar-menu-dot"}
+                        />
+                        // <ToolbarItem 
+                        //     key={el.id}
+                        //     text={el.text}
+                        //     active={el.active}
+                        //     menuIsShown={menuIsShown}
+                        //     onClick={() => toolbarOnClick(el.path, el.id)}
+                        // />
+                    )
+                }else{
+                    return(
+                        <div key={i}
+                            className="toolbar-menu-dot"
+                        />
+                    )
+                }
+            
+            })}</>
+        )
+    }
+
     /**
     * Markup
     */
@@ -138,16 +175,12 @@ export const Toolbar = (props) => {
             <div className="toolbar-logo">crypto.</div>
             <div className="toolbar-wrapper">
                 {renderToolbarItems()}
-                <div className="toolbar-menu">
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
-                    <div className="toolbar-menu-dot"/>
+                <div 
+                    className="toolbar-menu"
+                     onMouseEnter={handleMouseEnter} 
+                     onMouseLeave={handleMouseLeave}
+                >
+                    {renderMenuDots()}
                 </div>
             </div>
             
