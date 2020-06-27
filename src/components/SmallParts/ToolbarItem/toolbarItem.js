@@ -25,11 +25,7 @@ export const ToolbarItem = (props) => {
     */
 
     return(
-        <div onClick={props.onClick}
-            className={!props.menuIsShown ? 
-            (props.active ? "toolbar-item-active-disappear" : "toolbar-item-disappear") 
-            : (props.active ? "toolbar-item-active" : "toolbar-item")}
-        >
+        <div className="toolbar-item">
             {props.text}
         </div>
     );

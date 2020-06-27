@@ -1,6 +1,37 @@
 .toolbar {
-    // display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 30px 40px;
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
+    }
+    .toolbar-wrapper {
+        display: flex;
+        align-items: flex-end;
+        .toolbar-items {
+            display: flex;
+        }
+        .toolbar-menu {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2px 0 2px 20px;
+            width: 25px;
+            cursor: pointer;
+            .toolbar-menu-dot {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+            }
+        }
+    }
 }
+
 
 
 // @media only screen and (max-width: 1120px){

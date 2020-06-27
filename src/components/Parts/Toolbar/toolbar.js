@@ -23,6 +23,18 @@ import {
     CSSTransition 
 } from 'react-transition-group';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+/**
+* Icons
+*/
+
+import { 
+    
+} from '@fortawesome/fontawesome-free-brands';
+
 /**
 * Styles
 */
@@ -98,9 +110,13 @@ export const Toolbar = (props) => {
 
     const renderToolbarItems = () => {
         return(
-            <>{props.menuItems.map((el,i) => {
+            <div className="toolbar-items">{props.menuItems.map((el,i) => {
                 return(
-                <div key={i}>kj</div>
+                    <ToolbarItem 
+                        key={i}
+                        text={el.text}
+                        active={el.active}
+                    />
                     // <ToolbarItem 
                     //     key={el.id}
                     //     text={el.text}
@@ -109,7 +125,7 @@ export const Toolbar = (props) => {
                     //     onClick={() => toolbarOnClick(el.path, el.id)}
                     // />
                 )
-            })}</>
+            })}</div>
         )
     }
 
@@ -119,10 +135,22 @@ export const Toolbar = (props) => {
 
     return(
         <div className="toolbar">
-            {/* <img src={}/> */}
-            <div>
+            <div className="toolbar-logo">crypto.</div>
+            <div className="toolbar-wrapper">
                 {renderToolbarItems()}
+                <div className="toolbar-menu">
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                    <div className="toolbar-menu-dot"/>
+                </div>
             </div>
+            
         </div>
     );
 }
