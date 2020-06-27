@@ -1,0 +1,126 @@
+.header-images {
+    display: flex;
+    align-items: center;
+   .switch-buttons {
+       .switch-button-wrapper{
+        height: 50px;
+            .switch-button-activated {
+                border: 1.5px solid black;
+                width: 58px;
+                background: black;
+                // margin: 40px 0 40px 0;
+                cursor: pointer;
+            }
+            .switch-button-deactivated {
+                    border: 1.5px solid black;
+                    width: 20px;
+                    background: black;
+                    // margin: 40px 0 40px 0;
+                    cursor: pointer;
+                // &:hover {
+                //     -webkit-animation: appear4 1s ease;
+                //     -moz-animation: appear4 1s ease;
+                //     -o-animation: appear4 1s ease;
+                //     animation: appear4 1s ease;
+                // }
+            }
+            .switch-button-deactivated-hiden {
+                display: none;
+            }
+            .switch-button-deactivated-elongated {
+                border: 1.5px solid black;
+                width: 58px;
+                background: black;
+                // margin: 40px 0 40px 0;
+                -webkit-animation: lengthen 1s ease;
+                -moz-animation: lengthen 1s ease;
+                -o-animation: lengthen 1s ease;
+                animation: lengthen 1s ease;
+                cursor: pointer;
+            }
+            .switch-button-deactivated-shortened {
+                border: 1.5px solid black;
+                width: 20px;
+                background: black;
+                // margin: 40px 0 40px 0;
+                -webkit-animation: shorten 1s ease;
+                -moz-animation: shorten 1s ease;
+                -o-animation: shorten 1s ease;
+                animation: shorten 1s ease;
+                cursor: pointer;
+            }
+        }
+   }
+    >img {
+        width: 770px;
+        height: 510px;
+    }
+}
+
+@-webkit-keyframes lengthen {
+    from{
+        width: 20;
+    }
+    to{
+        width: 58;
+    }
+}
+@-moz-keyframes lengthen {
+    from{
+        width: 20;
+    }
+    to{
+        width: 58;
+    }
+}
+@-o-keyframes lengthen {
+    from{
+        width: 20;
+    }
+    to{
+        width: 58;
+    }
+}
+
+@keyframes lengthen {
+    from{
+        width: 20;
+    }
+    to{
+        width: 58;
+    }
+}
+
+@-webkit-keyframes shorten {
+    from{
+        width: 58;
+    }
+    to{
+        width: 20;
+    }
+}
+@-moz-keyframes shorten {
+    from{
+        width: 58;
+    }
+    to{
+        width: 20;
+    }
+}
+@-o-keyframes shorten {
+    from{
+        width: 58;
+    }
+    to{
+        width: 20;
+    }
+}
+
+@keyframes shorten {
+    from{
+        width: 58;
+    }
+    to{
+        width: 20;
+    }
+}

@@ -23,18 +23,6 @@ import {
     CSSTransition 
 } from 'react-transition-group';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-/**
-* Icons
-*/
-
-import { 
-    
-} from '@fortawesome/fontawesome-free-brands';
-
 /**
 * Styles
 */
@@ -195,8 +183,8 @@ export const Toolbar = (props) => {
                 {renderToolbarItems()}
                 <div 
                     className="toolbar-menu"
-                     onMouseEnter={handleMouseEnter} 
-                     onMouseLeave={handleMouseLeave}
+                    onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseLeave}
                 >
                     {renderMenuDots()}
                 </div>

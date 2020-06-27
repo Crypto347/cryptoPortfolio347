@@ -17,6 +17,7 @@ import './home.scss';
 */
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
+import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
 
 /**
 * Images
@@ -46,7 +47,8 @@ export const Home = () => {
         <div className="home">
             <div className="home-main-background">
                 <Toolbar/>
-                <img src={Image1}/>
+                <HeaderImages/>
+                {/* <img src={Image1}/> */}
             
             </div>
         </div>
