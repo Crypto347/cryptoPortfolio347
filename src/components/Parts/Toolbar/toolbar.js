@@ -148,7 +148,7 @@ export const Toolbar = (props) => {
                                 in={isHovering} 
                                 timeout={7000}
                                 mountOnEnter
-                                unmountOnExit
+                                // unmountOnExit
                                 classNames={{
                                     enter: '',
                                     enterActive: `toolbar-menu-dot-with-animation-open-${el}`,
