@@ -80,17 +80,20 @@ export const HeaderImages = (props) => {
         {
             id: 1, 
             active: true,
-            isHovering: null
+            isHovering: null,
+            closeSmoothly: false
         },
         {
             id: 2, 
             active: false,
-            isHovering: null
+            isHovering: null,
+            closeSmoothly: false
         },
         {
             id: 3, 
             active: false,
-            isHovering: null
+            isHovering: null,
+            closeSmoothly: false
         }
     ])
 
@@ -142,10 +145,12 @@ export const HeaderImages = (props) => {
             return {
                 ...el,
                 active: false,
-                isHovering: null
+                isHovering: null,
+                closeSmoothly: el.active ? true : false
             }
         });
         console.log(updatedSwitchButtons)
+        console.log({1:updatedSwitchButtons[0].closeSmoothly, 2:updatedSwitchButtons[1].closeSmoothly, 3:updatedSwitchButtons[2].closeSmoothly})
         let switchButton = {...updatedSwitchButtons.find(x => x.id === id), active: true};
         let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
 
@@ -164,6 +169,7 @@ export const HeaderImages = (props) => {
                         onMouseLeave={() => handleMouseLeave(el.id)}
                         onClick={() => switchButtonOnClick(el.id)}
                     >
+                        <div className={el.active ? "switch-button-number" : "switch-button-number-hidden"}>{el.id}</div>
                         <CSSTransition
                             in={el.isHovering && !el.active} 
                             timeout={7000}
@@ -176,8 +182,7 @@ export const HeaderImages = (props) => {
                                 exitActive: `${el.active ? null : "switch-button-deactivated-shortened"}`,
                             }}
                         > 
-                            <div className={el.active ? "switch-button-activated" : "switch-button-deactivated"}
-                            />
+                            <div className={el.active ? "switch-button-activated" : (el.closeSmoothly ? "switch-button-deactivated-shortened" : "switch-button-deactivated")}/>
                         </CSSTransition>
                     </div>
                     // <ToolbarItem 

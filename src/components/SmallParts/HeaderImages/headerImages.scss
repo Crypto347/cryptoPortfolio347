@@ -4,14 +4,26 @@
    .switch-buttons {
        .switch-button-wrapper{
             // border: 2px solid red;
-            height: 20px;
-            margin: 25px 0 25px 0px;
+            // height: 20px;
+            margin: 25px 0 25px 0px; 
             cursor: pointer;
+            .switch-button-number {
+                text-align: right;
+                font-family: 'Lora', serif;
+                font-size: 19px;
+                opacity: 1;
+            }
+            .switch-button-number-hidden {
+                text-align: right;
+                font-family: 'Lora', serif;
+                font-size: 19px;
+                opacity: 0;
+            }
             .switch-button-activated {
                 border: 1.5px solid black;
                 width: 58px;
                 background: black;
-                margin-top: 10px;
+                margin-bottom: 5px;
             }
             .switch-button-activated-hidden {
                 display: none;
@@ -20,7 +32,7 @@
                     border: 1.5px solid black;
                     width: 20px;
                     background: black;
-                    margin-top: 10px;
+                    margin-bottom: 5px;
                 // &:hover {
                 //     -webkit-animation: appear4 1s ease;
                 //     -moz-animation: appear4 1s ease;
