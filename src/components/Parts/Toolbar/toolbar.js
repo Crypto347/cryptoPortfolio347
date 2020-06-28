@@ -135,7 +135,7 @@ export const Toolbar = (props) => {
                             <CSSTransition
                                 in={isHovering} 
                                 timeout={7000}
-                                mountOnEnter
+                                // mountOnEnter
                                 // unmountOnExit
                                 classNames={{
                                     enter: '',
@@ -144,13 +144,8 @@ export const Toolbar = (props) => {
                                     exitActive: `toolbar-menu-dot-with-animation-close-${el}`
                                 }}
                             > 
-                                <div
-                                    className="toolbar-menu-dot"
-                                />
+                                <div className="toolbar-menu-dot"/>
                             </CSSTransition>
-                            <div
-                                className={isHovering === null ? "toolbar-menu-dot" : "toolbar-menu-dot-hide"}
-                            />
                         </div>
                         // <ToolbarItem 
                         //     key={el.id}

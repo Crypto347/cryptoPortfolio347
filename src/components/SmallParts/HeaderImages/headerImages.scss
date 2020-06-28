@@ -3,20 +3,24 @@
     align-items: center;
    .switch-buttons {
        .switch-button-wrapper{
-        height: 50px;
+            // border: 2px solid red;
+            height: 20px;
+            margin: 25px 0 25px 0px;
+            cursor: pointer;
             .switch-button-activated {
                 border: 1.5px solid black;
                 width: 58px;
                 background: black;
-                // margin: 40px 0 40px 0;
-                cursor: pointer;
+                margin-top: 10px;
+            }
+            .switch-button-activated-hidden {
+                display: none;
             }
             .switch-button-deactivated {
                     border: 1.5px solid black;
                     width: 20px;
                     background: black;
-                    // margin: 40px 0 40px 0;
-                    cursor: pointer;
+                    margin-top: 10px;
                 // &:hover {
                 //     -webkit-animation: appear4 1s ease;
                 //     -moz-animation: appear4 1s ease;
@@ -24,14 +28,13 @@
                 //     animation: appear4 1s ease;
                 // }
             }
-            .switch-button-deactivated-hiden {
+            .switch-button-deactivated-hidden {
                 display: none;
             }
             .switch-button-deactivated-elongated {
                 border: 1.5px solid black;
                 width: 58px;
                 background: black;
-                // margin: 40px 0 40px 0;
                 -webkit-animation: lengthen 1s ease;
                 -moz-animation: lengthen 1s ease;
                 -o-animation: lengthen 1s ease;
@@ -42,7 +45,6 @@
                 border: 1.5px solid black;
                 width: 20px;
                 background: black;
-                // margin: 40px 0 40px 0;
                 -webkit-animation: shorten 1s ease;
                 -moz-animation: shorten 1s ease;
                 -o-animation: shorten 1s ease;

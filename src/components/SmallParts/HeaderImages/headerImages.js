@@ -74,12 +74,24 @@ export const HeaderImages = (props) => {
     /**
     * State
     */
-    const [isHovering, setIsHovering] = useState(null);
+
     const [img, setImg] = useState('image1');
     const [switchButtons, setSwitchButtons] = useState([
-        {id: 1, active: true},
-        {id: 2, active: false},
-        {id: 3, active: false}
+        {
+            id: 1, 
+            active: true,
+            isHovering: null
+        },
+        {
+            id: 2, 
+            active: false,
+            isHovering: null
+        },
+        {
+            id: 3, 
+            active: false,
+            isHovering: null
+        }
     ])
 
     /**
@@ -92,12 +104,22 @@ export const HeaderImages = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleMouseEnter = () => {
-        setIsHovering(true);
+    const handleMouseEnter = (id) => {
+        let updatedSwitchButtons = [...switchButtons];
+        let switchButton = {...updatedSwitchButtons.find(x => x.id === id), isHovering: true};
+        let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
+
+        updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
+        setSwitchButtons(updatedSwitchButtons);
     }
 
-    const handleMouseLeave = () => {
-        setIsHovering(false);
+    const handleMouseLeave = (id) => {
+        let updatedSwitchButtons = [...switchButtons];
+        let switchButton = {...updatedSwitchButtons.find(x => x.id === id), isHovering: false};
+        let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
+
+        updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
+        setSwitchButtons(updatedSwitchButtons);
     }
  
 
@@ -114,18 +136,23 @@ export const HeaderImages = (props) => {
         }
     }
 
-    const renderClassName = (active) => {
-        if(active){
-            return "switch-button-activated";
-        }
-        if(!active&& isHovering === null){
-            return "switch-button-deactivated";
-        }
-        if(!active && isHovering !== null){
-            return "switch-button-deactivated-hiden";
-        }
-    }
+    const switchButtonOnClick = (id) => {
+        let updatedSwitchButtons = [...switchButtons];
+        updatedSwitchButtons = updatedSwitchButtons.map(el => {
+            return {
+                ...el,
+                active: false,
+                isHovering: null
+            }
+        });
+        console.log(updatedSwitchButtons)
+        let switchButton = {...updatedSwitchButtons.find(x => x.id === id), active: true};
+        let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
 
+        updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
+        setSwitchButtons(updatedSwitchButtons);
+    }
+    
     const renderSwitchButtons = () => {
         return(
             <div className="switch-buttons">{switchButtons.map((el,i) => {
@@ -133,24 +160,25 @@ export const HeaderImages = (props) => {
                     <div 
                         key={i}
                         className="switch-button-wrapper"
-                        onMouseEnter={handleMouseEnter} 
-                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => handleMouseEnter(el.id)} 
+                        onMouseLeave={() => handleMouseLeave(el.id)}
+                        onClick={() => switchButtonOnClick(el.id)}
                     >
-                         <CSSTransition
-                                in={isHovering && !el.active} 
-                                timeout={7000}
-                                mountOnEnter
-                                // unmountOnExit
-                                classNames={{
-                                    enter: '',
-                                    enterActive: `switch-button-deactivated-elongated`,
-                                    exit: '',
-                                    exitActive: `switch-button-deactivated-shortened`
-                                }}
-                            > 
-                            <div className={el.active ? "switch-button-activated" : "switch-button-deactivated"}/>
+                        <CSSTransition
+                            in={el.isHovering && !el.active} 
+                            timeout={7000}
+                            // mountOnEnter
+                            // unmountOnExit
+                            classNames={{
+                                enter: ``,
+                                enterActive: `${el.active ? null : "switch-button-deactivated-elongated"}`,
+                                exit: ``,
+                                exitActive: `${el.active ? null : "switch-button-deactivated-shortened"}`,
+                            }}
+                        > 
+                            <div className={el.active ? "switch-button-activated" : "switch-button-deactivated"}
+                            />
                         </CSSTransition>
-                        <div className={renderClassName(el.active)}/>
                     </div>
                     // <ToolbarItem 
                     //     key={el.id}
