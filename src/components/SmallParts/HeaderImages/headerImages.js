@@ -81,7 +81,15 @@ export const HeaderImages = (props) => {
     * State
     */
 
-    const [img, setImg] = useState({id: 1, imgName: 'image1'});
+    const [img, setImg] = useState(
+        {
+            id: 1,
+            imgName: "Image1",
+            headerText: "Crypto",
+            test1: "Hello.",
+            test2: "What can we help you with?"
+        }
+    );
     const [switchButtons, setSwitchButtons] = useState([
         {
             id: 1, 
@@ -130,17 +138,17 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
-        setImg()
+
     }
  
 
     const loadImage = (opt) => {
         switch(opt){
-            case 'image1':
+            case 'Image1':
                 return Image1;
-            case 'image2':
+            case 'Image2':
                 return Image2;
-            case 'image3':
+            case 'Image3':
                 return Image3;
             default:
                 return DefaultImage;
@@ -164,7 +172,9 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
-        setImg()
+        let headerImageObj = props.headerImagesItems.find(item => item.id === id);
+        console.log(headerImageObj)
+        setImg(headerImageObj)
     }
     
     const renderSwitchButtons = () => {
@@ -223,7 +233,7 @@ export const HeaderImages = (props) => {
 export default connect(
     (state) => {
         return {
-            // menuItems: Selectors.getMenuItemsState(state)
+            headerImagesItems: Selectors.getHeaderImagesItemsState(state)
         };
     },
     (dispatch) => {
