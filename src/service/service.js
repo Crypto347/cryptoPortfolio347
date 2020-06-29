@@ -15,10 +15,9 @@ export function fetchHeaderImagesArray() {
 
     return dispatch => {
         dispatch(Actions.fetchHeaderImagesBegin());
-        console.log("jk")
         return fetch("http://localhost:3005/api/headerImagesArray")
             // .then(handleErrors)
-            .then(res => res.json())
+            .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 console.log(json)
                 dispatch(Actions.fetchHeaderImagesSuccess(json));
