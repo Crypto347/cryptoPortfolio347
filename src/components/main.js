@@ -57,9 +57,9 @@ import * as Selectors from '../reducers/selectors';
 * Constants
 */
 
-import {
-    storiesArray
-} from '../constants/storiesArray';
+// import {
+//     storiesArray
+// } from '../constants/storiesArray';
 
 /**
 * Main component definition and export

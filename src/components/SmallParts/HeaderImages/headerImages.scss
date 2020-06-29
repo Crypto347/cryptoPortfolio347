@@ -1,7 +1,9 @@
 .header-images {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
    .switch-buttons {
+       width: 60px;
        .switch-button-wrapper{
             // border: 2px solid red;
             // height: 20px;
@@ -65,10 +67,17 @@
             }
         }
    }
-    >img {
-        width: 770px;
-        height: 510px;
-    }
+   .header-images-image {
+       width: calc(100% - 120px);
+       display: flex;
+       justify-content: center;
+        >img {
+            width: 770px;
+            height: 510px;
+            margin: 20px 0 0 0;
+        }
+   }
+   
 }
 
 @-webkit-keyframes lengthen {

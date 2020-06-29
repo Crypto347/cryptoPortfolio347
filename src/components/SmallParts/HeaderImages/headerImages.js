@@ -38,6 +38,12 @@ import './headerImages.scss';
 * Components
 */
 
+/**
+* Services
+*/
+
+import * as Services from "../../../service";
+
 
 /**
 * Actions
@@ -75,7 +81,7 @@ export const HeaderImages = (props) => {
     * State
     */
 
-    const [img, setImg] = useState('image1');
+    const [img, setImg] = useState({id: 1, imgName: 'image1'});
     const [switchButtons, setSwitchButtons] = useState([
         {
             id: 1, 
@@ -102,6 +108,7 @@ export const HeaderImages = (props) => {
     */
 
     useEffect(() => {
+        props.fetchHeaderImagesArray();
         // props.initMenuItems(menuItemsArray);
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
@@ -123,6 +130,7 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
+        setImg()
     }
  
 
@@ -156,6 +164,7 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
+        setImg()
     }
     
     const renderSwitchButtons = () => {
@@ -204,7 +213,9 @@ export const HeaderImages = (props) => {
     return(
         <div className="header-images">
             {renderSwitchButtons()}
-            <img src={loadImage(img)}/>
+            <div className="header-images-image">
+                <img src={loadImage(img.imgName)}/>
+            </div>
         </div>
     );
 }
@@ -219,6 +230,7 @@ export default connect(
         return {
             // initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchHeaderImagesArray: bindActionCreators(Services.fetchHeaderImagesArray, dispatch),
         };
     }
 )(HeaderImages);
