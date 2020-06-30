@@ -38,6 +38,8 @@ import './headerImages.scss';
 * Components
 */
 
+import Button from '../../../library/Button/button';
+
 /**
 * Services
 */
@@ -86,8 +88,7 @@ export const HeaderImages = (props) => {
             id: 1,
             imgName: "Image1",
             headerText: "Crypto",
-            test1: "Hello.",
-            test2: "What can we help you with?"
+            text: "Hello.What can we help you with?"
         }
     );
     const [switchButtons, setSwitchButtons] = useState([
@@ -222,12 +223,18 @@ export const HeaderImages = (props) => {
     return(
         <div className="header-images">
             {renderSwitchButtons()}
-            <div className="header-text-back">{img.headerText}</div>
+            <div className="header-text-back">
+                {img.headerText}
+            </div>
             <div className="header-text-front-crop">
                 <div className="header-text-front">
                     {img.headerText}
-                
                 </div>
+                <div className="header-text">{img.text}</div>
+                <Button
+                    className="header-get-direction"
+                    text="get direction."
+                />
             </div>
            
             <div className="header-image">

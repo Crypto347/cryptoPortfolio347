@@ -51,7 +51,7 @@ class Button extends Component {
         return(
             <div className={this.props.outerDivClassName}>
                 <button 
-                    className = {this.props.className}
+                    className={this.props.className}
                     onClick={this.props.onClick}
                     type={this.props.type}
                     disabled={this.props.disabled}
