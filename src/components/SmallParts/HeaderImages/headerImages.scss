@@ -115,11 +115,12 @@
        justify-content: center;
        position: relative;
        z-index: 300;
-       filter: drop-shadow(16px 16px 20px rgb(36, 36, 36)) invert(0%);
+       filter: drop-shadow(16px 16px 20px black) invert(0%);
         >img {
             width: 790px;
             height: 500px;
             margin: 40px 0 0 0;
+            filter: grayscale(20%);
         }
    }
    
