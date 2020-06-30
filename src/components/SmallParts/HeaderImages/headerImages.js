@@ -173,7 +173,6 @@ export const HeaderImages = (props) => {
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
         let headerImageObj = props.headerImagesItems.find(item => item.id === id);
-        console.log(headerImageObj)
         setImg(headerImageObj)
     }
     
@@ -223,7 +222,15 @@ export const HeaderImages = (props) => {
     return(
         <div className="header-images">
             {renderSwitchButtons()}
-            <div className="header-images-image">
+            <div className="header-text-back">{img.headerText}</div>
+            <div className="header-text-front-crop">
+                <div className="header-text-front">
+                    {img.headerText}
+                
+                </div>
+            </div>
+           
+            <div className="header-image">
                 <img src={loadImage(img.imgName)}/>
             </div>
         </div>

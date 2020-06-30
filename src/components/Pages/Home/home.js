@@ -46,6 +46,7 @@ export const Home = () => {
     return(
         <div className="home">
             <div className="home-main-background">
+                <div className="home-curtain"/>
                 <Toolbar/>
                 <HeaderImages/>
                 {/* <img src={Image1}/> */}
