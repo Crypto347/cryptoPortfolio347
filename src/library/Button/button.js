@@ -49,7 +49,21 @@ class Button extends Component {
 
     render(){
         return(
-            <div className={this.props.outerDivClassName}>
+            <>{this.props.outerDivClassName ? 
+                <div className={this.props.outerDivClassName}>
+                    <button 
+                        className={this.props.className}
+                        onClick={this.props.onClick}
+                        type={this.props.type}
+                        disabled={this.props.disabled}
+                        // ref={this.buttonRef}
+                        id={this.props.id}
+                        // style={{ width: `${this.props.width}`, height: `${this.props.height}`, borderRadius: `${this.props.borderRadius}`}}
+                        >
+                            {this.props.text}
+                            {this.props.children}
+                    </button>
+                </div> : 
                 <button 
                     className={this.props.className}
                     onClick={this.props.onClick}
@@ -62,7 +76,7 @@ class Button extends Component {
                         {this.props.text}
                         {this.props.children}
                 </button>
-            </div>
+            }</>   
         );
     }
 }
