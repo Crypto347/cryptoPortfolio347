@@ -25,8 +25,12 @@ import {
 
 
 /**
-* Icons
+* Hooks
 */
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
 * Styles
@@ -78,6 +82,8 @@ import DefaultImage from '../../../images/error.jpg';
 */
 
 export const HeaderImages = (props) => {
+
+    const size = useWindowSize();
 
     /**
     * State
@@ -223,14 +229,22 @@ export const HeaderImages = (props) => {
     return(
         <div className="header-images">
             {renderSwitchButtons()}
-            <div className="header-text-back">
+            <div 
+                className="header-text-back" 
+                style={{left: `${size.width/2 - 517}px`}}
+            >
                 {img.headerText}
             </div>
-            <div className="header-text-front-crop">
-                <div className="header-text-front">
+            <div 
+                className="header-text-front-crop" 
+                style={{left: `${size.width/2 - 394}px`}}
+            >
+                <div className="header-text-front" >
                     {img.headerText}
                 </div>
-                <div className="header-text">{img.text}</div>
+                <div className="header-text">
+                    {img.text}
+                </div>
                 <Button
                     className="header-get-direction"
                     text="get direction."
@@ -240,6 +254,7 @@ export const HeaderImages = (props) => {
             <div className="header-image">
                 <img src={loadImage(img.imgName)}/>
             </div>
+            {console.log(size)}
         </div>
     );
 }
