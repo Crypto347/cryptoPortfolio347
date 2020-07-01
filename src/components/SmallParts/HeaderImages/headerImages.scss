@@ -25,7 +25,7 @@
                 opacity: 0;
             }
             .switch-button-activated {
-                border: 1.5px solid white;
+                border: 1px solid white;
                 width: 58px;
                 background: white;
                 margin-bottom: 5px;
@@ -34,38 +34,32 @@
                 display: none;
             }
             .switch-button-deactivated {
-                    border: 1.5px solid white;
-                    width: 20px;
-                    background: white;
-                    margin-bottom: 5px;
-                // &:hover {
-                //     -webkit-animation: appear4 1s ease;
-                //     -moz-animation: appear4 1s ease;
-                //     -o-animation: appear4 1s ease;
-                //     animation: appear4 1s ease;
-                // }
+                border: 1px solid white;
+                width: 20px;
+                background: white;
+                margin-bottom: 5px;
             }
             .switch-button-deactivated-hidden {
                 display: none;
             }
             .switch-button-deactivated-elongated {
-                border: 1.5px solid white;
+                border: 1px solid white;
                 width: 58px;
                 background: white;
-                -webkit-animation: lengthen 1s ease;
-                -moz-animation: lengthen 1s ease;
-                -o-animation: lengthen 1s ease;
-                animation: lengthen 1s ease;
+                -webkit-animation: lengthen .5s linear;
+                -moz-animation: lengthen .5s linear;
+                -o-animation: lengthen .5s linear;
+                animation: lengthen .5s linear;
                 cursor: pointer;
             }
             .switch-button-deactivated-shortened {
-                border: 1.5px solid white;
+                border: 1px solid white;
                 width: 20px;
                 background: white;
-                -webkit-animation: shorten 1s ease;
-                -moz-animation: shorten 1s ease;
-                -o-animation: shorten 1s ease;
-                animation: shorten 1s ease;
+                -webkit-animation: shorten .5s linear;
+                -moz-animation: shorten .5s linear;
+                -o-animation: shorten .5s linear;
+                animation: shorten .5s linear;
                 cursor: pointer;
             }
         }

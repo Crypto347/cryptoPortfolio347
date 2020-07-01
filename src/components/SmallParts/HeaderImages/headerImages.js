@@ -32,6 +32,10 @@ import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
+import {
+    useInterval
+} from '../../../Hooks/useInterval';
+
 /**
 * Styles
 */
@@ -128,6 +132,11 @@ export const HeaderImages = (props) => {
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useInterval(() => {
+        let currentId = switchButtons.find(item => item.active === true).id;
+        switchButtonOnClick(currentId + 1);
+    }, true ? 10000 : null);
 
     const handleMouseEnter = (id) => {
         let updatedSwitchButtons = [...switchButtons];
