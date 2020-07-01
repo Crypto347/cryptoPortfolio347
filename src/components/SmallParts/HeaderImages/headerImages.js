@@ -207,7 +207,7 @@ export const HeaderImages = (props) => {
                                 exitActive: `${el.active ? null : "switch-button-deactivated-shortened"}`,
                             }}
                         > 
-                            <div className={el.active ? "switch-button-activated" : (el.closeSmoothly ? "switch-button-deactivated-shortened" : "switch-button-deactivated")}/>
+                            <div className={el.active ? "switch-button-activated" : `switch-button-deactivated ${el.closeSmoothly ? "switch-button-deactivated-shortened" : null}`}/>
                         </CSSTransition>
                     </div>
                     // <ToolbarItem 
@@ -239,7 +239,7 @@ export const HeaderImages = (props) => {
                 className="header-text-front-crop" 
                 style={{left: `${size.width/2 - 394}px`}}
             >
-                <div className="header-text-front" >
+                <div className="header-text-front">
                     {img.headerText}
                 </div>
                 <div className="header-text">
@@ -254,7 +254,6 @@ export const HeaderImages = (props) => {
             <div className="header-image">
                 <img src={loadImage(img.imgName)}/>
             </div>
-            {console.log(size)}
         </div>
     );
 }
