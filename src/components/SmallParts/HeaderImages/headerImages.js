@@ -93,6 +93,8 @@ export const HeaderImages = (props) => {
     * State
     */
 
+    const [imgShow, setImgShow] = useState(true);
+
     const [img, setImg] = useState(
         {
             id: 1,
@@ -181,15 +183,16 @@ export const HeaderImages = (props) => {
                 closeSmoothly: el.active ? true : false
             }
         });
-        console.log(updatedSwitchButtons)
-        console.log({1:updatedSwitchButtons[0].closeSmoothly, 2:updatedSwitchButtons[1].closeSmoothly, 3:updatedSwitchButtons[2].closeSmoothly})
+       
         let switchButton = {...updatedSwitchButtons.find(x => x.id === id), active: true};
         let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
         let headerImageObj = props.headerImagesItems.find(item => item.id === id);
-        setImg(headerImageObj)
+        setImg(headerImageObj);
+        setImgShow(!imgShow)
+        console.log(imgShow);
     }
     
     const renderSwitchButtons = () => {
@@ -260,7 +263,10 @@ export const HeaderImages = (props) => {
                 />
             </div>
            
-            <div className="header-image">
+            <div className={`${imgShow ? "header-image" : "hide"}`}>
+                <img src={loadImage(img.imgName)}/>
+            </div>
+            <div className={`${!imgShow ? "header-image" : "hide"}`}>
                 <img src={loadImage(img.imgName)}/>
             </div>
         </div>

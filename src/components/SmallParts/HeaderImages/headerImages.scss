@@ -103,27 +103,34 @@
         }
     }
  
-   .header-image {
-       width: calc(100% - 120px);
-       display: flex;
-       justify-content: center;
-       position: relative;
-       z-index: 300; 
-       filter: drop-shadow(16px 16px 20px black) invert(0%);
-        >img {
-            width: 790px;
-            height: 500px;
-            margin: 40px 0 0 0;
-            filter: grayscale(20%);
-        }
-   }
+    .header-image {
+        width: calc(100% - 120px);
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 300; 
+        animation: fadeIn 2s ease;
+        opacity: 1;
+        filter: drop-shadow(16px 16px 20px black) invert(0%);
+            >img {
+                width: 790px;
+                height: 500px;
+                margin: 40px 0 0 0;
+                filter: grayscale(20%);
+            }
+    }
+
+    .hide {
+        display: none;
+    }
+
     .fade-enter {
         opacity: 0;
     }
 
     .fade-enter-active {
         opacity: 1;
-        transition: opacity 1s ease-in-out;
+        transition: opacity 0s ease-in-out;
     }
 
     .fade-exit {
@@ -132,7 +139,7 @@
 
     .fade-exit-active {
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
     }
 
 }
