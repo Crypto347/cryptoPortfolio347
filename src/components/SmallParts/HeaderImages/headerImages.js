@@ -242,7 +242,13 @@ export const HeaderImages = (props) => {
         <div className="header-images">
             {renderSwitchButtons()}
             <div 
-                className="header-text-back" 
+                className={`${imgShow ? "header-text-back" : "hide"}`}
+                style={{left: `${size.width/2 - 517}px`}}
+            >
+                {img.headerText}
+            </div>
+            <div 
+                className={`${!imgShow ? "header-text-back" : "hide"}`}
                 style={{left: `${size.width/2 - 517}px`}}
             >
                 {img.headerText}
@@ -251,7 +257,10 @@ export const HeaderImages = (props) => {
                 className="header-text-front-crop" 
                 style={{left: `${size.width/2 - 394}px`}}
             >
-                <div className="header-text-front">
+                <div className={`${imgShow ? "header-text-front" : "hide"}`}>
+                    {img.headerText}
+                </div>
+                <div className={`${imgShow ? "header-text-front" : "hide"}`}>
                     {img.headerText}
                 </div>
                 <div className="header-text">
