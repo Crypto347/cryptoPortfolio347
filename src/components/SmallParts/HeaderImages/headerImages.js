@@ -135,7 +135,7 @@ export const HeaderImages = (props) => {
 
     useInterval(() => {
         let currentId = switchButtons.find(item => item.active === true).id;
-        switchButtonOnClick(currentId + 1);
+        switchButtonOnClick(currentId === 3 ? 1 : currentId + 1);
     }, true ? 10000 : null);
 
     const handleMouseEnter = (id) => {
