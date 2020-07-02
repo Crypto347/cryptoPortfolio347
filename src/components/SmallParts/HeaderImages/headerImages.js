@@ -260,7 +260,7 @@ export const HeaderImages = (props) => {
                 <div className={`${imgShow ? "header-text-front" : "hide"}`}>
                     {img.headerText}
                 </div>
-                <div className={`${imgShow ? "header-text-front" : "hide"}`}>
+                <div className={`${!imgShow ? "header-text-front" : "hide"}`}>
                     {img.headerText}
                 </div>
                 <div className="header-text">
