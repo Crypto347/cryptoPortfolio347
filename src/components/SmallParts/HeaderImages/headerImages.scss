@@ -109,7 +109,7 @@
         justify-content: center;
         position: relative;
         z-index: 300; 
-        animation: fadeIn 2s ease;
+        animation: fadeIn 1s ease;
         opacity: 1;
         filter: drop-shadow(16px 16px 20px black) invert(0%);
             >img {
@@ -123,25 +123,6 @@
     .hide {
         display: none;
     }
-
-    .fade-enter {
-        opacity: 0;
-    }
-
-    .fade-enter-active {
-        opacity: 1;
-        transition: opacity 0s ease-in-out;
-    }
-
-    .fade-exit {
-        opacity: 1;
-    }
-
-    .fade-exit-active {
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-
 }
 
 @keyframes fadeIn {
