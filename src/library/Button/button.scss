@@ -28,6 +28,12 @@
     height: 60px;
     position: relative;
     z-index: 500;
+    -webkit-animation: appearHeaderTextFront .5s linear;
+    -moz-animation: appearHeaderTextFront .5s linear;
+    -o-animation: appearHeaderTextFront .5s linear;
+    animation: appearHeaderTextFront .5s linear;
+    animation-delay: 4s;
+    animation-fill-mode: both;
     cursor: pointer;
     &:hover {
         background: transparent;
@@ -54,3 +60,48 @@
 //         width: 110px;
 //     }
 // }
+
+
+@keyframes appearHeaderTextFront {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+    
+@-moz-keyframes appearHeaderTextFront {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes appearHeaderTextFront {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-o-keyframes appearHeaderTextFront {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

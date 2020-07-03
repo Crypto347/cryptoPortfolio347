@@ -100,7 +100,6 @@
             animation: appearHeaderTextBack .5s linear;
         }
         .header-text {
-            font-family: 'Lora', serif;
             font-size: 65px;
             // width: calc(100% - 180px);
             margin: 0 70px 0 110px;
@@ -108,6 +107,38 @@
             top: 140px;
             position: absolute;
             z-index: 500;
+            .header-text-wrapper {
+                display: flex;
+                // transform: translateX(0%);
+                .header-text-bold{
+                    font-family: 'Lora', serif;
+                    // transform: translateX(10%);
+                    -webkit-animation: appearHeaderTextFront .5s linear;
+                    -moz-animation: appearHeaderTextFront .5s linear;
+                    -o-animation: appearHeaderTextFront .5s linear;
+                    animation: appearHeaderTextFront .5s linear;
+                    animation-delay: 1s;
+                    animation-fill-mode: both;
+                }
+                .header-text-regular-1 {
+                    // transform: translateX(10%);
+                    -webkit-animation: appearHeaderTextFront .5s linear;
+                    -moz-animation: appearHeaderTextFront .5s linear;
+                    -o-animation: appearHeaderTextFront .5s linear;
+                    animation: appearHeaderTextFront .5s linear;
+                    animation-delay: 2s;
+                    animation-fill-mode: both;
+                }
+            }
+            .header-text-regular-2 {
+                // transform: translateX(0%);
+                -webkit-animation: appearHeaderTextFront .5s linear;
+                -moz-animation: appearHeaderTextFront .5s linear;
+                -o-animation: appearHeaderTextFront .5s linear;
+                animation: appearHeaderTextFront .5s linear;
+                animation-delay: 3s;
+                animation-fill-mode: both;
+            }
         }
     }
  
@@ -135,6 +166,156 @@
         display: none;
     }
 }
+
+@keyframes appearHeaderTextFront {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+    
+@-moz-keyframes appearHeaderTextFront {
+    0% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(10%);
+    }
+}
+
+@-webkit-keyframes appearHeaderTextFront {
+    0% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(10%);
+    }
+}
+
+@-o-keyframes appearHeaderTextFront {
+    0% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(10%);
+    }
+}
+
+@keyframes appearHeaderTextFront2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+    
+@-moz-keyframes appearHeaderTextFront2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes appearHeaderTextFront2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-o-keyframes appearHeaderTextFront2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes appearHeaderTextFront1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+    
+@-moz-keyframes appearHeaderTextFront1 {
+    0% {
+        // opacity: 0;
+        transform: translateX(-100%);
+    }
+    30% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes appearHeaderTextFront1 {
+    0% {
+        // opacity: 0;
+        transform: translateX(-100%);
+    }
+    30% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@-o-keyframes appearHeaderTextFront1 {
+    0% {
+        // opacity: 0;
+        transform: translateX(-100%);
+    }
+    30% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
 
 @keyframes appearHeaderTextBack {
     0% {

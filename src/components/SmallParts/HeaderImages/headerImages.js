@@ -100,7 +100,9 @@ export const HeaderImages = (props) => {
             id: 1,
             imgName: "Image1",
             headerText: "Crypto",
-            text: "Hello.What can we help you with?"
+            text1: "Hello.",
+            text2: "What can we",
+            text3: "help you with?"
         }
     );
     const [switchButtons, setSwitchButtons] = useState([
@@ -264,7 +266,11 @@ export const HeaderImages = (props) => {
                     {img.headerText}
                 </div>
                 <div className="header-text">
-                    {img.text}
+                    <div className="header-text-wrapper">
+                        <div className="header-text-bold">{img.text1}</div>
+                        <div className="header-text-regular-1">{img.text2}</div>
+                    </div>
+                    <div className="header-text-regular-2">{img.text3}</div>
                 </div>
                 <Button
                     className="header-get-direction"
