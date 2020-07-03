@@ -265,7 +265,14 @@ export const HeaderImages = (props) => {
                 <div className={`${!imgShow ? "header-text-front" : "hide"}`}>
                     {img.headerText}
                 </div>
-                <div className="header-text">
+                <div className={`${imgShow ? "header-text" : "hide"}`}>
+                    <div className="header-text-wrapper">
+                        <div className="header-text-bold">{img.text1}</div>
+                        <div className="header-text-regular-1">{img.text2}</div>
+                    </div>
+                    <div className="header-text-regular-2">{img.text3}</div>
+                </div>
+                <div className={`${!imgShow ? "header-text" : "hide"}`}>
                     <div className="header-text-wrapper">
                         <div className="header-text-bold">{img.text1}</div>
                         <div className="header-text-regular-1">{img.text2}</div>
@@ -273,7 +280,11 @@ export const HeaderImages = (props) => {
                     <div className="header-text-regular-2">{img.text3}</div>
                 </div>
                 <Button
-                    className="header-get-direction"
+                    className={`${imgShow ? "header-get-direction" : "hide"}`}
+                    text="get direction."
+                />
+                <Button
+                    className={`${!imgShow ? "header-get-direction" : "hide"}`}
                     text="get direction."
                 />
             </div>
