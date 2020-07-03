@@ -4,10 +4,13 @@
     font-weight: bold;
     padding: 0 20px 0 10px;
     cursor: pointer;
-    // &:hover {
-    //     color: rgb(180, 139, 62);
-    //     background-color: rgba(104, 97, 95, 0.5);
-    // }
+    &:hover {
+        opacity: 0.7;
+        -webkit-animation: appear .5s linear;
+        -moz-animation: appear .5s linear;
+        -o-animation: appear .5s linear;
+        animation: appear .5s linear;
+    }
 }
 
 // .toolbar-item-active {
@@ -57,38 +60,22 @@
 //     animation: disappearText 0.3s linear;
 // }
 
-// @-webkit-keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
-// @-moz-keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
-// @-o-keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
-// @keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
+@-webkit-keyframes appear {
+    from{opacity: 1;}
+    to {opacity: 0.7;}
+}
+@-moz-keyframes appear {
+    from{opacity: 1;}
+    to {opacity: 0.7;}
+}
+@-o-keyframes appear {
+    from{opacity: 1;}
+    to {opacity: 0.7;}
+}
+@keyframes appear {
+    from{opacity: 1;}
+    to {opacity: 0.7;}
+}
 
 // @-webkit-keyframes appearText {
 //     0%{
