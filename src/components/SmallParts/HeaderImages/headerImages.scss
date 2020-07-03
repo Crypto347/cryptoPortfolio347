@@ -82,9 +82,9 @@
         top: 128px;
         // left: 288px;
         overflow: hidden;
-        // border: 2px solid red;
-        width: 790px;
-        height: 500px;
+        border: 2px solid red;
+        width: 770px;
+        height: 480px;
         z-index: 500;
         .header-text-front {
             position: absolute;
@@ -155,8 +155,8 @@
         opacity: 1;
         filter: drop-shadow(16px 16px 20px black) invert(0%);
             >img {
-                width: 790px;
-                height: 500px;
+                width: 770px;
+                height: 480px;
                 margin: 40px 0 0 0;
                 filter: grayscale(20%);
             }

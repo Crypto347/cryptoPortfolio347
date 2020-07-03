@@ -33,17 +33,19 @@ import './section1.scss';
 * Components
 */
 
+import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
+
 /**
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Services
@@ -93,25 +95,18 @@ export const Section1 = (props) => {
     //     setIsHovering(false);
     // }
 
-    const renderToolbarItems = () => {
-        // return(
-        //     <div className="toolbar-items">{props.menuItems.map((el,i) => {
-        //         return(
-        //             <ToolbarItem 
-        //                 key={i}
-        //                 text={el.text}
-        //                 active={el.active}
-        //             />
-        //             // <ToolbarItem 
-        //             //     key={el.id}
-        //             //     text={el.text}
-        //             //     active={el.active}
-        //             //     menuIsShown={menuIsShown}
-        //             //     onClick={() => toolbarOnClick(el.path, el.id)}
-        //             // />
-        //         )
-        //     })}</div>
-        // )
+    const renderSection1DataItems = () => {
+        return(
+            <div className="section-1-data-items">{props.section1DataItems.map((el,i) => {
+                return(
+                    <Section1DateItem 
+                        key={i}
+                        header={el.header}
+                        text={el.text}
+                    />
+                )
+            })}</div>
+        )
     }
 
 
@@ -121,8 +116,7 @@ export const Section1 = (props) => {
 
     return(
         <div className="section-1">
-      
-            
+            {renderSection1DataItems()}
         </div>
     );
 }
@@ -130,7 +124,7 @@ export const Section1 = (props) => {
 export default connect(
     (state) => {
         return {
-            // menuItems: Selectors.getMenuItemsState(state)
+            section1DataItems: Selectors.getSection1DateItemsState(state)
         };
     },
     (dispatch) => {

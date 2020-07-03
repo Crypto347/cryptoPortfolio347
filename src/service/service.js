@@ -11,8 +11,6 @@ import * as Actions from "../actions";
 // import * as Utility from "../utility";
 
 export function fetchHeaderImagesArray() {
-    // let properties = require('../assets/data/properties.json');
-
     return dispatch => {
         dispatch(Actions.fetchHeaderImagesBegin());
         return fetch("http://localhost:3005/api/headerImagesArray")
@@ -31,8 +29,6 @@ export function fetchHeaderImagesArray() {
 }
 
 export function fetchSection1Data() {
-    // let properties = require('../assets/data/properties.json');
-
     return dispatch => {
         dispatch(Actions.fetchSection1DataBegin());
         return fetch("http://localhost:3005/api/section1")

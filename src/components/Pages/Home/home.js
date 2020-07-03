@@ -50,10 +50,9 @@ export const Home = () => {
                 <div className="home-curtain"/>
                 <Toolbar/>
                 <HeaderImages/>
-                <Section1/>
                 {/* <img src={Image1}/> */}
-            
             </div>
+            <Section1/>
         </div>
     );
 }

@@ -15,3 +15,11 @@ export const getHeaderImagesItemsState = createSelector(
     [getHeaderImagesItems],
     (x) => x
 );
+
+const getSection1DateItems = (state) => state.section1.items;
+
+export const getSection1DateItemsState = createSelector(
+    [getSection1DateItems],
+    (x) => x
+);
+
