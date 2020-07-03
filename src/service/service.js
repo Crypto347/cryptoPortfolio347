@@ -19,13 +19,33 @@ export function fetchHeaderImagesArray() {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log(json)
+                // console.log(json);
                 dispatch(Actions.fetchHeaderImagesSuccess(json));
                 // return json;
             })
             .catch(error => {
-                console.log("error",error)
+                console.log("error",error);
                 dispatch(Actions.fetchHeaderImagesFailur(error))
+            });
+    };
+}
+
+export function fetchSection1Data() {
+    // let properties = require('../assets/data/properties.json');
+
+    return dispatch => {
+        dispatch(Actions.fetchSection1DataBegin());
+        return fetch("http://localhost:3005/api/section1")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                console.log(json)
+                dispatch(Actions.fetchSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchSection1DataFailur(error))
             });
     };
 }

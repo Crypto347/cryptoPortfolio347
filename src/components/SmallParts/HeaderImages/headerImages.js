@@ -193,8 +193,7 @@ export const HeaderImages = (props) => {
         setSwitchButtons(updatedSwitchButtons);
         let headerImageObj = props.headerImagesItems.find(item => item.id === id);
         setImg(headerImageObj);
-        setImgShow(!imgShow)
-        console.log(imgShow);
+        setImgShow(!imgShow);
     }
     
     const renderSwitchButtons = () => {

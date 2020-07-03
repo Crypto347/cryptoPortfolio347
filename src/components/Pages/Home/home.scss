@@ -7,7 +7,7 @@
         width: 100%;
         .home-curtain {
             position: absolute;
-            width: 100%;
+            width: calc(100% + 18px);
             height: 100vh;
             background: rgba(0, 0, 0, 0.8);
             z-index: 10;
