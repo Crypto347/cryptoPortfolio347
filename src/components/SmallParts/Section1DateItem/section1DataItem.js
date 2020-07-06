@@ -15,6 +15,15 @@ import {
 import './section1DataItem.scss';
 
 /**
+* Utility
+*/
+
+import {
+    H3,
+    H4
+} from '../../UtilityComponents';
+
+/**
 * Section1DataItem component definition and export
 */
 
@@ -26,9 +35,9 @@ export const Section1DataItem = (props) => {
 
     return(
         <div className="section-1-data-item">
-            <div className="section-1-data-item-header">{props.header}</div>
-            <div className="section-1-data-item-text">{props.text}</div>
-            <div></div>
+            <H3>{props.header}</H3>
+            <H4 className="h4-opacity">{props.text}</H4>
+            <div className="arrow"></div>
         </div>
     );
 }
