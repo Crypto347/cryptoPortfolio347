@@ -10,6 +10,10 @@ import {
     connect
 } from 'react-redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     CSSTransition 
 } from 'react-transition-group';
@@ -49,6 +53,10 @@ export const Section1DataItem = (props) => {
         setIsHovering(false);
     }
 
+    const arrowOnClick = (path) => {
+        props.history.push(props.match.url + (path === "" ? path : `/${path}`))
+    }
+
     /**
     * Markup
     */
@@ -73,6 +81,7 @@ export const Section1DataItem = (props) => {
                     className="arrow-wrapper"
                     onMouseLeave={handleMouseLeave} 
                     onMouseEnter={handleMouseEnter} 
+                    onClick={() => arrowOnClick(props.path)}
                 >
                     <div className="arrow-horizontal-line"></div>
                     <div className="arrow-wrapper2">
@@ -85,5 +94,5 @@ export const Section1DataItem = (props) => {
     );
 }
 
-export default Section1DataItem;
+export default withRouter(Section1DataItem);
  

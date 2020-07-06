@@ -32,9 +32,9 @@ import './main.scss';
 import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
 import Home from './Pages/Home/home';
-// import AboutUs from './Pages/AboutUs/aboutUs';
-// import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
-// import OurStory from './Pages/OurStory/ourStory';
+import AboutUsPage from './Pages/AboutUsPage/aboutUsPage';
+import ProcessPage from './Pages/ProcessPage/processPage';
+import HappyTeamPage from './Pages/HappyTeamPage/happyTeamPage';
 // import Locations from './Pages/Locations/locations';
 // import Contact from './Pages/Contact/contact';
 // import SingleStory from './Pages/SingleStory/singleStory';
@@ -109,22 +109,22 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/locations"}
                     component={Locations}
+                />*/}
+                <Route 
+                    exact 
+                    path={props.match.url + "/happy-team"}
+                    component={HappyTeamPage}
                 />
                 <Route 
                     exact 
-                    path={props.match.url + "/our-story"}
-                    component={OurStory}
-                />
-                <Route 
-                    exact 
-                    path={props.match.url + "/food-and-drink"}
-                    component={FoodAndDrink}
-                />
+                    path={props.match.url + "/process"}
+                    component={ProcessPage}
+                /> 
                 <Route 
                     exact 
                     path={props.match.url + "/about-us"}
-                    component={AboutUs}
-                /> */}
+                    component={AboutUsPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + ""}

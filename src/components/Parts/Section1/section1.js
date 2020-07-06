@@ -104,6 +104,7 @@ export const Section1 = (props) => {
                         key={i}
                         header={el.header}
                         text={el.text}
+                        path={el.path}
                     />
                 )
             })}</div>

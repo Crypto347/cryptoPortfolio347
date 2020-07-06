@@ -39,10 +39,10 @@ export class App extends Component {
          <div className="app">
             <Switch>
                <Route 
-                  path="/crypto-cafe"
+                  path="/crypto-portfolio"
                   component={ Main }
                />
-               <Redirect exact from="/" to="/crypto-cafe"/>
+               <Redirect exact from="/" to="/crypto-portfolio"/>
             </Switch>
          </div>
       );
