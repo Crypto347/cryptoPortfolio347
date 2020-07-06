@@ -248,10 +248,10 @@ export const HeaderImages = (props) => {
             return 370;
         }
         if(windowWidth < 730 && windowWidth > 600){
-            return 430;
+            return 310;
         }
         if(windowWidth < 600){
-            return 430;
+            return 245;
         }
 
         
@@ -270,10 +270,10 @@ export const HeaderImages = (props) => {
             return 284;
         }
         if(windowWidth < 730 && windowWidth > 600){
-            return 334;
+            return 234;
         }
         if(windowWidth < 600){
-            return 430;
+            return 182;
         }
     }
 
