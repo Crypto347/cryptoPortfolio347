@@ -2,11 +2,17 @@
 * Libraries
 */
 
-import React from 'react';
+import React, {
+    useState
+} from 'react';
 
 import {
     connect
 } from 'react-redux';
+
+import { 
+    CSSTransition 
+} from 'react-transition-group';
 
 /**
 * Styles
@@ -29,6 +35,20 @@ import {
 
 export const Section1DataItem = (props) => {
 
+    const [isHovering, setIsHovering] = useState(false);
+
+    /**
+    * Methods
+    */
+
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    }
+
     /**
     * Markup
     */
@@ -37,7 +57,30 @@ export const Section1DataItem = (props) => {
         <div className="section-1-data-item">
             <H3>{props.header}</H3>
             <H4 className="h4-opacity">{props.text}</H4>
-            <div className="arrow"></div>
+            <CSSTransition
+                in={isHovering} 
+                timeout={7000}
+                // mountOnEnter
+                // unmountOnExit
+                classNames={{
+                    enter: ``,
+                    enterActive: `arrow-wrapper-lengthen`,
+                    exit: ``,
+                    exitActive: `arrow-wrapper-shorten`,
+                }}
+            > 
+                <div 
+                    className="arrow-wrapper"
+                    onMouseLeave={handleMouseLeave} 
+                    onMouseEnter={handleMouseEnter} 
+                >
+                    <div className="arrow-horizontal-line"></div>
+                    <div className="arrow-wrapper2">
+                        <div className="arrow-top-line"></div>
+                        <div className="arrow-bottom-line"></div>
+                    </div>
+                </div>
+            </CSSTransition>
         </div>
     );
 }
