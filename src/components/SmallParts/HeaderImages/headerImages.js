@@ -235,6 +235,48 @@ export const HeaderImages = (props) => {
         )
     }
 
+    const renderSubtractedPxForTextBack = () => {
+        let windowWidth = size.width;
+        // console.log(windowWidth)
+        if(windowWidth > 1120){
+            return 517;
+        }
+        if(windowWidth < 1120 && windowWidth > 860){
+            return 430;
+        }
+        if(windowWidth < 860 && windowWidth > 730){
+            return 370;
+        }
+        if(windowWidth < 730 && windowWidth > 600){
+            return 430;
+        }
+        if(windowWidth < 600){
+            return 430;
+        }
+
+        
+    }
+
+    const renderSubtractedPxForTextFront = () => {
+        let windowWidth = size.width;
+        // console.log(windowWidth)
+        if(windowWidth > 1120){
+            return 394;
+        }
+        if(windowWidth < 1120 && windowWidth > 860){
+            return 334;
+        }
+        if(windowWidth < 860 && windowWidth > 730){
+            return 284;
+        }
+        if(windowWidth < 730 && windowWidth > 600){
+            return 334;
+        }
+        if(windowWidth < 600){
+            return 430;
+        }
+    }
+
     /**
     * Markup
     */
@@ -244,19 +286,19 @@ export const HeaderImages = (props) => {
             {renderSwitchButtons()}
             <div 
                 className={`${imgShow ? "header-text-back" : "hide"}`}
-                style={{left: `${size.width/2 - 517}px`}}
+                style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
             >
                 {img.headerText}
             </div>
             <div 
                 className={`${!imgShow ? "header-text-back" : "hide"}`}
-                style={{left: `${size.width/2 - 517}px`}}
+                style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
             >
                 {img.headerText}
             </div>
             <div 
                 className="header-text-front-crop" 
-                style={{left: `${size.width/2 - 394}px`}}
+                style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
             >
                 <div className={`${imgShow ? "header-text-front" : "hide"}`}>
                     {img.headerText}
@@ -294,6 +336,7 @@ export const HeaderImages = (props) => {
             <div className={`${!imgShow ? "header-image" : "hide"}`}>
                 <img src={loadImage(img.imgName)}/>
             </div>
+            {/* { console.log(renderSubtractedPxForTextBack())} */}
         </div>
     );
 }
