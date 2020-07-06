@@ -12,7 +12,7 @@
        }
        .arrow-wrapper2 {
             transform: translate(-5px);
-            height: 20px;
+            height: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -45,27 +45,30 @@
        }
        .arrow-wrapper2 {
             transform: translate(-5px);
-            height: 20px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
            .arrow-top-line {
-                border: 1px solid black;
+                border: 0px solid black;
                 height: 10px;
-                transform: translate(-1px, 1px) rotate(-45deg);
-                -webkit-animation: lengthenTopLine .1s linear;
-                -moz-animation: lengthenTopLine .1s linear;
-                -o-animation: lengthenTopLine .1s linear;
-                animation: lengthenTopLine .1s linear;
-                animation-delay: .1s;
+                transform: translate(-1px, 2.5px) rotate(-45deg);
+                -webkit-animation: lengthenArrowLines .1s linear;
+                -moz-animation: lengthenArrowLines .1s linear;
+                -o-animation: lengthenArrowLines .1s linear;
+                animation: lengthenArrowLines .1s linear;
+                animation-delay: .2s;
                 animation-fill-mode: both;
            }
            .arrow-bottom-line {
-                border: 1px solid black;
+                border: 0px solid black;
                 height: 10px;
-                transform: translate(-1px, -1px) rotate(45deg);
-                -webkit-animation: lengthenBottomLine .1s linear;
-                -moz-animation: lengthenBottomLine .1s linear;
-                -o-animation: lengthenBottomLine .1s linear;
-                animation: lengthenBottomLine .1s linear;
-                animation-delay: .1s;
+                transform: translate(-1px, -2.5px) rotate(45deg);
+                -webkit-animation: lengthenArrowLines .1s linear;
+                -moz-animation: lengthenArrowLines .1s linear;
+                -o-animation: lengthenArrowLines .1s linear;
+                animation: lengthenArrowLines .1s linear;
+                animation-delay: .2s;
                 animation-fill-mode: both;
            }
        }
@@ -88,98 +91,88 @@
         }
         .arrow-wrapper2 {
             transform: translate(-5px);
-            height: 20px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             .arrow-top-line {
                     border: 1px solid black;
                     height: 0px;
                     transform: translate(-1px, 1px) rotate(-45deg);
-                    -webkit-animation: shortenTopLine .1s linear;
-                    -moz-animation: shortenTopLine .1s linear;
-                    -o-animation: shortenTopLine .1s linear;
-                    animation: shortenTopLine .1s linear;
+                    -webkit-animation: shortenArrowLines .1s linear;
+                    -moz-animation: shortenArrowLines .1s linear;
+                    -o-animation: shortenArrowLines .1s linear;
+                    animation: shortenArrowLines .1s linear;
             }
             .arrow-bottom-line {
                     border: 1px solid black;
                     height: 0px;
                     transform: translate(-1px, -1px) rotate(45deg);
-                    -webkit-animation: shortenBottomLine .1s linear;
-                    -moz-animation: shortenBottomLine .1s linear;
-                    -o-animation: shortenBottomLine .1s linear;
-                    animation: shortenBottomLine .1s linear;
+                    -webkit-animation: shortenArrowLines .1s linear;
+                    -moz-animation: shortenArrowLines .1s linear;
+                    -o-animation: shortenArrowLines .1s linear;
+                    animation: shortenArrowLines .1s linear;
             }
         }
     }
 }
 
-@-webkit-keyframes lengthenTopLine {
-    from{height: 0px;}
-    to{height: 10px;}
+@-webkit-keyframes lengthenArrowLines {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
 }
-@-moz-keyframes lengthenTopLine {
-    from{height: 0px;}
-    to{height: 10px;}
+@-moz-keyframes lengthenArrowLines {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
 }
-@-o-keyframes lengthenTopLine {
-    from{height: 0px;}
-    to{height: 10px;}
-}
-
-@keyframes lengthenTopLine {
-    from{height: 0px;}
-    to{height: 10px;}
-}
-
-@-webkit-keyframes shortenTopLine {
-    from{height: 10px;}
-    to{height: 0px;}
-}
-@-moz-keyframes shortenTopLine {
-    from{height: 10px;}
-    to{height: 0px;}
-}
-@-o-keyframes shortenTopLine {
-    from{height: 10px;}
-    to{height: 0px;}
-}
-
-@keyframes shortenTopLine {
-    from{height: 10px;}
-    to{height: 0px;}
+@-o-keyframes lengthenArrowLines {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
 }
 
-@-webkit-keyframes lengthenBottomLine {
-    from{height: 0px;}
-    to{height: 10px;}
-}
-@-moz-keyframes lengthenBottomLine {
-    from{height: 0px;}
-    to{height: 10px;}
-}
-@-o-keyframes lengthenBottomLine {
-    from{height: 0px;}
-    to{height: 10px;}
+@keyframes lengthenArrowLines {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
 }
 
-@keyframes lengthenBottomLine {
-    from{height: 0px;}
-    to{height: 10px;}
-}
-
-@-webkit-keyframes shortenBottomLine {
-    from{height: 10px;}
+@-webkit-keyframes shortenArrowLines {
+    from{height: 15px;}
     to{height: 0px;}
 }
-@-moz-keyframes shortenBottomLine {
-    from{height: 10px;}
+@-moz-keyframes shortenArrowLines {
+    from{height: 15px;}
     to{height: 0px;}
 }
-@-o-keyframes shortenBottomLine {
-    from{height: 10px;}
+@-o-keyframes shortenArrowLines {
+    from{height: 15px;}
     to{height: 0px;}
 }
-
-@keyframes shortenBottomLine {
-    from{height: 10px;}
+@keyframes shortenArrowLines {
+    from{height: 15px;}
     to{height: 0px;}
 }
 
