@@ -6,6 +6,7 @@
     cursor: pointer;
     &:hover {
         opacity: 0.7;
+        color: rgb(155, 155, 155);
         -webkit-animation: appear .5s linear;
         -moz-animation: appear .5s linear;
         -o-animation: appear .5s linear;
