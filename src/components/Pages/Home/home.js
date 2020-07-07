@@ -36,7 +36,8 @@ export const Home = () => {
     * State
     */
 
-    const [scrollingUp, setScrollingUp] = useState(false)
+    const [scrollingUp, setScrollingUp] = useState(false);
+    const [scrollingHeight, setScrollingHeight] = useState(0);
 
     /**
     * Methods
@@ -45,14 +46,20 @@ export const Home = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         window.addEventListener('wheel', (e) => checkScrollDirection(e));
-        return () => window.removeEventListener('wheel', handleScroll)
+
+        return () => window.removeEventListener('wheel', (e) => checkScrollDirection(e))
     }, []);
 
+
+
     const checkScrollDirection = (e) => {
-        if (checkScrollDirectionIsUp(e)) {
-            setScrollingUp(true);
-        } else {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("home");
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
             setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
         }
     }
 
@@ -68,7 +75,7 @@ export const Home = () => {
     */
 
     return(
-        <div className="home">
+        <div className="home" id="home">
             <div className="home-main-background">
                 <div className="home-curtain"/>
                 {scrollingUp ? <Toolbar className="toolbar-white"/> : null}
