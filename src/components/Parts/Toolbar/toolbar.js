@@ -178,7 +178,7 @@ export const Toolbar = (props) => {
             <CSSTransition
                 in={props.scrollingUp} 
                 timeout={5000}
-                mountOnEnter
+                // mountOnEnter
                 // unmountOnExit
                 classNames={{
                     enter: ``,
@@ -187,7 +187,7 @@ export const Toolbar = (props) => {
                     exitActive: `toolbar-white-close`,
                 }}
             >  
-                <div className="toolbar-white">
+                <div className={props.scrollingUp ? "toolbar-white-mounted" : "toolbar-white-unmounted"}>
                     <div className="toolbar-logo">crypto.</div>
                     <div className="toolbar-wrapper">
                         {renderToolbarItems()}
