@@ -17,6 +17,13 @@
 
 
 
-// @media only screen and (max-width: 1120px){
-
-// }
+@media only screen and (max-device-width: 1120px){
+    .home {
+        .home-main-background {
+            height: 650px;
+            .home-curtain {
+                height: 650px;
+            }
+        }
+    }
+}
