@@ -9,6 +9,18 @@
     color: rgba(0, 0, 0, 0.4);
 }
 
+@media only screen and (max-width: 860px){
+    .h4-opacity {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .h4-opacity {
+        font-size: 20px;
+    }
+}
+
 // .h4-white-centered {
 //     font-size: 18px;
 //     font-family: 'Yanone Kaffeesatz', sans-serif;

@@ -54,6 +54,14 @@ import * as Selectors from '../../../reducers/selectors';
 import * as Services from "../../../service";
 
 /**
+* Utility
+*/
+
+import {
+   EH1
+} from '../../UtilityComponents';
+
+/**
 * Images
 */
 
@@ -100,12 +108,16 @@ export const Section1 = (props) => {
         return(
             <div className="section-1-data-items">{props.section1DataItems.map((el,i) => {
                 return(
-                    <Section1DateItem 
-                        key={i}
-                        header={el.header}
-                        text={el.text}
-                        path={el.path}
-                    />
+                    <div key={i}>
+                        <EH1/>
+                        <Section1DateItem 
+                            // key={i}
+                            header={el.header}
+                            text={el.text}
+                            path={el.path}
+                        />
+                        <EH1/>
+                    </div>
                 )
             })}</div>
         )
