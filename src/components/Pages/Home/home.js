@@ -3,7 +3,7 @@
 */
 
 import React, {
-    useEffect
+    useEffect, useState
 } from 'react';
 
 /**
@@ -33,12 +33,35 @@ import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unspla
 export const Home = () => {
 
     /**
+    * State
+    */
+
+    const [scrollingUp, setScrollingUp] = useState(false)
+
+    /**
     * Methods
     */
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        window.addEventListener('wheel', (e) => checkScrollDirection(e));
+        return () => window.removeEventListener('wheel', handleScroll)
     }, []);
+
+    const checkScrollDirection = (e) => {
+        if (checkScrollDirectionIsUp(e)) {
+            setScrollingUp(true);
+        } else {
+            setScrollingUp(false);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     /**
     * Markup
@@ -48,6 +71,7 @@ export const Home = () => {
         <div className="home">
             <div className="home-main-background">
                 <div className="home-curtain"/>
+                {scrollingUp ? <Toolbar className="toolbar-white"/> : null}
                 <Toolbar/>
                 <HeaderImages/>
                 {/* <img src={Image1}/> */}

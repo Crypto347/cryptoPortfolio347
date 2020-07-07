@@ -172,7 +172,7 @@ export const Toolbar = (props) => {
     */
 
     return(
-        <div className="toolbar">
+        <div className={props.className ? props.className : "toolbar"}>
             <div className="toolbar-logo">crypto.</div>
             <div className="toolbar-wrapper">
                 {renderToolbarItems()}

@@ -37,7 +37,7 @@ export const ProcessPage = () => {
     */
 
     useEffect(() => {
-        
+        window.scrollTo(0, 0);
     }, []);
 
     /**

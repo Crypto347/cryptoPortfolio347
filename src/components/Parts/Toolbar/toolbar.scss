@@ -117,6 +117,127 @@
     }
 }
 
+.toolbar-white {
+    position: fixed;
+    width: calc(100% - 78px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px 25px 40px;
+    color: black;
+    background: white;
+    z-index: 500;
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
+    }
+    .toolbar-wrapper {
+        display: flex;
+        align-items: flex-end;
+        .toolbar-items {
+            display: flex;
+        }
+        .toolbar-menu {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2px 0 2px 20px;
+            width: 25px;
+            cursor: pointer;
+            .toolbar-menu-dot {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+            }
+            .toolbar-menu-dot-hide {
+                display: none;
+            }
+            .toolbar-menu-dot-with-animation-open-1 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 0;
+                -webkit-animation: disappear1 1s ease;
+                -moz-animation: disappear1 1s ease;
+                -o-animation: disappear1 1s ease;
+                animation: disappear1 1s ease;
+            }
+            .toolbar-menu-dot-with-animation-open-2 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 0;
+                -webkit-animation: disappear2 1s ease;
+                -moz-animation: disappear2 1s ease ;
+                -o-animation: disappear2 1s ease ;
+                animation: disappear2 1s ease ;
+            }
+            .toolbar-menu-dot-with-animation-open-4 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 0;
+                -webkit-animation: disappear4 1s ease;
+                -moz-animation: disappear4 1s ease;
+                -o-animation: disappear4 1s ease;
+                animation: disappear4 1s ease;
+            }
+            .toolbar-menu-dot-with-animation-close-1 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+                -webkit-animation: appear1 1s ease;
+                -moz-animation: appear1 1s ease;
+                -o-animation: appear1 1s ease;
+                animation: appear1 1s ease;
+            }
+            .toolbar-menu-dot-with-animation-close-2 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+                -webkit-animation: appear2 1s ease;
+                -moz-animation: appear2 1s ease ;
+                -o-animation: appear2 1s ease ;
+                animation: appear2 1s ease ;
+            }
+            .toolbar-menu-dot-with-animation-close-4 {
+                border: 1px solid black;
+                border-radius: 50%;
+                background: black;
+                width: 3px;
+                height: 3px;
+                margin: 1px;
+                opacity: 1;
+                -webkit-animation: appear4 1s ease;
+                -moz-animation: appear4 1s ease;
+                -o-animation: appear4 1s ease;
+                animation: appear4 1s ease;
+            }
+        }
+    }
+}
+
 
 
 // @media only screen and (max-width: 1120px){
