@@ -113,6 +113,7 @@ export const Toolbar = (props) => {
                         key={i}
                         text={el.text}
                         active={el.active}
+                        toolbarMainColor={props.toolbarMainColor}
                     />
                     // <ToolbarItem 
                     //     key={el.id}
@@ -172,20 +173,49 @@ export const Toolbar = (props) => {
     */
 
     return(
-        <div className={props.className ? props.className : "toolbar"}>
-            <div className="toolbar-logo">crypto.</div>
-            <div className="toolbar-wrapper">
-                {renderToolbarItems()}
-                <div 
-                    className="toolbar-menu"
-                    onMouseEnter={handleMouseEnter} 
-                    onMouseLeave={handleMouseLeave}
-                >
-                    {renderMenuDots()}
+           <> 
+            {props.toolbarMainColor === "white" ? 
+            <CSSTransition
+                in={props.scrollingUp} 
+                timeout={5000}
+                mountOnEnter
+                // unmountOnExit
+                classNames={{
+                    enter: ``,
+                    enterActive: `toolbar-white-open`,
+                    exit: ``,
+                    exitActive: `toolbar-white-close`,
+                }}
+            >  
+                <div className="toolbar-white">
+                    <div className="toolbar-logo">crypto.</div>
+                    <div className="toolbar-wrapper">
+                        {renderToolbarItems()}
+                        <div 
+                            className="toolbar-menu"
+                            onMouseEnter={handleMouseEnter} 
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            {renderMenuDots()}
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-        </div>
+            </CSSTransition>
+            : 
+            <div className="toolbar">
+                <div className="toolbar-logo">crypto.</div>
+                <div className="toolbar-wrapper">
+                    {renderToolbarItems()}
+                    <div 
+                        className="toolbar-menu"
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        {renderMenuDots()}
+                    </div>
+                </div>
+            </div>}
+        </> 
     );
 }
 

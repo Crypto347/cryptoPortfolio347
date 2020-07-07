@@ -25,7 +25,7 @@ export const ToolbarItem = (props) => {
     */
 
     return(
-        <div className="toolbar-item">
+        <div className={`toolbar-item-${props.toolbarMainColor}`}>
             {props.text}
         </div>
     );

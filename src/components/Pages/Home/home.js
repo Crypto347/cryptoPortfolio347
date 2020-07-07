@@ -78,8 +78,8 @@ export const Home = () => {
         <div className="home" id="home">
             <div className="home-main-background">
                 <div className="home-curtain"/>
-                {scrollingUp ? <Toolbar className="toolbar-white"/> : null}
-                <Toolbar/>
+                <Toolbar toolbarMainColor="white" scrollingUp={scrollingUp}/>
+                <Toolbar toolbarMainColor="regular"/>
                 <HeaderImages/>
                 {/* <img src={Image1}/> */}
             </div>
