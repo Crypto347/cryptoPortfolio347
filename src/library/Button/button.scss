@@ -51,14 +51,33 @@
 
 
 
-// @media only screen and (max-width: 1000px){
-//     .load-more-posts-button-wrapper {
-//         width: calc(100% - 80px);
-//         padding: 0 40px 0 40px;
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .header-get-direction {
+        top: 300px;
+    }
+}
 
-    
+@media only screen and (max-width: 860px){
+    .header-get-direction {
+        top: 250px;
+        left: 95px;
+    }
+}
+
+@media only screen and (max-width: 730px){
+    .header-get-direction {
+        top: 200px;
+        left: 70px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .header-get-direction {
+        top: 175px;
+        left: 25px;
+    }
+}
+
 //     .portfolio-description-button-middle {
 //         width: 110px;
 //     }
