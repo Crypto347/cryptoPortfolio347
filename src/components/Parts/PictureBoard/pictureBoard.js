@@ -33,7 +33,8 @@ import './pictureBoard.scss';
 * Components
 */
 
-import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
+import PictureBoardTextItem from '../../SmallParts/PictureBoardTextItem/pictureBoardTextItem';
+import PictureBoardImageItem from '../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
 
 /**
 * Actions
@@ -104,21 +105,32 @@ export const PictureBoard = (props) => {
     //     setIsHovering(false);
     // }
 
-    const renderSection1DataItems = () => {
+    const renderPictureBoardItems = () => {
         return(
-            <div className="section-1-data-items">{props.section1DataItems.map((el,i) => {
-                return(
-                    <div key={i}>
-                        <EH1/>
-                        <Section1DateItem 
-                            // key={i}
-                            header={el.header}
-                            text={el.text}
-                            path={el.path}
-                        />
-                        <EH1/>
-                    </div>
-                )
+            <div className="picture-board-items">{props.pictureBoard.items.map((el,i) => {
+                if(el.option === "text"){
+                    return(
+                        // <div className="picture-board-item" key={i}>
+                            <PictureBoardTextItem 
+                                key={i}
+                                // header={el.header}
+                                // text={el.text}
+                                // path={el.path}
+                            />
+                        // </div>
+                    )
+                }else{
+                    return(
+                        // <div className="picture-board-item" key={i}>
+                            <PictureBoardImageItem  
+                                key={i}
+                                // header={el.header}
+                                // text={el.text}
+                                // path={el.path}
+                            />
+                        // </div>
+                    )
+                }
             })}</div>
         )
     }
@@ -130,7 +142,7 @@ export const PictureBoard = (props) => {
 
     return(
         <div className="picture-board">
-            {/* {renderSection1DataItems()} */}
+            {renderPictureBoardItems()}
         </div>
     );
 }
@@ -138,7 +150,7 @@ export const PictureBoard = (props) => {
 export default connect(
     (state) => {
         return {
-            // section1DataItems: Selectors.getSection1DateItemsState(state)
+            pictureBoard: Selectors.getPictureBoardItemsState(state)
         };
     },
     (dispatch) => {

@@ -23,3 +23,11 @@ export const getSection1DateItemsState = createSelector(
     (x) => x
 );
 
+const getPictureBoardItems = (state) => state.section2.pictureBoard;
+
+export const getPictureBoardItemsState = createSelector(
+    [getPictureBoardItems],
+    (x) => x
+);
+
+
