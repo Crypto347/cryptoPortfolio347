@@ -239,7 +239,7 @@ export const HeaderImages = (props) => {
         let windowWidth = size.width;
         // console.log(windowWidth)
         if(windowWidth > 1120){
-            return 517;
+            return 507;
         }
         if(windowWidth < 1120 && windowWidth > 860){
             return 430;
@@ -273,7 +273,7 @@ export const HeaderImages = (props) => {
             return 234;
         }
         if(windowWidth < 600){
-            return 182;
+            return 183;
         }
     }
 
