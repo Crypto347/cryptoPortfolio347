@@ -27,6 +27,7 @@ import './pictureBoardTextItem.scss';
 import {
     H3,
     H6,
+    EH0
 } from '../../UtilityComponents';
 
 /**
@@ -101,6 +102,7 @@ export const PictureBoardTextItem = (props) => {
     return(
         <div className="picture-board-text-item">
             <H6 className="h6-nobel">{props.header}</H6>
+            <EH0/>
             <H3 className="h3-black-teko">{props.text}</H3>
         </div>
     );

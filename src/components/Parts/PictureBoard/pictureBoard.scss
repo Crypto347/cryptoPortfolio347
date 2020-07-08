@@ -1,14 +1,12 @@
 .picture-board {
+    display: flex;
+    justify-content: center;
     .picture-board-items {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        height: 1068.75px;
-        .picture-board-item {
-            width: 237.5px;
-            height: 237.5px;
-            border: 2px solid red;
-        }
+        height: 1167.75px;
+        width: 1082px;
     }
 }
 
