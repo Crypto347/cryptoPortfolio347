@@ -67,7 +67,7 @@
    .header-text-back {
         position: absolute;
         font-size: 180px;
-        font-family: 'Lalezar', cursive;
+        font-family: 'Teko', sans-serif;
         color: white;
         top: 15px;
         opacity: 1;
@@ -87,7 +87,7 @@
         .header-text-front {
             position: absolute;
             font-size: 180px;
-            font-family: 'Lalezar', cursive;
+            font-family: 'Teko', sans-serif;
             color: white;
             top: -113px;
             left: -122px;
@@ -109,7 +109,7 @@
                 display: flex;
                 // transform: translateX(0%);
                 .header-text-bold{
-                    font-family: 'Lalezar', cursive;
+                    font-family: 'Teko', sans-serif;
                     // transform: translateX(10%);
                     -webkit-animation: appearHeaderTextFront .5s linear;
                     -moz-animation: appearHeaderTextFront .5s linear;

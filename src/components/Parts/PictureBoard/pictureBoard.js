@@ -113,8 +113,8 @@ export const PictureBoard = (props) => {
                         // <div className="picture-board-item" key={i}>
                             <PictureBoardTextItem 
                                 key={i}
-                                // header={el.header}
-                                // text={el.text}
+                                header={el.header}
+                                text={el.text}
                                 // path={el.path}
                             />
                         // </div>

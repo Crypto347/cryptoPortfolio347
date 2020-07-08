@@ -1,18 +1,30 @@
 .h3 {
-    font-size: 45px;
-    font-family: 'Lalezar', cursive;
+    font-size: 40px;
+    font-family: 'Teko', sans-serif;
     color: black;
+}
+
+.h3-black-teko {
+    font-size: 40px;
+    font-family: 'Teko', sans-serif;
+    color: black;
+}
+
+.h3-white-teko {
+    font-size: 40px;
+    font-family: 'Teko', sans-serif;
+    color: white;
 }
 
 
 @media only screen and (max-width: 860px){
-    .h3 {
+    .h3-black-teko {
         font-size: 35px;
     }
 }
 
 @media only screen and (max-width: 600px){
-    .h3 {
+    .h3-black-teko {
         font-size: 30px;
     }
 }

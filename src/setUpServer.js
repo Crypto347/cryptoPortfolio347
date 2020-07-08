@@ -182,7 +182,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             key: "",
             option: "text",
             header: "Music",
-            text: "She needed only a tube of paint and a brush to draw a masterpiece.",
+            text: "She needed only a paint and a brush to draw a masterpiece.",
             pictures: []
         },
         {

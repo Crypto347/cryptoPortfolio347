@@ -101,9 +101,10 @@ export const Section2 = (props) => {
     return(
         <div className="section-2">
             <div className="section-2-wrapper">
-                <H2 className="h2-white">Work</H2>
+                <H2 className="h2-white-teko">Work.</H2>
                 <EH3/>
                 <H4 className="h4-color-white">Lorem ipsum dolor sit amet, consectetur ad.</H4>
+                <EH3/>
                 <EH3/>
                 <PictureBoard/>
             </div>
