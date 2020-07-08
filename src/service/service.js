@@ -46,6 +46,24 @@ export function fetchSection1Data() {
     };
 }
 
+export function fetchPictureBoard() {
+    return dispatch => {
+        dispatch(Actions.fetchPictureBoardBegin());
+        return fetch("http://localhost:3005/api/section2/pictureBoard")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                console.log(json)
+                dispatch(Actions.fetchPictureBoardSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchPictureBoardFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

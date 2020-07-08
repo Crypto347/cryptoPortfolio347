@@ -33,7 +33,7 @@ import './section2.scss';
 * Components
 */
 
-// import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
+import PictureBoard from '../../Parts/PictureBoard/pictureBoard';
 
 /**
 * Actions
@@ -89,7 +89,7 @@ export const Section2 = (props) => {
     */
 
     useEffect(() => {
-        // props.fetchSection1Data();
+        props.fetchPictureBoard();
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
@@ -105,6 +105,7 @@ export const Section2 = (props) => {
                 <EH3/>
                 <H4 className="h4-color-white">Lorem ipsum dolor sit amet, consectetur ad.</H4>
                 <EH3/>
+                <PictureBoard/>
             </div>
             
         </div>
@@ -119,7 +120,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
+            fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }

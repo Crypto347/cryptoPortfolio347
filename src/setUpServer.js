@@ -71,6 +71,140 @@ app.get('/api/section1', (req, res) => {
     res.json(sec1);
 });
 
+app.get('/api/section2/pictureBoard', (req, res) => {
+    const picBoard = [
+        {
+            id: 1,
+            key: "",
+            option: "blacAndWhite",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 2,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 3,
+            key: "",
+            option: "text",
+            header: "Music",
+            text: "Beautiful and advanced interface.",
+            pictures: []
+        },
+        {
+            id: 4,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 5,
+            key: "",
+            option: "text",
+            header: "Music",
+            text: "How people really use their voice interfaces.",
+            pictures: []
+        },
+        {
+            id: 6,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 7,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 8,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 9,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 10,
+            key: "",
+            option: "blackAndWhite",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 11,
+            key: "",
+            option: "blackAndWhite",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 12,
+            key: "",
+            option: "text",
+            header: "Music",
+            text: "Cera is leading healthcare startup.",
+            pictures: []
+        },
+        {
+            id: 13,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 14,
+            key: "",
+            option: "text",
+            header: "Music",
+            text: "She needed only a tube of paint and a brush to draw a masterpiece.",
+            pictures: []
+        },
+        {
+            id: 15,
+            key: "",
+            option: "colorful",
+            header: null,
+            text: null,
+            pictures: []
+        },
+        {
+            id: 16,
+            key: "",
+            option: "blackAndWhite",
+            header: null,
+            text: null,
+            pictures: []
+        }
+    ]
+    res.json(picBoard);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
