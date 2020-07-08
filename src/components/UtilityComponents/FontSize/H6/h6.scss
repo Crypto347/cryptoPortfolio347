@@ -1,11 +1,19 @@
 .h6 {
-    font-size: 14px;
+    font-size: 15px;
     color: white;
 }
 
 .h6-nobel {
-    font-size: 14px;
+    font-size: 15px;
     color: rgb(155, 155, 155);
+    &:hover{
+        color: white;
+        -webkit-animation: appearPictureBorderHeade .3s linear;
+        -moz-animation: appearPictureBorderHeade .3s linear;
+        -o-animation: appearPictureBorderHeade .3s linear;
+        animation: appearPictureBorderHeade .3s linear;
+    }
+   
 }
 
 // .h6-pink-grey-yanone-suva {
@@ -19,3 +27,20 @@
 //     font-family: 'Jaldi', sans-serif;
 //     color: white;
 // }
+
+@-webkit-keyframes appearPictureBorderHeade {
+    from{color: rgb(155, 155, 155);}
+    to {color: white;}
+}
+@-moz-keyframes appearPictureBorderHeade {
+    from{color: rgb(155, 155, 155);}
+    to {color: white;}
+}
+@-o-keyframes appearPictureBorderHeade {
+    from{color: rgb(155, 155, 155);}
+    to {color: white;}
+}
+@keyframes appearPictureBorderHeade {
+    from{color: rgb(155, 155, 155);}
+    to {color: white;}
+}

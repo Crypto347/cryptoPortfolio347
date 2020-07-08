@@ -2,8 +2,19 @@
     padding: 25px;
     width: 220.5px;
     height: 306.25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: start;
     background-color: white;
     cursor: pointer;
     // border: 2px solid red;
+    &:hover {
+        background-color: rgb(37, 37, 37);
+    }
+    .picture-board-text-item-icon {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
 }
