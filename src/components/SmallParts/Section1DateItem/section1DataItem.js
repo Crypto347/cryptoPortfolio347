@@ -64,7 +64,7 @@ export const Section1DataItem = (props) => {
     return(
         <div className="section-1-data-item">
             <H3>{props.header}</H3>
-            <H4 className="h4-opacity">{props.text}</H4>
+            <H4 className="h4-color-nobel">{props.text}</H4>
             <CSSTransition
                 in={isHovering} 
                 timeout={7000}

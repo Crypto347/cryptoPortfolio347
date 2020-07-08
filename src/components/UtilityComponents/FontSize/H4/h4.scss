@@ -1,22 +1,27 @@
 .h4 {
-    font-size: 35px;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    color:  rgb(180, 139, 62);
+    font-size: 25px;
+    // font-family: 'Yanone Kaffeesatz', sans-serif;
+    // color:  rgb(180, 139, 62);
 }
 
-.h4-opacity {
+.h4-color-nobel {
     font-size: 25px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgb(155, 155, 155);
+}
+
+.h4-color-white {
+    font-size: 25px;
+    color: white;
 }
 
 @media only screen and (max-width: 860px){
-    .h4-opacity {
+    .h4-color-nobel {
         font-size: 23px;
     }
 }
 
 @media only screen and (max-width: 600px){
-    .h4-opacity {
+    .h4-color-nobel {
         font-size: 20px;
     }
 }
