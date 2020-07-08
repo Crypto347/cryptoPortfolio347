@@ -8,10 +8,10 @@
     color: rgb(155, 155, 155);
     &:hover{
         color: white;
-        -webkit-animation: appearPictureBorderHeade .3s linear;
-        -moz-animation: appearPictureBorderHeade .3s linear;
-        -o-animation: appearPictureBorderHeade .3s linear;
-        animation: appearPictureBorderHeade .3s linear;
+        -webkit-animation: appearPictureBoardHeader .3s linear;
+        -moz-animation: appearPictureBoardHeader .3s linear;
+        -o-animation: appearPictureBoardHeader .3s linear;
+        animation: appearPictureBoardHeader .3s linear;
     }
    
 }
@@ -28,19 +28,19 @@
 //     color: white;
 // }
 
-@-webkit-keyframes appearPictureBorderHeade {
+@-webkit-keyframes appearPictureBoardHeader {
     from{color: rgb(155, 155, 155);}
     to {color: white;}
 }
-@-moz-keyframes appearPictureBorderHeade {
+@-moz-keyframes appearPictureBoardHeader {
     from{color: rgb(155, 155, 155);}
     to {color: white;}
 }
-@-o-keyframes appearPictureBorderHeade {
+@-o-keyframes appearPictureBoardHeader {
     from{color: rgb(155, 155, 155);}
     to {color: white;}
 }
-@keyframes appearPictureBorderHeade {
+@keyframes appearPictureBoardHeader {
     from{color: rgb(155, 155, 155);}
     to {color: white;}
 }
