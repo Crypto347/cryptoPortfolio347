@@ -3,7 +3,7 @@
 */
 
 import React, {
-    useState
+    useState, useEffect
 } from 'react';
 
 import { 
@@ -198,11 +198,46 @@ export const PictureBoardImageItem = (props) => {
     * State
     */
 
-    // const [isHovering, setIsHovering] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
+    const divRef = React.useRef();
 
     /**
     * Methods
     */
+
+    useEffect(() => {
+        let pictureBoardImageItem = document.getElementById("pictureBoardImageItem");
+        evaluateCenter();
+        window.addEventListener('mousemove', (e) => handleMouseMove(e));
+        window.addEventListener('resize', evaluateCenter);
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('resize', evaluateCenter)
+        } 
+    }, [])
+
+    const evaluateCenter = () => {
+        const selectedDiv = divRef.current.getBoundingClientRect();
+        const width = selectedDiv.width;
+        const height = selectedDiv.height;
+        const top = selectedDiv.top;
+        const left = selectedDiv.left;
+        const centerX = left + width/2;
+        const centerY = top + height/2;
+        // console.log(centerX,centerY)
+        props.evaluateCenter(props.id, centerX, centerY);
+        // this.props.centerXY(centerX, centerY)
+    }
+
+    const handleMouseMove = (e) => {
+        const selectedDiv = divRef.current.getBoundingClientRect();
+        let pageX = e.pageX;
+        let cordinateX = e.x;
+        let cordinateY = e.y;
+    
+        // console.log(selectedDiv);
+        // console.log(selectedDiv)
+    }
 
     // const handleMouseEnter = () => {
     //     setIsHovering(true);
@@ -236,19 +271,25 @@ export const PictureBoardImageItem = (props) => {
     // }
 
     const loadImg = (coordX) => {
-
+        return col16;
     }
 
+    const onMouseMoveHandler = (e) => {
+       console.log(e.pageX)
+    }
+
+    
     /**
     * Markup
     */
 
     return(
-        <div className="picture-board-image-item">
-           {/* <img src={() => loadImg(props.coordX)}/> */}
+        <div className="picture-board-image-item" ref={divRef} id="pictureBoardImageItem">
             <div className="picture-board-image">
-                <img src={col47}/>
+                {/* <img src={() => loadImg(coordX)}/> */}
+                {/* <img src={col47}/> */}
             </div>
+            {console.log(props.pictureBoardOffsetLeft)}
         </div>
     );
 }

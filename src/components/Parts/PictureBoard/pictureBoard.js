@@ -83,15 +83,18 @@ export const PictureBoard = (props) => {
     * State
     */
 
-    const [menuIsShown, setMenuIsShown] = useState(false);
-    const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    const [isHovering, setIsHovering] = useState(null);
+    const [imgCoordinateRange, setImgCoordinateRange] = useState([
+        {}
+    ]);
+    // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
+    // const [isHovering, setIsHovering] = useState(null);
 
     /**
     * Methods
     */
 
     useEffect(() => {
+        
         // props.fetchSection1Data();
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
@@ -105,6 +108,11 @@ export const PictureBoard = (props) => {
     //     setIsHovering(false);
     // }
 
+    const evaluateCenter = (id, x, y) => {
+        
+        console.log(id, x,y)
+    }
+
     const renderPictureBoardItems = () => {
         return(
             <div className="picture-board-items">{props.pictureBoard.items.map((el,i) => {
@@ -113,8 +121,10 @@ export const PictureBoard = (props) => {
                         // <div className="picture-board-item" key={i}>
                             <PictureBoardTextItem 
                                 key={i}
+                                id={el.id}
                                 header={el.header}
                                 text={el.text}
+                                evaluateCenter={(id, x, y) => evaluateCenter(id, x,y)}
                                 // path={el.path}
                             />
                         // </div>
@@ -124,7 +134,9 @@ export const PictureBoard = (props) => {
                         // <div className="picture-board-item" key={i}>
                             <PictureBoardImageItem  
                                 key={i}
+                                id={el.id}
                                 imagesArray={el.pictures}
+                                evaluateCenter={(id, x, y) => evaluateCenter(id, x,y)}
                                 // coordX={}
                                 // header={el.header}
                                 // text={el.text}
@@ -143,7 +155,7 @@ export const PictureBoard = (props) => {
     */
 
     return(
-        <div className="picture-board">
+        <div className="picture-board" id="pictureBoard">
             {renderPictureBoardItems()}
         </div>
     );
