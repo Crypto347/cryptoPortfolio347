@@ -69,7 +69,7 @@ import bw16 from '../../../images/pictureBoard/B&WFolder4/clay-banks-_wkd7XBRfU4
 import bw17 from '../../../images/pictureBoard/B&WFolder4/lindsay-cotter-9J7sHieVFi0-unsplash.jpg';
 import bw18 from '../../../images/pictureBoard/B&WFolder4/marina-zaharkina-TKQXY1dAgjE-unsplash.jpg';
 import bw19 from '../../../images/pictureBoard/B&WFolder4/mike-marquez-VnlyIQxQS10-unsplash.jpg';
-import bw40 from '../../../images/pictureBoard/B&WFolder4/ohmky-lQwWZI_WjSU-unsplash.jpg';
+import bw20 from '../../../images/pictureBoard/B&WFolder4/ohmky-lQwWZI_WjSU-unsplash.jpg';
 
 //ColorfulFolder1
 
@@ -127,21 +127,20 @@ import col35 from '../../../images/pictureBoard/ColorfulFolder6/jess-bailey-OhWK
 //ColorfulFolder7
 
 import col36 from '../../../images/pictureBoard/ColorfulFolder7/eleni-koureas-jUcuu5f5js0-unsplash.jpg';
-import col37 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-4DPWnBrjIPg-unsplash.jpg';
-import col38 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-6izKUqAC9xw-unsplash.jpg';
-import col39 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
-import col40 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-L71uKsAVo4g-unsplash.jpg';
-import col41 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-z0guTIr_kts-unsplash.jpg';
-import col42 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-ZY2GNpgiWyU-unsplash.jpg';
+import col37 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-6izKUqAC9xw-unsplash.jpg';
+import col38 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
+import col39 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-L71uKsAVo4g-unsplash.jpg';
+import col40 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-z0guTIr_kts-unsplash.jpg';
+import col41 from '../../../images/pictureBoard/ColorfulFolder7/jess-bailey-ZY2GNpgiWyU-unsplash.jpg';
 
 //ColorfulFolder8
 
-import col43 from '../../../images/pictureBoard/ColorfulFolder8/eyeshadow-4713577_1920.jpg';
-import col44 from '../../../images/pictureBoard/ColorfulFolder8/gabrielle-henderson-xTLqJqtq8R4-unsplash.jpg';
-import col45 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-_969XXSgWc0-unsplash.jpg';
-import col46 from '../../../images/pictureBoard/ColorfulFolder8/laura-chouette-HTowfw8ascU-unsplash.jpg';
-import col47 from '../../../images/pictureBoard/ColorfulFolder8/life-3602514_1920.jpg';
-import col48 from '../../../images/pictureBoard/ColorfulFolder8/samantha-gades-pKt9mfEuZrs-unsplash.jpg';
+import col42 from '../../../images/pictureBoard/ColorfulFolder8/eyeshadow-4713577_1920.jpg';
+import col43 from '../../../images/pictureBoard/ColorfulFolder8/gabrielle-henderson-xTLqJqtq8R4-unsplash.jpg';
+import col44 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-_969XXSgWc0-unsplash.jpg';
+import col45 from '../../../images/pictureBoard/ColorfulFolder8/laura-chouette-HTowfw8ascU-unsplash.jpg';
+import col46 from '../../../images/pictureBoard/ColorfulFolder8/life-3602514_1920.jpg';
+import col47 from '../../../images/pictureBoard/ColorfulFolder8/samantha-gades-pKt9mfEuZrs-unsplash.jpg';
 
 //TextFolder1
 
@@ -181,6 +180,7 @@ import text24 from '../../../images/pictureBoard/TextFolder4/christin-hume-mfB1B
 import text25 from '../../../images/pictureBoard/TextFolder4/dylan-gillis-KdeqA3aTnBY-unsplash.jpg';
 import text26 from '../../../images/pictureBoard/TextFolder4/perry-grone-lbLgFFlADrY-unsplash.jpg';
 import text27 from '../../../images/pictureBoard/TextFolder4/scott-graham-5fNmWej4tAA-unsplash.jpg';
+import { LoadingManager } from 'three';
 
 /**
 * Constants
@@ -235,13 +235,20 @@ export const PictureBoardImageItem = (props) => {
     //     props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
     // }
 
+    const loadImg = (coordX) => {
+
+    }
+
     /**
     * Markup
     */
 
     return(
         <div className="picture-board-image-item">
-           
+           {/* <img src={() => loadImg(props.coordX)}/> */}
+            <div className="picture-board-image">
+                <img src={col47}/>
+            </div>
         </div>
     );
 }

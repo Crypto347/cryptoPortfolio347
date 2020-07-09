@@ -2,4 +2,12 @@
     width: 270.5px;
     height: 270.5px;
     background-color: rgb(90, 155, 172);
+    .picture-board-image {
+        // width: 270.5px;
+        // height: 270.5px;
+        >img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
 }

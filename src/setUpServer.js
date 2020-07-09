@@ -624,35 +624,29 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 2,
                     key: "col37",
                     folderName: "colorful",
-                    imageName: "jess-bailey-4DPWnBrjIPg-unsplash.jpg"
+                    imageName: "jess-bailey-6izKUqAC9xw-unsplash.jpg"
                 },
                 {
                     id: 3,
                     key: "col38",
                     folderName: "colorful",
-                    imageName: "jess-bailey-6izKUqAC9xw-unsplash.jpg"
+                    imageName: "jess-bailey-dWKqZcPLc8Y-unsplash.jpg"
                 },
                 {
                     id: 4,
                     key: "col39",
                     folderName: "colorful",
-                    imageName: "jess-bailey-dWKqZcPLc8Y-unsplash.jpg"
+                    imageName: "jess-bailey-L71uKsAVo4g-unsplash.jpg"
                 },
                 {
                     id: 5,
                     key: "col40",
                     folderName: "colorful",
-                    imageName: "jess-bailey-L71uKsAVo4g-unsplash.jpg"
+                    imageName: "jess-bailey-z0guTIr_kts-unsplash.jpg"
                 },
                 {
                     id: 6,
                     key: "col41",
-                    folderName: "colorful",
-                    imageName: "jess-bailey-z0guTIr_kts-unsplash.jpg"
-                },
-                {
-                    id: 7,
-                    key: "col42",
                     folderName: "colorful",
                     imageName: "jess-bailey-ZY2GNpgiWyU-unsplash.jpg"
                 }
@@ -706,37 +700,37 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             pictures: [
                 {
                     id: 1,
-                    key: "col43",
+                    key: "col42",
                     folderName: "colorful",
                     imageName: "eyeshadow-4713577_1920.jpg"
                 },
                 {
                     id: 2,
-                    key: "col44",
+                    key: "col43",
                     folderName: "colorful",
                     imageName: "gabrielle-henderson-xTLqJqtq8R4-unsplash.jpg"
                 },
                 {
                     id: 3,
-                    key: "col45",
+                    key: "col44",
                     folderName: "colorful",
                     imageName: "jess-bailey-_969XXSgWc0-unsplash.jpg"
                 },
                 {
                     id: 4,
-                    key: "col46",
+                    key: "col45",
                     folderName: "colorful",
                     imageName: "laura-chouette-HTowfw8ascU-unsplash.jpg"
                 },
                 {
                     id: 5,
-                    key: "col47",
+                    key: "col46",
                     folderName: "colorful",
                     imageName: "life-3602514_1920.jpg"
                 },
                 {
                     id: 6,
-                    key: "col48",
+                    key: "col47",
                     folderName: "colorful",
                     imageName: "samantha-gades-pKt9mfEuZrs-unsplash.jpg"
                 },
