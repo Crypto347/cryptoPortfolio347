@@ -180,13 +180,20 @@ import text24 from '../../../images/pictureBoard/TextFolder4/christin-hume-mfB1B
 import text25 from '../../../images/pictureBoard/TextFolder4/dylan-gillis-KdeqA3aTnBY-unsplash.jpg';
 import text26 from '../../../images/pictureBoard/TextFolder4/perry-grone-lbLgFFlADrY-unsplash.jpg';
 import text27 from '../../../images/pictureBoard/TextFolder4/scott-graham-5fNmWej4tAA-unsplash.jpg';
-import { LoadingManager } from 'three';
+
+
+import DefaultImage from '../../../images/error.jpg';
 
 /**
 * Constants
 */
 
-// import * as Colors from '../../../constants/colors';
+
+/**
+* Utility
+*/
+
+import * as Utility from '../../../utility';
 
 /**
 * PictureBoardImageItem component definition and export
@@ -198,6 +205,7 @@ export const PictureBoardImageItem = (props) => {
     * State
     */
     const [isHovering, setIsHovering] = useState(false);
+    const [imgToLoad, setImgToLoad] = useState("");
     const divRef = React.useRef();
 
     /**
@@ -205,6 +213,7 @@ export const PictureBoardImageItem = (props) => {
     */
 
     useEffect(() => {   
+        setImgToLoad(props.imagesArray[0].key);
         let imgCoordinateRange; 
         switch(props.id){
             case 1:
@@ -261,7 +270,8 @@ export const PictureBoardImageItem = (props) => {
             topCoordinate: pictureBoardImageItem.offsetTop,
             bottomCoordinate: pictureBoardImageItem.offsetTop + pictureBoardImageItem.offsetHeight,
             leftCoordinate: pictureBoardImageItem.offsetLeft,
-            rightCoordinate: pictureBoardImageItem.offsetLeft + pictureBoardImageItem.offsetWidth
+            rightCoordinate: pictureBoardImageItem.offsetLeft + pictureBoardImageItem.offsetWidth,
+            width: pictureBoardImageItem.offsetWidth
         };
         return updatedImgCoordinateRange;
     }
@@ -273,9 +283,23 @@ export const PictureBoardImageItem = (props) => {
         if(imgCoordinateRange.leftCoordinate < pageX && pageX < imgCoordinateRange.rightCoordinate &&
             imgCoordinateRange.topCoordinate < pageY && pageY < imgCoordinateRange.bottomCoordinate
         ){
-            console.log("my div", props.id)
+            let selectedDivDividedByImagesNumber = Math.round(imgCoordinateRange.width / props.imagesArray.length);
+            let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
+            coordinatesArray = coordinatesArray.map((el, i) => imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
+            coordinatesArray.map((el, i) => {
+                if(i !== coordinatesArray.length){
+                    if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
+                        setImgToLoad(props.imagesArray[i].key);
+                    }
+                }else{
+                    if(coordinatesArray[i] < pageX && pageX < imgCoordinateRange.rightCoordinate){
+                        setImgToLoad(props.imagesArray[i].key);
+                    }
+                }
+               
+            })
         }else{
-            console.log("Notmy div", props.id)
+            // console.log("Notmy div", props.id)
         }
     }
 
@@ -287,38 +311,151 @@ export const PictureBoardImageItem = (props) => {
     //     setIsHovering(false);
     // }
 
-    // const loadImage = (img) => {
-    //     switch(img) {
-    //         case 'image1':
-    //             return StoryImage1;
-    //         case 'image2':
-    //             return StoryImage2;
-    //         case 'image3':
-    //             return StoryImage3;
-    //         case 'image4':
-    //             return StoryImage4;
-    //         case 'image5':
-    //             return StoryImage5;
-    //         case 'image6':
-    //             return StoryImage6;
-    //         default:
-    //             return DefaultImage;
-    //     }
-    // }
-
     // const onClick = (obj) => {
     //     props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
     // }
 
-    const loadImg = (coordX) => {
-        return col16;
+    const loadImg = (key) => {
+        switch(key) {
+            case 'bw1':
+                return bw1;
+            case 'bw2':
+                return bw2;
+            case 'bw3':
+                return bw3;
+            case 'bw4':
+                return bw4;
+            case 'bw5':
+                return bw5;
+            case 'bw6':
+                return bw6;
+            case 'bw7':
+                return bw7;
+            case 'bw8':
+                return bw8;
+            case 'bw9':
+                return bw9;
+            case 'bw10':
+                return bw10;
+            case 'bw11':
+                return bw11;
+            case 'bw12':
+                return bw12;
+            case 'bw13':
+                return bw13;
+            case 'bw14':
+                return bw14;
+            case 'bw15':
+                return bw15;
+            case 'bw16':
+                return bw16;
+            case 'bw17':
+                return bw17;
+            case 'bw18':
+                return bw18;
+            case 'bw19':
+                return bw19;
+            case 'bw20':
+                return bw20;
+            case 'col1':
+                return col1;
+            case 'col2':
+                return col2;
+            case 'col3':
+                return col3;
+            case 'col4':
+                return col4;
+            case 'col5':
+                return col5;
+            case 'col6':
+                return col6;
+            case 'col7':
+                return col7;
+            case 'col8':
+                return col8;
+            case 'col9':
+                return col9;
+            case 'col10':
+                return col10;
+            case 'col11':
+                return col11;
+            case 'col12':
+                return col12;
+            case 'col13':
+                return col13;
+            case 'col14':
+                return col14;
+            case 'col15':
+                return col15;
+            case 'col16':
+                return col16;
+            case 'col17':
+                return col17;
+            case 'col18':
+                return col18;
+            case 'col19':
+                return col19;
+            case 'col20':
+                return col20;
+            case 'col21':
+                return col21;
+            case 'col22':
+                return col22;
+            case 'col23':
+                return col23;
+            case 'col24':
+                return col24;
+            case 'col25':
+                return col25;
+            case 'col26':
+                return col26;
+            case 'col27':
+                return col27;
+            case 'col28':
+                return col28;
+            case 'col29':
+                return col29;
+            case 'col30':
+                return col30;
+            case 'col31':
+                return col31;
+            case 'col32':
+                return col32;
+            case 'col33':
+                return col33;
+            case 'col34':
+                return col34;
+            case 'col35':
+                return col35;
+            case 'col36':
+                return col36;
+            case 'col37':
+                return col37;
+            case 'col38':
+                return col38;
+            case 'col39':
+                return col39;
+            case 'col40':
+                return col40;
+            case 'col41':
+                return col41;
+            case 'col42':
+                return col42;
+            case 'col43':
+                return col43;
+            case 'col44':
+                return col44;
+            case 'col45':
+                return col45;
+            case 'col46':
+                return col46;
+            case 'col47':
+                return col47;
+            default:
+                return DefaultImage;
+        }
     }
 
-    const onMouseMoveHandler = (e) => {
-       console.log(e.pageX)
-    }
-
-    
     /**
     * Markup
     */
@@ -326,8 +463,7 @@ export const PictureBoardImageItem = (props) => {
     return(
         <div className="picture-board-image-item" ref={divRef} id={`pictureBoardImageItem${props.id}`}>
             <div className="picture-board-image">
-                {/* <img src={() => loadImg(coordX)}/> */}
-                {/* <img src={col47}/> */}
+                <img src={loadImg(imgToLoad)}/>
             </div>
         </div>
     );
