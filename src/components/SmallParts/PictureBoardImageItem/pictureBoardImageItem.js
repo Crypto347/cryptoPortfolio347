@@ -461,8 +461,11 @@ export const PictureBoardImageItem = (props) => {
     */
 
     return(
-        <div className="picture-board-image-item" ref={divRef} id={`pictureBoardImageItem${props.id}`}>
-            <div className="picture-board-image">
+        <div 
+            className="picture-board-image-item" 
+            id={`pictureBoardImageItem${props.id}`}
+        >
+            <div className={props.option === "colorful" ? "picture-board-image" : "picture-board-image-black-and-white"}>
                 <img src={loadImg(imgToLoad)}/>
             </div>
         </div>

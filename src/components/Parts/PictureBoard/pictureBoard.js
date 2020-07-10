@@ -114,6 +114,7 @@ export const PictureBoard = (props) => {
                             <PictureBoardTextItem 
                                 key={i}
                                 id={el.id}
+                                option={el.option}
                                 header={el.header}
                                 text={el.text}
                                 // path={el.path}
@@ -126,6 +127,7 @@ export const PictureBoard = (props) => {
                             <PictureBoardImageItem  
                                 key={i}
                                 id={el.id}
+                                option={el.option}
                                 imagesArray={el.pictures}
                                 // coordX={}
                                 // header={el.header}
