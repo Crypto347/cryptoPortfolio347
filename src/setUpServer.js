@@ -84,7 +84,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "bw1",
                     folderName: "blackAndWhite",
-                    imageName: "computer-820281_1920.jpg"
+                    imageName: "dose-media-bU6JyhSI6zo-unsplash.jpg"
                 },
                 {
                     id: 2,
@@ -96,7 +96,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 3,
                     key: "bw3",
                     folderName: "blackAndWhite",
-                    imageName: "dose-media-bU6JyhSI6zo-unsplash.jpg"
+                    imageName: "rahul-bhogal-lihCTIOP28U-unsplash.jpg"                 
                 },
                 {
                     id: 4,
@@ -114,7 +114,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 6,
                     key: "bw6",
                     folderName: "blackAndWhite",
-                    imageName: "rahul-bhogal-lihCTIOP28U-unsplash.jpg"
+                    imageName: "computer-820281_1920.jpg"
                 }
             ]
         },
@@ -129,7 +129,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col1",
                     folderName: "colorful",
-                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.jpg"
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.jpg"
                 },
                 {
                     id: 2,
@@ -147,7 +147,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 4,
                     key: "col4",
                     folderName: "colorful",
-                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.jpg"
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.jpg"
                 },
                 {
                     id: 5,
@@ -231,7 +231,8 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col7",
                     folderName: "colorful",
-                    imageName: "cristina-matos-albers-WhxeSQ671SM-unsplash.jpg"
+                    imageName: "nathan-dumlao-pMW4jzELQCw-unsplash.jpg"
+               
                 },
                 {
                     id: 2,
@@ -249,7 +250,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 4,
                     key: "col10",
                     folderName: "colorful",
-                    imageName: "nathan-dumlao-pMW4jzELQCw-unsplash.jpg"
+                    imageName: "cristina-matos-albers-WhxeSQ671SM-unsplash.jpg"
                 },
                 {
                     id: 5,
@@ -321,7 +322,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col12",
                     folderName: "colorful",
-                    imageName: "emma-matthews-digital-content-production-vKM1ZdtoBL4-unsplash.jpg"
+                    imageName: "freestocks-A11MXTzUhLE-unsplash.jpg"
                 },
                 {
                     id: 2,
@@ -333,7 +334,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 3,
                     key: "col14",
                     folderName: "colorful",
-                    imageName: "freestocks-A11MXTzUhLE-unsplash.jpg"
+                    imageName: "emma-matthews-digital-content-production-vKM1ZdtoBL4-unsplash.jpg"
                 },
                 {
                     id: 4,
@@ -366,7 +367,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col18",
                     folderName: "colorful",
-                    imageName: "angele-kamp-KaeaUITiWnc-unsplash.jpg"
+                    imageName: "daily-nouri-E5Oo4nENq2M-unsplash.jpg"
                 },
                 {
                     id: 2,
@@ -378,7 +379,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 3,
                     key: "col20",
                     folderName: "colorful",
-                    imageName: "daily-nouri-E5Oo4nENq2M-unsplash.jpg"
+                    imageName: "angele-kamp-KaeaUITiWnc-unsplash.jpg"
                 },
                 {
                     id: 4,
@@ -417,7 +418,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col25",
                     folderName: "colorful",
-                    imageName: "chris-lee-70l1tDAI6rM-unsplash.jpg"
+                    imageName: "leone-venter-pVt9j3iWtPM-unsplash.jpg"
                 },
                 {
                     id: 2,
@@ -435,7 +436,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 4,
                     key: "col28",
                     folderName: "colorful",
-                    imageName: "leone-venter-pVt9j3iWtPM-unsplash.jpg"
+                    imageName: "chris-lee-70l1tDAI6rM-unsplash.jpg"
                 },
                 {
                     id: 5,
@@ -462,7 +463,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col31",
                     folderName: "colorful",
-                    imageName: "jess-bailey-MSH3ldaRZsg-unsplash.jpg"
+                    imageName: "paper-3025558_1920.jpg"
                 },
                 {
                     id: 2,
@@ -474,7 +475,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 3,
                     key: "col33",
                     folderName: "colorful",
-                    imageName: "paper-3025558_1920.jpg"
+                    imageName: "jess-bailey-MSH3ldaRZsg-unsplash.jpg"
                 },
                 {
                     id: 4,
@@ -499,27 +500,27 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             pictures: [
                 {
                     id: 1,
-                    key: "col7",
-                    folderName: "colorful",
-                    imageName: "glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg"
+                    key: "bw7",
+                    folderName: "blackAndWhite",
+                    imageName: "meghan-schiereck--2eJaLtf_bI-unsplash.jpg"
                 },
                 {
                     id: 2,
-                    key: "col8",
-                    folderName: "colorful",
+                    key: "bw8",
+                    folderName: "blackAndWhite",
                     imageName: "marci-angeles-H_pOAqtNVEg-unsplash.jpg"
                 },
                 {
                     id: 3,
-                    key: "col9",
-                    folderName: "colorful",
+                    key: "bw9",
+                    folderName: "blackAndWhite",
                     imageName: "marci-angeles-sDmLk4Mf0hQ-unsplash.jpg"
                 },
                 {
                     id: 4,
-                    key: "col10",
-                    folderName: "colorful",
-                    imageName: "meghan-schiereck--2eJaLtf_bI-unsplash.jpg"
+                    key: "bw10",
+                    folderName: "blackAndWhite",
+                    imageName: "glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg"
                 },
             ]
         },
@@ -618,38 +619,39 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col36",
                     folderName: "colorful",
-                    imageName: "eleni-koureas-jUcuu5f5js0-unsplash.jpg"
+                    imageName: "jess-bailey-_969XXSgWc0-unsplash.jpg"
                 },
                 {
                     id: 2,
                     key: "col37",
                     folderName: "colorful",
-                    imageName: "jess-bailey-6izKUqAC9xw-unsplash.jpg"
+                    imageName: "gabrielle-henderson-xTLqJqtq8R4-unsplash.jpg"
                 },
                 {
                     id: 3,
                     key: "col38",
                     folderName: "colorful",
-                    imageName: "jess-bailey-dWKqZcPLc8Y-unsplash.jpg"
+                    imageName: "eyeshadow-4713577_1920.jpg"
                 },
                 {
                     id: 4,
                     key: "col39",
                     folderName: "colorful",
-                    imageName: "jess-bailey-L71uKsAVo4g-unsplash.jpg"
+                    imageName: "laura-chouette-HTowfw8ascU-unsplash.jpg"
                 },
                 {
                     id: 5,
                     key: "col40",
                     folderName: "colorful",
-                    imageName: "jess-bailey-z0guTIr_kts-unsplash.jpg"
+                    imageName: "life-3602514_1920.jpg"
                 },
                 {
                     id: 6,
                     key: "col41",
                     folderName: "colorful",
-                    imageName: "jess-bailey-ZY2GNpgiWyU-unsplash.jpg"
-                }
+                    imageName: "samantha-gades-pKt9mfEuZrs-unsplash.jpg"
+                },
+                
             ]
         },
         {
@@ -702,38 +704,38 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "col42",
                     folderName: "colorful",
-                    imageName: "eyeshadow-4713577_1920.jpg"
+                    imageName: "jess-bailey-L71uKsAVo4g-unsplash.jpg"
                 },
                 {
                     id: 2,
                     key: "col43",
                     folderName: "colorful",
-                    imageName: "gabrielle-henderson-xTLqJqtq8R4-unsplash.jpg"
+                    imageName: "jess-bailey-6izKUqAC9xw-unsplash.jpg"
                 },
                 {
                     id: 3,
                     key: "col44",
                     folderName: "colorful",
-                    imageName: "jess-bailey-_969XXSgWc0-unsplash.jpg"
+                    imageName: "eleni-koureas-jUcuu5f5js0-unsplash.jpg"
                 },
                 {
                     id: 4,
                     key: "col45",
                     folderName: "colorful",
-                    imageName: "laura-chouette-HTowfw8ascU-unsplash.jpg"
+                    imageName: "jess-bailey-dWKqZcPLc8Y-unsplash.jpg"
                 },
                 {
                     id: 5,
                     key: "col46",
                     folderName: "colorful",
-                    imageName: "life-3602514_1920.jpg"
+                    imageName: "jess-bailey-z0guTIr_kts-unsplash.jpg"
                 },
                 {
                     id: 6,
                     key: "col47",
                     folderName: "colorful",
-                    imageName: "samantha-gades-pKt9mfEuZrs-unsplash.jpg"
-                },
+                    imageName: "jess-bailey-ZY2GNpgiWyU-unsplash.jpg"
+                }
             ]
         },
         {
@@ -747,7 +749,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "bw15",
                     folderName: "blackAndWhite",
-                    imageName: "alexandra-gorn-9rmnzkmydSY-unsplash.jpg"
+                    imageName: "ohmky-lQwWZI_WjSU-unsplash.jpg"
                 },
                 {
                     id: 2,
@@ -777,7 +779,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 6,
                     key: "bw20",
                     folderName: "blackAndWhite",
-                    imageName: "ohmky-lQwWZI_WjSU-unsplash.jpg"
+                    imageName: "alexandra-gorn-9rmnzkmydSY-unsplash.jpg"
                 }
             ]
         }
