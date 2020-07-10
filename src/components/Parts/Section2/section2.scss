@@ -23,6 +23,32 @@
     // border-radius: 255px 70px 225px 30px/70px 225px 30px 255px;
 }
 
+@media only screen and (max-width: 1250px){
+    .section-2 {
+        height: 3900px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 945px){
+    .section-2 {
+        height: 3150px;
+    }
+}
+
+@media only screen and (max-width: 775px){
+    .section-2 {
+        height: 8000px;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .section-2 {
+        height: 5880px;
+    }
+}
+
 // @media only screen and (max-width: 1310px){
 //     .section-1 {
 //         .section-1-data-items {

@@ -18,3 +18,95 @@
     }
     
 }
+
+@media only screen and (max-width: 1250px){
+    .picture-board-text-item {
+        // padding: 25px;
+        width: 334px;
+        height: 526px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // text-align: start;
+        // background-color: white;
+        // cursor: pointer;
+        // border: 2px solid red;
+        &:hover {
+            background-color: rgb(37, 37, 37);
+        }
+        .picture-board-text-item-icon {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 945px){
+    .picture-board-text-item {
+        // padding: 25px;
+        width: 250px;
+        height: 400px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // text-align: start;
+        // background-color: white;
+        // cursor: pointer;
+        // border: 2px solid red;
+        &:hover {
+            background-color: rgb(37, 37, 37);
+        }
+        .picture-board-text-item-icon {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 775px){
+    .picture-board-text-item {
+        // padding: 25px;
+        width: 370px;
+        height: 580px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // text-align: start;
+        // background-color: white;
+        // cursor: pointer;
+        // border: 2px solid red;
+        &:hover {
+            background-color: rgb(37, 37, 37);
+        }
+        .picture-board-text-item-icon {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .picture-board-text-item {
+        // padding: 25px;
+        width: 250px;
+        height: 400px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // text-align: start;
+        // background-color: white;
+        // cursor: pointer;
+        // border: 2px solid red;
+        &:hover {
+            background-color: rgb(37, 37, 37);
+        }
+        .picture-board-text-item-icon {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+    }
+}
