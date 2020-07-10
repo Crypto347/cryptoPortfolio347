@@ -83,9 +83,6 @@ export const PictureBoard = (props) => {
     * State
     */
 
-    const [imgCoordinateRange, setImgCoordinateRange] = useState([
-        {}
-    ]);
     // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     // const [isHovering, setIsHovering] = useState(null);
 
@@ -108,11 +105,6 @@ export const PictureBoard = (props) => {
     //     setIsHovering(false);
     // }
 
-    const evaluateCenter = (id, x, y) => {
-        
-        console.log(id, x,y)
-    }
-
     const renderPictureBoardItems = () => {
         return(
             <div className="picture-board-items">{props.pictureBoard.items.map((el,i) => {
@@ -124,7 +116,6 @@ export const PictureBoard = (props) => {
                                 id={el.id}
                                 header={el.header}
                                 text={el.text}
-                                evaluateCenter={(id, x, y) => evaluateCenter(id, x,y)}
                                 // path={el.path}
                             />
                         // </div>
@@ -136,7 +127,6 @@ export const PictureBoard = (props) => {
                                 key={i}
                                 id={el.id}
                                 imagesArray={el.pictures}
-                                evaluateCenter={(id, x, y) => evaluateCenter(id, x,y)}
                                 // coordX={}
                                 // header={el.header}
                                 // text={el.text}

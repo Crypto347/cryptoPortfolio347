@@ -197,7 +197,6 @@ export const PictureBoardImageItem = (props) => {
     /**
     * State
     */
-
     const [isHovering, setIsHovering] = useState(false);
     const divRef = React.useRef();
 
@@ -205,38 +204,79 @@ export const PictureBoardImageItem = (props) => {
     * Methods
     */
 
-    useEffect(() => {
-        let pictureBoardImageItem = document.getElementById("pictureBoardImageItem");
-        evaluateCenter();
-        window.addEventListener('mousemove', (e) => handleMouseMove(e));
-        window.addEventListener('resize', evaluateCenter);
+    useEffect(() => {   
+        let imgCoordinateRange; 
+        switch(props.id){
+            case 1:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 2:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 4:
+                imgCoordinateRange = evaluateCoordinates()
+                break;
+            case 6:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 7:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 8:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 9:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 10:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 11:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 13:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 15:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 16:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
+
+        }     
+
+        window.addEventListener('mousemove', (e) => handleMouseMove(e, imgCoordinateRange));
+        window.addEventListener('resize', evaluateCoordinates);
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('resize', evaluateCenter)
+            window.removeEventListener('resize', evaluateCoordinates)
         } 
     }, [])
 
-    const evaluateCenter = () => {
-        const selectedDiv = divRef.current.getBoundingClientRect();
-        const width = selectedDiv.width;
-        const height = selectedDiv.height;
-        const top = selectedDiv.top;
-        const left = selectedDiv.left;
-        const centerX = left + width/2;
-        const centerY = top + height/2;
-        // console.log(centerX,centerY)
-        props.evaluateCenter(props.id, centerX, centerY);
-        // this.props.centerXY(centerX, centerY)
+    const evaluateCoordinates = () => {
+        let pictureBoardImageItem = document.getElementById(`pictureBoardImageItem${props.id}`);
+        let updatedImgCoordinateRange = {
+            id: props.id,
+            topCoordinate: pictureBoardImageItem.offsetTop,
+            bottomCoordinate: pictureBoardImageItem.offsetTop + pictureBoardImageItem.offsetHeight,
+            leftCoordinate: pictureBoardImageItem.offsetLeft,
+            rightCoordinate: pictureBoardImageItem.offsetLeft + pictureBoardImageItem.offsetWidth
+        };
+        return updatedImgCoordinateRange;
     }
 
-    const handleMouseMove = (e) => {
-        const selectedDiv = divRef.current.getBoundingClientRect();
+    const handleMouseMove = (e, imgCoordinateRange) => {
         let pageX = e.pageX;
-        let cordinateX = e.x;
-        let cordinateY = e.y;
-    
-        // console.log(selectedDiv);
-        // console.log(selectedDiv)
+        let pageY = e.pageY;
+        
+        if(imgCoordinateRange.leftCoordinate < pageX && pageX < imgCoordinateRange.rightCoordinate &&
+            imgCoordinateRange.topCoordinate < pageY && pageY < imgCoordinateRange.bottomCoordinate
+        ){
+            console.log("my div", props.id)
+        }else{
+            console.log("Notmy div", props.id)
+        }
     }
 
     // const handleMouseEnter = () => {
@@ -284,12 +324,11 @@ export const PictureBoardImageItem = (props) => {
     */
 
     return(
-        <div className="picture-board-image-item" ref={divRef} id="pictureBoardImageItem">
+        <div className="picture-board-image-item" ref={divRef} id={`pictureBoardImageItem${props.id}`}>
             <div className="picture-board-image">
                 {/* <img src={() => loadImg(coordX)}/> */}
                 {/* <img src={col47}/> */}
             </div>
-            {console.log(props.pictureBoardOffsetLeft)}
         </div>
     );
 }
