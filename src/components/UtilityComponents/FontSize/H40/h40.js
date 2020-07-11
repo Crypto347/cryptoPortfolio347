@@ -8,13 +8,13 @@ import React from 'react';
 * Styles
 */
 
-import './h4.scss';
+import './h40.scss';
 
 /**
-* H4 component definition and export
+* H40 component definition and export
 */
 
-export const H4 = (props) => {
+export const H40 = (props) => {
 
     /**
     * Markup
@@ -22,7 +22,7 @@ export const H4 = (props) => {
 
     return(
         <div 
-            className={props.className ? props.className : "h4"}
+            className={props.className ? props.className  : "h40"}
             onClick={props.onClick}
         >
            {props.children}
@@ -30,5 +30,5 @@ export const H4 = (props) => {
     );
 }
 
-export default H4;
+export default H40;
  

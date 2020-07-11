@@ -20,6 +20,11 @@ export const initialState = {
         items: [],
         loading: false,
         error: null
+    },
+    ourProcess: {
+        items: [],
+        loading: false,
+        error: null
     }
 }
 
@@ -61,6 +66,43 @@ const fetchPictureBoardFailur = (state, action) => {
     };
 }
 
+const fetchOurProcessDataBegin = (state, action) => {
+    let updatedOurProcess = {
+        ...state.pictureBoard, 
+        loading: true, 
+        error: null
+    }
+
+    return {
+        ...state,
+        ourProcess: updatedOurProcess
+    };
+}
+
+const fetchOurProcessDataSuccess = (state, action) => {   
+    let updatedOurProcess = {
+        ...state.pictureBoard, 
+        items: action.array,
+        loading: false
+    } 
+    return {
+        ...state,
+        ourProcess: updatedOurProcess
+    };
+}
+
+const fetchOurProcessDataFailur = (state, action) => {
+    let updatedOurProcess = {
+        ...state.pictureBoard, 
+        items: [],
+        loading: false, 
+        error: action.err
+    }
+    return {
+        ...state,
+        ourProcess: updatedOurProcess
+    };
+}
 
 const section2Reducer = (state = initialState, action) => {
     switch(action.type){
@@ -70,6 +112,12 @@ const section2Reducer = (state = initialState, action) => {
             return fetchPictureBoardSuccess (state, action);
         case actionTypes.FETCH_PICTURE_BOARD_FAILURE:
             return fetchPictureBoardFailur(state, action);
+        case actionTypes.FETCH_OUR_PROCESS_DATA_BEGIN:
+            return fetchOurProcessDataBegin (state, action); 
+        case actionTypes.FETCH_OUR_PROCESS_DATA_SUCCESS:
+            return fetchOurProcessDataSuccess (state, action);
+        case actionTypes.FETCH_OUR_PROCESS_DATA_FAILURE:
+            return fetchOurProcessDataFailur(state, action);
         default: 
             return state;
     }

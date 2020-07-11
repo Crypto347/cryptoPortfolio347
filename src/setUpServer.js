@@ -787,6 +787,37 @@ app.get('/api/section2/pictureBoard', (req, res) => {
     res.json(picBoard);
 });
 
+app.get('/api/section2/ourProcess', (req, res) => {
+    const sec2 = [
+        {
+            id: 1,
+            header: "Sketch",
+            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+        },
+        {
+            id: 2,
+            header: "Process",
+            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+        },
+        {
+            id: 3,
+            header: "Development",
+            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+        },
+        {
+            id: 4,
+            header: "Design",
+            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+        },
+        {
+            id: 5,
+            header: "Evaluation",
+            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+        },
+    ]
+    res.json(sec2);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

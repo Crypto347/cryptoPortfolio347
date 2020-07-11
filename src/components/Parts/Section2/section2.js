@@ -34,6 +34,7 @@ import './section2.scss';
 */
 
 import PictureBoard from '../../Parts/PictureBoard/pictureBoard';
+import OurProcess from '../../Parts/OurProcess/ourProcess';
 
 /**
 * Actions
@@ -58,9 +59,10 @@ import * as Services from "../../../service";
 */
 
 import {
-   H2,
-   H4,
-   EH3
+   H130,
+   H25,
+   EH3,
+   EH4
 } from '../../UtilityComponents';
 
 /**
@@ -101,12 +103,14 @@ export const Section2 = (props) => {
     return(
         <div className="section-2">
             <div className="section-2-wrapper">
-                <H2 className="h2-white-teko">Work.</H2>
+                <H130 className="h130-white-teko">Work.</H130>
                 <EH3/>
-                <H4 className="h4-white">Lorem ipsum dolor sit amet, consectetur ad.</H4>
+                <H25 className="h25-white">Lorem ipsum dolor sit amet, consectetur ad.</H25>
                 <EH3/>
                 <EH3/>
                 <PictureBoard/>
+                <EH4/>
+                <OurProcess/>
             </div>
             
         </div>
@@ -122,6 +126,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
+          
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }

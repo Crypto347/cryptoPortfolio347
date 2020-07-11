@@ -8,13 +8,13 @@ import React from 'react';
 * Styles
 */
 
-import './h3.scss';
+import './h25.scss';
 
 /**
-* H3 component definition and export
+* H25 component definition and export
 */
 
-export const H3 = (props) => {
+export const H25 = (props) => {
 
     /**
     * Markup
@@ -22,7 +22,7 @@ export const H3 = (props) => {
 
     return(
         <div 
-            className={props.className ? props.className  : "h3"}
+            className={props.className ? props.className : "h25"}
             onClick={props.onClick}
         >
            {props.children}
@@ -30,5 +30,5 @@ export const H3 = (props) => {
     );
 }
 
-export default H3;
+export default H25;
  

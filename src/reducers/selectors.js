@@ -30,4 +30,11 @@ export const getPictureBoardItemsState = createSelector(
     (x) => x
 );
 
+const getOurProcessData = (state) => state.section2.ourProcess;
+
+export const getOurProcessDataState = createSelector(
+    [getOurProcessData],
+    (x) => x
+);
+
 

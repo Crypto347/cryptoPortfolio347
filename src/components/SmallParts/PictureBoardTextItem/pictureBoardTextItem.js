@@ -25,8 +25,8 @@ import './pictureBoardTextItem.scss';
 */
 
 import {
-    H3,
-    H6,
+    H15,
+    H40,
     EH0
 } from '../../UtilityComponents';
 
@@ -114,9 +114,9 @@ export const PictureBoardTextItem = (props) => {
             onMouseLeave={handleMouseLeave}
         >
             <div>
-                <H6 className="h6-nobel">{props.header}</H6>
+                <H15 className="h15-nobel">{props.header}</H15>
                 <EH0/>
-                <H3 className={isHovering ? "h3-white-teko" : "h3-nero-teko"}>{props.text}</H3>
+                <H40 className={isHovering ? "h40-white-teko" : "h40-nero-teko"}>{props.text}</H40>
             </div>
             <div className="picture-board-text-item-icon">
                 <FontAwesomeIcon icon={faEye} size="1x" color={isHovering ? "white" : "rgb(37, 37, 37)"}/>

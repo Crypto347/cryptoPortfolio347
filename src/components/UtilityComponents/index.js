@@ -1,9 +1,9 @@
 export * from './FontSize/H1/h1';
-export * from './FontSize/H2/h2';
-export * from './FontSize/H3/h3';
-export * from './FontSize/H4/h4';
+export * from './FontSize/H130/h130';
+export * from './FontSize/H40/h40';
+export * from './FontSize/H25/h25';
 export * from './FontSize/H5/h5';
-export * from './FontSize/H6/h6';
+export * from './FontSize/H15/h15';
 
 export * from './EmptyDivs/EH0/eh0';
 export * from './EmptyDivs/EH1/eh1';

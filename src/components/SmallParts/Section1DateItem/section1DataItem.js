@@ -29,8 +29,8 @@ import './section1DataItem.scss';
 */
 
 import {
-    H3,
-    H4
+    H40,
+    H25
 } from '../../UtilityComponents';
 
 /**
@@ -63,8 +63,8 @@ export const Section1DataItem = (props) => {
 
     return(
         <div className="section-1-data-item">
-            <H3 className="h3-black-teko">{props.header}</H3>
-            <H4 className="h4-nobel">{props.text}</H4>
+            <H40 className="h40-black-teko">{props.header}</H40>
+            <H25 className="h25-nobel">{props.text}</H25>
             <CSSTransition
                 in={isHovering} 
                 timeout={7000}

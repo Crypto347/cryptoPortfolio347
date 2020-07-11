@@ -35,7 +35,7 @@ export function fetchSection1Data() {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 dispatch(Actions.fetchSection1DataSuccess(json));
                 // return json;
             })
@@ -53,7 +53,7 @@ export function fetchPictureBoard() {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 dispatch(Actions.fetchPictureBoardSuccess(json));
                 // return json;
             })
@@ -63,6 +63,25 @@ export function fetchPictureBoard() {
             });
     };
 }
+
+export function fetchOurProcessData() {
+    return dispatch => {
+        dispatch(Actions.fetchOurProcessDataBegin());
+        return fetch("http://localhost:3005/api/section2/ourProcess")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                console.log(json)
+                dispatch(Actions.fetchOurProcessDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchOurProcessDataFailur(error))
+            });
+    };
+}
+
 
 function handleErrors(response) {
     if (!response.ok) {

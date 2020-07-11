@@ -25,8 +25,8 @@ import './pictureBoardImageItem.scss';
 */
 
 import {
-    H3,
-    H4,
+    H40,
+    H25,
     H5,
     EH1,
     EW1,
