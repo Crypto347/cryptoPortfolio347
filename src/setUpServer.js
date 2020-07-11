@@ -792,27 +792,27 @@ app.get('/api/section2/ourProcess', (req, res) => {
         {
             id: 1,
             header: "Sketch",
-            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+            img: "sketch"
         },
         {
             id: 2,
             header: "Process",
-            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+            img: "process"
         },
         {
             id: 3,
             header: "Development",
-            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+            img: "development"
         },
         {
             id: 4,
             header: "Design",
-            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+            img: "design"
         },
         {
             id: 5,
             header: "Evaluation",
-            img: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo."
+            img: "evaluation"
         },
     ]
     res.json(sec2);

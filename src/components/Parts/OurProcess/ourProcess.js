@@ -56,14 +56,22 @@ import * as Services from "../../../service";
 */
 
 import {
-   EH1
+   H45,
+   H25,
+   EH3,
+   EH2
 } from '../../UtilityComponents';
 
 /**
 * Images
 */
 
-
+import Sketch from '../../../images/OurProcess/main-home-gif-1.gif';
+import Process from '../../../images/OurProcess/home-2-icon-2.png';
+import Development from '../../../images/OurProcess/main-home-gif-2.gif';
+import Design from '../../../images/OurProcess/home-2-icon-4.png';
+import Evaluation from '../../../images/OurProcess/main-home-gif-3.gif';
+import DefaultImage from '../../../images/error.jpg';
 
 /**
 * Constants
@@ -101,20 +109,32 @@ export const OurProcess = (props) => {
     //     setIsHovering(false);
     // }
 
-    const renderPictureBoardItems = () => {
+    const renderImg = (opt) => {
+        switch(opt){
+            case 'sketch':
+                return Sketch;
+            case 'process':
+                return Process;
+            case 'development':
+                return Development;
+            case 'design':
+                return Design;
+            case 'evaluation':
+                return Evaluation;
+            default: 
+                return DefaultImage;
+        }
+    }
+
+    const renderOurProcessItems = () => {
         return(
-            <div className="picture-board-items">{props.pictureBoard.items.map((el,i) => {
+            <div className="our-process-items">{props.ourProcessDate.items.map((el,i) => {
                 return(
-                    // <div className="picture-board-item" key={i}>
-                        <PictureBoardTextItem 
-                            key={i}
-                            id={el.id}
-                            option={el.option}
-                            header={el.header}
-                            text={el.text}
-                            // path={el.path}
-                        />
-                    // </div>
+                    <div key={i}>
+                        <img src={renderImg(el.img)}/>
+                        <EH2/>
+                        <H25 className="h25-black-teko">{el.header}</H25>
+                    </div>
                 )
             })}</div>
         )
@@ -127,7 +147,9 @@ export const OurProcess = (props) => {
 
     return(
         <div className="our-process">
-            {/* {renderPictureBoardItems()} */}
+            <H45 className="h45-black-lustria">Our Process</H45>
+            <EH3/>
+            {renderOurProcessItems()}
         </div>
     );
 }
@@ -135,7 +157,7 @@ export const OurProcess = (props) => {
 export default connect(
     (state) => {
         return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state)
+            ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
     (dispatch) => {

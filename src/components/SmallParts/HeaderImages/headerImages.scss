@@ -110,7 +110,6 @@
                 // transform: translateX(0%);
                 .header-text-bold{
                     font-family: 'Teko', sans-serif;
-                    // transform: translateX(10%);
                     -webkit-animation: appearHeaderTextFront .5s linear;
                     -moz-animation: appearHeaderTextFront .5s linear;
                     -o-animation: appearHeaderTextFront .5s linear;
@@ -119,7 +118,7 @@
                     animation-fill-mode: both;
                 }
                 .header-text-regular-1 {
-                    // transform: translateX(10%);
+                    font-family: 'Lustria', serif;
                     -webkit-animation: appearHeaderTextFront .5s linear;
                     -moz-animation: appearHeaderTextFront .5s linear;
                     -o-animation: appearHeaderTextFront .5s linear;
@@ -130,6 +129,7 @@
             }
             .header-text-regular-2 {
                 // transform: translateX(0%);
+                font-family: 'Lustria', serif;
                 -webkit-animation: appearHeaderTextFront .5s linear;
                 -moz-animation: appearHeaderTextFront .5s linear;
                 -o-animation: appearHeaderTextFront .5s linear;

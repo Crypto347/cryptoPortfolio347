@@ -82,7 +82,6 @@ export const Home = () => {
                 <Toolbar toolbarMainColor="white" scrollingUp={scrollingUp}/>
                 <Toolbar toolbarMainColor="regular"/>
                 <HeaderImages/>
-                {/* <img src={Image1}/> */}
             </div>
             <Section1/>
             <Section2/>
