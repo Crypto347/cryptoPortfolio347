@@ -99,9 +99,9 @@ export const PhotoViewer = (props) => {
     // const [menuIsShown, setMenuIsShown] = useState(false);
     // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [isHoveringExpand, setIsHoveringExpand] = useState(false);
-    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState(false);
-    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState(false);
-    const [isHoveringCloseButton, setIsHoveringCloseButton] = useState(false);
+    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("off");
+    const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("off");
 
     /**
     * Methods
@@ -119,13 +119,13 @@ export const PhotoViewer = (props) => {
                 setIsHoveringExpand(true);
             break;
             case 'leftArrow': 
-                setIsHoveringLeftArrow(true);
+                setIsHoveringLeftArrow('on');
                 break;
             case 'rightArrow': 
-                setIsHoveringRightArrow(true);
+                setIsHoveringRightArrow('on');
                 break;
             case 'closeArrow': 
-                setIsHoveringCloseButton(true);
+                setIsHoveringCloseButton('on');
                 break;
         }
     }
@@ -136,13 +136,13 @@ export const PhotoViewer = (props) => {
                 setIsHoveringExpand(false);
                 break;
             case 'leftArrow': 
-                setIsHoveringLeftArrow(false);
+                setIsHoveringLeftArrow('off');
                 break;
             case 'rightArrow': 
-                setIsHoveringRightArrow(false);
+                setIsHoveringRightArrow('off');
                 break;
             case 'closeArrow': 
-                setIsHoveringCloseButton(false);
+                setIsHoveringCloseButton('off');
                 break;
         }
     }
@@ -157,6 +157,29 @@ export const PhotoViewer = (props) => {
                 )
             })}</div>
         )
+    }
+
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "leftArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "photoViewer-navigation-left-arrow";
+                case 'on':
+                    return "photoViewer-navigation-left-arrow-hover-on";
+                case 'off':
+                    return "photoViewer-navigation-left-arrow-hover-off"
+            }
+        }
+        if(opt === "rightArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "photoViewer-navigation-right-arrow";
+                case 'on':
+                    return "photoViewer-navigation-right-arrow-hover-on";
+                case 'off':
+                    return "photoViewer-navigation-right-arrow-hover-off"
+            }
+        }
     }
 
 
@@ -181,11 +204,19 @@ export const PhotoViewer = (props) => {
                  <div className="photoViewer-image-items"></div>
                 <div className="photoViewer-toolbar">
                     <div className="photoViewer-navigation">
-                        <div className="photoViewer-navigation-left-arrow">
+                        <div 
+                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                            onMouseLeave={() => handleMouseLeave('leftArrow')}
+                        >
                             <div className="arrow-top-line"/>
                             <div className="arrow-bottom-line"/>
                         </div>
-                        <div className="photoViewer-navigation-right-arrow">
+                        <div 
+                            className={renderClassName("rightArrow", isHoveringRightArrow)}
+                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                            onMouseLeave={() => handleMouseLeave('rightArrow')}
+                        >
                             <div className="arrow-top-line"/>
                             <div className="arrow-bottom-line"/>
                         </div>
@@ -200,7 +231,7 @@ export const PhotoViewer = (props) => {
                         <FontAwesomeIcon 
                             icon={faChevronRight} 
                             size="2x" 
-                            color={isHoveringRightArrow ? "rgb(37, 37, 37)" : "rgb(155, 155, 155)"}
+                            color={isHoveringRightArrow ? "rgb(37, 37, 37)" : ""}
                             onClick={() => iconOnClick(props.imagesArray)}
                             onMouseEnter={() => handleMouseEnter('rightArrow')} 
                             onMouseLeave={() => handleMouseLeave('rightArrow')}

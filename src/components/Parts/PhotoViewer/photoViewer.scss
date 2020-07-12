@@ -28,45 +28,147 @@
             border: 2px solid red;
         }
         .photoViewer-toolbar {
-            border: 2px solid red;
             height: 60px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             .photoViewer-navigation {
+                margin: 0px 20px 0px 20px;
+                width: 30px;
+                display: flex;
+                justify-content: space-between;
                 cursor: pointer;
-                .photoViewer-navigation-left-arrow{
-                //     .arrow-top-line {
-                //         border: 1px solid black;
-                //         height: 5px;
-                //         transform: translate(-1px, 1px) rotate(-45deg);
-                //    }
-                //    .arrow-bottom-line {
-                //         border: 1px solid black;
-                //         height: 5px;
-                //         transform: translate(-1px, -1px) rotate(45deg);
-                //    }
-                    
+                .photoViewer-navigation-left-arrow {
+                    .arrow-top-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, 3px) rotate(45deg);
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, -3px) rotate(-45deg);
+                    }
                 }
-                .photoViewer-navigation-right-arrow{
-                //     .arrow-top-line {
-                //         border: 1px solid black;
-                //         height: 5px;
-                //         transform: translate(-1px, 1px) rotate(-45deg);
-                //    }
-                //    .arrow-bottom-line {
-                //         border: 1px solid black;
-                //         height: 5px;
-                //         transform: translate(-1px, -1px) rotate(45deg);
-                //    }
+                .photoViewer-navigation-left-arrow-hover-on {
+                    .arrow-top-line {
+                        border: 1px solid rgb(37, 37, 37);
+                        height: 12px;
+                        transform: translate(5px, 3px) rotate(45deg);
+                        -webkit-animation: hoverOnArrowOn .5s linear;
+                        -moz-animation: hoverOnArrowOn .5s linear;
+                        -o-animation: hoverOnArrowOn .5s linear;
+                        animation: hoverOnArrowOn .5s linear;
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid rgb(37, 37, 37);
+                        height: 12px;
+                        transform: translate(5px, -3px) rotate(-45deg);
+                        -webkit-animation: hoverOnArrowOn .5s linear;
+                        -moz-animation: hoverOnArrowOn .5s linear;
+                        -o-animation: hoverOnArrowOn .5s linear;
+                        animation: hoverOnArrowOn .5s linear;
+                    }
                 }
-
+                .photoViewer-navigation-left-arrow-hover-off {
+                    .arrow-top-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, 3px) rotate(45deg);
+                        -webkit-animation: hoverOnArrowOff .5s linear;
+                        -moz-animation: hoverOnArrowOff .5s linear;
+                        -o-animation: hoverOnArrowOff .5s linear;
+                        animation: hoverOnArrowOff .5s linear;
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, -3px) rotate(-45deg);
+                        -webkit-animation: hoverOnArrowOff .5s linear;
+                        -moz-animation: hoverOnArrowOff .5s linear;
+                        -o-animation: hoverOnArrowOff .5s linear;
+                        animation: hoverOnArrowOff .5s linear;
+                    }
+                }
+                .photoViewer-navigation-right-arrow {
+                    .arrow-top-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, 3px)  rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, -3px) rotate(45deg);
+                    }
+                }
+                .photoViewer-navigation-right-arrow-hover-on {
+                    .arrow-top-line {
+                        border: 1px solid rgb(37, 37, 37);
+                        height: 12px;
+                        transform: translate(5px, 3px)  rotate(-45deg);
+                        -webkit-animation: hoverOnArrowOn .5s linear;
+                        -moz-animation: hoverOnArrowOn .5s linear;
+                        -o-animation: hoverOnArrowOn .5s linear;
+                        animation: hoverOnArrowOn .5s linear;
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid rgb(37, 37, 37);
+                        height: 12px;
+                        transform: translate(5px, -3px) rotate(45deg);
+                        -webkit-animation: hoverOnArrowOn .5s linear;
+                        -moz-animation: hoverOnArrowOn .5s linear;
+                        -o-animation: hoverOnArrowOn .5s linear;
+                        animation: hoverOnArrowOn .5s linear;
+                    }
+                }
+                .photoViewer-navigation-right-arrow-hover-off {
+                    .arrow-top-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, 3px)  rotate(-45deg);
+                        -webkit-animation: hoverOnArrowOff .5s linear;
+                        -moz-animation: hoverOnArrowOff .5s linear;
+                        -o-animation: hoverOnArrowOff .5s linear;
+                        animation: hoverOnArrowOff .5s linear;
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(5px, -3px) rotate(45deg);
+                        -webkit-animation: hoverOnArrowOff .5s linear;
+                        -moz-animation: hoverOnArrowOff .5s linear;
+                        -o-animation: hoverOnArrowOff .5s linear;
+                        animation: hoverOnArrowOff .5s linear;
+                    }
+                }
             }
             .photoViewer-pagination {
+                border: 2px solid red;
+                width: 50px;
 
             }
             .photoViewer-close {
-
+                border: 2px solid red;
+                width: 50px;
             }
         }
     }
+}    
+ .arrow-top-line {
+    border: 1px solid rgb(37, 37, 37);
+    -webkit-animation: hoverOnArrowTrue .5s linear;
+    -moz-animation: hoverOnArrowTrue .5s linear;
+    -o-animation: hoverOnArrowTrue .5s linear;
+    animation: hoverOnArrowTrue .5s linear;
+}
+.arrow-bottom-line {
+    border: 1px solid rgb(37, 37, 37);
+    -webkit-animation: hoverOnArrowTrue .5s linear;
+    -moz-animation: hoverOnArrowTrue .5s linear;
+    -o-animation: hoverOnArrowTrue .5s linear;
+    animation: hoverOnArrowTrue .5s linear;
 }
 
 // @media only screen and (max-width: 1310px){
@@ -94,3 +196,37 @@
 //     }
 // }
 
+
+@-webkit-keyframes hoverOnArrowOn {
+    from{border: 1px solid rgb(155, 155, 155);}
+    to{border: 1px solid rgb(37, 37, 37);}
+}
+@-moz-keyframes hoverOnArrowOn {
+    from{border: 1px solid rgb(155, 155, 155);}
+    to{border: 1px solid rgb(37, 37, 37);}
+}
+@-o-keyframes hoverOnArrowOn {
+    from{border: 1px solid rgb(155, 155, 155);}
+    to{border: 1px solid rgb(37, 37, 37);}
+}
+@keyframes hoverOnArrowOn {
+    from{border: 1px solid rgb(155, 155, 155);}
+    to{border: 1px solid rgb(37, 37, 37);}
+}
+
+@-webkit-keyframes hoverOnArrowOff {
+    from{border: 1px solid rgb(37, 37, 37);}
+    to{border: 1px solid rgb(155, 155, 155);}
+}
+@-moz-keyframes hoverOnArrowOff {
+    from{border: 1px solid rgb(37, 37, 37);}
+    to{border: 1px solid rgb(155, 155, 155);}
+}
+@-o-keyframes hoverOnArrowOff {
+    from{border: 1px solid rgb(37, 37, 37);}
+    to{border: 1px solid rgb(155, 155, 155);}
+}
+@keyframes hoverOnArrowOff {
+    from{border: 1px solid rgb(37, 37, 37);}
+    to{border: 1px solid rgb(155, 155, 155);}
+}
