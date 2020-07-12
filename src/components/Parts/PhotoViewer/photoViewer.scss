@@ -1,0 +1,36 @@
+.photoViewer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 600;
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}
+
+// @media only screen and (max-width: 1310px){
+//     .section-1 {
+//         .section-1-data-items {
+//             flex-direction: column;
+//             padding: 80px 100px 80px 100px;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 860px){
+//     .section-1 {
+//         .section-1-data-items {
+//             padding: 60px 80px 60px 80px;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 730px){
+//     .section-1 {
+//         .section-1-data-items {
+//             padding: 40px 60px 40px 60px;
+//         }
+//     }
+// }
+

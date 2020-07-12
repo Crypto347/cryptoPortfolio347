@@ -6,11 +6,27 @@ import React, {
     useEffect, useState
 } from 'react';
 
+import {
+    connect
+} from 'react-redux';
+
 /**
 * Styles
 */
 
 import './home.scss';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Components
@@ -20,6 +36,7 @@ import Toolbar from '../../Parts/Toolbar/toolbar';
 import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
 import Section1 from '../../Parts/Section1/section1';
 import Section2 from '../../Parts/Section2/section2';
+import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 /**
 * Images
@@ -31,7 +48,7 @@ import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unspla
 * Home component definition and export
 */
 
-export const Home = () => {
+export const Home = (props) => {
 
     /**
     * State
@@ -85,9 +102,22 @@ export const Home = () => {
             </div>
             <Section1/>
             <Section2/>
+           {props.photoViewerForPictureBoardTextItem.open ? <PhotoViewer/> : null}
         </div>
     );
 }
 
-export default Home;
+export default connect(
+    (state) => {
+        return {
+            photoViewerForPictureBoardTextItem: Selectors.getPhotoViewerForPictureBoardTextItemState(state)
+        };
+    },
+    (dispatch) => {
+        return {
+            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+        };
+    }
+)(Home);
  

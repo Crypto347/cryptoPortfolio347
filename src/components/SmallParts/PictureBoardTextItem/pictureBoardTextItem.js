@@ -53,6 +53,12 @@ import {
 import * as Actions from '../../../actions';
 
 /**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
+
+/**
 * Images
 */
 
@@ -151,7 +157,7 @@ export const PictureBoardTextItem = (props) => {
 export default connect(
     (state) => {
         return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state)
+            pictphotoViewerForPictureBoardTextItemureBoard: Selectors.getPictureBoardItemsState(state)
         };
     },
     (dispatch) => {
