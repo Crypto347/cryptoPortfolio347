@@ -71,9 +71,9 @@ import {
 * Utility
 */
 
-// import {
-//    EH1
-// } from '../../UtilityComponents';
+import {
+   H19
+} from '../../UtilityComponents';
 
 /**
 * Images
@@ -201,7 +201,7 @@ export const PhotoViewer = (props) => {
                     />
                 </div>
                  {/* {renderImages()} */}
-                 <div className="photoViewer-image-items"></div>
+                <div className="photoViewer-image-items"></div>
                 <div className="photoViewer-toolbar">
                     <div className="photoViewer-navigation">
                         <div 
@@ -220,24 +220,8 @@ export const PhotoViewer = (props) => {
                             <div className="arrow-top-line"/>
                             <div className="arrow-bottom-line"/>
                         </div>
-                        {/* <FontAwesomeIcon 
-                            icon={faChevronLeft} 
-                            size="2x" 
-                            color={isHoveringLeftArrow ? "rgb(37, 37, 37)" : "rgb(155, 155, 155)"}
-                            onClick={() => iconOnClick(props.imagesArray)}
-                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
-                            onMouseLeave={() => handleMouseLeave('leftArrow')}
-                        />
-                        <FontAwesomeIcon 
-                            icon={faChevronRight} 
-                            size="2x" 
-                            color={isHoveringRightArrow ? "rgb(37, 37, 37)" : ""}
-                            onClick={() => iconOnClick(props.imagesArray)}
-                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
-                            onMouseLeave={() => handleMouseLeave('rightArrow')}
-                        /> */}
                     </div>
-                    <div className="photoViewer-pagination"></div>
+                    <H19 className="h19-nobel">{`4 / 8`}</H19>
                     <div 
                         className="photoViewer-close"
                         onMouseEnter={() => handleMouseEnter('closeButton')} 
