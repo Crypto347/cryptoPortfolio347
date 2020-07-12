@@ -1,12 +1,72 @@
 .photoViewer {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 600;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 800;
     position: fixed;
     overflow: hidden;
     left: 0;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .photoViewer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 625px;
+        height: 100vh;
+        .photoViewer-full-screen {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            left: 20px;
+            cursor: pointer;
+        }
+        .photoViewer-image-items{
+            height: 457px;
+            border: 2px solid red;
+        }
+        .photoViewer-toolbar {
+            border: 2px solid red;
+            height: 60px;
+            .photoViewer-navigation {
+                cursor: pointer;
+                .photoViewer-navigation-left-arrow{
+                //     .arrow-top-line {
+                //         border: 1px solid black;
+                //         height: 5px;
+                //         transform: translate(-1px, 1px) rotate(-45deg);
+                //    }
+                //    .arrow-bottom-line {
+                //         border: 1px solid black;
+                //         height: 5px;
+                //         transform: translate(-1px, -1px) rotate(45deg);
+                //    }
+                    
+                }
+                .photoViewer-navigation-right-arrow{
+                //     .arrow-top-line {
+                //         border: 1px solid black;
+                //         height: 5px;
+                //         transform: translate(-1px, 1px) rotate(-45deg);
+                //    }
+                //    .arrow-bottom-line {
+                //         border: 1px solid black;
+                //         height: 5px;
+                //         transform: translate(-1px, -1px) rotate(45deg);
+                //    }
+                }
+
+            }
+            .photoViewer-pagination {
+
+            }
+            .photoViewer-close {
+
+            }
+        }
+    }
 }
 
 // @media only screen and (max-width: 1310px){

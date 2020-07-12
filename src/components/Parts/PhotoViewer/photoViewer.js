@@ -15,6 +15,10 @@ import {
     connect
 } from 'react-redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
 import {
     bindActionCreators
 } from 'redux';
@@ -53,6 +57,17 @@ import * as Selectors from '../../../reducers/selectors';
 import * as Services from "../../../service";
 
 /**
+* Icons
+*/
+
+import { 
+    faChevronLeft,
+    faChevronRight,
+    faExpand
+} from '@fortawesome/free-solid-svg-icons';
+
+
+/**
 * Utility
 */
 
@@ -83,7 +98,10 @@ export const PhotoViewer = (props) => {
 
     // const [menuIsShown, setMenuIsShown] = useState(false);
     // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    // const [isHovering, setIsHovering] = useState(null);
+    const [isHoveringExpand, setIsHoveringExpand] = useState(false);
+    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState(false);
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState(false);
+    const [isHoveringCloseButton, setIsHoveringCloseButton] = useState(false);
 
     /**
     * Methods
@@ -95,27 +113,46 @@ export const PhotoViewer = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'expand': 
+                setIsHoveringExpand(true);
+            break;
+            case 'leftArrow': 
+                setIsHoveringLeftArrow(true);
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow(true);
+                break;
+            case 'closeArrow': 
+                setIsHoveringCloseButton(true);
+                break;
+        }
+    }
 
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'expand': 
+                setIsHoveringExpand(false);
+                break;
+            case 'leftArrow': 
+                setIsHoveringLeftArrow(false);
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow(false);
+                break;
+            case 'closeArrow': 
+                setIsHoveringCloseButton(false);
+                break;
+        }
+    }
 
-    const renderSection1DataItems = () => {
+    const renderImages = () => {
         return(
-            <div className="section-1-data-items">{props.section1DataItems.map((el,i) => {
+            <div className="photoViewer-image-items">{props.imagesArray.map((el,i) => {
                 return(
                     <div key={i}>
-                        <EH1/>
-                        <Section1DateItem 
-                            // key={i}
-                            header={el.header}
-                            text={el.text}
-                            path={el.path}
-                        />
-                        <EH1/>
+                     
                     </div>
                 )
             })}</div>
@@ -129,6 +166,56 @@ export const PhotoViewer = (props) => {
 
     return(
         <div className="photoViewer">
+            <div className="photoViewer-wrapper">
+                <div className="photoViewer-full-screen">
+                    <FontAwesomeIcon 
+                        icon={faExpand} 
+                        size="lg" 
+                        color={isHoveringExpand ? "white" : "rgb(155, 155, 155)"}
+                        onClick={() => iconOnClick(props.imagesArray)}
+                        onMouseEnter={() => handleMouseEnter('expand')} 
+                        onMouseLeave={() => handleMouseLeave('expand')}
+                    />
+                </div>
+                 {/* {renderImages()} */}
+                 <div className="photoViewer-image-items"></div>
+                <div className="photoViewer-toolbar">
+                    <div className="photoViewer-navigation">
+                        <div className="photoViewer-navigation-left-arrow">
+                            <div className="arrow-top-line"/>
+                            <div className="arrow-bottom-line"/>
+                        </div>
+                        <div className="photoViewer-navigation-right-arrow">
+                            <div className="arrow-top-line"/>
+                            <div className="arrow-bottom-line"/>
+                        </div>
+                        {/* <FontAwesomeIcon 
+                            icon={faChevronLeft} 
+                            size="2x" 
+                            color={isHoveringLeftArrow ? "rgb(37, 37, 37)" : "rgb(155, 155, 155)"}
+                            onClick={() => iconOnClick(props.imagesArray)}
+                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                            onMouseLeave={() => handleMouseLeave('leftArrow')}
+                        />
+                        <FontAwesomeIcon 
+                            icon={faChevronRight} 
+                            size="2x" 
+                            color={isHoveringRightArrow ? "rgb(37, 37, 37)" : "rgb(155, 155, 155)"}
+                            onClick={() => iconOnClick(props.imagesArray)}
+                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                            onMouseLeave={() => handleMouseLeave('rightArrow')}
+                        /> */}
+                    </div>
+                    <div className="photoViewer-pagination"></div>
+                    <div 
+                        className="photoViewer-close"
+                        onMouseEnter={() => handleMouseEnter('closeButton')} 
+                        onMouseLeave={() => handleMouseLeave('closeButton')}
+                    >
+                        
+                    </div>
+                </div>
+            </div>
             {/* {renderSection1DataItems()} */}
         </div>
     );
