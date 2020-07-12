@@ -17,6 +17,10 @@ import uuid from "uuid";
 
 export const initialState = {
     menuItems: [],
+    photoViewerForPictureBoardTextItem: {
+        open: false,
+        arrayOfImages: []
+    }
 }
 
 const initMenuItems = (state, action) => {
@@ -26,6 +30,18 @@ const initMenuItems = (state, action) => {
     };
 }
 
+const photoViewerOpen = (state, action) => {
+    let updatedPhotoViewerForPictureBoardTextItem = {
+        ...state.photoViewerForPictureBoardTextItem,
+        open: action.val,
+        arrayOfImages: action.array
+    }
+    
+    return {
+        ...state,
+        photoViewerForPictureBoardTextItem: updatedPhotoViewerForPictureBoardTextItem,
+    };
+}
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -146,6 +162,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
             return initMenuItems(state, action); 
+        case actionTypes.PHOTO_VIEWER_OPEN:
+            return photoViewerOpen(state, action); 
         default: 
             return state;
     }

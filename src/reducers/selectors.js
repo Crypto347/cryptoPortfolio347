@@ -37,4 +37,11 @@ export const getOurProcessDataState = createSelector(
     (x) => x
 );
 
+const getPhotoViewerForPictureBoardTextItem = (state) => state.home.photoViewerForPictureBoardTextItem;
+
+export const getPhotoViewerForPictureBoardTextItemState = createSelector(
+    [getPhotoViewerForPictureBoardTextItem],
+    (x) => x
+);
+
 

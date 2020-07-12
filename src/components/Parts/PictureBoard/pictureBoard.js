@@ -117,6 +117,7 @@ export const PictureBoard = (props) => {
                                 option={el.option}
                                 header={el.header}
                                 text={el.text}
+                                imagesArray={el.pictures}
                                 // path={el.path}
                             />
                         // </div>

@@ -10,6 +10,14 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
+
 import { 
     CSSTransition 
 } from 'react-transition-group';
@@ -37,6 +45,12 @@ import {
 import { 
     faEye
 } from '@fortawesome/free-solid-svg-icons';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * Images
@@ -103,6 +117,10 @@ export const PictureBoardTextItem = (props) => {
     //     props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
     // }
 
+    const iconOnClick = (array) => {
+        props.photoViewerOpen(true, array);
+    }
+
     /**
     * Markup
     */
@@ -119,10 +137,27 @@ export const PictureBoardTextItem = (props) => {
                 <H40 className={isHovering ? "h40-white-teko" : "h40-nero-teko"}>{props.text}</H40>
             </div>
             <div className="picture-board-text-item-icon">
-                <FontAwesomeIcon icon={faEye} size="1x" color={isHovering ? "white" : "rgb(37, 37, 37)"}/>
+                <FontAwesomeIcon 
+                    icon={faEye} 
+                    size="1x" 
+                    color={isHovering ? "white" : "rgb(37, 37, 37)"}
+                    onClick={() => iconOnClick(props.imagesArray)}
+                />
             </div>
         </div>
     );
 }
 
-export default PictureBoardTextItem;
+export default connect(
+    (state) => {
+        return {
+            // pictureBoard: Selectors.getPictureBoardItemsState(state)
+        };
+    },
+    (dispatch) => {
+        return {
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+        };
+    }
+)(PictureBoardTextItem);
