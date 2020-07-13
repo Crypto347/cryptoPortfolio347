@@ -63,7 +63,8 @@ import * as Services from "../../../service";
 import { 
     faChevronLeft,
     faChevronRight,
-    faExpand
+    faExpand,
+    faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -100,8 +101,8 @@ export const PhotoViewer = (props) => {
     // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [isHoveringExpand, setIsHoveringExpand] = useState(false);
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
-    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("off");
-    const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("off");
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
+    const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
 
     /**
     * Methods
@@ -124,7 +125,7 @@ export const PhotoViewer = (props) => {
             case 'rightArrow': 
                 setIsHoveringRightArrow('on');
                 break;
-            case 'closeArrow': 
+            case 'closeButton': 
                 setIsHoveringCloseButton('on');
                 break;
         }
@@ -141,7 +142,7 @@ export const PhotoViewer = (props) => {
             case 'rightArrow': 
                 setIsHoveringRightArrow('off');
                 break;
-            case 'closeArrow': 
+            case 'closeButton': 
                 setIsHoveringCloseButton('off');
                 break;
         }
@@ -180,6 +181,30 @@ export const PhotoViewer = (props) => {
                     return "photoViewer-navigation-right-arrow-hover-off"
             }
         }
+        if(opt === "closeButtonText"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lora";
+                case 'on':
+                    return "h19-nobel-lora-nero-hover-on";
+                case 'off':
+                    return "h19-nobel-lora-nero-hover-off"
+            }
+        }
+
+        if(opt === "closeButton"){
+            switch(isHovering){
+                case 'init':
+                    return "photoViewer-close-wrapper";
+                case 'on':
+                    return "photoViewer-close-wrapper-hover-on";
+                case 'off':
+                    return "photoViewer-close-wrapper-hover-off"
+            }
+        }
+
+
+        
     }
 
 
@@ -223,11 +248,15 @@ export const PhotoViewer = (props) => {
                     </div>
                     <H19 className="h19-nobel">{`4 / 8`}</H19>
                     <div 
-                        className="photoViewer-close"
+                        className={renderClassName("closeButton", isHoveringCloseButton)}
                         onMouseEnter={() => handleMouseEnter('closeButton')} 
                         onMouseLeave={() => handleMouseLeave('closeButton')}
                     >
-                        
+                        <H19 className={renderClassName("closeButtonText", isHoveringCloseButton)}>Close</H19>
+                        <div className="photoViewer-close">
+                            <div className="close-first-line"/>
+                            <div className="close-second-line"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,7 +268,7 @@ export const PhotoViewer = (props) => {
 export default connect(
     (state) => {
         return {
-            // section1DataItems: Selectors.getSection1DateItemsState(state)
+            section1DataItems: Selectors.getSection1DateItemsState(state)
         };
     },
     (dispatch) => {

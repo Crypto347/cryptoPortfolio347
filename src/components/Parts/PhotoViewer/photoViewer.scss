@@ -144,27 +144,79 @@
                     }
                 }
             }
-            .photoViewer-close {
-                border: 2px solid red;
+            .photoViewer-close-wrapper {
+                display: flex;
                 width: 50px;
+                margin: 0px 27px 0px 20px;
+                cursor: pointer;
+                .photoViewer-close {
+                    .close-first-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(7px, 6px) rotate(45deg);
+                    }
+                    .close-second-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(7px, -8px) rotate(-45deg);
+                    }
+                }
+            }
+            .photoViewer-close-wrapper-hover-on {
+                display: flex;
+                width: 50px;
+                margin: 0px 27px 0px 20px;
+                cursor: pointer;
+                .photoViewer-close {
+                    .close-first-line {
+                        border: 1px solid rgb(37, 37, 37);
+                        height: 12px;
+                        transform: translate(7px, 6px) rotate(45deg);
+                        -webkit-animation: hoverOnArrowOn .5s linear;
+                        -moz-animation: hoverOnArrowOn .5s linear;
+                        -o-animation: hoverOnArrowOn .5s linear;
+                        animation: hoverOnArrowOn .5s linear;
+                    }
+                    .close-second-line {
+                        border: 1px solid rgb(37, 37, 37);
+                        height: 12px;
+                        transform: translate(7px, -8px) rotate(-45deg);
+                        -webkit-animation: hoverOnArrowOn .5s linear;
+                        -moz-animation: hoverOnArrowOn .5s linear;
+                        -o-animation: hoverOnArrowOn .5s linear;
+                        animation: hoverOnArrowOn .5s linear;
+                    }
+                }
+            }
+            .photoViewer-close-wrapper-hover-off {
+                display: flex;
+                width: 50px;
+                margin: 0px 27px 0px 20px;
+                cursor: pointer;
+                .photoViewer-close {
+                    .close-first-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(7px, 6px) rotate(45deg);
+                        -webkit-animation: hoverOnArrowOff .5s linear;
+                        -moz-animation: hoverOnArrowOff .5s linear;
+                        -o-animation: hoverOnArrowOff .5s linear;
+                        animation: hoverOnArrowOff .5s linear;
+                    }
+                    .close-second-line {
+                        border: 1px solid rgb(155, 155, 155);
+                        height: 12px;
+                        transform: translate(7px, -8px) rotate(-45deg);
+                        -webkit-animation: hoverOnArrowOff .5s linear;
+                        -moz-animation: hoverOnArrowOff .5s linear;
+                        -o-animation: hoverOnArrowOff .5s linear;
+                        animation: hoverOnArrowOff .5s linear;
+                    }
+                }
             }
         }
     }
 }    
- .arrow-top-line {
-    border: 1px solid rgb(37, 37, 37);
-    -webkit-animation: hoverOnArrowTrue .5s linear;
-    -moz-animation: hoverOnArrowTrue .5s linear;
-    -o-animation: hoverOnArrowTrue .5s linear;
-    animation: hoverOnArrowTrue .5s linear;
-}
-.arrow-bottom-line {
-    border: 1px solid rgb(37, 37, 37);
-    -webkit-animation: hoverOnArrowTrue .5s linear;
-    -moz-animation: hoverOnArrowTrue .5s linear;
-    -o-animation: hoverOnArrowTrue .5s linear;
-    animation: hoverOnArrowTrue .5s linear;
-}
 
 // @media only screen and (max-width: 1310px){
 //     .section-1 {
