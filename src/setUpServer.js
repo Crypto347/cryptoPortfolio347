@@ -25,7 +25,8 @@ app.get('/api/headerImagesArray', (req, res) => {
             headerText: "Crypto",
             text1: "Hello.",
             text2: "What can we",
-            text3: "help you with?"
+            text3: "help you with?",
+            alt: "Crypto"
         },
         {
             id: 2,
@@ -33,7 +34,8 @@ app.get('/api/headerImagesArray', (req, res) => {
             headerText: "Brand",
             text1: "Hello.",
             text2: "What can we",
-            text3: "help you with?"
+            text3: "help you with?",
+            alt: "Brand"
         },
         {
             id: 3,
@@ -41,7 +43,8 @@ app.get('/api/headerImagesArray', (req, res) => {
             headerText: "Hello",
             text1: "Design.",
             text2: "What can we",
-            text3: "help you with?"
+            text3: "help you with?",
+            alt: "Design"
         }
     ]
     res.json(headerImg);

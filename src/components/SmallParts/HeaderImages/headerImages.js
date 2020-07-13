@@ -82,6 +82,15 @@ import DefaultImage from '../../../images/error.jpg';
 
 
 /**
+* Utility
+*/
+
+import {
+    H19
+ } from '../../UtilityComponents';
+
+
+/**
 * HeaderImages component definition and export
 */
 
@@ -102,7 +111,8 @@ export const HeaderImages = (props) => {
             headerText: "Crypto",
             text1: "Hello.",
             text2: "What can we",
-            text3: "help you with?"
+            text3: "help you with?",
+            alt: "Crypto"
         }
     );
     const [switchButtons, setSwitchButtons] = useState([
@@ -170,8 +180,8 @@ export const HeaderImages = (props) => {
                 return Image2;
             case 'Image3':
                 return Image3;
-            default:
-                return DefaultImage;
+            // default:
+            //     return DefaultImage;
         }
     }
 
@@ -277,20 +287,19 @@ export const HeaderImages = (props) => {
         }
     }
 
-    /**
-    * Markup
-    */
-
-    return(
-        <div className="header-images">
-            {renderSwitchButtons()}
-            {props.headerImages.loading ? 
+    const renderImages = () => {
+        if(props.headerImages.loading && !props.headerImages.error){
+            return(
                 <div 
                     className="header-images-loading"
                     style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
                 >
                     <Loading/>
-                </div> :
+                </div>
+            )
+        }
+        if(!props.headerImages.loading && !props.headerImages.error){
+            return(
                 <>
                     <div 
                         className={`${imgShow ? "header-text-back" : "hide"}`}
@@ -339,13 +348,34 @@ export const HeaderImages = (props) => {
                     </div>
                     
                     <div className={`${imgShow ? "header-image" : "hide"}`}>
-                        <img src={loadImage(img.imgName)}/>
+                        <img src={loadImage(img.imgName)} alt={img.alt}/>
                     </div>
                     <div className={`${!imgShow ? "header-image" : "hide"}`}>
-                        <img src={loadImage(img.imgName)}/>
+                        <img src={loadImage(img.imgName)} alt={img.alt}/>
                     </div>
                 </>
-            }
+            )
+        }
+        if(!props.headerImages.loading && props.headerImages.error){
+            return(
+                <div 
+                    className="header-images-error"
+                    style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
+                >
+                    <H19 className="h19-nobel-lora">{`${props.headerImages.error}`}</H19>
+                </div>
+            )
+        }
+    }
+
+    /**
+    * Markup
+    */
+
+    return(
+        <div className="header-images">
+            {renderSwitchButtons()}
+            {renderImages()}
         </div>
     );
 }

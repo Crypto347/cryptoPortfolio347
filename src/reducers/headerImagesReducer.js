@@ -33,7 +33,7 @@ const fetchHeaderImagesSuccess = (state, action) => {
     return {
         ...state,
         loading: false,
-        items: action.array
+        items: action.array,
     };
 }
 
