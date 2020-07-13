@@ -45,7 +45,7 @@ import './headerImages.scss';
 /**
 * Components
 */
-
+import Loading from '../../SmallParts/Loading/loading';
 import Button from '../../../library/Button/button';
 
 /**
@@ -284,7 +284,13 @@ export const HeaderImages = (props) => {
     return(
         <div className="header-images">
             {renderSwitchButtons()}
-            {props.headerImages.loading ? null :
+            {props.headerImages.loading ? 
+                <div 
+                    className="header-images-loading"
+                    style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
+                >
+                    <Loading/>
+                </div> :
                 <>
                     <div 
                         className={`${imgShow ? "header-text-back" : "hide"}`}

@@ -18,7 +18,7 @@ import uuid from "uuid";
 export const initialState = {
     menuItems: [],
     photoViewerForPictureBoardTextItem: {
-        open: true,
+        open: false,
         arrayOfImages: []
     }
 }

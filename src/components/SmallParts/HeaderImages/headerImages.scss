@@ -2,6 +2,16 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    .header-images-loading {
+        position: absolute;
+        top: 128px;
+        width: 770px;
+        height: 480px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 600;
+    }
    .switch-buttons {
        width: 60px;
        position: relative;
@@ -166,6 +176,11 @@
 
 @media only screen and (max-width: 1120px){
     .header-images {
+        .header-images-loading {
+            width: 650px;
+            height: 400px;
+            top: 129px;
+        }
         .header-text-back {
             // position: absolute;
             font-size: 150px;
@@ -261,6 +276,11 @@
 
 @media only screen and (max-width: 860px){
     .header-images {
+        .header-images-loading {
+            width: 550px;
+            height: 350px;
+            // top: 129px;
+        }
         .header-text-back {
             // position: absolute;
             font-size: 130px;
@@ -276,7 +296,7 @@
        }
        .header-text-front-crop {
     //         position: absolute;
-            top: 129px;
+            // top: 129px;
     //         overflow: hidden;
             width: 550px;
             height: 350px;
@@ -356,6 +376,11 @@
 
 @media only screen and (max-width: 730px){
     .header-images {
+        .header-images-loading {
+            width: 450px;
+            height: 300px;
+            // top: 128px;
+        }
         .header-text-back {
             // position: absolute;
             font-size: 120px;
@@ -371,7 +396,7 @@
        }
        .header-text-front-crop {
     //         position: absolute;
-            top: 129px;
+            // top: 129px;
     //         overflow: hidden;
             width: 450px;
             height: 300px;
@@ -451,6 +476,11 @@
 
 @media only screen and (max-width: 600px){
     .header-images {
+        .header-images-loading {
+            width: 350px;
+            height: 260px;
+            // top: 128px;
+        }
         .header-text-back {
             // position: absolute;
             font-size: 100px;
@@ -466,7 +496,7 @@
        }
        .header-text-front-crop {
     //         position: absolute;
-            top: 129px;
+            // top: 129px;
     //         overflow: hidden;
             width: 350px;
             height: 260px;
