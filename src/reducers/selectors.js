@@ -9,10 +9,10 @@ export const getMenuItemsState = createSelector(
     (x) => x
 );
 
-const getHeaderImagesItems = (state) => state.headerImages.items;
+const getHeaderImages = (state) => state.headerImages;
 
-export const getHeaderImagesItemsState = createSelector(
-    [getHeaderImagesItems],
+export const getHeaderImagesState = createSelector(
+    [getHeaderImages],
     (x) => x
 );
 

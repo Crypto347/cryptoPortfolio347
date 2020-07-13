@@ -191,7 +191,7 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
-        let headerImageObj = props.headerImagesItems.find(item => item.id === id);
+        let headerImageObj = props.headerImages.items.find(item => item.id === id);
         setImg(headerImageObj);
         setImgShow(!imgShow);
     }
@@ -284,59 +284,62 @@ export const HeaderImages = (props) => {
     return(
         <div className="header-images">
             {renderSwitchButtons()}
-            <div 
-                className={`${imgShow ? "header-text-back" : "hide"}`}
-                style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
-            >
-                {img.headerText}
-            </div>
-            <div 
-                className={`${!imgShow ? "header-text-back" : "hide"}`}
-                style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
-            >
-                {img.headerText}
-            </div>
-            <div 
-                className="header-text-front-crop" 
-                style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
-            >
-                <div className={`${imgShow ? "header-text-front" : "hide"}`}>
-                    {img.headerText}
-                </div>
-                <div className={`${!imgShow ? "header-text-front" : "hide"}`}>
-                    {img.headerText}
-                </div>
-                <div className={`${imgShow ? "header-text" : "hide"}`}>
-                    <div className="header-text-wrapper">
-                        <div className="header-text-bold">{img.text1}</div>
-                        <div className="header-text-regular-1">{img.text2}</div>
+            {props.headerImages.loading ? null :
+                <>
+                    <div 
+                        className={`${imgShow ? "header-text-back" : "hide"}`}
+                        style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
+                    >
+                        {img.headerText}
                     </div>
-                    <div className="header-text-regular-2">{img.text3}</div>
-                </div>
-                <div className={`${!imgShow ? "header-text" : "hide"}`}>
-                    <div className="header-text-wrapper">
-                        <div className="header-text-bold">{img.text1}</div>
-                        <div className="header-text-regular-1">{img.text2}</div>
+                    <div 
+                        className={`${!imgShow ? "header-text-back" : "hide"}`}
+                        style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
+                    >
+                        {img.headerText}
                     </div>
-                    <div className="header-text-regular-2">{img.text3}</div>
-                </div>
-                <Button
-                    className={`${imgShow ? "header-get-direction" : "hide"}`}
-                    text="get direction."
-                />
-                <Button
-                    className={`${!imgShow ? "header-get-direction" : "hide"}`}
-                    text="get direction."
-                />
-            </div>
-           
-            <div className={`${imgShow ? "header-image" : "hide"}`}>
-                <img src={loadImage(img.imgName)}/>
-            </div>
-            <div className={`${!imgShow ? "header-image" : "hide"}`}>
-                <img src={loadImage(img.imgName)}/>
-            </div>
-            {/* { console.log(renderSubtractedPxForTextBack())} */}
+                    <div 
+                        className="header-text-front-crop" 
+                        style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
+                    >
+                        <div className={`${imgShow ? "header-text-front" : "hide"}`}>
+                            {img.headerText}
+                        </div>
+                        <div className={`${!imgShow ? "header-text-front" : "hide"}`}>
+                            {img.headerText}
+                        </div>
+                        <div className={`${imgShow ? "header-text" : "hide"}`}>
+                            <div className="header-text-wrapper">
+                                <div className="header-text-bold">{img.text1}</div>
+                                <div className="header-text-regular-1">{img.text2}</div>
+                            </div>
+                            <div className="header-text-regular-2">{img.text3}</div>
+                        </div>
+                        <div className={`${!imgShow ? "header-text" : "hide"}`}>
+                            <div className="header-text-wrapper">
+                                <div className="header-text-bold">{img.text1}</div>
+                                <div className="header-text-regular-1">{img.text2}</div>
+                            </div>
+                            <div className="header-text-regular-2">{img.text3}</div>
+                        </div>
+                        <Button
+                            className={`${imgShow ? "header-get-direction" : "hide"}`}
+                            text="get direction."
+                        />
+                        <Button
+                            className={`${!imgShow ? "header-get-direction" : "hide"}`}
+                            text="get direction."
+                        />
+                    </div>
+                    
+                    <div className={`${imgShow ? "header-image" : "hide"}`}>
+                        <img src={loadImage(img.imgName)}/>
+                    </div>
+                    <div className={`${!imgShow ? "header-image" : "hide"}`}>
+                        <img src={loadImage(img.imgName)}/>
+                    </div>
+                </>
+            }
         </div>
     );
 }
@@ -344,7 +347,7 @@ export const HeaderImages = (props) => {
 export default connect(
     (state) => {
         return {
-            headerImagesItems: Selectors.getHeaderImagesItemsState(state)
+            headerImages: Selectors.getHeaderImagesState(state)
         };
     },
     (dispatch) => {

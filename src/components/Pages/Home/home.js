@@ -102,7 +102,7 @@ export const Home = (props) => {
             </div>
             <Section1/>
             <Section2/>
-           {props.photoViewerForPictureBoardTextItem.open ? <PhotoViewer/> : null}
+            {props.photoViewerForPictureBoardTextItem.open ? <PhotoViewer/> : null}
         </div>
     );
 }
@@ -110,7 +110,8 @@ export const Home = (props) => {
 export default connect(
     (state) => {
         return {
-            photoViewerForPictureBoardTextItem: Selectors.getPhotoViewerForPictureBoardTextItemState(state)
+            photoViewerForPictureBoardTextItem: Selectors.getPhotoViewerForPictureBoardTextItemState(state),
+        
         };
     },
     (dispatch) => {
