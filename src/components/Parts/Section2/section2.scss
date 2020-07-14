@@ -23,17 +23,33 @@
     // border-radius: 255px 70px 225px 30px/70px 225px 30px 255px;
 }
 
+.section-2-loading-error {
+    height: 1100px;
+    background-image: url('../../../images/background/augustine-wong-3Om4DHcaAc0-unsplash.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    .section-2-wrapper {
+        height: 475px;
+        padding: 80px;
+        text-align: center;
+        background: rgb(37, 37, 37);
+    }
+}
+
 @media only screen and (max-width: 1250px){
     .section-2 {
         height: 4290px;
-    }
-    
+    }    
 }
 
 
 @media only screen and (max-width: 945px){
     .section-2 {
         height: 4390px;
+    }
+    .section-2-loading-error {
+        height: 1940px;
     }
 }
 
@@ -53,17 +69,26 @@
     .section-2 {
         height: 7180px;
     }
+    .section-2-loading-error {
+        height: 2050px;
+    }
 }
 
 @media only screen and (max-width: 330px){
     .section-2 {
         height: 7230px;
     }
+    .section-2-loading-error {
+        height: 2100px;
+    }
 }
 
 @media only screen and (max-width: 300px){
     .section-2 {
         height: 7260px;
+    }
+    .section-2-loading-error {
+        height: 2150px;
     }
 }
 // @media only screen and (max-width: 1310px){

@@ -1,6 +1,9 @@
 .picture-board {
     display: flex;
     justify-content: center;
+    .picture-board-loading-error {
+        height: 263px;
+    }
     .picture-board-items {
         display: flex;
         flex-direction: column;

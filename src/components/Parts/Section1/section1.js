@@ -143,12 +143,11 @@ export const Section1 = (props) => {
         if(!props.section1Data.loading && props.section1Data.error){
             return(
                 <div className="section1-loading-error">
-                    <H19 className="h19-nobel-lora">{`${props.section1Data.error} data`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.section1Data.error}`}</H19>
                 </div>
             )
         }
     } 
-
 
     /**
     * Markup

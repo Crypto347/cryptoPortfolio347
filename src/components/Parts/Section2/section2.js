@@ -96,12 +96,21 @@ export const Section2 = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
+    const renderClassName = (loading, error) => {
+        if(loading && !error || !loading && error){
+            return "section-2-loading-error"
+        }
+        if(!loading && !error){
+            return "section-2"
+        }
+    }
+
     /**
     * Markup
     */
 
     return(
-        <div className="section-2">
+        <div className={renderClassName(props.pictureBoard.loading, props.pictureBoard.error)}>
             <div className="section-2-wrapper">
                 <H130 className="h130-white-teko">Work.</H130>
                 <EH3/>
@@ -120,7 +129,7 @@ export const Section2 = (props) => {
 export default connect(
     (state) => {
         return {
-            // section1DataItems: Selectors.getSection1DateItemsState(state)
+            pictureBoard: Selectors.getPictureBoardItemsState(state)
         };
     },
     (dispatch) => {

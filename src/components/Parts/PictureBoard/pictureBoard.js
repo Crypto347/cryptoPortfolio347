@@ -33,6 +33,7 @@ import './pictureBoard.scss';
 * Components
 */
 
+import Loading from '../../SmallParts/Loading/loading';
 import PictureBoardTextItem from '../../SmallParts/PictureBoardTextItem/pictureBoardTextItem';
 import PictureBoardImageItem from '../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
 
@@ -59,13 +60,12 @@ import * as Services from "../../../service";
 */
 
 import {
-   EH1
+   H19
 } from '../../UtilityComponents';
 
 /**
 * Images
 */
-
 
 
 /**
@@ -104,6 +104,30 @@ export const PictureBoard = (props) => {
     // const handleMouseLeave = () => {
     //     setIsHovering(false);
     // }
+
+    const renderPictureBoard = () => {
+        if(props.pictureBoard.loading && !props.pictureBoard.error){
+            return(
+                <div className="picture-board-loading-error">
+                    <Loading color="white"/>
+                </div>
+            )
+        }
+        if(!props.pictureBoard.loading && !props.pictureBoard.error){
+            return(
+                <>
+                    {renderPictureBoardItems()}
+                </>
+            )
+        }
+        if(!props.pictureBoard.loading && props.pictureBoard.error){
+            return(
+                <div className="picture-board-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.pictureBoard.error}`}</H19>
+                </div>
+            )
+        }
+    } 
 
     const renderPictureBoardItems = () => {
         return(
@@ -149,7 +173,7 @@ export const PictureBoard = (props) => {
 
     return(
         <div className="picture-board" id="pictureBoard">
-            {renderPictureBoardItems()}
+            {renderPictureBoard()}
         </div>
     );
 }

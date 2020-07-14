@@ -294,7 +294,7 @@ export const HeaderImages = (props) => {
                     className="header-images-loading"
                     style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
                 >
-                    <Loading color="#fff"/>
+                    <Loading color="white"/>
                 </div>
             )
         }
@@ -362,7 +362,7 @@ export const HeaderImages = (props) => {
                     className="header-images-error"
                     style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
                 >
-                    <H19 className="h19-nobel-lora">{`${props.headerImages.error} data`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.headerImages.error}`}</H19>
                 </div>
             )
         }
