@@ -33,6 +33,8 @@ import './ourProcess.scss';
 * Components
 */
 
+import Loading from '../../SmallParts/Loading/loading';
+
 /**
 * Actions
 */
@@ -58,8 +60,9 @@ import * as Services from "../../../service";
 import {
    H45,
    H25,
+   H19,
    EH3,
-   EH2
+   EH2,
 } from '../../UtilityComponents';
 
 /**
@@ -140,6 +143,30 @@ export const OurProcess = (props) => {
         )
     }
 
+    const renderOurProcess = () => {
+        if(props.ourProcessDate.loading && !props.ourProcessDate.error){
+            return(
+                <div className="our-process-loading-error">
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.ourProcessDate.loading && !props.ourProcessDate.error){
+            return(
+                <>
+                    {renderOurProcessItems()}
+                </>
+            )
+        }
+        if(!props.ourProcessDate.loading && props.ourProcessDate.error){
+            return(
+                <div className="picture-board-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.ourProcessDate.error}`}</H19>
+                </div>
+            )
+        }
+    } 
+
 
     /**
     * Markup
@@ -149,7 +176,7 @@ export const OurProcess = (props) => {
         <div className="our-process">
             <H45 className="h45-black-lustria">Our Process</H45>
             <EH3/>
-            {renderOurProcessItems()}
+            {renderOurProcess()}
         </div>
     );
 }

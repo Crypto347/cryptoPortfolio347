@@ -204,16 +204,16 @@ export const PictureBoardImageItem = (props) => {
     /**
     * State
     */
-    const [isHovering, setIsHovering] = useState(false);
-    const [imgToLoad, setImgToLoad] = useState("");
-    const divRef = React.useRef();
+    // const [isHovering, setIsHovering] = useState(false);
+    const [imgToLoad, setImgToLoad] = useState({});
+    // const divRef = React.useRef();
 
     /**
     * Methods
     */
 
     useEffect(() => {   
-        setImgToLoad(props.imagesArray[0].key);
+        setImgToLoad(props.imagesArray[0]);
         let imgCoordinateRange; 
         switch(props.id){
             case 1:
@@ -289,11 +289,11 @@ export const PictureBoardImageItem = (props) => {
             coordinatesArray.map((el, i) => {
                 if(i !== coordinatesArray.length - 1){
                     if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
-                        setImgToLoad(props.imagesArray[i].key);
+                        setImgToLoad(props.imagesArray[i]);
                     }
                 }else{
                     if(coordinatesArray[i] < pageX && pageX < imgCoordinateRange.rightCoordinate){
-                        setImgToLoad(props.imagesArray[i].key);
+                        setImgToLoad(props.imagesArray[i]);
                     }
                 }
                
@@ -452,7 +452,7 @@ export const PictureBoardImageItem = (props) => {
             case 'col47':
                 return col47;
             default:
-                return DefaultImage;
+                return "";
         }
     }
 
@@ -466,7 +466,7 @@ export const PictureBoardImageItem = (props) => {
             id={`pictureBoardImageItem${props.id}`}
         >
             <div className={props.option === "colorful" ? "picture-board-image" : "picture-board-image-black-and-white"}>
-                <img src={loadImg(imgToLoad)}/>
+                <img src={loadImg(imgToLoad.key)} alt={imgToLoad.alt}/>
             </div>
         </div>
     );

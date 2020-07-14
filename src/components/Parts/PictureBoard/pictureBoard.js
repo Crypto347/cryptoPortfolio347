@@ -154,6 +154,7 @@ export const PictureBoard = (props) => {
                                 id={el.id}
                                 option={el.option}
                                 imagesArray={el.pictures}
+                                alt={el.alt}
                                 // coordX={}
                                 // header={el.header}
                                 // text={el.text}

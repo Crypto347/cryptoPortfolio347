@@ -1,5 +1,8 @@
 .our-process {
     text-align: center;
+    .our-process-loading-error {
+        height: 200px;
+    }
     .our-process-items{
         display: flex;
         justify-content: space-evenly;

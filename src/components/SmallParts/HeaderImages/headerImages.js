@@ -180,8 +180,8 @@ export const HeaderImages = (props) => {
                 return Image2;
             case 'Image3':
                 return Image3;
-            // default:
-            //     return DefaultImage;
+            default:
+                return "";
         }
     }
 
