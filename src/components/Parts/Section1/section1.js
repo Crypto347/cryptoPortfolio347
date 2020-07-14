@@ -33,6 +33,7 @@ import './section1.scss';
 * Components
 */
 
+import Loading from '../../SmallParts/Loading/loading';
 import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
 
 /**
@@ -58,7 +59,8 @@ import * as Services from "../../../service";
 */
 
 import {
-   EH1
+    EH1,
+    H19
 } from '../../UtilityComponents';
 
 /**
@@ -106,7 +108,7 @@ export const Section1 = (props) => {
 
     const renderSection1DataItems = () => {
         return(
-            <div className="section-1-data-items">{props.section1DataItems.map((el,i) => {
+            <div className="section-1-data-items">{props.section1Data.items.map((el,i) => {
                 return(
                     <div key={i}>
                         <EH1/>
@@ -123,6 +125,30 @@ export const Section1 = (props) => {
         )
     }
 
+    const renderSection1 = () => {
+        if(props.section1Data.loading && !props.section1Data.error){
+            return(
+                <div className="section1-loading-error">
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.section1Data.loading && !props.section1Data.error){
+            return(
+                <>
+                    {renderSection1DataItems()}
+                </>
+            )
+        }
+        if(!props.section1Data.loading && props.section1Data.error){
+            return(
+                <div className="section1-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.section1Data.error} data`}</H19>
+                </div>
+            )
+        }
+    } 
+
 
     /**
     * Markup
@@ -130,7 +156,7 @@ export const Section1 = (props) => {
 
     return(
         <div className="section-1">
-            {renderSection1DataItems()}
+            {renderSection1()}
         </div>
     );
 }
@@ -138,7 +164,7 @@ export const Section1 = (props) => {
 export default connect(
     (state) => {
         return {
-            section1DataItems: Selectors.getSection1DateItemsState(state)
+            section1Data: Selectors.getSection1DateState(state)
         };
     },
     (dispatch) => {

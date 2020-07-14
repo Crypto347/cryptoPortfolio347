@@ -268,7 +268,7 @@ export const PhotoViewer = (props) => {
 export default connect(
     (state) => {
         return {
-            section1DataItems: Selectors.getSection1DateItemsState(state)
+            // section1DataItems: Selectors.getSection1DateItemsState(state)
         };
     },
     (dispatch) => {

@@ -16,10 +16,10 @@ export const getHeaderImagesState = createSelector(
     (x) => x
 );
 
-const getSection1DateItems = (state) => state.section1.items;
+const getSection1Date = (state) => state.section1;
 
-export const getSection1DateItemsState = createSelector(
-    [getSection1DateItems],
+export const getSection1DateState = createSelector(
+    [getSection1Date],
     (x) => x
 );
 

@@ -14,7 +14,7 @@ import './loading.scss';
 * Loading component definition and export
 */
 
-export const Loading = () => {
+export const Loading = (props) => {
 
     /**
     * Markup
@@ -22,15 +22,15 @@ export const Loading = () => {
 
     return(
         <div className="loading">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
+            <div style={{background: `${props.color}`}}></div>
         </div>
     );
 }

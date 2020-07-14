@@ -1,6 +1,12 @@
 .section-1 {
     background-color: white;
     // height: 100px;
+    .section1-loading-error {
+        height: 413px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .section-1-data-items {
         display: flex;
         // flex-direction: row;

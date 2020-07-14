@@ -45,6 +45,7 @@ import './headerImages.scss';
 /**
 * Components
 */
+
 import Loading from '../../SmallParts/Loading/loading';
 import Button from '../../../library/Button/button';
 
@@ -171,7 +172,6 @@ export const HeaderImages = (props) => {
 
     }
  
-
     const loadImage = (opt) => {
         switch(opt){
             case 'Image1':
@@ -294,7 +294,7 @@ export const HeaderImages = (props) => {
                     className="header-images-loading"
                     style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
                 >
-                    <Loading/>
+                    <Loading color="#fff"/>
                 </div>
             )
         }
@@ -362,7 +362,7 @@ export const HeaderImages = (props) => {
                     className="header-images-error"
                     style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
                 >
-                    <H19 className="h19-nobel-lora">{`${props.headerImages.error}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.headerImages.error} data`}</H19>
                 </div>
             )
         }
