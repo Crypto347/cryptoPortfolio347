@@ -39,6 +39,14 @@ import Section2 from '../../Parts/Section2/section2';
 import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 /**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
+/**
 * Images
 */
 
@@ -54,6 +62,7 @@ export const Home = (props) => {
     * State
     */
 
+    const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [scrollingHeight, setScrollingHeight] = useState(0);
 
@@ -88,6 +97,38 @@ export const Home = (props) => {
         return e.deltaY < 0;
     }
 
+    const renderToolbars = () => {
+        if(size.width < 1120){
+            return(
+                <>
+                    <Toolbar 
+                        style="smallScreenAnimated" 
+                        scrollingUp={scrollingUp}
+                        toolbarMainColor="white"
+                    />
+                    <Toolbar 
+                        style="smallScreen"
+                        toolbarMainColor="regular"
+                    />
+                </>
+            )
+        }else{
+            return(
+                <>
+                    <Toolbar 
+                        style="regularScreenAnimated" 
+                        scrollingUp={scrollingUp}
+                        toolbarMainColor="white"
+                    />
+                    <Toolbar 
+                        style="regularScreen"
+                        toolbarMainColor="regular"
+                    />
+                </>
+            )
+        }
+    }
+
     /**
     * Markup
     */
@@ -96,8 +137,7 @@ export const Home = (props) => {
         <div className="home" id="home">
             <div className="home-main-background">
                 <div className="home-curtain"/>
-                <Toolbar toolbarMainColor="white" scrollingUp={scrollingUp}/>
-                <Toolbar toolbarMainColor="regular"/>
+                {renderToolbars()}
                 <HeaderImages/>
             </div>
             <Section1/>

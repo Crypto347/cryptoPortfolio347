@@ -52,7 +52,6 @@ import * as Selectors from '../../../reducers/selectors';
 * Images
 */
 
-
 /**
 * Constants
 */
@@ -66,6 +65,7 @@ import {
 */
 
 export const Toolbar = (props) => {
+
 
     /**
     * State
@@ -168,26 +168,10 @@ export const Toolbar = (props) => {
         )
     }
 
-    /**
-    * Markup
-    */
-
-    return(
-           <> 
-            {props.toolbarMainColor === "white" ? 
-            <CSSTransition
-                in={props.scrollingUp} 
-                timeout={5000}
-                // mountOnEnter
-                // unmountOnExit
-                classNames={{
-                    enter: ``,
-                    enterActive: `toolbar-white-open`,
-                    exit: ``,
-                    exitActive: `toolbar-white-close`,
-                }}
-            >  
-                <div className={props.scrollingUp ? "toolbar-white-mounted" : "toolbar-white-unmounted"}>
+    const renderToolbar = (option) => {
+        if(option === "regularScreen"){
+            return(
+                <div className="toolbar">
                     <div className="toolbar-logo">crypto.</div>
                     <div className="toolbar-wrapper">
                         {renderToolbarItems()}
@@ -200,21 +184,94 @@ export const Toolbar = (props) => {
                         </div>
                     </div>
                 </div>
-            </CSSTransition>
-            : 
-            <div className="toolbar">
-                <div className="toolbar-logo">crypto.</div>
-                <div className="toolbar-wrapper">
-                    {renderToolbarItems()}
-                    <div 
-                        className="toolbar-menu"
-                        onMouseEnter={handleMouseEnter} 
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        {renderMenuDots()}
+            )
+        }
+        if(option === "regularScreenAnimated"){
+            return(
+                <CSSTransition
+                    in={props.scrollingUp} 
+                    timeout={5000}
+                    // mountOnEnter
+                    // unmountOnExit
+                    classNames={{
+                        enter: ``,
+                        enterActive: `toolbar-white-open`,
+                        exit: ``,
+                        exitActive: `toolbar-white-close`,
+                    }}
+                >  
+                    <div className={props.scrollingUp ? "toolbar-white-mounted" : "toolbar-white-unmounted"}>
+                        <div className="toolbar-logo">crypto.</div>
+                        <div className="toolbar-wrapper">
+                            {renderToolbarItems()}
+                            <div 
+                                className="toolbar-menu"
+                                onMouseEnter={handleMouseEnter} 
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                {renderMenuDots()}
+                            </div>
+                        </div>
+                    </div>
+                </CSSTransition>
+            )
+        }
+        if(option === "smallScreen"){
+            return(
+                <div className="toolbar">
+                    <div className="toolbar-logo">crypto.</div>
+                    <div className="toolbar-wrapper">
+                        {renderToolbarItems()}
+                        <div 
+                            className="toolbar-menu"
+                            onMouseEnter={handleMouseEnter} 
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            {renderMenuDots()}
+                        </div>
                     </div>
                 </div>
-            </div>}
+            )
+        }
+        if(option === "smallScreenAnimated"){
+            return(
+                <CSSTransition
+                    in={props.scrollingUp} 
+                    timeout={5000}
+                    // mountOnEnter
+                    // unmountOnExit
+                    classNames={{
+                        enter: ``,
+                        enterActive: `toolbar-white-open`,
+                        exit: ``,
+                        exitActive: `toolbar-white-close`,
+                    }}
+                >  
+                    <div className={props.scrollingUp ? "toolbar-white-mounted" : "toolbar-white-unmounted"}>
+                        <div className="toolbar-logo">crypto.</div>
+                        <div className="toolbar-wrapper">
+                            {renderToolbarItems()}
+                            <div 
+                                className="toolbar-menu"
+                                onMouseEnter={handleMouseEnter} 
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                {renderMenuDots()}
+                            </div>
+                        </div>
+                    </div>
+                </CSSTransition>
+            )
+        }
+    }
+
+    /**
+    * Markup
+    */
+
+    return(
+        <> 
+           {renderToolbar(props.style)}
         </> 
     );
 }
