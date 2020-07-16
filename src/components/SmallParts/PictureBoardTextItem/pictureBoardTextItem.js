@@ -134,6 +134,7 @@ export const PictureBoardTextItem = (props) => {
     return(
         <div 
             className="picture-board-text-item"
+            onClick={() => iconOnClick(props.imagesArray)}
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
@@ -147,7 +148,6 @@ export const PictureBoardTextItem = (props) => {
                     icon={faEye} 
                     size="1x" 
                     color={isHovering ? "white" : "rgb(37, 37, 37)"}
-                    onClick={() => iconOnClick(props.imagesArray)}
                 />
             </div>
         </div>
