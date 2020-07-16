@@ -124,7 +124,7 @@ export const PictureBoardTextItem = (props) => {
     // }
 
     const iconOnClick = (array) => {
-        props.photoViewerOpen(true, array);
+        props.photoViewerOpen('pictureBoardForTextItem', true, array);
     }
 
     /**
@@ -157,7 +157,7 @@ export const PictureBoardTextItem = (props) => {
 export default connect(
     (state) => {
         return {
-            pictphotoViewerForPictureBoardTextItemureBoard: Selectors.getPictureBoardItemsState(state)
+            // pictureBoard: Selectors.getPictureBoardItemsState(state)
         };
     },
     (dispatch) => {

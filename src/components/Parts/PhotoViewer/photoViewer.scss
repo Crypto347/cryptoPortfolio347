@@ -1,4 +1,4 @@
-.photoViewer {
+.photo-viewer {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.1);
@@ -10,51 +10,59 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .photoViewer-wrapper {
+    .photo-viewer-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 625px;
         height: 100vh;
-        .photoViewer-full-screen {
+        .photo-viewer-full-screen {
             display: flex;
             justify-content: flex-end;
             position: relative;
             left: 20px;
             cursor: pointer;
         }
-        .photoViewer-image-items{
+        .photo-viewer-image-item{
             height: 457px;
-            border: 2px solid red;
+            >img {
+                width: 625px;
+                height: 457px;
+            }
         }
-        .photoViewer-toolbar {
+        .photo-viewer-toolbar {
             height: 60px;
             background-color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .photoViewer-navigation {
+            .photo-viewer-navigation {
                 margin: 0px 20px 0px 20px;
                 width: 30px;
                 display: flex;
                 justify-content: space-between;
                 cursor: pointer;
-                .photoViewer-navigation-left-arrow {
+                .photo-viewer-navigation-left-arrow {
+                    width: 12px;
                     .arrow-top-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, 3px) rotate(45deg);
                     }
                     .arrow-bottom-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, -3px) rotate(-45deg);
                     }
                 }
-                .photoViewer-navigation-left-arrow-hover-on {
+                .photo-viewer-navigation-left-arrow-hover-on {
+                    width: 12px;
                     .arrow-top-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, 3px) rotate(45deg);
                         -webkit-animation: hoverOnArrowOn .5s linear;
                         -moz-animation: hoverOnArrowOn .5s linear;
@@ -64,6 +72,7 @@
                     .arrow-bottom-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, -3px) rotate(-45deg);
                         -webkit-animation: hoverOnArrowOn .5s linear;
                         -moz-animation: hoverOnArrowOn .5s linear;
@@ -71,10 +80,12 @@
                         animation: hoverOnArrowOn .5s linear;
                     }
                 }
-                .photoViewer-navigation-left-arrow-hover-off {
+                .photo-viewer-navigation-left-arrow-hover-off {
+                    width: 12px;
                     .arrow-top-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, 3px) rotate(45deg);
                         -webkit-animation: hoverOnArrowOff .5s linear;
                         -moz-animation: hoverOnArrowOff .5s linear;
@@ -84,6 +95,7 @@
                     .arrow-bottom-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, -3px) rotate(-45deg);
                         -webkit-animation: hoverOnArrowOff .5s linear;
                         -moz-animation: hoverOnArrowOff .5s linear;
@@ -91,22 +103,27 @@
                         animation: hoverOnArrowOff .5s linear;
                     }
                 }
-                .photoViewer-navigation-right-arrow {
+                .photo-viewer-navigation-right-arrow {
+                        width: 12px;
                     .arrow-top-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, 3px)  rotate(-45deg);
                     }
                     .arrow-bottom-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, -3px) rotate(45deg);
                     }
                 }
-                .photoViewer-navigation-right-arrow-hover-on {
+                .photo-viewer-navigation-right-arrow-hover-on {
+                        width: 12px;
                     .arrow-top-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, 3px)  rotate(-45deg);
                         -webkit-animation: hoverOnArrowOn .5s linear;
                         -moz-animation: hoverOnArrowOn .5s linear;
@@ -116,6 +133,7 @@
                     .arrow-bottom-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, -3px) rotate(45deg);
                         -webkit-animation: hoverOnArrowOn .5s linear;
                         -moz-animation: hoverOnArrowOn .5s linear;
@@ -123,10 +141,12 @@
                         animation: hoverOnArrowOn .5s linear;
                     }
                 }
-                .photoViewer-navigation-right-arrow-hover-off {
+                .photo-viewer-navigation-right-arrow-hover-off {
+                        width: 12px;
                     .arrow-top-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, 3px)  rotate(-45deg);
                         -webkit-animation: hoverOnArrowOff .5s linear;
                         -moz-animation: hoverOnArrowOff .5s linear;
@@ -136,6 +156,7 @@
                     .arrow-bottom-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
+                        width: 0px;
                         transform: translate(5px, -3px) rotate(45deg);
                         -webkit-animation: hoverOnArrowOff .5s linear;
                         -moz-animation: hoverOnArrowOff .5s linear;
@@ -144,12 +165,12 @@
                     }
                 }
             }
-            .photoViewer-close-wrapper {
+            .photo-viewer-close-wrapper {
                 display: flex;
                 width: 50px;
                 margin: 0px 27px 0px 20px;
                 cursor: pointer;
-                .photoViewer-close {
+                .photo-viewer-close {
                     .close-first-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
@@ -162,12 +183,12 @@
                     }
                 }
             }
-            .photoViewer-close-wrapper-hover-on {
+            .photo-viewer-close-wrapper-hover-on {
                 display: flex;
                 width: 50px;
                 margin: 0px 27px 0px 20px;
                 cursor: pointer;
-                .photoViewer-close {
+                .photo-viewer-close {
                     .close-first-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
@@ -188,12 +209,12 @@
                     }
                 }
             }
-            .photoViewer-close-wrapper-hover-off {
+            .photo-viewer-close-wrapper-hover-off {
                 display: flex;
                 width: 50px;
                 margin: 0px 27px 0px 20px;
                 cursor: pointer;
-                .photoViewer-close {
+                .photo-viewer-close {
                     .close-first-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;

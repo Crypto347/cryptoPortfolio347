@@ -17,10 +17,8 @@ import uuid from "uuid";
 
 export const initialState = {
     menuItems: [],
-    photoViewerForPictureBoardTextItem: {
-        open: false,
-        arrayOfImages: []
-    }
+    photoViewerForPictureBoardTextItemOpen: false,
+    photoViewerImagesArray: []
 }
 
 const initMenuItems = (state, action) => {
@@ -30,16 +28,40 @@ const initMenuItems = (state, action) => {
     };
 }
 
-const photoViewerOpen = (state, action) => {
-    let updatedPhotoViewerForPictureBoardTextItem = {
-        ...state.photoViewerForPictureBoardTextItem,
-        open: action.val,
-        arrayOfImages: action.array
+const photoViewerOpen = (state, action) => {    
+    switch(action.option){
+        case 'pictureBoardForTextItem':
+            return {
+                ...state,
+                photoViewerForPictureBoardTextItemOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
+        default:
+            return state;
     }
-    
+}
+
+const prevImage = (state, action) => {
+    let updatedPhotoViewerImagesArray = [...state.photoViewerImagesArray];
+    let lastImage = updatedPhotoViewerImagesArray[updatedPhotoViewerImagesArray.length - 1];
+    updatedPhotoViewerImagesArray.pop();
+    updatedPhotoViewerImagesArray.unshift(lastImage);
+
     return {
         ...state,
-        photoViewerForPictureBoardTextItem: updatedPhotoViewerForPictureBoardTextItem,
+        photoViewerImagesArray: updatedPhotoViewerImagesArray,
+    };
+}
+
+
+const nextImage = (state, action) => {
+    let updatedPhotoViewerImagesArray = [...state.photoViewerImagesArray];
+    let currentImage = updatedPhotoViewerImagesArray[0];
+    updatedPhotoViewerImagesArray.shift();
+    updatedPhotoViewerImagesArray.push(currentImage);
+    return {
+        ...state,
+        photoViewerImagesArray: updatedPhotoViewerImagesArray,
     };
 }
 
@@ -164,6 +186,10 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return initMenuItems(state, action); 
         case actionTypes.PHOTO_VIEWER_OPEN:
             return photoViewerOpen(state, action); 
+        case actionTypes.PREV_IMAGE:
+            return prevImage(state, action); 
+        case actionTypes.NEXT_IMAGE:
+            return nextImage(state, action); 
         default: 
             return state;
     }

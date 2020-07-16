@@ -37,11 +37,17 @@ export const getOurProcessDataState = createSelector(
     (x) => x
 );
 
-const getPhotoViewerForPictureBoardTextItem = (state) => state.home.photoViewerForPictureBoardTextItem;
+const getPhotoViewerForPictureBoardTextItemOpen = (state) => state.home.photoViewerForPictureBoardTextItemOpen;
 
-export const getPhotoViewerForPictureBoardTextItemState = createSelector(
-    [getPhotoViewerForPictureBoardTextItem],
+export const getPhotoViewerForPictureBoardTextItemOpenState = createSelector(
+    [getPhotoViewerForPictureBoardTextItemOpen],
     (x) => x
 );
 
+const getPhotoViewerImagesArray = (state) => state.home.photoViewerImagesArray;
+
+export const getPhotoViewerImagesArrayState = createSelector(
+    [getPhotoViewerImagesArray],
+    (x) => x
+);
 
