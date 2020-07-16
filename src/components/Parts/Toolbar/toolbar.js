@@ -240,7 +240,7 @@ export const Toolbar = (props) => {
                         enter: ``,
                         enterActive: `toolbar-small-screen-animated-open`,
                         exit: ``,
-                        exitActive: `toolbar-white-close`,
+                        exitActive: `toolbar-small-screen-animated-close`,
                     }}
                 >  
                     <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>

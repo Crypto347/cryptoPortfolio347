@@ -120,6 +120,7 @@
 .toolbar-regular-screen-animated-unmounted {
     position: fixed;
     width: calc(100% - 78px);
+    height: calc(70px - 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -243,6 +244,7 @@
 .toolbar-regular-screen-animated-mounted {
     position: fixed;
     width: calc(100% - 78px);
+    height: calc(70px - 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -366,6 +368,7 @@
 .toolbar-regular-screen-animated-open {
     position: fixed;
     width: calc(100% - 78px);
+    height: calc(70px - 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -493,6 +496,7 @@
 .toolbar-regular-screen-animated-close {
     position: fixed;
     width: calc(100% - 78px);
+    height: calc(70px - 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -658,7 +662,6 @@
     background: white;
     z-index: 700;
     transform: translateY(-100%);
-    margin-bottom: 20px;
     .toolbar-menu {
         cursor: pointer;
         .toolbar-menu-line {
@@ -687,7 +690,6 @@
     background: white;
     z-index: 700;
     transform: translateY(0%);
-    margin-bottom: 20px;
     .toolbar-menu {
         cursor: pointer;
         .toolbar-menu-line {
@@ -715,7 +717,6 @@
     color: black;
     background: white;
     z-index: 700;
-    margin-bottom: 20px;
     -webkit-animation: toolbarWhiteOpen .5s linear;
     -moz-animation: toolbarWhiteOpen .5s linear;
     -o-animation: toolbarWhiteOpen .5s linear;
@@ -748,7 +749,6 @@
     color: black;
     background: white;
     z-index: 700;
-    margin-bottom: 20px;
     transform: translateY(-100%);
     -webkit-animation: toolbarWhiteClose .5s linear;
     -moz-animation: toolbarWhiteClose .5s linear;
