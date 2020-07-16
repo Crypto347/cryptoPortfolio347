@@ -1,4 +1,4 @@
-.toolbar {
+.toolbar-regular-screen {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,7 +117,7 @@
     }
 }
 
-.toolbar-white-unmounted {
+.toolbar-regular-screen-animated-unmounted {
     position: fixed;
     width: calc(100% - 78px);
     display: flex;
@@ -240,7 +240,7 @@
     }
 }
 
-.toolbar-white-mounted {
+.toolbar-regular-screen-animated-mounted {
     position: fixed;
     width: calc(100% - 78px);
     display: flex;
@@ -363,7 +363,7 @@
     }
 }
 
-.toolbar-white-open {
+.toolbar-regular-screen-animated-open {
     position: fixed;
     width: calc(100% - 78px);
     display: flex;
@@ -490,7 +490,7 @@
     }
 }
 
-.toolbar-white-close {
+.toolbar-regular-screen-animated-close {
     position: fixed;
     width: calc(100% - 78px);
     display: flex;
@@ -614,6 +614,158 @@
                 animation: appear4 1s ease;
             }
         }
+    }
+}
+
+.toolbar-small-screen {
+    position: relative;
+    width: calc(100% - 78px);
+    height: calc(70px - 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px 25px 40px;
+    box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
+    color: black;
+    background: white;
+    z-index: 700;
+    margin-bottom: 20px;
+    .toolbar-menu {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+    }
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
+.toolbar-small-screen-animated-unmounted {
+    position: fixed;
+    width: calc(100% - 78px);
+    height: calc(70px - 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px 25px 40px;
+    box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
+    color: black;
+    background: white;
+    z-index: 700;
+    transform: translateY(-100%);
+    margin-bottom: 20px;
+    .toolbar-menu {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+    }
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
+.toolbar-small-screen-animated-mounted {
+    position: fixed;
+    width: calc(100% - 78px);
+    height: calc(70px - 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px 25px 40px;
+    box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
+    color: black;
+    background: white;
+    z-index: 700;
+    transform: translateY(0%);
+    margin-bottom: 20px;
+    .toolbar-menu {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+    }
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
+.toolbar-small-screen-animated-open {
+    position: fixed;
+    width: calc(100% - 78px);
+    height: calc(70px - 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px 25px 40px;
+    box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
+    color: black;
+    background: white;
+    z-index: 700;
+    margin-bottom: 20px;
+    -webkit-animation: toolbarWhiteOpen .5s linear;
+    -moz-animation: toolbarWhiteOpen .5s linear;
+    -o-animation: toolbarWhiteOpen .5s linear;
+    animation: toolbarWhiteOpen .5s linear;
+    transform: translate(0%);
+    .toolbar-menu {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+    }
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
+    }
+}
+
+.toolbar-small-screen-animated-close {
+    position: fixed;
+    width: calc(100% - 78px);
+    height: calc(70px - 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px 25px 40px;
+    box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
+    color: black;
+    background: white;
+    z-index: 700;
+    margin-bottom: 20px;
+    transform: translateY(-100%);
+    -webkit-animation: toolbarWhiteClose .5s linear;
+    -moz-animation: toolbarWhiteClose .5s linear;
+    -o-animation: toolbarWhiteClose .5s linear;
+    animation: toolbarWhiteClose .5s linear;
+    .toolbar-menu {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+    }
+    .toolbar-logo {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        cursor: pointer;
     }
 }
 

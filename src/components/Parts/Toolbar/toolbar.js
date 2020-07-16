@@ -171,7 +171,7 @@ export const Toolbar = (props) => {
     const renderToolbar = (option) => {
         if(option === "regularScreen"){
             return(
-                <div className="toolbar">
+                <div className="toolbar-regular-screen">
                     <div className="toolbar-logo">crypto.</div>
                     <div className="toolbar-wrapper">
                         {renderToolbarItems()}
@@ -195,12 +195,12 @@ export const Toolbar = (props) => {
                     // unmountOnExit
                     classNames={{
                         enter: ``,
-                        enterActive: `toolbar-white-open`,
+                        enterActive: `toolbar-regular-screen-animated-open`,
                         exit: ``,
-                        exitActive: `toolbar-white-close`,
+                        exitActive: `toolbar-regular-screen-animated-close`,
                     }}
                 >  
-                    <div className={props.scrollingUp ? "toolbar-white-mounted" : "toolbar-white-unmounted"}>
+                    <div className={props.scrollingUp ? "toolbar-regular-screen-animated-mounted" : "toolbar-regular-screen-animated-unmounted"}>
                         <div className="toolbar-logo">crypto.</div>
                         <div className="toolbar-wrapper">
                             {renderToolbarItems()}
@@ -218,18 +218,14 @@ export const Toolbar = (props) => {
         }
         if(option === "smallScreen"){
             return(
-                <div className="toolbar">
-                    <div className="toolbar-logo">crypto.</div>
-                    <div className="toolbar-wrapper">
-                        {renderToolbarItems()}
-                        <div 
-                            className="toolbar-menu"
-                            onMouseEnter={handleMouseEnter} 
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            {renderMenuDots()}
-                        </div>
+                <div className="toolbar-small-screen">
+                    <div className="toolbar-menu">
+                        <div className="toolbar-menu-line"/>
+                        <div className="toolbar-menu-line"/>
+                        <div className="toolbar-menu-line"/>
                     </div>
+                    <div className="toolbar-logo">crypto.</div>
+                    <div/>
                 </div>
             )
         }
@@ -242,23 +238,19 @@ export const Toolbar = (props) => {
                     // unmountOnExit
                     classNames={{
                         enter: ``,
-                        enterActive: `toolbar-white-open`,
+                        enterActive: `toolbar-small-screen-animated-open`,
                         exit: ``,
                         exitActive: `toolbar-white-close`,
                     }}
                 >  
-                    <div className={props.scrollingUp ? "toolbar-white-mounted" : "toolbar-white-unmounted"}>
-                        <div className="toolbar-logo">crypto.</div>
-                        <div className="toolbar-wrapper">
-                            {renderToolbarItems()}
-                            <div 
-                                className="toolbar-menu"
-                                onMouseEnter={handleMouseEnter} 
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                {renderMenuDots()}
-                            </div>
+                    <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>
+                        <div className="toolbar-menu">
+                            <div className="toolbar-menu-line"/>
+                            <div className="toolbar-menu-line"/>
+                            <div className="toolbar-menu-line"/>
                         </div>
+                        <div className="toolbar-logo">crypto.</div>
+                        <div/>
                     </div>
                 </CSSTransition>
             )
