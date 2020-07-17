@@ -51,3 +51,9 @@ export const getPhotoViewerImagesArrayState = createSelector(
     (x) => x
 );
 
+const getTestimonials = (state) => state.section3.testimonials;
+
+export const getTestimonialsState = createSelector(
+    [getTestimonials],
+    (x) => x
+);

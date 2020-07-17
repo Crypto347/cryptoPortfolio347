@@ -139,7 +139,7 @@ export const Section2 = (props) => {
             <div className="section-2-wrapper">
                 <H130 className="h130-white-teko">Work.</H130>
                 <EH3/>
-                <H25 className="h25-white">Lorem ipsum dolor sit amet, consectetur ad.</H25>
+                <H25 className="h25-white-lustria">Lorem ipsum dolor sit amet, consectetur ad.</H25>
                 <EH3/>
                 <EH3/>
                 <PictureBoard/>

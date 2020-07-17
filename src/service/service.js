@@ -71,7 +71,7 @@ export function fetchOurProcessData() {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 dispatch(Actions.fetchOurProcessDataSuccess(json));
                 // return json;
             })
@@ -89,7 +89,7 @@ export function fetchTestimonials() {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log(json)
+                // console.log(json)
                 dispatch(Actions.fetchTestimonialsSuccess(json));
                 // return json;
             })

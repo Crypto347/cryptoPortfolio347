@@ -4,12 +4,6 @@
     // color:  rgb(180, 139, 62);
 }
 
-.h25-black-teko {
-    font-size: 25px;
-    font-family: 'Teko', sans-serif;
-    color: black;
-}
-
 .h25-nobel {
     font-size: 25px;
     color: rgb(155, 155, 155);
@@ -19,6 +13,37 @@
     font-size: 25px;
     color: white;
 }
+
+.h25-white-lustria {
+    font-size: 25px;
+    color: white;
+    font-family: 'Lustria', serif;
+}
+
+.h25-nobel-lustria {
+    font-size: 25px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+}
+
+.h25-black-lustria {
+    font-size: 25px;
+    color: black;
+    font-family: 'Lustria', serif;
+}
+
+.h25-black-teko {
+    font-size: 25px;
+    font-family: 'Teko', sans-serif;
+    color: black;
+}
+
+.h25-white-teko {
+    font-size: 25px;
+    font-family: 'Teko', sans-serif;
+    color: white;
+}
+
 
 @media only screen and (max-width: 860px){
     .h25-nobel {

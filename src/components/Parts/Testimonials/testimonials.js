@@ -45,7 +45,7 @@ import Swiper from '../../../library/Swiper/swiper';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Services
@@ -59,11 +59,21 @@ import * as Services from "../../../service";
 
 import {
     H45,
+    EH4,
+    EH2
 } from '../../UtilityComponents';
 
 /**
 * Images
 */
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 
 
@@ -82,6 +92,8 @@ export const Testimonials = (props) => {
     * State
     */
 
+   const size = useWindowSize();
+
     /**
     * Methods
     */
@@ -98,9 +110,14 @@ export const Testimonials = (props) => {
 
     return(
         <div className="testimonials">
+            <EH4/>
             <H45 className="h45-white-lustria">Testimonials</H45>
-            {/* <Swiper/> */}
-  
+            <EH2/>
+            <Swiper 
+                contentArray={props.testimonials}
+                translateWidth={size.width - 130}
+            />
+            <EH4/>
             
         </div>
     );
@@ -109,7 +126,7 @@ export const Testimonials = (props) => {
 export default connect(
     (state) => {
         return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state),
+            testimonials: Selectors.getTestimonialsState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },

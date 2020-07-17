@@ -30,7 +30,7 @@ export const initialState = {
 
 const fetchTestimonialsBegin = (state, action) => {
     let updatedTestimonials = {
-        ...state.pictureBoard, 
+        ...state.testimonials, 
         loading: true, 
         error: null
     }
@@ -43,7 +43,7 @@ const fetchTestimonialsBegin = (state, action) => {
 
 const fetchTestimonialsSuccess = (state, action) => {   
     let updatedTestimonials = {
-        ...state.pictureBoard, 
+        ...state.testimonials, 
         items: action.array,
         loading: false
     } 
@@ -55,7 +55,7 @@ const fetchTestimonialsSuccess = (state, action) => {
 
 const fetchTestimonialsFailur = (state, action) => {
     let updatedTestimonials = {
-        ...state.pictureBoard, 
+        ...state.testimonials, 
         items: [],
         loading: false, 
         error: action.err
