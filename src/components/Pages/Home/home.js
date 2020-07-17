@@ -36,6 +36,7 @@ import Toolbar from '../../Parts/Toolbar/toolbar';
 import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
 import Section1 from '../../Parts/Section1/section1';
 import Section2 from '../../Parts/Section2/section2';
+import Section3 from '../../Parts/Section3/section3';
 import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 /**
@@ -142,6 +143,7 @@ export const Home = (props) => {
             </div>
             <Section1/>
             <Section2/>
+            <Section3/>
             {props.photoViewerForPictureBoardTextItemOpen ? <PhotoViewer/> : null}
         </div>
     );

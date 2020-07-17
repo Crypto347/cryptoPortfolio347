@@ -82,6 +82,24 @@ export function fetchOurProcessData() {
     };
 }
 
+export function fetchTestimonials() {
+    return dispatch => {
+        dispatch(Actions.fetchTestimonialsBegin());
+        return fetch("http://localhost:3005/api/section3/testimonials")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                console.log(json)
+                dispatch(Actions.fetchTestimonialsSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTestimonialsFailur(error))
+            });
+    };
+}
+
 
 function handleErrors(response) {
     if (!response.ok) {

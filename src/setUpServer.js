@@ -810,19 +810,12 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 4,
                     key: "col45",
                     folderName: "colorful",
-                    imageName: "jess-bailey-dWKqZcPLc8Y-unsplash.jpg",
+                    imageName: "jess-bailey-z0guTIr_kts-unsplash.jpg",
                     alt: "image"
                 },
                 {
                     id: 5,
                     key: "col46",
-                    folderName: "colorful",
-                    imageName: "jess-bailey-z0guTIr_kts-unsplash.jpg",
-                    alt: "image"
-                },
-                {
-                    id: 6,
-                    key: "col47",
                     folderName: "colorful",
                     imageName: "jess-bailey-ZY2GNpgiWyU-unsplash.jpg",
                     alt: "image"
@@ -913,6 +906,27 @@ app.get('/api/section2/ourProcess', (req, res) => {
         },
     ]
     res.json(sec2);
+});
+
+app.get('/api/section3/testimonials', (req, res) => {
+    const testimonials = [
+        {
+            id: 1,
+            feedback: "Noster mnesarchum ne usu. An idque possim facilisis vim. Vix in verterem scribentur. Quo option integre sensibus in te vix malis . Vix tale ludus persius cu labore. In qui meis munere evertitur. Id rebum dolor petentium vis.",
+            author: "Jo Culp"
+        },
+        {
+            id: 2,
+            feedback: "Vix in verterem scribentur. Quo option integre sensibus in. Noster mnesarchum ne usu. Te vix malis an idque possim facilisis vim. Vix tale ludus persius cu labore. In qui meis munere evertitur. Id rebum dolor petentium vis, wisi dissen tias.",
+            author: "Paul Macha"
+        },
+        {
+            id: 3,
+            feedback: "In qui meis munere evertitur. Id rebum dolor petentium vis, wisi dissen tias. Vix in verterem scribentur. Quo option integre sensibus in. Noster mnesarchum ne usu. An idque possim facilisis vim. Vix tale ludus persius cu te vix malis labores.",
+            author: "John Eury"
+        },
+    ]
+    res.json(testimonials);
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {
