@@ -103,7 +103,15 @@ export const Swiper = (props) => {
         let slidesArray = [...props.contentArray.items];
         setSlides(slidesArray);
         // console.log(slidesArray)
-        if(!props.contentArray.loading){
+        if(!props.contentArray.loading && props.contentArray.items.length === 3){
+            setState({
+                ...state,
+                _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
+                translate: getTranslateValue(props.translateWidth, props.translateHeight),
+            })
+        }
+
+        if(!props.contentArray.loading && props.contentArray.items.length === 4){
             setState({
                 ...state,
                 _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
@@ -138,7 +146,7 @@ export const Swiper = (props) => {
 
     useEffect(() => {
         const smooth = e => {
-            if(e.target.className.includes('slider-content')){
+            if(e.target.className.includes(`${props.translateWidth ? "swiper-window-width-content" : "swiper-window-height-content"}`)){
                 transitionRef.current()
             }
         }
@@ -189,22 +197,47 @@ export const Swiper = (props) => {
 
     const smoothTransition = () => {
         let _slides = [];
+
+        if(props.showNumbersOfSLides === 1){
             //We're at the last slide
             if(activeIndex === slides.length - 1)
             _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0]];
             //We're back at the first slide. Just reset to how it was on initial render.
             else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1]]
             // Create an array of the previous last slide, and the next two slides that follow it.
-            else _slides = slides.slice(activeIndex - 1, activeIndex + 2)
-// console.log(_slides)
+            else _slides = slides.slice(activeIndex - 1, activeIndex + 2);
             setState({
                 ...state,
                 _slides,
                 transition: 0,
                 translate: getTranslateValue(props.translateWidth, props.translateHeight)
             })
-          
+        }
+        if(props.showNumbersOfSLides === 3){
+            if(activeIndex === slides.length - 1){
+                _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
+            }
+            if (activeIndex === 0){
+                _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]];
+            }
+            if(activeIndex === 1){
+                _slides = slides.slice(activeIndex - 1, activeIndex + 5);
+            }
+            if(activeIndex === 2){
+                _slides = [slides[1], slides[2], slides[3], slides[slides.length - 1], slides[0]];
+            }
+            if(activeIndex === 3){
+                _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]];
+            }
         
+            setState({
+                ...state,
+                _slides,
+                transition: 0,
+                translate: cardWidth
+            })
+        }
+      
     }
 
     const prevSlide = () => {
@@ -288,13 +321,13 @@ export const Swiper = (props) => {
     }
 
     const renderSwiper = () => {
-      console.log(_slides)
+    //   console.log(_slides)
       if(!props.contentArray.loading){
         if(props.translateWidth){
             return(
                 <div 
                     className="swiper-window-width-content" 
-                    id="swiper-content"
+                    id="swiper-window-width-content"
                     onMouseEnter={handleMouseEnter} 
                     onMouseLeave={handleMouseLeave}
                     style={{
@@ -430,7 +463,6 @@ export const Swiper = (props) => {
                 {renderSwiper()}
             </div>
             {renderSecondArrow()}
-            {console.log(isHoveringLeftArrow)}
         </div>
     );
 }

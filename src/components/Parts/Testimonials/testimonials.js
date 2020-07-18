@@ -116,6 +116,7 @@ export const Testimonials = (props) => {
             <Swiper 
                 contentArray={props.testimonials}
                 translateWidth={size.width - 130}
+                showNumbersOfSLides={1}
             />
             <EH4/>
             
