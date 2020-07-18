@@ -385,7 +385,10 @@ export const Swiper = (props) => {
                         >
                            <H25 className="h25-white-lustria">{el.feedback}</H25>
                            <EH2/>
-                           <H25 className="h25-white-teko">{el.author}</H25>
+                            <div className="author-name-wrapper">
+                                <div className="slide-dash"/>
+                                <H25 className="h25-white-teko">{el.author}</H25>
+                            </div>
                         </div>
                     )
                 })}</div>
