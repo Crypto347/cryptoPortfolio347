@@ -10,7 +10,6 @@
            
             .slide {
                 padding: 0 170px 0 170px;
-                cursor: context-menu;
                 user-select: none; /* supported by Chrome and Opera */
                 -webkit-user-select: none; /* Safari */
                 -khtml-user-select: none; /* Konqueror HTML */
@@ -203,6 +202,10 @@
             animation: hoverOnSwiperArrowOff .5s linear;
         }
     }
+}
+
+.active {
+    cursor: grabbing;
 }
 
 @-webkit-keyframes hoverOnArrowLabelOn {

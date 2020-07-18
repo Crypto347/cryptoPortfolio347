@@ -177,10 +177,12 @@ export const Swiper = (props) => {
         let mouseDown = false;
         swiper.addEventListener('mousedown', (e) => {
             mouseDown = true;
+            swiper.classList.add('active');
         });
         swiper.addEventListener('mousemove', (e) => handleMouseMove(e, mouseDown));
         swiper.addEventListener('mouseup', (e) => {
             mouseDown = false;
+            swiper.classList.remove('active');
         });
 
         return () => {
