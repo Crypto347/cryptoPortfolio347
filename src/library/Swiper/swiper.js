@@ -12,6 +12,10 @@ import {
     connect
 } from 'react-redux';
 
+import {
+    bindActionCreators
+} from 'redux';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -32,10 +36,16 @@ import {
 import './swiper.scss';
 
 /**
+* Actions
+*/
+
+import * as Actions from '../../actions';
+
+/**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../reducers/selectors';
 
 /**
 * Hooks
@@ -80,6 +90,7 @@ export const Swiper = (props) => {
     const [slides, setSlides] = useState([])
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
+    // const [mouseDown, setMouseDown] = useState(false)
   
     // const []
 
@@ -159,16 +170,46 @@ export const Swiper = (props) => {
 
         window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
+        window.addEventListener('resize', resize);
+        
+
+        let swiper = document.getElementById('swiper-wrapper');
+        let mouseDown = false;
+        swiper.addEventListener('mousedown', (e) => {
+            mouseDown = true;
+        });
+        swiper.addEventListener('mousemove', (e) => handleMouseMove(e, mouseDown));
+        swiper.addEventListener('mouseup', (e) => {
+            mouseDown = false;
+        });
 
         return () => {
             window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
+            // swiper.removeEventListener('mousedown', (e) => handleMouseUp(e));
+            swiper.removeEventListener('mousemove', handleMouseMove);
+            // swiper.removeEventListener('mouseup', (e) => handleMouseUp(e));
         };
     }, [])
 
     useInterval(() => {
         nextSlide();
     }, props.autoPlay ? 3000 : null)
+
+
+    // const handleMouseDown = (e) => {
+    //  console.log(e)
+    // }
+
+    const handleMouseMove = (e, mouseDown) => {
+        if(mouseDown){
+            console.log("mouseDown")
+        }
+    }
+
+    // const handleMouseUp = (e) => {
+    //     props.setMouseDown(false);
+    // }
 
     const getTranslateValue = (width, height) => {
         if(width){
@@ -327,7 +368,7 @@ export const Swiper = (props) => {
             return(
                 <div 
                     className="swiper-window-width-content" 
-                    id="swiper-window-width-content"
+                    id="swiper-content"
                     onMouseEnter={handleMouseEnter} 
                     onMouseLeave={handleMouseLeave}
                     style={{
@@ -459,10 +500,11 @@ export const Swiper = (props) => {
     return(
         <div className="swiper" id="swiper">
             {renderFirstArrow()}
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper"  id="swiper-wrapper">
                 {renderSwiper()}
             </div>
             {renderSecondArrow()}
+            {/* {console.log(mouseDown)} */}
         </div>
     );
 }
@@ -470,7 +512,7 @@ export const Swiper = (props) => {
 export default connect(
     (state) => {
         return {
-            // gallery: Selectors.getGalleryState(state)
+            // mouseDown: Selectors.getMouseDownState(state)
         };
     }
 )(Swiper);

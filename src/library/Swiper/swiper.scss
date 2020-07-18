@@ -11,6 +11,11 @@
             .slide {
                 padding: 0 170px 0 170px;
                 cursor: context-menu;
+                user-select: none; /* supported by Chrome and Opera */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
                 // background-color: rgb(18, 68, 159);
                 // filter: grayscale(40%);
                 // width: 100%;
