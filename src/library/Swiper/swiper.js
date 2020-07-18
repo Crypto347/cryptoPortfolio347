@@ -78,9 +78,9 @@ export const Swiper = (props) => {
     const getWidth = () => window.innerWidth;
     
     const [slides, setSlides] = useState([])
-
-    const [showUpArrow, setShowUpArrow] = useState(false);
-    const [showDownArrow, setShowDownArrow] = useState(false);
+    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
+  
     // const []
 
     const [state, setState] = useState({
@@ -223,14 +223,49 @@ export const Swiper = (props) => {
         })
     }
 
-    const handleMouseEnter = () => {
-        setShowUpArrow(true);
-        setShowDownArrow(true)
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'leftArrow': 
+                setIsHoveringLeftArrow('on');
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow('on');
+                break;
+        }
     }
 
-    const handleMouseLeave = () => {
-        setShowUpArrow(false);
-        setShowDownArrow(false);
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'leftArrow': 
+                setIsHoveringLeftArrow('off');
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow('off');
+                break;
+        }
+    }
+
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "leftArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "swiper-arrow-left-wrapper";
+                case 'on':
+                    return "swiper-arrow-left-wrapper-hover-on";
+                case 'off':
+                    return "swiper-arrow-left-wrapper-hover-off"
+            }
+        }
+        if(opt === "rightArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "swiper-arrow-right-wrapper";
+                case 'on':
+                    return "swiper-arrow-right-wrapper-hover-on";
+                case 'off':
+                    return "swiper-arrow-right-wrapper-hover-off"
+            }
+        }      
     }
 
     const loadImage = (img) => {
@@ -315,12 +350,14 @@ export const Swiper = (props) => {
     const renderFirstArrow = () => {
         if(props.translateWidth){
             return(
-                <div 
-                    className="swiper-arrow-left"
-                    onClick={prevSlide}
-                    onMouseEnter={handleMouseEnter} 
-                >
-                    <div className="swiper-arrow-left-wrapper">
+                <div className="swiper-arrow-left">
+                    <div 
+                        // className="swiper-arrow-left-wrapper"
+                        className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                        onClick={prevSlide}
+                        onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                        onMouseLeave={() => handleMouseLeave('leftArrow')}
+                    >
                         <div className="h17-white-lustria">Previous</div>
                         <div className="swiper-arrow-left-line"/>
                     </div>
@@ -348,12 +385,14 @@ export const Swiper = (props) => {
     const renderSecondArrow = () => {
         if(props.translateWidth){
             return(
-                <div 
-                    className="swiper-arrow-right"
-                    onClick={nextSlide}
-                    onMouseEnter={handleMouseEnter} 
-                >
-                    <div className="swiper-arrow-right-wrapper">
+                <div className="swiper-arrow-right">
+                    <div 
+                        // className="swiper-arrow-right-wrapper"
+                        className={renderClassName("rightArrow", isHoveringRightArrow)}
+                        onClick={nextSlide}
+                        onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                        onMouseLeave={() => handleMouseLeave('rightArrow')}
+                    >
                         <div className="h17-white-lustria">Next</div>
                         <div className="swiper-arrow-right-line"/>
                     </div>
@@ -391,6 +430,7 @@ export const Swiper = (props) => {
                 {renderSwiper()}
             </div>
             {renderSecondArrow()}
+            {console.log(isHoveringLeftArrow)}
         </div>
     );
 }
