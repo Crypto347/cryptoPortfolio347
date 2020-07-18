@@ -10,6 +10,7 @@
            
             .slide {
                 padding: 0 170px 0 170px;
+                cursor: context-menu;
                 // background-color: rgb(18, 68, 159);
                 // filter: grayscale(40%);
                 // width: 100%;
@@ -23,6 +24,54 @@
         }
     }
 }
+
+.swiper-arrow-left {
+    width: 65px;
+    .swiper-arrow-left-wrapper {
+        position: relative;
+        z-index: 20;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        cursor: pointer;
+        .h17-white-lustria {
+            font-size: 17px;
+            color: white;
+            font-family: 'Lustria', serif;
+            padding-right: 0;
+        }
+        .swiper-arrow-left-line {
+            border: 1px solid white;
+            width: 100px;
+            margin-top: 7px;
+        }
+    }
+
+}
+.swiper-arrow-right {
+    width: 65px;
+    .swiper-arrow-right-wrapper {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateX(-35px);
+        cursor: pointer;
+        .h17-white-lustria {
+            font-size: 17px;
+            color: white;
+            font-family: 'Lustria', serif;
+            padding-left: 0;
+        }
+        .swiper-arrow-right-line {
+            border: 1px solid white;
+            width: 100px;
+            margin-top: 7px;
+        }
+    }
+}
+
 
 
 // .slider-window-height-content {
@@ -40,34 +89,7 @@
 //     }
 // }
 
-.swiper-arrow-left {
-    border: 2px solid red;
-    width: 65px;
-    height: 17px;
-    // background-color: rgba(104, 97, 95, 0.7);
-    // position: absolute;
-    // top: 0;
-    // z-index: 1;
-    // padding-top: 3px;
-    // text-align: center;
-    cursor: pointer;
 
-}
-.swiper-arrow-right {
-    border: 2px solid red;
-    width: 65px;
-    height: 17px;
-    // width: 100px;
-    // height: 17px;
-    // background-color: rgba(104, 97, 95, 0.7);
-    // position: absolute;
-    // bottom: 0;
-    // z-index: 1;
-    // padding-top: 3px;
-    // text-align: center;
-    // cursor: pointer;
-    // border: 2px solid red;
-}
 
 
 // .swiper-arrow-up {

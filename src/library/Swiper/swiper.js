@@ -52,6 +52,7 @@ import {
 
 import {
     H25,
+    H15,
     EH2
 } from '../../components/UtilityComponents';
 
@@ -80,6 +81,7 @@ export const Swiper = (props) => {
 
     const [showUpArrow, setShowUpArrow] = useState(false);
     const [showDownArrow, setShowDownArrow] = useState(false);
+    // const []
 
     const [state, setState] = useState({
         activeIndex: 0,
@@ -318,18 +320,19 @@ export const Swiper = (props) => {
                     onClick={prevSlide}
                     onMouseEnter={handleMouseEnter} 
                 >
-                    {/* <div >
-
-                    </div> */}
+                    <div className="swiper-arrow-left-wrapper">
+                        <div className="h17-white-lustria">Previous</div>
+                        <div className="swiper-arrow-left-line"/>
+                    </div>
                 </div>
             )
         }
         if(props.translateHeight){
             return(
                 <div 
-                className="swiper-arrow-up"
-                onClick={prevSlide}
-                onMouseEnter={handleMouseEnter} 
+                    className="swiper-arrow-up"
+                    onClick={prevSlide}
+                    onMouseEnter={handleMouseEnter} 
                 >
                     <FontAwesomeIcon 
                         icon={faChevronUp} 
@@ -350,7 +353,10 @@ export const Swiper = (props) => {
                     onClick={nextSlide}
                     onMouseEnter={handleMouseEnter} 
                 >
-                  
+                    <div className="swiper-arrow-right-wrapper">
+                        <div className="h17-white-lustria">Next</div>
+                        <div className="swiper-arrow-right-line"/>
+                    </div>
                 </div>
             )
         }
