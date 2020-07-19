@@ -266,7 +266,7 @@ export const Swiper = (props) => {
         let posX2 = 0;
         let posInitial;
         let posFinal;
-        let threshold = 100;
+        let threshold = 10; //draging delta
 
         swiperContent.addEventListener('mousedown', (e) => {
             dragStart()
@@ -274,7 +274,7 @@ export const Swiper = (props) => {
             swiperContent.classList.add('active');
         });
 
-        swiperContent.addEventListener('mouseup', (e) => {
+        document.addEventListener('mouseup', (e) => {
           
             swiperContent.classList.remove('active');
         });
@@ -311,11 +311,11 @@ export const Swiper = (props) => {
             console.log(e)
             posFinal = swiperContent.offsetLeft;
             if (posFinal - posInitial < -threshold) {
-                nextSlide();
+                // nextSlide(swiperContent, posInitial);
             } else if (posFinal - posInitial > threshold) {
-              prevSlide();
+                // prevSlide(swiperContent, posInitial);
             } else {
-                swiperContent.style.left = (posInitial) + "px";
+                // swiperContent.style.left = (posInitial) + "px";
             }
         
             document.onmouseup = null;
@@ -387,13 +387,16 @@ export const Swiper = (props) => {
                 ...state,
                 _slides,
                 transition: 0,
-                translate: cardWidth
+                translate: getTranslateValue(props.translateWidth, props.translateHeight)
             })
         }
       
     }
 
-    const prevSlide = () => {
+    const prevSlide = (swiperContent, posInitial) => {
+        if(swiperContent){
+            // swiperContent.style.left = (-posInitial) + "px";
+        }
         setState({
             ...state,
             translate: 0,
@@ -401,7 +404,10 @@ export const Swiper = (props) => {
         })
     }
 
-    const nextSlide = () => {
+    const nextSlide = (swiperContent, posInitial) => {
+        if(swiperContent){
+            // swiperContent.style.left = (-posInitial) + "px";
+        }
         setState({
             ...state,
             translate: translate + getTranslateValue(props.translateWidth, props.translateHeight),
@@ -544,7 +550,7 @@ export const Swiper = (props) => {
                     <div 
                         // className="swiper-arrow-left-wrapper"
                         className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                        onClick={prevSlide}
+                        onClick={() => prevSlide(null, null)}
                         onMouseEnter={() => handleMouseEnter('leftArrow')} 
                         onMouseLeave={() => handleMouseLeave('leftArrow')}
                     >
@@ -558,7 +564,7 @@ export const Swiper = (props) => {
             return(
                 <div 
                     className="swiper-arrow-up"
-                    onClick={prevSlide}
+                    onClick={() => prevSlide(null, null)}
                     onMouseEnter={handleMouseEnter} 
                 >
                     <FontAwesomeIcon 
@@ -579,7 +585,7 @@ export const Swiper = (props) => {
                     <div 
                         // className="swiper-arrow-right-wrapper"
                         className={renderClassName("rightArrow", isHoveringRightArrow)}
-                        onClick={nextSlide}
+                        onClick={() => nextSlide(null, null)}
                         onMouseEnter={() => handleMouseEnter('rightArrow')} 
                         onMouseLeave={() => handleMouseLeave('rightArrow')}
                     >
@@ -593,7 +599,7 @@ export const Swiper = (props) => {
             return(
                 <div 
                     className="swiper-arrow-down"
-                    onClick={nextSlide}
+                    onClick={() => nextSlide(null, null)}
                     onMouseEnter={handleMouseEnter} 
                 >
                     <FontAwesomeIcon 
@@ -614,7 +620,7 @@ export const Swiper = (props) => {
     */
 
     return(
-        <div className="swiper" id="swiper">
+        <div className="swiper" id="">
             {renderFirstArrow()}
             <div className="swiper-wrapper"  id="swiper-wrapper">
                 {renderSwiper()}
