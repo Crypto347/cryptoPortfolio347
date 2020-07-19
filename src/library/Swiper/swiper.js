@@ -112,9 +112,15 @@ export const Swiper = (props) => {
 
     useEffect(() => {
         let slidesArray = [...props.contentArray.items];
+
         setSlides(slidesArray);
         // console.log(slidesArray)
         if(!props.contentArray.loading && props.contentArray.items.length === 3){
+            let swiperWrapper = document.getElementById('swiper-wrapper');   
+            let swiperContent = document.getElementById('swiper-content');
+            slide(swiperWrapper, swiperContent);
+            
+
             setState({
                 ...state,
                 _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
@@ -129,6 +135,8 @@ export const Swiper = (props) => {
                 translate: getTranslateValue(props.translateWidth, props.translateHeight),
             })
         }
+
+   
 
         return () => {
             setState({
@@ -156,6 +164,9 @@ export const Swiper = (props) => {
     }, [transition])
 
     useEffect(() => {
+ 
+        // swiperContent.onmousedown = dragStart;
+
         const smooth = e => {
             if(e.target.className.includes(`${props.translateWidth ? "swiper-window-width-content" : "swiper-window-height-content"}`)){
                 transitionRef.current()
@@ -173,17 +184,46 @@ export const Swiper = (props) => {
         window.addEventListener('resize', resize);
         
 
-        let swiper = document.getElementById('swiper-wrapper');
-        let mouseDown = false;
-        swiper.addEventListener('mousedown', (e) => {
-            mouseDown = true;
-            swiper.classList.add('active');
-        });
-        swiper.addEventListener('mousemove', (e) => handleMouseMove(e, mouseDown));
-        swiper.addEventListener('mouseup', (e) => {
-            mouseDown = false;
-            swiper.classList.remove('active');
-        });
+       
+            // slides = items.getElementsByClassName('slide'),
+            // slidesLength = slides.length,
+            // slideSize = slides.length ? items.getElementsByClassName('slide')[0].offsetWidth : null,
+            // firstSlide = slides[0],
+            // lastSlide = slides[slidesLength - 1],
+            // cloneFirst = firstSlide.cloneNode(true),
+            // cloneLast = lastSlide.cloneNode(true),
+            // index = 0,
+            // allowShift = true;
+        
+        // let mouseDown = false;
+     
+
+        // swiper.addEventListener('mousemove', (e) => {
+
+            
+
+
+            // if(mouseDown){
+            //     if(e.movementX < 0){
+            //         // prevSlide()
+            //         // let leftover = getTranslateValue(props.translateWidth, props.translateHeight) - e.offsetX;
+            //         // swiperContent.style.transform = `translateX(${e.offsetX}px)`;
+            //         // console.log("left", )
+            //     }
+            //     if(e.movementX > 0){
+            //         // nextSlide()
+            //         // console.log("lright")
+            //     }
+            //     // console.log(e)
+            // }
+        // });
+
+        // swiperContent.addEventListener('mouseup', (e) => {
+        //     mouseDown = false;
+        //     swiperContent.classList.remove('active');
+        // });
+      
+       
 
         return () => {
             window.removeEventListener('transitionend', smooth);
@@ -198,20 +238,90 @@ export const Swiper = (props) => {
         nextSlide();
     }, props.autoPlay ? 3000 : null)
 
-
     // const handleMouseDown = (e) => {
     //  console.log(e)
     // }
 
-    const handleMouseMove = (e, mouseDown) => {
-        if(mouseDown){
-            console.log("mouseDown")
-        }
-    }
+    // const handleMouseMove = (e, mouseDown) => {
+    //     if(mouseDown){
+    //         if(e.movementX < 0){
+    //             // prevSlide()
+    //             console.log("left")
+    //         }
+    //         if(e.movementX > 0){
+    //             // nextSlide()
+    //             console.log("lright")
+    //         }
+    //         console.log(e)
+    //     }
+    // }
 
     // const handleMouseUp = (e) => {
-    //     props.setMouseDown(false);
+    //     console.log(e)
+    //     // props.setMouseDown(false);
     // }
+
+    const slide = (swiperWrapper, swiperContent) => {
+        let posX1 = 0;
+        let posX2 = 0;
+        let posInitial;
+        let posFinal;
+        let threshold = 100;
+
+        swiperContent.addEventListener('mousedown', (e) => {
+            dragStart()
+            console.log(e)
+            swiperContent.classList.add('active');
+        });
+
+        swiperContent.addEventListener('mouseup', (e) => {
+          
+            swiperContent.classList.remove('active');
+        });
+
+        function dragStart (e) {
+            e = e || window.event;
+            e.preventDefault();
+            posInitial = swiperContent.offsetLeft;
+            // console.log("posInitial", posInitial)
+            if (e.type == 'touchstart') {
+              posX1 = e.touches[0].clientX;
+            } else {
+              posX1 = e.clientX;
+            //   console.log("posX1", posX1)
+              document.onmouseup = dragEnd;
+              document.onmousemove = dragAction;
+            }
+        }
+
+        function dragAction (e) {
+            e = e || window.event;
+            if (e.type == 'touchmove') {
+              posX2 = posX1 - e.touches[0].clientX;
+              posX1 = e.touches[0].clientX;
+            } else {
+              posX2 = posX1 - e.clientX;
+              posX1 = e.clientX;
+            }
+            // console.log("posX11", swiperContent.style.left)
+            swiperContent.style.left = (swiperContent.offsetLeft - posX2) + "px";
+        }
+        
+        function dragEnd (e) {
+            console.log(e)
+            posFinal = swiperContent.offsetLeft;
+            if (posFinal - posInitial < -threshold) {
+                nextSlide();
+            } else if (posFinal - posInitial > threshold) {
+              prevSlide();
+            } else {
+                swiperContent.style.left = (posInitial) + "px";
+            }
+        
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
 
     const getTranslateValue = (width, height) => {
         if(width){
@@ -383,6 +493,7 @@ export const Swiper = (props) => {
                         <div 
                             key={i} 
                             className="slide"
+                            id="slide"
                             style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                         >
                            <H25 className="h25-white-lustria">{el.feedback}</H25>

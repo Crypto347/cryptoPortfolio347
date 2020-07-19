@@ -4,10 +4,15 @@
     .swiper-wrapper {
         width: calc(100% - 130px);
         overflow: hidden;
+        position: relative;
+        z-index: 1;
         .swiper-window-width-content {
             display: flex;
             width: 100%;
-           
+            position: relative;
+            z-index: 100;
+            left: 0px;
+            border: 2px solid red;
             .slide {
                 padding: 0 170px 0 170px;
                 user-select: none; /* supported by Chrome and Opera */
