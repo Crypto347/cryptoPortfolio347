@@ -27,3 +27,15 @@ export function nextImage() {
         type: actionTypes.NEXT_IMAGE
     };
 };
+
+export function setSwiperState(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};

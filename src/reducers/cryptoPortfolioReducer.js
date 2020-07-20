@@ -18,7 +18,15 @@ import uuid from "uuid";
 export const initialState = {
     menuItems: [],
     photoViewerForPictureBoardTextItemOpen: false,
-    photoViewerImagesArray: []
+    photoViewerImagesArray: [],
+    swiper: {
+        slides: [],
+        _slides: [],
+        activeIndex: 0,
+        translate: 0,
+        transition: 0.45,
+        rerender: false
+    }
 }
 
 const initMenuItems = (state, action) => {
@@ -53,7 +61,6 @@ const prevImage = (state, action) => {
     };
 }
 
-
 const nextImage = (state, action) => {
     let updatedPhotoViewerImagesArray = [...state.photoViewerImagesArray];
     let currentImage = updatedPhotoViewerImagesArray[0];
@@ -64,6 +71,23 @@ const nextImage = (state, action) => {
         photoViewerImagesArray: updatedPhotoViewerImagesArray,
     };
 }
+
+const setSwiperState = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+        
+    };
+    return {
+        ...state,
+        swiper: updatedSwiper,
+    };
+}
+
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -190,6 +214,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return prevImage(state, action); 
         case actionTypes.NEXT_IMAGE:
             return nextImage(state, action); 
+        case actionTypes.SET_SWIPER_STATE:
+            return setSwiperState(state, action); 
         default: 
             return state;
     }

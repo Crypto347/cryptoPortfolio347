@@ -57,3 +57,10 @@ export const getTestimonialsState = createSelector(
     [getTestimonials],
     (x) => x
 );
+
+const getSwiperData = (state) => state.home.swiper;
+
+export const getSwiperDataState = createSelector(
+    [getSwiperData],
+    (x) => x
+);
