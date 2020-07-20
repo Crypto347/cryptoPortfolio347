@@ -70,14 +70,6 @@ import {
 * Images
 */
 
-// import StoryImage1 from '../../../images/photo-1527358043728-909898958b29.jpg';
-// import StoryImage2 from '../../../images/rocking-chairs-white-chairs-rockers.jpg';
-// import StoryImage3 from '../../../images/coffee-latte-art-coffee-shop.jpg';
-// import StoryImage4 from '../../../images/coffee-cup-latte-cappuccino.jpg';
-// import StoryImage5 from '../../../images/coffee-cup-beverage-food-photo.jpg';
-// import StoryImage6 from '../../../images/white-bowl-beside-glass-cup.jpg';
-// import DefaultImage from '../../../images/error.jpg';
-
 /**
 * Swiper component definition and export
 */
@@ -113,10 +105,12 @@ export const Swiper = (props) => {
     useEffect(() => {
         let slidesArray = [...props.contentArray.items];
         let _slides;
+        let swiperWrapper;
+        let swiperContent;
         if(!props.contentArray.loading && props.contentArray.items.length === 3){
-            let swiperWrapper = document.getElementById('swiper-wrapper');   
-            let swiperContent = document.getElementById('swiper-content');
-            slide(swiperWrapper, swiperContent);
+            swiperWrapper = document.getElementById('swiper-wrapper');   
+            swiperContent = document.getElementById('swiper-content');
+            
             
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]];
             // setState({
@@ -127,11 +121,17 @@ export const Swiper = (props) => {
 
             if(props.swiperData.rerender) {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
+                let translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+                let _slides = updateSlides(props.swiperData.slides, props.swiperData.activeIndex);
+                slide(swiperWrapper, swiperContent, translateVal, _slides);
+                console.log("2GEN", props.swiperData.activeIndex)
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                console.log("1", getTranslateValue(props.translateWidth, props.translateHeight))
+                slide(swiperWrapper, swiperContent, getTranslateValue(props.translateWidth, props.translateHeight));
             }
-            
            
+            // console.log("Addition", translateVal)
         }
 
         if(!props.contentArray.loading && props.contentArray.items.length === 4){
@@ -141,13 +141,23 @@ export const Swiper = (props) => {
             //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
+            console.log("3", props.swiperData._slides)
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
         }
 
    
 
         return () => {
+           
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
+            console.log("4",props.swiperData._slides)
+            if(swiperContent){
+                swiperContent.removeEventListener('mousedown', handleMouseDown);
+                // document.removeEventListener('mouseup', () => {})
+                // document.removeEventListener('mousemove', () => {})
+                // debugger
+            }
+           
             // setState({
             //     activeIndex: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
@@ -169,7 +179,9 @@ export const Swiper = (props) => {
             //     ...state,
             //     transition: 0.45
             // })
+           
             props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, 0.45, props.swiperData.rerender);
+            console.log("5", props.swiperData._slides)
         }
     }, [props.swiperData.transition])
 
@@ -206,55 +218,26 @@ export const Swiper = (props) => {
         nextSlide();
     }, props.autoPlay ? 3000 : null)
 
-    const slide = (swiperWrapper, swiperContent) => {
+    const slide = (swiperWrapper, swiperContent, translateVal, _slides) => {
         let posX1 = 0;
         let posX2 = 0;
         let posInitial;
         let posFinal;
         let threshold = 50; //draging delta
-        // let prev = document.getElementById('prev');
-        // let next = document.getElementById('next');
-        // let translate = getTranslateValue(props.translateWidth, props.translateHeight);
+        let direction;
 
-        swiperContent.addEventListener('mousedown', (e) => {
-            dragStart()
-            // console.log(e)
-            swiperContent.classList.add('active');
-        });
+        swiperContent.addEventListener('mousedown', (e) => handleMouseDown(e, dragStart, swiperContent));
 
         document.addEventListener('mouseup', (e) => {
           
             swiperContent.classList.remove('active');
         });
 
-        // prev.addEventListener('click', () => {
-        //     console.log(activeIndex)
-        //     activeIndex --;
-      
-        //     swiperContent.style.translate = 0;
-        //     prevSlide(null, null);
-        // });
-        // next.addEventListener('click', () => {
-        //     console.log(activeIndex)
-        //     activeIndex ++;
-       
-        //     swiperContent.style.translate = translate + getTranslateValue(props.translateWidth, props.translateHeight);
-        //     nextSlide(null, null);
-        // });
-
-        // const smooth = e => {
-        //     if(e.target.className.includes(`${props.translateWidth ? "swiper-window-width-content" : "swiper-window-height-content"}`)){
-        //         transitionRef.current()
-        //     }
-        // }
-
-                
-        // Transition events
-        // swiperContent.addEventListener('transitionend', smooth);
-
         function dragStart (e) {
             e = e || window.event;
             e.preventDefault();
+            console.log("Addition",props.swiperData.activeIndex)
+            // let translateValue = props.swiperData.translate
             posInitial = swiperContent.offsetLeft;
             // console.log("posInitial", posInitial)
             if (e.type == 'touchstart') {
@@ -276,27 +259,35 @@ export const Swiper = (props) => {
               posX2 = posX1 - e.clientX;
               posX1 = e.clientX;
             }
-            // console.log("posX11", swiperContent.style.left)
+            // console.log("posX11", posX1)
+            direction = e.movementX;
             swiperContent.style.left = (swiperContent.offsetLeft - posX2) + "px";
         }
         
         function dragEnd (e) {
-            // console.log(e)
-            posFinal = swiperContent.offsetLeft;
-            // swiperContent.style.left ="-200px";
-            if (posFinal - posInitial < -threshold) {
-                nextSlide(props.swiperData.activeIndex);
-            } else if (posFinal - posInitial > threshold) {
-                prevSlide(props.swiperData.activeIndex);
-            } else {
-                // swiperContent.style.left = (posInitial) + "px";
+            // posFinal = swiperContent.offsetLeft;
+            if(direction > 0){
+                prevSlide(swiperContent, posInitial, _slides);
+            }else{
+                nextSlide(swiperContent, posInitial, translateVal, _slides);
             }
-        
+            // if (posFinal - posInitial < -threshold) {
+            //     nextSlide(props.swiperData.activeIndex);
+            // } else if (posFinal - posInitial > threshold) {
+            //     prevSlide(props.swiperData.activeIndex);
+            // } else {
+                // swiperContent.style.left = (posInitial) + "px";
+            // }
+      
             document.onmouseup = null;
             document.onmousemove = null;
         }
     }
 
+    const handleMouseDown = (e, dragStart, swiperContent) => {
+        dragStart(e)
+        swiperContent.classList.add('active');
+    }
     const getTranslateValue = (width, height) => {
         if(width){
             if(width === "windowWidth"){
@@ -315,11 +306,12 @@ export const Swiper = (props) => {
     }
     
     const handleResize = () => {
-        setState({
-            ...state,
-            translate: getTranslateValue(props.translateWidth, props.translateHeight),
-            transition: 0
-        })
+        // setState({
+        //     ...state,
+        //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
+        //     transition: 0
+        // })
+        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
     }
 
     const smoothTransition = () => {
@@ -327,20 +319,19 @@ export const Swiper = (props) => {
         let slides = [...props.swiperData.slides];
         let activeIndex = props.swiperData.activeIndex;
         if(props.showNumbersOfSlides === 1){
+
+            _slides = updateSlides(slides, activeIndex);
             //We're at the last slide
-            if(activeIndex === slides.length - 1)
-            _slides = [props.swiperData.slides[slides.length - 2], slides[slides.length - 1], slides[0]];
-            //We're back at the first slide. Just reset to how it was on initial render.
-            else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1]]
-            // Create an array of the previous last slide, and the next two slides that follow it.
-            else _slides = slides.slice(activeIndex - 1, activeIndex + 2);
+           
             // setState({
             //     ...state,
             //     _slides,
             //     transition: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
             // })
+          
             props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            console.log("6",props.swiperData._slides)
         }
         if(props.showNumbersOfSlides === 3){
             if(activeIndex === slides.length - 1){
@@ -358,7 +349,7 @@ export const Swiper = (props) => {
             if(activeIndex === 3){
                 _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]];
             }
-        
+            console.log("7")
             setState({
                 ...state,
                 _slides,
@@ -369,34 +360,55 @@ export const Swiper = (props) => {
       
     }
 
-    const prevSlide = (index) => {
-        // if(swiperContent){
-        //     swiperContent.style.left = (-posInitial) + "px";
-        // }
+    const updateSlides = (slides, activeIndex) => {
+        let _slides = [];
+        if(activeIndex === slides.length - 1)
+        _slides = [props.swiperData.slides[slides.length - 2], slides[slides.length - 1], slides[0]];
+        //We're back at the first slide. Just reset to how it was on initial render.
+        else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1]]
+        // Create an array of the previous last slide, and the next two slides that follow it.
+        else _slides = slides.slice(activeIndex - 1, activeIndex + 2);
+
+        return _slides;
+    }
+
+    const prevSlide = (swiperContent, posInitial, _slides) => {
+        if(swiperContent){
+            swiperContent.style.left = (-posInitial) + "px";
+        }
         // setState({
         //     ...state,
         //     translate: 0,
         //     activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1
         // })
         let translate = 0;
-        let activeIndex = props.swiperData.activeIndex === 0 ? props.swiperData.slides.length - 1 : props.swiperData.activeIndex - 1
-        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, activeIndex, translate, props.swiperData.transition, true);
+        let activeIndex = props.swiperData.activeIndex === 0 ? props.swiperData.slides.length - 1 : props.swiperData.activeIndex - 1;
+        let _updatedSlides = _slides ? _slides : props.swiperData._slides;
+     
+      
+        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
+        console.log("8GEN", props.swiperData._slides)
+
     }
 
-    const nextSlide = (index) => {
-        // if(swiperContent){
-        //     swiperContent.style.left = (-posInitial) + "px";
-        // }
+    const nextSlide = (swiperContent, posInitial, translateVal, _slides) => {
+        if(swiperContent){
+            swiperContent.style.left = (-posInitial) + "px";
+        }
         // console.log(activeIndex)
         // setState({
         //     ...state,
         //     translate: translate + getTranslateValue(props.translateWidth, props.translateHeight),
         //     activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
         // })
-        console.log(index)
-        let translate = props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
+        
+        let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
-        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, activeIndex, translate, props.swiperData.transition, true);
+        let _updatedSlides = _slides ? _slides : props.swiperData._slides;
+        
+        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
+        console.log("9GEN", props.swiperData._slides)
+       
     }
 
     const handleMouseEnter = (opt) => {
@@ -534,7 +546,7 @@ export const Swiper = (props) => {
                     <div 
                         // className="swiper-arrow-left-wrapper"
                         className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                        onClick={() => prevSlide(props.swiperData.activeIndex)}
+                        onClick={() => prevSlide(null, null)}
                         onMouseEnter={() => handleMouseEnter('leftArrow')} 
                         onMouseLeave={() => handleMouseLeave('leftArrow')}
                         id="prev"
@@ -570,7 +582,7 @@ export const Swiper = (props) => {
                     <div 
                         // className="swiper-arrow-right-wrapper"
                         className={renderClassName("rightArrow", isHoveringRightArrow)}
-                        onClick={() => nextSlide(props.swiperData.activeIndex)}
+                        onClick={() => nextSlide(null, null)}
                         onMouseEnter={() => handleMouseEnter('rightArrow')} 
                         onMouseLeave={() => handleMouseLeave('rightArrow')}
                         id="next"
@@ -606,7 +618,7 @@ export const Swiper = (props) => {
     */
 
     return(
-        <div className="swiper" id="">
+        <div className="swiper" id="swiper">
             {renderFirstArrow()}
             <div className="swiper-wrapper"  id="swiper-wrapper">
                 {renderSwiper()}
