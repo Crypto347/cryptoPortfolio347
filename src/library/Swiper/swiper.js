@@ -107,6 +107,8 @@ export const Swiper = (props) => {
         let _slides;
         let swiperWrapper;
         let swiperContent;
+        let translateVal;
+        let _updatedSlides;
         if(!props.contentArray.loading && props.contentArray.items.length === 3){
             swiperWrapper = document.getElementById('swiper-wrapper');   
             swiperContent = document.getElementById('swiper-content');
@@ -121,17 +123,16 @@ export const Swiper = (props) => {
 
             if(props.swiperData.rerender) {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
-                let translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                let _slides = updateSlides(props.swiperData.slides, props.swiperData.activeIndex);
-                slide(swiperWrapper, swiperContent, translateVal, _slides);
-                console.log("2GEN", props.swiperData.activeIndex)
+
+                translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+                _updatedSlides = updateSlides(props.swiperData.slides, props.swiperData.activeIndex);
+               
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
-                console.log("1", getTranslateValue(props.translateWidth, props.translateHeight))
-                slide(swiperWrapper, swiperContent, getTranslateValue(props.translateWidth, props.translateHeight));
+                translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+                
             }
-           
-            // console.log("Addition", translateVal)
+            slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
         }
 
         if(!props.contentArray.loading && props.contentArray.items.length === 4){
@@ -141,7 +142,6 @@ export const Swiper = (props) => {
             //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
-            console.log("3", props.swiperData._slides)
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
         }
 
@@ -150,12 +150,8 @@ export const Swiper = (props) => {
         return () => {
            
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
-            console.log("4",props.swiperData._slides)
             if(swiperContent){
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
-                // document.removeEventListener('mouseup', () => {})
-                // document.removeEventListener('mousemove', () => {})
-                // debugger
             }
            
             // setState({
@@ -181,7 +177,6 @@ export const Swiper = (props) => {
             // })
            
             props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, 0.45, props.swiperData.rerender);
-            console.log("5", props.swiperData._slides)
         }
     }, [props.swiperData.transition])
 
@@ -208,9 +203,6 @@ export const Swiper = (props) => {
         return () => {
             window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
-            // swiper.removeEventListener('mousedown', (e) => handleMouseUp(e));
-            swiper.removeEventListener('mousemove', handleMouseMove);
-            // swiper.removeEventListener('mouseup', (e) => handleMouseUp(e));
         };
     }, [])
 
@@ -236,15 +228,11 @@ export const Swiper = (props) => {
         function dragStart (e) {
             e = e || window.event;
             e.preventDefault();
-            console.log("Addition",props.swiperData.activeIndex)
-            // let translateValue = props.swiperData.translate
             posInitial = swiperContent.offsetLeft;
-            // console.log("posInitial", posInitial)
             if (e.type == 'touchstart') {
               posX1 = e.touches[0].clientX;
             } else {
               posX1 = e.clientX;
-            //   console.log("posX1", posX1)
               document.onmouseup = dragEnd;
               document.onmousemove = dragAction;
             }
@@ -259,7 +247,6 @@ export const Swiper = (props) => {
               posX2 = posX1 - e.clientX;
               posX1 = e.clientX;
             }
-            // console.log("posX11", posX1)
             direction = e.movementX;
             swiperContent.style.left = (swiperContent.offsetLeft - posX2) + "px";
         }
@@ -319,19 +306,14 @@ export const Swiper = (props) => {
         let slides = [...props.swiperData.slides];
         let activeIndex = props.swiperData.activeIndex;
         if(props.showNumbersOfSlides === 1){
-
             _slides = updateSlides(slides, activeIndex);
-            //We're at the last slide
-           
             // setState({
             //     ...state,
             //     _slides,
             //     transition: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
             // })
-          
             props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            console.log("6",props.swiperData._slides)
         }
         if(props.showNumbersOfSlides === 3){
             if(activeIndex === slides.length - 1){
@@ -362,6 +344,7 @@ export const Swiper = (props) => {
 
     const updateSlides = (slides, activeIndex) => {
         let _slides = [];
+        //We're at the last slides
         if(activeIndex === slides.length - 1)
         _slides = [props.swiperData.slides[slides.length - 2], slides[slides.length - 1], slides[0]];
         //We're back at the first slide. Just reset to how it was on initial render.
@@ -381,13 +364,11 @@ export const Swiper = (props) => {
         //     translate: 0,
         //     activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1
         // })
-        let translate = 0;
         let activeIndex = props.swiperData.activeIndex === 0 ? props.swiperData.slides.length - 1 : props.swiperData.activeIndex - 1;
+        let translate = 0;
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-     
-      
+
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
-        console.log("8GEN", props.swiperData._slides)
 
     }
 
@@ -395,19 +376,16 @@ export const Swiper = (props) => {
         if(swiperContent){
             swiperContent.style.left = (-posInitial) + "px";
         }
-        // console.log(activeIndex)
         // setState({
         //     ...state,
         //     translate: translate + getTranslateValue(props.translateWidth, props.translateHeight),
         //     activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
         // })
-        
-        let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
+        let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
         
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
-        console.log("9GEN", props.swiperData._slides)
        
     }
 
@@ -476,7 +454,6 @@ export const Swiper = (props) => {
     }
 
     const renderSwiper = () => {
-    //   console.log(_slides)
       if(!props.contentArray.loading){
         if(props.translateWidth){
             return(
@@ -624,7 +601,6 @@ export const Swiper = (props) => {
                 {renderSwiper()}
             </div>
             {renderSecondArrow()}
-            {/* {console.log(mouseDown)} */}
         </div>
     );
 }
