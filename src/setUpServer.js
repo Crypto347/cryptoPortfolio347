@@ -929,6 +929,53 @@ app.get('/api/section3/testimonials', (req, res) => {
     res.json(testimonials);
 });
 
+app.get('/api/section3/team', (req, res) => {
+    const team = [
+        {
+            id: 1,
+            name: "Christina Kinslee",
+            position: "Designer",
+            photo: "Photo1",
+            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg",
+            hover: false
+        },
+        {
+            id: 2,
+            name: "Brian Lundquist",
+            position: "UX Designer",
+            photo: "Photo2",
+            path: "brian-lundquist-VwU6dbcwn-E-unsplash.jpg",
+            hover: false
+        },
+        {
+            id: 3,
+            name: "Charlotte Lynn",
+            position: "Developer",
+            photo: "Photo3",
+            path: "jake-nackos-IF9TK5Uy-KI-unsplash.jpg",
+            hover: false
+        },
+        {
+            id: 4,
+            name: "James Wilson",
+            position: "Developer",
+            photo: "Photo4",
+            path: "photo-1540569014015-19a7be504e3a.jpg",
+            hover: false
+        },
+        {
+            id: 5,
+            name: "Zoe Fernandez",
+            position: "Copywriter",
+            photo: "Photo5",
+            path: "zoe-fernandez--zqoE7jnQgw-unsplash.jpg",
+            hover: false
+        },
+    ]
+    res.json(team);
+});
+
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
