@@ -153,6 +153,7 @@ export const Swiper = (props) => {
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
             if(swiperContent){
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
+                document.removeEventListener('mouseup', handleMouseUp)
             }
            
             // setState({
@@ -190,7 +191,7 @@ export const Swiper = (props) => {
         }
 
         const resize = () => {
-            resizeRef.current()
+            resizeRef.current();
         }
 
         let interval = null;
@@ -218,10 +219,7 @@ export const Swiper = (props) => {
         let direction;
 
         swiperContent.addEventListener('mousedown', (e) => handleMouseDown(e, dragStart, swiperContent));
-
-        document.addEventListener('mouseup', (e) => {
-            swiperContent.classList.remove('active');
-        });
+        document.addEventListener('mouseup', () => handleMouseUp(swiperContent));
 
         function dragStart (e) {
             e = e || window.event;
@@ -271,6 +269,11 @@ export const Swiper = (props) => {
         dragStart(e)
         swiperContent.classList.add('active');
     }
+
+    const handleMouseUp = (swiperContent) => {
+        swiperContent.classList.remove('active');
+    }
+
     const getTranslateValue = (width, height) => {
         if(width){
             if(width === "windowWidth"){
@@ -294,7 +297,7 @@ export const Swiper = (props) => {
         //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
         //     transition: 0
         // })
-        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
+        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
     }
 
     const smoothTransition = () => {
