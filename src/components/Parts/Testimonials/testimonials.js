@@ -117,6 +117,7 @@ export const Testimonials = (props) => {
                 contentArray={props.testimonials}
                 translateWidth={size.width - 130}
                 showNumbersOfSlides={1}
+                autoPlay
             />
             <EH4/>
             

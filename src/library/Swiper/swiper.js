@@ -208,7 +208,7 @@ export const Swiper = (props) => {
 
     useInterval(() => {
         nextSlide();
-    }, props.autoPlay ? 3000 : null)
+    }, props.autoPlay ? 7000 : null)
 
     const slide = (swiperWrapper, swiperContent, translateVal, _slides) => {
         let posX1 = 0;
