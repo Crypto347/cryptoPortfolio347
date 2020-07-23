@@ -933,18 +933,18 @@ app.get('/api/section3/teamInformation', (req, res) => {
     const teamInfo = [
         {
             id: 1,
-            name: "Christina Kinslee",
+            name: "Marcos Paulo",
             position: "Designer",
             photo: "Photo1",
-            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg",
+            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg",
             hover: false
         },
         {
             id: 2,
-            name: "Marcos Paulo",
+            name: "Christina Kinslee",
             position: "UX Designer",
             photo: "Photo2",
-            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg",
+            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg",
             hover: false
         },
         {
