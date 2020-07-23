@@ -21,11 +21,11 @@ export const initialState = {
         loading: false,
         error: null
     },
-    // ourProcess: {
-    //     items: [],
-    //     loading: false,
-    //     error: null
-    // }
+    teamInformation: {
+        items: [],
+        loading: false,
+        error: null
+    }
 }
 
 const fetchTestimonialsBegin = (state, action) => {
@@ -66,43 +66,43 @@ const fetchTestimonialsFailur = (state, action) => {
     };
 }
 
-// const fetchOurProcessDataBegin = (state, action) => {
-//     let updatedOurProcess = {
-//         ...state.pictureBoard, 
-//         loading: true, 
-//         error: null
-//     }
+const fetchTeamInformationBegin = (state, action) => {
+    let updatedOurProcess = {
+        ...state.pictureBoard, 
+        loading: true, 
+        error: null
+    }
 
-//     return {
-//         ...state,
-//         ourProcess: updatedOurProcess
-//     };
-// }
+    return {
+        ...state,
+        ourProcess: updatedOurProcess
+    };
+}
 
-// const fetchOurProcessDataSuccess = (state, action) => {   
-//     let updatedOurProcess = {
-//         ...state.pictureBoard, 
-//         items: action.array,
-//         loading: false
-//     } 
-//     return {
-//         ...state,
-//         ourProcess: updatedOurProcess
-//     };
-// }
+const fetchTeamInformationSuccess = (state, action) => {   
+    let updatedOurProcess = {
+        ...state.pictureBoard, 
+        items: action.array,
+        loading: false
+    } 
+    return {
+        ...state,
+        ourProcess: updatedOurProcess
+    };
+}
 
-// const fetchOurProcessDataFailur = (state, action) => {
-//     let updatedOurProcess = {
-//         ...state.pictureBoard, 
-//         items: [],
-//         loading: false, 
-//         error: action.err
-//     }
-//     return {
-//         ...state,
-//         ourProcess: updatedOurProcess
-//     };
-// }
+const fetchTeamInformationFailur = (state, action) => {
+    let updatedOurProcess = {
+        ...state.pictureBoard, 
+        items: [],
+        loading: false, 
+        error: action.err
+    }
+    return {
+        ...state,
+        ourProcess: updatedOurProcess
+    };
+}
 
 const section2Reducer = (state = initialState, action) => {
     switch(action.type){
@@ -112,12 +112,12 @@ const section2Reducer = (state = initialState, action) => {
             return fetchTestimonialsSuccess (state, action);
         case actionTypes.FETCH_TESTIMONIALS_FAILURE:
             return fetchTestimonialsFailur(state, action);
-        // case actionTypes.FETCH_OUR_PROCESS_DATA_BEGIN:
-        //     return fetchOurProcessDataBegin (state, action); 
-        // case actionTypes.FETCH_OUR_PROCESS_DATA_SUCCESS:
-        //     return fetchOurProcessDataSuccess (state, action);
-        // case actionTypes.FETCH_OUR_PROCESS_DATA_FAILURE:
-        //     return fetchOurProcessDataFailur(state, action);
+        case actionTypes.FETCH_TEAM_INFORMATION_BEGIN:
+            return fetchTeamInformationBegin (state, action); 
+        case actionTypes.FETCH_TEAM_INFORMATION_SUCCESS:
+            return fetchTeamInformationSuccess (state, action);
+        case actionTypes.FETCH_TEAM_INFORMATION_FAILURE:
+            return fetchTeamInformationFailur(state, action);
         default: 
             return state;
     }

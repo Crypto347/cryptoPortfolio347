@@ -69,11 +69,11 @@ import {
 * Images
 */
 
-import Sketch from '../../../images/OurProcess/main-home-gif-1.gif';
-import Process from '../../../images/OurProcess/home-2-icon-2.png';
-import Development from '../../../images/OurProcess/main-home-gif-2.gif';
-import Design from '../../../images/OurProcess/home-2-icon-4.png';
-import Evaluation from '../../../images/OurProcess/main-home-gif-3.gif';
+import Sketch from '../../../images/ourProcess/main-home-gif-1.gif';
+import Process from '../../../images/ourProcess/home-2-icon-2.png';
+import Development from '../../../images/ourProcess/main-home-gif-2.gif';
+import Design from '../../../images/ourProcess/home-2-icon-4.png';
+import Evaluation from '../../../images/ourProcess/main-home-gif-3.gif';
 import DefaultImage from '../../../images/error.jpg';
 
 /**

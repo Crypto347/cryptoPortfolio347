@@ -64,3 +64,10 @@ export const getSwiperDataState = createSelector(
     [getSwiperData],
     (x) => x
 );
+
+const getTeamInformation = (state) => state.section3.teamInformation;
+
+export const getTeamInformationState = createSelector(
+    [getTeamInformation],
+    (x) => x
+);

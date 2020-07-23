@@ -929,8 +929,8 @@ app.get('/api/section3/testimonials', (req, res) => {
     res.json(testimonials);
 });
 
-app.get('/api/section3/team', (req, res) => {
-    const team = [
+app.get('/api/section3/teamInformation', (req, res) => {
+    const teamInfo = [
         {
             id: 1,
             name: "Christina Kinslee",
@@ -972,7 +972,7 @@ app.get('/api/section3/team', (req, res) => {
             hover: false
         },
     ]
-    res.json(team);
+    res.json(teamInfo);
 });
 
 

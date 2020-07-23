@@ -59,18 +59,6 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
-
-// import StoryImage1 from '../../../images/photo-1527358043728-909898958b29.jpg';
-// import StoryImage2 from '../../../images/rocking-chairs-white-chairs-rockers.jpg';
-// import StoryImage3 from '../../../images/coffee-latte-art-coffee-shop.jpg';
-// import StoryImage4 from '../../../images/coffee-cup-latte-cappuccino.jpg';
-// import StoryImage5 from '../../../images/coffee-cup-beverage-food-photo.jpg';
-// import StoryImage6 from '../../../images/white-bowl-beside-glass-cup.jpg';
-// import DefaultImage from '../../../images/error.jpg';
-
-/**
 * Cnstants
 */
 

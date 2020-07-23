@@ -27,20 +27,19 @@ import {
 * Styles
 */
 
-import './section3.scss';
+import './teamInformation.scss';
 
 /**
 * Components
 */
 
-import Testimonials from '../Testimonials/testimonials';
-import TeamInformation from '../TeamInformation/teamInformation';
+import TeamInformationCard from '../../SmallParts/TeamInformationCard/teamInformationCard';
 
 /**
 * Actions
 */
 
-import * as Actions from '../../../actions';
+// import * as Actions from '../../../actions';
 
 /**
 * Selectors
@@ -58,16 +57,23 @@ import * as Services from "../../../service";
 * Utility
 */
 
-// import {
-//    H130,
-//    H25,
-//    EH3,
-//    EH4
-// } from '../../UtilityComponents';
+import {
+    H45,
+    EH4,
+    EH2
+} from '../../UtilityComponents';
 
 /**
 * Images
 */
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 
 
@@ -77,36 +83,47 @@ import * as Services from "../../../service";
 
 
 /**
-* Section3 component definition and export
+* TeamInformation component definition and export
 */
 
-export const Section3 = (props) => {
+export const TeamInformation = (props) => {
 
     /**
     * State
     */
+
+   const size = useWindowSize();
 
     /**
     * Methods
     */
 
     useEffect(() => {
-        // props.fetchPictureBoard();
+        props.fetchTeamInformation();
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
-   
-
+    const renderTeamInformation = () => {
+        return(
+        <div className="team-information-items">{props.teamInformation.items.map((el, i) => {
+            return(
+                <TeamInformationCard
+                    photo={el.photo}
+                    key={i}
+                />
+            )
+        })}
+        </div>
+        )
+    }
     /**
     * Markup
     */
 
     return(
-        <div className="section-3">
-            <Testimonials/>
-            <TeamInformation/>
-            
+        <div className="team-information">
+            {renderTeamInformation()}
         </div>
     );
 }
@@ -114,16 +131,16 @@ export const Section3 = (props) => {
 export default connect(
     (state) => {
         return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state),
+            teamInformation: Selectors.getTeamInformationState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
     (dispatch) => {
         return {
-            // fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
+            fetchTeamInformation: bindActionCreators(Services.fetchTeamInformation, dispatch),
           
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
-)(Section3);
+)(TeamInformation);
  
