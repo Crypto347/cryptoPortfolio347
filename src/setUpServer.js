@@ -941,10 +941,10 @@ app.get('/api/section3/teamInformation', (req, res) => {
         },
         {
             id: 2,
-            name: "Brian Lundquist",
+            name: "Marcos Paulo",
             position: "UX Designer",
             photo: "Photo2",
-            path: "brian-lundquist-VwU6dbcwn-E-unsplash.jpg",
+            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg",
             hover: false
         },
         {
@@ -952,7 +952,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             name: "Charlotte Lynn",
             position: "Developer",
             photo: "Photo3",
-            path: "jake-nackos-IF9TK5Uy-KI-unsplash.jpg",
+            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.jpg",
             hover: false
         },
         {

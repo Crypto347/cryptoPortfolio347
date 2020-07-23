@@ -67,40 +67,39 @@ const fetchTestimonialsFailur = (state, action) => {
 }
 
 const fetchTeamInformationBegin = (state, action) => {
-    let updatedOurProcess = {
-        ...state.pictureBoard, 
+    let updateTeamInformationoard = {
+        ...state.teamInformation, 
         loading: true, 
         error: null
     }
 
     return {
         ...state,
-        ourProcess: updatedOurProcess
+        teamInformation: updateTeamInformationoard
     };
 }
 
 const fetchTeamInformationSuccess = (state, action) => {   
-    let updatedOurProcess = {
-        ...state.pictureBoard, 
+    let updateTeamInformationoard = {
+        ...state.teamInformation, 
         items: action.array,
         loading: false
     } 
     return {
         ...state,
-        ourProcess: updatedOurProcess
+        teamInformation: updateTeamInformationoard
     };
 }
 
 const fetchTeamInformationFailur = (state, action) => {
-    let updatedOurProcess = {
-        ...state.pictureBoard, 
+    let updateTeamInformationoard = {
         items: [],
         loading: false, 
         error: action.err
     }
     return {
         ...state,
-        ourProcess: updatedOurProcess
+        teamInformation: updateTeamInformationoard
     };
 }
 
