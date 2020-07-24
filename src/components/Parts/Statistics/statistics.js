@@ -27,20 +27,19 @@ import {
 * Styles
 */
 
-import './section4.scss';
+import './statistics.scss';
 
 /**
 * Components
 */
 
-import Statistics from '../Statistics/statistics';
-// import TeamInformation from '../TeamInformation/teamInformation';
+import Swiper from '../../../library/Swiper/swiper';
 
 /**
 * Actions
 */
 
-import * as Actions from '../../../actions';
+// import * as Actions from '../../../actions';
 
 /**
 * Selectors
@@ -58,16 +57,23 @@ import * as Services from "../../../service";
 * Utility
 */
 
-// import {
-//    H130,
-//    H25,
-//    EH3,
-//    EH4
-// } from '../../UtilityComponents';
+import {
+    H45,
+    EH4,
+    EH2
+} from '../../UtilityComponents';
 
 /**
 * Images
 */
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 
 
@@ -77,35 +83,34 @@ import * as Services from "../../../service";
 
 
 /**
-* Section4 component definition and export
+* Statistics component definition and export
 */
 
-export const Section4 = (props) => {
+export const Statistics = (props) => {
 
     /**
     * State
     */
+
+//    const size = useWindowSize();
 
     /**
     * Methods
     */
 
     useEffect(() => {
-        // props.fetchPictureBoard();
+        // props.fetchTestimonials();
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
-
-   
 
     /**
     * Markup
     */
 
     return(
-        <div className="section-4">
-            <Statistics/>
-            {/* <TeamInformation/> */}
+        <div className="statistics">
+      
             
         </div>
     );
@@ -114,16 +119,16 @@ export const Section4 = (props) => {
 export default connect(
     (state) => {
         return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state),
+            // testimonials: Selectors.getTestimonialsState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
     (dispatch) => {
         return {
-            // fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
+            // fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch),
           
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
-)(Section4);
+)(Statistics);
  

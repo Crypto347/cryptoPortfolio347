@@ -979,7 +979,31 @@ app.get('/api/section3/teamInformation', (req, res) => {
     ]
     res.json(teamInfo);
 });
-
+app.get('/api/section4/statistics', (req, res) => {
+    const statistics = [
+        {
+            id: 1,
+            label: "Web Design",
+            percent: 85
+        },
+        {
+            id: 2,
+            label: "Marketing",
+            percent: 75
+        },
+        {
+            id: 3,
+            label: "Development",
+            percent: 60
+        },
+        {
+            id: 4,
+            label: "Ui & UX",
+            percent: 79
+        }
+    ]
+    res.json(statistics);
+});
 
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
