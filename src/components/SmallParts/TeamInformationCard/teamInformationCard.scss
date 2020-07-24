@@ -7,11 +7,7 @@
             overflow: hidden;
             >img {
                 width: 100%;
-                // transition: transform 1s;
             }
-            // >img:hover{
-            //     transform: scale(1.05); 
-            // }
         }
         .team-information-card-image-wrapper-hover-on {
             overflow: hidden;
@@ -22,7 +18,6 @@
                 -moz-animation: teamCardImageOn .3s linear;
                 -o-animation: teamCardImageOn .3s linear;
                 animation: teamCardImageOn .3s linear;
-                // transition: transform 1s;
             }
         }
         .team-information-card-image-wrapper-hover-off {
@@ -40,7 +35,7 @@
        
         .team-information-card-info-hover-on {
             background: rgba(0, 0, 0, 0.7);
-            width: calc(100% - 40px);
+            width: calc(100% - 60px);
             position: absolute;
             left: 0%;
             top: 0%;
@@ -48,7 +43,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 0px 0px 0px 40px;
+            padding: 0px 20px 0px 40px;
             opacity: 1;
             -webkit-animation: teamInfoCardOn 0.3s linear;
             -moz-animation: teamInfoCardOn 0.3s linear;
@@ -61,7 +56,7 @@
         }
         .team-information-card-info-hover-off {
             background: rgba(0, 0, 0, 0.7);
-            width: calc(100% - 40px);
+            width: calc(100% - 60px);
             position: absolute;
             left: 0%;
             top: 0%;
@@ -69,7 +64,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 0px 0px 0px 40px;
+            padding: 0px 20px 0px 40px;
             opacity: 0;
             -webkit-animation: teamInfoCardOff .3s linear;
             -moz-animation: teamInfoCardOff .3s linear;
