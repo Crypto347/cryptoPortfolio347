@@ -33,6 +33,7 @@ import './teamInformation.scss';
 * Components
 */
 
+import Loading from '../../SmallParts/Loading/loading';
 import TeamInformationCard from '../../SmallParts/TeamInformationCard/teamInformationCard';
 
 /**
@@ -58,7 +59,7 @@ import * as Services from "../../../service";
 */
 
 import {
-    H45,
+    H19,
     EH4,
     EH2
 } from '../../UtilityComponents';
@@ -104,22 +105,39 @@ export const TeamInformation = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
+    
     const renderTeamInformation = () => {
-        return(
-        <div className="team-information-items">{props.teamInformation.items.map((el, i) => {
+        if(props.teamInformation.loading && !props.teamInformation.error){
             return(
-                <TeamInformationCard
-                    photo={el.photo}
-                    key={i}
-                    name={el.name}
-                    position={el.position}
-                    instaName={el.instaName}
-                />
+                <div className="team-information-loading-error">
+                    <Loading color="black"/>
+                </div>
             )
-        })}
-        </div>
-        )
-    }
+        }
+        if(!props.teamInformation.loading && !props.teamInformation.error){
+            return(
+                <div className="team-information-items">{props.teamInformation.items.map((el, i) => {
+                    return(
+                        <TeamInformationCard
+                            photo={el.photo}
+                            key={i}
+                            name={el.name}
+                            position={el.position}
+                            instaName={el.instaName}
+                        />
+                    )})}
+                </div>
+            )
+        }
+        if(!props.teamInformation.loading && props.teamInformation.error){
+            return(
+                <div className="team-information-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.teamInformation.error}`}</H19>
+                </div>
+            )
+        }
+    } 
+
     /**
     * Markup
     */
