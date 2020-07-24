@@ -111,6 +111,8 @@ export const TeamInformation = (props) => {
                 <TeamInformationCard
                     photo={el.photo}
                     key={i}
+                    name={el.name}
+                    position={el.position}
                 />
             )
         })}

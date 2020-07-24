@@ -3,8 +3,14 @@
 */
 
 import React, {
-    useState
+    useState, 
+    useEffect,
+    useRef
 } from 'react';
+
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
 
 import {
     connect
@@ -25,6 +31,14 @@ import {
 import './teamInformationCard.scss';
 
 /**
+* Icons
+*/
+
+import { 
+    faInstagram
+} from '@fortawesome/fontawesome-free-brands';
+
+/**
 * Images
 */
 
@@ -39,9 +53,10 @@ import Photo5 from '../../../images/teamPhotos/zoe-fernandez--zqoE7jnQgw-unsplas
 */
 
 import {
-    H40,
     H25,
-    EH1
+    H15,
+    EH3,
+    EH2
 } from '../../UtilityComponents';
 
 /**
@@ -50,20 +65,48 @@ import {
 
 export const TeamInformationCard = (props) => {
 
+    /**
+    * State
+    */
+
+    const resizeRef = useRef();
+
     const [isHovering, setIsHovering] = useState(false);
+    const [cardHeight, setCardHeight] = useState(0);
 
     /**
     * Methods
     */
 
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+        handleResize();
+    }
 
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
+    const handleMouseLeave = () => {
+        // setIsHovering(false);
+    }
 
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    })
+
+    useEffect(()=>{
+        // let teamInfoCardHeight = document.getElementById("team-information-card").clientHeight;
+        // setCardHeight(cardHeight);
+        // console.log(teamInfoCardHeight)
+        const resize = () => {
+            resizeRef.current();
+        }
+
+        window.addEventListener('resize', resize);
+
+    }, [])
+
+    const handleResize = () => {
+        let cardHeight = document.getElementById("img").clientHeight;
+        setCardHeight(cardHeight);
+    }
     // const arrowOnClick = (path) => {
     //     props.history.push(props.match.url + (path === "" ? path : `/${path}`))
     // }
@@ -90,10 +133,35 @@ export const TeamInformationCard = (props) => {
     */
 
     return(
-        <div className="team-information-card">
+        <div 
+            id="team-information-card"
+            className="team-information-card"
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
+        >
             <div className="team-information-card-image">
-                <img src={loadPhoto(props.photo)}/>
+                <img 
+                    id="img"
+                    src={loadPhoto(props.photo)}
+                />
+                {isHovering ? 
+                <div 
+                    className="team-information-card-info" 
+                    style={{height: `${cardHeight}px`}}
+                >
+                    <H25 className="h25-white-teko">{props.name}</H25>
+                    <H15 className="h15-white-lustria">{props.position}</H15>
+                    <EH2/>
+                    <FontAwesomeIcon 
+                        icon={faInstagram} 
+                        size="1x" 
+                        className="team-information-card-icon"
+                    />
+                    <EH3/>
+                </div> 
+                :  null}
             </div>
+           
         </div>
     );
 }

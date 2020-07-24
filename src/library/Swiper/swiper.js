@@ -198,7 +198,6 @@ export const Swiper = (props) => {
 
         window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
-        window.addEventListener('resize', resize);  
 
         return () => {
             window.removeEventListener('transitionend', smooth);
