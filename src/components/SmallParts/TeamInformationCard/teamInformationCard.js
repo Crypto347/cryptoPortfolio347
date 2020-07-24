@@ -84,7 +84,7 @@ export const TeamInformationCard = (props) => {
     }
 
     const handleMouseLeave = () => {
-        // setIsHovering(false);
+        setIsHovering(false);
     }
 
     useEffect(() => {
@@ -128,6 +128,23 @@ export const TeamInformationCard = (props) => {
         }
     }
 
+    const iconOnClick = (name, instaName) => {
+        switch(name){
+            case 'Marcos Paulo':
+                return window.open(`https://www.instagram.com/${instaName}`);
+            case 'Christina Kinslee':
+                return window.open(`https://www.instagram.com/${instaName}`);
+            case 'Charlotte Lynn':
+                return window.open(`https://www.instagram.com/${instaName}`);
+            case 'James Wilson':
+                return window.open(`https://www.instagram.com/${instaName}`);
+            case 'Zoe Fernandez':
+                return window.open(`https://www.instagram.com/${instaName}`);
+            default:
+                return window.open(`https://www.instagram.com/`);
+        }
+    }
+
     /**
     * Markup
     */
@@ -156,6 +173,7 @@ export const TeamInformationCard = (props) => {
                         icon={faInstagram} 
                         size="1x" 
                         className="team-information-card-icon"
+                        onClick={() => iconOnClick(props.name, props.instaName)}
                     />
                     <EH3/>
                 </div> 

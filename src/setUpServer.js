@@ -936,6 +936,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             name: "Marcos Paulo",
             position: "Designer",
             photo: "Photo1",
+            instaName: "ChristinaKinslee",
             path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg",
             hover: false
         },
@@ -944,6 +945,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             name: "Christina Kinslee",
             position: "UX Designer",
             photo: "Photo2",
+            instaName: "ChristinaKinslee",
             path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg",
             hover: false
         },
@@ -952,6 +954,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             name: "Charlotte Lynn",
             position: "Developer",
             photo: "Photo3",
+            instaName: "ChristinaKinslee",
             path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.jpg",
             hover: false
         },
@@ -960,6 +963,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             name: "James Wilson",
             position: "Developer",
             photo: "Photo4",
+            instaName: "ChristinaKinslee",
             path: "photo-1540569014015-19a7be504e3a.jpg",
             hover: false
         },
@@ -968,6 +972,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             name: "Zoe Fernandez",
             position: "Copywriter",
             photo: "Photo5",
+            instaName: "ChristinaKinslee",
             path: "zoe-fernandez--zqoE7jnQgw-unsplash.jpg",
             hover: false
         },

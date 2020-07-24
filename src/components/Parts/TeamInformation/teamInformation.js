@@ -113,6 +113,7 @@ export const TeamInformation = (props) => {
                     key={i}
                     name={el.name}
                     position={el.position}
+                    instaName={el.instaName}
                 />
             )
         })}
