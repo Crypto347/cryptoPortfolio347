@@ -979,8 +979,8 @@ app.get('/api/section3/teamInformation', (req, res) => {
     ]
     res.json(teamInfo);
 });
-app.get('/api/section4/statistics', (req, res) => {
-    const statistics = [
+app.get('/api/section4/statisticsData', (req, res) => {
+    const statisticsData = [
         {
             id: 1,
             label: "Web Design",
@@ -1002,7 +1002,7 @@ app.get('/api/section4/statistics', (req, res) => {
             percent: 79
         }
     ]
-    res.json(statistics);
+    res.json(statisticsData);
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {

@@ -118,6 +118,23 @@ export function fetchTeamInformation() {
     };
 }
 
+export function fetchStatisticsData() {
+    return dispatch => {
+        dispatch(Actions.fetchStatisticsDataBegin());
+        return fetch("http://localhost:3005/api/section4/statisticsData")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchStatisticsDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchStatisticsDataFailur(error))
+            });
+    };
+}
 
 function handleErrors(response) {
     if (!response.ok) {

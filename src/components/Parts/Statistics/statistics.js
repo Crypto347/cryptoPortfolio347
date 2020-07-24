@@ -58,7 +58,7 @@ import * as Services from "../../../service";
 */
 
 import {
-    H45,
+    H65,
     EH4,
     EH2
 } from '../../UtilityComponents';
@@ -99,19 +99,33 @@ export const Statistics = (props) => {
     */
 
     useEffect(() => {
-        // props.fetchTestimonials();
+        props.fetchStatisticsData();
         // window.addEventListener('scroll', handleScroll);
         // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
+    const renderStatisticsData = () => {
+        // return(
+        //     <div className="statistics-items">{props.ourProcessDate.items.map((el,i) => {
+        //         return(
+        //             <div key={i}>
+        //                 <img src={renderImg(el.img)}/>
+        //                 <EH2/>
+        //                 <H25 className="h25-black-teko">{el.header}</H25>
+        //             </div>
+        //         )
+        //     })}</div>
+        // )
+    }
     /**
     * Markup
     */
 
     return(
         <div className="statistics">
-      
-            
+            <H65 className="h65-black-teko">Love Design.</H65>
+            <H65 className="h65-black-lustria">With Your Soul</H65>
+            {renderStatisticsData()}
         </div>
     );
 }
@@ -125,7 +139,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch),
+            fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch),
           
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
