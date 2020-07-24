@@ -71,7 +71,7 @@ export const TeamInformationCard = (props) => {
 
     const resizeRef = useRef();
 
-    const [isHovering, setIsHovering] = useState(false);
+    const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
 
     /**
@@ -79,12 +79,12 @@ export const TeamInformationCard = (props) => {
     */
 
     const handleMouseEnter = () => {
-        setIsHovering(true);
+        setIsHovering("on");
         handleResize();
     }
 
     const handleMouseLeave = () => {
-        setIsHovering(false);
+        setIsHovering("off");
     }
 
     useEffect(() => {
@@ -145,6 +145,31 @@ export const TeamInformationCard = (props) => {
         }
     }
 
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "teamInfoCard"){
+            switch(isHovering){
+                case 'init':
+                    return null;
+                case 'on':
+                    return "team-information-card-info-hover-on";
+                case 'off':
+                    return "team-information-card-info-hover-off"
+            }
+        }
+        if(opt === "teamCardImage"){
+            switch(isHovering){
+                case 'init':
+                    return "team-information-card-image-wrapper";
+                case 'on':
+                    return "team-information-card-image-wrapper-hover-on";
+                case 'off':
+                    return "team-information-card-image-wrapper-hover-off"
+            }
+        }
+      
+ 
+    }
+
     /**
     * Markup
     */
@@ -157,13 +182,15 @@ export const TeamInformationCard = (props) => {
             onMouseLeave={handleMouseLeave}
         >
             <div className="team-information-card-image">
-                <img 
-                    id="img"
-                    src={loadPhoto(props.photo)}
-                />
+                <div className={renderClassName("teamCardImage", isHovering)}>
+                    <img 
+                        id="img"
+                        src={loadPhoto(props.photo)}
+                    />
+                </div>
                 {isHovering ? 
                 <div 
-                    className="team-information-card-info" 
+                    className={renderClassName("teamInfoCard", isHovering)}
                     style={{height: `${cardHeight}px`}}
                 >
                     <H25 className="h25-white-teko">{props.name}</H25>
