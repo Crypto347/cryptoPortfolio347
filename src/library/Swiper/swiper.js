@@ -36,6 +36,12 @@ import {
 import './swiper.scss';
 
 /**
+* Components
+*/
+
+import Loading from '../../components/SmallParts/Loading/loading';
+
+/**
 * Actions
 */
 
@@ -62,13 +68,12 @@ import {
 
 import {
     H25,
+    H19,
     H15,
     EH2
 } from '../../components/UtilityComponents';
 
-/**
-* Images
-*/
+
 
 /**
 * Swiper component definition and export
@@ -443,6 +448,30 @@ export const Swiper = (props) => {
     }
 
     const renderSwiper = () => {
+        if(props.contentArray.loading && !props.contentArray.error){
+            return(
+                <div className="content-array-loading-error">
+                    <Loading color="white"/>
+                </div>
+            )
+        }
+        if(!props.contentArray.loading && !props.contentArray.error){
+            return(
+                <>
+                    {swiper()}
+                </>
+            )
+        }
+        if(!props.contentArray.loading && props.contentArray.error){
+            return(
+                <div className="content-array-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.contentArray.error}`}</H19>
+                </div>
+            )
+        }
+    } 
+
+    const swiper = () => {
       if(!props.contentArray.loading){
         if(props.translateWidth){
             return(

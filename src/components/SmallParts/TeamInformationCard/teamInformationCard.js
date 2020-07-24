@@ -149,7 +149,7 @@ export const TeamInformationCard = (props) => {
         if(opt === "teamInfoCard"){
             switch(isHovering){
                 case 'init':
-                    return null;
+                    return "display-none";
                 case 'on':
                     return "team-information-card-info-hover-on";
                 case 'off':
@@ -166,8 +166,6 @@ export const TeamInformationCard = (props) => {
                     return "team-information-card-image-wrapper-hover-off"
             }
         }
-      
- 
     }
 
     /**

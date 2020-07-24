@@ -45,7 +45,7 @@ const fetchTestimonialsSuccess = (state, action) => {
     let updatedTestimonials = {
         ...state.testimonials, 
         items: action.array,
-        loading: false
+        loading: false,
     } 
     return {
         ...state,
