@@ -1,0 +1,59 @@
+.statistics-item {
+    .statistics-item-wrapper {
+        display: flex;
+        justify-content: space-between;
+        // width: 200px;
+        -webkit-animation: appearPercent 2s ease;
+        -moz-animation: appearPercent 2s ease;
+        -o-animation: appearPercent 2s ease;
+        animation: appearPercent 2s ease;
+        .statistics-item-percent {
+            font-size: 25px;
+            font-family: 'Teko', sans-serif;
+            color: black;
+        }
+    }
+    .statistics-item-percent-line-wrapper {
+        position: relative;
+        .statistics-item-percent-line-back {
+            width: 450px;
+            border: 1.5px solid rgba(155, 155, 155, 0.5);
+        }
+        .statistics-item-percent-line-top {
+            position: absolute;
+            top: 0%;
+            border: 1.5px solid black;
+            -webkit-animation: appearLine 2s ease;
+            -moz-animation: appearLine 2s ease;
+            -o-animation: appearLine 2s ease;
+            animation: appearLine 2s ease;
+        }
+    }
+    
+}
+
+@-webkit-keyframes appearPercent {
+    0%{width: 40%;}
+}
+@-moz-keyframes appearPercent {
+    0%{width: 40%;}
+}
+@-o-keyframes appearPercent {
+    0%{width: 40%;}
+}
+@keyframes appearPercent {
+    0%{width: 40%;}
+}
+
+@-webkit-keyframes appearLine {
+    0%{width: 0;}
+}
+@-moz-keyframes appearLine {
+    0%{width: 0%}
+}
+@-o-keyframes appearLine {
+    0%{width: 0;}
+}
+@keyframes appearLine {
+    0%{width: 0;}
+}

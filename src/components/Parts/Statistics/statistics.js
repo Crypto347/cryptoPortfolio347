@@ -33,7 +33,7 @@ import './statistics.scss';
 * Components
 */
 
-import Swiper from '../../../library/Swiper/swiper';
+import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
 
 /**
 * Actions
@@ -75,8 +75,8 @@ import {
 */
 
 import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
+    useInterval
+} from '../../../Hooks/useInterval';
 
 
 
@@ -95,7 +95,7 @@ export const Statistics = (props) => {
     * State
     */
 
-//    const size = useWindowSize();
+  
 
     /**
     * Methods
@@ -104,25 +104,31 @@ export const Statistics = (props) => {
     useEffect(() => {
         props.fetchStatisticsData();
         // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            // window.removeEventListener('scroll', handleScroll);
+        }
     }, []);
+    
+
+    const handleScroll = () => {
+        // let scrollHeight = document.body.scrollTop;
+        // let el = document.getElementById("statistics");
+      
+        // if(scrollHeight >= el.offsetTop - window.innerHeight/2 + 400){
+        //     setShowComponent(true);
+        // }
+    }
 
     const renderStatisticsData = () => {
         return(
-            <div className="statistics-items">{props.statisticsData.items.map((el,i) => {
+            <div>{props.statisticsData.items.map((el,i) => {
                 return(
-                    <div 
+                    <StatisticItem 
                         key={i}
-                        className="statistics-item"
-                    >
-                        <div className="statistics-item-wrapper">
-                            <H25 className="h25-black-teko">{el.label}</H25>
-                            <H25 className="h25-black-teko">{`${el.percent}%`}</H25>
-                        </div>
-                        <div className="statistics-item-percent-line"/>
-                        <EH10/>
-                        <EH20/>
-                    </div>
+                        label={el.label}
+                        percent={el.percent}
+                    />
                 )
             })}</div>
         )
