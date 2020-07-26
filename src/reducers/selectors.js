@@ -71,3 +71,11 @@ export const getTeamInformationState = createSelector(
     [getTeamInformation],
     (x) => x
 );
+
+const getStatisticsData = (state) => state.section4.statisticsData;
+
+export const getStatisticsDataState = createSelector(
+    [getStatisticsData],
+    (x) => x
+);
+

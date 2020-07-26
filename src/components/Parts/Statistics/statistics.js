@@ -59,8 +59,11 @@ import * as Services from "../../../service";
 
 import {
     H65,
+    H25,
     EH4,
-    EH2
+    EH1,
+    EH0,
+    EW3
 } from '../../UtilityComponents';
 
 /**
@@ -105,35 +108,49 @@ export const Statistics = (props) => {
     }, []);
 
     const renderStatisticsData = () => {
-        // return(
-        //     <div className="statistics-items">{props.ourProcessDate.items.map((el,i) => {
-        //         return(
-        //             <div key={i}>
-        //                 <img src={renderImg(el.img)}/>
-        //                 <EH2/>
-        //                 <H25 className="h25-black-teko">{el.header}</H25>
-        //             </div>
-        //         )
-        //     })}</div>
-        // )
+        return(
+            <div className="statistics-items">{props.statisticsData.items.map((el,i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="statistics-item"
+                    >
+                        <div className="statistics-item-wrapper">
+                            <H25 className="h25-black-teko">{el.label}</H25>
+                            <H25 className="h25-black-teko">{`${el.percent}%`}</H25>
+                        </div>
+                        <div className="statistics-item-percent-line"/>
+                        <EH0/>
+                        <EH1/>
+                    </div>
+                )
+            })}</div>
+        )
     }
     /**
     * Markup
     */
 
     return(
-        <div className="statistics">
-            <H65 className="h65-black-teko">Love Design.</H65>
-            <H65 className="h65-black-lustria">With Your Soul</H65>
-            {renderStatisticsData()}
-        </div>
+        <>
+            <EH4/>
+            <div className="statistics">
+                <div className="statistics-wrapper">
+                    <H65 className="h65-black-teko">Love Design.</H65>
+                    <H65 className="h65-black-lustria">With Your Soul</H65>
+                </div>
+                <EW3/>
+                {renderStatisticsData()}
+            </div>
+            <EH4/>
+        </>
     );
 }
 
 export default connect(
     (state) => {
         return {
-            // testimonials: Selectors.getTestimonialsState(state),
+            statisticsData: Selectors.getStatisticsDataState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
