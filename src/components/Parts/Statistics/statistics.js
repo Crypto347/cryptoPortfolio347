@@ -95,7 +95,7 @@ export const Statistics = (props) => {
     * State
     */
 
-  
+    const [showComponent, setShowComponent] = useState(false)
 
     /**
     * Methods
@@ -103,21 +103,20 @@ export const Statistics = (props) => {
 
     useEffect(() => {
         props.fetchStatisticsData();
-        // window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
-            // window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         }
     }, []);
     
 
     const handleScroll = () => {
-        // let scrollHeight = document.body.scrollTop;
-        // let el = document.getElementById("statistics");
-      
-        // if(scrollHeight >= el.offsetTop - window.innerHeight/2 + 400){
-        //     setShowComponent(true);
-        // }
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("statistics");
+        if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
+            setShowComponent(true);
+        }
     }
 
     const renderStatisticsData = () => {
@@ -140,13 +139,19 @@ export const Statistics = (props) => {
     return(
         <>
             <EH90/>
-            <div className="statistics">
-                <div className="statistics-wrapper">
-                    <H65 className="h65-black-teko">Love Design.</H65>
-                    <H65 className="h65-black-lustria">With Your Soul</H65>
-                </div>
-                <EW3/>
-                {renderStatisticsData()}
+            <div 
+                className="statistics" 
+                id="statistics"
+            >
+                {showComponent ? 
+                <>
+                    <div className="statistics-wrapper">
+                        <H65 className="h65-black-teko">Love Design.</H65>
+                        <H65 className="h65-black-lustria">With Your Soul</H65>
+                    </div>
+                    <EW3/>
+                    {renderStatisticsData()}
+                </> : null }
             </div>
             <EH90/>
         </>
