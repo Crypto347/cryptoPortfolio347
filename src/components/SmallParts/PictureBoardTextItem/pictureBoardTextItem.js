@@ -35,7 +35,7 @@ import './pictureBoardTextItem.scss';
 import {
     H15,
     H40,
-    EH0
+    EH10
 } from '../../UtilityComponents';
 
 /**
@@ -128,7 +128,7 @@ export const PictureBoardTextItem = (props) => {
         >
             <div>
                 <H15 className="h15-lustria-animation">{props.header}</H15>
-                <EH0/>
+                <EH10/>
                 <H40 className={isHovering ? "h40-white-teko" : "h40-nero-teko"}>{props.text}</H40>
             </div>
             <div className="picture-board-text-item-icon">

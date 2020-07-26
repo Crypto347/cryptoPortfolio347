@@ -60,8 +60,8 @@ import * as Services from "../../../service";
 
 import {
     H19,
-    EH4,
-    EH2
+    EH90,
+    EH25
 } from '../../UtilityComponents';
 
 /**

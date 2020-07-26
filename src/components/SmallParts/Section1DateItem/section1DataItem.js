@@ -31,7 +31,7 @@ import './section1DataItem.scss';
 import {
     H40,
     H25,
-    EH1
+    EH20
 } from '../../UtilityComponents';
 
 /**
@@ -65,7 +65,7 @@ export const Section1DataItem = (props) => {
     return(
         <div className="section-1-data-item">
             <H40 className="h40-black-teko">{props.header}</H40>
-            <EH1/>
+            <EH20/>
             <H25 className="h25-nobel-lustria">{props.text}</H25>
             <CSSTransition
                 in={isHovering} 

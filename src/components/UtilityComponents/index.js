@@ -8,11 +8,11 @@ export * from './FontSize/H19/h19';
 export * from './FontSize/H15/h15';
 export * from './FontSize/H5/h5';
 
-export * from './EmptyDivs/EH0/eh0';
-export * from './EmptyDivs/EH1/eh1';
-export * from './EmptyDivs/EH2/eh2';
-export * from './EmptyDivs/EH3/eh3';
-export * from './EmptyDivs/EH4/eh4';
+export * from './EmptyDivs/EH10/eh10';
+export * from './EmptyDivs/EH20/eh20';
+export * from './EmptyDivs/EH25/eh25';
+export * from './EmptyDivs/EH40/eh40';
+export * from './EmptyDivs/EH90/eh90';
 
 export * from './EmptyDivs/EW1/ew1';
 export * from './EmptyDivs/EW2/ew2';

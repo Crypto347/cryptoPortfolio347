@@ -59,8 +59,8 @@ import * as Services from "../../../service";
 
 import {
     H45,
-    EH4,
-    EH2
+    EH90,
+    EH25
 } from '../../UtilityComponents';
 
 /**
@@ -110,16 +110,16 @@ export const Testimonials = (props) => {
 
     return(
         <div className="testimonials">
-            <EH4/>
+            <EH90/>
             <H45 className="h45-white-lustria">Testimonials</H45>
-            <EH2/>
+            <EH25/>
             <Swiper 
                 contentArray={props.testimonials}
                 translateWidth={size.width - 130}
                 showNumbersOfSlides={1}
                 autoPlay
             />
-            <EH4/>
+            <EH90/>
             
         </div>
     );

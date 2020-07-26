@@ -70,7 +70,7 @@ import {
     H25,
     H19,
     H15,
-    EH2
+    EH25
 } from '../../components/UtilityComponents';
 
 
@@ -494,7 +494,7 @@ export const Swiper = (props) => {
                             style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                         >
                            <H25 className="h25-white-lustria">{el.feedback}</H25>
-                           <EH2/>
+                           <EH25/>
                             <div className="author-name-wrapper">
                                 <div className="slide-dash"/>
                                 <H25 className="h25-white-teko">{el.author}</H25>

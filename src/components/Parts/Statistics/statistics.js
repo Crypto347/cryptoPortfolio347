@@ -60,9 +60,9 @@ import * as Services from "../../../service";
 import {
     H65,
     H25,
-    EH4,
-    EH1,
-    EH0,
+    EH90,
+    EH20,
+    EH10,
     EW3
 } from '../../UtilityComponents';
 
@@ -120,8 +120,8 @@ export const Statistics = (props) => {
                             <H25 className="h25-black-teko">{`${el.percent}%`}</H25>
                         </div>
                         <div className="statistics-item-percent-line"/>
-                        <EH0/>
-                        <EH1/>
+                        <EH10/>
+                        <EH20/>
                     </div>
                 )
             })}</div>
@@ -133,7 +133,7 @@ export const Statistics = (props) => {
 
     return(
         <>
-            <EH4/>
+            <EH90/>
             <div className="statistics">
                 <div className="statistics-wrapper">
                     <H65 className="h65-black-teko">Love Design.</H65>
@@ -142,7 +142,7 @@ export const Statistics = (props) => {
                 <EW3/>
                 {renderStatisticsData()}
             </div>
-            <EH4/>
+            <EH90/>
         </>
     );
 }

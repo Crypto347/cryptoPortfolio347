@@ -55,8 +55,8 @@ import Photo5 from '../../../images/teamPhotos/zoe-fernandez--zqoE7jnQgw-unsplas
 import {
     H25,
     H15,
-    EH3,
-    EH2
+    EH40,
+    EH25
 } from '../../UtilityComponents';
 
 /**
@@ -193,14 +193,14 @@ export const TeamInformationCard = (props) => {
                 >
                     <H25 className="h25-white-teko">{props.name}</H25>
                     <H15 className="h15-white-lustria">{props.position}</H15>
-                    <EH2/>
+                    <EH25/>
                     <FontAwesomeIcon 
                         icon={faInstagram} 
                         size="1x" 
                         className="team-information-card-icon"
                         onClick={() => iconOnClick(props.name, props.instaName)}
                     />
-                    <EH3/>
+                    <EH40/>
                 </div> 
                 :  null}
             </div>

@@ -59,7 +59,7 @@ import * as Services from "../../../service";
 */
 
 import {
-    EH1,
+    EH20,
     H19
 } from '../../UtilityComponents';
 
@@ -111,14 +111,14 @@ export const Section1 = (props) => {
             <div className="section-1-data-items">{props.section1Data.items.map((el,i) => {
                 return(
                     <div key={i}>
-                        <EH1/>
+                        <EH20/>
                         <Section1DateItem 
                             // key={i}
                             header={el.header}
                             text={el.text}
                             path={el.path}
                         />
-                        <EH1/>
+                        <EH20/>
                     </div>
                 )
             })}</div>

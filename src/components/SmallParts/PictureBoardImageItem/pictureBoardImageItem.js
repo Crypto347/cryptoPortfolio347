@@ -28,7 +28,7 @@ import {
     H40,
     H25,
     H5,
-    EH1,
+    EH20,
     EW1,
     DoubleLine1
 } from '../../UtilityComponents';

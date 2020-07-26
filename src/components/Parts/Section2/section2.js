@@ -61,8 +61,8 @@ import * as Services from "../../../service";
 import {
    H130,
    H25,
-   EH3,
-   EH4
+   EH40,
+   EH90
 } from '../../UtilityComponents';
 
 /**
@@ -138,12 +138,12 @@ export const Section2 = (props) => {
         <div className={renderClassName(props.pictureBoard.loading, props.pictureBoard.error, props.ourProcessDate.loading, props.ourProcessDate.error)}>
             <div className="section-2-wrapper">
                 <H130 className="h130-white-teko">Work.</H130>
-                <EH3/>
+                <EH40/>
                 <H25 className="h25-white-lustria">Lorem ipsum dolor sit amet, consectetur ad.</H25>
-                <EH3/>
-                <EH3/>
+                <EH40/>
+                <EH40/>
                 <PictureBoard/>
-                <EH4/>
+                <EH90/>
                 <OurProcess/>
             </div>
             

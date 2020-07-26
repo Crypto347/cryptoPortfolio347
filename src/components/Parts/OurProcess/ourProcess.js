@@ -61,8 +61,8 @@ import {
    H45,
    H25,
    H19,
-   EH3,
-   EH2,
+   EH40,
+   EH25,
 } from '../../UtilityComponents';
 
 /**
@@ -135,7 +135,7 @@ export const OurProcess = (props) => {
                 return(
                     <div key={i}>
                         <img src={renderImg(el.img)}/>
-                        <EH2/>
+                        <EH25/>
                         <H25 className="h25-black-teko">{el.header}</H25>
                     </div>
                 )
@@ -175,7 +175,7 @@ export const OurProcess = (props) => {
     return(
         <div className="our-process">
             <H45 className="h45-black-lustria">Our Process</H45>
-            <EH3/>
+            <EH40/>
             {renderOurProcess()}
         </div>
     );
