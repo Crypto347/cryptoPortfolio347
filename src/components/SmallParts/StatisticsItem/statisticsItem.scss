@@ -46,12 +46,31 @@
 
 @media only screen and (max-width: 400px){
     .statistics-item {
+        .statistics-item-wrapper {
+            -webkit-animation: appearPercentSmallScreen 2s ease;
+            -moz-animation: appearPercentSmallScreen 2s ease;
+            -o-animation: appearPercentSmallScreen 2s ease;
+            animation: appearPercentSmallScreen 2s ease;
+        }
         .statistics-item-percent-line-wrapper {
             .statistics-item-percent-line-back {
                 width: calc(100vw - 100px);
             }
         }
     }
+}
+
+@-webkit-keyframes appearPercentSmallScreen {
+    0%{width: 80%;}
+}
+@-moz-keyframes appearPercentSmallScreen {
+    0%{width: 80%;}
+}
+@-o-keyframes appearPercentSmallScreen {
+    0%{width: 80%;}
+}
+@keyframes appearPercentSmallScreen {
+    0%{width: 80%;}
 }
 
 
@@ -69,7 +88,7 @@
 }
 
 @-webkit-keyframes appearLine {
-    0%{width: 0;}
+    0%{width: 0%;}
 }
 @-moz-keyframes appearLine {
     0%{width: 0%}
