@@ -28,17 +28,43 @@
 }
 
 
-// @media only screen and (max-width: 860px){
-//     .h65-black-teko {
-//         font-size: 35px;
-//     }
-// }
+@media only screen and (max-width: 690px){
+    
+    .h65-black-teko {
+        font-size: 55px;
+    }
+    .h65-black-lustria {
+        font-size: 50px;
+    }
+}
 
-// @media only screen and (max-width: 600px){
-//     .h65-black-teko {
-//         font-size: 30px;
-//     }
-// }
+@media only screen and (max-width: 600px){
+    .h65-black-teko {
+        font-size: 50px;
+    }
+    .h65-black-lustria {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .h65-black-teko {
+        font-size: 40px;
+    }
+    .h65-black-lustria {
+        font-size: 35px;
+    }
+}
+
+
+@media only screen and (max-width: 430px){
+    .h65-black-teko {
+        font-size: 35px;
+    }
+    .h65-black-lustria {
+        font-size: 30px;
+    }
+}
 
 // .h3-center {
 //     font-size: 40px;
