@@ -102,7 +102,7 @@ export const Achievements = (props) => {
     */
 
     useEffect(() => {
-        // props.fetchStatisticsData();
+        props.fetchAchievementsData();
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -112,11 +112,11 @@ export const Achievements = (props) => {
     
 
     const handleScroll = () => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("achievements");
-        if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
-            setShowComponent(true);
-        }
+        // let scrollHeight = document.body.scrollTop;
+        // let el = document.getElementById("achievements");
+        // if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
+        //     setShowComponent(true);
+        // }
     }
 
     // const renderStatisticsData = () => {
@@ -164,13 +164,13 @@ export const Achievements = (props) => {
 export default connect(
     (state) => {
         return {
-            // statisticsData: Selectors.getStatisticsDataState(state),
+            // achievementsData: Selectors.getAchievementsDataState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
     (dispatch) => {
         return {
-            // fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch),
+            fetchAchievementsData: bindActionCreators(Services.fetchAchievementsData, dispatch),
           
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };

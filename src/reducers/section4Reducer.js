@@ -21,11 +21,11 @@ export const initialState = {
         loading: false,
         error: null
     },
-    // teamInformation: {
-    //     items: [],
-    //     loading: false,
-    //     error: null
-    // }
+    achievements: {
+        items: [],
+        loading: false,
+        error: null
+    }
 }
 
 const fetchStatisticsDataBegin = (state, action) => {
@@ -66,42 +66,42 @@ const fetchStatisticsDataFailur = (state, action) => {
     };
 }
 
-// const fetchTeamInformationBegin = (state, action) => {
-//     let updateTeamInformationoard = {
-//         ...state.teamInformation, 
-//         loading: true, 
-//         error: null
-//     }
+const fetchAchievementsBegin = (state, action) => {
+    let updateAchievements = {
+        ...state.teamInformation, 
+        loading: true, 
+        error: null
+    }
 
-//     return {
-//         ...state,
-//         teamInformation: updateTeamInformationoard
-//     };
-// }
+    return {
+        ...state,
+        achievements: updateAchievements
+    };
+}
 
-// const fetchTeamInformationSuccess = (state, action) => {   
-//     let updateTeamInformationoard = {
-//         ...state.teamInformation, 
-//         items: action.array,
-//         loading: false
-//     } 
-//     return {
-//         ...state,
-//         teamInformation: updateTeamInformationoard
-//     };
-// }
+const fetchAchievementsSuccess = (state, action) => {   
+    let updateAchievements = {
+        ...state.teamInformation, 
+        items: action.array,
+        loading: false
+    } 
+    return {
+        ...state,
+        achievements: updateAchievements
+    };
+}
 
-// const fetchTeamInformationFailur = (state, action) => {
-//     let updateTeamInformationoard = {
-//         items: [],
-//         loading: false, 
-//         error: action.err
-//     }
-//     return {
-//         ...state,
-//         teamInformation: updateTeamInformationoard
-//     };
-// }
+const fetchAchievementsFailur = (state, action) => {
+    let updateAchievements = {
+        items: [],
+        loading: false, 
+        error: action.err
+    }
+    return {
+        ...state,
+        achievements: updateAchievements
+    };
+}
 
 const section2Reducer = (state = initialState, action) => {
     switch(action.type){
@@ -111,12 +111,12 @@ const section2Reducer = (state = initialState, action) => {
             return fetchStatisticsDataSuccess (state, action);
         case actionTypes.FETCH_STATISTICS_DATA_FAILURE:
             return fetchStatisticsDataFailur(state, action);
-        // case actionTypes.FETCH_TEAM_INFORMATION_BEGIN:
-        //     return fetchTeamInformationBegin (state, action); 
-        // case actionTypes.FETCH_TEAM_INFORMATION_SUCCESS:
-        //     return fetchTeamInformationSuccess (state, action);
-        // case actionTypes.FETCH_TEAM_INFORMATION_FAILURE:
-        //     return fetchTeamInformationFailur(state, action);
+        case actionTypes.FETCH_ACHIEVEMENTS_DATA_BEGIN:
+            return fetchAchievementsBegin (state, action); 
+        case actionTypes.FETCH_ACHIEVEMENTS_DATA_SUCCESS:
+            return fetchAchievementsSuccess (state, action);
+        case actionTypes.FETCH_ACHIEVEMENTS_DATA_FAILURE:
+            return fetchAchievementsFailur(state, action);
         default: 
             return state;
     }

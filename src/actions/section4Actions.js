@@ -20,3 +20,22 @@ export function fetchStatisticsDataFailur(err) {
     };
 };
 
+export function fetchAchievementsDataBegin() {
+    return { 
+        type: actionTypes.FETCH_ACHIEVEMENTS_DATA_BEGIN
+    };
+};
+
+export function fetchAchievementsDataSuccess(array) {
+    return { 
+        type: actionTypes.FETCH_ACHIEVEMENTS_DATA_SUCCESS,
+        array: array
+    };
+};
+
+export function fetchAchievementsDataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_ACHIEVEMENTS_DATA_FAILURE,
+        err: err
+    };
+};

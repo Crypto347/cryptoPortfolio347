@@ -1005,6 +1005,32 @@ app.get('/api/section4/statisticsData', (req, res) => {
     res.json(statisticsData);
 });
 
+app.get('/api/section4/achievementsData', (req, res) => {
+    const achievementsData = [
+        {
+            id: 1,
+            achievement: "Finished Yearly Projects",
+            number: 22
+        },
+        {
+            id: 2,
+            achievement: "Different Locations",
+            number: 7
+        },
+        {
+            id: 3,
+            achievement: "Years of Experience",
+            number: 14
+        },
+        {
+            id: 4,
+            achievement: "Released Projects",
+            number: 4
+        }
+    ]
+    res.json(achievementsData);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

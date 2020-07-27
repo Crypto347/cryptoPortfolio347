@@ -67,7 +67,7 @@ const fetchTestimonialsFailur = (state, action) => {
 }
 
 const fetchTeamInformationBegin = (state, action) => {
-    let updateTeamInformationoard = {
+    let updatedTeamInformation = {
         ...state.teamInformation, 
         loading: true, 
         error: null
@@ -75,31 +75,31 @@ const fetchTeamInformationBegin = (state, action) => {
 
     return {
         ...state,
-        teamInformation: updateTeamInformationoard
+        teamInformation: updatedTeamInformation
     };
 }
 
 const fetchTeamInformationSuccess = (state, action) => {   
-    let updateTeamInformationoard = {
+    let updatedTeamInformation = {
         ...state.teamInformation, 
         items: action.array,
         loading: false
     } 
     return {
         ...state,
-        teamInformation: updateTeamInformationoard
+        teamInformation: updatedTeamInformation
     };
 }
 
 const fetchTeamInformationFailur = (state, action) => {
-    let updateTeamInformationoard = {
+    let updatedTeamInformation = {
         items: [],
         loading: false, 
         error: action.err
     }
     return {
         ...state,
-        teamInformation: updateTeamInformationoard
+        teamInformation: updatedTeamInformation
     };
 }
 
