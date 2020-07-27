@@ -10,9 +10,16 @@
 }
 
 
-// @media only screen and (max-width: 1250px){
- 
-// }
+@media only screen and (max-width: 1120px){
+    .statistics {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 120px 0 80px;
+        .statistics-wrapper {
+        }
+        
+    }
+}
 
 
 // @media only screen and (max-width: 945px){

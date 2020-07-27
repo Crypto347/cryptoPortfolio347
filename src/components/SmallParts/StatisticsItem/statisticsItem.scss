@@ -32,6 +32,35 @@
     
 }
 
+
+@media only screen and (max-width: 1120px){
+    .statistics-item {
+        .statistics-item-wrapper {
+            display: flex;
+            justify-content: space-between;
+            .statistics-item-percent {
+                font-size: 25px;
+                font-family: 'Teko', sans-serif;
+                color: black;
+            }
+        }
+        .statistics-item-percent-line-wrapper {
+            position: relative;
+            .statistics-item-percent-line-back {
+                width: calc(100vw - 160px);
+                border: 1.5px solid rgba(155, 155, 155, 0.5);
+            }
+            .statistics-item-percent-line-top {
+                position: absolute;
+                top: 0%;
+                border: 1.5px solid black;
+            }
+        }
+        
+    }
+}
+
+
 @-webkit-keyframes appearPercent {
     0%{width: 40%;}
 }

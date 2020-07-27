@@ -61,7 +61,7 @@ import {
     H65,
     H25,
     EH90,
-    EH20,
+    EH25,
     EH10,
     EW3
 } from '../../UtilityComponents';
@@ -132,6 +132,7 @@ export const Statistics = (props) => {
             })}</div>
         )
     }
+
     /**
     * Markup
     */
@@ -150,6 +151,8 @@ export const Statistics = (props) => {
                         <H65 className="h65-black-lustria">With Your Soul</H65>
                     </div>
                     <EW3/>
+                    <EH25/>
+                    <EH25/>
                     {renderStatisticsData()}
                 </> : null }
             </div>
