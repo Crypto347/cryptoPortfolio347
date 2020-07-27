@@ -139,7 +139,7 @@ export const Achievements = (props) => {
 
     return(
         <>
-            <EH90/>
+            {/* <EH90/> */}
             <div 
                 className="achievements" 
                 id="achievements"
@@ -156,7 +156,7 @@ export const Achievements = (props) => {
                     {renderStatisticsData()}
                 </> : null } */}
             </div>
-            <EH90/>
+            {/* <EH90/> */}
         </>
     );
 }

@@ -114,7 +114,8 @@ export const Statistics = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("statistics");
-        if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
+        console.log(scrollHeight, el.offsetTop - window.innerHeight/2 - 400)
+        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 400){
             setShowComponent(true);
         }
     }
@@ -139,12 +140,12 @@ export const Statistics = (props) => {
 
     return(
         <div 
-            className="statistics" 
+            className="statistics-outer-wrapper" 
             id="statistics"
         >
+            <EH90/>
             {showComponent ? 
-            <>
-                <EH90/>
+            <div className="statistics-inner-wrapper">
                 <div className="statistics-wrapper">
                     <H65 className="h65-black-teko">Love Design.</H65>
                     <H65 className="h65-black-lustria">With Your Soul</H65>
@@ -153,8 +154,8 @@ export const Statistics = (props) => {
                 <EH25/>
                 <EH25/>
                 {renderStatisticsData()}
-                <EH90/>
-            </> : null }
+            </div> : null }
+            <EH90/>
         </div>
     );
 }
