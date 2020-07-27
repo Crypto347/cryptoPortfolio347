@@ -34,7 +34,7 @@ import './section4.scss';
 */
 
 import Statistics from '../Statistics/statistics';
-// import TeamInformation from '../TeamInformation/teamInformation';
+import Achievements from '../Achievements/achievements';
 
 /**
 * Actions
@@ -105,7 +105,7 @@ export const Section4 = (props) => {
     return(
         <div className="section-4">
             <Statistics/>
-            {/* <TeamInformation/> */}
+            <Achievements/>
             
         </div>
     );

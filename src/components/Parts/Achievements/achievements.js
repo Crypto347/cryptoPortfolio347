@@ -27,7 +27,7 @@ import {
 * Styles
 */
 
-import './statistics.scss';
+import './achievements.scss';
 
 /**
 * Components
@@ -86,10 +86,10 @@ import {
 
 
 /**
-* Statistics component definition and export
+* Achievements component definition and export
 */
 
-export const Statistics = (props) => {
+export const Achievements = (props) => {
 
     /**
     * State
@@ -102,7 +102,7 @@ export const Statistics = (props) => {
     */
 
     useEffect(() => {
-        props.fetchStatisticsData();
+        // props.fetchStatisticsData();
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -113,65 +113,67 @@ export const Statistics = (props) => {
 
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("statistics");
+        let el = document.getElementById("achievements");
         if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
             setShowComponent(true);
         }
     }
 
-    const renderStatisticsData = () => {
-        return(
-            <div>{props.statisticsData.items.map((el,i) => {
-                return(
-                    <StatisticItem 
-                        key={i}
-                        label={el.label}
-                        percent={el.percent}
-                    />
-                )
-            })}</div>
-        )
-    }
+    // const renderStatisticsData = () => {
+    //     return(
+    //         <div>{props.statisticsData.items.map((el,i) => {
+    //             return(
+    //                 <StatisticItem 
+    //                     key={i}
+    //                     label={el.label}
+    //                     percent={el.percent}
+    //                 />
+    //             )
+    //         })}</div>
+    //     )
+    // }
 
     /**
     * Markup
     */
 
     return(
-        <div 
-            className="statistics" 
-            id="statistics"
-        >
-            {showComponent ? 
-            <>
-                <EH90/>
-                <div className="statistics-wrapper">
-                    <H65 className="h65-black-teko">Love Design.</H65>
-                    <H65 className="h65-black-lustria">With Your Soul</H65>
-                </div>
-                <EW3/>
-                <EH25/>
-                <EH25/>
-                {renderStatisticsData()}
-                <EH90/>
-            </> : null }
-        </div>
+        <>
+            <EH90/>
+            <div 
+                className="achievements" 
+                id="achievements"
+            >
+                {/* {showComponent ? 
+                <>
+                    <div className="statistics-wrapper">
+                        <H65 className="h65-black-teko">Love Design.</H65>
+                        <H65 className="h65-black-lustria">With Your Soul</H65>
+                    </div>
+                    <EW3/>
+                    <EH25/>
+                    <EH25/>
+                    {renderStatisticsData()}
+                </> : null } */}
+            </div>
+            <EH90/>
+        </>
     );
 }
 
 export default connect(
     (state) => {
         return {
-            statisticsData: Selectors.getStatisticsDataState(state),
+            // statisticsData: Selectors.getStatisticsDataState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch),
+            // fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch),
           
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
-)(Statistics);
+)(Achievements);
  
