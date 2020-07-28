@@ -1,0 +1,48 @@
+.achievement-item {
+    width: 25%;
+    .achievement-item-number {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 170px;
+        font-family: 'Poppins', sans-serif;
+        color: rgb(239, 239, 239);
+        position: relative;
+        .achievement {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            color: black;
+            font-family: 'Lustria', serif;
+            text-align: center;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1330px){
+    .achievement-item {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1025px){
+    .achievement-item {
+        .achievement-item-number {
+            font-size: 140px;
+            .achievement {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 990px){
+    .achievement-item {
+        width: 100%;
+    }
+}

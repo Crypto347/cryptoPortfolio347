@@ -33,7 +33,7 @@ import './achievements.scss';
 * Components
 */
 
-import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
+import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
 
 /**
 * Actions
@@ -76,7 +76,9 @@ import {
     useInterval
 } from '../../../Hooks/useInterval';
 
-
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
 * Constants
@@ -93,7 +95,8 @@ export const Achievements = (props) => {
     * State
     */
 
-    const [showComponent, setShowComponent] = useState(true)
+    const size = useWindowSize();
+    const [showComponent, setShowComponent] = useState(false);
 
     /**
     * Methods
@@ -110,11 +113,16 @@ export const Achievements = (props) => {
     
 
     const handleScroll = () => {
-        // let scrollHeight = document.body.scrollTop;
-        // let el = document.getElementById("achievements");
-        // if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
-        //     setShowComponent(true);
-        // }
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("achievements");
+        if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
+            setShowComponent(true);
+        }
+        if(size.width - size.height < 0){
+            if(scrollHeight >= el.offsetTop - size.height/2 - 900){
+                setShowComponent(true);
+            }
+        }
     }
 
     const renderAchievementsData = () => {
@@ -122,16 +130,11 @@ export const Achievements = (props) => {
             return(
                 <div className="achievements-data-items">{props.achievementsData.items.map((el,i) => {
                     return(
-                        <div 
+                        <AchievementItem
                             key={i}
-                            className="achievements-data-item"
-                        >
-                            <div className="achievements-data-item-number">
-                                {el.number}
-                                <div className="achievements-data-item-achievement">{el.achievement}</div>
-                            </div>
-    
-                        </div>
+                            number={el.number}
+                            achievement={el.achievement}
+                        />
                     )
                 })}</div>
             )
