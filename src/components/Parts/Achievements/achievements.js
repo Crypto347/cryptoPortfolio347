@@ -60,9 +60,7 @@ import * as Services from "../../../service";
 import {
     H65,
     H25,
-    EH90,
-    EH25,
-    EH10,
+    EH70,
     EW3
 } from '../../UtilityComponents';
 
@@ -120,16 +118,18 @@ export const Achievements = (props) => {
     }
 
     const renderAchievementsData = () => {
-        console.log(props.achievementsData.items)
         if(!props.achievementsData.loading && !props.achievementsData.error){
             return(
-                <div>{props.achievementsData.items.map((el,i) => {
+                <div className="achievements-data-items">{props.achievementsData.items.map((el,i) => {
                     return(
                         <div 
                             key={i}
-                            className="achievement-data-item"
+                            className="achievements-data-item"
                         >
-                            <div className="achievement-data-item-number">{el.number}</div>
+                            <div className="achievements-data-item-number">
+                                {el.number}
+                                <div className="achievements-data-item-achievement">{el.achievement}</div>
+                            </div>
     
                         </div>
                     )
@@ -143,16 +143,12 @@ export const Achievements = (props) => {
     */
 
     return(
-        <>
-            <EH90/>
-            <div 
-               className="achievement"
-                id="achievements"
-            >
-                {showComponent ? renderAchievementsData() : null}
-            </div>
-            <EH90/>
-        </>
+        <div 
+            className="achievements"
+            id="achievements"
+        >
+            {showComponent ? renderAchievementsData() : null}
+        </div>
     );
 }
 

@@ -1,8 +1,71 @@
 .achievements {
-    border: 2px solid red;
-    .achievement-data-item {
-        .achievement-data-item-number {
-            
+    .achievements-data-items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 70px 80px 70px 80px;
+        width: calc(100% - 160px);
+        .achievements-data-item {
+            width: 25%;
+            .achievements-data-item-number {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 170px;
+                font-family: 'Poppins', sans-serif;
+                color: rgb(239, 239, 239);
+                position: relative;
+                .achievements-data-item-achievement {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 25px;
+                    color: black;
+                    font-family: 'Lustria', serif;
+                     text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1330px){
+    .achievements {
+        .achievements-data-items {
+            padding: 54px 80px 54px 80px;
+            .achievements-data-item {
+                width: 50%;
+            }
+        }
+    }
+   
+}
+
+@media only screen and (max-width: 1025px){
+    .achievements {
+        .achievements-data-items {
+            padding: 70px 80px 70px 80px;
+            .achievements-data-item {
+                .achievements-data-item-number {
+                    font-size: 140px;
+                    .achievements-data-item-achievement {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 990px){
+    .achievements {
+        .achievements-data-items {
+            .achievements-data-item {
+                width: 100%;
+            }
         }
     }
 }
