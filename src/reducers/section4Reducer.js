@@ -21,7 +21,7 @@ export const initialState = {
         loading: false,
         error: null
     },
-    achievements: {
+    achievementsData: {
         items: [],
         loading: false,
         error: null
@@ -67,7 +67,7 @@ const fetchStatisticsDataFailur = (state, action) => {
 }
 
 const fetchAchievementsBegin = (state, action) => {
-    let updateAchievements = {
+    let updateAchievementsData = {
         ...state.teamInformation, 
         loading: true, 
         error: null
@@ -75,31 +75,31 @@ const fetchAchievementsBegin = (state, action) => {
 
     return {
         ...state,
-        achievements: updateAchievements
+        achievementsData: updateAchievementsData
     };
 }
 
 const fetchAchievementsSuccess = (state, action) => {   
-    let updateAchievements = {
+    let updateAchievementsData = {
         ...state.teamInformation, 
         items: action.array,
         loading: false
     } 
     return {
         ...state,
-        achievements: updateAchievements
+        achievementsData: updateAchievementsData
     };
 }
 
 const fetchAchievementsFailur = (state, action) => {
-    let updateAchievements = {
+    let updateAchievementsData = {
         items: [],
         loading: false, 
         error: action.err
     }
     return {
         ...state,
-        achievements: updateAchievements
+        achievementsData: updateAchievementsData
     };
 }
 

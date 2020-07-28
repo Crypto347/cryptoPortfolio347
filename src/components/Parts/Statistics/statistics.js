@@ -119,7 +119,7 @@ export const Statistics = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("statistics");
-        console.log(scrollHeight, el.offsetTop - size.height/2 - 800)
+        // console.log(scrollHeight, el.offsetTop - size.height/2 - 800)
         if(scrollHeight >= el.offsetTop - size.height/2 - 400){
             setShowComponent(true);
         }
@@ -164,7 +164,7 @@ export const Statistics = (props) => {
                 <EH25/>
                 <EH25/>
                 {renderStatisticsData()}
-            </div> : null }
+            </div> : null}
             <EH90/>
         </div>
     );

@@ -79,3 +79,9 @@ export const getStatisticsDataState = createSelector(
     (x) => x
 );
 
+const getAchievementsData = (state) => state.section4.achievementsData;
+
+export const getAchievementsDataState = createSelector(
+    [getAchievementsData],
+    (x) => x
+);

@@ -95,7 +95,7 @@ export const Achievements = (props) => {
     * State
     */
 
-    const [showComponent, setShowComponent] = useState(false)
+    const [showComponent, setShowComponent] = useState(true)
 
     /**
     * Methods
@@ -119,19 +119,24 @@ export const Achievements = (props) => {
         // }
     }
 
-    // const renderStatisticsData = () => {
-    //     return(
-    //         <div>{props.statisticsData.items.map((el,i) => {
-    //             return(
-    //                 <StatisticItem 
-    //                     key={i}
-    //                     label={el.label}
-    //                     percent={el.percent}
-    //                 />
-    //             )
-    //         })}</div>
-    //     )
-    // }
+    const renderAchievementsData = () => {
+        console.log(props.achievementsData.items)
+        if(!props.achievementsData.loading && !props.achievementsData.error){
+            return(
+                <div>{props.achievementsData.items.map((el,i) => {
+                    return(
+                        <div 
+                            key={i}
+                            className="achievement-data-item"
+                        >
+                            <div className="achievement-data-item-number">{el.number}</div>
+    
+                        </div>
+                    )
+                })}</div>
+            )
+        }
+    }
 
     /**
     * Markup
@@ -139,24 +144,14 @@ export const Achievements = (props) => {
 
     return(
         <>
-            {/* <EH90/> */}
+            <EH90/>
             <div 
-                className="achievements" 
+               className="achievement"
                 id="achievements"
             >
-                {/* {showComponent ? 
-                <>
-                    <div className="statistics-wrapper">
-                        <H65 className="h65-black-teko">Love Design.</H65>
-                        <H65 className="h65-black-lustria">With Your Soul</H65>
-                    </div>
-                    <EW3/>
-                    <EH25/>
-                    <EH25/>
-                    {renderStatisticsData()}
-                </> : null } */}
+                {showComponent ? renderAchievementsData() : null}
             </div>
-            {/* <EH90/> */}
+            <EH90/>
         </>
     );
 }
@@ -164,7 +159,7 @@ export const Achievements = (props) => {
 export default connect(
     (state) => {
         return {
-            // achievementsData: Selectors.getAchievementsDataState(state),
+            achievementsData: Selectors.getAchievementsDataState(state),
             // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
