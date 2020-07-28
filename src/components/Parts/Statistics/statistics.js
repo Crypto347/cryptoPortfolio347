@@ -78,7 +78,9 @@ import {
     useInterval
 } from '../../../Hooks/useInterval';
 
-
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
 * Constants
@@ -90,11 +92,13 @@ import {
 */
 
 export const Statistics = (props) => {
+    
 
     /**
     * State
     */
 
+    const size = useWindowSize();
     const [showComponent, setShowComponent] = useState(false)
 
     /**
@@ -104,6 +108,7 @@ export const Statistics = (props) => {
     useEffect(() => {
         props.fetchStatisticsData();
         window.addEventListener('scroll', handleScroll);
+        // console.log(size.width, size.height)
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -114,9 +119,14 @@ export const Statistics = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("statistics");
-        console.log(scrollHeight, el.offsetTop - window.innerHeight/2 - 400)
-        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 400){
+        console.log(scrollHeight, el.offsetTop - size.height/2 - 800)
+        if(scrollHeight >= el.offsetTop - size.height/2 - 400){
             setShowComponent(true);
+        }
+        if(size.width - size.height < 0){
+            if(scrollHeight >= el.offsetTop - size.height/2 - 900){
+                setShowComponent(true);
+            }
         }
     }
 
