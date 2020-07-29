@@ -64,20 +64,20 @@
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, 3px) rotate(45deg);
-                        -webkit-animation: hoverOnArrowOn .5s linear;
-                        -moz-animation: hoverOnArrowOn .5s linear;
-                        -o-animation: hoverOnArrowOn .5s linear;
-                        animation: hoverOnArrowOn .5s linear;
+                        -webkit-animation: hoverArrowOn .5s linear;
+                        -moz-animation: hoverArrowOn .5s linear;
+                        -o-animation: hoverArrowOn .5s linear;
+                        animation: hoverArrowOn .5s linear;
                     }
                     .arrow-bottom-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, -3px) rotate(-45deg);
-                        -webkit-animation: hoverOnArrowOn .5s linear;
-                        -moz-animation: hoverOnArrowOn .5s linear;
-                        -o-animation: hoverOnArrowOn .5s linear;
-                        animation: hoverOnArrowOn .5s linear;
+                        -webkit-animation: hoverArrowOn .5s linear;
+                        -moz-animation: hoverArrowOn .5s linear;
+                        -o-animation: hoverArrowOn .5s linear;
+                        animation: hoverArrowOn .5s linear;
                     }
                 }
                 .photo-viewer-navigation-left-arrow-hover-off {
@@ -87,20 +87,20 @@
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, 3px) rotate(45deg);
-                        -webkit-animation: hoverOnArrowOff .5s linear;
-                        -moz-animation: hoverOnArrowOff .5s linear;
-                        -o-animation: hoverOnArrowOff .5s linear;
-                        animation: hoverOnArrowOff .5s linear;
+                        -webkit-animation: hoverArrowOff .5s linear;
+                        -moz-animation: hoverArrowOff .5s linear;
+                        -o-animation: hoverArrowOff .5s linear;
+                        animation: hoverArrowOff .5s linear;
                     }
                     .arrow-bottom-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, -3px) rotate(-45deg);
-                        -webkit-animation: hoverOnArrowOff .5s linear;
-                        -moz-animation: hoverOnArrowOff .5s linear;
-                        -o-animation: hoverOnArrowOff .5s linear;
-                        animation: hoverOnArrowOff .5s linear;
+                        -webkit-animation: hoverArrowOff .5s linear;
+                        -moz-animation: hoverArrowOff .5s linear;
+                        -o-animation: hoverArrowOff .5s linear;
+                        animation: hoverArrowOff .5s linear;
                     }
                 }
                 .photo-viewer-navigation-right-arrow {
@@ -125,20 +125,20 @@
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, 3px)  rotate(-45deg);
-                        -webkit-animation: hoverOnArrowOn .5s linear;
-                        -moz-animation: hoverOnArrowOn .5s linear;
-                        -o-animation: hoverOnArrowOn .5s linear;
-                        animation: hoverOnArrowOn .5s linear;
+                        -webkit-animation: hoverArrowOn .5s linear;
+                        -moz-animation: hoverArrowOn .5s linear;
+                        -o-animation: hoverArrowOn .5s linear;
+                        animation: hoverArrowOn .5s linear;
                     }
                     .arrow-bottom-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, -3px) rotate(45deg);
-                        -webkit-animation: hoverOnArrowOn .5s linear;
-                        -moz-animation: hoverOnArrowOn .5s linear;
-                        -o-animation: hoverOnArrowOn .5s linear;
-                        animation: hoverOnArrowOn .5s linear;
+                        -webkit-animation: hoverArrowOn .5s linear;
+                        -moz-animation: hoverArrowOn .5s linear;
+                        -o-animation: hoverArrowOn .5s linear;
+                        animation: hoverArrowOn .5s linear;
                     }
                 }
                 .photo-viewer-navigation-right-arrow-hover-off {
@@ -148,20 +148,20 @@
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, 3px)  rotate(-45deg);
-                        -webkit-animation: hoverOnArrowOff .5s linear;
-                        -moz-animation: hoverOnArrowOff .5s linear;
-                        -o-animation: hoverOnArrowOff .5s linear;
-                        animation: hoverOnArrowOff .5s linear;
+                        -webkit-animation: hoverArrowOff .5s linear;
+                        -moz-animation: hoverArrowOff .5s linear;
+                        -o-animation: hoverArrowOff .5s linear;
+                        animation: hoverArrowOff .5s linear;
                     }
                     .arrow-bottom-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
                         width: 0px;
                         transform: translate(5px, -3px) rotate(45deg);
-                        -webkit-animation: hoverOnArrowOff .5s linear;
-                        -moz-animation: hoverOnArrowOff .5s linear;
-                        -o-animation: hoverOnArrowOff .5s linear;
-                        animation: hoverOnArrowOff .5s linear;
+                        -webkit-animation: hoverArrowOff .5s linear;
+                        -moz-animation: hoverArrowOff .5s linear;
+                        -o-animation: hoverArrowOff .5s linear;
+                        animation: hoverArrowOff .5s linear;
                     }
                 }
             }
@@ -193,19 +193,19 @@
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
                         transform: translate(7px, 6px) rotate(45deg);
-                        -webkit-animation: hoverOnArrowOn .5s linear;
-                        -moz-animation: hoverOnArrowOn .5s linear;
-                        -o-animation: hoverOnArrowOn .5s linear;
-                        animation: hoverOnArrowOn .5s linear;
+                        -webkit-animation: hoverArrowOn .5s linear;
+                        -moz-animation: hoverArrowOn .5s linear;
+                        -o-animation: hoverArrowOn .5s linear;
+                        animation: hoverArrowOn .5s linear;
                     }
                     .close-second-line {
                         border: 1px solid rgb(37, 37, 37);
                         height: 12px;
                         transform: translate(7px, -8px) rotate(-45deg);
-                        -webkit-animation: hoverOnArrowOn .5s linear;
-                        -moz-animation: hoverOnArrowOn .5s linear;
-                        -o-animation: hoverOnArrowOn .5s linear;
-                        animation: hoverOnArrowOn .5s linear;
+                        -webkit-animation: hoverArrowOn .5s linear;
+                        -moz-animation: hoverArrowOn .5s linear;
+                        -o-animation: hoverArrowOn .5s linear;
+                        animation: hoverArrowOn .5s linear;
                     }
                 }
             }
@@ -219,19 +219,19 @@
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
                         transform: translate(7px, 6px) rotate(45deg);
-                        -webkit-animation: hoverOnArrowOff .5s linear;
-                        -moz-animation: hoverOnArrowOff .5s linear;
-                        -o-animation: hoverOnArrowOff .5s linear;
-                        animation: hoverOnArrowOff .5s linear;
+                        -webkit-animation: hoverArrowOff .5s linear;
+                        -moz-animation: hoverArrowOff .5s linear;
+                        -o-animation: hoverArrowOff .5s linear;
+                        animation: hoverArrowOff .5s linear;
                     }
                     .close-second-line {
                         border: 1px solid rgb(155, 155, 155);
                         height: 12px;
                         transform: translate(7px, -8px) rotate(-45deg);
-                        -webkit-animation: hoverOnArrowOff .5s linear;
-                        -moz-animation: hoverOnArrowOff .5s linear;
-                        -o-animation: hoverOnArrowOff .5s linear;
-                        animation: hoverOnArrowOff .5s linear;
+                        -webkit-animation: hoverArrowOff .5s linear;
+                        -moz-animation: hoverArrowOff .5s linear;
+                        -o-animation: hoverArrowOff .5s linear;
+                        animation: hoverArrowOff .5s linear;
                     }
                 }
             }
@@ -265,36 +265,36 @@
 // }
 
 
-@-webkit-keyframes hoverOnArrowOn {
+@-webkit-keyframes hoverArrowOn {
     from{border: 1px solid rgb(155, 155, 155);}
     to{border: 1px solid rgb(37, 37, 37);}
 }
-@-moz-keyframes hoverOnArrowOn {
+@-moz-keyframes hoverArrowOn {
     from{border: 1px solid rgb(155, 155, 155);}
     to{border: 1px solid rgb(37, 37, 37);}
 }
-@-o-keyframes hoverOnArrowOn {
+@-o-keyframes hoverArrowOn {
     from{border: 1px solid rgb(155, 155, 155);}
     to{border: 1px solid rgb(37, 37, 37);}
 }
-@keyframes hoverOnArrowOn {
+@keyframes hoverArrowOn {
     from{border: 1px solid rgb(155, 155, 155);}
     to{border: 1px solid rgb(37, 37, 37);}
 }
 
-@-webkit-keyframes hoverOnArrowOff {
+@-webkit-keyframes hoverArrowOff {
     from{border: 1px solid rgb(37, 37, 37);}
     to{border: 1px solid rgb(155, 155, 155);}
 }
-@-moz-keyframes hoverOnArrowOff {
+@-moz-keyframes hoverArrowOff {
     from{border: 1px solid rgb(37, 37, 37);}
     to{border: 1px solid rgb(155, 155, 155);}
 }
-@-o-keyframes hoverOnArrowOff {
+@-o-keyframes hoverArrowOff {
     from{border: 1px solid rgb(37, 37, 37);}
     to{border: 1px solid rgb(155, 155, 155);}
 }
-@keyframes hoverOnArrowOff {
+@keyframes hoverArrowOff {
     from{border: 1px solid rgb(37, 37, 37);}
     to{border: 1px solid rgb(155, 155, 155);}
 }

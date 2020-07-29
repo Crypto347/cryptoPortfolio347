@@ -80,19 +80,19 @@
             font-size: 17px;
             color: white;
             font-family: 'Lustria', serif;
-            -webkit-animation: hoverOnArrowLabelOn .5s linear;
-            -moz-animation: hoverOnArrowLabelOn .5s linear;
-            -o-animation: hoverOnArrowLabelOn .5s linear;
-            animation: hoverOnArrowLabelOn .5s linear;
+            -webkit-animation: hoverArrowLabelOn .5s linear;
+            -moz-animation: hoverArrowLabelOn .5s linear;
+            -o-animation: hoverArrowLabelOn .5s linear;
+            animation: hoverArrowLabelOn .5s linear;
         }
         .swiper-arrow-left-line {
             border: 1px solid white;
             width: 115px;
             margin-top: 7px;
-            -webkit-animation: hoverOnSwiperArrowOn .5s linear;
-            -moz-animation: hoverOnSwiperArrowOn .5s linear;
-            -o-animation: hoverOnSwiperArrowOn .5s linear;
-            animation: hoverOnSwiperArrowOn .5s linear;
+            -webkit-animation: hoverSwiperArrowOn .5s linear;
+            -moz-animation: hoverSwiperArrowOn .5s linear;
+            -o-animation: hoverSwiperArrowOn .5s linear;
+            animation: hoverSwiperArrowOn .5s linear;
         }
     }
     .swiper-arrow-left-wrapper-hover-off {
@@ -107,19 +107,19 @@
             font-size: 17px;
             color: white;
             font-family: 'Lustria', serif;
-            -webkit-animation: hoverOnArrowLabelOff .5s linear;
-            -moz-animation: hoverOnArrowLabelOff .5s linear;
-            -o-animation: hoverOnArrowLabelOff .5s linear;
-            animation: hoverOnArrowLabelOff .5s linear;
+            -webkit-animation: hoverArrowLabelOff .5s linear;
+            -moz-animation: hoverArrowLabelOff .5s linear;
+            -o-animation: hoverArrowLabelOff .5s linear;
+            animation: hoverArrowLabelOff .5s linear;
         }
         .swiper-arrow-left-line {
             border: 1px solid white;
             width: 110px;
             margin-top: 7px;
-            -webkit-animation: hoverOnSwiperArrowOff .5s linear;
-            -moz-animation: hoverOnSwiperArrowOff .5s linear;
-            -o-animation: hoverOnSwiperArrowOff .5s linear;
-            animation: hoverOnSwiperArrowOff .5s linear;
+            -webkit-animation: hoverSwiperArrowOff .5s linear;
+            -moz-animation: hoverSwiperArrowOff .5s linear;
+            -o-animation: hoverSwiperArrowOff .5s linear;
+            animation: hoverSwiperArrowOff .5s linear;
         }
     }
 
@@ -127,11 +127,13 @@
 .swiper-arrow-right {
     width: 65px;
     .swiper-arrow-right-wrapper {
+        position: relative;
         width: 110px;
         transform: translateX(-45px);
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        z-index: 20;
         cursor: pointer;
         .h17-white-lustria {
             width: 110px;
@@ -149,11 +151,13 @@
         }
     }
     .swiper-arrow-right-wrapper-hover-on {
+        position: relative;
         width: 115px;
         transform: translateX(-50px);
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        z-index: 20;
         cursor: pointer;
         .h17-white-lustria {
             width: 105px;
@@ -163,27 +167,29 @@
             color: white;
             font-family: 'Lustria', serif;
             padding-left: 0;
-            -webkit-animation: hoverOnArrowLabelOn .5s linear;
-            -moz-animation: hoverOnArrowLabelOn .5s linear;
-            -o-animation: hoverOnArrowLabelOn .5s linear;
-            animation: hoverOnArrowLabelOn .5s linear;
+            -webkit-animation: hoverArrowLabelOn .5s linear;
+            -moz-animation: hoverArrowLabelOn .5s linear;
+            -o-animation: hoverArrowLabelOn .5s linear;
+            animation: hoverArrowLabelOn .5s linear;
         }
         .swiper-arrow-right-line {
             border: 1px solid white;
             width: 115px;
             margin-top: 7px;
-            -webkit-animation: hoverOnSwiperArrowOn .5s linear;
-            -moz-animation: hoverOnSwiperArrowOn .5s linear;
-            -o-animation: hoverOnSwiperArrowOn .5s linear;
-            animation: hoverOnSwiperArrowOn .5s linear;
+            -webkit-animation: hoverSwiperArrowOn .5s linear;
+            -moz-animation: hoverSwiperArrowOn .5s linear;
+            -o-animation: hoverSwiperArrowOn .5s linear;
+            animation: hoverSwiperArrowOn .5s linear;
         }
     }
     .swiper-arrow-right-wrapper-hover-off {
+        position: relative;
         width: 110px;
         transform: translateX(-45px);
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        z-index: 20;
         cursor: pointer;
         .h17-white-lustria {
             width: 110px;
@@ -193,20 +199,20 @@
             color: white;
             font-family: 'Lustria', serif;
             padding-left: 0;
-            -webkit-animation: hoverOnArrowLabelOff .5s linear;
-            -moz-animation: hoverOnArrowLabelOff .5s linear;
-            -o-animation: hoverOnArrowLabelOff .5s linear;
-            animation: hoverOnArrowLabelOff .5s linear;
+            -webkit-animation: hoverArrowLabelOff .5s linear;
+            -moz-animation: hoverArrowLabelOff .5s linear;
+            -o-animation: hoverArrowLabelOff .5s linear;
+            animation: hoverArrowLabelOff .5s linear;
         }
         .swiper-arrow-right-line {
             border: 1px solid white;
             width: 110px;
             margin-top: 7px;
             // transform: rotate(180deg);
-            -webkit-animation: hoverOnSwiperArrowOff .5s linear;
-            -moz-animation: hoverOnSwiperArrowOff .5s linear;
-            -o-animation: hoverOnSwiperArrowOff .5s linear;
-            animation: hoverOnSwiperArrowOff .5s linear;
+            -webkit-animation: hoverSwiperArrowOff .5s linear;
+            -moz-animation: hoverSwiperArrowOff .5s linear;
+            -o-animation: hoverSwiperArrowOff .5s linear;
+            animation: hoverSwiperArrowOff .5s linear;
         }
     }
 }
@@ -215,70 +221,70 @@
     cursor: grabbing;
 }
 
-@-webkit-keyframes hoverOnArrowLabelOn {
+@-webkit-keyframes hoverArrowLabelOn {
     from{width: 110px;}
     to{width: 105px;}
 }
-@-moz-keyframes hoverOnArrowLabelOn {
+@-moz-keyframes hoverArrowLabelOn {
     from{width: 110px;}
     to{width: 105px;}
 }
-@-o-keyframes hoverOnArrowLabelOn {
+@-o-keyframes hoverArrowLabelOn {
     from{width: 110px;}
     to{width: 105px;}
 }
-@keyframes hoverOnArrowLabelOn {
+@keyframes hoverArrowLabelOn {
     from{width: 110px;}
     to{width: 105px;}
 }
 
-@-webkit-keyframes hoverOnArrowLabelOff {
+@-webkit-keyframes hoverArrowLabelOff {
     from{width: 105px;}
     to{width: 110px;}
 }
-@-moz-keyframes hoverOnArrowLabelOff {
+@-moz-keyframes hoverArrowLabelOff {
     from{width: 105px;}
     to{width: 110px;}
 }
-@-o-keyframes hoverOnArrowLabelOff {
+@-o-keyframes hoverArrowLabelOff {
     from{width: 105px;}
     to{width: 110px;}
 }
-@keyframes hoverOnArrowLabelOff {
+@keyframes hoverArrowLabelOff {
     from{width: 105px;}
     to{width: 110px;}
 }
 
-@-webkit-keyframes hoverOnSwiperArrowOn {
+@-webkit-keyframes hoverSwiperArrowOn {
     from{width: 110px;}
     to{width: 115px;}
 }
-@-moz-keyframes hoverOnSwiperArrowOn {
+@-moz-keyframes hoverSwiperArrowOn {
     from{width: 110px;}
     to{width: 115px;}
 }
-@-o-keyframes hoverOnSwiperArrowOn {
+@-o-keyframes hoverSwiperArrowOn {
     from{width: 110px;}
     to{width: 115px;}
 }
-@keyframes hoverOnSwiperArrowOn {
+@keyframes hoverSwiperArrowOn {
     from{width: 110px;}
     to{width: 115px;}
 }
 
-@-webkit-keyframes hoverOnSwiperArrowOff {
+@-webkit-keyframes hoverSwiperArrowOff {
     from{width: 115px;}
     to{width: 110px;}
 }
-@-moz-keyframes hoverOnSwiperArrowOff {
+@-moz-keyframes hoverSwiperArrowOff {
     from{width: 115px;}
     to{width: 110px;}
 }
-@-o-keyframes hoverOnSwiperArrowOff {
+@-o-keyframes hoverSwiperArrowOff {
     from{width: 115px;}
     to{width: 110px;}
 }
-@keyframes hoverOnSwiperArrowOff {
+@keyframes hoverSwiperArrowOff {
     from{width: 115px;}
     to{width: 110px;}
 }

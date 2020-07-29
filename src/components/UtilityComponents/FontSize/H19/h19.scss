@@ -21,52 +21,52 @@
     font-size: 19px;
     color: rgb(37, 37, 37);
     font-family: 'Lora', serif;
-    -webkit-animation: h19HoverOnArrowOn .5s linear;
-    -moz-animation: h19HoverOnArrowOn .5s linear;
-    -o-animation: h19HoverOnArrowOn .5s linear;
-    animation: h19HoverOnArrowOn .5s linear;
+    -webkit-animation: h19HoverArrowOn .5s linear;
+    -moz-animation: h19HoverArrowOn .5s linear;
+    -o-animation: h19HoverArrowOn .5s linear;
+    animation: h19HoverArrowOn .5s linear;
 }
 
 .h19-nobel-lora-nero-hover-off {
     font-size: 19px;
     color: rgb(155, 155, 155);
     font-family: 'Lora', serif;
-    -webkit-animation: h19HoverOnArrowOff .5s linear;
-    -moz-animation: h19HoverOnArrowOff .5s linear;
-    -o-animation: h19HoverOnArrowOff .5s linear;
-    animation: h19HoverOnArrowOff .5s linear;
+    -webkit-animation: h19HoverArrowOff .5s linear;
+    -moz-animation: h19HoverArrowOff .5s linear;
+    -o-animation: h19HoverArrowOff .5s linear;
+    animation: h19HoverArrowOff .5s linear;
 }
 
-@-webkit-keyframes h19HoverOnArrowOn {
+@-webkit-keyframes h19HoverArrowOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
-@-moz-keyframes h19HoverOnArrowOn {
+@-moz-keyframes h19HoverArrowOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
-@-o-keyframes h19HoverOnArrowOn {
+@-o-keyframes h19HoverArrowOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
-@keyframes h19HoverOnArrowOn {
+@keyframes h19HoverArrowOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
 
-@-webkit-keyframes h19HoverOnArrowOff {
+@-webkit-keyframes h19HoverArrowOff {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
-@-moz-keyframes h19HoverOnArrowOff {
+@-moz-keyframes h19HoverArrowOff {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
-@-o-keyframes h19HoverOnArrowOff {
+@-o-keyframes h19HoverArrowOff {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
-@keyframes h19HoverOnArrowOff {
+@keyframes h19HoverArrowOff {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
