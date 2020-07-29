@@ -33,6 +33,7 @@ import './statistics.scss';
 * Components
 */
 
+import Loading from '../../SmallParts/Loading/loading';
 import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
 
 /**
@@ -59,7 +60,7 @@ import * as Services from "../../../service";
 
 import {
     H65,
-    H25,
+    H19,
     EH90,
     EH25,
     EH10,
@@ -144,6 +145,40 @@ export const Statistics = (props) => {
         )
     }
 
+    const renderStatistics = () => {
+        if(props.statisticsData.loading && !props.statisticsData.error){
+            return(
+                <div className="statistics-loading-error">
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.statisticsData.loading && !props.statisticsData.error){
+            return(
+                <>
+                    {showComponent ? 
+                    <div className="statistics-inner-wrapper">
+                        <div className="statistics-wrapper">
+                            <H65 className="h65-black-teko">Love Design.</H65>
+                            <H65 className="h65-black-lustria">With Your Soul</H65>
+                        </div>
+                        <EW3/>
+                        <EH25/>
+                        <EH25/>
+                        {renderStatisticsData()}
+                    </div> : null}
+                </>
+            )
+        }
+        if(!props.statisticsData.loading && props.statisticsData.error){
+            return(
+                <div className="statistics-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.statisticsData.error}`}</H19>
+                </div>
+            )
+        }
+    } 
+
     /**
     * Markup
     */
@@ -154,17 +189,7 @@ export const Statistics = (props) => {
             id="statistics"
         >
             <EH90/>
-            {showComponent ? 
-            <div className="statistics-inner-wrapper">
-                <div className="statistics-wrapper">
-                    <H65 className="h65-black-teko">Love Design.</H65>
-                    <H65 className="h65-black-lustria">With Your Soul</H65>
-                </div>
-                <EW3/>
-                <EH25/>
-                <EH25/>
-                {renderStatisticsData()}
-            </div> : null}
+            {renderStatistics()}
             <EH90/>
         </div>
     );

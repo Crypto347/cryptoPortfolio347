@@ -2,6 +2,10 @@
     background-image: url('../../../images/background/augustine-wong-3Om4DHcaAc0-unsplash.jpg');
     background-position: center;
     background-size: 100% 100%;
+    .statistics-loading-error {
+        display: flex;
+        justify-content: center;
+    }
     .statistics-inner-wrapper {
         display: flex;
         justify-content: center;
