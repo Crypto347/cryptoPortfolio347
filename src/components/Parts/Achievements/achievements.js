@@ -33,6 +33,7 @@ import './achievements.scss';
 * Components
 */
 
+import Loading from '../../SmallParts/Loading/loading';
 import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
 
 /**
@@ -58,9 +59,9 @@ import * as Services from "../../../service";
 */
 
 import {
-    H65,
+    H19,
     H25,
-    EH70,
+    EH80,
     EW3
 } from '../../UtilityComponents';
 
@@ -141,6 +142,30 @@ export const Achievements = (props) => {
         }
     }
 
+    const renderAchievements = () => {
+        if(props.achievementsData.loading && !props.achievementsData.error){
+            return(
+                <div className="achievements-loading-error">
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.achievementsData.loading && !props.achievementsData.error){
+            return(
+                <>
+                   {showComponent ? renderAchievementsData() : null}
+                </>
+            )
+        }
+        if(!props.achievementsData.loading && props.achievementsData.error){
+            return(
+                <div className="achievements-loading-error">
+                    <H19 className="h19-nobel-lora">{`${props.achievementsData.error}`}</H19>
+                </div>
+            )
+        }
+    } 
+
     /**
     * Markup
     */
@@ -150,7 +175,9 @@ export const Achievements = (props) => {
             className="achievements"
             id="achievements"
         >
-            {showComponent ? renderAchievementsData() : null}
+            <EH80/>
+            {renderAchievements()}
+            <EH80/>
         </div>
     );
 }

@@ -1,27 +1,13 @@
 .achievements {
+    .achievements-loading-error {
+        display: flex;
+        justify-content: center;
+    }
     .achievements-data-items {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 70px 80px 70px 80px;
+        padding: 0px 80px 0px 80px;
         width: calc(100% - 160px);
     }
 }
-
-@media only screen and (max-width: 1330px){
-    .achievements {
-        .achievements-data-items {
-            padding: 54px 80px 54px 80px;
-        }
-    }
-   
-}
-
-@media only screen and (max-width: 1025px){
-    .achievements {
-        .achievements-data-items {
-            padding: 70px 80px 70px 80px;
-        }
-    }
-}
-

@@ -61,7 +61,7 @@ import * as Services from "../../../service";
 import {
     H65,
     H19,
-    EH90,
+    EH80,
     EH25,
     EH10,
     EW3
@@ -188,9 +188,9 @@ export const Statistics = (props) => {
             className="statistics-outer-wrapper" 
             id="statistics"
         >
-            <EH90/>
+            <EH80/>
             {renderStatistics()}
-            <EH90/>
+            <EH80/>
         </div>
     );
 }

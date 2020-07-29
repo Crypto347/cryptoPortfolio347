@@ -62,7 +62,7 @@ import {
    H130,
    H25,
    EH40,
-   EH90
+   EH80
 } from '../../UtilityComponents';
 
 /**
@@ -140,13 +140,11 @@ export const Section2 = (props) => {
                 <H130 className="h130-white-teko">Work.</H130>
                 <EH40/>
                 <H25 className="h25-white-lustria">Lorem ipsum dolor sit amet, consectetur ad.</H25>
-                <EH40/>
-                <EH40/>
+                <EH80/>
                 <PictureBoard/>
-                <EH90/>
+                <EH80/>
                 <OurProcess/>
             </div>
-            
         </div>
     );
 }
