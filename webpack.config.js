@@ -22,11 +22,11 @@ module.exports = {
         use: [
           {
             loader: 'html-loader'
-          }
+          },
         ]
       },
       {
-        test: /\.(png|gif|jpg|jpeg|svg|ico)$/,
+        test: /\.(png|gif|jpg|jpeg|svg|ico|mp4)$/,
         use:  'file-loader?name=[name].[ext]'
       },
       // {

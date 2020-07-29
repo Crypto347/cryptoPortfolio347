@@ -38,6 +38,7 @@ import Section1 from '../../Parts/Section1/section1';
 import Section2 from '../../Parts/Section2/section2';
 import Section3 from '../../Parts/Section3/section3';
 import Section4 from '../../Parts/Section4/section4';
+import Section5 from '../../Parts/Section5/section5';
 import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 /**
@@ -146,6 +147,7 @@ export const Home = (props) => {
             <Section2/>
             <Section3/>
             <Section4/>
+            <Section5/>
             {props.photoViewerForPictureBoardTextItemOpen ? <PhotoViewer/> : null}
         </div>
     );
