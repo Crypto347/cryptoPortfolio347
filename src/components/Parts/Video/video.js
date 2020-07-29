@@ -87,6 +87,8 @@ export const Video = (props) => {
     * State
     */
 
+    const [isHoveringPlayButton, setIsHoveringPlayButton] = useState("init");
+
     /**
     * Methods
     */
@@ -99,12 +101,35 @@ export const Video = (props) => {
     * Markup
     */
 
+    const renderClassName = (isHovering) => {
+        switch(isHovering){
+            case 'init':
+                return "video-play-button";
+            case 'on':
+                return "video-play-button-hover-on";
+            case 'off':
+                return "video-play-button-hover-off"
+        }       
+    }
+
+    const handleMouseEnter = () => {
+        setIsHoveringPlayButton("on")
+    }
+
+    const handleMouseLeave = () => {
+        setIsHoveringPlayButton("off")
+    }
+
     return(
         <div className="video">
             <div className="video-wrapper">
                 <img src={vidCover}/>
                 <div className="video-play-button-wrapper">
-                    <div className="video-play-button">
+                    <div 
+                        className={renderClassName(isHoveringPlayButton)}
+                        onMouseEnter={() => handleMouseEnter('expand')} 
+                        onMouseLeave={() => handleMouseLeave('expand')}
+                    >
                     </div>
                 </div>
             </div>

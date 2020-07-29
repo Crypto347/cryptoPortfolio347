@@ -22,21 +22,87 @@
                 border-radius: 50%;
                 background-color: rgb(37, 37, 37);
                 cursor: pointer;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border: 13px solid transparent;
+                    border-left: 22px solid transparent;
+                    border-left-color: white;
+                    // border-top: 1;
+                    margin-left: -7px;
+                    margin-top: -12px;
+                }
             }
-            .video-play-button:after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 0;
-                height: 0;
-                border: 13px solid transparent;
-                border-left: 22px solid transparent;
-                border-left-color: white;
-                // border-top: 1;
-                margin-left: -6px;
-                margin-top: -12px;
+            .video-play-button-hover-on {
+                position: relative;
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                background-color: rgb(37, 37, 37);
+                cursor: pointer;
+                -webkit-animation: hoverPlayButtonOn .2s ease;
+                -moz-animation: hoverPlayButtonOn .2s ease;
+                -o-animation: hoverPlayButtonOn .2s ease;
+                animation: hoverPlayButtonOn .2s ease;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border: 13px solid transparent;
+                    border-left: 22px solid transparent;
+                    border-left-color: white;
+                    // border-top: 1;
+                    margin-left: -7px;
+                    margin-top: -12px;
+                }
             }
+            .video-play-button-hover-off {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: rgb(37, 37, 37);
+                cursor: pointer;
+                -webkit-animation: hoverPlayButtonOff .2s ease;
+                -moz-animation: hoverPlayButtonOff .2s ease;
+                -o-animation: hoverPlayButtonOff .2s ease;
+                animation: hoverPlayButtonOff .2s ease;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border: 13px solid transparent;
+                    border-left: 22px solid transparent;
+                    border-left-color: white;
+                    // border-top: 1;
+                    margin-left: -7px;
+                    margin-top: -12px;
+                }
+            }
+            // .video-play-button:after {
+            //     content: '';
+            //     position: absolute;
+            //     top: 50%;
+            //     left: 50%;
+            //     width: 0;
+            //     height: 0;
+            //     border: 13px solid transparent;
+            //     border-left: 22px solid transparent;
+            //     border-left-color: white;
+            //     // border-top: 1;
+            //     margin-left: -6px;
+            //     margin-top: -12px;
+            // }
         }
        
     }
@@ -44,30 +110,84 @@
         width: 100%;  
     }
 }
+@-webkit-keyframes hoverPlayButtonOn {
+    from{
+        width: 100px;
+        height: 100px;
+    }
+    to{
+        width: 110px;
+        height: 110px;
+    }
+}
+@-moz-keyframes hoverPlayButtonOn {
+    from{
+        width: 100px;
+        height: 100px;
+    }
+    to{
+        width: 110px;
+        height: 110px;
+    }
+}
+@-o-keyframes hoverPlayButtonOn {
+    from{
+        width: 100px;
+        height: 100px;
+    }
+    to{
+        width: 110px;
+        height: 110px;
+    }
+}
+@keyframes hoverPlayButtonOn {
+    from{
+        width: 100px;
+        height: 100px;
+    }
+    to{
+        width: 110px;
+        height: 110px;
+    }
+}
 
-// @media only screen and (max-width: 945px){
-//     .picture-board {
-//         .picture-board-items {
-//             width: 600px;
-//             height: 2700px;
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 775px){
-//     .picture-board {
-//         .picture-board-items {
-//             width: 420px;
-//             height: 7560px;
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 540px){
-//     .picture-board {
-//         .picture-board-items {
-//             width: 300px;
-//             height: 5400px;
-//         }
-//     }
-// }
+@-webkit-keyframes hoverPlayButtonOff {
+    from{
+        width: 110px;
+        height: 110px;
+    }
+    to{
+        width: 100px;
+        height: 100px;
+    }
+}
+@-moz-keyframes hoverPlayButtonOff {
+    from{
+        width: 110px;
+        height: 110px;
+    }
+    to{
+        width: 100px;
+        height: 100px;
+    }
+}
+@-o-keyframes hoverPlayButtonOff {
+    from{
+        width: 110px;
+        height: 110px;
+    }
+    to{
+        width: 100px;
+        height: 100px;
+    }
+}
+@keyframes hoverPlayButtonOff {
+    from{
+        width: 110px;
+        height: 110px;
+    }
+    to{
+        width: 100px;
+        height: 100px;
+    }
+}
