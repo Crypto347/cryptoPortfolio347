@@ -88,14 +88,25 @@ export const Video = (props) => {
     */
 
     const [isHoveringPlayButton, setIsHoveringPlayButton] = useState("init");
-
+    const [videoShown, setVideoShown] = useState(false)
     /**
     * Methods
     */
 
     useEffect(() => {
-      
-    }, []);
+        let video;
+        if(videoShown){
+            video = document.getElementById("video");
+            video.play();
+            video.addEventListener('ended', videoOnFinish);
+        }
+
+        return () =>  {
+            if(videoShown){
+                video.removeEventListener('ended', videoOnFinish);
+            }
+        }
+    }, [videoShown]);
 
     /**
     * Markup
@@ -120,23 +131,34 @@ export const Video = (props) => {
         setIsHoveringPlayButton("off")
     }
 
+    const showVideo = () => {
+        setVideoShown(true);
+    }
+
+    const videoOnFinish = () => {
+        setVideoShown(false);
+    }
+
     return(
         <div className="video">
+            {!videoShown ? 
             <div className="video-wrapper">
                 <img src={vidCover}/>
                 <div className="video-play-button-wrapper">
                     <div 
                         className={renderClassName(isHoveringPlayButton)}
+                        onClick={showVideo}
                         onMouseEnter={() => handleMouseEnter('expand')} 
                         onMouseLeave={() => handleMouseLeave('expand')}
                     >
                     </div>
                 </div>
-            </div>
-           
-            {/* <video controls>
+            </div> : null}
+            {videoShown ? 
+            <video id="video" controls>
                 <source src={vid1} type="video/mp4"/>
-            </video> */}
+            </video> : null}
+           
             {/* <>Video by cottonbro from Pexels</> */}
         </div>
     );
