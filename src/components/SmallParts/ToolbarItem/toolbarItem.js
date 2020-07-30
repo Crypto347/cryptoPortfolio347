@@ -2,7 +2,9 @@
 * Libraries
 */
 
-import React from 'react';
+import React, {
+    useState
+} from 'react';
 
 import {
     connect
@@ -19,14 +21,32 @@ import './toolbarItem.scss';
 */
 
 export const ToolbarItem = (props) => {
+    
+    /**
+    * State
+    */
+
+    const [isHovering, setIsHovering] = useState(false);
+    
+    /**
+    * Methods
+    */
 
     /**
     * Markup
     */
 
     return(
-        <div className={`toolbar-item-${props.toolbarMainColor}`}>
+        <div 
+            className={`toolbar-item-${props.toolbarMainColor}`}
+            onMouseEnter={props.onMouseEnter} 
+            onMouseLeave={props.onMouseLeave}
+        >
             {props.text}
+            {props.showOptionsRegular && props.hoverToolbarItem ? 
+            <div className="toolbar-item-options">
+
+            </div> : null}
         </div>
     );
 }

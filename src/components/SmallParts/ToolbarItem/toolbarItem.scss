@@ -1,4 +1,5 @@
 .toolbar-item-white {
+    position: relative;
     font-family: 'Balsamiq Sans', cursive;
     font-size: 17px;
     font-weight: bold;
@@ -13,9 +14,18 @@
         -o-animation: appear .5s linear;
         animation: appear .5s linear;
     }
+    .toolbar-item-options {
+        position: absolute;
+        left: 30%;
+        height: 100px;
+        width: 30px;
+        background-color: white;
+        box-shadow: 0px -10px 0px rgb(239, 239, 239);
+    }
 }
 
 .toolbar-item-regular {
+    position: relative;
     font-family: 'Balsamiq Sans', cursive;
     font-size: 17px;
     font-weight: bold;
@@ -30,7 +40,16 @@
         -o-animation: appear .5s linear;
         animation: appear .5s linear;
     }
+    .toolbar-item-options {
+        position: absolute;
+        left: 30%;
+        height: 100px;
+        width: 30px;
+        background-color: white;
+        box-shadow: 0px -10px 0px rgb(239, 239, 239);
+    }
 }
+
 
 // .toolbar-item-active {
 //     border-bottom: 1px solid rgb(180, 139, 62);

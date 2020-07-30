@@ -74,6 +74,10 @@ export const Toolbar = (props) => {
     const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [isHovering, setIsHovering] = useState(null);
+    const [showOptionsRegular, setShowOptionsRegular] = useState(false);
+    const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
+    const [toolbarItemData, setToolbarItemData] = useState({});
+    const [showOptionsLessThan3Regular, setShowOptionsLessThan3Regular] = useState(false)
 
     /**
     * Methods
@@ -85,12 +89,47 @@ export const Toolbar = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
-    const handleMouseEnter = () => {
+    const handleMouseEnterMenuIcon = (opt) => {
         setIsHovering(true);
     }
 
-    const handleMouseLeave = () => {
+    const handleMouseLeaveMenuIcon = (opt) => {
         setIsHovering(false);
+    }
+
+    const handleMouseEnterToolbarItem = (opt, data) => {
+        switch(opt){
+            case 'regular':
+                if(data.length > 2){
+                    setShowOptionsRegular(true);
+                    setToolbarItemData(data);
+                }else{
+                    setShowOptionsLessThan3Regular(true);
+                }
+              
+                return;
+            case 'animated': 
+                setShowOptionsAnimated(true);
+                setToolbarItemData(data);
+                return;
+        }
+    }
+
+    const handleMouseLeaveToolbarItem = (opt, data) => {
+        switch(opt){
+            case 'regular':
+                if(data.length > 2){
+                    setShowOptionsRegular(false);
+                    setToolbarItemData([]);
+                }else{
+                    setShowOptionsLessThan3Regular(false);
+                }
+                return;
+            case 'animated': 
+                setShowOptionsAnimated(false);
+                setToolbarItemData([]);
+                return;
+        }
     }
     // const handleScroll = () => {
     //     setMenuIsShown(false);
@@ -109,12 +148,16 @@ export const Toolbar = (props) => {
         return(
             <div className="toolbar-items">{props.menuItems.map((el,i) => {
                 return(
-                    <ToolbarItem 
-                        key={i}
-                        text={el.text}
-                        active={el.active}
-                        toolbarMainColor={props.toolbarMainColor}
-                    />
+                        <ToolbarItem 
+                            key={i}
+                            text={el.text}
+                            active={el.active}
+                            hoverToolbarItem={el.isHover}
+                            toolbarMainColor={props.toolbarMainColor}
+                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el.options)} 
+                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el.options)}
+                            showOptionsRegular={showOptionsLessThan3Regular}
+                        />
                     // <ToolbarItem 
                     //     key={el.id}
                     //     text={el.text}
@@ -171,19 +214,25 @@ export const Toolbar = (props) => {
     const renderToolbar = (option) => {
         if(option === "regularScreen"){
             return(
-                <div className="toolbar-regular-screen">
-                    <div className="toolbar-logo">crypto.</div>
-                    <div className="toolbar-wrapper">
-                        {renderToolbarItems()}
-                        <div 
-                            className="toolbar-menu"
-                            onMouseEnter={handleMouseEnter} 
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            {renderMenuDots()}
+                <>
+                    <div className="toolbar-regular-screen">
+                        <div className="toolbar-logo">crypto.</div>
+                        <div className="toolbar-wrapper">
+                            {renderToolbarItems()}
+                            <div 
+                                className="toolbar-menu"
+                                onMouseEnter={handleMouseEnterMenuIcon} 
+                                onMouseLeave={handleMouseLeaveMenuIcon}
+                            >
+                                {renderMenuDots()}
+                            </div>
                         </div>
                     </div>
-                </div>
+                    {showOptionsRegular ? 
+                    <div className="toolbar-regular-screen-options-full-width">
+                        {renderToolbarOptions()}
+                    </div> : null}
+                </>
             )
         }
         if(option === "regularScreenAnimated"){
@@ -206,8 +255,8 @@ export const Toolbar = (props) => {
                             {renderToolbarItems()}
                             <div 
                                 className="toolbar-menu"
-                                onMouseEnter={handleMouseEnter} 
-                                onMouseLeave={handleMouseLeave}
+                                onMouseEnter={handleMouseEnterMenuIcon} 
+                                onMouseLeave={handleMouseLeaveMenuIcon}
                             >
                                 {renderMenuDots()}
                             </div>
@@ -255,6 +304,30 @@ export const Toolbar = (props) => {
                 </CSSTransition>
             )
         }
+    }
+
+    const renderToolbarOptions = () => {
+        return(
+            <>{toolbarItemData.map((el, i) => {
+                return(
+                    <div key={i} className="toolbar-option">
+                        {renderToolbarOptionItems(el.array)}
+                    </div>
+                )
+            })}</>
+        )
+    }
+
+    const renderToolbarOptionItems = (itemsArray) => {
+        return(
+            <>{itemsArray.map((el, i) => {
+                return(
+                    <div key={i} className="toolbar-option-item">
+                        {el.text}
+                    </div>
+                )
+            })}</>
+        )
     }
 
     /**
