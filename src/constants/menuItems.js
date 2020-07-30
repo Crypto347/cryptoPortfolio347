@@ -24,8 +24,8 @@ export const menuItemsArray = [
                     },
                     {
                         id: 112,
-                        text: "Custom Project 2",
-                        itemId: "customProject2",
+                        text: "Creative Agency",
+                        itemId: "creativeAgency",
                         path: "",
                         active: false,
                         isHover: false,
@@ -33,8 +33,8 @@ export const menuItemsArray = [
                     },
                     {
                         id: 113,
-                        text: "Big images",
-                        itemId: "bigImages",
+                        text: "Design Studio",
+                        itemId: "designStudio",
                         path: "",
                         active: false,
                         isHover: false,
@@ -42,8 +42,8 @@ export const menuItemsArray = [
                     },
                     {
                         id: 114,
-                        text: "Big slider",
-                        itemId: "bigSlider",
+                        text: "Blog Home",
+                        itemId: "blogHome",
                         path: "",
                         active: false,
                         isHover: false,
@@ -51,17 +51,8 @@ export const menuItemsArray = [
                     },
                     {
                         id: 115,
-                        text: "Small images",
-                        itemId: "smallImages",
-                        path: "",
-                        active: false,
-                        isHover: false,
-                        subOptions: []
-                    },
-                    {
-                        id: 115,
-                        text: "Small images",
-                        itemId: "smallImages",
+                        text: "Product Showcase",
+                        itemId: "productShowcase",
                         path: "",
                         active: false,
                         isHover: false,

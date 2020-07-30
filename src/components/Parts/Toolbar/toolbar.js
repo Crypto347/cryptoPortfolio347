@@ -139,6 +139,18 @@ export const Toolbar = (props) => {
                 return;
         }
     }
+
+    const handleMouseEnterToolbarOptionItem = (pathOfIds) => {
+        props.setIsHoveringToolbarOptionItem(true, pathOfIds);
+        console.log(pathOfIds)
+     
+    }
+
+    const handleMouseLeaveToolbarOptionItem = (pathOfIds) => {
+        props.setIsHoveringToolbarOptionItem(false, pathOfIds);
+        // console.log(path)
+
+    }
     // const handleScroll = () => {
     //     setMenuIsShown(false);
     // }
@@ -330,19 +342,20 @@ export const Toolbar = (props) => {
                             key={i} 
                             className="toolbar-option"
                         >
-                            {renderToolbarOptionItems(el.array)}
+                            {renderToolbarOptionItems(el)}
                         </div>
                 )
             })}</div>
         )
     }
 
-    const renderToolbarOptionItems = (itemsArray) => {
+    const renderToolbarOptionItems = (obj) => {
         return(
-            <>{itemsArray.map((el, i) => {
+            <>{obj.array.map((el, i) => {
+                let pathOfIds = [obj.id, el.id]
                 return(
                     <div key={i} className="toolbar-option-item">
-                        {el.active ? 
+                        {el.active || el.isHover ? 
                         <div className="arrow-wrapper">
                             <div className="arrow-horizontal-line"></div>
                             <div className="arrow-wrapper2">
@@ -350,7 +363,13 @@ export const Toolbar = (props) => {
                                 <div className="arrow-bottom-line"></div>
                             </div>
                         </div> : null}
-                        <H15 className="h15-black-lustria">{el.text}</H15>
+                        <div 
+                            className="toolbar-option-item-wrapper"
+                            onMouseEnter={() => handleMouseEnterToolbarOptionItem(pathOfIds)} 
+                            onMouseLeave={() => handleMouseLeaveToolbarOptionItem(pathOfIds)}
+                        >
+                            <H15 className="h15-black-lustria">{el.text}</H15>
+                        </div>
                     </div>
                 )
             })}</>
@@ -377,7 +396,8 @@ export default connect(
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch)
+            setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
+            setIsHoveringToolbarOptionItem: bindActionCreators(Actions.setIsHoveringToolbarOptionItem, dispatch),
         };
     }
 )(withRouter(Toolbar));

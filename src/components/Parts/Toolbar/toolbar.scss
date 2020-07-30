@@ -784,13 +784,11 @@
         display: flex;
         justify-content: center;
         .toolbar-option {
-            border: 2px solid red;
             padding-right: 70px;
             .toolbar-option-item {
                 display: flex;
                 align-items: center;
                 padding: 5px;
-                border: 2px solid green;
                 cursor: pointer;
                 .arrow-wrapper {
                     display: flex;

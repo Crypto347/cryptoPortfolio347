@@ -42,8 +42,16 @@ export function setSwiperState(slides, _slides, activeIndex, translate, transiti
 
 export function setIsHoveringMenuItem(val, id) {
     return { 
-        type: actionTypes.SET_IS_HOVERING_MENU_ITEMS,
+        type: actionTypes.SET_IS_HOVERING_MENU_ITEM,
         val: val,
         id: id
+    };
+};
+
+export function setIsHoveringToolbarOptionItem(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_IS_HOVERING_TOOLBAR_OPTION_ITEM,
+        val: val,
+        pathOfIds: pathOfIds
     };
 };
