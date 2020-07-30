@@ -49,8 +49,14 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
+* Utility
 */
+
+import {
+   EH40,
+   H15,
+   EW2
+} from '../../UtilityComponents';
 
 /**
 * Constants
@@ -233,11 +239,13 @@ export const Toolbar = (props) => {
                     {/* <div onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}> */}
                         {showOptionsRegular ? 
                         <div 
-                        className="toolbar-regular-screen-options-full-width"
-                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
-                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
+                            className="toolbar-regular-screen-options"
+                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
+                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
                         >
+                            <EH40/>
                             {renderToolbarOptions()}
+                            <EH40/>
                         </div> : null}
                     {/* </div> */}
                 </>
@@ -316,13 +324,16 @@ export const Toolbar = (props) => {
 
     const renderToolbarOptions = () => {
         return(
-            <>{toolbarItemData.options.map((el, i) => {
+            <div className="toolbar-regular-screen-options-wrapper">{toolbarItemData.options.map((el, i) => {
                 return(
-                    <div key={i} className="toolbar-option">
-                        {renderToolbarOptionItems(el.array)}
-                    </div>
+                        <div 
+                            key={i} 
+                            className="toolbar-option"
+                        >
+                            {renderToolbarOptionItems(el.array)}
+                        </div>
                 )
-            })}</>
+            })}</div>
         )
     }
 
@@ -331,7 +342,15 @@ export const Toolbar = (props) => {
             <>{itemsArray.map((el, i) => {
                 return(
                     <div key={i} className="toolbar-option-item">
-                        {el.text}
+                        {el.active ? 
+                        <div className="arrow-wrapper">
+                            <div className="arrow-horizontal-line"></div>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div> : null}
+                        <H15 className="h15-black-lustria">{el.text}</H15>
                     </div>
                 )
             })}</>

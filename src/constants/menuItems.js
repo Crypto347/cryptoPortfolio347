@@ -79,7 +79,7 @@ export const menuItemsArray = [
                         text: "Photography Home",
                         itemId: "photographyHome",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -132,7 +132,7 @@ export const menuItemsArray = [
                         text: "Conference Home",
                         itemId: "conferenceHome",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -185,7 +185,7 @@ export const menuItemsArray = [
                         text: "Marketing Agency",
                         itemId: "marketingAgency",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -239,7 +239,7 @@ export const menuItemsArray = [
                         text: "Custom Project 1",
                         itemId: "customProject1",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -319,7 +319,7 @@ export const menuItemsArray = [
                         text: "Two Columns",
                         itemId: "twoColumns",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -390,7 +390,7 @@ export const menuItemsArray = [
                         text: "Overlay",
                         itemId: "overlay",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -443,7 +443,7 @@ export const menuItemsArray = [
                         text: "Standard",
                         itemId: "standard",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -524,7 +524,7 @@ export const menuItemsArray = [
                         text: "About Us",
                         itemId: "aboutUs",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -632,7 +632,7 @@ export const menuItemsArray = [
                         text: "Blog List Standard",
                         itemId: "blogListStandard",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -750,7 +750,7 @@ export const menuItemsArray = [
                         text: "Shop Single",
                         itemId: "shopSingle",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -942,7 +942,7 @@ export const menuItemsArray = [
                         text: "Accordions",
                         itemId: "accordions",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -1031,7 +1031,7 @@ export const menuItemsArray = [
                         text: "Pricing Tables",
                         itemId: "pricingTables",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -1102,7 +1102,7 @@ export const menuItemsArray = [
                         text: "Headings",
                         itemId: "headings",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
@@ -1183,7 +1183,7 @@ export const menuItemsArray = [
                         text: "Text Marquee",
                         itemId: "textMarquee",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: false,
                         subOptions: []
         
