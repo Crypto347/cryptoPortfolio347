@@ -39,3 +39,11 @@ export function setSwiperState(slides, _slides, activeIndex, translate, transiti
         rerender: rerender
     };
 };
+
+export function setIsHoveringMenuItem(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVERING_MENU_ITEMS,
+        val: val,
+        id: id
+    };
+};

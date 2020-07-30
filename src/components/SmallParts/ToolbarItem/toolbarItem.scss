@@ -1,22 +1,43 @@
-.toolbar-item-white {
+.toolbar-item-wrapper {
     position: relative;
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 0 20px 0 10px;
-    color: black;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.7;
-        color: rgb(155, 155, 155);
-        -webkit-animation: appear .5s linear;
-        -moz-animation: appear .5s linear;
-        -o-animation: appear .5s linear;
-        animation: appear .5s linear;
+    .toolbar-item-white {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 0 20px 0 10px;
+        color: black;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+            color: rgb(155, 155, 155);
+            -webkit-animation: appear .5s linear;
+            -moz-animation: appear .5s linear;
+            -o-animation: appear .5s linear;
+            animation: appear .5s linear;
+        }
+    }
+    
+    .toolbar-item-regular {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 0 20px 0 10px;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+            color: rgb(155, 155, 155);
+            -webkit-animation: appear .5s linear;
+            -moz-animation: appear .5s linear;
+            -o-animation: appear .5s linear;
+            animation: appear .5s linear;
+        }
+      
     }
     .toolbar-item-options {
         position: absolute;
-        left: 30%;
+        top: 260%;
+        left: -50%;
         height: 100px;
         width: 30px;
         background-color: white;
@@ -24,31 +45,6 @@
     }
 }
 
-.toolbar-item-regular {
-    position: relative;
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 0 20px 0 10px;
-    color: white;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.7;
-        color: rgb(155, 155, 155);
-        -webkit-animation: appear .5s linear;
-        -moz-animation: appear .5s linear;
-        -o-animation: appear .5s linear;
-        animation: appear .5s linear;
-    }
-    .toolbar-item-options {
-        position: absolute;
-        left: 30%;
-        height: 100px;
-        width: 30px;
-        background-color: white;
-        box-shadow: 0px -10px 0px rgb(239, 239, 239);
-    }
-}
 
 
 // .toolbar-item-active {

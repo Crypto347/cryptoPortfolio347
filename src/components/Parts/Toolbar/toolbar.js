@@ -97,7 +97,8 @@ export const Toolbar = (props) => {
         setIsHovering(false);
     }
 
-    const handleMouseEnterToolbarItem = (opt, data) => {
+    const handleMouseEnterToolbarItem = (opt, data, id) => {
+        props.setIsHoveringMenuItem(true, id);
         switch(opt){
             case 'regular':
                 if(data.length > 2){
@@ -116,6 +117,7 @@ export const Toolbar = (props) => {
     }
 
     const handleMouseLeaveToolbarItem = (opt, data) => {
+        props.setIsHoveringMenuItem(false);
         switch(opt){
             case 'regular':
                 if(data.length > 2){
@@ -154,7 +156,7 @@ export const Toolbar = (props) => {
                             active={el.active}
                             hoverToolbarItem={el.isHover}
                             toolbarMainColor={props.toolbarMainColor}
-                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el.options)} 
+                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el.options, el.id)} 
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el.options)}
                             showOptionsRegular={showOptionsLessThan3Regular}
                         />
@@ -350,7 +352,7 @@ export default connect(
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch)
         };
     }
 )(withRouter(Toolbar));

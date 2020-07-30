@@ -38,11 +38,13 @@ export const ToolbarItem = (props) => {
 
     return(
         <div 
-            className={`toolbar-item-${props.toolbarMainColor}`}
+            className="toolbar-item-wrapper"
             onMouseEnter={props.onMouseEnter} 
-            onMouseLeave={props.onMouseLeave}
-        >
-            {props.text}
+            onMouseLeave={props.onMouseLeave}>
+            <div className={`toolbar-item-${props.toolbarMainColor}`}>
+                {props.text}
+        
+            </div>
             {props.showOptionsRegular && props.hoverToolbarItem ? 
             <div className="toolbar-item-options">
 

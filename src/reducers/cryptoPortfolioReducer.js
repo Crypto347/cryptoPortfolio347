@@ -88,6 +88,25 @@ const setSwiperState = (state, action) => {
     };
 }
 
+const setIsHoveringMenuItem = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+    if(action.val){
+        let toolbarItem = {...updatedMenuItems.find(item => item.id === action.id), isHover: action.val};
+        let itemIndex = updatedMenuItems.findIndex(item => item.id === action.id);
+        updatedMenuItems.splice(itemIndex, 1, toolbarItem)
+    }else{
+        updatedMenuItems = updatedMenuItems.map(el => {
+            return{
+                ...el,
+                isHover: action.val
+            }
+        })
+    }
+    return {
+        ...state,
+        menuItems: updatedMenuItems,
+    };
+}
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -216,6 +235,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return nextImage(state, action); 
         case actionTypes.SET_SWIPER_STATE:
             return setSwiperState(state, action); 
+        case actionTypes.SET_IS_HOVERING_MENU_ITEMS:
+            return setIsHoveringMenuItem(state, action); 
         default: 
             return state;
     }
