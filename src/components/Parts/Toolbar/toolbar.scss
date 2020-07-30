@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px 25px 40px;
+    padding: 0 40px 0 40px;
+    height: 88px;
     color: white;
     position: relative;
     z-index: 600;
@@ -13,9 +14,12 @@
     }
     .toolbar-wrapper {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        height: 100%;
         .toolbar-items {
+            height: 100%;
             display: flex;
+            
         }
         .toolbar-menu {
             display: flex;

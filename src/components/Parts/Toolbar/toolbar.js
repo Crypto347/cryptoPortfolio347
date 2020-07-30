@@ -101,7 +101,7 @@ export const Toolbar = (props) => {
         props.setIsHoveringMenuItem(true, id);
         switch(opt){
             case 'regular':
-                if(data.length > 2){
+                if(data.options.length > 2){
                     setShowOptionsRegular(true);
                     setToolbarItemData(data);
                 }else{
@@ -120,16 +120,16 @@ export const Toolbar = (props) => {
         props.setIsHoveringMenuItem(false);
         switch(opt){
             case 'regular':
-                if(data.length > 2){
+                if(data.options.length > 2){
                     setShowOptionsRegular(false);
-                    setToolbarItemData([]);
+                    setToolbarItemData({});
                 }else{
                     setShowOptionsLessThan3Regular(false);
                 }
                 return;
             case 'animated': 
                 setShowOptionsAnimated(false);
-                setToolbarItemData([]);
+                setToolbarItemData({});
                 return;
         }
     }
@@ -156,8 +156,8 @@ export const Toolbar = (props) => {
                             active={el.active}
                             hoverToolbarItem={el.isHover}
                             toolbarMainColor={props.toolbarMainColor}
-                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el.options, el.id)} 
-                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el.options)}
+                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
+                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
                             showOptionsRegular={showOptionsLessThan3Regular}
                         />
                     // <ToolbarItem 
@@ -230,10 +230,16 @@ export const Toolbar = (props) => {
                             </div>
                         </div>
                     </div>
-                    {showOptionsRegular ? 
-                    <div className="toolbar-regular-screen-options-full-width">
-                        {renderToolbarOptions()}
-                    </div> : null}
+                    {/* <div onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}> */}
+                        {showOptionsRegular ? 
+                        <div 
+                        className="toolbar-regular-screen-options-full-width"
+                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
+                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
+                        >
+                            {renderToolbarOptions()}
+                        </div> : null}
+                    {/* </div> */}
                 </>
             )
         }
@@ -310,7 +316,7 @@ export const Toolbar = (props) => {
 
     const renderToolbarOptions = () => {
         return(
-            <>{toolbarItemData.map((el, i) => {
+            <>{toolbarItemData.options.map((el, i) => {
                 return(
                     <div key={i} className="toolbar-option">
                         {renderToolbarOptionItems(el.array)}
