@@ -790,8 +790,9 @@
                 align-items: center;
                 padding: 5px;
                 cursor: pointer;
-                .arrow-wrapper {
+                .arrow-wrapper-active {
                     display: flex;
+                    transform: translate(100%);
                     // margin-top: 30px;
                     align-items: center;
                     .arrow-horizontal-line {
@@ -910,6 +911,9 @@
                     }
                 }
 
+                .toolbar-option-item-text-active {
+                    transform: translateX(20px);
+                }
                 .toolbar-option-item-text {
                     transform: translateX(0px);
                 }

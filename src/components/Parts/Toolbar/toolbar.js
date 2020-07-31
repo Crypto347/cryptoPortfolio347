@@ -338,7 +338,7 @@ export const Toolbar = (props) => {
         )
     }
 
-    const renderClassName = (opt, isHovering) => {
+    const renderClassName = (opt, isHovering, active) => {
         if(opt === "arrow"){
             switch(isHovering){
                 case 'init':
@@ -350,6 +350,9 @@ export const Toolbar = (props) => {
             }
         }
         if(opt === "text"){
+            if(active){
+                return "toolbar-option-item-text-active";
+            }
             switch(isHovering){
                 case 'init':
                     return "toolbar-option-item-text";
@@ -358,6 +361,7 @@ export const Toolbar = (props) => {
                 case 'off':
                     return "toolbar-option-item-text-hover-off";
             }
+            
         }
        
     }
@@ -370,7 +374,7 @@ export const Toolbar = (props) => {
                 return(
                     <div key={i} className="toolbar-option-item">
                         {el.active ? 
-                        <div className="arrow-wrapper">
+                        <div className="arrow-wrapper-active">
                             <div className="arrow-horizontal-line"></div>
                             <div className="arrow-wrapper2">
                                 <div className="arrow-top-line"></div>
@@ -386,7 +390,7 @@ export const Toolbar = (props) => {
                             </div>
                         </div> : null}
                         <div 
-                            className={renderClassName("text", el.isHover)}
+                            className={renderClassName("text", el.isHover, el.active)}
                             onMouseEnter={() => handleMouseEnterToolbarOptionItem(pathOfIds)} 
                             onMouseLeave={() => handleMouseLeaveToolbarOptionItem(pathOfIds)}
                         >
