@@ -18,7 +18,7 @@ export const menuItemsArray = [
                         itemId: "mainHome",
                         path: "",
                         active: true,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -28,7 +28,7 @@ export const menuItemsArray = [
                         itemId: "creativeAgency",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -37,7 +37,7 @@ export const menuItemsArray = [
                         itemId: "designStudio",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -46,7 +46,7 @@ export const menuItemsArray = [
                         itemId: "blogHome",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -55,7 +55,7 @@ export const menuItemsArray = [
                         itemId: "productShowcase",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                 ]
@@ -71,7 +71,7 @@ export const menuItemsArray = [
                         itemId: "photographyHome",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -81,7 +81,7 @@ export const menuItemsArray = [
                         itemId: "shopDivided",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -90,7 +90,7 @@ export const menuItemsArray = [
                         itemId: "projectShowcase",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -99,7 +99,7 @@ export const menuItemsArray = [
                         itemId: "boxedShowcase",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -108,7 +108,7 @@ export const menuItemsArray = [
                         itemId: "portfolioGallery",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -124,7 +124,7 @@ export const menuItemsArray = [
                         itemId: "conferenceHome",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -134,7 +134,7 @@ export const menuItemsArray = [
                         itemId: "shopHome",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -143,7 +143,7 @@ export const menuItemsArray = [
                         itemId: "masonryPortfolio",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -152,7 +152,7 @@ export const menuItemsArray = [
                         itemId: "splitScreenSlider",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -161,7 +161,7 @@ export const menuItemsArray = [
                         itemId: "fullscreenShowcase",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -177,7 +177,7 @@ export const menuItemsArray = [
                         itemId: "marketingAgency",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -187,7 +187,7 @@ export const menuItemsArray = [
                         itemId: "shopMasonry",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -196,7 +196,7 @@ export const menuItemsArray = [
                         itemId: "parallaxPortfolio",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -205,7 +205,7 @@ export const menuItemsArray = [
                         itemId: "vCardHome",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -231,7 +231,7 @@ export const menuItemsArray = [
                         itemId: "customProject1",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -241,7 +241,7 @@ export const menuItemsArray = [
                         itemId: "customProject2",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -250,7 +250,7 @@ export const menuItemsArray = [
                         itemId: "bigImages",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -259,7 +259,7 @@ export const menuItemsArray = [
                         itemId: "bigSlider",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -268,7 +268,7 @@ export const menuItemsArray = [
                         itemId: "smallImages",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -277,7 +277,7 @@ export const menuItemsArray = [
                         itemId: "smallSlider",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -286,7 +286,7 @@ export const menuItemsArray = [
                         itemId: "gallery",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -295,7 +295,7 @@ export const menuItemsArray = [
                         itemId: "smallGallery",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                 ]
@@ -311,7 +311,7 @@ export const menuItemsArray = [
                         itemId: "twoColumns",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -321,7 +321,7 @@ export const menuItemsArray = [
                         itemId: "twoColumnsWide",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -330,7 +330,7 @@ export const menuItemsArray = [
                         itemId: "threeColumns",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -339,7 +339,7 @@ export const menuItemsArray = [
                         itemId: "threeColumnsWide",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -348,7 +348,7 @@ export const menuItemsArray = [
                         itemId: "fourColumns",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -357,7 +357,7 @@ export const menuItemsArray = [
                         itemId: "fourColumnsWide",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -366,7 +366,7 @@ export const menuItemsArray = [
                         itemId: "fiveColumnsWide",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -382,7 +382,7 @@ export const menuItemsArray = [
                         itemId: "overlay",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -392,7 +392,7 @@ export const menuItemsArray = [
                         itemId: "overlayWithInfo",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -401,7 +401,7 @@ export const menuItemsArray = [
                         itemId: "simpleOverlay",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -410,7 +410,7 @@ export const menuItemsArray = [
                         itemId: "slideFromImageLeft",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -419,7 +419,7 @@ export const menuItemsArray = [
                         itemId: "switchImage",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -435,7 +435,7 @@ export const menuItemsArray = [
                         itemId: "standard",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -445,7 +445,7 @@ export const menuItemsArray = [
                         itemId: "gallery",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -454,7 +454,7 @@ export const menuItemsArray = [
                         itemId: "galleryWithSpace",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -463,7 +463,7 @@ export const menuItemsArray = [
                         itemId: "masonry",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -472,7 +472,7 @@ export const menuItemsArray = [
                         itemId: "masonryWide",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -481,7 +481,7 @@ export const menuItemsArray = [
                         itemId: "metro",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -490,7 +490,7 @@ export const menuItemsArray = [
                         itemId: "pinterest3Columns",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -516,7 +516,7 @@ export const menuItemsArray = [
                         itemId: "aboutUs",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -526,7 +526,7 @@ export const menuItemsArray = [
                         itemId: "aboutMe",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -535,7 +535,7 @@ export const menuItemsArray = [
                         itemId: "meetTheTeam",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -544,7 +544,7 @@ export const menuItemsArray = [
                         itemId: "ourServices",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -553,7 +553,7 @@ export const menuItemsArray = [
                         itemId: "ourProcess",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -562,7 +562,7 @@ export const menuItemsArray = [
                         itemId: "faqPage",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -571,7 +571,7 @@ export const menuItemsArray = [
                         itemId: "contactUs",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -580,7 +580,7 @@ export const menuItemsArray = [
                         itemId: "getInTouch",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -589,7 +589,7 @@ export const menuItemsArray = [
                         itemId: "comingSoon",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -598,7 +598,7 @@ export const menuItemsArray = [
                         itemId: "404ErroePage",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -624,7 +624,7 @@ export const menuItemsArray = [
                         itemId: "blogListStandard",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -634,7 +634,7 @@ export const menuItemsArray = [
                         itemId: "leftSidebarBlog",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -643,7 +643,7 @@ export const menuItemsArray = [
                         itemId: "noSidebarBlog",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -652,7 +652,7 @@ export const menuItemsArray = [
                         itemId: "masonryBlog",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -661,7 +661,7 @@ export const menuItemsArray = [
                         itemId: "postSingles",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: [
                             {
                                 id: 4151,
@@ -669,7 +669,7 @@ export const menuItemsArray = [
                                 itemId: "standard",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -678,7 +678,7 @@ export const menuItemsArray = [
                                 itemId: "galleryPost",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -687,7 +687,7 @@ export const menuItemsArray = [
                                 itemId: "linkPost",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -696,7 +696,7 @@ export const menuItemsArray = [
                                 itemId: "quotePost",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -705,7 +705,7 @@ export const menuItemsArray = [
                                 itemId: "audioPost",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -714,7 +714,7 @@ export const menuItemsArray = [
                                 itemId: "videoPost",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             }
                         ]
@@ -742,7 +742,7 @@ export const menuItemsArray = [
                         itemId: "shopSingle",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -752,7 +752,7 @@ export const menuItemsArray = [
                         itemId: "mansoryShop",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -761,7 +761,7 @@ export const menuItemsArray = [
                         itemId: "productTypes",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: [
                             {
                                 id: 5131,
@@ -769,7 +769,7 @@ export const menuItemsArray = [
                                 itemId: "standardProduct",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -778,7 +778,7 @@ export const menuItemsArray = [
                                 itemId: "variableProduct",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -787,7 +787,7 @@ export const menuItemsArray = [
                                 itemId: "groupedProduct",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -796,7 +796,7 @@ export const menuItemsArray = [
                                 itemId: "externalProduct",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -805,7 +805,7 @@ export const menuItemsArray = [
                                 itemId: "downloadableProduct",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -814,7 +814,7 @@ export const menuItemsArray = [
                                 itemId: "virtualProduct",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             }
                         ]
@@ -825,7 +825,7 @@ export const menuItemsArray = [
                         itemId: "layouts",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: [
                             {
                                 id: 5141,
@@ -833,7 +833,7 @@ export const menuItemsArray = [
                                 itemId: "leftSidebar",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -842,7 +842,7 @@ export const menuItemsArray = [
                                 itemId: "shop3Columns",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -851,7 +851,7 @@ export const menuItemsArray = [
                                 itemId: "shop4Columns",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -860,7 +860,7 @@ export const menuItemsArray = [
                                 itemId: "shop4ColumnsWide",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -869,7 +869,7 @@ export const menuItemsArray = [
                                 itemId: "shop5ColumnsWide",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             }
                         ]
@@ -880,7 +880,7 @@ export const menuItemsArray = [
                         itemId: "shopPages",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: [
                             {
                                 id: 5151,
@@ -888,7 +888,7 @@ export const menuItemsArray = [
                                 itemId: "myAccount",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -897,7 +897,7 @@ export const menuItemsArray = [
                                 itemId: "cart",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             },
                             {
@@ -906,7 +906,7 @@ export const menuItemsArray = [
                                 itemId: "checkout",
                                 path: "",
                                 active: false,
-                                isHover: false,
+                                isHover: "init",
                                 subOptions: []
                             }
                         ]
@@ -934,7 +934,7 @@ export const menuItemsArray = [
                         itemId: "accordions",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -944,7 +944,7 @@ export const menuItemsArray = [
                         itemId: "tabs",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -953,7 +953,7 @@ export const menuItemsArray = [
                         itemId: "callToAction",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -962,7 +962,7 @@ export const menuItemsArray = [
                         itemId: "testimonials",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -971,7 +971,7 @@ export const menuItemsArray = [
                         itemId: "team",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -980,7 +980,7 @@ export const menuItemsArray = [
                         itemId: "contactForm",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -989,7 +989,7 @@ export const menuItemsArray = [
                         itemId: "iconWithText",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -998,7 +998,7 @@ export const menuItemsArray = [
                         itemId: "banner",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1007,7 +1007,7 @@ export const menuItemsArray = [
                         itemId: "buttons",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -1023,7 +1023,7 @@ export const menuItemsArray = [
                         itemId: "pricingTables",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -1033,7 +1033,7 @@ export const menuItemsArray = [
                         itemId: "pieCharts",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1042,7 +1042,7 @@ export const menuItemsArray = [
                         itemId: "counters",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1051,7 +1051,7 @@ export const menuItemsArray = [
                         itemId: "countdown",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1060,7 +1060,7 @@ export const menuItemsArray = [
                         itemId: "clients",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1069,7 +1069,7 @@ export const menuItemsArray = [
                         itemId: "progressBar",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1078,7 +1078,7 @@ export const menuItemsArray = [
                         itemId: "googleMaps",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -1094,7 +1094,7 @@ export const menuItemsArray = [
                         itemId: "headings",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -1104,7 +1104,7 @@ export const menuItemsArray = [
                         itemId: "lists",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1113,7 +1113,7 @@ export const menuItemsArray = [
                         itemId: "highlights",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1122,7 +1122,7 @@ export const menuItemsArray = [
                         itemId: "dropcaps",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1131,7 +1131,7 @@ export const menuItemsArray = [
                         itemId: "columns",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1140,7 +1140,7 @@ export const menuItemsArray = [
                         itemId: "blockquote",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1149,7 +1149,7 @@ export const menuItemsArray = [
                         itemId: "shopList",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                     ,
@@ -1159,7 +1159,7 @@ export const menuItemsArray = [
                         itemId: "blogList",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]
@@ -1175,7 +1175,7 @@ export const menuItemsArray = [
                         itemId: "textMarquee",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
         
                     },
@@ -1185,7 +1185,7 @@ export const menuItemsArray = [
                         itemId: "scrollSlider",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1194,7 +1194,7 @@ export const menuItemsArray = [
                         itemId: "productPair",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     },
                     {
@@ -1203,7 +1203,7 @@ export const menuItemsArray = [
                         itemId: "portfolioProjectShowcase",
                         path: "",
                         active: false,
-                        isHover: false,
+                        isHover: "init",
                         subOptions: []
                     }
                 ]

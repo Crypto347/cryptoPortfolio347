@@ -794,29 +794,139 @@
                     display: flex;
                     // margin-top: 30px;
                     align-items: center;
-                   .arrow-horizontal-line {
+                    .arrow-horizontal-line {
                         border-top: 1px solid black;
                         background: black;
                         width: 15px;
-                   }
-                   .arrow-wrapper2 {
+                    }
+                    .arrow-wrapper2 {
                         transform: translate(-5px);
                         height: 10px;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
-                       .arrow-top-line {
+                        .arrow-top-line {
                             border-top: 1px solid black;
                             width: 5px;
                             transform: translate(0px, 2.5px) rotate(-45deg);
-                       }
+                        }
                        .arrow-bottom-line {
                             border-top: 1px solid black;
                             width: 5px;
                             transform: translate(0px, -3.5px) rotate(45deg);
-                       }
-                   }
-               }
+                        }
+                    }
+                }
+                .arrow-wrapper-hide {
+                    display: flex;
+                    align-items: center;
+                    opacity: 0;
+                    transform: translateX(0%);
+                    .arrow-horizontal-line {
+                        border-top: 1px solid black;
+                        background: black;
+                        width: 15px;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(-5px);
+                        height: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border-top: 1px solid black;
+                            width: 5px;
+                            transform: translate(0px, 2.5px) rotate(-45deg);
+                        }
+                        .arrow-bottom-line {
+                            border-top: 1px solid black;
+                            width: 5px;
+                            transform: translate(0px, -3.5px) rotate(45deg);
+                        }
+                    }
+                }
+                .arrow-wrapper-hover-on {
+                    display: flex;
+                    align-items: center;
+                    opacity: 1;
+                    transform: translateX(100%);
+                    -webkit-animation: arrowAppears .2s ease;
+                    -moz-animation: arrowAppears .2s ease;
+                    -o-animation: arrowAppears .2s ease;
+                    animation: arrowAppears .2s ease;
+                    .arrow-horizontal-line {
+                        border-top: 1px solid black;
+                        background: black;
+                        width: 15px;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(-5px);
+                        height: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border-top: 1px solid black;
+                            width: 5px;
+                            transform: translate(0px, 2.5px) rotate(-45deg);
+                        }
+                        .arrow-bottom-line {
+                            border-top: 1px solid black;
+                            width: 5px;
+                            transform: translate(0px, -3.5px) rotate(45deg);
+                        }
+                    }
+                }
+                .arrow-wrapper-hover-off {
+                    display: flex;
+                    align-items: center;
+                    opacity: 0;
+                    transform: translateX(0%);
+                    -webkit-animation: arrowDisppears .2s ease;
+                    -moz-animation: arrowDisppears .2s ease;
+                    -o-animation: arrowDisppears .2s ease;
+                    animation: arrowDisppears .2s ease;
+                    .arrow-horizontal-line {
+                        border-top: 1px solid black;
+                        background: black;
+                        width: 15px;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(-5px);
+                        height: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border-top: 1px solid black;
+                            width: 5px;
+                            transform: translate(0px, 2.5px) rotate(-45deg);
+                        }
+                        .arrow-bottom-line {
+                            border-top: 1px solid black;
+                            width: 5px;
+                            transform: translate(0px, -3.5px) rotate(45deg);
+                        }
+                    }
+                }
+
+                .toolbar-option-item-text {
+                    transform: translateX(0px);
+                }
+                .toolbar-option-item-text-hover-on {
+                    transform: translateX(20px);
+                    -webkit-animation: textHoverOn .2s ease;
+                    -moz-animation: textHoverOn .2s ease;
+                    -o-animation: textHoverOn .2s ease;
+                    animation: textHoverOn .2s ease;
+                }
+                .toolbar-option-item-text-hover-off {
+                    transform: translateX(0px);
+                    -webkit-animation: textHoverOff .2s ease;
+                    -moz-animation: textHoverOff .2s ease;
+                    -o-animation: textHoverOff .2s ease;
+                    animation: textHoverOff .2s ease;
+                }
             }
         }
     }
@@ -826,6 +936,122 @@
 // @media only screen and (max-width: 1120px){
     
 // }
+
+@-webkit-keyframes textHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(20px);}
+}
+@-moz-keyframes textHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(20px);}
+}
+@-o-keyframes textHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(20px);}
+}
+@keyframes textHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(20px);}
+}
+
+@-webkit-keyframes textHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
+}
+@-moz-keyframes textHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
+}
+@-o-keyframes textHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
+}
+@keyframes textHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
+}
+
+@-webkit-keyframes arrowAppears {
+    from{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+}
+@-moz-keyframes arrowAppears {
+    from{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+}
+@-o-keyframes arrowAppears {
+    from{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+}
+@keyframes arrowAppears {
+    from{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes arrowDisppears {
+    from{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+}
+@-moz-keyframes arrowDisppears {
+    from{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+}
+@-o-keyframes arrowDisppears {
+    from{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+}
+@keyframes arrowDisppears {
+    from{
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 0;
+    }
+}
 
 @-webkit-keyframes toolbarWhiteOpen {
     from{transform: translateY(-100%);}

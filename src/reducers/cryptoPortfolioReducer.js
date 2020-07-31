@@ -100,7 +100,19 @@ const setIsHoveringMenuItem = (state, action) => {
                 ...el,
                 isHover: action.val
             }
+        });
+
+        updatedMenuItems.map((el, i) => {
+            updatedMenuItems[i].options.map((el2, i2) => {
+                updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+                    updatedMenuItems[i].options[i2].array[i3].isHover = "init";
+                    updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+                        updatedMenuItems[i].options[i2].array[i3].subOptions[i4].isHover = "init";
+                    })
+                })
+            })
         })
+        console.log(updatedMenuItems)
     }
     return {
         ...state,

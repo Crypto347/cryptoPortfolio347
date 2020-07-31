@@ -77,7 +77,7 @@ export const Toolbar = (props) => {
     * State
     */
 
-    const [menuIsShown, setMenuIsShown] = useState(false);
+    // const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [isHovering, setIsHovering] = useState(null);
     const [showOptionsRegular, setShowOptionsRegular] = useState(false);
@@ -139,15 +139,15 @@ export const Toolbar = (props) => {
                 return;
         }
     }
-
+//reduce
     const handleMouseEnterToolbarOptionItem = (pathOfIds) => {
-        props.setIsHoveringToolbarOptionItem(true, pathOfIds);
+        props.setIsHoveringToolbarOptionItem("on", pathOfIds);
         console.log(pathOfIds)
      
     }
-
+//reduce
     const handleMouseLeaveToolbarOptionItem = (pathOfIds) => {
-        props.setIsHoveringToolbarOptionItem(false, pathOfIds);
+        props.setIsHoveringToolbarOptionItem("off", pathOfIds);
         // console.log(path)
 
     }
@@ -181,13 +181,6 @@ export const Toolbar = (props) => {
                             onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
                             data={el}
                         />
-                    // <ToolbarItem 
-                    //     key={el.id}
-                    //     text={el.text}
-                    //     active={el.active}
-                    //     menuIsShown={menuIsShown}
-                    //     onClick={() => toolbarOnClick(el.path, el.id)}
-                    // />
                 )
             })}</div>
         )
@@ -214,13 +207,6 @@ export const Toolbar = (props) => {
                                 <div className="toolbar-menu-dot"/>
                             </CSSTransition>
                         </div>
-                        // <ToolbarItem 
-                        //     key={el.id}
-                        //     text={el.text}
-                        //     active={el.active}
-                        //     menuIsShown={menuIsShown}
-                        //     onClick={() => toolbarOnClick(el.path, el.id)}
-                        // />
                     )
                 }else{
                     return(
@@ -352,13 +338,38 @@ export const Toolbar = (props) => {
         )
     }
 
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "arrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-hide";
+                case 'on':
+                    return "arrow-wrapper-hover-on";
+                case 'off':
+                    return "arrow-wrapper-hover-off";
+            }
+        }
+        if(opt === "text"){
+            switch(isHovering){
+                case 'init':
+                    return "toolbar-option-item-text";
+                case 'on':
+                    return "toolbar-option-item-text-hover-on";
+                case 'off':
+                    return "toolbar-option-item-text-hover-off";
+            }
+        }
+       
+    }
+
+
     const renderToolbarOptionItems = (obj) => {
         return(
             <>{obj.array.map((el, i) => {
                 let pathOfIds = [obj.id, el.id]
                 return(
                     <div key={i} className="toolbar-option-item">
-                        {el.active || el.isHover ? 
+                        {el.active ? 
                         <div className="arrow-wrapper">
                             <div className="arrow-horizontal-line"></div>
                             <div className="arrow-wrapper2">
@@ -366,12 +377,22 @@ export const Toolbar = (props) => {
                                 <div className="arrow-bottom-line"></div>
                             </div>
                         </div> : null}
+                        {!el.active ? 
+                        <div className={renderClassName("arrow", el.isHover)}>
+                            <div className="arrow-horizontal-line"></div>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div> : null}
                         <div 
-                            className="toolbar-option-item-wrapper"
+                            className={renderClassName("text", el.isHover)}
                             onMouseEnter={() => handleMouseEnterToolbarOptionItem(pathOfIds)} 
                             onMouseLeave={() => handleMouseLeaveToolbarOptionItem(pathOfIds)}
                         >
-                            <H15 className="h15-black-lustria">{el.text}</H15>
+                            {/* <div className={renderClassName("text", el.isHover)}> */}
+                                <H15 className="h15-black-lustria">{el.text}</H15>
+                            {/* </div> */}
                         </div>
                     </div>
                 )
