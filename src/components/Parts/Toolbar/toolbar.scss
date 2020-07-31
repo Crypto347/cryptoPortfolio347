@@ -785,6 +785,10 @@
         justify-content: center;
         .toolbar-option {
             padding-right: 70px;
+            .toolbar-option-header-text {
+                transform: translateX(24px);
+                padding-bottom: 10px;
+            }
             .toolbar-option-item {
                 display: flex;
                 align-items: center;

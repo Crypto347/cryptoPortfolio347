@@ -54,6 +54,7 @@ import * as Selectors from '../../../reducers/selectors';
 
 import {
    EH40,
+   H19,
    H15,
    EW2
 } from '../../UtilityComponents';
@@ -331,6 +332,9 @@ export const Toolbar = (props) => {
                             key={i} 
                             className="toolbar-option"
                         >
+                            <div className="toolbar-option-header-text">
+                                <H19 className="h19-matterhorn-teko">{el.header}</H19>
+                            </div>
                             {renderToolbarOptionItems(el)}
                         </div>
                 )
