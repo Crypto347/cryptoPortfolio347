@@ -177,6 +177,9 @@ export const Toolbar = (props) => {
                             onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
                             showOptionsRegular={showOptionsLessThan3Regular}
+                            onMouseEnterOptionItem={(pathOfIds) => handleMouseEnterToolbarOptionItem(pathOfIds)} 
+                            onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
+                            data={el}
                         />
                     // <ToolbarItem 
                     //     key={el.id}

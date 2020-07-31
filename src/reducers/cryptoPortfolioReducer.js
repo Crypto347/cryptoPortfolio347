@@ -115,39 +115,39 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
     if(action.val){
         let optionItem = {
             ...updatedMenuItems
-            .find(item => item.active === true).options
+            .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array
             .find(item => item.id === action.pathOfIds[1]),
             isHover: action.val
         }
 
         let optionItemIndex = updatedMenuItems
-            .find(item => item.active === true).options
+            .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array
             .findIndex(item => item.id === action.pathOfIds[1]);
             
         
         updatedMenuItems
-        .find(item => item.active === true).options
+        .find(item => item.isHover === true).options
         .find(item => item.id === action.pathOfIds[0]).array
         .splice(optionItemIndex, 1, optionItem);
     }else{
         let optionItem = {
             ...updatedMenuItems
-            .find(item => item.active === true).options
+            .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array
             .find(item => item.id === action.pathOfIds[1]),
             isHover: action.val
         }
 
         let optionItemIndex = updatedMenuItems
-            .find(item => item.active === true).options
+            .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array
             .findIndex(item => item.id === action.pathOfIds[1]);
             
         
         updatedMenuItems
-        .find(item => item.active === true).options
+        .find(item => item.isHover === true).options
         .find(item => item.id === action.pathOfIds[0]).array
         .splice(optionItemIndex, 1, optionItem);
     }
