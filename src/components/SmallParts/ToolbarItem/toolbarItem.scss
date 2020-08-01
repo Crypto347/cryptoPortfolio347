@@ -214,6 +214,27 @@
                     align-items: center;
                     padding: 5px;
                     cursor: pointer;
+                    .toolbar-option-item-text-active {
+                        transform: translateX(-20px);
+                    }
+                    .toolbar-option-item-text {
+                        transform: translateX(0px);
+                    }
+                    .toolbar-option-item-text-hover-on {
+                        transform: translateX(-20px);
+                        -webkit-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                        -moz-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                        -o-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                        animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                    }
+                    .toolbar-option-item-text-hover-off {
+                        transform: translateX(-0px);
+                        -webkit-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                        -moz-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                        -o-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                        animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                    }
+
                     .arrow-wrapper-active {
                         display: flex;
                         transform: translate(-100%);
@@ -334,27 +355,175 @@
                             }
                         }
                     }
+                }
+                .toolbar-option-item-with-sub-option {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 5px;
+                    cursor: pointer;
+                    .sub-option-arrow-wrapper {
+                        width: 10px;
+                        .sub-option-arrow-top-line {
+                            border-left: 1px solid rgb(78, 78, 78);
+                            height: 7px;
+                            width: 0px;
+                            transform: translate(5px, 1.3px)  rotate(45deg);
+                        }
+                        .sub-option-arrow-bottom-line {
+                            border-left: 1px solid rgb(78, 78, 78);
+                            height: 7px;
+                            width: 0px;
+                            transform: translate(5px, -1.3px) rotate(-45deg);
+                        }
+                    }
+                    .toolbar-option-item-text-and-arrow-wrapper{
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        .toolbar-option-item-text-active {
+                            transform: translateX(-20px);
+                        }
+                        .toolbar-option-item-text {
+                            transform: translateX(0px);
+                        }
+                        .toolbar-option-item-text-hover-on {
+                            transform: translateX(-20px);
+                            -webkit-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                            -moz-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                            -o-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                            animation: toolbarItemTextHoverOnAlignEnd .2s ease;
+                        }
+                        .toolbar-option-item-text-hover-off {
+                            transform: translateX(-0px);
+                            -webkit-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                            -moz-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                            -o-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                            animation: toolbarItemTextHoverOffAlignEnd .2s ease;
+                        }
     
-                    .toolbar-option-item-text-active {
-                        transform: translateX(-20px);
+                        .arrow-wrapper-active {
+                            display: flex;
+                            transform: translate(-100%);
+                            // margin-top: 30px;
+                            align-items: center;
+                            .arrow-horizontal-line {
+                                border-top: 1px solid black;
+                                background: black;
+                                width: 15px;
+                            }
+                            .arrow-wrapper2 {
+                                transform: translate(5px);
+                                height: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                .arrow-top-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, 2.5px) rotate(45deg);
+                                }
+                               .arrow-bottom-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, -3.5px) rotate(-45deg);
+                                }
+                            }
+                        }
+                        .arrow-wrapper-hide {
+                            display: flex;
+                            align-items: center;
+                            opacity: 0;
+                            transform: translateX(100%);
+                            .arrow-horizontal-line {
+                                border-top: 1px solid black;
+                                background: black;
+                                width: 15px;
+                            }
+                            .arrow-wrapper2 {
+                                transform: translate(5px);
+                                height: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                .arrow-top-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, 2.5px) rotate(45deg);
+                                }
+                                .arrow-bottom-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, -3.5px) rotate(-45deg);
+                                }
+                            }
+                        }
+                        .arrow-wrapper-hover-on {
+                            display: flex;
+                            align-items: center;
+                            opacity: 1;
+                            transform: translateX(-100%);
+                            -webkit-animation: toolbarItemArrowAppearsAlignEnd .2s ease;
+                            -moz-animation: toolbarItemArrowAppearsAlignEnd .2s ease;
+                            -o-animation: toolbarItemArrowAppearsAlignEnd .2s ease;
+                            animation: toolbarItemArrowAppearsAlignEnd .2s ease;
+                            .arrow-horizontal-line {
+                                border-top: 1px solid black;
+                                background: black;
+                                width: 15px;
+                            }
+                            .arrow-wrapper2 {
+                                transform: translate(5px);
+                                height: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                .arrow-top-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, 2.5px) rotate(45deg);
+                                }
+                                .arrow-bottom-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, -3.5px) rotate(-45deg);
+                                }
+                            }
+                        }
+                        .arrow-wrapper-hover-off {
+                            display: flex;
+                            align-items: center;
+                            opacity: 0;
+                            transform: translateX(0%);
+                            -webkit-animation: toolbarItemArrowDisppearsAlignEnd .2s ease;
+                            -moz-animation: toolbarItemArrowDisppearsAlignEnd .2s ease;
+                            -o-animation: toolbarItemArrowDisppearsAlignEnd .2s ease;
+                            animation: toolbarItemArrowDisppearsAlignEnd .2s ease;
+                            .arrow-horizontal-line {
+                                border-top: 1px solid black;
+                                background: black;
+                                width: 15px;
+                            }
+                            .arrow-wrapper2 {
+                                transform: translate(5px);
+                                height: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                .arrow-top-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, 2.5px) rotate(45deg);
+                                }
+                                .arrow-bottom-line {
+                                    border-top: 1px solid black;
+                                    width: 5px;
+                                    transform: translate(0px, -3.5px) rotate(-45deg);
+                                }
+                            }
+                        }
                     }
-                    .toolbar-option-item-text {
-                        transform: translateX(0px);
-                    }
-                    .toolbar-option-item-text-hover-on {
-                        transform: translateX(-20px);
-                        -webkit-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
-                        -moz-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
-                        -o-animation: toolbarItemTextHoverOnAlignEnd .2s ease;
-                        animation: toolbarItemTextHoverOnAlignEnd .2s ease;
-                    }
-                    .toolbar-option-item-text-hover-off {
-                        transform: translateX(-0px);
-                        -webkit-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
-                        -moz-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
-                        -o-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
-                        animation: toolbarItemTextHoverOffAlignEnd .2s ease;
-                    }
+          
                 }
             }
             

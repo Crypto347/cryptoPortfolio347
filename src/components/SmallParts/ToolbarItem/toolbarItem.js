@@ -118,36 +118,75 @@ export const ToolbarItem = (props) => {
                         </div>
                     )
                 }else{
-                    return(
-                        <div key={i} className="toolbar-option-item">
-                            <div 
-                                className={renderClassName("text", el.isHover, el.active)}
-                                onMouseEnter={() => props.onMouseEnterOptionItem(pathOfIds)} 
-                                onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
-                            >
-                                {/* <div className={renderClassName("text", el.isHover)}> */}
-                                    <H15 className="h15-black-lustria">{el.text}</H15>
-                                {/* </div> */}
+                    if(el.subOptions.length === 0){
+                        return(
+                            <div key={i} className="toolbar-option-item">
+                                <div 
+                                    className={renderClassName("text", el.isHover, el.active)}
+                                    onMouseEnter={() => props.onMouseEnterOptionItem(pathOfIds)} 
+                                    onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
+                                >
+                                    {/* <div className={renderClassName("text", el.isHover)}> */}
+                                        <H15 className="h15-black-lustria">{el.text}</H15>
+                                    {/* </div> */}
+                                </div>
+                                {el.active ? 
+                                <div className="arrow-wrapper-active">
+                                    <div className="arrow-wrapper2">
+                                        <div className="arrow-top-line"></div>
+                                        <div className="arrow-bottom-line"></div>
+                                    </div>
+                                    <div className="arrow-horizontal-line"></div>
+                                </div> : null}
+                                {!el.active ? 
+                                <div className={renderClassName("arrow", el.isHover)}>
+                                    <div className="arrow-wrapper2">
+                                        <div className="arrow-top-line"></div>
+                                        <div className="arrow-bottom-line"></div>
+                                    </div>
+                                    <div className="arrow-horizontal-line"></div>
+                                </div> : null}
                             </div>
-                            {el.active ? 
-                            <div className="arrow-wrapper-active">
-                                <div className="arrow-wrapper2">
-                                    <div className="arrow-top-line"></div>
-                                    <div className="arrow-bottom-line"></div>
+                        )
+                    }else{
+                        return(
+                            <div key={i} className="toolbar-option-item-with-sub-option">
+                                <div className="sub-option-arrow-wrapper">
+                                    <div className="sub-option-arrow-top-line"/>
+                                    <div className="sub-option-arrow-bottom-line"/>
                                 </div>
-                                <div className="arrow-horizontal-line"></div>
-                            </div> : null}
-                            {!el.active ? 
-                            <div className={renderClassName("arrow", el.isHover)}>
-                                <div className="arrow-wrapper2">
-                                    <div className="arrow-top-line"></div>
-                                    <div className="arrow-bottom-line"></div>
+                                <div className="toolbar-option-item-text-and-arrow-wrapper">
+                                    <div 
+                                        className={renderClassName("text", el.isHover, el.active)}
+                                        onMouseEnter={() => props.onMouseEnterOptionItem(pathOfIds)} 
+                                        onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
+                                    >
+                                        {/* <div className={renderClassName("text", el.isHover)}> */}
+                                            <H15 className="h15-black-lustria">{el.text}</H15>
+                                        {/* </div> */}
+                                    </div>
+                                    {el.active ? 
+                                    <div className="arrow-wrapper-active">
+                                        <div className="arrow-wrapper2">
+                                            <div className="arrow-top-line"></div>
+                                            <div className="arrow-bottom-line"></div>
+                                        </div>
+                                        <div className="arrow-horizontal-line"></div>
+                                    </div> : null}
+                                    {!el.active ? 
+                                    <div className={renderClassName("arrow", el.isHover)}>
+                                        <div className="arrow-wrapper2">
+                                            <div className="arrow-top-line"></div>
+                                            <div className="arrow-bottom-line"></div>
+                                        </div>
+                                        <div className="arrow-horizontal-line"></div>
+                                    </div> : null}
                                 </div>
-                                <div className="arrow-horizontal-line"></div>
-                            </div> : null}
-                       
-                        </div>
-                    )
+                               
+                            </div>
+                        )
+                    }
+                   
                 }
                
             })}</>
