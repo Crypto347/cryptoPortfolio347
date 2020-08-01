@@ -182,14 +182,28 @@ export const ToolbarItem = (props) => {
                                         <div className="arrow-horizontal-line"></div>
                                     </div> : null}
                                 </div>
-                               
+                                {el.isHover === "on" ? renderSubOptions(el.subOptions) : null}
                             </div>
                         )
                     }
                    
                 }
-               
             })}</>
+        )
+    }
+
+    const renderSubOptions = (subOptions) => {
+        return(
+            <div className="toolbar-item-sub-options">{subOptions.map((el, i) => {
+                return(
+                        <div 
+                            key={i} 
+                            className="toolbar-sub-option"
+                        >
+                            <H15 className="h15-black-lustria">{el.text}</H15>
+                        </div>
+                )
+            })}</div>
         )
     }
 

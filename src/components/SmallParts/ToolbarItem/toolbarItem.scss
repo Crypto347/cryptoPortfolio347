@@ -357,6 +357,7 @@
                     }
                 }
                 .toolbar-option-item-with-sub-option {
+                    position: relative;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -521,6 +522,20 @@
                                     transform: translate(0px, -3.5px) rotate(-45deg);
                                 }
                             }
+                        }
+                    }
+
+                    .toolbar-item-sub-options {
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        top: -50%;
+                        left: -100%;
+                        margin-left: 10px;
+                        background-color: white;
+                        box-shadow: 0px -10px 0px rgb(239, 239, 239);
+                        .toolbar-sub-option {
+
                         }
                     }
           
