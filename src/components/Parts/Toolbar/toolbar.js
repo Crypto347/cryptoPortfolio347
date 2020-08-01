@@ -143,7 +143,7 @@ export const Toolbar = (props) => {
 //reduce
     const handleMouseEnterToolbarOptionItem = (pathOfIds) => {
         props.setIsHoveringToolbarOptionItem("on", pathOfIds);
-        console.log(pathOfIds)
+        // console.log(pathOfIds)
      
     }
 //reduce
@@ -180,6 +180,7 @@ export const Toolbar = (props) => {
                             showOptionsRegular={showOptionsLessThan3Regular}
                             onMouseEnterOptionItem={(pathOfIds) => handleMouseEnterToolbarOptionItem(pathOfIds)} 
                             onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
+                            renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
                         />
                 )
@@ -369,7 +370,6 @@ export const Toolbar = (props) => {
         }
        
     }
-
 
     const renderToolbarOptionItems = (obj) => {
         return(

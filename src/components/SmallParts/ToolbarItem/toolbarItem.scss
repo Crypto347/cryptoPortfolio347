@@ -44,40 +44,158 @@
         width: 230px;
         background-color: white;
         box-shadow: 0px -10px 0px rgb(239, 239, 239);
+        padding: 0 20px 0 20px;
         .toolbar-item-options-wrapper {
-            .toolbar-option-item {
-                display: flex;
-                align-items: center;
-                padding: 5px;
-                cursor: pointer;
-                .arrow-wrapper {
+            .toolbar-option {
+                .toolbar-option-item {
                     display: flex;
-                    // margin-top: 30px;
                     align-items: center;
-                   .arrow-horizontal-line {
-                        border-top: 1px solid black;
-                        background: black;
-                        width: 15px;
-                   }
-                   .arrow-wrapper2 {
-                        transform: translate(-5px);
-                        height: 10px;
+                    padding: 5px;
+                    cursor: pointer;
+                    .arrow-wrapper-active {
                         display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                       .arrow-top-line {
+                        transform: translate(100%);
+                        // margin-top: 30px;
+                        align-items: center;
+                        .arrow-horizontal-line {
                             border-top: 1px solid black;
-                            width: 5px;
-                            transform: translate(0px, 2.5px) rotate(-45deg);
-                       }
-                       .arrow-bottom-line {
+                            background: black;
+                            width: 15px;
+                        }
+                        .arrow-wrapper2 {
+                            transform: translate(-5px);
+                            height: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .arrow-top-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, 2.5px) rotate(-45deg);
+                            }
+                           .arrow-bottom-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, -3.5px) rotate(45deg);
+                            }
+                        }
+                    }
+                    .arrow-wrapper-hide {
+                        display: flex;
+                        align-items: center;
+                        opacity: 0;
+                        transform: translateX(0%);
+                        .arrow-horizontal-line {
                             border-top: 1px solid black;
-                            width: 5px;
-                            transform: translate(0px, -3.5px) rotate(45deg);
-                       }
-                   }
-               }
+                            background: black;
+                            width: 15px;
+                        }
+                        .arrow-wrapper2 {
+                            transform: translate(-5px);
+                            height: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .arrow-top-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, 2.5px) rotate(-45deg);
+                            }
+                            .arrow-bottom-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, -3.5px) rotate(45deg);
+                            }
+                        }
+                    }
+                    .arrow-wrapper-hover-on {
+                        display: flex;
+                        align-items: center;
+                        opacity: 1;
+                        transform: translateX(100%);
+                        -webkit-animation: arrowAppears .2s ease;
+                        -moz-animation: arrowAppears .2s ease;
+                        -o-animation: arrowAppears .2s ease;
+                        animation: arrowAppears .2s ease;
+                        .arrow-horizontal-line {
+                            border-top: 1px solid black;
+                            background: black;
+                            width: 15px;
+                        }
+                        .arrow-wrapper2 {
+                            transform: translate(-5px);
+                            height: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .arrow-top-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, 2.5px) rotate(-45deg);
+                            }
+                            .arrow-bottom-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, -3.5px) rotate(45deg);
+                            }
+                        }
+                    }
+                    .arrow-wrapper-hover-off {
+                        display: flex;
+                        align-items: center;
+                        opacity: 0;
+                        transform: translateX(0%);
+                        -webkit-animation: arrowDisppears .2s ease;
+                        -moz-animation: arrowDisppears .2s ease;
+                        -o-animation: arrowDisppears .2s ease;
+                        animation: arrowDisppears .2s ease;
+                        .arrow-horizontal-line {
+                            border-top: 1px solid black;
+                            background: black;
+                            width: 15px;
+                        }
+                        .arrow-wrapper2 {
+                            transform: translate(-5px);
+                            height: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .arrow-top-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, 2.5px) rotate(-45deg);
+                            }
+                            .arrow-bottom-line {
+                                border-top: 1px solid black;
+                                width: 5px;
+                                transform: translate(0px, -3.5px) rotate(45deg);
+                            }
+                        }
+                    }
+    
+                    .toolbar-option-item-text-active {
+                        transform: translateX(20px);
+                    }
+                    .toolbar-option-item-text {
+                        transform: translateX(0px);
+                    }
+                    .toolbar-option-item-text-hover-on {
+                        transform: translateX(20px);
+                        -webkit-animation: textHoverOn .2s ease;
+                        -moz-animation: textHoverOn .2s ease;
+                        -o-animation: textHoverOn .2s ease;
+                        animation: textHoverOn .2s ease;
+                    }
+                    .toolbar-option-item-text-hover-off {
+                        transform: translateX(0px);
+                        -webkit-animation: textHoverOff .2s ease;
+                        -moz-animation: textHoverOff .2s ease;
+                        -o-animation: textHoverOff .2s ease;
+                        animation: textHoverOff .2s ease;
+                    }
+                }
             }
+            
         }
     }
 }

@@ -112,7 +112,7 @@ const setIsHoveringMenuItem = (state, action) => {
                 })
             })
         })
-        console.log(updatedMenuItems)
+        // console.log(updatedMenuItems)
     }
     return {
         ...state,
