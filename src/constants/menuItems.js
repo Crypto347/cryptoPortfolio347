@@ -6,6 +6,7 @@ export const menuItemsArray = [
         path: "",
         active: true,
         isHover: false,
+        hasSubOptions: false,
         options: [
             {
                 id: 11,
@@ -219,6 +220,7 @@ export const menuItemsArray = [
         path: "portfolio",
         active: false,
         isHover: false,
+        hasSubOptions: false,
         options: [
             {
                 id: 21,
@@ -504,6 +506,7 @@ export const menuItemsArray = [
         path: "pages",
         active: false,
         isHover: false,
+        hasSubOptions: false,
         options: [
             {
                 id: 31,
@@ -612,6 +615,7 @@ export const menuItemsArray = [
         path: "blog",
         active: false,
         isHover: false,
+        hasSubOptions: true,
         options: [
             {
                 id: 41,
@@ -730,6 +734,7 @@ export const menuItemsArray = [
         path: "shop",
         active: false,
         isHover: false,
+        hasSubOptions: true,
         options: [
             {
                 id: 51,
@@ -741,7 +746,7 @@ export const menuItemsArray = [
                         text: "Shop Single",
                         itemId: "shopSingle",
                         path: "",
-                        active: false,
+                        active: true,
                         isHover: "init",
                         subOptions: []
         
@@ -922,6 +927,7 @@ export const menuItemsArray = [
         path: "elements",
         active: false,
         isHover: false,
+        hasSubOptions: false,
         options: [
             {
                 id: 61,

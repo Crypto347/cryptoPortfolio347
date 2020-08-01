@@ -84,39 +84,72 @@ export const ToolbarItem = (props) => {
     }
 
     const renderOptionItems = (obj) => {
-        console.log(obj.array)
         return(
             <>{obj.array.map((el, i) => {
-                let pathOfIds = [obj.id, el.id]
-                return(
-                    <div key={i} className="toolbar-option-item">
-                        {el.active ? 
-                        <div className="arrow-wrapper-active">
-                            <div className="arrow-horizontal-line"></div>
-                            <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
+                let pathOfIds = [obj.id, el.id];
+                if(!props.hasSubOptions){
+                    return(
+                        <div key={i} className="toolbar-option-item">
+                            {el.active ? 
+                            <div className="arrow-wrapper-active">
+                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-wrapper2">
+                                    <div className="arrow-top-line"></div>
+                                    <div className="arrow-bottom-line"></div>
+                                </div>
+                            </div> : null}
+                            {!el.active ? 
+                            <div className={renderClassName("arrow", el.isHover)}>
+                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-wrapper2">
+                                    <div className="arrow-top-line"></div>
+                                    <div className="arrow-bottom-line"></div>
+                                </div>
+                            </div> : null}
+                            <div 
+                                className={renderClassName("text", el.isHover, el.active)}
+                                onMouseEnter={() => props.onMouseEnterOptionItem(pathOfIds)} 
+                                onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
+                            >
+                                {/* <div className={renderClassName("text", el.isHover)}> */}
+                                    <H15 className="h15-black-lustria">{el.text}</H15>
+                                {/* </div> */}
                             </div>
-                        </div> : null}
-                        {!el.active ? 
-                        <div className={renderClassName("arrow", el.isHover)}>
-                            <div className="arrow-horizontal-line"></div>
-                            <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
-                            </div>
-                        </div> : null}
-                        <div 
-                            className={renderClassName("text", el.isHover, el.active)}
-                            onMouseEnter={() => props.onMouseEnterOptionItem(pathOfIds)} 
-                            onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
-                        >
-                            {/* <div className={renderClassName("text", el.isHover)}> */}
-                                <H15 className="h15-black-lustria">{el.text}</H15>
-                            {/* </div> */}
                         </div>
-                    </div>
-                )
+                    )
+                }else{
+                    return(
+                        <div key={i} className="toolbar-option-item">
+                            <div 
+                                className={renderClassName("text", el.isHover, el.active)}
+                                onMouseEnter={() => props.onMouseEnterOptionItem(pathOfIds)} 
+                                onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
+                            >
+                                {/* <div className={renderClassName("text", el.isHover)}> */}
+                                    <H15 className="h15-black-lustria">{el.text}</H15>
+                                {/* </div> */}
+                            </div>
+                            {el.active ? 
+                            <div className="arrow-wrapper-active">
+                                <div className="arrow-wrapper2">
+                                    <div className="arrow-top-line"></div>
+                                    <div className="arrow-bottom-line"></div>
+                                </div>
+                                <div className="arrow-horizontal-line"></div>
+                            </div> : null}
+                            {!el.active ? 
+                            <div className={renderClassName("arrow", el.isHover)}>
+                                <div className="arrow-wrapper2">
+                                    <div className="arrow-top-line"></div>
+                                    <div className="arrow-bottom-line"></div>
+                                </div>
+                                <div className="arrow-horizontal-line"></div>
+                            </div> : null}
+                       
+                        </div>
+                    )
+                }
+               
             })}</>
         )
     }
@@ -137,7 +170,8 @@ export const ToolbarItem = (props) => {
             </div>
             {props.showOptionsRegular && props.hoverToolbarItem ? 
             <div 
-                className="toolbar-item-options"
+                className={props.hasSubOptions ? "toolbar-item-options-align-end" : "toolbar-item-options"}
+                // className="toolbar-item-options"
                 onMouseLeave={props.onMouseLeave}
             >
                 <EH40/>

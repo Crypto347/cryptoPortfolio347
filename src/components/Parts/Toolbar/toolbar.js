@@ -182,6 +182,7 @@ export const Toolbar = (props) => {
                             onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
+                            hasSubOptions={el.hasSubOptions}
                         />
                 )
             })}</div>
