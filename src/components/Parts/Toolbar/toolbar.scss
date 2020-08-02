@@ -124,11 +124,11 @@
 .toolbar-regular-screen-animated-unmounted {
     position: fixed;
     width: calc(100% - 78px);
-    height: calc(70px - 50px);
+    height: 68px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px 25px 40px;
+    padding: 0px 40px 0px 40px;
     box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
     color: black;
     background: white;
@@ -141,9 +141,11 @@
     }
     .toolbar-wrapper {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        height: 100%;
         .toolbar-items {
             display: flex;
+            height: 100%;
         }
         .toolbar-menu {
             display: flex;
@@ -248,11 +250,12 @@
 .toolbar-regular-screen-animated-mounted {
     position: fixed;
     width: calc(100% - 78px);
-    height: calc(70px - 50px);
+    height: 68px;
+    // border-bottom: 10px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px 25px 40px;
+    padding: 0px 40px 0px 40px;
     box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
     color: black;
     background: white;
@@ -265,9 +268,11 @@
     }
     .toolbar-wrapper {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        height: 100%;
         .toolbar-items {
             display: flex;
+            height: 100%;
         }
         .toolbar-menu {
             display: flex;
@@ -372,11 +377,11 @@
 .toolbar-regular-screen-animated-open {
     position: fixed;
     width: calc(100% - 78px);
-    height: calc(70px - 50px);
+    height: 68px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px 25px 40px;
+    padding: 0px 40px 0px 40px;
     box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
     color: black;
     background: white;
@@ -393,9 +398,11 @@
     }
     .toolbar-wrapper {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        height: 100%;
         .toolbar-items {
             display: flex;
+            height: 100%;
         }
         .toolbar-menu {
             display: flex;
@@ -500,11 +507,11 @@
 .toolbar-regular-screen-animated-close {
     position: fixed;
     width: calc(100% - 78px);
-    height: calc(70px - 50px);
+    height: 68px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 40px 25px 40px;
+    padding: 0px 40px 0px 40px;
     box-shadow: 0px 1px 1px rgba(0, 0 ,0, .1);
     color: black;
     background: white;
@@ -521,9 +528,11 @@
     }
     .toolbar-wrapper {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        height: 100%;
         .toolbar-items {
             display: flex;
+            height: 100%;
         }
         .toolbar-menu {
             display: flex;

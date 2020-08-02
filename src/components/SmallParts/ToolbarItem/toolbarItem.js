@@ -262,6 +262,7 @@ export const ToolbarItem = (props) => {
                 // className="toolbar-item-options"
                 onMouseLeave={props.onMouseLeave}
             >
+                <div  className="grey-line"/>
                 <EH20/>
                 {renderOptions()}
                 <EH20/>
