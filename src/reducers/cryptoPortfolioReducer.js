@@ -124,7 +124,7 @@ const setIsHoveringMenuItem = (state, action) => {
 const setIsHoveringToolbarOptionItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
     
-    if(action.val){
+    if(action.val === "on"){
         let optionItem = {
             ...updatedMenuItems
             .find(item => item.isHover === true).options
@@ -140,9 +140,9 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
             
         
         updatedMenuItems
-        .find(item => item.isHover === true).options
-        .find(item => item.id === action.pathOfIds[0]).array
-        .splice(optionItemIndex, 1, optionItem);
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .splice(optionItemIndex, 1, optionItem);
     }else{
         let optionItem = {
             ...updatedMenuItems
@@ -159,9 +159,9 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
             
         
         updatedMenuItems
-        .find(item => item.isHover === true).options
-        .find(item => item.id === action.pathOfIds[0]).array
-        .splice(optionItemIndex, 1, optionItem);
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .splice(optionItemIndex, 1, optionItem);
     }
     return {
         ...state,

@@ -142,18 +142,16 @@ export const Toolbar = (props) => {
                 return;
         }
     }
-//reduce
-    const handleMouseEnterToolbarOptionItem = (pathOfIds) => {
-        props.setIsHoveringToolbarOptionItem("on", pathOfIds);
-        // console.log(pathOfIds)
-     
-    }
-//reduce
-    const handleMouseLeaveToolbarOptionItem = (pathOfIds) => {
-        props.setIsHoveringToolbarOptionItem("off", pathOfIds);
-        // console.log(path)
 
-    }
+    // const handleMouseEnterToolbarSubOptionItem = (pathOfIds) => {
+    //     props.setIsHoveringToolbarSubOptionItem("on", pathOfIds);
+    //     console.log(pathOfIds)
+     
+    // }
+    // const handleMouseLeaveToolbarSubOptionItem = (pathOfIds) => {
+    //     props.setIsHoveringToolbarSubOptionItem("off", pathOfIds);
+    // }
+
     // const handleScroll = () => {
     //     setMenuIsShown(false);
     // }
@@ -180,8 +178,8 @@ export const Toolbar = (props) => {
                             onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
                             showOptionsRegular={showOptionsLessThan3Regular}
-                            onMouseEnterOptionItem={(pathOfIds) => handleMouseEnterToolbarOptionItem(pathOfIds)} 
-                            onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
+                            onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
+                            // onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
                             hasSubOptions={el.hasSubOptions}
@@ -400,8 +398,8 @@ export const Toolbar = (props) => {
                         </div> : null}
                         <div 
                             className={renderClassName("text", el.isHover, el.active)}
-                            onMouseEnter={() => handleMouseEnterToolbarOptionItem(pathOfIds)} 
-                            onMouseLeave={() => handleMouseLeaveToolbarOptionItem(pathOfIds)}
+                            onMouseEnter={() => props.setIsHoveringToolbarOptionItem("on", pathOfIds)} 
+                            onMouseLeave={() => props.setIsHoveringToolbarOptionItem("off", pathOfIds)}
                         >
                             {/* <div className={renderClassName("text", el.isHover)}> */}
                                 <H15 className="h15-black-lustria">{el.text}</H15>
