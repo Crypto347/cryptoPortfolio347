@@ -212,7 +212,7 @@
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
-                    padding: 5px;
+                    padding: 5px 20px 5px 5px;
                     cursor: pointer;
                     .toolbar-option-item-text-active {
                         transform: translateX(-20px);
@@ -362,7 +362,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 5px 25px 5px 25px;
+                    padding: 5px 20px 5px 25px;
                     cursor: pointer;
                     .sub-option-arrow-wrapper {
                         width: 10px;
@@ -383,6 +383,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: flex-end;
+                        // transform: translateX(20px);
                         .toolbar-option-item-text-active {
                             transform: translateX(-20px);
                         }

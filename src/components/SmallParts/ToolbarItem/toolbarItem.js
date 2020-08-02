@@ -22,6 +22,7 @@ import './toolbarItem.scss';
 
 import {
     EH40,
+    EH20,
     H15,
     EW2
  } from '../../UtilityComponents';
@@ -202,7 +203,7 @@ export const ToolbarItem = (props) => {
                 className="toolbar-item-sub-options"
                 onMouseLeave={() => props.onMouseLeaveOptionItem(pathOfIds)}
             >
-                <EH40/>
+                <EH20/>
                 {subOptions.map((el, i) => {
                 return(
                     <div key={i} className="toolbar-sub-option-item">
@@ -233,7 +234,7 @@ export const ToolbarItem = (props) => {
                         </div> : null}
                     </div>
                 )})}
-                <EH40/>
+                <EH20/>
             </div>
         )
     }
@@ -258,9 +259,9 @@ export const ToolbarItem = (props) => {
                 // className="toolbar-item-options"
                 onMouseLeave={props.onMouseLeave}
             >
-                <EH40/>
+                <EH20/>
                 {renderOptions()}
-                <EH40/>
+                <EH20/>
             </div> : null}
         </div>
     );

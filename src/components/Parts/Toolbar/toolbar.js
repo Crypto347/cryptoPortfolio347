@@ -54,6 +54,8 @@ import * as Selectors from '../../../reducers/selectors';
 
 import {
    EH40,
+   EH20,
+   EH10,
    H19,
    H15,
    EW2
@@ -247,9 +249,11 @@ export const Toolbar = (props) => {
                             onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
                         >
-                            <EH40/>
+                            <EH20/>
+                            <EH10/>
                             {renderToolbarOptions()}
-                            <EH40/>
+                            <EH10/>
+                            <EH20/>
                         </div> : null}
                     {/* </div> */}
                 </>
