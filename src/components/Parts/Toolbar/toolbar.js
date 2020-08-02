@@ -143,6 +143,7 @@ export const Toolbar = (props) => {
         }
     }
 
+
     // const handleMouseEnterToolbarSubOptionItem = (pathOfIds) => {
     //     props.setIsHoveringToolbarSubOptionItem("on", pathOfIds);
     //     console.log(pathOfIds)
@@ -179,7 +180,7 @@ export const Toolbar = (props) => {
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
                             showOptionsRegular={showOptionsLessThan3Regular}
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
-                            // onMouseLeaveOptionItem={(pathOfIds) => handleMouseLeaveToolbarOptionItem(pathOfIds)}
+                            onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
                             hasSubOptions={el.hasSubOptions}
@@ -433,6 +434,7 @@ export default connect(
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
             setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
             setIsHoveringToolbarOptionItem: bindActionCreators(Actions.setIsHoveringToolbarOptionItem, dispatch),
+            setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
         };
     }
 )(withRouter(Toolbar));

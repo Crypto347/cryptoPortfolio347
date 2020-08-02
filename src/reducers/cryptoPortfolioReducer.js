@@ -138,7 +138,6 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[0]).array
             .findIndex(item => item.id === action.pathOfIds[1]);
             
-        
         updatedMenuItems
             .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array
@@ -157,17 +156,82 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[0]).array
             .findIndex(item => item.id === action.pathOfIds[1]);
             
-        
         updatedMenuItems
             .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array
             .splice(optionItemIndex, 1, optionItem);
+
+            updatedMenuItems.map((el, i) => {
+                updatedMenuItems[i].options.map((el2, i2) => {
+                    updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+                        // updatedMenuItems[i].options[i2].array[i3].isHover = "init";
+                        updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+                            updatedMenuItems[i].options[i2].array[i3].subOptions[i4].isHover = "init";
+                        })
+                    })
+                })
+            })
+
     }
     return {
         ...state,
-        menuItems: updatedMenuItems,
+        menuItems: updatedMenuItems
     };
 }
+
+const setIsHoveringToolbarSubOptionItem = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+    console.log(action.pathOfIds)
+    if(action.val === "on"){
+        let subOptionItem = {
+            ...updatedMenuItems
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .find(item => item.id === action.pathOfIds[1]).subOptions
+            .find(item => item.id === action.pathOfIds[2]),
+            isHover: action.val
+        }
+console.log(subOptionItem)
+        let subOptionItemIndex = updatedMenuItems
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .find(item => item.id === action.pathOfIds[1]).subOptions
+            .findIndex(item => item.id === action.pathOfIds[2]);
+            
+        updatedMenuItems
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .find(item => item.id === action.pathOfIds[1]).subOptions
+            .splice(subOptionItemIndex, 1, subOptionItem);
+    }else{
+        let subOptionItem = {
+            ...updatedMenuItems
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .find(item => item.id === action.pathOfIds[1]).subOptions
+            .find(item => item.id === action.pathOfIds[2]),
+            isHover: action.val
+        }
+
+        let subOptionItemIndex = updatedMenuItems
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .find(item => item.id === action.pathOfIds[1]).subOptions
+            .findIndex(item => item.id === action.pathOfIds[2]);
+            
+        updatedMenuItems
+            .find(item => item.isHover === true).options
+            .find(item => item.id === action.pathOfIds[0]).array
+            .find(item => item.id === action.pathOfIds[1]).subOptions
+            .splice(subOptionItemIndex, 1, subOptionItem);
+    }
+    return {
+        ...state,
+        menuItems: updatedMenuItems
+    };
+}
+
+
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -279,11 +343,6 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
 //     }; 
 // }
 
-
-
-
-
-
 const cryptoPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -300,6 +359,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setIsHoveringMenuItem(state, action); 
         case actionTypes.SET_IS_HOVERING_TOOLBAR_OPTION_ITEM:
             return setIsHoveringToolbarOptionItem(state, action); 
+        case actionTypes.SET_IS_HOVERING_TOOLBAR_SUB_OPTION_ITEM:
+            return setIsHoveringToolbarSubOptionItem(state, action); 
         default: 
             return state;
     }

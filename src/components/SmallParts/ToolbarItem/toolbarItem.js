@@ -212,8 +212,8 @@ export const ToolbarItem = (props) => {
                     <div key={i} className="toolbar-sub-option-item">
                         <div 
                             className={renderClassName("text", el.isHover, el.active)}
-                            // onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)} 
-                            // onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
+                            onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
+                            onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
                         >
                             {/* <div className={renderClassName("text", el.isHover)}> */}
                                 <H15 className="h15-black-lustria">{el.text}</H15>
