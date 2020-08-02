@@ -529,9 +529,9 @@
 
                     .toolbar-item-sub-options {
                         position: absolute;
-                        width: 200px;
+                        width: 230px;
                         top: -100%;
-                        left: -100%;
+                        left: calc(-100% - 30px);
                         // padding: 5px 15px 5px 15px;
                         padding: 0 20px 0 20px;
                         // margin-left: 5px;
