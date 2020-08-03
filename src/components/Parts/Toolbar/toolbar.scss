@@ -1183,13 +1183,37 @@
     margin-bottom: 20px;
     .toolbar-menu {
         cursor: pointer;
-        .toolbar-menu-line {
-            border: 1px solid rgb(37, 37, 37);
-            margin: 3px;
-            width: 13px;
-        }
-        .toolbar-menu-middle-line {
+        .toolbar-menu-first-line {
             display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
+        }
+        .toolbar-menu-second-line {
+            display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
+        }
+        .toolbar-menu-third-line {
+            display: flex;
+            margin: 3px 0 3px 0;
             .toolbar-menu-left-half-line {
                 border: 1px solid rgb(37, 37, 37);
                 margin: 0 0 0 3px;
@@ -1204,18 +1228,101 @@
     }
     .toolbar-menu-open {
         cursor: pointer;
-        .toolbar-menu-line {
-            border: 1px solid rgb(37, 37, 37);
-            margin: 3px;
-            width: 13px;
+        .toolbar-menu-first-line {
+            display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
+        }
+        .toolbar-menu-second-line {
+            display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
+        }
+        .toolbar-menu-third-line {
+            display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
         }
     }
     .toolbar-menu-close {
         cursor: pointer;
-        .toolbar-menu-line {
-            border: 1px solid rgb(37, 37, 37);
-            margin: 3px;
-            width: 13px;
+        .toolbar-menu-first-line {
+            display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
+        }
+        .toolbar-menu-second-line {
+            display: flex;
+            justify-content: center;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid transparent;
+                margin: 0 0 0 3px;
+                width: 0px;
+                -webkit-animation: menuSecondLineClose 1s ease;
+                -moz-animation: menuSecondLineClose 1s ease;
+                -o-animation: menuSecondLineClose 1s ease;
+                animation: menuSecondLineClose 1s ease;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid transparent;
+                margin: 0 3px 0 0;
+                width: 0px;
+                -webkit-animation: menuSecondLineClose 1s ease;
+                -moz-animation: menuSecondLineClose 1s ease;
+                -o-animation: menuSecondLineClose 1s ease;
+                animation: menuSecondLineClose 1s ease;
+            }
+        }
+        .toolbar-menu-third-line {
+            display: flex;
+            margin: 3px 0 3px 0;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
         }
     }
     .toolbar-logo {
@@ -1523,6 +1630,47 @@
 // @media only screen and (max-width: 1120px){
     
 // }
+
+@-webkit-keyframes menuSecondLineClose {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
+@-moz-keyframes menuSecondLineClose {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
+@-o-keyframes menuSecondLineClose {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
+@keyframes menuSecondLineClose {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
 
 @-webkit-keyframes toolbarWhiteOptionsOpen {
     from{transform: translateY(-68px);}

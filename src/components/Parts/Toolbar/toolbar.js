@@ -349,12 +349,18 @@ export const Toolbar = (props) => {
                         className={renderClassName("menuSmallScreenButton", sidebarState)}
                         onClick={menuOnClick}
                     >
-                        <div className="toolbar-menu-line"/>
-                        <div className="toolbar-menu-middle-line">
+                        <div className="toolbar-menu-first-line">
                             <div className="toolbar-menu-left-half-line"/>
                             <div className="toolbar-menu-right-half-line"/>
                         </div>
-                        <div className="toolbar-menu-line"/>
+                        <div className="toolbar-menu-second-line">
+                            <div className="toolbar-menu-left-half-line"/>
+                            <div className="toolbar-menu-right-half-line"/>
+                        </div>
+                        <div className="toolbar-menu-third-line">
+                            <div className="toolbar-menu-left-half-line"/>
+                            <div className="toolbar-menu-right-half-line"/>
+                        </div>
                     </div>
                     <div className="toolbar-logo">crypto.</div>
                     <div/>
