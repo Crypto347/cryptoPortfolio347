@@ -43,6 +43,12 @@ export const ToolbarItem = (props) => {
     * Methods
     */
 
+    const toolbarOptionItemOnClick = (path, id) => {
+        console.log(path, id)
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        // props.activateMenuItem(id);
+    }
+
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "arrow"){
             switch(isHovering){
@@ -88,9 +94,13 @@ export const ToolbarItem = (props) => {
         return(
             <>{obj.array.map((el, i) => {
                 let pathOfIds = [obj.id, el.id];
-                if(!props.hasSubOptions){
+                if(!props.data.hasSubOptions){
                     return(
-                        <div key={i} className="toolbar-option-item">
+                        <div 
+                            key={i} 
+                            className="toolbar-option-item"
+                            onClick={() => toolbarOptionItemOnClick(el.path, el.id)}
+                        >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
                                 <div className="arrow-horizontal-line"></div>
@@ -121,7 +131,11 @@ export const ToolbarItem = (props) => {
                 }else{
                     if(el.subOptions.length === 0){
                         return(
-                            <div key={i} className="toolbar-option-item">
+                            <div 
+                                key={i} 
+                                className="toolbar-option-item"
+                                onClick={() => toolbarOptionItemOnClick(el.path, el.id)}
+                            >
                                 <div 
                                     className={renderClassName("text", el.isHover, el.active)}
                                     onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)} 
@@ -253,12 +267,12 @@ export const ToolbarItem = (props) => {
             onMouseLeave={props.onMouseLeave}
            >
             <div className={`toolbar-item-${props.toolbarMainColor}`}>
-                {props.text}
+                {props.data.text}
         
             </div>
-            {props.showOptionsRegular && props.hoverToolbarItem ? 
+            {props.showOptionsRegular && props.data.isHover ? 
             <div 
-                className={props.hasSubOptions ? "toolbar-item-options-align-end" : "toolbar-item-options"}
+                className={props.data.hasSubOptions ? "toolbar-item-options-align-end" : "toolbar-item-options"}
                 // className="toolbar-item-options"
                 onMouseLeave={props.onMouseLeave}
             >

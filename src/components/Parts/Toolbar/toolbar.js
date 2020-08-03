@@ -143,16 +143,6 @@ export const Toolbar = (props) => {
         }
     }
 
-
-    // const handleMouseEnterToolbarSubOptionItem = (pathOfIds) => {
-    //     props.setIsHoveringToolbarSubOptionItem("on", pathOfIds);
-    //     console.log(pathOfIds)
-     
-    // }
-    // const handleMouseLeaveToolbarSubOptionItem = (pathOfIds) => {
-    //     props.setIsHoveringToolbarSubOptionItem("off", pathOfIds);
-    // }
-
     // const handleScroll = () => {
     //     setMenuIsShown(false);
     // }
@@ -172,9 +162,9 @@ export const Toolbar = (props) => {
                 return(
                         <ToolbarItem 
                             key={i}
-                            text={el.text}
-                            active={el.active}
-                            hoverToolbarItem={el.isHover}
+                            // text={el.text}
+                            // active={el.active}
+                            // hoverToolbarItem={el.isHover}
                             toolbarMainColor={props.toolbarMainColor}
                             onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
@@ -183,7 +173,7 @@ export const Toolbar = (props) => {
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
-                            hasSubOptions={el.hasSubOptions}
+                            // hasSubOptions={el.hasSubOptions}
                         />
                 )
             })}</div>

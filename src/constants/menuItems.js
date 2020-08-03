@@ -3,7 +3,7 @@ export const menuItemsArray = [
         id: 1,
         text: "Home.",
         itemId: "home",
-        path: "",
+        path: null,
         active: true,
         isHover: false,
         hasSubOptions: false,
@@ -27,7 +27,7 @@ export const menuItemsArray = [
                         id: 112,
                         text: "Creative Agency",
                         itemId: "creativeAgency",
-                        path: "",
+                        path: "creative-agency",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -36,7 +36,7 @@ export const menuItemsArray = [
                         id: 113,
                         text: "Design Studio",
                         itemId: "designStudio",
-                        path: "",
+                        path: "design-studio",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -45,7 +45,7 @@ export const menuItemsArray = [
                         id: 114,
                         text: "Blog Home",
                         itemId: "blogHome",
-                        path: "",
+                        path: "blog-home",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -54,7 +54,7 @@ export const menuItemsArray = [
                         id: 115,
                         text: "Product Showcase",
                         itemId: "productShowcase",
-                        path: "",
+                        path: "product-showcase",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -70,7 +70,7 @@ export const menuItemsArray = [
                         id: 121,
                         text: "Photography Home",
                         itemId: "photographyHome",
-                        path: "",
+                        path: "photography-home",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -80,7 +80,7 @@ export const menuItemsArray = [
                         id: 122,
                         text: "Shop Divided",
                         itemId: "shopDivided",
-                        path: "",
+                        path: "shop-divided",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -89,7 +89,7 @@ export const menuItemsArray = [
                         id: 123,
                         text: "Project Showcase",
                         itemId: "projectShowcase",
-                        path: "",
+                        path: "project-showcase",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -98,7 +98,7 @@ export const menuItemsArray = [
                         id: 124,
                         text: "Boxed Showcase",
                         itemId: "boxedShowcase",
-                        path: "",
+                        path: "boxed-showcase",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -107,7 +107,7 @@ export const menuItemsArray = [
                         id: 125,
                         text: "Portfolio Gallery",
                         itemId: "portfolioGallery",
-                        path: "",
+                        path: "portfolio-gallery",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -123,7 +123,7 @@ export const menuItemsArray = [
                         id: 131,
                         text: "Conference Home",
                         itemId: "conferenceHome",
-                        path: "",
+                        path: "conference-home",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -133,7 +133,7 @@ export const menuItemsArray = [
                         id: 132,
                         text: "Shop Home",
                         itemId: "shopHome",
-                        path: "",
+                        path: "shop-home",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -142,7 +142,7 @@ export const menuItemsArray = [
                         id: 133,
                         text: "Masonry Portfolio",
                         itemId: "masonryPortfolio",
-                        path: "",
+                        path: "masonry-portfolio",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -151,7 +151,7 @@ export const menuItemsArray = [
                         id: 134,
                         text: "Split Screen Slider",
                         itemId: "splitScreenSlider",
-                        path: "",
+                        path: "split-screen-slider",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -160,7 +160,7 @@ export const menuItemsArray = [
                         id: 135,
                         text: "Fullscreen Showcase",
                         itemId: "fullscreenShowcase",
-                        path: "",
+                        path: "fullscreen-showcase",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -176,7 +176,7 @@ export const menuItemsArray = [
                         id: 141,
                         text: "Marketing Agency",
                         itemId: "marketingAgency",
-                        path: "",
+                        path: "marketing-agency",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -186,7 +186,7 @@ export const menuItemsArray = [
                         id: 142,
                         text: "Shop Masonry",
                         itemId: "shopMasonry",
-                        path: "",
+                        path: "shop-masonry",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -195,7 +195,7 @@ export const menuItemsArray = [
                         id: 143,
                         text: "Parallax Portfolio",
                         itemId: "parallaxPortfolio",
-                        path: "",
+                        path: "parallax-portfolio",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -204,7 +204,7 @@ export const menuItemsArray = [
                         id: 144,
                         text: "vCard Home",
                         itemId: "vCardHome",
-                        path: "",
+                        path: "vcard-home",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -217,7 +217,7 @@ export const menuItemsArray = [
         id: 2,
         text: "Portfolio.",
         itemId: "portfolio",
-        path: "portfolio",
+        path: null,
         active: false,
         isHover: false,
         hasSubOptions: false,
@@ -231,7 +231,7 @@ export const menuItemsArray = [
                         id: 211,
                         text: "Custom Project 1",
                         itemId: "customProject1",
-                        path: "",
+                        path: "portfolio-item/our-brands",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -241,7 +241,7 @@ export const menuItemsArray = [
                         id: 212,
                         text: "Custom Project 2",
                         itemId: "customProject2",
-                        path: "",
+                        path: "portfolio-item/work-process-3",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -250,7 +250,7 @@ export const menuItemsArray = [
                         id: 213,
                         text: "Big images",
                         itemId: "bigImages",
-                        path: "",
+                        path: "portfolio-item/welcome-take-a-look-at-our-portfolio",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -259,7 +259,7 @@ export const menuItemsArray = [
                         id: 214,
                         text: "Big slider",
                         itemId: "bigSlider",
-                        path: "",
+                        path: "portfolio-item/take-a-look-at-our-portfolio",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -268,7 +268,7 @@ export const menuItemsArray = [
                         id: 215,
                         text: "Small images",
                         itemId: "smallImages",
-                        path: "",
+                        path: "portfolio-item/small-images-fashion-2",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -277,7 +277,7 @@ export const menuItemsArray = [
                         id: 216,
                         text: "Small slider",
                         itemId: "smallSlider",
-                        path: "",
+                        path: "portfolio-item/small-slider-fashion",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -286,7 +286,7 @@ export const menuItemsArray = [
                         id: 117,
                         text: "Gallery",
                         itemId: "gallery",
-                        path: "",
+                        path: "portfolio-item/portfolio-gallery",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -295,7 +295,7 @@ export const menuItemsArray = [
                         id: 218,
                         text: "Small gallery",
                         itemId: "smallGallery",
-                        path: "",
+                        path: "portfolio-item/portfolio-small-gallery",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -311,7 +311,7 @@ export const menuItemsArray = [
                         id: 221,
                         text: "Two Columns",
                         itemId: "twoColumns",
-                        path: "",
+                        path: "two-columns",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -321,7 +321,7 @@ export const menuItemsArray = [
                         id: 222,
                         text: "Two Columns Wide",
                         itemId: "twoColumnsWide",
-                        path: "",
+                        path: "two-columns-wide",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -330,7 +330,7 @@ export const menuItemsArray = [
                         id: 223,
                         text: "Three Columns",
                         itemId: "threeColumns",
-                        path: "",
+                        path: "three-columns",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -339,7 +339,7 @@ export const menuItemsArray = [
                         id: 224,
                         text: "Three Columns Wide",
                         itemId: "threeColumnsWide",
-                        path: "",
+                        path: "three-columns-wide",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -348,7 +348,7 @@ export const menuItemsArray = [
                         id: 225,
                         text: "Four Columns",
                         itemId: "fourColumns",
-                        path: "",
+                        path: "four-columns",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -357,7 +357,7 @@ export const menuItemsArray = [
                         id: 226,
                         text: "Four Columns Wide",
                         itemId: "fourColumnsWide",
-                        path: "",
+                        path: "four-columns-wide",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -366,7 +366,7 @@ export const menuItemsArray = [
                         id: 227,
                         text: "Five Columns Wide",
                         itemId: "fiveColumnsWide",
-                        path: "",
+                        path: "five-columns-wide",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -382,7 +382,7 @@ export const menuItemsArray = [
                         id: 231,
                         text: "Overlay",
                         itemId: "overlay",
-                        path: "",
+                        path: "overlay",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -392,7 +392,7 @@ export const menuItemsArray = [
                         id: 232,
                         text: "Overlay With Info",
                         itemId: "overlayWithInfo",
-                        path: "",
+                        path: "overlay-with-info",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -401,7 +401,7 @@ export const menuItemsArray = [
                         id: 233,
                         text: "Simple Overlay",
                         itemId: "simpleOverlay",
-                        path: "",
+                        path: "simple-overlay",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -410,7 +410,7 @@ export const menuItemsArray = [
                         id: 234,
                         text: "Slide From Image Left",
                         itemId: "slideFromImageLeft",
-                        path: "",
+                        path: "slide-from-image-left",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -419,7 +419,7 @@ export const menuItemsArray = [
                         id: 235,
                         text: "Switch Image",
                         itemId: "switchImage",
-                        path: "",
+                        path: "gallery-switch-image",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -435,7 +435,7 @@ export const menuItemsArray = [
                         id: 241,
                         text: "Standard",
                         itemId: "standard",
-                        path: "",
+                        path: "portfolio-standard",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -445,7 +445,7 @@ export const menuItemsArray = [
                         id: 242,
                         text: "Gallery",
                         itemId: "gallery",
-                        path: "",
+                        path: "gallery",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -454,7 +454,7 @@ export const menuItemsArray = [
                         id: 243,
                         text: "Gallery With Space",
                         itemId: "galleryWithSpace",
-                        path: "",
+                        path: "gallery-with-space",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -463,7 +463,7 @@ export const menuItemsArray = [
                         id: 244,
                         text: "Masonry",
                         itemId: "masonry",
-                        path: "",
+                        path: "masonry",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -472,7 +472,7 @@ export const menuItemsArray = [
                         id: 245,
                         text: "Masonry Wide",
                         itemId: "masonryWide",
-                        path: "",
+                        path: "masonry-wide",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -481,7 +481,7 @@ export const menuItemsArray = [
                         id: 246,
                         text: "Metro",
                         itemId: "metro",
-                        path: "",
+                        path: "metro",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -490,7 +490,7 @@ export const menuItemsArray = [
                         id: 247,
                         text: "Pinterest 3 columns",
                         itemId: "pinterest3Columns",
-                        path: "",
+                        path: "pinterest-3-columns",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -503,7 +503,7 @@ export const menuItemsArray = [
         id: 3,
         text: "Pages.",
         itemId: "pages",
-        path: "pages",
+        path: null,
         active: false,
         isHover: false,
         hasSubOptions: false,
@@ -517,7 +517,7 @@ export const menuItemsArray = [
                         id: 311,
                         text: "About Us",
                         itemId: "aboutUs",
-                        path: "",
+                        path: "about-us",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -527,7 +527,7 @@ export const menuItemsArray = [
                         id: 312,
                         text: "About Me",
                         itemId: "aboutMe",
-                        path: "",
+                        path: "about-me",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -536,7 +536,7 @@ export const menuItemsArray = [
                         id: 313,
                         text: "Meet The Team",
                         itemId: "meetTheTeam",
-                        path: "",
+                        path: "meet-the-team",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -545,7 +545,7 @@ export const menuItemsArray = [
                         id: 314,
                         text: "Our Services",
                         itemId: "ourServices",
-                        path: "",
+                        path: "our-services",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -554,7 +554,7 @@ export const menuItemsArray = [
                         id: 315,
                         text: "Our Process",
                         itemId: "ourProcess",
-                        path: "",
+                        path: "our-process",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -563,7 +563,7 @@ export const menuItemsArray = [
                         id: 316,
                         text: "FAQ Page",
                         itemId: "faqPage",
-                        path: "",
+                        path: "faq-page",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -572,7 +572,7 @@ export const menuItemsArray = [
                         id: 317,
                         text: "Contact Us",
                         itemId: "contactUs",
-                        path: "",
+                        path: "contact-us",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -581,7 +581,7 @@ export const menuItemsArray = [
                         id: 318,
                         text: "Get In Touch",
                         itemId: "getInTouch",
-                        path: "",
+                        path: "get-in-touch",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -590,7 +590,7 @@ export const menuItemsArray = [
                         id: 319,
                         text: "Coming Soon",
                         itemId: "comingSoon",
-                        path: "",
+                        path: "coming-soon",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -599,7 +599,7 @@ export const menuItemsArray = [
                         id: 320,
                         text: "404 Erroe Page",
                         itemId: "404ErroePage",
-                        path: "",
+                        path: "error",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -612,7 +612,7 @@ export const menuItemsArray = [
         id: 4,
         text: "Blog.",
         itemId: "blog",
-        path: "blog",
+        path: null,
         active: false,
         isHover: false,
         hasSubOptions: true,
@@ -626,7 +626,7 @@ export const menuItemsArray = [
                         id: 411,
                         text: "Blog List Standard",
                         itemId: "blogListStandard",
-                        path: "",
+                        path: "blog-list-standard",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -636,7 +636,7 @@ export const menuItemsArray = [
                         id: 412,
                         text: "Left Sidebar Blog",
                         itemId: "leftSidebarBlog",
-                        path: "",
+                        path: "left-sidebar-blog",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -645,7 +645,7 @@ export const menuItemsArray = [
                         id: 413,
                         text: "No Sidebar Blog",
                         itemId: "noSidebarBlog",
-                        path: "",
+                        path: "no-sidebar-blog",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -654,7 +654,7 @@ export const menuItemsArray = [
                         id: 414,
                         text: "Masonry Blog",
                         itemId: "masonryBlog",
-                        path: "",
+                        path: "masonry-blog",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -663,7 +663,7 @@ export const menuItemsArray = [
                         id: 415,
                         text: "Post Singles",
                         itemId: "postSingles",
-                        path: "",
+                        path: null,
                         active: false,
                         isHover: "init",
                         subOptions: [
@@ -671,7 +671,7 @@ export const menuItemsArray = [
                                 id: 4151,
                                 text: "Standard",
                                 itemId: "standard",
-                                path: "",
+                                path: "empowering-leaders-to-live-life-on-purpose",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -680,7 +680,7 @@ export const menuItemsArray = [
                                 id: 4152,
                                 text: "Gallery Post",
                                 itemId: "galleryPost",
-                                path: "",
+                                path: "gallery-post",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -689,7 +689,7 @@ export const menuItemsArray = [
                                 id: 4153,
                                 text: "Link Post",
                                 itemId: "linkPost",
-                                path: "",
+                                path: "document-everything-people-are-voracious-for-the-products-of-people-what-helps-people-helps-business",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -698,7 +698,7 @@ export const menuItemsArray = [
                                 id: 4154,
                                 text: "Quote Post",
                                 itemId: "quotePost",
-                                path: "",
+                                path: "quote-post",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -707,7 +707,7 @@ export const menuItemsArray = [
                                 id: 4155,
                                 text: "Audio Post",
                                 itemId: "audioPost",
-                                path: "",
+                                path: "audio-post",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -716,7 +716,7 @@ export const menuItemsArray = [
                                 id: 4156,
                                 text: "Video Post",
                                 itemId: "videoPost",
-                                path: "",
+                                path: "video-post",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -745,7 +745,7 @@ export const menuItemsArray = [
                         id: 511,
                         text: "Shop Single",
                         itemId: "shopSingle",
-                        path: "",
+                        path: "product/yellow-t-shirt",
                         active: true,
                         isHover: "init",
                         subOptions: []
@@ -755,7 +755,7 @@ export const menuItemsArray = [
                         id: 512,
                         text: "Mansory Shop",
                         itemId: "mansoryShop",
-                        path: "",
+                        path: "shop-masonry",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -764,7 +764,7 @@ export const menuItemsArray = [
                         id: 513,
                         text: "Product types",
                         itemId: "productTypes",
-                        path: "",
+                        path: null,
                         active: false,
                         isHover: "init",
                         subOptions: [
@@ -772,7 +772,7 @@ export const menuItemsArray = [
                                 id: 5131,
                                 text: "Standard Product",
                                 itemId: "standardProduct",
-                                path: "",
+                                path: "product/black-t-shirt",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -781,7 +781,7 @@ export const menuItemsArray = [
                                 id: 5132,
                                 text: "Variable Product",
                                 itemId: "variableProduct",
-                                path: "",
+                                path: "product/yellow-t-shirt",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -790,7 +790,7 @@ export const menuItemsArray = [
                                 id: 5133,
                                 text: "Grouped Product",
                                 itemId: "groupedProduct",
-                                path: "",
+                                path: "product/white-t-shirt",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -799,7 +799,7 @@ export const menuItemsArray = [
                                 id: 5134,
                                 text: "External Product",
                                 itemId: "externalProduct",
-                                path: "",
+                                path: "product/black-t-shirt-2",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -808,7 +808,7 @@ export const menuItemsArray = [
                                 id: 5135,
                                 text: "Downloadable Product",
                                 itemId: "downloadableProduct",
-                                path: "",
+                                path: "product/yellow-t-shirt-2",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -817,7 +817,7 @@ export const menuItemsArray = [
                                 id: 5136,
                                 text: "Virtual Product",
                                 itemId: "virtualProduct",
-                                path: "",
+                                path: "product/gray-t-shirt",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -828,7 +828,7 @@ export const menuItemsArray = [
                         id: 514,
                         text: "Layouts",
                         itemId: "layouts",
-                        path: "",
+                        path: null,
                         active: false,
                         isHover: "init",
                         subOptions: [
@@ -836,7 +836,7 @@ export const menuItemsArray = [
                                 id: 5141,
                                 text: "Left Sidebar",
                                 itemId: "leftSidebar",
-                                path: "",
+                                path: "modern-shop",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -845,7 +845,7 @@ export const menuItemsArray = [
                                 id: 5142,
                                 text: "Shop 3 Columns",
                                 itemId: "shop3Columns",
-                                path: "",
+                                path: "shop-three-columns",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -854,7 +854,7 @@ export const menuItemsArray = [
                                 id: 5143,
                                 text: "Shop 4 Columns",
                                 itemId: "shop4Columns",
-                                path: "",
+                                path: "shop-four-columns",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -863,7 +863,7 @@ export const menuItemsArray = [
                                 id: 5144,
                                 text: "Shop 4 Columns Wide",
                                 itemId: "shop4ColumnsWide",
-                                path: "",
+                                path: "shop-four-columns-wide",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -872,7 +872,7 @@ export const menuItemsArray = [
                                 id: 5145,
                                 text: "Shop 5 Columns Wide",
                                 itemId: "shop5ColumnsWide",
-                                path: "",
+                                path: "shop-five-columns-wide",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -883,7 +883,7 @@ export const menuItemsArray = [
                         id: 515,
                         text: "Shop Pages",
                         itemId: "shopPages",
-                        path: "",
+                        path: null,
                         active: false,
                         isHover: "init",
                         subOptions: [
@@ -891,7 +891,7 @@ export const menuItemsArray = [
                                 id: 5151,
                                 text: "My Account",
                                 itemId: "myAccount",
-                                path: "",
+                                path: "my-account",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -900,7 +900,7 @@ export const menuItemsArray = [
                                 id: 5152,
                                 text: "Cart",
                                 itemId: "cart",
-                                path: "",
+                                path: "cart",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -909,7 +909,7 @@ export const menuItemsArray = [
                                 id: 5153,
                                 text: "Checkout",
                                 itemId: "checkout",
-                                path: "",
+                                path: "checkout",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []
@@ -924,7 +924,7 @@ export const menuItemsArray = [
         id: 6,
         text: "Elements.",
         itemId: "elements",
-        path: "elements",
+        path: null,
         active: false,
         isHover: false,
         hasSubOptions: false,
@@ -938,7 +938,7 @@ export const menuItemsArray = [
                         id: 611,
                         text: "Accordions",
                         itemId: "accordions",
-                        path: "",
+                        path: "accordions",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -948,7 +948,7 @@ export const menuItemsArray = [
                         id: 612,
                         text: "Tabs",
                         itemId: "tabs",
-                        path: "",
+                        path: "tabs",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -957,7 +957,7 @@ export const menuItemsArray = [
                         id: 613,
                         text: "Call To Action",
                         itemId: "callToAction",
-                        path: "",
+                        path: "call-to-action",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -966,7 +966,7 @@ export const menuItemsArray = [
                         id: 614,
                         text: "Testimonials",
                         itemId: "testimonials",
-                        path: "",
+                        path: "testimonials",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -975,7 +975,7 @@ export const menuItemsArray = [
                         id: 615,
                         text: "Team",
                         itemId: "team",
-                        path: "",
+                        path: "team",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -984,7 +984,7 @@ export const menuItemsArray = [
                         id: 616,
                         text: "Contact Form",
                         itemId: "contactForm",
-                        path: "",
+                        path: "contact-form",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -993,7 +993,7 @@ export const menuItemsArray = [
                         id: 617,
                         text: "Icon With Text",
                         itemId: "iconWithText",
-                        path: "",
+                        path: "icon-with-text",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1002,7 +1002,7 @@ export const menuItemsArray = [
                         id: 618,
                         text: "Banner",
                         itemId: "banner",
-                        path: "",
+                        path: "banner",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1011,7 +1011,7 @@ export const menuItemsArray = [
                         id: 619,
                         text: "Buttons",
                         itemId: "buttons",
-                        path: "",
+                        path: "buttons",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1027,7 +1027,7 @@ export const menuItemsArray = [
                         id: 621,
                         text: "Pricing Tables",
                         itemId: "pricingTables",
-                        path: "",
+                        path: "pricing-tables",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1037,7 +1037,7 @@ export const menuItemsArray = [
                         id: 622,
                         text: "Pie Charts",
                         itemId: "pieCharts",
-                        path: "",
+                        path: "pie-charts",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1046,7 +1046,7 @@ export const menuItemsArray = [
                         id: 623,
                         text: "Counters",
                         itemId: "counters",
-                        path: "",
+                        path: "counters",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1055,7 +1055,7 @@ export const menuItemsArray = [
                         id: 624,
                         text: "Countdown",
                         itemId: "countdown",
-                        path: "",
+                        path: "countdown",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1064,7 +1064,7 @@ export const menuItemsArray = [
                         id: 625,
                         text: "Clients",
                         itemId: "clients",
-                        path: "",
+                        path: "clients",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1073,7 +1073,7 @@ export const menuItemsArray = [
                         id: 626,
                         text: "Progress Bar",
                         itemId: "progressBar",
-                        path: "",
+                        path: "progress-bar",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1082,7 +1082,7 @@ export const menuItemsArray = [
                         id: 627,
                         text: "Google Maps",
                         itemId: "googleMaps",
-                        path: "",
+                        path: "google-maps",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1098,7 +1098,7 @@ export const menuItemsArray = [
                         id: 631,
                         text: "Headings",
                         itemId: "headings",
-                        path: "",
+                        path: "headings",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1108,7 +1108,7 @@ export const menuItemsArray = [
                         id: 632,
                         text: "Lists",
                         itemId: "lists",
-                        path: "",
+                        path: "lists",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1117,7 +1117,7 @@ export const menuItemsArray = [
                         id: 633,
                         text: "Highlights",
                         itemId: "highlights",
-                        path: "",
+                        path: "highlights",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1126,7 +1126,7 @@ export const menuItemsArray = [
                         id: 634,
                         text: "Dropcaps",
                         itemId: "dropcaps",
-                        path: "",
+                        path: "dropcaps",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1135,7 +1135,7 @@ export const menuItemsArray = [
                         id: 635,
                         text: "Columns",
                         itemId: "columns",
-                        path: "",
+                        path: "columns",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1144,7 +1144,7 @@ export const menuItemsArray = [
                         id: 636,
                         text: "Blockquote",
                         itemId: "blockquote",
-                        path: "",
+                        path: "blockquote",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1153,7 +1153,7 @@ export const menuItemsArray = [
                         id: 637,
                         text: "Shop List",
                         itemId: "shopList",
-                        path: "",
+                        path: "shop-list",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1163,7 +1163,7 @@ export const menuItemsArray = [
                         id: 638,
                         text: "Blog List",
                         itemId: "blogList",
-                        path: "",
+                        path: "blog-list",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1179,7 +1179,7 @@ export const menuItemsArray = [
                         id: 641,
                         text: "Text Marquee",
                         itemId: "textMarquee",
-                        path: "",
+                        path: "text-marquee",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1189,7 +1189,7 @@ export const menuItemsArray = [
                         id: 642,
                         text: "Scroll Slider",
                         itemId: "scrollSlider",
-                        path: "",
+                        path: "scroll-slider",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1198,7 +1198,7 @@ export const menuItemsArray = [
                         id: 643,
                         text: "Product Pair",
                         itemId: "productPair",
-                        path: "",
+                        path: "product-pair",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1207,7 +1207,7 @@ export const menuItemsArray = [
                         id: 644,
                         text: "Portfolio Project Showcase",
                         itemId: "portfolioProjectShowcase",
-                        path: "",
+                        path: "portfolio-project-showcase",
                         active: false,
                         isHover: "init",
                         subOptions: []
