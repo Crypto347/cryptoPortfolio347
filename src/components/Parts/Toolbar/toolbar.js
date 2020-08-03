@@ -82,11 +82,12 @@ export const Toolbar = (props) => {
 
     // const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
+    const [sidebarState, setSidebarState] = useState("init")
     const [isHovering, setIsHovering] = useState(null);
     const [showOptionsRegular, setShowOptionsRegular] = useState(false);
-    const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
+    // const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
     const [toolbarItemData, setToolbarItemData] = useState({});
-    const [showOptionsLessThan3Regular, setShowOptionsLessThan3Regular] = useState(false)
+    const [showOptionsLessThan3Regular, setShowOptionsLessThan3Regular] = useState(false);
 
     /**
     * Methods
@@ -119,8 +120,8 @@ export const Toolbar = (props) => {
               
                 return;
             case 'animated': 
-                setShowOptionsAnimated(true);
-                setToolbarItemData(data);
+                // setShowOptionsAnimated(true);
+                // setToolbarItemData(data);
                 return;
         }
     }
@@ -137,8 +138,8 @@ export const Toolbar = (props) => {
                 }
                 return;
             case 'animated': 
-                setShowOptionsAnimated(false);
-                setToolbarItemData({});
+                // setShowOptionsAnimated(false);
+                // setToolbarItemData({});
                 return;
         }
     }
@@ -157,6 +158,16 @@ export const Toolbar = (props) => {
        
     }
 
+    const menuOnClick = () => {
+        switch(sidebarState){
+            case 'open':
+                return setSidebarState("close");
+            case 'close':
+                return setSidebarState("open");
+        }
+        setSidebarState("open");
+    }
+
     // const handleScroll = () => {
     //     setMenuIsShown(false);
     // }
@@ -170,29 +181,40 @@ export const Toolbar = (props) => {
     //     setMenuIsShown(!menuIsShown);
     // }
 
-    const renderToolbarItems = () => {
-        return(
-            <div className="toolbar-items">{props.menuItems.map((el,i) => {
-                return(
-                        <ToolbarItem 
-                            key={i}
-                            // text={el.text}
-                            // active={el.active}
-                            // hoverToolbarItem={el.isHover}
-                            toolbarMainColor={props.toolbarMainColor}
-                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
-                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
-                            showOptionsRegular={showOptionsLessThan3Regular}
-                            onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
-                            onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                            itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
-                            renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
-                            data={el}
-                            // hasSubOptions={el.hasSubOptions}
-                        />
-                )
-            })}</div>
-        )
+    const renderClassName = (opt, isHovering, active) => {
+        if(opt === "arrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-hide";
+                case 'on':
+                    return "arrow-wrapper-hover-on";
+                case 'off':
+                    return "arrow-wrapper-hover-off";
+            }
+        }
+        if(opt === "text"){
+            if(active){
+                return "toolbar-option-item-text-active";
+            }
+            switch(isHovering){
+                case 'init':
+                    return "toolbar-option-item-text";
+                case 'on':
+                    return "toolbar-option-item-text-hover-on";
+                case 'off':
+                    return "toolbar-option-item-text-hover-off";
+            } 
+        }
+        if(opt === "menuSmallScreenButton"){
+            switch(isHovering){
+                case 'init':
+                    return "toolbar-menu";
+                case 'open':
+                    return "toolbar-menu-open";
+                case 'close':
+                    return "toolbar-menu-close";
+            }
+        }
     }
 
     const renderMenuDots = () => {
@@ -323,9 +345,15 @@ export const Toolbar = (props) => {
         if(option === "smallScreen"){
             return(
                 <div className="toolbar-small-screen">
-                    <div className="toolbar-menu">
+                    <div
+                        className={renderClassName("menuSmallScreenButton", sidebarState)}
+                        onClick={menuOnClick}
+                    >
                         <div className="toolbar-menu-line"/>
-                        <div className="toolbar-menu-line"/>
+                        <div className="toolbar-menu-middle-line">
+                            <div className="toolbar-menu-left-half-line"/>
+                            <div className="toolbar-menu-right-half-line"/>
+                        </div>
                         <div className="toolbar-menu-line"/>
                     </div>
                     <div className="toolbar-logo">crypto.</div>
@@ -361,6 +389,31 @@ export const Toolbar = (props) => {
         }
     }
 
+    const renderToolbarItems = () => {
+        return(
+            <div className="toolbar-items">{props.menuItems.map((el,i) => {
+                return(
+                        <ToolbarItem 
+                            key={i}
+                            // text={el.text}
+                            // active={el.active}
+                            // hoverToolbarItem={el.isHover}
+                            toolbarMainColor={props.toolbarMainColor}
+                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
+                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
+                            showOptionsRegular={showOptionsLessThan3Regular}
+                            onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
+                            onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
+                            itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
+                            renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
+                            data={el}
+                            // hasSubOptions={el.hasSubOptions}
+                        />
+                )
+            })}</div>
+        )
+    }
+
     const renderToolbarOptions = () => {
         return(
             <div className="toolbar-regular-screen-options-wrapper">{toolbarItemData.options.map((el, i) => {
@@ -377,34 +430,6 @@ export const Toolbar = (props) => {
                 )
             })}</div>
         )
-    }
-
-    const renderClassName = (opt, isHovering, active) => {
-        if(opt === "arrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper-hide";
-                case 'on':
-                    return "arrow-wrapper-hover-on";
-                case 'off':
-                    return "arrow-wrapper-hover-off";
-            }
-        }
-        if(opt === "text"){
-            if(active){
-                return "toolbar-option-item-text-active";
-            }
-            switch(isHovering){
-                case 'init':
-                    return "toolbar-option-item-text";
-                case 'on':
-                    return "toolbar-option-item-text-hover-on";
-                case 'off':
-                    return "toolbar-option-item-text-hover-off";
-            }
-            
-        }
-       
     }
 
     const renderToolbarOptionItems = (obj) => {
@@ -447,6 +472,8 @@ export const Toolbar = (props) => {
             })}</>
         )
     }
+
+   
 
     /**
     * Markup

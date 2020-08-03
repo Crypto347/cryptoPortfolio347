@@ -239,11 +239,11 @@ const setActivityOfToolbarOptionItem = (state, action) => {
         let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
         let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
         updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
-        console.log(objPrevActiveToolbarItem)
+        
         let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
         let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
         updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
-        console.log(objNewActiveToolbarItem)
+        
     }
 
     updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
@@ -300,11 +300,10 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
         let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
         let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
         updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
-        console.log(objPrevActiveToolbarItem)
+
         let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
         let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
         updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
-        console.log(objNewActiveToolbarItem)
     }
 
     updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {

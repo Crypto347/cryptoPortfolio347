@@ -1168,7 +1168,6 @@
 }
 
 
-
 .toolbar-small-screen {
     position: relative;
     width: calc(100% - 78px);
@@ -1183,6 +1182,35 @@
     z-index: 700;
     margin-bottom: 20px;
     .toolbar-menu {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+        .toolbar-menu-middle-line {
+            display: flex;
+            .toolbar-menu-left-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 0 0 3px;
+                width: 5.5px;
+            }
+            .toolbar-menu-right-half-line {
+                border: 1px solid rgb(37, 37, 37);
+                margin: 0 3px 0 0;
+                width: 5.5px;
+            }
+        }
+    }
+    .toolbar-menu-open {
+        cursor: pointer;
+        .toolbar-menu-line {
+            border: 1px solid rgb(37, 37, 37);
+            margin: 3px;
+            width: 13px;
+        }
+    }
+    .toolbar-menu-close {
         cursor: pointer;
         .toolbar-menu-line {
             border: 1px solid rgb(37, 37, 37);
