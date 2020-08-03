@@ -191,7 +191,7 @@ const setIsHoveringToolbarSubOptionItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[2]),
             isHover: action.val
         }
-console.log(subOptionItem)
+        
         let subOptionItemIndex = updatedMenuItems
             .find(item => item.isHover === true).options
             .find(item => item.id === action.pathOfIds[0]).array

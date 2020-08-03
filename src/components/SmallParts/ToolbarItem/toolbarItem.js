@@ -43,8 +43,14 @@ export const ToolbarItem = (props) => {
     * Methods
     */
 
-    const toolbarOptionItemOnClick = (path, id) => {
-        console.log(path, id)
+    const toolbarOptionItemOnClick = (path, pathOfIds) => {
+        console.log(path, pathOfIds)
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        // props.activateMenuItem(id);
+    }
+
+    const toolbarSubOptionItemOnClick = (path, pathOfIds) => {
+        console.log(path, pathOfIds)
         // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
         // props.activateMenuItem(id);
     }
@@ -134,7 +140,7 @@ export const ToolbarItem = (props) => {
                             <div 
                                 key={i} 
                                 className="toolbar-option-item"
-                                onClick={() => toolbarOptionItemOnClick(el.path, el.id)}
+                                onClick={() => toolbarOptionItemOnClick(el.path, pathOfIds)}
                             >
                                 <div 
                                     className={renderClassName("text", el.isHover, el.active)}
@@ -221,9 +227,12 @@ export const ToolbarItem = (props) => {
                 {subOptions.map((el, i) => {
                     let updatedPathOfIds = [...pathOfIds];
                     updatedPathOfIds.push(el.id);
-                    console.log(updatedPathOfIds)
                 return(
-                    <div key={i} className="toolbar-sub-option-item">
+                    <div 
+                        key={i} 
+                        className="toolbar-sub-option-item"
+                        onClick={() => toolbarOptionItemOnClick(el.path, updatedPathOfIds)}
+                    >
                         <div 
                             className={renderClassName("text", el.isHover, el.active)}
                             onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
