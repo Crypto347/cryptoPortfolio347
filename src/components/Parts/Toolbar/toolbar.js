@@ -241,51 +241,78 @@ export const Toolbar = (props) => {
                             </div>
                         </div>
                     </div>
-                    {/* <div onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}> */}
-                        {showOptionsRegular ? 
-                        <div 
-                            className="toolbar-regular-screen-options"
-                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
-                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
-                        >
-                            <EH20/>
-                            <EH10/>
-                            {renderToolbarOptions()}
-                            <EH10/>
-                            <EH20/>
-                        </div> : null}
-                    {/* </div> */}
+                    {showOptionsRegular ? 
+                    <div 
+                        className="toolbar-regular-screen-options"
+                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
+                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
+                    >
+                        <div  className="grey-line"/>
+                        <EH20/>
+                        <EH10/>
+                        {renderToolbarOptions()}
+                        <EH10/>
+                        <EH20/>
+                    </div> : null}
                 </>
             )
         }
         if(option === "regularScreenAnimated"){
             return(
-                <CSSTransition
-                    in={props.scrollingUp} 
-                    timeout={5000}
-                    // mountOnEnter
-                    // unmountOnExit
-                    classNames={{
-                        enter: ``,
-                        enterActive: `toolbar-regular-screen-animated-open`,
-                        exit: ``,
-                        exitActive: `toolbar-regular-screen-animated-close`,
-                    }}
-                >  
-                    <div className={props.scrollingUp ? "toolbar-regular-screen-animated-mounted" : "toolbar-regular-screen-animated-unmounted"}>
-                        <div className="toolbar-logo">crypto.</div>
-                        <div className="toolbar-wrapper">
-                            {renderToolbarItems()}
-                            <div 
-                                className="toolbar-menu"
-                                onMouseEnter={handleMouseEnterMenuIcon} 
-                                onMouseLeave={handleMouseLeaveMenuIcon}
-                            >
-                                {renderMenuDots()}
+                <div className="wrapper">
+                    <CSSTransition
+                        in={props.scrollingUp} 
+                        timeout={5000}
+                        // mountOnEnter
+                        // unmountOnExit
+                        classNames={{
+                            enter: ``,
+                            enterActive: `toolbar-regular-screen-animated-open`,
+                            exit: ``,
+                            exitActive: `toolbar-regular-screen-animated-close`,
+                        }}
+                    >  
+                        <div className={props.scrollingUp ? "toolbar-regular-screen-animated-mounted" : "toolbar-regular-screen-animated-unmounted"}>
+                            <div className="toolbar-logo">crypto.</div>
+                            <div className="toolbar-wrapper">
+                                {renderToolbarItems()}
+                                <div 
+                                    className="toolbar-menu"
+                                    onMouseEnter={handleMouseEnterMenuIcon} 
+                                    onMouseLeave={handleMouseLeaveMenuIcon}
+                                >
+                                    {renderMenuDots()}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </CSSTransition>
+                    </CSSTransition>
+                    {showOptionsRegular ? 
+                    <CSSTransition
+                        in={props.scrollingUp} 
+                        timeout={5000}
+                        // mountOnEnter
+                        // unmountOnExit
+                        classNames={{
+                            enter: ``,
+                            enterActive: `toolbar-regular-screen-animated-options-open`,
+                            exit: ``,
+                            exitActive: `toolbar-regular-screen-animated-options-close`,
+                        }}
+                    >  
+                        <div 
+                            className="toolbar-regular-screen-animated-options"
+                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
+                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
+                        >
+                            <div  className="grey-line"/>
+                            <EH20/>
+                            <EH10/>
+                            {renderToolbarOptions()}
+                            <EH10/>
+                            <EH20/>
+                        </div>
+                    </CSSTransition>  : null}
+                </div>
             )
         }
         if(option === "smallScreen"){
