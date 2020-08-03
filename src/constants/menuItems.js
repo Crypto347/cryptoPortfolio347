@@ -746,7 +746,7 @@ export const menuItemsArray = [
                         text: "Shop Single",
                         itemId: "shopSingle",
                         path: "product/yellow-t-shirt",
-                        active: true,
+                        active: false,
                         isHover: "init",
                         subOptions: []
         

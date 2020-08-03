@@ -63,3 +63,10 @@ export function setIsHoveringToolbarSubOptionItem(val, pathOfIds) {
         pathOfIds: pathOfIds
     };
 };
+
+export function setActivityOfToolbarOptionItem(pathOfIds) {
+    return { 
+        type: actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_OPTION_ITEM,
+        pathOfIds: pathOfIds
+    };
+};

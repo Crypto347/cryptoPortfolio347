@@ -19,6 +19,18 @@
             animation: appear .5s linear;
         }
     }
+    .toolbar-item-white-active {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 17px;
+        font-weight: bold;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 10px;
+        color: rgb(155, 155, 155);
+        opacity: 0.7;
+        cursor: pointer;
+    }
     
     .toolbar-item-regular {
         font-family: 'Balsamiq Sans', cursive;
@@ -39,6 +51,18 @@
             animation: appear .5s linear;
         }
       
+    }
+    .toolbar-item-regular-active {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 17px;
+        font-weight: bold;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 10px;
+        color: rgb(155, 155, 155);
+        opacity: 0.7;
+        cursor: pointer;      
     }
     .toolbar-item-options {
         position: absolute;
@@ -888,69 +912,3 @@
     from{opacity: 1;}
     to {opacity: 0.7;}
 }
-
-// @-webkit-keyframes appearText {
-//     0%{
-//         opacity: 0;
-//     }
-//     90% {
-//         opacity: 1;
-//     }
-// }
-// @-moz-keyframes appearText {
-//     0%{
-//         opacity: 0;
-//     }
-//     90% {
-//         opacity: 1;
-//     }
-// }
-// @-o-keyframes appearText {
-//     0%{
-//         opacity: 0;
-//     }
-//     90% {
-//         opacity: 1;
-//     }
-// }
-// @keyframes appearText {
-//     0%{
-//         opacity: 0;
-//     }
-//     90% {
-//         opacity: 1;
-//     }
-// }
-
-// @-webkit-keyframes disappearText {
-//     0%{
-//         opacity: 1;
-//     }
-//     70% {
-//         opacity: 0;
-//     }
-// }
-// @-moz-keyframes disappearText {
-//     0%{
-//         opacity: 1;
-//     }
-//     70% {
-//         opacity: 0;
-//     }
-// }
-// @-o-keyframes disappearText {
-//     0%{
-//         opacity: 1;
-//     }
-//     70% {
-//         opacity: 0;
-//     }
-// }
-// @keyframes disappearText {
-//     0%{
-//         opacity: 1;
-//     }
-//     70% {
-//         opacity: 0;
-//     }
-// }

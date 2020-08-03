@@ -231,6 +231,55 @@ const setIsHoveringToolbarSubOptionItem = (state, action) => {
     };
 }
 
+const setActivityOfToolbarOptionItem = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+    let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
+    let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
+    let hoveredToolbarItemId = updatedMenuItems.find(item => item.isHover === true).id;
+    if(previouslyActiveToolbarItemId !==  hoveredToolbarItemId){
+        let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
+        let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
+        updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
+        console.log(objPrevActiveToolbarItem)
+        let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
+        let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
+        updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
+        console.log(objNewActiveToolbarItem)
+    }
+
+    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2,i2) => {
+            return{
+                ...el2,
+                active: false
+            }
+        })
+    })
+    
+    let optionItem = {
+        ...updatedMenuItems
+        .find(item => item.isHover === true).options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .find(item => item.id === action.pathOfIds[1]),
+        active: true
+    }
+
+    let optionItemIndex = updatedMenuItems
+        .find(item => item.isHover === true).options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+    updatedMenuItems
+        .find(item => item.isHover === true).options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .splice(optionItemIndex, 1, optionItem);
+
+    return {
+        ...state,
+        menuItems: updatedMenuItems
+    };
+}
+
 
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
@@ -361,6 +410,9 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setIsHoveringToolbarOptionItem(state, action); 
         case actionTypes.SET_IS_HOVERING_TOOLBAR_SUB_OPTION_ITEM:
             return setIsHoveringToolbarSubOptionItem(state, action); 
+        case actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_OPTION_ITEM:
+            return setActivityOfToolbarOptionItem(state, action); 
+        
         default: 
             return state;
     }

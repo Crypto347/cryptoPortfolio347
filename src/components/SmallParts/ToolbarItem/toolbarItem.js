@@ -46,7 +46,7 @@ export const ToolbarItem = (props) => {
     const toolbarOptionItemOnClick = (path, pathOfIds) => {
         console.log(path, pathOfIds)
         // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        // props.activateMenuItem(id);
+        props.setActivityOfToolbarOptionItem(pathOfIds);
     }
 
     const toolbarSubOptionItemOnClick = (path, pathOfIds) => {
@@ -105,7 +105,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-option-item"
-                            onClick={() => toolbarOptionItemOnClick(el.path, el.id)}
+                            onClick={() => toolbarOptionItemOnClick(el.path, pathOfIds)}
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
@@ -275,7 +275,7 @@ export const ToolbarItem = (props) => {
             onMouseEnter={props.onMouseEnter} 
             onMouseLeave={props.onMouseLeave}
            >
-            <div className={`toolbar-item-${props.toolbarMainColor}`}>
+            <div className={props.data.active ? `toolbar-item-${props.toolbarMainColor}-active` : `toolbar-item-${props.toolbarMainColor}`}>
                 {props.data.text}
         
             </div>
@@ -293,5 +293,6 @@ export const ToolbarItem = (props) => {
         </div>
     );
 }
- export default ToolbarItem;
+ 
+export default ToolbarItem;
  

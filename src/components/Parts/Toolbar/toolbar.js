@@ -171,6 +171,7 @@ export const Toolbar = (props) => {
                             showOptionsRegular={showOptionsLessThan3Regular}
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
+                            setActivityOfToolbarOptionItem={props.setActivityOfToolbarOptionItem}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
                             // hasSubOptions={el.hasSubOptions}
@@ -397,7 +398,11 @@ export const Toolbar = (props) => {
             <>{obj.array.map((el, i) => {
                 let pathOfIds = [obj.id, el.id]
                 return(
-                    <div key={i} className="toolbar-option-item">
+                    <div 
+                        key={i} 
+                        className="toolbar-option-item"
+                        onClick={() => props.setActivityOfToolbarOptionItem(pathOfIds)}
+                    >
                         {el.active ? 
                         <div className="arrow-wrapper-active">
                             <div className="arrow-horizontal-line"></div>
@@ -451,6 +456,7 @@ export default connect(
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
             setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
             setIsHoveringToolbarOptionItem: bindActionCreators(Actions.setIsHoveringToolbarOptionItem, dispatch),
+            setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
         };
     }
