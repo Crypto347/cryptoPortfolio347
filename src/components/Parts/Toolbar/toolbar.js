@@ -143,6 +143,20 @@ export const Toolbar = (props) => {
         }
     }
 
+    const itemOnClick = (opt, path, pathOfIds) => {
+        switch(opt){
+            case 'optionItem': 
+                props.setActivityOfToolbarOptionItem(pathOfIds);
+                return;
+            case 'subOptionItem': 
+                props.setActivityOfToolbarOptionItem(pathOfIds);
+                return;
+        }
+        console.log(path, pathOfIds)
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+       
+    }
+
     // const handleScroll = () => {
     //     setMenuIsShown(false);
     // }
@@ -171,7 +185,7 @@ export const Toolbar = (props) => {
                             showOptionsRegular={showOptionsLessThan3Regular}
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                            setActivityOfToolbarOptionItem={props.setActivityOfToolbarOptionItem}
+                            itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
                             // hasSubOptions={el.hasSubOptions}
@@ -401,7 +415,7 @@ export const Toolbar = (props) => {
                     <div 
                         key={i} 
                         className="toolbar-option-item"
-                        onClick={() => props.setActivityOfToolbarOptionItem(pathOfIds)}
+                        onClick={() => itemOnClick("optionItem", el.path, pathOfIds)}
                     >
                         {el.active ? 
                         <div className="arrow-wrapper-active">

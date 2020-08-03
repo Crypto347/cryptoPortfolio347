@@ -43,16 +43,18 @@ export const ToolbarItem = (props) => {
     * Methods
     */
 
-    const toolbarOptionItemOnClick = (path, pathOfIds) => {
+    const itemOnClick = (opt, path, pathOfIds) => {
+        switch(opt){
+            case 'optionItem': 
+                props.setActivityOfToolbarOptionItem(pathOfIds);
+                return;
+            case 'subOptionItem': 
+                props.setActivityOfToolbarOptionItem(pathOfIds);
+                return;
+        }
         console.log(path, pathOfIds)
         // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        props.setActivityOfToolbarOptionItem(pathOfIds);
-    }
-
-    const toolbarSubOptionItemOnClick = (path, pathOfIds) => {
-        console.log(path, pathOfIds)
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        // props.activateMenuItem(id);
+       
     }
 
     const renderClassName = (opt, isHovering, active) => {
@@ -105,7 +107,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-option-item"
-                            onClick={() => toolbarOptionItemOnClick(el.path, pathOfIds)}
+                            onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
@@ -140,7 +142,7 @@ export const ToolbarItem = (props) => {
                             <div 
                                 key={i} 
                                 className="toolbar-option-item"
-                                onClick={() => toolbarOptionItemOnClick(el.path, pathOfIds)}
+                                onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
                             >
                                 <div 
                                     className={renderClassName("text", el.isHover, el.active)}
