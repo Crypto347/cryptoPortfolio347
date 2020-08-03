@@ -171,7 +171,6 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
                     })
                 })
             })
-
     }
     return {
         ...state,
@@ -236,7 +235,7 @@ const setActivityOfToolbarOptionItem = (state, action) => {
     let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
     let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
     let hoveredToolbarItemId = updatedMenuItems.find(item => item.isHover === true).id;
-    if(previouslyActiveToolbarItemId !==  hoveredToolbarItemId){
+    if(previouslyActiveToolbarItemId !== hoveredToolbarItemId){
         let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
         let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
         updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
@@ -248,7 +247,7 @@ const setActivityOfToolbarOptionItem = (state, action) => {
     }
 
     updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2,i2) => {
+        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
             return{
                 ...el2,
                 active: false
@@ -256,6 +255,17 @@ const setActivityOfToolbarOptionItem = (state, action) => {
         })
     })
     
+    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+            updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
+                return{
+                    ...el3,
+                    active: false
+                }
+            })
+        })
+    })
+
     let optionItem = {
         ...updatedMenuItems
         .find(item => item.isHover === true).options
@@ -281,6 +291,68 @@ const setActivityOfToolbarOptionItem = (state, action) => {
 }
 
 
+const setActivityOfToolbarSubOptionItem = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+    let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
+    let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
+    let hoveredToolbarItemId = updatedMenuItems.find(item => item.isHover === true).id;
+    if(previouslyActiveToolbarItemId !== hoveredToolbarItemId){
+        let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
+        let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
+        updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
+        console.log(objPrevActiveToolbarItem)
+        let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
+        let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
+        updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
+        console.log(objNewActiveToolbarItem)
+    }
+
+    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+            return{
+                ...el2,
+                active: false
+            }
+        })
+    })
+    
+    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+            updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
+                return{
+                    ...el3,
+                    active: false
+                }
+            })
+        })
+    })
+    
+    let subOptionItem = {
+        ...updatedMenuItems
+        .find(item => item.isHover === true).options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .find(item => item.id === action.pathOfIds[1]).subOptions
+        .find(item => item.id === action.pathOfIds[2]),
+        active: true
+    }
+    
+    let subOptionItemIndex = updatedMenuItems
+        .find(item => item.isHover === true).options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .find(item => item.id === action.pathOfIds[1]).subOptions
+        .findIndex(item => item.id === action.pathOfIds[2]);
+        
+    updatedMenuItems
+        .find(item => item.isHover === true).options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .find(item => item.id === action.pathOfIds[1]).subOptions
+        .splice(subOptionItemIndex, 1, subOptionItem);
+
+    return {
+        ...state,
+        menuItems: updatedMenuItems
+    };
+}
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -412,7 +484,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setIsHoveringToolbarSubOptionItem(state, action); 
         case actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_OPTION_ITEM:
             return setActivityOfToolbarOptionItem(state, action); 
-        
+        case actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM:
+            return setActivityOfToolbarSubOptionItem(state, action); 
         default: 
             return state;
     }

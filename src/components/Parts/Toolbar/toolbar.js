@@ -149,7 +149,7 @@ export const Toolbar = (props) => {
                 props.setActivityOfToolbarOptionItem(pathOfIds);
                 return;
             case 'subOptionItem': 
-                props.setActivityOfToolbarOptionItem(pathOfIds);
+                props.setActivityOfToolbarSubOptionItem(pathOfIds);
                 return;
         }
         console.log(path, pathOfIds)
@@ -470,8 +470,9 @@ export default connect(
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
             setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
             setIsHoveringToolbarOptionItem: bindActionCreators(Actions.setIsHoveringToolbarOptionItem, dispatch),
-            setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
+            setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
+            setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
         };
     }
 )(withRouter(Toolbar));

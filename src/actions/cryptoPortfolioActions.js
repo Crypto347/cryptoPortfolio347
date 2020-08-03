@@ -70,3 +70,10 @@ export function setActivityOfToolbarOptionItem(pathOfIds) {
         pathOfIds: pathOfIds
     };
 };
+
+export function setActivityOfToolbarSubOptionItem(pathOfIds) {
+    return { 
+        type: actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM,
+        pathOfIds: pathOfIds
+    };
+};

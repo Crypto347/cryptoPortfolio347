@@ -233,7 +233,7 @@ export const ToolbarItem = (props) => {
                     <div 
                         key={i} 
                         className="toolbar-sub-option-item"
-                        onClick={() => toolbarOptionItemOnClick(el.path, updatedPathOfIds)}
+                        onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
                     >
                         <div 
                             className={renderClassName("text", el.isHover, el.active)}
