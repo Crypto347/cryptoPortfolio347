@@ -1190,11 +1190,13 @@
                 border: 1px solid rgb(37, 37, 37);
                 margin: 0 0 0 3px;
                 width: 5.5px;
+                transform: translateY(0px) rotate(0deg);
             }
             .toolbar-menu-right-half-line {
                 border: 1px solid rgb(37, 37, 37);
                 margin: 0 3px 0 0;
                 width: 5.5px;
+                transform: translateY(0px) rotate(0deg);
             }
         }
         .toolbar-menu-second-line {
@@ -1230,30 +1232,51 @@
         cursor: pointer;
         .toolbar-menu-first-line {
             display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 3px 0 3px 0;
             .toolbar-menu-left-half-line {
                 border: 1px solid rgb(37, 37, 37);
-                margin: 0 0 0 3px;
-                width: 5.5px;
+                margin: 0;
+                width: 6px;
+                transform: rotate(45deg);
+                -webkit-animation: menuFirstLineLeftHalfLineOpen 1s ease;
+                -moz-animation: menuFirstLineLeftHalfLineOpen 1s ease;
+                -o-animation: menuFirstLineLeftHalfLineOpen 1s ease;
+                animation: menuFirstLineLeftHalfLineOpen 1s ease;
             }
             .toolbar-menu-right-half-line {
                 border: 1px solid rgb(37, 37, 37);
-                margin: 0 3px 0 0;
-                width: 5.5px;
+                margin: 0;
+                width: 6px;
+                transform: rotate(-45deg);
+                -webkit-animation: menuFirstLineRightHalfLineOpen 1s ease;
+                -moz-animation: menuFirstLineRightHalfLineOpen 1s ease;
+                -o-animation: menuFirstLineRightHalfLineOpen 1s ease;
+                animation: menuFirstLineRightHalfLineOpen 1s ease;
             }
         }
         .toolbar-menu-second-line {
             display: flex;
+            justify-content: center;
             margin: 3px 0 3px 0;
             .toolbar-menu-left-half-line {
-                border: 1px solid rgb(37, 37, 37);
+                border: 1px solid transparent;
                 margin: 0 0 0 3px;
-                width: 5.5px;
+                width: 0px;
+                -webkit-animation: menuSecondLineOpen 1s ease;
+                -moz-animation: menuSecondLineOpen 1s ease;
+                -o-animation: menuSecondLineOpen 1s ease;
+                animation: menuSecondLineOpen 1s ease;
             }
             .toolbar-menu-right-half-line {
-                border: 1px solid rgb(37, 37, 37);
+                border: 1px solid transparent;
                 margin: 0 3px 0 0;
-                width: 5.5px;
+                width: 0px;
+                -webkit-animation: menuSecondLineOpen 1s ease;
+                -moz-animation: menuSecondLineOpen 1s ease;
+                -o-animation: menuSecondLineOpen 1s ease;
+                animation: menuSecondLineOpen 1s ease;
             }
         }
         .toolbar-menu-third-line {
@@ -1292,18 +1315,18 @@
             justify-content: center;
             margin: 3px 0 3px 0;
             .toolbar-menu-left-half-line {
-                border: 1px solid transparent;
+                border: 1px solid rgb(37, 37, 37);
                 margin: 0 0 0 3px;
-                width: 0px;
+                width: 5.5px;
                 -webkit-animation: menuSecondLineClose 1s ease;
                 -moz-animation: menuSecondLineClose 1s ease;
                 -o-animation: menuSecondLineClose 1s ease;
                 animation: menuSecondLineClose 1s ease;
             }
             .toolbar-menu-right-half-line {
-                border: 1px solid transparent;
+                border: 1px solid rgb(37, 37, 37);
                 margin: 0 3px 0 0;
-                width: 0px;
+                width: 5.5px;
                 -webkit-animation: menuSecondLineClose 1s ease;
                 -moz-animation: menuSecondLineClose 1s ease;
                 -o-animation: menuSecondLineClose 1s ease;
@@ -1631,7 +1654,75 @@
     
 // }
 
-@-webkit-keyframes menuSecondLineClose {
+@-webkit-keyframes menuFirstLineLeftHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(45deg);
+    }
+}
+@-moz-keyframes menuFirstLineLeftHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(45deg);
+    }
+}
+@-o-keyframes menuFirstLineLeftHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(45deg);
+    }
+}
+@keyframes menuFirstLineLeftHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+        width: 6px;
+    }
+    to{
+        transform: rotate(45deg);
+        width: 6px;
+    }
+}
+
+@-webkit-keyframes menuFirstLineRightHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+@-moz-keyframes menuFirstLineRightHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+@-o-keyframes menuFirstLineRightHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+@keyframes menuFirstLineRightHalfLineOpen {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+
+@-webkit-keyframes menuSecondLineOpen {
     from{
         width: 5.5px;
         border: 1px solid rgb(37, 37, 37);
@@ -1639,36 +1730,77 @@
     to{
         width: 0px;
         border: 1px solid transparent;
+    }
+}
+@-moz-keyframes menuSecondLineOpen {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
+@-o-keyframes menuSecondLineOpen {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
+@keyframes menuSecondLineOpen {
+    from{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
+    }
+    to{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+}
+
+@-webkit-keyframes menuSecondLineClose {
+    from{
+        width: 0px;
+        border: 1px solid transparent;
+    }
+    to{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
     }
 }
 @-moz-keyframes menuSecondLineClose {
     from{
-        width: 5.5px;
-        border: 1px solid rgb(37, 37, 37);
-    }
-    to{
         width: 0px;
         border: 1px solid transparent;
+    }
+    to{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
     }
 }
 @-o-keyframes menuSecondLineClose {
     from{
-        width: 5.5px;
-        border: 1px solid rgb(37, 37, 37);
-    }
-    to{
         width: 0px;
         border: 1px solid transparent;
+    }
+    to{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
     }
 }
 @keyframes menuSecondLineClose {
     from{
-        width: 5.5px;
-        border: 1px solid rgb(37, 37, 37);
-    }
-    to{
         width: 0px;
         border: 1px solid transparent;
+    }
+    to{
+        width: 5.5px;
+        border: 1px solid rgb(37, 37, 37);
     }
 }
 
