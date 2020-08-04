@@ -108,7 +108,7 @@ export const Toolbar = (props) => {
     }
 
     const handleMouseEnterToolbarItem = (opt, data, id) => {
-        props.setIsHoveringMenuItem(true, id);
+        props.setIsHoveringMenuItem("on", id);
         switch(opt){
             case 'regular':
                 if(data.options.length > 2){
@@ -127,7 +127,7 @@ export const Toolbar = (props) => {
     }
 
     const handleMouseLeaveToolbarItem = (opt, data) => {
-        props.setIsHoveringMenuItem(false);
+        props.setIsHoveringMenuItem("off");
         switch(opt){
             case 'regular':
                 if(data.options.length > 2){

@@ -5,7 +5,7 @@ export const menuItemsArray = [
         itemId: "home",
         path: null,
         active: true,
-        isHover: false,
+        isHover: "init",
         hasSubOptions: false,
         options: [
             {
@@ -219,7 +219,7 @@ export const menuItemsArray = [
         itemId: "portfolio",
         path: null,
         active: false,
-        isHover: false,
+        isHover: "init",
         hasSubOptions: false,
         options: [
             {
@@ -505,7 +505,7 @@ export const menuItemsArray = [
         itemId: "pages",
         path: null,
         active: false,
-        isHover: false,
+        isHover: "init",
         hasSubOptions: false,
         options: [
             {
@@ -614,7 +614,7 @@ export const menuItemsArray = [
         itemId: "blog",
         path: null,
         active: false,
-        isHover: false,
+        isHover: "init",
         hasSubOptions: true,
         options: [
             {
@@ -733,7 +733,7 @@ export const menuItemsArray = [
         itemId: "shop",
         path: "shop",
         active: false,
-        isHover: false,
+        isHover: "init",
         hasSubOptions: true,
         options: [
             {
@@ -926,7 +926,7 @@ export const menuItemsArray = [
         itemId: "elements",
         path: null,
         active: false,
-        isHover: false,
+        isHover: "init",
         hasSubOptions: false,
         options: [
             {

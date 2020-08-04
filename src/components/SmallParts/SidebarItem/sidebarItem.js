@@ -57,31 +57,34 @@ export const SidebarItem = (props) => {
        
     // }
 
-    // const renderClassName = (opt, isHovering, active) => {
-    //     if(opt === "arrow"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "arrow-wrapper-hide";
-    //             case 'on':
-    //                 return "arrow-wrapper-hover-on";
-    //             case 'off':
-    //                 return "arrow-wrapper-hover-off";
-    //         }
-    //     }
-    //     if(opt === "text"){
-    //         if(active){
-    //             return "toolbar-option-item-text-active";
-    //         }
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "toolbar-option-item-text";
-    //             case 'on':
-    //                 return "toolbar-option-item-text-hover-on";
-    //             case 'off':
-    //                 return "toolbar-option-item-text-hover-off";
-    //         }
-    //     }
-    // }
+    const renderClassName = (opt, isHovering, active) => {
+        if(opt === "sidebarArrow"){
+            if(active){
+                return "sidebar-item-arrow-wrapper";
+            }
+            switch(isHovering){
+                case 'init':
+                    return "sidebar-item-arrow-wrapper";
+                case 'on':
+                    return "sidebar-item-arrow-wrapper-hover-on";
+                case 'off':
+                    return "sidebar-item-arrow-wrapper-hover-off";
+            }
+        }
+        // if(opt === "text"){
+        //     if(active){
+        //         return "toolbar-option-item-text-active";
+        //     }
+        //     switch(isHovering){
+        //         case 'init':
+        //             return "toolbar-option-item-text";
+        //         case 'on':
+        //             return "toolbar-option-item-text-hover-on";
+        //         case 'off':
+        //             return "toolbar-option-item-text-hover-off";
+        //     }
+        // }
+    }
 
     // const renderOptions = () => {
     //     return(
@@ -275,13 +278,13 @@ export const SidebarItem = (props) => {
      
         <div 
             className="sidebar-item-wrapper"
-            // onMouseEnter={props.onMouseEnter} 
-            // onMouseLeave={props.onMouseLeave}
+            onMouseEnter={props.onMouseEnter} 
+            onMouseLeave={props.onMouseLeave}
            >
             <div className={props.data.active ? `sidebar-item-active` : `sidebar-item`}>
                 <div className="item-wrapper">
                     {props.data.text}
-                    <div className="sidebar-item-arrow-wrapper">
+                    <div className={renderClassName("sidebarArrow", props.data.isHover, props.data.active)}>
                         <div className="sidebar-item-arrow-top-line"/>
                         <div className="sidebar-item-arrow-bottom-line"/>
                     </div>

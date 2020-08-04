@@ -280,7 +280,7 @@ export const ToolbarItem = (props) => {
             <div className={props.data.active ? `toolbar-item-${props.toolbarMainColor}-active` : `toolbar-item-${props.toolbarMainColor}`}>
                 {props.data.text}
             </div>
-            {props.showOptionsRegular && props.data.isHover ? 
+            {props.showOptionsRegular && props.data.isHover === "on" ? 
             <div 
                 className={props.data.hasSubOptions ? "toolbar-item-options-align-end" : "toolbar-item-options"}
                 // className="toolbar-item-options"

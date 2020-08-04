@@ -86,6 +86,29 @@ export const Sidebar = (props) => {
         // props.activateMenuItem(id);
     }
 
+    const handleMouseEnterSidebarItem = (data, id) => {
+        props.setIsHoveringMenuItem("on", id);
+
+                // if(data.options.length > 2){
+                //     setShowOptionsRegular(true);
+                //     setSidebarItemData(data);
+                // }else{
+                //     setShowOptionsLessThan3Regular(true);
+                // }
+           
+    }
+
+    const handleMouseLeaveSidebarItem = (data) => {
+        props.setIsHoveringMenuItem("off");
+
+                // if(data.options.length > 2){
+                //     setShowOptionsRegular(false);
+                //     setSidebarItemData({});
+                // }else{
+                //     setShowOptionsLessThan3Regular(false);
+                // }
+    }
+
     const renderSidebarItems = () => {
         return(
             <div className="sidebar-items">
@@ -94,6 +117,8 @@ export const Sidebar = (props) => {
                         <SidebarItem 
                             key={el.id}
                             data={el}
+                            onMouseEnter={() => handleMouseEnterSidebarItem(el, el.id)} 
+                            onMouseLeave={() => handleMouseLeaveSidebarItem(el)}
                             // text={el.text}
                             // active={el.active}
                             // onClick={() => sidebarOnClick(el.path, el.id)}
@@ -136,7 +161,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
+            setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
             // activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
