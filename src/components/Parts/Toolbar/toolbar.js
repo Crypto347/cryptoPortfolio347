@@ -387,10 +387,22 @@ export const Toolbar = (props) => {
                     }}
                 >  
                     <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>
-                        <div className="toolbar-menu">
-                            <div className="toolbar-menu-line"/>
-                            <div className="toolbar-menu-line"/>
-                            <div className="toolbar-menu-line"/>
+                        <div
+                            className={renderClassName("menuSmallScreenButton", sidebarState)}
+                            onClick={menuOnClick}
+                        >
+                            <div className="toolbar-menu-first-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
+                            <div className="toolbar-menu-second-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
+                            <div className="toolbar-menu-third-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
                         </div>
                         <div className="toolbar-logo">crypto.</div>
                         <div/>
