@@ -23,6 +23,7 @@ import './sidebarItem.scss';
 import {
     EH40,
     EH20,
+    EH10,
     H19,
     H15,
     EW2
@@ -179,48 +180,52 @@ export const SidebarItem = (props) => {
 
     const renderSubOptions = (subOptions, pathOfIds) => {
         return(
-            <div 
-                className="sidebar-item-sub-options"
-                onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
-            >
-                <EH20/>
-                {subOptions.map((el, i) => {
-                    let updatedPathOfIds = [...pathOfIds];
-                    updatedPathOfIds.push(el.id);
-                    return(
-                        <div 
-                            key={i} 
-                            className="sidebar-sub-option-item"
-                            // onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
-                        >
-                            {el.active ? 
-                            <div className="arrow-wrapper-active">
-                                <div className="arrow-horizontal-line"></div>
-                                <div className="arrow-wrapper2">
-                                    <div className="arrow-top-line"></div>
-                                    <div className="arrow-bottom-line"></div>
-                                </div>
-                            </div> : null}
-                            {!el.active ? 
-                            <div className={renderClassName("arrow", el.isHover)}>
-                                <div className="arrow-horizontal-line"></div>
-                                <div className="arrow-wrapper2">
-                                    <div className="arrow-top-line"></div>
-                                    <div className="arrow-bottom-line"></div>
-                                </div>
-                            </div> : null}       
+            <>
+                <EH10/>
+                <div className="grey-line"/>
+                <div 
+                    className="sidebar-item-sub-options"
+                    onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
+                >
+                    <EH20/>
+                    {subOptions.map((el, i) => {
+                        let updatedPathOfIds = [...pathOfIds];
+                        updatedPathOfIds.push(el.id);
+                        return(
                             <div 
-                                className={renderClassName("text", el.isHover, el.active)}
-                                onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
-                                onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
+                                key={i} 
+                                className="sidebar-sub-option-item"
+                                // onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
                             >
-                                <H15 className="h15-black-lustria">{el.text}</H15>
+                                {el.active ? 
+                                <div className="arrow-wrapper-active">
+                                    <div className="arrow-horizontal-line"></div>
+                                    <div className="arrow-wrapper2">
+                                        <div className="arrow-top-line"></div>
+                                        <div className="arrow-bottom-line"></div>
+                                    </div>
+                                </div> : null}
+                                {!el.active ? 
+                                <div className={renderClassName("arrow", el.isHover)}>
+                                    <div className="arrow-horizontal-line"></div>
+                                    <div className="arrow-wrapper2">
+                                        <div className="arrow-top-line"></div>
+                                        <div className="arrow-bottom-line"></div>
+                                    </div>
+                                </div> : null}       
+                                <div 
+                                    className={renderClassName("text", el.isHover, el.active)}
+                                    onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
+                                    onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
+                                >
+                                    <H15 className="h15-black-lustria">{el.text}</H15>
+                                </div>
+                                                
                             </div>
-                                             
-                        </div>
-                    )})}
-                <EH20/>
-            </div>
+                        )})}
+                    <EH20/>
+                </div>
+            </>
         )
     }
 
@@ -250,10 +255,10 @@ export const SidebarItem = (props) => {
                 className="sidebar-item-options"
                 onMouseLeave={props.onMouseLeave}
             >
-                {/* <div  className="grey-line"/> */}
+                <div className="grey-line"/>
                 {/* <EH20/> */}
                 {renderOptions()}
-                {/* <EH20/> */}
+                <EH20/>
             </div> : null}
         </div>
     );
