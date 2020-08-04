@@ -229,39 +229,39 @@ export const ToolbarItem = (props) => {
                 {subOptions.map((el, i) => {
                     let updatedPathOfIds = [...pathOfIds];
                     updatedPathOfIds.push(el.id);
-                return(
-                    <div 
-                        key={i} 
-                        className="toolbar-sub-option-item"
-                        onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
-                    >
+                    return(
                         <div 
-                            className={renderClassName("text", el.isHover, el.active)}
-                            onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
-                            onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
+                            key={i} 
+                            className="toolbar-sub-option-item"
+                            onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
                         >
-                            {/* <div className={renderClassName("text", el.isHover)}> */}
-                                <H15 className="h15-black-lustria">{el.text}</H15>
-                            {/* </div> */}
+                            <div 
+                                className={renderClassName("text", el.isHover, el.active)}
+                                onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
+                                onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
+                            >
+                                {/* <div className={renderClassName("text", el.isHover)}> */}
+                                    <H15 className="h15-black-lustria">{el.text}</H15>
+                                {/* </div> */}
+                            </div>
+                            {el.active ? 
+                            <div className="arrow-wrapper-active">
+                                <div className="arrow-wrapper2">
+                                    <div className="arrow-top-line"></div>
+                                    <div className="arrow-bottom-line"></div>
+                                </div>
+                                <div className="arrow-horizontal-line"></div>
+                            </div> : null}
+                            {!el.active ? 
+                            <div className={renderClassName("arrow", el.isHover)}>
+                                <div className="arrow-wrapper2">
+                                    <div className="arrow-top-line"></div>
+                                    <div className="arrow-bottom-line"></div>
+                                </div>
+                                <div className="arrow-horizontal-line"></div>
+                            </div> : null}
                         </div>
-                        {el.active ? 
-                        <div className="arrow-wrapper-active">
-                            <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
-                            </div>
-                            <div className="arrow-horizontal-line"></div>
-                        </div> : null}
-                        {!el.active ? 
-                        <div className={renderClassName("arrow", el.isHover)}>
-                            <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
-                            </div>
-                            <div className="arrow-horizontal-line"></div>
-                        </div> : null}
-                    </div>
-                )})}
+                    )})}
                 <EH20/>
             </div>
         )

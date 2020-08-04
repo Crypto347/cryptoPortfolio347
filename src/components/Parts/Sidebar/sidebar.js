@@ -3,6 +3,7 @@
 */
 
 import React, {
+    useState,
     useEffect
 } from 'react';
 
@@ -73,13 +74,15 @@ export const Sidebar = (props) => {
     * State
     */
 
-    useEffect(() => {
-        // props.initMenuItems(menuItemsArray);
-    }, [])
+    const [showOptions, setShowOptions] = useState(false);
 
     /**
     * Methods
     */
+
+    useEffect(() => {
+        // props.initMenuItems(menuItemsArray);
+    }, [])
 
     const sidebarOnClick = (path, id) => {
         // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
@@ -90,7 +93,7 @@ export const Sidebar = (props) => {
         props.setIsHoveringMenuItem("on", id);
 
                 // if(data.options.length > 2){
-                //     setShowOptionsRegular(true);
+                    setShowOptions(true);
                 //     setSidebarItemData(data);
                 // }else{
                 //     setShowOptionsLessThan3Regular(true);
@@ -102,7 +105,7 @@ export const Sidebar = (props) => {
         props.setIsHoveringMenuItem("off");
 
                 // if(data.options.length > 2){
-                //     setShowOptionsRegular(false);
+                    setShowOptions(false);
                 //     setSidebarItemData({});
                 // }else{
                 //     setShowOptionsLessThan3Regular(false);
@@ -119,6 +122,9 @@ export const Sidebar = (props) => {
                             data={el}
                             onMouseEnter={() => handleMouseEnterSidebarItem(el, el.id)} 
                             onMouseLeave={() => handleMouseLeaveSidebarItem(el)}
+                            showOptions={showOptions}
+                            onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
+                            onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
                             // text={el.text}
                             // active={el.active}
                             // onClick={() => sidebarOnClick(el.path, el.id)}
@@ -162,7 +168,8 @@ export default connect(
     (dispatch) => {
         return {
             setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
-            // activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch)
+            setIsHoveringToolbarOptionItem: bindActionCreators(Actions.setIsHoveringToolbarOptionItem, dispatch),
+            setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
         };
     }
 )(withRouter(Sidebar));

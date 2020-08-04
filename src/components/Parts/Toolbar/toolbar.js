@@ -84,7 +84,7 @@ export const Toolbar = (props) => {
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [sidebarState, setSidebarState] = useState("open")
     const [isHovering, setIsHovering] = useState(null);
-    const [showOptionsRegular, setShowOptionsRegular] = useState(false);
+    const [showOptions, setShowOptions] = useState(false);
     // const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
     const [toolbarItemData, setToolbarItemData] = useState({});
     const [showOptionsLessThan3Regular, setShowOptionsLessThan3Regular] = useState(false);
@@ -112,7 +112,7 @@ export const Toolbar = (props) => {
         switch(opt){
             case 'regular':
                 if(data.options.length > 2){
-                    setShowOptionsRegular(true);
+                    setShowOptions(true);
                     setToolbarItemData(data);
                 }else{
                     setShowOptionsLessThan3Regular(true);
@@ -131,7 +131,7 @@ export const Toolbar = (props) => {
         switch(opt){
             case 'regular':
                 if(data.options.length > 2){
-                    setShowOptionsRegular(false);
+                    setShowOptions(false);
                     setToolbarItemData({});
                 }else{
                     setShowOptionsLessThan3Regular(false);
@@ -268,7 +268,7 @@ export const Toolbar = (props) => {
                             </div>
                         </div>
                     </div>
-                    {showOptionsRegular ? 
+                    {showOptions ? 
                     <div 
                         className="toolbar-regular-screen-options"
                         onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
@@ -313,7 +313,7 @@ export const Toolbar = (props) => {
                             </div>
                         </div>
                     </CSSTransition>
-                    {showOptionsRegular ? 
+                    {showOptions ? 
                     <CSSTransition
                         in={props.scrollingUp} 
                         timeout={5000}
