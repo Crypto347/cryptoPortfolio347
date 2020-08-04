@@ -13,10 +13,10 @@
         &:hover {
             opacity: 0.7;
             color: rgb(155, 155, 155);
-            -webkit-animation: appear .5s linear;
-            -moz-animation: appear .5s linear;
-            -o-animation: appear .5s linear;
-            animation: appear .5s linear;
+            -webkit-animation: appearToolbarSidebarItemText .5s linear;
+            -moz-animation: appearToolbarSidebarItemText .5s linear;
+            -o-animation: appearToolbarSidebarItemText .5s linear;
+            animation: appearToolbarSidebarItemText .5s linear;
         }
     }
     .toolbar-item-white-active {
@@ -45,10 +45,10 @@
         &:hover {
             opacity: 0.7;
             color: rgb(155, 155, 155);
-            -webkit-animation: appear .5s linear;
-            -moz-animation: appear .5s linear;
-            -o-animation: appear .5s linear;
-            animation: appear .5s linear;
+            -webkit-animation: appearToolbarSidebarItemText .5s linear;
+            -moz-animation: appearToolbarSidebarItemText .5s linear;
+            -o-animation: appearToolbarSidebarItemText .5s linear;
+            animation: appearToolbarSidebarItemText .5s linear;
         }
       
     }
@@ -407,7 +407,7 @@
                             border-left: 1px solid rgb(78, 78, 78);
                             height: 7px;
                             width: 0px;
-                            transform: translate(5px, 1.3px)  rotate(45deg);
+                            transform: translate(5px, 1.3px) rotate(45deg);
                         }
                         .sub-option-arrow-bottom-line {
                             border-left: 1px solid rgb(78, 78, 78);
@@ -849,66 +849,19 @@
     }
 }
 
-// .toolbar-item-active {
-//     border-bottom: 1px solid rgb(180, 139, 62);
-//     border-top: 1px solid rgb(180, 139, 62);
-//     text-align: center;
-//     height: 34px;
-//     padding-top: 18px;
-//     color: rgb(180, 139, 62);
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     font-size: 18px;
-//     opacity: 1;
-//     -webkit-animation: appearText 2s linear;
-//     -moz-animation: appearText 2s linear;
-//     -o-animation: appearText 2s linear;
-//     animation: appearText 2s linear;
-//     cursor: pointer;
-// }
-
-// .toolbar-item-disappear {
-//     border-bottom: 1px solid rgb(82, 78, 76);
-//     text-align: center;
-//     height: 34px;
-//     padding-top: 18px;
-//     color: white;
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     font-size: 18px;
-//     opacity: 0;
-//     -webkit-animation: disappearText 0.3s linear;
-//     -moz-animation: disappearText 0.3s linear;
-//     -o-animation: disappearText 0.3s linear;
-//     animation: disappearText 0.3s linear;
-// }
-
-// .toolbar-item-active-disappear {
-//     border-bottom: 1px solid rgb(82, 78, 76);
-//     text-align: center;
-//     height: 34px;
-//     padding-top: 18px;
-//     color: rgb(180, 139, 62);
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     font-size: 18px;
-//     opacity: 0;
-//     -webkit-animation: disappearText 0.3s linear;
-//     -moz-animation: disappearText 0.3s linear;
-//     -o-animation: disappearText 0.3s linear;
-//     animation: disappearText 0.3s linear;
-// }
-
-@-webkit-keyframes appear {
+@-webkit-keyframes appearToolbarSidebarItemText {
     from{opacity: 1;}
     to {opacity: 0.7;}
 }
-@-moz-keyframes appear {
+@-moz-keyframes appearToolbarSidebarItemText {
     from{opacity: 1;}
     to {opacity: 0.7;}
 }
-@-o-keyframes appear {
+@-o-keyframes appearToolbarSidebarItemText {
     from{opacity: 1;}
     to {opacity: 0.7;}
 }
-@keyframes appear {
+@keyframes appearToolbarSidebarItemText {
     from{opacity: 1;}
     to {opacity: 0.7;}
 }

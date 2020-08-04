@@ -1,0 +1,76 @@
+.sidebar-item-wrapper {
+    .sidebar-item {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 17px;
+        font-weight: bold;
+        border-bottom: 0.5px solid rgb(155, 155, 155);
+        padding: 0 10px 0 10px;
+        height: 40px;
+        // align-items: center;
+        // padding: 0 20px 0 10px;
+        color: black;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+            color: rgb(155, 155, 155);
+            -webkit-animation: appearToolbarSidebarItemText .5s linear;
+            -moz-animation: appearToolbarSidebarItemText .5s linear;
+            -o-animation: appearToolbarSidebarItemText .5s linear;
+            animation: appearToolbarSidebarItemText .5s linear;
+        }
+        .item-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            .sidebar-item-arrow-wrapper {
+                width: 10px;
+                .sidebar-item-arrow-top-line {
+                    border-left: 1px solid rgb(78, 78, 78);
+                    height: 7px;
+                    width: 0px;
+                    transform: translate(5px, 1.3px) rotate(-45deg);
+                }
+                .sidebar-item-arrow-bottom-line {
+                    border-left: 1px solid rgb(78, 78, 78);
+                    height: 7px;
+                    width: 0px;
+                    transform: translate(5px, -1.3px) rotate(45deg);
+                }
+            }
+        }
+    }
+    
+    .sidebar-item-active {
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 17px;
+        font-weight: bold;
+        border-bottom: 0.5px solid rgb(155, 155, 155);
+        padding: 0 10px 0 10px;
+        height: 40px;
+        color: rgb(155, 155, 155);
+        opacity: 0.7;
+        cursor: pointer;
+        .item-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            .sidebar-item-arrow-wrapper {
+                width: 10px;
+                .sidebar-item-arrow-top-line {
+                    border-left: 1px solid rgb(78, 78, 78);
+                    height: 7px;
+                    width: 0px;
+                    transform: translate(5px, 1.3px) rotate(-45deg);
+                }
+                .sidebar-item-arrow-bottom-line {
+                    border-left: 1px solid rgb(78, 78, 78);
+                    height: 7px;
+                    width: 0px;
+                    transform: translate(5px, -1.3px) rotate(45deg);
+                }
+            }
+        }
+    }
+}

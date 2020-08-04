@@ -34,7 +34,7 @@ import './toolbar.scss';
 */
 
 import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
-import Backdrop from '../../../library/Backdrop/backdrop';
+import Sidebar from '../Sidebar/sidebar';
 
 /**
 * Actions
@@ -82,7 +82,7 @@ export const Toolbar = (props) => {
 
     // const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    const [sidebarState, setSidebarState] = useState("init")
+    const [sidebarState, setSidebarState] = useState("open")
     const [isHovering, setIsHovering] = useState(null);
     const [showOptionsRegular, setShowOptionsRegular] = useState(false);
     // const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
@@ -344,27 +344,32 @@ export const Toolbar = (props) => {
         }
         if(option === "smallScreen"){
             return(
-                <div className="toolbar-small-screen">
-                    <div
-                        className={renderClassName("menuSmallScreenButton", sidebarState)}
-                        onClick={menuOnClick}
-                    >
-                        <div className="toolbar-menu-first-line">
-                            <div className="toolbar-menu-left-half-line"/>
-                            <div className="toolbar-menu-right-half-line"/>
+                <>
+                    <div className="toolbar-small-screen">
+                        <div
+                            className={renderClassName("menuSmallScreenButton", sidebarState)}
+                            onClick={menuOnClick}
+                        >
+                            <div className="toolbar-menu-first-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
+                            <div className="toolbar-menu-second-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
+                            <div className="toolbar-menu-third-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
                         </div>
-                        <div className="toolbar-menu-second-line">
-                            <div className="toolbar-menu-left-half-line"/>
-                            <div className="toolbar-menu-right-half-line"/>
-                        </div>
-                        <div className="toolbar-menu-third-line">
-                            <div className="toolbar-menu-left-half-line"/>
-                            <div className="toolbar-menu-right-half-line"/>
-                        </div>
+                        <div className="toolbar-logo">crypto.</div>
+                        <div/>
                     </div>
-                    <div className="toolbar-logo">crypto.</div>
-                    <div/>
-                </div>
+                    {sidebarState === "open" ? 
+                    <Sidebar/> : 
+                    null}
+                </>
             )
         }
         if(option === "smallScreenAnimated"){

@@ -22,7 +22,7 @@ import {
 * Components
 */
 
-// import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
+import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
 // import SocialMediaIcon from '../../SmallParts/SocialMediaIcon/socialMediaIcon';
 
 /**
@@ -74,7 +74,7 @@ export const Sidebar = (props) => {
     */
 
     useEffect(() => {
-        props.initMenuItems(menuItemsArray);
+        // props.initMenuItems(menuItemsArray);
     }, [])
 
     /**
@@ -82,22 +82,23 @@ export const Sidebar = (props) => {
     */
 
     const sidebarOnClick = (path, id) => {
-        props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        props.activateMenuItem(id);
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        // props.activateMenuItem(id);
     }
 
     const renderSidebarItems = () => {
         return(
             <div className="sidebar-items">
                 {props.menuItems.map((el) => {
-                    // return(
-                        // <SidebarItem 
-                        //     key={el.id}
-                        //     text={el.text}
-                        //     active={el.active}
-                        //     onClick={() => sidebarOnClick(el.path, el.id)}
-                        // />
-                    // )
+                    return(
+                        <SidebarItem 
+                            key={el.id}
+                            data={el}
+                            // text={el.text}
+                            // active={el.active}
+                            // onClick={() => sidebarOnClick(el.path, el.id)}
+                        />
+                    )
             })}</div>
         )
     }
@@ -121,19 +122,8 @@ export const Sidebar = (props) => {
 
     return(
         <div className="sidebar">
-            <div className="sidebar-logo">
-                <div className="sidebar-image-logo">
-                    <img src={MyLogo}/>
-                </div>
-                <div className="sidebar-image-cafe">
-                    <img src={MyLogoCafe}/>
-                </div>
-                <div className="sidebar-image-crypto">
-                    <img src={MyLogoCrypto}/>
-                </div>
-            </div>
+            <div style={{height: "68px"}}/>
             {renderSidebarItems()}
-            {renderSocialMediaIcons()}
         </div>
     );
 }
@@ -141,7 +131,7 @@ export const Sidebar = (props) => {
 export default connect(
     (state) => {
         return {
-            // menuItems: Selectors.getMenuItemsState(state)
+            menuItems: Selectors.getMenuItemsState(state)
         };
     },
     (dispatch) => {
