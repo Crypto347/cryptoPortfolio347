@@ -61,9 +61,9 @@ export const SidebarItem = (props) => {
 
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "sidebarArrow"){
-            if(active){
-                return "sidebar-item-arrow-wrapper";
-            }
+            // if(active){
+            //     return "sidebar-item-arrow-wrapper";
+            // }
             switch(isHovering){
                 case 'init':
                     return "sidebar-item-arrow-wrapper";
@@ -223,7 +223,7 @@ export const SidebarItem = (props) => {
                                                 
                             </div>
                         )})}
-                    <EH20/>
+                    {/* <EH20/> */}
                 </div>
             </>
         )

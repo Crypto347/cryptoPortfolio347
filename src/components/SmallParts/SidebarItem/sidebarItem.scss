@@ -23,61 +23,7 @@
             justify-content: space-between;
             align-items: center;
             height: 100%;
-            .sidebar-item-arrow-wrapper {
-                width: 10px;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
-            .sidebar-item-arrow-wrapper-hover-on {
-                width: 10px;
-                transform: rotate(90deg);
-                -webkit-animation: rotateSidebarArrowOpenState .5s linear;
-                -moz-animation: rotateSidebarArrowOpenState .5s linear;
-                -o-animation: rotateSidebarArrowOpenState .5s linear;
-                animation: rotateSidebarArrowOpenState .5s linear;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
-            .sidebar-item-arrow-wrapper-hover-off {
-                width: 10px;
-                transform: rotate(0deg);
-                -webkit-animation: rotateSidebarArrowCloseState .5s linear;
-                -moz-animation: rotateSidebarArrowCloseState .5s linear;
-                -o-animation: rotateSidebarArrowCloseState .5s linear;
-                animation: rotateSidebarArrowCloseState .5s linear;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
+          
         }
     }
     
@@ -96,21 +42,21 @@
             justify-content: space-between;
             align-items: center;
             height: 100%;
-            .sidebar-item-arrow-wrapper {
-                width: 10px;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
+            // .sidebar-item-arrow-wrapper {
+            //     width: 10px;
+            //     .sidebar-item-arrow-top-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, 1.3px) rotate(-45deg);
+            //     }
+            //     .sidebar-item-arrow-bottom-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, -1.3px) rotate(45deg);
+            //     }
+            // }
         }
     }
 
@@ -304,61 +250,61 @@
             height: 100%;
             padding-left: 15px;
      
-            .sidebar-item-arrow-wrapper {
-                width: 10px;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
-            .sidebar-item-arrow-wrapper-hover-on {
-                width: 10px;
-                transform: rotate(90deg);
-                -webkit-animation: rotateSidebarArrowOpenState .5s linear;
-                -moz-animation: rotateSidebarArrowOpenState .5s linear;
-                -o-animation: rotateSidebarArrowOpenState .5s linear;
-                animation: rotateSidebarArrowOpenState .5s linear;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
-            .sidebar-item-arrow-wrapper-hover-off {
-                width: 10px;
-                transform: rotate(0deg);
-                -webkit-animation: rotateSidebarArrowCloseState .5s linear;
-                -moz-animation: rotateSidebarArrowCloseState .5s linear;
-                -o-animation: rotateSidebarArrowCloseState .5s linear;
-                animation: rotateSidebarArrowCloseState .5s linear;
-                .sidebar-item-arrow-top-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, 1.3px) rotate(-45deg);
-                }
-                .sidebar-item-arrow-bottom-line {
-                    border-left: 1px solid rgb(78, 78, 78);
-                    height: 7px;
-                    width: 0px;
-                    transform: translate(5px, -1.3px) rotate(45deg);
-                }
-            }
+            // .sidebar-item-arrow-wrapper {
+            //     width: 10px;
+            //     .sidebar-item-arrow-top-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, 1.3px) rotate(-45deg);
+            //     }
+            //     .sidebar-item-arrow-bottom-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, -1.3px) rotate(45deg);
+            //     }
+            // }
+            // .sidebar-item-arrow-wrapper-hover-on {
+            //     width: 10px;
+            //     transform: rotate(90deg);
+            //     -webkit-animation: rotateSidebarArrowOpenState .5s linear;
+            //     -moz-animation: rotateSidebarArrowOpenState .5s linear;
+            //     -o-animation: rotateSidebarArrowOpenState .5s linear;
+            //     animation: rotateSidebarArrowOpenState .5s linear;
+            //     .sidebar-item-arrow-top-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, 1.3px) rotate(-45deg);
+            //     }
+            //     .sidebar-item-arrow-bottom-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, -1.3px) rotate(45deg);
+            //     }
+            // }
+            // .sidebar-item-arrow-wrapper-hover-off {
+            //     width: 10px;
+            //     transform: rotate(0deg);
+            //     -webkit-animation: rotateSidebarArrowCloseState .5s linear;
+            //     -moz-animation: rotateSidebarArrowCloseState .5s linear;
+            //     -o-animation: rotateSidebarArrowCloseState .5s linear;
+            //     animation: rotateSidebarArrowCloseState .5s linear;
+            //     .sidebar-item-arrow-top-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, 1.3px) rotate(-45deg);
+            //     }
+            //     .sidebar-item-arrow-bottom-line {
+            //         border-left: 1px solid rgb(78, 78, 78);
+            //         height: 7px;
+            //         width: 0px;
+            //         transform: translate(5px, -1.3px) rotate(45deg);
+            //     }
+            // }
         }
         .sidebar-item-sub-options {
             position: relative;
@@ -522,6 +468,62 @@
             }
         }
 
+    }
+}
+
+.sidebar-item-arrow-wrapper {
+    width: 10px;
+    .sidebar-item-arrow-top-line {
+        border-left: 1px solid rgb(78, 78, 78);
+        height: 7px;
+        width: 0px;
+        transform: translate(5px, 1.3px) rotate(-45deg);
+    }
+    .sidebar-item-arrow-bottom-line {
+        border-left: 1px solid rgb(78, 78, 78);
+        height: 7px;
+        width: 0px;
+        transform: translate(5px, -1.3px) rotate(45deg);
+    }
+}
+.sidebar-item-arrow-wrapper-hover-on {
+    width: 10px;
+    transform: rotate(90deg);
+    -webkit-animation: rotateSidebarArrowOpenState .5s linear;
+    -moz-animation: rotateSidebarArrowOpenState .5s linear;
+    -o-animation: rotateSidebarArrowOpenState .5s linear;
+    animation: rotateSidebarArrowOpenState .5s linear;
+    .sidebar-item-arrow-top-line {
+        border-left: 1px solid rgb(78, 78, 78);
+        height: 7px;
+        width: 0px;
+        transform: translate(5px, 1.3px) rotate(-45deg);
+    }
+    .sidebar-item-arrow-bottom-line {
+        border-left: 1px solid rgb(78, 78, 78);
+        height: 7px;
+        width: 0px;
+        transform: translate(5px, -1.3px) rotate(45deg);
+    }
+}
+.sidebar-item-arrow-wrapper-hover-off {
+    width: 10px;
+    transform: rotate(0deg);
+    -webkit-animation: rotateSidebarArrowCloseState .5s linear;
+    -moz-animation: rotateSidebarArrowCloseState .5s linear;
+    -o-animation: rotateSidebarArrowCloseState .5s linear;
+    animation: rotateSidebarArrowCloseState .5s linear;
+    .sidebar-item-arrow-top-line {
+        border-left: 1px solid rgb(78, 78, 78);
+        height: 7px;
+        width: 0px;
+        transform: translate(5px, 1.3px) rotate(-45deg);
+    }
+    .sidebar-item-arrow-bottom-line {
+        border-left: 1px solid rgb(78, 78, 78);
+        height: 7px;
+        width: 0px;
+        transform: translate(5px, -1.3px) rotate(45deg);
     }
 }
 
