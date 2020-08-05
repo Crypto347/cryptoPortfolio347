@@ -54,12 +54,10 @@ import * as Actions from '../actions';
 import * as Selectors from '../reducers/selectors';
 
 /**
-* Constants
+* Utilities
 */
 
-// import {
-//     storiesArray
-// } from '../constants/storiesArray';
+import * as Utility from '../utility';
 
 /**
 * Main component definition and export
@@ -72,7 +70,9 @@ export const Main = (props) => {
     */
 
     useEffect(() => {
-        // let path = props.location.pathname.slice(13);
+        let path = props.location.pathname.slice(18);
+        let pathOfIds = Utility.findPathOfIds(path);
+        // console.log(pathOfIds)
     
     }, [])
 
