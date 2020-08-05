@@ -23,9 +23,7 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    CSSTransition 
-} from 'react-transition-group';
+import Fullscreen from "react-full-screen";
 
 /**
 * Styles
@@ -73,7 +71,8 @@ import {
 */
 
 import {
-   H19
+   H19,
+   EW30
 } from '../../UtilityComponents';
 
 /**
@@ -120,9 +119,6 @@ import text25 from '../../../images/pictureBoard/TextFolder4/dylan-gillis-KdeqA3
 import text26 from '../../../images/pictureBoard/TextFolder4/perry-grone-lbLgFFlADrY-unsplash.jpg';
 import text27 from '../../../images/pictureBoard/TextFolder4/scott-graham-5fNmWej4tAA-unsplash.jpg';
 
-
-
-
 /**
 * Constants
 */
@@ -143,6 +139,7 @@ export const PhotoViewer = (props) => {
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
+    const [fullScreen, setFullScreen] = useState(false);
 
     /**
     * Methods
@@ -313,60 +310,94 @@ export const PhotoViewer = (props) => {
     */
 
     return(
-        <div className="photo-viewer">
-            <div className="photo-viewer-wrapper">
-                <div className="photo-viewer-full-screen">
-                    <FontAwesomeIcon 
-                        icon={faExpand} 
-                        size="lg" 
-                        color={isHoveringExpand ? "white" : "rgb(155, 155, 155)"}
-                        // onClick={() => props.nextImage(props.arrayOfImages[0].id)}
-                        onMouseEnter={() => handleMouseEnter('expand')} 
-                        onMouseLeave={() => handleMouseLeave('expand')}
-                    />
-                </div>
-                 {/* {renderImages()} */}
-                <div className="photo-viewer-image-item">
-                    <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
-                </div>
-                <div className="photo-viewer-toolbar">
-                    <div className="photo-viewer-navigation">
-                        <div 
-                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                            onClick={props.prevImage}
-                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
-                            onMouseLeave={() => handleMouseLeave('leftArrow')}
-                        >
-                            <div className="arrow-top-line"/>
-                            <div className="arrow-bottom-line"/>
+        <>
+            {!fullScreen ? <div className="photo-viewer">
+                <div className="photo-viewer-wrapper">
+                    <div className="photo-viewer-full-screen-button">
+                        <FontAwesomeIcon 
+                            icon={faExpand} 
+                            size="lg" 
+                            color={isHoveringExpand ? "white" : "rgb(155, 155, 155)"}
+                            onClick={() => setFullScreen(true)}
+                            onMouseEnter={() => handleMouseEnter('expand')} 
+                            onMouseLeave={() => handleMouseLeave('expand')}
+                        />
+                    </div>
+                    {/* {renderImages()} */}
+                    <div className="photo-viewer-image-item">
+                        <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
+                    </div>
+                    <div className="photo-viewer-toolbar">
+                        <div className="photo-viewer-navigation">
+                            <div 
+                                className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                                onClick={props.prevImage}
+                                onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                                onMouseLeave={() => handleMouseLeave('leftArrow')}
+                            >
+                                <div className="arrow-top-line"/>
+                                <div className="arrow-bottom-line"/>
+                            </div>
+                            <div 
+                                className={renderClassName("rightArrow", isHoveringRightArrow)}
+                                onClick={props.nextImage}
+                                onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                                onMouseLeave={() => handleMouseLeave('rightArrow')}
+                            >
+                                <div className="arrow-top-line"/>
+                                <div className="arrow-bottom-line"/>
+                            </div>
                         </div>
+                        <H19 className="h19-nobel">{`${props.photoViewerImagesArray[0].id} / ${props.photoViewerImagesArray.length}`}</H19>
                         <div 
-                            className={renderClassName("rightArrow", isHoveringRightArrow)}
-                            onClick={props.nextImage}
-                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
-                            onMouseLeave={() => handleMouseLeave('rightArrow')}
+                            className={renderClassName("closeButton", isHoveringCloseButton)}
+                            onClick={() => props.photoViewerOpen('pictureBoardForTextItem', false, [])}
+                            onMouseEnter={() => handleMouseEnter('closeButton')} 
+                            onMouseLeave={() => handleMouseLeave('closeButton')}
                         >
-                            <div className="arrow-top-line"/>
-                            <div className="arrow-bottom-line"/>
+                            <H19 className={renderClassName("closeButtonText", isHoveringCloseButton)}>Close</H19>
+                            <div className="photo-viewer-close">
+                                <div className="close-first-line"/>
+                                <div className="close-second-line"/>
+                            </div>
                         </div>
                     </div>
-                    <H19 className="h19-nobel">{`${props.photoViewerImagesArray[0].id} / ${props.photoViewerImagesArray.length}`}</H19>
-                    <div 
-                        className={renderClassName("closeButton", isHoveringCloseButton)}
-                        onClick={() => props.photoViewerOpen('pictureBoardForTextItem', false, [])}
-                        onMouseEnter={() => handleMouseEnter('closeButton')} 
-                        onMouseLeave={() => handleMouseLeave('closeButton')}
-                    >
-                        <H19 className={renderClassName("closeButtonText", isHoveringCloseButton)}>Close</H19>
-                        <div className="photo-viewer-close">
-                            <div className="close-first-line"/>
-                            <div className="close-second-line"/>
+                </div>
+                {/* {renderSection1DataItems()} */}
+            </div> : null}
+           
+                <Fullscreen
+                    enabled={fullScreen}
+                >
+                    <div className="fullscreen-outer-wrapper">
+                        <div className="fullscreen-wrapper">
+                            <div 
+                                className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                                onClick={props.prevImage}
+                                onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                                onMouseLeave={() => handleMouseLeave('leftArrow')}
+                            >
+                                <div className="arrow-top-line"/>
+                                <div className="arrow-bottom-line"/>
+                            </div>
+                            <EW30/>
+                            <div className="fullscreen-photo-viewer-image-item">
+                                <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
+                            </div>
+                            <EW30/>
+                            <div 
+                                className={renderClassName("rightArrow", isHoveringRightArrow)}
+                                onClick={props.nextImage}
+                                onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                                onMouseLeave={() => handleMouseLeave('rightArrow')}
+                            >
+                                <div className="arrow-top-line"/>
+                                <div className="arrow-bottom-line"/>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            {/* {renderSection1DataItems()} */}
-        </div>
+                </Fullscreen>
+        </>
     );
 }
 

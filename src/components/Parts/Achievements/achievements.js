@@ -62,7 +62,7 @@ import {
     H19,
     H25,
     EH80,
-    EW3
+    EW90
 } from '../../UtilityComponents';
 
 /**

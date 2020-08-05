@@ -24,7 +24,7 @@ import {
     EH40,
     EH20,
     H15,
-    EW2
+    EW70
  } from '../../UtilityComponents';
 
 /**

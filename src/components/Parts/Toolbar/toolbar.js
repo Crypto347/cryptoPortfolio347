@@ -59,7 +59,7 @@ import {
    EH10,
    H19,
    H15,
-   EW2
+   EW70
 } from '../../UtilityComponents';
 
 /**

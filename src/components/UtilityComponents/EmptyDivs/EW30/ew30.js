@@ -8,22 +8,22 @@ import React from 'react';
 * Styles
 */
 
-import './ew3.scss';
+import './ew30.scss';
 
 /**
 * EW3 component definition and export
 */
 
-export const EW3 = () => {
+export const EW30 = () => {
 
     /**
     * Markup
     */
 
     return(
-        <div className="ew3"/>
+        <div className="ew-30"/>
     );
 }
 
-export default EW3;
+export default EW30;
  
