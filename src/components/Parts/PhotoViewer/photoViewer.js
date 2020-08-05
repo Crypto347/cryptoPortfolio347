@@ -62,7 +62,7 @@ import {
     faChevronLeft,
     faChevronRight,
     faExpand,
-    faTimes
+    faCompress
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -136,6 +136,8 @@ export const PhotoViewer = (props) => {
 
     // const [menuIsShown, setMenuIsShown] = useState(false);
     const [isHoveringExpand, setIsHoveringExpand] = useState(false);
+    const [isHoveringShrink, setIsHoveringShrink] = useState(false);
+    
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
@@ -155,7 +157,10 @@ export const PhotoViewer = (props) => {
         switch(opt){
             case 'expand': 
                 setIsHoveringExpand(true);
-            break;
+                break;
+            case 'shrink': 
+                setIsHoveringShrink(true);
+                break;
             case 'leftArrow': 
                 setIsHoveringLeftArrow('on');
                 break;
@@ -172,6 +177,9 @@ export const PhotoViewer = (props) => {
         switch(opt){
             case 'expand': 
                 setIsHoveringExpand(false);
+                break;
+            case 'shrink': 
+                setIsHoveringShrink(false);
                 break;
             case 'leftArrow': 
                 setIsHoveringLeftArrow('off');
@@ -302,7 +310,11 @@ export const PhotoViewer = (props) => {
         )
     }
 
-   
+    const fullscreenOnChangeHandler = (e) => {
+        if(!e){
+            setFullScreen(e);
+        }
+    }
 
 
     /**
@@ -368,8 +380,21 @@ export const PhotoViewer = (props) => {
            
                 <Fullscreen
                     enabled={fullScreen}
+                    onChange={(e) => fullscreenOnChangeHandler(e)}
                 >
                     <div className="fullscreen-outer-wrapper">
+                        <div className="fullscreen-close-button">
+                            <div className="small-screen">
+                            <FontAwesomeIcon 
+                                icon={faCompress} 
+                                size="lg" 
+                                color={isHoveringShrink ? "white" : "rgb(155, 155, 155)"}
+                                onClick={() => setFullScreen(false)}
+                                onMouseEnter={() => handleMouseEnter('shrink')} 
+                                onMouseLeave={() => handleMouseLeave('shrink')}
+                            />
+                            </div>
+                        </div>
                         <div className="fullscreen-wrapper">
                             <div 
                                 className={renderClassName("leftArrow", isHoveringLeftArrow)}
