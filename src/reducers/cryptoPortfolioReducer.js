@@ -325,6 +325,25 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
             })
         })
     })
+
+    let optionItem = {
+        ...updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .find(item => item.id === action.pathOfIds[1]),
+        active: true
+    }
+    
+    let optionItemIndex = updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+    updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .find(item => item.id === action.pathOfIds[0]).array
+        .splice(optionItemIndex, 1, optionItem);
+
     
     let subOptionItem = {
         ...updatedMenuItems
