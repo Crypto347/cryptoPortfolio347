@@ -3,7 +3,7 @@
         font-family: 'Balsamiq Sans', cursive;
         font-size: 17px;
         font-weight: bold;
-        border-bottom: 0.5px solid rgb(155, 155, 155);
+        border-bottom: 0.5px solid rgba(155, 155, 155, 0.4);
         padding: 0 20px 0 20px;
         height: 60px;
         // align-items: center;
@@ -31,7 +31,7 @@
         font-family: 'Balsamiq Sans', cursive;
         font-size: 17px;
         font-weight: bold;
-        border-bottom: 0.5px solid rgb(155, 155, 155);
+        border-bottom: 0.5px solid rgba(155, 155, 155, 0.4);
         padding: 0 20px 0 20px;
         height: 60px;
         color: rgb(155, 155, 155);
@@ -61,7 +61,7 @@
     }
 
     .sidebar-item-options {
-        border-bottom: 0.5px solid rgb(155, 155, 155);
+        border-bottom: 0.5px solid rgba(155, 155, 155, 0.4);
         .grey-line {
             width: 100%;
             height: 10px;

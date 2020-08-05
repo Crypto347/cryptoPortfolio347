@@ -6,6 +6,16 @@
     background: white;
     z-index: 690;
     overflow-y: scroll;
+    .sidebar-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Balsamiq Sans', cursive;
+        font-size: 33px;
+        height: 68px;  
+        border-bottom: 0.5px solid rgba(155, 155, 155, 0.4);
+        cursor: pointer;
+    }
 }
 
 // @media only screen and (max-width: 1120px){

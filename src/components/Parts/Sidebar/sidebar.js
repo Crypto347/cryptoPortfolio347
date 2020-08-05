@@ -168,7 +168,7 @@ export const Sidebar = (props) => {
 
     return(
         <div className="sidebar">
-            <div style={{height: "68px",  borderBottom: "0.5px solid rgb(155, 155, 155)"}}/>
+            <div className="sidebar-logo">crypto.</div>
             {renderSidebarItems()}
         </div>
     );
