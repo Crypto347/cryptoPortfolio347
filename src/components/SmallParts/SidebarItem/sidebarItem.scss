@@ -249,62 +249,152 @@
             align-items: center;
             height: 100%;
             padding-left: 15px;
-     
-            // .sidebar-item-arrow-wrapper {
-            //     width: 10px;
-            //     .sidebar-item-arrow-top-line {
-            //         border-left: 1px solid rgb(78, 78, 78);
-            //         height: 7px;
-            //         width: 0px;
-            //         transform: translate(5px, 1.3px) rotate(-45deg);
-            //     }
-            //     .sidebar-item-arrow-bottom-line {
-            //         border-left: 1px solid rgb(78, 78, 78);
-            //         height: 7px;
-            //         width: 0px;
-            //         transform: translate(5px, -1.3px) rotate(45deg);
-            //     }
-            // }
-            // .sidebar-item-arrow-wrapper-hover-on {
-            //     width: 10px;
-            //     transform: rotate(90deg);
-            //     -webkit-animation: rotateSidebarArrowOpenState .5s linear;
-            //     -moz-animation: rotateSidebarArrowOpenState .5s linear;
-            //     -o-animation: rotateSidebarArrowOpenState .5s linear;
-            //     animation: rotateSidebarArrowOpenState .5s linear;
-            //     .sidebar-item-arrow-top-line {
-            //         border-left: 1px solid rgb(78, 78, 78);
-            //         height: 7px;
-            //         width: 0px;
-            //         transform: translate(5px, 1.3px) rotate(-45deg);
-            //     }
-            //     .sidebar-item-arrow-bottom-line {
-            //         border-left: 1px solid rgb(78, 78, 78);
-            //         height: 7px;
-            //         width: 0px;
-            //         transform: translate(5px, -1.3px) rotate(45deg);
-            //     }
-            // }
-            // .sidebar-item-arrow-wrapper-hover-off {
-            //     width: 10px;
-            //     transform: rotate(0deg);
-            //     -webkit-animation: rotateSidebarArrowCloseState .5s linear;
-            //     -moz-animation: rotateSidebarArrowCloseState .5s linear;
-            //     -o-animation: rotateSidebarArrowCloseState .5s linear;
-            //     animation: rotateSidebarArrowCloseState .5s linear;
-            //     .sidebar-item-arrow-top-line {
-            //         border-left: 1px solid rgb(78, 78, 78);
-            //         height: 7px;
-            //         width: 0px;
-            //         transform: translate(5px, 1.3px) rotate(-45deg);
-            //     }
-            //     .sidebar-item-arrow-bottom-line {
-            //         border-left: 1px solid rgb(78, 78, 78);
-            //         height: 7px;
-            //         width: 0px;
-            //         transform: translate(5px, -1.3px) rotate(45deg);
-            //     }
-            // }
+        .sidebar-option-item-text-and-arrow-wrapper {
+            display: flex;
+            transform: translate(-20px);
+            .arrow-wrapper-active {
+                display: flex;
+                transform: translate(100%);
+                // margin-top: 30px;
+                align-items: center;
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+            .arrow-wrapper-hide {
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                transform: translateX(0%);
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+            .arrow-wrapper-hover-on {
+                display: flex;
+                align-items: center;
+                opacity: 1;
+                transform: translateX(100%);
+                -webkit-animation: toolbarItemArrowAppears .2s ease;
+                -moz-animation: toolbarItemArrowAppears .2s ease;
+                -o-animation: toolbarItemArrowAppears .2s ease;
+                animation: toolbarItemArrowAppears .2s ease;
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+            .arrow-wrapper-hover-off {
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                transform: translateX(0%);
+                -webkit-animation: toolbarItemArrowDisappears .2s ease;
+                -moz-animation: toolbarItemArrowDiappears .2s ease;
+                -o-animation: toolbarItemArrowDisappears .2s ease;
+                animation: toolbarItemArrowDisappears .2s ease;
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+
+            .sidebar-option-item-text-active {
+                transform: translateX(20px);
+            }
+            .sidebar-option-item-text {
+                transform: translateX(0px);
+            }
+            .sidebar-option-item-text-hover-on {
+                transform: translateX(20px);
+                -webkit-animation: toolbarItemTextHoverOn .2s ease;
+                -moz-animation: toolbarItemTextHoverOn .2s ease;
+                -o-animation: toolbarItemTextHoverOn .2s ease;
+                animation: toolbarItemTextHoverOn .2s ease;
+            }
+            .sidebar-option-item-text-hover-off {
+                transform: translateX(0px);
+                -webkit-animation: toolbarItemTextHoverOff .2s ease;
+                -moz-animation: toolbarItemTextHoverOff .2s ease;
+                -o-animation: toolbarItemTextHoverOff .2s ease;
+                animation: toolbarItemTextHoverOff .2s ease;
+            }
+        }
+          
         }
         .sidebar-item-sub-options {
             position: relative;

@@ -112,6 +112,20 @@ export const Sidebar = (props) => {
                 // }
     }
 
+    const itemOnClick = (opt, path, pathOfIds) => {
+        switch(opt){
+            case 'optionItem': 
+                props.setActivityOfToolbarOptionItem(pathOfIds);
+                return;
+            case 'subOptionItem': 
+                props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                return;
+        }
+        console.log(path, pathOfIds)
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+       
+    }
+
     const renderSidebarItems = () => {
         return(
             <div className="sidebar-items">
@@ -125,6 +139,7 @@ export const Sidebar = (props) => {
                             showOptions={showOptions}
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
+                            itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
                             // text={el.text}
                             // active={el.active}
                             // onClick={() => sidebarOnClick(el.path, el.id)}
@@ -170,6 +185,8 @@ export default connect(
             setIsHoveringMenuItem: bindActionCreators(Actions.setIsHoveringMenuItem, dispatch),
             setIsHoveringToolbarOptionItem: bindActionCreators(Actions.setIsHoveringToolbarOptionItem, dispatch),
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
+            setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
+            setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
         };
     }
 )(withRouter(Sidebar));

@@ -111,7 +111,7 @@ export const ToolbarItem = (props) => {
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
-                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-horizontal-line"/>
                                 <div className="arrow-wrapper2">
                                     <div className="arrow-top-line"></div>
                                     <div className="arrow-bottom-line"></div>
@@ -119,7 +119,7 @@ export const ToolbarItem = (props) => {
                             </div> : null}
                             {!el.active ? 
                             <div className={renderClassName("arrow", el.isHover)}>
-                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-horizontal-line"/>
                                 <div className="arrow-wrapper2">
                                     <div className="arrow-top-line"></div>
                                     <div className="arrow-bottom-line"></div>
@@ -159,7 +159,7 @@ export const ToolbarItem = (props) => {
                                         <div className="arrow-top-line"></div>
                                         <div className="arrow-bottom-line"></div>
                                     </div>
-                                    <div className="arrow-horizontal-line"></div>
+                                    <div className="arrow-horizontal-line"/>
                                 </div> : null}
                                 {!el.active ? 
                                 <div className={renderClassName("arrow", el.isHover)}>
@@ -167,7 +167,7 @@ export const ToolbarItem = (props) => {
                                         <div className="arrow-top-line"></div>
                                         <div className="arrow-bottom-line"></div>
                                     </div>
-                                    <div className="arrow-horizontal-line"></div>
+                                    <div className="arrow-horizontal-line"/>
                                 </div> : null}
                             </div>
                         )
@@ -198,7 +198,7 @@ export const ToolbarItem = (props) => {
                                             <div className="arrow-top-line"></div>
                                             <div className="arrow-bottom-line"></div>
                                         </div>
-                                        <div className="arrow-horizontal-line"></div>
+                                        <div className="arrow-horizontal-line"/>
                                     </div> : null}
                                     {!el.active ? 
                                     <div className={renderClassName("arrow", el.isHover)}>
@@ -206,7 +206,7 @@ export const ToolbarItem = (props) => {
                                             <div className="arrow-top-line"></div>
                                             <div className="arrow-bottom-line"></div>
                                         </div>
-                                        <div className="arrow-horizontal-line"></div>
+                                        <div className="arrow-horizontal-line"/>
                                     </div> : null}
                                 </div>
                                 {el.isHover === "on" ? renderSubOptions(el.subOptions, pathOfIds): null}
@@ -250,7 +250,7 @@ export const ToolbarItem = (props) => {
                                     <div className="arrow-top-line"></div>
                                     <div className="arrow-bottom-line"></div>
                                 </div>
-                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-horizontal-line"/>
                             </div> : null}
                             {!el.active ? 
                             <div className={renderClassName("arrow", el.isHover)}>
@@ -258,7 +258,7 @@ export const ToolbarItem = (props) => {
                                     <div className="arrow-top-line"></div>
                                     <div className="arrow-bottom-line"></div>
                                 </div>
-                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-horizontal-line"/>
                             </div> : null}
                         </div>
                     )})}

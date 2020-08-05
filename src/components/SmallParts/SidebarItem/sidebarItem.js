@@ -125,11 +125,11 @@ export const SidebarItem = (props) => {
                         <div 
                             key={i} 
                             className="sidebar-option-item"
-                            // onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
+                            onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
-                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-horizontal-line"/>
                                 <div className="arrow-wrapper2">
                                     <div className="arrow-top-line"></div>
                                     <div className="arrow-bottom-line"></div>
@@ -137,7 +137,7 @@ export const SidebarItem = (props) => {
                             </div> : null}
                             {!el.active ? 
                             <div className={renderClassName("arrow", el.isHover)}>
-                                <div className="arrow-horizontal-line"></div>
+                                <div className="arrow-horizontal-line"/>
                                 <div className="arrow-wrapper2">
                                     <div className="arrow-top-line"></div>
                                     <div className="arrow-bottom-line"></div>
@@ -154,7 +154,8 @@ export const SidebarItem = (props) => {
                             </div>
                         </div>
                     )
-                }else{
+                }
+                else{
                     return(
                         <div 
                             key={i} 
@@ -163,15 +164,51 @@ export const SidebarItem = (props) => {
                             onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
                         >
                             <div className="item-wrapper">
-                                <H15 className="h15-black-lustria">{el.text}</H15>
+                                <div className="sidebar-option-item-text-and-arrow-wrapper">
+                                    {el.active ? 
+                                    <div className="arrow-wrapper-active">
+                                         <div className="arrow-horizontal-line"/>
+                                        <div className="arrow-wrapper2">
+                                            <div className="arrow-top-line"></div>
+                                            <div className="arrow-bottom-line"></div>
+                                        </div>
+                                    </div> : null}
+                                    {!el.active ? 
+                                    <div className={renderClassName("arrow", el.isHover)}>
+                                        <div className="arrow-horizontal-line"/>
+                                        <div className="arrow-wrapper2">
+                                            <div className="arrow-top-line"></div>
+                                            <div className="arrow-bottom-line"></div>
+                                        </div>
+                                        
+                                    </div> : null}
+                                    <div className={renderClassName("text", el.isHover, el.active)}>
+                                        <H15 className="h15-black-lustria">{el.text}</H15>
+                                    </div>
+                                </div>
                                 <div className={renderClassName("sidebarArrow", el.isHover, el.active)}>
                                     <div className="sidebar-item-arrow-top-line"/>
                                     <div className="sidebar-item-arrow-bottom-line"/>
                                 </div>
                             </div>
-                           
+                        
                             {el.isHover === "on" ? renderSubOptions(el.subOptions, pathOfIds): null}
                         </div>
+                        // <div 
+                        //     key={i} 
+                        //     className="sidebar-option-item-with-sub-option"
+                        //     onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)}
+                        //     onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
+                        // >
+                        //     <div className="item-wrapper">
+                        //         <H15 className="h15-black-lustria">{el.text}</H15>
+                        //         <div className={renderClassName("sidebarArrow", el.isHover, el.active)}>
+                        //             <div className="sidebar-item-arrow-top-line"/>
+                        //             <div className="sidebar-item-arrow-bottom-line"/>
+                        //         </div>
+                        //     </div>
+                        //     {el.isHover === "on" ? renderSubOptions(el.subOptions, pathOfIds): null}
+                        // </div>
                     )
                 }
             })}</>
@@ -195,11 +232,11 @@ export const SidebarItem = (props) => {
                             <div 
                                 key={i} 
                                 className="sidebar-sub-option-item"
-                                // onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
+                                onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
                             >
                                 {el.active ? 
                                 <div className="arrow-wrapper-active">
-                                    <div className="arrow-horizontal-line"></div>
+                                    <div className="arrow-horizontal-line"/>
                                     <div className="arrow-wrapper2">
                                         <div className="arrow-top-line"></div>
                                         <div className="arrow-bottom-line"></div>
@@ -207,7 +244,7 @@ export const SidebarItem = (props) => {
                                 </div> : null}
                                 {!el.active ? 
                                 <div className={renderClassName("arrow", el.isHover)}>
-                                    <div className="arrow-horizontal-line"></div>
+                                    <div className="arrow-horizontal-line"/>
                                     <div className="arrow-wrapper2">
                                         <div className="arrow-top-line"></div>
                                         <div className="arrow-bottom-line"></div>
