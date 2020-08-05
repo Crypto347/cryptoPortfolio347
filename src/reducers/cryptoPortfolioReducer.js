@@ -26,7 +26,8 @@ export const initialState = {
         translate: 0,
         transition: 0.45,
         rerender: false
-    }
+    },
+    sidebarState: "init"
 }
 
 const initMenuItems = (state, action) => {
@@ -372,6 +373,14 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
     };
 }
 
+const setSidebarState = (state, action) => {
+    return {
+        ...state,
+        sidebarState: action.val,
+    };
+}
+
+
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
 //     let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
@@ -504,6 +513,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setActivityOfToolbarOptionItem(state, action); 
         case actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM:
             return setActivityOfToolbarSubOptionItem(state, action); 
+        case actionTypes.SET_SIDEBAR_STATE:
+            return setSidebarState(state, action); 
         default: 
             return state;
     }

@@ -85,3 +85,10 @@ export const getAchievementsDataState = createSelector(
     [getAchievementsData],
     (x) => x
 );
+
+const getSidebarState = (state) => state.home.sidebarState;
+
+export const getSidebarStateState = createSelector(
+    [getSidebarState],
+    (x) => x
+);

@@ -77,3 +77,10 @@ export function setActivityOfToolbarSubOptionItem(pathOfIds) {
         pathOfIds: pathOfIds
     };
 };
+
+export function setSidebarState(val) {
+    return { 
+        type: actionTypes.SET_SIDEBAR_STATE,
+        val: val
+    };
+};

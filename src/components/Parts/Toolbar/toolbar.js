@@ -82,7 +82,6 @@ export const Toolbar = (props) => {
 
     // const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    const [sidebarState, setSidebarState] = useState("open")
     const [isHovering, setIsHovering] = useState(null);
     const [showOptions, setShowOptions] = useState(false);
     // const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
@@ -159,13 +158,13 @@ export const Toolbar = (props) => {
     }
 
     const menuOnClick = () => {
-        switch(sidebarState){
+        switch(props.sidebarState){
             case 'open':
-                return setSidebarState("close");
+                return props.setSidebarState("close");
             case 'close':
-                return setSidebarState("open");
+                return props.setSidebarState("open");
         }
-        setSidebarState("open");
+        props.setSidebarState("open");
     }
 
     // const handleScroll = () => {
@@ -347,7 +346,7 @@ export const Toolbar = (props) => {
                 <>
                     <div className="toolbar-small-screen">
                         <div
-                            className={renderClassName("menuSmallScreenButton", sidebarState)}
+                            className={renderClassName("menuSmallScreenButton", props.sidebarState)}
                             onClick={menuOnClick}
                         >
                             <div className="toolbar-menu-first-line">
@@ -366,48 +365,45 @@ export const Toolbar = (props) => {
                         <div className="toolbar-logo">crypto.</div>
                         <div/>
                     </div>
-                    {sidebarState === "open" ? 
-                    <Sidebar/> : 
-                    null}
                 </>
             )
         }
         if(option === "smallScreenAnimated"){
             return(
-                <CSSTransition
-                    in={props.scrollingUp} 
-                    timeout={5000}
-                    // mountOnEnter
-                    // unmountOnExit
-                    classNames={{
-                        enter: ``,
-                        enterActive: `toolbar-small-screen-animated-open`,
-                        exit: ``,
-                        exitActive: `toolbar-small-screen-animated-close`,
-                    }}
-                >  
-                    <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>
-                        <div
-                            className={renderClassName("menuSmallScreenButton", sidebarState)}
-                            onClick={menuOnClick}
-                        >
-                            <div className="toolbar-menu-first-line">
-                                <div className="toolbar-menu-left-half-line"/>
-                                <div className="toolbar-menu-right-half-line"/>
+                    <CSSTransition
+                        in={props.scrollingUp} 
+                        timeout={5000}
+                        // mountOnEnter
+                        // unmountOnExit
+                        classNames={{
+                            enter: ``,
+                            enterActive: `toolbar-small-screen-animated-open`,
+                            exit: ``,
+                            exitActive: `toolbar-small-screen-animated-close`,
+                        }}
+                    >  
+                        <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>
+                            <div
+                                className={renderClassName("menuSmallScreenButton", props.sidebarState)}
+                                onClick={menuOnClick}
+                            >
+                                <div className="toolbar-menu-first-line">
+                                    <div className="toolbar-menu-left-half-line"/>
+                                    <div className="toolbar-menu-right-half-line"/>
+                                </div>
+                                <div className="toolbar-menu-second-line">
+                                    <div className="toolbar-menu-left-half-line"/>
+                                    <div className="toolbar-menu-right-half-line"/>
+                                </div>
+                                <div className="toolbar-menu-third-line">
+                                    <div className="toolbar-menu-left-half-line"/>
+                                    <div className="toolbar-menu-right-half-line"/>
+                                </div>
                             </div>
-                            <div className="toolbar-menu-second-line">
-                                <div className="toolbar-menu-left-half-line"/>
-                                <div className="toolbar-menu-right-half-line"/>
-                            </div>
-                            <div className="toolbar-menu-third-line">
-                                <div className="toolbar-menu-left-half-line"/>
-                                <div className="toolbar-menu-right-half-line"/>
-                            </div>
+                            <div className="toolbar-logo">crypto.</div>
+                            <div/>
                         </div>
-                        <div className="toolbar-logo">crypto.</div>
-                        <div/>
-                    </div>
-                </CSSTransition>
+                    </CSSTransition>
             )
         }
     }
@@ -504,7 +500,8 @@ export const Toolbar = (props) => {
 
     return(
         <> 
-           {renderToolbar(props.style)}
+            {renderToolbar(props.style)}
+            {props.sidebarState === "open" ? <Sidebar/> : null}
         </> 
     );
 }
@@ -512,7 +509,8 @@ export const Toolbar = (props) => {
 export default connect(
     (state) => {
         return {
-            menuItems: Selectors.getMenuItemsState(state)
+            menuItems: Selectors.getMenuItemsState(state),
+            sidebarState: Selectors.getSidebarStateState(state),
         };
     },
     (dispatch) => {
@@ -523,6 +521,7 @@ export default connect(
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
+            setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
         };
     }
 )(withRouter(Toolbar));
