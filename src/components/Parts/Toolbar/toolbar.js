@@ -501,7 +501,7 @@ export const Toolbar = (props) => {
     return(
         <> 
             {renderToolbar(props.style)}
-            {props.sidebarState === "open" ? <Sidebar/> : null}
+            <Sidebar sidebarState={props.sidebarState}/>
         </> 
     );
 }

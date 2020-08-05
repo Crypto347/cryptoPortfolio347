@@ -91,25 +91,12 @@ export const Sidebar = (props) => {
 
     const handleMouseEnterSidebarItem = (data, id) => {
         props.setIsHoveringMenuItem("on", id);
-
-                // if(data.options.length > 2){
-                    setShowOptions(true);
-                //     setSidebarItemData(data);
-                // }else{
-                //     setShowOptionsLessThan3Regular(true);
-                // }
-           
+        setShowOptions(true);
     }
 
     const handleMouseLeaveSidebarItem = (data) => {
         props.setIsHoveringMenuItem("off");
-
-                // if(data.options.length > 2){
-                    setShowOptions(false);
-                //     setSidebarItemData({});
-                // }else{
-                //     setShowOptionsLessThan3Regular(false);
-                // }
+        setShowOptions(false);
     }
 
     const itemOnClick = (opt, path, pathOfIds) => {
@@ -140,34 +127,28 @@ export const Sidebar = (props) => {
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
                             itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
-                            // text={el.text}
-                            // active={el.active}
-                            // onClick={() => sidebarOnClick(el.path, el.id)}
                         />
                     )
             })}</div>
         )
     }
-
-    const renderSocialMediaIcons = () => {
-        return(
-            <div className="icons-soc-med" >{socialMediaIcons.map((el, i) => {
-                // return(
-                //     <SocialMediaIcon
-                //         key={i}
-                //         name={el.name}
-                //     />
-                // )
-            })}</div>
-        )
+    
+    const renderClassName = (state) => {
+       switch(state){
+            case 'init':
+                return "sidebar";
+            case 'open':
+                return "sidebar-open";  
+            case 'close':
+                return "sidebar-close";
+       }
     }
-
     /**
     * Markup
     */
 
     return(
-        <div className="sidebar">
+        <div className={renderClassName(props.sidebarState)}>
             <div className="sidebar-logo">crypto.</div>
             {renderSidebarItems()}
         </div>
