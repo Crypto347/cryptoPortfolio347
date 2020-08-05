@@ -49,11 +49,18 @@
     .h25-nobel {
         font-size: 23px;
     }
+    .h25-white-lustria {
+        font-size: 20px;
+    }
+    
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 530px){
     .h25-nobel {
-        font-size: 20px;
+        font-size: 17px;
+    }
+    .h25-white-lustria {
+        font-size: 17px;
     }
 }
 

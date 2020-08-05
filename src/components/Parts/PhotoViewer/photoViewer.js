@@ -377,51 +377,50 @@ export const PhotoViewer = (props) => {
                 </div>
                 {/* {renderSection1DataItems()} */}
             </div> : null}
-           
-                <Fullscreen
-                    enabled={fullScreen}
-                    onChange={(e) => fullscreenOnChangeHandler(e)}
-                >
-                    <div className="fullscreen-outer-wrapper">
-                        <div className="fullscreen-close-button">
-                            <div className="small-screen">
-                            <FontAwesomeIcon 
-                                icon={faCompress} 
-                                size="lg" 
-                                color={isHoveringShrink ? "white" : "rgb(155, 155, 155)"}
-                                onClick={() => setFullScreen(false)}
-                                onMouseEnter={() => handleMouseEnter('shrink')} 
-                                onMouseLeave={() => handleMouseLeave('shrink')}
-                            />
-                            </div>
-                        </div>
-                        <div className="fullscreen-wrapper">
-                            <div 
-                                className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                                onClick={props.prevImage}
-                                onMouseEnter={() => handleMouseEnter('leftArrow')} 
-                                onMouseLeave={() => handleMouseLeave('leftArrow')}
-                            >
-                                <div className="arrow-top-line"/>
-                                <div className="arrow-bottom-line"/>
-                            </div>
-                            <EW30/>
-                            <div className="fullscreen-photo-viewer-image-item">
-                                <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
-                            </div>
-                            <EW30/>
-                            <div 
-                                className={renderClassName("rightArrow", isHoveringRightArrow)}
-                                onClick={props.nextImage}
-                                onMouseEnter={() => handleMouseEnter('rightArrow')} 
-                                onMouseLeave={() => handleMouseLeave('rightArrow')}
-                            >
-                                <div className="arrow-top-line"/>
-                                <div className="arrow-bottom-line"/>
-                            </div>
+            <Fullscreen
+                enabled={fullScreen}
+                onChange={(e) => fullscreenOnChangeHandler(e)}
+            >
+                <div className="fullscreen-outer-wrapper">
+                    <div className="fullscreen-close-button">
+                        <div className="small-screen">
+                        <FontAwesomeIcon 
+                            icon={faCompress} 
+                            size="lg" 
+                            color={isHoveringShrink ? "white" : "rgb(155, 155, 155)"}
+                            onClick={() => setFullScreen(false)}
+                            onMouseEnter={() => handleMouseEnter('shrink')} 
+                            onMouseLeave={() => handleMouseLeave('shrink')}
+                        />
                         </div>
                     </div>
-                </Fullscreen>
+                    <div className="fullscreen-wrapper">
+                        <div 
+                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                            onClick={props.prevImage}
+                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                            onMouseLeave={() => handleMouseLeave('leftArrow')}
+                        >
+                            <div className="arrow-top-line"/>
+                            <div className="arrow-bottom-line"/>
+                        </div>
+                        <EW30/>
+                        <div className="fullscreen-photo-viewer-image-item">
+                            <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
+                        </div>
+                        <EW30/>
+                        <div 
+                            className={renderClassName("rightArrow", isHoveringRightArrow)}
+                            onClick={props.nextImage}
+                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                            onMouseLeave={() => handleMouseLeave('rightArrow')}
+                        >
+                            <div className="arrow-top-line"/>
+                            <div className="arrow-bottom-line"/>
+                        </div>
+                    </div>
+                </div>
+            </Fullscreen>
         </>
     );
 }
