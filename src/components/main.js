@@ -35,7 +35,7 @@ import Home from './Pages/Home/home';
 import AboutUsPage from './Pages/AboutUsPage/aboutUsPage';
 import ProcessPage from './Pages/ProcessPage/processPage';
 import HappyTeamPage from './Pages/HappyTeamPage/happyTeamPage';
-// import Locations from './Pages/Locations/locations';
+import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
 // import Contact from './Pages/Contact/contact';
 // import SingleStory from './Pages/SingleStory/singleStory';
 // import Archieve from './Pages/Archieve/archieve';
@@ -104,12 +104,12 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/contact"}
                     component={Contact}
-                />
+                />*/}
                 <Route 
                     exact 
-                    path={props.match.url + "/locations"}
-                    component={Locations}
-                />*/}
+                    path={props.match.url + "/portfolio-item/big-slider-0"}
+                    component={BigSlider}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/happy-team"}

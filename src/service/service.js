@@ -154,6 +154,24 @@ export function fetchAchievementsData() {
     };
 }
 
+// export function fetchAchievementsData() {
+//     return dispatch => {
+//         dispatch(Actions.fetchAchievementsDataBegin());
+//         return fetch("http://localhost:3005/api/portfolio-item/1", )
+//             // .then(handleErrors)
+//             .then(res => res.json()) // to debug instead of json write text
+//             .then(json => {
+//                 // console.log(json)
+//                 dispatch(Actions.fetchAchievementsDataSuccess(json));
+//                 // return json;
+//             })
+//             .catch(error => {
+//                 console.log("error",error)
+//                 dispatch(Actions.fetchAchievementsDataFailur(error))
+//             });
+//     };
+// }
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

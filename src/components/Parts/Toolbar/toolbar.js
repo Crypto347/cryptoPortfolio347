@@ -145,6 +145,8 @@ export const Toolbar = (props) => {
     }
 
     const itemOnClick = (opt, path, pathOfIds) => {
+        console.log(path, pathOfIds);
+        props.history.push(props.match.url + (path === "" ? path : `/${path}`));
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -153,9 +155,7 @@ export const Toolbar = (props) => {
                 props.setActivityOfToolbarSubOptionItem(pathOfIds);
                 return;
         }
-        console.log(path, pathOfIds)
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-       
+        
     }
 
     const menuOnClick = () => {
@@ -256,6 +256,38 @@ export const Toolbar = (props) => {
             return(
                 <>
                     <div className="toolbar-regular-screen">
+                        <div className="toolbar-logo">crypto.</div>
+                        <div className="toolbar-wrapper">
+                            {renderToolbarItems()}
+                            <div 
+                                className="toolbar-menu"
+                                onMouseEnter={handleMouseEnterMenuIcon} 
+                                onMouseLeave={handleMouseLeaveMenuIcon}
+                            >
+                                {renderMenuDots()}
+                            </div>
+                        </div>
+                    </div>
+                    {showOptions ? 
+                    <div 
+                        className="toolbar-regular-screen-options"
+                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
+                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
+                    >
+                        <div  className="grey-line"/>
+                        <EH20/>
+                        <EH10/>
+                        {renderToolbarOptions()}
+                        <EH10/>
+                        <EH20/>
+                    </div> : null}
+                </>
+            )
+        }
+        if(option === "regularScreenWhite"){
+            return(
+                <>
+                    <div className="toolbar-regular-screen-white">
                         <div className="toolbar-logo">crypto.</div>
                         <div className="toolbar-wrapper">
                             {renderToolbarItems()}

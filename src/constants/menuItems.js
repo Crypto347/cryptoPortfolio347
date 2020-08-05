@@ -250,7 +250,7 @@ export const menuItemsArray = [
                         id: 213,
                         text: "Big images",
                         itemId: "bigImages",
-                        path: "portfolio-item/welcome-take-a-look-at-our-portfolio",
+                        path: "portfolio-item/big-images-0",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -259,7 +259,7 @@ export const menuItemsArray = [
                         id: 214,
                         text: "Big slider",
                         itemId: "bigSlider",
-                        path: "portfolio-item/take-a-look-at-our-portfolio",
+                        path: "portfolio-item/big-slider-0",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -268,7 +268,7 @@ export const menuItemsArray = [
                         id: 215,
                         text: "Small images",
                         itemId: "smallImages",
-                        path: "portfolio-item/small-images-fashion-2",
+                        path: "portfolio-item/small-images-0",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -277,7 +277,7 @@ export const menuItemsArray = [
                         id: 216,
                         text: "Small slider",
                         itemId: "smallSlider",
-                        path: "portfolio-item/small-slider-fashion",
+                        path: "portfolio-item/small-slider-0",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -286,7 +286,7 @@ export const menuItemsArray = [
                         id: 117,
                         text: "Gallery",
                         itemId: "gallery",
-                        path: "portfolio-item/portfolio-gallery",
+                        path: "portfolio-item/portfolio-gallery-0",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -295,7 +295,7 @@ export const menuItemsArray = [
                         id: 218,
                         text: "Small gallery",
                         itemId: "smallGallery",
-                        path: "portfolio-item/portfolio-small-gallery",
+                        path: "portfolio-item/portfolio-small-gallery-0",
                         active: false,
                         isHover: "init",
                         subOptions: []

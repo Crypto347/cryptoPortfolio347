@@ -49,7 +49,6 @@ app.get('/api/headerImagesArray', (req, res) => {
     ]
     res.json(headerImg);
 });
-
 app.get('/api/section1', (req, res) => {
     const sec1 = [
         {
@@ -73,7 +72,6 @@ app.get('/api/section1', (req, res) => {
     ]
     res.json(sec1);
 });
-
 app.get('/api/section2/pictureBoard', (req, res) => {
     const picBoard = [
         {
@@ -82,6 +80,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-1",
             pictures: [
                 {
                     id: 1,
@@ -133,6 +132,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-2",
             pictures: [
                 {
                     id: 1,
@@ -184,6 +184,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "text",
             header: "Music",
             text: "Beautiful and advanced interface.",
+            path: null,
             pictures: [
                 {
                     id: 1,
@@ -249,6 +250,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/portfolio-gallery-1",
             pictures: [
                 {
                     id: 1,
@@ -294,6 +296,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "text",
             header: "Music",
             text: "How people really use their voice interfaces.",
+            path: null,
             pictures: [
                 {
                     id: 1,
@@ -352,6 +355,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-3",
             pictures: [
                 {
                     id: 1,
@@ -403,6 +407,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-4",
             pictures: [
                 {
                     id: 1,
@@ -461,6 +466,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-5",
             pictures: [
                 {
                     id: 1,
@@ -512,6 +518,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/small-images-1",
             pictures: [
                 {
                     id: 1,
@@ -556,6 +563,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-6",
             pictures: [
                 {
                     id: 1,
@@ -593,6 +601,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
+            path: "portfolio-item/small-slider-7",
             pictures: [
                 {
                     id: 1,
@@ -630,6 +639,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "text",
             header: "Music",
             text: "Cera is leading healthcare startup.",
+            path: null,
             pictures: [
                 {
                     id: 1,
@@ -688,6 +698,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/portfolio-gallery-2",
             pictures: [
                 {
                     id: 1,
@@ -740,6 +751,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "text",
             header: "Music",
             text: "She needed only a pen to draw a masterpiece.",
+            path: null,
             pictures: [
                 {
                     id: 1,
@@ -784,6 +796,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
+            path: "portfolio-item/small-images-2",
             pictures: [
                 {
                     id: 1,
@@ -828,6 +841,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
+            path: "portfolio-item/small-images-3",
             pictures: [
                 {
                     id: 1,
@@ -876,7 +890,6 @@ app.get('/api/section2/pictureBoard', (req, res) => {
     ]
     res.json(picBoard);
 });
-
 app.get('/api/section2/ourProcess', (req, res) => {
     const sec2 = [
         {
@@ -907,7 +920,6 @@ app.get('/api/section2/ourProcess', (req, res) => {
     ]
     res.json(sec2);
 });
-
 app.get('/api/section3/testimonials', (req, res) => {
     const testimonials = [
         {
@@ -928,7 +940,6 @@ app.get('/api/section3/testimonials', (req, res) => {
     ]
     res.json(testimonials);
 });
-
 app.get('/api/section3/teamInformation', (req, res) => {
     const teamInfo = [
         {
@@ -1004,7 +1015,6 @@ app.get('/api/section4/statisticsData', (req, res) => {
     ]
     res.json(statisticsData);
 });
-
 app.get('/api/section4/achievementsData', (req, res) => {
     const achievementsData = [
         {
@@ -1029,6 +1039,39 @@ app.get('/api/section4/achievementsData', (req, res) => {
         }
     ]
     res.json(achievementsData);
+});
+
+app.get('/api/portfolio-item/:id', (req, res) => {
+    let id = req.params.id
+    if(id === 1){
+        const achievementsData = [
+            {
+                id: 1,
+                achievement: "Finished Yearly Projects",
+                number: 22
+            },
+            {
+                id: 2,
+                achievement: "Different Locations",
+                number: 7
+            },
+            {
+                id: 3,
+                achievement: "Years of Experience",
+                number: 14
+            },
+            {
+                id: 4,
+                achievement: "Released Projects",
+                number: 4
+            }
+        ]
+        res.json(achievementsData);
+    }else{
+        let achievementsData = []
+        res.json(achievementsData);
+    }
+  
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {

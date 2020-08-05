@@ -87,12 +87,12 @@ export const ToolbarItem = (props) => {
         return(
             <div className="toolbar-item-options-wrapper">{props.data.options.map((el, i) => {
                 return(
-                        <div 
-                            key={i} 
-                            className="toolbar-option"
-                        >
-                            {renderOptionItems(el)}
-                        </div>
+                    <div 
+                        key={i} 
+                        className="toolbar-option"
+                    >
+                        {renderOptionItems(el)}
+                    </div>
                 )
             })}</div>
         )
