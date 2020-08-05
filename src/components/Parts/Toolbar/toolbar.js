@@ -35,6 +35,7 @@ import './toolbar.scss';
 
 import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
 import Sidebar from '../Sidebar/sidebar';
+import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
 * Actions
@@ -502,6 +503,11 @@ export const Toolbar = (props) => {
         <> 
             {renderToolbar(props.style)}
             <Sidebar sidebarState={props.sidebarState}/>
+            <Backdrop
+                show={props.sidebarState === "open"}
+                onClick={() => props.setSidebarState("close")}
+                className="backdrop-home"
+            />
         </> 
     );
 }
