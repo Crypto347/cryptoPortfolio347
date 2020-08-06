@@ -11,6 +11,7 @@ import section1Reducer from './section1Reducer';
 import section2Reducer from './section2Reducer';
 import section3Reducer from './section3Reducer';
 import section4Reducer from './section4Reducer';
+import smallImagesPortfolioReducer from './smallImagesPortfolioReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -20,4 +21,5 @@ export default (history) => combineReducers({
     section2: section2Reducer,
     section3: section3Reducer,
     section4: section4Reducer,
+    smallImagesPortfolioReducer: smallImagesPortfolioReducer
 });

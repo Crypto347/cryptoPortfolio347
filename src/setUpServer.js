@@ -1041,36 +1041,89 @@ app.get('/api/section4/achievementsData', (req, res) => {
     res.json(achievementsData);
 });
 
-app.get('/api/portfolio-item/:id', (req, res) => {
-    let id = req.params.id
-    if(id === 1){
-        const achievementsData = [
-            {
-                id: 1,
-                achievement: "Finished Yearly Projects",
-                number: 22
-            },
-            {
-                id: 2,
-                achievement: "Different Locations",
-                number: 7
-            },
-            {
-                id: 3,
-                achievement: "Years of Experience",
-                number: 14
-            },
-            {
-                id: 4,
-                achievement: "Released Projects",
-                number: 4
-            }
-        ]
-        res.json(achievementsData);
+app.get('/api/portfolio-item/small-images/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const smallImages = [
+        {
+            id: 1,
+            header: "Small images – Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            category: "Lifestyle",
+            date: "11.20.2017",
+            tags: ["Creative"],
+            imagesArray: [
+                {
+                    id: 1,
+                    imageName: "small-images-1",
+                    path: "small-images-1"
+                },
+                {
+                    id: 2,
+                    imageName: "small-images-2",
+                    path: "small-images-2"
+                },
+                {
+                    id: 3,
+                    imageName: "small-images-3",
+                    path: "small-images-3"
+                },
+                {
+                    id: 4,
+                    imageName: "small-images-4",
+                    path: "small-images-4"
+                },
+                {
+                    id: 5,
+                    imageName: "small-images-5",
+                    path: "small-images-5"
+                }
+            ]
+        },
+        {
+            id: 2,
+            header: "Small images – Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            category: "Lifestyle",
+            date: "11.20.2017",
+            tags: ["Creative"],
+            imagesArray: [
+                {
+                    id: 1,
+                    imageName: "small-images-1",
+                    path: "small-images-1"
+                },
+                {
+                    id: 2,
+                    imageName: "small-images-2",
+                    path: "small-images-2"
+                },
+                {
+                    id: 3,
+                    imageName: "small-images-3",
+                    path: "small-images-3"
+                },
+                {
+                    id: 4,
+                    imageName: "small-images-4",
+                    path: "small-images-4"
+                },
+                {
+                    id: 5,
+                    imageName: "small-images-5",
+                    path: "small-images-5"
+                }
+            ]
+        }
+    ]
+
+    let smallImagesObj = smallImages.find(item => item.id === id);
+    if(!smallImagesObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
     }else{
-        let achievementsData = []
-        res.json(achievementsData);
+        res.json(smallImagesObj);  
     }
+
   
 });
 

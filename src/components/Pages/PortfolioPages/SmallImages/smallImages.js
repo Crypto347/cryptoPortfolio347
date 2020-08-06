@@ -7,6 +7,10 @@ import React, {
 } from 'react';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
     connect
 } from 'react-redux';
 
@@ -20,26 +24,25 @@ import './smallImages.scss';
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../../actions';
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../../reducers/selectors';
+
+/**
+* Services
+*/
+
+import * as Services from "../../../../service";
 
 /**
 * Components
 */
 
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-// import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
-// import Section1 from '../../Parts/Section1/section1';
-// import Section2 from '../../Parts/Section2/section2';
-// import Section3 from '../../Parts/Section3/section3';
-// import Section4 from '../../Parts/Section4/section4';
-// import Section5 from '../../Parts/Section5/section5';
-// import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 /**
 * Hooks
@@ -78,7 +81,9 @@ export const SmallImages = (props) => {
         // if(props.location.state){
         //     console.log(props.location.state.obj)
         // }
-        console.log("ID",props.match.params.id)
+        // let id = 
+        // console.log("ID",props.match.params.id)
+        props.fetchSmallImagesPortfolio(props.match.params.id);
         // window.addEventListener('wheel', (e) => checkScrollDirection(e));
 
         // return () => window.removeEventListener('wheel', (e) => checkScrollDirection(e))
@@ -166,7 +171,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
