@@ -1,6 +1,6 @@
 export const findPathOfIds = (path) => {
     let updatedPath = path.split("/");
-    if(path === " "){
+    if(path === ""){
         return [1, 11, 111];
     }
   

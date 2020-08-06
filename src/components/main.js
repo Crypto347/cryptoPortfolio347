@@ -75,7 +75,7 @@ export const Main = (props) => {
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
-    console.log("PATH",pathOfIds)
+    console.log("PATH",path, pathOfIds)
     }, [])
 
     /**
