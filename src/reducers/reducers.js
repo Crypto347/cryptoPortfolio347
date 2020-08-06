@@ -21,5 +21,5 @@ export default (history) => combineReducers({
     section2: section2Reducer,
     section3: section3Reducer,
     section4: section4Reducer,
-    smallImagesPortfolioReducer: smallImagesPortfolioReducer
+    smallImagesPortfolio: smallImagesPortfolioReducer
 });

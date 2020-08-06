@@ -1,76 +1,52 @@
-.h65 {
-    font-size: 65px;
+.h70 {
+    font-size: 70px;
     color: black;
 }
 
-.h65-black-lustria {
-    font-size: 65px;
-    font-family: 'Lustria', serif;
-    color: black;
-}
-
-.h65-white-teko {
-    font-size: 65px;
-    font-family: 'Teko', sans-serif;
-    color: white;
-}
-
-.h65-nero-teko {
-    font-size: 65px;
-    font-family: 'Teko', sans-serif;
+.h70-nero-poppins {
+    font-size: 70px;
+    font-family: 'Poppins', sans-serif;
     color: rgb(37, 37, 37);
 }
 
-.h65-black-teko {
-    font-size: 65px;
-    font-family: 'Teko', sans-serif;
-    color: black;
-}
 
-.h65-black-poppins {
-    font-size: 70px;
-    font-family: 'Poppins', sans-serif;
-    color: black;
-}
-
-
-@media only screen and (max-width: 690px){
+// @media only screen and (max-width: 690px){
     
-    .h65-black-teko {
-        font-size: 55px;
-    }
-    .h65-black-lustria {
-        font-size: 50px;
-    }
-}
+//     .h65-black-teko {
+//         font-size: 55px;
+//     }
+//     .h65-black-lustria {
+//         font-size: 50px;
+//     }
+// }
 
-@media only screen and (max-width: 600px){
-    .h65-black-teko {
-        font-size: 50px;
-    }
-    .h65-black-lustria {
-        font-size: 45px;
-    }
-}
+// @media only screen and (max-width: 600px){
+//     .h65-black-teko {
+//         font-size: 50px;
+//     }
+//     .h65-black-lustria {
+//         font-size: 45px;
+//     }
+// }
 
-@media only screen and (max-width: 600px){
-    .h65-black-teko {
-        font-size: 40px;
-    }
-    .h65-black-lustria {
-        font-size: 35px;
-    }
-}
+// @media only screen and (max-width: 600px){
+//     .h65-black-teko {
+//         font-size: 40px;
+//     }
+//     .h65-black-lustria {
+//         font-size: 35px;
+//     }
+// }
 
 
-@media only screen and (max-width: 430px){
-    .h65-black-teko {
-        font-size: 35px;
-    }
-    .h65-black-lustria {
-        font-size: 30px;
-    }
-}
+// @media only screen and (max-width: 430px){
+//     .h65-black-teko {
+//         font-size: 35px;
+//     }
+//     .h65-black-lustria {
+//         font-size: 30px;
+//     }
+// }
 
 // .h3-center {
 //     font-size: 40px;

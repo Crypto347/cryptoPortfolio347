@@ -53,6 +53,21 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+* Utility
+*/
+
+import {
+    H70,
+    H22,
+    H19,
+    EH20,
+    EH40,
+    EH60,
+
+ } from '../../../UtilityComponents';
+ 
+
+/**
 * Images
 */
 
@@ -141,23 +156,56 @@ export const SmallImages = (props) => {
         }
     }
 
+    const renderPortfolioImages = () => {
+        return(
+            <div className="section-1-data-items">{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
+                return(
+                    <div key={i}>
+                      
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
+    const renderTags = () => {
+        // console.log(props.smallImagesPortfolio.item.tags)
+        return(
+            <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
+                return(
+                    <div key={i}>
+                        {el.name}
+                    </div>
+                )
+            })}</div>
+        )
+    }
+    
     /**
     * Markup
     */
 
     return(
         <div className="small-images" id="smallImages">
-            {/* <div className="home-main-background"> */}
-                {/* <div className="home-curtain"/> */}
-                {renderToolbars()}
-                {/* <HeaderImages/> */}
-            {/* </div> */}
-            {/* <Section1/>
-            <Section2/>
-            <Section3/>
-            <Section4/>
-            <Section5/> */}
-            {/* {props.photoViewerForPictureBoardTextItemOpen ? <PhotoViewer/> : null} */}
+            {renderToolbars()}
+            <div className="small-images-content">
+                <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.item.header}</H70>
+                <div>
+                    {/* {renderPortfolioImages()} */}
+                </div>
+                <div className="small-images-movable-part">
+                    <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
+                    <EH60/>
+                    <H22 className="h22-black-poppins">Category:</H22>
+                    <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.category}</H19>
+                    <EH40/>
+                    <H22 className="h22-black-poppins">Date:</H22>
+                    <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
+                    <EH40/>
+                    <H22 className="h22-black-poppins">Tags:</H22>
+                    {/* <H19 className="h19-nobel-lustria">{renderTags()}</H19> */}
+                </div>
+            </div>
         </div>
     );
 }
@@ -165,7 +213,7 @@ export const SmallImages = (props) => {
 export default connect(
     (state) => {
         return {
-            // photoViewerForPictureBoardTextItemOpen: Selectors.getPhotoViewerForPictureBoardTextItemOpenState(state),
+            smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
         
         };
     },

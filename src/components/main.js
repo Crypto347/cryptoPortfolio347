@@ -76,8 +76,8 @@ export const Main = (props) => {
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
         props.history.listen((location, action) => {
-            let path = location.pathname.slice(18);
-            let pathOfIds = Utility.findPathOfIds(path);
+            path = location.pathname.slice(18);
+            pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
         });

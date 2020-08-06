@@ -1051,32 +1051,37 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Lifestyle",
             date: "11.20.2017",
-            tags: ["Creative"],
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative"
+                }
+            ],
             imagesArray: [
                 {
                     id: 1,
                     imageName: "small-images-1",
-                    path: "small-images-1"
+                    path: "adam-wilson-1QZYZib7eYs-unsplash.jpg"
                 },
                 {
                     id: 2,
                     imageName: "small-images-2",
-                    path: "small-images-2"
+                    path: "jason-blackeye-DKCgibUVLNc-unsplash.jpg"
                 },
                 {
                     id: 3,
                     imageName: "small-images-3",
-                    path: "small-images-3"
+                    path: "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg"
                 },
                 {
                     id: 4,
                     imageName: "small-images-4",
-                    path: "small-images-4"
+                    path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg"
                 },
                 {
                     id: 5,
                     imageName: "small-images-5",
-                    path: "small-images-5"
+                    path: "shelbey-miller-HIQd4db8Kr8-unsplash.jpg"
                 }
             ]
         },

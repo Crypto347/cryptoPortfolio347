@@ -92,3 +92,10 @@ export const getSidebarStateState = createSelector(
     [getSidebarState],
     (x) => x
 );
+
+const getSmallImagesPortfolio = (state) => state.smallImagesPortfolio;
+
+export const getSmallImagesPortfolioState = createSelector(
+    [getSmallImagesPortfolio],
+    (x) => x
+);
