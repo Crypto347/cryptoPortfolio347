@@ -84,3 +84,18 @@ export function setSidebarState(val) {
         val: val
     };
 };
+
+export function activateMenuItem(pathOfIds) {
+    return { 
+        type: actionTypes.ACTIVATE_MENU_ITEM,
+        pathOfIds: pathOfIds
+    };
+};
+
+export function clearActivityOfMenuItems() {
+    return { 
+        type: actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS
+    };
+};
+
+

@@ -100,6 +100,9 @@ export const Sidebar = (props) => {
     }
 
     const itemOnClick = (opt, path, pathOfIds) => {
+        console.log(path, pathOfIds)
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        props.clearActivityOfMenuItems();
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -108,8 +111,7 @@ export const Sidebar = (props) => {
                 props.setActivityOfToolbarSubOptionItem(pathOfIds);
                 return;
         }
-        console.log(path, pathOfIds)
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+
        
     }
 
@@ -168,6 +170,7 @@ export default connect(
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
         };
     }
 )(withRouter(Sidebar));

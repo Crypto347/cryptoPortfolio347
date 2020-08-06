@@ -147,6 +147,7 @@ export const Toolbar = (props) => {
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds);
         props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        props.clearActivityOfMenuItems();
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -155,7 +156,6 @@ export const Toolbar = (props) => {
                 props.setActivityOfToolbarSubOptionItem(pathOfIds);
                 return;
         }
-        
     }
 
     const menuOnClick = () => {
@@ -560,6 +560,7 @@ export default connect(
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
         };
     }
 )(withRouter(Toolbar));

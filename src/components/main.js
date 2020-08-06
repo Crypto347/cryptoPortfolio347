@@ -72,8 +72,9 @@ export const Main = (props) => {
     useEffect(() => {
         let path = props.location.pathname.slice(18);
         let pathOfIds = Utility.findPathOfIds(path);
-        // console.log(pathOfIds)
-    
+        props.clearActivityOfMenuItems();
+        props.activateMenuItem(pathOfIds);
+    console.log(pathOfIds)
     }, [])
 
     /**
@@ -143,8 +144,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
-            // initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             // startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
             // startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
             // startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch)

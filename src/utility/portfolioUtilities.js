@@ -1,6 +1,8 @@
 export const findPathOfIds = (path) => {
     switch(path){
-        case 'portfolio-item':
-            return [2, 21, 214]
+        case '':
+            return [1, 11, 111];
+        case 'portfolio-item/big-slider-0':
+            return [2, 21, 214];
     }
 }

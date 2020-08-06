@@ -233,39 +233,52 @@ const setIsHoveringToolbarSubOptionItem = (state, action) => {
 
 const setActivityOfToolbarOptionItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
-    let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
-    let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
+    // let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
+    // let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
     let hoveredToolbarItemId = updatedMenuItems.find(item => item.isHover === "on").id;
-    if(previouslyActiveToolbarItemId !== hoveredToolbarItemId){
-        let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
-        let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
-        updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
+    // if(previouslyActiveToolbarItemId !== hoveredToolbarItemId){
+    //     let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
+    //     let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
+    //     updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
         
-        let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
-        let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
-        updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
-        
-    }
 
-    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
-            return{
-                ...el2,
-                active: false
-            }
-        })
-    })
-    
-    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
-            updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
-                return{
-                    ...el3,
-                    active: false
-                }
+    updatedMenuItems.map((el, i) => {
+        updatedMenuItems[i].active = false;
+        updatedMenuItems[i].options.map((el2, i2) => {
+            updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+                updatedMenuItems[i].options[i2].array[i3].active = false;
+                updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+                    updatedMenuItems[i].options[i2].array[i3].subOptions[i4].active = false;
+                })
             })
         })
     })
+
+    let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
+    let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
+    updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
+        
+    // }
+
+    // updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+    //     updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+    //         return{
+    //             ...el2,
+    //             active: false
+    //         }
+    //     })
+    // })
+    
+    // updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+    //     updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+    //         updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
+    //             return{
+    //                 ...el3,
+    //                 active: false
+    //             }
+    //         })
+    //     })
+    // })
 
     let optionItem = {
         ...updatedMenuItems
@@ -294,38 +307,40 @@ const setActivityOfToolbarOptionItem = (state, action) => {
 
 const setActivityOfToolbarSubOptionItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
-    let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
-    let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
+    // let previouslyActiveToolbarItemId = updatedMenuItems.find(item => item.active === true).id;
+    // let previouslyActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.active === true);
     let hoveredToolbarItemId = updatedMenuItems.find(item => item.isHover === "on").id;
-    if(previouslyActiveToolbarItemId !== hoveredToolbarItemId){
-        let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
-        let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
-        updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
+    // if(previouslyActiveToolbarItemId !== hoveredToolbarItemId){
+    //     let objPrevActiveToolbarItem = {...updatedMenuItems.find(item => item.id === previouslyActiveToolbarItemId), active: false};
+    //     let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
+    //     updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
 
-        let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
-        let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
-        updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
-    }
+ 
 
-    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
-            return{
-                ...el2,
-                active: false
-            }
-        })
-    })
+    let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
+    let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
+    updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
+    // }
+
+    // updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+    //     updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+    //         return{
+    //             ...el2,
+    //             active: false
+    //         }
+    //     })
+    // })
     
-    updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-        updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
-            updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
-                return{
-                    ...el3,
-                    active: false
-                }
-            })
-        })
-    })
+    // updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
+    //     updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
+    //         updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
+    //             return{
+    //                 ...el3,
+    //                 active: false
+    //             }
+    //         })
+    //     })
+    // })
 
     let optionItem = {
         ...updatedMenuItems
@@ -376,7 +391,81 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
 const setSidebarState = (state, action) => {
     return {
         ...state,
-        sidebarState: action.val,
+        sidebarState: action.val
+    };
+}
+
+const activateMenuItem = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+
+
+    if(action.pathOfIds.length === 3){
+        let optionItem = {
+            ...updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]).array
+            .find(item => item.id === action.pathOfIds[2]),
+            active: true
+        }
+        
+        let optionItemIndex = updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]).array
+            .findIndex(item => item.id === action.pathOfIds[2]);
+            
+        updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]).array
+            .splice(optionItemIndex, 1, optionItem);
+
+    }
+ 
+    if(action.pathOfIds.length === 4){
+        let subOptionItem = {
+            ...updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]).array
+            .find(item => item.id === action.pathOfIds[2]).subOptions
+            .find(item => item.id === action.pathOfIds[3]),
+            active: true
+        }
+        
+        let subOptionItemIndex = updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]).array
+            .find(item => item.id === action.pathOfIds[2]).subOptions
+            .findIndex(item => item.id === action.pathOfIds[3]);
+            
+        updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]).array
+            .find(item => item.id === action.pathOfIds[2]).subOptions
+            .splice(subOptionItemIndex, 1, subOptionItem);
+    }
+    return {
+        ...state,
+        menuItems: updatedMenuItems
+    };
+}
+
+const clearActivityOfMenuItems = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+
+    updatedMenuItems.map((el, i) => {
+        updatedMenuItems[i].active = false;
+        updatedMenuItems[i].options.map((el2, i2) => {
+            updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+                updatedMenuItems[i].options[i2].array[i3].active = false;
+                updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+                    updatedMenuItems[i].options[i2].array[i3].subOptions[i4].active = false;
+                })
+            })
+        })
+    })
+
+    return {
+        ...state,
+        menuItems: updatedMenuItems
     };
 }
 
@@ -515,6 +604,10 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setActivityOfToolbarSubOptionItem(state, action); 
         case actionTypes.SET_SIDEBAR_STATE:
             return setSidebarState(state, action); 
+        case actionTypes.ACTIVATE_MENU_ITEM:
+            return activateMenuItem(state, action); 
+        case actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS:
+            return clearActivityOfMenuItems(state, action); 
         default: 
             return state;
     }
