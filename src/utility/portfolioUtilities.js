@@ -1,8 +1,16 @@
 export const findPathOfIds = (path) => {
-    switch(path){
-        case '':
-            return [1, 11, 111];
-        case 'portfolio-item/big-slider-0':
+    let updatedPath = path.split("/");
+    if(path === " "){
+        return [1, 11, 111];
+    }
+  
+    switch(updatedPath[1]){
+        // case '':
+        //     return [1, 11, 111];
+        case 'big-slider':
             return [2, 21, 214];
+        case 'small-images':
+            return [2, 21, 215];
+       
     }
 }

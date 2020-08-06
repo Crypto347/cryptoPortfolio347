@@ -181,7 +181,7 @@ const setIsHoveringToolbarOptionItem = (state, action) => {
 
 const setIsHoveringToolbarSubOptionItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
-    console.log(action.pathOfIds)
+    // console.log(action.pathOfIds)
     if(action.val === "on"){
         let subOptionItem = {
             ...updatedMenuItems

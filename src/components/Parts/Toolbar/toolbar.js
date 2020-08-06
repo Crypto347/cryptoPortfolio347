@@ -146,7 +146,9 @@ export const Toolbar = (props) => {
 
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds);
-        props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        props.history.push(`/crypto-portfolio/${path}`);
+      
         props.clearActivityOfMenuItems();
         switch(opt){
             case 'optionItem': 

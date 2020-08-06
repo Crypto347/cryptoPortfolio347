@@ -35,6 +35,7 @@ import Home from './Pages/Home/home';
 import AboutUsPage from './Pages/AboutUsPage/aboutUsPage';
 import ProcessPage from './Pages/ProcessPage/processPage';
 import HappyTeamPage from './Pages/HappyTeamPage/happyTeamPage';
+import SmallImages from './Pages/PortfolioPages/SmallImages/smallImages';
 import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
 // import Contact from './Pages/Contact/contact';
 // import SingleStory from './Pages/SingleStory/singleStory';
@@ -74,7 +75,7 @@ export const Main = (props) => {
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
-    console.log(pathOfIds)
+    console.log("PATH",pathOfIds)
     }, [])
 
     /**
@@ -108,8 +109,13 @@ export const Main = (props) => {
                 />*/}
                 <Route 
                     exact 
-                    path={props.match.url + "/portfolio-item/big-slider-0"}
+                    path={props.match.url + "/portfolio-item/big-slider/:id"}
                     component={BigSlider}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/portfolio-item/small-images/:id"}
+                    component={SmallImages}
                 />
                 <Route 
                     exact 

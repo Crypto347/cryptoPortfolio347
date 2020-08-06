@@ -259,7 +259,7 @@ export const menuItemsArray = [
                         id: 214,
                         text: "Big slider",
                         itemId: "bigSlider",
-                        path: "portfolio-item/big-slider-0",
+                        path: "portfolio-item/big-slider/0",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -268,7 +268,7 @@ export const menuItemsArray = [
                         id: 215,
                         text: "Small images",
                         itemId: "smallImages",
-                        path: "portfolio-item/small-images-0",
+                        path: "portfolio-item/small-images/0",
                         active: false,
                         isHover: "init",
                         subOptions: []
