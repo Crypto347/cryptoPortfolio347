@@ -27,6 +27,35 @@
     font-family: 'Lustria', serif;
 }
 
+.h19-nobel-lustria-animated {
+    font-size: 19px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+}
+
+.h19-nobel-lustria-hover-on {
+    font-size: 19px;
+    color: rgb(37, 37, 37);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h19HoverArrowOn .5s linear;
+    -moz-animation: h19HoverArrowOn .5s linear;
+    -o-animation: h19HoverArrowOn .5s linear;
+    animation: h19HoverArrowOn .5s linear;
+}
+
+.h19-nobel-lustria-hover-off {
+    font-size: 19px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h19HoverArrowOff .5s linear;
+    -moz-animation: h19HoverArrowOff .5s linear;
+    -o-animation: h19HoverArrowOff .5s linear;
+    animation: h19HoverArrowOff .5s linear;
+}
+
 .h19-black-poppins {
     font-size: 19px;
     color: black;

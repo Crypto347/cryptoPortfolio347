@@ -1054,7 +1054,8 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    label: "Creative"
+                    label: "Creative",
+                    isHover: "init"
                 }
             ],
             imagesArray: [

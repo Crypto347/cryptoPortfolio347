@@ -24,6 +24,8 @@ export const H19 = (props) => {
         <div 
             className={props.className ? props.className : "h19"}
             onClick={props.onClick}
+            onMouseEnter={props.onMouseEnter} 
+            onMouseLeave={props.onMouseLeave}
         >
            {props.children}
         </div>

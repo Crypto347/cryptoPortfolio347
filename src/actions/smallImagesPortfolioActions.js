@@ -19,3 +19,11 @@ export function fetchSmallImagesPortfolioFailur(err) {
         err: err
     };
 };
+
+export function setIsHoveringTag(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVERING_TAG,
+        val: val,
+        id: id
+    };
+};

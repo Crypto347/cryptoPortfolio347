@@ -95,6 +95,7 @@ export const SmallImages = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     // const [scrollingHeight, setScrollingHeight] = useState(0);
     const [showContent, setShowContent] = useState(false);
+    const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
 
     /**
     * Methods
@@ -125,10 +126,80 @@ export const SmallImages = (props) => {
                 return Id1SmallImages4;
             case 'id1SmallImages5':
                 return Id1SmallImages5;
-       
             default:
                 return "";
         }
+    }
+
+    const handleMouseEnter = (opt, id) => {
+        switch(opt){
+            case 'smallImagesCategory': 
+                setIsHoveringCategoryText("on");
+                break;
+            case 'smallImagesTag1': 
+                props.setIsHoveringTag("on", id);
+                break;
+            case 'smallImagesTag2': 
+                props.setIsHoveringTag("on", id);
+                break;
+        }
+    }
+
+    const handleMouseLeave = (opt, id) => {
+        switch(opt){
+            case 'smallImagesCategory': 
+                setIsHoveringCategoryText("off");
+                break;
+            case 'smallImagesTag1': 
+                props.setIsHoveringTag("off", id);
+                break;
+            case 'smallImagesTag2': 
+                props.setIsHoveringTag("off", id);
+                break;
+        }
+    }
+    
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "smallImagesCategory"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lustria-animated";
+                case 'on':
+                    return "h19-nobel-lustria-hover-on";
+                case 'off':
+                    return "h19-nobel-lustria-hover-off"
+            }
+        }
+        if(opt === "smallImagesTag1"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lustria-animated";
+                case 'on':
+                    return "h19-nobel-lustria-hover-on";
+                case 'off':
+                    return "h19-nobel-lustria-hover-off"
+            }
+        }
+        if(opt === "smallImagesTag2"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lustria-animated";
+                case 'on':
+                    return "h19-nobel-lustria-hover-on";
+                case 'off':
+                    return "h19-nobel-lustria-hover-off"
+            }
+        }
+        // if(opt === "closeButtonText"){
+        //     switch(isHovering){
+        //         case 'init':
+        //             return "h19-nobel-lustria";
+        //         case 'on':
+        //             return "h19-nobel-lustria-hover-on";
+        //         case 'off':
+        //             return "h19-nobel-lustria-hover-off"
+        //     }
+        // }
     }
 
     // const checkScrollDirection = (e) => {
@@ -202,8 +273,12 @@ export const SmallImages = (props) => {
         return(
             <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
                 return(
-                    <div key={i}>
-                        {el.name}
+                    <div 
+                        key={i}
+                        onMouseEnter={() => handleMouseEnter(`smallImagesTag${el.id}`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallImagesTag${el.id}`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`smallImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>
@@ -229,13 +304,19 @@ export const SmallImages = (props) => {
                         <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
                         <EH60/>
                         <H22 className="h22-black-poppins">Category:</H22>
-                        <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.category}</H19>
+                        <H19 
+                            className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
+                            onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
+                            onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
+                        >
+                            {props.smallImagesPortfolio.item.category}
+                        </H19>
                         <EH40/>
                         <H22 className="h22-black-poppins">Date:</H22>
                         <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
                         <EH40/>
                         <H22 className="h22-black-poppins">Tags:</H22>
-                        {/* <H19 className="h19-nobel-lustria">{renderTags()}</H19> */}
+                        {renderTags()}
                     </div>
                 </div>
             )
@@ -272,7 +353,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            setIsHoveringTag: bindActionCreators(Actions.setIsHoveringTag, dispatch)
         };
     }
 )(SmallImages);

@@ -46,6 +46,21 @@ const fetchSmallImagesPortfolioFailur = (state, action) => {
     };
 }
 
+const setIsHoveringTag = (state, action) => {
+    let updatedTags = [...state.item.tags];
+
+    let tag = {...updatedTags.find(item => item.id === action.id), isHover: action.val};
+    let tagIndex = updatedTags.findIndex(item => item.id === action.id);
+    updatedTags.splice(tagIndex, 1, tag);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            tags: updatedTags
+        }
+    };
+}
 
 const smallImagesPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
@@ -55,6 +70,8 @@ const smallImagesPortfolioReducer = (state = initialState, action) => {
             return fetchSmallImagesPortfolioSuccess (state, action);
         case actionTypes.FETCH_SMALL_IMAGES_PORTFOLIO_FAILURE:
             return fetchSmallImagesPortfolioFailur(state, action);
+        case actionTypes.SET_IS_HOVERING_TAG:
+            return setIsHoveringTag(state, action);
         default: 
             return state;
     }
