@@ -124,8 +124,8 @@ export const SmallImages = (props) => {
         let elementOffsetTop = document.getElementById("smallImagesContent").offsetTop;
         // let elementOffsetHeight = document.getElementById("smallImagesContent").offsetHeight;
         // console.log(elementOffsetHeight)
-        if(scrollHeight > elementOffsetTop + 70){
-            setMoveStepMovablePart(scrollHeight-elementOffsetTop-70);
+        if(scrollHeight > elementOffsetTop){
+            setMoveStepMovablePart(scrollHeight-elementOffsetTop);
             setMovablePartFinalPosition(elementOffsetHeight)
         }else{
             setMoveStepMovablePart(0);
@@ -312,35 +312,38 @@ export const SmallImages = (props) => {
         }
         if(!props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
             return(
-                <div 
-                    id="smallImagesContent"
-                    className="small-images-content"
-                >
-                    <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.header}</H70>
-                    {/* <div> */}
-                        {renderPortfolioImages()}
-                    {/* </div> */}
+                <div className="small-images-wrapper">
+                    <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.item.header}</H70>
+                    <EH40/>
                     <div 
-                        id="smallImagesMovablePart"
-                        className="small-images-movable-part" 
-                        style={{marginTop: `${moveStepMovablePart}px`}}
+                        id="smallImagesContent"
+                        className="small-images-content"
                     >
-                        <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
-                        <EH60/>
-                        <H22 className="h22-nero-poppins">Category:</H22>
-                        <H19 
-                            className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
-                            onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
-                            onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
+                        {/* <div> */}
+                            {renderPortfolioImages()}
+                        {/* </div> */}
+                        <div 
+                            id="smallImagesMovablePart"
+                            className="small-images-movable-part" 
+                            style={{marginTop: `${moveStepMovablePart}px`}}
                         >
-                            {props.smallImagesPortfolio.item.category}
-                        </H19>
-                        <EH40/>
-                        <H22 className="h22-nero-poppins">Date:</H22>
-                        <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
-                        <EH40/>
-                        <H22 className="h22-nero-poppins">Tags:</H22>
-                        {renderTags()}
+                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
+                            <EH60/>
+                            <H22 className="h22-nero-poppins">Category:</H22>
+                            <H19 
+                                className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
+                                onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
+                                onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
+                            >
+                                {props.smallImagesPortfolio.item.category}
+                            </H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Date:</H22>
+                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Tags:</H22>
+                            {renderTags()}
+                        </div>
                     </div>
                 </div>
             )
