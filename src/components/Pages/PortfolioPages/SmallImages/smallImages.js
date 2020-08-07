@@ -3,7 +3,7 @@
 */
 
 import React, {
-    useEffect, useState
+    useEffect, useState, useLa
 } from 'react';
 
 import {
@@ -96,6 +96,9 @@ export const SmallImages = (props) => {
     // const [scrollingHeight, setScrollingHeight] = useState(0);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
+    // const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
+    
 
     /**
     * Methods
@@ -106,13 +109,28 @@ export const SmallImages = (props) => {
         // if(props.location.state){
         //     console.log(props.location.state.obj)
         // }
-        // let id = 
-        // console.log("ID",props.match.params.id)
+
         props.fetchSmallImagesPortfolio(props.match.params.id);
         if(props.smallImagesPortfolio.item !== {}){
             setShowContent(true)
         }
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+
+    const handleScroll = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let elementOffsetTop = document.getElementById("smallImagesContent").offsetTop;
+        // let elementOffsetHeight = document.getElementById("smallImagesContent").offsetHeight;
+        // console.log(elementOffsetHeight)
+        if(scrollHeight > elementOffsetTop + 70){
+            setMoveStepMovablePart(scrollHeight-elementOffsetTop-70);
+            setMovablePartFinalPosition(elementOffsetHeight)
+        }else{
+            setMoveStepMovablePart(0);
+        }
+    }
 
     const loadImg = (key) => {
         switch(key) {
@@ -269,7 +287,6 @@ export const SmallImages = (props) => {
     }
 
     const renderTags = () => {
-        // console.log(props.smallImagesPortfolio.item.tags)
         return(
             <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
                 return(
@@ -295,15 +312,22 @@ export const SmallImages = (props) => {
         }
         if(!props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
             return(
-                <div className="small-images-content">
+                <div 
+                    id="smallImagesContent"
+                    className="small-images-content"
+                >
                     <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.header}</H70>
                     {/* <div> */}
                         {renderPortfolioImages()}
                     {/* </div> */}
-                    <div className="small-images-movable-part">
+                    <div 
+                        id="smallImagesMovablePart"
+                        className="small-images-movable-part" 
+                        style={{marginTop: `${moveStepMovablePart}px`}}
+                    >
                         <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
                         <EH60/>
-                        <H22 className="h22-black-poppins">Category:</H22>
+                        <H22 className="h22-nero-poppins">Category:</H22>
                         <H19 
                             className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
                             onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
@@ -312,10 +336,10 @@ export const SmallImages = (props) => {
                             {props.smallImagesPortfolio.item.category}
                         </H19>
                         <EH40/>
-                        <H22 className="h22-black-poppins">Date:</H22>
+                        <H22 className="h22-nero-poppins">Date:</H22>
                         <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
                         <EH40/>
-                        <H22 className="h22-black-poppins">Tags:</H22>
+                        <H22 className="h22-nero-poppins">Tags:</H22>
                         {renderTags()}
                     </div>
                 </div>
@@ -338,7 +362,6 @@ export const SmallImages = (props) => {
         <div className="small-images" id="smallImages">
             {renderToolbars()}
             {showContent ? renderSmallImagesContent() : null}
-          
         </div>
     );
 }
