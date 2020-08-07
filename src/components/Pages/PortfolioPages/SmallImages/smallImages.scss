@@ -1,7 +1,27 @@
 .small-images {
-    .small-images-content {
-        padding: 70px 130px 70px 130px;
+    .small-images-loading-error {
+
     }
+    .small-images-content {
+        width: calc(100% - 245px);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 70px 130px 70px 130px;
+        // border: 2px solid red;
+        .small-images-portfolio-images {
+            width: 58%;
+            .small-images-portfolio-image {
+                > img {
+                    width: 100%;
+                }
+            }
+        }
+        .small-images-movable-part {
+            width: calc(42% - 30px);
+            padding: 5px 0px 0px 30px;
+        }
+    }
+   
 }
 
 

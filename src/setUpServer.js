@@ -1060,27 +1060,27 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "small-images-1",
+                    imageName: "id1SmallImages1",
                     path: "adam-wilson-1QZYZib7eYs-unsplash.jpg"
                 },
                 {
                     id: 2,
-                    imageName: "small-images-2",
+                    imageName: "id1SmallImages2",
                     path: "jason-blackeye-DKCgibUVLNc-unsplash.jpg"
                 },
                 {
                     id: 3,
-                    imageName: "small-images-3",
+                    imageName: "id1SmallImages3",
                     path: "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg"
                 },
                 {
                     id: 4,
-                    imageName: "small-images-4",
+                    imageName: "id1SmallImages4",
                     path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg"
                 },
                 {
                     id: 5,
-                    imageName: "small-images-5",
+                    imageName: "id1SmallImages5",
                     path: "shelbey-miller-HIQd4db8Kr8-unsplash.jpg"
                 }
             ]

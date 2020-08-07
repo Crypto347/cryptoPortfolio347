@@ -16,6 +16,7 @@ export * from './FontSize/H130/h130';
 export * from './EmptyDivs/EH10/eh10';
 export * from './EmptyDivs/EH20/eh20';
 export * from './EmptyDivs/EH25/eh25';
+export * from './EmptyDivs/EH30/eh30';
 export * from './EmptyDivs/EH40/eh40';
 export * from './EmptyDivs/EH60/eh60';
 export * from './EmptyDivs/EH70/eh70';
