@@ -65,7 +65,7 @@ import {
     EH30,
     EH40,
     EH60,
-
+    EH70
  } from '../../../UtilityComponents';
  
 
@@ -96,6 +96,8 @@ export const SmallImages = (props) => {
     // const [scrollingHeight, setScrollingHeight] = useState(0);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
     // const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
     
@@ -160,6 +162,12 @@ export const SmallImages = (props) => {
             case 'smallImagesTag2': 
                 props.setIsHoveringTag("on", id);
                 break;
+            case 'leftArrow': 
+                setIsHoveringLeftArrow("on");
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow("on");
+                break;
         }
     }
 
@@ -174,10 +182,17 @@ export const SmallImages = (props) => {
             case 'smallImagesTag2': 
                 props.setIsHoveringTag("off", id);
                 break;
+            case 'leftArrow': 
+                setIsHoveringLeftArrow("off");
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow("off");
+                break;
         }
     }
     
     const renderClassName = (opt, isHovering) => {
+
         if(opt === "smallImagesCategory"){
             switch(isHovering){
                 case 'init':
@@ -206,6 +221,26 @@ export const SmallImages = (props) => {
                     return "h19-nobel-lustria-hover-on";
                 case 'off':
                     return "h19-nobel-lustria-hover-off"
+            }
+        }
+        if(opt === "leftArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-left";
+                case 'on':
+                    return "arrow-wrapper-left-lengthen";
+                case 'off':
+                    return "arrow-wrapper-left-shorten"
+            }
+        }
+        if(opt === "rightArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-right";
+                case 'on':
+                    return "arrow-wrapper-right-lengthen";
+                case 'off':
+                    return "arrow-wrapper-right-shorten"
             }
         }
         // if(opt === "closeButtonText"){
@@ -314,7 +349,7 @@ export const SmallImages = (props) => {
             return(
                 <div className="small-images-wrapper">
                     <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.item.header}</H70>
-                    <EH40/>
+                    <EH70/>
                     <div 
                         id="smallImagesContent"
                         className="small-images-content"
@@ -343,6 +378,39 @@ export const SmallImages = (props) => {
                             <EH40/>
                             <H22 className="h22-nero-poppins">Tags:</H22>
                             {renderTags()}
+                        </div>
+                    </div>
+                    <div className="small-images-navigation">
+                        <div 
+                            className={renderClassName("leftArrow",isHoveringLeftArrow)}
+                            onMouseEnter={() => handleMouseEnter("leftArrow")} 
+                            onMouseLeave={() => handleMouseLeave("leftArrow")} 
+                            // onClick={() => arrowOnClick(props.path)}
+                        >
+                            <div className="arrow-horizontal-line"></div>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div>
+
+                        <div className="small-images-navigation-menu">
+                            <div className="small-images-navigation-menu-dot"/>
+                            <div className="small-images-navigation-menu-dot"/>
+                            <div className="small-images-navigation-menu-dot"/>
+                            <div className="small-images-navigation-menu-dot"/>
+                        </div>
+                        <div 
+                            className={renderClassName("rightArrow", isHoveringRightArrow)}
+                            onMouseEnter={() => handleMouseEnter("rightArrow")} 
+                            onMouseLeave={() => handleMouseLeave("rightArrow")} 
+                            // onClick={() => arrowOnClick(props.path)}
+                        >
+                            <div className="arrow-horizontal-line"></div>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

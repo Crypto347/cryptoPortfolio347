@@ -29,7 +29,6 @@
            }
        }
     }
-
    .arrow-wrapper-lengthen {
         display: flex;
         margin-top: 30px;
@@ -39,10 +38,10 @@
             border: 1px solid black;
             background: black;
             width: 60px;
-            -webkit-animation: lengthenHorizontalLine .1s linear;
-            -moz-animation: lengthenHorizontalLine .1s linear;
-            -o-animation: lengthenHorizontalLine .1s linear;
-            animation: lengthenHorizontalLine .1s linear;
+            -webkit-animation: lengthenHorizontalLineSection1 .1s linear;
+            -moz-animation: lengthenHorizontalLineSection1 .1s linear;
+            -o-animation: lengthenHorizontalLineSection1 .1s linear;
+            animation: lengthenHorizontalLineSection1 .1s linear;
        }
        .arrow-wrapper2 {
             transform: translate(-5px);
@@ -54,10 +53,10 @@
                 border: 0px solid black;
                 height: 10px;
                 transform: translate(-1px, 2.5px) rotate(-45deg);
-                -webkit-animation: lengthenArrowLines .1s linear;
-                -moz-animation: lengthenArrowLines .1s linear;
-                -o-animation: lengthenArrowLines .1s linear;
-                animation: lengthenArrowLines .1s linear;
+                -webkit-animation: lengthenArrowLineSection1 .1s linear;
+                -moz-animation: lengthenArrowLineSection1 .1s linear;
+                -o-animation: lengthenArrowLineSection1 .1s linear;
+                animation: lengthenArrowLineSection1 .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
            }
@@ -65,10 +64,10 @@
                 border: 0px solid black;
                 height: 10px;
                 transform: translate(-1px, -2.5px) rotate(45deg);
-                -webkit-animation: lengthenArrowLines .1s linear;
-                -moz-animation: lengthenArrowLines .1s linear;
-                -o-animation: lengthenArrowLines .1s linear;
-                animation: lengthenArrowLines .1s linear;
+                -webkit-animation: lengthenArrowLineSection1 .1s linear;
+                -moz-animation: lengthenArrowLineSection1 .1s linear;
+                -o-animation: lengthenArrowLineSection1 .1s linear;
+                animation: lengthenArrowLineSection1 .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
            }
@@ -83,10 +82,10 @@
             border: 1px solid black;
             background: black;
             width: 50px;
-            -webkit-animation: shortenHorizontalLine .1s linear;
-            -moz-animation: shortenHorizontalLine .1s linear;
-            -o-animation: shortenHorizontalLine .1s linear;
-            animation: shortenHorizontalLine .1s linear;
+            -webkit-animation: shortenHorizontalLineSection1 .1s linear;
+            -moz-animation: shortenHorizontalLineSection1 .1s linear;
+            -o-animation: shortenHorizontalLineSection1 .1s linear;
+            animation: shortenHorizontalLineSection1 .1s linear;
             animation-delay: .1s;
             animation-fill-mode: both;
         }
@@ -100,19 +99,19 @@
                 border: 1px solid black;
                 height: 0px;
                 transform: translate(-1px, 1px) rotate(-45deg);
-                -webkit-animation: shortenArrowLines .1s linear;
-                -moz-animation: shortenArrowLines .1s linear;
-                -o-animation: shortenArrowLines .1s linear;
-                animation: shortenArrowLines .1s linear;
+                -webkit-animation: shortenArrowLineSection1 .1s linear;
+                -moz-animation: shortenArrowLineSection1 .1s linear;
+                -o-animation: shortenArrowLineSection1 .1s linear;
+                animation: shortenArrowLineSection1 .1s linear;
             }
             .arrow-bottom-line {
                 border: 1px solid black;
                 height: 0px;
                 transform: translate(-1px, -1px) rotate(45deg);
-                -webkit-animation: shortenArrowLines .1s linear;
-                -moz-animation: shortenArrowLines .1s linear;
-                -o-animation: shortenArrowLines .1s linear;
-                animation: shortenArrowLines .1s linear;
+                -webkit-animation: shortenArrowLineSection1 .1s linear;
+                -moz-animation: shortenArrowLineSection1 .1s linear;
+                -o-animation: shortenArrowLineSection1 .1s linear;
+                animation: shortenArrowLineSection1 .1s linear;
             }
         }
     }
@@ -120,7 +119,7 @@
 
 
 
-@-webkit-keyframes lengthenArrowLines {
+@-webkit-keyframes lengthenArrowLineSection1 {
     from{
         height: 0px;
         border: 0px solid black;
@@ -130,7 +129,7 @@
         border: 1px solid black;
     }
 }
-@-moz-keyframes lengthenArrowLines {
+@-moz-keyframes lengthenArrowLineSection1 {
     from{
         height: 0px;
         border: 0px solid black;
@@ -140,7 +139,17 @@
         border: 1px solid black;
     }
 }
-@-o-keyframes lengthenArrowLines {
+@-o-keyframes lengthenArrowLineSection1 {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
+}
+@keyframes lengthenArrowLineSection1 {
     from{
         height: 0px;
         border: 0px solid black;
@@ -151,66 +160,54 @@
     }
 }
 
-@keyframes lengthenArrowLines {
-    from{
-        height: 0px;
-        border: 0px solid black;
-    }
-    to{
-        height: 15px;
-        border: 1px solid black;
-    }
-}
-
-@-webkit-keyframes shortenArrowLines {
+@-webkit-keyframes shortenArrowLineSection1 {
     from{height: 15px;}
     to{height: 0px;}
 }
-@-moz-keyframes shortenArrowLines {
+@-moz-keyframes shortenArrowLineSection1 {
     from{height: 15px;}
     to{height: 0px;}
 }
-@-o-keyframes shortenArrowLines {
+@-o-keyframes shortenArrowLineSection1 {
     from{height: 15px;}
     to{height: 0px;}
 }
-@keyframes shortenArrowLines {
+@keyframes shortenArrowLineSection1 {
     from{height: 15px;}
     to{height: 0px;}
 }
 
-@-webkit-keyframes lengthenHorizontalLine {
+@-webkit-keyframes lengthenHorizontalLineSection1 {
     from{width: 50px;}
     to{width: 60px;}
 }
-@-moz-keyframes lengthenHorizontalLine {
+@-moz-keyframes lengthenHorizontalLineSection1 {
     from{width: 50px;}
     to{width: 60px;}
 }
-@-o-keyframes lengthenHorizontalLine {
+@-o-keyframes lengthenHorizontalLineSection1 {
+    from{width: 50px;}
+    to{width: 60px;}
+}
+@keyframes lengthenHorizontalLineSection1 {
     from{width: 50px;}
     to{width: 60px;}
 }
 
-@keyframes lengthenHorizontalLine {
-    from{width: 50px;}
-    to{width: 60px;}
-}
-
-@-webkit-keyframes shortenHorizontalLine {
+@-webkit-keyframes shortenHorizontalLineSection1 {
     from{width: 60px;}
     to{width: 50px;}
 }
-@-moz-keyframes shortenHorizontalLine {
+@-moz-keyframes shortenHorizontalLineSection1 {
     from{width: 60px;}
     to{width: 50px;}
 }
-@-o-keyframes shortenHorizontalLine {
+@-o-keyframes shortenHorizontalLineSection1 {
     from{width: 60px;}
     to{width: 50px;}
 }
 
-@keyframes shortenHorizontalLine {
+@keyframes shortenHorizontalLineSection1 {
     from{width: 60px;}
     to{width: 50px;}
 }

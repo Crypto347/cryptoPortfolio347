@@ -81,8 +81,8 @@ export const Section1DataItem = (props) => {
             > 
                 <div 
                     className="arrow-wrapper"
-                    onMouseLeave={handleMouseLeave} 
                     onMouseEnter={handleMouseEnter} 
+                    onMouseLeave={handleMouseLeave}
                     onClick={() => arrowOnClick(props.path)}
                 >
                     <div className="arrow-horizontal-line"></div>

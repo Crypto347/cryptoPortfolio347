@@ -24,10 +24,242 @@
                 padding: 5px 0px 0px 30px;
             }
         }
+        .small-images-navigation {
+            border: 2px solid yellowgreen;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .arrow-wrapper-left {
+                
+            }
+
+            .small-images-navigation-menu {
+                width: 25px;
+                display: flex;
+                flex-wrap: wrap;
+                border: 2px solid red;
+                cursor: pointer;
+                .small-images-navigation-menu-dot {
+                    border: 2px solid rgb(37, 37, 37);
+                    background-color: rgb(37, 37, 37);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin: 2px;
+                }
+            }
+            .arrow-wrapper-right {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: 30px;
+                border: 2px solid red;
+               .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 15px;
+               }
+               .arrow-wrapper2 {
+                    transform: translate(-3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                   .arrow-top-line {
+                        border: 1px solid black;
+                        height: 0px;
+                        transform: translate(1px, 1px) rotate(-45deg);
+                   }
+                   .arrow-bottom-line {
+                        border: 1px solid black;
+                        height: 0px;
+                        transform: translate(1px, -1px) rotate(45deg);
+                   }
+               }
+            }
+        
+           .arrow-wrapper-right-lengthen {
+                display: flex;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+               .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 20px;
+                    -webkit-animation: lengthenRightHorizontalLineSmallImages .1s linear;
+                    -moz-animation: lengthenRightHorizontalLineSmallImages .1s linear;
+                    -o-animation: lengthenRightHorizontalLineSmallImages .1s linear;
+                    animation: lengthenRightHorizontalLineSmallImages .1s linear;
+               }
+               .arrow-wrapper2 {
+                    transform: translate(-3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                   .arrow-top-line {
+                        border: 0px solid black;
+                        height: 7px;
+                        transform: translate(1px, 1px) rotate(-45deg);
+                        -webkit-animation: lengthenRightArrowLineSmallImages .1s linear;
+                        -moz-animation: lengthenRightArrowLineSmallImages .1s linear;
+                        -o-animation: lengthenRightArrowLineSmallImages .1s linear;
+                        animation: lengthenRightArrowLineSmallImages .1s linear;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                   }
+                   .arrow-bottom-line {
+                        border: 0px solid black;
+                        height: 7px;
+                        transform: translate(1px, -1px) rotate(45deg);
+                        -webkit-animation: lengthenRightArrowLineSmallImages .1s linear;
+                        -moz-animation: lengthenRightArrowLineSmallImages .1s linear;
+                        -o-animation: lengthenRightArrowLineSmallImages .1s linear;
+                        animation: lengthenRightArrowLineSmallImages .1s linear;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                   }
+               }
+           }
+           .arrow-wrapper-right-shorten {
+                display: flex;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+                .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 15px;
+                    -webkit-animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    -moz-animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    -o-animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    animation-delay: .1s;
+                    animation-fill-mode: both;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border: 1px solid black;
+                        height: 0px;
+                        transform: translate(-1px, 1px) rotate(-45deg);
+                        -webkit-animation: shortenRightArrowLineSmallImages .1s linear;
+                        -moz-animation: shortenRightArrowLineSmallImages .1s linear;
+                        -o-animation: shortenRightArrowLineSmallImages .1s linear;
+                        animation: shortenRightArrowLineSmallImages .1s linear;
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid black;
+                        height: 0px;
+                        transform: translate(-1px, -1px) rotate(45deg);
+                        -webkit-animation: shortenRightArrowLineSmallImages .1s linear;
+                        -moz-animation: shortenRightArrowLineSmallImages .1s linear;
+                        -o-animation: shortenRightArrowLineSmallImages .1s linear;
+                        animation: shortenRightArrowLineSmallImages .1s linear;
+                    }
+                }
+            }
+        }
     }
 }
 
 
+@-webkit-keyframes lengthenRightArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+@-moz-keyframes lengthenRightArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+@-o-keyframes lengthenRightArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+@keyframes lengthenRightArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+
+@-webkit-keyframes shortenRightArrowLineSmallImages {
+    from{height: 7px;}
+    to{height: 0px;}
+}
+@-moz-keyframes shortenRightArrowLineSmallImages {
+    from{height: 7px;}
+    to{height: 0px;}
+}
+@-o-keyframes shortenRightArrowLineSmallImages {
+    from{height: 7px;}
+    to{height: 0px;}
+}
+@keyframes shortenRightArrowLinesSmallImages {
+    from{height: 7px;}
+    to{height: 0px;}
+}
+
+@-webkit-keyframes lengthenRightHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+@-moz-keyframes lengthenRightHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+@-o-keyframes lengthenRightHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+@keyframes lengthenRightHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+
+@-webkit-keyframes shorteRightHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
+@-moz-keyframes shorteRightHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
+@-o-keyframes shorteRightHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
+@keyframes shorteRightHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
 
 // @media only screen and (max-device-width: 1120px){
 //     .home {
