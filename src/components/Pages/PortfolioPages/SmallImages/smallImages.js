@@ -134,7 +134,7 @@ export const SmallImages = (props) => {
             setMoveStepMovablePart(scrollHeight - smallImagesContentOffsetTop);
             setMovablePartFinalPosition(smallImagesContentOffsetHeight)
         } else if(scrollHeight > bottomOfSmallImagesPortfolioImages) {
-            setMoveStepMovablePart(smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight);
+            setMoveStepMovablePart(smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight - 30);
         } else {
             setMoveStepMovablePart(0);
         }
