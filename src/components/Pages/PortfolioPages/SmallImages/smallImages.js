@@ -98,8 +98,9 @@ export const SmallImages = (props) => {
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
+    const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
-    const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
+    // const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
     
 
     /**
@@ -124,7 +125,6 @@ export const SmallImages = (props) => {
     const handleScroll = (e) => {
         let scrollHeight = document.body.scrollTop;
         let smallImagesContentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
-        let smallImagesContentOffsetHeight = document.getElementById("smallImagesContent").offsetHeight - 200;
         let smallImagesPortfolioImagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
         let smallImagesPortfolioImagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
         let smallImagesPortfolioMovablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
@@ -132,7 +132,6 @@ export const SmallImages = (props) => {
         console.log(scrollHeight, smallImagesContentOffsetTop, bottomOfSmallImagesPortfolioImages)
         if(scrollHeight > smallImagesContentOffsetTop && scrollHeight < bottomOfSmallImagesPortfolioImages){
             setMoveStepMovablePart(scrollHeight - smallImagesContentOffsetTop);
-            setMovablePartFinalPosition(smallImagesContentOffsetHeight)
         } 
         else if(scrollHeight > bottomOfSmallImagesPortfolioImages) {
             setMoveStepMovablePart(smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight - 30);
@@ -176,6 +175,9 @@ export const SmallImages = (props) => {
             case 'rightArrow': 
                 setIsHoveringRightArrow("on");
                 break;
+            case 'menuButton': 
+                setIsHoveringMenuButton("on");
+                break;
         }
     }
 
@@ -196,11 +198,13 @@ export const SmallImages = (props) => {
             case 'rightArrow': 
                 setIsHoveringRightArrow("off");
                 break;
+            case 'menuButton': 
+                setIsHoveringMenuButton("off");
+                break;
         }
     }
     
     const renderClassName = (opt, isHovering) => {
-
         if(opt === "smallImagesCategory"){
             switch(isHovering){
                 case 'init':
@@ -251,16 +255,16 @@ export const SmallImages = (props) => {
                     return "arrow-wrapper-right-shorten"
             }
         }
-        // if(opt === "closeButtonText"){
-        //     switch(isHovering){
-        //         case 'init':
-        //             return "h19-nobel-lustria";
-        //         case 'on':
-        //             return "h19-nobel-lustria-hover-on";
-        //         case 'off':
-        //             return "h19-nobel-lustria-hover-off"
-        //     }
-        // }
+        if(opt === "menuButton"){
+            switch(isHovering){
+                case 'init':
+                    return "small-images-navigation-menu-dot";
+                case 'on':
+                    return "small-images-navigation-menu-dot-hover-on";
+                case 'off':
+                    return "small-images-navigation-menu-dot-hover-off"
+            }
+        }
     }
 
     // const checkScrollDirection = (e) => {
@@ -393,7 +397,7 @@ export const SmallImages = (props) => {
                     </div>
                     <div className="small-images-navigation">
                         <div 
-                            className={renderClassName("leftArrow",isHoveringLeftArrow)}
+                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
                             onMouseEnter={() => handleMouseEnter("leftArrow")} 
                             onMouseLeave={() => handleMouseLeave("leftArrow")} 
                             // onClick={() => arrowOnClick(props.path)}
@@ -405,11 +409,15 @@ export const SmallImages = (props) => {
                             <div className="arrow-horizontal-line"/>
                         </div>
 
-                        <div className="small-images-navigation-menu">
-                            <div className="small-images-navigation-menu-dot"/>
-                            <div className="small-images-navigation-menu-dot"/>
-                            <div className="small-images-navigation-menu-dot"/>
-                            <div className="small-images-navigation-menu-dot"/>
+                        <div 
+                            className="small-images-navigation-menu"
+                            onMouseEnter={() => handleMouseEnter("menuButton")} 
+                            onMouseLeave={() => handleMouseLeave("menuButton")} 
+                        >
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
                         </div>
                         <div 
                             className={renderClassName("rightArrow", isHoveringRightArrow)}

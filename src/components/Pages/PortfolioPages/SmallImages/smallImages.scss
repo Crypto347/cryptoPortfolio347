@@ -152,7 +152,6 @@
                 width: 25px;
                 display: flex;
                 flex-wrap: wrap;
-                border: 2px solid red;
                 cursor: pointer;
                 .small-images-navigation-menu-dot {
                     border: 2px solid rgb(37, 37, 37);
@@ -161,6 +160,30 @@
                     height: 4px;
                     border-radius: 50%;
                     margin: 2px;
+                }
+                .small-images-navigation-menu-dot-hover-on {
+                    border: 2px solid rgb(155, 155, 155);
+                    background-color: rgb(155, 155, 155);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin: 2px;
+                    -webkit-animation: smallImagesMenuButtonHoverOn .3s linear;
+                    -moz-animation: smallImagesMenuButtonHoverOn .3s linear;
+                    -o-animation: smallImagesMenuButtonHoverOn .3s linear;
+                    animation: smallImagesMenuButtonHoverOn .3s linear;
+                }
+                .small-images-navigation-menu-dot-hover-off {
+                    border: 2px solid rgb(37, 37, 37);
+                    background-color: rgb(37, 37, 37);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin: 2px;
+                    -webkit-animation: smallImagesMenuButtonHoverOff .3s linear;
+                    -moz-animation: smallImagesMenuButtonHoverOff .3s linear;
+                    -o-animation: smallImagesMenuButtonHoverOff .3s linear;
+                    animation: smallImagesMenuButtonHoverOff .3s linear;
                 }
             }
 
@@ -282,6 +305,87 @@
     }
 }
 
+@-webkit-keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+@-moz-keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+@-o-keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+@keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+
+@-webkit-keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@-moz-keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@-o-keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
 
 @-webkit-keyframes lengthenArrowLineSmallImages {
     from{
