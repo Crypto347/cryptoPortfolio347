@@ -128,14 +128,16 @@ export const SmallImages = (props) => {
         let smallImagesPortfolioImagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
         let smallImagesPortfolioImagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
         let smallImagesPortfolioMovablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
-        let bottomOfSmallImagesPortfolioImages = smallImagesPortfolioImagesOffsetTop + smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight
+        let bottomOfSmallImagesPortfolioImages = smallImagesPortfolioImagesOffsetTop + smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight;
         console.log(scrollHeight, smallImagesContentOffsetTop, bottomOfSmallImagesPortfolioImages)
         if(scrollHeight > smallImagesContentOffsetTop && scrollHeight < bottomOfSmallImagesPortfolioImages){
             setMoveStepMovablePart(scrollHeight - smallImagesContentOffsetTop);
             setMovablePartFinalPosition(smallImagesContentOffsetHeight)
-        } else if(scrollHeight > bottomOfSmallImagesPortfolioImages) {
+        } 
+        else if(scrollHeight > bottomOfSmallImagesPortfolioImages) {
             setMoveStepMovablePart(smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight - 30);
-        } else {
+        } 
+        else {
             setMoveStepMovablePart(0);
         }
     }
@@ -372,7 +374,7 @@ export const SmallImages = (props) => {
                             style={{marginTop: `${moveStepMovablePart}px`}}
                         >
                             <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
-                            <EH60/>
+                            <EH40/>
                             <H22 className="h22-nero-poppins">Category:</H22>
                             <H19 
                                 className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
