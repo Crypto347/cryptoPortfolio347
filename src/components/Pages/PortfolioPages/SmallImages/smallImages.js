@@ -396,11 +396,11 @@ export const SmallImages = (props) => {
                             onMouseLeave={() => handleMouseLeave("leftArrow")} 
                             // onClick={() => arrowOnClick(props.path)}
                         >
-                            <div className="arrow-horizontal-line"></div>
-                            <div className="arrow-wrapper2">
+                             <div className="arrow-wrapper2">
                                 <div className="arrow-top-line"></div>
                                 <div className="arrow-bottom-line"></div>
                             </div>
+                            <div className="arrow-horizontal-line"/>
                         </div>
 
                         <div className="small-images-navigation-menu">
@@ -415,7 +415,7 @@ export const SmallImages = (props) => {
                             onMouseLeave={() => handleMouseLeave("rightArrow")} 
                             // onClick={() => arrowOnClick(props.path)}
                         >
-                            <div className="arrow-horizontal-line"></div>
+                            <div className="arrow-horizontal-line"/>
                             <div className="arrow-wrapper2">
                                 <div className="arrow-top-line"></div>
                                 <div className="arrow-bottom-line"></div>
