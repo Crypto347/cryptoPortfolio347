@@ -18,12 +18,12 @@
             flex-direction: column;
             justify-content: center;
            .arrow-top-line {
-                border: 1px solid black;
+                border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, 1px) rotate(-45deg);
            }
            .arrow-bottom-line {
-                border: 1px solid black;
+                border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, -1px) rotate(45deg);
            }
@@ -96,7 +96,7 @@
             flex-direction: column;
             justify-content: center;
             .arrow-top-line {
-                border: 1px solid black;
+                border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, 1px) rotate(-45deg);
                 -webkit-animation: shortenArrowLineSection1 .1s linear;
@@ -105,7 +105,7 @@
                 animation: shortenArrowLineSection1 .1s linear;
             }
             .arrow-bottom-line {
-                border: 1px solid black;
+                border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, -1px) rotate(45deg);
                 -webkit-animation: shortenArrowLineSection1 .1s linear;
@@ -161,20 +161,44 @@
 }
 
 @-webkit-keyframes shortenArrowLineSection1 {
-    from{height: 15px;}
-    to{height: 0px;}
+    from{
+        border: 1px solid black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
 }
 @-moz-keyframes shortenArrowLineSection1 {
-    from{height: 15px;}
-    to{height: 0px;}
+    from{
+        border: 1px solid black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
 }
 @-o-keyframes shortenArrowLineSection1 {
-    from{height: 15px;}
-    to{height: 0px;}
+    from{
+        border: 1px solid black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
 }
 @keyframes shortenArrowLineSection1 {
-    from{height: 15px;}
-    to{height: 0px;}
+    from{
+        border: 1px solid black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
 }
 
 @-webkit-keyframes lengthenHorizontalLineSection1 {
