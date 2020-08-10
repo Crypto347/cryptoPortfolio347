@@ -20,11 +20,16 @@ import {
 } from 'react-router-dom';
 
 /**
+* Styles
+*/
+
+import './sidebar.scss';
+
+/**
 * Components
 */
 
 import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
-// import SocialMediaIcon from '../../SmallParts/SocialMediaIcon/socialMediaIcon';
 
 /**
 * Actions
@@ -33,36 +38,10 @@ import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
 import * as Actions from '../../../actions';
 
 /**
-* Styles
-*/
-
-import './sidebar.scss';
-
-/**
 * Selectors
 */
 
 import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Images
-*/
-
-// import MyLogo from '../../../images/FinalLogo.png';
-// import MyLogoCafe from '../../../images/myLogoCafe.png';
-// import MyLogoCrypto from '../../../images/cryptoLogoText.png';
-
-/**
-* Constants
-*/
-
-import {
-    menuItemsArray
-} from '../../../constants/menuItems';
-
-import {
-    socialMediaIcons
-} from '../../../constants/socialMediaIcons';
 
 /**
 * Sidebar component definition and export
@@ -81,13 +60,8 @@ export const Sidebar = (props) => {
     */
 
     useEffect(() => {
-        // props.initMenuItems(menuItemsArray);
-    }, [])
-
-    const sidebarOnClick = (path, id) => {
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        // props.activateMenuItem(id);
-    }
+        
+    }, []);
 
     const handleMouseEnterSidebarItem = (data, id) => {
         props.setIsHoveringMenuItem("on", id);
@@ -112,8 +86,6 @@ export const Sidebar = (props) => {
                 props.setActivityOfToolbarSubOptionItem(pathOfIds);
                 return;
         }
-
-       
     }
 
     const renderSidebarItems = () => {
@@ -171,7 +143,7 @@ export default connect(
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
-            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch)
         };
     }
 )(withRouter(Sidebar));

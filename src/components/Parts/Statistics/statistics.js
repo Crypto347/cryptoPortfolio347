@@ -8,20 +8,12 @@ import React, {
 } from 'react';
 
 import {
-    withRouter
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -37,10 +29,10 @@ import Loading from '../../SmallParts/Loading/loading';
 import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
 
 /**
-* Actions
+* Services
 */
 
-// import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
@@ -49,51 +41,30 @@ import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
-    H65,
     H19,
+    H65,
     EH80,
     EH25,
-    EH10,
     EW90
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
 
 /**
 * Hooks
 */
 
 import {
-    useInterval
-} from '../../../Hooks/useInterval';
-
-import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
-
-/**
-* Constants
-*/
-
 
 /**
 * Statistics component definition and export
 */
 
 export const Statistics = (props) => {
-    
 
     /**
     * State
@@ -109,7 +80,6 @@ export const Statistics = (props) => {
     useEffect(() => {
         props.fetchStatisticsData();
         window.addEventListener('scroll', handleScroll);
-        // console.log(size.width, size.height)
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -120,7 +90,7 @@ export const Statistics = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("statistics");
-        // console.log(scrollHeight, el.offsetTop - size.height/2 - 800)
+
         if(scrollHeight >= el.offsetTop - size.height/2 - 400){
             setShowComponent(true);
         }
@@ -198,15 +168,12 @@ export const Statistics = (props) => {
 export default connect(
     (state) => {
         return {
-            statisticsData: Selectors.getStatisticsDataState(state),
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
+            statisticsData: Selectors.getStatisticsDataState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch),
-          
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch)
         };
     }
 )(Statistics);

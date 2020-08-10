@@ -40,8 +40,6 @@ export const Section5 = () => {
         
     }, []);
 
-   
-
     /**
     * Markup
     */
