@@ -3,25 +3,12 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
 
 import {
-    withRouter
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -38,22 +25,10 @@ import PictureBoardTextItem from '../../SmallParts/PictureBoardTextItem/pictureB
 import PictureBoardImageItem from '../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
 
 /**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
 * Selectors
 */
 
 import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Services
-*/
-
-import * as Services from "../../../service";
 
 /**
 * Utility
@@ -62,16 +37,6 @@ import * as Services from "../../../service";
 import {
    H19
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
-
-
-/**
-* Constants
-*/
-
 
 /**
 * PictureBoard component definition and export
@@ -83,27 +48,13 @@ export const PictureBoard = (props) => {
     * State
     */
 
-    // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    // const [isHovering, setIsHovering] = useState(null);
-
     /**
     * Methods
     */
 
     useEffect(() => {
         
-        // props.fetchSection1Data();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
     }, [])
-
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
-
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
 
     const renderPictureBoard = () => {
         if(props.pictureBoard.loading && !props.pictureBoard.error){
@@ -134,33 +85,24 @@ export const PictureBoard = (props) => {
             <div className="picture-board-items">{props.pictureBoard.items.map((el,i) => {
                 if(el.option === "text"){
                     return(
-                        // <div className="picture-board-item" key={i}>
-                            <PictureBoardTextItem 
-                                key={i}
-                                id={el.id}
-                                option={el.option}
-                                header={el.header}
-                                text={el.text}
-                                imagesArray={el.pictures}
-                                // path={el.path}
-                            />
-                        // </div>
+                        <PictureBoardTextItem 
+                            key={i}
+                            id={el.id}
+                            option={el.option}
+                            header={el.header}
+                            text={el.text}
+                            imagesArray={el.pictures}
+                        />
                     )
                 }else{
                     return(
-                        // <div className="picture-board-item" key={i}>
-                            <PictureBoardImageItem  
-                                key={i}
-                                id={el.id}
-                                option={el.option}
-                                imagesArray={el.pictures}
-                                alt={el.alt}
-                                // coordX={}
-                                // header={el.header}
-                                // text={el.text}
-                                // path={el.path}
-                            />
-                        // </div>
+                        <PictureBoardImageItem  
+                            key={i}
+                            id={el.id}
+                            option={el.option}
+                            imagesArray={el.pictures}
+                            alt={el.alt}
+                        />
                     )
                 }
             })}</div>
