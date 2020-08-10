@@ -99,7 +99,7 @@ export const SmallImages = (props) => {
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
-    // const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
+    const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
     
 
     /**
@@ -123,13 +123,19 @@ export const SmallImages = (props) => {
 
     const handleScroll = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let elementOffsetTop = document.getElementById("smallImagesContent").offsetTop;
-        // let elementOffsetHeight = document.getElementById("smallImagesContent").offsetHeight;
-        // console.log(elementOffsetHeight)
-        if(scrollHeight > elementOffsetTop){
-            setMoveStepMovablePart(scrollHeight-elementOffsetTop);
-            setMovablePartFinalPosition(elementOffsetHeight)
-        }else{
+        let smallImagesContentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
+        let smallImagesContentOffsetHeight = document.getElementById("smallImagesContent").offsetHeight - 200;
+        let smallImagesPortfolioImagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
+        let smallImagesPortfolioImagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
+        let smallImagesPortfolioMovablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
+        let bottomOfSmallImagesPortfolioImages = smallImagesPortfolioImagesOffsetTop + smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight
+        console.log(scrollHeight, smallImagesContentOffsetTop, bottomOfSmallImagesPortfolioImages)
+        if(scrollHeight > smallImagesContentOffsetTop && scrollHeight < bottomOfSmallImagesPortfolioImages){
+            setMoveStepMovablePart(scrollHeight - smallImagesContentOffsetTop);
+            setMovablePartFinalPosition(smallImagesContentOffsetHeight)
+        } else if(scrollHeight > bottomOfSmallImagesPortfolioImages) {
+            setMoveStepMovablePart(smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight);
+        } else {
             setMoveStepMovablePart(0);
         }
     }
@@ -307,7 +313,10 @@ export const SmallImages = (props) => {
 
     const renderPortfolioImages = () => {
         return(
-            <div className="small-images-portfolio-images">{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
+            <div 
+                id="smallImagesPortfolioImages"
+                className="small-images-portfolio-images"
+            >{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
                 return(
                     <div 
                         key={i}

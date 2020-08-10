@@ -11,8 +11,9 @@
             width: 100%;
             display: flex;
             flex-wrap: wrap;
+            align-items: flex-start;
             .small-images-portfolio-images {
-                width: 58%;
+                width: calc(58% - 4px);
                 .small-images-portfolio-image {
                     > img {
                         width: 100%;
@@ -53,7 +54,6 @@
                 align-items: center;
                 cursor: pointer;
                 width: 30px;
-                border: 2px solid red;
                .arrow-horizontal-line {
                     border: 1px solid black;
                     background: black;
