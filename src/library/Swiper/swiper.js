@@ -131,11 +131,11 @@ export const Swiper = (props) => {
 
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = updateSlides(props.swiperData.slides, props.swiperData.activeIndex);
-               
+                console.log("SWIPER TRUE")
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                
+                console.log("SWIPER False")
             }
             slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
         
@@ -151,11 +151,11 @@ export const Swiper = (props) => {
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
         }
 
-   
+   console.log("SWIPER", props.swiperData)
 
         return () => {
            
-            props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
+            props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
             if(swiperContent){
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
                 document.removeEventListener('mouseup', handleMouseUp)
