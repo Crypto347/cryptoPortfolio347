@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 import {
     connect
@@ -18,10 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -37,10 +28,10 @@ import Loading from '../../SmallParts/Loading/loading';
 import TeamInformationCard from '../../SmallParts/TeamInformationCard/teamInformationCard';
 
 /**
-* Actions
+* Services
 */
 
-// import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
@@ -49,24 +40,12 @@ import TeamInformationCard from '../../SmallParts/TeamInformationCard/teamInform
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
-    H19,
-    EH90,
-    EH25
+    H19
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
 
 /**
 * Hooks
@@ -75,13 +54,6 @@ import {
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
-
-
-
-/**
-* Constants
-*/
-
 
 /**
 * TeamInformation component definition and export
@@ -93,7 +65,7 @@ export const TeamInformation = (props) => {
     * State
     */
 
-   const size = useWindowSize();
+    const size = useWindowSize();
 
     /**
     * Methods
@@ -101,9 +73,7 @@ export const TeamInformation = (props) => {
 
     useEffect(() => {
         props.fetchTeamInformation();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
     
     const renderTeamInformation = () => {
@@ -152,15 +122,12 @@ export const TeamInformation = (props) => {
 export default connect(
     (state) => {
         return {
-            teamInformation: Selectors.getTeamInformationState(state),
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
+            teamInformation: Selectors.getTeamInformationState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchTeamInformation: bindActionCreators(Services.fetchTeamInformation, dispatch),
-          
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchTeamInformation: bindActionCreators(Services.fetchTeamInformation, dispatch)
         };
     }
 )(TeamInformation);

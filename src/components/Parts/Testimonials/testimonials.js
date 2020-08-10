@@ -36,10 +36,10 @@ import './testimonials.scss';
 import Swiper from '../../../library/Swiper/swiper';
 
 /**
-* Actions
+* Services
 */
 
-// import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
@@ -48,24 +48,14 @@ import Swiper from '../../../library/Swiper/swiper';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
     H45,
+    EH25,
     EH80,
-    EH25
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
 
 /**
 * Hooks
@@ -74,13 +64,6 @@ import {
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
-
-
-
-/**
-* Constants
-*/
-
 
 /**
 * Testimonials component definition and export
@@ -92,7 +75,7 @@ export const Testimonials = (props) => {
     * State
     */
 
-   const size = useWindowSize();
+    const size = useWindowSize();
 
     /**
     * Methods
@@ -100,9 +83,7 @@ export const Testimonials = (props) => {
 
     useEffect(() => {
         props.fetchTestimonials();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
     /**
     * Markup
@@ -127,15 +108,12 @@ export const Testimonials = (props) => {
 export default connect(
     (state) => {
         return {
-            testimonials: Selectors.getTestimonialsState(state),
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
+            testimonials: Selectors.getTestimonialsState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch),
-          
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch)
         };
     }
 )(Testimonials);

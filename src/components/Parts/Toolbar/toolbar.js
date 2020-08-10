@@ -54,12 +54,10 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-   EH40,
-   EH20,
-   EH10,
-   H19,
-   H15,
-   EW70
+    H15,
+    H19,
+    EH10,
+    EH20
 } from '../../UtilityComponents';
 
 /**
@@ -76,16 +74,13 @@ import {
 
 export const Toolbar = (props) => {
 
-
     /**
     * State
     */
 
-    // const [menuIsShown, setMenuIsShown] = useState(false);
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [isHovering, setIsHovering] = useState(null);
     const [showOptions, setShowOptions] = useState(false);
-    // const [showOptionsAnimated, setShowOptionsAnimated] = useState(false);
     const [toolbarItemData, setToolbarItemData] = useState({});
     const [showOptionsLessThan3Regular, setShowOptionsLessThan3Regular] = useState(false);
 
@@ -95,15 +90,13 @@ export const Toolbar = (props) => {
 
     useEffect(() => {
         props.initMenuItems(menuItemsArray);
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
-    const handleMouseEnterMenuIcon = (opt) => {
+    const handleMouseEnterMenuIcon = () => {
         setIsHovering(true);
     }
 
-    const handleMouseLeaveMenuIcon = (opt) => {
+    const handleMouseLeaveMenuIcon = () => {
         setIsHovering(false);
     }
 
@@ -117,11 +110,6 @@ export const Toolbar = (props) => {
                 }else{
                     setShowOptionsLessThan3Regular(true);
                 }
-              
-                return;
-            case 'animated': 
-                // setShowOptionsAnimated(true);
-                // setToolbarItemData(data);
                 return;
         }
     }
@@ -137,18 +125,12 @@ export const Toolbar = (props) => {
                     setShowOptionsLessThan3Regular(false);
                 }
                 return;
-            case 'animated': 
-                // setShowOptionsAnimated(false);
-                // setToolbarItemData({});
-                return;
         }
     }
 
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds);
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
         props.history.push(`/crypto-portfolio/${path}`);
-      
         props.clearActivityOfMenuItems();
         switch(opt){
             case 'optionItem': 
@@ -169,19 +151,6 @@ export const Toolbar = (props) => {
         }
         props.setSidebarState("open");
     }
-
-    // const handleScroll = () => {
-    //     setMenuIsShown(false);
-    // }
-
-    // const toolbarOnClick = (path, id) => {
-    //     props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-    //     props.activateMenuItem(id);
-    // }
-
-    // const toggleMenuButton = () => {
-    //     setMenuIsShown(!menuIsShown);
-    // }
 
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "arrow"){
@@ -248,7 +217,6 @@ export const Toolbar = (props) => {
                         />
                     )
                 }
-            
             })}</>
         )
     }
@@ -449,9 +417,6 @@ export const Toolbar = (props) => {
                 return(
                         <ToolbarItem 
                             key={i}
-                            // text={el.text}
-                            // active={el.active}
-                            // hoverToolbarItem={el.isHover}
                             toolbarMainColor={props.toolbarMainColor}
                             onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
                             onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
@@ -461,7 +426,6 @@ export const Toolbar = (props) => {
                             itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
                             renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                             data={el}
-                            // hasSubOptions={el.hasSubOptions}
                         />
                 )
             })}</div>
@@ -517,17 +481,13 @@ export const Toolbar = (props) => {
                             onMouseEnter={() => props.setIsHoveringToolbarOptionItem("on", pathOfIds)} 
                             onMouseLeave={() => props.setIsHoveringToolbarOptionItem("off", pathOfIds)}
                         >
-                            {/* <div className={renderClassName("text", el.isHover)}> */}
-                                <H15 className="h15-black-lustria">{el.text}</H15>
-                            {/* </div> */}
+                            <H15 className="h15-black-lustria">{el.text}</H15>
                         </div>
                     </div>
                 )
             })}</>
         )
     }
-
-   
 
     /**
     * Markup
@@ -550,7 +510,7 @@ export default connect(
     (state) => {
         return {
             menuItems: Selectors.getMenuItemsState(state),
-            sidebarState: Selectors.getSidebarStateState(state),
+            sidebarState: Selectors.getSidebarStateState(state)
         };
     },
     (dispatch) => {
@@ -562,7 +522,7 @@ export default connect(
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
-            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch)
         };
     }
 )(withRouter(Toolbar));
