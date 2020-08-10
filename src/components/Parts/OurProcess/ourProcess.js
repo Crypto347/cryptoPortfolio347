@@ -19,10 +19,6 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
 * Styles
 */
@@ -36,22 +32,16 @@ import './ourProcess.scss';
 import Loading from '../../SmallParts/Loading/loading';
 
 /**
-* Actions
+* Services
 */
 
-import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
 */
 
 import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Services
-*/
-
-import * as Services from "../../../service";
 
 /**
 * Utility
@@ -75,11 +65,6 @@ import Development from '../../../images/ourProcess/main-home-gif-2.gif';
 import Design from '../../../images/ourProcess/home-2-icon-4.png';
 import Evaluation from '../../../images/ourProcess/main-home-gif-3.gif';
 import DefaultImage from '../../../images/error.jpg';
-
-/**
-* Constants
-*/
-
 
 /**
 * OurProcess component definition and export

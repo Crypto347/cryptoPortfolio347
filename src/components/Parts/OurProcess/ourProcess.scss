@@ -12,36 +12,7 @@
 @media only screen and (max-width: 945px){
     .our-process {
         .our-process-items{
-            display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
         }
     }
 }
-
-// @media only screen and (max-width: 945px){
-//     .picture-board {
-//         .picture-board-items {
-//             width: 600px;
-//             height: 2700px;
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 775px){
-//     .picture-board {
-//         .picture-board-items {
-//             width: 420px;
-//             height: 7560px;
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 540px){
-//     .picture-board {
-//         .picture-board-items {
-//             width: 300px;
-//             height: 5400px;
-//         }
-//     }
-// }

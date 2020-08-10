@@ -8,20 +8,12 @@ import React, {
 } from 'react';
 
 import {
-    withRouter
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -37,10 +29,10 @@ import Loading from '../../SmallParts/Loading/loading';
 import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
 
 /**
-* Actions
+* Services
 */
 
-// import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
@@ -49,42 +41,21 @@ import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
     H19,
-    H25,
-    EH80,
-    EW90
+    EH80
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
 
 /**
 * Hooks
 */
 
 import {
-    useInterval
-} from '../../../Hooks/useInterval';
-
-import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
-
-/**
-* Constants
-*/
-
 
 /**
 * Achievements component definition and export
@@ -185,15 +156,12 @@ export const Achievements = (props) => {
 export default connect(
     (state) => {
         return {
-            achievementsData: Selectors.getAchievementsDataState(state),
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
+            achievementsData: Selectors.getAchievementsDataState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchAchievementsData: bindActionCreators(Services.fetchAchievementsData, dispatch),
-          
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchAchievementsData: bindActionCreators(Services.fetchAchievementsData, dispatch)
         };
     }
 )(Achievements);
