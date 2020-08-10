@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 import {
     connect
@@ -76,26 +71,13 @@ export const OurProcess = (props) => {
     * State
     */
 
-    // const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    // const [isHovering, setIsHovering] = useState(null);
-
     /**
     * Methods
     */
 
     useEffect(() => {
         props.fetchOurProcessData();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
-
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
-
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
+    }, []);
 
     const renderImg = (opt) => {
         switch(opt){
@@ -150,8 +132,7 @@ export const OurProcess = (props) => {
                 </div>
             )
         }
-    } 
-
+    }
 
     /**
     * Markup
@@ -174,8 +155,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch)
         };
     }
 )(OurProcess);

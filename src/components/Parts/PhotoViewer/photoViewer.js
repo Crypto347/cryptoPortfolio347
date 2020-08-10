@@ -8,10 +8,6 @@ import React, {
 } from 'react';
 
 import {
-    withRouter
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -32,11 +28,6 @@ import Fullscreen from "react-full-screen";
 import './photoViewer.scss';
 
 /**
-* Components
-*/
-
-
-/**
 * Actions
 */
 
@@ -47,24 +38,6 @@ import * as Actions from '../../../actions';
 */
 
 import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
-* Icons
-*/
-
-import { 
-    faChevronLeft,
-    faChevronRight,
-    faExpand,
-    faCompress
-} from '@fortawesome/free-solid-svg-icons';
-
 
 /**
 * Utility
@@ -120,9 +93,13 @@ import text26 from '../../../images/pictureBoard/TextFolder4/perry-grone-lbLgFFl
 import text27 from '../../../images/pictureBoard/TextFolder4/scott-graham-5fNmWej4tAA-unsplash.jpg';
 
 /**
-* Constants
+* Icons
 */
 
+import {
+    faExpand,
+    faCompress
+} from '@fortawesome/free-solid-svg-icons';
 
 /**
 * PhotoViewer component definition and export
@@ -134,10 +111,8 @@ export const PhotoViewer = (props) => {
     * State
     */
 
-    // const [menuIsShown, setMenuIsShown] = useState(false);
     const [isHoveringExpand, setIsHoveringExpand] = useState(false);
     const [isHoveringShrink, setIsHoveringShrink] = useState(false);
-    
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
@@ -148,9 +123,7 @@ export const PhotoViewer = (props) => {
     */
 
     useEffect(() => {
-        // props.fetchSection1Data();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
+
     }, [])
 
     const handleMouseEnter = (opt) => {
@@ -298,24 +271,11 @@ export const PhotoViewer = (props) => {
         }
     }
 
-    const renderImages = () => {
-        return(
-            <div className="photo-viewer-image-items">{props.arrayOfImages.map((el,i) => {
-                return(
-                    <div key={i} className="photo-viewer-image-item">
-                        <img src={loadImg(el.key)}/>
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
     const fullscreenOnChangeHandler = (e) => {
         if(!e){
             setFullScreen(e);
         }
     }
-
 
     /**
     * Markup
@@ -335,7 +295,6 @@ export const PhotoViewer = (props) => {
                             onMouseLeave={() => handleMouseLeave('expand')}
                         />
                     </div>
-                    {/* {renderImages()} */}
                     <div className="photo-viewer-image-item">
                         <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
                     </div>
@@ -375,7 +334,6 @@ export const PhotoViewer = (props) => {
                         </div>
                     </div>
                 </div>
-                {/* {renderSection1DataItems()} */}
             </div> : null}
             <Fullscreen
                 enabled={fullScreen}
@@ -428,15 +386,14 @@ export const PhotoViewer = (props) => {
 export default connect(
     (state) => {
         return {
-            photoViewerImagesArray: Selectors.getPhotoViewerImagesArrayState(state),
+            photoViewerImagesArray: Selectors.getPhotoViewerImagesArrayState(state)
         };
     },
     (dispatch) => {
         return {
-            // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
             prevImage: bindActionCreators(Actions.prevImage, dispatch),
             nextImage: bindActionCreators(Actions.nextImage, dispatch),
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }
 )(PhotoViewer);
