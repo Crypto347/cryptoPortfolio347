@@ -124,17 +124,18 @@ export const SmallImages = (props) => {
 
     const handleScroll = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let smallImagesContentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
-        let smallImagesPortfolioImagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
-        let smallImagesPortfolioImagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
-        let smallImagesPortfolioMovablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
-        let bottomOfSmallImagesPortfolioImages = smallImagesPortfolioImagesOffsetTop + smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight;
-        console.log(scrollHeight, smallImagesContentOffsetTop, bottomOfSmallImagesPortfolioImages)
-        if(scrollHeight > smallImagesContentOffsetTop && scrollHeight < bottomOfSmallImagesPortfolioImages){
-            setMoveStepMovablePart(scrollHeight - smallImagesContentOffsetTop);
+        let contentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
+        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
+        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
+        let movablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
+
+        let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
+
+        if(scrollHeight > contentOffsetTop && scrollHeight < moveUntil){
+            setMoveStepMovablePart(scrollHeight - contentOffsetTop);
         } 
-        else if(scrollHeight > bottomOfSmallImagesPortfolioImages) {
-            setMoveStepMovablePart(smallImagesPortfolioImagesOffsetHeight - smallImagesPortfolioMovablePartHeight - 30);
+        else if(scrollHeight > moveUntil) {
+            setMoveStepMovablePart(imagesOffsetHeight - movablePartHeight - 30);
         } 
         else {
             setMoveStepMovablePart(0);

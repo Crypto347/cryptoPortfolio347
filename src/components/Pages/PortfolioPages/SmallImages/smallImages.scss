@@ -26,7 +26,8 @@
             }
         }
         .small-images-navigation {
-            width: 100%;
+            transform: translateX(-7.5px);
+            width: calc(100% + 15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,14 +49,14 @@
                     flex-direction: column;
                     justify-content: center;
                    .arrow-top-line {
-                        border: 1px solid black;
+                        border: 1px solid transparent;
                         height: 0px;
-                        transform: translate(1px, 1px) rotate(45deg);
+                        transform: translate(1px, 1.5px) rotate(45deg);
                    }
                    .arrow-bottom-line {
-                        border: 1px solid black;
+                        border: 1px solid transparent;
                         height: 0px;
-                        transform: translate(1px, -1px) rotate(-45deg);
+                        transform: translate(1px, -1.5px) rotate(-45deg);
                    }
                }
             }
@@ -81,9 +82,9 @@
                     flex-direction: column;
                     justify-content: center;
                    .arrow-top-line {
-                        border: 0px solid black;
+                        border: 0px solid black; 
                         height: 7px;
-                        transform: translate(1px, 1px) rotate(45deg);
+                        transform: translate(1px, 1.5px) rotate(45deg);
                         -webkit-animation: lengthenArrowLineSmallImages .1s linear;
                         -moz-animation: lengthenArrowLineSmallImages .1s linear;
                         -o-animation: lengthenArrowLineSmallImages .1s linear;
@@ -94,7 +95,7 @@
                    .arrow-bottom-line {
                         border: 0px solid black;
                         height: 7px;
-                        transform: translate(1px, -1px) rotate(-45deg);
+                        transform: translate(1px, -1.5px) rotate(-45deg);
                         -webkit-animation: lengthenArrowLineSmallImages .1s linear;
                         -moz-animation: lengthenArrowLineSmallImages .1s linear;
                         -o-animation: lengthenArrowLineSmallImages .1s linear;
@@ -103,50 +104,50 @@
                         animation-fill-mode: both;
                    }
                }
-           }
-           .arrow-wrapper-left-shorten {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                width: 30px;
-                cursor: pointer;
-                .arrow-horizontal-line {
-                    border: 1px solid black;
-                    background: black;
-                    width: 15px;
-                    -webkit-animation: shorteHorizontalLineSmallImages .1s linear;
-                    -moz-animation: shorteHorizontalLineSmallImages .1s linear;
-                    -o-animation: shorteHorizontalLineSmallImages .1s linear;
-                    animation: shorteHorizontalLineSmallImages .1s linear;
-                    animation-delay: .1s;
-                    animation-fill-mode: both;
-                }
-                .arrow-wrapper2 {
-                    transform: translate(3px);
-                    height: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    .arrow-top-line {
-                        border: 1px solid black;
-                        height: 0px;
-                        transform: translate(-1px, 1px) rotate(45deg);
-                        -webkit-animation: shortenArrowLineSmallImages .1s linear;
-                        -moz-animation: shortenArrowLineSmallImages .1s linear;
-                        -o-animation: shortenArrowLineSmallImages .1s linear;
-                        animation: shortenArrowLineSmallImages .1s linear;
-                    }
-                    .arrow-bottom-line {
-                        border: 1px solid black;
-                        height: 0px;
-                        transform: translate(-1px, -1px) rotate(-45deg);
-                        -webkit-animation: shortenArrowLineSmallImages .1s linear;
-                        -moz-animation: shortenArrowLineSmallImages .1s linear;
-                        -o-animation: shortenArrowLineSmallImages .1s linear;
-                        animation: shortenArrowLineSmallImages .1s linear;
-                    }
-                }
             }
+            .arrow-wrapper-left-shorten {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width: 30px;
+                    cursor: pointer;
+                    .arrow-horizontal-line {
+                        border: 1px solid black;
+                        background: black;
+                        width: 15px;
+                        -webkit-animation: shorteHorizontalLineSmallImages .1s linear;
+                        -moz-animation: shorteHorizontalLineSmallImages .1s linear;
+                        -o-animation: shorteHorizontalLineSmallImages .1s linear;
+                        animation: shorteHorizontalLineSmallImages .1s linear;
+                        animation-delay: .1s;
+                        animation-fill-mode: both;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(3px);
+                        height: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, 1.5px) rotate(45deg);
+                            -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                            -moz-animation: shortenArrowLineSmallImages .1s linear;
+                            -o-animation: shortenArrowLineSmallImages .1s linear;
+                            animation: shortenArrowLineSmallImages .1s linear;
+                        }
+                        .arrow-bottom-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, -1.5px) rotate(-45deg);
+                            -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                            -moz-animation: shortenArrowLineSmallImages .1s linear;
+                            -o-animation: shortenArrowLineSmallImages .1s linear;
+                            animation: shortenArrowLineSmallImages .1s linear;
+                        }
+                    }
+                }
 
             .small-images-navigation-menu {
                 width: 25px;
@@ -204,14 +205,14 @@
                     flex-direction: column;
                     justify-content: center;
                    .arrow-top-line {
-                        border: 1px solid black;
+                        border: 1px solid transparent;
                         height: 0px;
-                        transform: translate(1px, 1px) rotate(-45deg);
+                        transform: translate(1px, 1.5px) rotate(-45deg);
                    }
                    .arrow-bottom-line {
-                        border: 1px solid black;
+                        border: 1px solid transparent;
                         height: 0px;
-                        transform: translate(1px, -1px) rotate(45deg);
+                        transform: translate(1px, -1.5px) rotate(45deg);
                    }
                }
             }
@@ -238,7 +239,7 @@
                    .arrow-top-line {
                         border: 0px solid black;
                         height: 7px;
-                        transform: translate(1px, 1px) rotate(-45deg);
+                        transform: translate(1px, 1.5px) rotate(-45deg);
                         -webkit-animation: lengthenArrowLineSmallImages .1s linear;
                         -moz-animation: lengthenArrowLineSmallImages .1s linear;
                         -o-animation: lengthenArrowLineSmallImages .1s linear;
@@ -249,7 +250,7 @@
                    .arrow-bottom-line {
                         border: 0px solid black;
                         height: 7px;
-                        transform: translate(1px, -1px) rotate(45deg);
+                        transform: translate(1px, -1.5px) rotate(45deg);
                         -webkit-animation: lengthenArrowLineSmallImages .1s linear;
                         -moz-animation: lengthenArrowLineSmallImages .1s linear;
                         -o-animation: lengthenArrowLineSmallImages .1s linear;
@@ -282,18 +283,18 @@
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border: 1px solid black;
+                        border: 1px solid transparent;
                         height: 0px;
-                        transform: translate(-1px, 1px) rotate(-45deg);
+                        transform: translate(1px, 1.5px) rotate(-45deg);
                         -webkit-animation: shortenArrowLineSmallImages .1s linear;
                         -moz-animation: shortenArrowLineSmallImages .1s linear;
                         -o-animation: shortenArrowLineSmallImages .1s linear;
                         animation: shortenArrowLineSmallImages .1s linear;
                     }
                     .arrow-bottom-line {
-                        border: 1px solid black;
+                        border: 1px solid transparent;
                         height: 0px;
-                        transform: translate(-1px, -1px) rotate(45deg);
+                        transform: translate(1px, -1.5px) rotate(45deg);
                         -webkit-animation: shortenArrowLineSmallImages .1s linear;
                         -moz-animation: shortenArrowLineSmallImages .1s linear;
                         -o-animation: shortenArrowLineSmallImages .1s linear;
@@ -441,8 +442,14 @@
     to{height: 0px;}
 }
 @keyframes shortenArrowLineSmallImages {
-    from{height: 7px;}
-    to{height: 0px;}
+    from{
+        border: 1px solid black;
+        height: 7px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
 }
 
 @-webkit-keyframes lengthenHorizontalLineSmallImages {
