@@ -31,7 +31,7 @@ import './main.scss';
 
 import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
-import Home from './Pages/Home/home';
+import Home from './Pages/HomePages/Home/home';
 import AboutUsPage from './Pages/AboutUsPage/aboutUsPage';
 import ProcessPage from './Pages/ProcessPage/processPage';
 import HappyTeamPage from './Pages/HappyTeamPage/happyTeamPage';

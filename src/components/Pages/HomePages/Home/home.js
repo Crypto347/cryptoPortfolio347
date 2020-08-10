@@ -17,29 +17,29 @@ import {
 import './home.scss';
 
 /**
+* Components
+*/
+
+import Toolbar from '../../../Parts/Toolbar/toolbar';
+import HeaderImages from '../../../SmallParts/HeaderImages/headerImages';
+import Section1 from '../../../Parts/Section1/section1';
+import Section2 from '../../../Parts/Section2/section2';
+import Section3 from '../../../Parts/Section3/section3';
+import Section4 from '../../../Parts/Section4/section4';
+import Section5 from '../../../Parts/Section5/section5';
+import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
+
+/**
 * Actions
 */
 
-import * as Actions from '../../../actions';
+import * as Actions from '../../../../actions';
 
 /**
 * Selectors
 */
 
-import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Components
-*/
-
-import Toolbar from '../../Parts/Toolbar/toolbar';
-import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
-import Section1 from '../../Parts/Section1/section1';
-import Section2 from '../../Parts/Section2/section2';
-import Section3 from '../../Parts/Section3/section3';
-import Section4 from '../../Parts/Section4/section4';
-import Section5 from '../../Parts/Section5/section5';
-import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
+import * as Selectors from '../../../../reducers/selectors';
 
 /**
 * Hooks
@@ -47,13 +47,7 @@ import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 import {
     useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-/**
-* Images
-*/
-
-import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
+} from '../../../../Hooks/useWindowSize';
 
 /**
 * Home component definition and export
@@ -67,7 +61,6 @@ export const Home = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [scrollingHeight, setScrollingHeight] = useState(0);
 
     /**
     * Methods

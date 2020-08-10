@@ -13,15 +13,6 @@ import React, {
 import './aboutUsPage.scss';
 
 /**
-* Components
-*/
-
-/**
-* Images
-*/
-
-
-/**
 * AboutUsPage component definition and export
 */
 

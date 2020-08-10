@@ -13,20 +13,6 @@ import React, {
 import './processPage.scss';
 
 /**
-* Components
-*/
-
-import Toolbar from '../../Parts/Toolbar/toolbar';
-import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
-import Section1 from '../../Parts/Section1/section1';
-
-/**
-* Images
-*/
-
-import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
-
-/**
 * ProcessPage component definition and export
 */
 

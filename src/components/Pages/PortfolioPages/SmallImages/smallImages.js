@@ -21,16 +21,17 @@ import {
 import './smallImages.scss';
 
 /**
+* Components
+*/
+
+import Loading from '../../../SmallParts/Loading/loading';
+import Toolbar from '../../../Parts/Toolbar/toolbar';
+
+/**
 * Actions
 */
 
 import * as Actions from '../../../../actions';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../../reducers/selectors';
 
 /**
 * Services
@@ -39,20 +40,10 @@ import * as Selectors from '../../../../reducers/selectors';
 import * as Services from "../../../../service";
 
 /**
-* Components
+* Selectors
 */
 
-
-import Loading from '../../../SmallParts/Loading/loading';
-import Toolbar from '../../../Parts/Toolbar/toolbar';
-
-/**
-* Hooks
-*/
-
-import {
-    useWindowSize
-} from '../../../../Hooks/useWindowSize';
+import * as Selectors from '../../../../reducers/selectors';
 
 /**
 * Utility
@@ -66,8 +57,15 @@ import {
     EH40,
     EH60,
     EH70
- } from '../../../UtilityComponents';
- 
+} from '../../../UtilityComponents';
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../../Hooks/useWindowSize';
 
 /**
 * Images
@@ -93,25 +91,19 @@ export const SmallImages = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    // const [scrollingHeight, setScrollingHeight] = useState(0);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
-    // const [movablePartFinalPosition, setMovablePartFinalPosition] = useState(0);
     
-
     /**
     * Methods
     */
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // if(props.location.state){
-        //     console.log(props.location.state.obj)
-        // }
 
         props.fetchSmallImagesPortfolio(props.match.params.id);
         if(props.smallImagesPortfolio.item !== {}){
@@ -370,9 +362,7 @@ export const SmallImages = (props) => {
                         id="smallImagesContent"
                         className="small-images-content"
                     >
-                        {/* <div> */}
-                            {renderPortfolioImages()}
-                        {/* </div> */}
+                        {renderPortfolioImages()}
                         <div 
                             id="smallImagesMovablePart"
                             className="small-images-movable-part" 

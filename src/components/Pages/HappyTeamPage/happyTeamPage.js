@@ -13,14 +13,6 @@ import React, {
 import './happyTeamPage.scss';
 
 /**
-* Components
-*/
-
-/**
-* Images
-*/
-
-/**
 * HappyTeamPage component definition and export
 */
 
