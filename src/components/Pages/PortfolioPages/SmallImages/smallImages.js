@@ -49,13 +49,12 @@ import * as Selectors from '../../../../reducers/selectors';
 * Utility
 */
 
-import {
-    H70,
-    H22,
+import { 
     H19,
+    H22,
+    H70,
     EH30,
     EH40,
-    EH60,
     EH70
 } from '../../../UtilityComponents';
 

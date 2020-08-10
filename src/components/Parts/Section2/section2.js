@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 import {
     connect
@@ -18,10 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -37,10 +28,10 @@ import PictureBoard from '../../Parts/PictureBoard/pictureBoard';
 import OurProcess from '../../Parts/OurProcess/ourProcess';
 
 /**
-* Actions
+* Services
 */
 
-import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
@@ -49,32 +40,15 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
-   H130,
    H25,
+   H130,
    EH40,
    EH80
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
-
-
-
-/**
-* Constants
-*/
-
 
 /**
 * Section2 component definition and export
@@ -92,13 +66,11 @@ export const Section2 = (props) => {
 
     useEffect(() => {
         props.fetchPictureBoard();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
+    }, []);
 
     const renderClassName = (pictureBoardLoading, pictureBoardError, ourProcessLoading, ourProcessError) => {
-       
         let opt;
+
         if(!pictureBoardLoading && !pictureBoardError && !ourProcessLoading && !ourProcessError){
             opt = "noLoadingNoError";
         }
@@ -158,9 +130,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
-          
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch)
         };
     }
 )(Section2);

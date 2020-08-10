@@ -3,13 +3,8 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 import {
     connect
@@ -18,10 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -37,10 +28,10 @@ import Loading from '../../SmallParts/Loading/loading';
 import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
 
 /**
-* Actions
+* Services
 */
 
-import * as Actions from '../../../actions';
+import * as Services from "../../../service";
 
 /**
 * Selectors
@@ -49,30 +40,13 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
-    EH20,
-    H19
+    H19,
+    EH20
 } from '../../UtilityComponents';
-
-/**
-* Images
-*/
-
-
-
-/**
-* Constants
-*/
-
 
 /**
 * Section1 component definition and export
@@ -84,27 +58,13 @@ export const Section1 = (props) => {
     * State
     */
 
-    const [menuIsShown, setMenuIsShown] = useState(false);
-    const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
-    const [isHovering, setIsHovering] = useState(null);
-
     /**
     * Methods
     */
 
     useEffect(() => {
         props.fetchSection1Data();
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
-    }, [])
-
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
-
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
+    }, []);
 
     const renderSection1DataItems = () => {
         return(
@@ -168,8 +128,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch)
         };
     }
 )(Section1);

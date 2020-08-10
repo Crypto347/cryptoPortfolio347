@@ -43,11 +43,11 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-   H45,
-   H25,
-   H19,
-   EH40,
-   EH25,
+    H19,
+    H25,
+    H45,
+    EH25,
+    EH40
 } from '../../UtilityComponents';
 
 /**
