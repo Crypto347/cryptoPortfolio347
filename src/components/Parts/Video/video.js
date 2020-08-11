@@ -7,22 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    withRouter
-} from 'react-router-dom';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
 * Styles
 */
@@ -30,39 +14,11 @@ import {
 import './video.scss';
 
 /**
-* Components
-*/
-
-import Loading from '../../SmallParts/Loading/loading';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Services
-*/
-
-import * as Services from "../../../service";
-
-/**
 * Utility
 */
 
 import {
-   H45,
-   H25,
-   H19,
-   EH40,
-   EH25,
+    H19
 } from '../../UtilityComponents';
 
 /**
@@ -73,22 +29,18 @@ import vid1 from '../../../videos/team_work.mp4';
 import vidCover from '../../../videos/john-schnobrich-unsplash.jpg';
 
 /**
-* Constants
-*/
-
-
-/**
 * Video component definition and export
 */
 
-export const Video = (props) => {
+export const Video = () => {
 
     /**
     * State
     */
 
     const [isHoveringPlayButton, setIsHoveringPlayButton] = useState("init");
-    const [videoShown, setVideoShown] = useState(false)
+    const [videoShown, setVideoShown] = useState(false);
+
     /**
     * Methods
     */
@@ -154,27 +106,17 @@ export const Video = (props) => {
                     </div>
                 </div>
             </div> : null}
-            {videoShown ? 
-            <video id="video" controls>
-                <source src={vid1} type="video/mp4"/>
-            </video> : null}
-           
-            {/* <>Video by cottonbro from Pexels</> */}
+            {videoShown ?
+            <div className="video-copyrights-wrapper">
+                <H19 className="h19-nobel-lora">Video by cottonbro from Pexels</H19> 
+                <video id="video" controls>
+                    <source src={vid1} type="video/mp4"/>
+                </video> 
+            </div> : null}
+       
         </div>
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
-        };
-    }
-)(Video);
+export default Video;
  
