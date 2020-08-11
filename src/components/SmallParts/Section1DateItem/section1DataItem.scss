@@ -51,6 +51,7 @@
             justify-content: center;
            .arrow-top-line {
                 border: 0px solid black;
+                background: black;
                 height: 10px;
                 transform: translate(-1px, 2.5px) rotate(-45deg);
                 -webkit-animation: lengthenArrowLineSection1 .1s linear;
@@ -62,6 +63,7 @@
            }
            .arrow-bottom-line {
                 border: 0px solid black;
+                background: black;
                 height: 10px;
                 transform: translate(-1px, -2.5px) rotate(45deg);
                 -webkit-animation: lengthenArrowLineSection1 .1s linear;
@@ -161,40 +163,48 @@
 @-webkit-keyframes shortenArrowLineSection1 {
     from{
         border: 1px solid black;
+        background: black;
         height: 15px;
     }
     to{
         border: 1px solid transparent;
+        background: black;
         height: 0px;
     }
 }
 @-moz-keyframes shortenArrowLineSection1 {
     from{
         border: 1px solid black;
+        background: black;
         height: 15px;
     }
     to{
         border: 1px solid transparent;
+        background: black;
         height: 0px;
     }
 }
 @-o-keyframes shortenArrowLineSection1 {
     from{
         border: 1px solid black;
+        background: black;
         height: 15px;
     }
     to{
         border: 1px solid transparent;
+        background: black;
         height: 0px;
     }
 }
 @keyframes shortenArrowLineSection1 {
     from{
         border: 1px solid black;
+        background: black;
         height: 15px;
     }
     to{
         border: 1px solid transparent;
+        background: black;
         height: 0px;
     }
 }
