@@ -4,25 +4,8 @@
 
 import React, {
     useState, 
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
 * Styles
@@ -31,23 +14,22 @@ import {
 import './statisticsItem.scss';
 
 /**
+* Utility
+*/
+
+import {
+    H25,
+    EH10,
+    EH20
+} from '../../UtilityComponents';
+
+/**
 * Hooks
 */
 
 import {
     useInterval
 } from '../../../Hooks/useInterval';
-
-/**
-* Utility
-*/
-
-import {
-    H25,
-    H15,
-    EH10,
-    EH20
-} from '../../UtilityComponents';
 
 /**
 * StatisticsItem component definition and export
@@ -68,11 +50,6 @@ export const StatisticsItem = (props) => {
     */
    
     useEffect(() => {
-        // let timer = setTimeout(() => {
-        //     setShowPercent(true);
-        // }, 500);
-
-        // return () => clearTimeout(timer);
     }, []);
 
     useInterval(() => {

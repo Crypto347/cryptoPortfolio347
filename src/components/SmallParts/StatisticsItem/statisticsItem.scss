@@ -2,7 +2,6 @@
     .statistics-item-wrapper {
         display: flex;
         justify-content: space-between;
-        // width: 200px;
         -webkit-animation: appearPercent 2s ease;
         -moz-animation: appearPercent 2s ease;
         -o-animation: appearPercent 2s ease;
@@ -29,9 +28,7 @@
             animation: appearLine 2s ease;
         }
     }
-    
 }
-
 
 @media only screen and (max-width: 1120px){
     .statistics-item {
@@ -40,7 +37,6 @@
                 width: calc(100vw - 160px);
             }
         }
-        
     }
 }
 
@@ -72,7 +68,6 @@
 @keyframes appearPercentSmallScreen {
     0%{width: 80%;}
 }
-
 
 @-webkit-keyframes appearPercent {
     0%{width: 40%;}

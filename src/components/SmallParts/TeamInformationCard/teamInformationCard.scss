@@ -31,8 +31,6 @@
                 animation: teamCardImageOff .3s linear;
             }
         }
-        
-       
         .team-information-card-info-hover-on {
             background: rgba(0, 0, 0, 0.7);
             width: calc(100% - 60px);
@@ -121,7 +119,6 @@
     from{transform: scale(1.05);}
     to{transform: scale(1);}
 }
-
 
 @-webkit-keyframes teamInfoCardOn {
     from{opacity: 0;}

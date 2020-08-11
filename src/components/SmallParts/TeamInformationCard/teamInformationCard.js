@@ -12,41 +12,11 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
 * Styles
 */
 
 import './teamInformationCard.scss';
-
-/**
-* Icons
-*/
-
-import { 
-    faInstagram
-} from '@fortawesome/fontawesome-free-brands';
-
-/**
-* Images
-*/
-
-import Photo1 from '../../../images/teamPhotos/marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg';
-import Photo2 from '../../../images/teamPhotos/christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg';
-import Photo3 from '../../../images/teamPhotos/vinicius-wiesehofer-LS1e59caoNM-unsplash.jpg';
-import Photo4 from '../../../images/teamPhotos/photo-1540569014015-19a7be504e3a.jpg';
-import Photo5 from '../../../images/teamPhotos/zoe-fernandez--zqoE7jnQgw-unsplash.jpg';
 
 /**
 * Utility
@@ -60,6 +30,24 @@ import {
 } from '../../UtilityComponents';
 
 /**
+* Images
+*/
+
+import Photo1 from '../../../images/teamPhotos/marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg';
+import Photo2 from '../../../images/teamPhotos/christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg';
+import Photo3 from '../../../images/teamPhotos/vinicius-wiesehofer-LS1e59caoNM-unsplash.jpg';
+import Photo4 from '../../../images/teamPhotos/photo-1540569014015-19a7be504e3a.jpg';
+import Photo5 from '../../../images/teamPhotos/zoe-fernandez--zqoE7jnQgw-unsplash.jpg';
+
+/**
+* Icons
+*/
+
+import { 
+    faInstagram
+} from '@fortawesome/fontawesome-free-brands';
+
+/**
 * TeamInformationCard component definition and export
 */
 
@@ -70,7 +58,6 @@ export const TeamInformationCard = (props) => {
     */
 
     const resizeRef = useRef();
-
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
 
@@ -92,24 +79,17 @@ export const TeamInformationCard = (props) => {
     })
 
     useEffect(()=>{
-        // let teamInfoCardHeight = document.getElementById("team-information-card").clientHeight;
-        // setCardHeight(cardHeight);
-        // console.log(teamInfoCardHeight)
         const resize = () => {
             resizeRef.current();
         }
-
         window.addEventListener('resize', resize);
-
-    }, [])
+        return () =>  window.removeEventListener('resize', resize);
+    }, []);
 
     const handleResize = () => {
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight);
     }
-    // const arrowOnClick = (path) => {
-    //     props.history.push(props.match.url + (path === "" ? path : `/${path}`))
-    // }
 
     const loadPhoto = (img) => {
         switch(img){
