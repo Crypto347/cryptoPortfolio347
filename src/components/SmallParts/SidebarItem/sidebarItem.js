@@ -2,13 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
+import React from 'react';
 
 /**
 * Styles
@@ -21,13 +15,11 @@ import './sidebarItem.scss';
 */
 
 import {
-    EH40,
-    EH20,
-    EH10,
-    H19,
     H15,
-    EW70
- } from '../../UtilityComponents';
+    H19,
+    EH10,
+    EH20
+} from '../../UtilityComponents';
 
 /**
 * SidebarItem component definition and export
@@ -38,26 +30,10 @@ export const SidebarItem = (props) => {
     /**
     * State
     */
-
-    // const [isHovering, setIsHovering] = useState(false);
     
     /**
     * Methods
     */
-
-    // const itemOnClick = (opt, path, pathOfIds) => {
-    //     switch(opt){
-    //         case 'optionItem': 
-    //             props.setActivityOfToolbarOptionItem(pathOfIds);
-    //             return;
-    //         case 'subOptionItem': 
-    //             props.setActivityOfToolbarOptionItem(pathOfIds);
-    //             return;
-    //     }
-    //     console.log(path, pathOfIds)
-    //     // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-       
-    // }
 
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "sidebarArrow"){
@@ -102,15 +78,15 @@ export const SidebarItem = (props) => {
         return(
             <div className="sidebar-item-options-wrapper">{props.data.options.map((el, i) => {
                 return(
-                        <div 
-                            key={i} 
-                            className="sidebar-option"
-                        >
-                            <div className="sidebar-option-header-text">
-                                <H19 className="h19-matterhorn-teko">{el.header}</H19>
-                            </div>
-                            {renderOptionItems(el)}
+                    <div 
+                        key={i} 
+                        className="sidebar-option"
+                    >
+                        <div className="sidebar-option-header-text">
+                            <H19 className="h19-matterhorn-teko">{el.header}</H19>
                         </div>
+                        {renderOptionItems(el)}
+                    </div>
                 )
             })}</div>
         )
@@ -148,9 +124,7 @@ export const SidebarItem = (props) => {
                                 onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)} 
                                 onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
                             >
-                                {/* <div className={renderClassName("text", el.isHover)}> */}
-                                    <H15 className="h15-black-lustria">{el.text}</H15>
-                                {/* </div> */}
+                                <H15 className="h15-black-lustria">{el.text}</H15>
                             </div>
                         </div>
                     )
@@ -194,21 +168,6 @@ export const SidebarItem = (props) => {
                         
                             {el.isHover === "on" ? renderSubOptions(el.subOptions, pathOfIds): null}
                         </div>
-                        // <div 
-                        //     key={i} 
-                        //     className="sidebar-option-item-with-sub-option"
-                        //     onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)}
-                        //     onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
-                        // >
-                        //     <div className="item-wrapper">
-                        //         <H15 className="h15-black-lustria">{el.text}</H15>
-                        //         <div className={renderClassName("sidebarArrow", el.isHover, el.active)}>
-                        //             <div className="sidebar-item-arrow-top-line"/>
-                        //             <div className="sidebar-item-arrow-bottom-line"/>
-                        //         </div>
-                        //     </div>
-                        //     {el.isHover === "on" ? renderSubOptions(el.subOptions, pathOfIds): null}
-                        // </div>
                     )
                 }
             })}</>
@@ -256,11 +215,9 @@ export const SidebarItem = (props) => {
                                     onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
                                 >
                                     <H15 className="h15-black-lustria">{el.text}</H15>
-                                </div>
-                                                
+                                </div>           
                             </div>
                         )})}
-                    {/* <EH20/> */}
                 </div>
             </>
         )
@@ -293,7 +250,6 @@ export const SidebarItem = (props) => {
                 onMouseLeave={props.onMouseLeave}
             >
                 <div className="grey-line"/>
-                {/* <EH20/> */}
                 {renderOptions()}
                 <EH20/>
             </div> : null}
