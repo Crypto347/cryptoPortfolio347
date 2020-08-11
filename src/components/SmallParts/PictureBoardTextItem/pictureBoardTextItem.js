@@ -18,10 +18,6 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
 * Styles
 */
@@ -53,18 +49,6 @@ import {
 import * as Actions from '../../../actions';
 
 /**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Cnstants
-*/
-
-// import * as Colors from '../../../constants/colors';
-
-/**
 * PictureBoardTextItem component definition and export
 */
 
@@ -87,29 +71,6 @@ export const PictureBoardTextItem = (props) => {
     const handleMouseLeave = () => {
         setIsHovering(false);
     }
-
-    // const loadImage = (img) => {
-    //     switch(img) {
-    //         case 'image1':
-    //             return StoryImage1;
-    //         case 'image2':
-    //             return StoryImage2;
-    //         case 'image3':
-    //             return StoryImage3;
-    //         case 'image4':
-    //             return StoryImage4;
-    //         case 'image5':
-    //             return StoryImage5;
-    //         case 'image6':
-    //             return StoryImage6;
-    //         default:
-    //             return DefaultImage;
-    //     }
-    // }
-
-    // const onClick = (obj) => {
-    //     props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
-    // }
 
     const iconOnClick = (array) => {
         props.photoViewerOpen('pictureBoardForTextItem', true, array);
@@ -150,8 +111,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }
 )(PictureBoardTextItem);

@@ -7,10 +7,6 @@ import React, {
 } from 'react';
 
 import {
-    connect
-} from 'react-redux';
-
-import {
     withRouter
 } from 'react-router-dom';
 
@@ -29,8 +25,8 @@ import './section1DataItem.scss';
 */
 
 import {
-    H40,
     H25,
+    H40,
     EH20
 } from '../../UtilityComponents';
 
