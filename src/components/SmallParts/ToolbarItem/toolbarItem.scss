@@ -19,7 +19,6 @@
             animation: appearToolbarSidebarItemText .5s linear;
         }
     }
-    
     .toolbar-item-white-active {
         font-family: 'Balsamiq Sans', cursive;
         font-size: 17px;
@@ -51,7 +50,6 @@
             -o-animation: appearToolbarSidebarItemText .5s linear;
             animation: appearToolbarSidebarItemText .5s linear;
         }
-      
     }
     .toolbar-item-regular-active {
         font-family: 'Balsamiq Sans', cursive;
@@ -65,14 +63,13 @@
         opacity: 0.7;
         cursor: pointer;      
     }
+
     .toolbar-item-options {
         position: absolute;
         top: 100%;
         left: -50%;
         width: 240px;
         background-color: white;
-        // box-shadow: 0px -10px 0px rgb(239, 239, 239);
-        // padding: 0 20px 0 20px;
         .grey-line {
             width: 100%;
             height: 10px;
@@ -88,7 +85,6 @@
                     .arrow-wrapper-active {
                         display: flex;
                         transform: translate(100%);
-                        // margin-top: 30px;
                         align-items: center;
                         .arrow-horizontal-line {
                             border-top: 1px solid black;
@@ -237,8 +233,6 @@
         left: -50%;
         width: 240px;
         background-color: white;
-        // box-shadow: 0px -10px 0px rgb(239, 239, 239);
-        // padding: 0 20px 0 20px;
         .grey-line {
             width: 100%;
             height: 10px;
@@ -276,7 +270,6 @@
                     .arrow-wrapper-active {
                         display: flex;
                         transform: translate(-100%);
-                        // margin-top: 30px;
                         align-items: center;
                         .arrow-horizontal-line {
                             border-top: 1px solid black;
@@ -395,7 +388,6 @@
                     }
                 }
                 .toolbar-option-item-with-sub-option {
-                    // width: calc(100% + 40px);
                     position: relative;
                     display: flex;
                     justify-content: space-between;
@@ -421,7 +413,6 @@
                         display: flex;
                         align-items: center;
                         justify-content: flex-end;
-                        // transform: translateX(20px);
                         .toolbar-option-item-text-active {
                             transform: translateX(-20px);
                         }
@@ -446,7 +437,6 @@
                         .arrow-wrapper-active {
                             display: flex;
                             transform: translate(-100%);
-                            // margin-top: 30px;
                             align-items: center;
                             .arrow-horizontal-line {
                                 border-top: 1px solid black;
@@ -570,10 +560,7 @@
                         width: 230px;
                         top: -100%;
                         left: calc(-100% - 30px);
-                        // padding: 5px 15px 5px 15px;
                         padding: 0 20px 0 20px;
-                        // margin-left: 5px;
-                        // border: 2px solid red;
                         background-color: white;
                         box-shadow: 0px -10px 0px rgb(239, 239, 239);
                         .toolbar-sub-option-item {
@@ -606,7 +593,6 @@
                             .arrow-wrapper-active {
                                 display: flex;
                                 transform: translate(-100%);
-                                // margin-top: 30px;
                                 align-items: center;
                                 .arrow-horizontal-line {
                                     border-top: 1px solid black;
@@ -725,10 +711,8 @@
                             }
                         }
                     }
-          
                 }
             }
-            
         }
     }
 }
@@ -766,7 +750,6 @@
     from{transform: translateX(-20px);}
     to{transform: translateX(0px);}
 }
-
 
 @-webkit-keyframes toolbarItemArrowAppearsAlignEnd {
     from{

@@ -6,10 +6,6 @@ import React, {
     useState
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
 /**
 * Styles
 */
@@ -21,10 +17,8 @@ import './toolbarItem.scss';
 */
 
 import {
-    EH40,
-    EH20,
     H15,
-    EW70
+    EH20
  } from '../../UtilityComponents';
 
 /**
@@ -36,8 +30,6 @@ export const ToolbarItem = (props) => {
     /**
     * State
     */
-
-    const [isHovering, setIsHovering] = useState(false);
     
     /**
     * Methods
@@ -53,7 +45,6 @@ export const ToolbarItem = (props) => {
                 return;
         }
         console.log(path, pathOfIds)
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
        
     }
 
@@ -130,9 +121,7 @@ export const ToolbarItem = (props) => {
                                 onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)} 
                                 onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
                             >
-                                {/* <div className={renderClassName("text", el.isHover)}> */}
-                                    <H15 className="h15-black-lustria">{el.text}</H15>
-                                {/* </div> */}
+                                <H15 className="h15-black-lustria">{el.text}</H15>
                             </div>
                         </div>
                     )
@@ -149,9 +138,7 @@ export const ToolbarItem = (props) => {
                                     onMouseEnter={() => props.onMouseEnterAndLeaveOptionItem("on", pathOfIds)} 
                                     onMouseLeave={() => props.onMouseEnterAndLeaveOptionItem("off", pathOfIds)}
                                 >
-                                    {/* <div className={renderClassName("text", el.isHover)}> */}
-                                        <H15 className="h15-black-lustria">{el.text}</H15>
-                                    {/* </div> */}
+                                    <H15 className="h15-black-lustria">{el.text}</H15>
                                 </div>
                                 {el.active ? 
                                 <div className="arrow-wrapper-active">
@@ -188,9 +175,7 @@ export const ToolbarItem = (props) => {
                                         className={renderClassName("text", el.isHover, el.active)}
                                      
                                     >
-                                        {/* <div className={renderClassName("text", el.isHover)}> */}
-                                            <H15 className="h15-black-lustria">{el.text}</H15>
-                                        {/* </div> */}
+                                        <H15 className="h15-black-lustria">{el.text}</H15>
                                     </div>
                                     {el.active ? 
                                     <div className="arrow-wrapper-active">
@@ -213,7 +198,6 @@ export const ToolbarItem = (props) => {
                             </div>
                         )
                     }
-                   
                 }
             })}</>
         )
@@ -240,9 +224,7 @@ export const ToolbarItem = (props) => {
                                 onMouseEnter={() => props.onMouseEnterAndLeaveSubOptionItem("on", updatedPathOfIds)} 
                                 onMouseLeave={() => props.onMouseEnterAndLeaveSubOptionItem("off", updatedPathOfIds)}
                             >
-                                {/* <div className={renderClassName("text", el.isHover)}> */}
-                                    <H15 className="h15-black-lustria">{el.text}</H15>
-                                {/* </div> */}
+                                <H15 className="h15-black-lustria">{el.text}</H15>
                             </div>
                             {el.active ? 
                             <div className="arrow-wrapper-active">
@@ -283,7 +265,6 @@ export const ToolbarItem = (props) => {
             {props.showOptionsRegular && props.data.isHover === "on" ? 
             <div 
                 className={props.data.hasSubOptions ? "toolbar-item-options-align-end" : "toolbar-item-options"}
-                // className="toolbar-item-options"
                 onMouseLeave={props.onMouseLeave}
             >
                 <div  className="grey-line"/>
