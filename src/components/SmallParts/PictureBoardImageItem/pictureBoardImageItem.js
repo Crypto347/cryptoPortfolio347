@@ -6,14 +6,6 @@ import React, {
     useState, useEffect
 } from 'react';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
 * Styles
 */
@@ -24,14 +16,7 @@ import './pictureBoardImageItem.scss';
 * Utility
 */
 
-import {
-    H40,
-    H25,
-    H5,
-    EH20,
-    EW10,
-    DoubleLine1
-} from '../../UtilityComponents';
+import * as Utility from '../../../utility';
 
 /**
 * Images
@@ -141,19 +126,6 @@ import col44 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-dWKq
 import col45 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-z0guTIr_kts-unsplash.jpg';
 import col46 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-ZY2GNpgiWyU-unsplash.jpg';
 
-import DefaultImage from '../../../images/error.jpg';
-
-/**
-* Constants
-*/
-
-
-/**
-* Utility
-*/
-
-import * as Utility from '../../../utility';
-
 /**
 * PictureBoardImageItem component definition and export
 */
@@ -163,9 +135,8 @@ export const PictureBoardImageItem = (props) => {
     /**
     * State
     */
-    // const [isHovering, setIsHovering] = useState(false);
+   
     const [imgToLoad, setImgToLoad] = useState({});
-    // const divRef = React.useRef();
 
     /**
     * Methods
@@ -211,16 +182,11 @@ export const PictureBoardImageItem = (props) => {
             case 16:
                 imgCoordinateRange = evaluateCoordinates(); 
                 break;
-
         }     
 
         window.addEventListener('mousemove', (e) => handleMouseMove(e, imgCoordinateRange));
-        // window.addEventListener('resize', evaluateCoordinates());
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            // window.removeEventListener('resize', evaluateCoordinates())
-        } 
-    }, [])
+        return () => window.removeEventListener('mousemove', handleMouseMove)
+    }, []);
 
     const evaluateCoordinates = () => {
         let pictureBoardImageItem = document.getElementById(`pictureBoardImageItem${props.id}`);
@@ -261,18 +227,6 @@ export const PictureBoardImageItem = (props) => {
             // console.log("Notmy div", props.id)
         }
     }
-
-    // const handleMouseEnter = () => {
-    //     setIsHovering(true);
-    // }
-
-    // const handleMouseLeave = () => {
-    //     setIsHovering(false);
-    // }
-
-    // const onClick = (obj) => {
-    //     props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
-    // }
 
     const loadImg = (key) => {
         switch(key) {
