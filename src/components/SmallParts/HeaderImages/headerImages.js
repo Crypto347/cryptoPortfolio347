@@ -23,19 +23,6 @@ import {
     CSSTransition 
 } from 'react-transition-group';
 
-
-/**
-* Hooks
-*/
-
-import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-import {
-    useInterval
-} from '../../../Hooks/useInterval';
-
 /**
 * Styles
 */
@@ -55,18 +42,31 @@ import Button from '../../../library/Button/button';
 
 import * as Services from "../../../service";
 
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
 /**
 * Selectors
 */
 
 import * as Selectors from '../../../reducers/selectors';
+
+/**
+* Utility
+*/
+
+import {
+    H19
+} from '../../UtilityComponents';
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
+import {
+    useInterval
+} from '../../../Hooks/useInterval';
 
 /**
 * Images
@@ -75,21 +75,6 @@ import * as Selectors from '../../../reducers/selectors';
 import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
 import Image2 from '../../../images/headerImages/john-schnobrich-2FPjlAyMQTA-unsplash.jpg';
 import Image3 from '../../../images/headerImages/photo-2560610_1920.jpg';
-import DefaultImage from '../../../images/error.jpg';
-
-/**
-* Constants
-*/
-
-
-/**
-* Utility
-*/
-
-import {
-    H19
- } from '../../UtilityComponents';
-
 
 /**
 * HeaderImages component definition and export
@@ -135,7 +120,7 @@ export const HeaderImages = (props) => {
             isHovering: null,
             closeSmoothly: false
         }
-    ])
+    ]);
 
     /**
     * Methods
@@ -143,9 +128,6 @@ export const HeaderImages = (props) => {
 
     useEffect(() => {
         props.fetchHeaderImagesArray();
-        // props.initMenuItems(menuItemsArray);
-        // window.addEventListener('scroll', handleScroll);
-        // return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     useInterval(() => {
@@ -169,7 +151,6 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
-
     }
  
     const loadImage = (opt) => {
@@ -201,6 +182,7 @@ export const HeaderImages = (props) => {
 
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
+
         let headerImageObj = props.headerImages.items.find(item => item.id === id);
         setImg(headerImageObj);
         setImgShow(!imgShow);
@@ -233,13 +215,6 @@ export const HeaderImages = (props) => {
                             <div className={el.active ? "switch-button-activated" : `switch-button-deactivated ${el.closeSmoothly ? "switch-button-deactivated-shortened" : null}`}/>
                         </CSSTransition>
                     </div>
-                    // <ToolbarItem 
-                    //     key={el.id}
-                    //     text={el.text}
-                    //     active={el.active}
-                    //     menuIsShown={menuIsShown}
-                    //     onClick={() => toolbarOnClick(el.path, el.id)}
-                    // />
                 )
             })}</div>
         )
@@ -247,7 +222,7 @@ export const HeaderImages = (props) => {
 
     const renderSubtractedPxForTextBack = () => {
         let windowWidth = size.width;
-        // console.log(windowWidth)
+
         if(windowWidth > 1120){
             return 507;
         }
@@ -263,13 +238,11 @@ export const HeaderImages = (props) => {
         if(windowWidth < 600){
             return 245;
         }
-
-        
     }
 
     const renderSubtractedPxForTextFront = () => {
         let windowWidth = size.width;
-        // console.log(windowWidth)
+
         if(windowWidth > 1120){
             return 394;
         }
@@ -388,9 +361,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
-            fetchHeaderImagesArray: bindActionCreators(Services.fetchHeaderImagesArray, dispatch),
+            fetchHeaderImagesArray: bindActionCreators(Services.fetchHeaderImagesArray, dispatch)
         };
     }
 )(HeaderImages);

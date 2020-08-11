@@ -39,17 +39,6 @@ import {
 } from '../../../Hooks/useInterval';
 
 /**
-* Utility
-*/
-
-import {
-    H25,
-    H15,
-    EH10,
-    EH20
-} from '../../UtilityComponents';
-
-/**
 * AchievementItem component definition and export
 */
 
@@ -67,11 +56,7 @@ export const AchievementItem = (props) => {
     */
    
     useEffect(() => {
-        // let timer = setTimeout(() => {
-        //     setShowPercent(true);
-        // }, 500);
-
-        // return () => clearTimeout(timer);
+        
     }, []);
 
     useInterval(() => {
