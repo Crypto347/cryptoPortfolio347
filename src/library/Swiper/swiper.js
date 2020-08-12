@@ -67,13 +67,10 @@ import {
 */
 
 import {
-    H25,
     H19,
-    H15,
+    H25,
     EH25
 } from '../../components/UtilityComponents';
-
-
 
 /**
 * Swiper component definition and export
@@ -150,8 +147,6 @@ export const Swiper = (props) => {
             // })
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
         }
-
-   console.log("SWIPER", props.swiperData)
 
         return () => {
            

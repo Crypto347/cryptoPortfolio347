@@ -3,7 +3,8 @@
 */
 
 import React, {
-    useEffect, useState, useLa
+    useState,
+    useEffect
 } from 'react';
 
 import {
@@ -96,20 +97,26 @@ export const SmallImages = (props) => {
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
-    
+
     /**
     * Methods
     */
 
     useEffect(() => {
         window.scrollTo(0, 0);
-
         props.fetchSmallImagesPortfolio(props.match.params.id);
+
         if(props.smallImagesPortfolio.item !== {}){
             setShowContent(true)
         }
+
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('wheel', checkScrollDirection);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('wheel', checkScrollDirection);
+        }
     }, []);
 
 
@@ -259,23 +266,23 @@ export const SmallImages = (props) => {
         }
     }
 
-    // const checkScrollDirection = (e) => {
-    //     let scrollHeight = document.body.scrollTop;
-    //     let el = document.getElementById("home");
+    const checkScrollDirection = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("smallImages");
 
-    //     if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-    //         setScrollingUp(false);
-    //     }else{
-    //         setScrollingUp(true);
-    //     }
-    // }
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
 
-    // const checkScrollDirectionIsUp = (e)  => {
-    //     if (e.wheelDelta) {
-    //       return e.wheelDelta > 0;
-    //     }
-    //     return e.deltaY < 0;
-    // }
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     const renderToolbars = () => {
         if(size.width < 1120){

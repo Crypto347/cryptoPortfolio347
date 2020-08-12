@@ -68,9 +68,9 @@ export const Home = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        window.addEventListener('wheel', (e) => checkScrollDirection(e));
+        window.addEventListener('wheel', checkScrollDirection);
 
-        return () => window.removeEventListener('wheel', (e) => checkScrollDirection(e))
+        return () => window.removeEventListener('wheel', checkScrollDirection);
     }, []);
 
 
@@ -78,7 +78,7 @@ export const Home = (props) => {
     const checkScrollDirection = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("home");
-
+        
         if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
             setScrollingUp(false);
         }else{

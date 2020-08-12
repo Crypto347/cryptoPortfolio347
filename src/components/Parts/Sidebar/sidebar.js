@@ -78,6 +78,7 @@ export const Sidebar = (props) => {
         // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
         props.history.push(`/crypto-portfolio/${path}`);
         props.clearActivityOfMenuItems();
+        props.setSidebarState("init")
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -143,7 +144,8 @@ export default connect(
             setIsHoveringToolbarSubOptionItem: bindActionCreators(Actions.setIsHoveringToolbarSubOptionItem, dispatch),
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
-            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch)
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
         };
     }
 )(withRouter(Sidebar));
