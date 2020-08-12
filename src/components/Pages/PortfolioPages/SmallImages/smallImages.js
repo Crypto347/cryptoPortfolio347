@@ -134,10 +134,10 @@ export const SmallImages = (props) => {
 
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
-        let contentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
-        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
-        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
-        let movablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
+        let contentOffsetTop = document.getElementById("smallImagesContent") ? document.getElementById("smallImagesContent").offsetTop : 0;
+        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages") ? document.getElementById("smallImagesPortfolioImages").offsetTop : 0;
+        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages") ? document.getElementById("smallImagesPortfolioImages").offsetHeight : 0;
+        let movablePartHeight = document.getElementById("smallImagesMovablePart") ? document.getElementById("smallImagesMovablePart").offsetHeight : 0;
         let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
 
         // Set margin top of movable part
