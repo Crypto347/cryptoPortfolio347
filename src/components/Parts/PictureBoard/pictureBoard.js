@@ -7,6 +7,10 @@ import React, {
 } from 'react';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
     connect
 } from 'react-redux';
 
@@ -23,6 +27,12 @@ import './pictureBoard.scss';
 import Loading from '../../SmallParts/Loading/loading';
 import PictureBoardTextItem from '../../SmallParts/PictureBoardTextItem/pictureBoardTextItem';
 import PictureBoardImageItem from '../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * Selectors
