@@ -78,7 +78,8 @@ export const Sidebar = (props) => {
         // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
         props.history.push(`/crypto-portfolio/${path}`);
         props.clearActivityOfMenuItems();
-        props.setSidebarState("init")
+        props.setSidebarState("init");
+        window.location.reload();
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);

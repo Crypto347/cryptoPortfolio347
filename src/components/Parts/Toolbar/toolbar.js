@@ -132,6 +132,7 @@ export const Toolbar = (props) => {
         console.log(path, pathOfIds);
         props.history.push(`/crypto-portfolio/${path}`);
         props.clearActivityOfMenuItems();
+        window.location.reload();
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
