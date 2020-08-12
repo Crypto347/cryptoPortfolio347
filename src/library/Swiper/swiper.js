@@ -128,11 +128,9 @@ export const Swiper = (props) => {
 
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = updateSlides(props.swiperData.slides, props.swiperData.activeIndex);
-                console.log("SWIPER TRUE")
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                console.log("SWIPER False")
             }
             slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
         
