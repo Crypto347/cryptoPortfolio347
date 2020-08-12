@@ -9,16 +9,22 @@
     color: rgb(37, 37, 37);
 }
 
+@media only screen and (max-width: 1130px){
+    .h70-nero-poppins {
+        font-size: 60px;
+    }
+}
 
-// @media only screen and (max-width: 690px){
-    
-//     .h65-black-teko {
-//         font-size: 55px;
-//     }
-//     .h65-black-lustria {
-//         font-size: 50px;
-//     }
-// }
+@media only screen and (max-width: 1010px){
+    .h70-nero-poppins {
+        font-size: 45px;
+    }
+}
+@media only screen and (max-width: 640px){
+    .h70-nero-poppins {
+        font-size: 35px;
+    }
+}
 
 // @media only screen and (max-width: 600px){
 //     .h65-black-teko {

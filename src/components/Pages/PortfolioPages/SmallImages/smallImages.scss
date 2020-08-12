@@ -310,6 +310,23 @@
     }
 }
 
+@media only screen and (max-width: 1030px){
+    .small-images {
+        .small-images-wrapper {
+            .small-images-content {
+                .small-images-portfolio-images {
+                    width: calc(100% - 4px);
+                }
+                .small-images-movable-part {
+                    width: calc(100% - 30px);
+                    padding: 5px 30px 30px 30px;
+                    margin-top: 0px !important; 
+                }
+            }
+        }
+    }
+}
+
 @-webkit-keyframes smallImagesMenuButtonHoverOn {
     from{
         background-color: rgb(37, 37, 37);
@@ -511,17 +528,6 @@
     from{width: 20px;}
     to{width: 15px;}
 }
-
-// @media only screen and (max-device-width: 1120px){
-//     .home {
-//         .home-main-background {
-//             height: 650px;
-//             .home-curtain {
-//                 height: 650px;
-//             }
-//         }
-//     }
-// }
 
 // @media only screen and (max-width: 1120px){
 //     .home {
