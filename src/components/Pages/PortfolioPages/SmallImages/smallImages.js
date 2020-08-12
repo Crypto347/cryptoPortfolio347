@@ -84,6 +84,11 @@ import Id1SmallImages5 from '../../../../images/smallImages/id1/shelbey-miller-H
 import Id2SmallImages1 from '../../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-unsplash.jpg';
 import Id2SmallImages2 from '../../../../images/smallImages/id2/paper-3025558_1920.jpg';
 
+//Id3
+
+import Id3SmallImages1 from '../../../../images/smallImages/id3/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
+import Id3SmallImages2 from '../../../../images/smallImages/id3/jess-bailey-L71uKsAVo4g-unsplash.jpg';
+import Id3SmallImages3 from '../../../../images/smallImages/id3/jess-bailey-z0guTIr_kts-unsplash.jpg';
 
 /**
 * SmallImages component definition and export
@@ -141,6 +146,12 @@ export const SmallImages = (props) => {
                 return Id2SmallImages1;
             case 'id2SmallImages2':
                 return Id2SmallImages2;
+            case 'id3SmallImages1':
+                return Id3SmallImages1;
+            case 'id3SmallImages2':
+                return Id3SmallImages2;
+            case 'id3SmallImages3':
+                return Id3SmallImages3;
             default:
                 return "";
         }
