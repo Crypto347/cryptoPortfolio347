@@ -110,35 +110,14 @@ export const SmallImages = (props) => {
             setShowContent(true)
         }
 
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('wheel', checkScrollDirection);
+        // window.addEventListener('scroll', handleScroll);
+        window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('wheel', checkScrollDirection);
+            // window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('wheel', handleOnWheel);
         }
     }, []);
-
-
-    const handleScroll = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let contentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
-        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
-        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
-        let movablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
-
-        let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
-
-        if(scrollHeight > contentOffsetTop && scrollHeight < moveUntil){
-            setMoveStepMovablePart(scrollHeight - contentOffsetTop);
-        } 
-        else if(scrollHeight > moveUntil) {
-            setMoveStepMovablePart(imagesOffsetHeight - movablePartHeight - 30);
-        } 
-        else {
-            setMoveStepMovablePart(0);
-        }
-    }
 
     const loadImg = (key) => {
         switch(key) {
@@ -266,14 +245,33 @@ export const SmallImages = (props) => {
         }
     }
 
-    const checkScrollDirection = (e) => {
+    const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("smallImages");
+        let contentOffsetTop = document.getElementById("smallImagesContent").offsetTop;
+        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages").offsetTop;
+        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages").offsetHeight;
+        let movablePartHeight = document.getElementById("smallImagesMovablePart").offsetHeight;
+        let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
+
+        // Check scroll direction
 
         if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
             setScrollingUp(false);
         }else{
             setScrollingUp(true);
+        }
+
+        // Set margin top of movable part
+
+        if(scrollHeight > contentOffsetTop && scrollHeight < moveUntil){
+            setMoveStepMovablePart(scrollHeight - contentOffsetTop);
+        } 
+        else if(scrollHeight > moveUntil) {
+            setMoveStepMovablePart(imagesOffsetHeight - movablePartHeight - 30);
+        } 
+        else {
+            setMoveStepMovablePart(0);
         }
     }
 
