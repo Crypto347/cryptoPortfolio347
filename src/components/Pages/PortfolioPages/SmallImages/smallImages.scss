@@ -1,7 +1,10 @@
 .small-images {
     width: calc(100% + 18px);
     .small-images-loading-error {
-
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .small-images-wrapper {
         display: flex;

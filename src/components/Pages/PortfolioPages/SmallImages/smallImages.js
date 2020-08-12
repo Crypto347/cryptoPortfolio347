@@ -379,7 +379,10 @@ export const SmallImages = (props) => {
     const renderSmallImagesContent = () => {
         if(props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
             return(
-                <div className="small-images-loading-error">
+                <div 
+                    className="small-images-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
                     <Loading color="black"/>
                 </div>
             )
@@ -459,7 +462,10 @@ export const SmallImages = (props) => {
         }
         if(!props.smallImagesPortfolio.loading && props.smallImagesPortfolio.error){
             return(
-                <div className="small-images-loading-error">
+                <div 
+                    className="small-images-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
                     <H19 className="h19-nobel-lora">{`${props.smallImagesPortfolio.error}`}</H19>
                 </div>
             )
