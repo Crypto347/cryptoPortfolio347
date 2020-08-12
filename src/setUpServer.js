@@ -518,7 +518,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/small-images-1",
+            path: "portfolio-item/small-images/2",
             pictures: [
                 {
                     id: 1,
@@ -1090,34 +1090,25 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             id: 2,
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
-            category: "Lifestyle",
-            date: "11.20.2017",
-            tags: ["Creative"],
+            category: "Music",
+            date: "11.13.2017",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "small-images-1",
+                    imageName: "id2SmallImages1",
                     path: "small-images-1"
                 },
                 {
                     id: 2,
-                    imageName: "small-images-2",
+                    imageName: "id2SmallImages2",
                     path: "small-images-2"
-                },
-                {
-                    id: 3,
-                    imageName: "small-images-3",
-                    path: "small-images-3"
-                },
-                {
-                    id: 4,
-                    imageName: "small-images-4",
-                    path: "small-images-4"
-                },
-                {
-                    id: 5,
-                    imageName: "small-images-5",
-                    path: "small-images-5"
                 }
             ]
         }

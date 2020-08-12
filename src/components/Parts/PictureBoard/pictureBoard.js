@@ -102,6 +102,8 @@ export const PictureBoard = (props) => {
                             option={el.option}
                             imagesArray={el.pictures}
                             alt={el.alt}
+                            path={el.path}
+                            clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                         />
                     )
                 }
@@ -129,7 +131,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch)
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }

@@ -3,8 +3,13 @@
 */
 
 import React, {
-    useState, useEffect
+    useState, 
+    useEffect
 } from 'react';
+
+import {
+    withRouter
+} from 'react-router-dom';
 
 /**
 * Styles
@@ -367,6 +372,11 @@ export const PictureBoardImageItem = (props) => {
         }
     }
 
+    const pictureBoardItemOnClick = (path) => {
+        props.history.push(`/crypto-portfolio/${path}`);
+        props.clearActivityOfMenuItems();
+    }
+
     /**
     * Markup
     */
@@ -375,6 +385,7 @@ export const PictureBoardImageItem = (props) => {
         <div 
             className="picture-board-image-item" 
             id={`pictureBoardImageItem${props.id}`}
+            onClick={() => pictureBoardItemOnClick(props.path)}
         >
             <div className={props.option === "colorful" ? "picture-board-image" : "picture-board-image-black-and-white"}>
                 <img src={loadImg(imgToLoad.key)} alt={imgToLoad.alt}/>
@@ -383,4 +394,4 @@ export const PictureBoardImageItem = (props) => {
     );
 }
 
-export default PictureBoardImageItem;
+export default withRouter(PictureBoardImageItem);

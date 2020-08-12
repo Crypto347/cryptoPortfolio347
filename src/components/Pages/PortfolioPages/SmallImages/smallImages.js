@@ -79,6 +79,12 @@ import Id1SmallImages3 from '../../../../images/smallImages/id1/nordwood-themes-
 import Id1SmallImages4 from '../../../../images/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg';
 import Id1SmallImages5 from '../../../../images/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.jpg';
 
+//Id2
+
+import Id2SmallImages1 from '../../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-unsplash.jpg';
+import Id2SmallImages2 from '../../../../images/smallImages/id2/paper-3025558_1920.jpg';
+
+
 /**
 * SmallImages component definition and export
 */
@@ -131,6 +137,10 @@ export const SmallImages = (props) => {
                 return Id1SmallImages4;
             case 'id1SmallImages5':
                 return Id1SmallImages5;
+            case 'id2SmallImages1':
+                return Id2SmallImages1;
+            case 'id2SmallImages2':
+                return Id2SmallImages2;
             default:
                 return "";
         }
