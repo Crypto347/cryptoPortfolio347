@@ -97,5 +97,3 @@ export function clearActivityOfMenuItems() {
         type: actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS
     };
 };
-
-

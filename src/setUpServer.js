@@ -1187,8 +1187,60 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     }else{
         res.json(smallImagesObj);  
     }
-
+});
+app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
+    let id = parseInt(req.params.id);
   
+    const bigSlider = [
+        {
+            id: 1,
+            header: "Take a Look at Our Portfolio.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            category: "Lifestyle",
+            date: "11.22.2017",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    imageName: "id1BigSlider1",
+                    path: "adam-wilson-1QZYZib7eYs-unsplash.jpg"
+                },
+                {
+                    id: 2,
+                    imageName: "id1BigSlider2",
+                    path: "jason-blackeye-DKCgibUVLNc-unsplash.jpg"
+                },
+                {
+                    id: 3,
+                    imageName: "id1BigSlider3",
+                    path: "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg"
+                },
+                {
+                    id: 4,
+                    imageName: "id1BigSlider4",
+                    path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg"
+                },
+                {
+                    id: 5,
+                    imageName: "id1BigSlider5",
+                    path: "shelbey-miller-HIQd4db8Kr8-unsplash.jpg"
+                }
+            ]
+        }
+    ]
+
+    let bigSliderObj = bigSlider.find(item => item.id === id);
+    if(!bigSliderObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(bigSliderObj);  
+    }
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {

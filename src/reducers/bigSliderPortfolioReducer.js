@@ -21,7 +21,7 @@ export const initialState = {
     error: null
 }
 
-const fetchSmallImagesPortfolioBegin = (state, action) => {
+const fetchBigSliderPortfolioBegin = (state, action) => {
     return {
         ...state,
         loading: true,
@@ -29,7 +29,7 @@ const fetchSmallImagesPortfolioBegin = (state, action) => {
     };
 }
 
-const fetchSmallImagesPortfolioSuccess = (state, action) => {    
+const fetchBigSliderPortfolioSuccess = (state, action) => {    
     return {
         ...state,
         loading: false,
@@ -37,7 +37,7 @@ const fetchSmallImagesPortfolioSuccess = (state, action) => {
     };
 }
 
-const fetchSmallImagesPortfolioFailur = (state, action) => {
+const fetchBigSliderPortfolioFailur = (state, action) => {
     return {
         ...state,
         loading: false,
@@ -46,7 +46,7 @@ const fetchSmallImagesPortfolioFailur = (state, action) => {
     };
 }
 
-const setSmallImagesIsHoveringTag = (state, action) => {
+const setBigSliderIsHoveringTag = (state, action) => {
     let updatedTags = [...state.item.tags];
 
     let tag = {...updatedTags.find(item => item.id === action.id), isHover: action.val};
@@ -64,14 +64,14 @@ const setSmallImagesIsHoveringTag = (state, action) => {
 
 const smallImagesPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.FETCH_SMALL_IMAGES_PORTFOLIO_BEGIN:
-            return fetchSmallImagesPortfolioBegin (state, action); 
-        case actionTypes.FETCH_SMALL_IMAGES_PORTFOLIO_SUCCESS:
-            return fetchSmallImagesPortfolioSuccess (state, action);
-        case actionTypes.FETCH_SMALL_IMAGES_PORTFOLIO_FAILURE:
-            return fetchSmallImagesPortfolioFailur(state, action);
-        case actionTypes.SET_SMALL_IMAGES_IS_HOVERING_TAG:
-            return setSmallImagesIsHoveringTag(state, action);
+        case actionTypes.FETCH_BIG_SLIDER_PORTFOLIO_BEGIN:
+            return fetchBigSliderPortfolioBegin (state, action); 
+        case actionTypes.FETCH_BIG_SLIDER_PORTFOLIO_SUCCESS:
+            return fetchBigSliderPortfolioSuccess (state, action);
+        case actionTypes.FETCH_BIG_SLIDER_PORTFOLIO_FAILURE:
+            return fetchBigSliderPortfolioFailur(state, action);
+        case actionTypes.SET_BIG_SLIDER_IS_HOVERING_TAG:
+            return setBigSliderIsHoveringTag(state, action);
         default: 
             return state;
     }

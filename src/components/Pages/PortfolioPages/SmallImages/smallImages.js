@@ -195,10 +195,10 @@ export const SmallImages = (props) => {
                 setIsHoveringCategoryText("on");
                 break;
             case 'smallImagesTag1': 
-                props.setIsHoveringTag("on", id);
+                props.setSmallImagesIsHoveringTag("on", id);
                 break;
             case 'smallImagesTag2': 
-                props.setIsHoveringTag("on", id);
+                props.setSmallImagesIsHoveringTag("on", id);
                 break;
         }
     }
@@ -209,10 +209,10 @@ export const SmallImages = (props) => {
                 setIsHoveringCategoryText("off");
                 break;
             case 'smallImagesTag1': 
-                props.setIsHoveringTag("off", id);
+                props.setSmallImagesIsHoveringTag("off", id);
                 break;
             case 'smallImagesTag2': 
-                props.setIsHoveringTag("off", id);
+                props.setSmallImagesIsHoveringTag("off", id);
                 break;
         }
     }
@@ -420,7 +420,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
-            setIsHoveringTag: bindActionCreators(Actions.setIsHoveringTag, dispatch)
+            setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch)
         };
     }
 )(SmallImages);

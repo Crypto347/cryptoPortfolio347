@@ -106,3 +106,11 @@ export const getPictureBoardImagesCooradinateRangeState = createSelector(
     [getPictureBoardImagesCooradinateRange],
     (x) => x
 );
+
+const getBigSliderPortfolio = (state) => state.bigSliderPortfolio;
+
+export const getBigSliderPortfolioState = createSelector(
+    [getBigSliderPortfolio],
+    (x) => x
+);
+

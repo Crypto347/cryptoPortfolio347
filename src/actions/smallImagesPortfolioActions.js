@@ -20,9 +20,9 @@ export function fetchSmallImagesPortfolioFailur(err) {
     };
 };
 
-export function setIsHoveringTag(val, id) {
+export function setSmallImagesIsHoveringTag(val, id) {
     return { 
-        type: actionTypes.SET_IS_HOVERING_TAG,
+        type: actionTypes.SET_SMALL_IMAGES_IS_HOVERING_TAG,
         val: val,
         id: id
     };

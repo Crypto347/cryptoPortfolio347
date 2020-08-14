@@ -172,6 +172,24 @@ export function fetchSmallImagesPortfolio(id) {
     };
 }
 
+export function fetchBigSliderPortfolio(id) {
+    return dispatch => {
+        dispatch(Actions.fetchBigSliderPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/big-slider/${id}`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBigSliderPortfolioSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBigSliderPortfolioFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

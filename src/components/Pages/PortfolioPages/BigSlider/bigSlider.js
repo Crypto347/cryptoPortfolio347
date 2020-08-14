@@ -120,9 +120,9 @@ export const BigSlader = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        props.fetchSmallImagesPortfolio(props.match.params.id);
-        
-        if(props.smallImagesPortfolio.item !== {}){
+        props.fetchBigSliderPortfolio(props.match.params.id);
+
+        if(props.bigSliderPortfolio.item !== {}){
             setShowContent(true)
         }
 
@@ -138,8 +138,8 @@ export const BigSlader = (props) => {
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
         let contentOffsetTop = document.getElementById("smallImagesContent") ? document.getElementById("smallImagesContent").offsetTop : 0;
-        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages") ? document.getElementById("smallImagesPortfolioImages").offsetTop : 0;
-        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages") ? document.getElementById("smallImagesPortfolioImages").offsetHeight : 0;
+        let imagesOffsetTop = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetTop : 0;
+        let imagesOffsetHeight = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetHeight : 0;
         let movablePartHeight = document.getElementById("smallImagesMovablePart") ? document.getElementById("smallImagesMovablePart").offsetHeight : 0;
         let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
 
@@ -195,10 +195,10 @@ export const BigSlader = (props) => {
                 setIsHoveringCategoryText("on");
                 break;
             case 'smallImagesTag1': 
-                props.setIsHoveringTag("on", id);
+                props.setBigSliderIsHoveringTag("on", id);
                 break;
             case 'smallImagesTag2': 
-                props.setIsHoveringTag("on", id);
+                props.setBigSliderIsHoveringTag("on", id);
                 break;
         }
     }
@@ -209,10 +209,10 @@ export const BigSlader = (props) => {
                 setIsHoveringCategoryText("off");
                 break;
             case 'smallImagesTag1': 
-                props.setIsHoveringTag("off", id);
+                props.setBigSliderIsHoveringTag("off", id);
                 break;
             case 'smallImagesTag2': 
-                props.setIsHoveringTag("off", id);
+                props.setBigSliderIsHoveringTag("off", id);
                 break;
         }
     }
@@ -305,9 +305,9 @@ export const BigSlader = (props) => {
     const renderPortfolioImages = () => {
         return(
             <div 
-                id="smallImagesPortfolioImages"
+                id="bigSliderPortfolioImages"
                 className="small-images-portfolio-images"
-            >{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
+            >{props.bigSliderPortfolio.item.imagesArray.map((el,i) => {
                 return(
                     <div 
                         key={i}
@@ -323,7 +323,7 @@ export const BigSlader = (props) => {
 
     const renderTags = () => {
         return(
-            <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
+            <div className="small-images-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
@@ -338,7 +338,7 @@ export const BigSlader = (props) => {
     }
 
     const renderSmallImagesContent = () => {
-        if(props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
+        if(props.bigSliderPortfolio.loading && !props.bigSliderPortfolio.error){
             return(
                 <div 
                     className="small-images-loading-error" 
@@ -348,10 +348,10 @@ export const BigSlader = (props) => {
                 </div>
             )
         }
-        if(!props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
+        if(!props.bigSliderPortfolio.loading && !props.bigSliderPortfolio.error){
             return(
                 <div className="small-images-wrapper">
-                    <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.item.header}</H70>
+                    <H70 className="h70-nero-poppins">{props.bigSliderPortfolio.item.header}</H70>
                     <EH70/>
                     <div 
                         id="smallImagesContent"
@@ -363,7 +363,7 @@ export const BigSlader = (props) => {
                             className="small-images-movable-part" 
                             style={{marginTop: `${moveStepMovablePart}px`}}
                         >
-                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
+                            <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.text}</H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Category:</H22>
                             <H19 
@@ -371,11 +371,11 @@ export const BigSlader = (props) => {
                                 onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
                                 onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
                             >
-                                {props.smallImagesPortfolio.item.category}
+                                {props.bigSliderPortfolio.item.category}
                             </H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Date:</H22>
-                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
+                            <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.date}</H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Tags:</H22>
                             {renderTags()}
@@ -385,13 +385,13 @@ export const BigSlader = (props) => {
                 </div>
             )
         }
-        if(!props.smallImagesPortfolio.loading && props.smallImagesPortfolio.error){
+        if(!props.bigSliderPortfolio.loading && props.bigSliderPortfolio.error){
             return(
                 <div 
                     className="small-images-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H19 className="h19-nobel-lora">{`${props.smallImagesPortfolio.error}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.bigSliderPortfolio.error}`}</H19>
                 </div>
             )
         }
@@ -413,14 +413,13 @@ export const BigSlader = (props) => {
 export default connect(
     (state) => {
         return {
-            smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
-        
+            bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
-            setIsHoveringTag: bindActionCreators(Actions.setIsHoveringTag, dispatch)
+            fetchBigSliderPortfolio: bindActionCreators(Services.fetchBigSliderPortfolio, dispatch),
+            setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch)
         };
     }
 )(BigSlader);
