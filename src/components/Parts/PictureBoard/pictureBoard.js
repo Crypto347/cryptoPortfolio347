@@ -105,6 +105,8 @@ export const PictureBoard = (props) => {
                         />
                     )
                 }else{
+                    let imgCoordinateRange = props.pictureBoardImagesCooradinateRange.find(item => item.id === el.id);
+                    // console.log(imgCoordinateRange)
                     return(
                         <PictureBoardImageItem  
                             key={i}
@@ -114,13 +116,14 @@ export const PictureBoard = (props) => {
                             alt={el.alt}
                             path={el.path}
                             clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            rememberCoordinateRange={props.rememberCoordinateRange}
+                            imgCoordinateRange={imgCoordinateRange}
                         />
                     )
                 }
             })}</div>
         )
     }
-
 
     /**
     * Markup
@@ -136,13 +139,14 @@ export const PictureBoard = (props) => {
 export default connect(
     (state) => {
         return {
-            pictureBoard: Selectors.getPictureBoardItemsState(state)
+            pictureBoard: Selectors.getPictureBoardItemsState(state),
+            pictureBoardImagesCooradinateRange: Selectors.getPictureBoardImagesCooradinateRangeState(state),
         };
     },
     (dispatch) => {
         return {
-            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch)
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            rememberCoordinateRange: bindActionCreators(Actions.rememberCoordinateRange, dispatch)
         };
     }
 )(PictureBoard);

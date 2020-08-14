@@ -21,6 +21,57 @@ export const initialState = {
         loading: false,
         error: null
     },
+    pictureBoardImagesCooradinateRange: [
+        {
+            id: 1,
+            updated: false
+        },
+        {
+            id: 2,
+            updated: false
+        },
+        {
+            id: 4,
+            updated: false
+        },
+        {
+            id: 6,
+            updated: false
+        },
+        {
+            id: 7,
+            updated: false
+        },
+        {
+            id: 8,
+            updated: false
+        },
+        {
+            id: 9,
+            updated: false
+        },
+        {
+            id: 10,
+            updated: false
+        },
+        {
+            id: 11,
+            updated: false
+        },
+        {
+            id: 13,
+            updated: false
+        },
+        {
+            id: 15,
+            updated: false
+        },
+        {
+            id: 16,
+            updated: false
+        }
+    ],
+
     ourProcess: {
         items: [],
         loading: false,
@@ -104,6 +155,18 @@ const fetchOurProcessDataFailur = (state, action) => {
     };
 }
 
+const rememberCoordinateRange = (state, action) => {
+    let updatedPictureBoardImagesCooradinateRange = [...state.pictureBoardImagesCooradinateRange];
+    
+    let objIndex = updatedPictureBoardImagesCooradinateRange.findIndex(item => item.id === action.id);
+    updatedPictureBoardImagesCooradinateRange.splice(objIndex, 1, action.coordinateRange);
+
+    return {
+        ...state,
+        pictureBoardImagesCooradinateRange: updatedPictureBoardImagesCooradinateRange
+    };
+}
+
 const section2Reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PICTURE_BOARD_BEGIN:
@@ -118,6 +181,8 @@ const section2Reducer = (state = initialState, action) => {
             return fetchOurProcessDataSuccess (state, action);
         case actionTypes.FETCH_OUR_PROCESS_DATA_FAILURE:
             return fetchOurProcessDataFailur(state, action);
+        case actionTypes.REMEMBER_COORDINATE_RANGE:
+            return rememberCoordinateRange(state, action);
         default: 
             return state;
     }

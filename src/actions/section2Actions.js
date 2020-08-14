@@ -40,3 +40,10 @@ export function fetchOurProcessDataFailur(err) {
     };
 };
 
+export function rememberCoordinateRange(id, coordinateRange) {
+    return { 
+        type: actionTypes.REMEMBER_COORDINATE_RANGE,
+        id: id,
+        coordinateRange: coordinateRange
+    };
+};

@@ -99,3 +99,10 @@ export const getSmallImagesPortfolioState = createSelector(
     [getSmallImagesPortfolio],
     (x) => x
 );
+
+const getPictureBoardImagesCooradinateRange = (state) => state.section2.pictureBoardImagesCooradinateRange;
+
+export const getPictureBoardImagesCooradinateRangeState = createSelector(
+    [getPictureBoardImagesCooradinateRange],
+    (x) => x
+);

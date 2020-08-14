@@ -188,41 +188,29 @@ export const PictureBoardImageItem = (props) => {
                 imgCoordinateRange = evaluateCoordinates(); 
                 break;
         }     
+        props.rememberCoordinateRange(props.id, imgCoordinateRange);
 
-        window.addEventListener('mousemove', (e) => handleMouseMove(e, imgCoordinateRange));
+        // console.log(imgCoordinateRange)
+        window.addEventListener('mousemove', handleMouseMove);
         return () => window.removeEventListener('mousemove', handleMouseMove)
-    }, []);
+    }, [props.imgCoordinateRange.updated]);
 
-    const evaluateCoordinates = () => {
-        let pictureBoardImageItem = document.getElementById(`pictureBoardImageItem${props.id}`);
-        let updatedImgCoordinateRange = {
-            id: props.id,
-            topCoordinate: pictureBoardImageItem.offsetTop,
-            bottomCoordinate: pictureBoardImageItem.offsetTop + pictureBoardImageItem.offsetHeight,
-            leftCoordinate: pictureBoardImageItem.offsetLeft,
-            rightCoordinate: pictureBoardImageItem.offsetLeft + pictureBoardImageItem.offsetWidth,
-            width: pictureBoardImageItem.offsetWidth
-        };
-        return updatedImgCoordinateRange;
-    }
-
-    const handleMouseMove = (e, imgCoordinateRange) => {
+    const handleMouseMove = (e) => {
         let pageX = e.pageX;
         let pageY = e.pageY;
-        
-        if(imgCoordinateRange.leftCoordinate < pageX && pageX < imgCoordinateRange.rightCoordinate &&
-            imgCoordinateRange.topCoordinate < pageY && pageY < imgCoordinateRange.bottomCoordinate
+        if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
+            props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
         ){
-            let selectedDivDividedByImagesNumber = Math.round(imgCoordinateRange.width / props.imagesArray.length);
+            let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
             let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
-            coordinatesArray = coordinatesArray.map((el, i) => imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
+            coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
             coordinatesArray.map((el, i) => {
                 if(i !== coordinatesArray.length - 1){
                     if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
                         setImgToLoad(props.imagesArray[i]);
                     }
                 }else{
-                    if(coordinatesArray[i] < pageX && pageX < imgCoordinateRange.rightCoordinate){
+                    if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
                         setImgToLoad(props.imagesArray[i]);
                     }
                 }
@@ -231,6 +219,19 @@ export const PictureBoardImageItem = (props) => {
         }else{
             // console.log("Notmy div", props.id)
         }
+    }
+    const evaluateCoordinates = () => {
+        let pictureBoardImageItem = document.getElementById(`pictureBoardImageItem${props.id}`);
+        let updatedImgCoordinateRange = {
+            id: props.id,
+            topCoordinate: pictureBoardImageItem.offsetTop,
+            bottomCoordinate: pictureBoardImageItem.offsetTop + pictureBoardImageItem.offsetHeight,
+            leftCoordinate: pictureBoardImageItem.offsetLeft,
+            rightCoordinate: pictureBoardImageItem.offsetLeft + pictureBoardImageItem.offsetWidth,
+            width: pictureBoardImageItem.offsetWidth,
+            updated: true
+        };
+        return updatedImgCoordinateRange;
     }
 
     const loadImg = (key) => {
