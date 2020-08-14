@@ -144,7 +144,7 @@ export const Footer = (props) => {
                         <H22 className="h22-white-poppins">Our Offices</H22>
                         <EH20/>
                         <EH5/>
-                        <div className="footer-info-map">
+                        <div className="footer-info-map" /** onClick go to aboutUs page */> 
                             <img src={Map}/>
                         </div>
                     </div>
