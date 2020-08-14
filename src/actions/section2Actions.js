@@ -47,3 +47,10 @@ export function rememberCoordinateRange(id, coordinateRange) {
         coordinateRange: coordinateRange
     };
 };
+
+export function forgetCoordinateRange(arr) {
+    return { 
+        type: actionTypes.FORGET_COORDINATE_RANGE,
+        arr: arr
+    };
+};

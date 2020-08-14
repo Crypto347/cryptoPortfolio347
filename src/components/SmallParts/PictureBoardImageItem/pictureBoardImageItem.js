@@ -4,7 +4,8 @@
 
 import React, {
     useState, 
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -140,15 +141,67 @@ export const PictureBoardImageItem = (props) => {
     /**
     * State
     */
-   
-    const [imgToLoad, setImgToLoad] = useState({});
 
+    const resizeRef = useRef();
+    const [imgToLoad, setImgToLoad] = useState({});
+ 
     /**
     * Methods
     */
 
     useEffect(() => {   
+        const resize = () => {
+            resizeRef.current();
+        }
+
         setImgToLoad(props.imagesArray[0]);
+        setImageCoordinateRange();
+        
+
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('resize', resize);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('resize', resize);
+        }
+    }, [props.imgCoordinateRange.updated]);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = () => {
+        setImageCoordinateRange();
+    }
+   
+    const handleMouseMove = (e) => {
+        let pageX = e.pageX;
+        let pageY = e.pageY;
+        if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
+            props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
+        ){
+            let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
+            let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
+            coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
+            coordinatesArray.map((el, i) => {
+                if(i !== coordinatesArray.length - 1){
+                    if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
+                        setImgToLoad(props.imagesArray[i]);
+                    }
+                }else{
+                    if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
+                        setImgToLoad(props.imagesArray[i]);
+                    }
+                }
+               
+            })
+        }else{
+            // console.log("Notmy div", props.id)
+        }
+    }
+
+    const setImageCoordinateRange = () => {
         let imgCoordinateRange; 
         switch(props.id){
             case 1:
@@ -189,37 +242,8 @@ export const PictureBoardImageItem = (props) => {
                 break;
         }     
         props.rememberCoordinateRange(props.id, imgCoordinateRange);
-
-        // console.log(imgCoordinateRange)
-        window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove)
-    }, [props.imgCoordinateRange.updated]);
-
-    const handleMouseMove = (e) => {
-        let pageX = e.pageX;
-        let pageY = e.pageY;
-        if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
-            props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
-        ){
-            let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
-            let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
-            coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
-            coordinatesArray.map((el, i) => {
-                if(i !== coordinatesArray.length - 1){
-                    if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
-                        setImgToLoad(props.imagesArray[i]);
-                    }
-                }else{
-                    if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
-                        setImgToLoad(props.imagesArray[i]);
-                    }
-                }
-               
-            })
-        }else{
-            // console.log("Notmy div", props.id)
-        }
     }
+
     const evaluateCoordinates = () => {
         let pictureBoardImageItem = document.getElementById(`pictureBoardImageItem${props.id}`);
         let updatedImgCoordinateRange = {

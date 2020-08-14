@@ -71,7 +71,6 @@ export const initialState = {
             updated: false
         }
     ],
-
     ourProcess: {
         items: [],
         loading: false,
@@ -167,6 +166,13 @@ const rememberCoordinateRange = (state, action) => {
     };
 }
 
+const forgetCoordinateRange = (state, action) => {
+    return {
+        ...state,
+        pictureBoardImagesCooradinateRange: action.arr
+    };
+}
+
 const section2Reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PICTURE_BOARD_BEGIN:
@@ -183,6 +189,8 @@ const section2Reducer = (state = initialState, action) => {
             return fetchOurProcessDataFailur(state, action);
         case actionTypes.REMEMBER_COORDINATE_RANGE:
             return rememberCoordinateRange(state, action);
+        case actionTypes.FORGET_COORDINATE_RANGE:
+            return forgetCoordinateRange(state, action);
         default: 
             return state;
     }

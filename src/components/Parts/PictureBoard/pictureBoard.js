@@ -3,7 +3,8 @@
 */
 
 import React, {
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -58,13 +59,77 @@ export const PictureBoard = (props) => {
     * State
     */
 
+    const resizeRef = useRef();
+    const initCoordinateRange = [
+        {
+            id: 1,
+            updated: false
+        },
+        {
+            id: 2,
+            updated: false
+        },
+        {
+            id: 4,
+            updated: false
+        },
+        {
+            id: 6,
+            updated: false
+        },
+        {
+            id: 7,
+            updated: false
+        },
+        {
+            id: 8,
+            updated: false
+        },
+        {
+            id: 9,
+            updated: false
+        },
+        {
+            id: 10,
+            updated: false
+        },
+        {
+            id: 11,
+            updated: false
+        },
+        {
+            id: 13,
+            updated: false
+        },
+        {
+            id: 15,
+            updated: false
+        },
+        {
+            id: 16,
+            updated: false
+        }
+    ]
+
     /**
     * Methods
     */
 
     useEffect(() => {
-        
-    }, [])
+        const resize = () => {
+            resizeRef.current();
+        }
+        window.addEventListener('resize', resize);
+        return () => window.removeEventListener('resize', resize);
+    }, []);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = () => {
+        props.forgetCoordinateRange(initCoordinateRange);
+    }
 
     const renderPictureBoard = () => {
         if(props.pictureBoard.loading && !props.pictureBoard.error){
@@ -117,6 +182,7 @@ export const PictureBoard = (props) => {
                             path={el.path}
                             clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                             rememberCoordinateRange={props.rememberCoordinateRange}
+                            // forgetCoordinateRange={props.forgetCoordinateRange}
                             imgCoordinateRange={imgCoordinateRange}
                         />
                     )
@@ -146,7 +212,8 @@ export default connect(
     (dispatch) => {
         return {
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
-            rememberCoordinateRange: bindActionCreators(Actions.rememberCoordinateRange, dispatch)
+            rememberCoordinateRange: bindActionCreators(Actions.rememberCoordinateRange, dispatch),
+            forgetCoordinateRange: bindActionCreators(Actions.forgetCoordinateRange, dispatch),
         };
     }
 )(PictureBoard);
