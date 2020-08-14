@@ -1,6 +1,7 @@
 export * from './FontSize/H1/h1';
 export * from './FontSize/H5/h5';
 export * from './FontSize/H15/h15';
+export * from './FontSize/H17/h17';
 export * from './FontSize/H19/h19';
 export * from './FontSize/H22/h22';
 export * from './FontSize/H25/h25';

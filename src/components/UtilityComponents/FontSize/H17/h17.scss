@@ -1,38 +1,26 @@
-.h15 {
-    font-size: 15px;
+.h17 {
+    font-size: 17px;
     color: white;
 }
 
-.h15-white-lustria {
-    font-size: 15px;
-    color: white;
-    font-family: 'Lustria', serif;
-}
-
-.h15-black-lustria {
-    font-size: 15px;
-    color: black;
-    font-family: 'Lustria', serif;
-}
-
-.h15-nobel-lustria {
-    font-size: 15px;
+.h17-nobel-lustria {
+    font-size: 17px;
     color: rgb(155, 155, 155);
     font-family: 'Lustria', serif;
 }
 
-.h15-lustria-animation {
-    font-size: 15px;
-    color: rgb(155, 155, 155);
-    font-family: 'Lustria', serif;
-    &:hover{
-        color: white;
-        -webkit-animation: appearPictureBoardHeader .3s linear;
-        -moz-animation: appearPictureBoardHeader .3s linear;
-        -o-animation: appearPictureBoardHeader .3s linear;
-        animation: appearPictureBoardHeader .3s linear;
-    }
-}
+// .h17-lustria-animation {
+//     font-size: 17px;
+//     color: rgb(155, 155, 155);
+//     font-family: 'Lustria', serif;
+//     &:hover{
+//         color: white;
+//         -webkit-animation: appearPictureBoardHeader .3s linear;
+//         -moz-animation: appearPictureBoardHeader .3s linear;
+//         -o-animation: appearPictureBoardHeader .3s linear;
+//         animation: appearPictureBoardHeader .3s linear;
+//     }
+// }
 
 // .h15-pink-grey-yanone-suva {
 //     font-size: 14px;

@@ -27,6 +27,7 @@ import './smallImages.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Footer from '../../../Parts/Footer/footer';
 
 /**
 * Actions
@@ -491,6 +492,7 @@ export const SmallImages = (props) => {
         <div className="small-images" id="smallImages">
             {renderToolbars()}
             {showContent ? renderSmallImagesContent() : null}
+            <Footer/>
         </div>
     );
 }
