@@ -4,12 +4,16 @@
         .footer-info-wrapper {
             display: flex;
             justify-content: center;
+            // align-items: flex-start;
             flex-wrap: wrap;
             padding: 0 70px 0 70px;
             width: calc(100% - 140px);
             .footer-info-section {
                 width: calc(25% - 60px);
                 padding: 20px 30px 20px 30px;
+                .footer-info-section-wrapper {
+                    display: flex;
+                }
             }
             .footer-info-map {
                 width: 250px;
