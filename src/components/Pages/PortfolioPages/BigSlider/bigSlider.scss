@@ -1,32 +1,552 @@
-.big-slider {
-    // width: calc(100% + 18px);
-    // .home-main-background {
-    //     background-image: url("../../../images/background/abstract-3304213_1280.png");
-    //     background-size: 100% 100vh;
-    //     height: 100vh;
-    //     width: 100%;
-    //     .home-curtain {
-    //         position: absolute;
-    //         width: calc(100% + 18px);
-    //         height: 100vh;
-    //         background: rgba(0, 0, 0, 0.8);
-    //         z-index: 10;
-    //     }
-    // }
+.small-images {
+    width: calc(100% + 18px);
+    .small-images-loading-error {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .small-images-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 130px 70px 130px;
+        .small-images-content {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            .small-images-portfolio-images {
+                width: calc(58% - 4px);
+                .small-images-portfolio-image {
+                    > img {
+                        width: 100%;
+                    }
+                }
+            }
+            .small-images-movable-part {
+                width: calc(42% - 30px);
+                padding: 5px 0px 0px 30px;
+            }
+        }
+        .small-images-navigation {
+            transform: translateX(-7.5px);
+            width: calc(100% + 15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .arrow-wrapper-left {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+               .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 15px;
+               }
+               .arrow-wrapper2 {
+                    transform: translate(3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                   .arrow-top-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(1px, 2px) rotate(45deg);
+                   }
+                   .arrow-bottom-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(1px, -2px) rotate(-45deg);
+                   }
+               }
+            }
+            .arrow-wrapper-left-lengthen {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+               .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 20px;
+                    -webkit-animation: lengthenHorizontalLineSmallImages .1s linear;
+                    -moz-animation: lengthenHorizontalLineSmallImages .1s linear;
+                    -o-animation: lengthenHorizontalLineSmallImages .1s linear;
+                    animation: lengthenHorizontalLineSmallImages .1s linear;
+               }
+               .arrow-wrapper2 {
+                    transform: translate(3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                   .arrow-top-line {
+                        border: 0px solid black;
+                        background: black;
+                        height: 7px;
+                        transform: translate(1px, 2px) rotate(45deg);
+                        -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                        -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                        -o-animation: lengthenArrowLineSmallImages .1s linear;
+                        animation: lengthenArrowLineSmallImages .1s linear;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                   }
+                   .arrow-bottom-line {
+                        border: 0px solid black;
+                        background: black;
+                        height: 7px;
+                        transform: translate(1px, -2px) rotate(-45deg);
+                        -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                        -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                        -o-animation: lengthenArrowLineSmallImages .1s linear;
+                        animation: lengthenArrowLineSmallImages .1s linear;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                   }
+               }
+            }
+            .arrow-wrapper-left-shorten {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width: 30px;
+                    cursor: pointer;
+                    .arrow-horizontal-line {
+                        border: 1px solid black;
+                        background: black;
+                        width: 15px;
+                        -webkit-animation: shorteHorizontalLineSmallImages .1s linear;
+                        -moz-animation: shorteHorizontalLineSmallImages .1s linear;
+                        -o-animation: shorteHorizontalLineSmallImages .1s linear;
+                        animation: shorteHorizontalLineSmallImages .1s linear;
+                        animation-delay: .1s;
+                        animation-fill-mode: both;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(3px);
+                        height: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, 2px) rotate(45deg);
+                            -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                            -moz-animation: shortenArrowLineSmallImages .1s linear;
+                            -o-animation: shortenArrowLineSmallImages .1s linear;
+                            animation: shortenArrowLineSmallImages .1s linear;
+                        }
+                        .arrow-bottom-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, -2px) rotate(-45deg);
+                            -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                            -moz-animation: shortenArrowLineSmallImages .1s linear;
+                            -o-animation: shortenArrowLineSmallImages .1s linear;
+                            animation: shortenArrowLineSmallImages .1s linear;
+                        }
+                    }
+                }
+
+            .small-images-navigation-menu {
+                width: 25px;
+                display: flex;
+                flex-wrap: wrap;
+                cursor: pointer;
+                .small-images-navigation-menu-dot {
+                    border: 2px solid rgb(37, 37, 37);
+                    background-color: rgb(37, 37, 37);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin: 2px;
+                }
+                .small-images-navigation-menu-dot-hover-on {
+                    border: 2px solid rgb(155, 155, 155);
+                    background-color: rgb(155, 155, 155);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin: 2px;
+                    -webkit-animation: smallImagesMenuButtonHoverOn .3s linear;
+                    -moz-animation: smallImagesMenuButtonHoverOn .3s linear;
+                    -o-animation: smallImagesMenuButtonHoverOn .3s linear;
+                    animation: smallImagesMenuButtonHoverOn .3s linear;
+                }
+                .small-images-navigation-menu-dot-hover-off {
+                    border: 2px solid rgb(37, 37, 37);
+                    background-color: rgb(37, 37, 37);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    margin: 2px;
+                    -webkit-animation: smallImagesMenuButtonHoverOff .3s linear;
+                    -moz-animation: smallImagesMenuButtonHoverOff .3s linear;
+                    -o-animation: smallImagesMenuButtonHoverOff .3s linear;
+                    animation: smallImagesMenuButtonHoverOff .3s linear;
+                }
+            }
+
+            .arrow-wrapper-right {
+                display: flex;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+               .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 15px;
+               }
+               .arrow-wrapper2 {
+                    transform: translate(-3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                   .arrow-top-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(1px, 2px) rotate(-45deg);
+                   }
+                   .arrow-bottom-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(1px, -2px) rotate(45deg);
+                   }
+               }
+            }
+           .arrow-wrapper-right-lengthen {
+                display: flex;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+               .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 20px;
+                    -webkit-animation: lengthenHorizontalLineSmallImages .1s linear;
+                    -moz-animation: lengthenHorizontalLineSmallImages .1s linear;
+                    -o-animation: lengthenHorizontalLineSmallImages .1s linear;
+                    animation: lengthenHorizontalLineSmallImages .1s linear;
+               }
+               .arrow-wrapper2 {
+                    transform: translate(-3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                   .arrow-top-line {
+                        border: 0px solid black;
+                        background: black;
+                        height: 7px;
+                        transform: translate(1px, 2px) rotate(-45deg);
+                        -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                        -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                        -o-animation: lengthenArrowLineSmallImages .1s linear;
+                        animation: lengthenArrowLineSmallImages .1s linear;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                   }
+                   .arrow-bottom-line {
+                        border: 0px solid black;
+                        background: black;
+                        height: 7px;
+                        transform: translate(1px, -2px) rotate(45deg);
+                        -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                        -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                        -o-animation: lengthenArrowLineSmallImages .1s linear;
+                        animation: lengthenArrowLineSmallImages .1s linear;
+                        animation-delay: .2s;
+                        animation-fill-mode: both;
+                   }
+               }
+            }
+           .arrow-wrapper-right-shorten {
+                display: flex;
+                align-items: center;
+                width: 30px;
+                cursor: pointer;
+                .arrow-horizontal-line {
+                    border: 1px solid black;
+                    background: black;
+                    width: 15px;
+                    -webkit-animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    -moz-animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    -o-animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    animation: shorteRightHorizontalLineSmallImages .1s linear;
+                    animation-delay: .1s;
+                    animation-fill-mode: both;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-3px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(1px, 2px) rotate(-45deg);
+                        -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                        -moz-animation: shortenArrowLineSmallImages .1s linear;
+                        -o-animation: shortenArrowLineSmallImages .1s linear;
+                        animation: shortenArrowLineSmallImages .1s linear;
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(1px, -2px) rotate(45deg);
+                        -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                        -moz-animation: shortenArrowLineSmallImages .1s linear;
+                        -o-animation: shortenArrowLineSmallImages .1s linear;
+                        animation: shortenArrowLineSmallImages .1s linear;
+                    }
+                }
+            }
+        }
+    }
 }
 
+@media only screen and (max-width: 1030px){
+    .small-images {
+        .small-images-wrapper {
+            .small-images-content {
+                .small-images-portfolio-images {
+                    width: calc(100% - 4px);
+                }
+                .small-images-movable-part {
+                    width: calc(100% - 30px);
+                    padding: 5px 30px 30px 30px;
+                    margin-top: 0px !important; 
+                }
+            }
+        }
+    }
+}
 
+@media only screen and (max-width: 830px){
+    .small-images {
+        .small-images-wrapper {
+            padding: 70px;
+        }
+    }
+}
 
-// @media only screen and (max-device-width: 1120px){
-//     .home {
-//         .home-main-background {
-//             height: 650px;
-//             .home-curtain {
-//                 height: 650px;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 600px){
+    .small-images {
+        .small-images-wrapper {
+            padding: 20px;
+        }
+    }
+}
+
+@-webkit-keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+@-moz-keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+@-o-keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+@keyframes smallImagesMenuButtonHoverOn {
+    from{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+    to{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+}
+
+@-webkit-keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@-moz-keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@-o-keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@keyframes smallImagesMenuButtonHoverOff {
+    from{
+        background-color: rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
+    }
+    to{
+        background-color: rgb(37, 37, 37);
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+
+@-webkit-keyframes lengthenArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+@-moz-keyframes lengthenArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+@-o-keyframes lengthenArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+@keyframes lengthenArrowLineSmallImages {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 7px;
+        border: 1px solid black;
+    }
+}
+
+@-webkit-keyframes shortenArrowLineSmallImages {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 7px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
+}
+@-moz-keyframes shortenArrowLineSmallImages {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 7px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
+}
+@-o-keyframes shortenArrowLineSmallImages {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 7px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
+}
+@keyframes shortenArrowLineSmallImages {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 7px;
+    }
+    to{
+        border: 1px solid transparent;
+        height: 0px;
+    }
+}
+
+@-webkit-keyframes lengthenHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+@-moz-keyframes lengthenHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+@-o-keyframes lengthenHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+@keyframes lengthenHorizontalLineSmallImages {
+    from{width: 15px;}
+    to{width: 20px;}
+}
+
+@-webkit-keyframes shorteHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
+@-moz-keyframes shorteHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
+@-o-keyframes shorteHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
+@keyframes shorteHorizontalLineSmallImages {
+    from{width: 20px;}
+    to{width: 15px;}
+}
 
 // @media only screen and (max-width: 1120px){
 //     .home {

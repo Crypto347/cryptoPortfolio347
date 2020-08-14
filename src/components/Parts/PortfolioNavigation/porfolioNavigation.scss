@@ -1,0 +1,283 @@
+.porfolio-navigation {
+    transform: translateX(-7.5px);
+    width: calc(100% + 15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .arrow-wrapper-left {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30px;
+        cursor: pointer;
+        .arrow-horizontal-line {
+            border: 1px solid black;
+            background: black;
+            width: 15px;
+        }
+        .arrow-wrapper2 {
+            transform: translate(3px);
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .arrow-top-line {
+                border: 1px solid transparent;
+                height: 0px;
+                transform: translate(1px, 2px) rotate(45deg);
+            }
+            .arrow-bottom-line {
+                border: 1px solid transparent;
+                height: 0px;
+                transform: translate(1px, -2px) rotate(-45deg);
+            }
+        }
+    }
+    .arrow-wrapper-left-lengthen {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30px;
+        cursor: pointer;
+        .arrow-horizontal-line {
+            border: 1px solid black;
+            background: black;
+            width: 20px;
+            -webkit-animation: lengthenHorizontalLineSmallImages .1s linear;
+            -moz-animation: lengthenHorizontalLineSmallImages .1s linear;
+            -o-animation: lengthenHorizontalLineSmallImages .1s linear;
+            animation: lengthenHorizontalLineSmallImages .1s linear;
+        }
+        .arrow-wrapper2 {
+            transform: translate(3px);
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .arrow-top-line {
+                border: 0px solid black;
+                background: black;
+                height: 7px;
+                transform: translate(1px, 2px) rotate(45deg);
+                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                -o-animation: lengthenArrowLineSmallImages .1s linear;
+                animation: lengthenArrowLineSmallImages .1s linear;
+                animation-delay: .2s;
+                animation-fill-mode: both;
+            }
+            .arrow-bottom-line {
+                border: 0px solid black;
+                background: black;
+                height: 7px;
+                transform: translate(1px, -2px) rotate(-45deg);
+                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                -o-animation: lengthenArrowLineSmallImages .1s linear;
+                animation: lengthenArrowLineSmallImages .1s linear;
+                animation-delay: .2s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+    .arrow-wrapper-left-shorten {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 30px;
+            cursor: pointer;
+            .arrow-horizontal-line {
+                border: 1px solid black;
+                background: black;
+                width: 15px;
+                -webkit-animation: shorteHorizontalLineSmallImages .1s linear;
+                -moz-animation: shorteHorizontalLineSmallImages .1s linear;
+                -o-animation: shorteHorizontalLineSmallImages .1s linear;
+                animation: shorteHorizontalLineSmallImages .1s linear;
+                animation-delay: .1s;
+                animation-fill-mode: both;
+            }
+            .arrow-wrapper2 {
+                transform: translate(3px);
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .arrow-top-line {
+                    border: 1px solid transparent;
+                    height: 0px;
+                    transform: translate(-1px, 2px) rotate(45deg);
+                    -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                    -moz-animation: shortenArrowLineSmallImages .1s linear;
+                    -o-animation: shortenArrowLineSmallImages .1s linear;
+                    animation: shortenArrowLineSmallImages .1s linear;
+                }
+                .arrow-bottom-line {
+                    border: 1px solid transparent;
+                    height: 0px;
+                    transform: translate(-1px, -2px) rotate(-45deg);
+                    -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                    -moz-animation: shortenArrowLineSmallImages .1s linear;
+                    -o-animation: shortenArrowLineSmallImages .1s linear;
+                    animation: shortenArrowLineSmallImages .1s linear;
+                }
+            }
+        }
+
+    .navigation-menu {
+        width: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        cursor: pointer;
+        .navigation-menu-dot {
+            border: 2px solid rgb(37, 37, 37);
+            background-color: rgb(37, 37, 37);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            margin: 2px;
+        }
+        .navigation-menu-dot-hover-on {
+            border: 2px solid rgb(155, 155, 155);
+            background-color: rgb(155, 155, 155);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            margin: 2px;
+            -webkit-animation: smallImagesMenuButtonHoverOn .3s linear;
+            -moz-animation: smallImagesMenuButtonHoverOn .3s linear;
+            -o-animation: smallImagesMenuButtonHoverOn .3s linear;
+            animation: smallImagesMenuButtonHoverOn .3s linear;
+        }
+        .navigation-menu-dot-hover-off {
+            border: 2px solid rgb(37, 37, 37);
+            background-color: rgb(37, 37, 37);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            margin: 2px;
+            -webkit-animation: smallImagesMenuButtonHoverOff .3s linear;
+            -moz-animation: smallImagesMenuButtonHoverOff .3s linear;
+            -o-animation: smallImagesMenuButtonHoverOff .3s linear;
+            animation: smallImagesMenuButtonHoverOff .3s linear;
+        }
+    }
+
+    .arrow-wrapper-right {
+        display: flex;
+        align-items: center;
+        width: 30px;
+        cursor: pointer;
+        .arrow-horizontal-line {
+            border: 1px solid black;
+            background: black;
+            width: 15px;
+        }
+        .arrow-wrapper2 {
+            transform: translate(-3px);
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .arrow-top-line {
+                border: 1px solid transparent;
+                height: 0px;
+                transform: translate(1px, 2px) rotate(-45deg);
+            }
+            .arrow-bottom-line {
+                border: 1px solid transparent;
+                height: 0px;
+                transform: translate(1px, -2px) rotate(45deg);
+            }
+        }
+    }
+    .arrow-wrapper-right-lengthen {
+        display: flex;
+        align-items: center;
+        width: 30px;
+        cursor: pointer;
+        .arrow-horizontal-line {
+            border: 1px solid black;
+            background: black;
+            width: 20px;
+            -webkit-animation: lengthenHorizontalLineSmallImages .1s linear;
+            -moz-animation: lengthenHorizontalLineSmallImages .1s linear;
+            -o-animation: lengthenHorizontalLineSmallImages .1s linear;
+            animation: lengthenHorizontalLineSmallImages .1s linear;
+        }
+        .arrow-wrapper2 {
+            transform: translate(-3px);
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .arrow-top-line {
+                border: 0px solid black;
+                background: black;
+                height: 7px;
+                transform: translate(1px, 2px) rotate(-45deg);
+                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                -o-animation: lengthenArrowLineSmallImages .1s linear;
+                animation: lengthenArrowLineSmallImages .1s linear;
+                animation-delay: .2s;
+                animation-fill-mode: both;
+            }
+            .arrow-bottom-line {
+                border: 0px solid black;
+                background: black;
+                height: 7px;
+                transform: translate(1px, -2px) rotate(45deg);
+                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
+                -moz-animation: lengthenArrowLineSmallImages .1s linear;
+                -o-animation: lengthenArrowLineSmallImages .1s linear;
+                animation: lengthenArrowLineSmallImages .1s linear;
+                animation-delay: .2s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+    .arrow-wrapper-right-shorten {
+        display: flex;
+        align-items: center;
+        width: 30px;
+        cursor: pointer;
+        .arrow-horizontal-line {
+            border: 1px solid black;
+            background: black;
+            width: 15px;
+            -webkit-animation: shorteRightHorizontalLineSmallImages .1s linear;
+            -moz-animation: shorteRightHorizontalLineSmallImages .1s linear;
+            -o-animation: shorteRightHorizontalLineSmallImages .1s linear;
+            animation: shorteRightHorizontalLineSmallImages .1s linear;
+            animation-delay: .1s;
+            animation-fill-mode: both;
+        }
+        .arrow-wrapper2 {
+            transform: translate(-3px);
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .arrow-top-line {
+                border: 1px solid transparent;
+                height: 0px;
+                transform: translate(1px, 2px) rotate(-45deg);
+                -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                -moz-animation: shortenArrowLineSmallImages .1s linear;
+                -o-animation: shortenArrowLineSmallImages .1s linear;
+                animation: shortenArrowLineSmallImages .1s linear;
+            }
+            .arrow-bottom-line {
+                border: 1px solid transparent;
+                height: 0px;
+                transform: translate(1px, -2px) rotate(45deg);
+                -webkit-animation: shortenArrowLineSmallImages .1s linear;
+                -moz-animation: shortenArrowLineSmallImages .1s linear;
+                -o-animation: shortenArrowLineSmallImages .1s linear;
+                animation: shortenArrowLineSmallImages .1s linear;
+            }
+        }
+    }
+}
+

@@ -27,6 +27,7 @@ import './smallImages.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -96,6 +97,7 @@ import Id3SmallImages3 from '../../../../images/smallImages/id3/jess-bailey-z0gu
 import Id4SmallImages1 from '../../../../images/smallImages/id4/clay-banks-_wkd7XBRfU4-unsplash.jpg';
 import Id4SmallImages2 from '../../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-unsplash.jpg';
 import Id4SmallImages3 from '../../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-unsplash.jpg';
+
 /**
 * SmallImages component definition and export
 */
@@ -110,9 +112,6 @@ export const SmallImages = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
-    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
-    const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
@@ -122,8 +121,6 @@ export const SmallImages = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         props.fetchSmallImagesPortfolio(props.match.params.id);
-
-        let scrollDirectionOldValue = 0;
 
         if(props.smallImagesPortfolio.item !== {}){
             setShowContent(true)
@@ -203,15 +200,6 @@ export const SmallImages = (props) => {
             case 'smallImagesTag2': 
                 props.setIsHoveringTag("on", id);
                 break;
-            case 'leftArrow': 
-                setIsHoveringLeftArrow("on");
-                break;
-            case 'rightArrow': 
-                setIsHoveringRightArrow("on");
-                break;
-            case 'menuButton': 
-                setIsHoveringMenuButton("on");
-                break;
         }
     }
 
@@ -225,15 +213,6 @@ export const SmallImages = (props) => {
                 break;
             case 'smallImagesTag2': 
                 props.setIsHoveringTag("off", id);
-                break;
-            case 'leftArrow': 
-                setIsHoveringLeftArrow("off");
-                break;
-            case 'rightArrow': 
-                setIsHoveringRightArrow("off");
-                break;
-            case 'menuButton': 
-                setIsHoveringMenuButton("off");
                 break;
         }
     }
@@ -267,36 +246,6 @@ export const SmallImages = (props) => {
                     return "h19-nobel-lustria-hover-on";
                 case 'off':
                     return "h19-nobel-lustria-hover-off"
-            }
-        }
-        if(opt === "leftArrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper-left";
-                case 'on':
-                    return "arrow-wrapper-left-lengthen";
-                case 'off':
-                    return "arrow-wrapper-left-shorten"
-            }
-        }
-        if(opt === "rightArrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper-right";
-                case 'on':
-                    return "arrow-wrapper-right-lengthen";
-                case 'off':
-                    return "arrow-wrapper-right-shorten"
-            }
-        }
-        if(opt === "menuButton"){
-            switch(isHovering){
-                case 'init':
-                    return "small-images-navigation-menu-dot";
-                case 'on':
-                    return "small-images-navigation-menu-dot-hover-on";
-                case 'off':
-                    return "small-images-navigation-menu-dot-hover-off"
             }
         }
     }
@@ -432,43 +381,7 @@ export const SmallImages = (props) => {
                             {renderTags()}
                         </div>
                     </div>
-                    <div className="small-images-navigation">
-                        <div 
-                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                            onMouseEnter={() => handleMouseEnter("leftArrow")} 
-                            onMouseLeave={() => handleMouseLeave("leftArrow")} 
-                            // onClick={() => arrowOnClick(props.path)}
-                        >
-                             <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
-                            </div>
-                            <div className="arrow-horizontal-line"/>
-                        </div>
-
-                        <div 
-                            className="small-images-navigation-menu"
-                            onMouseEnter={() => handleMouseEnter("menuButton")} 
-                            onMouseLeave={() => handleMouseLeave("menuButton")} 
-                        >
-                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
-                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
-                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
-                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
-                        </div>
-                        <div 
-                            className={renderClassName("rightArrow", isHoveringRightArrow)}
-                            onMouseEnter={() => handleMouseEnter("rightArrow")} 
-                            onMouseLeave={() => handleMouseLeave("rightArrow")} 
-                            // onClick={() => arrowOnClick(props.path)}
-                        >
-                            <div className="arrow-horizontal-line"/>
-                            <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
-                            </div>
-                        </div>
-                    </div>
+                   <PortfolioNavigation/>
                 </div>
             )
         }

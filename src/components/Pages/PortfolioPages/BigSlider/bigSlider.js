@@ -3,8 +3,13 @@
 */
 
 import React, {
-    useEffect, useState
+    useState,
+    useEffect
 } from 'react';
+
+import {
+    bindActionCreators
+} from 'redux';
 
 import {
     connect
@@ -17,29 +22,43 @@ import {
 import './bigSlider.scss';
 
 /**
+* Components
+*/
+
+import Loading from '../../../SmallParts/Loading/loading';
+import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Footer from '../../../Parts/Footer/footer';
+
+/**
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../../actions';
+
+/**
+* Services
+*/
+
+import * as Services from "../../../../service";
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Components
+* Utility
 */
 
-import Toolbar from '../../../Parts/Toolbar/toolbar';
-// import HeaderImages from '../../SmallParts/HeaderImages/headerImages';
-// import Section1 from '../../Parts/Section1/section1';
-// import Section2 from '../../Parts/Section2/section2';
-// import Section3 from '../../Parts/Section3/section3';
-// import Section4 from '../../Parts/Section4/section4';
-// import Section5 from '../../Parts/Section5/section5';
-// import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
+import { 
+    H19,
+    H22,
+    H70,
+    EH30,
+    EH40,
+    EH70
+} from '../../../UtilityComponents';
 
 /**
 * Hooks
@@ -53,13 +72,36 @@ import {
 * Images
 */
 
-// import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
+//Id1
+
+import Id1SmallImages1 from '../../../../images/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.jpg';
+import Id1SmallImages2 from '../../../../images/smallImages/id1/jason-blackeye-DKCgibUVLNc-unsplash.jpg';
+import Id1SmallImages3 from '../../../../images/smallImages/id1/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg';
+import Id1SmallImages4 from '../../../../images/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg';
+import Id1SmallImages5 from '../../../../images/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.jpg';
+
+//Id2
+
+import Id2SmallImages1 from '../../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-unsplash.jpg';
+import Id2SmallImages2 from '../../../../images/smallImages/id2/paper-3025558_1920.jpg';
+
+//Id3
+
+import Id3SmallImages1 from '../../../../images/smallImages/id3/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
+import Id3SmallImages2 from '../../../../images/smallImages/id3/jess-bailey-L71uKsAVo4g-unsplash.jpg';
+import Id3SmallImages3 from '../../../../images/smallImages/id3/jess-bailey-z0guTIr_kts-unsplash.jpg';
+
+//Id4
+
+import Id4SmallImages1 from '../../../../images/smallImages/id4/clay-banks-_wkd7XBRfU4-unsplash.jpg';
+import Id4SmallImages2 from '../../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-unsplash.jpg';
+import Id4SmallImages3 from '../../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-unsplash.jpg';
 
 /**
-* BigSlider component definition and export
+* BigSlader component definition and export
 */
 
-export const BigSlider = (props) => {
+export const BigSlader = (props) => {
 
     /**
     * State
@@ -67,7 +109,12 @@ export const BigSlider = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    // const [scrollingHeight, setScrollingHeight] = useState(0);
+    const [showContent, setShowContent] = useState(false);
+    const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
+    const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
+    const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
     * Methods
@@ -75,30 +122,205 @@ export const BigSlider = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // window.addEventListener('wheel', (e) => checkScrollDirection(e));
+        props.fetchSmallImagesPortfolio(props.match.params.id);
 
-        // return () => window.removeEventListener('wheel', (e) => checkScrollDirection(e))
+        let scrollDirectionOldValue = 0;
+
+        if(props.smallImagesPortfolio.item !== {}){
+            setShowContent(true)
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('wheel', handleOnWheel);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('wheel', handleOnWheel);
+        }
     }, []);
 
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        let contentOffsetTop = document.getElementById("smallImagesContent") ? document.getElementById("smallImagesContent").offsetTop : 0;
+        let imagesOffsetTop = document.getElementById("smallImagesPortfolioImages") ? document.getElementById("smallImagesPortfolioImages").offsetTop : 0;
+        let imagesOffsetHeight = document.getElementById("smallImagesPortfolioImages") ? document.getElementById("smallImagesPortfolioImages").offsetHeight : 0;
+        let movablePartHeight = document.getElementById("smallImagesMovablePart") ? document.getElementById("smallImagesMovablePart").offsetHeight : 0;
+        let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
 
+        // Set margin top of movable part
 
-    // const checkScrollDirection = (e) => {
-    //     let scrollHeight = document.body.scrollTop;
-    //     let el = document.getElementById("home");
+        if(scrollHeight > contentOffsetTop && scrollHeight < moveUntil){
+            setMoveStepMovablePart(scrollHeight - contentOffsetTop);
+        } 
+        else if(scrollHeight > moveUntil) {
+            setMoveStepMovablePart(imagesOffsetHeight - movablePartHeight - 30);
+        } 
+        else {
+            setMoveStepMovablePart(0);
+        }
+    }
 
-    //     if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-    //         setScrollingUp(false);
-    //     }else{
-    //         setScrollingUp(true);
-    //     }
-    // }
+    const loadImg = (key) => {
+        switch(key) {
+            case 'id1SmallImages1':
+                return Id1SmallImages1;
+            case 'id1SmallImages2':
+                return Id1SmallImages2;
+            case 'id1SmallImages3':
+                return Id1SmallImages3;
+            case 'id1SmallImages4':
+                return Id1SmallImages4;
+            case 'id1SmallImages5':
+                return Id1SmallImages5;
+            case 'id2SmallImages1':
+                return Id2SmallImages1;
+            case 'id2SmallImages2':
+                return Id2SmallImages2;
+            case 'id3SmallImages1':
+                return Id3SmallImages1;
+            case 'id3SmallImages2':
+                return Id3SmallImages2;
+            case 'id3SmallImages3':
+                return Id3SmallImages3;
+            case 'id4SmallImages1':
+                return Id4SmallImages1;
+            case 'id4SmallImages2':
+                return Id4SmallImages2;
+            case 'id4SmallImages3':
+                return Id4SmallImages3;
+            default:
+                return "";
+        }
+    }
 
-    // const checkScrollDirectionIsUp = (e)  => {
-    //     if (e.wheelDelta) {
-    //       return e.wheelDelta > 0;
-    //     }
-    //     return e.deltaY < 0;
-    // }
+    const handleMouseEnter = (opt, id) => {
+        switch(opt){
+            case 'smallImagesCategory': 
+                setIsHoveringCategoryText("on");
+                break;
+            case 'smallImagesTag1': 
+                props.setIsHoveringTag("on", id);
+                break;
+            case 'smallImagesTag2': 
+                props.setIsHoveringTag("on", id);
+                break;
+            case 'leftArrow': 
+                setIsHoveringLeftArrow("on");
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow("on");
+                break;
+            case 'menuButton': 
+                setIsHoveringMenuButton("on");
+                break;
+        }
+    }
+
+    const handleMouseLeave = (opt, id) => {
+        switch(opt){
+            case 'smallImagesCategory': 
+                setIsHoveringCategoryText("off");
+                break;
+            case 'smallImagesTag1': 
+                props.setIsHoveringTag("off", id);
+                break;
+            case 'smallImagesTag2': 
+                props.setIsHoveringTag("off", id);
+                break;
+            case 'leftArrow': 
+                setIsHoveringLeftArrow("off");
+                break;
+            case 'rightArrow': 
+                setIsHoveringRightArrow("off");
+                break;
+            case 'menuButton': 
+                setIsHoveringMenuButton("off");
+                break;
+        }
+    }
+    
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "smallImagesCategory"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lustria-animated";
+                case 'on':
+                    return "h19-nobel-lustria-hover-on";
+                case 'off':
+                    return "h19-nobel-lustria-hover-off"
+            }
+        }
+        if(opt === "smallImagesTag1"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lustria-animated";
+                case 'on':
+                    return "h19-nobel-lustria-hover-on";
+                case 'off':
+                    return "h19-nobel-lustria-hover-off"
+            }
+        }
+        if(opt === "smallImagesTag2"){
+            switch(isHovering){
+                case 'init':
+                    return "h19-nobel-lustria-animated";
+                case 'on':
+                    return "h19-nobel-lustria-hover-on";
+                case 'off':
+                    return "h19-nobel-lustria-hover-off"
+            }
+        }
+        if(opt === "leftArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-left";
+                case 'on':
+                    return "arrow-wrapper-left-lengthen";
+                case 'off':
+                    return "arrow-wrapper-left-shorten"
+            }
+        }
+        if(opt === "rightArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-right";
+                case 'on':
+                    return "arrow-wrapper-right-lengthen";
+                case 'off':
+                    return "arrow-wrapper-right-shorten"
+            }
+        }
+        if(opt === "menuButton"){
+            switch(isHovering){
+                case 'init':
+                    return "small-images-navigation-menu-dot";
+                case 'on':
+                    return "small-images-navigation-menu-dot-hover-on";
+                case 'off':
+                    return "small-images-navigation-menu-dot-hover-off"
+            }
+        }
+    }
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("smallImages");
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     const renderToolbars = () => {
         if(size.width < 1120){
@@ -132,23 +354,146 @@ export const BigSlider = (props) => {
         }
     }
 
+    const renderPortfolioImages = () => {
+        return(
+            <div 
+                id="smallImagesPortfolioImages"
+                className="small-images-portfolio-images"
+            >{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="small-images-portfolio-image"
+                    >
+                        <img src={loadImg(el.imageName)}/>
+                        <EH30/>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
+    const renderTags = () => {
+        return(
+            <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
+                return(
+                    <div 
+                        key={i}
+                        onMouseEnter={() => handleMouseEnter(`smallImagesTag${el.id}`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallImagesTag${el.id}`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`smallImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
+    const renderSmallImagesContent = () => {
+        if(props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
+            return(
+                <div 
+                    className="small-images-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
+            return(
+                <div className="small-images-wrapper">
+                    <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.item.header}</H70>
+                    <EH70/>
+                    <div 
+                        id="smallImagesContent"
+                        className="small-images-content"
+                    >
+                        {renderPortfolioImages()}
+                        <div 
+                            id="smallImagesMovablePart"
+                            className="small-images-movable-part" 
+                            style={{marginTop: `${moveStepMovablePart}px`}}
+                        >
+                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Category:</H22>
+                            <H19 
+                                className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
+                                onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
+                                onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
+                            >
+                                {props.smallImagesPortfolio.item.category}
+                            </H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Date:</H22>
+                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Tags:</H22>
+                            {renderTags()}
+                        </div>
+                    </div>
+                    <div className="small-images-navigation">
+                        <div 
+                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                            onMouseEnter={() => handleMouseEnter("leftArrow")} 
+                            onMouseLeave={() => handleMouseLeave("leftArrow")} 
+                            // onClick={() => arrowOnClick(props.path)}
+                        >
+                             <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                            <div className="arrow-horizontal-line"/>
+                        </div>
+
+                        <div 
+                            className="small-images-navigation-menu"
+                            onMouseEnter={() => handleMouseEnter("menuButton")} 
+                            onMouseLeave={() => handleMouseLeave("menuButton")} 
+                        >
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                            <div className={renderClassName("menuButton", isHoveringMenuButton)}/>
+                        </div>
+                        <div 
+                            className={renderClassName("rightArrow", isHoveringRightArrow)}
+                            onMouseEnter={() => handleMouseEnter("rightArrow")} 
+                            onMouseLeave={() => handleMouseLeave("rightArrow")} 
+                            // onClick={() => arrowOnClick(props.path)}
+                        >
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if(!props.smallImagesPortfolio.loading && props.smallImagesPortfolio.error){
+            return(
+                <div 
+                    className="small-images-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <H19 className="h19-nobel-lora">{`${props.smallImagesPortfolio.error}`}</H19>
+                </div>
+            )
+        }
+    } 
+    
     /**
     * Markup
     */
 
     return(
-        <div className="big-slider" id="bigSlider">
-            {/* <div className="home-main-background"> */}
-                {/* <div className="home-curtain"/> */}
-                {renderToolbars()}
-                {/* <HeaderImages/> */}
-            {/* </div> */}
-            {/* <Section1/>
-            <Section2/>
-            <Section3/>
-            <Section4/>
-            <Section5/> */}
-            {/* {props.photoViewerForPictureBoardTextItemOpen ? <PhotoViewer/> : null} */}
+        <div className="small-images" id="smallImages">
+            {renderToolbars()}
+            {showContent ? renderSmallImagesContent() : null}
+            <Footer/>
         </div>
     );
 }
@@ -156,15 +501,15 @@ export const BigSlider = (props) => {
 export default connect(
     (state) => {
         return {
-            // photoViewerForPictureBoardTextItemOpen: Selectors.getPhotoViewerForPictureBoardTextItemOpenState(state),
+            smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
         
         };
     },
     (dispatch) => {
         return {
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
+            setIsHoveringTag: bindActionCreators(Actions.setIsHoveringTag, dispatch)
         };
     }
-)(BigSlider);
+)(BigSlader);
  
