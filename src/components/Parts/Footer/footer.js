@@ -79,6 +79,10 @@ export const Footer = (props) => {
       
     }, []);
 
+    const feedOnClick = () => {
+        window.open("https://twitter.com/", '_blank');
+    }
+
     /**
     * Markup
     */
@@ -120,11 +124,20 @@ export const Footer = (props) => {
                         <EH20/>
                         <EH5/>
                         <div className="footer-info-section-feed-wrapper">
-                            <a>@RobWattCT</a>&nbsp;&nbsp;
+                            <a 
+                                href="https://twitter.com/"
+                                target="_blank"
+                            >@RobWattCT</a>&nbsp;&nbsp;
                             Hi there, thank you for writing in and choosing our themes! We don’t have precise dates, but since we ar…
                         </div>
-                        <H17 className="h17-nobel-lustria-animation">https://t.co/70En9g7CzX</H17>
-                        <H17 className="h17-nobel-lustria-animation">3 months ago</H17>
+                        <H17 
+                            className="h17-nobel-lustria-animation"
+                            onClick={feedOnClick}
+                        >https://t.co/70En9g7CzX</H17>
+                        <H17 
+                            className="h17-nobel-lustria-animation"
+                            onClick={feedOnClick}
+                        >3 months ago</H17>
                     </div>
                     <div className="footer-info-section">
                         <EH10/>

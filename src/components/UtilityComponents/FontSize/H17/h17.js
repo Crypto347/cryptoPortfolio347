@@ -21,7 +21,10 @@ export const H17 = (props) => {
     */
 
     return(
-        <div className={props.className ? props.className : "h17"}>
+        <div 
+            className={props.className ? props.className : "h17"}
+            onClick={props.onClick}
+        >
            {props.children}
         </div>
     );
