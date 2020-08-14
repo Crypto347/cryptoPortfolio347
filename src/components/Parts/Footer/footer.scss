@@ -14,6 +14,22 @@
                 .footer-info-section-wrapper {
                     display: flex;
                 }
+                .footer-info-section-feed-wrapper {
+                    font-size: 17px;
+                    color: white;
+                    font-family: 'Lustria', serif;
+                    >a {
+                        color: rgb(155, 155, 155);
+                        cursor: pointer;
+                        &:hover{
+                            color: white;
+                            -webkit-animation: footerText .3s linear;
+                            -moz-animation: footerText .3s linear;
+                            -o-animation: footerText .3s linear;
+                            animation: footerText .3s linear;
+                        }
+                    }
+                }
             }
             .footer-info-map {
                 width: 250px;

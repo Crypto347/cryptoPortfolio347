@@ -119,9 +119,12 @@ export const Footer = (props) => {
                         <H22 className="h22-white-poppins">Twitter Feed</H22>
                         <EH20/>
                         <EH5/>
-                        <H17 className="h17-nobel-lustria">@RobWattCT Hi there, thank you for writing in and choosing our themes! We don’t have precise dates, but since we ar…</H17>
-                        <H17 className="h17-nobel-lustria">https://t.co/70En9g7CzX</H17>
-                        <H17 className="h17-nobel-lustria">3 months ago</H17>
+                        <div className="footer-info-section-feed-wrapper">
+                            <a>@RobWattCT</a>&nbsp;&nbsp;
+                            Hi there, thank you for writing in and choosing our themes! We don’t have precise dates, but since we ar…
+                        </div>
+                        <H17 className="h17-nobel-lustria-animation">https://t.co/70En9g7CzX</H17>
+                        <H17 className="h17-nobel-lustria-animation">3 months ago</H17>
                     </div>
                     <div className="footer-info-section">
                         <EH10/>
