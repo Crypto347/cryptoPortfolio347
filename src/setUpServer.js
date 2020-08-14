@@ -841,7 +841,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
-            path: "portfolio-item/small-images-3",
+            path: "portfolio-item/small-images/4",
             pictures: [
                 {
                     id: 1,
@@ -1139,6 +1139,42 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                 {
                     id: 3,
                     imageName: "id3SmallImages3",
+                    path: "small-images-3"
+                }
+            ]
+        },
+        {
+            id: 4,
+            header: "Small images – Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            category: "Music",
+            date: "12.08.2017",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Coffee",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    imageName: "id4SmallImages1",
+                    path: "small-images-1"
+                },
+                {
+                    id: 2,
+                    imageName: "id4SmallImages2",
+                    path: "small-images-2"
+                },
+                {
+                    id: 3,
+                    imageName: "id4SmallImages3",
                     path: "small-images-3"
                 }
             ]
