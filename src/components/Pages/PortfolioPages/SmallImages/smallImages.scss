@@ -330,6 +330,22 @@
     }
 }
 
+@media only screen and (max-width: 830px){
+    .small-images {
+        .small-images-wrapper {
+            padding: 70px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .small-images {
+        .small-images-wrapper {
+            padding: 30px;
+        }
+    }
+}
+
 @-webkit-keyframes smallImagesMenuButtonHoverOn {
     from{
         background-color: rgb(37, 37, 37);
