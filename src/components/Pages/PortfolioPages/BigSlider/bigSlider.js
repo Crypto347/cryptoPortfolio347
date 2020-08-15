@@ -306,12 +306,12 @@ export const BigSlader = (props) => {
         return(
             <div 
                 id="bigSliderPortfolioImages"
-                className="small-images-portfolio-images"
+                className="big-slider-portfolio-images"
             >{props.bigSliderPortfolio.item.imagesArray.map((el,i) => {
                 return(
                     <div 
                         key={i}
-                        className="small-images-portfolio-image"
+                        className="big-slider-portfolio-image"
                     >
                         <img src={loadImg(el.imageName)}/>
                         <EH30/>
@@ -323,7 +323,7 @@ export const BigSlader = (props) => {
 
     const renderTags = () => {
         return(
-            <div className="small-images-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {
+            <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
@@ -337,11 +337,11 @@ export const BigSlader = (props) => {
         )
     }
 
-    const renderSmallImagesContent = () => {
+    const renderBigSliderContent = () => {
         if(props.bigSliderPortfolio.loading && !props.bigSliderPortfolio.error){
             return(
                 <div 
-                    className="small-images-loading-error" 
+                    className="big-slider-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -350,36 +350,14 @@ export const BigSlader = (props) => {
         }
         if(!props.bigSliderPortfolio.loading && !props.bigSliderPortfolio.error){
             return(
-                <div className="small-images-wrapper">
+                <div className="big-slider-wrapper">
                     <H70 className="h70-nero-poppins">{props.bigSliderPortfolio.item.header}</H70>
                     <EH70/>
                     <div 
-                        id="smallImagesContent"
-                        className="small-images-content"
+                        id="bigSliderContent"
+                        className="big-slider-content"
                     >
-                        {renderPortfolioImages()}
-                        <div 
-                            id="smallImagesMovablePart"
-                            className="small-images-movable-part" 
-                            style={{marginTop: `${moveStepMovablePart}px`}}
-                        >
-                            <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.text}</H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Category:</H22>
-                            <H19 
-                                className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
-                                onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
-                                onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
-                            >
-                                {props.bigSliderPortfolio.item.category}
-                            </H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Date:</H22>
-                            <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.date}</H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Tags:</H22>
-                            {renderTags()}
-                        </div>
+                       
                     </div>
                    <PortfolioNavigation/>
                 </div>
@@ -388,7 +366,7 @@ export const BigSlader = (props) => {
         if(!props.bigSliderPortfolio.loading && props.bigSliderPortfolio.error){
             return(
                 <div 
-                    className="small-images-loading-error" 
+                    className="big-slider-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H19 className="h19-nobel-lora">{`${props.bigSliderPortfolio.error}`}</H19>
@@ -402,9 +380,9 @@ export const BigSlader = (props) => {
     */
 
     return(
-        <div className="small-images" id="smallImages">
+        <div className="big-slider" id="bigSlider">
             {renderToolbars()}
-            {showContent ? renderSmallImagesContent() : null}
+            {showContent ? renderBigSliderContent() : null}
             <Footer/>
         </div>
     );
