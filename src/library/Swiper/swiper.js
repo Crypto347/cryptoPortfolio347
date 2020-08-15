@@ -74,7 +74,7 @@ import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-K
 import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.jpg';
 import Id1BigSlider3 from '../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.jpg';
 import Id1BigSlider4 from '../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.jpg';
-import Id1BigSlider5 from '../../images/bigSlider/id1/oladimeji-odunsi-S6XUgeCOosQ-unsplash.jpg';
+import Id1BigSlider5 from '../../images/bigSlider/id1/nadine-shaabana-soX8qpVwOm4-unsplash.jpg';
 
 /**
 * Icons
@@ -412,6 +412,12 @@ export const Swiper = (props) => {
     }
 
     const renderClassName = (opt, isHovering) => {
+        if(opt === "testimonials"){
+            return "swiper-testimonials"
+        }
+        if(opt === "bigSlider"){
+            return "swiper-big-slider"
+        }
         if(opt === "leftArrow"){
             switch(isHovering){
                 case 'init':
@@ -515,9 +521,9 @@ export const Swiper = (props) => {
                                 id="slide"
                                 style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                             >
-                                {/* <div className="slide-image"> */}
+                                <div className="slide-image">
                                     <img src={loadImage(el.imageName)}/>
-                                {/* </div> */}
+                                </div>
                             </div>
                         )
                     }
@@ -631,9 +637,12 @@ export const Swiper = (props) => {
     */
 
     return(
-        <div className="swiper" id="swiper">
+        <div 
+            className={renderClassName(props.component)} 
+            id="swiper"
+        >
             {renderFirstArrow()}
-            <div className="swiper-wrapper"  id="swiper-wrapper">
+            <div className="swiper-wrapper" id="swiper-wrapper">
                 {renderSwiper()}
             </div>
             {renderSecondArrow()}

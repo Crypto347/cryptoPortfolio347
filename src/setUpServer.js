@@ -1229,7 +1229,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 5,
                     imageName: "id1BigSlider5",
-                    path: "oladimeji-odunsi-S6XUgeCOosQ-unsplash.jpg"
+                    path: "nadine-shaabana-soX8qpVwOm4-unsplash.jpg"
                 }
             ]
         }
