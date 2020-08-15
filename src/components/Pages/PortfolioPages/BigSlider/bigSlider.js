@@ -27,6 +27,7 @@ import './bigSlider.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import Footer from '../../../Parts/Footer/footer';
 
@@ -137,10 +138,10 @@ export const BigSlader = (props) => {
 
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
-        let contentOffsetTop = document.getElementById("smallImagesContent") ? document.getElementById("smallImagesContent").offsetTop : 0;
+        let contentOffsetTop = document.getElementById("bigSliderContent") ? document.getElementById("bigSliderContent").offsetTop : 0;
         let imagesOffsetTop = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetTop : 0;
         let imagesOffsetHeight = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetHeight : 0;
-        let movablePartHeight = document.getElementById("smallImagesMovablePart") ? document.getElementById("smallImagesMovablePart").offsetHeight : 0;
+        let movablePartHeight = document.getElementById("sbigSliderMovablePart") ? document.getElementById("bigSliderMovablePart").offsetHeight : 0;
         let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
 
         // Set margin top of movable part
@@ -191,13 +192,13 @@ export const BigSlader = (props) => {
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
-            case 'smallImagesCategory': 
+            case 'bigSliderCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'smallImagesTag1': 
+            case 'bigSliderTag1': 
                 props.setBigSliderIsHoveringTag("on", id);
                 break;
-            case 'smallImagesTag2': 
+            case 'bigSliderTag2': 
                 props.setBigSliderIsHoveringTag("on", id);
                 break;
         }
@@ -205,20 +206,20 @@ export const BigSlader = (props) => {
 
     const handleMouseLeave = (opt, id) => {
         switch(opt){
-            case 'smallImagesCategory': 
+            case 'bigSliderCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'smallImagesTag1': 
+            case 'bigSliderTag1': 
                 props.setBigSliderIsHoveringTag("off", id);
                 break;
-            case 'smallImagesTag2': 
+            case 'bigSliderTag2': 
                 props.setBigSliderIsHoveringTag("off", id);
                 break;
         }
     }
     
     const renderClassName = (opt, isHovering) => {
-        if(opt === "smallImagesCategory"){
+        if(opt === "bigSliderCategory"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -228,7 +229,7 @@ export const BigSlader = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallImagesTag1"){
+        if(opt === "bigSliderTag1"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -238,7 +239,7 @@ export const BigSlader = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallImagesTag2"){
+        if(opt === "bigSliderTag2"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -252,7 +253,7 @@ export const BigSlader = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("smallImages");
+        let el = document.getElementById("bigSlider");
     
         // Check scroll direction
 
@@ -327,10 +328,10 @@ export const BigSlader = (props) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`smallImagesTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`smallImagesTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`bigSliderTag${el.id}`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`bigSliderTag${el.id}`, el.id)} 
                     >
-                        <H19 className={renderClassName(`smallImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`bigSliderTag${el.id}`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>
@@ -357,6 +358,14 @@ export const BigSlader = (props) => {
                         id="bigSliderContent"
                         className="big-slider-content"
                     >
+                        <Swiper
+                           component="bigSlider"
+                           contentArray={props.bigSliderPortfolio.item.imagesArray}
+                           content={props.bigSliderPortfolio}
+                           translateWidth={size.width - 130}
+                           showNumbersOfSlides={1}
+                        //    autoPlay
+                        />
                        
                     </div>
                    <PortfolioNavigation/>

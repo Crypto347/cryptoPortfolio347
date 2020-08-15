@@ -7,6 +7,7 @@
         position: relative;
         z-index: 1;
         .swiper-window-width-content {
+            border: 2px solid red;
             display: flex;
             width: 100%;
             position: relative;
@@ -29,6 +30,13 @@
                         margin-right: 5px;
                     }
                 }
+                // .slide-image {
+                //     width:
+                    >img {
+                        border: 2px solid red;
+                        width: 100%;
+                    }
+                // }
                 // background-color: rgb(18, 68, 159);
                 // filter: grayscale(40%);
                 // width: 100%;

@@ -95,7 +95,9 @@ export const Testimonials = (props) => {
             <H45 className="h45-white-lustria">Testimonials</H45>
             <EH25/>
             <Swiper 
-                contentArray={props.testimonials}
+                component="testimonials"
+                contentArray={props.testimonials.items}
+                content={props.testimonials}
                 translateWidth={size.width - 130}
                 showNumbersOfSlides={1}
                 autoPlay

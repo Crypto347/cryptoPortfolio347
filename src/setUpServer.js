@@ -1209,27 +1209,27 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     imageName: "id1BigSlider1",
-                    path: "adam-wilson-1QZYZib7eYs-unsplash.jpg"
+                    path: "ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg"
                 },
                 {
                     id: 2,
                     imageName: "id1BigSlider2",
-                    path: "jason-blackeye-DKCgibUVLNc-unsplash.jpg"
+                    path: "estee-janssens-zni0zgb3bkQ-unsplash.jpg"
                 },
                 {
                     id: 3,
                     imageName: "id1BigSlider3",
-                    path: "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg"
+                    path: "filip-mroz-uKV0xYsRdsg-unsplash.jpg"
                 },
                 {
                     id: 4,
                     imageName: "id1BigSlider4",
-                    path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg"
+                    path: "laura-chouette-t6hNUc8vspA-unsplash.jpg"
                 },
                 {
                     id: 5,
                     imageName: "id1BigSlider5",
-                    path: "shelbey-miller-HIQd4db8Kr8-unsplash.jpg"
+                    path: "oladimeji-odunsi-S6XUgeCOosQ-unsplash.jpg"
                 }
             ]
         }

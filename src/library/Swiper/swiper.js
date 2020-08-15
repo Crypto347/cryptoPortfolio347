@@ -21,15 +21,6 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 /**
-* Icons
-*/
-
-import { 
-   faChevronUp,
-   faChevronDown
-} from '@fortawesome/free-solid-svg-icons';
-
-/**
 * Styles
 */
 
@@ -53,14 +44,6 @@ import * as Actions from '../../actions';
 
 import * as Selectors from '../../reducers/selectors';
 
-/**
-* Hooks
-*/
-
-import {
-    useInterval
-} from '../../Hooks/useInterval';
-
 
 /**
 * Utility
@@ -71,6 +54,36 @@ import {
     H25,
     EH25
 } from '../../components/UtilityComponents';
+
+
+/**
+* Hooks
+*/
+
+import {
+    useInterval
+} from '../../Hooks/useInterval';
+
+/**
+* Images
+*/
+
+//Id1
+
+import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg';
+import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.jpg';
+import Id1BigSlider3 from '../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.jpg';
+import Id1BigSlider4 from '../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.jpg';
+import Id1BigSlider5 from '../../images/bigSlider/id1/oladimeji-odunsi-S6XUgeCOosQ-unsplash.jpg';
+
+/**
+* Icons
+*/
+
+import { 
+    faChevronUp,
+    faChevronDown
+ } from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Swiper component definition and export
@@ -105,13 +118,13 @@ export const Swiper = (props) => {
     */
 
     useEffect(() => {
-        let slidesArray = [...props.contentArray.items];
+        let slidesArray = [...props.contentArray];
         let _slides;
         let swiperWrapper;
         let swiperContent;
         let translateVal;
         let _updatedSlides;
-        if(!props.contentArray.loading && props.contentArray.items.length === 3){
+        if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById('swiper-wrapper');   
             swiperContent = document.getElementById('swiper-content');
           
@@ -136,7 +149,7 @@ export const Swiper = (props) => {
         
         }
 
-        if(!props.contentArray.loading && props.contentArray.items.length === 4){
+        if(!props.content.loading && props.showNumbersOfSlides === 3){
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]]
             // setState({
             //     ...state,
@@ -162,7 +175,7 @@ export const Swiper = (props) => {
             // });
             // setSlides([]);
         };
-    }, [props.contentArray.loading, props.swiperData.slides.length, props.swiperData.activeIndex]);
+    }, [props.content.loading, props.swiperData.slides.length, props.swiperData.activeIndex]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -423,49 +436,47 @@ export const Swiper = (props) => {
 
     const loadImage = (img) => {
         switch(img) {
-            case 'image1': 
-                return StoryImage1;
-            case 'image2': 
-                return StoryImage2;
-            case 'image3': 
-                return StoryImage3;
-            case 'image4': 
-                return StoryImage4;
-            case 'image5': 
-                return StoryImage5;
-            case 'image6': 
-                return StoryImage6;
+            case 'id1BigSlider1': 
+                return Id1BigSlider1;
+            case 'id1BigSlider2': 
+                return Id1BigSlider2;
+            case 'id1BigSlider3': 
+                return Id1BigSlider3;
+            case 'id1BigSlider4': 
+                return Id1BigSlider4;
+            case 'id1BigSlider5': 
+                return Id1BigSlider5;
             default:
                 return ""; 
         }
     }
 
     const renderSwiper = () => {
-        if(props.contentArray.loading && !props.contentArray.error){
+        if(props.content.loading && !props.content.error){
             return(
                 <div className="content-array-loading-error">
                     <Loading color="white"/>
                 </div>
             )
         }
-        if(!props.contentArray.loading && !props.contentArray.error){
+        if(!props.content.loading && !props.content.error){
             return(
                 <>
                     {swiper()}
                 </>
             )
         }
-        if(!props.contentArray.loading && props.contentArray.error){
+        if(!props.content.loading && props.content.error){
             return(
                 <div className="content-array-loading-error">
-                    <H19 className="h19-nobel-lora">{`${props.contentArray.error}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.content.error}`}</H19>
                 </div>
             )
         }
     } 
 
     const swiper = () => {
-      if(!props.contentArray.loading){
+      if(!props.content.loading){
         if(props.translateWidth){
             return(
                 <div 
@@ -476,24 +487,40 @@ export const Swiper = (props) => {
                     style={{
                         transform: `translateX(-${props.swiperData.translate}px)`,
                         transition: `transform ${props.swiperData.transition}s ease-out`,
-                        width: `${getTranslateValue(props.translateWidth, props.translateHeight) * 3}px`
+                        width: `${getTranslateValue(props.translateWidth, props.translateHeight) * props.contentArray.length}px`
                     }}
                 >{props.swiperData._slides.map((el, i) => {
-                    return(
-                        <div 
-                            key={i} 
-                            className="slide"
-                            id="slide"
-                            style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
-                        >
-                           <H25 className="h25-white-lustria">{el.feedback}</H25>
-                           <EH25/>
-                            <div className="author-name-wrapper">
-                                <div className="slide-dash"/>
-                                <H25 className="h25-white-teko">{el.author}</H25>
+                    if(props.component === "testimonials"){
+                        return(
+                            <div 
+                                key={i} 
+                                className="slide"
+                                id="slide"
+                                style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                            >
+                               <H25 className="h25-white-lustria">{el.feedback}</H25>
+                               <EH25/>
+                                <div className="author-name-wrapper">
+                                    <div className="slide-dash"/>
+                                    <H25 className="h25-white-teko">{el.author}</H25>
+                                </div>
                             </div>
-                        </div>
-                    )
+                        )
+                    }
+                    if(props.component === "bigSlider"){
+                        return(
+                            <div 
+                                key={i} 
+                                className="slide"
+                                id="slide"
+                                style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                            >
+                                {/* <div className="slide-image"> */}
+                                    <img src={loadImage(el.imageName)}/>
+                                {/* </div> */}
+                            </div>
+                        )
+                    }
                 })}</div>
             )
         }
@@ -523,8 +550,6 @@ export const Swiper = (props) => {
             )
         }
       }
-       
-       
     }
 
     const renderFirstArrow = () => {
