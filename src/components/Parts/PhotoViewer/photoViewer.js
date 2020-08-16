@@ -352,7 +352,7 @@ export const PhotoViewer = (props) => {
                         </div>
                     </div>
                 </div>
-            </div> : null}
+            </div> :
             <Fullscreen
                 enabled={fullScreen}
                 onChange={(e) => fullscreenOnChangeHandler(e)}
@@ -396,7 +396,7 @@ export const PhotoViewer = (props) => {
                         </div>
                     </div>
                 </div>
-            </Fullscreen>
+            </Fullscreen>}
         </>
     );
 }
