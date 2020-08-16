@@ -647,20 +647,22 @@ export const Swiper = (props) => {
     */
 
     return(
-        <div 
-            className={renderClassName(props.component)} 
-            id="swiper"
-        >
-            {renderFirstArrow()}
-            <div className="swiper-wrapper" id="swiper-wrapper">
-                {renderSwiper()}
+        <>
+            <div 
+                className={renderClassName(props.component)} 
+                id="swiper"
+            >
+                {renderFirstArrow()}
+                <div className="swiper-wrapper" id="swiper-wrapper">
+                    {renderSwiper()}
+                </div>
+                {renderSecondArrow()}
             </div>
-            {renderSecondArrow()}
             {props.photoViewerForSwiperOpen ? 
             <PhotoViewer
                 component="swiper"
             /> : null}
-        </div>
+        </>
     );
 }
 
