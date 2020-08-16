@@ -261,7 +261,7 @@ export const Swiper = (props) => {
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
             if(direction === 0){
-                openPhotoViewer();
+                return;
             }else if(direction > 0){
                 prevSlide(_slides);
             }else{
@@ -395,8 +395,25 @@ export const Swiper = (props) => {
        
     }
 
-    const openPhotoViewer = (array) => {
-        props.photoViewerOpen('swiper', true, props.swiperData.slides);
+    const openPhotoViewer = (id) => {
+        let slidesForPhotoViewer = [...props.swiperData.slides];
+        let removedSlides = [];
+        let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
+              
+        slidesForPhotoViewer.map((el, i) => {
+            if(i < currentSlideIndex){
+                removedSlides.push(el);
+            }
+        })
+        slidesForPhotoViewer.splice(0, currentSlideIndex)
+      
+        if(removedSlides.length !== 0){
+            slidesForPhotoViewer.push(removedSlides);
+        }
+        
+        slidesForPhotoViewer = slidesForPhotoViewer.flat();
+        
+        props.photoViewerOpen('swiper', true, slidesForPhotoViewer);
     }
 
     const handleMouseEnter = (opt) => {
@@ -531,7 +548,10 @@ export const Swiper = (props) => {
                                 id="slide"
                                 style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                             >
-                                <div className="slide-image">
+                                <div 
+                                    className="slide-image"
+                                    onClick={() => openPhotoViewer(el.id)}
+                                >
                                     <img src={loadImage(el.key)}/>
                                 </div>
                             </div>
@@ -638,7 +658,6 @@ export const Swiper = (props) => {
                 </div>
             )
         }
-       
     }
 
 
