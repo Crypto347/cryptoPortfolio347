@@ -31,6 +31,7 @@ import './swiper.scss';
 */
 
 import Loading from '../../components/SmallParts/Loading/loading';
+import PhotoViewer from '../../components/Parts/PhotoViewer/photoViewer';
 
 /**
 * Actions
@@ -68,7 +69,7 @@ import {
 * Images
 */
 
-//Id1
+//Big Slider Id1
 
 import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg';
 import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.jpg';
@@ -127,7 +128,7 @@ export const Swiper = (props) => {
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById('swiper-wrapper');   
             swiperContent = document.getElementById('swiper-content');
-          
+       
             
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]];
             // setState({
@@ -226,7 +227,7 @@ export const Swiper = (props) => {
         let posInitial;
         let posFinal;
         let threshold = 50; //draging delta
-        let direction;
+        let direction = 0;
 
         swiperContent.addEventListener('mousedown', (e) => handleMouseDown(e, dragStart, swiperContent));
         document.addEventListener('mouseup', () => handleMouseUp(swiperContent));
@@ -258,18 +259,23 @@ export const Swiper = (props) => {
         }
         
         function dragEnd (e) {
-            if(direction > 0){
+            // posFinal = swiperContent.offsetLeft;
+            if(direction === 0){
+                openPhotoViewer();
+            }else if(direction > 0){
                 prevSlide(_slides);
             }else{
                 nextSlide(_slides, translateVal);
             }
             // if (posFinal - posInitial < -threshold) {
-            //     nextSlide(props.swiperData.activeIndex);
+            //     nextSlide(_slides, translateVal);
             // } else if (posFinal - posInitial > threshold) {
-            //     prevSlide(props.swiperData.activeIndex);
-            // } else {
+            //     prevSlide(_slides);
+            // } 
+            // else {
                 // swiperContent.style.left = (posInitial) + "px";
             // }
+            direction = 0;
             document.onmouseup = null;
             document.onmousemove = null;
         }
@@ -387,6 +393,10 @@ export const Swiper = (props) => {
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
        
+    }
+
+    const openPhotoViewer = (array) => {
+        props.photoViewerOpen('swiper', true, props.swiperData.slides);
     }
 
     const handleMouseEnter = (opt) => {
@@ -522,7 +532,7 @@ export const Swiper = (props) => {
                                 style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                             >
                                 <div className="slide-image">
-                                    <img src={loadImage(el.imageName)}/>
+                                    <img src={loadImage(el.key)}/>
                                 </div>
                             </div>
                         )
@@ -646,6 +656,10 @@ export const Swiper = (props) => {
                 {renderSwiper()}
             </div>
             {renderSecondArrow()}
+            {props.photoViewerForSwiperOpen ? 
+            <PhotoViewer
+                component="swiper"
+            /> : null}
         </div>
     );
 }
@@ -653,14 +667,15 @@ export const Swiper = (props) => {
 export default connect(
     (state) => {
         return {
-            swiperData: Selectors.getSwiperDataState(state)
+            swiperData: Selectors.getSwiperDataState(state),
+            photoViewerForSwiperOpen: Selectors.getPhotoViewerForSwiperOpenState(state),
         };
     },
     (dispatch) => {
         return {
             // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
             setSwiperState: bindActionCreators(Actions.setSwiperState, dispatch),
-            // nextImage: bindActionCreators(Actions.nextImage, dispatch),
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }

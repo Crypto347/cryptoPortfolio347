@@ -1061,27 +1061,27 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "id1SmallImages1",
+                    key: "id1SmallImages1",
                     path: "adam-wilson-1QZYZib7eYs-unsplash.jpg"
                 },
                 {
                     id: 2,
-                    imageName: "id1SmallImages2",
+                    key: "id1SmallImages2",
                     path: "jason-blackeye-DKCgibUVLNc-unsplash.jpg"
                 },
                 {
                     id: 3,
-                    imageName: "id1SmallImages3",
+                    key: "id1SmallImages3",
                     path: "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg"
                 },
                 {
                     id: 4,
-                    imageName: "id1SmallImages4",
+                    key: "id1SmallImages4",
                     path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg"
                 },
                 {
                     id: 5,
-                    imageName: "id1SmallImages5",
+                    key: "id1SmallImages5",
                     path: "shelbey-miller-HIQd4db8Kr8-unsplash.jpg"
                 }
             ]
@@ -1102,12 +1102,12 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "id2SmallImages1",
+                    key: "id2SmallImages1",
                     path: "small-images-1"
                 },
                 {
                     id: 2,
-                    imageName: "id2SmallImages2",
+                    key: "id2SmallImages2",
                     path: "small-images-2"
                 }
             ]
@@ -1128,17 +1128,17 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "id3SmallImages1",
+                    key: "id3SmallImages1",
                     path: "small-images-1"
                 },
                 {
                     id: 2,
-                    imageName: "id3SmallImages2",
+                    key: "id3SmallImages2",
                     path: "small-images-2"
                 },
                 {
                     id: 3,
-                    imageName: "id3SmallImages3",
+                    key: "id3SmallImages3",
                     path: "small-images-3"
                 }
             ]
@@ -1164,17 +1164,17 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "id4SmallImages1",
+                    key: "id4SmallImages1",
                     path: "small-images-1"
                 },
                 {
                     id: 2,
-                    imageName: "id4SmallImages2",
+                    key: "id4SmallImages2",
                     path: "small-images-2"
                 },
                 {
                     id: 3,
-                    imageName: "id4SmallImages3",
+                    key: "id4SmallImages3",
                     path: "small-images-3"
                 }
             ]
@@ -1208,27 +1208,27 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    imageName: "id1BigSlider1",
+                    key: "id1BigSlider1",
                     path: "ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg"
                 },
                 {
                     id: 2,
-                    imageName: "id1BigSlider2",
+                    key: "id1BigSlider2",
                     path: "estee-janssens-zni0zgb3bkQ-unsplash.jpg"
                 },
                 {
                     id: 3,
-                    imageName: "id1BigSlider3",
+                    key: "id1BigSlider3",
                     path: "filip-mroz-uKV0xYsRdsg-unsplash.jpg"
                 },
                 {
                     id: 4,
-                    imageName: "id1BigSlider4",
+                    key: "id1BigSlider4",
                     path: "laura-chouette-t6hNUc8vspA-unsplash.jpg"
                 },
                 {
                     id: 5,
-                    imageName: "id1BigSlider5",
+                    key: "id1BigSlider5",
                     path: "nadine-shaabana-soX8qpVwOm4-unsplash.jpg"
                 }
             ]

@@ -141,7 +141,10 @@ export const Home = (props) => {
             <Section3/>
             <Section4/>
             <Section5/>
-            {props.photoViewerForPictureBoardTextItemOpen ? <PhotoViewer/> : null}
+            {props.photoViewerForPictureBoardTextItemOpen ? 
+            <PhotoViewer
+                component="pictureBoardForTextItem"
+            /> : null}
         </div>
     );
 }

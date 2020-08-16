@@ -18,6 +18,7 @@ import uuid from "uuid";
 export const initialState = {
     menuItems: [],
     photoViewerForPictureBoardTextItemOpen: false,
+    photoViewerForSwiperOpen: false,
     photoViewerImagesArray: [],
     swiper: {
         slides: [],
@@ -43,6 +44,12 @@ const photoViewerOpen = (state, action) => {
             return {
                 ...state,
                 photoViewerForPictureBoardTextItemOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
+        case 'swiper':
+            return {
+                ...state,
+                photoViewerForSwiperOpen: action.val,
                 photoViewerImagesArray: action.array
             };
         default:

@@ -114,3 +114,10 @@ export const getBigSliderPortfolioState = createSelector(
     (x) => x
 );
 
+const getPhotoViewerForSwiperOpen = (state) => state.home.photoViewerForSwiperOpen;
+
+export const getPhotoViewerForSwiperOpenState = createSelector(
+    [getPhotoViewerForSwiperOpen],
+    (x) => x
+);
+

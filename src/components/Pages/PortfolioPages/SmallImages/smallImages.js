@@ -313,7 +313,7 @@ export const SmallImages = (props) => {
                         key={i}
                         className="small-images-portfolio-image"
                     >
-                        <img src={loadImg(el.imageName)}/>
+                        <img src={loadImg(el.key)}/>
                         <EH30/>
                     </div>
                 )

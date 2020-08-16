@@ -92,6 +92,14 @@ import text25 from '../../../images/pictureBoard/TextFolder4/dylan-gillis-KdeqA3
 import text26 from '../../../images/pictureBoard/TextFolder4/perry-grone-lbLgFFlADrY-unsplash.jpg';
 import text27 from '../../../images/pictureBoard/TextFolder4/scott-graham-5fNmWej4tAA-unsplash.jpg';
 
+//Big Slider Id1
+
+import Id1BigSlider1 from '../../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg';
+import Id1BigSlider2 from '../../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.jpg';
+import Id1BigSlider3 from '../../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.jpg';
+import Id1BigSlider4 from '../../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.jpg';
+import Id1BigSlider5 from '../../../images/bigSlider/id1/nadine-shaabana-soX8qpVwOm4-unsplash.jpg';
+
 /**
 * Icons
 */
@@ -124,7 +132,7 @@ export const PhotoViewer = (props) => {
 
     useEffect(() => {
 
-    }, [])
+    }, []);
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -266,6 +274,16 @@ export const PhotoViewer = (props) => {
                 return text26;
             case 'text27':
                 return text27;
+            case 'id1BigSlider1': 
+                return Id1BigSlider1;
+            case 'id1BigSlider2': 
+                return Id1BigSlider2;
+            case 'id1BigSlider3': 
+                return Id1BigSlider3;
+            case 'id1BigSlider4': 
+                return Id1BigSlider4;
+            case 'id1BigSlider5': 
+                return Id1BigSlider5;
             default:
                 return "";
         }
@@ -322,7 +340,7 @@ export const PhotoViewer = (props) => {
                         <H19 className="h19-nobel">{`${props.photoViewerImagesArray[0].id} / ${props.photoViewerImagesArray.length}`}</H19>
                         <div 
                             className={renderClassName("closeButton", isHoveringCloseButton)}
-                            onClick={() => props.photoViewerOpen('pictureBoardForTextItem', false, [])}
+                            onClick={() => props.photoViewerOpen(props.component, false, [])}
                             onMouseEnter={() => handleMouseEnter('closeButton')} 
                             onMouseLeave={() => handleMouseLeave('closeButton')}
                         >

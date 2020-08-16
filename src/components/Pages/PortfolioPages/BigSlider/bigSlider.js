@@ -74,30 +74,6 @@ import {
 * Images
 */
 
-//Id1
-
-import Id1SmallImages1 from '../../../../images/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.jpg';
-import Id1SmallImages2 from '../../../../images/smallImages/id1/jason-blackeye-DKCgibUVLNc-unsplash.jpg';
-import Id1SmallImages3 from '../../../../images/smallImages/id1/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg';
-import Id1SmallImages4 from '../../../../images/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg';
-import Id1SmallImages5 from '../../../../images/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.jpg';
-
-//Id2
-
-import Id2SmallImages1 from '../../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-unsplash.jpg';
-import Id2SmallImages2 from '../../../../images/smallImages/id2/paper-3025558_1920.jpg';
-
-//Id3
-
-import Id3SmallImages1 from '../../../../images/smallImages/id3/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
-import Id3SmallImages2 from '../../../../images/smallImages/id3/jess-bailey-L71uKsAVo4g-unsplash.jpg';
-import Id3SmallImages3 from '../../../../images/smallImages/id3/jess-bailey-z0guTIr_kts-unsplash.jpg';
-
-//Id4
-
-import Id4SmallImages1 from '../../../../images/smallImages/id4/clay-banks-_wkd7XBRfU4-unsplash.jpg';
-import Id4SmallImages2 from '../../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-unsplash.jpg';
-import Id4SmallImages3 from '../../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-unsplash.jpg';
 
 /**
 * BigSlader component definition and export
@@ -303,25 +279,7 @@ export const BigSlader = (props) => {
         }
     }
 
-    const renderPortfolioImages = () => {
-        return(
-            <div 
-                id="bigSliderPortfolioImages"
-                className="big-slider-portfolio-images"
-            >{props.bigSliderPortfolio.item.imagesArray.map((el,i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="big-slider-portfolio-image"
-                    >
-                        <img src={loadImg(el.imageName)}/>
-                        <EH30/>
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
+   
     const renderTags = () => {
         return(
             <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {
