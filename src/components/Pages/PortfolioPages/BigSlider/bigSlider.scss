@@ -11,10 +11,22 @@
         flex-direction: column;
         padding: 70px 130px 70px 130px;
         .big-slider-content {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
+            // width: 100%;
+            // display: flex;
+            // flex-wrap: wrap;
+            // align-items: flex-start;
+            .big-slider-content-info {
+                display: flex;
+                flex-wrap: wrap;
+                .big-slider-text-wrapper {
+                    width: calc(70% - 60px);
+                    padding-right: 60px;
+                }
+                .big-slider-category-date-tags-wrapper {
+                    width: 30%;
+                    flex-direction: column;
+                }
+            }
         }
     }
 }

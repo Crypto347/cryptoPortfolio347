@@ -366,8 +366,30 @@ export const BigSlader = (props) => {
                            showNumbersOfSlides={1}
                         //    autoPlay
                         />
-                       
+                        <EH40/>
+                        <div className="big-slider-content-info">
+                            <div className="big-slider-text-wrapper">
+                                <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.text}</H19>
+                            </div>
+                            <div className="big-slider-category-date-tags-wrapper">
+                                <H22 className="h22-nero-poppins">Category:</H22>
+                                <H19 
+                                    className={renderClassName("bigSliderCategory", isHoveringCategoryText)}
+                                    onMouseEnter={() => handleMouseEnter('bigSliderCategory')} 
+                                    onMouseLeave={() => handleMouseLeave('bigSliderCategory')}
+                                >
+                                    {props.bigSliderPortfolio.item.category}
+                                </H19>
+                                <EH40/>
+                                <H22 className="h22-nero-poppins">Date:</H22>
+                                <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.date}</H19>
+                                <EH40/>
+                                <H22 className="h22-nero-poppins">Tags:</H22>
+                                {renderTags()}
+                            </div>
+                        </div>
                     </div>
+                    <EH70/>
                    <PortfolioNavigation/>
                 </div>
             )
