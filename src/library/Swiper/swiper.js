@@ -261,10 +261,10 @@ export const Swiper = (props) => {
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
             if(direction === 0){
-                return;
+                openPhotoViewer(props.swiperData.activeIndex);
             }else if(direction > 0){
                 prevSlide(_slides);
-            }else{
+            }else if(direction < 0){
                 nextSlide(_slides, translateVal);
             }
             // if (posFinal - posInitial < -threshold) {
@@ -395,22 +395,22 @@ export const Swiper = (props) => {
        
     }
 
-    const openPhotoViewer = (id) => {
+    const openPhotoViewer = (activeIndex) => {
         let slidesForPhotoViewer = [...props.swiperData.slides];
         let removedSlides = [];
-        let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
+        // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
               
         slidesForPhotoViewer.map((el, i) => {
-            if(i < currentSlideIndex){
+            if(i < activeIndex){
                 removedSlides.push(el);
             }
         })
-        slidesForPhotoViewer.splice(0, currentSlideIndex)
+        slidesForPhotoViewer.splice(0, activeIndex)
       
         if(removedSlides.length !== 0){
             slidesForPhotoViewer.push(removedSlides);
         }
-        
+
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
         
         props.photoViewerOpen('swiper', true, slidesForPhotoViewer);
@@ -550,7 +550,7 @@ export const Swiper = (props) => {
                             >
                                 <div 
                                     className="slide-image"
-                                    onClick={() => openPhotoViewer(el.id)}
+                                    // onClick={() => openPhotoViewer(el.id)}
                                 >
                                     <img src={loadImage(el.key)}/>
                                 </div>
