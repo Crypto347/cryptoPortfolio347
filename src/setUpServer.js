@@ -1040,7 +1040,6 @@ app.get('/api/section4/achievementsData', (req, res) => {
     ]
     res.json(achievementsData);
 });
-
 app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
@@ -1342,6 +1341,60 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
         res.json(bigSliderObj);  
+    }
+});
+app.get('/api/portfolio-item/big-images/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const bigImages = [
+        {
+            id: 1,
+            header: "Welcome! Take a Look at Our Portfolio.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
+            category: "Lifestyle",
+            date: "08.17.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1BigImages1",
+                    path: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1BigImages2",
+                    path: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1BigImages3",
+                    path: "lee-campbell-qNPESem_t4I-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1BigImages4",
+                    path: "melanie-mauer-x-agyuDQHJA-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1BigImages5",
+                    path: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                }
+            ]
+        }
+    ]
+
+    let bigImagesObj = bigImages.find(item => item.id === id);
+    if(!bigImagesObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(bigImagesObj);  
     }
 });
 

@@ -7,6 +7,8 @@ export const findPathOfIds = (path) => {
     switch(updatedPath[1]){
         // case '':
         //     return [1, 11, 111];
+        case 'big-images':
+            return [2, 21, 213];
         case 'big-slider':
             return [2, 21, 214];
         case 'small-images':

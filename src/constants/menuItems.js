@@ -250,7 +250,7 @@ export const menuItemsArray = [
                         id: 213,
                         text: "Big images",
                         itemId: "bigImages",
-                        path: "portfolio-item/big-images-0",
+                        path: "portfolio-item/big-images/1",
                         active: false,
                         isHover: "init",
                         subOptions: []

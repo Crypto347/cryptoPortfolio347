@@ -37,6 +37,7 @@ import ProcessPage from './Pages/ProcessPage/processPage';
 import HappyTeamPage from './Pages/HappyTeamPage/happyTeamPage';
 import SmallImages from './Pages/PortfolioPages/SmallImages/smallImages';
 import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
+import BigImages from './Pages/PortfolioPages/BigImages/bigImages';
 // import Contact from './Pages/Contact/contact';
 // import SingleStory from './Pages/SingleStory/singleStory';
 // import Archieve from './Pages/Archieve/archieve';
@@ -109,12 +110,12 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/new-york-opening"}
                     component={SingleStory}
-                />
+                />*/}
                 <Route 
                     exact 
-                    path={props.match.url + "/contact"}
-                    component={Contact}
-                />*/}
+                    path={props.match.url + "/portfolio-item/big-images/:id"}
+                    component={BigImages}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/big-slider/:id"}

@@ -121,3 +121,9 @@ export const getPhotoViewerForSwiperOpenState = createSelector(
     (x) => x
 );
 
+const getBigImagesPortfolio = (state) => state.bigImagesPortfolio;
+
+export const getBigImagesPortfolioState = createSelector(
+    [getBigImagesPortfolio],
+    (x) => x
+);

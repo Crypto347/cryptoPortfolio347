@@ -62,7 +62,7 @@ const setBigSliderIsHoveringTag = (state, action) => {
     };
 }
 
-const smallImagesPortfolioReducer = (state = initialState, action) => {
+const bigSliderPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_BIG_SLIDER_PORTFOLIO_BEGIN:
             return fetchBigSliderPortfolioBegin (state, action); 
@@ -77,4 +77,4 @@ const smallImagesPortfolioReducer = (state = initialState, action) => {
     }
 }
 
-export default smallImagesPortfolioReducer;
+export default bigSliderPortfolioReducer;
