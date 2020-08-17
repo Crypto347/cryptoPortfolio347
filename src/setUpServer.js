@@ -407,7 +407,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-4",
+            path: "portfolio-item/big-slider/3",
             pictures: [
                 {
                     id: 1,
@@ -1281,6 +1281,57 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                     id: 6,
                     key: "id2BigSlider6",
                     path: "computer-updated.png"
+                }
+            ]
+        },
+        {
+            id: 3,
+            header: "Branding & Website.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
+            category: "Lifestyle",
+            date: "07.10.2017",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3BigSlider1",
+                    path: "angele-kamp-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id3BigSlider2",
+                    path: "charles-deluvio-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3BigSlider3",
+                    path: "daily-nouri-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id3BigSlider4",
+                    path: "jess-bailey-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id3BigSlider5",
+                    path: "jozsef-hocza-updated-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id3BigSlider6",
+                    path: "laika-notebooks-updated-unsplash.png"
+                },
+                {
+                    id: 7,
+                    key: "id3BigSlider7",
+                    path: "lauren-fleischmann-updated-unsplash.png"
                 }
             ]
         }

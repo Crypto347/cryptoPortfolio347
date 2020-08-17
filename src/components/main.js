@@ -80,6 +80,7 @@ export const Main = (props) => {
             pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
+            props.photoViewerOpen("all", false, []);
         });
      
      
@@ -159,7 +160,7 @@ export default connect(
         return {
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
-            // startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             // startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
             // startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch)
         };

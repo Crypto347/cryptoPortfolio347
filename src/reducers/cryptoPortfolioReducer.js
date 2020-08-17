@@ -52,6 +52,13 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForSwiperOpen: action.val,
                 photoViewerImagesArray: action.array
             };
+        case 'all':
+            return {
+                ...state,
+                photoViewerForPictureBoardTextItemOpen: action.val,
+                photoViewerForSwiperOpen: action.val,
+                photoViewerImagesArray: action.array
+            }
         default:
             return state;
     }

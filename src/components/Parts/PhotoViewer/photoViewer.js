@@ -109,6 +109,16 @@ import Id2BigSlider4 from '../../../images/bigSlider/id2/grocery-list-updated.pn
 import Id2BigSlider5 from '../../../images/bigSlider/id2/heather-ford-updated-unsplash.png';
 import Id2BigSlider6 from '../../../images/bigSlider/id2/computer-updated.png';
 
+//Big Slider Id3
+
+import Id3BigSlider1 from '../../../images/bigSlider/id3/angele-kamp-updated-unsplash.png';
+import Id3BigSlider2 from '../../../images/bigSlider/id3/charles-deluvio-updated-unsplash.png';
+import Id3BigSlider3 from '../../../images/bigSlider/id3/daily-nouri-updated-unsplash.png';
+import Id3BigSlider4 from '../../../images/bigSlider/id3/jess-bailey-updated-unsplash.png';
+import Id3BigSlider5 from '../../../images/bigSlider/id3/jozsef-hocza-updated-unsplash.png';
+import Id3BigSlider6 from '../../../images/bigSlider/id3/laika-notebooks-updated-unsplash.png';
+import Id3BigSlider7 from '../../../images/bigSlider/id3/lauren-fleischmann-updated-unsplash.png';
+
 /**
 * Icons
 */
@@ -305,6 +315,20 @@ export const PhotoViewer = (props) => {
                 return Id2BigSlider5;
             case 'id2BigSlider6': 
                 return Id2BigSlider6;
+            case 'id3BigSlider1': 
+                return Id3BigSlider1;
+            case 'id3BigSlider2': 
+                return Id3BigSlider2;
+            case 'id3BigSlider3': 
+                return Id3BigSlider3;
+            case 'id3BigSlider4': 
+                return Id3BigSlider4;
+            case 'id3BigSlider5': 
+                return Id3BigSlider5;
+            case 'id3BigSlider6': 
+                return Id3BigSlider6;
+            case 'id3BigSlider7': 
+                return Id3BigSlider7;
             default:
                 return "";
         }
@@ -323,7 +347,10 @@ export const PhotoViewer = (props) => {
     return(
         <>
             <div className="photo-viewer">
-                <div className="photo-viewer-wrapper">
+                <div 
+                    className="photo-viewer-wrapper"
+                    style={{width: `${props.width}`}}
+                >
                     <div className="photo-viewer-full-screen-button">
                         <FontAwesomeIcon 
                             icon={faExpand} 
@@ -334,7 +361,10 @@ export const PhotoViewer = (props) => {
                             onMouseLeave={() => handleMouseLeave('expand')}
                         />
                     </div>
-                    <div className="photo-viewer-image-item">
+                    <div 
+                        className="photo-viewer-image-item"
+                        style={{width: `${props.width}`, height: `${props.height}`}}
+                    >
                         <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
                     </div>
                     <div className="photo-viewer-toolbar">
