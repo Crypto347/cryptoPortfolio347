@@ -948,7 +948,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             position: "Designer",
             photo: "Photo1",
             instaName: "ChristinaKinslee",
-            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.jpg",
+            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
             hover: false
         },
         {
@@ -957,7 +957,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             position: "UX Designer",
             photo: "Photo2",
             instaName: "ChristinaKinslee",
-            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.jpg",
+            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
             hover: false
         },
         {
@@ -966,7 +966,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             position: "Developer",
             photo: "Photo3",
             instaName: "ChristinaKinslee",
-            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.jpg",
+            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
             hover: false
         },
         {
@@ -975,7 +975,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             position: "Developer",
             photo: "Photo4",
             instaName: "ChristinaKinslee",
-            path: "photo-1540569014015-19a7be504e3a.jpg",
+            path: "photo-1540569014015-19a7be504e3a.png",
             hover: false
         },
         {
@@ -984,7 +984,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
             position: "Copywriter",
             photo: "Photo5",
             instaName: "ChristinaKinslee",
-            path: "zoe-fernandez--zqoE7jnQgw-unsplash.jpg",
+            path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
             hover: false
         },
     ]

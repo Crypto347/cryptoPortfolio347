@@ -280,7 +280,7 @@ export const Swiper = (props) => {
         
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
-            if(direction === 0){
+            if(props.component === "bigSlider" && direction === 0){
                 openPhotoViewer(props.swiperData.activeIndex);
             }else if(direction > 0){
                 prevSlide(_slides);
