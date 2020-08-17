@@ -28,6 +28,7 @@ import './smallImages.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
+import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -270,6 +271,27 @@ export const SmallImages = (props) => {
         return e.deltaY < 0;
     }
 
+    const openPhotoViewer = (array, activeIndex) => {
+        let slidesForPhotoViewer = [...array];
+        let removedSlides = [];
+        // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
+              
+        slidesForPhotoViewer.map((el, i) => {
+            if(i < activeIndex){
+                removedSlides.push(el);
+            }
+        })
+        slidesForPhotoViewer.splice(0, activeIndex)
+      
+        if(removedSlides.length !== 0){
+            slidesForPhotoViewer.push(removedSlides);
+        }
+
+        slidesForPhotoViewer = slidesForPhotoViewer.flat();
+        
+        props.photoViewerOpen('smallImages', true, slidesForPhotoViewer);
+    }
+
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -313,7 +335,10 @@ export const SmallImages = (props) => {
                         key={i}
                         className="small-images-portfolio-image"
                     >
-                        <img src={loadImg(el.key)}/>
+                        <img 
+                            src={loadImg(el.key)}
+                            onClick={() => openPhotoViewer(props.smallImagesPortfolio.item.imagesArray, i)}
+                        />
                         <EH30/>
                     </div>
                 )
@@ -406,6 +431,12 @@ export const SmallImages = (props) => {
             {renderToolbars()}
             {showContent ? renderSmallImagesContent() : null}
             <Footer/>
+            {props.photoViewerForSmallImagesOpen ? 
+            <PhotoViewer
+                width={700}
+                height={457}
+                component="smallImages"
+            /> : null}
         </div>
     );
 }
@@ -414,13 +445,14 @@ export default connect(
     (state) => {
         return {
             smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
-        
+            photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state),
         };
     },
     (dispatch) => {
         return {
             fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
-            setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch)
+            setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch),
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }
 )(SmallImages);

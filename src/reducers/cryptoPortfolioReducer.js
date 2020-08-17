@@ -18,7 +18,8 @@ import uuid from "uuid";
 export const initialState = {
     menuItems: [],
     photoViewerForPictureBoardTextItemOpen: false,
-    photoViewerForSwiperOpen: false,
+    photoViewerForBigSliderOpen: false,
+    photoViewerForSmallImagesOpen: false,
     photoViewerImagesArray: [],
     swiper: {
         slides: [],
@@ -46,17 +47,24 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForPictureBoardTextItemOpen: action.val,
                 photoViewerImagesArray: action.array
             };
-        case 'swiper':
+        case 'bigSlider':
             return {
                 ...state,
-                photoViewerForSwiperOpen: action.val,
+                photoViewerForBigSliderOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
+        case 'smallImages':
+            return {
+                ...state,
+                photoViewerForSmallImagesOpen: action.val,
                 photoViewerImagesArray: action.array
             };
         case 'all':
             return {
                 ...state,
                 photoViewerForPictureBoardTextItemOpen: action.val,
-                photoViewerForSwiperOpen: action.val,
+                photoViewerForBigSliderOpen: action.val,
+                photoViewerForSmallImagesOpen: action.val,
                 photoViewerImagesArray: action.array
             }
         default:

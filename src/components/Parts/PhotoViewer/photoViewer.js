@@ -119,6 +119,31 @@ import Id3BigSlider5 from '../../../images/bigSlider/id3/jozsef-hocza-updated-un
 import Id3BigSlider6 from '../../../images/bigSlider/id3/laika-notebooks-updated-unsplash.png';
 import Id3BigSlider7 from '../../../images/bigSlider/id3/lauren-fleischmann-updated-unsplash.png';
 
+//Small Images Id1
+
+import Id1SmallImages1 from '../../../images/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.jpg';
+import Id1SmallImages2 from '../../../images/smallImages/id1/jason-blackeye-DKCgibUVLNc-unsplash.jpg';
+import Id1SmallImages3 from '../../../images/smallImages/id1/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg';
+import Id1SmallImages4 from '../../../images/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg';
+import Id1SmallImages5 from '../../../images/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.jpg';
+
+//Small Images Id2
+
+import Id2SmallImages1 from '../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-unsplash.jpg';
+import Id2SmallImages2 from '../../../images/smallImages/id2/paper-3025558_1920.jpg';
+
+//Small Images Id3
+
+import Id3SmallImages1 from '../../../images/smallImages/id3/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
+import Id3SmallImages2 from '../../../images/smallImages/id3/jess-bailey-L71uKsAVo4g-unsplash.jpg';
+import Id3SmallImages3 from '../../../images/smallImages/id3/jess-bailey-z0guTIr_kts-unsplash.jpg';
+
+//Small Images Id4
+
+import Id4SmallImages1 from '../../../images/smallImages/id4/clay-banks-_wkd7XBRfU4-unsplash.jpg';
+import Id4SmallImages2 from '../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-unsplash.jpg';
+import Id4SmallImages3 from '../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-unsplash.jpg';
+
 /**
 * Icons
 */
@@ -329,6 +354,32 @@ export const PhotoViewer = (props) => {
                 return Id3BigSlider6;
             case 'id3BigSlider7': 
                 return Id3BigSlider7;
+            case 'id1SmallImages1':
+                return Id1SmallImages1;
+            case 'id1SmallImages2':
+                return Id1SmallImages2;
+            case 'id1SmallImages3':
+                return Id1SmallImages3;
+            case 'id1SmallImages4':
+                return Id1SmallImages4;
+            case 'id1SmallImages5':
+                return Id1SmallImages5;
+            case 'id2SmallImages1':
+                return Id2SmallImages1;
+            case 'id2SmallImages2':
+                return Id2SmallImages2;
+            case 'id3SmallImages1':
+                return Id3SmallImages1;
+            case 'id3SmallImages2':
+                return Id3SmallImages2;
+            case 'id3SmallImages3':
+                return Id3SmallImages3;
+            case 'id4SmallImages1':
+                return Id4SmallImages1;
+            case 'id4SmallImages2':
+                return Id4SmallImages2;
+            case 'id4SmallImages3':
+                return Id4SmallImages3;
             default:
                 return "";
         }

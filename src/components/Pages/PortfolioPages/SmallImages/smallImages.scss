@@ -18,6 +18,7 @@
             .small-images-portfolio-images {
                 width: calc(58% - 4px);
                 .small-images-portfolio-image {
+                    cursor: pointer;
                     > img {
                         width: 100%;
                     }

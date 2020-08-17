@@ -114,10 +114,10 @@ export const getBigSliderPortfolioState = createSelector(
     (x) => x
 );
 
-const getPhotoViewerForSwiperOpen = (state) => state.home.photoViewerForSwiperOpen;
+const getPhotoViewerForBigSliderOpen = (state) => state.home.photoViewerForBigSliderOpen;
 
-export const getPhotoViewerForSwiperOpenState = createSelector(
-    [getPhotoViewerForSwiperOpen],
+export const getPhotoViewerForBigSliderOpenState = createSelector(
+    [getPhotoViewerForBigSliderOpen],
     (x) => x
 );
 
@@ -125,5 +125,12 @@ const getBigImagesPortfolio = (state) => state.bigImagesPortfolio;
 
 export const getBigImagesPortfolioState = createSelector(
     [getBigImagesPortfolio],
+    (x) => x
+);
+
+const getPhotoViewerForSmallImagesOpen = (state) => state.home.photoViewerForSmallImagesOpen;
+
+export const getPhotoViewerForSmallImagesOpenState = createSelector(
+    [getPhotoViewerForSmallImagesOpen],
     (x) => x
 );

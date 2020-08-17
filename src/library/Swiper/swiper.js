@@ -281,7 +281,8 @@ export const Swiper = (props) => {
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
             if(props.component === "bigSlider" && direction === 0){
-                openPhotoViewer(props.swiperData.activeIndex);
+                console.log(props.component)
+                openPhotoViewer(props.component, props.swiperData.activeIndex);
             }else if(direction > 0){
                 prevSlide(_slides);
             }else if(direction < 0){
@@ -415,7 +416,7 @@ export const Swiper = (props) => {
        
     }
 
-    const openPhotoViewer = (activeIndex) => {
+    const openPhotoViewer = (component, activeIndex) => {
         let slidesForPhotoViewer = [...props.swiperData.slides];
         let removedSlides = [];
         // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
@@ -432,8 +433,7 @@ export const Swiper = (props) => {
         }
 
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
-        
-        props.photoViewerOpen('swiper', true, slidesForPhotoViewer);
+        props.photoViewerOpen(component, true, slidesForPhotoViewer);
     }
 
     const handleMouseEnter = (opt) => {
@@ -723,7 +723,7 @@ export const Swiper = (props) => {
                 </div>
                 {renderSecondArrow()}
             </div>
-            {props.photoViewerForSwiperOpen ? 
+            {props.photoViewerForBigSliderOpen ? 
             <PhotoViewer
                 width={700}
                 height={457}
@@ -737,7 +737,7 @@ export default connect(
     (state) => {
         return {
             swiperData: Selectors.getSwiperDataState(state),
-            photoViewerForSwiperOpen: Selectors.getPhotoViewerForSwiperOpenState(state),
+            photoViewerForBigSliderOpen: Selectors.getPhotoViewerForBigSliderOpenState(state),
         };
     },
     (dispatch) => {
