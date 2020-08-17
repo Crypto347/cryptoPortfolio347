@@ -302,49 +302,49 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "text9",
                     folderName: "text",
-                    imageName: "anthony-reungere-s6xt1mwF_iU-unsplash.jpg",
+                    imageName: "anthony-reungere-s6xt1mwF_iU-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 2,
                     key: "text10",
                     folderName: "text",
-                    imageName: "brendan-steeves-G-YAJ61qIuU-unsplash.jpg",
+                    imageName: "brendan-steeves-G-YAJ61qIuU-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 3,
                     key: "text11",
                     folderName: "text",
-                    imageName: "matthew-henry-Ix1TiS-E17E-unsplash.jpg",
+                    imageName: "matthew-henry-Ix1TiS-E17E-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 4,
                     key: "text12",
                     folderName: "text",
-                    imageName: "rikki-chan-9FfJW5Tu_qk-unsplash.jpg",
+                    imageName: "rikki-chan-9FfJW5Tu_qk-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 5,
                     key: "text13",
                     folderName: "text",
-                    imageName: "timo-stern-iUBgeNeyVy8-unsplash.jpg",
+                    imageName: "timo-stern-iUBgeNeyVy8-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 6,
                     key: "text14",
                     folderName: "text",
-                    imageName: "ugur-peker-AkX0_cZQ6PI-unsplash.jpg",
+                    imageName: "ugur-peker-AkX0_cZQ6PI-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 7,
                     key: "text15",
                     folderName: "text",
-                    imageName: "z-s-3-VLBL1DKxk-unsplash.jpg",
+                    imageName: "z-s-3-VLBL1DKxk-unsplash.png",
                     alt: "image"
                 },
             ]
@@ -645,14 +645,14 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "text16",
                     folderName: "text",
-                    imageName: "iltun-huseynli-TQyah6wdlzg-unsplash.jpg",
+                    imageName: "iltun-huseynli-TQyah6wdlzg-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 2,
                     key: "text17",
                     folderName: "text",
-                    imageName: "iltun-huseynli-Vyy_ddIxuEk-unsplash.jpg",
+                    imageName: "iltun-huseynli-Vyy_ddIxuEk-unsplash.png",
                     alt: "image"
                 },
                 {
@@ -666,28 +666,28 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 4,
                     key: "text19",
                     folderName: "text",
-                    imageName: "jason-ortego-buF62ewDLcQ-unsplash.jpg",
+                    imageName: "jason-ortego-buF62ewDLcQ-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 5,
                     key: "text20",
                     folderName: "text",
-                    imageName: "justin-chrn-OCmOLiKrK-Y-unsplash.jpg",
+                    imageName: "justin-chrn-OCmOLiKrK-Y-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 6,
                     key: "text21",
                     folderName: "text",
-                    imageName: "murad-mornel-HjNqvIE91Js-unsplash.jpg",
+                    imageName: "murad-mornel-HjNqvIE91Js-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 7,
                     key: "text22",
                     folderName: "text",
-                    imageName: "peter-jan-rijpkema-wI6o8OwUwdw-unsplash.jpg",
+                    imageName: "peter-jan-rijpkema-wI6o8OwUwdw-unsplash.png",
                     alt: "image"
                 },
             ]
@@ -757,35 +757,35 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "text23",
                     folderName: "text",
-                    imageName: "annie-spratt-sggw4-qDD54-unsplash.jpg",
+                    imageName: "annie-spratt-sggw4-qDD54-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 2,
                     key: "text24",
                     folderName: "text",
-                    imageName: "christin-hume-mfB1B1s4sMc-unsplash.jpg",
+                    imageName: "christin-hume-mfB1B1s4sMc-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 3,
                     key: "text25",
                     folderName: "text",
-                    imageName: "dylan-gillis-KdeqA3aTnBY-unsplash.jpg",
+                    imageName: "dylan-gillis-KdeqA3aTnBY-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 4,
                     key: "text26",
                     folderName: "text",
-                    imageName: "perry-grone-lbLgFFlADrY-unsplash.jpg",
+                    imageName: "perry-grone-lbLgFFlADrY-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 5,
                     key: "text27",
                     folderName: "text",
-                    imageName: "scott-graham-5fNmWej4tAA-unsplash.jpg",
+                    imageName: "scott-graham-5fNmWej4tAA-unsplash.png",
                     alt: "image"
                 },
             ]
