@@ -71,20 +71,20 @@ import {
 
 //Big Slider Id1
 
-import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.png';
-import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.png';
-import Id1BigSlider3 from '../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.png';
-import Id1BigSlider4 from '../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.png';
-import Id1BigSlider5 from '../../images/bigSlider/id1/nadine-shaabana-soX8qpVwOm4-unsplash.png';
+import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-updated-unsplash.png';
+import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-updated-unsplash.png';
+import Id1BigSlider3 from '../../images/bigSlider/id1/filip-mroz-updated-unsplash.png';
+import Id1BigSlider4 from '../../images/bigSlider/id1/laura-chouette-updated-unsplash.png';
+import Id1BigSlider5 from '../../images/bigSlider/id1/nadine-shaabana-updated-unsplash.png';
 
 //Big Slider Id2
 
-import Id2BigSlider1 from '../../images/bigSlider/id2/dose-media-updated-unsplash.jpg';
-import Id2BigSlider2 from '../../images/bigSlider/id2/daniel-korpai-updated-unsplash.jpg';
-import Id2BigSlider3 from '../../images/bigSlider/id2/rahul-bhogal-updated-unsplash.jpg';
-import Id2BigSlider4 from '../../images/bigSlider/id2/grocery-list-updated.jpg';
-import Id2BigSlider5 from '../../images/bigSlider/id2/heather-ford-updated-unsplash.jpg';
-import Id2BigSlider6 from '../../images/bigSlider/id2/computer-updated.jpg';
+import Id2BigSlider1 from '../../images/bigSlider/id2/dose-media-updated-unsplash.png';
+import Id2BigSlider2 from '../../images/bigSlider/id2/daniel-korpai-updated-unsplash.png';
+import Id2BigSlider3 from '../../images/bigSlider/id2/rahul-bhogal-updated-unsplash.png';
+import Id2BigSlider4 from '../../images/bigSlider/id2/grocery-list-updated.png';
+import Id2BigSlider5 from '../../images/bigSlider/id2/heather-ford-updated-unsplash.png';
+import Id2BigSlider6 from '../../images/bigSlider/id2/computer-updated.png';
 
 /**
 * Icons

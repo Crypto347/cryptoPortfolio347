@@ -54,14 +54,14 @@ import {
 
 //TextFolder1
 
-import text1 from '../../../images/pictureBoard/TextFolder1/alexandra-gorn-JIUjvqe2ZHg-unsplash.jpg';
-import text2 from '../../../images/pictureBoard/TextFolder1/alexandra-gorn-W5dsm9n6e3g-unsplash.jpg';
-import text3 from '../../../images/pictureBoard/TextFolder1/alexandru-acea-T5jXjei49uY-unsplash.jpg';
-import text4 from '../../../images/pictureBoard/TextFolder1/cullen-jones-wu9Xr4rt5cU-unsplash.jpg';
-import text5 from '../../../images/pictureBoard/TextFolder1/jean-philippe-delberghe-3EC_3r8-yME-unsplash.jpg';
-import text6 from '../../../images/pictureBoard/TextFolder1/patrick-perkins-3wylDrjxH-E-unsplash.jpg';
-import text7 from '../../../images/pictureBoard/TextFolder1/sam-marx-3w8eCQgX_4c-unsplash.jpg';
-import text8 from '../../../images/pictureBoard/TextFolder1/timothy-buck-psrloDbaZc8-unsplash.jpg';
+import text1 from '../../../images/pictureBoard/TextFolder1/alexandra-gorn-JIUjvqe2ZHg-unsplash.png';
+import text2 from '../../../images/pictureBoard/TextFolder1/alexandra-gorn-W5dsm9n6e3g-unsplash.png';
+import text3 from '../../../images/pictureBoard/TextFolder1/alexandru-acea-T5jXjei49uY-unsplash.png';
+import text4 from '../../../images/pictureBoard/TextFolder1/cullen-jones-wu9Xr4rt5cU-unsplash.png';
+import text5 from '../../../images/pictureBoard/TextFolder1/jean-philippe-delberghe-3EC_3r8-yME-unsplash.png';
+import text6 from '../../../images/pictureBoard/TextFolder1/patrick-perkins-3wylDrjxH-E-unsplash.png';
+import text7 from '../../../images/pictureBoard/TextFolder1/sam-marx-3w8eCQgX_4c-unsplash.png';
+import text8 from '../../../images/pictureBoard/TextFolder1/timothy-buck-psrloDbaZc8-unsplash.png';
 
 //Textolder2
 
@@ -94,20 +94,20 @@ import text27 from '../../../images/pictureBoard/TextFolder4/scott-graham-5fNmWe
 
 //Big Slider Id1
 
-import Id1BigSlider1 from '../../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.png';
-import Id1BigSlider2 from '../../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.png';
-import Id1BigSlider3 from '../../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.png';
-import Id1BigSlider4 from '../../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.png';
-import Id1BigSlider5 from '../../../images/bigSlider/id1/nadine-shaabana-soX8qpVwOm4-unsplash.png';
+import Id1BigSlider1 from '../../../images/bigSlider/id1/ash-from-modern-afflatus-updated-unsplash.png';
+import Id1BigSlider2 from '../../../images/bigSlider/id1/estee-janssens-updated-unsplash.png';
+import Id1BigSlider3 from '../../../images/bigSlider/id1/filip-mroz-updated-unsplash.png';
+import Id1BigSlider4 from '../../../images/bigSlider/id1/laura-chouette-updated-unsplash.png';
+import Id1BigSlider5 from '../../../images/bigSlider/id1/nadine-shaabana-updated-unsplash.png';
 
 //Big Slider Id2
 
-import Id2BigSlider1 from '../../../images/bigSlider/id2/dose-media-updated-unsplash.jpg';
-import Id2BigSlider2 from '../../../images/bigSlider/id2/daniel-korpai-updated-unsplash.jpg';
-import Id2BigSlider3 from '../../../images/bigSlider/id2/rahul-bhogal-updated-unsplash.jpg';
-import Id2BigSlider4 from '../../../images/bigSlider/id2/grocery-list-updated.jpg';
-import Id2BigSlider5 from '../../../images/bigSlider/id2/heather-ford-updated-unsplash.jpg';
-import Id2BigSlider6 from '../../../images/bigSlider/id2/computer-updated.jpg';
+import Id2BigSlider1 from '../../../images/bigSlider/id2/dose-media-updated-unsplash.png';
+import Id2BigSlider2 from '../../../images/bigSlider/id2/daniel-korpai-updated-unsplash.png';
+import Id2BigSlider3 from '../../../images/bigSlider/id2/rahul-bhogal-updated-unsplash.png';
+import Id2BigSlider4 from '../../../images/bigSlider/id2/grocery-list-updated.png';
+import Id2BigSlider5 from '../../../images/bigSlider/id2/heather-ford-updated-unsplash.png';
+import Id2BigSlider6 from '../../../images/bigSlider/id2/computer-updated.png';
 
 /**
 * Icons

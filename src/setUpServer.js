@@ -190,56 +190,56 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 1,
                     key: "text1",
                     folderName: "text",
-                    imageName: "alexandra-gorn-JIUjvqe2ZHg-unsplash.jpg",
+                    imageName: "alexandra-gorn-JIUjvqe2ZHg-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 2,
                     key: "text2",
                     folderName: "text",
-                    imageName: "alexandra-gorn-W5dsm9n6e3g-unsplash.jpg",
+                    imageName: "alexandra-gorn-W5dsm9n6e3g-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 3,
                     key: "text3",
                     folderName: "text",
-                    imageName: "alexandru-acea-T5jXjei49uY-unsplash.jpg",
+                    imageName: "alexandru-acea-T5jXjei49uY-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 4,
                     key: "text4",
                     folderName: "text",
-                    imageName: "cullen-jones-wu9Xr4rt5cU-unsplash.jpg",
+                    imageName: "cullen-jones-wu9Xr4rt5cU-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 5,
                     key: "text5",
                     folderName: "text",
-                    imageName: "jean-philippe-delberghe-3EC_3r8-yME-unsplash.jpg",
+                    imageName: "jean-philippe-delberghe-3EC_3r8-yME-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 6,
                     key: "text6",
                     folderName: "text",
-                    imageName: "patrick-perkins-3wylDrjxH-E-unsplash.jpg",
+                    imageName: "patrick-perkins-3wylDrjxH-E-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 7,
                     key: "text7",
                     folderName: "text",
-                    imageName: "sam-marx-3w8eCQgX_4c-unsplash.jpg",
+                    imageName: "sam-marx-3w8eCQgX_4c-unsplash.png",
                     alt: "image"
                 },
                 {
                     id: 8,
                     key: "text8",
                     folderName: "text",
-                    imageName: "timothy-buck-psrloDbaZc8-unsplash.jpg",
+                    imageName: "timothy-buck-psrloDbaZc8-unsplash.png",
                     alt: "image"
                 }
             ]
@@ -1209,27 +1209,27 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id1BigSlider1",
-                    path: "ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.png"
+                    path: "ash-from-modern-afflatus-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id1BigSlider2",
-                    path: "estee-janssens-zni0zgb3bkQ-unsplash.png"
+                    path: "estee-janssens-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id1BigSlider3",
-                    path: "filip-mroz-uKV0xYsRdsg-unsplash.png"
+                    path: "filip-mroz-updated-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id1BigSlider4",
-                    path: "laura-chouette-t6hNUc8vspA-unsplash.png"
+                    path: "laura-chouette-updated-unsplash.png"
                 },
                 {
                     id: 5,
                     key: "id1BigSlider5",
-                    path: "nadine-shaabana-soX8qpVwOm4-unsplash.png"
+                    path: "nadine-shaabana-updated-unsplash.png"
                 }
             ]
         },
@@ -1255,32 +1255,32 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id2BigSlider1",
-                    path: "dose-media-updated-unsplash.jpg"
+                    path: "dose-media-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id2BigSlider2",
-                    path: "daniel-korpai-updated-unsplash.jpg"
+                    path: "daniel-korpai-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id2BigSlider3",
-                    path: "rahul-bhogal-updated-unsplash.jpg"
+                    path: "rahul-bhogal-updated-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id2BigSlider4",
-                    path: "grocery-list-updated.jpg"
+                    path: "grocery-list-updated.png"
                 },
                 {
                     id: 5,
                     key: "id2BigSlider5",
-                    path: "heather-ford-updated-unsplash.jpg"
+                    path: "heather-ford-updated-unsplash.png"
                 },
                 {
                     id: 6,
                     key: "id2BigSlider6",
-                    path: "computer-updated.jpg"
+                    path: "computer-updated.png"
                 }
             ]
         }
