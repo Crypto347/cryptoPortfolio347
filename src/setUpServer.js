@@ -80,7 +80,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-1",
+            path: "portfolio-item/big-slider/2",
             pictures: [
                 {
                     id: 1,
@@ -100,7 +100,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
                     id: 3,
                     key: "bw3",
                     folderName: "blackAndWhite",
-                    imageName: "rahul-bhogal-lihCTIOP28U-unsplash.jpg"  ,               
+                    imageName: "rahul-bhogal-lihCTIOP28U-unsplash.jpg",               
                     alt: "image"
                 },
                 {
@@ -1050,7 +1050,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Lifestyle",
-            date: "11.20.2017",
+            date: "07.20.2020",
             tags: [
                 {
                     id: 1,
@@ -1091,7 +1091,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Music",
-            date: "11.13.2017",
+            date: "05.13.2020",
             tags: [
                 {
                     id: 1,
@@ -1117,7 +1117,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Music",
-            date: "12.08.2017",
+            date: "12.08.2020",
             tags: [
                 {
                     id: 1,
@@ -1148,7 +1148,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Music",
-            date: "12.08.2017",
+            date: "26.06.2020",
             tags: [
                 {
                     id: 1,
@@ -1197,7 +1197,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
             header: "Take a Look at Our Portfolio.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             category: "Lifestyle",
-            date: "11.22.2017",
+            date: "06.22.2020",
             tags: [
                 {
                     id: 1,
@@ -1209,27 +1209,78 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id1BigSlider1",
-                    path: "ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg"
+                    path: "ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id1BigSlider2",
-                    path: "estee-janssens-zni0zgb3bkQ-unsplash.jpg"
+                    path: "estee-janssens-zni0zgb3bkQ-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id1BigSlider3",
-                    path: "filip-mroz-uKV0xYsRdsg-unsplash.jpg"
+                    path: "filip-mroz-uKV0xYsRdsg-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id1BigSlider4",
-                    path: "laura-chouette-t6hNUc8vspA-unsplash.jpg"
+                    path: "laura-chouette-t6hNUc8vspA-unsplash.png"
                 },
                 {
                     id: 5,
                     key: "id1BigSlider5",
-                    path: "nadine-shaabana-soX8qpVwOm4-unsplash.jpg"
+                    path: "nadine-shaabana-soX8qpVwOm4-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            header: "Branding & Website.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
+            category: "Lifestyle",
+            date: "07.10.2017",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2BigSlider1",
+                    path: "dose-media-updated-unsplash.jpg"
+                },
+                {
+                    id: 2,
+                    key: "id2BigSlider2",
+                    path: "daniel-korpai-updated-unsplash.jpg"
+                },
+                {
+                    id: 3,
+                    key: "id2BigSlider3",
+                    path: "rahul-bhogal-updated-unsplash.jpg"
+                },
+                {
+                    id: 4,
+                    key: "id2BigSlider4",
+                    path: "grocery-list-updated.jpg"
+                },
+                {
+                    id: 5,
+                    key: "id2BigSlider5",
+                    path: "heather-ford-updated-unsplash.jpg"
+                },
+                {
+                    id: 6,
+                    key: "id2BigSlider6",
+                    path: "computer-updated.jpg"
                 }
             ]
         }

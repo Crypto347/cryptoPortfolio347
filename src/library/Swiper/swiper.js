@@ -71,11 +71,20 @@ import {
 
 //Big Slider Id1
 
-import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.jpg';
-import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.jpg';
-import Id1BigSlider3 from '../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.jpg';
-import Id1BigSlider4 from '../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.jpg';
-import Id1BigSlider5 from '../../images/bigSlider/id1/nadine-shaabana-soX8qpVwOm4-unsplash.jpg';
+import Id1BigSlider1 from '../../images/bigSlider/id1/ash-from-modern-afflatus-KPDDc1DeP4Y-unsplash.png';
+import Id1BigSlider2 from '../../images/bigSlider/id1/estee-janssens-zni0zgb3bkQ-unsplash.png';
+import Id1BigSlider3 from '../../images/bigSlider/id1/filip-mroz-uKV0xYsRdsg-unsplash.png';
+import Id1BigSlider4 from '../../images/bigSlider/id1/laura-chouette-t6hNUc8vspA-unsplash.png';
+import Id1BigSlider5 from '../../images/bigSlider/id1/nadine-shaabana-soX8qpVwOm4-unsplash.png';
+
+//Big Slider Id2
+
+import Id2BigSlider1 from '../../images/bigSlider/id2/dose-media-updated-unsplash.jpg';
+import Id2BigSlider2 from '../../images/bigSlider/id2/daniel-korpai-updated-unsplash.jpg';
+import Id2BigSlider3 from '../../images/bigSlider/id2/rahul-bhogal-updated-unsplash.jpg';
+import Id2BigSlider4 from '../../images/bigSlider/id2/grocery-list-updated.jpg';
+import Id2BigSlider5 from '../../images/bigSlider/id2/heather-ford-updated-unsplash.jpg';
+import Id2BigSlider6 from '../../images/bigSlider/id2/computer-updated.jpg';
 
 /**
 * Icons
@@ -479,6 +488,18 @@ export const Swiper = (props) => {
                 return Id1BigSlider4;
             case 'id1BigSlider5': 
                 return Id1BigSlider5;
+            case 'id2BigSlider1': 
+                return Id2BigSlider1;
+            case 'id2BigSlider2': 
+                return Id2BigSlider2;
+            case 'id2BigSlider3': 
+                return Id2BigSlider3;
+            case 'id2BigSlider4': 
+                return Id2BigSlider4;
+            case 'id2BigSlider5': 
+                return Id2BigSlider5;
+            case 'id2BigSlider6': 
+                return Id2BigSlider6;
             default:
                 return ""; 
         }
