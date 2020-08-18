@@ -406,6 +406,7 @@ export const SmallImages = (props) => {
                             {renderTags()}
                         </div>
                     </div>
+                    <EH70/>
                    <PortfolioNavigation/>
                 </div>
             )

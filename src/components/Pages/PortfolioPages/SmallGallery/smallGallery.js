@@ -97,7 +97,6 @@ export const SmallGallery = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
     * Methods
@@ -141,34 +140,34 @@ export const SmallGallery = (props) => {
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
-            case 'smallImagesCategory': 
+            case 'smallGalleryCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'smallImagesTag1': 
-                props.setSmallImagesIsHoveringTag("on", id);
+            case 'smallGalleryTag1': 
+                props.setSmallGalleryIsHoveringTag("on", id);
                 break;
-            case 'smallImagesTag2': 
-                props.setSmallImagesIsHoveringTag("on", id);
+            case 'smallGalleryTag2': 
+                props.setSmallGalleryIsHoveringTag("on", id);
                 break;
         }
     }
 
     const handleMouseLeave = (opt, id) => {
         switch(opt){
-            case 'smallImagesCategory': 
+            case 'smallGalleryCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'smallImagesTag1': 
-                props.setSmallImagesIsHoveringTag("off", id);
+            case 'smallGalleryTag1': 
+                props.setSmallGalleryIsHoveringTag("off", id);
                 break;
-            case 'smallImagesTag2': 
-                props.setSmallImagesIsHoveringTag("off", id);
+            case 'smallGalleryTag2': 
+                props.setSmallGalleryIsHoveringTag("off", id);
                 break;
         }
     }
     
     const renderClassName = (opt, isHovering) => {
-        if(opt === "smallImagesCategory"){
+        if(opt === "smallGalleryCategory"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -178,7 +177,7 @@ export const SmallGallery = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallImagesTag1"){
+        if(opt === "smallGalleryTag1"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -188,7 +187,7 @@ export const SmallGallery = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallImagesTag2"){
+        if(opt === "smallGalleryTag2"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -333,27 +332,25 @@ export const SmallGallery = (props) => {
                     >
                         {renderPortfolioImages()}
                         <div className="small-gallery-content-info">
-                            {/* <div className="small-gallery-text-wrapper">
-                                <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.text}</H19>
-                            </div>
-                            <div className="small-gallery-category-date-tags-wrapper">
-                                <H22 className="h22-nero-poppins">Category:</H22>
-                                <H19 
-                                    className={renderClassName("bigSliderCategory", isHoveringCategoryText)}
-                                    onMouseEnter={() => handleMouseEnter('bigSliderCategory')} 
-                                    onMouseLeave={() => handleMouseLeave('bigSliderCategory')}
-                                >
-                                    {props.bigSliderPortfolio.item.category}
-                                </H19>
-                                <EH40/>
-                                <H22 className="h22-nero-poppins">Date:</H22>
-                                <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.date}</H19>
-                                <EH40/>
-                                <H22 className="h22-nero-poppins">Tags:</H22>
-                                {renderTags()}
-                            </div> */}
+                            <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.text}</H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Category:</H22>
+                            <H19 
+                                className={renderClassName("smallGalleryCategory", isHoveringCategoryText)}
+                                onMouseEnter={() => handleMouseEnter('smallGalleryCategory')} 
+                                onMouseLeave={() => handleMouseLeave('smallGalleryCategory')}
+                            >
+                                {props.smallGalleryPortfolio.item.category}
+                            </H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Date:</H22>
+                            <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.date}</H19>
+                            <EH40/>
+                            <H22 className="h22-nero-poppins">Tags:</H22>
+                            {renderTags()}
                         </div>
                     </div>
+                    <EH70/>
                    <PortfolioNavigation/>
                 </div>
             )
@@ -399,7 +396,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallGalleryPortfolio: bindActionCreators(Services.fetchSmallGalleryPortfolio, dispatch),
-            // setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch),
+            setSmallGalleryIsHoveringTag: bindActionCreators(Actions.setSmallGalleryIsHoveringTag, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }
