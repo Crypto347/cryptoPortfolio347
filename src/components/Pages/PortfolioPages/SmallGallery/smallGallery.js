@@ -74,6 +74,14 @@ import {
 * Images
 */
 
+//Id1
+
+import Id1SmallGallery1 from '../../../../images/smallGallery/Id1/ash-from-modern-afflatus-updated1-unsplash.png';
+import Id1SmallGallery2 from '../../../../images/smallGallery/Id1/estee-janssens-updated1-unsplash.png';
+import Id1SmallGallery3 from '../../../../images/smallGallery/Id1/filip-mroz-updated1-unsplash.png';
+import Id1SmallGallery4 from '../../../../images/smallGallery/Id1/georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png';
+import Id1SmallGallery5 from '../../../../images/smallGallery/Id1/laura-chouette-updated1-unsplash.png';
+import Id1SmallGallery6 from '../../../../images/smallGallery/Id1/nadine-shaabana-updated1-unsplash.png';
 
 /**
 * SmallGallery component definition and export
@@ -114,32 +122,18 @@ export const SmallGallery = (props) => {
 
     const loadImg = (key) => {
         switch(key) {
-            case 'id1SmallImages1':
-                return Id1SmallImages1;
-            case 'id1SmallImages2':
-                return Id1SmallImages2;
-            case 'id1SmallImages3':
-                return Id1SmallImages3;
-            case 'id1SmallImages4':
-                return Id1SmallImages4;
-            case 'id1SmallImages5':
-                return Id1SmallImages5;
-            case 'id2SmallImages1':
-                return Id2SmallImages1;
-            case 'id2SmallImages2':
-                return Id2SmallImages2;
-            case 'id3SmallImages1':
-                return Id3SmallImages1;
-            case 'id3SmallImages2':
-                return Id3SmallImages2;
-            case 'id3SmallImages3':
-                return Id3SmallImages3;
-            case 'id4SmallImages1':
-                return Id4SmallImages1;
-            case 'id4SmallImages2':
-                return Id4SmallImages2;
-            case 'id4SmallImages3':
-                return Id4SmallImages3;
+            case 'id1SmallGallery1':
+                return Id1SmallGallery1;
+            case 'id1SmallGallery2':
+                return Id1SmallGallery2;
+            case 'id1SmallGallery3':
+                return Id1SmallGallery3;
+            case 'id1SmallGallery4':
+                return Id1SmallGallery4;
+            case 'id1SmallGallery5':
+                return Id1SmallGallery5;
+            case 'id1SmallGallery6':
+                return Id1SmallGallery6;
             default:
                 return "";
         }
@@ -338,28 +332,27 @@ export const SmallGallery = (props) => {
                         className="small-gallery-content"
                     >
                         {renderPortfolioImages()}
-                        {/* <div 
-                            id="smallImagesMovablePart"
-                            className="small-images-movable-part" 
-                            style={{marginTop: `${moveStepMovablePart}px`}}
-                        >
-                            <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.text}</H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Category:</H22>
-                            <H19 
-                                className={renderClassName("smallImagesCategory", isHoveringCategoryText)}
-                                onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
-                                onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
-                            >
-                                {props.smallGalleryPortfolio.item.category}
-                            </H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Date:</H22>
-                            <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.date}</H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Tags:</H22>
-                            {renderTags()}
-                        </div> */}
+                        <div className="small-gallery-content-info">
+                            {/* <div className="small-gallery-text-wrapper">
+                                <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.text}</H19>
+                            </div>
+                            <div className="small-gallery-category-date-tags-wrapper">
+                                <H22 className="h22-nero-poppins">Category:</H22>
+                                <H19 
+                                    className={renderClassName("bigSliderCategory", isHoveringCategoryText)}
+                                    onMouseEnter={() => handleMouseEnter('bigSliderCategory')} 
+                                    onMouseLeave={() => handleMouseLeave('bigSliderCategory')}
+                                >
+                                    {props.bigSliderPortfolio.item.category}
+                                </H19>
+                                <EH40/>
+                                <H22 className="h22-nero-poppins">Date:</H22>
+                                <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.date}</H19>
+                                <EH40/>
+                                <H22 className="h22-nero-poppins">Tags:</H22>
+                                {renderTags()}
+                            </div> */}
+                        </div>
                     </div>
                    <PortfolioNavigation/>
                 </div>

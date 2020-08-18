@@ -1469,12 +1469,12 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id1SmallGallery1",
-                    path: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                    path: "ash-from-modern-afflatus-updated1-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id1SmallGallery2",
-                    path: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                    path: "estee-janssens-updated1-unsplash.png"
                 },
                 {
                     id: 3,
@@ -1484,17 +1484,17 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                 {
                     id: 4,
                     key: "id1SmallGallery4",
-                    path: "melanie-mauer-x-agyuDQHJA-unsplash.png"
+                    path: "georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png"
                 },
                 {
                     id: 5,
                     key: "id1SmallGallery5",
-                    path: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                    path: "laura-chouette-updated1-unsplash.png"
                 },
                 {
                     id: 6,
                     key: "id1SmallGallery6",
-                    path: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                    path: "nadine-shaabana-updated1-unsplash.png"
                 }
             ]
         }
