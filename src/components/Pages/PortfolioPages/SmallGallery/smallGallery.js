@@ -158,11 +158,11 @@ export const SmallGallery = (props) => {
             case 'smallGalleryCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'smallGalleryTag1': 
+            case 'smallGalleryTag': 
                 props.setSmallGalleryIsHoveringTag("on", id);
                 break;
-            case 'smallGalleryTag2': 
-                props.setSmallGalleryIsHoveringTag("on", id);
+            case 'image': 
+                props.setSmallGalleryIsHoveringImage("on", id);
                 break;
         }
     }
@@ -172,11 +172,11 @@ export const SmallGallery = (props) => {
             case 'smallGalleryCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'smallGalleryTag1': 
+            case 'smallGalleryTag': 
                 props.setSmallGalleryIsHoveringTag("off", id);
                 break;
-            case 'smallGalleryTag2': 
-                props.setSmallGalleryIsHoveringTag("off", id);
+            case 'image': 
+                props.setSmallGalleryIsHoveringImage("off", id);
                 break;
         }
     }
@@ -192,7 +192,7 @@ export const SmallGallery = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallGalleryTag1"){
+        if(opt === "smallGalleryTag"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -202,14 +202,14 @@ export const SmallGallery = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallGalleryTag2"){
+        if(opt === "image"){
             switch(isHovering){
                 case 'init':
-                    return "h19-nobel-lustria-animated";
+                    return "small-gallery-portfolio-image-curtain";
                 case 'on':
-                    return "h19-nobel-lustria-hover-on";
+                    return "small-gallery-portfolio-image-curtain-hover-on";
                 case 'off':
-                    return "h19-nobel-lustria-hover-off"
+                    return "small-gallery-portfolio-image-curtain-hover-off"
             }
         }
     }
@@ -292,16 +292,23 @@ export const SmallGallery = (props) => {
             <div 
                 id="smallGalleryPortfolioImages"
                 className="small-gallery-portfolio-images"
-            >{props.smallGalleryPortfolio.item.imagesArray.map((el,i) => {
+            >{props.smallGalleryPortfolio.item.imagesArray.map((el, i) => {
                 return(
                     <div 
                         key={i}
-                        className="small-gallery-portfolio-image"
+                        className="small-gallery-portfolio-image-wrapper"
                     >
-                        <img 
-                            src={loadImg(el.key)}
-                            onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
-                        />
+                        <div 
+                            className="small-gallery-portfolio-image"
+                            onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
+                            onMouseLeave={() => handleMouseLeave(`image`, el.id)} 
+                        >
+                            <img 
+                                src={loadImg(el.key)}
+                                onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
+                            />
+                            <div className={renderClassName(`image`, el.isHover)}/>
+                        </div>
                         <EH30/>
                     </div>
                 )
@@ -315,10 +322,10 @@ export const SmallGallery = (props) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`smallGalleryTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`smallGalleryTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`smallGalleryTag`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallGalleryTag`, el.id)} 
                     >
-                        <H19 className={renderClassName(`smallGalleryTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`smallGalleryTag`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>
@@ -413,6 +420,7 @@ export default connect(
             fetchSmallGalleryPortfolio: bindActionCreators(Services.fetchSmallGalleryPortfolio, dispatch),
             setSmallGalleryIsHoveringTag: bindActionCreators(Actions.setSmallGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            setSmallGalleryIsHoveringImage: bindActionCreators(Actions.setSmallGalleryIsHoveringImage, dispatch),
         };
     }
 )(SmallGallery);

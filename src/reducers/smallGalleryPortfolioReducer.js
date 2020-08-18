@@ -62,6 +62,22 @@ const setSmallGalleryIsHoveringTag = (state, action) => {
     };
 }
 
+const setSmallGalleryIsHoveringImage = (state, action) => {
+    let updatedImagesArray = [...state.item.imagesArray];
+
+    let image = {...updatedImagesArray.find(item => item.id === action.id), isHover: action.val};
+    let imageIndex = updatedImagesArray.findIndex(item => item.id === action.id);
+    updatedImagesArray.splice(imageIndex, 1, image);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            imagesArray: updatedImagesArray
+        }
+    };
+}
+
 const smallGallerysPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SMALL_GALLERY_PORTFOLIO_BEGIN:
@@ -72,6 +88,8 @@ const smallGallerysPortfolioReducer = (state = initialState, action) => {
             return fetchSmallGalleryPortfolioFailur(state, action);
         case actionTypes.SET_SMALL_GALLERY_IS_HOVERING_TAG:
             return setSmallGalleryIsHoveringTag(state, action);
+        case actionTypes.SET_SMALL_GALLERY_IS_HOVERING_IMAGE:
+            return setSmallGalleryIsHoveringImage(state, action);
         default: 
             return state;
     }

@@ -223,7 +223,7 @@ export const BigSlader = (props) => {
 
     const renderTags = () => {
         return(
-            <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {
+            <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el, i) => {
                 return(
                     <div 
                         key={i}

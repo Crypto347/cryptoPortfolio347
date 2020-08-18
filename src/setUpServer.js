@@ -1463,37 +1463,48 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     id: 1,
                     label: "Creative",
                     isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Creative",
+                    isHover: "init"
                 }
             ],
             imagesArray: [
                 {
                     id: 1,
                     key: "id1SmallGallery1",
+                    isHover: "init",
                     path: "ash-from-modern-afflatus-updated1-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id1SmallGallery2",
+                    isHover: "init",
                     path: "estee-janssens-updated1-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id1SmallGallery3",
+                    isHover: "init",
                     path: "lee-campbell-qNPESem_t4I-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id1SmallGallery4",
+                    isHover: "init",
                     path: "georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png"
                 },
                 {
                     id: 5,
                     key: "id1SmallGallery5",
+                    isHover: "init",
                     path: "laura-chouette-updated1-unsplash.png"
                 },
                 {
                     id: 6,
                     key: "id1SmallGallery6",
+                    isHover: "init",
                     path: "nadine-shaabana-updated1-unsplash.png"
                 }
             ]
@@ -1515,21 +1526,25 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id2SmallGallery1",
+                    isHover: "init",
                     path: "hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id2SmallGallery2",
+                    isHover: "init",
                     path: "jess-bailey-ycTvvg1mPU4-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id2SmallGallery3",
+                    isHover: "init",
                     path: "nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id2SmallGallery4",
+                    isHover: "init",
                     path: "stil-8-GAoVpIk4M-updated-unsplash.png"
                 }
             ]

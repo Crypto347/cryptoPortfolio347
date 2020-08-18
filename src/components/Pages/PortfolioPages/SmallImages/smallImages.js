@@ -329,7 +329,7 @@ export const SmallImages = (props) => {
             <div 
                 id="smallImagesPortfolioImages"
                 className="small-images-portfolio-images"
-            >{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
+            >{props.smallImagesPortfolio.item.imagesArray.map((el, i) => {
                 return(
                     <div 
                         key={i}
@@ -348,7 +348,7 @@ export const SmallImages = (props) => {
 
     const renderTags = () => {
         return(
-            <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
+            <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el, i) => {
                 return(
                     <div 
                         key={i}

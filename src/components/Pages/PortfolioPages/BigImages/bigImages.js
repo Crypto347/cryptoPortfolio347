@@ -290,7 +290,7 @@ export const BigImages = (props) => {
    
     const renderTags = () => {
         return(
-            <div className="big-images-tags">{props.bigImagesPortfolio.item.tags.map((el,i) => {
+            <div className="big-images-tags">{props.bigImagesPortfolio.item.tags.map((el, i) => {
                 return(
                     <div 
                         key={i}
@@ -306,7 +306,7 @@ export const BigImages = (props) => {
 
     const renderPortfolioImages = () => {
         return(
-            <div className="big-images-portfolio-images">{props.bigImagesPortfolio.item.imagesArray.map((el,i) => {
+            <div className="big-images-portfolio-images">{props.bigImagesPortfolio.item.imagesArray.map((el, i) => {
                 return(
                     <div 
                         key={i}

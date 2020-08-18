@@ -27,3 +27,11 @@ export function setSmallGalleryIsHoveringTag(val, id) {
         id: id
     };
 };
+
+export function setSmallGalleryIsHoveringImage(val, id) {
+    return { 
+        type: actionTypes.SET_SMALL_GALLERY_IS_HOVERING_IMAGE,
+        val: val,
+        id: id
+    };
+};
