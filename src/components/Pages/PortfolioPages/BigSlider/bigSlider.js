@@ -113,10 +113,7 @@ export const BigSlader = (props) => {
             case 'bigSliderCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'bigSliderTag1': 
-                props.setBigSliderIsHoveringTag("on", id);
-                break;
-            case 'bigSliderTag2': 
+            case 'bigSliderTag': 
                 props.setBigSliderIsHoveringTag("on", id);
                 break;
         }
@@ -127,10 +124,7 @@ export const BigSlader = (props) => {
             case 'bigSliderCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'bigSliderTag1': 
-                props.setBigSliderIsHoveringTag("off", id);
-                break;
-            case 'bigSliderTag2': 
+            case 'bigSliderTag': 
                 props.setBigSliderIsHoveringTag("off", id);
                 break;
         }
@@ -147,17 +141,7 @@ export const BigSlader = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "bigSliderTag1"){
-            switch(isHovering){
-                case 'init':
-                    return "h19-nobel-lustria-animated";
-                case 'on':
-                    return "h19-nobel-lustria-hover-on";
-                case 'off':
-                    return "h19-nobel-lustria-hover-off"
-            }
-        }
-        if(opt === "bigSliderTag2"){
+        if(opt === "bigSliderTag"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -227,10 +211,10 @@ export const BigSlader = (props) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`bigSliderTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`bigSliderTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`bigSliderTag`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`bigSliderTag`, el.id)} 
                     >
-                        <H19 className={renderClassName(`bigSliderTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`bigSliderTag`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>

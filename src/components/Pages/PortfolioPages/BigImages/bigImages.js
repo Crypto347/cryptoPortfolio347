@@ -159,10 +159,7 @@ export const BigImages = (props) => {
             case 'bigImagesCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'bigImagesTag1': 
-                props.setBigImagesIsHoveringTag("on", id);
-                break;
-            case 'bigImagesTag2': 
+            case 'bigImagesTag': 
                 props.setBigImagesIsHoveringTag("on", id);
                 break;
         }
@@ -173,10 +170,7 @@ export const BigImages = (props) => {
             case 'bigImagesCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'bigImagesTag1': 
-                props.setBigImagesIsHoveringTag("off", id);
-                break;
-            case 'bigImagesTag2': 
+            case 'bigImagesTag': 
                 props.setBigImagesIsHoveringTag("off", id);
                 break;
         }
@@ -193,17 +187,7 @@ export const BigImages = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "bigImagesTag1"){
-            switch(isHovering){
-                case 'init':
-                    return "h19-nobel-lustria-animated";
-                case 'on':
-                    return "h19-nobel-lustria-hover-on";
-                case 'off':
-                    return "h19-nobel-lustria-hover-off"
-            }
-        }
-        if(opt === "bigImagesTag2"){
+        if(opt === "bigImagesTag"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -294,10 +278,10 @@ export const BigImages = (props) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`bigImagesTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`bigImagesTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`bigImagesTag`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`bigImagesTag`, el.id)} 
                     >
-                        <H19 className={renderClassName(`bigImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`bigImagesTag`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>

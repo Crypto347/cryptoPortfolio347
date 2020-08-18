@@ -300,13 +300,11 @@ export const SmallGallery = (props) => {
                     >
                         <div 
                             className="small-gallery-portfolio-image"
+                            onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
                             onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
-                            onMouseLeave={() => handleMouseLeave(`image`, el.id)} 
+                            onMouseLeave={() => handleMouseLeave(`image`, el.id)}
                         >
-                            <img 
-                                src={loadImg(el.key)}
-                                onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
-                            />
+                            <img src={loadImg(el.key)}/>
                             <div className={renderClassName(`image`, el.isHover)}/>
                         </div>
                         <EH30/>

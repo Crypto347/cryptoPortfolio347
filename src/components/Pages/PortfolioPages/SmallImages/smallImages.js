@@ -195,10 +195,7 @@ export const SmallImages = (props) => {
             case 'smallImagesCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'smallImagesTag1': 
-                props.setSmallImagesIsHoveringTag("on", id);
-                break;
-            case 'smallImagesTag2': 
+            case 'smallImagesTag': 
                 props.setSmallImagesIsHoveringTag("on", id);
                 break;
         }
@@ -209,10 +206,7 @@ export const SmallImages = (props) => {
             case 'smallImagesCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'smallImagesTag1': 
-                props.setSmallImagesIsHoveringTag("off", id);
-                break;
-            case 'smallImagesTag2': 
+            case 'smallImagesTag': 
                 props.setSmallImagesIsHoveringTag("off", id);
                 break;
         }
@@ -229,17 +223,7 @@ export const SmallImages = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "smallImagesTag1"){
-            switch(isHovering){
-                case 'init':
-                    return "h19-nobel-lustria-animated";
-                case 'on':
-                    return "h19-nobel-lustria-hover-on";
-                case 'off':
-                    return "h19-nobel-lustria-hover-off"
-            }
-        }
-        if(opt === "smallImagesTag2"){
+        if(opt === "smallImagesTag"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -352,10 +336,10 @@ export const SmallImages = (props) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`smallImagesTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`smallImagesTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`smallImagesTag`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallImagesTag`, el.id)} 
                     >
-                        <H19 className={renderClassName(`smallImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`smallImagesTag`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>
