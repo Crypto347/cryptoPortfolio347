@@ -100,6 +100,13 @@ export const getSmallImagesPortfolioState = createSelector(
     (x) => x
 );
 
+const getPhotoViewerForSmallImagesOpen = (state) => state.home.photoViewerForSmallImagesOpen;
+
+export const getPhotoViewerForSmallImagesOpenState = createSelector(
+    [getPhotoViewerForSmallImagesOpen],
+    (x) => x
+);
+
 const getPictureBoardImagesCooradinateRange = (state) => state.section2.pictureBoardImagesCooradinateRange;
 
 export const getPictureBoardImagesCooradinateRangeState = createSelector(
@@ -128,16 +135,18 @@ export const getBigImagesPortfolioState = createSelector(
     (x) => x
 );
 
-const getPhotoViewerForSmallImagesOpen = (state) => state.home.photoViewerForSmallImagesOpen;
-
-export const getPhotoViewerForSmallImagesOpenState = createSelector(
-    [getPhotoViewerForSmallImagesOpen],
-    (x) => x
-);
-
 const getPhotoViewerForBigImagesOpen = (state) => state.home.photoViewerForBigImagesOpen;
 
 export const getPhotoViewerForBigImagesOpenState = createSelector(
     [getPhotoViewerForBigImagesOpen],
     (x) => x
 );
+
+const getSmallGalleryPortfolio = (state) => state.smallGalleryPortfolio;
+
+export const getSmallGalleryPortfolioState = createSelector(
+    [getSmallGalleryPortfolio],
+    (x) => x
+);
+
+

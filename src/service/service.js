@@ -208,6 +208,24 @@ export function fetchBigImagesPortfolio(id) {
     };
 }
 
+export function fetchSmallGalleryPortfolio(id) {
+    return dispatch => {
+        dispatch(Actions.fetchSmallGalleryPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/small-gallery/${id}`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchSmallGalleryPortfolioSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchSmallGalleryPortfolioFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

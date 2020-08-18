@@ -97,11 +97,11 @@ export const SmallGallery = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // props.fetchSmallImagesPortfolio(props.match.params.id);
+        props.fetchSmallGalleryPortfolio(props.match.params.id);
 
-        // if(props.smallImagesPortfolio.item !== {}){
-        //     setShowContent(true)
-        // }
+        if(props.smallGalleryPortfolio.item !== {}){
+            setShowContent(true);
+        }
 
         // window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);
@@ -244,7 +244,7 @@ export const SmallGallery = (props) => {
 
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
         
-        props.photoViewerOpen('smallImages', true, slidesForPhotoViewer);
+        props.photoViewerOpen('smallGallery', true, slidesForPhotoViewer);
     }
 
     const renderToolbars = () => {
@@ -282,17 +282,17 @@ export const SmallGallery = (props) => {
     const renderPortfolioImages = () => {
         return(
             <div 
-                id="smallImagesPortfolioImages"
-                className="small-images-portfolio-images"
-            >{props.smallImagesPortfolio.item.imagesArray.map((el,i) => {
+                id="smallGalleryPortfolioImages"
+                className="small-gallery-portfolio-images"
+            >{props.smallGalleryPortfolio.item.imagesArray.map((el,i) => {
                 return(
                     <div 
                         key={i}
-                        className="small-images-portfolio-image"
+                        className="small-gallery-portfolio-image"
                     >
                         <img 
                             src={loadImg(el.key)}
-                            onClick={() => openPhotoViewer(props.smallImagesPortfolio.item.imagesArray, i)}
+                            onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
                         />
                         <EH30/>
                     </div>
@@ -303,14 +303,14 @@ export const SmallGallery = (props) => {
 
     const renderTags = () => {
         return(
-            <div className="small-images-tags">{props.smallImagesPortfolio.item.tags.map((el,i) => {
+            <div className="small-gallery-tags">{props.smallGalleryPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`smallImagesTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`smallImagesTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`smallGalleryTag${el.id}`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallGalleryTag${el.id}`, el.id)} 
                     >
-                        <H19 className={renderClassName(`smallImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`smallGalleryTag${el.id}`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>
@@ -318,32 +318,32 @@ export const SmallGallery = (props) => {
     }
 
     const renderSmallGalleryContent = () => {
-        if(props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
+        if(props.smallGalleryPortfolio.loading && !props.smallGalleryPortfolio.error){
             return(
                 <div 
-                    className="small-images-loading-error" 
+                    className="small-gallery-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.smallImagesPortfolio.loading && !props.smallImagesPortfolio.error){
+        if(!props.smallGalleryPortfolio.loading && !props.smallGalleryPortfolio.error){
             return(
-                <div className="small-images-wrapper">
-                    <H70 className="h70-nero-poppins">{props.smallImagesPortfolio.item.header}</H70>
+                <div className="small-gallery-wrapper">
+                    <H70 className="h70-nero-poppins">{props.smallGalleryPortfolio.item.header}</H70>
                     <EH70/>
                     <div 
-                        id="smallImagesContent"
-                        className="small-images-content"
+                        id="smallGalleryContent"
+                        className="small-gallery-content"
                     >
                         {renderPortfolioImages()}
-                        <div 
+                        {/* <div 
                             id="smallImagesMovablePart"
                             className="small-images-movable-part" 
                             style={{marginTop: `${moveStepMovablePart}px`}}
                         >
-                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.text}</H19>
+                            <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.text}</H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Category:</H22>
                             <H19 
@@ -351,27 +351,27 @@ export const SmallGallery = (props) => {
                                 onMouseEnter={() => handleMouseEnter('smallImagesCategory')} 
                                 onMouseLeave={() => handleMouseLeave('smallImagesCategory')}
                             >
-                                {props.smallImagesPortfolio.item.category}
+                                {props.smallGalleryPortfolio.item.category}
                             </H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Date:</H22>
-                            <H19 className="h19-nobel-lustria">{props.smallImagesPortfolio.item.date}</H19>
+                            <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.date}</H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Tags:</H22>
                             {renderTags()}
-                        </div>
+                        </div> */}
                     </div>
                    <PortfolioNavigation/>
                 </div>
             )
         }
-        if(!props.smallImagesPortfolio.loading && props.smallImagesPortfolio.error){
+        if(!props.smallGalleryPortfolio.loading && props.smallGalleryPortfolio.error){
             return(
                 <div 
                     className="small-images-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H19 className="h19-nobel-lora">{`${props.smallImagesPortfolio.error}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.smallGalleryPortfolio.error}`}</H19>
                 </div>
             )
         }
@@ -384,7 +384,7 @@ export const SmallGallery = (props) => {
     return(
         <div className="small-gallery" id="smallGallery">
             {renderToolbars()}
-            {/* {showContent ? renderSmallGalleryContent() : null} */}
+            {showContent ? renderSmallGalleryContent() : null}
             <Footer/>
            {/*  {props.photoViewerForSmallImagesOpen ? 
             <PhotoViewer
@@ -399,15 +399,15 @@ export const SmallGallery = (props) => {
 export default connect(
     (state) => {
         return {
-            smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
-            photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state),
+            smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
+            // photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
-            setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch),
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            fetchSmallGalleryPortfolio: bindActionCreators(Services.fetchSmallGalleryPortfolio, dispatch),
+            // setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch),
+            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }
 )(SmallGallery);

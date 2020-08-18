@@ -7,3 +7,4 @@ export * from './section4Actions';
 export * from './smallImagesPortfolioActions';
 export * from './bigSliderPortfolioActions';
 export * from './bigImagesPortfolioActions';
+export * from './smallGalleryPortfolioActions';

@@ -100,7 +100,7 @@ export const BigSlader = (props) => {
         props.fetchBigSliderPortfolio(props.match.params.id);
 
         if(props.bigSliderPortfolio.item !== {}){
-            setShowContent(true)
+            setShowContent(true);
         }
 
         window.addEventListener('wheel', handleOnWheel);

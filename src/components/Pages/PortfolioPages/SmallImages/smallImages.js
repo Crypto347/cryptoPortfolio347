@@ -124,7 +124,7 @@ export const SmallImages = (props) => {
         props.fetchSmallImagesPortfolio(props.match.params.id);
 
         if(props.smallImagesPortfolio.item !== {}){
-            setShowContent(true)
+            setShowContent(true);
         }
 
         window.addEventListener('scroll', handleScroll);

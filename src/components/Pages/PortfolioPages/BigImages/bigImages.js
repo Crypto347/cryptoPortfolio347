@@ -117,7 +117,7 @@ export const BigImages = (props) => {
         props.fetchBigImagesPortfolio(props.match.params.id);
 
         if(props.bigImagesPortfolio.item !== {}){
-            setShowContent(true)
+            setShowContent(true);
         }
 
         window.addEventListener('wheel', handleOnWheel);
