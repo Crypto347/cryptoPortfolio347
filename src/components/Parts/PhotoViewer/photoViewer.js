@@ -144,6 +144,14 @@ import Id4SmallImages1 from '../../../images/smallImages/id4/clay-banks-_wkd7XBR
 import Id4SmallImages2 from '../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-updated-unsplash.png';
 import Id4SmallImages3 from '../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-updated-unsplash.png';
 
+//Big Images Id1
+
+import Id1BigImages1 from '../../../images/bigImages/id1/joshua-reddekopp-cNe8GsQR-OQ-unsplash.png';
+import Id1BigImages2 from '../../../images/bigImages/id1/lee-campbell-CI-5GwJcVjE-unsplash.png';
+import Id1BigImages3 from '../../../images/bigImages/id1/lee-campbell-qNPESem_t4I-unsplash.png';
+import Id1BigImages4 from '../../../images/bigImages/id1/melanie-mauer-x-agyuDQHJA-unsplash.png';
+import Id1BigImages5 from '../../../images/bigImages/id1/nathan-dumlao-KEniowKfX3k-unsplash.png';
+
 /**
 * Icons
 */
@@ -380,6 +388,16 @@ export const PhotoViewer = (props) => {
                 return Id4SmallImages2;
             case 'id4SmallImages3':
                 return Id4SmallImages3;
+            case 'id1BigImages1':
+                return Id1BigImages1;
+            case 'id1BigImages2':
+                return Id1BigImages2;
+            case 'id1BigImages3':
+                return Id1BigImages3;
+            case 'id1BigImages4':
+                return Id1BigImages4;
+            case 'id1BigImages5':
+                return Id1BigImages5;
             default:
                 return "";
         }

@@ -29,6 +29,7 @@ import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 // import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
+import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -211,6 +212,27 @@ export const BigImages = (props) => {
         return e.deltaY < 0;
     }
 
+    const openPhotoViewer = (array, activeIndex) => {
+        let slidesForPhotoViewer = [...array];
+        let removedSlides = [];
+        // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
+              
+        slidesForPhotoViewer.map((el, i) => {
+            if(i < activeIndex){
+                removedSlides.push(el);
+            }
+        })
+        slidesForPhotoViewer.splice(0, activeIndex)
+      
+        if(removedSlides.length !== 0){
+            slidesForPhotoViewer.push(removedSlides);
+        }
+
+        slidesForPhotoViewer = slidesForPhotoViewer.flat();
+        
+        props.photoViewerOpen('bigImages', true, slidesForPhotoViewer);
+    }
+
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -344,6 +366,12 @@ export const BigImages = (props) => {
             {renderToolbars()}
             {showContent ? renderBigImagesContent() : null}
             <Footer/>
+            {props.photoViewerForBigImagesOpen ? 
+            <PhotoViewer
+                width={700}
+                height={457}
+                component="bigImages"
+            /> : null}
         </div>
     );
 }
@@ -352,12 +380,13 @@ export default connect(
     (state) => {
         return {
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
+            photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state)
         };
     },
     (dispatch) => {
         return {
             fetchBigImagesPortfolio: bindActionCreators(Services.fetchBigImagesPortfolio, dispatch),
-            // setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch)
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }
 )(BigImages);

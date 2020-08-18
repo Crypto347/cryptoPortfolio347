@@ -134,3 +134,10 @@ export const getPhotoViewerForSmallImagesOpenState = createSelector(
     [getPhotoViewerForSmallImagesOpen],
     (x) => x
 );
+
+const getPhotoViewerForBigImagesOpen = (state) => state.home.photoViewerForBigImagesOpen;
+
+export const getPhotoViewerForBigImagesOpenState = createSelector(
+    [getPhotoViewerForBigImagesOpen],
+    (x) => x
+);
