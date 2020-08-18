@@ -355,7 +355,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-3",
+            path: "portfolio-item/big-images/2",
             pictures: [
                 {
                     id: 1,
@@ -1390,6 +1390,52 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
                     id: 5,
                     key: "id1BigImages5",
                     path: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            header: "Branding & Website.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
+            category: "Lifestyle",
+            date: "07.17.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2BigImages1",
+                    path: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2BigImages2",
+                    path: "emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id2BigImages3",
+                    path: "uby-yanes-393QQ30ecvQ-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id2BigImages4",
+                    path: "stil-flRm0z3MEoA-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id2BigImages5",
+                    path: "freestocks-A11MXTzUhLE-updated-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id2BigImages6",
+                    path: "emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png"
                 }
             ]
         }
