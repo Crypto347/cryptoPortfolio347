@@ -102,47 +102,47 @@ import Id1BigSlider5 from '../../../images/bigSlider/id1/nadine-shaabana-updated
 
 //Big Slider Id2
 
-import Id2BigSlider1 from '../../../images/bigSlider/id2/dose-media-updated-unsplash.png';
-import Id2BigSlider2 from '../../../images/bigSlider/id2/daniel-korpai-updated-unsplash.png';
-import Id2BigSlider3 from '../../../images/bigSlider/id2/rahul-bhogal-updated-unsplash.png';
-import Id2BigSlider4 from '../../../images/bigSlider/id2/grocery-list-updated.png';
-import Id2BigSlider5 from '../../../images/bigSlider/id2/heather-ford-updated-unsplash.png';
-import Id2BigSlider6 from '../../../images/bigSlider/id2/computer-updated.png';
+import Id2BigSlider1 from '../../../images/bigSlider/id2/dose-media-bU6JyhSI6zo-updated-unsplash.png';
+import Id2BigSlider2 from '../../../images/bigSlider/id2/daniel-korpai-kO7TrSB9pCQ-updated-unsplash.png';
+import Id2BigSlider3 from '../../../images/bigSlider/id2/rahul-bhogal-lihCTIOP28U-updated-unsplash.png';
+import Id2BigSlider4 from '../../../images/bigSlider/id2/grocery-list-1670408_1920-updated.png';
+import Id2BigSlider5 from '../../../images/bigSlider/id2/heather-ford-6fiz86Ql3UA--updated-unsplash.png';
+import Id2BigSlider6 from '../../../images/bigSlider/id2/computer-820281_1920-updated.png';
 
 //Big Slider Id3
 
-import Id3BigSlider1 from '../../../images/bigSlider/id3/angele-kamp-updated-unsplash.png';
-import Id3BigSlider2 from '../../../images/bigSlider/id3/charles-deluvio-updated-unsplash.png';
-import Id3BigSlider3 from '../../../images/bigSlider/id3/daily-nouri-updated-unsplash.png';
-import Id3BigSlider4 from '../../../images/bigSlider/id3/jess-bailey-updated-unsplash.png';
-import Id3BigSlider5 from '../../../images/bigSlider/id3/jozsef-hocza-updated-unsplash.png';
-import Id3BigSlider6 from '../../../images/bigSlider/id3/laika-notebooks-updated-unsplash.png';
-import Id3BigSlider7 from '../../../images/bigSlider/id3/lauren-fleischmann-updated-unsplash.png';
+import Id3BigSlider1 from '../../../images/bigSlider/id3/angele-kamp-KaeaUITiWnc-upadted-unsplash.png';
+import Id3BigSlider2 from '../../../images/bigSlider/id3/charles-deluvio-dtSjxKDIPnA-updated-unsplash.png';
+import Id3BigSlider3 from '../../../images/bigSlider/id3/daily-nouri-E5Oo4nENq2M-updated-unsplash.png';
+import Id3BigSlider4 from '../../../images/bigSlider/id3/jess-bailey-YFn6rpnyeRY-updated-unsplash.png';
+import Id3BigSlider5 from '../../../images/bigSlider/id3/jozsef-hocza-pJYd5CI_TRM-updated-unsplash.png';
+import Id3BigSlider6 from '../../../images/bigSlider/id3/laika-notebooks-pONH9yZ-wXg-updated-unsplash.png';
+import Id3BigSlider7 from '../../../images/bigSlider/id3/lauren-fleischmann-R2aodqJn3b8-updated-unsplash.png';
 
 //Small Images Id1
 
-import Id1SmallImages1 from '../../../images/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.jpg';
-import Id1SmallImages2 from '../../../images/smallImages/id1/jason-blackeye-DKCgibUVLNc-unsplash.jpg';
-import Id1SmallImages3 from '../../../images/smallImages/id1/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg';
-import Id1SmallImages4 from '../../../images/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg';
-import Id1SmallImages5 from '../../../images/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.jpg';
+import Id1SmallImages1 from '../../../images/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.png';
+import Id1SmallImages2 from '../../../images/smallImages/id1/jason-blackeye-DKCgibUVLNc-unsplash.png';
+import Id1SmallImages3 from '../../../images/smallImages/id1/nordwood-themes-Nv4QHkTVEaI-unsplash.png';
+import Id1SmallImages4 from '../../../images/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.png';
+import Id1SmallImages5 from '../../../images/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.png';
 
 //Small Images Id2
 
-import Id2SmallImages1 from '../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-unsplash.jpg';
-import Id2SmallImages2 from '../../../images/smallImages/id2/paper-3025558_1920.jpg';
+import Id2SmallImages1 from '../../../images/smallImages/id2/jess-bailey-MSH3ldaRZsg-updated-unsplash.png';
+import Id2SmallImages2 from '../../../images/smallImages/id2/paper-3025558_1920-updated.png';
 
 //Small Images Id3
 
-import Id3SmallImages1 from '../../../images/smallImages/id3/jess-bailey-dWKqZcPLc8Y-unsplash.jpg';
-import Id3SmallImages2 from '../../../images/smallImages/id3/jess-bailey-L71uKsAVo4g-unsplash.jpg';
-import Id3SmallImages3 from '../../../images/smallImages/id3/jess-bailey-z0guTIr_kts-unsplash.jpg';
+import Id3SmallImages1 from '../../../images/smallImages/id3/jess-bailey-dWKqZcPLc8Y-updated-unsplash.png';
+import Id3SmallImages2 from '../../../images/smallImages/id3/jess-bailey-L71uKsAVo4g-updated-unsplash.png';
+import Id3SmallImages3 from '../../../images/smallImages/id3/jess-bailey-z0guTIr_kts-updated-unsplash.png';
 
 //Small Images Id4
 
-import Id4SmallImages1 from '../../../images/smallImages/id4/clay-banks-_wkd7XBRfU4-unsplash.jpg';
-import Id4SmallImages2 from '../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-unsplash.jpg';
-import Id4SmallImages3 from '../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-unsplash.jpg';
+import Id4SmallImages1 from '../../../images/smallImages/id4/clay-banks-_wkd7XBRfU4-updated-unsplash.png';
+import Id4SmallImages2 from '../../../images/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-updated-unsplash.png';
+import Id4SmallImages3 from '../../../images/smallImages/id4/ohmky-lQwWZI_WjSU-updated-unsplash.png';
 
 /**
 * Icons

@@ -1061,27 +1061,27 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id1SmallImages1",
-                    path: "adam-wilson-1QZYZib7eYs-unsplash.jpg"
+                    path: "adam-wilson-1QZYZib7eYs-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id1SmallImages2",
-                    path: "jason-blackeye-DKCgibUVLNc-unsplash.jpg"
+                    path: "jason-blackeye-DKCgibUVLNc-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id1SmallImages3",
-                    path: "nordwood-themes-Nv4QHkTVEaI-unsplash.jpg"
+                    path: "nordwood-themes-Nv4QHkTVEaI-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id1SmallImages4",
-                    path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.jpg"
+                    path: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.png"
                 },
                 {
                     id: 5,
                     key: "id1SmallImages5",
-                    path: "shelbey-miller-HIQd4db8Kr8-unsplash.jpg"
+                    path: "shelbey-miller-HIQd4db8Kr8-unsplash.png"
                 }
             ]
         },
@@ -1102,12 +1102,12 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id2SmallImages1",
-                    path: "small-images-1"
+                    path: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id2SmallImages2",
-                    path: "small-images-2"
+                    path: "paper-3025558_1920-updated.png"
                 }
             ]
         },
@@ -1128,17 +1128,17 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id3SmallImages1",
-                    path: "small-images-1"
+                    path: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id3SmallImages2",
-                    path: "small-images-2"
+                    path: "jess-bailey-L71uKsAVo4g-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id3SmallImages3",
-                    path: "small-images-3"
+                    path: "jess-bailey-z0guTIr_kts-updated-unsplash.png"
                 }
             ]
         },
@@ -1164,17 +1164,17 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id4SmallImages1",
-                    path: "small-images-1"
+                    path: "clay-banks-_wkd7XBRfU4-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id4SmallImages2",
-                    path: "small-images-2"
+                    path: "marina-zaharkina-TKQXY1dAgjE-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id4SmallImages3",
-                    path: "small-images-3"
+                    path: "ohmky-lQwWZI_WjSU-updated-unsplash.png"
                 }
             ]
         }
@@ -1254,32 +1254,32 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id2BigSlider1",
-                    path: "dose-media-updated-unsplash.png"
+                    path: "dose-media-bU6JyhSI6zo-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id2BigSlider2",
-                    path: "daniel-korpai-updated-unsplash.png"
+                    path: "daniel-korpai-kO7TrSB9pCQ-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id2BigSlider3",
-                    path: "rahul-bhogal-updated-unsplash.png"
+                    path: "rahul-bhogal-lihCTIOP28U-updated-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id2BigSlider4",
-                    path: "grocery-list-updated.png"
+                    path: "grocery-list-1670408_1920-updated.png"
                 },
                 {
                     id: 5,
                     key: "id2BigSlider5",
-                    path: "heather-ford-updated-unsplash.png"
+                    path: "heather-ford-6fiz86Ql3UA--updated-unsplash.png"
                 },
                 {
                     id: 6,
                     key: "id2BigSlider6",
-                    path: "computer-updated.png"
+                    path: "computer-820281_1920-updated.png"
                 }
             ]
         },
@@ -1300,37 +1300,37 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id3BigSlider1",
-                    path: "angele-kamp-updated-unsplash.png"
+                    path: "angele-kamp-KaeaUITiWnc-upadted-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "id3BigSlider2",
-                    path: "charles-deluvio-updated-unsplash.png"
+                    path: "charles-deluvio-dtSjxKDIPnA-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "id3BigSlider3",
-                    path: "daily-nouri-updated-unsplash.png"
+                    path: "daily-nouri-E5Oo4nENq2M-updated-unsplash.png"
                 },
                 {
                     id: 4,
                     key: "id3BigSlider4",
-                    path: "jess-bailey-updated-unsplash.png"
+                    path: "jess-bailey-YFn6rpnyeRY-updated-unsplash.png"
                 },
                 {
                     id: 5,
                     key: "id3BigSlider5",
-                    path: "jozsef-hocza-updated-unsplash.png"
+                    path: "jozsef-hocza-pJYd5CI_TRM-updated-unsplash.png"
                 },
                 {
                     id: 6,
                     key: "id3BigSlider6",
-                    path: "laika-notebooks-updated-unsplash.png"
+                    path: "laika-notebooks-pONH9yZ-wXg-updated-unsplash.png"
                 },
                 {
                     id: 7,
                     key: "id3BigSlider7",
-                    path: "lauren-fleischmann-updated-unsplash.png"
+                    path: "lauren-fleischmann-R2aodqJn3b8-updated-unsplash.png"
                 }
             ]
         }
