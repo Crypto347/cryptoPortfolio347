@@ -727,7 +727,7 @@ export const Swiper = (props) => {
             <PhotoViewer
                 width={700}
                 height={457}
-                component="swiper"
+                component="bigSlider"
             /> : null}
         </>
     );

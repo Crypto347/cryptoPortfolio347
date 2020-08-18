@@ -103,68 +103,10 @@ export const BigSlader = (props) => {
             setShowContent(true)
         }
 
-        window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('wheel', handleOnWheel);
-        }
+        return () => window.removeEventListener('wheel', handleOnWheel);
     }, []);
-
-    const handleScroll = () => {
-        let scrollHeight = document.body.scrollTop;
-        let contentOffsetTop = document.getElementById("bigSliderContent") ? document.getElementById("bigSliderContent").offsetTop : 0;
-        let imagesOffsetTop = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetTop : 0;
-        let imagesOffsetHeight = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetHeight : 0;
-        let movablePartHeight = document.getElementById("sbigSliderMovablePart") ? document.getElementById("bigSliderMovablePart").offsetHeight : 0;
-        let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
-
-        // Set margin top of movable part
-
-        if(scrollHeight > contentOffsetTop && scrollHeight < moveUntil){
-            setMoveStepMovablePart(scrollHeight - contentOffsetTop);
-        } 
-        else if(scrollHeight > moveUntil) {
-            setMoveStepMovablePart(imagesOffsetHeight - movablePartHeight - 30);
-        } 
-        else {
-            setMoveStepMovablePart(0);
-        }
-    }
-
-    const loadImg = (key) => {
-        switch(key) {
-            case 'id1SmallImages1':
-                return Id1SmallImages1;
-            case 'id1SmallImages2':
-                return Id1SmallImages2;
-            case 'id1SmallImages3':
-                return Id1SmallImages3;
-            case 'id1SmallImages4':
-                return Id1SmallImages4;
-            case 'id1SmallImages5':
-                return Id1SmallImages5;
-            case 'id2SmallImages1':
-                return Id2SmallImages1;
-            case 'id2SmallImages2':
-                return Id2SmallImages2;
-            case 'id3SmallImages1':
-                return Id3SmallImages1;
-            case 'id3SmallImages2':
-                return Id3SmallImages2;
-            case 'id3SmallImages3':
-                return Id3SmallImages3;
-            case 'id4SmallImages1':
-                return Id4SmallImages1;
-            case 'id4SmallImages2':
-                return Id4SmallImages2;
-            case 'id4SmallImages3':
-                return Id4SmallImages3;
-            default:
-                return "";
-        }
-    }
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
@@ -279,7 +221,6 @@ export const BigSlader = (props) => {
         }
     }
 
-   
     const renderTags = () => {
         return(
             <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {

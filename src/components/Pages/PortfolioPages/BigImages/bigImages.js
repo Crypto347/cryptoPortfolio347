@@ -74,6 +74,11 @@ import {
 * Images
 */
 
+import Id1BigImages1 from '../../../../images/bigImages/id1/joshua-reddekopp-cNe8GsQR-OQ-unsplash.png';
+import Id1BigImages2 from '../../../../images/bigImages/id1/lee-campbell-CI-5GwJcVjE-unsplash.png';
+import Id1BigImages3 from '../../../../images/bigImages/id1/lee-campbell-qNPESem_t4I-unsplash.png';
+import Id1BigImages4 from '../../../../images/bigImages/id1/melanie-mauer-x-agyuDQHJA-unsplash.png';
+import Id1BigImages5 from '../../../../images/bigImages/id1/nathan-dumlao-KEniowKfX3k-unsplash.png';
 
 /**
 * BigImages component definition and export
@@ -103,64 +108,23 @@ export const BigImages = (props) => {
             setShowContent(true)
         }
 
-        // window.addEventListener('scroll', handleScroll);
-        // window.addEventListener('wheel', handleOnWheel);
+        window.addEventListener('wheel', handleOnWheel);
 
-        // return () => {
-        //     window.removeEventListener('scroll', handleScroll);
-        //     window.removeEventListener('wheel', handleOnWheel);
-        // }
+        return () => window.removeEventListener('wheel', handleOnWheel);
     }, []);
-
-    const handleScroll = () => {
-        let scrollHeight = document.body.scrollTop;
-        let contentOffsetTop = document.getElementById("bigSliderContent") ? document.getElementById("bigSliderContent").offsetTop : 0;
-        let imagesOffsetTop = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetTop : 0;
-        let imagesOffsetHeight = document.getElementById("bigSliderPortfolioImages") ? document.getElementById("bigSliderPortfolioImages").offsetHeight : 0;
-        let movablePartHeight = document.getElementById("sbigSliderMovablePart") ? document.getElementById("bigSliderMovablePart").offsetHeight : 0;
-        let moveUntil = imagesOffsetTop + imagesOffsetHeight - movablePartHeight;
-
-        // Set margin top of movable part
-
-        if(scrollHeight > contentOffsetTop && scrollHeight < moveUntil){
-            setMoveStepMovablePart(scrollHeight - contentOffsetTop);
-        } 
-        else if(scrollHeight > moveUntil) {
-            setMoveStepMovablePart(imagesOffsetHeight - movablePartHeight - 30);
-        } 
-        else {
-            setMoveStepMovablePart(0);
-        }
-    }
 
     const loadImg = (key) => {
         switch(key) {
-            case 'id1SmallImages1':
-                return Id1SmallImages1;
-            case 'id1SmallImages2':
-                return Id1SmallImages2;
-            case 'id1SmallImages3':
-                return Id1SmallImages3;
-            case 'id1SmallImages4':
-                return Id1SmallImages4;
-            case 'id1SmallImages5':
-                return Id1SmallImages5;
-            case 'id2SmallImages1':
-                return Id2SmallImages1;
-            case 'id2SmallImages2':
-                return Id2SmallImages2;
-            case 'id3SmallImages1':
-                return Id3SmallImages1;
-            case 'id3SmallImages2':
-                return Id3SmallImages2;
-            case 'id3SmallImages3':
-                return Id3SmallImages3;
-            case 'id4SmallImages1':
-                return Id4SmallImages1;
-            case 'id4SmallImages2':
-                return Id4SmallImages2;
-            case 'id4SmallImages3':
-                return Id4SmallImages3;
+            case 'id1BigImages1':
+                return Id1BigImages1;
+            case 'id1BigImages2':
+                return Id1BigImages2;
+            case 'id1BigImages3':
+                return Id1BigImages3;
+            case 'id1BigImages4':
+                return Id1BigImages4;
+            case 'id1BigImages5':
+                return Id1BigImages5;
             default:
                 return "";
         }
@@ -229,7 +193,7 @@ export const BigImages = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("bigSlider");
+        let el = document.getElementById("bigImages");
     
         // Check scroll direction
 
@@ -278,7 +242,6 @@ export const BigImages = (props) => {
             )
         }
     }
-
    
     const renderTags = () => {
         return(
@@ -290,6 +253,25 @@ export const BigImages = (props) => {
                         onMouseLeave={() => handleMouseLeave(`bigSliderTag${el.id}`, el.id)} 
                     >
                         <H19 className={renderClassName(`bigSliderTag${el.id}`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
+    const renderPortfolioImages = () => {
+        return(
+            <div className="big-images-portfolio-images">{props.bigImagesPortfolio.item.imagesArray.map((el,i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="big-images-portfolio-image"
+                    >
+                        <img 
+                            src={loadImg(el.key)}
+                            onClick={() => openPhotoViewer(props.bigImagesPortfolio.item.imagesArray, i)}
+                        />
+                        <EH30/>
                     </div>
                 )
             })}</div>
@@ -312,24 +294,13 @@ export const BigImages = (props) => {
                 <div className="big-images-wrapper">
                     <H70 className="h70-nero-poppins">{props.bigImagesPortfolio.item.header}</H70>
                     <EH70/>
-                    {/* <div 
+                    <div 
                         id="bigSliderContent"
                         className="big-images-content"
                     >
-                        <Swiper
-                           component="bigImages"
-                           contentArray={props.bigImagesPortfolio.item.imagesArray}
-                           content={props.bigImagesPortfolio}
-                           translateWidth={size.width - 130}
-                           showNumbersOfSlides={1}
-                        //    autoPlay
-                        />
-                        <EH40/>
                         <div className="big-images-content-info">
-                            <div className="big-images-text-wrapper">
-                                <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.text}</H19>
-                            </div>
-                            <div className="big-images-category-date-tags-wrapper">
+                            {renderPortfolioImages()}
+                            {/* <div className="big-images-category-date-tags-wrapper">
                                 <H22 className="h22-nero-poppins">Category:</H22>
                                 <H19 
                                     className={renderClassName("bigImagesCategory", isHoveringCategoryText)}
@@ -344,9 +315,9 @@ export const BigImages = (props) => {
                                 <EH40/>
                                 <H22 className="h22-nero-poppins">Tags:</H22>
                                 {renderTags()}
-                            </div>
+                            </div> */}
                         </div>
-                    </div> */}
+                    </div>
                     <EH70/>
                    <PortfolioNavigation/>
                 </div>
