@@ -1358,6 +1358,11 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
                     id: 1,
                     label: "Creative",
                     isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    isHover: "init"
                 }
             ],
             imagesArray: [

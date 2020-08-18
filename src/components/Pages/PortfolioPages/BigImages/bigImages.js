@@ -133,34 +133,34 @@ export const BigImages = (props) => {
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
-            case 'bigSliderCategory': 
+            case 'bigImagesCategory': 
                 setIsHoveringCategoryText("on");
                 break;
-            case 'bigSliderTag1': 
-                props.setBigSliderIsHoveringTag("on", id);
+            case 'bigImagesTag1': 
+                props.setBigImagesIsHoveringTag("on", id);
                 break;
-            case 'bigSliderTag2': 
-                props.setBigSliderIsHoveringTag("on", id);
+            case 'bigImagesTag2': 
+                props.setBigImagesIsHoveringTag("on", id);
                 break;
         }
     }
 
     const handleMouseLeave = (opt, id) => {
         switch(opt){
-            case 'bigSliderCategory': 
+            case 'bigImagesCategory': 
                 setIsHoveringCategoryText("off");
                 break;
-            case 'bigSliderTag1': 
-                props.setBigSliderIsHoveringTag("off", id);
+            case 'bigImagesTag1': 
+                props.setBigImagesIsHoveringTag("off", id);
                 break;
-            case 'bigSliderTag2': 
-                props.setBigSliderIsHoveringTag("off", id);
+            case 'bigImagesTag2': 
+                props.setBigImagesIsHoveringTag("off", id);
                 break;
         }
     }
     
     const renderClassName = (opt, isHovering) => {
-        if(opt === "bigSliderCategory"){
+        if(opt === "bigImagesCategory"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -170,7 +170,7 @@ export const BigImages = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "bigSliderTag1"){
+        if(opt === "bigImagesTag1"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -180,7 +180,7 @@ export const BigImages = (props) => {
                     return "h19-nobel-lustria-hover-off"
             }
         }
-        if(opt === "bigSliderTag2"){
+        if(opt === "bigImagesTag2"){
             switch(isHovering){
                 case 'init':
                     return "h19-nobel-lustria-animated";
@@ -267,14 +267,14 @@ export const BigImages = (props) => {
    
     const renderTags = () => {
         return(
-            <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el,i) => {
+            <div className="big-images-tags">{props.bigImagesPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`bigSliderTag${el.id}`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`bigSliderTag${el.id}`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`bigImagesTag${el.id}`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`bigImagesTag${el.id}`, el.id)} 
                     >
-                        <H19 className={renderClassName(`bigSliderTag${el.id}`, el.isHover)}>{el.label}</H19>
+                        <H19 className={renderClassName(`bigImagesTag${el.id}`, el.isHover)}>{el.label}</H19>
                     </div>
                 )
             })}</div>
@@ -322,26 +322,32 @@ export const BigImages = (props) => {
                     >
                         <div className="big-images-content-info">
                             {renderPortfolioImages()}
-                            {/* <div className="big-images-category-date-tags-wrapper">
-                                <H22 className="h22-nero-poppins">Category:</H22>
-                                <H19 
-                                    className={renderClassName("bigImagesCategory", isHoveringCategoryText)}
-                                    onMouseEnter={() => handleMouseEnter('bigImagesCategory')} 
-                                    onMouseLeave={() => handleMouseLeave('bigImagesCategory')}
-                                >
-                                    {props.bigImagesPortfolio.item.category}
-                                </H19>
-                                <EH40/>
-                                <H22 className="h22-nero-poppins">Date:</H22>
-                                <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.date}</H19>
-                                <EH40/>
-                                <H22 className="h22-nero-poppins">Tags:</H22>
-                                {renderTags()}
-                            </div> */}
+                            <EH40/>
+                            <div className="big-images-content-info">
+                                <div className="big-images-text-wrapper">
+                                    <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.text}</H19>
+                                </div>
+                                <div className="big-images-category-date-tags-wrapper">
+                                    <H22 className="h22-nero-poppins">Category:</H22>
+                                    <H19 
+                                        className={renderClassName("bigImagesCategory", isHoveringCategoryText)}
+                                        onMouseEnter={() => handleMouseEnter('bigImagesCategory')} 
+                                        onMouseLeave={() => handleMouseLeave('bigImagesCategory')}
+                                    >
+                                        {props.bigImagesPortfolio.item.category}
+                                    </H19>
+                                    <EH40/>
+                                    <H22 className="h22-nero-poppins">Date:</H22>
+                                    <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.date}</H19>
+                                    <EH40/>
+                                    <H22 className="h22-nero-poppins">Tags:</H22>
+                                    {renderTags()}
+                                </div>
+                            </div>
                         </div>
+                        <EH70/>
+                        <PortfolioNavigation/>
                     </div>
-                    <EH70/>
-                   <PortfolioNavigation/>
                 </div>
             )
         }
@@ -386,6 +392,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchBigImagesPortfolio: bindActionCreators(Services.fetchBigImagesPortfolio, dispatch),
+            setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }
