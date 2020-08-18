@@ -149,4 +149,9 @@ export const getSmallGalleryPortfolioState = createSelector(
     (x) => x
 );
 
+const getPhotoViewerForSmallGalleryOpen = (state) => state.home.photoViewerForSmallGalleryOpen;
 
+export const getPhotoViewerForSmallGalleryOpenState = createSelector(
+    [getPhotoViewerForSmallGalleryOpen],
+    (x) => x
+);

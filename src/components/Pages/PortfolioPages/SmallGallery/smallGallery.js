@@ -83,6 +83,13 @@ import Id1SmallGallery4 from '../../../../images/smallGallery/Id1/georgie-cobbs-
 import Id1SmallGallery5 from '../../../../images/smallGallery/Id1/laura-chouette-updated1-unsplash.png';
 import Id1SmallGallery6 from '../../../../images/smallGallery/Id1/nadine-shaabana-updated1-unsplash.png';
 
+//Id2
+
+import Id2SmallGallery1 from '../../../../images/smallGallery/Id2/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png';
+import Id2SmallGallery2 from '../../../../images/smallGallery/Id2/jess-bailey-ycTvvg1mPU4-updated-unsplash.png';
+import Id2SmallGallery3 from '../../../../images/smallGallery/Id2/nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png';
+import Id2SmallGallery4 from '../../../../images/smallGallery/Id2/stil-8-GAoVpIk4M-updated-unsplash.png';
+
 /**
 * SmallGallery component definition and export
 */
@@ -133,6 +140,14 @@ export const SmallGallery = (props) => {
                 return Id1SmallGallery5;
             case 'id1SmallGallery6':
                 return Id1SmallGallery6;
+            case 'id2SmallGallery1':
+                return Id2SmallGallery1;
+            case 'id2SmallGallery2':
+                return Id2SmallGallery2;
+            case 'id2SmallGallery3':
+                return Id2SmallGallery3;
+            case 'id2SmallGallery4':
+                return Id2SmallGallery4;
             default:
                 return "";
         }
@@ -376,12 +391,12 @@ export const SmallGallery = (props) => {
             {renderToolbars()}
             {showContent ? renderSmallGalleryContent() : null}
             <Footer/>
-           {/*  {props.photoViewerForSmallImagesOpen ? 
+            {props.photoViewerForSmallGalleryOpen ? 
             <PhotoViewer
                 width={700}
                 height={457}
-                component="smallImages"
-            /> : null} */}
+                component="smallGallery"
+            /> : null}
         </div>
     );
 }
@@ -390,14 +405,14 @@ export default connect(
     (state) => {
         return {
             smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
-            // photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state),
+            photoViewerForSmallGalleryOpen: Selectors.getPhotoViewerForSmallGalleryOpenState(state),
         };
     },
     (dispatch) => {
         return {
             fetchSmallGalleryPortfolio: bindActionCreators(Services.fetchSmallGalleryPortfolio, dispatch),
             setSmallGalleryIsHoveringTag: bindActionCreators(Actions.setSmallGalleryIsHoveringTag, dispatch),
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }
 )(SmallGallery);

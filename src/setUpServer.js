@@ -601,7 +601,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-7",
+            path: "portfolio-item/small-gallery/2",
             pictures: [
                 {
                     id: 1,
@@ -1495,6 +1495,42 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     id: 6,
                     key: "id1SmallGallery6",
                     path: "nadine-shaabana-updated1-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            header: "Portfolio small gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
+            category: "Lifestyle",
+            date: "08.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2SmallGallery1",
+                    path: "hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2SmallGallery2",
+                    path: "jess-bailey-ycTvvg1mPU4-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id2SmallGallery3",
+                    path: "nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id2SmallGallery4",
+                    path: "stil-8-GAoVpIk4M-updated-unsplash.png"
                 }
             ]
         }
