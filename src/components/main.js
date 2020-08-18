@@ -38,7 +38,7 @@ import HappyTeamPage from './Pages/HappyTeamPage/happyTeamPage';
 import SmallImages from './Pages/PortfolioPages/SmallImages/smallImages';
 import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
 import BigImages from './Pages/PortfolioPages/BigImages/bigImages';
-// import Contact from './Pages/Contact/contact';
+import SmallGallery from './Pages/PortfolioPages/SmallGallery/smallGallery';
 // import SingleStory from './Pages/SingleStory/singleStory';
 // import Archieve from './Pages/Archieve/archieve';
 // import Category from './Pages/Category/category';
@@ -83,9 +83,7 @@ export const Main = (props) => {
             props.activateMenuItem(pathOfIds);
             props.photoViewerOpen("all", false, []);
         });
-     
-     
-    }, [])
+    }, []);
 
     /**
     * Markup
@@ -105,12 +103,12 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/million-visits"}
                     component={SingleStory}
-                />
+                />*/}
                 <Route 
                     exact 
-                    path={props.match.url + "/new-york-opening"}
-                    component={SingleStory}
-                />*/}
+                    path={props.match.url + "/portfolio-item/small-gallery/:id"}
+                    component={SmallGallery}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/big-images/:id"}

@@ -1448,6 +1448,65 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
         res.json(bigImagesObj);  
     }
 });
+app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const smallGallery = [
+        {
+            id: 1,
+            header: "Portfolio small gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
+            category: "Lifestyle",
+            date: "07.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1SmallGallery1",
+                    path: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1SmallGallery2",
+                    path: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1SmallGallery3",
+                    path: "lee-campbell-qNPESem_t4I-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1SmallGallery4",
+                    path: "melanie-mauer-x-agyuDQHJA-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1SmallGallery5",
+                    path: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id1SmallGallery6",
+                    path: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                }
+            ]
+        }
+    ]
+
+    let smallGalleryObj = smallGallery.find(item => item.id === id);
+    if(!smallGalleryObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(smallGalleryObj);  
+    }
+});
 
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);

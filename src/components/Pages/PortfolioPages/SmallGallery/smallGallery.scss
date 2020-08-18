@@ -1,0 +1,78 @@
+.small-gallery {
+    width: calc(100% + 18px);
+    .small-gallery-loading-error {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .small-gallery-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 130px 70px 130px;
+        // .small-images-content {
+        //     width: 100%;
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     align-items: flex-start;
+        //     .small-images-portfolio-images {
+        //         width: calc(58% - 4px);
+        //         .small-images-portfolio-image {
+        //             cursor: pointer;
+        //             > img {
+        //                 width: 100%;
+        //             }
+        //         }
+        //     }
+        //     .small-images-movable-part {
+        //         width: calc(42% - 30px);
+        //         padding: 5px 0px 0px 30px;
+        //     }
+        // }
+    }
+}
+
+// @media only screen and (max-width: 1030px){
+//     .small-images {
+//         .small-images-wrapper {
+//             .small-images-content {
+//                 .small-images-portfolio-images {
+//                     width: calc(100% - 4px);
+//                 }
+//                 .small-images-movable-part {
+//                     width: calc(100% - 30px);
+//                     padding: 5px 30px 30px 30px;
+//                     margin-top: 0px !important; 
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 830px){
+//     .small-images {
+//         .small-images-wrapper {
+//             padding: 70px;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 600px){
+//     .small-images {
+//         .small-images-wrapper {
+//             padding: 20px;
+//         }
+//     }
+// }
+
+
+// @media only screen and (max-width: 1120px){
+//     .home {
+//         .home-main-background {
+//             height: 650px;
+//             .home-curtain {
+//                 height: 650px;
+//             }
+//         }
+//     }
+// }

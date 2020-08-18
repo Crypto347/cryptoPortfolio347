@@ -295,7 +295,7 @@ export const menuItemsArray = [
                         id: 218,
                         text: "Small gallery",
                         itemId: "smallGallery",
-                        path: "portfolio-item/portfolio-small-gallery-0",
+                        path: "portfolio-item/small-gallery/1",
                         active: false,
                         isHover: "init",
                         subOptions: []
