@@ -90,6 +90,15 @@ import Id2SmallGallery2 from '../../../../images/smallGallery/Id2/jess-bailey-yc
 import Id2SmallGallery3 from '../../../../images/smallGallery/Id2/nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png';
 import Id2SmallGallery4 from '../../../../images/smallGallery/Id2/stil-8-GAoVpIk4M-updated-unsplash.png';
 
+//Id3
+
+import Id3SmallGallery1 from '../../../../images/smallGallery/Id3/eyeshadow-4713577_1920-updated.png';
+import Id3SmallGallery2 from '../../../../images/smallGallery/Id3/gabrielle-henderson-xTLqJqtq8R4-updated-unsplash.png';
+import Id3SmallGallery3 from '../../../../images/smallGallery/Id3/jess-bailey-_969XXSgWc0-updated-unsplash.png';
+import Id3SmallGallery4 from '../../../../images/smallGallery/Id3/laura-chouette-HTowfw8ascU-updated-unsplash.png';
+import Id3SmallGallery5 from '../../../../images/smallGallery/Id3/life-3602514_1920-updated.png';
+import Id3SmallGallery6 from '../../../../images/smallGallery/Id3/samantha-gades-pKt9mfEuZrs-updated-unsplash.png';
+
 /**
 * SmallGallery component definition and export
 */
@@ -148,6 +157,18 @@ export const SmallGallery = (props) => {
                 return Id2SmallGallery3;
             case 'id2SmallGallery4':
                 return Id2SmallGallery4;
+            case 'id3SmallGallery1':
+                return Id3SmallGallery1;
+            case 'id3SmallGallery2':
+                return Id3SmallGallery2;
+            case 'id3SmallGallery3':
+                return Id3SmallGallery3;
+            case 'id3SmallGallery4':
+                return Id3SmallGallery4;
+            case 'id3SmallGallery5':
+                return Id3SmallGallery5;
+            case 'id3SmallGallery6':
+                return Id3SmallGallery6;
             default:
                 return "";
         }

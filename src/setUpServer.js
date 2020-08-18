@@ -698,7 +698,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/portfolio-gallery-2",
+            path: "portfolio-item/small-gallery/3",
             pictures: [
                 {
                     id: 1,
@@ -1466,7 +1466,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Creative",
+                    label: "Fashion",
                     isHover: "init"
                 }
             ],
@@ -1546,6 +1546,58 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     key: "id2SmallGallery4",
                     isHover: "init",
                     path: "stil-8-GAoVpIk4M-updated-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 3,
+            header: "Portfolio small gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
+            category: "Lifestyle",
+            date: "08.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Design",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3SmallGallery1",
+                    isHover: "init",
+                    path: "eyeshadow-4713577_1920-updated.png"
+                },
+                {
+                    id: 2,
+                    key: "id3SmallGallery2",
+                    isHover: "init",
+                    path: "gabrielle-henderson-xTLqJqtq8R4-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3SmallGallery3",
+                    isHover: "init",
+                    path: "jess-bailey-_969XXSgWc0-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id3SmallGallery4",
+                    isHover: "init",
+                    path: "laura-chouette-HTowfw8ascU-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id3SmallGallery5",
+                    isHover: "init",
+                    path: "life-3602514_1920-updated.png"
+                },
+                {
+                    id: 6,
+                    key: "id3SmallGallery6",
+                    isHover: "init",
+                    path: "samantha-gades-pKt9mfEuZrs-updated-unsplash.png"
                 }
             ]
         }
