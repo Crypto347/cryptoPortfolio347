@@ -186,6 +186,15 @@ import Id3SmallGallery4 from '../../../images/portfolioPages/smallGallery/Id3/la
 import Id3SmallGallery5 from '../../../images/portfolioPages/smallGallery/Id3/life-3602514_1920-updated.png';
 import Id3SmallGallery6 from '../../../images/portfolioPages/smallGallery/Id3/samantha-gades-pKt9mfEuZrs-updated-unsplash.png';
 
+//Gallery Id1
+
+import Id1Gallery1 from '../../../images/portfolioPages/Gallery/Id1/ash-from-modern-afflatus-updated2-unsplash.png';
+import Id1Gallery2 from '../../../images/portfolioPages/Gallery/Id1/estee-janssens-updated2-unsplash.png';
+import Id1Gallery3 from '../../../images/portfolioPages/Gallery/Id1/filip-mroz-updated2-unsplash.png';
+import Id1Gallery4 from '../../../images/portfolioPages/Gallery/Id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
+import Id1Gallery5 from '../../../images/portfolioPages/Gallery/Id1/laura-chouette-updated2-unsplash.png';
+import Id1Gallery6 from '../../../images/portfolioPages/Gallery/Id1/nadine-shaabana-updated2-unsplash.png';
+
 /**
 * Icons
 */
@@ -476,6 +485,18 @@ export const PhotoViewer = (props) => {
                 return Id3SmallGallery5;
             case 'id3SmallGallery6':
                 return Id3SmallGallery6;
+            case 'id1Gallery1':
+                return Id1Gallery1;
+            case 'id1Gallery2':
+                return Id1Gallery2;
+            case 'id1Gallery3':
+                return Id1Gallery3;
+            case 'id1Gallery4':
+                return Id1Gallery4;
+            case 'id1Gallery5':
+                return Id1Gallery5;
+            case 'id1Gallery6':
+                return Id1Gallery6;
             default:
                 return "";
         }
