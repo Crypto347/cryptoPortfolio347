@@ -1455,7 +1455,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
         {
             id: 1,
             header: "Portfolio small gallery",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo.",
             category: "Lifestyle",
             date: "07.18.2020",
             tags: [
@@ -1608,6 +1608,77 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
         res.json(smallGalleryObj);  
+    }
+});
+
+app.get('/api/portfolio-item/gallery/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const gallery = [
+        {
+            id: 1,
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            category: "Lifestyle",
+            date: "07.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Fashion",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1SmallGallery1",
+                    isHover: "init",
+                    path: "ash-from-modern-afflatus-updated1-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1SmallGallery2",
+                    isHover: "init",
+                    path: "estee-janssens-updated1-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1SmallGallery3",
+                    isHover: "init",
+                    path: "lee-campbell-qNPESem_t4I-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1SmallGallery4",
+                    isHover: "init",
+                    path: "georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1SmallGallery5",
+                    isHover: "init",
+                    path: "laura-chouette-updated1-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id1SmallGallery6",
+                    isHover: "init",
+                    path: "nadine-shaabana-updated1-unsplash.png"
+                }
+            ]
+        }
+    ]
+
+    let galleryObj = gallery.find(item => item.id === id);
+    if(!galleryObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(galleryObj);  
     }
 });
 
