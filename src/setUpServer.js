@@ -1791,7 +1791,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
     const smallSlider = [
         {
             id: 1,
-            header: "Portfolio gallery",
+            header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
             category: "Lifestyle",
             date: "07.18.2020",
@@ -1799,11 +1799,6 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
                 {
                     id: 1,
                     label: "Creative",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Fashion",
                     isHover: "init"
                 }
             ],
