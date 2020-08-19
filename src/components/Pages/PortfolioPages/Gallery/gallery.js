@@ -76,14 +76,20 @@ import {
 
 //Id1
 
-import Id1Gallery1 from '../../../../images/portfolioPages/Gallery/Id1/ash-from-modern-afflatus-updated2-unsplash.png';
-import Id1Gallery2 from '../../../../images/portfolioPages/Gallery/Id1/estee-janssens-updated2-unsplash.png';
-import Id1Gallery3 from '../../../../images/portfolioPages/Gallery/Id1/filip-mroz-updated2-unsplash.png';
-import Id1Gallery4 from '../../../../images/portfolioPages/Gallery/Id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
-import Id1Gallery5 from '../../../../images/portfolioPages/Gallery/Id1/laura-chouette-updated2-unsplash.png';
-import Id1Gallery6 from '../../../../images/portfolioPages/Gallery/Id1/nadine-shaabana-updated2-unsplash.png';
+import Id1Gallery1 from '../../../../images/portfolioPages/Gallery/id1/ash-from-modern-afflatus-updated2-unsplash.png';
+import Id1Gallery2 from '../../../../images/portfolioPages/Gallery/id1/estee-janssens-updated2-unsplash.png';
+import Id1Gallery3 from '../../../../images/portfolioPages/Gallery/id1/filip-mroz-updated2-unsplash.png';
+import Id1Gallery4 from '../../../../images/portfolioPages/Gallery/id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
+import Id1Gallery5 from '../../../../images/portfolioPages/Gallery/id1/laura-chouette-updated2-unsplash.png';
+import Id1Gallery6 from '../../../../images/portfolioPages/Gallery/id1/nadine-shaabana-updated2-unsplash.png';
 
+//Id2
 
+import Id2Gallery1 from '../../../../images/portfolioPages/Gallery/id2/cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png';
+import Id2Gallery2 from '../../../../images/portfolioPages/Gallery/id2/food-3025556_1920-updated.png';
+import Id2Gallery3 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-6VhPY27jdps-updated-unsplash.png';
+import Id2Gallery4 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pMW4jzELQCw-updated-unsplash.png';
+import Id2Gallery5 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png';
 /**
 * Gallery component definition and export
 */
@@ -134,6 +140,16 @@ export const Gallery = (props) => {
                 return Id1Gallery5;
             case 'id1Gallery6':
                 return Id1Gallery6;
+            case 'id2Gallery1':
+                return Id2Gallery1;
+            case 'id2Gallery2':
+                return Id2Gallery2;
+            case 'id2Gallery3':
+                return Id2Gallery3;
+            case 'id2Gallery4':
+                return Id2Gallery4;
+            case 'id2Gallery5':
+                return Id2Gallery5;
             default:
                 return "";
         }

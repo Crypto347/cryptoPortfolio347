@@ -163,37 +163,45 @@ import Id2BigImages6 from '../../../images/portfolioPages/bigImages/id2/emma-mat
 
 //Small Gallery Id1
 
-import Id1SmallGallery1 from '../../../images/portfolioPages/smallGallery/Id1/ash-from-modern-afflatus-updated1-unsplash.png';
-import Id1SmallGallery2 from '../../../images/portfolioPages/smallGallery/Id1/estee-janssens-updated1-unsplash.png';
-import Id1SmallGallery3 from '../../../images/portfolioPages/smallGallery/Id1/filip-mroz-updated1-unsplash.png';
-import Id1SmallGallery4 from '../../../images/portfolioPages/smallGallery/Id1/georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png';
-import Id1SmallGallery5 from '../../../images/portfolioPages/smallGallery/Id1/laura-chouette-updated1-unsplash.png';
-import Id1SmallGallery6 from '../../../images/portfolioPages/smallGallery/Id1/nadine-shaabana-updated1-unsplash.png';
+import Id1SmallGallery1 from '../../../images/portfolioPages/smallGallery/id1/ash-from-modern-afflatus-updated1-unsplash.png';
+import Id1SmallGallery2 from '../../../images/portfolioPages/smallGallery/id1/estee-janssens-updated1-unsplash.png';
+import Id1SmallGallery3 from '../../../images/portfolioPages/smallGallery/id1/filip-mroz-updated1-unsplash.png';
+import Id1SmallGallery4 from '../../../images/portfolioPages/smallGallery/id1/georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png';
+import Id1SmallGallery5 from '../../../images/portfolioPages/smallGallery/id1/laura-chouette-updated1-unsplash.png';
+import Id1SmallGallery6 from '../../../images/portfolioPages/smallGallery/id1/nadine-shaabana-updated1-unsplash.png';
 
 //Small Gallery Id2
 
-import Id2SmallGallery1 from '../../../images/portfolioPages/smallGallery/Id2/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png';
-import Id2SmallGallery2 from '../../../images/portfolioPages/smallGallery/Id2/jess-bailey-ycTvvg1mPU4-updated-unsplash.png';
-import Id2SmallGallery3 from '../../../images/portfolioPages/smallGallery/Id2/nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png';
-import Id2SmallGallery4 from '../../../images/portfolioPages/smallGallery/Id2/stil-8-GAoVpIk4M-updated-unsplash.png';
+import Id2SmallGallery1 from '../../../images/portfolioPages/smallGallery/id2/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png';
+import Id2SmallGallery2 from '../../../images/portfolioPages/smallGallery/id2/jess-bailey-ycTvvg1mPU4-updated-unsplash.png';
+import Id2SmallGallery3 from '../../../images/portfolioPages/smallGallery/id2/nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png';
+import Id2SmallGallery4 from '../../../images/portfolioPages/smallGallery/id2/stil-8-GAoVpIk4M-updated-unsplash.png';
 
 //Small Gallery Id3
 
-import Id3SmallGallery1 from '../../../images/portfolioPages/smallGallery/Id3/eyeshadow-4713577_1920-updated.png';
-import Id3SmallGallery2 from '../../../images/portfolioPages/smallGallery/Id3/gabrielle-henderson-xTLqJqtq8R4-updated-unsplash.png';
-import Id3SmallGallery3 from '../../../images/portfolioPages/smallGallery/Id3/jess-bailey-_969XXSgWc0-updated-unsplash.png';
-import Id3SmallGallery4 from '../../../images/portfolioPages/smallGallery/Id3/laura-chouette-HTowfw8ascU-updated-unsplash.png';
-import Id3SmallGallery5 from '../../../images/portfolioPages/smallGallery/Id3/life-3602514_1920-updated.png';
-import Id3SmallGallery6 from '../../../images/portfolioPages/smallGallery/Id3/samantha-gades-pKt9mfEuZrs-updated-unsplash.png';
+import Id3SmallGallery1 from '../../../images/portfolioPages/smallGallery/id3/eyeshadow-4713577_1920-updated.png';
+import Id3SmallGallery2 from '../../../images/portfolioPages/smallGallery/id3/gabrielle-henderson-xTLqJqtq8R4-updated-unsplash.png';
+import Id3SmallGallery3 from '../../../images/portfolioPages/smallGallery/id3/jess-bailey-_969XXSgWc0-updated-unsplash.png';
+import Id3SmallGallery4 from '../../../images/portfolioPages/smallGallery/id3/laura-chouette-HTowfw8ascU-updated-unsplash.png';
+import Id3SmallGallery5 from '../../../images/portfolioPages/smallGallery/id3/life-3602514_1920-updated.png';
+import Id3SmallGallery6 from '../../../images/portfolioPages/smallGallery/id3/samantha-gades-pKt9mfEuZrs-updated-unsplash.png';
 
 //Gallery Id1
 
-import Id1Gallery1 from '../../../images/portfolioPages/Gallery/Id1/ash-from-modern-afflatus-updated2-unsplash.png';
-import Id1Gallery2 from '../../../images/portfolioPages/Gallery/Id1/estee-janssens-updated2-unsplash.png';
-import Id1Gallery3 from '../../../images/portfolioPages/Gallery/Id1/filip-mroz-updated2-unsplash.png';
-import Id1Gallery4 from '../../../images/portfolioPages/Gallery/Id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
-import Id1Gallery5 from '../../../images/portfolioPages/Gallery/Id1/laura-chouette-updated2-unsplash.png';
-import Id1Gallery6 from '../../../images/portfolioPages/Gallery/Id1/nadine-shaabana-updated2-unsplash.png';
+import Id1Gallery1 from '../../../images/portfolioPages/Gallery/id1/ash-from-modern-afflatus-updated2-unsplash.png';
+import Id1Gallery2 from '../../../images/portfolioPages/Gallery/id1/estee-janssens-updated2-unsplash.png';
+import Id1Gallery3 from '../../../images/portfolioPages/Gallery/id1/filip-mroz-updated2-unsplash.png';
+import Id1Gallery4 from '../../../images/portfolioPages/Gallery/id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
+import Id1Gallery5 from '../../../images/portfolioPages/Gallery/id1/laura-chouette-updated2-unsplash.png';
+import Id1Gallery6 from '../../../images/portfolioPages/Gallery/id1/nadine-shaabana-updated2-unsplash.png';
+
+// GalleryId2
+
+import Id2Gallery1 from '../../../images/portfolioPages/Gallery/id2/cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png';
+import Id2Gallery2 from '../../../images/portfolioPages/Gallery/id2/food-3025556_1920-updated.png';
+import Id2Gallery3 from '../../../images/portfolioPages/Gallery/id2/nathan-dumlao-6VhPY27jdps-updated-unsplash.png';
+import Id2Gallery4 from '../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pMW4jzELQCw-updated-unsplash.png';
+import Id2Gallery5 from '../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png';
 
 /**
 * Icons
@@ -497,6 +505,16 @@ export const PhotoViewer = (props) => {
                 return Id1Gallery5;
             case 'id1Gallery6':
                 return Id1Gallery6;
+            case 'id2Gallery1':
+                return Id2Gallery1;
+            case 'id2Gallery2':
+                return Id2Gallery2;
+            case 'id2Gallery3':
+                return Id2Gallery3;
+            case 'id2Gallery4':
+                return Id2Gallery4;
+            case 'id2Gallery5':
+                return Id2Gallery5;
             default:
                 return "";
         }

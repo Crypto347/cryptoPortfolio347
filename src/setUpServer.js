@@ -250,7 +250,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/portfolio-gallery-1",
+            path: "portfolio-item/gallery/2",
             pictures: [
                 {
                     id: 1,
@@ -1669,6 +1669,57 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     key: "id1Gallery6",
                     isHover: "init",
                     path: "nadine-shaabana-updated2-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            category: "Lifestyle",
+            date: "07.19.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Coffee",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2Gallery1",
+                    isHover: "init",
+                    path: "cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2Gallery2",
+                    isHover: "init",
+                    path: "food-3025556_1920-updated.png"
+                },
+                {
+                    id: 3,
+                    key: "id2Gallery3",
+                    isHover: "init",
+                    path: "nathan-dumlao-6VhPY27jdps-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id2Gallery4",
+                    isHover: "init",
+                    path: "nathan-dumlao-pMW4jzELQCw-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id2Gallery5",
+                    isHover: "init",
+                    path: "nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png"
                 }
             ]
         }
