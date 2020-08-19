@@ -337,24 +337,27 @@ export const Gallery = (props) => {
                         className="gallery-content"
                     >
                         {renderPortfolioImages()}
-                        {/* <div className="gallery-content-info">
-                            <H19 className="h19-nobel-lustria">{props.galleryPortfolio.item.text}</H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Category:</H22>
-                            <H19 
-                                className={renderClassName("galleryCategory", isHoveringCategoryText)}
-                                onMouseEnter={() => handleMouseEnter('galleryCategory')} 
-                                onMouseLeave={() => handleMouseLeave('galleryCategory')}
-                            >
-                                {props.galleryPortfolio.item.category}
-                            </H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Date:</H22>
-                            <H19 className="h19-nobel-lustria">{props.galleryPortfolio.item.date}</H19>
-                            <EH40/>
-                            <H22 className="h22-nero-poppins">Tags:</H22>
-                            {renderTags()}
-                        </div> */}
+                        <div className="gallery-content-info">
+                            <div className="gallery-text-wrapper">
+                                <H19 className="h19-nobel-lustria">{props.galleryPortfolio.item.text}</H19>
+                            </div>
+                            <div className="gallery-category-date-tags-wrapper">
+                                <H22 className="h22-nero-poppins">Category:</H22>
+                                <H19 
+                                    className={renderClassName("galleryCategory", isHoveringCategoryText)}
+                                    onMouseEnter={() => handleMouseEnter('galleryCategory')} 
+                                    onMouseLeave={() => handleMouseLeave('galleryCategory')}
+                                >
+                                    {props.galleryPortfolio.item.category}
+                                </H19>
+                                <EH40/>
+                                <H22 className="h22-nero-poppins">Date:</H22>
+                                <H19 className="h19-nobel-lustria">{props.galleryPortfolio.item.date}</H19>
+                                <EH40/>
+                                <H22 className="h22-nero-poppins">Tags:</H22>
+                                {renderTags()}
+                            </div>
+                        </div>
                     </div>
                     <EH70/>
                    <PortfolioNavigation/>
@@ -382,12 +385,12 @@ export const Gallery = (props) => {
             {renderToolbars()}
             {showContent ? renderGalleryContent() : null}
             <Footer/>
-            {/* {props.photoViewerForSmallGalleryOpen ? 
+            {props.photoViewerForGalleryOpen ? 
             <PhotoViewer
                 width={700}
                 height={457}
-                component="smallGallery"
-            /> : null} */}
+                component="gallery"
+            /> : null}
         </div>
     );
 }

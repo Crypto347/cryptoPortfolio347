@@ -40,23 +40,13 @@
                     flex-wrap: wrap;
                     .big-slider-text-wrapper {
                         width: calc(100% - 60px);
-                        padding-right: 60px;
                     }
                     .big-slider-category-date-tags-wrapper {
                         width: 100%;
-                        flex-direction: column;
                         padding-top: 40px;
                     }
                 }
             }
-        }
-    }
-}
-
-@media only screen and (max-width: 800px){
-    .big-slider {
-        .big-slider-wrapper {
-            padding: 70px;
         }
     }
 }

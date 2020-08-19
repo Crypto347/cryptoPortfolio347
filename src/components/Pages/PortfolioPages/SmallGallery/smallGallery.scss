@@ -11,7 +11,7 @@
         flex-direction: column;
         padding: 70px 130px 70px 130px;
         .small-gallery-content {
-            width: 100%;
+            width: calc(100% + 30px);
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
@@ -93,7 +93,7 @@
 @media only screen and (max-width: 970px){
     .small-gallery {
         .small-gallery-wrapper {
-            padding: 70px 40px 70px 70px;
+            padding: 70px 70px 70px 70px;
         }
     }
 }
@@ -106,7 +106,6 @@
                 .small-gallery-portfolio-images {
                     .small-gallery-portfolio-image-wrapper {
                         width: 100%;
-                        margin-right: 0px;
                         .small-gallery-portfolio-image {
                             >img {
                                 width: 100%;
