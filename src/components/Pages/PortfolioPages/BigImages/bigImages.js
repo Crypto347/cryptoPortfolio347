@@ -77,20 +77,20 @@ import {
 
 //Id 1
 
-import Id1BigImages1 from '../../../../images/bigImages/id1/joshua-reddekopp-cNe8GsQR-OQ-unsplash.png';
-import Id1BigImages2 from '../../../../images/bigImages/id1/lee-campbell-CI-5GwJcVjE-unsplash.png';
-import Id1BigImages3 from '../../../../images/bigImages/id1/lee-campbell-qNPESem_t4I-unsplash.png';
-import Id1BigImages4 from '../../../../images/bigImages/id1/melanie-mauer-x-agyuDQHJA-unsplash.png';
-import Id1BigImages5 from '../../../../images/bigImages/id1/nathan-dumlao-KEniowKfX3k-unsplash.png';
+import Id1BigImages1 from '../../../../images/portfolioPages/bigImages/id1/joshua-reddekopp-cNe8GsQR-OQ-unsplash.png';
+import Id1BigImages2 from '../../../../images/portfolioPages/bigImages/id1/lee-campbell-CI-5GwJcVjE-unsplash.png';
+import Id1BigImages3 from '../../../../images/portfolioPages/bigImages/id1/lee-campbell-qNPESem_t4I-unsplash.png';
+import Id1BigImages4 from '../../../../images/portfolioPages/bigImages/id1/melanie-mauer-x-agyuDQHJA-unsplash.png';
+import Id1BigImages5 from '../../../../images/portfolioPages/bigImages/id1/nathan-dumlao-KEniowKfX3k-unsplash.png';
 
 //Id 2
 
-import Id2BigImages1 from '../../../../images/bigImages/id2/uby-yanes-LMwW0ARHc4o-updated-unsplash.png';
-import Id2BigImages2 from '../../../../images/bigImages/id2/emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png';
-import Id2BigImages3 from '../../../../images/bigImages/id2/uby-yanes-393QQ30ecvQ-updated-unsplash.png';
-import Id2BigImages4 from '../../../../images/bigImages/id2/stil-flRm0z3MEoA-updated-unsplash.png';
-import Id2BigImages5 from '../../../../images/bigImages/id2/freestocks-A11MXTzUhLE-updated-unsplash.png';
-import Id2BigImages6 from '../../../../images/bigImages/id2/emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png';
+import Id2BigImages1 from '../../../../images/portfolioPages/bigImages/id2/uby-yanes-LMwW0ARHc4o-updated-unsplash.png';
+import Id2BigImages2 from '../../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png';
+import Id2BigImages3 from '../../../../images/portfolioPages/bigImages/id2/uby-yanes-393QQ30ecvQ-updated-unsplash.png';
+import Id2BigImages4 from '../../../../images/portfolioPages/bigImages/id2/stil-flRm0z3MEoA-updated-unsplash.png';
+import Id2BigImages5 from '../../../../images/portfolioPages/bigImages/id2/freestocks-A11MXTzUhLE-updated-unsplash.png';
+import Id2BigImages6 from '../../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png';
 
 /**
 * BigImages component definition and export

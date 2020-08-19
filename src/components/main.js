@@ -39,6 +39,7 @@ import SmallImages from './Pages/PortfolioPages/SmallImages/smallImages';
 import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
 import BigImages from './Pages/PortfolioPages/BigImages/bigImages';
 import SmallGallery from './Pages/PortfolioPages/SmallGallery/smallGallery';
+import Gallery from './Pages/PortfolioPages/Gallery/gallery';
 // import SingleStory from './Pages/SingleStory/singleStory';
 // import Archieve from './Pages/Archieve/archieve';
 // import Category from './Pages/Category/category';
@@ -98,12 +99,12 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/category/specials"}
                     component={Category}
-                />
+                />*/}
                 <Route 
                     exact 
-                    path={props.match.url + "/million-visits"}
-                    component={SingleStory}
-                />*/}
+                    path={props.match.url + "/portfolio-item/gallery/:id"}
+                    component={Gallery}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/small-gallery/:id"}

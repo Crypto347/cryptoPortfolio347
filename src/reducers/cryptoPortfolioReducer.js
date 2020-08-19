@@ -22,6 +22,7 @@ export const initialState = {
     photoViewerForSmallImagesOpen: false,
     photoViewerForBigImagesOpen: false,
     photoViewerForSmallGalleryOpen: false,
+    photoViewerForGalleryOpen: false,
     photoViewerImagesArray: [],
     swiper: {
         slides: [],
@@ -73,6 +74,12 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForSmallGalleryOpen: action.val,
                 photoViewerImagesArray: action.array
             };
+        case 'gallery':
+            return {
+                ...state,
+                photoViewerForGalleryOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
         case 'all':
             return {
                 ...state,
@@ -81,6 +88,7 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForSmallImagesOpen: action.val,
                 photoViewerForBigImagesOpen: action.val,
                 photoViewerForSmallGalleryOpen: action.val,
+                photoViewerForGalleryOpen: action.val,
                 photoViewerImagesArray: action.array
             }
         default:

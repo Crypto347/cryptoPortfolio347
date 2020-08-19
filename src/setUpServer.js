@@ -1487,7 +1487,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     id: 3,
                     key: "id1SmallGallery3",
                     isHover: "init",
-                    path: "lee-campbell-qNPESem_t4I-unsplash.png"
+                    path: "filip-mroz-updated1-unsplash.png"
                 },
                 {
                     id: 4,
@@ -1636,39 +1636,39 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    key: "id1SmallGallery1",
+                    key: "id1Gallery1",
                     isHover: "init",
-                    path: "ash-from-modern-afflatus-updated1-unsplash.png"
+                    path: "ash-from-modern-afflatus-updated2-unsplash.png"
                 },
                 {
                     id: 2,
-                    key: "id1SmallGallery2",
+                    key: "id1Gallery2",
                     isHover: "init",
-                    path: "estee-janssens-updated1-unsplash.png"
+                    path: "estee-janssens-updated2-unsplash.png"
                 },
                 {
                     id: 3,
-                    key: "id1SmallGallery3",
+                    key: "id1Gallery3",
                     isHover: "init",
-                    path: "lee-campbell-qNPESem_t4I-unsplash.png"
+                    path: "filip-mroz-updated2-unsplash.png"
                 },
                 {
                     id: 4,
-                    key: "id1SmallGallery4",
+                    key: "id1Gallery4",
                     isHover: "init",
-                    path: "georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png"
+                    path: "georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png"
                 },
                 {
                     id: 5,
-                    key: "id1SmallGallery5",
+                    key: "id1Gallery5",
                     isHover: "init",
-                    path: "laura-chouette-updated1-unsplash.png"
+                    path: "laura-chouette-updated2-unsplash.png"
                 },
                 {
                     id: 6,
-                    key: "id1SmallGallery6",
+                    key: "id1Gallery6",
                     isHover: "init",
-                    path: "nadine-shaabana-updated1-unsplash.png"
+                    path: "nadine-shaabana-updated2-unsplash.png"
                 }
             ]
         }

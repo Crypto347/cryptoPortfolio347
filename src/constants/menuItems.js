@@ -283,10 +283,10 @@ export const menuItemsArray = [
                         subOptions: []
                     },
                     {
-                        id: 117,
+                        id: 217,
                         text: "Gallery",
                         itemId: "gallery",
-                        path: "portfolio-item/portfolio-gallery-0",
+                        path: "portfolio-item/gallery/1",
                         active: false,
                         isHover: "init",
                         subOptions: []
