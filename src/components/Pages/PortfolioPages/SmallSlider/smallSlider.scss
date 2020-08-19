@@ -1,0 +1,82 @@
+.small-slider {
+    width: calc(100% + 18px);
+    .small-slider-loading-error {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .small-slider-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 130px 70px 130px;
+        .small-slider-content {
+            width: calc(100% + 30px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            .small-slider-portfolio-swiper {
+                width: 70%;
+            }
+            .small-slider-content-info {
+                width: 30%;
+            }
+        }
+    }
+}
+
+// @media only screen and (max-width: 1110px){
+//     .small-gallery {
+//         .small-gallery-wrapper {
+//             .small-gallery-content {
+//                 .small-gallery-portfolio-images {
+//                     width: 100%;
+//                 }
+//                 .small-gallery-content-info {
+//                     width: calc(100% - 30px);
+//                     padding-right: 30px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 970px){
+//     .small-gallery {
+//         .small-gallery-wrapper {
+//             padding: 70px 70px 70px 70px;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 680px){
+//     .small-gallery {
+//         .small-gallery-wrapper {
+//             padding: 70px;
+//             .small-gallery-content {
+//                 .small-gallery-portfolio-images {
+//                     .small-gallery-portfolio-image-wrapper {
+//                         width: 100%;
+//                         .small-gallery-portfolio-image {
+//                             >img {
+//                                 width: 100%;
+//                             }
+//                         }
+//                     }
+//                 }
+//                 .small-gallery-content-info {
+//                     width: calc(100% - 30px);
+//                     padding-right: 30px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 600px){
+//     .small-gallery {
+//         .small-gallery-wrapper {
+//             padding: 70px 30px 70px 30px;
+//         }
+//     }
+// }

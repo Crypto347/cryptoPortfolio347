@@ -90,6 +90,16 @@ import Id2Gallery2 from '../../../../images/portfolioPages/Gallery/id2/food-3025
 import Id2Gallery3 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-6VhPY27jdps-updated-unsplash.png';
 import Id2Gallery4 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pMW4jzELQCw-updated-unsplash.png';
 import Id2Gallery5 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png';
+
+//Id3
+
+import Id3Gallery1 from '../../../../images/portfolioPages/Gallery/id3/chris-lee-70l1tDAI6rM-updated-unsplash.png';
+import Id3Gallery2 from '../../../../images/portfolioPages/Gallery/id3/kara-eads--0eTYFd2pzM-updated-unsplash.png';
+import Id3Gallery3 from '../../../../images/portfolioPages/Gallery/id3/kara-eads-Uq9o9uUIT08-updated-unsplash.png';
+import Id3Gallery4 from '../../../../images/portfolioPages/Gallery/id3/leone-venter-pVt9j3iWtPM-updated-unsplash.png';
+import Id3Gallery5 from '../../../../images/portfolioPages/Gallery/id3/olena-sergienko-dIMJWLx1YbE-updated-unsplash.png';
+import Id3Gallery6 from '../../../../images/portfolioPages/Gallery/id3/sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png';
+
 /**
 * Gallery component definition and export
 */
@@ -150,6 +160,18 @@ export const Gallery = (props) => {
                 return Id2Gallery4;
             case 'id2Gallery5':
                 return Id2Gallery5;
+            case 'id3Gallery1':
+                return Id3Gallery1;
+            case 'id3Gallery2':
+                return Id3Gallery2;
+            case 'id3Gallery3':
+                return Id3Gallery3;
+            case 'id3Gallery4':
+                return Id3Gallery4;
+            case 'id3Gallery5':
+                return Id3Gallery5;
+            case 'id3Gallery6':
+                return Id3Gallery6;
             default:
                 return "";
         }

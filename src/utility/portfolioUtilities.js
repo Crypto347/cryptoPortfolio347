@@ -14,6 +14,8 @@ export const findPathOfIds = (path) => {
             return [2, 21, 214];
         case 'small-images':
             return [2, 21, 215];
+        case 'small-slider':
+            return [2, 21, 216];
         case 'gallery':
             return [2, 21, 217];
         case 'small-gallery':

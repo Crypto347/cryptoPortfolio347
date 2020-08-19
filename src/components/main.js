@@ -40,7 +40,7 @@ import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
 import BigImages from './Pages/PortfolioPages/BigImages/bigImages';
 import SmallGallery from './Pages/PortfolioPages/SmallGallery/smallGallery';
 import Gallery from './Pages/PortfolioPages/Gallery/gallery';
-// import SingleStory from './Pages/SingleStory/singleStory';
+import SmallSlider from './Pages/PortfolioPages/SmallSLider/smallSlider';
 // import Archieve from './Pages/Archieve/archieve';
 // import Category from './Pages/Category/category';
 
@@ -95,11 +95,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
-                {/* <Route 
+                <Route 
                     exact 
-                    path={props.match.url + "/category/specials"}
-                    component={Category}
-                />*/}
+                    path={props.match.url + "/portfolio-item/small-slider/:id"}
+                    component={SmallSlider}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/gallery/:id"}

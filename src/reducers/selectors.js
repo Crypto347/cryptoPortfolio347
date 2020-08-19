@@ -170,3 +170,17 @@ export const getPhotoViewerForGalleryOpenState = createSelector(
     (x) => x
 );
 
+const getSmallSliderPortfolio = (state) => state.smallSliderPortfolio;
+
+export const getSmallSliderPortfolioState = createSelector(
+    [getSmallSliderPortfolio],
+    (x) => x
+);
+
+const getPhotoViewerForSmallSliderOpen = (state) => state.home.photoViewerForSmallSliderOpen;
+
+export const getPhotoViewerForSmallSliderOpenState = createSelector(
+    [getPhotoViewerForSmallSliderOpen],
+    (x) => x
+);
+

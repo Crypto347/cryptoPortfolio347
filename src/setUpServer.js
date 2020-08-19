@@ -466,7 +466,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-5",
+            path: "portfolio-item/gallery/3",
             pictures: [
                 {
                     id: 1,
@@ -1722,6 +1722,58 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     path: "nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png"
                 }
             ]
+        },
+        {
+            id: 3,
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            category: "Lifestyle",
+            date: "07.19.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3Gallery1",
+                    isHover: "init",
+                    path: "chris-lee-70l1tDAI6rM-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id3Gallery2",
+                    isHover: "init",
+                    path: "kara-eads--0eTYFd2pzM-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3Gallery3",
+                    isHover: "init",
+                    path: "kara-eads-Uq9o9uUIT08-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id3Gallery4",
+                    isHover: "init",
+                    path: "leone-venter-pVt9j3iWtPM-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id3Gallery5",
+                    isHover: "init",
+                    path: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id3Gallery6",
+                    isHover: "init",
+                    path: "sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png"
+                }
+            ]
         }
     ]
 
@@ -1730,6 +1782,77 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
         res.json(galleryObj);  
+    }
+});
+
+app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const smallSlider = [
+        {
+            id: 1,
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            category: "Lifestyle",
+            date: "07.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Fashion",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1Gallery1",
+                    isHover: "init",
+                    path: "ash-from-modern-afflatus-updated2-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1Gallery2",
+                    isHover: "init",
+                    path: "estee-janssens-updated2-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1Gallery3",
+                    isHover: "init",
+                    path: "filip-mroz-updated2-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1Gallery4",
+                    isHover: "init",
+                    path: "georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1Gallery5",
+                    isHover: "init",
+                    path: "laura-chouette-updated2-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id1Gallery6",
+                    isHover: "init",
+                    path: "nadine-shaabana-updated2-unsplash.png"
+                }
+            ]
+        }
+    ]
+
+    let smallSliderObj = smallSlider.find(item => item.id === id);
+    if(!smallSliderObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(smallSliderObj);  
     }
 });
 

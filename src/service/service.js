@@ -244,6 +244,24 @@ export function fetchGalleryPortfolio(id) {
     };
 }
 
+export function fetchSmallSliderPortfolio(id) {
+    return dispatch => {
+        dispatch(Actions.fetchSmallSliderPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/small-slider/${id}`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchSmallSliderPortfolioSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchSmallSliderPortfolioFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

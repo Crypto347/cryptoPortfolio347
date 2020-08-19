@@ -399,7 +399,7 @@ export const SmallGallery = (props) => {
         if(!props.smallGalleryPortfolio.loading && props.smallGalleryPortfolio.error){
             return(
                 <div 
-                    className="small-images-loading-error" 
+                    className="small-gallery-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H19 className="h19-nobel-lora">{`${props.smallGalleryPortfolio.error}`}</H19>

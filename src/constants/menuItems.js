@@ -277,7 +277,7 @@ export const menuItemsArray = [
                         id: 216,
                         text: "Small slider",
                         itemId: "smallSlider",
-                        path: "portfolio-item/small-slider-0",
+                        path: "portfolio-item/small-slider/1",
                         active: false,
                         isHover: "init",
                         subOptions: []
