@@ -306,6 +306,22 @@ export const SmallSlider = (props) => {
             )
         }
         if(!props.smallSliderPortfolio.loading && !props.smallSliderPortfolio.error){
+            let translatedValue;
+            let paddingOneSide;
+            if(size.width > 1110){
+                translatedValue = onePercentToPx * 69;
+                paddingOneSide = 130;
+            }else if(size.width < 1100 && size.width > 900){
+                translatedValue = size.width;
+                paddingOneSide = 130;
+            }else if(size.width < 900 && size.width > 680){
+                translatedValue = size.width;
+                paddingOneSide = 70;
+            }else if(size.width < 680){
+                translatedValue = size.width;
+                paddingOneSide = 30;
+            }
+
             return(
                 <div className="small-slider-wrapper">
                     <H70 className="h70-nero-poppins">{props.smallSliderPortfolio.item.header}</H70>
@@ -319,7 +335,7 @@ export const SmallSlider = (props) => {
                                 component="smallSlider"
                                 contentArray={props.smallSliderPortfolio.item.imagesArray}
                                 content={props.smallSliderPortfolio}
-                                translateWidth={onePercentToPx * 69 - 130}
+                                translateWidth={translatedValue - paddingOneSide}
                                 showNumbersOfSlides={1}
                                 autoPlay
                             />
