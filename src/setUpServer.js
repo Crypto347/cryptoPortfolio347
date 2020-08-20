@@ -132,7 +132,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "colorful",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-2",
+            path: "portfolio-item/small-slider/2",
             pictures: [
                 {
                     id: 1,
@@ -563,7 +563,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
             option: "blackAndWhite",
             header: null,
             text: null,
-            path: "portfolio-item/small-slider-6",
+            path: "portfolio-item/small-slider/3",
             pictures: [
                 {
                     id: 1,
@@ -1838,6 +1838,52 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
                     key: "id1SmallSlider6",
                     isHover: "init",
                     path: "workperch-AiOzVFqlyZI-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            header: "Small slider - Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
+            category: "Lifestyle",
+            date: "08.20.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2SmallSlider1",
+                    isHover: "init",
+                    path: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2SmallSlider2",
+                    isHover: "init",
+                    path: "gaelle-marcel-yO9ZVNFbpao-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id2SmallSlider3",
+                    isHover: "init",
+                    path: "jane-palash-iaofnd2IdFU-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id2SmallSlider4",
+                    isHover: "init",
+                    path: "kara-eads-gVUV7PbSu_0-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id2SmallSlider5",
+                    isHover: "init",
+                    path: "siora-photography-G8RdOUjVuJo-updated-unsplash.png"
                 }
             ]
         }
