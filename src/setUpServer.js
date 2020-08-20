@@ -1886,6 +1886,46 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
                     path: "siora-photography-G8RdOUjVuJo-updated-unsplash.png"
                 }
             ]
+        },
+        {
+            id: 3,
+            header: "Small slider - Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
+            category: "Lifestyle",
+            date: "08.20.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3SmallSlider1",
+                    isHover: "init",
+                    path: "meghan-schiereck--2eJaLtf_bI-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id3SmallSlider2",
+                    isHover: "init",
+                    path: "glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3SmallSlider3",
+                    isHover: "init",
+                    path: "marci-angeles-H_pOAqtNVEg-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id3SmallSlider4",
+                    isHover: "init",
+                    path: "marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png"
+                }
+            ]
         }
     ]
 

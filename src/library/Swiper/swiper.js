@@ -114,6 +114,15 @@ import Id2SmallSlider3 from '../../images/portfolioPages/smallSlider/id2/jane-pa
 import Id2SmallSlider4 from '../../images/portfolioPages/smallSlider/id2/kara-eads-gVUV7PbSu_0-updated-unsplash.png';
 import Id2SmallSlider5 from '../../images/portfolioPages/smallSlider/id2/siora-photography-G8RdOUjVuJo-updated-unsplash.png';
 
+//Small Slider Id3
+
+import Id3SmallSlider1 from '../../images/portfolioPages/smallSlider/id3/meghan-schiereck--2eJaLtf_bI-updated-unsplash.png';
+import Id3SmallSlider2 from '../../images/portfolioPages/smallSlider/id3/glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png';
+import Id3SmallSlider3 from '../../images/portfolioPages/smallSlider/id3/marci-angeles-H_pOAqtNVEg-updated-unsplash.png';
+import Id3SmallSlider4 from '../../images/portfolioPages/smallSlider/id3/marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png';
+
+
+
 /**
 * Icons
 */
@@ -567,6 +576,14 @@ export const Swiper = (props) => {
                 return Id2SmallSlider4;
             case 'id2SmallSlider5': 
                 return Id2SmallSlider5;
+            case 'id3SmallSlider1': 
+                return Id3SmallSlider1;
+            case 'id3SmallSlider2': 
+                return Id3SmallSlider2;
+            case 'id3SmallSlider3': 
+                return Id3SmallSlider3;
+            case 'id3SmallSlider4': 
+                return Id3SmallSlider4;
             default:
                 return ""; 
         }
