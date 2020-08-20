@@ -212,6 +212,15 @@ import Id3Gallery4 from '../../../images/portfolioPages/Gallery/id3/leone-venter
 import Id3Gallery5 from '../../../images/portfolioPages/Gallery/id3/olena-sergienko-dIMJWLx1YbE-updated-unsplash.png';
 import Id3Gallery6 from '../../../images/portfolioPages/Gallery/id3/sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png';
 
+//Small Slider Id1
+
+import Id1SmallSlider1 from '../../../images/portfolioPages/smallSlider/id1/damian-patkowski--pahtnAMuFo-unsplash.png';
+import Id1SmallSlider2 from '../../../images/portfolioPages/smallSlider/id1/drew-beamer-ehBB9G7qbss-unsplash.png';
+import Id1SmallSlider3 from '../../../images/portfolioPages/smallSlider/id1/drew-beamer-PL6ClUWwDEw-unsplash.png';
+import Id1SmallSlider4 from '../../../images/portfolioPages/smallSlider/id1/grovemade-DhZ5BpBeQEM-unsplash.png';
+import Id1SmallSlider5 from '../../../images/portfolioPages/smallSlider/id1/lee-campbell-gA-km82BywY-unsplash.png';
+import Id1SmallSlider6 from '../../../images/portfolioPages/smallSlider/id1/workperch-AiOzVFqlyZI-unsplash.png';
+
 /**
 * Icons
 */
@@ -536,6 +545,18 @@ export const PhotoViewer = (props) => {
                 return Id3Gallery5;
             case 'id3Gallery6':
                 return Id3Gallery6;
+            case 'id1SmallSlider1': 
+                return Id1SmallSlider1;
+            case 'id1SmallSlider2': 
+                return Id1SmallSlider2;
+            case 'id1SmallSlider3': 
+                return Id1SmallSlider3;
+            case 'id1SmallSlider4': 
+                return Id1SmallSlider4;
+            case 'id1SmallSlider5': 
+                return Id1SmallSlider5;
+            case 'id1SmallSlider6': 
+                return Id1SmallSlider6;
             default:
                 return "";
         }

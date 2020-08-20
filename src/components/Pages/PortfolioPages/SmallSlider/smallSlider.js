@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -27,6 +28,7 @@ import './smallSlider.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
@@ -84,6 +86,8 @@ export const SmallSlider = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [onePercentToPx, setOnePercentToPx] = useState(0);
+    const resizeRef = useRef();
 
     /**
     * Methods
@@ -92,6 +96,11 @@ export const SmallSlider = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         props.fetchSmallSliderPortfolio(props.match.params.id);
+        calculateOnePercent(size.width);
+
+        const resize = () => {
+            resizeRef.current();
+        }
 
         if(props.smallSliderPortfolio.item !== {}){
             setShowContent(true);
@@ -99,12 +108,30 @@ export const SmallSlider = (props) => {
 
         // window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);
+        window.addEventListener('resize', resize);
 
         return () => {
             // window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('wheel', handleOnWheel);
+            window.removeEventListener('resize', resize)
         }
-    }, []);
+    }, [onePercentToPx]);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = () => {
+        calculateOnePercent(size.width);
+    }
+
+
+    const calculateOnePercent = (scrWidth) => {
+        let screenWidth = scrWidth / 100;
+
+        // console.log(screenWidth)
+        setOnePercentToPx(screenWidth);
+    }
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
@@ -288,9 +315,16 @@ export const SmallSlider = (props) => {
                         className="small-slider-content"
                     >
                         <div className="small-slider-portfolio-swiper">
-
+                            <Swiper
+                                component="smallSlider"
+                                contentArray={props.smallSliderPortfolio.item.imagesArray}
+                                content={props.smallSliderPortfolio}
+                                translateWidth={onePercentToPx * 69 - 130}
+                                showNumbersOfSlides={1}
+                                autoPlay
+                            />
                         </div>
-                        {/* {renderPortfolioImages()} */}
+                       
                         <div className="small-slider-content-info">
                             <H19 className="h19-nobel-lustria">{props.smallSliderPortfolio.item.text}</H19>
                             <EH40/>

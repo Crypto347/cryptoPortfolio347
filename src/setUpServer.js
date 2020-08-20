@@ -1792,7 +1792,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
         {
             id: 1,
             header: "Small slider - Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
             category: "Lifestyle",
             date: "07.18.2020",
             tags: [
@@ -1805,39 +1805,39 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    key: "id1Gallery1",
+                    key: "id1SmallSlider1",
                     isHover: "init",
-                    path: "ash-from-modern-afflatus-updated2-unsplash.png"
+                    path: "damian-patkowski--pahtnAMuFo-unsplash.png"
                 },
                 {
                     id: 2,
-                    key: "id1Gallery2",
+                    key: "id1SmallSlider2",
                     isHover: "init",
-                    path: "estee-janssens-updated2-unsplash.png"
+                    path: "drew-beamer-ehBB9G7qbss-unsplash.png"
                 },
                 {
                     id: 3,
-                    key: "id1Gallery3",
+                    key: "id1SmallSlider3",
                     isHover: "init",
-                    path: "filip-mroz-updated2-unsplash.png"
+                    path: "drew-beamer-PL6ClUWwDEw-unsplash.png"
                 },
                 {
                     id: 4,
-                    key: "id1Gallery4",
+                    key: "id1SmallSlider4",
                     isHover: "init",
-                    path: "georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png"
+                    path: "grovemade-DhZ5BpBeQEM-unsplash.png"
                 },
                 {
                     id: 5,
-                    key: "id1Gallery5",
+                    key: "id1SmallSlider5",
                     isHover: "init",
-                    path: "laura-chouette-updated2-unsplash.png"
+                    path: "lee-campbell-gA-km82BywY-unsplash.png"
                 },
                 {
                     id: 6,
-                    key: "id1Gallery6",
+                    key: "id1SmallSlider6",
                     isHover: "init",
-                    path: "nadine-shaabana-updated2-unsplash.png"
+                    path: "workperch-AiOzVFqlyZI-unsplash.png"
                 }
             ]
         }

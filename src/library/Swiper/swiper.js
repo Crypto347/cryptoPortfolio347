@@ -97,6 +97,15 @@ import Id3BigSlider5 from '../../images/portfolioPages/bigSlider/id3/jozsef-hocz
 import Id3BigSlider6 from '../../images/portfolioPages/bigSlider/id3/laika-notebooks-pONH9yZ-wXg-updated-unsplash.png';
 import Id3BigSlider7 from '../../images/portfolioPages/bigSlider/id3/lauren-fleischmann-R2aodqJn3b8-updated-unsplash.png';
 
+//Small Slider Id1
+
+import Id1SmallSlider1 from '../../images/portfolioPages/smallSlider/id1/damian-patkowski--pahtnAMuFo-unsplash.png';
+import Id1SmallSlider2 from '../../images/portfolioPages/smallSlider/id1/drew-beamer-ehBB9G7qbss-unsplash.png';
+import Id1SmallSlider3 from '../../images/portfolioPages/smallSlider/id1/drew-beamer-PL6ClUWwDEw-unsplash.png';
+import Id1SmallSlider4 from '../../images/portfolioPages/smallSlider/id1/grovemade-DhZ5BpBeQEM-unsplash.png';
+import Id1SmallSlider5 from '../../images/portfolioPages/smallSlider/id1/lee-campbell-gA-km82BywY-unsplash.png';
+import Id1SmallSlider6 from '../../images/portfolioPages/smallSlider/id1/workperch-AiOzVFqlyZI-unsplash.png';
+
 /**
 * Icons
 */
@@ -161,7 +170,7 @@ export const Swiper = (props) => {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
 
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                _updatedSlides = updateSlides(props.swiperData.slides, props.swiperData.activeIndex);
+                _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
@@ -280,7 +289,7 @@ export const Swiper = (props) => {
         
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
-            if(props.component === "bigSlider" && direction === 0){
+            if(['bigSlider', 'smallSlider'].includes(props.component) && direction === 0){
                 console.log(props.component)
                 openPhotoViewer(props.component, props.swiperData.activeIndex);
             }else if(direction > 0){
@@ -342,7 +351,7 @@ export const Swiper = (props) => {
         let slides = [...props.swiperData.slides];
         let activeIndex = props.swiperData.activeIndex;
         if(props.showNumbersOfSlides === 1){
-            _slides = updateSlides(slides, activeIndex);
+            _slides = updateSlidesFullScreen(slides, activeIndex);
             // setState({
             //     ...state,
             //     _slides,
@@ -378,7 +387,7 @@ export const Swiper = (props) => {
       
     }
 
-    const updateSlides = (slides, activeIndex) => {
+    const updateSlidesFullScreen = (slides, activeIndex) => {
         let _slides = [];
         //We're at the last slides
         if(activeIndex === slides.length - 1)
@@ -465,6 +474,9 @@ export const Swiper = (props) => {
         if(opt === "bigSlider"){
             return "swiper-big-slider"
         }
+        if(opt === "smallSlider"){
+            return "swiper-small-slider"
+        }
         if(opt === "leftArrow"){
             switch(isHovering){
                 case 'init':
@@ -525,6 +537,18 @@ export const Swiper = (props) => {
                 return Id3BigSlider6;
             case 'id3BigSlider7': 
                 return Id3BigSlider7;
+            case 'id1SmallSlider1': 
+                return Id1SmallSlider1;
+            case 'id1SmallSlider2': 
+                return Id1SmallSlider2;
+            case 'id1SmallSlider3': 
+                return Id1SmallSlider3;
+            case 'id1SmallSlider4': 
+                return Id1SmallSlider4;
+            case 'id1SmallSlider5': 
+                return Id1SmallSlider5;
+            case 'id1SmallSlider6': 
+                return Id1SmallSlider6;
             default:
                 return ""; 
         }
@@ -555,102 +579,137 @@ export const Swiper = (props) => {
     } 
 
     const swiper = () => {
-      if(!props.content.loading){
-        if(props.translateWidth){
-            return(
-                <div 
-                    className="swiper-window-width-content" 
-                    id="swiper-content"
-                    onMouseEnter={handleMouseEnter} 
-                    onMouseLeave={handleMouseLeave}
-                    style={{
-                        transform: `translateX(-${props.swiperData.translate}px)`,
-                        transition: `transform ${props.swiperData.transition}s ease-out`,
-                        width: `${getTranslateValue(props.translateWidth, props.translateHeight) * props.contentArray.length}px`
-                    }}
-                >{props.swiperData._slides.map((el, i) => {
-                    if(props.component === "testimonials"){
-                        return(
-                            <div 
-                                key={i} 
-                                className="slide"
-                                id="slide"
-                                style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
-                            >
-                               <H25 className="h25-white-lustria">{el.feedback}</H25>
-                               <EH25/>
-                                <div className="author-name-wrapper">
-                                    <div className="slide-dash"/>
-                                    <H25 className="h25-white-teko">{el.author}</H25>
-                                </div>
-                            </div>
-                        )
-                    }
-                    if(props.component === "bigSlider"){
-                        return(
-                            <div 
-                                key={i} 
-                                className="slide"
-                                id="slide"
-                                style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
-                            >
+        if(!props.content.loading){
+            if(props.translateWidth){
+                return(
+                    <div 
+                        className="swiper-window-width-content" 
+                        id="swiper-content"
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave}
+                        style={{
+                            transform: `translateX(-${props.swiperData.translate}px)`,
+                            transition: `transform ${props.swiperData.transition}s ease-out`,
+                            width: `${getTranslateValue(props.translateWidth, props.translateHeight) * props.contentArray.length}px`
+                        }}
+                    >{props.swiperData._slides.map((el, i) => {
+                        if(props.component === "testimonials"){
+                            return(
                                 <div 
-                                    className="slide-image"
-                                    // onClick={() => openPhotoViewer(el.id)}
+                                    key={i} 
+                                    className="slide"
+                                    id="slide"
+                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                                 >
-                                    <img src={loadImage(el.key)}/>
+                                <H25 className="h25-white-lustria">{el.feedback}</H25>
+                                <EH25/>
+                                    <div className="author-name-wrapper">
+                                        <div className="slide-dash"/>
+                                        <H25 className="h25-white-teko">{el.author}</H25>
+                                    </div>
                                 </div>
+                            )
+                        }
+                        if(props.component === "bigSlider"){
+                            return(
+                                <div 
+                                    key={i} 
+                                    className="slide"
+                                    id="slide"
+                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                                >
+                                    <div 
+                                        className="slide-image"
+                                        // onClick={() => openPhotoViewer(el.id)}
+                                    >
+                                        <img src={loadImage(el.key)}/>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        if(props.component === "smallSlider"){
+                            return(
+                                <div 
+                                    key={i} 
+                                    className="slide"
+                                    id="slide"
+                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                                >
+                                    <div 
+                                        className="slide-image"
+                                        // onClick={() => openPhotoViewer(el.id)}
+                                    >
+                                        <img src={loadImage(el.key)}/>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}</div>
+                )
+            }
+            if(props.translateHeight){
+                return(
+                    <div 
+                        className="swiper-window-height-content" 
+                        id="swiper-content"
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave}
+                        style={{
+                            transform: `translateY(-${translate}px)`,
+                            transition: `transform ${transition}s ease-out`,
+                            height: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`
+                        }}
+                    >{_slides.map((el, i) => {
+                        return(
+                            <div 
+                                key={i} 
+                                className="slide"
+                                style={{height: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                            >
+                                <img src={loadImage(el)}/>
                             </div>
                         )
-                    }
-                })}</div>
-            )
+                    })}</div>
+                )
+            }
         }
-        if(props.translateHeight){
-            return(
-                <div 
-                    className="swiper-window-height-content" 
-                    id="swiper-content"
-                    onMouseEnter={handleMouseEnter} 
-                    onMouseLeave={handleMouseLeave}
-                    style={{
-                        transform: `translateY(-${translate}px)`,
-                        transition: `transform ${transition}s ease-out`,
-                        height: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`
-                    }}
-                >{_slides.map((el, i) => {
-                    return(
-                        <div 
-                            key={i} 
-                            className="slide"
-                            style={{height: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
-                        >
-                            <img src={loadImage(el)}/>
-                        </div>
-                    )
-                })}</div>
-            )
-        }
-      }
     }
 
     const renderFirstArrow = () => {
         if(props.translateWidth){
-            return(
-                <div className="swiper-arrow-left">
-                    <div 
-                        // className="swiper-arrow-left-wrapper"
-                        className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                        onClick={() => prevSlide(null, null)}
-                        onMouseEnter={() => handleMouseEnter('leftArrow')} 
-                        onMouseLeave={() => handleMouseLeave('leftArrow')}
-                        id="prev"
-                    >
-                        <div className="h17-white-lustria">Previous</div>
-                        <div className="swiper-arrow-left-line"/>
+            if(props.component === "smallSlider"){
+                return(
+                    <div className="swiper-arrow-left">
+                        <div 
+                            // className="swiper-arrow-left-wrapper"
+                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                            onClick={() => prevSlide(null, null)}
+                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                            onMouseLeave={() => handleMouseLeave('leftArrow')}
+                            id="prev"
+                        >
+                            <div className="swiper-arrow-left-line"/>
+                        </div>
                     </div>
-                </div>
-            )
+                )
+            }
+            if(props.component === "testimonials"){
+                return(
+                    <div className="swiper-arrow-left">
+                        <div 
+                            // className="swiper-arrow-left-wrapper"
+                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                            onClick={() => prevSlide(null, null)}
+                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                            onMouseLeave={() => handleMouseLeave('leftArrow')}
+                            id="prev"
+                        >
+                            <div className="h17-white-lustria">Previous</div>
+                            <div className="swiper-arrow-left-line"/>
+                        </div>
+                    </div>
+                )
+            }
         }
         if(props.translateHeight){
             return(
@@ -672,21 +731,39 @@ export const Swiper = (props) => {
 
     const renderSecondArrow = () => {
         if(props.translateWidth){
-            return(
-                <div className="swiper-arrow-right">
-                    <div 
-                        // className="swiper-arrow-right-wrapper"
-                        className={renderClassName("rightArrow", isHoveringRightArrow)}
-                        onClick={() => nextSlide(null, null)}
-                        onMouseEnter={() => handleMouseEnter('rightArrow')} 
-                        onMouseLeave={() => handleMouseLeave('rightArrow')}
-                        id="next"
-                    >
-                        <div className="h17-white-lustria">Next</div>
-                        <div className="swiper-arrow-right-line"/>
+            if(props.component === "smallSlider"){
+                return(
+                    <div className="swiper-arrow-right">
+                        <div 
+                            // className="swiper-arrow-right-wrapper"
+                            className={renderClassName("rightArrow", isHoveringRightArrow)}
+                            onClick={() => nextSlide(null, null)}
+                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                            onMouseLeave={() => handleMouseLeave('rightArrow')}
+                            id="next"
+                        >
+                            <div className="swiper-arrow-right-line"/>
+                        </div>
                     </div>
-                </div>
-            )
+                )
+            }
+            if(props.component === "testimonials"){
+                return(
+                    <div className="swiper-arrow-right">
+                        <div 
+                            // className="swiper-arrow-right-wrapper"
+                            className={renderClassName("rightArrow", isHoveringRightArrow)}
+                            onClick={() => nextSlide(null, null)}
+                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                            onMouseLeave={() => handleMouseLeave('rightArrow')}
+                            id="next"
+                        >
+                            <div className="h17-white-lustria">Next</div>
+                            <div className="swiper-arrow-right-line"/>
+                        </div>
+                    </div>
+                )
+            }
         }
         if(props.translateHeight){
             return(
@@ -729,6 +806,12 @@ export const Swiper = (props) => {
                 height={457}
                 component="bigSlider"
             /> : null}
+            {props.photoViewerForSmallSliderOpen ? 
+            <PhotoViewer
+                width={700}
+                height={457}
+                component="smallSlider"
+            /> : null}
         </>
     );
 }
@@ -738,6 +821,7 @@ export default connect(
         return {
             swiperData: Selectors.getSwiperDataState(state),
             photoViewerForBigSliderOpen: Selectors.getPhotoViewerForBigSliderOpenState(state),
+            photoViewerForSmallSliderOpen: Selectors.getPhotoViewerForSmallSliderOpenState(state),
         };
     },
     (dispatch) => {

@@ -18,11 +18,12 @@ import uuid from "uuid";
 export const initialState = {
     menuItems: [],
     photoViewerForPictureBoardTextItemOpen: false,
+    photoViewerForBigImagesOpen: false,
     photoViewerForBigSliderOpen: false,
     photoViewerForSmallImagesOpen: false,
-    photoViewerForBigImagesOpen: false,
-    photoViewerForSmallGalleryOpen: false,
+    photoViewerForSmallSliderOpen: false,
     photoViewerForGalleryOpen: false,
+    photoViewerForSmallGalleryOpen: false,
     photoViewerImagesArray: [],
     swiper: {
         slides: [],
@@ -50,6 +51,12 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForPictureBoardTextItemOpen: action.val,
                 photoViewerImagesArray: action.array
             };
+        case 'bigImages':
+            return {
+                ...state,
+                photoViewerForBigImagesOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
         case 'bigSlider':
             return {
                 ...state,
@@ -62,16 +69,10 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForSmallImagesOpen: action.val,
                 photoViewerImagesArray: action.array
             };
-        case 'bigImages':
+        case 'smallSlider':
             return {
                 ...state,
-                photoViewerForBigImagesOpen: action.val,
-                photoViewerImagesArray: action.array
-            };
-        case 'smallGallery':
-            return {
-                ...state,
-                photoViewerForSmallGalleryOpen: action.val,
+                photoViewerForSmallSliderOpen: action.val,
                 photoViewerImagesArray: action.array
             };
         case 'gallery':
@@ -80,15 +81,22 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForGalleryOpen: action.val,
                 photoViewerImagesArray: action.array
             };
+        case 'smallGallery':
+            return {
+                ...state,
+                photoViewerForSmallGalleryOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
         case 'all':
             return {
                 ...state,
                 photoViewerForPictureBoardTextItemOpen: action.val,
+                photoViewerForBigImagesOpen: action.val,
                 photoViewerForBigSliderOpen: action.val,
                 photoViewerForSmallImagesOpen: action.val,
-                photoViewerForBigImagesOpen: action.val,
-                photoViewerForSmallGalleryOpen: action.val,
+                photoViewerForSmallSliderOpen: action.val,
                 photoViewerForGalleryOpen: action.val,
+                photoViewerForSmallGalleryOpen: action.val,
                 photoViewerImagesArray: action.array
             }
         default:

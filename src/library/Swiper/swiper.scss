@@ -432,6 +432,219 @@
     }
 }
 
+.swiper-small-slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .swiper-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        .swiper-window-width-content {
+            display: flex;
+            width: 100%;
+            position: relative;
+            z-index: 100;
+            left: 0px;
+            .slide {
+                padding: 0;
+                user-select: none; /* supported by Chrome and Opera */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                .slide-image {
+                    width: 100%;
+                    >img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .content-array-loading-error {
+            // height: 484px;
+        }
+    }
+    .swiper-arrow-left {
+        position: absolute;
+        width: 65px;
+        .swiper-arrow-left-wrapper {
+            position: relative;
+            z-index: 20;
+            width: 110px;
+            cursor: pointer;
+            .h17-white-lustria {
+                width: 110px;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 17px;
+                color: white;
+                font-family: 'Lustria', serif;
+                padding-right: 0;
+            }
+            .swiper-arrow-left-line {
+                border: 1px solid white;
+                width: 110px;
+                margin-top: 7px;
+            }
+        }
+        .swiper-arrow-left-wrapper-hover-on {
+            position: relative;
+            z-index: 20;
+            width: 115px;
+            cursor: pointer;
+            .h17-white-lustria {
+                width: 105px;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 17px;
+                color: white;
+                font-family: 'Lustria', serif;
+                -webkit-animation: hoverArrowLabelOn .5s linear;
+                -moz-animation: hoverArrowLabelOn .5s linear;
+                -o-animation: hoverArrowLabelOn .5s linear;
+                animation: hoverArrowLabelOn .5s linear;
+            }
+            .swiper-arrow-left-line {
+                border: 1px solid white;
+                width: 115px;
+                margin-top: 7px;
+                -webkit-animation: hoverSwiperArrowOn .5s linear;
+                -moz-animation: hoverSwiperArrowOn .5s linear;
+                -o-animation: hoverSwiperArrowOn .5s linear;
+                animation: hoverSwiperArrowOn .5s linear;
+            }
+        }
+        .swiper-arrow-left-wrapper-hover-off {
+            position: relative;
+            z-index: 20;
+            width: 110px;
+            cursor: pointer;
+            .h17-white-lustria {
+                width: 110px;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 17px;
+                color: white;
+                font-family: 'Lustria', serif;
+                -webkit-animation: hoverArrowLabelOff .5s linear;
+                -moz-animation: hoverArrowLabelOff .5s linear;
+                -o-animation: hoverArrowLabelOff .5s linear;
+                animation: hoverArrowLabelOff .5s linear;
+            }
+            .swiper-arrow-left-line {
+                border: 1px solid white;
+                width: 110px;
+                margin-top: 7px;
+                -webkit-animation: hoverSwiperArrowOff .5s linear;
+                -moz-animation: hoverSwiperArrowOff .5s linear;
+                -o-animation: hoverSwiperArrowOff .5s linear;
+                animation: hoverSwiperArrowOff .5s linear;
+            }
+        }
+    
+    }
+    .swiper-arrow-right {
+        width: 65px;
+        position: absolute;
+        right: 0%;
+        z-index: 20;
+        .swiper-arrow-right-wrapper {
+            position: relative;
+            width: 110px;
+            transform: translateX(-45px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: 20;
+            cursor: pointer;
+            .h17-white-lustria {
+                width: 110px;
+                display: flex;
+                justify-content: flex-start;
+                font-size: 17px;
+                color: white;
+                font-family: 'Lustria', serif;
+                padding-left: 0;
+            }
+            .swiper-arrow-right-line {
+                border: 1px solid white;
+                width: 110px;
+                margin-top: 7px;
+            }
+        }
+        .swiper-arrow-right-wrapper-hover-on {
+            position: relative;
+            width: 115px;
+            transform: translateX(-50px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: 20;
+            cursor: pointer;
+            .h17-white-lustria {
+                width: 105px;
+                display: flex;
+                justify-content: flex-start;
+                font-size: 17px;
+                color: white;
+                font-family: 'Lustria', serif;
+                padding-left: 0;
+                -webkit-animation: hoverArrowLabelOn .5s linear;
+                -moz-animation: hoverArrowLabelOn .5s linear;
+                -o-animation: hoverArrowLabelOn .5s linear;
+                animation: hoverArrowLabelOn .5s linear;
+            }
+            .swiper-arrow-right-line {
+                border: 1px solid white;
+                width: 115px;
+                margin-top: 7px;
+                -webkit-animation: hoverSwiperArrowOn .5s linear;
+                -moz-animation: hoverSwiperArrowOn .5s linear;
+                -o-animation: hoverSwiperArrowOn .5s linear;
+                animation: hoverSwiperArrowOn .5s linear;
+            }
+        }
+        .swiper-arrow-right-wrapper-hover-off {
+            position: relative;
+            width: 110px;
+            transform: translateX(-45px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            z-index: 20;
+            cursor: pointer;
+            .h17-white-lustria {
+                width: 110px;
+                display: flex;
+                justify-content: flex-start;
+                font-size: 17px;
+                color: white;
+                font-family: 'Lustria', serif;
+                padding-left: 0;
+                -webkit-animation: hoverArrowLabelOff .5s linear;
+                -moz-animation: hoverArrowLabelOff .5s linear;
+                -o-animation: hoverArrowLabelOff .5s linear;
+                animation: hoverArrowLabelOff .5s linear;
+            }
+            .swiper-arrow-right-line {
+                border: 1px solid white;
+                width: 110px;
+                margin-top: 7px;
+                // transform: rotate(180deg);
+                -webkit-animation: hoverSwiperArrowOff .5s linear;
+                -moz-animation: hoverSwiperArrowOff .5s linear;
+                -o-animation: hoverSwiperArrowOff .5s linear;
+                animation: hoverSwiperArrowOff .5s linear;
+            }
+        }
+    }
+}
+
+
 .active {
     cursor: grabbing;
 }

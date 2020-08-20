@@ -16,10 +16,11 @@
             flex-wrap: wrap;
             align-items: flex-start;
             .small-slider-portfolio-swiper {
-                width: 70%;
+                width: calc(69% - 50px);
+                padding-right: 50px;
             }
             .small-slider-content-info {
-                width: 30%;
+                width: 31%;
             }
         }
     }
