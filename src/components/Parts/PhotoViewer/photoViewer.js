@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -47,6 +48,14 @@ import {
    H19,
    EW30
 } from '../../UtilityComponents';
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks';
 
 /**
 * Images
@@ -240,20 +249,41 @@ export const PhotoViewer = (props) => {
     * State
     */
 
+    const size = useWindowSize();
+    const resizeRef = useRef();
     const [isHoveringExpand, setIsHoveringExpand] = useState(false);
     const [isHoveringShrink, setIsHoveringShrink] = useState(false);
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
     const [fullScreen, setFullScreen] = useState(false);
+    const [photoViewerWindowSize, setPhotoViewerWindowSize] = useState({
+        width: 0,
+        height: 0
+    })
 
     /**
     * Methods
     */
 
     useEffect(() => {
+        renderStyle(size.width, props.width, props.height);
+        const resize = () => {
+            resizeRef.current();
+        }
 
-    }, []);
+        window.addEventListener('resize', resize);
+
+        return () => window.removeEventListener('resize', resize);
+    }, [size.width]);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = () => {
+        // calculateOnePercent(size.width);
+    }
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -568,6 +598,32 @@ export const PhotoViewer = (props) => {
         }
     }
 
+    const renderStyle = (screenWidth, width, height) => {
+        let updatedPhotoViewerWindowSize = {};
+        if(screenWidth > 800){
+            updatedPhotoViewerWindowSize={
+                width: width,
+                height:height
+            }
+        }else if(screenWidth < 800 && screenWidth > 600){
+            updatedPhotoViewerWindowSize={
+                width: width - 200,
+                height: height - 100
+            }
+        }else if(screenWidth < 600 && screenWidth > 480){
+            updatedPhotoViewerWindowSize={
+                width: width - 300,
+                height: height - 200
+            }
+        }else if(screenWidth < 480){
+            updatedPhotoViewerWindowSize={
+                width: width - 400,
+                height: height - 270
+            }
+        }
+        setPhotoViewerWindowSize(updatedPhotoViewerWindowSize);
+    }
+
     /**
     * Markup
     */
@@ -577,7 +633,7 @@ export const PhotoViewer = (props) => {
             <div className="photo-viewer">
                 <div 
                     className="photo-viewer-wrapper"
-                    style={{width: `${props.width}`}}
+                    style={{width: `${photoViewerWindowSize.width}`}}
                 >
                     <div className="photo-viewer-full-screen-button">
                         <FontAwesomeIcon 
@@ -591,7 +647,7 @@ export const PhotoViewer = (props) => {
                     </div>
                     <div 
                         className="photo-viewer-image-item"
-                        style={{width: `${props.width}`, height: `${props.height}`}}
+                        style={{width: `${photoViewerWindowSize.width}`, height: `${photoViewerWindowSize.height}`}}
                     >
                         <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
                     </div>

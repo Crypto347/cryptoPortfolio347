@@ -83,11 +83,12 @@ export const SmallSlider = (props) => {
     */
 
     const size = useWindowSize();
+    const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [onePercentToPx, setOnePercentToPx] = useState(0);
-    const resizeRef = useRef();
+ 
 
     /**
     * Methods
@@ -115,7 +116,7 @@ export const SmallSlider = (props) => {
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize)
         }
-    }, [onePercentToPx]);
+    }, []);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -124,8 +125,7 @@ export const SmallSlider = (props) => {
     const handleResize = () => {
         calculateOnePercent(size.width);
     }
-
-
+    
     const calculateOnePercent = (scrWidth) => {
         let screenWidth = scrWidth / 100;
 
@@ -249,33 +249,6 @@ export const SmallSlider = (props) => {
                 </>
             )
         }
-    }
-
-    const renderPortfolioImages = () => {
-        return(
-            <div 
-                id="smallSliderPortfolioImages"
-                className="small-slider-portfolio-images"
-            >{props.smallSliderPortfolio.item.imagesArray.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="small-slider-portfolio-image-wrapper"
-                    >
-                        <div 
-                            className="small-slider-portfolio-image"
-                            onClick={() => openPhotoViewer(props.smallSliderPortfolio.item.imagesArray, i)}
-                            onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
-                            onMouseLeave={() => handleMouseLeave(`image`, el.id)}
-                        >
-                            <img src={loadImg(el.key)}/>
-                            <div className={renderClassName(`image`, el.isHover)}/>
-                        </div>
-                        <EH30/>
-                    </div>
-                )
-            })}</div>
-        )
     }
 
     const renderTags = () => {
