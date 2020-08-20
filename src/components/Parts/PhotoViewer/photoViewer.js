@@ -261,6 +261,10 @@ export const PhotoViewer = (props) => {
         width: 0,
         height: 0
     })
+    const [photoViewerFullscreenWindowSize, setPhotoViewerFullscreenWindowSize] = useState({
+        width: 0,
+        height: 0
+    })
 
     /**
     * Methods
@@ -600,28 +604,73 @@ export const PhotoViewer = (props) => {
 
     const renderStyle = (screenWidth, width, height) => {
         let updatedPhotoViewerWindowSize = {};
-        if(screenWidth > 800){
-            updatedPhotoViewerWindowSize={
+        let updatedPhotoViewerFullscreenWindowSize = {};
+        if(screenWidth > 1100){
+            updatedPhotoViewerWindowSize = {
                 width: width,
-                height:height
+                height: height
             }
-        }else if(screenWidth < 800 && screenWidth > 600){
-            updatedPhotoViewerWindowSize={
+            updatedPhotoViewerFullscreenWindowSize = {
+                width: 0,
+                height: 80
+            }
+        }else if(screenWidth < 1100 && screenWidth > 900){
+            updatedPhotoViewerWindowSize = {
+                width: width,
+                height: height
+            }
+            updatedPhotoViewerFullscreenWindowSize = {
+                width: 0,
+                height: 65
+            }
+        }else if(screenWidth < 900 && screenWidth > 800){
+            updatedPhotoViewerWindowSize = {
+                width: width,
+                height: height
+            }
+            updatedPhotoViewerFullscreenWindowSize = {
+                width: 0,
+                height: 55
+            }
+        }else if(screenWidth < 800 && screenWidth > 700){
+                updatedPhotoViewerWindowSize = {
+                    width: width - 200,
+                    height: height - 100
+                }
+                updatedPhotoViewerFullscreenWindowSize = {
+                    width: width,
+                    height: 50
+                }
+        }else if(screenWidth < 700 && screenWidth > 600){
+            updatedPhotoViewerWindowSize = {
                 width: width - 200,
                 height: height - 100
             }
+            updatedPhotoViewerFullscreenWindowSize = {
+                width: width,
+                height: 40
+            }
         }else if(screenWidth < 600 && screenWidth > 480){
-            updatedPhotoViewerWindowSize={
+            updatedPhotoViewerWindowSize = {
                 width: width - 300,
                 height: height - 200
             }
+            updatedPhotoViewerFullscreenWindowSize = {
+                width: width,
+                height: 35
+            }
         }else if(screenWidth < 480){
-            updatedPhotoViewerWindowSize={
+            updatedPhotoViewerWindowSize = {
                 width: width - 400,
                 height: height - 270
             }
+            updatedPhotoViewerFullscreenWindowSize = {
+                width: width,
+                height: 30
+            }
         }
         setPhotoViewerWindowSize(updatedPhotoViewerWindowSize);
+        setPhotoViewerFullscreenWindowSize(updatedPhotoViewerFullscreenWindowSize)
     }
 
     /**
@@ -690,9 +739,9 @@ export const PhotoViewer = (props) => {
             </div>
             {fullScreen ? 
                 <Fullscreen
-                enabled={fullScreen}
-                onChange={(e) => fullscreenOnChangeHandler(e)}
-            >
+                    enabled={fullScreen}
+                    onChange={(e) => fullscreenOnChangeHandler(e)}
+                >
                 <div className="fullscreen-outer-wrapper">
                     <div className="fullscreen-close-button">
                         <div className="small-screen">
@@ -717,7 +766,10 @@ export const PhotoViewer = (props) => {
                             <div className="arrow-bottom-line"/>
                         </div>
                         <EW30/>
-                        <div className="fullscreen-photo-viewer-image-item">
+                        <div 
+                            className="fullscreen-photo-viewer-image-item"
+                            style={{height: `${photoViewerFullscreenWindowSize.height}vh`}}
+                        >
                             <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
                         </div>
                         <EW30/>
