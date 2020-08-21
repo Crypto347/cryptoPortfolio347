@@ -413,7 +413,7 @@ export const Toolbar = (props) => {
         if(option === "toolbarVersion2"){
             return(
                 <>
-                    <div className="toolbar-regular-screen-white">
+                    <div className="toolbarVersion2-white">
                         <div className="toolbar-logo">crypto.</div>
                         <div className="toolbar-wrapper">
                             <div 

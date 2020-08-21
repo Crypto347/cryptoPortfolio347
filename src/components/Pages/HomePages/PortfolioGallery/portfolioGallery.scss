@@ -1,11 +1,58 @@
 .portfolio-gallery {
     width: calc(100% + 18px);
-    // .big-images-loading-error {
-    //     width: 100vw;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
+    .portfolio-gallery-loading-error {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .portfolio-gallery-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 70px 130px 70px 130px;
+        .portfolio-gallery-header-wrapper {
+            cursor: context-menu;
+            .header-wrapper {
+                display: flex;
+                align-items: center;
+                .portfolio-gallery-header-bold {
+                    font-size: 90px;
+                    color: black;
+                    font-family: 'Poppins', sans-serif;
+                    -webkit-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    -moz-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    -o-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    animation-delay: 1s;
+                    animation-fill-mode: both;
+                }
+                .portfolio-gallery-header-text1 {
+                    font-size: 90px;
+                    color: rgb(37, 37, 37);
+                    font-family: 'Lustria', serif;
+                    padding-left: 15px;
+                    -webkit-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    -moz-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    -o-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                    animation-delay: 2s;
+                    animation-fill-mode: both;
+                }
+            }
+            .portfolio-gallery-header-text2 {
+                font-size: 90px;
+                color: rgb(37, 37, 37);
+                font-family: 'Lustria', serif;
+                -webkit-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                -moz-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                -o-animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                animation: poortfolioGalleryHeaderTextAppear .2s linear;
+                animation-delay: 3s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+ 
     // .big-images-wrapper {
     //     display: flex;
     //     flex-direction: column;
@@ -74,3 +121,45 @@
 //         }
 //     }
 // }
+
+@keyframes poortfolioGalleryHeaderTextAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-moz-keyframes poortfolioGalleryHeaderTextAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes poortfolioGalleryHeaderTextAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-o-keyframes poortfolioGalleryHeaderTextAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+

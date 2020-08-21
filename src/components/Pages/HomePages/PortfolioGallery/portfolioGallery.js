@@ -383,6 +383,15 @@ export const PortfolioGallery = (props) => {
     return(
         <div className="portfolio-gallery">
             {renderToolbars()}
+            <div className="portfolio-gallery-wrapper">
+                <div className="portfolio-gallery-header-wrapper">
+                    <div className="header-wrapper">
+                        <div className="portfolio-gallery-header-bold">Welcome!</div>
+                        <div className="portfolio-gallery-header-text1">Take a Look</div>
+                    </div>
+                    <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
+                </div>
+            </div>
             <Footer/>
         </div>
     );
