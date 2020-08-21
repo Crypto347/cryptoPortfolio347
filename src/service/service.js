@@ -154,20 +154,20 @@ export function fetchAchievementsData() {
     };
 }
 
-export function fetchSmallImagesPortfolio(id) {
+export function fetchBigImagesPortfolio(id) {
     return dispatch => {
-        dispatch(Actions.fetchSmallImagesPortfolioBegin());
-        return fetch(`http://localhost:3005/api/portfolio-item/small-images/${id}`)
+        dispatch(Actions.fetchBigImagesPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/big-images/${id}`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchSmallImagesPortfolioSuccess(json));
+                dispatch(Actions.fetchBigImagesPortfolioSuccess(json));
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
-                dispatch(Actions.fetchSmallImagesPortfolioFailur(error))
+                dispatch(Actions.fetchBigImagesPortfolioFailur(error))
             });
     };
 }
@@ -190,38 +190,38 @@ export function fetchBigSliderPortfolio(id) {
     };
 }
 
-export function fetchBigImagesPortfolio(id) {
+export function fetchSmallImagesPortfolio(id) {
     return dispatch => {
-        dispatch(Actions.fetchBigImagesPortfolioBegin());
-        return fetch(`http://localhost:3005/api/portfolio-item/big-images/${id}`)
+        dispatch(Actions.fetchSmallImagesPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/small-images/${id}`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchBigImagesPortfolioSuccess(json));
+                dispatch(Actions.fetchSmallImagesPortfolioSuccess(json));
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
-                dispatch(Actions.fetchBigImagesPortfolioFailur(error))
+                dispatch(Actions.fetchSmallImagesPortfolioFailur(error))
             });
     };
 }
 
-export function fetchSmallGalleryPortfolio(id) {
+export function fetchSmallSliderPortfolio(id) {
     return dispatch => {
-        dispatch(Actions.fetchSmallGalleryPortfolioBegin());
-        return fetch(`http://localhost:3005/api/portfolio-item/small-gallery/${id}`)
+        dispatch(Actions.fetchSmallSliderPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/small-slider/${id}`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchSmallGalleryPortfolioSuccess(json));
+                dispatch(Actions.fetchSmallSliderPortfolioSuccess(json));
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
-                dispatch(Actions.fetchSmallGalleryPortfolioFailur(error))
+                dispatch(Actions.fetchSmallSliderPortfolioFailur(error))
             });
     };
 }
@@ -244,23 +244,26 @@ export function fetchGalleryPortfolio(id) {
     };
 }
 
-export function fetchSmallSliderPortfolio(id) {
+export function fetchSmallGalleryPortfolio(id) {
     return dispatch => {
-        dispatch(Actions.fetchSmallSliderPortfolioBegin());
-        return fetch(`http://localhost:3005/api/portfolio-item/small-slider/${id}`)
+        dispatch(Actions.fetchSmallGalleryPortfolioBegin());
+        return fetch(`http://localhost:3005/api/portfolio-item/small-gallery/${id}`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchSmallSliderPortfolioSuccess(json));
+                dispatch(Actions.fetchSmallGalleryPortfolioSuccess(json));
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
-                dispatch(Actions.fetchSmallSliderPortfolioFailur(error))
+                dispatch(Actions.fetchSmallGalleryPortfolioFailur(error))
             });
     };
 }
+
+
+
 
 function handleErrors(response) {
     if (!response.ok) {

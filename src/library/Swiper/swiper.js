@@ -728,7 +728,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(props.component === "testimonials"){
+            if(['testimonials','bigSlider'].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
                         <div 
@@ -782,7 +782,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(props.component === "testimonials"){
+            if(['testimonials','bigSlider'].includes(props.component)){
                 return(
                     <div className="swiper-arrow-right">
                         <div 
