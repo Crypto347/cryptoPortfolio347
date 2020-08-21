@@ -113,7 +113,7 @@ export const PortfolioGallery = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // props.fetchBigImagesPortfolio(props.match.params.id);
+        props.fetchPortfolioGalleryPage();
 
         // if(props.bigImagesPortfolio.item !== {}){
         //     setShowContent(true);
@@ -406,7 +406,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // fetchBigImagesPortfolio: bindActionCreators(Services.fetchBigImagesPortfolio, dispatch),
+            fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             // setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };

@@ -49,6 +49,7 @@ app.get('/api/headerImagesArray', (req, res) => {
     ]
     res.json(headerImg);
 });
+
 app.get('/api/section1', (req, res) => {
     const sec1 = [
         {
@@ -72,6 +73,7 @@ app.get('/api/section1', (req, res) => {
     ]
     res.json(sec1);
 });
+
 app.get('/api/section2/pictureBoard', (req, res) => {
     const picBoard = [
         {
@@ -890,6 +892,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
     ]
     res.json(picBoard);
 });
+
 app.get('/api/section2/ourProcess', (req, res) => {
     const sec2 = [
         {
@@ -920,6 +923,7 @@ app.get('/api/section2/ourProcess', (req, res) => {
     ]
     res.json(sec2);
 });
+
 app.get('/api/section3/testimonials', (req, res) => {
     const testimonials = [
         {
@@ -940,6 +944,7 @@ app.get('/api/section3/testimonials', (req, res) => {
     ]
     res.json(testimonials);
 });
+
 app.get('/api/section3/teamInformation', (req, res) => {
     const teamInfo = [
         {
@@ -990,6 +995,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
     ]
     res.json(teamInfo);
 });
+
 app.get('/api/section4/statisticsData', (req, res) => {
     const statisticsData = [
         {
@@ -1015,6 +1021,7 @@ app.get('/api/section4/statisticsData', (req, res) => {
     ]
     res.json(statisticsData);
 });
+
 app.get('/api/section4/achievementsData', (req, res) => {
     const achievementsData = [
         {
@@ -1040,6 +1047,7 @@ app.get('/api/section4/achievementsData', (req, res) => {
     ]
     res.json(achievementsData);
 });
+
 app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
@@ -1187,6 +1195,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
         res.json(smallImagesObj);  
     }
 });
+
 app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
@@ -1343,6 +1352,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
         res.json(bigSliderObj);  
     }
 });
+
 app.get('/api/portfolio-item/big-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
@@ -1448,6 +1458,7 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
         res.json(bigImagesObj);  
     }
 });
+
 app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
@@ -1935,6 +1946,948 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
     }else{
         res.json(smallSliderObj);  
     }
+});
+
+app.get('/api/portfolio-gallery-page', (req, res) => {
+    const portfolioGallery = [
+        {
+            id: 1,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Images",
+            path: "portfolio-item/small-images/1",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Big Slider",
+            path: "portfolio-item/big-slider/1",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 3,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Gallery",
+            path: "portfolio-item/gallery/1",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 4,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Gallery",
+            path: "portfolio-item/small-gallery/1",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 5,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Big Images",
+            path: "portfolio-item/big-images/1",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 6,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Slider",
+            path: "portfolio-item/small-slider/1",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 7,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Slider",
+            path: "portfolio-item/small-slider/2",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 8,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Gallery",
+            path: "portfolio-item/gallery/2",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 9,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Gallery",
+            path: "portfolio-item/small-gallery/2",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 10,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Images",
+            path: "portfolio-item/small-images/2",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 11,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Big Slider",
+            path: "portfolio-item/big-slider/2",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 12,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Big Images",
+            path: "portfolio-item/big-images/2",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 13,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "gallery",
+            path: "portfolio-item/gallery/3",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 14,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Slider",
+            path: "portfolio-item/small-slider/3",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 15,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Gallery",
+            path: "portfolio-item/small-gallery/3",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 16,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Images",
+            path: "portfolio-item/small-images/3",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 17,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Big Slider",
+            path: "portfolio-item/big-slider/3",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+        {
+            id: 18,
+            key: "",
+            option: "colorful",
+            type: "Graphic Design",
+            portfolioType: "Small Images",
+            path: "portfolio-item/small-images/4",
+            pictures: [
+                {
+                    id: 1,
+                    key: "col1",
+                    folderName: "colorful",
+                    imageName: "kara-eads-gVUV7PbSu_0-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 2,
+                    key: "col2",
+                    folderName: "colorful",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 3,
+                    key: "col3",
+                    folderName: "colorful",
+                    imageName: "jane-palash-iaofnd2IdFU-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 4,
+                    key: "col4",
+                    folderName: "colorful",
+                    imageName: "fallon-michael-_lKsxGjOzk8-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 5,
+                    key: "col5",
+                    folderName: "colorful",
+                    imageName: "kara-eads-ylNifQf8TiY-unsplash.png",
+                    alt: "image"
+                },
+                {
+                    id: 6,
+                    key: "col6",
+                    folderName: "colorful",
+                    imageName: "siora-photography-G8RdOUjVuJo-unsplash.png",
+                    alt: "image"
+                }
+            ]
+        },
+    ]
+    res.json(portfolioGallery);
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {
