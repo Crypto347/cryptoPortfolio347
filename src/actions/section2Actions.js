@@ -40,17 +40,17 @@ export function fetchOurProcessDataFailur(err) {
     };
 };
 
-export function rememberCoordinateRange(id, coordinateRange) {
+export function rememberCoordinateRangeForPictureBoard(id, coordinateRange) {
     return { 
-        type: actionTypes.REMEMBER_COORDINATE_RANGE,
+        type: actionTypes.REMEMBER_COORDINATE_RANGE_FOR_PICTURE_BOARD,
         id: id,
         coordinateRange: coordinateRange
     };
 };
 
-export function forgetCoordinateRange(arr) {
+export function forgetCoordinateRangeForPictureBoard(arr) {
     return { 
-        type: actionTypes.FORGET_COORDINATE_RANGE,
+        type: actionTypes.FORGET_COORDINATE_RANGE_FOR_PICTURE_BOARD,
         arr: arr
     };
 };

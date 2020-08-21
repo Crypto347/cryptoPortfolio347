@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -27,8 +28,7 @@ import './portfolioGallery.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
-import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
+import PictureBoardImageItem from '../../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -102,10 +102,82 @@ export const PortfolioGallery = (props) => {
     */
 
     const size = useWindowSize();
+    const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     // const [showContent, setShowContent] = useState(false);
     // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
+  
+    const initCoordinateRange = [
+        {
+            id: 1,
+            updated: false
+        },
+        {
+            id: 2,
+            updated: false
+        },
+        {
+            id: 3,
+            updated: false
+        },
+        {
+            id: 4,
+            updated: false
+        },
+        {
+            id: 5,
+            updated: false
+        },
+        {
+            id: 6,
+            updated: false
+        },
+        {
+            id: 7,
+            updated: false
+        },
+        {
+            id: 8,
+            updated: false
+        },
+        {
+            id: 9,
+            updated: false
+        },
+        {
+            id: 10,
+            updated: false
+        },
+        {
+            id: 11,
+            updated: false
+        },
+        {
+            id: 12,
+            updated: false
+        },
+        {
+            id: 13,
+            updated: false
+        },
+        {
+            id: 15,
+            updated: false
+        },
+        {
+            id: 16,
+            updated: false
+        },
+        {
+            id: 17,
+            updated: false
+        },
+        {
+            id: 18,
+            updated: false
+        }
+    ]
 
     /**
     * Methods
@@ -115,14 +187,20 @@ export const PortfolioGallery = (props) => {
         window.scrollTo(0, 0);
         props.fetchPortfolioGalleryPage();
 
-        // if(props.bigImagesPortfolio.item !== {}){
-        //     setShowContent(true);
-        // }
-
-        // window.addEventListener('wheel', handleOnWheel);
-
-        // return () => window.removeEventListener('wheel', handleOnWheel);
+        const resize = () => {
+            resizeRef.current();
+        }
+        window.addEventListener('resize', resize);
+        return () => window.removeEventListener('resize', resize);
     }, []);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = () => {
+        props.forgetCoordinateRangeForPortfolioGalleryPage(initCoordinateRange);
+    }
 
     // const loadImg = (key) => {
     //     switch(key) {
@@ -294,87 +372,63 @@ export const PortfolioGallery = (props) => {
     //     )
     // }
 
-    // const renderPortfolioImages = () => {
-    //     return(
-    //         <div className="big-images-portfolio-images">{props.bigImagesPortfolio.item.imagesArray.map((el, i) => {
-    //             return(
-    //                 <div 
-    //                     key={i}
-    //                     className="big-images-portfolio-image"
-    //                 >
-    //                     <img 
-    //                         src={loadImg(el.key)}
-    //                         onClick={() => openPhotoViewer(props.bigImagesPortfolio.item.imagesArray, i)}
-    //                     />
-    //                     <EH30/>
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
+    const renderPortfolioGalleryPageItems = () => {
+        return(
+            <div className="portfolio-gallery-page-items">{props.portfolioGalleryPage.item.imagesArray.map((el, i) => {
+                let imgCoordinateRange = props.portfolioGalleryPage.itemsCooradinateRange.find(item => item.id === el.id);
+                return(
+                    <div 
+                        key={i}
+                        className="portfolio-gallery-page-item"
+                    >
+                        <PictureBoardImageItem  
+                            key={i}
+                            component="portfolioGalleryPage"
+                            id={el.id}
+                            option={el.option}
+                            imagesArray={el.pictures}
+                            alt={el.alt}
+                            path={el.path}
+                            clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
+                            // forgetCoordinateRange={props.forgetCoordinateRange}
+                            imgCoordinateRange={imgCoordinateRange}
+                        />
+                    </div>
+                )
+            })}</div>
+        )
+    }
 
-    // const renderBigImagesContent = () => {
-    //     if(props.bigImagesPortfolio.loading && !props.bigImagesPortfolio.error){
-    //         return(
-    //             <div 
-    //                 className="big-images-loading-error" 
-    //                 style={{height: `${size.height}px`}}
-    //             >
-    //                 <Loading color="black"/>
-    //             </div>
-    //         )
-    //     }
-    //     if(!props.bigImagesPortfolio.loading && !props.bigImagesPortfolio.error){
-    //         return(
-    //             <div className="big-images-wrapper">
-    //                 <H70 className="h70-nero-poppins">{props.bigImagesPortfolio.item.header}</H70>
-    //                 <EH70/>
-    //                 <div 
-    //                     id="bigSliderContent"
-    //                     className="big-images-content"
-    //                 >
-    //                     <div className="big-images-content-info">
-    //                         {renderPortfolioImages()}
-    //                         <EH40/>
-    //                         <div className="big-images-content-info">
-    //                             <div className="big-images-text-wrapper">
-    //                                 <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.text}</H19>
-    //                             </div>
-    //                             <div className="big-images-category-date-tags-wrapper">
-    //                                 <H22 className="h22-nero-poppins">Category:</H22>
-    //                                 <H19 
-    //                                     className={renderClassName("bigImagesCategory", isHoveringCategoryText)}
-    //                                     onMouseEnter={() => handleMouseEnter('bigImagesCategory')} 
-    //                                     onMouseLeave={() => handleMouseLeave('bigImagesCategory')}
-    //                                 >
-    //                                     {props.bigImagesPortfolio.item.category}
-    //                                 </H19>
-    //                                 <EH40/>
-    //                                 <H22 className="h22-nero-poppins">Date:</H22>
-    //                                 <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.date}</H19>
-    //                                 <EH40/>
-    //                                 <H22 className="h22-nero-poppins">Tags:</H22>
-    //                                 {renderTags()}
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <EH70/>
-    //                     <PortfolioNavigation/>
-    //                 </div>
-    //             </div>
-    //         )
-    //     }
-    //     if(!props.bigImagesPortfolio.loading && props.bigImagesPortfolio.error){
-    //         return(
-    //             <div 
-    //                 className="big-images-loading-error" 
-    //                 style={{height: `${size.height}px`}}
-    //             >
-    //                 <H19 className="h19-nobel-lora">{`${props.bigImagesPortfolio.error}`}</H19>
-    //             </div>
-    //         )
-    //     }
-    // } 
+    const renderPortfolioGalleryPageData = () => {
+        if(props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error){
+            return(
+                <div 
+                    className="portfolio-gallery-page-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error){
+            return(
+                <div className="portfolio-gallery-page-items-wrapper">
+                    {renderPortfolioGalleryPageItems()}
+                </div>
+            )
+        }
+        if(!props.portfolioGalleryPage.loading && props.portfolioGalleryPage.error){
+            return(
+                <div 
+                    className="portfolio-gallery-page-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <H19 className="h19-nobel-lora">{`${props.portfolioGalleryPage.error}`}</H19>
+                </div>
+            )
+        }
+    } 
     
     /**
     * Markup
@@ -391,6 +445,7 @@ export const PortfolioGallery = (props) => {
                     </div>
                     <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
                 </div>
+                {renderPortfolioGalleryPageData()}
             </div>
             <Footer/>
         </div>
@@ -400,13 +455,15 @@ export const PortfolioGallery = (props) => {
 export default connect(
     (state) => {
         return {
-            // bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
+            portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
             // photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state)
         };
     },
     (dispatch) => {
         return {
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
+            rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
+            forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
             // setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };

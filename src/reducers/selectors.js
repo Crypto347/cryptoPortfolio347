@@ -184,3 +184,9 @@ export const getPhotoViewerForSmallSliderOpenState = createSelector(
     (x) => x
 );
 
+const getPortfolioGalleryPage = (state) => state.portfolioGalleryPage;
+
+export const getPortfolioGalleryPageState = createSelector(
+    [getPortfolioGalleryPage],
+    (x) => x
+);

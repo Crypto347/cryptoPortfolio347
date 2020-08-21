@@ -154,7 +154,7 @@ const fetchOurProcessDataFailur = (state, action) => {
     };
 }
 
-const rememberCoordinateRange = (state, action) => {
+const rememberCoordinateRangeForPictureBoard = (state, action) => {
     let updatedPictureBoardImagesCooradinateRange = [...state.pictureBoardImagesCooradinateRange];
     
     let objIndex = updatedPictureBoardImagesCooradinateRange.findIndex(item => item.id === action.id);
@@ -166,7 +166,7 @@ const rememberCoordinateRange = (state, action) => {
     };
 }
 
-const forgetCoordinateRange = (state, action) => {
+const forgetCoordinateRangeForPictureBoard = (state, action) => {
     return {
         ...state,
         pictureBoardImagesCooradinateRange: action.arr
@@ -187,10 +187,10 @@ const section2Reducer = (state = initialState, action) => {
             return fetchOurProcessDataSuccess (state, action);
         case actionTypes.FETCH_OUR_PROCESS_DATA_FAILURE:
             return fetchOurProcessDataFailur(state, action);
-        case actionTypes.REMEMBER_COORDINATE_RANGE:
-            return rememberCoordinateRange(state, action);
-        case actionTypes.FORGET_COORDINATE_RANGE:
-            return forgetCoordinateRange(state, action);
+        case actionTypes.REMEMBER_COORDINATE_RANGE_FOR_PICTURE_BOARD:
+            return rememberCoordinateRangeForPictureBoard(state, action);
+        case actionTypes.FORGET_COORDINATE_RANGE_FOR_PICTURE_BOARD:
+            return forgetCoordinateRangeForPictureBoard(state, action);
         default: 
             return state;
     }

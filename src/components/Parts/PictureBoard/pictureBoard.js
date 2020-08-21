@@ -128,7 +128,7 @@ export const PictureBoard = (props) => {
     });
 
     const handleResize = () => {
-        props.forgetCoordinateRange(initCoordinateRange);
+        props.forgetCoordinateRangeForPictureBoard(initCoordinateRange);
     }
 
     const renderPictureBoard = () => {
@@ -181,7 +181,7 @@ export const PictureBoard = (props) => {
                             alt={el.alt}
                             path={el.path}
                             clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                            rememberCoordinateRange={props.rememberCoordinateRange}
+                            rememberCoordinateRange={props.rememberCoordinateRangeForPictureBoard}
                             // forgetCoordinateRange={props.forgetCoordinateRange}
                             imgCoordinateRange={imgCoordinateRange}
                         />
@@ -212,8 +212,8 @@ export default connect(
     (dispatch) => {
         return {
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
-            rememberCoordinateRange: bindActionCreators(Actions.rememberCoordinateRange, dispatch),
-            forgetCoordinateRange: bindActionCreators(Actions.forgetCoordinateRange, dispatch),
+            rememberCoordinateRangeForPictureBoard: bindActionCreators(Actions.rememberCoordinateRangeForPictureBoard, dispatch),
+            forgetCoordinateRangeForPictureBoard: bindActionCreators(Actions.forgetCoordinateRangeForPictureBoard, dispatch),
         };
     }
 )(PictureBoard);

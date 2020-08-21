@@ -210,8 +210,14 @@ export const PictureBoardImageItem = (props) => {
             case 2:
                 imgCoordinateRange = evaluateCoordinates(); 
                 break;
+            case 3:
+                imgCoordinateRange = evaluateCoordinates(); 
+                break;
             case 4:
-                imgCoordinateRange = evaluateCoordinates()
+                imgCoordinateRange = evaluateCoordinates();
+                break;
+            case 5:
+                imgCoordinateRange = evaluateCoordinates();
                 break;
             case 6:
                 imgCoordinateRange = evaluateCoordinates(); 
@@ -231,8 +237,14 @@ export const PictureBoardImageItem = (props) => {
             case 11:
                 imgCoordinateRange = evaluateCoordinates(); 
                 break;
+            case 12:
+                imgCoordinateRange = evaluateCoordinates();
+                break;
             case 13:
                 imgCoordinateRange = evaluateCoordinates(); 
+                break;
+            case 14:
+                imgCoordinateRange = evaluateCoordinates()
                 break;
             case 15:
                 imgCoordinateRange = evaluateCoordinates(); 
@@ -240,8 +252,15 @@ export const PictureBoardImageItem = (props) => {
             case 16:
                 imgCoordinateRange = evaluateCoordinates(); 
                 break;
-        }     
-        props.rememberCoordinateRange(props.id, imgCoordinateRange);
+            case 17:
+                imgCoordinateRange = evaluateCoordinates();
+                break;
+            case 18:
+                imgCoordinateRange = evaluateCoordinates();
+                break;
+        }  
+            props.rememberCoordinateRange(props.id, imgCoordinateRange);
+       
     }
 
     const evaluateCoordinates = () => {

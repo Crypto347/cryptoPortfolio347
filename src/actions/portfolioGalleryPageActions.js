@@ -19,3 +19,19 @@ export function fetchPortfolioGalleryPageFailur(err) {
         err: err
     };
 };
+
+
+export function rememberCoordinateRangeForPortfolioGalleryPage(id, coordinateRange) {
+    return { 
+        type: actionTypes.REMEMBER_COORDINATE_RANGE_FOR_PORTFOLIO_GALLERY_PAGE,
+        id: id,
+        coordinateRange: coordinateRange
+    };
+};
+
+export function forgetCoordinateRangeForPortfolioGalleryPage(arr) {
+    return { 
+        type: actionTypes.FORGET_COORDINATE_RANGE_FOR_PORTFOLIO_GALLERY_PAGE,
+        arr: arr
+    };
+};
