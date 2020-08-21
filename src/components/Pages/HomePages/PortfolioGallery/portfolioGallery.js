@@ -27,7 +27,6 @@ import './portfolioGallery.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-// import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
@@ -384,6 +383,7 @@ export const PortfolioGallery = (props) => {
     return(
         <div className="portfolio-gallery">
             {renderToolbars()}
+            <Footer/>
         </div>
     );
 }
