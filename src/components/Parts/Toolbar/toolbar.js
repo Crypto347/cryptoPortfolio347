@@ -410,6 +410,37 @@ export const Toolbar = (props) => {
                     </CSSTransition>
             )
         }
+        if(option === "toolbarVersion2"){
+            return(
+                <>
+                    <div className="toolbar-regular-screen-white">
+                        <div className="toolbar-logo">crypto.</div>
+                        <div className="toolbar-wrapper">
+                            <div 
+                                className="toolbar-menu"
+                                onMouseEnter={handleMouseEnterMenuIcon} 
+                                onMouseLeave={handleMouseLeaveMenuIcon}
+                            >
+                                {renderMenuDots()}
+                            </div>
+                        </div>
+                    </div>
+                    {/* {showOptions ? 
+                    <div 
+                        className="toolbar-regular-screen-options"
+                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
+                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
+                    >
+                        <div  className="grey-line"/>
+                        <EH20/>
+                        <EH10/>
+                        {renderToolbarOptions()}
+                        <EH10/>
+                        <EH20/>
+                    </div> : null} */}
+                </>
+            )
+        }
     }
 
     const renderToolbarItems = () => {

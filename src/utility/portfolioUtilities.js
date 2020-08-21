@@ -3,11 +3,17 @@ export const findPathOfIds = (path) => {
     if(path === ""){
         return [1, 11, 111];
     }
-  
+
+    //Home items
+    switch(updatedPath[0]){
+        case 'portfolio-gallery':
+            return [];       
+    }
+
+    //Portfolio items
     switch(updatedPath[1]){
         // case '':
         //     return [1, 11, 111];
-       
         case 'big-images':
             return [2, 21, 213];
         case 'big-slider':

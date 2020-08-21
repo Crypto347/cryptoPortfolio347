@@ -41,6 +41,7 @@ import BigImages from './Pages/PortfolioPages/BigImages/bigImages';
 import SmallGallery from './Pages/PortfolioPages/SmallGallery/smallGallery';
 import Gallery from './Pages/PortfolioPages/Gallery/gallery';
 import SmallSlider from './Pages/PortfolioPages/SmallSLider/smallSlider';
+import PortfolioGallery from './Pages/HomePages/PortfolioGallery/portfolioGallery';
 // import Archieve from './Pages/Archieve/archieve';
 // import Category from './Pages/Category/category';
 
@@ -95,6 +96,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/portfolio-gallery"}
+                    component={PortfolioGallery}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/small-slider/:id"}

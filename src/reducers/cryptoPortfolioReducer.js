@@ -452,7 +452,6 @@ const setSidebarState = (state, action) => {
 const activateMenuItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
 
-
     if(action.pathOfIds.length === 3){
         let optionItem = {
             ...updatedMenuItems
