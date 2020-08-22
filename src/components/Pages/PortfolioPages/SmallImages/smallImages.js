@@ -218,9 +218,9 @@ export const SmallImages = (props) => {
                 case 'init':
                     return "h19-nobel-lustria-animated";
                 case 'on':
-                    return "h19-nobel-lustria-hover-on";
+                    return "h19-nobel-lustria-nero-hover-on";
                 case 'off':
-                    return "h19-nobel-lustria-hover-off"
+                    return "h19-nobel-lustria-nero-hover-off"
             }
         }
         if(opt === "smallImagesTag"){
@@ -228,9 +228,9 @@ export const SmallImages = (props) => {
                 case 'init':
                     return "h19-nobel-lustria-animated";
                 case 'on':
-                    return "h19-nobel-lustria-hover-on";
+                    return "h19-nobel-lustria-nero-hover-on";
                 case 'off':
-                    return "h19-nobel-lustria-hover-off"
+                    return "h19-nobel-lustria-nero-hover-off"
             }
         }
     }

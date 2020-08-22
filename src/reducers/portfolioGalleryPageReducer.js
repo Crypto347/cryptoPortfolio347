@@ -135,6 +135,19 @@ const forgetCoordinateRangeForPortfolioGalleryPage = (state, action) => {
     };
 }
 
+const setPortfolioGalleryPageIsHoveringTypeOfCard = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let item = {...updatedItems.find(item => item.id === action.id), isHover: action.val};
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const section1Reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PORTFOLIO_GALLERY_PAGE_BEGIN:
@@ -147,6 +160,8 @@ const section1Reducer = (state = initialState, action) => {
             return rememberCoordinateRangeForPortfolioGalleryPage(state, action);
         case actionTypes.FORGET_COORDINATE_RANGE_FOR_PORTFOLIO_GALLERY_PAGE:
             return forgetCoordinateRangeForPortfolioGalleryPage(state, action);
+        case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_TYPE_OF_CARD:
+            return setPortfolioGalleryPageIsHoveringTypeOfCard(state, action);
         default: 
             return state;
     }

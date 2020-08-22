@@ -21,6 +21,35 @@
     font-family: 'Lustria', serif;
 }
 
+.h15-nobel-lustria-animated {
+    font-size: 15px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+}
+
+.h15-nobel-lora-nero-hover-on {
+    font-size: 15px;
+    color: rgb(37, 37, 37);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h15NobelNeroHoverOn .5s linear;
+    -moz-animation: h15NobelNeroHoverOn .5s linear;
+    -o-animation: h15NobelNeroHoverOn .5s linear;
+    animation: h15NobelNeroHoverOn .5s linear;
+}
+
+.h15-nobel-lora-nero-hover-off {
+    font-size: 15px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h15NobelNeroHoverOff .5s linear;
+    -moz-animation: h15NobelNeroHoverOff .5s linear;
+    -o-animation: h15NobelNeroHoverOff .5s linear;
+    animation: h15NobelNeroHoverOff .5s linear;
+}
+
 .h15-nobel-lustria-animation {
     font-size: 15px;
     color: rgb(155, 155, 155);
@@ -62,3 +91,38 @@
     from{color: rgb(155, 155, 155);}
     to {color: white;}
 }
+
+@-webkit-keyframes h15NobelNeroHoverOn{
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+@-moz-keyframes h15NobelNeroHoverOn{
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+@-o-keyframes h15NobelNeroHoverOn{
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+@keyframes h15NobelNeroHoverOn{
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+
+@-webkit-keyframes h15NobelNeroHoverOff {
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+@-moz-keyframes h15NobelNeroHoverOff {
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+@-o-keyframes h15NobelNeroHoverOff {
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+@keyframes h15NobelNeroHoverOff {
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+

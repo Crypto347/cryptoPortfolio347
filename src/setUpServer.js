@@ -1954,8 +1954,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 1,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Images",
+            isHover: "init",
             path: "portfolio-item/small-images/1",
             pictures: [
                 {
@@ -1999,8 +2000,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 2,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Big Slider",
+            isHover: "init",
             path: "portfolio-item/big-slider/1",
             pictures: [
                 {
@@ -2044,8 +2046,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 3,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Gallery",
+            isHover: "init",
             path: "portfolio-item/gallery/1",
             pictures: [
                 {
@@ -2102,8 +2105,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 4,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Gallery",
+            isHover: "init",
             path: "portfolio-item/small-gallery/1",
             pictures: [
                 {
@@ -2160,8 +2164,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 5,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Big Images",
+            isHover: "init",
             path: "portfolio-item/big-images/1",
             pictures: [
                 {
@@ -2205,8 +2210,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 6,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Slider",
+            isHover: "init",
             path: "portfolio-item/small-slider/1",
             pictures: [
                 {
@@ -2263,8 +2269,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 7,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Slider",
+            isHover: "init",
             path: "portfolio-item/small-slider/2",
             pictures: [
                 {
@@ -2313,8 +2320,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 8,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Gallery",
+            isHover: "init",
             path: "portfolio-item/gallery/2",
             pictures: [
                 {
@@ -2363,8 +2371,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 9,
             key: "",
             option: "blackAndWhite",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Gallery",
+            isHover: "init",
             path: "portfolio-item/small-gallery/2",
             pictures: [
                 {
@@ -2405,8 +2414,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 10,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Images",
+            isHover: "init",
             path: "portfolio-item/small-images/2",
             pictures: [
                 {
@@ -2429,8 +2439,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 11,
             key: "",
             option: "blackAndWhite",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Big Slider",
+            isHover: "init",
             path: "portfolio-item/big-slider/2",
             pictures: [
                 {
@@ -2481,8 +2492,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 12,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Big Images",
+            isHover: "init",
             path: "portfolio-item/big-images/2",
             pictures: [
                 {
@@ -2533,8 +2545,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 13,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "gallery",
+            isHover: "init",
             path: "portfolio-item/gallery/3",
             pictures: [
                 {
@@ -2591,8 +2604,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 14,
             key: "",
             option: "blackAndWhite",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Slider",
+            isHover: "init",
             path: "portfolio-item/small-slider/3",
             pictures: [
                 {
@@ -2633,8 +2647,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 15,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Gallery",
+            isHover: "init",
             path: "portfolio-item/small-gallery/3",
             pictures: [
                 {
@@ -2691,8 +2706,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 16,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Images",
+            isHover: "init",
             path: "portfolio-item/small-images/3",
             pictures: [
                 {
@@ -2722,8 +2738,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 17,
             key: "",
             option: "colorful",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Big Slider",
+            isHover: "init",
             path: "portfolio-item/big-slider/3",
             pictures: [
                 {
@@ -2781,8 +2798,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 18,
             key: "",
             option: "blackAndWhite",
-            type: "Graphic Design",
+            designType: "Graphic Design",
             portfolioType: "Small Images",
+            isHover: "init",
             path: "portfolio-item/small-images/4",
             pictures: [
                 {

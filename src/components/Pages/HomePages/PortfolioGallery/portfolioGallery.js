@@ -54,7 +54,7 @@ import * as Selectors from '../../../../reducers/selectors';
 */
 
 import { 
-    H19,
+    H15,
     H22,
     H70,
     EH30,
@@ -202,6 +202,35 @@ export const PortfolioGallery = (props) => {
         props.forgetCoordinateRangeForPortfolioGalleryPage(initCoordinateRange);
     }
 
+    const handleMouseEnter = (opt, id) => {
+        switch(opt){
+            case 'designType': 
+                props.setPortfolioGalleryPageIsHoveringTypeOfCard("on", id);
+                break;
+        }
+    }
+
+    const handleMouseLeave = (opt, id) => {
+        switch(opt){
+            case 'designType': 
+                props.setPortfolioGalleryPageIsHoveringTypeOfCard("off", id);
+                break;
+        }
+    }
+
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "designType"){
+            switch(isHovering){
+                case 'init':
+                    return "h15-nobel-lustria-animated";
+                case 'on':
+                    return "h15-nobel-lora-nero-hover-on";
+                case 'off':
+                    return "h15-nobel-lora-nero-hover-off"
+            }
+        }
+    }
+
     // const loadImg = (key) => {
     //     switch(key) {
     //         case 'id1BigImages1':
@@ -250,29 +279,6 @@ export const PortfolioGallery = (props) => {
     //         case 'bigImagesTag': 
     //             props.setBigImagesIsHoveringTag("off", id);
     //             break;
-    //     }
-    // }
-    
-    // const renderClassName = (opt, isHovering) => {
-    //     if(opt === "bigImagesCategory"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h19-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h19-nobel-lustria-hover-on";
-    //             case 'off':
-    //                 return "h19-nobel-lustria-hover-off"
-    //         }
-    //     }
-    //     if(opt === "bigImagesTag"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h19-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h19-nobel-lustria-hover-on";
-    //             case 'off':
-    //                 return "h19-nobel-lustria-hover-off"
-    //         }
     //     }
     // }
 
@@ -356,46 +362,57 @@ export const PortfolioGallery = (props) => {
         // }
     }
    
-    // const renderTags = () => {
-    //     return(
-    //         <div className="big-images-tags">{props.bigImagesPortfolio.item.tags.map((el, i) => {
-    //             return(
-    //                 <div 
-    //                     key={i}
-    //                     onMouseEnter={() => handleMouseEnter(`bigImagesTag`, el.id)} 
-    //                     onMouseLeave={() => handleMouseLeave(`bigImagesTag`, el.id)} 
-    //                 >
-    //                     <H19 className={renderClassName(`bigImagesTag`, el.isHover)}>{el.label}</H19>
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
+ 
 
     const renderPortfolioGalleryPageItems = () => {
         return(
-            <div className="portfolio-gallery-page-items">{props.portfolioGalleryPage.item.imagesArray.map((el, i) => {
+            <div className="portfolio-gallery-page-items">{props.portfolioGalleryPage.items.map((el, i) => {
                 let imgCoordinateRange = props.portfolioGalleryPage.itemsCooradinateRange.find(item => item.id === el.id);
                 return(
                     <div 
                         key={i}
-                        className="portfolio-gallery-page-item"
+                        className="portfolio-gallery-page-card"
                     >
-                        <PictureBoardImageItem  
+                        {/* <PictureBoardImageItem  
                             key={i}
-                            component="portfolioGalleryPage"
                             id={el.id}
                             option={el.option}
                             imagesArray={el.pictures}
                             alt={el.alt}
-                            path={el.path}
-                            clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            // path={el.path}
+                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                             rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
                             // forgetCoordinateRange={props.forgetCoordinateRange}
                             imgCoordinateRange={imgCoordinateRange}
-                        />
+                        /> */}
+                        <div
+                            onMouseEnter={() => handleMouseEnter('designType', el.id)} 
+                            onMouseLeave={() => handleMouseLeave('designType', el.id)}
+                        >
+                            <H15 className={renderClassName("designType", el.isHover)}>{el.designType}</H15>
+                        </div>
                     </div>
                 )
+                // 
+                // return(
+                //     <div 
+                //         key={i}
+                //         className="portfolio-gallery-page-item"
+                //     >
+                //         <PictureBoardImageItem  
+                //             key={i}
+                //             id={el.id}
+                //             option={el.option}
+                //             imagesArray={el.pictures}
+                //             alt={el.alt}
+                //             // path={el.path}
+                //             // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                //             rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
+                //             // forgetCoordinateRange={props.forgetCoordinateRange}
+                //             imgCoordinateRange={imgCoordinateRange}
+                //         />
+                //     </div>
+                // )
             })}</div>
         )
     }
@@ -424,7 +441,7 @@ export const PortfolioGallery = (props) => {
                     className="portfolio-gallery-page-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H19 className="h19-nobel-lora">{`${props.portfolioGalleryPage.error}`}</H19>
+                    <H15 className="h19-nobel-lora">{`${props.portfolioGalleryPage.error}`}</H15>
                 </div>
             )
         }
@@ -464,7 +481,7 @@ export default connect(
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
-            // setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
+            setPortfolioGalleryPageIsHoveringTypeOfCard: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringTypeOfCard, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }

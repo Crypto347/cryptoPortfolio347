@@ -35,3 +35,11 @@ export function forgetCoordinateRangeForPortfolioGalleryPage(arr) {
         arr: arr
     };
 };
+
+export function setPortfolioGalleryPageIsHoveringTypeOfCard(val, id) {
+    return { 
+        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_TYPE_OF_CARD,
+        val: val,
+        id: id
+    };
+};
