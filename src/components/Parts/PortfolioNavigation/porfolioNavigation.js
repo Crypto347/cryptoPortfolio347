@@ -150,7 +150,7 @@ export const PorfolioNavigation = (props) => {
                 onMouseLeave={() => handleMouseLeave("leftArrow")} 
                 // onClick={() => arrowOnClick(props.path)}
             >
-                    <div className="arrow-wrapper2">
+                <div className="arrow-wrapper">
                     <div className="arrow-top-line"></div>
                     <div className="arrow-bottom-line"></div>
                 </div>
@@ -174,7 +174,7 @@ export const PorfolioNavigation = (props) => {
                 // onClick={() => arrowOnClick(props.path)}
             >
                 <div className="arrow-horizontal-line"/>
-                <div className="arrow-wrapper2">
+                <div className="arrow-wrapper">
                     <div className="arrow-top-line"></div>
                     <div className="arrow-bottom-line"></div>
                 </div>

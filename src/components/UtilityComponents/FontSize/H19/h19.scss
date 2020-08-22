@@ -27,6 +27,18 @@
     font-family: 'Lustria', serif;
 }
 
+.h19-black-poppins {
+    font-size: 19px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+.h19-nero-poppins {
+    font-size: 19px;
+    color:   rgb(37, 37, 37);
+    font-family: 'Poppins', sans-serif;
+}
+
 .h19-nobel-lustria-animated {
     font-size: 19px;
     color: rgb(155, 155, 155);
@@ -54,12 +66,6 @@
     -moz-animation: h19NobelNeroHoverOff .5s linear;
     -o-animation: h19NobelNeroHoverOff .5s linear;
     animation: h19NobelNeroHoverOff .5s linear;
-}
-
-.h19-black-poppins {
-    font-size: 19px;
-    color: black;
-    font-family: 'Poppins', sans-serif;
 }
 
 .h19-nobel-lora-nero-hover-on {

@@ -58,10 +58,126 @@
             width: calc(100% + 30px);
             .portfolio-gallery-page-item {
                 width: calc(33.3% - 30px);
-                padding-right: 30px;
+                padding: 0 30px 30px 0;
                 // border: 2px solid red;
                 .portfolio-gallery-page-item-image {
                     width: 100%;
+                }
+                .arrow-wrapper {
+                    display: flex;
+                    margin-top: 30px;
+                    align-items: center;
+                    cursor: pointer;
+                   .arrow-horizontal-line {
+                        border: 1px solid black;
+                        background: black;
+                        width: 60px;
+                   }
+                   .arrow-wrapper2 {
+                        transform: translate(-5px);
+                        height: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                       .arrow-top-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, 1px) rotate(-45deg);
+                       }
+                       .arrow-bottom-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, -1px) rotate(45deg);
+                       }
+                   }
+                }
+                .arrow-wrapper-lengthen {
+                    display: flex;
+                    margin-top: 30px;
+                    align-items: center;
+                    cursor: pointer;
+                    .arrow-horizontal-line {
+                        border: 1px solid black;
+                        background: black;
+                        width: 60px;
+                        -webkit-animation: lengthenHorizontalLinePortfolioGallery .1s linear;
+                        -moz-animation: lengthenHorizontalLinePortfolioGallery .1s linear;
+                        -o-animation: lengthenHorizontalLinePortfolioGallery .1s linear;
+                        animation: lengthenHorizontalLinePortfolioGallery .1s linear;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(-5px);
+                        height: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border: 0px solid black;
+                            background: black;
+                            height: 10px;
+                            transform: translate(-1px, 2.5px) rotate(-45deg);
+                            -webkit-animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            -moz-animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            -o-animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            animation-delay: .2s;
+                            animation-fill-mode: both;
+                        }
+                        .arrow-bottom-line {
+                            border: 0px solid black;
+                            background: black;
+                            height: 10px;
+                            transform: translate(-1px, -2.5px) rotate(45deg);
+                            -webkit-animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            -moz-animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            -o-animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            animation-delay: .2s;
+                            animation-fill-mode: both;
+                        }
+                    }
+                }
+                .arrow-wrapper-shorten {
+                    display: flex;
+                    margin-top: 30px;
+                    align-items: center;
+                    cursor: pointer;
+                    .arrow-horizontal-line {
+                        border: 1px solid black;
+                        background: black;
+                        width: 50px;
+                        -webkit-animation: shortenHorizontalLinePortfolioGallery .1s linear;
+                        -moz-animation: shortenHorizontalLinePortfolioGallery .1s linear;
+                        -o-animation: shortenHorizontalLinePortfolioGallery .1s linear;
+                        animation: shortenHorizontalLinePortfolioGallery .1s linear;
+                        animation-delay: .1s;
+                        animation-fill-mode: both;
+                    }
+                    .arrow-wrapper2 {
+                        transform: translate(-5px);
+                        height: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .arrow-top-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, 1px) rotate(-45deg);
+                            -webkit-animation: shortenArrowLinePortfolioGallery .1s linear;
+                            -moz-animation: shortenArrowLinePortfolioGallery .1s linear;
+                            -o-animation: shortenArrowLinePortfolioGallery .1s linear;
+                            animation: shortenArrowLinePortfolioGallery .1s linear;
+                        }
+                        .arrow-bottom-line {
+                            border: 1px solid transparent;
+                            height: 0px;
+                            transform: translate(-1px, -1px) rotate(45deg);
+                            -webkit-animation: shortenArrowLinePortfolioGallery .1s linear;
+                            -moz-animation: shortenArrowLinePortfolioGallery .1s linear;
+                            -o-animation: shortenArrowLinePortfolioGallery .1s linear;
+                            animation: shortenArrowLinePortfolioGallery .1s linear;
+                        }
+                    }
                 }
             }
         }
@@ -176,4 +292,129 @@
         transform: translateY(0%);
     }
 }
+
+@-webkit-keyframes lengthenArrowLinePortfolioGallery {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
+}
+@-moz-keyframes lengthenArrowLinePortfolioGallery {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
+}
+@-o-keyframes lengthenArrowLinePortfolioGallery {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
+}
+@keyframes lengthenArrowLinePortfolioGallery {
+    from{
+        height: 0px;
+        border: 0px solid black;
+    }
+    to{
+        height: 15px;
+        border: 1px solid black;
+    }
+}
+
+@-webkit-keyframes shortenArrowLinePortfolioGallery {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        background: black;
+        height: 0px;
+    }
+}
+@-moz-keyframes shortenArrowLinePortfolioGallery {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        background: black;
+        height: 0px;
+    }
+}
+@-o-keyframes shortenArrowLinePortfolioGallery {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        background: black;
+        height: 0px;
+    }
+}
+@keyframes shortenArrowLinePortfolioGallery {
+    from{
+        border: 1px solid black;
+        background: black;
+        height: 15px;
+    }
+    to{
+        border: 1px solid transparent;
+        background: black;
+        height: 0px;
+    }
+}
+
+@-webkit-keyframes lengthenHorizontalLinePortfolioGallery {
+    from{width: 50px;}
+    to{width: 60px;}
+}
+@-moz-keyframes lengthenHorizontalLinePortfolioGallery {
+    from{width: 50px;}
+    to{width: 60px;}
+}
+@-o-keyframes lengthenHorizontalLinePortfolioGallery {
+    from{width: 50px;}
+    to{width: 60px;}
+}
+@keyframes lengthenHorizontalLinePortfolioGallery {
+    from{width: 50px;}
+    to{width: 60px;}
+}
+
+@-webkit-keyframes shortenHorizontalLinePortfolioGallery {
+    from{width: 60px;}
+    to{width: 50px;}
+}
+@-moz-keyframes shortenHorizontalLinePortfolioGallery {
+    from{width: 60px;}
+    to{width: 50px;}
+}
+@-o-keyframes shortenHorizontalLinePortfolioGallery {
+    from{width: 60px;}
+    to{width: 50px;}
+}
+@keyframes shortenHorizontalLinePortfolioGallery {
+    from{width: 60px;}
+    to{width: 50px;}
+}
+
 

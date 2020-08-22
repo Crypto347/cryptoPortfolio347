@@ -55,8 +55,10 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
+    H19,
     H22,
     H70,
+    EH10,
     EH30,
     EH40,
     EH70
@@ -104,6 +106,7 @@ export const PortfolioGallery = (props) => {
     const size = useWindowSize();
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [isHoveringArrow, setIsHoveringArrow] = useState("init");
     // const [showContent, setShowContent] = useState(false);
     // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
@@ -211,6 +214,9 @@ export const PortfolioGallery = (props) => {
             case 'designType': 
                 props.setPortfolioGalleryPageIsHoveringTypeOfCard("on", id);
                 break;
+            case 'arrow': 
+                setIsHoveringArrow("on");
+                break;
         }
     }
 
@@ -218,6 +224,9 @@ export const PortfolioGallery = (props) => {
         switch(opt){
             case 'designType': 
                 props.setPortfolioGalleryPageIsHoveringTypeOfCard("off", id);
+                break;
+            case 'arrow': 
+                setIsHoveringArrow("off");
                 break;
         }
     }
@@ -231,6 +240,16 @@ export const PortfolioGallery = (props) => {
                     return "h15-nobel-lora-nero-hover-on";
                 case 'off':
                     return "h15-nobel-lora-nero-hover-off"
+            }
+        }
+        if(opt === "arrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper";
+                case 'on':
+                    return "arrow-wrapper-lengthen";
+                case 'off':
+                    return "arrow-wrapper-shorten"
             }
         }
     }
@@ -329,11 +348,11 @@ export const PortfolioGallery = (props) => {
 
     const renderToolbars = () => {
         return(
-                <Toolbar 
-                    style="toolbarVersion2" 
-                    // scrollingUp={scrollingUp}
-                    toolbarMainColor="white"
-                />
+            <Toolbar 
+                style="toolbarVersion2" 
+                // scrollingUp={scrollingUp}
+                toolbarMainColor="white"
+            />
         )
         // if(size.width < 1120){
         //     return(
@@ -391,12 +410,28 @@ export const PortfolioGallery = (props) => {
                                 imgCoordinateRange={imgCoordinateRange}
                             />
                         </div>
+                        <EH30/>
                         <div
                             onMouseEnter={() => handleMouseEnter('designType', el.id)} 
                             onMouseLeave={() => handleMouseLeave('designType', el.id)}
                         >
                             <H15 className={renderClassName("designType", el.isHover)}>{el.designType}</H15>
                         </div>
+                        <EH10/>
+                        <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
+                        <div 
+                            className={renderClassName("arrow", isHoveringArrow)}
+                            onMouseEnter={() => handleMouseEnter("arrow")} 
+                            onMouseLeave={() => handleMouseLeave("arrow")} 
+                            // onClick={() => arrowOnClick(props.path)}
+                        >
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div>
+                        <EH30/>
                     </div>
                 )
                 // 
