@@ -162,6 +162,10 @@ export const PortfolioGallery = (props) => {
             updated: false
         },
         {
+            id: 14,
+            updated: false
+        },
+        {
             id: 15,
             updated: false
         },
@@ -371,20 +375,22 @@ export const PortfolioGallery = (props) => {
                 return(
                     <div 
                         key={i}
-                        className="portfolio-gallery-page-card"
+                        className="portfolio-gallery-page-item"
                     >
-                        {/* <PictureBoardImageItem  
-                            key={i}
-                            id={el.id}
-                            option={el.option}
-                            imagesArray={el.pictures}
-                            alt={el.alt}
-                            // path={el.path}
-                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                            rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
-                            // forgetCoordinateRange={props.forgetCoordinateRange}
-                            imgCoordinateRange={imgCoordinateRange}
-                        /> */}
+                        <div className="portfolio-gallery-page-item-image">
+                            <PictureBoardImageItem  
+                                component="portfolioGallery"
+                                id={el.id}
+                                option={el.option}
+                                imagesArray={el.pictures}
+                                alt={el.alt}
+                                // path={el.path}
+                                // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                                rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
+                                // forgetCoordinateRange={props.forgetCoordinateRange}
+                                imgCoordinateRange={imgCoordinateRange}
+                            />
+                        </div>
                         <div
                             onMouseEnter={() => handleMouseEnter('designType', el.id)} 
                             onMouseLeave={() => handleMouseLeave('designType', el.id)}
@@ -430,9 +436,9 @@ export const PortfolioGallery = (props) => {
         }
         if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error){
             return(
-                <div className="portfolio-gallery-page-items-wrapper">
+                <>
                     {renderPortfolioGalleryPageItems()}
-                </div>
+                </>
             )
         }
         if(!props.portfolioGalleryPage.loading && props.portfolioGalleryPage.error){

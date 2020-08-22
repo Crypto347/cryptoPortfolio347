@@ -132,6 +132,151 @@ import col44 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-dWKq
 import col45 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-z0guTIr_kts-unsplash.png';
 import col46 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-ZY2GNpgiWyU-unsplash.png';
 
+
+//Big Slider Id1
+
+import Id1BigSlider1 from '../../../images/portfolioPages/bigSlider/id1/ash-from-modern-afflatus-updated-unsplash.png';
+import Id1BigSlider2 from '../../../images/portfolioPages/bigSlider/id1/estee-janssens-updated-unsplash.png';
+import Id1BigSlider3 from '../../../images/portfolioPages/bigSlider/id1/filip-mroz-updated-unsplash.png';
+import Id1BigSlider4 from '../../../images/portfolioPages/bigSlider/id1/laura-chouette-updated-unsplash.png';
+import Id1BigSlider5 from '../../../images/portfolioPages/bigSlider/id1/nadine-shaabana-updated-unsplash.png';
+
+//Big Slider Id2
+
+import Id2BigSlider1 from '../../../images/portfolioPages/bigSlider/id2/dose-media-bU6JyhSI6zo-updated-unsplash.png';
+import Id2BigSlider2 from '../../../images/portfolioPages/bigSlider/id2/daniel-korpai-kO7TrSB9pCQ-updated-unsplash.png';
+import Id2BigSlider3 from '../../../images/portfolioPages/bigSlider/id2/rahul-bhogal-lihCTIOP28U-updated-unsplash.png';
+import Id2BigSlider4 from '../../../images/portfolioPages/bigSlider/id2/grocery-list-1670408_1920-updated.png';
+import Id2BigSlider5 from '../../../images/portfolioPages/bigSlider/id2/heather-ford-6fiz86Ql3UA--updated-unsplash.png';
+import Id2BigSlider6 from '../../../images/portfolioPages/bigSlider/id2/computer-820281_1920-updated.png';
+
+//Big Slider Id3
+
+import Id3BigSlider1 from '../../../images/portfolioPages/bigSlider/id3/angele-kamp-KaeaUITiWnc-upadted-unsplash.png';
+import Id3BigSlider2 from '../../../images/portfolioPages/bigSlider/id3/charles-deluvio-dtSjxKDIPnA-updated-unsplash.png';
+import Id3BigSlider3 from '../../../images/portfolioPages/bigSlider/id3/daily-nouri-E5Oo4nENq2M-updated-unsplash.png';
+import Id3BigSlider4 from '../../../images/portfolioPages/bigSlider/id3/jess-bailey-YFn6rpnyeRY-updated-unsplash.png';
+import Id3BigSlider5 from '../../../images/portfolioPages/bigSlider/id3/jozsef-hocza-pJYd5CI_TRM-updated-unsplash.png';
+import Id3BigSlider6 from '../../../images/portfolioPages/bigSlider/id3/laika-notebooks-pONH9yZ-wXg-updated-unsplash.png';
+import Id3BigSlider7 from '../../../images/portfolioPages/bigSlider/id3/lauren-fleischmann-R2aodqJn3b8-updated-unsplash.png';
+
+//Small Images Id1
+
+import Id1SmallImages1 from '../../../images/portfolioPages/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.png';
+import Id1SmallImages2 from '../../../images/portfolioPages/smallImages/id1/jason-blackeye-DKCgibUVLNc-unsplash.png';
+import Id1SmallImages3 from '../../../images/portfolioPages/smallImages/id1/nordwood-themes-Nv4QHkTVEaI-unsplash.png';
+import Id1SmallImages4 from '../../../images/portfolioPages/smallImages/id1/ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.png';
+import Id1SmallImages5 from '../../../images/portfolioPages/smallImages/id1/shelbey-miller-HIQd4db8Kr8-unsplash.png';
+
+//Small Images Id2
+
+import Id2SmallImages1 from '../../../images/portfolioPages/smallImages/id2/jess-bailey-MSH3ldaRZsg-updated-unsplash.png';
+import Id2SmallImages2 from '../../../images/portfolioPages/smallImages/id2/paper-3025558_1920-updated.png';
+
+//Small Images Id3
+
+import Id3SmallImages1 from '../../../images/portfolioPages/smallImages/id3/jess-bailey-dWKqZcPLc8Y-updated-unsplash.png';
+import Id3SmallImages2 from '../../../images/portfolioPages/smallImages/id3/jess-bailey-L71uKsAVo4g-updated-unsplash.png';
+import Id3SmallImages3 from '../../../images/portfolioPages/smallImages/id3/jess-bailey-z0guTIr_kts-updated-unsplash.png';
+
+//Small Images Id4
+
+import Id4SmallImages1 from '../../../images/portfolioPages/smallImages/id4/clay-banks-_wkd7XBRfU4-updated-unsplash.png';
+import Id4SmallImages2 from '../../../images/portfolioPages/smallImages/id4/marina-zaharkina-TKQXY1dAgjE-updated-unsplash.png';
+import Id4SmallImages3 from '../../../images/portfolioPages/smallImages/id4/ohmky-lQwWZI_WjSU-updated-unsplash.png';
+
+//Big Images Id1
+
+import Id1BigImages1 from '../../../images/portfolioPages/bigImages/id1/joshua-reddekopp-cNe8GsQR-OQ-unsplash.png';
+import Id1BigImages2 from '../../../images/portfolioPages/bigImages/id1/lee-campbell-CI-5GwJcVjE-unsplash.png';
+import Id1BigImages3 from '../../../images/portfolioPages/bigImages/id1/lee-campbell-qNPESem_t4I-unsplash.png';
+import Id1BigImages4 from '../../../images/portfolioPages/bigImages/id1/melanie-mauer-x-agyuDQHJA-unsplash.png';
+import Id1BigImages5 from '../../../images/portfolioPages/bigImages/id1/nathan-dumlao-KEniowKfX3k-unsplash.png';
+
+//Big Images Id2
+
+import Id2BigImages1 from '../../../images/portfolioPages/bigImages/id2/uby-yanes-LMwW0ARHc4o-updated-unsplash.png';
+import Id2BigImages2 from '../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png';
+import Id2BigImages3 from '../../../images/portfolioPages/bigImages/id2/uby-yanes-393QQ30ecvQ-updated-unsplash.png';
+import Id2BigImages4 from '../../../images/portfolioPages/bigImages/id2/stil-flRm0z3MEoA-updated-unsplash.png';
+import Id2BigImages5 from '../../../images/portfolioPages/bigImages/id2/freestocks-A11MXTzUhLE-updated-unsplash.png';
+import Id2BigImages6 from '../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png';
+
+//Small Gallery Id1
+
+import Id1SmallGallery1 from '../../../images/portfolioPages/smallGallery/id1/ash-from-modern-afflatus-updated1-unsplash.png';
+import Id1SmallGallery2 from '../../../images/portfolioPages/smallGallery/id1/estee-janssens-updated1-unsplash.png';
+import Id1SmallGallery3 from '../../../images/portfolioPages/smallGallery/id1/filip-mroz-updated1-unsplash.png';
+import Id1SmallGallery4 from '../../../images/portfolioPages/smallGallery/id1/georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png';
+import Id1SmallGallery5 from '../../../images/portfolioPages/smallGallery/id1/laura-chouette-updated1-unsplash.png';
+import Id1SmallGallery6 from '../../../images/portfolioPages/smallGallery/id1/nadine-shaabana-updated1-unsplash.png';
+
+//Small Gallery Id2
+
+import Id2SmallGallery1 from '../../../images/portfolioPages/smallGallery/id2/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png';
+import Id2SmallGallery2 from '../../../images/portfolioPages/smallGallery/id2/jess-bailey-ycTvvg1mPU4-updated-unsplash.png';
+import Id2SmallGallery3 from '../../../images/portfolioPages/smallGallery/id2/nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png';
+import Id2SmallGallery4 from '../../../images/portfolioPages/smallGallery/id2/stil-8-GAoVpIk4M-updated-unsplash.png';
+
+//Small Gallery Id3
+
+import Id3SmallGallery1 from '../../../images/portfolioPages/smallGallery/id3/eyeshadow-4713577_1920-updated.png';
+import Id3SmallGallery2 from '../../../images/portfolioPages/smallGallery/id3/gabrielle-henderson-xTLqJqtq8R4-updated-unsplash.png';
+import Id3SmallGallery3 from '../../../images/portfolioPages/smallGallery/id3/jess-bailey-_969XXSgWc0-updated-unsplash.png';
+import Id3SmallGallery4 from '../../../images/portfolioPages/smallGallery/id3/laura-chouette-HTowfw8ascU-updated-unsplash.png';
+import Id3SmallGallery5 from '../../../images/portfolioPages/smallGallery/id3/life-3602514_1920-updated.png';
+import Id3SmallGallery6 from '../../../images/portfolioPages/smallGallery/id3/samantha-gades-pKt9mfEuZrs-updated-unsplash.png';
+
+//Gallery Id1
+
+import Id1Gallery1 from '../../../images/portfolioPages/Gallery/id1/ash-from-modern-afflatus-updated2-unsplash.png';
+import Id1Gallery2 from '../../../images/portfolioPages/Gallery/id1/estee-janssens-updated2-unsplash.png';
+import Id1Gallery3 from '../../../images/portfolioPages/Gallery/id1/filip-mroz-updated2-unsplash.png';
+import Id1Gallery4 from '../../../images/portfolioPages/Gallery/id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
+import Id1Gallery5 from '../../../images/portfolioPages/Gallery/id1/laura-chouette-updated2-unsplash.png';
+import Id1Gallery6 from '../../../images/portfolioPages/Gallery/id1/nadine-shaabana-updated2-unsplash.png';
+
+// GalleryId2
+
+import Id2Gallery1 from '../../../images/portfolioPages/Gallery/id2/cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png';
+import Id2Gallery2 from '../../../images/portfolioPages/Gallery/id2/food-3025556_1920-updated.png';
+import Id2Gallery3 from '../../../images/portfolioPages/Gallery/id2/nathan-dumlao-6VhPY27jdps-updated-unsplash.png';
+import Id2Gallery4 from '../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pMW4jzELQCw-updated-unsplash.png';
+import Id2Gallery5 from '../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png';
+
+// GalleryId3
+
+import Id3Gallery1 from '../../../images/portfolioPages/Gallery/id3/chris-lee-70l1tDAI6rM-updated-unsplash.png';
+import Id3Gallery2 from '../../../images/portfolioPages/Gallery/id3/kara-eads--0eTYFd2pzM-updated-unsplash.png';
+import Id3Gallery3 from '../../../images/portfolioPages/Gallery/id3/kara-eads-Uq9o9uUIT08-updated-unsplash.png';
+import Id3Gallery4 from '../../../images/portfolioPages/Gallery/id3/leone-venter-pVt9j3iWtPM-updated-unsplash.png';
+import Id3Gallery5 from '../../../images/portfolioPages/Gallery/id3/olena-sergienko-dIMJWLx1YbE-updated-unsplash.png';
+import Id3Gallery6 from '../../../images/portfolioPages/Gallery/id3/sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png';
+
+//Small Slider Id1
+
+import Id1SmallSlider1 from '../../../images/portfolioPages/smallSlider/id1/damian-patkowski--pahtnAMuFo-unsplash.png';
+import Id1SmallSlider2 from '../../../images/portfolioPages/smallSlider/id1/drew-beamer-ehBB9G7qbss-unsplash.png';
+import Id1SmallSlider3 from '../../../images/portfolioPages/smallSlider/id1/drew-beamer-PL6ClUWwDEw-unsplash.png';
+import Id1SmallSlider4 from '../../../images/portfolioPages/smallSlider/id1/grovemade-DhZ5BpBeQEM-unsplash.png';
+import Id1SmallSlider5 from '../../../images/portfolioPages/smallSlider/id1/lee-campbell-gA-km82BywY-unsplash.png';
+import Id1SmallSlider6 from '../../../images/portfolioPages/smallSlider/id1/workperch-AiOzVFqlyZI-unsplash.png';
+
+//Small Slider Id2
+
+import Id2SmallSlider1 from '../../../images/portfolioPages/smallSlider/id2/fallon-michael-_lKsxGjOzk8-updated-unsplash.png';
+import Id2SmallSlider2 from '../../../images/portfolioPages/smallSlider/id2/gaelle-marcel-yO9ZVNFbpao-updated-unsplash.png';
+import Id2SmallSlider3 from '../../../images/portfolioPages/smallSlider/id2/jane-palash-iaofnd2IdFU-updated-unsplash.png';
+import Id2SmallSlider4 from '../../../images/portfolioPages/smallSlider/id2/kara-eads-gVUV7PbSu_0-updated-unsplash.png';
+import Id2SmallSlider5 from '../../../images/portfolioPages/smallSlider/id2/siora-photography-G8RdOUjVuJo-updated-unsplash.png';
+
+//Small Slider Id3
+
+import Id3SmallSlider1 from '../../../images/portfolioPages/smallSlider/id3/meghan-schiereck--2eJaLtf_bI-updated-unsplash.png';
+import Id3SmallSlider2 from '../../../images/portfolioPages/smallSlider/id3/glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png';
+import Id3SmallSlider3 from '../../../images/portfolioPages/smallSlider/id3/marci-angeles-H_pOAqtNVEg-updated-unsplash.png';
+import Id3SmallSlider4 from '../../../images/portfolioPages/smallSlider/id3/marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png';
+
 /**
 * PictureBoardImageItem component definition and export
 */
@@ -411,8 +556,197 @@ export const PictureBoardImageItem = (props) => {
                 return col45;
             case 'col46':
                 return col46;
+            case 'id1BigSlider1': 
+                return Id1BigSlider1;
+            case 'id1BigSlider2': 
+                return Id1BigSlider2;
+            case 'id1BigSlider3': 
+                return Id1BigSlider3;
+            case 'id1BigSlider4': 
+                return Id1BigSlider4;
+            case 'id1BigSlider5': 
+                return Id1BigSlider5;
+            case 'id2BigSlider1': 
+                return Id2BigSlider1;
+            case 'id2BigSlider2': 
+                return Id2BigSlider2;
+            case 'id2BigSlider3': 
+                return Id2BigSlider3;
+            case 'id2BigSlider4': 
+                return Id2BigSlider4;
+            case 'id2BigSlider5': 
+                return Id2BigSlider5;
+            case 'id2BigSlider6': 
+                return Id2BigSlider6;
+            case 'id3BigSlider1': 
+                return Id3BigSlider1;
+            case 'id3BigSlider2': 
+                return Id3BigSlider2;
+            case 'id3BigSlider3': 
+                return Id3BigSlider3;
+            case 'id3BigSlider4': 
+                return Id3BigSlider4;
+            case 'id3BigSlider5': 
+                return Id3BigSlider5;
+            case 'id3BigSlider6': 
+                return Id3BigSlider6;
+            case 'id3BigSlider7': 
+                return Id3BigSlider7;
+            case 'id1SmallImages1':
+                return Id1SmallImages1;
+            case 'id1SmallImages2':
+                return Id1SmallImages2;
+            case 'id1SmallImages3':
+                return Id1SmallImages3;
+            case 'id1SmallImages4':
+                return Id1SmallImages4;
+            case 'id1SmallImages5':
+                return Id1SmallImages5;
+            case 'id2SmallImages1':
+                return Id2SmallImages1;
+            case 'id2SmallImages2':
+                return Id2SmallImages2;
+            case 'id3SmallImages1':
+                return Id3SmallImages1;
+            case 'id3SmallImages2':
+                return Id3SmallImages2;
+            case 'id3SmallImages3':
+                return Id3SmallImages3;
+            case 'id4SmallImages1':
+                return Id4SmallImages1;
+            case 'id4SmallImages2':
+                return Id4SmallImages2;
+            case 'id4SmallImages3':
+                return Id4SmallImages3;
+            case 'id1BigImages1':
+                return Id1BigImages1;
+            case 'id1BigImages2':
+                return Id1BigImages2;
+            case 'id1BigImages3':
+                return Id1BigImages3;
+            case 'id1BigImages4':
+                return Id1BigImages4;
+            case 'id1BigImages5':
+                return Id1BigImages5;
+            case 'id2BigImages1':
+                return Id2BigImages1;
+            case 'id2BigImages2':
+                return Id2BigImages2;
+            case 'id2BigImages3':
+                return Id2BigImages3;
+            case 'id2BigImages4':
+                return Id2BigImages4;
+            case 'id2BigImages5':
+                return Id2BigImages5;
+            case 'id2BigImages6':
+                return Id2BigImages6;
+            case 'id1SmallGallery1':
+                return Id1SmallGallery1;
+            case 'id1SmallGallery2':
+                return Id1SmallGallery2;
+            case 'id1SmallGallery3':
+                return Id1SmallGallery3;
+            case 'id1SmallGallery4':
+                return Id1SmallGallery4;
+            case 'id1SmallGallery5':
+                return Id1SmallGallery5;
+            case 'id1SmallGallery6':
+                return Id1SmallGallery6;
+            case 'id2SmallGallery1':
+                return Id2SmallGallery1;
+            case 'id2SmallGallery2':
+                return Id2SmallGallery2;
+            case 'id2SmallGallery3':
+                return Id2SmallGallery3;
+            case 'id2SmallGallery4':
+                return Id2SmallGallery4;
+            case 'id3SmallGallery1':
+                return Id3SmallGallery1;
+            case 'id3SmallGallery2':
+                return Id3SmallGallery2;
+            case 'id3SmallGallery3':
+                return Id3SmallGallery3;
+            case 'id3SmallGallery4':
+                return Id3SmallGallery4;
+            case 'id3SmallGallery5':
+                return Id3SmallGallery5;
+            case 'id3SmallGallery6':
+                return Id3SmallGallery6;
+            case 'id1Gallery1':
+                return Id1Gallery1;
+            case 'id1Gallery2':
+                return Id1Gallery2;
+            case 'id1Gallery3':
+                return Id1Gallery3;
+            case 'id1Gallery4':
+                return Id1Gallery4;
+            case 'id1Gallery5':
+                return Id1Gallery5;
+            case 'id1Gallery6':
+                return Id1Gallery6;
+            case 'id2Gallery1':
+                return Id2Gallery1;
+            case 'id2Gallery2':
+                return Id2Gallery2;
+            case 'id2Gallery3':
+                return Id2Gallery3;
+            case 'id2Gallery4':
+                return Id2Gallery4;
+            case 'id2Gallery5':
+                return Id2Gallery5;
+            case 'id3Gallery1':
+                return Id3Gallery1;
+            case 'id3Gallery2':
+                return Id3Gallery2;
+            case 'id3Gallery3':
+                return Id3Gallery3;
+            case 'id3Gallery4':
+                return Id3Gallery4;
+            case 'id3Gallery5':
+                return Id3Gallery5;
+            case 'id3Gallery6':
+                return Id3Gallery6;
+            case 'id1SmallSlider1': 
+                return Id1SmallSlider1;
+            case 'id1SmallSlider2': 
+                return Id1SmallSlider2;
+            case 'id1SmallSlider3': 
+                return Id1SmallSlider3;
+            case 'id1SmallSlider4': 
+                return Id1SmallSlider4;
+            case 'id1SmallSlider5': 
+                return Id1SmallSlider5;
+            case 'id1SmallSlider6': 
+                return Id1SmallSlider6;
+            case 'id2SmallSlider1': 
+                return Id2SmallSlider1;
+            case 'id2SmallSlider2': 
+                return Id2SmallSlider2;
+            case 'id2SmallSlider3': 
+                return Id2SmallSlider3;
+            case 'id2SmallSlider4': 
+                return Id2SmallSlider4;
+            case 'id2SmallSlider5': 
+                return Id2SmallSlider5;
+            case 'id3SmallSlider1': 
+                return Id3SmallSlider1;
+            case 'id3SmallSlider2': 
+                return Id3SmallSlider2;
+            case 'id3SmallSlider3': 
+                return Id3SmallSlider3;
+            case 'id3SmallSlider4': 
+                return Id3SmallSlider4;
             default:
                 return "";
+        }
+    }
+
+    const renderClassName = (opt) => {
+        switch(opt) {
+            case 'pictureBoard':
+                return 'picture-board-image-item';
+            case 'portfolioGallery':
+                return "portfolio-gallery-image-item";
         }
     }
 
@@ -427,12 +761,15 @@ export const PictureBoardImageItem = (props) => {
 
     return(
         <div 
-            className="picture-board-image-item" 
+            className={renderClassName(props.component)}
             id={`pictureBoardImageItem${props.id}`}
             onClick={() => pictureBoardItemOnClick(props.path)}
         >
             <div className={props.option === "colorful" ? "picture-board-image" : "picture-board-image-black-and-white"}>
-                <img src={loadImg(imgToLoad.key)} alt={imgToLoad.alt}/>
+                <img 
+                    src={loadImg(imgToLoad.key)} 
+                    alt={imgToLoad.alt}
+                />
             </div>
         </div>
     );

@@ -175,6 +175,7 @@ export const PictureBoard = (props) => {
                     return(
                         <PictureBoardImageItem  
                             key={i}
+                            component="pictureBoard"
                             id={el.id}
                             option={el.option}
                             imagesArray={el.pictures}

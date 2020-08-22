@@ -51,6 +51,20 @@
                 animation-fill-mode: both;
             }
         }
+
+        .portfolio-gallery-page-items {
+            display: flex;
+            flex-wrap: wrap;
+            width: calc(100% + 30px);
+            .portfolio-gallery-page-item {
+                width: calc(33.3% - 30px);
+                padding-right: 30px;
+                // border: 2px solid red;
+                .portfolio-gallery-page-item-image {
+                    width: 100%;
+                }
+            }
+        }
     }
  
     // .big-images-wrapper {
