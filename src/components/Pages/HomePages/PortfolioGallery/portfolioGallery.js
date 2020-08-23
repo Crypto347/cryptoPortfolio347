@@ -106,7 +106,6 @@ export const PortfolioGallery = (props) => {
     const size = useWindowSize();
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [isHoveringArrow, setIsHoveringArrow] = useState("init");
     // const [showContent, setShowContent] = useState(false);
     // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
@@ -212,10 +211,10 @@ export const PortfolioGallery = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'designType': 
-                props.setPortfolioGalleryPageIsHoveringTypeOfCard("on", id);
+                props.setPortfolioGalleryPageIsHoveringDesignType("on", id);
                 break;
             case 'arrow': 
-                setIsHoveringArrow("on");
+                props.setPortfolioGalleryPageIsHoveringArrow("on", id);
                 break;
         }
     }
@@ -223,10 +222,10 @@ export const PortfolioGallery = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'designType': 
-                props.setPortfolioGalleryPageIsHoveringTypeOfCard("off", id);
+                props.setPortfolioGalleryPageIsHoveringDesignType("off", id);
                 break;
             case 'arrow': 
-                setIsHoveringArrow("off");
+                props.setPortfolioGalleryPageIsHoveringArrow("off", id);
                 break;
         }
     }
@@ -415,14 +414,14 @@ export const PortfolioGallery = (props) => {
                             onMouseEnter={() => handleMouseEnter('designType', el.id)} 
                             onMouseLeave={() => handleMouseLeave('designType', el.id)}
                         >
-                            <H15 className={renderClassName("designType", el.isHover)}>{el.designType}</H15>
+                            <H15 className={renderClassName("designType", el.designTypeIsHover)}>{el.designType}</H15>
                         </div>
                         <EH10/>
                         <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
                         <div 
-                            className={renderClassName("arrow", isHoveringArrow)}
-                            onMouseEnter={() => handleMouseEnter("arrow")} 
-                            onMouseLeave={() => handleMouseLeave("arrow")} 
+                            className={renderClassName("arrow", el.arrowIsHovering)}
+                            onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
+                            onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
                             // onClick={() => arrowOnClick(props.path)}
                         >
                             <div className="arrow-horizontal-line"/>
@@ -522,7 +521,8 @@ export default connect(
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
-            setPortfolioGalleryPageIsHoveringTypeOfCard: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringTypeOfCard, dispatch),
+            setPortfolioGalleryPageIsHoveringDesignType: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringDesignType, dispatch),
+            setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }

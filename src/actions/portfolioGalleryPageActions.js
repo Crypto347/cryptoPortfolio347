@@ -36,10 +36,19 @@ export function forgetCoordinateRangeForPortfolioGalleryPage(arr) {
     };
 };
 
-export function setPortfolioGalleryPageIsHoveringTypeOfCard(val, id) {
+export function setPortfolioGalleryPageIsHoveringDesignType(val, id) {
     return { 
-        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_TYPE_OF_CARD,
+        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_DESIGN_TYPE,
         val: val,
         id: id
     };
 };
+
+export function setPortfolioGalleryPageIsHoveringArrow(val, id) {
+    return { 
+        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW,
+        val: val,
+        id: id
+    };
+};
+
