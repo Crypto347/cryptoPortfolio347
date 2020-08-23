@@ -135,10 +135,10 @@ import col46 from '../../../images/pictureBoard/ColorfulFolder8/jess-bailey-ZY2G
 
 //Big Slider Id1
 
-import Id1BigSlider1 from '../../../images/portfolioPages/bigSlider/id1/ash-from-modern-afflatus-updated-unsplash.png';
+import Id1BigSlider1 from '../../../images/portfolioPages/bigSlider/id1/laura-chouette-updated-unsplash.png';
 import Id1BigSlider2 from '../../../images/portfolioPages/bigSlider/id1/estee-janssens-updated-unsplash.png';
 import Id1BigSlider3 from '../../../images/portfolioPages/bigSlider/id1/filip-mroz-updated-unsplash.png';
-import Id1BigSlider4 from '../../../images/portfolioPages/bigSlider/id1/laura-chouette-updated-unsplash.png';
+import Id1BigSlider4 from '../../../images/portfolioPages/bigSlider/id1/ash-from-modern-afflatus-updated-unsplash.png';
 import Id1BigSlider5 from '../../../images/portfolioPages/bigSlider/id1/nadine-shaabana-updated-unsplash.png';
 
 //Big Slider Id2
@@ -229,12 +229,12 @@ import Id3SmallGallery6 from '../../../images/portfolioPages/smallGallery/id3/sa
 
 //Gallery Id1
 
-import Id1Gallery1 from '../../../images/portfolioPages/Gallery/id1/ash-from-modern-afflatus-updated2-unsplash.png';
+import Id1Gallery1 from '../../../images/portfolioPages/Gallery/id1/nadine-shaabana-updated2-unsplash.png';
 import Id1Gallery2 from '../../../images/portfolioPages/Gallery/id1/estee-janssens-updated2-unsplash.png';
 import Id1Gallery3 from '../../../images/portfolioPages/Gallery/id1/filip-mroz-updated2-unsplash.png';
 import Id1Gallery4 from '../../../images/portfolioPages/Gallery/id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
 import Id1Gallery5 from '../../../images/portfolioPages/Gallery/id1/laura-chouette-updated2-unsplash.png';
-import Id1Gallery6 from '../../../images/portfolioPages/Gallery/id1/nadine-shaabana-updated2-unsplash.png';
+import Id1Gallery6 from '../../../images/portfolioPages/Gallery/id1/ash-from-modern-afflatus-updated2-unsplash.png';
 
 // GalleryId2
 
