@@ -1,15 +1,16 @@
 .portfolio-gallery {
     width: calc(100% + 18px);
-    .portfolio-gallery-loading-error {
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  
     .portfolio-gallery-wrapper {
         display: flex;
         flex-direction: column;
         padding: 70px 130px 70px 130px;
+        .portfolio-gallery-loading-error {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .portfolio-gallery-header-wrapper {
             cursor: context-menu;
             .header-wrapper {
@@ -51,7 +52,6 @@
                 animation-fill-mode: both;
             }
         }
-
         .portfolio-gallery-page-items {
             display: flex;
             flex-wrap: wrap;

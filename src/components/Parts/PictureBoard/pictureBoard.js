@@ -181,9 +181,8 @@ export const PictureBoard = (props) => {
                             imagesArray={el.pictures}
                             alt={el.alt}
                             path={el.path}
-                            clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                             rememberCoordinateRange={props.rememberCoordinateRangeForPictureBoard}
-                            // forgetCoordinateRange={props.forgetCoordinateRange}
                             imgCoordinateRange={imgCoordinateRange}
                         />
                     )
