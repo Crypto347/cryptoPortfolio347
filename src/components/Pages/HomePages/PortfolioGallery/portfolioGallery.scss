@@ -15,6 +15,7 @@
             cursor: context-menu;
             .header-wrapper {
                 display: flex;
+                flex-direction: row;
                 align-items: center;
                 .portfolio-gallery-header-bold {
                     font-size: 90px;
@@ -182,75 +183,137 @@
             }
         }
     }
- 
-    // .big-images-wrapper {
-    //     display: flex;
-    //     flex-direction: column;
-    //     padding: 70px 130px 70px 130px;
-    //     .big-images-content {
-    //         // width: 100%;
-    //         // display: flex;
-    //         // flex-wrap: wrap;
-    //         // align-items: flex-start;
-    //         .big-images-content-info {
-    //             display: flex;
-    //             flex-wrap: wrap;
-    //             .big-images-portfolio-images {
-    //                 width: 100%;
-    //                 // padding-right: 60px;
-    //                 .big-images-portfolio-image {
-    //                     cursor: pointer;
-    //                     >img {
-    //                         width: 100%;
-    //                     }
-    //                 }
-    //             }
-    //             .big-images-text-wrapper {
-    //                 width: calc(70% - 60px);
-    //                 padding-right: 60px;
-    //             }
-    //             .big-images-category-date-tags-wrapper {
-    //                 width: 30%;
-    //                 flex-direction: column;
-    //             }
-    //             // .big-images-category-date-tags-wrapper {
-    //             //     width: 30%;
-    //             //     flex-direction: column;
-    //             // }
-    //         }
-    //     }
-    // }
 }
 
-// @media only screen and (max-width: 1030px){
-//     .big-images {
-//         .big-images-wrapper {
-//             .big-images-content {
-//                 .big-images-content-info {
-//                     display: flex;
-//                     flex-wrap: wrap;
-//                     .big-images-text-wrapper {
-//                         width: calc(100% - 60px);
-//                         padding-right: 60px;
-//                     }
-//                     .big-images-category-date-tags-wrapper {
-//                         width: 100%;
-//                         flex-direction: column;
-//                         padding-top: 40px;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1290px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-header-wrapper {
+                .header-wrapper {
+                    .portfolio-gallery-header-bold {
+                        font-size: 70px;
+                    }
+                    .portfolio-gallery-header-text1 {
+                        font-size: 70px;
+                    }
+                }
+                .portfolio-gallery-header-text2 {
+                    font-size: 70px;
+                }
+            }
+        }
+    }
+}
 
-// @media only screen and (max-width: 800px){
-//     .big-images {
-//         .big-images-wrapper {
-//             padding: 70px 30px 70px 30px;
-//         }
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-page-items {
+                .portfolio-gallery-page-item {
+                    width: calc(50% - 30px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-header-wrapper {
+                .header-wrapper {
+                    .portfolio-gallery-header-bold {
+                        font-size: 55px;
+                    }
+                    .portfolio-gallery-header-text1 {
+                        font-size: 55px;
+                    }
+                }
+                .portfolio-gallery-header-text2 {
+                    font-size: 55px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 945px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-page-items {
+                .portfolio-gallery-page-item {
+                    width: calc(100% - 30px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 890px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 70px 70px 70px 70px;
+        }
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-header-wrapper {
+                .header-wrapper {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .portfolio-gallery-header-text1 {
+                        padding-left: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 690px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-header-wrapper {
+                .header-wrapper {
+                    .portfolio-gallery-header-bold {
+                        font-size: 45px;
+                    }
+                    .portfolio-gallery-header-text1 {
+                        font-size: 45px;
+                    }
+                }
+                .portfolio-gallery-header-text2 {
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .portfolio-gallery {
+        .portfolio-gallery-wrapper {
+            .portfolio-gallery-header-wrapper {
+                .header-wrapper {
+                    .portfolio-gallery-header-bold {
+                        font-size: 35px;
+                    }
+                    .portfolio-gallery-header-text1 {
+                        font-size: 35px;
+                    }
+                }
+                .portfolio-gallery-header-text2 {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
 
 @keyframes poortfolioGalleryHeaderTextAppear {
     0% {

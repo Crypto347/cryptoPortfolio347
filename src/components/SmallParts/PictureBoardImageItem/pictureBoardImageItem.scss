@@ -36,6 +36,54 @@
     }
 }
 
+@media only screen and (min-width: 1700px){
+    .portfolio-gallery-image-item {
+        height: 350px;
+        .picture-board-image {
+            >img{
+                height: 350px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 350px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px){
+    .portfolio-gallery-image-item {
+        height: 300px;
+        .picture-board-image {
+            >img{
+                height: 300px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 300px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    .portfolio-gallery-image-item {
+        height: 240px;
+        .picture-board-image {
+            >img{
+                height: 230px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 230px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1250px){
     .picture-board-image-item {
         width: 384px;
@@ -54,7 +102,53 @@
             }
         }
     }
+    .portfolio-gallery-image-item {
+        height: 200px;
+        .picture-board-image {
+            >img{
+                height: 200px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 200px;
+            }
+        }
+    }
 }
+
+@media only screen and (max-width: 1120px){
+    .portfolio-gallery-image-item {
+        height: 270px;
+        .picture-board-image {
+            >img{
+                height: 270px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 270px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .portfolio-gallery-image-item {
+        height: 250px;
+        .picture-board-image {
+            >img{
+                height: 250px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 250px;
+            }
+        }
+    }
+}
+
 
 @media only screen and (max-width: 945px){
     .picture-board-image-item {
@@ -74,7 +168,52 @@
             }
         }
     }
+    .portfolio-gallery-image-item {
+        height: 450px;
+        .picture-board-image {
+            >img{
+                height: 450px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 450px;
+            }
+        }
+    }
 }
+
+// @media only screen and (max-width: 890px){
+//     .portfolio-gallery-image-item {
+//         height: 400px;
+//         .picture-board-image {
+//             >img{
+//                 height: 400px;
+//             }
+//         }
+//         .picture-board-image-black-and-white {
+//             >img{
+//                 height: 400px;
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 830px){
+//     .portfolio-gallery-image-item {
+//         height: 350px;
+//         .picture-board-image {
+//             >img{
+//                 height: 350px;
+//             }
+//         }
+//         .picture-board-image-black-and-white {
+//             >img{
+//                 height: 350px;
+//             }
+//         }
+//     }
+// }
 
 @media only screen and (max-width: 775px){
     .picture-board-image-item {
@@ -96,6 +235,38 @@
     }
 }
 
+@media only screen and (max-width: 740px){
+    .portfolio-gallery-image-item {
+        height: 370px;
+        .picture-board-image {
+            >img{
+                height: 370px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 370px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .portfolio-gallery-image-item {
+        height: 320px;
+        .picture-board-image {
+            >img{
+                height: 320px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 320px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 540px){
     .picture-board-image-item {
         width: 300px;
@@ -111,6 +282,35 @@
             >img{
                 width: 300px;
                 height: 300px;
+            }
+        }
+    }
+    .portfolio-gallery-image-item {
+        height: 250px;
+        .picture-board-image {
+            >img{
+                height: 250px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 250px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 470px){
+    .portfolio-gallery-image-item {
+        height: 200px;
+        .picture-board-image {
+            >img{
+                height: 200px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 200px;
             }
         }
     }

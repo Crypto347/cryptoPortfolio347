@@ -2739,6 +2739,12 @@
     } 
 }
 
+@media only screen and (max-width: 890px){
+    .toolbarVersion2-white {
+        padding: 0 70px 0 70px;
+    }
+}
+
 @-webkit-keyframes menuThirdLineLeftHalfLineOpen {
     from{
         transform: translate(0px, 0px) rotate(0deg);
