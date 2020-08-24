@@ -1054,6 +1054,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     const smallImages = [
         {
             id: 1,
+            key: "smallImages1",
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Lifestyle",
@@ -1095,6 +1096,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
         },
         {
             id: 2,
+            key: "smallImages2",
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Music",
@@ -1121,6 +1123,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
         },
         {
             id: 3,
+            key: "smallImages3",
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Music",
@@ -1153,6 +1156,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
         {
             id: 4,
             header: "Small images – Fashion",
+            key: "smallImages4",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             category: "Music",
             date: "26.06.2020",
@@ -1202,6 +1206,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
     const bigSlider = [
         {
             id: 1,
+            key: "bigSlider1",
             header: "Take a Look at Our Portfolio.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             category: "Lifestyle",
@@ -1243,6 +1248,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
         },
         {
             id: 2,
+            key: "bigSlider2",
             header: "Branding & Website.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             category: "Lifestyle",
@@ -1294,6 +1300,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
         },
         {
             id: 3,
+            key: "bigSlider3",
             header: "Branding & Website.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             category: "Lifestyle",
@@ -1359,6 +1366,7 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
     const bigImages = [
         {
             id: 1,
+            key: "bigImages1",
             header: "Welcome! Take a Look at Our Portfolio.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             category: "Lifestyle",
@@ -1405,6 +1413,7 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
         },
         {
             id: 2,
+            key: "bigImages2",
             header: "Branding & Website.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             category: "Lifestyle",
@@ -1465,6 +1474,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
     const smallGallery = [
         {
             id: 1,
+            key: "smallGallery1",
             header: "Portfolio small gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo.",
             category: "Lifestyle",
@@ -1522,6 +1532,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
         },
         {
             id: 2,
+            key: "smallGallery2",
             header: "Portfolio small gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
             category: "Lifestyle",
@@ -1562,6 +1573,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
         },
         {
             id: 3,
+            key: "smallGallery3",
             header: "Portfolio small gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
             category: "Lifestyle",
@@ -1628,6 +1640,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
     const gallery = [
         {
             id: 1,
+            key: "gallery1",
             header: "Portfolio gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
             category: "Lifestyle",
@@ -1685,6 +1698,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
         },
         {
             id: 2,
+            key: "gallery2",
             header: "Portfolio gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
             category: "Lifestyle",
@@ -1736,6 +1750,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
         },
         {
             id: 3,
+            key: "gallery3",
             header: "Portfolio gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
             category: "Lifestyle",
@@ -1802,6 +1817,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
     const smallSlider = [
         {
             id: 1,
+            key: "smallSlider1",
             header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
             category: "Lifestyle",
@@ -1854,6 +1870,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
         },
         {
             id: 2,
+            key: "smallSlider2",
             header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
             category: "Lifestyle",
@@ -1900,6 +1917,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
         },
         {
             id: 3,
+            key: "smallSlider3",
             header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
             category: "Lifestyle",
@@ -1952,7 +1970,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
     const portfolioGallery = [
         {
             id: 1,
-            key: "",
+            key: "smallImages1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Images",
@@ -1999,7 +2017,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 2,
-            key: "",
+            key: "bigSLider1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Big Slider",
@@ -2046,7 +2064,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 3,
-            key: "",
+            key: "gallery1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Gallery",
@@ -2106,7 +2124,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 4,
-            key: "",
+            key: "smallGallery1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Gallery",
@@ -2166,7 +2184,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 5,
-            key: "",
+            key: "bigImages1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Big Images",
@@ -2213,7 +2231,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 6,
-            key: "",
+            key: "smallSlider1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Slider",
@@ -2273,7 +2291,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 7,
-            key: "",
+            key: "smallSlider2",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Slider",
@@ -2325,7 +2343,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 8,
-            key: "",
+            key: "gallery2",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Gallery",
@@ -2377,7 +2395,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 9,
-            key: "",
+            key: "smallGallery2",
             option: "blackAndWhite",
             designType: "Graphic Design",
             portfolioType: "Small Gallery",
@@ -2421,7 +2439,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 10,
-            key: "",
+            key: "smallImages2",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Images",
@@ -2447,7 +2465,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 11,
-            key: "",
+            key: "bigSlider2",
             option: "blackAndWhite",
             designType: "Graphic Design",
             portfolioType: "Big Slider",
@@ -2501,7 +2519,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 12,
-            key: "",
+            key: "bigImages2",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Big Images",
@@ -2555,10 +2573,10 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 13,
-            key: "",
+            key: "gallery3",
             option: "colorful",
             designType: "Graphic Design",
-            portfolioType: "gallery",
+            portfolioType: "Gallery",
             designTypeIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/3",
@@ -2615,9 +2633,10 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 14,
-            key: "",
+            key: "smallSlider3",
             option: "blackAndWhite",
             designType: "Graphic Design",
+            portfolioType: "Small Slider",
             designTypeIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/3",
@@ -2658,7 +2677,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 15,
-            key: "",
+            key: "smallGallery3",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Gallery",
@@ -2718,7 +2737,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 16,
-            key: "",
+            key: "smallImages3",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Small Images",
@@ -2751,7 +2770,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 17,
-            key: "",
+            key: "bigSlider3",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Big Slider",
@@ -2812,7 +2831,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 18,
-            key: "",
+            key: "smallImages4",
             option: "blackAndWhite",
             designType: "Graphic Design",
             portfolioType: "Small Images",

@@ -353,7 +353,7 @@ export const BigImages = (props) => {
                             </div>
                         </div>
                         <EH70/>
-                        <PortfolioNavigation/>
+                        <PortfolioNavigation component="bigImages"/>
                     </div>
                 </div>
             )

@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
 * Styles
 */
@@ -26,6 +30,12 @@ import './porfolioNavigation.scss';
 */
 
 import Loading from '../../SmallParts/Loading/loading';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
 
 /**
 * Services
@@ -74,7 +84,29 @@ export const PorfolioNavigation = (props) => {
     */
 
     useEffect(() => {
+        let key;
+        switch(props.component){
+            case 'bigImages':
+                key = props.bigImagesPortfolio.item.key
+                break; 
+            case 'bigSlider':
+                key = props.bigSliderPortfolio.item.key
+                break; 
+            case 'gallery':
+                key = props.galleryPortfolio.item.key
+                break; 
+            case 'smallGallery':
+                key = props.smallGalleryPortfolio.item.key
+                break; 
+            case 'smallImages':
+                key = props.smallImagesPortfolio.item.key
+                break; 
+            case 'smallSlider':
+                key = props.smallSliderPortfolio.item.key
+                break; 
+        }
 
+        props.setHistoryPopFromItem(key);
     }, []);
 
     const handleMouseEnter = (opt, id) => {
@@ -138,6 +170,11 @@ export const PorfolioNavigation = (props) => {
         }
     }
 
+    const handleMenuOnClick = () => {
+    
+        props.history.push(`/crypto-portfolio/portfolio-gallery`)
+    }
+
     /**
     * Markup
     */
@@ -159,6 +196,7 @@ export const PorfolioNavigation = (props) => {
 
             <div 
                 className="navigation-menu"
+                onClick={handleMenuOnClick}
                 onMouseEnter={() => handleMouseEnter("menuButton")} 
                 onMouseLeave={() => handleMouseLeave("menuButton")} 
             >
@@ -186,13 +224,18 @@ export const PorfolioNavigation = (props) => {
 export default connect(
     (state) => {
         return {
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
+            bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
+            bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
+            galleryPortfolio: Selectors.getGalleryPortfolioState(state),
+            smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
+            smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
+            smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state),
         };
     },
     (dispatch) => {
         return {
-            // fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch)
+            setHistoryPopFromItem: bindActionCreators(Actions.setHistoryPopFromItem, dispatch)
         };
     }
-)(PorfolioNavigation);
+)(withRouter(PorfolioNavigation));
  

@@ -172,11 +172,17 @@ export const PortfolioGallery = (props) => {
     useEffect(() => {
         // window.scrollTo(0, 0);
         props.fetchPortfolioGalleryPage();
-
         const resize = () => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
+        // props.history.listen((location, action) => {
+        //  console.log("LOCATION", location, action)
+        //  if(action === "POP"){
+
+        //  }
+        // });
+
         return () => window.removeEventListener('resize', resize);
     }, []);
 
@@ -253,7 +259,6 @@ export const PortfolioGallery = (props) => {
     //     return e.deltaY < 0;
     // }
 
-
     const renderToolbars = () => {
         return(
             <Toolbar 
@@ -274,6 +279,7 @@ export const PortfolioGallery = (props) => {
                         <div 
                             key={i}
                             className="portfolio-gallery-page-item"
+                            id={el.key}
                         >
                             <div className="portfolio-gallery-page-item-image">
                                 <PictureBoardImageItem  

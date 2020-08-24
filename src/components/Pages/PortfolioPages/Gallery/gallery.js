@@ -398,7 +398,7 @@ export const Gallery = (props) => {
                         </div>
                     </div>
                     <EH70/>
-                   <PortfolioNavigation/>
+                   <PortfolioNavigation component="gallery"/>
                 </div>
             )
         }

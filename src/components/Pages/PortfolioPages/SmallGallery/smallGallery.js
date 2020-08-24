@@ -392,7 +392,7 @@ export const SmallGallery = (props) => {
                         </div>
                     </div>
                     <EH70/>
-                   <PortfolioNavigation/>
+                   <PortfolioNavigation component="smallGallery"/>
                 </div>
             )
         }

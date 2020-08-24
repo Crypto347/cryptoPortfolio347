@@ -52,3 +52,9 @@ export function setPortfolioGalleryPageIsHoveringArrow(val, id) {
     };
 };
 
+export function setHistoryPopFromItem(val) {
+    return { 
+        type: actionTypes.SET_HISTORY_POP_FROM_ITEM,
+        val: val
+    };
+};

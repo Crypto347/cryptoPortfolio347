@@ -88,7 +88,6 @@ export const SmallSlider = (props) => {
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [onePercentToPx, setOnePercentToPx] = useState(0);
- 
 
     /**
     * Methods
@@ -103,9 +102,7 @@ export const SmallSlider = (props) => {
             resizeRef.current();
         }
 
-        if(props.smallSliderPortfolio.item !== {}){
-            setShowContent(true);
-        }
+        setShowContent(true);
 
         // window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);
@@ -281,6 +278,7 @@ export const SmallSlider = (props) => {
         if(!props.smallSliderPortfolio.loading && !props.smallSliderPortfolio.error){
             let translatedValue;
             let paddingOneSide;
+            
             if(size.width > 1110){
                 translatedValue = onePercentToPx * 69;
                 paddingOneSide = 130;
@@ -294,7 +292,6 @@ export const SmallSlider = (props) => {
                 translatedValue = size.width;
                 paddingOneSide = 30;
             }
-
             return(
                 <div className="small-slider-wrapper">
                     <H70 className="h70-nero-poppins">{props.smallSliderPortfolio.item.header}</H70>
@@ -334,7 +331,7 @@ export const SmallSlider = (props) => {
                         </div>
                     </div>
                     <EH70/>
-                   <PortfolioNavigation/>
+                    <PortfolioNavigation component="smallSlider"/>
                 </div>
             )
         }

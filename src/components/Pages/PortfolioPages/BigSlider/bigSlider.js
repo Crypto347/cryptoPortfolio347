@@ -273,7 +273,7 @@ export const BigSlader = (props) => {
                         </div>
                     </div>
                     <EH70/>
-                   <PortfolioNavigation/>
+                   <PortfolioNavigation component="bigSlider"/>
                 </div>
             )
         }
