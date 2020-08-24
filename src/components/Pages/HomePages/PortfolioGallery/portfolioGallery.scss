@@ -262,6 +262,7 @@
 @media only screen and (max-width: 780px){
     .portfolio-gallery {
         .portfolio-gallery-wrapper {
+            padding: 70px 30px 70px 30px;
             .portfolio-gallery-header-wrapper {
                 .header-wrapper {
                     flex-direction: column;
@@ -301,7 +302,7 @@
             .portfolio-gallery-header-wrapper {
                 .header-wrapper {
                     .portfolio-gallery-header-bold {
-                        font-size: 35px;
+                        font-size: 40px;
                     }
                     .portfolio-gallery-header-text1 {
                         font-size: 35px;
@@ -314,6 +315,7 @@
         }
     }
 }
+
 
 @keyframes poortfolioGalleryHeaderTextAppear {
     0% {
