@@ -96,6 +96,7 @@ export const BigSlader = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchBigSliderPortfolio(props.match.params.id);
 
@@ -305,13 +306,14 @@ export const BigSlader = (props) => {
 export default connect(
     (state) => {
         return {
-            bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
+            bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state)
         };
     },
     (dispatch) => {
         return {
             fetchBigSliderPortfolio: bindActionCreators(Services.fetchBigSliderPortfolio, dispatch),
-            setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch)
+            setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
     }
 )(BigSlader);

@@ -88,9 +88,7 @@ export const PortfolioGallery = (props) => {
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [portfolioGalleryItemRef, setPortfolioGalleryItemRef] = useState(null);
-    // const [showContent, setShowContent] = useState(false);
     // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    const [scrollToPosition, setScrollToPosition] = useState(0);
   
     const initCoordinateRange = [
         {
@@ -184,9 +182,8 @@ export const PortfolioGallery = (props) => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
-        
         return () => window.removeEventListener('resize', resize);
-    }, []);
+    }, [props.unmountComponent.state]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -271,6 +268,13 @@ export const PortfolioGallery = (props) => {
         )
     }
 
+
+    const arrowOnClick = (path) => {
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent();
+        // props.history.push(`/crypto-portfolio/${path}`)
+    }
+
     const renderPortfolioGalleryPageItems = () => {
         return(
             <>
@@ -309,7 +313,7 @@ export const PortfolioGallery = (props) => {
                                 className={renderClassName("arrow", el.arrowIsHovering)}
                                 onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
                                 onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
-                                onClick={() => props.history.push(`/crypto-portfolio/${el.path}`)}
+                                onClick={() => arrowOnClick(el.path)}
                             >
                                 <div className="arrow-horizontal-line"/>
                                 <div className="arrow-wrapper2">
@@ -360,20 +364,24 @@ export const PortfolioGallery = (props) => {
     */
 
     return(
-        <div className="portfolio-gallery">
-            {renderToolbars()}
-            <div className="portfolio-gallery-wrapper">
-                <div className="portfolio-gallery-header-wrapper">
-                    <div className="header-wrapper">
-                        <div className="portfolio-gallery-header-bold">Welcome!</div>
-                        <div className="portfolio-gallery-header-text1">Take a Look</div>
+        // <>{showComponent ? 
+            <div className="portfolio-gallery">
+                {renderToolbars()}
+                <div className="portfolio-gallery-wrapper">
+                    <div className="portfolio-gallery-header-wrapper">
+                        <div className="header-wrapper">
+                            <div className="portfolio-gallery-header-bold">Welcome!</div>
+                            <div className="portfolio-gallery-header-text1">Take a Look</div>
+                        </div>
+                        <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
                     </div>
-                    <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
+                    {renderPortfolioGalleryPageData()}
                 </div>
-                {renderPortfolioGalleryPageData()}
-            </div>
-            <Footer/>
-        </div>
+                <Footer/>
+            </div> 
+        //     : null}
+        // </>
+        
     );
 }
 
@@ -381,7 +389,7 @@ export default connect(
     (state) => {
         return {
             portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
-            // photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state)
+            unmountComponent: Selectors.getUnmountComponentState(state)
         };
     },
     (dispatch) => {
@@ -391,7 +399,8 @@ export default connect(
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
             setPortfolioGalleryPageIsHoveringDesignType: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringDesignType, dispatch),
             setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)
         };
     }
 )(PortfolioGallery);

@@ -3,6 +3,19 @@
     top: -10px;
     left: -10px;
     height: 30px; 
+    opacity: 1;
+}
+
+.main-unmount {
+    position: relative;
+    top: -10px;
+    left: -10px;
+    height: 30px; 
+    opacity: 0;
+    -webkit-animation: unmountMainComponent 1s ease;
+    -moz-animation: unmountMainComponent 1s ease;
+    -o-animation: unmountMainComponent 1s ease;
+    animation: unmountMainComponent 1s ease;
 }
 
 // .main-scrolling-hidden {
@@ -11,3 +24,19 @@
 //     left: -10px;
 //     height: 30px; 
 // }
+@-webkit-keyframes unmountMainComponent {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-moz-keyframes unmountMainComponent {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-o-keyframes unmountMainComponent {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes unmountMainComponent {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}

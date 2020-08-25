@@ -97,3 +97,24 @@ export function clearActivityOfMenuItems() {
         type: actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS
     };
 };
+
+export function setUnmountComponentValues(val, path) {
+    return { 
+        type: actionTypes.SET_UNMOUNT_COMPONENT_VALUES,
+        val: val,
+        path: path
+    };
+};
+
+export function unmountComponent() {
+    return { 
+        type: actionTypes.UNMOUNT_COMPONENT
+    };
+};
+
+export function gotoNewPage() {
+    return { 
+        type: actionTypes.GO_TO_NEW_PAGE
+    };
+};
+

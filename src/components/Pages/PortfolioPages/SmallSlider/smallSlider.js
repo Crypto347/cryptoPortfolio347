@@ -94,6 +94,7 @@ export const SmallSlider = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchSmallSliderPortfolio(props.match.params.id);
         calculateOnePercent(size.width);
@@ -378,6 +379,7 @@ export default connect(
             fetchSmallSliderPortfolio: bindActionCreators(Services.fetchSmallSliderPortfolio, dispatch),
             setSmallSliderIsHoveringTag: bindActionCreators(Actions.setSmallSliderIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
     }
 )(SmallSlider);

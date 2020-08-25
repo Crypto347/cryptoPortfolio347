@@ -113,6 +113,7 @@ export const BigImages = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchBigImagesPortfolio(props.match.params.id);
 
@@ -400,7 +401,8 @@ export default connect(
         return {
             fetchBigImagesPortfolio: bindActionCreators(Services.fetchBigImagesPortfolio, dispatch),
             setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
     }
 )(BigImages);

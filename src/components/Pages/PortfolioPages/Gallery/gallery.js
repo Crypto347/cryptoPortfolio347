@@ -120,6 +120,7 @@ export const Gallery = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchGalleryPortfolio(props.match.params.id);
 
@@ -437,7 +438,7 @@ export default connect(
     (state) => {
         return {
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
-            photoViewerForGalleryOpen: Selectors.getPhotoViewerForGalleryOpenState(state),
+            photoViewerForGalleryOpen: Selectors.getPhotoViewerForGalleryOpenState(state)
         };
     },
     (dispatch) => {
@@ -446,6 +447,7 @@ export default connect(
             setGalleryIsHoveringTag: bindActionCreators(Actions.setGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setGalleryIsHoveringImage: bindActionCreators(Actions.setGalleryIsHoveringImage, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
     }
 )(Gallery);

@@ -33,7 +33,11 @@ export const initialState = {
         transition: 0.45,
         rerender: false
     },
-    sidebarState: "init"
+    sidebarState: "init",
+    unmountComponent: {
+        state: false,
+        gotoPage: ''
+    }
 }
 
 const initMenuItems = (state, action) => {
@@ -522,6 +526,17 @@ const clearActivityOfMenuItems = (state, action) => {
     };
 }
 
+const setUnmountComponentValues = (state, action) => {
+     return {
+        ...state,
+        unmountComponent: {
+            state: action.val,
+            gotoPage: action.path
+        }
+    };
+}
+
+
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -661,6 +676,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return activateMenuItem(state, action); 
         case actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS:
             return clearActivityOfMenuItems(state, action); 
+        case actionTypes.SET_UNMOUNT_COMPONENT_VALUES:
+            return setUnmountComponentValues(state, action); 
         default: 
             return state;
     }

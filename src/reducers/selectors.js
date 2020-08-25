@@ -190,3 +190,10 @@ export const getPortfolioGalleryPageState = createSelector(
     [getPortfolioGalleryPage],
     (x) => x
 );
+
+const getUnmountComponent = (state) => state.home.unmountComponent;
+
+export const getUnmountComponentState = createSelector(
+    [getUnmountComponent],
+    (x) => x
+);

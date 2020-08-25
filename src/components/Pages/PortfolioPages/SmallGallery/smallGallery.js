@@ -119,6 +119,7 @@ export const SmallGallery = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchSmallGalleryPortfolio(props.match.params.id);
 
@@ -431,7 +432,7 @@ export default connect(
     (state) => {
         return {
             smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
-            photoViewerForSmallGalleryOpen: Selectors.getPhotoViewerForSmallGalleryOpenState(state),
+            photoViewerForSmallGalleryOpen: Selectors.getPhotoViewerForSmallGalleryOpenState(state)
         };
     },
     (dispatch) => {
@@ -440,6 +441,7 @@ export default connect(
             setSmallGalleryIsHoveringTag: bindActionCreators(Actions.setSmallGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setSmallGalleryIsHoveringImage: bindActionCreators(Actions.setSmallGalleryIsHoveringImage, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
     }
 )(SmallGallery);
