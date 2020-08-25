@@ -99,37 +99,51 @@ export const Main = (props) => {
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-gallery"}
-                    component={PortfolioGallery}
+                    render={(props) => (
+                        <PortfolioGallery key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/small-slider/:id"}
-                    component={SmallSlider}
+                    render={(props) => (
+                        <SmallSlider key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/gallery/:id"}
-                    component={Gallery}
+                    render={(props) => (
+                        <Gallery key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/small-gallery/:id"}
-                    component={SmallGallery}
+                    render={(props) => (
+                        <SmallGallery key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/big-images/:id"}
-                    component={BigImages}
+                    render={(props) => (
+                        <BigImages key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/big-slider/:id"}
-                    component={BigSlider}
+                    render={(props) => (
+                        <BigSlider key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-item/small-images/:id"}
-                    component={SmallImages}
+                    render={(props) => (
+                        <SmallImages key={props.match.params.id} {...props} />)
+                    }
                 />
                 <Route 
                     exact 

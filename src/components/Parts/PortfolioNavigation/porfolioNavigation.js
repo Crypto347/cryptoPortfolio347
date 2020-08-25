@@ -78,12 +78,16 @@ export const PorfolioNavigation = (props) => {
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
+    const [key, setKey] = useState("");
 
     /**
     * Methods
     */
 
     useEffect(() => {
+        if(props.portfolioGalleryPage.items.length === 0){
+            props.fetchPortfolioGalleryPage();
+        }
         let key;
         switch(props.component){
             case 'bigImages':
@@ -105,8 +109,8 @@ export const PorfolioNavigation = (props) => {
                 key = props.smallSliderPortfolio.item.key
                 break; 
         }
-
         props.setHistoryPopFromItem(key);
+        setKey(key);
     }, []);
 
     const handleMouseEnter = (opt, id) => {
@@ -175,6 +179,27 @@ export const PorfolioNavigation = (props) => {
         props.setHistoryPopFromItem("scrollToTop");
     }
 
+    const arrowOnClick = (opt, key) => {
+        let updatedPortfolioGalleryItems = [...props.portfolioGalleryPage.items];
+        let updatedPortfolioGalleryItemIndex = updatedPortfolioGalleryItems.findIndex(item => item.key === key);
+        switch(opt) {
+            case 'prev':
+                if(updatedPortfolioGalleryItemIndex === 0){
+                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[updatedPortfolioGalleryItems.length - 1].path}`);
+                }else{
+                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[updatedPortfolioGalleryItemIndex - 1].path}`);
+                }
+                return;
+            case 'next':
+                if(updatedPortfolioGalleryItemIndex === updatedPortfolioGalleryItems.length - 1){
+                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[0].path}`);
+                }else{
+                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[updatedPortfolioGalleryItemIndex + 1].path}`);
+                }
+                return;
+        }
+    }
+
     /**
     * Markup
     */
@@ -185,7 +210,7 @@ export const PorfolioNavigation = (props) => {
                 className={renderClassName("leftArrow", isHoveringLeftArrow)}
                 onMouseEnter={() => handleMouseEnter("leftArrow")} 
                 onMouseLeave={() => handleMouseLeave("leftArrow")} 
-                // onClick={() => arrowOnClick(props.path)}
+                onClick={() => arrowOnClick('prev', key)}
             >
                 <div className="arrow-wrapper">
                     <div className="arrow-top-line"></div>
@@ -209,7 +234,7 @@ export const PorfolioNavigation = (props) => {
                 className={renderClassName("rightArrow", isHoveringRightArrow)}
                 onMouseEnter={() => handleMouseEnter("rightArrow")} 
                 onMouseLeave={() => handleMouseLeave("rightArrow")} 
-                // onClick={() => arrowOnClick(props.path)}
+                onClick={() => arrowOnClick('next', key)}
             >
                 <div className="arrow-horizontal-line"/>
                 <div className="arrow-wrapper">
@@ -224,16 +249,18 @@ export const PorfolioNavigation = (props) => {
 export default connect(
     (state) => {
         return {
+            portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
             smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
             smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
-            smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state),
+            smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state)
         };
     },
     (dispatch) => {
         return {
+            fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             setHistoryPopFromItem: bindActionCreators(Actions.setHistoryPopFromItem, dispatch)
         };
     }

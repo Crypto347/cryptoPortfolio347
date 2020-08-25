@@ -241,10 +241,6 @@ export const PortfolioGallery = (props) => {
         }
     }
 
-    const getPortfolioGalleryItemRef = (ref) => {
-   
-    }
-
     // const handleOnWheel = (e) => {
     //     let scrollHeight = document.body.scrollTop;
     //     let el = document.getElementById("bigImages");
