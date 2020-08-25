@@ -2017,7 +2017,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
         },
         {
             id: 2,
-            key: "bigSLider1",
+            key: "bigSlider1",
             option: "colorful",
             designType: "Graphic Design",
             portfolioType: "Big Slider",

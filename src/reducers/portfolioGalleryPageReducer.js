@@ -19,7 +19,7 @@ export const initialState = {
     items: [],
     loading: false,
     error: null,
-    historyPopFromItem: "",
+    historyPopFromItem: "scrollToTop",
     itemsCooradinateRange: [
         {
             id: 1,

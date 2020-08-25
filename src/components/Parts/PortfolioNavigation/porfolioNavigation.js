@@ -171,8 +171,8 @@ export const PorfolioNavigation = (props) => {
     }
 
     const handleMenuOnClick = () => {
-    
-        props.history.push(`/crypto-portfolio/portfolio-gallery`)
+        props.history.push(`/crypto-portfolio/portfolio-gallery`);
+        props.setHistoryPopFromItem("scrollToTop");
     }
 
     /**

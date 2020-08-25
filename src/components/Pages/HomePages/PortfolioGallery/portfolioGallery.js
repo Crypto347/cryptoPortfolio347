@@ -84,11 +84,13 @@ export const PortfolioGallery = (props) => {
     */
 
     const size = useWindowSize();
+    // const itemRef = useRef(null);
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [portfolioGalleryItemRef, setPortfolioGalleryItemRef] = useState(null);
     // const [showContent, setShowContent] = useState(false);
     // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
+    const [scrollToPosition, setScrollToPosition] = useState(0);
   
     const initCoordinateRange = [
         {
@@ -170,19 +172,19 @@ export const PortfolioGallery = (props) => {
     */
 
     useEffect(() => {
-        // window.scrollTo(0, 0);
+        if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error && props.portfolioGalleryPage.historyPopFromItem !== "scrollToTop"){
+            let itemOffsetTop = document.getElementById(props.portfolioGalleryPage.historyPopFromItem) ? document.getElementById(props.portfolioGalleryPage.historyPopFromItem).offsetTop : 0;
+            window.scrollTo(0, itemOffsetTop - 30);
+        }else{
+            window.scrollTo(0, 0);
+        }
+
         props.fetchPortfolioGalleryPage();
         const resize = () => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
-        // props.history.listen((location, action) => {
-        //  console.log("LOCATION", location, action)
-        //  if(action === "POP"){
-
-        //  }
-        // });
-
+        
         return () => window.removeEventListener('resize', resize);
     }, []);
 
@@ -237,6 +239,10 @@ export const PortfolioGallery = (props) => {
                     return "arrow-wrapper-shorten"
             }
         }
+    }
+
+    const getPortfolioGalleryItemRef = (ref) => {
+   
     }
 
     // const handleOnWheel = (e) => {
