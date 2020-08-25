@@ -35,18 +35,18 @@ export const ToolbarItem = (props) => {
     * Methods
     */
 
-    const itemOnClick = (opt, path, pathOfIds) => {
-        switch(opt){
-            case 'optionItem': 
-                props.setActivityOfToolbarOptionItem(pathOfIds);
-                return;
-            case 'subOptionItem': 
-                props.setActivityOfToolbarOptionItem(pathOfIds);
-                return;
-        }
-        console.log(path, pathOfIds)
+    // const itemOnClick = (opt, path, pathOfIds) => {
+    //     switch(opt){
+    //         case 'optionItem': 
+    //             props.setActivityOfToolbarOptionItem(pathOfIds);
+    //             return;
+    //         case 'subOptionItem': 
+    //             props.setActivityOfToolbarOptionItem(pathOfIds);
+    //             return;
+    //     }
+    //     console.log(path, pathOfIds)
        
-    }
+    // }
 
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "arrow"){

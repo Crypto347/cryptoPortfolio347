@@ -75,11 +75,13 @@ export const Sidebar = (props) => {
 
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds)
-        // props.history.push(props.match.url + (path === "" ? path : `/${path}`));
-        props.history.push(`/crypto-portfolio/${path}`);
+        // props.history.push(`/crypto-portfolio/${path}`);
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent();
+
         props.clearActivityOfMenuItems();
         props.setSidebarState("init");
-        window.location.reload();
+        // window.location.reload();
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -147,6 +149,8 @@ export default connect(
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)
         };
     }
 )(withRouter(Sidebar));

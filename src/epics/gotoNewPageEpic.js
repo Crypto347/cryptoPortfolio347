@@ -7,8 +7,7 @@ import {
 } from 'rxjs';
 
 import { 
-    mergeMap, 
-    delay 
+    mergeMap
   } from 'rxjs/operators';
 
 import { 
@@ -30,7 +29,9 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
     action$.pipe(
         ofType(actionTypes.GO_TO_NEW_PAGE),
         mergeMap(action => {
-            dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`)
+            let path = state$.value.home.unmountComponent.gotoPage === "" ? "/crypto-portfolio" : `/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`
+console.log(path)
+            dependencies$.history.push(path)
             return empty();
         })
     )

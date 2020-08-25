@@ -130,9 +130,13 @@ export const Toolbar = (props) => {
 
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds);
-        props.history.push(`/crypto-portfolio/${path}`);
+        // props.history.push(`/crypto-portfolio/${path}`);
+        console.log(path)
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent();
+
         props.clearActivityOfMenuItems();
-        window.location.reload();
+        // window.location.reload();
         switch(opt){
             case 'optionItem': 
                 props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -554,7 +558,9 @@ export default connect(
             setActivityOfToolbarOptionItem: bindActionCreators(Actions.setActivityOfToolbarOptionItem, dispatch),
             setActivityOfToolbarSubOptionItem: bindActionCreators(Actions.setActivityOfToolbarSubOptionItem, dispatch),
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
-            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch)
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)
         };
     }
 )(withRouter(Toolbar));

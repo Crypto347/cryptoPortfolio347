@@ -7,6 +7,10 @@ import React, {
 } from 'react';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
     connect
 } from 'react-redux';
 
@@ -67,6 +71,7 @@ export const Home = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         window.addEventListener('wheel', checkScrollDirection);
 
@@ -160,7 +165,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }

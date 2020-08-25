@@ -170,6 +170,7 @@ export const PortfolioGallery = (props) => {
     */
 
     useEffect(() => {
+        props.setUnmountComponentValues(false, "");
         if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error && props.portfolioGalleryPage.historyPopFromItem !== "scrollToTop"){
             let itemOffsetTop = document.getElementById(props.portfolioGalleryPage.historyPopFromItem) ? document.getElementById(props.portfolioGalleryPage.historyPopFromItem).offsetTop : 0;
             window.scrollTo(0, itemOffsetTop - 30);

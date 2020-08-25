@@ -99,9 +99,10 @@ export const Main = (props) => {
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-gallery"}
-                    render={(props) => (
-                        <PortfolioGallery key={props.match.params.id} {...props} />)
-                    }
+                    // render={(props) => (
+                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
+                    // }
+                    component={PortfolioGallery}
                 />
                 <Route 
                     exact 
