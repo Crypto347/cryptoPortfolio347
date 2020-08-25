@@ -29,9 +29,7 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
     action$.pipe(
         ofType(actionTypes.GO_TO_NEW_PAGE),
         mergeMap(action => {
-            let path = state$.value.home.unmountComponent.gotoPage === "" ? "/crypto-portfolio" : `/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`
-console.log(path)
-            dependencies$.history.push(path)
+            dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`)
             return empty();
         })
     )
