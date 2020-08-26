@@ -226,12 +226,23 @@ export const Toolbar = (props) => {
         )
     }
 
+    const logoOnClick = () => {
+        props.history.push(`/crypto-portfolio`);
+        window.location.reload();
+    }
+
     const renderToolbar = (option) => {
         if(option === "regularScreen"){
             return(
                 <>
                     <div className="toolbar-regular-screen">
-                        <div className="toolbar-logo">crypto.</div>
+                        <div 
+                            className="toolbar-logo"
+                            onClick={logoOnClick}
+
+                        >
+                            crypto.
+                        </div>
                         <div className="toolbar-wrapper">
                             {renderToolbarItems()}
                             <div 
@@ -263,7 +274,12 @@ export const Toolbar = (props) => {
             return(
                 <>
                     <div className="toolbar-regular-screen-white">
-                        <div className="toolbar-logo">crypto.</div>
+                        <div 
+                            className="toolbar-logo"
+                            onClick={logoOnClick}
+                        >
+                            crypto.
+                        </div>
                         <div className="toolbar-wrapper">
                             {renderToolbarItems()}
                             <div 
@@ -307,7 +323,12 @@ export const Toolbar = (props) => {
                         }}
                     >  
                         <div className={props.scrollingUp ? "toolbar-regular-screen-animated-mounted" : "toolbar-regular-screen-animated-unmounted"}>
-                            <div className="toolbar-logo">crypto.</div>
+                            <div 
+                                className="toolbar-logo"
+                                onClick={logoOnClick}
+                            >
+                                crypto.
+                            </div>
                             <div className="toolbar-wrapper">
                                 {renderToolbarItems()}
                                 <div 
@@ -370,7 +391,12 @@ export const Toolbar = (props) => {
                                 <div className="toolbar-menu-right-half-line"/>
                             </div>
                         </div>
-                        <div className="toolbar-logo">crypto.</div>
+                        <div 
+                            className="toolbar-logo"
+                            onClick={logoOnClick}
+                        >
+                            crypto.
+                        </div>
                         <div/>
                     </div>
                 </>
@@ -408,7 +434,12 @@ export const Toolbar = (props) => {
                                     <div className="toolbar-menu-right-half-line"/>
                                 </div>
                             </div>
-                            <div className="toolbar-logo">crypto.</div>
+                            <div 
+                                className="toolbar-logo"
+                                onClick={logoOnClick}
+                            >
+                                crypto.
+                            </div>
                             <div/>
                         </div>
                     </CSSTransition>
@@ -418,7 +449,12 @@ export const Toolbar = (props) => {
             return(
                 <>
                     <div className="toolbarVersion2-white">
-                        <div className="toolbar-logo">crypto.</div>
+                        <div 
+                            className="toolbar-logo"
+                            onClick={logoOnClick}
+                        >
+                            crypto.
+                            </div>
                         <div className="toolbar-wrapper">
                             <div 
                                 className="toolbar-menu"
@@ -532,7 +568,10 @@ export const Toolbar = (props) => {
     return(
         <> 
             {renderToolbar(props.style)}
-            <Sidebar sidebarState={props.sidebarState}/>
+            <Sidebar 
+                sidebarState={props.sidebarState}
+                logoOnClick={logoOnClick}
+            />
             <Backdrop
                 show={props.sidebarState === "open"}
                 onClick={() => props.setSidebarState("close")}

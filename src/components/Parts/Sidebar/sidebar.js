@@ -128,7 +128,12 @@ export const Sidebar = (props) => {
 
     return(
         <div className={renderClassName(props.sidebarState)}>
-            <div className="sidebar-logo">crypto.</div>
+            <div 
+                className="sidebar-logo"
+                onClick={props.logoOnClick}
+            >
+                crypto.
+            </div>
             {renderSidebarItems()}
         </div>
     );
