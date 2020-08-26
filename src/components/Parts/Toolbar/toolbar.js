@@ -264,7 +264,7 @@ export const Toolbar = (props) => {
                             {renderToolbarItems()}
                             <div 
                                 className="toolbar-menu"
-                                onClick={() => menuDotsOnClick(option)}
+                                onClick={() => menuDotsOnClick(props.page)}
                                 onMouseEnter={handleMouseEnterMenuIcon} 
                                 onMouseLeave={handleMouseLeaveMenuIcon}
                             >
@@ -302,7 +302,7 @@ export const Toolbar = (props) => {
                             {renderToolbarItems()}
                             <div 
                                 className="toolbar-menu"
-                                onClick={() => menuDotsOnClick(option)}
+                                onClick={() => menuDotsOnClick(props.page)}
                                 onMouseEnter={handleMouseEnterMenuIcon} 
                                 onMouseLeave={handleMouseLeaveMenuIcon}
                             >
@@ -352,7 +352,7 @@ export const Toolbar = (props) => {
                                 {renderToolbarItems()}
                                 <div 
                                     className="toolbar-menu"
-                                    onClick={() => menuDotsOnClick(option)}
+                                    onClick={() => menuDotsOnClick(props.page)}
                                     onMouseEnter={handleMouseEnterMenuIcon} 
                                     onMouseLeave={handleMouseLeaveMenuIcon}
                                 >
@@ -424,45 +424,45 @@ export const Toolbar = (props) => {
         }
         if(option === "smallScreenAnimated"){
             return(
-                    <CSSTransition
-                        in={props.scrollingUp} 
-                        timeout={5000}
-                        // mountOnEnter
-                        // unmountOnExit
-                        classNames={{
-                            enter: ``,
-                            enterActive: `toolbar-small-screen-animated-open`,
-                            exit: ``,
-                            exitActive: `toolbar-small-screen-animated-close`,
-                        }}
-                    >  
-                        <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>
-                            <div
-                                className={renderClassName("menuSmallScreenButton", props.sidebarState)}
-                                onClick={menuOnClick}
-                            >
-                                <div className="toolbar-menu-first-line">
-                                    <div className="toolbar-menu-left-half-line"/>
-                                    <div className="toolbar-menu-right-half-line"/>
-                                </div>
-                                <div className="toolbar-menu-second-line">
-                                    <div className="toolbar-menu-left-half-line"/>
-                                    <div className="toolbar-menu-right-half-line"/>
-                                </div>
-                                <div className="toolbar-menu-third-line">
-                                    <div className="toolbar-menu-left-half-line"/>
-                                    <div className="toolbar-menu-right-half-line"/>
-                                </div>
+                <CSSTransition
+                    in={props.scrollingUp} 
+                    timeout={5000}
+                    // mountOnEnter
+                    // unmountOnExit
+                    classNames={{
+                        enter: ``,
+                        enterActive: `toolbar-small-screen-animated-open`,
+                        exit: ``,
+                        exitActive: `toolbar-small-screen-animated-close`,
+                    }}
+                >  
+                    <div className={props.scrollingUp ? "toolbar-small-screen-animated-mounted" : "toolbar-small-screen-animated-unmounted"}>
+                        <div
+                            className={renderClassName("menuSmallScreenButton", props.sidebarState)}
+                            onClick={menuOnClick}
+                        >
+                            <div className="toolbar-menu-first-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
                             </div>
-                            <div 
-                                className="toolbar-logo"
-                                onClick={logoOnClick}
-                            >
-                                crypto.
+                            <div className="toolbar-menu-second-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
                             </div>
-                            <div/>
+                            <div className="toolbar-menu-third-line">
+                                <div className="toolbar-menu-left-half-line"/>
+                                <div className="toolbar-menu-right-half-line"/>
+                            </div>
                         </div>
-                    </CSSTransition>
+                        <div 
+                            className="toolbar-logo"
+                            onClick={logoOnClick}
+                        >
+                            crypto.
+                        </div>
+                        <div/>
+                    </div>
+                </CSSTransition>
             )
         }
         if(option === "toolbarVersion2"){
@@ -478,7 +478,7 @@ export const Toolbar = (props) => {
                         <div className="toolbar-wrapper">
                             <div 
                                 className="toolbar-menu"
-                                onClick={() => menuDotsOnClick(option)}
+                                onClick={() => menuDotsOnClick(props.page)}
                                 onMouseEnter={handleMouseEnterMenuIcon} 
                                 onMouseLeave={handleMouseLeaveMenuIcon}
                             >

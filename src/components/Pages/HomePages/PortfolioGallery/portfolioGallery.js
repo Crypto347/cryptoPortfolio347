@@ -28,6 +28,7 @@ import './portfolioGallery.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
 import PictureBoardImageItem from '../../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
 import Footer from '../../../Parts/Footer/footer';
 
@@ -368,20 +369,25 @@ export const PortfolioGallery = (props) => {
     */
 
     return(
-        <div className="portfolio-gallery">
-            {renderToolbars()}
-            <div className="portfolio-gallery-wrapper">
-                <div className="portfolio-gallery-header-wrapper">
-                    <div className="header-wrapper">
-                        <div className="portfolio-gallery-header-bold">Welcome!</div>
-                        <div className="portfolio-gallery-header-text1">Take a Look</div>
+        <>
+            <div className="portfolio-gallery">
+                {renderToolbars()}
+                <div className="portfolio-gallery-wrapper">
+                    <div className="portfolio-gallery-header-wrapper">
+                        <div className="header-wrapper">
+                            <div className="portfolio-gallery-header-bold">Welcome!</div>
+                            <div className="portfolio-gallery-header-text1">Take a Look</div>
+                        </div>
+                        <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
                     </div>
-                    <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
+                    {renderPortfolioGalleryPageData()}
                 </div>
-                {renderPortfolioGalleryPageData()}
+                <Footer/>
             </div>
-            <Footer/>
-        </div>         
+            {props.menuDotsState.state === "on" ? 
+                <MenuFullScreen/> : null
+            }     
+        </> 
     );
 }
 

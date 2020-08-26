@@ -40,7 +40,7 @@ export const initialState = {
     },
     menuDotsState: {
         page: "",
-        state: "init"
+        state: "on"
     }
 }
 
@@ -543,10 +543,10 @@ const setUnmountComponentValues = (state, action) => {
 const setMenuDotsState = (state, action) => {
     return {
        ...state,
-       unmountComponent: {
-           state: action.val,
-           gotoPage: action.path
-       }
+        menuDotsState: {
+            page: action.page,
+            state: action.val
+        }
    };
 }
 

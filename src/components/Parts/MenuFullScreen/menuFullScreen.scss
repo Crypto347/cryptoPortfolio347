@@ -1,0 +1,91 @@
+.menu-fullscreen {
+    width: calc(100% - 100px);
+    height: 100%;
+    position: fixed;
+    z-index: 650;
+    left: 0;
+    top: 0;
+    background: rgb(23, 23, 23);
+    padding: 50px;
+    .menu-fullscreen-logo-close-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .menu-fullscreen-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid white;
+            width: 60px;
+            height: 60px;
+            font-family: 'Balsamiq Sans', cursive;
+            font-size: 33px;
+            color: white;
+            cursor: pointer;
+           
+        }
+        .menu-fullscreen-close-button {
+            cursor: pointer;
+            .menu-fullscreen-close-button-first-line {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 3px 0 3px 0;
+                .menu-fullscreen-close-button-left-half-line {
+                    border: 1.5px solid white;
+                    border-radius: 20%;
+                    background: white;
+                    margin: 0;
+                    width: 10px;
+                    transform: translate(2px, 1px) rotate(45deg);
+                }
+                .menu-fullscreen-close-button-right-half-line {
+                    border: 1.5px solid white;
+                    border-radius: 20%;
+                    background: white;
+                    margin: 0;
+                    width: 10px;
+                    transform: translate(-2px, 1px) rotate(-45deg);
+                }
+            }
+            .menu-fullscreen-close-button-second-line {
+                display: flex;
+                justify-content: center;
+                margin: 3px 0 3px 0;
+                .menu-fullscreen-close-button-left-half-line {
+                    border: 1px solid transparent;
+                    margin: 0 0 0 3px;
+                    width: 0px;
+                }
+                .menu-fullscreen-close-button-right-half-line {
+                    border: 1px solid transparent;
+                    margin: 0 3px 0 0;
+                    width: 0px;
+                }
+            }
+            .menu-fullscreen-close-button-third-line {
+                display: flex;
+                margin: 3px 0 3px 0;
+                .menu-fullscreen-close-button-left-half-line {
+                    border: 1.5px solid white;
+                    border-radius: 20%;
+                    background: white;
+                    margin: 0 0 0 3px;
+                    width: 10px;
+                    transform: translate(2px, -1px) rotate(-45deg);
+                }
+                .menu-fullscreen-close-button-right-half-line {
+                    border: 1.5px solid white;
+                    border-radius: 20%;
+                    background: white;
+                    margin: 0 3px 0 0;
+                    width: 10px;
+                    transform: translate(-2px, -1px) rotate(45deg);
+                }
+            }
+        }
+    }
+   
+}
+
+
+
