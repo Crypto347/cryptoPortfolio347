@@ -37,6 +37,10 @@ export const initialState = {
     unmountComponent: {
         state: false,
         gotoPage: ''
+    },
+    menuDotsState: {
+        page: "",
+        state: "init"
     }
 }
 
@@ -536,7 +540,15 @@ const setUnmountComponentValues = (state, action) => {
     };
 }
 
-
+const setMenuDotsState = (state, action) => {
+    return {
+       ...state,
+       unmountComponent: {
+           state: action.val,
+           gotoPage: action.path
+       }
+   };
+}
 
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
@@ -678,6 +690,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return clearActivityOfMenuItems(state, action); 
         case actionTypes.SET_UNMOUNT_COMPONENT_VALUES:
             return setUnmountComponentValues(state, action); 
+        case actionTypes.SET_MENU_DOTS_STATE:
+            return setMenuDotsState(state, action); 
         default: 
             return state;
     }

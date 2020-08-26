@@ -131,11 +131,11 @@ export const Toolbar = (props) => {
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds);
         // props.history.push(`/crypto-portfolio/${path}`);
-        console.log(path)
+        props.setHistoryPopFromItem("scrollToTop");
+        props.clearActivityOfMenuItems();
         props.setUnmountComponentValues(true, path);
         props.unmountComponent();
-
-        props.clearActivityOfMenuItems();
+    
         // window.location.reload();
         switch(opt){
             case 'optionItem': 
@@ -155,6 +155,23 @@ export const Toolbar = (props) => {
                 return props.setSidebarState("open");
         }
         props.setSidebarState("open");
+    }
+
+    const menuDotsOnClick = (page) => {
+        switch(page){
+            case 'home':
+            case 'bigImages':
+            case 'bigSlider':
+            case 'gallery':
+            case 'smallGallery':
+            case 'smallImages':
+            case 'smallSlider':
+                props.setMenuDotsState("on", page)
+                return;
+            case 'portfolioGallery':
+                props.setMenuDotsState("on", page)
+                return;
+        }
     }
 
     const renderClassName = (opt, isHovering, active) => {
@@ -217,7 +234,8 @@ export const Toolbar = (props) => {
                     )
                 }else{
                     return(
-                        <div key={i}
+                        <div 
+                            key={i}
                             className="toolbar-menu-dot"
                         />
                     )
@@ -239,7 +257,6 @@ export const Toolbar = (props) => {
                         <div 
                             className="toolbar-logo"
                             onClick={logoOnClick}
-
                         >
                             crypto.
                         </div>
@@ -247,6 +264,7 @@ export const Toolbar = (props) => {
                             {renderToolbarItems()}
                             <div 
                                 className="toolbar-menu"
+                                onClick={() => menuDotsOnClick(option)}
                                 onMouseEnter={handleMouseEnterMenuIcon} 
                                 onMouseLeave={handleMouseLeaveMenuIcon}
                             >
@@ -284,6 +302,7 @@ export const Toolbar = (props) => {
                             {renderToolbarItems()}
                             <div 
                                 className="toolbar-menu"
+                                onClick={() => menuDotsOnClick(option)}
                                 onMouseEnter={handleMouseEnterMenuIcon} 
                                 onMouseLeave={handleMouseLeaveMenuIcon}
                             >
@@ -333,6 +352,7 @@ export const Toolbar = (props) => {
                                 {renderToolbarItems()}
                                 <div 
                                     className="toolbar-menu"
+                                    onClick={() => menuDotsOnClick(option)}
                                     onMouseEnter={handleMouseEnterMenuIcon} 
                                     onMouseLeave={handleMouseLeaveMenuIcon}
                                 >
@@ -454,10 +474,11 @@ export const Toolbar = (props) => {
                             onClick={logoOnClick}
                         >
                             crypto.
-                            </div>
+                        </div>
                         <div className="toolbar-wrapper">
                             <div 
                                 className="toolbar-menu"
+                                onClick={() => menuDotsOnClick(option)}
                                 onMouseEnter={handleMouseEnterMenuIcon} 
                                 onMouseLeave={handleMouseLeaveMenuIcon}
                             >
@@ -599,7 +620,9 @@ export default connect(
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
+            setHistoryPopFromItem: bindActionCreators(Actions.setHistoryPopFromItem, dispatch)
         };
     }
 )(withRouter(Toolbar));

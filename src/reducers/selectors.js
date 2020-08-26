@@ -197,3 +197,10 @@ export const getUnmountComponentState = createSelector(
     [getUnmountComponent],
     (x) => x
 );
+
+const getMenuDotsState = (state) => state.home.menuDotsState;
+
+export const getMenuDotsStateState = createSelector(
+    [getMenuDotsState],
+    (x) => x
+);

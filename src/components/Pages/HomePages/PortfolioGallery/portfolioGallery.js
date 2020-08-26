@@ -265,6 +265,7 @@ export const PortfolioGallery = (props) => {
                 style="toolbarVersion2" 
                 // scrollingUp={scrollingUp}
                 toolbarMainColor="white"
+                page="portfolioGallery"
             />
         )
     }
@@ -367,24 +368,20 @@ export const PortfolioGallery = (props) => {
     */
 
     return(
-        // <>{showComponent ? 
-            <div className="portfolio-gallery">
-                {renderToolbars()}
-                <div className="portfolio-gallery-wrapper">
-                    <div className="portfolio-gallery-header-wrapper">
-                        <div className="header-wrapper">
-                            <div className="portfolio-gallery-header-bold">Welcome!</div>
-                            <div className="portfolio-gallery-header-text1">Take a Look</div>
-                        </div>
-                        <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
+        <div className="portfolio-gallery">
+            {renderToolbars()}
+            <div className="portfolio-gallery-wrapper">
+                <div className="portfolio-gallery-header-wrapper">
+                    <div className="header-wrapper">
+                        <div className="portfolio-gallery-header-bold">Welcome!</div>
+                        <div className="portfolio-gallery-header-text1">Take a Look</div>
                     </div>
-                    {renderPortfolioGalleryPageData()}
+                    <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
                 </div>
-                <Footer/>
-            </div> 
-        //     : null}
-        // </>
-        
+                {renderPortfolioGalleryPageData()}
+            </div>
+            <Footer/>
+        </div>         
     );
 }
 
@@ -392,7 +389,8 @@ export default connect(
     (state) => {
         return {
             portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
-            unmountComponent: Selectors.getUnmountComponentState(state)
+            unmountComponent: Selectors.getUnmountComponentState(state),
+            menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {

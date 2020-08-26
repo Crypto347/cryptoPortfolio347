@@ -285,10 +285,12 @@ export const SmallGallery = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="smallGallery"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
+                        page="smallGallery"
                     />
                 </>
             )
@@ -299,10 +301,12 @@ export const SmallGallery = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="smallGallery"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
+                        page="smallGallery"
                     />
                 </>
             )

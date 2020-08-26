@@ -118,3 +118,11 @@ export function gotoNewPage() {
     };
 };
 
+export function setMenuDotsState(val, page) {
+    return { 
+        type: actionTypes.SET_MENU_DOTS_STATE,
+        val: val,
+        page: page
+    };
+};
+

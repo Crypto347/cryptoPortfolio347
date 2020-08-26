@@ -106,10 +106,12 @@ export const Home = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="home"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
+                        page="home"
                     />
                 </>
             )
@@ -120,10 +122,12 @@ export const Home = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="home"
                     />
                     <Toolbar 
                         style="regularScreen"
                         toolbarMainColor="regular"
+                        page="home"
                     />
                 </>
             )

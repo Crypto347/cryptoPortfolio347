@@ -182,10 +182,12 @@ export const BigSlader = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="bigSlider"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
+                        page="bigSlider"
                     />
                 </>
             )
@@ -196,10 +198,12 @@ export const BigSlader = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="bigSlider"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
+                        page="bigSlider"
                     />
                 </>
             )

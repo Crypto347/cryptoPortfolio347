@@ -225,10 +225,12 @@ export const SmallSlider = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="smallSlider"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
+                        page="smallSlider"
                     />
                 </>
             )
@@ -239,10 +241,12 @@ export const SmallSlider = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
+                        page="smallSlider"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
+                        page="smallSlider"
                     />
                 </>
             )
