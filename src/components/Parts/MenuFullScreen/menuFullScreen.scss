@@ -85,7 +85,7 @@
         }
     }
     .menu-fullscreen-items {
-        border: 2px solid red;
+        padding: 15px 0 0 15px;
         .menu-fullscreen-item {
             display: flex;
             align-items: center;
@@ -96,8 +96,8 @@
                 transform: translate(100%);
                 align-items: center;
                 .arrow-horizontal-line {
-                    border-top: 1px solid black;
-                    background: black;
+                    border-top: 1px solid white;
+                    background: white;
                     width: 15px;
                 }
                 .arrow-wrapper2 {
@@ -107,12 +107,12 @@
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, 2.5px) rotate(-45deg);
                     }
                    .arrow-bottom-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, -3.5px) rotate(45deg);
                     }
@@ -124,8 +124,8 @@
                 opacity: 0;
                 transform: translateX(0%);
                 .arrow-horizontal-line {
-                    border-top: 1px solid black;
-                    background: black;
+                    border-top: 1px solid white;
+                    background: white;
                     width: 15px;
                 }
                 .arrow-wrapper2 {
@@ -135,12 +135,12 @@
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, 2.5px) rotate(-45deg);
                     }
                     .arrow-bottom-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, -3.5px) rotate(45deg);
                     }
@@ -156,8 +156,8 @@
                 -o-animation: toolbarItemArrowAppears .2s ease;
                 animation: toolbarItemArrowAppears .2s ease;
                 .arrow-horizontal-line {
-                    border-top: 1px solid black;
-                    background: black;
+                    border-top: 1px solid white;
+                    background: white;
                     width: 15px;
                 }
                 .arrow-wrapper2 {
@@ -167,12 +167,12 @@
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, 2.5px) rotate(-45deg);
                     }
                     .arrow-bottom-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, -3.5px) rotate(45deg);
                     }
@@ -188,8 +188,8 @@
                 -o-animation: toolbarItemArrowDisappears .2s ease;
                 animation: toolbarItemArrowDisappears .2s ease;
                 .arrow-horizontal-line {
-                    border-top: 1px solid black;
-                    background: black;
+                    border-top: 1px solid white;
+                    background: white;
                     width: 15px;
                 }
                 .arrow-wrapper2 {
@@ -199,12 +199,12 @@
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, 2.5px) rotate(-45deg);
                     }
                     .arrow-bottom-line {
-                        border-top: 1px solid black;
+                        border-top: 1px solid white;
                         width: 5px;
                         transform: translate(0px, -3.5px) rotate(45deg);
                     }
