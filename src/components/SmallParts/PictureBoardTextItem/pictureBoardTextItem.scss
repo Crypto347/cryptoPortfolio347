@@ -11,6 +11,11 @@
     &:hover {
         background-color: rgb(37, 37, 37);
     }
+    .picture-board-text-item-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .picture-board-text-item-icon {
         display: flex;
         justify-content: flex-end;

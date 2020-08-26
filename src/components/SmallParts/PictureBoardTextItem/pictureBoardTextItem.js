@@ -87,7 +87,7 @@ export const PictureBoardTextItem = (props) => {
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
-            <div>
+            <div className="picture-board-text-item-text-wrapper">
                 <H15 className="h15-nobel-lustria-animation">{props.header}</H15>
                 <EH10/>
                 <H40 className={isHovering ? "h40-white-teko" : "h40-nero-teko"}>{props.text}</H40>
