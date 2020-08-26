@@ -1,4 +1,4 @@
-export const menuItemsArray = [
+export const menuFullscreenItemsArray = [
     {
         id: 1,
         text: "Home.",

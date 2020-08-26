@@ -9,6 +9,13 @@ export const getMenuItemsState = createSelector(
     (x) => x
 );
 
+const getMenuFullScreenItems = (state) => state.home.menuFullscreenItems;
+
+export const getMenuFullScreenItemsState = createSelector(
+    [getMenuFullScreenItems],
+    (x) => x
+);
+
 const getHeaderImages = (state) => state.headerImages;
 
 export const getHeaderImagesState = createSelector(

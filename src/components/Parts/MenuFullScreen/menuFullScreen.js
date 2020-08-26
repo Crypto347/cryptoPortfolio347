@@ -21,10 +21,10 @@ import {
 import './menuFullScreen.scss';
 
 /**
-* Components
+* Actions
 */
 
-import Loading from '../../SmallParts/Loading/loading';
+import * as Actions from '../../../actions';
 
 /**
 * Services
@@ -37,6 +37,7 @@ import * as Services from "../../../service";
 */
 
 import * as Selectors from '../../../reducers/selectors';
+
 
 /**
 * Utility
@@ -51,15 +52,12 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
+* Constants
 */
 
-import Sketch from '../../../images/ourProcess/main-home-gif-1.gif';
-import Process from '../../../images/ourProcess/home-2-icon-2.png';
-import Development from '../../../images/ourProcess/main-home-gif-2.gif';
-import Design from '../../../images/ourProcess/home-2-icon-4.png';
-import Evaluation from '../../../images/ourProcess/main-home-gif-3.gif';
-import DefaultImage from '../../../images/error.jpg';
+import {
+    menuFullscreenItemsArray
+} from '../../../constants/menuFullscreenItems';
 
 /**
 * MenuFullScreen component definition and export
@@ -76,7 +74,7 @@ export const MenuFullScreen = (props) => {
     */
 
     useEffect(() => {
-        // props.fetchOurProcessData();
+        props.initMenuFullscreenItems(menuFullscreenItemsArray);
     }, []);
 
     // const renderImg = (opt) => {
@@ -171,7 +169,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch)
+            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
+            initMenuFullscreenItems: bindActionCreators(Actions.initMenuFullscreenItems, dispatch)
         };
     }
 )(MenuFullScreen);

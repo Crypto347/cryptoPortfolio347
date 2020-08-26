@@ -17,6 +17,7 @@ import uuid from "uuid";
 
 export const initialState = {
     menuItems: [],
+    menuFullScreenItems: [],
     photoViewerForPictureBoardTextItemOpen: false,
     photoViewerForBigImagesOpen: false,
     photoViewerForBigSliderOpen: false,
@@ -50,6 +51,14 @@ const initMenuItems = (state, action) => {
         menuItems: action.array,
     };
 }
+
+const initMenuFullscreenItems = (state, action) => {
+    return {
+        ...state,
+        menuFullScreenItems: action.array,
+    };
+}
+
 
 const photoViewerOpen = (state, action) => {    
     switch(action.option){
@@ -664,6 +673,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
             return initMenuItems(state, action); 
+        case actionTypes.INIT_MENU_FULLSCREEN_ITEMS:
+            return initMenuFullscreenItems(state, action); 
         case actionTypes.PHOTO_VIEWER_OPEN:
             return photoViewerOpen(state, action); 
         case actionTypes.PREV_IMAGE:
