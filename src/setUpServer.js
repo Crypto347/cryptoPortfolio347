@@ -1126,7 +1126,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             key: "smallImages3",
             header: "Small images – Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
-            category: "Music",
+            category: "Graphic Design",
             date: "12.08.2020",
             tags: [
                 {
@@ -1158,7 +1158,7 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             header: "Small images – Fashion",
             key: "smallImages4",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
-            category: "Music",
+            category: "Graphic Design",
             date: "26.06.2020",
             tags: [
                 {
@@ -1209,7 +1209,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
             key: "bigSlider1",
             header: "Take a Look at Our Portfolio.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
-            category: "Lifestyle",
+            category: "Graphic Design",
             date: "06.22.2020",
             tags: [
                 {
@@ -1251,7 +1251,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
             key: "bigSlider2",
             header: "Branding & Website.",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
-            category: "Lifestyle",
+            category: "Graphic Design",
             date: "07.10.2017",
             tags: [
                 {
@@ -1535,7 +1535,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
             key: "smallGallery2",
             header: "Portfolio small gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis.",
-            category: "Lifestyle",
+            category: "Music",
             date: "08.18.2020",
             tags: [
                 {
@@ -1643,7 +1643,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
             key: "gallery1",
             header: "Portfolio gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
-            category: "Lifestyle",
+            category: "Music",
             date: "07.18.2020",
             tags: [
                 {
@@ -1701,7 +1701,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
             key: "gallery2",
             header: "Portfolio gallery",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
-            category: "Lifestyle",
+            category: "Music",
             date: "07.19.2020",
             tags: [
                 {
@@ -1820,7 +1820,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
             key: "smallSlider1",
             header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
-            category: "Lifestyle",
+            category: "Graphic Design",
             date: "07.18.2020",
             tags: [
                 {
@@ -1873,7 +1873,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
             key: "smallSlider2",
             header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
-            category: "Lifestyle",
+            category: "Graphic Design",
             date: "08.20.2020",
             tags: [
                 {
@@ -1920,7 +1920,7 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
             key: "smallSlider3",
             header: "Small slider - Fashion",
             text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
-            category: "Lifestyle",
+            category: "Music",
             date: "08.20.2020",
             tags: [
                 {
@@ -1972,9 +1972,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 1,
             key: "smallImages1",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Small Images",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/1",
             pictures: [
@@ -2019,9 +2019,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 2,
             key: "bigSlider1",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Graphic Design",
             portfolioType: "Big Slider",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-slider/1",
             pictures: [
@@ -2066,9 +2066,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 3,
             key: "gallery1",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Music",
             portfolioType: "Gallery",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/1",
             pictures: [
@@ -2126,9 +2126,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 4,
             key: "smallGallery1",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Small Gallery",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-gallery/1",
             pictures: [
@@ -2186,9 +2186,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 5,
             key: "bigImages1",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Big Images",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-images/1",
             pictures: [
@@ -2233,9 +2233,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 6,
             key: "smallSlider1",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Graphic Design",
             portfolioType: "Small Slider",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/1",
             pictures: [
@@ -2293,9 +2293,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 7,
             key: "smallSlider2",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Graphic Design",
             portfolioType: "Small Slider",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/2",
             pictures: [
@@ -2345,9 +2345,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 8,
             key: "gallery2",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Music",
             portfolioType: "Gallery",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/2",
             pictures: [
@@ -2397,9 +2397,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 9,
             key: "smallGallery2",
             option: "blackAndWhite",
-            designType: "Graphic Design",
+            portfolioCategory: "Music",
             portfolioType: "Small Gallery",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-gallery/2",
             pictures: [
@@ -2441,9 +2441,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 10,
             key: "smallImages2",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Small Images",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/2",
             pictures: [
@@ -2467,9 +2467,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 11,
             key: "bigSlider2",
             option: "blackAndWhite",
-            designType: "Graphic Design",
+            portfolioCategory: "Graphic Design",
             portfolioType: "Big Slider",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-slider/2",
             pictures: [
@@ -2521,9 +2521,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 12,
             key: "bigImages2",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Big Images",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-images/2",
             pictures: [
@@ -2575,9 +2575,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 13,
             key: "gallery3",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Gallery",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/3",
             pictures: [
@@ -2635,9 +2635,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 14,
             key: "smallSlider3",
             option: "blackAndWhite",
-            designType: "Graphic Design",
+            portfolioCategory: "Music",
             portfolioType: "Small Slider",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/3",
             pictures: [
@@ -2679,9 +2679,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 15,
             key: "smallGallery3",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Small Gallery",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-gallery/3",
             pictures: [
@@ -2739,9 +2739,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 16,
             key: "smallImages3",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Graphic Design",
             portfolioType: "Small Images",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/3",
             pictures: [
@@ -2772,9 +2772,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 17,
             key: "bigSlider3",
             option: "colorful",
-            designType: "Graphic Design",
+            portfolioCategory: "Lifestyle",
             portfolioType: "Big Slider",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-slider/3",
             pictures: [
@@ -2833,9 +2833,9 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 18,
             key: "smallImages4",
             option: "blackAndWhite",
-            designType: "Graphic Design",
+            portfolioCategory: "Graphic Design",
             portfolioType: "Small Images",
-            designTypeIsHover: "init",
+            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/4",
             pictures: [

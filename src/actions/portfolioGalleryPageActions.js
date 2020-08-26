@@ -36,9 +36,9 @@ export function forgetCoordinateRangeForPortfolioGalleryPage(arr) {
     };
 };
 
-export function setPortfolioGalleryPageIsHoveringDesignType(val, id) {
+export function setPortfolioGalleryPageIsHoveringPortfolioCategory(val, id) {
     return { 
-        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_DESIGN_TYPE,
+        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_PORTFOLIO_CATEGORY,
         val: val,
         id: id
     };

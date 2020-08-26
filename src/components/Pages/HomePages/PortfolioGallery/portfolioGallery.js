@@ -196,8 +196,8 @@ export const PortfolioGallery = (props) => {
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
-            case 'designType': 
-                props.setPortfolioGalleryPageIsHoveringDesignType("on", id);
+            case 'portfolioCategory': 
+                props.setPortfolioGalleryPageIsHoveringPortfolioCategory("on", id);
                 break;
             case 'arrow': 
                 props.setPortfolioGalleryPageIsHoveringArrow("on", id);
@@ -207,8 +207,8 @@ export const PortfolioGallery = (props) => {
 
     const handleMouseLeave = (opt, id) => {
         switch(opt){
-            case 'designType': 
-                props.setPortfolioGalleryPageIsHoveringDesignType("off", id);
+            case 'portfolioCategory': 
+                props.setPortfolioGalleryPageIsHoveringPortfolioCategory("off", id);
                 break;
             case 'arrow': 
                 props.setPortfolioGalleryPageIsHoveringArrow("off", id);
@@ -217,7 +217,7 @@ export const PortfolioGallery = (props) => {
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "designType"){
+        if(opt === "portfolioCategory"){
             switch(isHovering){
                 case 'init':
                     return "h15-nobel-lustria-animated";
@@ -299,14 +299,16 @@ export const PortfolioGallery = (props) => {
                                     // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                                     rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
                                     imgCoordinateRange={imgCoordinateRange}
+                                    setUnmountComponentValues={props.setUnmountComponentValues}
+                                    unmountComponent={props.unmountComponent}
                                 />
                             </div>
                             <EH30/>
                             <div
-                                onMouseEnter={() => handleMouseEnter('designType', el.id)} 
-                                onMouseLeave={() => handleMouseLeave('designType', el.id)}
+                                onMouseEnter={() => handleMouseEnter('portfolioCategory', el.id)} 
+                                onMouseLeave={() => handleMouseLeave('portfolioCategory', el.id)}
                             >
-                                <H15 className={renderClassName("designType", el.designTypeIsHover)}>{el.designType}</H15>
+                                <H15 className={renderClassName("portfolioCategory", el.portfolioCategoryIsHover)}>{el.portfolioCategory}</H15>
                             </div>
                             <EH10/>
                             <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
@@ -398,7 +400,7 @@ export default connect(
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
-            setPortfolioGalleryPageIsHoveringDesignType: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringDesignType, dispatch),
+            setPortfolioGalleryPageIsHoveringPortfolioCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringPortfolioCategory, dispatch),
             setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)

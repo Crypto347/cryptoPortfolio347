@@ -184,6 +184,9 @@ export const PictureBoard = (props) => {
                             // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                             rememberCoordinateRange={props.rememberCoordinateRangeForPictureBoard}
                             imgCoordinateRange={imgCoordinateRange}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+
                         />
                     )
                 }
@@ -214,6 +217,8 @@ export default connect(
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             rememberCoordinateRangeForPictureBoard: bindActionCreators(Actions.rememberCoordinateRangeForPictureBoard, dispatch),
             forgetCoordinateRangeForPictureBoard: bindActionCreators(Actions.forgetCoordinateRangeForPictureBoard, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)
         };
     }
 )(PictureBoard);

@@ -140,10 +140,10 @@ const forgetCoordinateRangeForPortfolioGalleryPage = (state, action) => {
     };
 }
 
-const setPortfolioGalleryPageIsHoveringDesignType = (state, action) => {
+const setPortfolioGalleryPageIsHoveringPortfolioCategory = (state, action) => {
     let updatedItems = [...state.items];
 
-    let item = {...updatedItems.find(item => item.id === action.id), designTypeIsHover: action.val};
+    let item = {...updatedItems.find(item => item.id === action.id), portfolioCategoryIsHover: action.val};
     let itemIndex = updatedItems.findIndex(item => item.id === action.id);
     updatedItems.splice(itemIndex, 1, item);
 
@@ -185,8 +185,8 @@ const section1Reducer = (state = initialState, action) => {
             return rememberCoordinateRangeForPortfolioGalleryPage(state, action);
         case actionTypes.FORGET_COORDINATE_RANGE_FOR_PORTFOLIO_GALLERY_PAGE:
             return forgetCoordinateRangeForPortfolioGalleryPage(state, action);
-        case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_DESIGN_TYPE:
-            return setPortfolioGalleryPageIsHoveringDesignType(state, action);
+        case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_PORTFOLIO_CATEGORY:
+            return setPortfolioGalleryPageIsHoveringPortfolioCategory(state, action);
         case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW:
             return setPortfolioGalleryPageIsHoveringArrow(state, action);
         case actionTypes.SET_HISTORY_POP_FROM_ITEM:

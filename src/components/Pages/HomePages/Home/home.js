@@ -160,7 +160,6 @@ export default connect(
     (state) => {
         return {
             photoViewerForPictureBoardTextItemOpen: Selectors.getPhotoViewerForPictureBoardTextItemOpenState(state),
-        
         };
     },
     (dispatch) => {

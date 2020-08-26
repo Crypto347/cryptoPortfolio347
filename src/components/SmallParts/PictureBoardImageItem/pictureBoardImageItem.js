@@ -751,7 +751,9 @@ export const PictureBoardImageItem = (props) => {
     }
 
     const pictureBoardItemOnClick = (path) => {
-        props.history.push(`/crypto-portfolio/${path}`);
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent();
+        // props.history.push(`/crypto-portfolio/${path}`);
         // props.clearActivityOfMenuItems();
     }
 
