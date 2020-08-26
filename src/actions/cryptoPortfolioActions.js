@@ -72,6 +72,15 @@ export function setIsHoveringToolbarSubOptionItem(val, pathOfIds) {
     };
 };
 
+export function setIsHoveringMenuFullscreenItem(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVERING_MENU_FULLSCREEN_ITEM,
+        val: val,
+        id: id
+    };
+};
+
+
 export function setActivityOfToolbarOptionItem(pathOfIds) {
     return { 
         type: actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_OPTION_ITEM,

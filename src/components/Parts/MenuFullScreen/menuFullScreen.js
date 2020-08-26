@@ -46,7 +46,7 @@ import * as Selectors from '../../../reducers/selectors';
 import {
     H19,
     H25,
-    H45,
+    H70,
     EH25,
     EH40
 } from '../../UtilityComponents';
@@ -76,61 +76,70 @@ export const MenuFullScreen = (props) => {
     useEffect(() => {
         props.initMenuFullscreenItems(menuFullscreenItemsArray);
     }, []);
+    
+    const renderClassName = (opt, isHovering, active) => {
+        if(opt === "arrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper-hide";
+                case 'on':
+                    return "arrow-wrapper-hover-on";
+                case 'off':
+                    return "arrow-wrapper-hover-off";
+            }
+        }
+        if(opt === "text"){
+            if(active){
+                return "menu-fullscreen-item-text-active";
+            }
+            switch(isHovering){
+                case 'init':
+                    return "menu-fullscreen-item-text";
+                case 'on':
+                    return "menu-fullscreen-item-text-hover-on";
+                case 'off':
+                    return "menu-fullscreen-item-text-hover-off";
+            }
+        }
+    }
 
-    // const renderImg = (opt) => {
-    //     switch(opt){
-    //         case 'sketch':
-    //             return Sketch;
-    //         case 'process':
-    //             return Process;
-    //         case 'development':
-    //             return Development;
-    //         case 'design':
-    //             return Design;
-    //         case 'evaluation':
-    //             return Evaluation;
-    //         default: 
-    //             return DefaultImage;
-    //     }
-    // }
-
-    // const renderOurProcessItems = () => {
-    //     return(
-    //         <div className="our-process-items">{props.ourProcessDate.items.map((el,i) => {
-    //             return(
-    //                 <div key={i}>
-    //                     <img src={renderImg(el.img)}/>
-    //                     <EH25/>
-    //                     <H25 className="h25-black-teko">{el.header}</H25>
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
-
-    // const renderOurProcess = () => {
-    //     if(props.ourProcessDate.loading && !props.ourProcessDate.error){
-    //         return(
-    //             <div className="our-process-loading-error">
-    //                 <Loading color="black"/>
-    //             </div>
-    //         )
-    //     }
-    //     if(!props.ourProcessDate.loading && !props.ourProcessDate.error){
-    //         return(
-    //             <>
-    //                 {renderOurProcessItems()}
-    //             </>
-    //         )
-    //     }
-    //     if(!props.ourProcessDate.loading && props.ourProcessDate.error){
-    //         return(
-    //             <div className="picture-board-loading-error">
-    //                 <H19 className="h19-nobel-lora">{`${props.ourProcessDate.error}`}</H19>
-    //             </div>
-    //         )
-    //     }
-    // }
+    const renderMenuFullscreenItems = () => {
+        return(
+            <div className="menu-fullscreen-items">{props.menuFullscreenItems.map((el,i) => {
+                return(
+                    <div 
+                        key={i} 
+                        className="menu-fullscreen-item"
+                        // onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
+                    >
+                        {el.active ? 
+                        <div className="arrow-wrapper-active">
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div> : null}
+                        {!el.active ? 
+                        <div className={renderClassName("arrow", el.isHover)}>
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div> : null}
+                        <div 
+                            className={renderClassName("text", el.isHover, el.active)}
+                            onMouseEnter={() => props.setIsHoveringMenuFullscreenItem("on", el.id)} 
+                            onMouseLeave={() => props.setIsHoveringMenuFullscreenItem("off", el.id)}
+                        >
+                            <H70 className="h70-white-poppins">{el.text}</H70>
+                        </div>
+                    </div>
+                )
+            })}</div>
+        )
+    }
 
     /**
     * Markup
@@ -157,6 +166,7 @@ export const MenuFullScreen = (props) => {
                     </div>
                 </div>
             </div>
+            {renderMenuFullscreenItems()}
         </div>
     );
 }
@@ -164,13 +174,13 @@ export const MenuFullScreen = (props) => {
 export default connect(
     (state) => {
         return {
-            ourProcessDate: Selectors.getOurProcessDataState(state)
+            menuFullscreenItems: Selectors.getMenuFullScreenItemsState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
-            initMenuFullscreenItems: bindActionCreators(Actions.initMenuFullscreenItems, dispatch)
+            initMenuFullscreenItems: bindActionCreators(Actions.initMenuFullscreenItems, dispatch),
+            setIsHoveringMenuFullscreenItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenItem, dispatch),
         };
     }
 )(MenuFullScreen);

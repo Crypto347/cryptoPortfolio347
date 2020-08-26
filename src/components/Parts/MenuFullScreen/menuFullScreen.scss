@@ -84,7 +84,155 @@
             }
         }
     }
-   
+    .menu-fullscreen-items {
+        border: 2px solid red;
+        .menu-fullscreen-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 5px 5px 20px;
+            cursor: pointer;
+            .arrow-wrapper-active {
+                display: flex;
+                transform: translate(100%);
+                align-items: center;
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                   .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+            .arrow-wrapper-hide {
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                transform: translateX(0%);
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+            .arrow-wrapper-hover-on {
+                display: flex;
+                align-items: center;
+                opacity: 1;
+                transform: translateX(100%);
+                -webkit-animation: toolbarItemArrowAppears .2s ease;
+                -moz-animation: toolbarItemArrowAppears .2s ease;
+                -o-animation: toolbarItemArrowAppears .2s ease;
+                animation: toolbarItemArrowAppears .2s ease;
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+            .arrow-wrapper-hover-off {
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                transform: translateX(0%);
+                -webkit-animation: toolbarItemArrowDisappears .2s ease;
+                -moz-animation: toolbarItemArrowDiappears .2s ease;
+                -o-animation: toolbarItemArrowDisappears .2s ease;
+                animation: toolbarItemArrowDisappears .2s ease;
+                .arrow-horizontal-line {
+                    border-top: 1px solid black;
+                    background: black;
+                    width: 15px;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, 2.5px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border-top: 1px solid black;
+                        width: 5px;
+                        transform: translate(0px, -3.5px) rotate(45deg);
+                    }
+                }
+            }
+
+            .menu-fullscreen-item-text-active {
+                transform: translateX(20px);
+            }
+            .menu-fullscreen-item-text {
+                transform: translateX(0px);
+            }
+            .menu-fullscreen-item-text-hover-on {
+                transform: translateX(20px);
+                -webkit-animation: toolbarItemTextHoverOn .2s ease;
+                -moz-animation: toolbarItemTextHoverOn .2s ease;
+                -o-animation: toolbarItemTextHoverOn .2s ease;
+                animation: toolbarItemTextHoverOn .2s ease;
+            }
+            .menu-fullscreen-item-text-hover-off {
+                transform: translateX(0px);
+                -webkit-animation: toolbarItemTextHoverOff .2s ease;
+                -moz-animation: toolbarItemTextHoverOff .2s ease;
+                -o-animation: toolbarItemTextHoverOff .2s ease;
+                animation: toolbarItemTextHoverOff .2s ease;
+            }
+        }
+    }
 }
 
 

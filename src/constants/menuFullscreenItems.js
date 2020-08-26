@@ -4,7 +4,7 @@ export const menuFullscreenItemsArray = [
         text: "Home.",
         itemId: "home",
         path: null,
-        active: true,
+        active: false,
         isHover: "init",
         hasSubOptions: false,
         options: [
@@ -59,7 +59,7 @@ export const menuFullscreenItemsArray = [
         text: "About.",
         itemId: "about",
         path: null,
-        active: true,
+        active: false,
         isHover: "init",
         hasSubOptions: false,
         options: [
@@ -114,7 +114,7 @@ export const menuFullscreenItemsArray = [
         text: "Work.",
         itemId: "work",
         path: null,
-        active: true,
+        active: false,
         isHover: "init",
         hasSubOptions: false,
         options: [
@@ -160,7 +160,7 @@ export const menuFullscreenItemsArray = [
         text: "Contact.",
         itemId: "contact",
         path: null,
-        active: true,
+        active: false,
         isHover: "init",
         hasSubOptions: false,
         options: []
