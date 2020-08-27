@@ -104,6 +104,7 @@
     .menu-fullscreen-items {
         padding: 25px 0 0 0;
         .menu-fullscreen-item1 {
+            // position: relative;
             display: flex;
             align-items: center;
             // padding: 5px 5px 5px 20px;
@@ -256,6 +257,7 @@
             }
         }
         .menu-fullscreen-item2 {
+            // position: relative;
             display: flex;
             align-items: center;
             // padding: 5px 5px 5px 20px;
@@ -408,6 +410,7 @@
             }
         }
         .menu-fullscreen-item3 {
+            // position: relative;
             display: flex;
             align-items: center;
             // padding: 5px 5px 5px 20px;
@@ -560,6 +563,7 @@
             }
         }
         .menu-fullscreen-item4 {
+            // position: relative;
             display: flex;
             align-items: center;
             // padding: 5px 5px 5px 20px;
@@ -712,6 +716,13 @@
             }
         }
     }
+}
+
+.menu-fullscreen-item-options{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border: 2px solid red;
 }
 
 @-webkit-keyframes menuFullScreenItemTextHoverOn {

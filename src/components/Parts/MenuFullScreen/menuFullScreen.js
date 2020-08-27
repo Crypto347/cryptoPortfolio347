@@ -44,8 +44,7 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    H19,
-    H25,
+    H17,
     H70,
     EH25,
     EH40
@@ -135,7 +134,28 @@ export const MenuFullScreen = (props) => {
                         >
                             <H70 className="h70-white-poppins">{el.text}</H70>
                         </div>
+                        {el.active ? renderMenuFullscreenItemOptions(el.options) : null}
                     </div>
+                )
+            })}</div>
+        )
+    }
+
+    const renderMenuFullscreenItemOptions = (options) => {
+        return(
+            <div className="menu-fullscreen-item-options">{options.map((el,i) => {
+                return(
+                    <div key={i}>{el.array.map((el, i) => {
+                        return(
+                            <div 
+                                key={i} 
+                                className={`menu-fullscreen-item${el.id}-option`}
+                                // onClick={() => props.setActivityOfMenuFullscreenItem("on", el.id)}
+                            >
+                                <H17 className="h17-white-poppins">{el.text}</H17>
+                            </div>
+                        )
+                    })}</div>
                 )
             })}</div>
         )
