@@ -96,25 +96,25 @@
                 transform: translate(100%);
                 align-items: center;
                 .arrow-horizontal-line {
-                    border-top: 1px solid white;
+                    border-top: 2px solid white;
                     background: white;
-                    width: 15px;
+                    width: 37px;
                 }
                 .arrow-wrapper2 {
                     transform: translate(-5px);
-                    height: 10px;
+                    height: 40px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, 2.5px) rotate(-45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, 8px) rotate(-45deg);
                     }
                    .arrow-bottom-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, -3.5px) rotate(45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, -8px) rotate(45deg);
                     }
                 }
             }
@@ -124,25 +124,25 @@
                 opacity: 0;
                 transform: translateX(0%);
                 .arrow-horizontal-line {
-                    border-top: 1px solid white;
+                    border-top: 2px solid white;
                     background: white;
-                    width: 15px;
+                    width: 37px;
                 }
                 .arrow-wrapper2 {
                     transform: translate(-5px);
-                    height: 10px;
+                    height: 40px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, 2.5px) rotate(-45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, 8px) rotate(-45deg);
                     }
                     .arrow-bottom-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, -3.5px) rotate(45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, -8px) rotate(45deg);
                     }
                 }
             }
@@ -156,25 +156,25 @@
                 -o-animation: toolbarItemArrowAppears .2s ease;
                 animation: toolbarItemArrowAppears .2s ease;
                 .arrow-horizontal-line {
-                    border-top: 1px solid white;
+                    border-top: 2px solid white;
                     background: white;
-                    width: 15px;
+                    width: 37px;
                 }
                 .arrow-wrapper2 {
                     transform: translate(-5px);
-                    height: 10px;
+                    height: 40px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, 2.5px) rotate(-45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, 8px) rotate(-45deg);
                     }
                     .arrow-bottom-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, -3.5px) rotate(45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, -8px) rotate(45deg);
                     }
                 }
             }
@@ -188,52 +188,85 @@
                 -o-animation: toolbarItemArrowDisappears .2s ease;
                 animation: toolbarItemArrowDisappears .2s ease;
                 .arrow-horizontal-line {
-                    border-top: 1px solid white;
+                    border-top: 2px solid white;
                     background: white;
-                    width: 15px;
+                    width: 37px;
                 }
                 .arrow-wrapper2 {
                     transform: translate(-5px);
-                    height: 10px;
+                    height: 40px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     .arrow-top-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, 2.5px) rotate(-45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, 8px) rotate(-45deg);
                     }
                     .arrow-bottom-line {
-                        border-top: 1px solid white;
-                        width: 5px;
-                        transform: translate(0px, -3.5px) rotate(45deg);
+                        border-top: 2px solid white;
+                        width: 20px;
+                        transform: translate(-10px, -8px) rotate(45deg);
                     }
                 }
             }
 
             .menu-fullscreen-item-text-active {
-                transform: translateX(20px);
+                transform: translateX(50px);
             }
             .menu-fullscreen-item-text {
                 transform: translateX(0px);
             }
             .menu-fullscreen-item-text-hover-on {
-                transform: translateX(20px);
-                -webkit-animation: toolbarItemTextHoverOn .2s ease;
-                -moz-animation: toolbarItemTextHoverOn .2s ease;
-                -o-animation: toolbarItemTextHoverOn .2s ease;
-                animation: toolbarItemTextHoverOn .2s ease;
+                transform: translateX(50px);
+                -webkit-animation: menuFullScreenItemTextHoverOn .2s ease;
+                -moz-animation: menuFullScreenItemTextHoverOn .2s ease;
+                -o-animation: menuFullScreenItemTextHoverOn .2s ease;
+                animation: menuFullScreenItemTextHoverOn .2s ease;
             }
             .menu-fullscreen-item-text-hover-off {
                 transform: translateX(0px);
-                -webkit-animation: toolbarItemTextHoverOff .2s ease;
-                -moz-animation: toolbarItemTextHoverOff .2s ease;
-                -o-animation: toolbarItemTextHoverOff .2s ease;
-                animation: toolbarItemTextHoverOff .2s ease;
+                -webkit-animation: menuFullScreenItemTextHoverOff .2s ease;
+                -moz-animation: menuFullScreenItemTextHoverOff .2s ease;
+                -o-animation: menuFullScreenItemTextHoverOff .2s ease;
+                animation: menuFullScreenItemTextHoverOff .2s ease;
             }
         }
     }
 }
 
+@-webkit-keyframes menuFullScreenItemTextHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(50px);}
+}
+@-moz-keyframes menuFullScreenItemTextHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(50px);}
+}
+@-o-keyframes menuFullScreenItemTextHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(50px);}
+}
+@keyframes menuFullScreenItemTextHoverOn {
+    from{transform: translateX(0);}
+    to{transform: translateX(50px);}
+}
+
+@-webkit-keyframes menuFullScreenItemTextHoverOff {
+    from{transform: translateX(50px);}
+    to{transform: translateX(0px);}
+}
+@-moz-keyframes menuFullScreenItemTextHoverOff {
+    from{transform: translateX(50px);}
+    to{transform: translateX(0px);}
+}
+@-o-keyframes menuFullScreenItemTextHoverOff {
+    from{transform: translateX(50px);}
+    to{transform: translateX(0px);}
+}
+@keyframes menuFullScreenItemTextHoverOff {
+    from{transform: translateX(50px);}
+    to{transform: translateX(0px);}
+}
 
 

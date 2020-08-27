@@ -4,7 +4,7 @@ export const menuFullscreenItemsArray = [
         text: "Home.",
         itemId: "home",
         path: null,
-        active: false,
+        active: true,
         isHover: "init",
         hasSubOptions: false,
         options: [
