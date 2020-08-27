@@ -103,6 +103,9 @@
     }
     .menu-fullscreen-items {
         padding: 25px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         .menu-fullscreen-item1 {
             // position: relative;
             display: flex;
@@ -721,8 +724,41 @@
 .menu-fullscreen-item-options{
     position: absolute;
     top: 30%;
-    left: 40%;
-    border: 2px solid red;
+    left: 430px;
+    width: 250px;
+    .menu-fullscreen-item1-option {
+        -webkit-animation: appearMenuFullscreenOptionItem .2s linear;
+        -moz-animation: appearMenuFullscreenOptionItem .2s linear;
+        -o-animation: appearMenuFullscreenOptionItem .2s linear;
+        animation: appearMenuFullscreenOptionItem .2s linear;
+        animation-delay: .1s;
+        animation-fill-mode: both;
+    }
+    .menu-fullscreen-item2-option {
+        -webkit-animation: appearMenuFullscreenOptionItem .2s linear;
+        -moz-animation: appearMenuFullscreenOptionItem .2s linear;
+        -o-animation: appearMenuFullscreenOptionItem .2s linear;
+        animation: appearMenuFullscreenOptionItem .2s linear;
+        animation-delay: .2s;
+        animation-fill-mode: both;
+    }
+    .menu-fullscreen-item3-option {
+        -webkit-animation: appearMenuFullscreenOptionItem .2s linear;
+        -moz-animation: appearMenuFullscreenOptionItem .2s linear;
+        -o-animation: appearMenuFullscreenOptionItem .2s linear;
+        animation: appearMenuFullscreenOptionItem .2s linear;
+        animation-delay: .3s;
+        animation-fill-mode: both;
+    }
+    
+    .menu-fullscreen-item4-option {
+        -webkit-animation: appearMenuFullscreenOptionItem .2s linear;
+        -moz-animation: appearMenuFullscreenOptionItem .2s linear;
+        -o-animation: appearMenuFullscreenOptionItem .2s linear;
+        animation: appearMenuFullscreenOptionItem .2s linear;
+        animation-delay: .4s;
+        animation-fill-mode: both;
+    }
 }
 
 @-webkit-keyframes menuFullScreenItemTextHoverOn {
@@ -841,3 +877,43 @@
     }
 }
 
+@keyframes appearMenuFullscreenOptionItem {
+    0% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-moz-keyframes appearMenuFullscreenOptionItem {
+    0% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes appearMenuFullscreenOptionItem {
+    0% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-o-keyframes appearMenuFullscreenOptionItem {
+    0% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

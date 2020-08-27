@@ -501,6 +501,33 @@ const setActivityOfMenuFullscreenItem = (state, action) => {
     };
 }
 
+const setIsHoveringMenuFullscreenOptionItem = (state, action) => {
+    let updatedMenuFullscreenItems = [...state.menuFullscreenItems];
+console.log(action.pathOfIds)
+    let optionItem = {
+        ...updatedMenuFullscreenItems
+        .find(item => item.id === action.pathOfIds[0]).options
+        .find(item => item.id === action.pathOfIds[1]).array
+        .find(item => item.id === action.pathOfIds[2]),
+        isHover: action.val
+    }
+    
+    let optionItemIndex = updatedMenuFullscreenItems
+        .find(item => item.id === action.pathOfIds[0]).options
+        .find(item => item.id === action.pathOfIds[1]).array
+        .findIndex(item => item.id === action.pathOfIds[2]);
+        
+    updatedMenuFullscreenItems
+        .find(item => item.id === action.pathOfIds[0]).options
+        .find(item => item.id === action.pathOfIds[1]).array
+        .splice(optionItemIndex, 1, optionItem);
+
+    return {
+        ...state,
+        menuFullscreenItems: updatedMenuFullscreenItems
+    };
+}
+
 const setSidebarState = (state, action) => {
     return {
         ...state,
@@ -739,6 +766,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setActivityOfToolbarSubOptionItem(state, action); 
         case actionTypes.SET_ACTIVITY_OF_MENU_FULLSCREEN_ITEM:
             return setActivityOfMenuFullscreenItem(state, action); 
+        case actionTypes.SET_IS_HOVERING_MENU_FULLSCREEN_OPTION_ITEM:
+            return setIsHoveringMenuFullscreenOptionItem(state, action); 
         case actionTypes.SET_SIDEBAR_STATE:
             return setSidebarState(state, action); 
         case actionTypes.ACTIVATE_MENU_ITEM:

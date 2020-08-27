@@ -18,7 +18,7 @@ export const menuFullscreenItemsArray = [
                         text: "Design Studio",
                         itemId: "designStudio",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: "init",
                         subOptions: []
         

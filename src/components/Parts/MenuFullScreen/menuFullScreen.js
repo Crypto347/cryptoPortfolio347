@@ -44,8 +44,9 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    H17,
+    H15,
     H70,
+    EH10,
     EH25,
     EH40
 } from '../../UtilityComponents';
@@ -100,6 +101,16 @@ export const MenuFullScreen = (props) => {
                     return "menu-fullscreen-item-text-hover-off";
             }
         }
+        if(opt === "optionItem"){
+            switch(isHovering){
+                case 'init':
+                    return "h15-white-poppins-animated";
+                case 'on':
+                    return "h15-white-lustria-nobel-hover-on";
+                case 'off':
+                    return "h15-white-lustria-nobel-hover-off";
+            }
+        }
     }
 
     const renderMenuFullscreenItems = () => {
@@ -134,25 +145,29 @@ export const MenuFullScreen = (props) => {
                         >
                             <H70 className="h70-white-poppins">{el.text}</H70>
                         </div>
-                        {el.active ? renderMenuFullscreenItemOptions(el.options) : null}
+                        {el.active ? renderMenuFullscreenItemOptions(el) : null}
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderMenuFullscreenItemOptions = (options) => {
+    const renderMenuFullscreenItemOptions = (obj) => {
         return(
-            <div className="menu-fullscreen-item-options">{options.map((el,i) => {
+            <div className="menu-fullscreen-item-options">{obj.options.map((el,i) => {
                 return(
-                    <div key={i}>{el.array.map((el, i) => {
+                    <div key={el.id}>{el.array.map((el1, i1) => {
+                        let pathOfIds = [obj.id, el.id, el1.id]
                         return(
                             <div 
-                                key={i} 
-                                className={`menu-fullscreen-item${el.id}-option`}
+                                key={el1.id} 
+                                className={`menu-fullscreen-item${i1+1}-option`}
+                                onMouseEnter={() => props.setIsHoveringMenuFullscreenOptionItem("on", pathOfIds)} 
+                                onMouseLeave={() => props.setIsHoveringMenuFullscreenOptionItem("off", pathOfIds)}
                                 // onClick={() => props.setActivityOfMenuFullscreenItem("on", el.id)}
                             >
-                                <H17 className="h17-white-poppins">{el.text}</H17>
+                                <H15 className={renderClassName("optionItem", el1.isHover)}>{el1.text}</H15>
+                                <EH10/>
                             </div>
                         )
                     })}</div>
@@ -206,6 +221,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setIsHoveringMenuFullscreenItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenItem, dispatch),
             setActivityOfMenuFullscreenItem: bindActionCreators(Actions.setActivityOfMenuFullscreenItem, dispatch),
+            setIsHoveringMenuFullscreenOptionItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenOptionItem, dispatch),
         };
     }
 )(MenuFullScreen);
