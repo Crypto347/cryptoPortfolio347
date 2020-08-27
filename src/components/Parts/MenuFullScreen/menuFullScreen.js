@@ -14,6 +14,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
 * Styles
 */
@@ -113,13 +117,20 @@ export const MenuFullScreen = (props) => {
         }
     }
 
+    const menuFullscreenSubOptionOnClick = (path) => {
+        props.setMenuDotsState("off", props.page);
+        // props.history.push(`/crypto-portfolio/${path}`);
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent();
+    }
+
     const renderMenuFullscreenItems = () => {
         return(
             <div className="menu-fullscreen-items">{props.menuFullscreenItems.map((el,i) => {
                 return(
                     <div 
                         key={i} 
-                        className={`menu-fullscreen-item${el.id}`}
+                        className={`menu-fullscreen-item${i+1}`}
                         onClick={() => props.setActivityOfMenuFullscreenItem("on", el.id)}
                     >
                         {el.active ? 
@@ -164,7 +175,7 @@ export const MenuFullScreen = (props) => {
                                 className={`menu-fullscreen-item${i1+1}-option`}
                                 onMouseEnter={() => props.setIsHoveringMenuFullscreenOptionItem("on", pathOfIds)} 
                                 onMouseLeave={() => props.setIsHoveringMenuFullscreenOptionItem("off", pathOfIds)}
-                                // onClick={() => props.setActivityOfMenuFullscreenItem("on", el.id)}
+                                onClick={() => menuFullscreenSubOptionOnClick(el1.path)}
                             >
                                 <H15 className={renderClassName("optionItem", el1.isHover)}>{el1.text}</H15>
                                 <EH10/>
@@ -222,7 +233,9 @@ export default connect(
             setIsHoveringMenuFullscreenItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenItem, dispatch),
             setActivityOfMenuFullscreenItem: bindActionCreators(Actions.setActivityOfMenuFullscreenItem, dispatch),
             setIsHoveringMenuFullscreenOptionItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenOptionItem, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
         };
     }
-)(MenuFullScreen);
+)(withRouter(MenuFullScreen));
  

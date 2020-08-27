@@ -41,7 +41,7 @@ export const initialState = {
     },
     menuDotsState: {
         page: "",
-        state: "on"
+        state: "init"
     }
 }
 
