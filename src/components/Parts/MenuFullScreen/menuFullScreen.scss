@@ -6,7 +6,7 @@
     left: 0;
     top: 0;
     background: rgb(23, 23, 23);
-    padding: 50px;
+    padding: 50px 60px 50px 60px;
     .menu-fullscreen-logo-close-wrapper {
         display: flex;
         justify-content: space-between;
@@ -21,7 +21,24 @@
             font-size: 33px;
             color: white;
             cursor: pointer;
-           
+        }
+        .menu-fullscreen-logo-appear {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid white;
+            width: 60px;
+            height: 60px;
+            font-family: 'Balsamiq Sans', cursive;
+            font-size: 33px;
+            color: white;
+            cursor: pointer;
+            -webkit-animation: appearMenuFullscreenItem .3s linear;
+            -moz-animation: appearMenuFullscreenItem .3s linear;
+            -o-animation: appearMenuFullscreenItem .3s linear;
+            animation: appearMenuFullscreenItem .3s linear;
+            // animation-delay: 1s;
+            // animation-fill-mode: both;
         }
         .menu-fullscreen-close-button {
             cursor: pointer;
@@ -85,11 +102,11 @@
         }
     }
     .menu-fullscreen-items {
-        padding: 15px 0 0 15px;
+        // padding: 15px 0 0 15px;
         .menu-fullscreen-item {
             display: flex;
             align-items: center;
-            padding: 5px 5px 5px 20px;
+            // padding: 5px 5px 5px 20px;
             cursor: pointer;
             .arrow-wrapper-active {
                 display: flex;
@@ -267,6 +284,47 @@
 @keyframes menuFullScreenItemTextHoverOff {
     from{transform: translateX(50px);}
     to{transform: translateX(0px);}
+}
+
+@keyframes appearMenuFullscreenItem {
+    0% {
+        // opacity: 0;
+        transform: translateX(-30%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@-moz-keyframes appearMenuFullscreenItem {
+    0% {
+        // opacity: 0;
+        transform: translateX(-30%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@-webkit-keyframes appearMenuFullscreenItem {
+    0% {
+        // opacity: 0;
+        transform: translateX(-30%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@-o-keyframes appearMenuFullscreenItem {
+    0% {
+        // opacity: 0;
+        transform: translateX(-30%);
+    }
+    100% {
+        // opacity: 1;
+        transform: translateX(0%);
+    }
 }
 
 

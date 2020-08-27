@@ -148,10 +148,13 @@ export const MenuFullScreen = (props) => {
     return(
         <div className="menu-fullscreen">
             <div className="menu-fullscreen-logo-close-wrapper">
-                <div className="menu-fullscreen-logo">
+                <div className={props.state === "on"? "menu-fullscreen-logo-appear" : "menu-fullscreen-logo"}>
                     C.
                 </div>
-                <div className="menu-fullscreen-close-button">
+                <div 
+                    className="menu-fullscreen-close-button"
+                    onClick={() => props.setMenuDotsState("off", props.page)}
+                >
                     <div className="menu-fullscreen-close-button-first-line">
                         <div className="menu-fullscreen-close-button-left-half-line"/>
                         <div className="menu-fullscreen-close-button-right-half-line"/>
@@ -181,6 +184,7 @@ export default connect(
         return {
             initMenuFullscreenItems: bindActionCreators(Actions.initMenuFullscreenItems, dispatch),
             setIsHoveringMenuFullscreenItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenItem, dispatch),
+            setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
         };
     }
 )(MenuFullScreen);
