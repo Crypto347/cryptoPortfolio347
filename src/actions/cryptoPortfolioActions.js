@@ -80,18 +80,25 @@ export function setIsHoveringMenuFullscreenItem(val, id) {
     };
 };
 
-
 export function setActivityOfToolbarOptionItem(pathOfIds) {
     return { 
-        type: actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_OPTION_ITEM,
+        type: actionTypes.SET_ACTIVITY_OF_TOOLBAR_OPTION_ITEM,
         pathOfIds: pathOfIds
     };
 };
 
 export function setActivityOfToolbarSubOptionItem(pathOfIds) {
     return { 
-        type: actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM,
+        type: actionTypes.SET_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM,
         pathOfIds: pathOfIds
+    };
+};
+
+export function setActivityOfMenuFullscreenItem(val, id) {
+    return { 
+        type: actionTypes.SET_ACTIVITY_OF_MENU_FULLSCREEN_ITEM,
+        val: val,
+        id: id
     };
 };
 

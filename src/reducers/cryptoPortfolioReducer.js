@@ -304,7 +304,6 @@ const setIsHoveringToolbarSubOptionItem = (state, action) => {
 const setIsHoveringMenuFullscreenItem = (state, action) => {
     let updatedMenuFullscreenItems = [...state.menuFullscreenItems];
     
-    // if(action.val === "on"){
     let item = {
         ...updatedMenuFullscreenItems
         .find(item => item.id === action.id),
@@ -314,28 +313,6 @@ const setIsHoveringMenuFullscreenItem = (state, action) => {
     let itemIndex = updatedMenuFullscreenItems.findIndex(item => item.id === action.id);
     updatedMenuFullscreenItems.splice(itemIndex, 1, item);
 
-    // }
-    // else{
-    //     let item = {
-    //         ...updatedMenuFullscreenItems
-    //         .find(item => item.id === action.id),
-    //         isHover: action.val
-    //     }
-
-    //     let itemIndex = updatedMenuFullscreenItems.findIndex(item => item.id === action.id);
-    //     updatedMenuFullscreenItems.splice(itemIndex, 1, item);
-
-        // updatedMenuFullscreenItems.map((el, i) => {
-        //     updatedMenuFullscreenItems[i].options.map((el2, i2) => {
-        //         updatedMenuFullscreenItems[i].options[i2].array.map((el3, i3) => {
-        //             // updatedMenuFullscreenItems[i].options[i2].array[i3].isHover = "init";
-        //             updatedMenuFullscreenItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
-        //                 updatedMenuFullscreenItems[i].options[i2].array[i3].subOptions[i4].isHover = "init";
-        //             })
-        //         })
-        //     })
-        // })
-    // }
     return {
         ...state,
         menuFullscreenItems: updatedMenuFullscreenItems
@@ -496,6 +473,31 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
     return {
         ...state,
         menuItems: updatedMenuItems
+    };
+}
+
+const setActivityOfMenuFullscreenItem = (state, action) => {
+    let updatedMenuFullscreenItems = [...state.menuFullscreenItems];
+    
+    updatedMenuFullscreenItems = updatedMenuFullscreenItems.map((el, i) => {
+        return {
+            ...el,
+            active: false
+        }
+    })
+    
+    let item = {
+        ...updatedMenuFullscreenItems
+        .find(item => item.id === action.id),
+        active: action.val
+    }
+
+    let itemIndex = updatedMenuFullscreenItems.findIndex(item => item.id === action.id);
+    updatedMenuFullscreenItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        menuFullscreenItems: updatedMenuFullscreenItems
     };
 }
 
@@ -731,10 +733,12 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setIsHoveringToolbarSubOptionItem(state, action); 
         case actionTypes.SET_IS_HOVERING_MENU_FULLSCREEN_ITEM:
             return setIsHoveringMenuFullscreenItem(state, action); 
-        case actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_OPTION_ITEM:
+        case actionTypes.SET_ACTIVITY_OF_TOOLBAR_OPTION_ITEM:
             return setActivityOfToolbarOptionItem(state, action); 
-        case actionTypes.SET_IS_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM:
+        case actionTypes.SET_ACTIVITY_OF_TOOLBAR_SUB_OPTION_ITEM:
             return setActivityOfToolbarSubOptionItem(state, action); 
+        case actionTypes.SET_ACTIVITY_OF_MENU_FULLSCREEN_ITEM:
+            return setActivityOfMenuFullscreenItem(state, action); 
         case actionTypes.SET_SIDEBAR_STATE:
             return setSidebarState(state, action); 
         case actionTypes.ACTIVATE_MENU_ITEM:

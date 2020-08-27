@@ -184,7 +184,10 @@ export const PortfolioGallery = (props) => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
-        return () => window.removeEventListener('resize', resize);
+        return () => {
+            window.removeEventListener('resize', resize);
+            props.setMenuDotsState("init", "")
+        }
     }, [props.unmountComponent.state]);
 
     useEffect(() => {
@@ -410,7 +413,8 @@ export default connect(
             setPortfolioGalleryPageIsHoveringPortfolioCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringPortfolioCategory, dispatch),
             setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch)
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
         };
     }
 )(PortfolioGallery);

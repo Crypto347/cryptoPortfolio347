@@ -109,8 +109,8 @@ export const MenuFullScreen = (props) => {
                 return(
                     <div 
                         key={i} 
-                        className="menu-fullscreen-item"
-                        // onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
+                        className={`menu-fullscreen-item${el.id}`}
+                        onClick={() => props.setActivityOfMenuFullscreenItem("on", el.id)}
                     >
                         {el.active ? 
                         <div className="arrow-wrapper-active">
@@ -183,8 +183,9 @@ export default connect(
     (dispatch) => {
         return {
             initMenuFullscreenItems: bindActionCreators(Actions.initMenuFullscreenItems, dispatch),
-            setIsHoveringMenuFullscreenItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenItem, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
+            setIsHoveringMenuFullscreenItem: bindActionCreators(Actions.setIsHoveringMenuFullscreenItem, dispatch),
+            setActivityOfMenuFullscreenItem: bindActionCreators(Actions.setActivityOfMenuFullscreenItem, dispatch),
         };
     }
 )(MenuFullScreen);
