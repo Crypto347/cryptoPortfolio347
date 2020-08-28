@@ -62,6 +62,22 @@ const setBigImagesIsHoveringTag = (state, action) => {
     };
 }
 
+const setBigImagesIsHoveringCategory = (state, action) => {
+    let updatedCategories = [...state.item.categories];
+
+    let category = {...updatedCategories.find(item => item.id === action.id), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.id === action.id);
+    updatedCategories.splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            categories: updatedCategories
+        }
+    };
+}
+
 const bigImagesPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_BIG_IMAGES_PORTFOLIO_BEGIN:
@@ -72,6 +88,8 @@ const bigImagesPortfolioReducer = (state = initialState, action) => {
             return fetchBigImagesPortfolioFailur(state, action);
         case actionTypes.SET_BIG_IMAGES_IS_HOVERING_TAG:
             return setBigImagesIsHoveringTag(state, action);
+        case actionTypes.SET_BIG_IMAGES_IS_HOVERING_CATEGORY:
+            return setBigImagesIsHoveringCategory(state, action);
         default: 
             return state;
     }

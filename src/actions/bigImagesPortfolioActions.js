@@ -27,3 +27,12 @@ export function setBigImagesIsHoveringTag(val, id) {
         id: id
     };
 };
+
+export function setBigImagesIsHoveringCategory(val, id) {
+    return { 
+        type: actionTypes.SET_BIG_IMAGES_IS_HOVERING_CATEGORY,
+        val: val,
+        id: id
+    };
+};
+

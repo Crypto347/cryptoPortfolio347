@@ -158,7 +158,7 @@ export const BigImages = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'bigImagesCategory': 
-                setIsHoveringCategoryText("on");
+                props.setBigImagesIsHoveringCategory("on", id);
                 break;
             case 'bigImagesTag': 
                 props.setBigImagesIsHoveringTag("on", id);
@@ -169,7 +169,7 @@ export const BigImages = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'bigImagesCategory': 
-                setIsHoveringCategoryText("off");
+                props.setBigImagesIsHoveringCategory("off", id);
                 break;
             case 'bigImagesTag': 
                 props.setBigImagesIsHoveringTag("off", id);
@@ -277,12 +277,30 @@ export const BigImages = (props) => {
         }
     }
    
+    const renderCategories = () => {
+        return(
+            <div className="big-images-categories">{props.bigImagesPortfolio.item.categories.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="big-images-category"
+                        onMouseEnter={() => handleMouseEnter(`bigImagesCategory`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`bigImagesCategory`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`bigImagesCategory`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     const renderTags = () => {
         return(
             <div className="big-images-tags">{props.bigImagesPortfolio.item.tags.map((el, i) => {
                 return(
                     <div 
                         key={i}
+                        className="big-images-tag"
                         onMouseEnter={() => handleMouseEnter(`bigImagesTag`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`bigImagesTag`, el.id)} 
                     >
@@ -341,13 +359,7 @@ export const BigImages = (props) => {
                                 </div>
                                 <div className="big-images-category-date-tags-wrapper">
                                     <H22 className="h22-nero-poppins">Category:</H22>
-                                    <H19 
-                                        className={renderClassName("bigImagesCategory", isHoveringCategoryText)}
-                                        onMouseEnter={() => handleMouseEnter('bigImagesCategory')} 
-                                        onMouseLeave={() => handleMouseLeave('bigImagesCategory')}
-                                    >
-                                        {props.bigImagesPortfolio.item.category}
-                                    </H19>
+                                    {renderCategories()}
                                     <EH40/>
                                     <H22 className="h22-nero-poppins">Date:</H22>
                                     <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.date}</H19>
@@ -404,6 +416,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchBigImagesPortfolio: bindActionCreators(Services.fetchBigImagesPortfolio, dispatch),
+            setBigImagesIsHoveringCategory: bindActionCreators(Actions.setBigImagesIsHoveringCategory, dispatch),
             setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
