@@ -64,6 +64,13 @@
                 .portfolio-gallery-page-item-image {
                     width: 100%;
                 }
+                .portfolio-gallery-page-item-categories {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .portfolio-gallery-page-item-category {
+                        padding-right: 10px;
+                    }
+                }
                 .arrow-wrapper {
                     display: flex;
                     margin-top: 10px;

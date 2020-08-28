@@ -281,6 +281,25 @@ export const PortfolioGallery = (props) => {
         // props.history.push(`/crypto-portfolio/${path}`)
     }
 
+    const renderCategories = (obj) => {
+        return(
+            <div className="portfolio-gallery-page-item-categories">{obj.categories.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="portfolio-gallery-page-item-category"
+                        onMouseEnter={() => handleMouseEnter(`portfolioCategory`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`portfolioCategory`, el.id)} 
+                    >
+                        {i === 0 ? 
+                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{`${el.label}`}</H15> : 
+                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{`/ ${el.label}`}</H15>}
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     const renderPortfolioGalleryPageItems = () => {
         return(
             <>
@@ -309,12 +328,7 @@ export const PortfolioGallery = (props) => {
                                 />
                             </div>
                             <EH30/>
-                            <div
-                                onMouseEnter={() => handleMouseEnter('portfolioCategory', el.id)} 
-                                onMouseLeave={() => handleMouseLeave('portfolioCategory', el.id)}
-                            >
-                                <H15 className={renderClassName("portfolioCategory", el.portfolioCategoryIsHover)}>{el.portfolioCategory}</H15>
-                            </div>
+                            {renderCategories(el)}
                             <EH10/>
                             <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
                             <div 

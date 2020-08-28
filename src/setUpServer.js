@@ -2206,9 +2206,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 1,
             key: "smallImages1",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Images",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/1",
             pictures: [
@@ -2253,9 +2265,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 2,
             key: "bigSlider1",
             option: "colorful",
-            portfolioCategory: "Graphic Design",
+            categories: [
+                {
+                    id: 1,
+                    label: "Music",
+                    key: "music",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Big Slider",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-slider/1",
             pictures: [
@@ -2300,9 +2324,15 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 3,
             key: "gallery1",
             option: "colorful",
-            portfolioCategory: "Music",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Gallery",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/1",
             pictures: [
@@ -2360,9 +2390,27 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 4,
             key: "smallGallery1",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Gallery",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-gallery/1",
             pictures: [
@@ -2420,9 +2468,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 5,
             key: "bigImages1",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Big Images",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-images/1",
             pictures: [
@@ -2467,9 +2527,27 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 6,
             key: "smallSlider1",
             option: "colorful",
-            portfolioCategory: "Graphic Design",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Slider",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/1",
             pictures: [
@@ -2527,9 +2605,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 7,
             key: "smallSlider2",
             option: "colorful",
-            portfolioCategory: "Graphic Design",
+            categories: [
+                {
+                    id: 1,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Slider",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/2",
             pictures: [
@@ -2579,9 +2669,15 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 8,
             key: "gallery2",
             option: "colorful",
-            portfolioCategory: "Music",
+            categories: [
+                {
+                    id: 1,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Gallery",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/2",
             pictures: [
@@ -2631,9 +2727,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 9,
             key: "smallGallery2",
             option: "blackAndWhite",
-            portfolioCategory: "Music",
+            categories: [
+                {
+                    id: 1,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Gallery",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-gallery/2",
             pictures: [
@@ -2675,9 +2783,27 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 10,
             key: "smallImages2",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Music",
+                    key: "music",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Images",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/2",
             pictures: [
@@ -2701,9 +2827,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 11,
             key: "bigSlider2",
             option: "blackAndWhite",
-            portfolioCategory: "Graphic Design",
+            categories: [
+                {
+                    id: 1,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Big Slider",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-slider/2",
             pictures: [
@@ -2755,9 +2893,27 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 12,
             key: "bigImages2",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Big Images",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-images/2",
             pictures: [
@@ -2809,9 +2965,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 13,
             key: "gallery3",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Gallery",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/gallery/3",
             pictures: [
@@ -2869,9 +3037,15 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 14,
             key: "smallSlider3",
             option: "blackAndWhite",
-            portfolioCategory: "Music",
+            categories: [
+                {
+                    id: 1,
+                    label: "Music",
+                    key: "music",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Slider",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-slider/3",
             pictures: [
@@ -2913,9 +3087,15 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 15,
             key: "smallGallery3",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Gallery",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-gallery/3",
             pictures: [
@@ -2973,9 +3153,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 16,
             key: "smallImages3",
             option: "colorful",
-            portfolioCategory: "Graphic Design",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init"
+                },
+            ],
             portfolioType: "Small Images",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/3",
             pictures: [
@@ -3006,9 +3198,27 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 17,
             key: "bigSlider3",
             option: "colorful",
-            portfolioCategory: "Lifestyle",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Music",
+                    key: "music",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Big Slider",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/big-slider/3",
             pictures: [
@@ -3067,9 +3277,15 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
             id: 18,
             key: "smallImages4",
             option: "blackAndWhite",
-            portfolioCategory: "Graphic Design",
+            categories: [
+                {
+                    id: 1,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init"
+                }
+            ],
             portfolioType: "Small Images",
-            portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
             path: "portfolio-item/small-images/4",
             pictures: [
