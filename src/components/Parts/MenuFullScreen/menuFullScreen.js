@@ -124,6 +124,15 @@ export const MenuFullScreen = (props) => {
         props.unmountComponent();
     }
 
+
+    const menuFullScreenItemOnClick = (id, hasOptions, path) => {
+        props.setActivityOfMenuFullscreenItem("on", id);
+        if(!hasOptions){
+            props.setUnmountComponentValues(true, path);
+            props.unmountComponent();
+        }
+    }
+
     const renderMenuFullscreenItems = () => {
         return(
             <div className="menu-fullscreen-items">{props.menuFullscreenItems.map((el,i) => {
@@ -131,7 +140,7 @@ export const MenuFullScreen = (props) => {
                     <div 
                         key={i} 
                         className={`menu-fullscreen-item${i+1}`}
-                        onClick={() => props.setActivityOfMenuFullscreenItem("on", el.id)}
+                        onClick={() => menuFullScreenItemOnClick(el.id, el.hasOptions, el.path)}
                     >
                         {el.active ? 
                         <div className="arrow-wrapper-active">

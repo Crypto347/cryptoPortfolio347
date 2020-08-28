@@ -6,7 +6,7 @@ export const menuFullscreenItemsArray = [
         path: null,
         active: false,
         isHover: "init",
-        hasSubOptions: false,
+        hasOptions: true,
         options: [
             {
                 id: 11,
@@ -61,7 +61,7 @@ export const menuFullscreenItemsArray = [
         path: null,
         active: false,
         isHover: "init",
-        hasSubOptions: false,
+        hasOptions: true,
         options: [
             {
                 id: 21,
@@ -116,7 +116,7 @@ export const menuFullscreenItemsArray = [
         path: null,
         active: false,
         isHover: "init",
-        hasSubOptions: false,
+        hasOptions: true,
         options: [
             {
                 id: 31,
@@ -159,10 +159,10 @@ export const menuFullscreenItemsArray = [
         id: 4,
         text: "Contact.",
         itemId: "contact",
-        path: null,
+        path: "contact-us",
         active: false,
         isHover: "init",
-        hasSubOptions: false,
+        hasOptions: false,
         options: []
     },
 ]
