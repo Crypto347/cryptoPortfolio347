@@ -29,7 +29,7 @@ import './portfolioGallery.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
-import PictureBoardImageItem from '../../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
+import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -294,7 +294,7 @@ export const PortfolioGallery = (props) => {
                             id={el.key}
                         >
                             <div className="portfolio-gallery-page-item-image">
-                                <PictureBoardImageItem  
+                                <SwitchImage  
                                     component="portfolioGallery"
                                     id={el.id}
                                     option={el.option}

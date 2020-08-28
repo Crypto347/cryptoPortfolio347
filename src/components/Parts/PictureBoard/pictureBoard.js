@@ -27,7 +27,7 @@ import './pictureBoard.scss';
 
 import Loading from '../../SmallParts/Loading/loading';
 import PictureBoardTextItem from '../../SmallParts/PictureBoardTextItem/pictureBoardTextItem';
-import PictureBoardImageItem from '../../SmallParts/PictureBoardImageItem/pictureBoardImageItem';
+import SwitchImage from '../../SmallParts/SwitchImage/switchImage';
 
 /**
 * Actions
@@ -173,7 +173,7 @@ export const PictureBoard = (props) => {
                     let imgCoordinateRange = props.pictureBoardImagesCooradinateRange.find(item => item.id === el.id);
                     // console.log(imgCoordinateRange)
                     return(
-                        <PictureBoardImageItem  
+                        <SwitchImage  
                             key={i}
                             component="pictureBoard"
                             id={el.id}

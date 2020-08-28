@@ -16,7 +16,7 @@ import {
 * Styles
 */
 
-import './pictureBoardImageItem.scss';
+import './switchImage.scss';
 
 /**
 * Utility
@@ -278,10 +278,10 @@ import Id3SmallSlider3 from '../../../images/portfolioPages/smallSlider/id3/marc
 import Id3SmallSlider4 from '../../../images/portfolioPages/smallSlider/id3/marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png';
 
 /**
-* PictureBoardImageItem component definition and export
+* SwitchImage component definition and export
 */
 
-export const PictureBoardImageItem = (props) => {
+export const SwitchImage = (props) => {
 
     /**
     * State
@@ -409,14 +409,14 @@ export const PictureBoardImageItem = (props) => {
     }
 
     const evaluateCoordinates = () => {
-        let pictureBoardImageItem = document.getElementById(`pictureBoardImageItem${props.id}`);
+        let switchImage = document.getElementById(`switchImage${props.id}`);
         let updatedImgCoordinateRange = {
             id: props.id,
-            topCoordinate: pictureBoardImageItem.offsetTop,
-            bottomCoordinate: pictureBoardImageItem.offsetTop + pictureBoardImageItem.offsetHeight,
-            leftCoordinate: pictureBoardImageItem.offsetLeft,
-            rightCoordinate: pictureBoardImageItem.offsetLeft + pictureBoardImageItem.offsetWidth,
-            width: pictureBoardImageItem.offsetWidth,
+            topCoordinate: switchImage.offsetTop,
+            bottomCoordinate: switchImage.offsetTop + switchImage.offsetHeight,
+            leftCoordinate: switchImage.offsetLeft,
+            rightCoordinate: switchImage.offsetLeft + switchImage.offsetWidth,
+            width: switchImage.offsetWidth,
             updated: true
         };
         return updatedImgCoordinateRange;
@@ -764,7 +764,7 @@ export const PictureBoardImageItem = (props) => {
     return(
         <div 
             className={renderClassName(props.component)}
-            id={`pictureBoardImageItem${props.id}`}
+            id={`switchImage${props.id}`}
             onClick={() => pictureBoardItemOnClick(props.path)}
         >
             <div className={props.option === "colorful" ? "picture-board-image" : "picture-board-image-black-and-white"}>
@@ -777,4 +777,4 @@ export const PictureBoardImageItem = (props) => {
     );
 }
 
-export default withRouter(PictureBoardImageItem);
+export default withRouter(SwitchImage);
