@@ -27,6 +27,20 @@
             .small-images-movable-part {
                 width: calc(42% - 30px);
                 padding: 5px 0px 0px 30px;
+                .small-images-categories {
+                    display: flex;
+                    flex-direction: row;
+                    .small-images-category {
+                        padding-right: 10px;
+                    }
+                }
+                .small-images-tags {
+                    display: flex;
+                    flex-direction: row;
+                    .small-images-tag {
+                        padding-right: 10px;
+                    }
+                }
             }
         }
     }
@@ -61,6 +75,16 @@
     .small-images {
         .small-images-wrapper {
             padding: 20px;
+            .small-images-content {
+                .small-images-movable-part {
+                    .small-images-categories {
+                        flex-direction: column;
+                    }
+                    .small-images-tags {
+                        flex-direction: column;
+                    }
+                }
+            }
         }
     }
 }

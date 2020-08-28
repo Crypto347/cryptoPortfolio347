@@ -20,6 +20,14 @@ export function fetchSmallImagesPortfolioFailur(err) {
     };
 };
 
+export function setSmallImagesIsHoveringCategory(val, id) {
+    return { 
+        type: actionTypes.SET_SMALL_IMAGES_IS_HOVERING_CATEGORY,
+        val: val,
+        id: id
+    };
+};
+
 export function setSmallImagesIsHoveringTag(val, id) {
     return { 
         type: actionTypes.SET_SMALL_IMAGES_IS_HOVERING_TAG,
