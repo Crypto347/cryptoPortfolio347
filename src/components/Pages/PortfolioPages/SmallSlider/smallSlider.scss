@@ -21,6 +21,21 @@
             }
             .small-slider-content-info {
                 width: 31%;
+                .small-slider-categories {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .small-slider-category {
+                        padding-right: 10px;
+                    }
+                }
+                .small-slider-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    border: 2px solid red;
+                    .small-slider-tag {
+                        padding-right: 10px;
+                    }
+                }
             }
         }
     }

@@ -71,14 +71,14 @@
                 width: 30%;
                 .small-gallery-categories {
                     display: flex;
-                    flex-direction: row;
+                    flex-wrap: wrap;
                     .small-gallery-category {
                         padding-right: 10px;
                     }
                 }
                 .small-gallery-tags {
                     display: flex;
-                    flex-direction: row;
+                    flex-wrap: wrap;
                     .small-gallery-tag {
                         padding-right: 10px;
                     }
@@ -140,16 +140,6 @@
     .small-gallery {
         .small-gallery-wrapper {
             padding: 70px 30px 70px 30px;
-            .small-gallery-content {
-                .small-gallery-content-info {
-                    .small-gallery-categories {
-                        flex-direction: column;
-                    }
-                    .small-gallery-tags {
-                        flex-direction: column;
-                    }
-                }
-            }
         }
     }
 }

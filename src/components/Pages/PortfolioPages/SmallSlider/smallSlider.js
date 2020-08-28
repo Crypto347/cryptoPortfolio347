@@ -134,7 +134,7 @@ export const SmallSlider = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'smallSliderCategory': 
-                setIsHoveringCategoryText("on");
+                props.setSmallSliderIsHoveringCategory("on", id);
                 break;
             case 'smallSliderTag': 
                 props.setSmallSliderIsHoveringTag("on", id);
@@ -145,7 +145,7 @@ export const SmallSlider = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'smallSliderCategory': 
-                setIsHoveringCategoryText("off");
+                props.setSmallSliderIsHoveringCategory("off", id);
                 break;
             case 'smallSliderTag': 
                 props.setSmallSliderIsHoveringTag("off", id);
@@ -196,27 +196,6 @@ export const SmallSlider = (props) => {
         return e.deltaY < 0;
     }
 
-    const openPhotoViewer = (array, activeIndex) => {
-        let slidesForPhotoViewer = [...array];
-        let removedSlides = [];
-        // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
-              
-        slidesForPhotoViewer.map((el, i) => {
-            if(i < activeIndex){
-                removedSlides.push(el);
-            }
-        })
-        slidesForPhotoViewer.splice(0, activeIndex)
-      
-        if(removedSlides.length !== 0){
-            slidesForPhotoViewer.push(removedSlides);
-        }
-
-        slidesForPhotoViewer = slidesForPhotoViewer.flat();
-        
-        props.photoViewerOpen('smallSlider', true, slidesForPhotoViewer);
-    }
-
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -253,12 +232,30 @@ export const SmallSlider = (props) => {
         }
     }
 
+    const renderCategories = () => {
+        return(
+            <div className="small-slider-categories">{props.smallSliderPortfolio.item.categories.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="small-slider-category"
+                        onMouseEnter={() => handleMouseEnter(`smallSliderCategory`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallSliderCategory`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`smallSliderCategory`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     const renderTags = () => {
         return(
             <div className="small-slider-tags">{props.smallSliderPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
+                        className="small-images-tag"
                         onMouseEnter={() => handleMouseEnter(`smallSliderTag`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`smallSliderTag`, el.id)} 
                     >
@@ -320,13 +317,7 @@ export const SmallSlider = (props) => {
                             <H19 className="h19-nobel-lustria">{props.smallSliderPortfolio.item.text}</H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Category:</H22>
-                            <H19 
-                                className={renderClassName("smallSliderCategory", isHoveringCategoryText)}
-                                onMouseEnter={() => handleMouseEnter('smallSliderCategory')} 
-                                onMouseLeave={() => handleMouseLeave('smallSliderCategory')}
-                            >
-                                {props.smallSliderPortfolio.item.category}
-                            </H19>
+                            {renderCategories()}
                             <EH40/>
                             <H22 className="h22-nero-poppins">Date:</H22>
                             <H19 className="h19-nobel-lustria">{props.smallSliderPortfolio.item.date}</H19>
@@ -381,6 +372,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallSliderPortfolio: bindActionCreators(Services.fetchSmallSliderPortfolio, dispatch),
+            setSmallSliderIsHoveringCategory: bindActionCreators(Actions.setSmallSliderIsHoveringCategory, dispatch),
             setSmallSliderIsHoveringTag: bindActionCreators(Actions.setSmallSliderIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),

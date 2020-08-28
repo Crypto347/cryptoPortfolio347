@@ -46,6 +46,22 @@ const fetchSmallSliderPortfolioFailur = (state, action) => {
     };
 }
 
+const setSmallSliderIsHoveringCategory = (state, action) => {
+    let updatedCategories = [...state.item.categories];
+
+    let category = {...updatedCategories.find(item => item.id === action.id), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.id === action.id);
+    updatedCategories.splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            categories: updatedCategories
+        }
+    };
+}
+
 const setSmallSliderIsHoveringTag = (state, action) => {
     let updatedTags = [...state.item.tags];
 
@@ -70,6 +86,8 @@ const smallSliderPortfolioReducer = (state = initialState, action) => {
             return fetchSmallSliderPortfolioSuccess (state, action);
         case actionTypes.FETCH_SMALL_SLIDER_PORTFOLIO_FAILURE:
             return fetchSmallSliderPortfolioFailur(state, action);
+        case actionTypes.SET_SMALL_SLIDER_IS_HOVERING_CATEGORY:
+            return setSmallSliderIsHoveringCategory(state, action);
         case actionTypes.SET_SMALL_SLIDER_IS_HOVERING_TAG:
             return setSmallSliderIsHoveringTag(state, action);
         default: 

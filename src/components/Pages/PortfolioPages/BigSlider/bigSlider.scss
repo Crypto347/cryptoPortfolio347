@@ -27,14 +27,14 @@
                     flex-direction: column;
                     .big-slider-categories {
                         display: flex;
-                        flex-direction: row;
+                        flex-wrap: wrap;
                         .big-slider-category {
                             padding-right: 10px;
                         }
                     }
                     .big-slider-tags {
                         display: flex;
-                        flex-direction: row;
+                        flex-wrap: wrap;
                         .big-slider-tag {
                             padding-right: 10px;
                         }
@@ -69,25 +69,6 @@
     .big-slider {
         .big-slider-wrapper {
             padding: 70px 30px 70px 30px;
-        }
-    }
-}
-
-@media only screen and (max-width: 600px){
-    .big-slider {
-        .big-slider-wrapper {
-            .big-slider-content {
-                .big-slider-content-info {
-                    .big-slider-category-date-tags-wrapper {
-                        .big-slider-categories {
-                            flex-direction: column;
-                        }
-                        .big-slider-tags {
-                            flex-direction: column;
-                        }
-                    }
-                }
-            }
         }
     }
 }

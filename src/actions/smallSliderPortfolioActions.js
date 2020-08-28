@@ -20,6 +20,14 @@ export function fetchSmallSliderPortfolioFailur(err) {
     };
 };
 
+export function setSmallSliderIsHoveringCategory(val, id) {
+    return { 
+        type: actionTypes.SET_SMALL_SLIDER_IS_HOVERING_CATEGORY,
+        val: val,
+        id: id
+    };
+};
+
 export function setSmallSliderIsHoveringTag(val, id) {
     return { 
         type: actionTypes.SET_SMALL_SLIDER_IS_HOVERING_TAG,
