@@ -20,6 +20,13 @@ export function fetchBigSliderPortfolioFailur(err) {
     };
 };
 
+export function setBigSliderIsHoveringCategory(val, id) {
+    return { 
+        type: actionTypes.SET_BIG_SLIDER_IS_HOVERING_CATEGORY,
+        val: val,
+        id: id
+    };
+};
 export function setBigSliderIsHoveringTag(val, id) {
     return { 
         type: actionTypes.SET_BIG_SLIDER_IS_HOVERING_TAG,

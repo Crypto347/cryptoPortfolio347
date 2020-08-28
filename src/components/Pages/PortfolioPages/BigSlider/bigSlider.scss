@@ -25,6 +25,20 @@
                 .big-slider-category-date-tags-wrapper {
                     width: 30%;
                     flex-direction: column;
+                    .big-slider-categories {
+                        display: flex;
+                        flex-direction: row;
+                        .big-slider-category {
+                            padding-right: 10px;
+                        }
+                    }
+                    .big-slider-tags {
+                        display: flex;
+                        flex-direction: row;
+                        .big-slider-tag {
+                            padding-right: 10px;
+                        }
+                    }
                 }
             }
         }
@@ -58,10 +72,22 @@
         }
     }
 }
-// @media only screen and (max-width: 600px){
-//     .small-images {
-//         .small-images-wrapper {
-//             padding: 20px;
-//         }
-//     }
-// }
+
+@media only screen and (max-width: 600px){
+    .big-slider {
+        .big-slider-wrapper {
+            .big-slider-content {
+                .big-slider-content-info {
+                    .big-slider-category-date-tags-wrapper {
+                        .big-slider-categories {
+                            flex-direction: column;
+                        }
+                        .big-slider-tags {
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

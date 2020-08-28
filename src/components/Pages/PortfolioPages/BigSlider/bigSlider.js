@@ -112,7 +112,7 @@ export const BigSlader = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'bigSliderCategory': 
-                setIsHoveringCategoryText("on");
+                props.setBigSliderIsHoveringCategory("on", id);
                 break;
             case 'bigSliderTag': 
                 props.setBigSliderIsHoveringTag("on", id);
@@ -123,7 +123,7 @@ export const BigSlader = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'bigSliderCategory': 
-                setIsHoveringCategoryText("off");
+                props.setBigSliderIsHoveringCategory("off", id);
                 break;
             case 'bigSliderTag': 
                 props.setBigSliderIsHoveringTag("off", id);
@@ -210,6 +210,23 @@ export const BigSlader = (props) => {
         }
     }
 
+    const renderCategories = () => {
+        return(
+            <div className="big-slider-categories">{props.bigSliderPortfolio.item.categories.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="big-slider-category"
+                        onMouseEnter={() => handleMouseEnter(`bigSliderCategory`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`bigSliderCategory`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`bigSliderCategory`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     const renderTags = () => {
         return(
             <div className="big-slider-tags">{props.bigSliderPortfolio.item.tags.map((el, i) => {
@@ -261,13 +278,7 @@ export const BigSlader = (props) => {
                             </div>
                             <div className="big-slider-category-date-tags-wrapper">
                                 <H22 className="h22-nero-poppins">Category:</H22>
-                                <H19 
-                                    className={renderClassName("bigSliderCategory", isHoveringCategoryText)}
-                                    onMouseEnter={() => handleMouseEnter('bigSliderCategory')} 
-                                    onMouseLeave={() => handleMouseLeave('bigSliderCategory')}
-                                >
-                                    {props.bigSliderPortfolio.item.category}
-                                </H19>
+                                {renderCategories()}
                                 <EH40/>
                                 <H22 className="h22-nero-poppins">Date:</H22>
                                 <H19 className="h19-nobel-lustria">{props.bigSliderPortfolio.item.date}</H19>
@@ -316,6 +327,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchBigSliderPortfolio: bindActionCreators(Services.fetchBigSliderPortfolio, dispatch),
+            setBigSliderIsHoveringCategory: bindActionCreators(Actions.setBigSliderIsHoveringCategory, dispatch),
             setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };

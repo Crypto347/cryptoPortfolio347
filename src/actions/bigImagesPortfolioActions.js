@@ -20,14 +20,6 @@ export function fetchBigImagesPortfolioFailur(err) {
     };
 };
 
-export function setBigImagesIsHoveringTag(val, id) {
-    return { 
-        type: actionTypes.SET_BIG_IMAGES_IS_HOVERING_TAG,
-        val: val,
-        id: id
-    };
-};
-
 export function setBigImagesIsHoveringCategory(val, id) {
     return { 
         type: actionTypes.SET_BIG_IMAGES_IS_HOVERING_CATEGORY,
@@ -36,3 +28,10 @@ export function setBigImagesIsHoveringCategory(val, id) {
     };
 };
 
+export function setBigImagesIsHoveringTag(val, id) {
+    return { 
+        type: actionTypes.SET_BIG_IMAGES_IS_HOVERING_TAG,
+        val: val,
+        id: id
+    };
+};

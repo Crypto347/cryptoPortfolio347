@@ -46,6 +46,22 @@ const fetchBigSliderPortfolioFailur = (state, action) => {
     };
 }
 
+const setBigImagesIsHoveringCategory = (state, action) => {
+    let updatedCategories = [...state.item.categories];
+
+    let category = {...updatedCategories.find(item => item.id === action.id), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.id === action.id);
+    updatedCategories.splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            categories: updatedCategories
+        }
+    };
+}
+
 const setBigSliderIsHoveringTag = (state, action) => {
     let updatedTags = [...state.item.tags];
 
@@ -70,6 +86,8 @@ const bigSliderPortfolioReducer = (state = initialState, action) => {
             return fetchBigSliderPortfolioSuccess (state, action);
         case actionTypes.FETCH_BIG_SLIDER_PORTFOLIO_FAILURE:
             return fetchBigSliderPortfolioFailur(state, action);
+        case actionTypes.SET_BIG_SLIDER_IS_HOVERING_CATEGORY:
+            return setBigImagesIsHoveringCategory(state, action);
         case actionTypes.SET_BIG_SLIDER_IS_HOVERING_TAG:
             return setBigSliderIsHoveringTag(state, action);
         default: 
