@@ -181,7 +181,7 @@ export const Gallery = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'galleryCategory': 
-                setIsHoveringCategoryText("on");
+                props.setGalleryIsHoveringCategory("on", id);
                 break;
             case 'galleryTag': 
                 props.setGalleryIsHoveringTag("on", id);
@@ -195,7 +195,7 @@ export const Gallery = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'galleryCategory': 
-                setIsHoveringCategoryText("off");
+                props.setGalleryIsHoveringCategory("off", id);
                 break;
             case 'galleryTag': 
                 props.setGalleryIsHoveringTag("off", id);
@@ -343,12 +343,30 @@ export const Gallery = (props) => {
         )
     }
 
+    const renderCategories = () => {
+        return(
+            <div className="gallery-categories">{props.galleryPortfolio.item.categories.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="gallery-category"
+                        onMouseEnter={() => handleMouseEnter(`galleryCategory`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`galleryCategory`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`galleryCategory`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     const renderTags = () => {
         return(
             <div className="gallery-tags">{props.galleryPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
+                        className="gallery-tag"
                         onMouseEnter={() => handleMouseEnter(`galleryTag`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`galleryTag`, el.id)} 
                     >
@@ -386,13 +404,7 @@ export const Gallery = (props) => {
                             </div>
                             <div className="gallery-category-date-tags-wrapper">
                                 <H22 className="h22-nero-poppins">Category:</H22>
-                                <H19 
-                                    className={renderClassName("galleryCategory", isHoveringCategoryText)}
-                                    onMouseEnter={() => handleMouseEnter('galleryCategory')} 
-                                    onMouseLeave={() => handleMouseLeave('galleryCategory')}
-                                >
-                                    {props.galleryPortfolio.item.category}
-                                </H19>
+                                {renderCategories()}
                                 <EH40/>
                                 <H22 className="h22-nero-poppins">Date:</H22>
                                 <H19 className="h19-nobel-lustria">{props.galleryPortfolio.item.date}</H19>
@@ -448,6 +460,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchGalleryPortfolio: bindActionCreators(Services.fetchGalleryPortfolio, dispatch),
+            setGalleryIsHoveringCategory: bindActionCreators(Actions.setGalleryIsHoveringCategory, dispatch),
             setGalleryIsHoveringTag: bindActionCreators(Actions.setGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setGalleryIsHoveringImage: bindActionCreators(Actions.setGalleryIsHoveringImage, dispatch),

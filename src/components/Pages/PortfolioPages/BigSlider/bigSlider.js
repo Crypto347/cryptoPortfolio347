@@ -233,6 +233,7 @@ export const BigSlader = (props) => {
                 return(
                     <div 
                         key={i}
+                        className="big-slider-tag"
                         onMouseEnter={() => handleMouseEnter(`bigSliderTag`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`bigSliderTag`, el.id)} 
                     >

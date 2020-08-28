@@ -77,6 +77,20 @@
                 .gallery-category-date-tags-wrapper {
                     width: 30%;
                     flex-direction: column;
+                    .gallery-categories {
+                        display: flex;
+                        flex-direction: row;
+                        .gallery-category {
+                            padding-right: 10px;
+                        }
+                    }
+                    .gallery-tags {
+                        display: flex;
+                        flex-direction: row;
+                        .gallery-tag {
+                            padding-right: 10px;
+                        }
+                    }
                 }
             }
         }
@@ -132,6 +146,18 @@
     .gallery {
         .gallery-wrapper {
             padding: 70px 30px 70px 30px;
+            .gallery-content {
+                .gallery-content-info {
+                    .gallery-category-date-tags-wrapper {
+                        .gallery-categories {
+                            flex-direction: column;
+                        }
+                        .gallery-tags {
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
         }
     }
 }

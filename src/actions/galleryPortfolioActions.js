@@ -20,6 +20,14 @@ export function fetchGalleryPortfolioFailur(err) {
     };
 };
 
+export function setGalleryIsHoveringCategory(val, id) {
+    return { 
+        type: actionTypes.SET_GALLERY_IS_HOVERING_CATEGORY,
+        val: val,
+        id: id
+    };
+};
+
 export function setGalleryIsHoveringTag(val, id) {
     return { 
         type: actionTypes.SET_GALLERY_IS_HOVERING_TAG,
