@@ -46,6 +46,22 @@ const fetchSmallGalleryPortfolioFailur = (state, action) => {
     };
 }
 
+const setSmallGalleryIsHoveringCategory = (state, action) => {
+    let updatedCategories = [...state.item.categories];
+
+    let category = {...updatedCategories.find(item => item.id === action.id), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.id === action.id);
+    updatedCategories.splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            categories: updatedCategories
+        }
+    };
+}
+
 const setSmallGalleryIsHoveringTag = (state, action) => {
     let updatedTags = [...state.item.tags];
 
@@ -86,6 +102,8 @@ const smallGallerysPortfolioReducer = (state = initialState, action) => {
             return fetchSmallGalleryPortfolioSuccess (state, action);
         case actionTypes.FETCH_SMALL_GALLERY_PORTFOLIO_FAILURE:
             return fetchSmallGalleryPortfolioFailur(state, action);
+        case actionTypes.SET_SMALL_GALLERY_IS_HOVERING_CATEGORY:
+            return setSmallGalleryIsHoveringCategory(state, action);
         case actionTypes.SET_SMALL_GALLERY_IS_HOVERING_TAG:
             return setSmallGalleryIsHoveringTag(state, action);
         case actionTypes.SET_SMALL_GALLERY_IS_HOVERING_IMAGE:

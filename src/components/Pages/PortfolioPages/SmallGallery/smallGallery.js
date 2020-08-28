@@ -178,7 +178,7 @@ export const SmallGallery = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'smallGalleryCategory': 
-                setIsHoveringCategoryText("on");
+                props.setSmallGalleryIsHoveringCategory("on", id);
                 break;
             case 'smallGalleryTag': 
                 props.setSmallGalleryIsHoveringTag("on", id);
@@ -192,7 +192,7 @@ export const SmallGallery = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'smallGalleryCategory': 
-                setIsHoveringCategoryText("off");
+                props.setSmallGalleryIsHoveringCategory("off", id);
                 break;
             case 'smallGalleryTag': 
                 props.setSmallGalleryIsHoveringTag("off", id);
@@ -340,12 +340,30 @@ export const SmallGallery = (props) => {
         )
     }
 
+    const renderCategories = () => {
+        return(
+            <div className="small-gallery-categories">{props.smallGalleryPortfolio.item.categories.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="small-gallery-category"
+                        onMouseEnter={() => handleMouseEnter(`smallGalleryCategory`, el.id)} 
+                        onMouseLeave={() => handleMouseLeave(`smallGalleryCategory`, el.id)} 
+                    >
+                        <H19 className={renderClassName(`smallGalleryCategory`, el.isHover)}>{el.label}</H19>
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     const renderTags = () => {
         return(
             <div className="small-gallery-tags">{props.smallGalleryPortfolio.item.tags.map((el,i) => {
                 return(
                     <div 
                         key={i}
+                        className="small-gallery-tag"
                         onMouseEnter={() => handleMouseEnter(`smallGalleryTag`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`smallGalleryTag`, el.id)} 
                     >
@@ -381,13 +399,7 @@ export const SmallGallery = (props) => {
                             <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.text}</H19>
                             <EH40/>
                             <H22 className="h22-nero-poppins">Category:</H22>
-                            <H19 
-                                className={renderClassName("smallGalleryCategory", isHoveringCategoryText)}
-                                onMouseEnter={() => handleMouseEnter('smallGalleryCategory')} 
-                                onMouseLeave={() => handleMouseLeave('smallGalleryCategory')}
-                            >
-                                {props.smallGalleryPortfolio.item.category}
-                            </H19>
+                            {renderCategories()}
                             <EH40/>
                             <H22 className="h22-nero-poppins">Date:</H22>
                             <H19 className="h19-nobel-lustria">{props.smallGalleryPortfolio.item.date}</H19>
@@ -442,6 +454,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallGalleryPortfolio: bindActionCreators(Services.fetchSmallGalleryPortfolio, dispatch),
+            setSmallGalleryIsHoveringCategory: bindActionCreators(Actions.setSmallGalleryIsHoveringCategory, dispatch),
             setSmallGalleryIsHoveringTag: bindActionCreators(Actions.setSmallGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setSmallGalleryIsHoveringImage: bindActionCreators(Actions.setSmallGalleryIsHoveringImage, dispatch),
