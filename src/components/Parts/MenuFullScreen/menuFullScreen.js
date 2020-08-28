@@ -110,9 +110,9 @@ export const MenuFullScreen = (props) => {
                 case 'init':
                     return "h15-white-poppins-animated";
                 case 'on':
-                    return "h15-white-lustria-nobel-hover-on";
+                    return "h15-white-poppins-nobel-hover-on";
                 case 'off':
-                    return "h15-white-lustria-nobel-hover-off";
+                    return "h15-white-poppins-nobel-hover-off";
             }
         }
     }

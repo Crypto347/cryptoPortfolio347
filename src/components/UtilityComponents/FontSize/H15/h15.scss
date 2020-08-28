@@ -71,7 +71,7 @@
     cursor: pointer;
 }
 
-.h15-white-lustria-nobel-hover-on {
+.h15-white-poppins-nobel-hover-on {
     font-size: 15px;
     color: rgb(155, 155, 155);
     font-family: 'Poppins', sans-serif;
@@ -82,7 +82,7 @@
     animation: h15WhiteNobelHoverOn .5s linear;
 }
 
-.h15-white-lustria-nobel-hover-off {
+.h15-white-poppins-nobel-hover-off {
     font-size: 15px;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -157,36 +157,36 @@
 }
 
 
-@-webkit-keyframes h15NobelNeroHoverOn {
+@-webkit-keyframes h15WhiteNobelHoverOn {
     from{color: white;}
     to{color: rgb(155, 155, 155);}
 }
-@-moz-keyframes h15NobelNeroHoverOn {
+@-moz-keyframes h15WhiteNobelHoverOn {
     from{color: white;}
     to{color: rgb(155, 155, 155);}
 }
-@-o-keyframes h15NobelNeroHoverOn {
+@-o-keyframes h15WhiteNobelHoverOn {
     from{color: white;}
     to{color: rgb(155, 155, 155);}
 }
-@keyframes h15NobelNeroHoverOn {
+@keyframes h15WhiteNobelHoverOn {
     from{color: white;}
     to{color: rgb(155, 155, 155);}
 }
 
-@-webkit-keyframes h15NobelNeroHoverOff {
+@-webkit-keyframes h15WhiteNobelHoverOff {
     from{color: rgb(155, 155, 155);}
     to{color: white;}
 }
-@-moz-keyframes h15NobelNeroHoverOff {
+@-moz-keyframes h15WhiteNobelHoverOff {
     from{color: rgb(155, 155, 155);}
     to{color: white;}
 }
-@-o-keyframes h15NobelNeroHoverOff {
+@-o-keyframes h15WhiteNobelHoverOff {
     from{color: rgb(155, 155, 155);}
     to{color: white;}
 }
-@keyframes h15NobelNeroHoverOff {
+@keyframes h15WhiteNobelHoverOff {
     from{color: rgb(155, 155, 155);}
     to{color: white;}
 }
