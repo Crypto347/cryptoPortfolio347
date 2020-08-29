@@ -3353,10 +3353,16 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
 });
 
 app.get('/api/portfolio-category/:category', (req, res) => {
-    let category = parseInt(req.params.category);
+    let category = req.params.category;
 
+    category = category.split("");
+    let indexOfSlash = category.findIndex(item => item === "-");
+    category.splice(indexOfSlash, 1)
+    let lowerToUpperCase = category[indexOfSlash].toUpperCase();
+    category.splice(indexOfSlash, 1, lowerToUpperCase);
+    category = category.join("");
     console.log(category)
-  
+    
     const archieve = [
         {
             id: 1,
