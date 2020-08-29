@@ -198,10 +198,10 @@ export const PortfolioGallery = (props) => {
         props.forgetCoordinateRangeForPortfolioGalleryPage(initCoordinateRange);
     }
 
-    const handleMouseEnter = (opt, id) => {
+    const handleMouseEnter = (opt, id, pathOfIds) => {
         switch(opt){
             case 'portfolioCategory': 
-                props.setPortfolioGalleryPageIsHoveringPortfolioCategory("on", id);
+                props.setPortfolioGalleryPageIsHoveringCategory("on", pathOfIds);
                 break;
             case 'arrow': 
                 props.setPortfolioGalleryPageIsHoveringArrow("on", id);
@@ -209,10 +209,10 @@ export const PortfolioGallery = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id) => {
+    const handleMouseLeave = (opt, id, pathOfIds) => {
         switch(opt){
             case 'portfolioCategory': 
-                props.setPortfolioGalleryPageIsHoveringPortfolioCategory("off", id);
+                props.setPortfolioGalleryPageIsHoveringCategory("off", pathOfIds);
                 break;
             case 'arrow': 
                 props.setPortfolioGalleryPageIsHoveringArrow("off", id);
@@ -284,12 +284,13 @@ export const PortfolioGallery = (props) => {
     const renderCategories = (obj) => {
         return(
             <div className="portfolio-gallery-page-item-categories">{obj.categories.map((el, i) => {
+                let pathOfIds = [obj.id, el.id];
                 return(
                     <div 
                         key={i}
                         className="portfolio-gallery-page-item-category"
-                        onMouseEnter={() => handleMouseEnter(`portfolioCategory`, el.id)} 
-                        onMouseLeave={() => handleMouseLeave(`portfolioCategory`, el.id)} 
+                        onMouseEnter={() => handleMouseEnter(`portfolioCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`portfolioCategory`, null, pathOfIds)} 
                     >
                         {i === 0 ? 
                         <H15 className={renderClassName("portfolioCategory", el.isHover)}>{`${el.label}`}</H15> : 
@@ -424,7 +425,7 @@ export default connect(
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
-            setPortfolioGalleryPageIsHoveringPortfolioCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringPortfolioCategory, dispatch),
+            setPortfolioGalleryPageIsHoveringCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringCategory, dispatch),
             setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

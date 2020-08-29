@@ -36,11 +36,11 @@ export function forgetCoordinateRangeForPortfolioGalleryPage(arr) {
     };
 };
 
-export function setPortfolioGalleryPageIsHoveringPortfolioCategory(val, id) {
+export function setPortfolioGalleryPageIsHoveringCategory(val, pathOfIds) {
     return { 
-        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_PORTFOLIO_CATEGORY,
+        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_CATEGORY,
         val: val,
-        id: id
+        pathOfIds: pathOfIds
     };
 };
 
