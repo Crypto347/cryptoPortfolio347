@@ -182,7 +182,7 @@ const setHistoryPopFromItem = (state, action) => {
     };
 }
 
-const section1Reducer = (state = initialState, action) => {
+const portfolioGalleryPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PORTFOLIO_GALLERY_PAGE_BEGIN:
             return fetchPortfolioGalleryPageBegin (state, action); 
@@ -205,4 +205,4 @@ const section1Reducer = (state = initialState, action) => {
     }
 }
 
-export default section1Reducer;
+export default portfolioGalleryPageReducer;

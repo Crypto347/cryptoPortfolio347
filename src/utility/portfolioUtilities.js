@@ -7,7 +7,9 @@ export const findPathOfIds = (path) => {
     //Home items
     switch(updatedPath[0]){
         case 'portfolio-gallery':
-            return [];       
+            return []; 
+        case 'portfolio-category':
+            return []; 
     }
 
     //Portfolio items

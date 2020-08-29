@@ -280,7 +280,23 @@ export function fetchPortfolioGalleryPage() {
     };
 }
 
-
+export function fetchArchieve(category) {
+    return dispatch => {
+        dispatch(Actions.fetchArchieveBegin());
+        return fetch(`http://localhost:3005/api/portfolio-category/${category}`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchArchieveSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchArchieveFailur(error))
+            });
+    };
+}
 
 function handleErrors(response) {
     if (!response.ok) {

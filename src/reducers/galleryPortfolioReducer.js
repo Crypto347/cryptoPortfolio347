@@ -94,7 +94,7 @@ const setGalleryIsHoveringImage = (state, action) => {
     };
 }
 
-const gallerysPortfolioReducer = (state = initialState, action) => {
+const galleryPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_GALLERY_PORTFOLIO_BEGIN:
             return fetchGalleryPortfolioBegin (state, action); 
@@ -113,4 +113,4 @@ const gallerysPortfolioReducer = (state = initialState, action) => {
     }
 }
 
-export default gallerysPortfolioReducer;
+export default galleryPortfolioReducer;

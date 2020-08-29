@@ -94,7 +94,7 @@ const setSmallGalleryIsHoveringImage = (state, action) => {
     };
 }
 
-const smallGallerysPortfolioReducer = (state = initialState, action) => {
+const smallGalleryPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SMALL_GALLERY_PORTFOLIO_BEGIN:
             return fetchSmallGalleryPortfolioBegin (state, action); 
@@ -113,4 +113,4 @@ const smallGallerysPortfolioReducer = (state = initialState, action) => {
     }
 }
 
-export default smallGallerysPortfolioReducer;
+export default smallGalleryPortfolioReducer;

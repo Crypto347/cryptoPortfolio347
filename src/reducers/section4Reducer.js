@@ -103,7 +103,7 @@ const fetchAchievementsFailur = (state, action) => {
     };
 }
 
-const section2Reducer = (state = initialState, action) => {
+const section4Reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_STATISTICS_DATA_BEGIN:
             return fetchStatisticsDataBegin (state, action); 
@@ -122,4 +122,4 @@ const section2Reducer = (state = initialState, action) => {
     }
 }
 
-export default section2Reducer;
+export default section4Reducer;

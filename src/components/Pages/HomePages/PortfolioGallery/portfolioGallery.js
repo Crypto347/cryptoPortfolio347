@@ -275,7 +275,7 @@ export const PortfolioGallery = (props) => {
     }
 
 
-    const arrowOnClick = (path) => {
+    const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
         props.unmountComponent();
         // props.history.push(`/crypto-portfolio/${path}`)
@@ -289,6 +289,7 @@ export const PortfolioGallery = (props) => {
                     <div 
                         key={i}
                         className="portfolio-gallery-page-item-category"
+                        onClick={() => onClickHandler(el.path)}
                         onMouseEnter={() => handleMouseEnter(`portfolioCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`portfolioCategory`, null, pathOfIds)} 
                     >
@@ -335,7 +336,7 @@ export const PortfolioGallery = (props) => {
                                 className={renderClassName("arrow", el.arrowIsHovering)}
                                 onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
                                 onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
-                                onClick={() => arrowOnClick(el.path)}
+                                onClick={() => onClickHandler(el.path)}
                             >
                                 <div className="arrow-horizontal-line"/>
                                 <div className="arrow-wrapper2">

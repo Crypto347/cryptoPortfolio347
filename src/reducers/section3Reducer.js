@@ -103,7 +103,7 @@ const fetchTeamInformationFailur = (state, action) => {
     };
 }
 
-const section2Reducer = (state = initialState, action) => {
+const section3Reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TESTIMONIALS_BEGIN:
             return fetchTestimonialsBegin (state, action); 
@@ -122,4 +122,4 @@ const section2Reducer = (state = initialState, action) => {
     }
 }
 
-export default section2Reducer;
+export default section3Reducer;

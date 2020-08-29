@@ -2211,12 +2211,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
+                    path: "portfolio-category/design",
                     isHover: "init"
                 }
             ],
@@ -2270,12 +2272,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Music",
                     key: "music",
+                    path: "portfolio-category/music",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Lifestyle",
                     key: "lifestyle",
+                    path: "portfolio-category/lifestyle",
                     isHover: "init"
                 }
             ],
@@ -2329,6 +2333,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 }
             ],
@@ -2395,18 +2400,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Editorial",
                     key: "editorial",
+                    path: "portfolio-category/editorial",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     label: "Architecture",
                     key: "architecture",
+                    path: "portfolio-category/architecture",
                     isHover: "init"
                 }
             ],
@@ -2473,12 +2481,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Art Direction",
                     key: "artDirection",
+                    path: "portfolio-category/art-direction",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Lifestyle",
                     key: "lifestyle",
+                    path: "portfolio-category/lifestyle",
                     isHover: "init"
                 }
             ],
@@ -2532,18 +2542,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Editorial",
                     key: "editorial",
+                    path: "portfolio-category/editorial",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     label: "Architecture",
                     key: "architecture",
+                    path: "portfolio-category/architecture",
                     isHover: "init"
                 }
             ],
@@ -2610,12 +2623,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Art Direction",
                     key: "artDirection",
+                    path: "portfolio-category/art-direction",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
+                    path: "portfolio-category/design",
                     isHover: "init"
                 }
             ],
@@ -2674,6 +2689,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Architecture",
                     key: "architecture",
+                    path: "portfolio-category/architecture",
                     isHover: "init"
                 }
             ],
@@ -2732,12 +2748,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Design",
                     key: "design",
+                    path: "portfolio-category/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Lifestyle",
                     key: "lifestyle",
+                    path: "portfolio-category/lifestyle",
                     isHover: "init"
                 }
             ],
@@ -2788,18 +2806,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Art Direction",
                     key: "artDirection",
+                    path: "portfolio-category/art-direction",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Music",
                     key: "music",
+                    path: "portfolio-category/music",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     label: "Architecture",
                     key: "architecture",
+                    path: "portfolio-category/architecture",
                     isHover: "init"
                 }
             ],
@@ -2832,12 +2853,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Editorial",
                     key: "editorial",
+                    path: "portfolio-category/editorial",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Architecture",
                     key: "architecture",
+                    path: "portfolio-category/architecture",
                     isHover: "init"
                 }
             ],
@@ -2898,18 +2921,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
+                    path: "portfolio-category/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     label: "Editorial",
                     key: "editorial",
+                    path: "portfolio-category/editorial",
                     isHover: "init"
                 }
             ],
@@ -2970,12 +2996,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Design",
                     key: "design",
+                    path: "portfolio-category/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Editorial",
                     key: "editorial",
+                    path: "portfolio-category/editorial",
                     isHover: "init"
                 }
             ],
@@ -3042,6 +3070,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Music",
                     key: "music",
+                    path: "portfolio-category/music",
                     isHover: "init"
                 }
             ],
@@ -3092,6 +3121,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Lifestyle",
                     key: "lifestyle",
+                    path: "portfolio-category/lifestyle",
                     isHover: "init"
                 }
             ],
@@ -3158,12 +3188,14 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Art Direction",
                     key: "artDirection",
+                    path: "portfolio-category/art-direction",
                     isHover: "init"
                 },
             ],
@@ -3203,18 +3235,21 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
+                    path: "portfolio-category/graphic-design",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
+                    path: "portfolio-category/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     label: "Music",
                     key: "music",
+                    path: "portfolio-category/music",
                     isHover: "init"
                 }
             ],
@@ -3282,6 +3317,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     id: 1,
                     label: "Lifestyle",
                     key: "lifestyle",
+                    path: "portfolio-category/lifestyle",
                     isHover: "init"
                 }
             ],
@@ -3318,17 +3354,19 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
 
 app.get('/api/portfolio-category/:category', (req, res) => {
     let category = parseInt(req.params.category);
+
+    console.log(category)
   
     const archieve = [
         {
             id: 1,
-            key: "smallImages1",
+            key: "artDirection",
             option: "colorful",
             portfolioCategory: "Lifestyle",
             portfolioType: "Small Images",
             portfolioCategoryIsHover: "init",
             arrowIsHovering: "init",
-            path: "portfolio-item/small-images/1",
+            path: "portfolio-item/portfolio-category/1",
             pictures: [
                 {
                     id: 1,
@@ -3369,12 +3407,12 @@ app.get('/api/portfolio-category/:category', (req, res) => {
         },
     ]
 
-    let smallSliderObj = smallSlider.find(item => item.id === id);
-    if(!smallSliderObj) {
-        res.status(404).send("The portfolio with the given ID was not found")
-    }else{
-        res.json(smallSliderObj);  
-    }
+    // let smallSliderObj = smallSlider.find(item => item.key === key);
+    // if(!smallSliderObj) {
+    //     res.status(404).send("The portfolio with the given ID was not found")
+    // }else{
+    //     res.json(smallSliderObj);  
+    // }
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {
