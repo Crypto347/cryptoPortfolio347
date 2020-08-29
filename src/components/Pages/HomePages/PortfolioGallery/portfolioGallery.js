@@ -292,9 +292,8 @@ export const PortfolioGallery = (props) => {
                         onMouseEnter={() => handleMouseEnter(`portfolioCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`portfolioCategory`, null, pathOfIds)} 
                     >
-                        {i === 0 ? 
-                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{`${el.label}`}</H15> : 
-                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{`/ ${el.label}`}</H15>}
+                        {i !== 0 ? <div className="portfolio-gallery-page-item-category-slash">/</div> : null}
+                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{el.label}</H15>
                     </div>
                 )
             })}</div>

@@ -68,7 +68,14 @@
                     display: flex;
                     flex-wrap: wrap;
                     .portfolio-gallery-page-item-category {
-                        padding-right: 10px;
+                        padding-right: 6px;
+                        display: flex;
+                        align-items: flex-end;
+                        .portfolio-gallery-page-item-category-slash {
+                            font-size: 14px;
+                            color: rgb(155, 155, 155);
+                            padding-right: 2px;
+                        }
                     }
                 }
                 .arrow-wrapper {
