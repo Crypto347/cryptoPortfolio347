@@ -124,9 +124,7 @@ export const SmallImages = (props) => {
         window.scrollTo(0, 0);
         props.fetchSmallImagesPortfolio(props.match.params.id);
 
-        if(props.smallImagesPortfolio.item !== {}){
-            setShowContent(true);
-        }
+        setShowContent(true);
 
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);

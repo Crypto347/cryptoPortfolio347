@@ -25,12 +25,12 @@ import './archieve.scss';
 * Components
 */
 
-// import Loading from '../../../SmallParts/Loading/loading';
-// import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Loading from '../../SmallParts/Loading/loading';
+import Toolbar from '../../Parts/Toolbar/toolbar';
 // import Swiper from '../../../../library/Swiper/swiper';
 // import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 // import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
-// import Footer from '../../../Parts/Footer/footer';
+import Footer from '../../Parts/Footer/footer';
 
 /**
 * Actions
@@ -48,28 +48,28 @@ import * as Services from "../../../service";
 * Selectors
 */
 
-// import * as Selectors from '../../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Utility
 */
 
-// import { 
-//     H19,
-//     H22,
-//     H70,
-//     EH30,
-//     EH40,
-//     EH70
-// } from '../../../UtilityComponents';
+import { 
+    H19,
+    H22,
+    H70,
+    EH30,
+    EH40,
+    EH70
+} from '../../UtilityComponents';
 
 /**
 * Hooks
 */
 
-// import {
-//     useWindowSize
-// } from '../../../../Hooks/useWindowSize';
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
 * Images
@@ -102,8 +102,8 @@ export const Archieve = (props) => {
     * State
     */
 
-    // const size = useWindowSize();
-    // const [scrollingUp, setScrollingUp] = useState(false);
+    const size = useWindowSize();
+    const [scrollingUp, setScrollingUp] = useState(false);
     // const [showContent, setShowContent] = useState(false);
     // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
@@ -114,17 +114,37 @@ export const Archieve = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         props.fetchArchieve(props.match.params.category);
 
         // if(props.bigImagesPortfolio.item !== {}){
         //     setShowContent(true);
         // }
 
-        // window.addEventListener('wheel', handleOnWheel);
+        window.addEventListener('wheel', handleOnWheel);
 
-        // return () => window.removeEventListener('wheel', handleOnWheel);
+        return () => window.removeEventListener('wheel', handleOnWheel);
     }, []);
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("archieve");
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     // const loadImg = (key) => {
     //     switch(key) {
@@ -241,41 +261,42 @@ export const Archieve = (props) => {
     //     props.photoViewerOpen('bigImages', true, slidesForPhotoViewer);
     // }
 
-    // const renderToolbars = () => {
-    //     if(size.width < 1120){
-    //         return(
-    //             <>
-    //                 <Toolbar 
-    //                     style="smallScreenAnimated" 
-    //                     scrollingUp={scrollingUp}
-    //                     toolbarMainColor="white"
-    //                     page="bigImages"
-    //                 />
-    //                 <Toolbar 
-    //                     style="smallScreen"
-    //                     toolbarMainColor="regular"
-    //                     page="bigImages"
-    //                 />
-    //             </>
-    //         )
-    //     }else{
-    //         return(
-    //             <>
-    //                 <Toolbar 
-    //                     style="regularScreenAnimated" 
-    //                     scrollingUp={scrollingUp}
-    //                     toolbarMainColor="white"
-    //                     page="bigImages"
-    //                 />
-    //                 <Toolbar 
-    //                     style="regularScreenWhite"
-    //                     toolbarMainColor="white"
-    //                     page="bigImages"
-    //                 />
-    //             </>
-    //         )
-    //     }
-    // }
+   
+    const renderToolbars = () => {
+        if(size.width < 1120){
+            return(
+                <>
+                    <Toolbar 
+                        style="smallScreenAnimated" 
+                        scrollingUp={scrollingUp}
+                        toolbarMainColor="white"
+                        page="bigImages"
+                    />
+                    <Toolbar 
+                        style="smallScreen"
+                        toolbarMainColor="regular"
+                        page="bigImages"
+                    />
+                </>
+            )
+        }else{
+            return(
+                <>
+                    <Toolbar 
+                        style="regularScreenAnimated" 
+                        scrollingUp={scrollingUp}
+                        toolbarMainColor="white"
+                        page="bigImages"
+                    />
+                    <Toolbar 
+                        style="regularScreenWhite"
+                        toolbarMainColor="white"
+                        page="bigImages"
+                    />
+                </>
+            )
+        }
+    }
    
     // const renderCategories = () => {
     //     return(
@@ -330,62 +351,62 @@ export const Archieve = (props) => {
     //     )
     // }
 
-    // const renderBigImagesContent = () => {
-    //     if(props.bigImagesPortfolio.loading && !props.bigImagesPortfolio.error){
-    //         return(
-    //             <div 
-    //                 className="big-images-loading-error" 
-    //                 style={{height: `${size.height}px`}}
-    //             >
-    //                 <Loading color="black"/>
-    //             </div>
-    //         )
-    //     }
-    //     if(!props.bigImagesPortfolio.loading && !props.bigImagesPortfolio.error){
-    //         return(
-    //             <div className="big-images-wrapper">
-    //                 <H70 className="h70-nero-poppins">{props.bigImagesPortfolio.item.header}</H70>
-    //                 <EH70/>
-    //                 <div 
-    //                     id="bigSliderContent"
-    //                     className="big-images-content"
-    //                 >
-    //                     <div className="big-images-content-info">
-    //                         {renderPortfolioImages()}
-    //                         <EH40/>
-    //                         <div className="big-images-content-info">
-    //                             <div className="big-images-text-wrapper">
-    //                                 <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.text}</H19>
-    //                             </div>
-    //                             <div className="big-images-category-date-tags-wrapper">
-    //                                 <H22 className="h22-nero-poppins">Category:</H22>
-    //                                 {renderCategories()}
-    //                                 <EH40/>
-    //                                 <H22 className="h22-nero-poppins">Date:</H22>
-    //                                 <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.date}</H19>
-    //                                 <EH40/>
-    //                                 <H22 className="h22-nero-poppins">Tags:</H22>
-    //                                 {renderTags()}
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <EH70/>
-    //                     <PortfolioNavigation component="bigImages"/>
-    //                 </div>
-    //             </div>
-    //         )
-    //     }
-    //     if(!props.bigImagesPortfolio.loading && props.bigImagesPortfolio.error){
-    //         return(
-    //             <div 
-    //                 className="big-images-loading-error" 
-    //                 style={{height: `${size.height}px`}}
-    //             >
-    //                 <H19 className="h19-nobel-lora">{`${props.bigImagesPortfolio.error}`}</H19>
-    //             </div>
-    //         )
-    //     }
-    // } 
+    const renderArchieveContent = () => {
+        if(props.archieve.loading && !props.archieve.error){
+            return(
+                <div 
+                    className="archieve-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.archieve.loading && !props.archieve.error){
+            return(
+                <div className="archieve-wrapper">
+                    {/* <H70 className="h70-nero-poppins">{props.bigImagesPortfolio.item.header}</H70>
+                    <EH70/>
+                    <div 
+                        id="bigSliderContent"
+                        className="big-images-content"
+                    >
+                        <div className="big-images-content-info">
+                            {renderPortfolioImages()}
+                            <EH40/>
+                            <div className="big-images-content-info">
+                                <div className="big-images-text-wrapper">
+                                    <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.text}</H19>
+                                </div>
+                                <div className="big-images-category-date-tags-wrapper">
+                                    <H22 className="h22-nero-poppins">Category:</H22>
+                                    {renderCategories()}
+                                    <EH40/>
+                                    <H22 className="h22-nero-poppins">Date:</H22>
+                                    <H19 className="h19-nobel-lustria">{props.bigImagesPortfolio.item.date}</H19>
+                                    <EH40/>
+                                    <H22 className="h22-nero-poppins">Tags:</H22>
+                                    {renderTags()}
+                                </div>
+                            </div>
+                        </div>
+                        <EH70/>
+                        <PortfolioNavigation component="bigImages"/>
+                    </div> */}
+                </div>
+            )
+        }
+        if(!props.archieve.loading && props.archieve.error){
+            return(
+                <div 
+                    className="archieve-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <H19 className="h19-nobel-lora">{`${props.archieve.error}`}</H19>
+                </div>
+            )
+        }
+    } 
     
     /**
     * Markup
@@ -393,9 +414,10 @@ export const Archieve = (props) => {
 
     return(
         <div className="archieve" id="archieve">
-            {/* {renderToolbars()}
-            {showContent ? renderBigImagesContent() : null}
-            <Footer/> */}
+            {renderToolbars()}
+            {renderArchieveContent()}
+            {/* {showContent ? renderArchieveContent() : null} */}
+            <Footer/>
         </div>
     );
 }
@@ -403,7 +425,7 @@ export const Archieve = (props) => {
 export default connect(
     (state) => {
         return {
-            // bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
+            archieve: Selectors.getArchieveState(state),
             // photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state)
         };
     },

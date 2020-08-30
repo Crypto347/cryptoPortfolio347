@@ -123,9 +123,7 @@ export const SmallGallery = (props) => {
         window.scrollTo(0, 0);
         props.fetchSmallGalleryPortfolio(props.match.params.id);
 
-        if(props.smallGalleryPortfolio.item !== {}){
-            setShowContent(true);
-        }
+        setShowContent(true);
 
         // window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);

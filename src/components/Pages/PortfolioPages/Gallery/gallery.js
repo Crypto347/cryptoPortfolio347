@@ -124,9 +124,7 @@ export const Gallery = (props) => {
         window.scrollTo(0, 0);
         props.fetchGalleryPortfolio(props.match.params.id);
 
-        if(props.galleryPortfolio.item !== {}){
-            setShowContent(true);
-        }
+        setShowContent(true);
 
         // window.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleOnWheel);

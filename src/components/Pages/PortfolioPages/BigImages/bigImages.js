@@ -117,9 +117,7 @@ export const BigImages = (props) => {
         window.scrollTo(0, 0);
         props.fetchBigImagesPortfolio(props.match.params.id);
 
-        if(props.bigImagesPortfolio.item !== {}){
-            setShowContent(true);
-        }
+        setShowContent(true);
 
         window.addEventListener('wheel', handleOnWheel);
 

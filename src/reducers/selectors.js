@@ -211,3 +211,10 @@ export const getMenuDotsStateState = createSelector(
     [getMenuDotsState],
     (x) => x
 );
+
+const getArchieve = (state) => state.archieve;
+
+export const getArchieveState = createSelector(
+    [getArchieve],
+    (x) => x
+);

@@ -1,57 +1,57 @@
-.big-images {
+.archieve {
     width: calc(100% + 18px);
-    .big-images-loading-error {
+    .archieve-loading-error {
         width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .big-images-wrapper {
+    .archieve-wrapper {
         display: flex;
         flex-direction: column;
         padding: 70px 130px 70px 130px;
-        .big-images-content {
-            // width: 100%;
-            // display: flex;
-            // flex-wrap: wrap;
-            // align-items: flex-start;
-            .big-images-content-info {
-                display: flex;
-                flex-wrap: wrap;
-                .big-images-portfolio-images {
-                    width: 100%;
-                    // padding-right: 60px;
-                    .big-images-portfolio-image {
-                        cursor: pointer;
-                        >img {
-                            width: 100%;
-                        }
-                    }
-                }
-                .big-images-text-wrapper {
-                    width: calc(70% - 60px);
-                    padding-right: 60px;
-                }
-                .big-images-category-date-tags-wrapper {
-                    width: 30%;
-                    flex-direction: column;
-                    .big-images-categories {
-                        display: flex;
-                        flex-wrap: wrap;
-                        .big-images-category {
-                            padding-right: 10px;
-                        }
-                    }
-                    .big-images-tags {
-                        display: flex;
-                        flex-wrap: wrap;
-                        .big-images-tag {
-                            padding-right: 10px;
-                        }
-                    }
-                }
-            }
-        }
+        // .big-images-content {
+        //     // width: 100%;
+        //     // display: flex;
+        //     // flex-wrap: wrap;
+        //     // align-items: flex-start;
+        //     .big-images-content-info {
+        //         display: flex;
+        //         flex-wrap: wrap;
+        //         .big-images-portfolio-images {
+        //             width: 100%;
+        //             // padding-right: 60px;
+        //             .big-images-portfolio-image {
+        //                 cursor: pointer;
+        //                 >img {
+        //                     width: 100%;
+        //                 }
+        //             }
+        //         }
+        //         .big-images-text-wrapper {
+        //             width: calc(70% - 60px);
+        //             padding-right: 60px;
+        //         }
+        //         .big-images-category-date-tags-wrapper {
+        //             width: 30%;
+        //             flex-direction: column;
+        //             .big-images-categories {
+        //                 display: flex;
+        //                 flex-wrap: wrap;
+        //                 .big-images-category {
+        //                     padding-right: 10px;
+        //                 }
+        //             }
+        //             .big-images-tags {
+        //                 display: flex;
+        //                 flex-wrap: wrap;
+        //                 .big-images-tag {
+        //                     padding-right: 10px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
 
