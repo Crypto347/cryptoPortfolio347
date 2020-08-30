@@ -3361,64 +3361,388 @@ app.get('/api/portfolio-category/:category', (req, res) => {
     let lowerToUpperCase = category[indexOfSlash].toUpperCase();
     category.splice(indexOfSlash, 1, lowerToUpperCase);
     category = category.join("");
-    console.log(category)
     
     const archieve = [
         {
             id: 1,
-            key: "artDirection",
-            option: "colorful",
-            portfolioCategory: "Lifestyle",
-            portfolioType: "Small Images",
-            portfolioCategoryIsHover: "init",
-            arrowIsHovering: "init",
-            path: "portfolio-item/portfolio-category/1",
-            pictures: [
+            category: "artDirection",
+            archieveData: [
                 {
                     id: 1,
-                    key: "id1SmallImages1",
-                    imageName: "adam-wilson-1QZYZib7eYs-unsplash.png",
-                    folderName: "colorful",
-                    alt: "image"
+                    key: "bigImages1",
+                    header: "Big Images",
+                    path: "portfolio-item/big-images/1",
+                    coverImage: {
+                        id: 1,
+                        key: "id1BigImages1",
+                        isHover: "init",
+                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            path: "portfolio-category/art-direction",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            path: "portfolio-category/lifestyle",
+                            isHover: "init"
+                        }
+                    ]                    
                 },
                 {
                     id: 2,
-                    key: "id1SmallImages2",
-                    imageName: "jason-blackeye-DKCgibUVLNc-unsplash.png",
-                    folderName: "colorful",
-                    alt: "image"
+                    key: "smallSlider2",
+                    header: "Small Slider",
+                    path: "portfolio-item/small-slider/2",
+                    coverImage: {
+                        id: 1,
+                        key: "id2SmallSlider1",
+                        isHover: "init",
+                        imageName: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            path: "portfolio-category/art-direction",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            path: "portfolio-category/design",
+                            isHover: "init"
+                        }
+                    ],                   
                 },
                 {
                     id: 3,
-                    key: "id1SmallImages3",
-                    imageName: "nordwood-themes-Nv4QHkTVEaI-unsplash.png",
-                    folderName: "colorful",
-                    alt: "image"
+                    key: "smallImages2",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/2",
+                    coverImage: {
+                        id: 1,
+                        key: "id2SmallImages1",
+                        isHover: "init",
+                        imageName: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            path: "portfolio-category/art-direction",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Music",
+                            key: "music",
+                            path: "portfolio-category/music",
+                            isHover: "init"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            path: "portfolio-category/architecture",
+                            isHover: "init"
+                        }
+                    ],   
                 },
                 {
                     id: 4,
-                    key: "id1SmallImages4",
-                    imageName: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.png",
-                    folderName: "colorful",
-                    alt: "image"
+                    key: "smallImages3",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/3",
+                    coverImage: {
+                        id: 1,
+                        key: "id3SmallImages1",
+                        isHover: "init",
+                        imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            path: "portfolio-category/art-direction",
+                            isHover: "init"
+                        },
+                    ],
+                }
+            ]
+         
+        },
+        {
+            id: 2,
+            category: "graphicDesign",
+            archieveData: [
+                {
+                    id: 1,
+                    key: "smallImages1",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/1",
+                    coverImage: {
+                        id: 1,
+                        key: "id1SmallImages1",
+                        isHover: "init",
+                        imageName: "adam-wilson-1QZYZib7eYs-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            path: "portfolio-category/design",
+                            isHover: "init"
+                        }
+                    ]    
+                },
+                {
+                    id: 2,
+                    key: "gallery1",
+                    header: "Gallery",
+                    path: "portfolio-item/gallery/1",
+                    coverImage: {
+                        id: 1,
+                        key: "id1Gallery1",
+                        isHover: "init",
+                        imageName: "nadine-shaabana-updated2-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        }
+                    ],           
+                },
+                {
+                    id: 3,
+                    key: "smallGallery1",
+                    header: "Small Gallery",
+                    path: "portfolio-item/small-gallery/1",
+                    coverImage: {
+                        id: 1,
+                        key: "id1SmallGallery1",
+                        isHover: "init",
+                        imageName: "ash-from-modern-afflatus-updated1-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            path: "portfolio-category/editorial",
+                            isHover: "init"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            path: "portfolio-category/architecture",
+                            isHover: "init"
+                        }
+                    ],
+                },
+                {
+                    id: 4,
+                    key: "smallSlider1",
+                    header: "Small Slider",
+                    path: "portfolio-item/small-slider/1",
+                    coverImage: {
+                        id: 1,
+                        key: "id1SmallSlider1",
+                        isHover: "init",
+                        imageName: "damian-patkowski--pahtnAMuFo-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            path: "portfolio-category/editorial",
+                            isHover: "init"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            path: "portfolio-category/architecture",
+                            isHover: "init"
+                        }
+                    ],
                 },
                 {
                     id: 5,
-                    key: "id1SmallImages5",
-                    imageName: "shelbey-miller-HIQd4db8Kr8-unsplash.png",
-                    folderName: "colorful",
-                    alt: "image"
+                    key: "bigImages2",
+                    header: "Big Images",
+                    path: "portfolio-item/big-images/2",
+                    coverImage: {
+                        id: 1,
+                        key: "id2BigImages1",
+                        isHiver: "init",
+                        imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            path: "portfolio-category/design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 3,
+                            label: "Editorial",
+                            key: "editorial",
+                            path: "portfolio-category/editorial",
+                            isHover: "init"
+                        }
+                    ],
+                },
+                {
+                    id: 6,
+                    key: "smallImages3",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/3",
+                    coverImage: {
+                        id: 1,
+                        key: "id3SmallImages1",
+                        isHover: "init",
+                        imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            path: "portfolio-category/art-direction",
+                            isHover: "init"
+                        },
+                    ],
+                },
+                {
+                    id: 7,
+                    key: "bigSlider3",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/3",
+                    coverImage: {
+                        id: 1,
+                        key: "id3BigSlider1",
+                        isHover: "init",
+                        imageName: "angele-kamp-KaeaUITiWnc-upadted-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            path: "portfolio-category/graphic-design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            path: "portfolio-category/design",
+                            isHover: "init"
+                        },
+                        {
+                            id: 3,
+                            label: "Music",
+                            key: "music",
+                            path: "portfolio-category/music",
+                            isHover: "init"
+                        }
+                    ],
                 }
             ]
+         
         },
     ]
 
-    // let smallSliderObj = smallSlider.find(item => item.key === key);
-    // if(!smallSliderObj) {
-    //     res.status(404).send("The portfolio with the given ID was not found")
-    // }else{
-    //     res.json(smallSliderObj);  
-    // }
+    let archieveObj = archieve.find(item => item.category === category);
+    if(!archieveObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(archieveObj);  
+    }
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {
