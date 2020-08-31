@@ -42,6 +42,27 @@
     }
 }
 
+.archive-load-more {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(239, 239, 239);
+    background-color: rgb(37, 37, 37);
+    border: 3px solid rgb(37, 37, 37);
+    width: 170px;
+    height: 60px;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        color: rgb(37, 37, 37);
+    }
+    &:disabled{
+        color: rgb(239, 239, 239);
+        background-color: rgb(37, 37, 37);
+        cursor: not-allowed;
+    }
+}
+
 .none {
     width:none;
 }

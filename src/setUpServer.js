@@ -3372,6 +3372,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
         {
             id: 1,
             category: "artDirection",
+            disableLoadMoreButton: false,
             archiveData: [
                 {
                     id: 1,
@@ -3506,6 +3507,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
         {
             id: 2,
             category: "graphicDesign",
+            disableLoadMoreButton: false,
             archiveData: [
                 {
                     id: 1,
@@ -3744,7 +3746,13 @@ app.post('/api/portfolio-category/:category', (req, res) => {
     ]
 
     let archiveObj = archive.find(item => item.category === category);
-
+    let takeItems = req.body.step * 4;
+    if(takeItems > archiveObj.archiveData.length){
+        archiveObj.disableLoadMoreButton = true;
+    }else{
+        archiveObj.archiveData = archiveObj.archiveData.slice(0, takeItems)
+    }
+console.log(archiveObj.archiveData)
     if(!archiveObj) {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{

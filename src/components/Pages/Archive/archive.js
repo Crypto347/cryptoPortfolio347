@@ -29,7 +29,7 @@ import Loading from '../../SmallParts/Loading/loading';
 import Toolbar from '../../Parts/Toolbar/toolbar';
 // import Swiper from '../../../../library/Swiper/swiper';
 // import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
-// import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
+import Button from '../../../library/Button/button';
 import Footer from '../../Parts/Footer/footer';
 
 /**
@@ -91,7 +91,6 @@ export const Archive = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
-    // const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
@@ -103,9 +102,7 @@ export const Archive = (props) => {
         window.scrollTo(0, 0);
         props.fetchArchive(props.match.params.category, 1);
 
-        // if(props.bigImagesPortfolio.item !== {}){
-            setShowContent(true);
-        // }
+        setShowContent(true);
 
         window.addEventListener('wheel', handleOnWheel);
 
@@ -244,7 +241,6 @@ export const Archive = (props) => {
 
 
     const renderArchiveData = () => {
-        console.log(props.archive.item.archiveData)
         return(
             <div className="archive-date-items">{props.archive.item.archiveData.map((el, i) => {
                 return(
@@ -265,7 +261,16 @@ export const Archive = (props) => {
                         <EH40 className="h40-nero-teko">{el.header}</EH40>
                     </div>
                 )
-            })}</div>
+            })}
+            <div className="archive-button-load-more">
+                <Button
+                    className="archive-load-more"
+                    text="load more."
+                    onClick={() => props.fetchArchive(props.match.params.category, 2)}
+                    disabled={props.archive.item.disableLoadMoreButton}
+                />
+            </div> 
+            </div>
         )
     }
 
@@ -283,12 +288,12 @@ export const Archive = (props) => {
         if(!props.archive.loading && !props.archive.error){
             return(
                 <div className="archive-wrapper">
-                    <EH20/>
+                    <EH90/>
                     <H45 className="h45-nero-lustria">Archive</H45>
                     <EH90/>
                     <div className="grey-line"/>
-                    <EH70/>
-                   {showContent ? renderArchiveData() : null}
+                    {showContent ? renderArchiveData() : null}
+                  
                 </div>
             )
         }
