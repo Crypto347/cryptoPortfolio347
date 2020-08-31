@@ -287,10 +287,10 @@ export const Archive = (props) => {
         }
         if(!props.archive.loading && !props.archive.error){
             return(
-                <div className="archive-wrapper">
-                    <EH90/>
-                    <H45 className="h45-nero-lustria">Archive</H45>
-                    <EH90/>
+                <div className="archive-wrapper">\
+                    <div className="archive-header">
+                        <H45 className="h45-nero-lustria">Archive</H45>
+                    </div>\
                     <div className="grey-line"/>
                     {showContent ? renderArchiveData() : null}
                   

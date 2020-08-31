@@ -27,6 +27,7 @@ export * from './EmptyDivs/EW10/ew10';
 export * from './EmptyDivs/EW30/ew30';
 export * from './EmptyDivs/EW70/ew70';
 export * from './EmptyDivs/EW90/ew90';
+export * from './EmptyDivs/EW130/ew130';
 
 export * from './HorizantalLines/Line1/line1';
 export * from './HorizantalLines/Line2/line2';
