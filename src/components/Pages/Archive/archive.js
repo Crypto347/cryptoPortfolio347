@@ -153,29 +153,40 @@ export const Archive = (props) => {
         }
     }
 
+    const handleMouseEnter = (opt, id) => {
+        switch(opt){
+            case 'image': 
+                props.setArchiveIsHoveringImage("on", id);
+                break;
+            case 'smallGalleryCategory': 
+                props.setSmallGalleryIsHoveringCategory("on", id);
+                break;           
+        }
+    }
+
+    const handleMouseLeave = (opt, id) => {
+        switch(opt){
+            case 'image': 
+                props.setArchiveIsHoveringImage("off", id);
+                break;
+            case 'smallGalleryCategory': 
+                // props.setArchiveIsHoveringImage("off", id);
+                break;           
+        }
+    }
     
-    // const renderClassName = (opt, isHovering) => {
-    //     if(opt === "bigImagesCategory"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h19-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h19-nobel-lustria-nero-hover-on";
-    //             case 'off':
-    //                 return "h19-nobel-lustria-nero-hover-off"
-    //         }
-    //     }
-    //     if(opt === "bigImagesTag"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h19-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h19-nobel-lustria-nero-hover-on";
-    //             case 'off':
-    //                 return "h19-nobel-lustria-nero-hover-off"
-    //         }
-    //     }
-    // }
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "image"){
+            switch(isHovering){
+                case 'init':
+                    return "archive-image-curtain";
+                case 'on':
+                    return "archive-image-curtain-hover-on";
+                case 'off':
+                    return "archive-image-curtain-hover-off"
+            }
+        }
+    }
 
 
     const renderToolbars = () => {
@@ -233,18 +244,23 @@ export const Archive = (props) => {
 
 
     const renderArchiveData = () => {
-        console.log(props.archive.items.archiveData)
+        console.log(props.archive.item.archiveData)
         return(
-            <div className="archive-date-items">{props.archive.items.archiveData.map((el, i) => {
+            <div className="archive-date-items">{props.archive.item.archiveData.map((el, i) => {
                 return(
                     <div 
                         key={i}
                         className="archive-date-item"
                     >
-                        <img 
-                            src={loadImg(el.coverImage.key)}
-                            onClick={() => openPhotoViewer(props.bigImagesPortfolio.item.imagesArray, i)}
-                        />
+                        <div 
+                            className="archive-image"
+                            // onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
+                            onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
+                            onMouseLeave={() => handleMouseLeave(`image`, el.id)}
+                        >
+                            <img src={loadImg(el.coverImage.key)}/>
+                            <div className={renderClassName(`image`, el.isHover)}/>
+                        </div>
                         <EH30/>
                         <EH40 className="h40-nero-teko">{el.header}</EH40>
                     </div>
@@ -312,7 +328,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
-            // setBigImagesIsHoveringCategory: bindActionCreators(Actions.setBigImagesIsHoveringCategory, dispatch),
+            setArchiveIsHoveringImage: bindActionCreators(Actions.setArchiveIsHoveringImage, dispatch),
             // setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),

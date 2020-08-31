@@ -6,10 +6,10 @@ export function fetchArchiveBegin() {
     };
 };
 
-export function fetchArchiveSuccess(array) {
+export function fetchArchiveSuccess(obj) {
     return { 
         type: actionTypes.FETCH_ARCHIVE_SUCCESS,
-        array: array
+        obj: obj
     };
 };
 
@@ -17,6 +17,14 @@ export function fetchArchiveFailur(err) {
     return { 
         type: actionTypes.FETCH_ARCHIVE_FAILURE,
         err: err
+    };
+};
+
+export function setArchiveIsHoveringImage(val, id) {
+    return { 
+        type: actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE,
+        val: val,
+        id: id
     };
 };
 
@@ -36,10 +44,4 @@ export function fetchArchiveFailur(err) {
 //     };
 // };
 
-// export function setSmallGalleryIsHoveringImage(val, id) {
-//     return { 
-//         type: actionTypes.SET_SMALL_GALLERY_IS_HOVERING_IMAGE,
-//         val: val,
-//         id: id
-//     };
-// };
+

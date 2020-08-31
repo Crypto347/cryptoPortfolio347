@@ -16,7 +16,7 @@ import uuid from "uuid";
 */
 
 export const initialState = {
-    items: [],
+    item: {},
     loading: false,
     error: null
 }
@@ -33,7 +33,7 @@ const fetchArchiveSuccess = (state, action) => {
     return {
         ...state,
         loading: false,
-        items: action.array
+        item: action.obj
     };
 }
 
@@ -42,7 +42,23 @@ const fetchArchiveFailur = (state, action) => {
         ...state,
         loading: false,
         error: action.err,
-        items: []
+        item: {}
+    };
+}
+
+const setArchiveIsHoveringImage = (state, action) => {
+    let updatedImagesArray = [...state.item.archiveData];
+
+    let image = {...updatedImagesArray.find(item => item.id === action.id), isHover: action.val};
+    let imageIndex = updatedImagesArray.findIndex(item => item.id === action.id);
+    updatedImagesArray.splice(imageIndex, 1, image);
+
+    return {
+        ...state,
+        item: {
+            ...state.item,
+            archiveData: updatedImagesArray
+        }
     };
 }
 
@@ -54,6 +70,8 @@ const archiveReducer = (state = initialState, action) => {
             return fetchArchiveSuccess (state, action);
         case actionTypes.FETCH_ARCHIVE_FAILURE:
             return fetchArchiveFailur(state, action);
+        case actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE:
+            return setArchiveIsHoveringImage(state, action);
         default: 
             return state;
     }
