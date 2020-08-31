@@ -69,59 +69,7 @@ import {
 * Images
 */
 
-//Big Slider Id1
-
-import Id1BigSlider1 from '../../images/portfolioPages/bigSlider/id1/ash-from-modern-afflatus-updated-unsplash.png';
-import Id1BigSlider2 from '../../images/portfolioPages/bigSlider/id1/estee-janssens-updated-unsplash.png';
-import Id1BigSlider3 from '../../images/portfolioPages/bigSlider/id1/filip-mroz-updated-unsplash.png';
-import Id1BigSlider4 from '../../images/portfolioPages/bigSlider/id1/laura-chouette-updated-unsplash.png';
-import Id1BigSlider5 from '../../images/portfolioPages/bigSlider/id1/nadine-shaabana-updated-unsplash.png';
-
-//Big Slider Id2
-
-import Id2BigSlider1 from '../../images/portfolioPages/bigSlider/id2/dose-media-bU6JyhSI6zo-updated-unsplash.png';
-import Id2BigSlider2 from '../../images/portfolioPages/bigSlider/id2/daniel-korpai-kO7TrSB9pCQ-updated-unsplash.png';
-import Id2BigSlider3 from '../../images/portfolioPages/bigSlider/id2/rahul-bhogal-lihCTIOP28U-updated-unsplash.png';
-import Id2BigSlider4 from '../../images/portfolioPages/bigSlider/id2/grocery-list-1670408_1920-updated.png';
-import Id2BigSlider5 from '../../images/portfolioPages/bigSlider/id2/heather-ford-6fiz86Ql3UA--updated-unsplash.png';
-import Id2BigSlider6 from '../../images/portfolioPages/bigSlider/id2/computer-820281_1920-updated.png';
-
-
-//Big Slider Id3
-
-import Id3BigSlider1 from '../../images/portfolioPages/bigSlider/id3/angele-kamp-KaeaUITiWnc-upadted-unsplash.png';
-import Id3BigSlider2 from '../../images/portfolioPages/bigSlider/id3/charles-deluvio-dtSjxKDIPnA-updated-unsplash.png';
-import Id3BigSlider3 from '../../images/portfolioPages/bigSlider/id3/daily-nouri-E5Oo4nENq2M-updated-unsplash.png';
-import Id3BigSlider4 from '../../images/portfolioPages/bigSlider/id3/jess-bailey-YFn6rpnyeRY-updated-unsplash.png';
-import Id3BigSlider5 from '../../images/portfolioPages/bigSlider/id3/jozsef-hocza-pJYd5CI_TRM-updated-unsplash.png';
-import Id3BigSlider6 from '../../images/portfolioPages/bigSlider/id3/laika-notebooks-pONH9yZ-wXg-updated-unsplash.png';
-import Id3BigSlider7 from '../../images/portfolioPages/bigSlider/id3/lauren-fleischmann-R2aodqJn3b8-updated-unsplash.png';
-
-//Small Slider Id1
-
-import Id1SmallSlider1 from '../../images/portfolioPages/smallSlider/id1/damian-patkowski--pahtnAMuFo-unsplash.png';
-import Id1SmallSlider2 from '../../images/portfolioPages/smallSlider/id1/drew-beamer-ehBB9G7qbss-unsplash.png';
-import Id1SmallSlider3 from '../../images/portfolioPages/smallSlider/id1/drew-beamer-PL6ClUWwDEw-unsplash.png';
-import Id1SmallSlider4 from '../../images/portfolioPages/smallSlider/id1/grovemade-DhZ5BpBeQEM-unsplash.png';
-import Id1SmallSlider5 from '../../images/portfolioPages/smallSlider/id1/lee-campbell-gA-km82BywY-unsplash.png';
-import Id1SmallSlider6 from '../../images/portfolioPages/smallSlider/id1/workperch-AiOzVFqlyZI-unsplash.png';
-
-//Small Slider Id2
-
-import Id2SmallSlider1 from '../../images/portfolioPages/smallSlider/id2/fallon-michael-_lKsxGjOzk8-updated-unsplash.png';
-import Id2SmallSlider2 from '../../images/portfolioPages/smallSlider/id2/gaelle-marcel-yO9ZVNFbpao-updated-unsplash.png';
-import Id2SmallSlider3 from '../../images/portfolioPages/smallSlider/id2/jane-palash-iaofnd2IdFU-updated-unsplash.png';
-import Id2SmallSlider4 from '../../images/portfolioPages/smallSlider/id2/kara-eads-gVUV7PbSu_0-updated-unsplash.png';
-import Id2SmallSlider5 from '../../images/portfolioPages/smallSlider/id2/siora-photography-G8RdOUjVuJo-updated-unsplash.png';
-
-//Small Slider Id3
-
-import Id3SmallSlider1 from '../../images/portfolioPages/smallSlider/id3/meghan-schiereck--2eJaLtf_bI-updated-unsplash.png';
-import Id3SmallSlider2 from '../../images/portfolioPages/smallSlider/id3/glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png';
-import Id3SmallSlider3 from '../../images/portfolioPages/smallSlider/id3/marci-angeles-H_pOAqtNVEg-updated-unsplash.png';
-import Id3SmallSlider4 from '../../images/portfolioPages/smallSlider/id3/marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png';
-
-
+import * as Images from '../../constants/images';
 
 /**
 * Icons
@@ -519,71 +467,71 @@ export const Swiper = (props) => {
     const loadImage = (img) => {
         switch(img) {
             case 'id1BigSlider1': 
-                return Id1BigSlider1;
+                return Images.ID_1_BIG_SLIDER_1;
             case 'id1BigSlider2': 
-                return Id1BigSlider2;
+                return Images.ID_1_BIG_SLIDER_2;
             case 'id1BigSlider3': 
-                return Id1BigSlider3;
+                return Images.ID_1_BIG_SLIDER_3;
             case 'id1BigSlider4': 
-                return Id1BigSlider4;
+                return Images.ID_1_BIG_SLIDER_4;
             case 'id1BigSlider5': 
-                return Id1BigSlider5;
+                return Images.ID_1_BIG_SLIDER_5;
             case 'id2BigSlider1': 
-                return Id2BigSlider1;
+                return Images.ID_2_BIG_SLIDER_1;
             case 'id2BigSlider2': 
-                return Id2BigSlider2;
+                return Images.ID_2_BIG_SLIDER_2;
             case 'id2BigSlider3': 
-                return Id2BigSlider3;
+                return Images.ID_2_BIG_SLIDER_3;
             case 'id2BigSlider4': 
-                return Id2BigSlider4;
+                return Images.ID_2_BIG_SLIDER_4;
             case 'id2BigSlider5': 
-                return Id2BigSlider5;
+                return Images.ID_2_BIG_SLIDER_5;
             case 'id2BigSlider6': 
-                return Id2BigSlider6;
+                return Images.ID_2_BIG_SLIDER_6;
             case 'id3BigSlider1': 
-                return Id3BigSlider1;
+                return Images.ID_3_BIG_SLIDER_1;
             case 'id3BigSlider2': 
-                return Id3BigSlider2;
+                return Images.ID_3_BIG_SLIDER_2;
             case 'id3BigSlider3': 
-                return Id3BigSlider3;
+                return Images.ID_3_BIG_SLIDER_3;
             case 'id3BigSlider4': 
-                return Id3BigSlider4;
+                return Images.ID_3_BIG_SLIDER_4;
             case 'id3BigSlider5': 
-                return Id3BigSlider5;
+                return Images.ID_3_BIG_SLIDER_5;
             case 'id3BigSlider6': 
-                return Id3BigSlider6;
+                return Images.ID_3_BIG_SLIDER_6;
             case 'id3BigSlider7': 
-                return Id3BigSlider7;
+                return Images.ID_3_BIG_SLIDER_7;
             case 'id1SmallSlider1': 
-                return Id1SmallSlider1;
+                return Images.ID_1_SMALL_SLIDER_1;
             case 'id1SmallSlider2': 
-                return Id1SmallSlider2;
+                return Images.ID_1_SMALL_SLIDER_2;
             case 'id1SmallSlider3': 
-                return Id1SmallSlider3;
+                return Images.ID_1_SMALL_SLIDER_3;
             case 'id1SmallSlider4': 
-                return Id1SmallSlider4;
+                return Images.ID_1_SMALL_SLIDER_4;
             case 'id1SmallSlider5': 
-                return Id1SmallSlider5;
+                return Images.ID_1_SMALL_SLIDER_5;
             case 'id1SmallSlider6': 
-                return Id1SmallSlider6;
+                return Images.ID_1_SMALL_SLIDER_6;
             case 'id2SmallSlider1': 
-                return Id2SmallSlider1;
+                return Images.ID_2_SMALL_SLIDER_1;
             case 'id2SmallSlider2': 
-                return Id2SmallSlider2;
+                return Images.ID_2_SMALL_SLIDER_2;
             case 'id2SmallSlider3': 
-                return Id2SmallSlider3;
+                return Images.ID_2_SMALL_SLIDER_3;
             case 'id2SmallSlider4': 
-                return Id2SmallSlider4;
+                return Images.ID_2_SMALL_SLIDER_4;
             case 'id2SmallSlider5': 
-                return Id2SmallSlider5;
+                return Images.ID_2_SMALL_SLIDER_5;
             case 'id3SmallSlider1': 
-                return Id3SmallSlider1;
+                return Images.ID_3_SMALL_SLIDER_1;
             case 'id3SmallSlider2': 
-                return Id3SmallSlider2;
+                return Images.ID_3_SMALL_SLIDER_2;
             case 'id3SmallSlider3': 
-                return Id3SmallSlider3;
+                return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
-                return Id3SmallSlider4;
+                return Images.ID_3_SMALL_SLIDER_4;
             default:
                 return ""; 
         }

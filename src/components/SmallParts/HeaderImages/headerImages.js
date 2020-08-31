@@ -72,9 +72,7 @@ import {
 * Images
 */
 
-import Image1 from '../../../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
-import Image2 from '../../../images/headerImages/john-schnobrich-2FPjlAyMQTA-unsplash.jpg';
-import Image3 from '../../../images/headerImages/photo-2560610_1920.jpg';
+import * as Images from '../../../constants/images';
 
 /**
 * HeaderImages component definition and export
@@ -156,11 +154,11 @@ export const HeaderImages = (props) => {
     const loadImage = (opt) => {
         switch(opt){
             case 'Image1':
-                return Image1;
+                return Images.HEADER_IMAGE_1;
             case 'Image2':
-                return Image2;
+                return Images.HEADER_IMAGE_2;
             case 'Image3':
-                return Image3;
+                return Images.HEADER_IMAGE_3;
             default:
                 return "";
         }

@@ -59,7 +59,7 @@ import {
 * Images
 */
 
-import Map from '../../../images/addition/footer-img-1-300x156.png'
+import * as Images from '../../../constants/images';
 
 /**
 * Footer component definition and export
@@ -145,7 +145,7 @@ export const Footer = (props) => {
                         <EH20/>
                         <EH5/>
                         <div className="footer-info-map" /** onClick go to aboutUs page */> 
-                            <img src={Map}/>
+                            <img src={Images.MAP}/>
                         </div>
                     </div>
                 </div>

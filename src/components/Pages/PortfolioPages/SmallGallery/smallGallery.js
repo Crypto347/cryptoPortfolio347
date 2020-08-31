@@ -74,30 +74,7 @@ import {
 * Images
 */
 
-//Id1
-
-import Id1SmallGallery1 from '../../../../images/portfolioPages/smallGallery/id1/ash-from-modern-afflatus-updated1-unsplash.png';
-import Id1SmallGallery2 from '../../../../images/portfolioPages/smallGallery/id1/estee-janssens-updated1-unsplash.png';
-import Id1SmallGallery3 from '../../../../images/portfolioPages/smallGallery/id1/filip-mroz-updated1-unsplash.png';
-import Id1SmallGallery4 from '../../../../images/portfolioPages/smallGallery/id1/georgie-cobbs-muOHbrFGEQY-updated1-unsplash.png';
-import Id1SmallGallery5 from '../../../../images/portfolioPages/smallGallery/id1/laura-chouette-updated1-unsplash.png';
-import Id1SmallGallery6 from '../../../../images/portfolioPages/smallGallery/id1/nadine-shaabana-updated1-unsplash.png';
-
-//Id2
-
-import Id2SmallGallery1 from '../../../../images/portfolioPages/smallGallery/id2/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png';
-import Id2SmallGallery2 from '../../../../images/portfolioPages/smallGallery/id2/jess-bailey-ycTvvg1mPU4-updated-unsplash.png';
-import Id2SmallGallery3 from '../../../../images/portfolioPages/smallGallery/id2/nahuel-hawkes-Ki6JO9sraB8-updated-unsplash.png';
-import Id2SmallGallery4 from '../../../../images/portfolioPages/smallGallery/id2/stil-8-GAoVpIk4M-updated-unsplash.png';
-
-//Id3
-
-import Id3SmallGallery1 from '../../../../images/portfolioPages/smallGallery/id3/eyeshadow-4713577_1920-updated.png';
-import Id3SmallGallery2 from '../../../../images/portfolioPages/smallGallery/id3/gabrielle-henderson-xTLqJqtq8R4-updated-unsplash.png';
-import Id3SmallGallery3 from '../../../../images/portfolioPages/smallGallery/id3/jess-bailey-_969XXSgWc0-updated-unsplash.png';
-import Id3SmallGallery4 from '../../../../images/portfolioPages/smallGallery/id3/laura-chouette-HTowfw8ascU-updated-unsplash.png';
-import Id3SmallGallery5 from '../../../../images/portfolioPages/smallGallery/id3/life-3602514_1920-updated.png';
-import Id3SmallGallery6 from '../../../../images/portfolioPages/smallGallery/id3/samantha-gades-pKt9mfEuZrs-updated-unsplash.png';
+import * as Images from '../../../../constants/images';
 
 /**
 * SmallGallery component definition and export
@@ -137,37 +114,37 @@ export const SmallGallery = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'id1SmallGallery1':
-                return Id1SmallGallery1;
+                return Images.ID_1_SMALL_GALLERY_1;
             case 'id1SmallGallery2':
-                return Id1SmallGallery2;
+                return Images.ID_1_SMALL_GALLERY_2;
             case 'id1SmallGallery3':
-                return Id1SmallGallery3;
+                return Images.ID_1_SMALL_GALLERY_3;
             case 'id1SmallGallery4':
-                return Id1SmallGallery4;
+                return Images.ID_1_SMALL_GALLERY_4;
             case 'id1SmallGallery5':
-                return Id1SmallGallery5;
+                return Images.ID_1_SMALL_GALLERY_5;
             case 'id1SmallGallery6':
-                return Id1SmallGallery6;
+                return Images.ID_1_SMALL_GALLERY_6;
             case 'id2SmallGallery1':
-                return Id2SmallGallery1;
+                return Images.ID_2_SMALL_GALLERY_1;
             case 'id2SmallGallery2':
-                return Id2SmallGallery2;
+                return Images.ID_2_SMALL_GALLERY_2;
             case 'id2SmallGallery3':
-                return Id2SmallGallery3;
+                return Images.ID_2_SMALL_GALLERY_3;
             case 'id2SmallGallery4':
-                return Id2SmallGallery4;
+                return Images.ID_2_SMALL_GALLERY_4;
             case 'id3SmallGallery1':
-                return Id3SmallGallery1;
+                return Images.ID_3_SMALL_GALLERY_1;
             case 'id3SmallGallery2':
-                return Id3SmallGallery2;
+                return Images.ID_3_SMALL_GALLERY_2;
             case 'id3SmallGallery3':
-                return Id3SmallGallery3;
+                return Images.ID_3_SMALL_GALLERY_3;
             case 'id3SmallGallery4':
-                return Id3SmallGallery4;
+                return Images.ID_3_SMALL_GALLERY_4;
             case 'id3SmallGallery5':
-                return Id3SmallGallery5;
+                return Images.ID_3_SMALL_GALLERY_5;
             case 'id3SmallGallery6':
-                return Id3SmallGallery6;
+                return Images.ID_3_SMALL_GALLERY_6;
             default:
                 return "";
         }

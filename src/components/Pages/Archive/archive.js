@@ -77,24 +77,6 @@ import {
 * Images
 */
 import * as Images from '../../../constants/images';
-//GraphicDesign
-
-import Id1SmallImages1 from '../../../images/portfolioPages/smallImages/id1/adam-wilson-1QZYZib7eYs-unsplash.png';
-import Id1Gallery1 from '../../../images/portfolioPages/gallery/id1/nadine-shaabana-updated2-unsplash.png';
-import Id1SmallGallery1 from '../../../images/portfolioPages/smallGallery/id1/ash-from-modern-afflatus-updated1-unsplash.png';
-import Id1SmallSlider1 from '../../../images/portfolioPages/smallSlider/id1/damian-patkowski--pahtnAMuFo-unsplash.png';
-import Id2BigImages1 from '../../../images/portfolioPages/bigImages/id2/uby-yanes-LMwW0ARHc4o-updated-unsplash.png';
-import Id3SmallImages1 from '../../../images/portfolioPages/smallImages/id3/jess-bailey-dWKqZcPLc8Y-updated-unsplash.png';
-import Id3BigSlider1 from '../../../images/portfolioPages/bigSlider/id3/angele-kamp-KaeaUITiWnc-upadted-unsplash.png';
-
-//Id 2
-
-// import Id2BigImages1 from '../../../../images/portfolioPages/bigImages/id2/uby-yanes-LMwW0ARHc4o-updated-unsplash.png';
-// import Id2BigImages2 from '../../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png';
-// import Id2BigImages3 from '../../../../images/portfolioPages/bigImages/id2/uby-yanes-393QQ30ecvQ-updated-unsplash.png';
-// import Id2BigImages4 from '../../../../images/portfolioPages/bigImages/id2/stil-flRm0z3MEoA-updated-unsplash.png';
-// import Id2BigImages5 from '../../../../images/portfolioPages/bigImages/id2/freestocks-A11MXTzUhLE-updated-unsplash.png';
-// import Id2BigImages6 from '../../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png';
 
 /**
 * Archive component definition and export
@@ -153,19 +135,19 @@ export const Archive = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'id1SmallImages1':
-                return Id1SmallImages1;
+                return Images.ID_1_SMALL_IMAGES_1;
             case 'id1Gallery1':
-                return Id1Gallery1;
+                return Images.ID_1_GALLERY_1;
             case 'id1SmallGallery1':
-                return Id1SmallGallery1;
+                return Images.ID_1_SMALL_GALLERY_1;
             case 'id1SmallSlider1':
-                return Id1SmallSlider1;
+                return Images.ID_1_SMALL_SLIDER_1;
             case 'id2BigImages1':
-                return Id2BigImages1;
+                return Images.ID_2_BIG_IMAGES_1;
             case 'id3SmallImages1':
-                return Id3SmallImages1;
+                return Images.ID_3_SMALL_IMAGES_1;
             case 'id3BigSlider1':
-                return Id3BigSlider1;
+                return Images.ID_3_BIG_SLIDER_1;
             default:
                 return "";
         }

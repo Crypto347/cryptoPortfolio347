@@ -74,31 +74,7 @@ import {
 * Images
 */
 
-//Id1
-
-import Id1Gallery1 from '../../../../images/portfolioPages/Gallery/id1/ash-from-modern-afflatus-updated2-unsplash.png';
-import Id1Gallery2 from '../../../../images/portfolioPages/Gallery/id1/estee-janssens-updated2-unsplash.png';
-import Id1Gallery3 from '../../../../images/portfolioPages/Gallery/id1/filip-mroz-updated2-unsplash.png';
-import Id1Gallery4 from '../../../../images/portfolioPages/Gallery/id1/georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png';
-import Id1Gallery5 from '../../../../images/portfolioPages/Gallery/id1/laura-chouette-updated2-unsplash.png';
-import Id1Gallery6 from '../../../../images/portfolioPages/Gallery/id1/nadine-shaabana-updated2-unsplash.png';
-
-//Id2
-
-import Id2Gallery1 from '../../../../images/portfolioPages/Gallery/id2/cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png';
-import Id2Gallery2 from '../../../../images/portfolioPages/Gallery/id2/food-3025556_1920-updated.png';
-import Id2Gallery3 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-6VhPY27jdps-updated-unsplash.png';
-import Id2Gallery4 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pMW4jzELQCw-updated-unsplash.png';
-import Id2Gallery5 from '../../../../images/portfolioPages/Gallery/id2/nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png';
-
-//Id3
-
-import Id3Gallery1 from '../../../../images/portfolioPages/Gallery/id3/chris-lee-70l1tDAI6rM-updated-unsplash.png';
-import Id3Gallery2 from '../../../../images/portfolioPages/Gallery/id3/kara-eads--0eTYFd2pzM-updated-unsplash.png';
-import Id3Gallery3 from '../../../../images/portfolioPages/Gallery/id3/kara-eads-Uq9o9uUIT08-updated-unsplash.png';
-import Id3Gallery4 from '../../../../images/portfolioPages/Gallery/id3/leone-venter-pVt9j3iWtPM-updated-unsplash.png';
-import Id3Gallery5 from '../../../../images/portfolioPages/Gallery/id3/olena-sergienko-dIMJWLx1YbE-updated-unsplash.png';
-import Id3Gallery6 from '../../../../images/portfolioPages/Gallery/id3/sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png';
+import * as Images from '../../../../constants/images';
 
 /**
 * Gallery component definition and export
@@ -138,39 +114,39 @@ export const Gallery = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'id1Gallery1':
-                return Id1Gallery1;
+                return Images.ID_1_GALLERY_1;
             case 'id1Gallery2':
-                return Id1Gallery2;
+                return Images.ID_1_GALLERY_2;
             case 'id1Gallery3':
-                return Id1Gallery3;
+                return Images.ID_1_GALLERY_3;
             case 'id1Gallery4':
-                return Id1Gallery4;
+                return Images.ID_1_GALLERY_4;
             case 'id1Gallery5':
-                return Id1Gallery5;
+                return Images.ID_1_GALLERY_5;
             case 'id1Gallery6':
-                return Id1Gallery6;
+                return Images.ID_1_GALLERY_6;
             case 'id2Gallery1':
-                return Id2Gallery1;
+                return Images.ID_2_GALLERY_1;
             case 'id2Gallery2':
-                return Id2Gallery2;
+                return Images.ID_2_GALLERY_2;
             case 'id2Gallery3':
-                return Id2Gallery3;
+                return Images.ID_2_GALLERY_3;
             case 'id2Gallery4':
-                return Id2Gallery4;
+                return Images.ID_2_GALLERY_4;
             case 'id2Gallery5':
-                return Id2Gallery5;
+                return Images.ID_2_GALLERY_5;
             case 'id3Gallery1':
-                return Id3Gallery1;
+                return Images.ID_3_GALLERY_1;
             case 'id3Gallery2':
-                return Id3Gallery2;
+                return Images.ID_3_GALLERY_2;
             case 'id3Gallery3':
-                return Id3Gallery3;
+                return Images.ID_3_GALLERY_3;
             case 'id3Gallery4':
-                return Id3Gallery4;
+                return Images.ID_3_GALLERY_4;
             case 'id3Gallery5':
-                return Id3Gallery5;
+                return Images.ID_3_GALLERY_5;
             case 'id3Gallery6':
-                return Id3Gallery6;
+                return Images.ID_3_GALLERY_6;
             default:
                 return "";
         }

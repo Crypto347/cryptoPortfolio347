@@ -33,11 +33,7 @@ import {
 * Images
 */
 
-import Photo1 from '../../../images/teamPhotos/marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png';
-import Photo2 from '../../../images/teamPhotos/christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png';
-import Photo3 from '../../../images/teamPhotos/vinicius-wiesehofer-LS1e59caoNM-unsplash.png';
-import Photo4 from '../../../images/teamPhotos/photo-1540569014015-19a7be504e3a.png';
-import Photo5 from '../../../images/teamPhotos/zoe-fernandez--zqoE7jnQgw-unsplash.png';
+import * as Images from '../../../constants/images';
 
 /**
 * Icons
@@ -94,15 +90,15 @@ export const TeamInformationCard = (props) => {
     const loadPhoto = (img) => {
         switch(img){
             case 'Photo1':
-                return Photo1; 
+                return Images.PHOTO_1; 
             case 'Photo2':
-                return Photo2; 
+                return Images.PHOTO_2; 
             case 'Photo3':
-                return Photo3; 
+                return Images.PHOTO_3; 
             case 'Photo4':
-                return Photo4;
+                return Images.PHOTO_4;
             case 'Photo5':
-                return Photo5;
+                return Images.PHOTO_5;
             default:
                 return "";
         }

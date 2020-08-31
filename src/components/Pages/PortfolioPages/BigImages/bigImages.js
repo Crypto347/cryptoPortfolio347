@@ -75,22 +75,7 @@ import {
 * Images
 */
 
-//Id 1
-
-import Id1BigImages1 from '../../../../images/portfolioPages/bigImages/id1/joshua-reddekopp-cNe8GsQR-OQ-unsplash.png';
-import Id1BigImages2 from '../../../../images/portfolioPages/bigImages/id1/lee-campbell-CI-5GwJcVjE-unsplash.png';
-import Id1BigImages3 from '../../../../images/portfolioPages/bigImages/id1/lee-campbell-qNPESem_t4I-unsplash.png';
-import Id1BigImages4 from '../../../../images/portfolioPages/bigImages/id1/melanie-mauer-x-agyuDQHJA-unsplash.png';
-import Id1BigImages5 from '../../../../images/portfolioPages/bigImages/id1/nathan-dumlao-KEniowKfX3k-unsplash.png';
-
-//Id 2
-
-import Id2BigImages1 from '../../../../images/portfolioPages/bigImages/id2/uby-yanes-LMwW0ARHc4o-updated-unsplash.png';
-import Id2BigImages2 from '../../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png';
-import Id2BigImages3 from '../../../../images/portfolioPages/bigImages/id2/uby-yanes-393QQ30ecvQ-updated-unsplash.png';
-import Id2BigImages4 from '../../../../images/portfolioPages/bigImages/id2/stil-flRm0z3MEoA-updated-unsplash.png';
-import Id2BigImages5 from '../../../../images/portfolioPages/bigImages/id2/freestocks-A11MXTzUhLE-updated-unsplash.png';
-import Id2BigImages6 from '../../../../images/portfolioPages/bigImages/id2/emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png';
+import * as Images from '../../../../constants/images';
 
 /**
 * BigImages component definition and export
@@ -127,27 +112,27 @@ export const BigImages = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'id1BigImages1':
-                return Id1BigImages1;
+                return Images.ID_1_BIG_IMAGES_1;
             case 'id1BigImages2':
-                return Id1BigImages2;
+                return Images.ID_1_BIG_IMAGES_2;
             case 'id1BigImages3':
-                return Id1BigImages3;
+                return Images.ID_1_BIG_IMAGES_3;
             case 'id1BigImages4':
-                return Id1BigImages4;
+                return Images.ID_1_BIG_IMAGES_4;
             case 'id1BigImages5':
-                return Id1BigImages5;
+                return Images.ID_1_BIG_IMAGES_5;
             case 'id2BigImages1':
-                return Id2BigImages1;
+                return Images.ID_2_BIG_IMAGES_1;
             case 'id2BigImages2':
-                return Id2BigImages2;
+                return Images.ID_2_BIG_IMAGES_2;
             case 'id2BigImages3':
-                return Id2BigImages3;
+                return Images.ID_2_BIG_IMAGES_3;
             case 'id2BigImages4':
-                return Id2BigImages4;
+                return Images.ID_2_BIG_IMAGES_4;
             case 'id2BigImages5':
-                return Id2BigImages5;
+                return Images.ID_2_BIG_IMAGES_5;
             case 'id2BigImages6':
-                return Id2BigImages6;
+                return Images.ID_2_BIG_IMAGES_6;
             default:
                 return "";
         }

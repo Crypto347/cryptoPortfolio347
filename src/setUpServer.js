@@ -1292,7 +1292,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 1,
                     key: "id1BigSlider1",
-                    imageName: "ash-from-modern-afflatus-updated-unsplash.png"
+                    imageName: "laura-chouette-updated-unsplash.png"
                 },
                 {
                     id: 2,
@@ -1307,7 +1307,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                 {
                     id: 4,
                     key: "id1BigSlider4",
-                    imageName: "laura-chouette-updated-unsplash.png"
+                    imageName: "ash-from-modern-afflatus-updated-unsplash.png"
                 },
                 {
                     id: 5,
@@ -1842,7 +1842,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     id: 1,
                     key: "id1Gallery1",
                     isHover: "init",
-                    imageName: "ash-from-modern-afflatus-updated2-unsplash.png"
+                    imageName: "nadine-shaabana-updated2-unsplash.png"
                 },
                 {
                     id: 2,
@@ -1872,7 +1872,7 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     id: 6,
                     key: "id1Gallery6",
                     isHover: "init",
-                    imageName: "nadine-shaabana-updated2-unsplash.png"
+                    imageName: "ash-from-modern-afflatus-updated2-unsplash.png"
                 }
             ]
         },
@@ -3744,7 +3744,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
     ]
 
     let archiveObj = archive.find(item => item.category === category);
-    
+
     if(!archiveObj) {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{

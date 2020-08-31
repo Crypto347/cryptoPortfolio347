@@ -54,12 +54,8 @@ import {
 * Images
 */
 
-import Sketch from '../../../images/ourProcess/main-home-gif-1.gif';
-import Process from '../../../images/ourProcess/home-2-icon-2.png';
-import Development from '../../../images/ourProcess/main-home-gif-2.gif';
-import Design from '../../../images/ourProcess/home-2-icon-4.png';
-import Evaluation from '../../../images/ourProcess/main-home-gif-3.gif';
-import DefaultImage from '../../../images/error.jpg';
+import * as Images from '../../../constants/images';
+
 
 /**
 * OurProcess component definition and export
@@ -82,17 +78,17 @@ export const OurProcess = (props) => {
     const renderImg = (opt) => {
         switch(opt){
             case 'sketch':
-                return Sketch;
+                return Images.SKETCH;
             case 'process':
-                return Process;
+                return Images.PROCESS;
             case 'development':
-                return Development;
+                return Images.DEVELOPMENT;
             case 'design':
-                return Design;
+                return Images.DESIGN;
             case 'evaluation':
-                return Evaluation;
+                return Images.EVALUATION;
             default: 
-                return DefaultImage;
+                return "";
         }
     }
 
