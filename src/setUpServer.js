@@ -3,6 +3,7 @@
 */
 
 const express = require('express');
+const bodyParser = require('body-parser')
 const app = express();
 var cors = require('cors');
 
@@ -11,6 +12,10 @@ var cors = require('cors');
 */
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.json()); //Content-Type of application/json.
+// app.use(bodyParser.raw()); //Content-Type is application/octet-stream.
+// app.use(bodyParser.text()); //Content-Type of text/plain
 
 app.get('/', (req, res) => {
     res.send('Hello world!!');
@@ -3352,7 +3357,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
     res.json(portfolioGallery);
 });
 
-app.get('/api/portfolio-category/:category', (req, res) => {
+app.post('/api/portfolio-category/:category', (req, res) => {
     let category = req.params.category;
 
     category = category.split("");
@@ -3362,11 +3367,12 @@ app.get('/api/portfolio-category/:category', (req, res) => {
     category.splice(indexOfSlash, 1, lowerToUpperCase);
     category = category.join("");
     
-    const archieve = [
+    console.log(req.body.step)
+    const archive = [
         {
             id: 1,
             category: "artDirection",
-            archieveData: [
+            archiveData: [
                 {
                     id: 1,
                     key: "bigImages1",
@@ -3500,7 +3506,7 @@ app.get('/api/portfolio-category/:category', (req, res) => {
         {
             id: 2,
             category: "graphicDesign",
-            archieveData: [
+            archiveData: [
                 {
                     id: 1,
                     key: "smallImages1",
@@ -3737,11 +3743,12 @@ app.get('/api/portfolio-category/:category', (req, res) => {
         },
     ]
 
-    let archieveObj = archieve.find(item => item.category === category);
-    if(!archieveObj) {
+    let archiveObj = archive.find(item => item.category === category);
+    
+    if(!archiveObj) {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
-        res.json(archieveObj);  
+        res.json(archiveObj);  
     }
 });
 

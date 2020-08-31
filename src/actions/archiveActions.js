@@ -1,21 +1,21 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function fetchArchieveBegin() {
+export function fetchArchiveBegin() {
     return { 
-        type: actionTypes.FETCH_ARCHIEVE_BEGIN
+        type: actionTypes.FETCH_ARCHIVE_BEGIN
     };
 };
 
-export function fetchArchieveSuccess(array) {
+export function fetchArchiveSuccess(array) {
     return { 
-        type: actionTypes.FETCH_ARCHIEVE_SUCCESS,
+        type: actionTypes.FETCH_ARCHIVE_SUCCESS,
         array: array
     };
 };
 
-export function fetchArchieveFailur(err) {
+export function fetchArchiveFailur(err) {
     return { 
-        type: actionTypes.FETCH_ARCHIEVE_FAILURE,
+        type: actionTypes.FETCH_ARCHIVE_FAILURE,
         err: err
     };
 };

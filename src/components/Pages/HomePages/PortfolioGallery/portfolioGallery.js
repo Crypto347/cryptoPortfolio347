@@ -403,10 +403,10 @@ export const PortfolioGallery = (props) => {
                 <Footer/>
             </div>
             {props.menuDotsState.state === "on" ? 
-                <MenuFullScreen 
+            <MenuFullScreen 
                 page="portfolioGallery"
                 state={props.menuDotsState.state}
-                /> : null
+            /> : null
             }     
         </> 
     );

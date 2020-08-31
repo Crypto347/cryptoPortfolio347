@@ -280,20 +280,29 @@ export function fetchPortfolioGalleryPage() {
     };
 }
 
-export function fetchArchieve(category) {
+export function fetchArchive(category, step) {
     return dispatch => {
-        dispatch(Actions.fetchArchieveBegin());
-        return fetch(`http://localhost:3005/api/portfolio-category/${category}`)
+        dispatch(Actions.fetchArchiveBegin());
+        return fetch(`http://localhost:3005/api/portfolio-category/${category}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                step: step
+            })
+        })
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchArchieveSuccess(json));
+                dispatch(Actions.fetchArchiveSuccess(json));
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
-                dispatch(Actions.fetchArchieveFailur(error))
+                dispatch(Actions.fetchArchiveFailur(error))
             });
     };
 }

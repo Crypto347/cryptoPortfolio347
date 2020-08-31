@@ -212,9 +212,9 @@ export const getMenuDotsStateState = createSelector(
     (x) => x
 );
 
-const getArchieve = (state) => state.archieve;
+const getArchive = (state) => state.archive;
 
-export const getArchieveState = createSelector(
-    [getArchieve],
+export const getArchiveState = createSelector(
+    [getArchive],
     (x) => x
 );

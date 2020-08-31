@@ -18,7 +18,7 @@ import smallGalleryPortfolioReducer from './smallGalleryPortfolioReducer';
 import galleryPortfolioReducer from './galleryPortfolioReducer';
 import smallSliderPortfolioReducer from './smallSliderPortfolioReducer';
 import portfolioGalleryPageReducer from './portfolioGalleryPageReducer';
-import archieveReducer from './archieveReducer';
+import archiveReducer from './archiveReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -35,5 +35,5 @@ export default (history) => combineReducers({
     galleryPortfolio: galleryPortfolioReducer,
     smallSliderPortfolio: smallSliderPortfolioReducer,
     portfolioGalleryPage: portfolioGalleryPageReducer,
-    archieve: archieveReducer
+    archive: archiveReducer
 });

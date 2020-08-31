@@ -40,9 +40,9 @@ import BigSlider from './Pages/PortfolioPages/BigSlider/bigSlider';
 import BigImages from './Pages/PortfolioPages/BigImages/bigImages';
 import SmallGallery from './Pages/PortfolioPages/SmallGallery/smallGallery';
 import Gallery from './Pages/PortfolioPages/Gallery/gallery';
-import SmallSlider from './Pages/PortfolioPages/SmallSLider/smallSlider';
+import SmallSlider from './Pages/PortfolioPages/SmallSlider/smallSlider';
 import PortfolioGallery from './Pages/HomePages/PortfolioGallery/portfolioGallery';
-import Archieve from './Pages/Archieve/archieve';
+import Archive from './Pages/Archive/archive';
 // import Category from './Pages/Category/category';
 
 /**
@@ -96,11 +96,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
-            <Route 
+                <Route 
                     exact 
                     path={props.match.url + "/portfolio-category/:category"}
                     render={(props) => (
-                        <Archieve key={props.match.params.category} {...props} />)
+                        <Archive key={props.match.params.category} {...props} />)
                     }
                 />
                 <Route 

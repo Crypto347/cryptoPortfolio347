@@ -21,7 +21,7 @@ export const initialState = {
     error: null
 }
 
-const fetcharchieveBegin = (state, action) => {
+const fetchArchiveBegin = (state, action) => {
     return {
         ...state,
         loading: true,
@@ -29,7 +29,7 @@ const fetcharchieveBegin = (state, action) => {
     };
 }
 
-const fetcharchieveSuccess = (state, action) => {    
+const fetchArchiveSuccess = (state, action) => {    
     return {
         ...state,
         loading: false,
@@ -37,7 +37,7 @@ const fetcharchieveSuccess = (state, action) => {
     };
 }
 
-const fetcharchieveFailur = (state, action) => {
+const fetchArchiveFailur = (state, action) => {
     return {
         ...state,
         loading: false,
@@ -46,17 +46,17 @@ const fetcharchieveFailur = (state, action) => {
     };
 }
 
-const archieveReducer = (state = initialState, action) => {
+const archiveReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.FETCH_ARCHIEVE_BEGIN:
-            return fetcharchieveBegin (state, action); 
-        case actionTypes.FETCH_ARCHIEVE_SUCCESS:
-            return fetcharchieveSuccess (state, action);
-        case actionTypes.FETCH_ARCHIEVE_FAILURE:
-            return fetcharchieveFailur(state, action);
+        case actionTypes.FETCH_ARCHIVE_BEGIN:
+            return fetchArchiveBegin (state, action); 
+        case actionTypes.FETCH_ARCHIVE_SUCCESS:
+            return fetchArchiveSuccess (state, action);
+        case actionTypes.FETCH_ARCHIVE_FAILURE:
+            return fetchArchiveFailur(state, action);
         default: 
             return state;
     }
 }
 
-export default archieveReducer;
+export default archiveReducer;
