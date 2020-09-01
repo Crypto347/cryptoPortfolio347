@@ -6,10 +6,10 @@ export function fetchArchiveBegin() {
     };
 };
 
-export function fetchArchiveSuccess(obj) {
+export function fetchArchiveSuccess(array) {
     return { 
         type: actionTypes.FETCH_ARCHIVE_SUCCESS,
-        obj: obj
+        array: array
     };
 };
 
@@ -20,6 +20,34 @@ export function fetchArchiveFailur(err) {
     };
 };
 
+export function loadMoreArchiveDataBegin() {
+    return { 
+        type: actionTypes.LOAD_MORE_ARCHIVE_DATA_BEGIN
+    };
+};
+
+export function loadMoreArchiveDataSuccess(array) {
+    return { 
+        type: actionTypes.LOAD_MORE_ARCHIVE_DATA_SUCCESS,
+        array: array
+    };
+};
+
+export function loadMoreArchiveDataFailur(err) {
+    return { 
+        type: actionTypes.LOAD_MORE_ARCHIVE_DATA_FAILURE,
+        err: err
+    };
+};
+
+export function loadMoreDisableButtonState(val) {
+    return { 
+        type: actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE,
+        val: val
+    };
+};
+
+
 export function setArchiveIsHoveringImage(val, id) {
     return { 
         type: actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE,
@@ -27,6 +55,9 @@ export function setArchiveIsHoveringImage(val, id) {
         id: id
     };
 };
+
+
+
 
 // export function setSmallGalleryIsHoveringCategory(val, id) {
 //     return { 

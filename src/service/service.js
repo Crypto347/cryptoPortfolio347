@@ -282,7 +282,11 @@ export function fetchPortfolioGalleryPage() {
 
 export function fetchArchive(category, step) {
     return dispatch => {
-        dispatch(Actions.fetchArchiveBegin());
+        if(step === 1){
+            dispatch(Actions.fetchArchiveBegin());
+        }else{
+            dispatch(Actions.loadMoreArchiveDataBegin());
+        }
         return fetch(`http://localhost:3005/api/portfolio-category/${category}`, {
             method: 'POST',
             headers: {
@@ -296,13 +300,24 @@ export function fetchArchive(category, step) {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchArchiveSuccess(json));
+                console.log("JSON",json)
+                if(step === 1){
+                    dispatch(Actions.fetchArchiveSuccess(json.archiveData));
+                    dispatch(Actions.loadMoreDisableButtonState(json.disableLoadMoreButton));
+                }else{
+                    dispatch(Actions.loadMoreArchiveDataSuccess(json.archiveData));
+                    dispatch(Actions.loadMoreDisableButtonState(json.disableLoadMoreButton));
+                }
+              
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
-                dispatch(Actions.fetchArchiveFailur(error))
+                if(step === 1){
+                    dispatch(Actions.fetchArchiveFailur(error))
+                }else{
+                    dispatch(Actions.loadMoreArchiveDataFailur(error))
+                }
             });
     };
 }

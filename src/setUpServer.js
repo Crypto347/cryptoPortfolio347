@@ -3752,9 +3752,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
     }else{
         archiveObj.archiveData = archiveObj.archiveData.slice(0, takeItems)
     }
-console.log(archiveObj.archiveData)
+    
     if(!archiveObj) {
-        res.status(404).send("The portfolio with the given ID was not found")
+        res.status(404).send("The portfolio with the given ID was not found");
     }else{
         res.json(archiveObj);  
     }

@@ -16,9 +16,12 @@ import uuid from "uuid";
 */
 
 export const initialState = {
-    item: {},
+    items: [],
     loading: false,
-    error: null
+    error: null,
+    loadingMoreData: false,
+    errorMoreData: null,
+    disableLoadMoreButton: false
 }
 
 const fetchArchiveBegin = (state, action) => {
@@ -33,7 +36,7 @@ const fetchArchiveSuccess = (state, action) => {
     return {
         ...state,
         loading: false,
-        item: action.obj
+        items: action.array
     };
 }
 
@@ -42,23 +45,53 @@ const fetchArchiveFailur = (state, action) => {
         ...state,
         loading: false,
         error: action.err,
-        item: {}
+        items: []
+    };
+}
+
+const loadMoreArchiveDataBegin = (state, action) => {
+    return {
+        ...state,
+        loadingMoreData: true,
+        errorMoreData: null
+    };
+}
+
+const loadMoreArchiveDataSuccess = (state, action) => {    
+
+
+    return {
+        ...state,
+        loadingMoreData: false,
+        items: action.array
+    };
+}
+
+const loadMoreArchiveDataFailur = (state, action) => {
+    return {
+        ...state,
+        loadingMoreData: false,
+        errorMoreData: action.err,
+        items: [...state.items]
+    };
+}
+
+const loadMoreDisableButtonState = (state, action) => {
+    return {
+        ...state,
+        disableLoadMoreButton: action.val
     };
 }
 
 const setArchiveIsHoveringImage = (state, action) => {
-    let updatedImagesArray = [...state.item.archiveData];
-
-    let image = {...updatedImagesArray.find(item => item.id === action.id), isHover: action.val};
-    let imageIndex = updatedImagesArray.findIndex(item => item.id === action.id);
-    updatedImagesArray.splice(imageIndex, 1, image);
+    let updatedItems = [...state.items];
+    let image = {...updatedItems.find(item => item.id === action.id).coverImage, isHover: action.val};
+    let imageIndex = updatedItems.findIndex(item => item.id === action.id);
+    updatedItems[imageIndex].coverImage = image;
 
     return {
         ...state,
-        item: {
-            ...state.item,
-            archiveData: updatedImagesArray
-        }
+        items: updatedItems
     };
 }
 
@@ -70,6 +103,14 @@ const archiveReducer = (state = initialState, action) => {
             return fetchArchiveSuccess (state, action);
         case actionTypes.FETCH_ARCHIVE_FAILURE:
             return fetchArchiveFailur(state, action);
+        case actionTypes.LOAD_MORE_ARCHIVE_DATA_BEGIN:
+            return loadMoreArchiveDataBegin (state, action); 
+        case actionTypes.LOAD_MORE_ARCHIVE_DATA_SUCCESS:
+            return loadMoreArchiveDataSuccess (state, action);
+        case actionTypes.LOAD_MORE_ARCHIVE_DATA_FAILURE:
+            return loadMoreArchiveDataFailur(state, action);
+        case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE:
+            return loadMoreDisableButtonState(state, action);
         case actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE:
             return setArchiveIsHoveringImage(state, action);
         default: 

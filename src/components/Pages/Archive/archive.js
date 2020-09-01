@@ -26,7 +26,10 @@ import './archive.scss';
 */
 
 import Loading from '../../SmallParts/Loading/loading';
+import LoadingVersion2 from '../../SmallParts/LoadingVersion2/loadingVersion2';
 import Toolbar from '../../Parts/Toolbar/toolbar';
+
+
 // import Swiper from '../../../../library/Swiper/swiper';
 // import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import Button from '../../../library/Button/button';
@@ -242,7 +245,7 @@ export const Archive = (props) => {
 
     const renderArchiveData = () => {
         return(
-            <div className="archive-date-items">{props.archive.item.archiveData.map((el, i) => {
+            <div className="archive-date-items">{props.archive.items.map((el, i) => {
                 return(
                     <div 
                         key={i}
@@ -255,24 +258,52 @@ export const Archive = (props) => {
                             onMouseLeave={() => handleMouseLeave(`image`, el.id)}
                         >
                             <img src={loadImg(el.coverImage.key)}/>
-                            <div className={renderClassName(`image`, el.isHover)}/>
+                            <div className={renderClassName(`image`, el.coverImage.isHover)}/>
                         </div>
                         <EH30/>
                         <EH40 className="h40-nero-teko">{el.header}</EH40>
                     </div>
                 )
             })}
-            <div className="archive-button-load-more">
-                <Button
-                    className="archive-load-more"
-                    text="load more."
-                    onClick={() => props.fetchArchive(props.match.params.category, 2)}
-                    disabled={props.archive.item.disableLoadMoreButton}
-                />
-            </div> 
+            {renderLoadMoreButton()}
             </div>
         )
     }
+
+    const renderLoadMoreButton = () => {
+        if(props.archive.loadingMoreData && !props.archive.errorMoreData){
+            return(
+                <div 
+                    className="archive-button-load-more-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <LoadingVersion2 color="rgb(37, 37, 37)"/>
+                </div>
+            )
+        }
+        if(!props.archive.loadingMoreData && !props.archive.errorMoreData){
+            return(
+                <div className="archive-button-load-more">
+                    <Button
+                        className="archive-load-more"
+                        text="load more."
+                        onClick={() => props.fetchArchive(props.match.params.category, 2)}
+                        disabled={props.archive.disableLoadMoreButton}
+                    />
+                </div> 
+            )
+        }
+        if(!props.archive.loadingMoreData && props.archive.errorMoreData){
+            return(
+                <div 
+                    className="archive-button-load-more-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <H19 className="h19-nobel-lora">{`${props.archive.error}`}</H19>
+                </div>
+            )
+        }
+    } 
 
     const renderArchiveContent = () => {
         if(props.archive.loading && !props.archive.error){
@@ -287,10 +318,10 @@ export const Archive = (props) => {
         }
         if(!props.archive.loading && !props.archive.error){
             return(
-                <div className="archive-wrapper">\
+                <div className="archive-wrapper">
                     <div className="archive-header">
                         <H45 className="h45-nero-lustria">Archive</H45>
-                    </div>\
+                    </div>
                     <div className="grey-line"/>
                     {showContent ? renderArchiveData() : null}
                   
