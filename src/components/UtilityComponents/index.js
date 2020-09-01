@@ -5,6 +5,7 @@ export * from './FontSize/H17/h17';
 export * from './FontSize/H19/h19';
 export * from './FontSize/H22/h22';
 export * from './FontSize/H25/h25';
+export * from './FontSize/H35/h35';
 export * from './FontSize/H40/h40';
 export * from './FontSize/H45/h45';
 export * from './FontSize/H65/h65';

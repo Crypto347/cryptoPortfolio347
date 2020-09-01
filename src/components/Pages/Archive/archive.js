@@ -60,6 +60,7 @@ import * as Selectors from '../../../reducers/selectors';
 import { 
     H19,
     H22,
+    H35,
     H45,
     EH20,
     EH30,
@@ -134,20 +135,20 @@ export const Archive = (props) => {
 
     const loadImg = (key) => {
         switch(key) {
-            case 'id1SmallImages1':
-                return Images.ID_1_SMALL_IMAGES_1;
-            case 'id1Gallery1':
-                return Images.ID_1_GALLERY_1;
-            case 'id1SmallGallery1':
-                return Images.ID_1_SMALL_GALLERY_1;
-            case 'id1SmallSlider1':
-                return Images.ID_1_SMALL_SLIDER_1;
-            case 'id2BigImages1':
-                return Images.ID_2_BIG_IMAGES_1;
-            case 'id3SmallImages1':
-                return Images.ID_3_SMALL_IMAGES_1;
-            case 'id3BigSlider1':
-                return Images.ID_3_BIG_SLIDER_1;
+            case 'graphicDesignCover1':
+                return Images.GRAPHIC_DESIGN_COVER_1;
+            case 'graphicDesignCover2':
+                return Images.GRAPHIC_DESIGN_COVER_2;
+            case 'graphicDesignCover3':
+                return Images.GRAPHIC_DESIGN_COVER_3;
+            case 'graphicDesignCover4':
+                return Images.GRAPHIC_DESIGN_COVER_4;
+            case 'graphicDesignCover5':
+                return Images.GRAPHIC_DESIGN_COVER_5;
+            case 'graphicDesignCover6':
+                return Images.GRAPHIC_DESIGN_COVER_6;
+            case 'graphicDesignCover7':
+                return Images.GRAPHIC_DESIGN_COVER_7;
             default:
                 return "";
         }
@@ -187,7 +188,6 @@ export const Archive = (props) => {
             }
         }
     }
-
 
     const renderToolbars = () => {
         if(size.width < 1120){
@@ -261,7 +261,7 @@ export const Archive = (props) => {
                             <div className={renderClassName(`image`, el.coverImage.isHover)}/>
                         </div>
                         <EH30/>
-                        <EH40 className="h40-nero-teko">{el.header}</EH40>
+                        <H35 className="h35-nero-poppins">{el.header}</H35>
                     </div>
                 )
             })}

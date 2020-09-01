@@ -571,7 +571,6 @@ export const ID_3_SMALL_SLIDER_4 = Id3SmallSlider4;
 * Team Photos
 */
 
-
 import Photo1 from '../images/teamPhotos/marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png';
 import Photo2 from '../images/teamPhotos/christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png';
 import Photo3 from '../images/teamPhotos/vinicius-wiesehofer-LS1e59caoNM-unsplash.png';
@@ -583,3 +582,24 @@ export const PHOTO_2 = Photo2;
 export const PHOTO_3 = Photo3;
 export const PHOTO_4 = Photo4;
 export const PHOTO_5 = Photo5;
+
+/**
+* Team Photos
+*/
+
+import GraphicDesignCover1 from '../images/archiveCoverPictures/graphicDesign/adam-wilson-1QZYZib7eYs-archive-unsplash.png';
+import GraphicDesignCover2 from '../images/archiveCoverPictures/graphicDesign/nadine-shaabana-updated-archive-unsplash.png';
+import GraphicDesignCover3 from '../images/archiveCoverPictures/graphicDesign/ash-from-modern-afflatus-updated-archive-unsplash.png';
+import GraphicDesignCover4 from '../images/archiveCoverPictures/graphicDesign/damian-patkowski--pahtnAMuFo-archive-unsplash.png';
+import GraphicDesignCover5 from '../images/archiveCoverPictures/graphicDesign/uby-yanes-LMwW0ARHc4o-updated-archive-unsplash.png';
+import GraphicDesignCover6 from '../images/archiveCoverPictures/graphicDesign/jess-bailey-dWKqZcPLc8Y-updated-archive-unsplash.png';
+import GraphicDesignCover7 from '../images/archiveCoverPictures/graphicDesign/angele-kamp-KaeaUITiWnc-archive-upadted-unsplash.png';
+
+export const GRAPHIC_DESIGN_COVER_1 = GraphicDesignCover1;
+export const GRAPHIC_DESIGN_COVER_2 = GraphicDesignCover2;
+export const GRAPHIC_DESIGN_COVER_3 = GraphicDesignCover3;
+export const GRAPHIC_DESIGN_COVER_4 = GraphicDesignCover4;
+export const GRAPHIC_DESIGN_COVER_5 = GraphicDesignCover5;
+export const GRAPHIC_DESIGN_COVER_6 = GraphicDesignCover6;
+export const GRAPHIC_DESIGN_COVER_7 = GraphicDesignCover7;
+

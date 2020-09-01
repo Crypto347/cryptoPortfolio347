@@ -3516,9 +3516,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-images/1",
                     coverImage: {
                         id: 1,
-                        key: "id1SmallImages1",
+                        key: "graphicDesignCover1",
                         isHover: "init",
-                        imageName: "adam-wilson-1QZYZib7eYs-unsplash.png",
+                        imageName: "adam-wilson-1QZYZib7eYs-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3546,9 +3546,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/gallery/1",
                     coverImage: {
                         id: 1,
-                        key: "id1Gallery1",
+                        key: "graphicDesignCover2",
                         isHover: "init",
-                        imageName: "nadine-shaabana-updated2-unsplash.png",
+                        imageName: "nadine-shaabana-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3569,9 +3569,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-gallery/1",
                     coverImage: {
                         id: 1,
-                        key: "id1SmallGallery1",
+                        key: "graphicDesignCover3",
                         isHover: "init",
-                        imageName: "ash-from-modern-afflatus-updated1-unsplash.png",
+                        imageName: "ash-from-modern-afflatus-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3606,9 +3606,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-slider/1",
                     coverImage: {
                         id: 1,
-                        key: "id1SmallSlider1",
+                        key: "graphicDesignCover4",
                         isHover: "init",
-                        imageName: "damian-patkowski--pahtnAMuFo-unsplash.png",
+                        imageName: "damian-patkowski--pahtnAMuFo-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3643,9 +3643,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/big-images/2",
                     coverImage: {
                         id: 1,
-                        key: "id2BigImages1",
+                        key: "graphicDesignCover5",
                         isHiver: "init",
-                        imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png",
+                        imageName: "uby-yanes-LMwW0ARHc4o-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3680,9 +3680,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-images/3",
                     coverImage: {
                         id: 1,
-                        key: "id3SmallImages1",
+                        key: "graphicDesignCover6",
                         isHover: "init",
-                        imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png",
+                        imageName: "jess-bailey-dWKqZcPLc8Y-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3710,9 +3710,9 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/big-slider/3",
                     coverImage: {
                         id: 1,
-                        key: "id3BigSlider1",
+                        key: "graphicDesignCover7",
                         isHover: "init",
-                        imageName: "angele-kamp-KaeaUITiWnc-upadted-unsplash.png",
+                        imageName: "angele-kamp-KaeaUITiWnc-archive-upadted-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
