@@ -218,3 +218,10 @@ export const getArchiveState = createSelector(
     [getArchive],
     (x) => x
 );
+
+const getHistoryPopFromPortfolioItem = (state) => state.home.historyPopFromItem;
+
+export const getHistoryPopFromPortfolioItemeState = createSelector(
+    [getHistoryPopFromPortfolioItem],
+    (x) => x
+);

@@ -19,7 +19,6 @@ export const initialState = {
     items: [],
     loading: false,
     error: null,
-    historyPopFromItem: "scrollToTop",
     itemsCooradinateRange: [
         {
             id: 1,
@@ -175,12 +174,6 @@ const setPortfolioGalleryPageIsHoveringArrow = (state, action) => {
     };
 }
 
-const setHistoryPopFromItem = (state, action) => {
-    return {
-        ...state,
-        historyPopFromItem: action.val
-    };
-}
 
 const portfolioGalleryPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -198,8 +191,6 @@ const portfolioGalleryPageReducer = (state = initialState, action) => {
             return setPortfolioGalleryPageIsHoveringCategory(state, action);
         case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW:
             return setPortfolioGalleryPageIsHoveringArrow(state, action);
-        case actionTypes.SET_HISTORY_POP_FROM_ITEM:
-            return setHistoryPopFromItem(state, action);
         default: 
             return state;
     }

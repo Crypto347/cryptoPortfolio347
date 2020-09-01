@@ -238,7 +238,7 @@ export const Archive = (props) => {
 
     const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent({category: props.archive.category});
+        props.unmountComponent(props.archive.category);
         // props.history.push(`/crypto-portfolio/${path}`)
     }
    
@@ -272,7 +272,7 @@ export const Archive = (props) => {
                     >
                         <div 
                             className="archive-image"
-                            // onClick={() => openPhotoViewer(props.smallGalleryPortfolio.item.imagesArray, i)}
+                            onClick={() => onClickHandler(el.path)}
                             onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
                             onMouseLeave={() => handleMouseLeave(`image`, el.id)}
                         >

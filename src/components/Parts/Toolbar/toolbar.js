@@ -131,7 +131,7 @@ export const Toolbar = (props) => {
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds);
         // props.history.push(`/crypto-portfolio/${path}`);
-        props.setHistoryPopFromItem("scrollToTop");
+        props.setHistoryPopFromPortfolioItem("scrollToTop");
         props.clearActivityOfMenuItems();
         props.setUnmountComponentValues(true, path);
         props.unmountComponent();
@@ -622,7 +622,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setHistoryPopFromItem: bindActionCreators(Actions.setHistoryPopFromItem, dispatch)
+            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
         };
     }
 )(withRouter(Toolbar));

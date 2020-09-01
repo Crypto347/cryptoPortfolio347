@@ -109,7 +109,7 @@ export const PorfolioNavigation = (props) => {
                 key = props.smallSliderPortfolio.item.key
                 break; 
         }
-        props.setHistoryPopFromItem(key);
+        props.setHistoryPopFromPortfolioItem(key);
         setKey(key);
     }, []);
 
@@ -176,7 +176,7 @@ export const PorfolioNavigation = (props) => {
 
     const handleMenuOnClick = () => {
         props.history.push(`/crypto-portfolio/portfolio-gallery`);
-        props.setHistoryPopFromItem("scrollToTop");
+        props.setHistoryPopFromPortfolioItem("scrollToTop");
     }
 
     const arrowOnClick = (opt, key) => {
@@ -261,7 +261,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
-            setHistoryPopFromItem: bindActionCreators(Actions.setHistoryPopFromItem, dispatch)
+            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
         };
     }
 )(withRouter(PorfolioNavigation));

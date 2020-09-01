@@ -76,7 +76,7 @@ export const Sidebar = (props) => {
     const itemOnClick = (opt, path, pathOfIds) => {
         console.log(path, pathOfIds)
         // props.history.push(`/crypto-portfolio/${path}`);
-        props.setHistoryPopFromItem("scrollToTop");
+        props.setHistoryPopFromPortfolioItem("scrollToTop");
         props.clearActivityOfMenuItems();
         props.setUnmountComponentValues(true, path);
         props.unmountComponent();
@@ -157,7 +157,7 @@ export default connect(
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
-            setHistoryPopFromItem: bindActionCreators(Actions.setHistoryPopFromItem, dispatch)
+            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
         };
     }
 )(withRouter(Sidebar));

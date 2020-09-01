@@ -52,9 +52,9 @@ export function setPortfolioGalleryPageIsHoveringArrow(val, id) {
     };
 };
 
-export function setHistoryPopFromItem(val) {
+export function setHistoryPopFromPortfolioItem(val) {
     return { 
-        type: actionTypes.SET_HISTORY_POP_FROM_ITEM,
+        type: actionTypes.SET_HISTORY_POP_FROM_PORTFOLIO_ITEM,
         val: val
     };
 };

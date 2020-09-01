@@ -42,7 +42,8 @@ export const initialState = {
     menuDotsState: {
         page: "",
         state: "init"
-    }
+    },
+    historyPopFromItem: "scrollToTop",
 }
 
 const initMenuItems = (state, action) => {
@@ -628,6 +629,14 @@ const setMenuDotsState = (state, action) => {
    };
 }
 
+const setHistoryPopFromPortfolioItem = (state, action) => {
+    return {
+        ...state,
+        historyPopFromItem: action.val
+    };
+}
+
+
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
 //     let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
@@ -778,6 +787,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setUnmountComponentValues(state, action); 
         case actionTypes.SET_MENU_DOTS_STATE:
             return setMenuDotsState(state, action); 
+        case actionTypes.SET_HISTORY_POP_FROM_PORTFOLIO_ITEM:
+            return setHistoryPopFromPortfolioItem(state, action);
         default: 
             return state;
     }

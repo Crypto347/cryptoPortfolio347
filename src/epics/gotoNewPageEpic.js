@@ -31,7 +31,7 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
         mergeMap(action => {
             dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`)
             console.log(action.locationState, state$.value.archive.category)
-            if(action.locationState.category === state$.value.archive.category){
+            if(action.locationState === state$.value.archive.category){
                 window.location.reload();
             }
             return empty();
