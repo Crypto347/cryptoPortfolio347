@@ -188,7 +188,7 @@ export const PortfolioGallery = (props) => {
             window.removeEventListener('resize', resize);
             props.setMenuDotsState("init", "")
         }
-    }, [props.unmountComponent.state]);
+    }, []);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -416,7 +416,7 @@ export default connect(
     (state) => {
         return {
             portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
-            unmountComponent: Selectors.getUnmountComponentState(state),
+            // unmountComponentObj: Selectors.getUnmountComponentState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },

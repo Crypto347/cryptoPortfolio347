@@ -103,6 +103,10 @@ export const Archive = (props) => {
     */
 
     useEffect(() => {
+        // if(props.archive.category === props.location.state.category){
+        //     window.location.relode();
+        //     console.log("LLLO");
+        // }
         props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchArchive(props.match.params.category, 1);
@@ -234,6 +238,12 @@ export const Archive = (props) => {
                 </>
             )
         }
+    }
+
+    const onClickHandler = (path) => {
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent({category: props.archive.category});
+        // props.history.push(`/crypto-portfolio/${path}`)
     }
    
     const renderCategories = (obj) => {
@@ -374,7 +384,6 @@ export default connect(
     (state) => {
         return {
             archive: Selectors.getArchiveState(state),
-            // photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state)
         };
     },
     (dispatch) => {
@@ -382,8 +391,8 @@ export default connect(
             fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
             setArchiveIsHoveringImage: bindActionCreators(Actions.setArchiveIsHoveringImage, dispatch),
             setArchiveIsHoveringCategory: bindActionCreators(Actions.setArchiveIsHoveringCategory, dispatch),
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
         };
     }
 )(Archive);

@@ -21,7 +21,8 @@ export const initialState = {
     error: null,
     loadingMoreData: false,
     errorMoreData: null,
-    disableLoadMoreButton: false
+    disableLoadMoreButton: false,
+    category: ""
 }
 
 const fetchArchiveBegin = (state, action) => {
@@ -117,6 +118,13 @@ const setArchiveIsHoveringCategory = (state, action) => {
     };
 }
 
+const setArchiveCategory = (state, action) => {
+    return {
+        ...state,
+        category: action.category
+    }
+}
+
 const archiveReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_ARCHIVE_BEGIN:
@@ -133,6 +141,8 @@ const archiveReducer = (state = initialState, action) => {
             return loadMoreArchiveDataFailur(state, action);
         case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE:
             return loadMoreDisableButtonState(state, action);
+        case actionTypes.SET_ARCHIVE_CATEGORY:
+            return setArchiveCategory(state, action);
         case actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE:
             return setArchiveIsHoveringImage(state, action);
         case actionTypes.SET_ARCHIVE_IS_HOVERING_CATEGORY:

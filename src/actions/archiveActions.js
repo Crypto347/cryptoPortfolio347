@@ -47,6 +47,13 @@ export function loadMoreDisableButtonState(val) {
     };
 };
 
+export function setArchiveCategory(category) {
+    return { 
+        type: actionTypes.SET_ARCHIVE_CATEGORY,
+        category: category
+    };
+};
+
 export function setArchiveIsHoveringImage(val, id) {
     return { 
         type: actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE,
@@ -54,7 +61,6 @@ export function setArchiveIsHoveringImage(val, id) {
         id: id
     };
 };
-
 
 export function setArchiveIsHoveringCategory(val, pathOfIds) {
     return { 

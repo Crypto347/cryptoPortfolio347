@@ -303,6 +303,7 @@ export function fetchArchive(category, step) {
                 console.log("JSON",json)
                 if(step === 1){
                     dispatch(Actions.fetchArchiveSuccess(json.archiveData));
+                    dispatch(Actions.setArchiveCategory(json.category));
                     dispatch(Actions.loadMoreDisableButtonState(json.disableLoadMoreButton));
                 }else{
                     dispatch(Actions.loadMoreArchiveDataSuccess(json.archiveData));
