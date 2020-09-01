@@ -296,8 +296,7 @@ export const Archive = (props) => {
         if(props.archive.loadingMoreData && !props.archive.errorMoreData){
             return(
                 <div 
-                    className="archive-button-load-more-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    className="archive-button-load-more-loading-error"
                 >
                     <LoadingVersion2 color="rgb(37, 37, 37)"/>
                 </div>
@@ -319,7 +318,6 @@ export const Archive = (props) => {
             return(
                 <div 
                     className="archive-button-load-more-loading-error" 
-                    style={{height: `${size.height}px`}}
                 >
                     <H19 className="h19-nobel-lora">{`${props.archive.error}`}</H19>
                 </div>
