@@ -47,7 +47,6 @@ export function loadMoreDisableButtonState(val) {
     };
 };
 
-
 export function setArchiveIsHoveringImage(val, id) {
     return { 
         type: actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE,
@@ -57,22 +56,11 @@ export function setArchiveIsHoveringImage(val, id) {
 };
 
 
-
-
-// export function setSmallGalleryIsHoveringCategory(val, id) {
-//     return { 
-//         type: actionTypes.SET_SMALL_GALLERY_IS_HOVERING_CATEGORY,
-//         val: val,
-//         id: id
-//     };
-// };
-
-// export function setSmallGalleryIsHoveringTag(val, id) {
-//     return { 
-//         type: actionTypes.SET_SMALL_GALLERY_IS_HOVERING_TAG,
-//         val: val,
-//         id: id
-//     };
-// };
-
+export function setArchiveIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_ARCHIVE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};
 

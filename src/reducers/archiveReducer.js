@@ -95,6 +95,28 @@ const setArchiveIsHoveringImage = (state, action) => {
     };
 }
 
+const setArchiveIsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const archiveReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_ARCHIVE_BEGIN:
@@ -113,6 +135,8 @@ const archiveReducer = (state = initialState, action) => {
             return loadMoreDisableButtonState(state, action);
         case actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE:
             return setArchiveIsHoveringImage(state, action);
+        case actionTypes.SET_ARCHIVE_IS_HOVERING_CATEGORY:
+            return setArchiveIsHoveringCategory(state, action);
         default: 
             return state;
     }

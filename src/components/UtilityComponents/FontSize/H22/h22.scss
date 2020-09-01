@@ -15,124 +15,65 @@
     font-family: 'Poppins', sans-serif;
 }
 
-// .h4-white-centered {
-//     font-size: 18px;
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     color:  white;
-//     text-align: center;
-// }
+.h22-nero-lustria-animated {
+    font-size: 22px;
+    color: rgb(37, 37, 37);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+}
 
-// .h4-animation {
-//     font-size: 18px;
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     color:  white;
-//     position: relative;
-//     &:hover {
-//         color: rgb(180, 139, 62);
-//         -webkit-animation: appear 0.3s linear;
-//         -moz-animation: appear 0.3s linear;
-//         -o-animation: appear 0.3s linear;
-//         animation: appear 0.3s linear;
-//     }
-// }
+.h22-nero-lora-nobel-hover-on {
+    font-size: 22px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h22NeroNobelHoverOn .5s linear;
+    -moz-animation: h22NeroNobelHoverOn .5s linear;
+    -o-animation: h22NeroNobelHoverOn .5s linear;
+    animation: h22NeroNobelHoverOn .5s linear;
+}
 
-// .h4-animation-cursor {
-//     font-size: 18px;
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     color:  white;
-//     position: relative;
-//     cursor: pointer;
-//     &:hover {
-//         color: rgb(180, 139, 62);
-//         -webkit-animation: appear 0.3s linear;
-//         -moz-animation: appear 0.3s linear;
-//         -o-animation: appear 0.3s linear;
-//         animation: appear 0.3s linear;
-//     }
-// }
+.h22-nero-lora-nobel-hover-off {
+    font-size: 22px;
+    color: rgb(37, 37, 37);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h22NeroNobelHoverOff .5s linear;
+    -moz-animation: h22NeroNobelHoverOff .5s linear;
+    -o-animation: h22NeroNobelHoverOff .5s linear;
+    animation: h22NeroNobelHoverOff .5s linear;
+}
 
-// .h4-animation-with-icon-right {
-//     font-size: 18px;
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     color:  white;
-//     position: relative;
-//     &:hover {
-//         color: rgb(180, 139, 62);
-//         -webkit-animation: appear 0.3s linear;
-//         -moz-animation: appear 0.3s linear;
-//         -o-animation: appear 0.3s linear;
-//         animation: appear 0.3s linear;
-//     }
-// }
+@-webkit-keyframes h22NeroNobelHoverOn{
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+@-moz-keyframes h22NeroNobelHoverOn{
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+@-o-keyframes h22NeroNobelHoverOn{
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
+@keyframes h22NeroNobelHoverOn{
+    from{color: rgb(37, 37, 37);}
+    to{color: rgb(155, 155, 155);}
+}
 
-// .h4-animation-with-icon-right:after {
-//     content: "\f105";
-//     font-family: "Font Awesome 5 Free";
-//     font-weight: 900;
-//     top: 50%;
-//     right: -12px;
-//     padding-left: 5px;
-//     font-size: 14px;
-//     position: absolute;
-//     transform: translateY(-50%);
-// }
-
-// .h4-animation-with-icon-left {
-//     font-size: 18px;
-//     font-family: 'Yanone Kaffeesatz', sans-serif;
-//     color:  white;
-//     position: relative;
-//     cursor: pointer;
-//     &:hover {
-//         color: rgb(180, 139, 62);
-//         -webkit-animation: appear 0.3s linear;
-//         -moz-animation: appear 0.3s linear;
-//         -o-animation: appear 0.3s linear;
-//         animation: appear 0.3s linear;
-//     }
-// }
-
-// .h4-animation-with-icon-left:after {
-//     content: "\f105";
-//     font-family: "Font Awesome 5 Free";
-//     font-weight: 900;
-//     top: 45%;
-//     left: -20px;
-//     padding-left: 5px;
-//     font-size: 14px;
-//     position: absolute;
-//     transform: translateY(-50%);
-// }
-
-// @-webkit-keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
-// @-moz-keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
-// @-o-keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
-// @keyframes appear {
-//     from{
-//         color: white;
-//     }
-//     to {
-//         color: rgb(180, 139, 62);
-//     }
-// }
+@-webkit-keyframes h22NeroNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+@-moz-keyframes h22NeroNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+@-o-keyframes h22NeroNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}
+@keyframes h22NeroNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: rgb(37, 37, 37);}
+}

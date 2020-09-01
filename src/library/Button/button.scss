@@ -48,7 +48,7 @@
     font-weight: bold;
     color: rgb(239, 239, 239);
     background-color: rgb(37, 37, 37);
-    border: 3px solid rgb(37, 37, 37);
+    border: 2px solid rgb(37, 37, 37);
     width: 170px;
     height: 60px;
     cursor: pointer;
@@ -59,7 +59,7 @@
     &:disabled{
         color: rgb(239, 239, 239);
         background-color: rgb(155, 155, 155);
-        border: 3px solid rgb(155, 155, 155);
+        border: 2px solid rgb(155, 155, 155);
         cursor: not-allowed;
     }
 }

@@ -3367,7 +3367,6 @@ app.post('/api/portfolio-category/:category', (req, res) => {
     category.splice(indexOfSlash, 1, lowerToUpperCase);
     category = category.join("");
     
-    console.log(req.body.step)
     const archive = [
         {
             id: 1,

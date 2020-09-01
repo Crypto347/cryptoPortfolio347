@@ -62,6 +62,7 @@ import {
     H22,
     H35,
     H45,
+    EH10,
     EH20,
     EH30,
     EH40,
@@ -154,25 +155,25 @@ export const Archive = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, id) => {
+    const handleMouseEnter = (opt, id, pathOfIds) => {
         switch(opt){
             case 'image': 
                 props.setArchiveIsHoveringImage("on", id);
                 break;
-            case 'smallGalleryCategory': 
-                props.setSmallGalleryIsHoveringCategory("on", id);
-                break;           
+            case 'archiveCategory': 
+                props.setArchiveIsHoveringCategory("on", pathOfIds);
+                break;   
         }
     }
 
-    const handleMouseLeave = (opt, id) => {
+    const handleMouseLeave = (opt, id, pathOfIds) => {
         switch(opt){
             case 'image': 
                 props.setArchiveIsHoveringImage("off", id);
                 break;
-            case 'smallGalleryCategory': 
-                // props.setArchiveIsHoveringImage("off", id);
-                break;           
+            case 'archiveCategory': 
+                props.setArchiveIsHoveringCategory("off", pathOfIds);
+                break;     
         }
     }
     
@@ -185,6 +186,16 @@ export const Archive = (props) => {
                     return "archive-image-curtain-hover-on";
                 case 'off':
                     return "archive-image-curtain-hover-off"
+            }
+        }
+        if(opt === "archiveCategory"){
+            switch(isHovering){
+                case 'init':
+                    return "h22-nero-lustria-animated";
+                case 'on':
+                    return "h22-nero-lora-nobel-hover-on";
+                case 'off':
+                    return "h22-nero-lora-nobel-hover-off"
             }
         }
     }
@@ -225,23 +236,25 @@ export const Archive = (props) => {
         }
     }
    
-    // const renderCategories = () => {
-    //     return(
-    //         <div className="big-images-categories">{props.bigImagesPortfolio.item.categories.map((el, i) => {
-    //             return(
-    //                 <div 
-    //                     key={i}
-    //                     className="big-images-category"
-    //                     onMouseEnter={() => handleMouseEnter(`bigImagesCategory`, el.id)} 
-    //                     onMouseLeave={() => handleMouseLeave(`bigImagesCategory`, el.id)} 
-    //                 >
-    //                     <H19 className={renderClassName(`bigImagesCategory`, el.isHover)}>{el.label}</H19>
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
-
+    const renderCategories = (obj) => {
+        return(
+            <div className="archive-item-categories">{obj.categories.map((el, i) => {
+                let pathOfIds = [obj.id, el.id];
+                return(
+                    <div 
+                        key={i}
+                        className="archive-item-category"
+                        onClick={() => onClickHandler(el.path)}
+                        onMouseEnter={() => handleMouseEnter(`archiveCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`archiveCategory`, null, pathOfIds)} 
+                    >
+                        {i !== 0 ? <div className="archive-item-category-slash">/</div> : null}
+                        <H22 className={renderClassName("archiveCategory", el.isHover)}>{el.label}</H22>
+                    </div>
+                )
+            })}</div>
+        )
+    }
 
     const renderArchiveData = () => {
         return(
@@ -262,6 +275,9 @@ export const Archive = (props) => {
                         </div>
                         <EH30/>
                         <H35 className="h35-nero-poppins">{el.header}</H35>
+                        <EH10/>
+                        {renderCategories(el)}
+                        <EH70/>
                     </div>
                 )
             })}
@@ -365,7 +381,7 @@ export default connect(
         return {
             fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
             setArchiveIsHoveringImage: bindActionCreators(Actions.setArchiveIsHoveringImage, dispatch),
-            // setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
+            setArchiveIsHoveringCategory: bindActionCreators(Actions.setArchiveIsHoveringCategory, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
