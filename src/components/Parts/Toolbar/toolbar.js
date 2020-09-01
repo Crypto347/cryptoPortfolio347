@@ -508,18 +508,18 @@ export const Toolbar = (props) => {
         return(
             <div className="toolbar-items">{props.menuItems.map((el,i) => {
                 return(
-                        <ToolbarItem 
-                            key={i}
-                            toolbarMainColor={props.toolbarMainColor}
-                            onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
-                            onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
-                            showOptionsRegular={showOptionsLessThan3Regular}
-                            onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
-                            onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                            itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
-                            renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
-                            data={el}
-                        />
+                    <ToolbarItem 
+                        key={i}
+                        toolbarMainColor={props.toolbarMainColor}
+                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', el, el.id)} 
+                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', el)}
+                        showOptionsRegular={showOptionsLessThan3Regular}
+                        onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
+                        onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
+                        itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
+                        renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
+                        data={el}
+                    />
                 )
             })}</div>
         )

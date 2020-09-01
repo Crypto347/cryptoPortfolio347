@@ -103,10 +103,6 @@ export const Archive = (props) => {
     */
 
     useEffect(() => {
-        // if(props.archive.category === props.location.state.category){
-        //     window.location.relode();
-        //     console.log("LLLO");
-        // }
         props.setUnmountComponentValues(false, "");
         window.scrollTo(0, 0);
         props.fetchArchive(props.match.params.category, 1);
