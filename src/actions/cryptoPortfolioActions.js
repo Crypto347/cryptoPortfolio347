@@ -138,20 +138,21 @@ export function setUnmountComponentValues(val, path) {
     };
 };
 
-export function unmountComponent(repeatedKey, repeatedPath) {
+export function unmountComponent(repeatedKey, repeatedPath, page) {
     return { 
         type: actionTypes.UNMOUNT_COMPONENT,
         repeatedKey: repeatedKey,
-        repeatedPath: repeatedPath
-
+        repeatedPath: repeatedPath,
+        page: page
     };
 };
 
-export function gotoNewPage(repeatedKey, repeatedPath) {
+export function gotoNewPage(repeatedKey, repeatedPath, page) {
     return { 
         type: actionTypes.GO_TO_NEW_PAGE,
         repeatedKey: repeatedKey,
-        repeatedPath: repeatedPath
+        repeatedPath: repeatedPath,
+        page: page
     };
 };
 
@@ -159,7 +160,7 @@ export function setMenuDotsState(val, page) {
     return { 
         type: actionTypes.SET_MENU_DOTS_STATE,
         val: val,
-        page: page
+        page: page,
     };
 };
 

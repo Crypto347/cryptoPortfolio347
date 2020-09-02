@@ -277,7 +277,7 @@ export const PortfolioGallery = (props) => {
 
     const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent();
+        props.unmountComponent(null, null, "portfolioGallery");
         // props.history.push(`/crypto-portfolio/${path}`)
     }
 

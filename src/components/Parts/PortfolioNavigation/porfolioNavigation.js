@@ -175,26 +175,50 @@ export const PorfolioNavigation = (props) => {
     }
 
     const handleMenuOnClick = () => {
-        props.history.push(`/crypto-portfolio/portfolio-gallery`);
+        console.log(props.location.state.category)
+        switch(props.location.state.page){
+            case 'portfolioGallery':
+                props.history.push(`/crypto-portfolio/portfolio-gallery`);
+                break;
+            case 'archive':
+                props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state.category}`);
+                break;
+            default: 
+                props.history.push(`/crypto-portfolio/portfolio-gallery`);
+                return;
+        }
         props.setHistoryPopFromPortfolioItem("scrollToTop");
     }
 
     const arrowOnClick = (opt, key) => {
-        let updatedPortfolioGalleryItems = [...props.portfolioGalleryPage.items];
-        let updatedPortfolioGalleryItemIndex = updatedPortfolioGalleryItems.findIndex(item => item.key === key);
+        let updatedItems = [];
+       
+        switch(props.location.state.page){
+            case 'portfolioGallery':
+                updatedItems = [...props.portfolioGalleryPage.items];
+                break;
+            case 'archive':
+                updatedItems = [...props.archive.items];
+                break;
+            default: 
+                updatedItems = [...props.portfolioGalleryPage.items];
+                return;
+        }
+        console.log(updatedItems)
+        let updatedItemIndex = updatedItems.findIndex(item => item.key === key);
         switch(opt) {
             case 'prev':
-                if(updatedPortfolioGalleryItemIndex === 0){
-                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[updatedPortfolioGalleryItems.length - 1].path}`);
+                if(updatedItemIndex === 0){
+                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: props.location.state.page, category: props.location.state.category});
                 }else{
-                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[updatedPortfolioGalleryItemIndex - 1].path}`);
+                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: props.location.state.page, category: props.location.state.category});
                 }
                 return;
             case 'next':
-                if(updatedPortfolioGalleryItemIndex === updatedPortfolioGalleryItems.length - 1){
-                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[0].path}`);
+                if(updatedItemIndex === updatedItems.length - 1){
+                    props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: props.location.state.page, category: props.location.state.category});
                 }else{
-                    props.history.push(`/crypto-portfolio/${updatedPortfolioGalleryItems[updatedPortfolioGalleryItemIndex + 1].path}`);
+                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: props.location.state.page, category: props.location.state.category});
                 }
                 return;
         }
@@ -250,6 +274,7 @@ export default connect(
     (state) => {
         return {
             portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
+            archive: Selectors.getArchiveState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),

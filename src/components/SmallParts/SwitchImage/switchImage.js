@@ -505,7 +505,7 @@ export const SwitchImage = (props) => {
 
     const pictureBoardItemOnClick = (path) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent();
+        props.unmountComponent(null, null, "portfolioGallery");
         // props.history.push(`/crypto-portfolio/${path}`);
         // props.clearActivityOfMenuItems();
     }

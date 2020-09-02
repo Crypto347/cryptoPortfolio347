@@ -247,7 +247,7 @@ export const Archive = (props) => {
 
     const onClickHandler = (path, key) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent(key, path);
+        props.unmountComponent(key, path, "archive");
         // props.history.push(`/crypto-portfolio/${path}`)
     }
    
