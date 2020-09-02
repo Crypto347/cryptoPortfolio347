@@ -95,7 +95,6 @@ export const Archive = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showContent, setShowContent] = useState(false);
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
@@ -104,19 +103,24 @@ export const Archive = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(!props.archive.loading && !props.archive.error && props.historyPopFromItem !== "scrollToTop"){
-            let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-            window.scrollTo(0, itemOffsetTop - 30);
-        }else{
-            window.scrollTo(0, 0);
+        if(props.archive.items.length === 0){
+            props.fetchArchive(props.match.params.category, 1);
         }
-        props.fetchArchive(props.match.params.category, 1);
 
-        setShowContent(true);
-
+        let timeout = setTimeout(() => {
+            if(!props.archive.loading && !props.archive.error && props.historyPopFromItem !== "scrollToTop"){
+                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
+                window.scrollTo(0, itemOffsetTop - 30);
+            }else{
+                window.scrollTo(0, 0);
+            }
+        }, 2);
         window.addEventListener('wheel', handleOnWheel);
 
-        return () => window.removeEventListener('wheel', handleOnWheel);
+        return () => {
+            clearTimeout(timeout);
+            window.removeEventListener('wheel', handleOnWheel);
+        }
     }, []);
 
     const handleOnWheel = (e) => {
@@ -274,6 +278,7 @@ export const Archive = (props) => {
                     <div 
                         key={i}
                         className="archive-date-item"
+                        id={el.key}
                     >
                         <div 
                             className="archive-image"
@@ -348,8 +353,7 @@ export const Archive = (props) => {
                         <H45 className="h45-nero-lustria">Archive</H45>
                     </div>
                     <div className="grey-line"/>
-                    {showContent ? renderArchiveData() : null}
-                  
+                    {renderArchiveData()}
                 </div>
             )
         }

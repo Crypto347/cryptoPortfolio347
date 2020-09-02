@@ -1,8 +1,19 @@
+html { 
+    height: 100%; 
+    // overflow:auto; 
+}
+body { height: 100%; }
+#app {
+    height: auto;
+}
+.app{
+    height: auto;
+}
 .main {
+    height: auto;
     position: relative;
     top: -10px;
     left: -10px;
-    height: 30px; 
     opacity: 1;
 }
 
