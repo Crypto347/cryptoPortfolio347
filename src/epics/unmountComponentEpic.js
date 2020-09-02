@@ -31,7 +31,7 @@ export const unmountComponentEpic = (action$) =>
         ofType(actionTypes.UNMOUNT_COMPONENT),
         mergeMap(action => {
             return of(
-                Actions.gotoNewPage(action.locationState)
+                Actions.gotoNewPage(action.repeatedKey, action.repeatedPath)
             ).pipe(
                 delay(1000)
             )

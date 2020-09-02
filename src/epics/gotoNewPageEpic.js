@@ -3,6 +3,7 @@
 */
 
 import { 
+    of,
     empty 
 } from 'rxjs';
 
@@ -29,12 +30,14 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
     action$.pipe(
         ofType(actionTypes.GO_TO_NEW_PAGE),
         mergeMap(action => {
-            dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`)
-            console.log(action.locationState, state$.value.archive.category)
-            if(action.locationState === state$.value.archive.category){
-                window.location.reload();
+            if(action.repeatedKey === state$.value.archive.category){
+                return of(
+                    Actions.setUnmountComponentValues(false, action.repeatedPath)
+                )
+            }else{
+                dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`);
+                return empty();
             }
-            return empty();
         })
     )
 

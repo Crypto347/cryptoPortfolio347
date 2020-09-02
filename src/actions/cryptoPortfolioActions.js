@@ -138,17 +138,20 @@ export function setUnmountComponentValues(val, path) {
     };
 };
 
-export function unmountComponent(locationState) {
+export function unmountComponent(repeatedKey, repeatedPath) {
     return { 
         type: actionTypes.UNMOUNT_COMPONENT,
-        locationState: locationState
+        repeatedKey: repeatedKey,
+        repeatedPath: repeatedPath
+
     };
 };
 
-export function gotoNewPage(locationState) {
+export function gotoNewPage(repeatedKey, repeatedPath) {
     return { 
         type: actionTypes.GO_TO_NEW_PAGE,
-        locationState: locationState
+        repeatedKey: repeatedKey,
+        repeatedPath: repeatedPath
     };
 };
 

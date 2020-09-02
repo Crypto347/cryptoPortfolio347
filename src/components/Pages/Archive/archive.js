@@ -104,7 +104,12 @@ export const Archive = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        window.scrollTo(0, 0);
+        if(!props.archive.loading && !props.archive.error && props.historyPopFromItem !== "scrollToTop"){
+            let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
+            window.scrollTo(0, itemOffsetTop - 30);
+        }else{
+            window.scrollTo(0, 0);
+        }
         props.fetchArchive(props.match.params.category, 1);
 
         setShowContent(true);
@@ -236,9 +241,9 @@ export const Archive = (props) => {
         }
     }
 
-    const onClickHandler = (path) => {
+    const onClickHandler = (path, key) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent(props.archive.category);
+        props.unmountComponent(key, path);
         // props.history.push(`/crypto-portfolio/${path}`)
     }
    
@@ -250,7 +255,7 @@ export const Archive = (props) => {
                     <div 
                         key={i}
                         className="archive-item-category"
-                        onClick={() => onClickHandler(el.path)}
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`archiveCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`archiveCategory`, null, pathOfIds)} 
                     >
@@ -378,6 +383,7 @@ export default connect(
     (state) => {
         return {
             archive: Selectors.getArchiveState(state),
+            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
         };
     },
     (dispatch) => {
