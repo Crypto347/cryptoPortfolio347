@@ -175,8 +175,8 @@ export const PorfolioNavigation = (props) => {
     }
 
     const handleMenuOnClick = () => {
-        console.log(props.location.state.category)
-        switch(props.location.state.page){
+        let page = props.location.state ? props.location.state.page : null;
+        switch(page){
             case 'portfolioGallery':
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 break;
