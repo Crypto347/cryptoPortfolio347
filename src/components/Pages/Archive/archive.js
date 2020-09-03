@@ -148,6 +148,7 @@ export const Archive = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'graphicDesignCover1':
+            case 'designCover1':
                 return Images.ARCHIVE_COVER_PIC_1;
             case 'graphicDesignCover2':
                 return Images.ARCHIVE_COVER_PIC_2;
@@ -161,13 +162,20 @@ export const Archive = (props) => {
             case 'artDirectionCover4':
                 return Images.ARCHIVE_COVER_PIC_6;
             case 'graphicDesignCover7':
+            case 'designCover2':
                 return Images.ARCHIVE_COVER_PIC_7;
             case 'artDirectionCover1':
+            case 'designCover3':
                 return Images.ARCHIVE_COVER_PIC_8;
             case 'artDirectionCover2':
+            case 'designCover6':
                 return Images.ARCHIVE_COVER_PIC_9;
             case 'artDirectionCover3':
                 return Images.ARCHIVE_COVER_PIC_10;
+            case 'designCover4':
+                return Images.ARCHIVE_COVER_PIC_11;
+            case 'designCover5':
+                return Images.ARCHIVE_COVER_PIC_12;
             default:
                 return "";
         }
@@ -254,13 +262,12 @@ export const Archive = (props) => {
         }
     }
 
-    const onClickHandler = (path, key) => {
-        if(props.archive.category !== key){
+    const onClickHandler = (opt, path, key) => {
+        if(opt === 'goToArchive' && props.archive.category !== key){
             props.clearArchiveData();
         }
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(key, path, "archive");
-        // props.history.push(`/crypto-portfolio/${path}`)
     }
    
     const renderCategories = (obj) => {
@@ -271,7 +278,7 @@ export const Archive = (props) => {
                     <div 
                         key={i}
                         className="archive-item-category"
-                        onClick={() => onClickHandler(el.path, el.key)}
+                        onClick={() => onClickHandler("goToArchive", el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`archiveCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`archiveCategory`, null, pathOfIds)} 
                     >
@@ -294,7 +301,7 @@ export const Archive = (props) => {
                     >
                         <div 
                             className="archive-image"
-                            onClick={() => onClickHandler(el.path)}
+                            onClick={() => onClickHandler("goToPortfolioItem", el.path)}
                             onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
                             onMouseLeave={() => handleMouseLeave(`image`, el.id)}
                         >

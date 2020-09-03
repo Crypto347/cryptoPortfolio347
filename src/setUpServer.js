@@ -3502,7 +3502,6 @@ console.log(category)
                     ],
                 }
             ]
-         
         },
         {
             id: 2,
@@ -3741,7 +3740,6 @@ console.log(category)
                     ],
                 }
             ]
-         
         },
         {
             id: 3,
@@ -3785,7 +3783,7 @@ console.log(category)
                     path: "portfolio-item/big-slider/3",
                     coverImage: {
                         id: 1,
-                        key: "designCover3",
+                        key: "designCover2",
                         isHover: "init",
                         imageName: "angele-kamp-KaeaUITiWnc-upadted-unsplash.png",
                         folderName: "colorful",
@@ -3822,7 +3820,7 @@ console.log(category)
                     path: "portfolio-item/big-images/2",
                     coverImage: {
                         id: 1,
-                        key: "designCover2",
+                        key: "designCover3",
                         isHover: "init",
                         imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png",
                         folderName: "colorful",
