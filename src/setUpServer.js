@@ -4075,6 +4075,177 @@ console.log(category)
                     ]    
                 }
             ]
+        },
+        {
+            id: 5,
+            category: "architecture",
+            disableLoadMoreButton: false,
+            archiveData: [
+                {
+                    id: 1,
+                    key: "smallImages2",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/2",
+                    coverImage: {
+                        id: 1,
+                        key: "architectureCover1",
+                        isHover: "init",
+                        imageName: "jess-bailey-MSH3ldaRZsg-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            isHover: "init",
+                            path: "portfolio-category/art-direction"
+                        },
+                        {
+                            id: 2,
+                            label: "Music",
+                            key: "music",
+                            isHover: "init",
+                            path: "portfolio-category/music"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                },
+                {
+                    id: 2,
+                    key: "bigSlider2",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/2",
+                    coverImage: {
+                        id: 1,
+                        key: "architectureCover2",
+                        isHover: "init",
+                        imageName: "dose-media-bU6JyhSI6zo-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial",
+                        },
+                        {
+                            id: 2,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture",
+                        }
+                    ]    
+                },
+                {
+                    id: 3,
+                    key: "smallGallery1",
+                    header: "Small Gallery",
+                    path: "portfolio-item/small-gallery/1",
+                    coverImage: {
+                        id: 1,
+                        key: "architectureCover3",
+                        isHover: "init",
+                        imageName: "ash-from-modern-afflatus-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                },
+                {
+                    id: 4,
+                    key: "gallery2",
+                    header: "Gallery",
+                    path: "portfolio-item/gallery/2",
+                    coverImage: {
+                        id: 1,
+                        key: "architectureCover4",
+                        isHover: "init",
+                        imageName: "cristina-matos-albers-WhxeSQ671SM-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                },
+                {
+                    id: 5,
+                    key: "smallSlider1",
+                    header: "Small Slider",
+                    path: "portfolio-item/small-slider/1",
+                    coverImage: {
+                        id: 1,
+                        key: "architectureCover5",
+                        isHover: "init",
+                        imageName: "damian-patkowski--pahtnAMuFo-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                }
+            ]
         }
     ]
 

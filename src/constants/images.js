@@ -601,6 +601,8 @@ import ArchiveCoverPic11 from '../images/archiveCoverPictures/hope-house-press-l
 import ArchiveCoverPic12 from '../images/archiveCoverPictures/chris-lee-70l1tDAI6rM-updated-archive-unsplash.png';
 import ArchiveCoverPic13 from '../images/archiveCoverPictures/laura-chouette-updated-archive-unsplash.png';
 import ArchiveCoverPic14 from '../images/archiveCoverPictures/meghan-schiereck--2eJaLtf_bI-updated-archive-unsplash.png';
+import ArchiveCoverPic15 from '../images/archiveCoverPictures/dose-media-bU6JyhSI6zo-updated-archive-unsplash.png';
+import ArchiveCoverPic16 from '../images/archiveCoverPictures/cristina-matos-albers-WhxeSQ671SM-updated-archive-unsplash.png';
 
 export const ARCHIVE_COVER_PIC_1 = ArchiveCoverPic1;
 export const ARCHIVE_COVER_PIC_2 = ArchiveCoverPic2;
@@ -616,3 +618,5 @@ export const ARCHIVE_COVER_PIC_11 = ArchiveCoverPic11;
 export const ARCHIVE_COVER_PIC_12 = ArchiveCoverPic12;
 export const ARCHIVE_COVER_PIC_13 = ArchiveCoverPic13;
 export const ARCHIVE_COVER_PIC_14 = ArchiveCoverPic14;
+export const ARCHIVE_COVER_PIC_15 = ArchiveCoverPic15;
+export const ARCHIVE_COVER_PIC_16 = ArchiveCoverPic16;
