@@ -146,19 +146,26 @@ export const Archive = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'graphicDesignCover1':
-                return Images.GRAPHIC_DESIGN_COVER_1;
+                return Images.ARCHIVE_COVER_PIC_1;
             case 'graphicDesignCover2':
-                return Images.GRAPHIC_DESIGN_COVER_2;
+                return Images.ARCHIVE_COVER_PIC_2;
             case 'graphicDesignCover3':
-                return Images.GRAPHIC_DESIGN_COVER_3;
+                return Images.ARCHIVE_COVER_PIC_3;
             case 'graphicDesignCover4':
-                return Images.GRAPHIC_DESIGN_COVER_4;
+                return Images.ARCHIVE_COVER_PIC_4;
             case 'graphicDesignCover5':
-                return Images.GRAPHIC_DESIGN_COVER_5;
+                return Images.ARCHIVE_COVER_PIC_5;
             case 'graphicDesignCover6':
-                return Images.GRAPHIC_DESIGN_COVER_6;
+            case 'artDirectionCover4':
+                return Images.ARCHIVE_COVER_PIC_6;
             case 'graphicDesignCover7':
-                return Images.GRAPHIC_DESIGN_COVER_7;
+                return Images.ARCHIVE_COVER_PIC_7;
+            case 'artDirectionCover1':
+                return Images.ARCHIVE_COVER_PIC_8;
+            case 'artDirectionCover2':
+                return Images.ARCHIVE_COVER_PIC_9;
+            case 'artDirectionCover3':
+                return Images.ARCHIVE_COVER_PIC_10;
             default:
                 return "";
         }

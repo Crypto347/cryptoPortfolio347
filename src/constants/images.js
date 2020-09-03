@@ -584,22 +584,28 @@ export const PHOTO_4 = Photo4;
 export const PHOTO_5 = Photo5;
 
 /**
-* Team Photos
+* Archive cover pictures
 */
 
-import GraphicDesignCover1 from '../images/archiveCoverPictures/graphicDesign/adam-wilson-1QZYZib7eYs-archive-unsplash.png';
-import GraphicDesignCover2 from '../images/archiveCoverPictures/graphicDesign/nadine-shaabana-updated-archive-unsplash.png';
-import GraphicDesignCover3 from '../images/archiveCoverPictures/graphicDesign/ash-from-modern-afflatus-updated-archive-unsplash.png';
-import GraphicDesignCover4 from '../images/archiveCoverPictures/graphicDesign/damian-patkowski--pahtnAMuFo-archive-unsplash.png';
-import GraphicDesignCover5 from '../images/archiveCoverPictures/graphicDesign/uby-yanes-LMwW0ARHc4o-updated-archive-unsplash.png';
-import GraphicDesignCover6 from '../images/archiveCoverPictures/graphicDesign/jess-bailey-dWKqZcPLc8Y-updated-archive-unsplash.png';
-import GraphicDesignCover7 from '../images/archiveCoverPictures/graphicDesign/angele-kamp-KaeaUITiWnc-archive-upadted-unsplash.png';
+import ArchiveCoverPic1 from '../images/archiveCoverPictures/adam-wilson-1QZYZib7eYs-archive-unsplash.png';
+import ArchiveCoverPic2 from '../images/archiveCoverPictures/nadine-shaabana-updated-archive-unsplash.png';
+import ArchiveCoverPic3 from '../images/archiveCoverPictures/ash-from-modern-afflatus-updated-archive-unsplash.png';
+import ArchiveCoverPic4 from '../images/archiveCoverPictures/damian-patkowski--pahtnAMuFo-archive-unsplash.png';
+import ArchiveCoverPic5 from '../images/archiveCoverPictures/uby-yanes-LMwW0ARHc4o-updated-archive-unsplash.png';
+import ArchiveCoverPic6 from '../images/archiveCoverPictures/jess-bailey-dWKqZcPLc8Y-updated-archive-unsplash.png';
+import ArchiveCoverPic7 from '../images/archiveCoverPictures/angele-kamp-KaeaUITiWnc-archive-upadted-unsplash.png';
+import ArchiveCoverPic8 from '../images/archiveCoverPictures/joshua-reddekopp-cNe8GsQR-OQ-archive-unsplash.png';
+import ArchiveCoverPic9 from '../images/archiveCoverPictures/fallon-michael-_lKsxGjOzk8-updated-archive-unsplash.png';
+import ArchiveCoverPic10 from '../images/archiveCoverPictures/jess-bailey-MSH3ldaRZsg-updated-archive-unsplash.png';
 
-export const GRAPHIC_DESIGN_COVER_1 = GraphicDesignCover1;
-export const GRAPHIC_DESIGN_COVER_2 = GraphicDesignCover2;
-export const GRAPHIC_DESIGN_COVER_3 = GraphicDesignCover3;
-export const GRAPHIC_DESIGN_COVER_4 = GraphicDesignCover4;
-export const GRAPHIC_DESIGN_COVER_5 = GraphicDesignCover5;
-export const GRAPHIC_DESIGN_COVER_6 = GraphicDesignCover6;
-export const GRAPHIC_DESIGN_COVER_7 = GraphicDesignCover7;
+export const ARCHIVE_COVER_PIC_1 = ArchiveCoverPic1;
+export const ARCHIVE_COVER_PIC_2 = ArchiveCoverPic2;
+export const ARCHIVE_COVER_PIC_3 = ArchiveCoverPic3;
+export const ARCHIVE_COVER_PIC_4 = ArchiveCoverPic4;
+export const ARCHIVE_COVER_PIC_5 = ArchiveCoverPic5;
+export const ARCHIVE_COVER_PIC_6 = ArchiveCoverPic6;
+export const ARCHIVE_COVER_PIC_7 = ArchiveCoverPic7;
+export const ARCHIVE_COVER_PIC_8 = ArchiveCoverPic8;
+export const ARCHIVE_COVER_PIC_9 = ArchiveCoverPic9;
+export const ARCHIVE_COVER_PIC_10 = ArchiveCoverPic10;
 

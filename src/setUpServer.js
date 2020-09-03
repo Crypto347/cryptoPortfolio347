@@ -3380,7 +3380,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/big-images/1",
                     coverImage: {
                         id: 1,
-                        key: "id1BigImages1",
+                        key: "artDirectionCover1",
                         isHover: "init",
                         imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png",
                         folderName: "colorful",
@@ -3410,7 +3410,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-slider/2",
                     coverImage: {
                         id: 1,
-                        key: "id2SmallSlider1",
+                        key: "artDirectionCover2",
                         isHover: "init",
                         imageName: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png",
                         folderName: "colorful",
@@ -3440,7 +3440,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-images/2",
                     coverImage: {
                         id: 1,
-                        key: "id2SmallImages1",
+                        key: "artDirectionCover3",
                         isHover: "init",
                         imageName: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png",
                         folderName: "colorful",
@@ -3477,7 +3477,7 @@ app.post('/api/portfolio-category/:category', (req, res) => {
                     path: "portfolio-item/small-images/3",
                     coverImage: {
                         id: 1,
-                        key: "id3SmallImages1",
+                        key: "artDirectionCover4",
                         isHover: "init",
                         imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png",
                         folderName: "colorful",
