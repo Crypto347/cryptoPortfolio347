@@ -3383,7 +3383,7 @@ console.log(category)
                         id: 1,
                         key: "artDirectionCover1",
                         isHover: "init",
-                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png",
+                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3413,7 +3413,7 @@ console.log(category)
                         id: 1,
                         key: "artDirectionCover2",
                         isHover: "init",
-                        imageName: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png",
+                        imageName: "fallon-michael-_lKsxGjOzk8-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3443,7 +3443,7 @@ console.log(category)
                         id: 1,
                         key: "artDirectionCover3",
                         isHover: "init",
-                        imageName: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png",
+                        imageName: "jess-bailey-MSH3ldaRZsg-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3480,7 +3480,7 @@ console.log(category)
                         id: 1,
                         key: "artDirectionCover4",
                         isHover: "init",
-                        imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png",
+                        imageName: "jess-bailey-dWKqZcPLc8Y-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3755,7 +3755,7 @@ console.log(category)
                         id: 1,
                         key: "designCover1",
                         isHover: "init",
-                        imageName: "adam-wilson-1QZYZib7eYs-unsplash.png",
+                        imageName: "adam-wilson-1QZYZib7eYs-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3785,7 +3785,7 @@ console.log(category)
                         id: 1,
                         key: "designCover2",
                         isHover: "init",
-                        imageName: "angele-kamp-KaeaUITiWnc-upadted-unsplash.png",
+                        imageName: "angele-kamp-KaeaUITiWnc-archive-upadted-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3822,7 +3822,7 @@ console.log(category)
                         id: 1,
                         key: "designCover3",
                         isHover: "init",
-                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png",
+                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3859,7 +3859,7 @@ console.log(category)
                         id: 1,
                         key: "designCover4",
                         isHover: "init",
-                        imageName: "hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png",
+                        imageName: "hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3889,7 +3889,7 @@ console.log(category)
                         id: 1,
                         key: "designCover5",
                         isHover: "init",
-                        imageName: "chris-lee-70l1tDAI6rM-updated-unsplash.png",
+                        imageName: "chris-lee-70l1tDAI6rM-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3919,7 +3919,7 @@ console.log(category)
                         id: 1,
                         key: "designCover6",
                         isHover: "init",
-                        imageName: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png",
+                        imageName: "fallon-michael-_lKsxGjOzk8-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -3941,8 +3941,141 @@ console.log(category)
                     ]    
                 }
             ]
-         
         },
+        {
+            id: 4,
+            category: "music",
+            disableLoadMoreButton: false,
+            archiveData: [
+                {
+                    id: 1,
+                    key: "smallImages2",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/2",
+                    coverImage: {
+                        id: 1,
+                        key: "musicCover1",
+                        isHover: "init",
+                        imageName: "jess-bailey-MSH3ldaRZsg-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            isHover: "init",
+                            path: "portfolio-category/art-direction"
+                        },
+                        {
+                            id: 2,
+                            label: "Music",
+                            key: "music",
+                            isHover: "init",
+                            path: "portfolio-category/music"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                },
+                {
+                    id: 2,
+                    key: "bigSlider1",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/1",
+                    coverImage: {
+                        id: 1,
+                        key: "musicCover2",
+                        isHover: "init",
+                        imageName: "laura-chouette-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Music",
+                            key: "music",
+                            isHover: "init",
+                            path: "portfolio-category/music",
+                        },
+                        {
+                            id: 2,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            isHover: "init",
+                            path: "portfolio-category/lifestyle",
+                        }
+                    ]    
+                },
+                {
+                    id: 3,
+                    key: "bigSlider3",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/3",
+                    coverImage: {
+                        id: 1,
+                        key: "musicCover3",
+                        isHover: "init",
+                        imageName: "angele-kamp-KaeaUITiWnc-archive-upadted-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            isHover: "init",
+                            path: "portfolio-category/design"
+                        },
+                        {
+                            id: 3,
+                            label: "Music",
+                            key: "music",
+                            isHover: "init",
+                            path: "portfolio-category/music"
+                        }
+                    ]    
+                },
+                {
+                    id: 4,
+                    key: "smallSlider3",
+                    header: "Small Slider",
+                    path: "portfolio-item/small-slider/3",
+                    coverImage: {
+                        id: 1,
+                        key: "musicCover4",
+                        isHover: "init",
+                        imageName: "meghan-schiereck--2eJaLtf_bI-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Music",
+                            key: "music",
+                            isHover: "init",
+                            path: "portfolio-category/music"
+                        }
+                    ]    
+                }
+            ]
+        }
     ]
 
     let archiveObj = archive.find(item => item.category === category);
