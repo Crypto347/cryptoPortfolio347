@@ -278,7 +278,7 @@ export const PortfolioGallery = (props) => {
     const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, "portfolioGallery");
-        // props.history.push(`/crypto-portfolio/${path}`)
+        props.clearArchiveData();
     }
 
     const renderCategories = (obj) => {
@@ -430,6 +430,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(PortfolioGallery);

@@ -56,6 +56,7 @@ import * as Selectors from '../../../reducers/selectors';
 /**
 * Utility
 */
+import * as Utility from '../../../utility';
 
 import { 
     H19,
@@ -106,7 +107,8 @@ export const Archive = (props) => {
         if(props.archive.items.length === 0){
             props.fetchArchive(props.match.params.category, 1);
         }
-
+        // console.log("1",props.archive.category)
+        // console.log("2", Utility.categoryPathToKey(props.location.state.category))
         let timeout = setTimeout(() => {
             if(!props.archive.loading && !props.archive.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
@@ -253,6 +255,9 @@ export const Archive = (props) => {
     }
 
     const onClickHandler = (path, key) => {
+        if(props.archive.category !== key){
+            props.clearArchiveData();
+        }
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(key, path, "archive");
         // props.history.push(`/crypto-portfolio/${path}`)
@@ -404,6 +409,7 @@ export default connect(
             setArchiveIsHoveringCategory: bindActionCreators(Actions.setArchiveIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(Archive);

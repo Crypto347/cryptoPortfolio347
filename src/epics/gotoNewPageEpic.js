@@ -23,6 +23,12 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
+* Utility
+*/
+
+import * as Utility from '../utility';
+
+/**
 * Epic
 */
 
@@ -33,25 +39,9 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
             let category = state$.value.archive.category;
             let categoryToPath;
             if(state$.value.archive.category){
-                let categoryToArray = category.split("");
-               
-                let indexOfUpperCaseLetter;
-                indexOfUpperCaseLetter = categoryToArray.map((item, i) => {
-                    if(item === item.toUpperCase()){
-                        return i;
-                    }else{
-                        return false;
-                    }
-                })
-                indexOfUpperCaseLetter = indexOfUpperCaseLetter.find(item => item !== false);
-                
-                categoryToArray.splice(indexOfUpperCaseLetter, 1, categoryToArray[indexOfUpperCaseLetter].toLowerCase());
-                categoryToArray.splice(indexOfUpperCaseLetter, 0, "-");
-                categoryToPath = categoryToArray.join("");
-    
+                categoryToPath = Utility.categoryKeyToPath(category);
             }
             
-          
             if(action.repeatedKey === category){
                 return of(
                     Actions.setUnmountComponentValues(false, action.repeatedPath)

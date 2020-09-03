@@ -70,3 +70,10 @@ export function setArchiveIsHoveringCategory(val, pathOfIds) {
     };
 };
 
+export function clearArchiveData() {
+    return { 
+        type: actionTypes.CLEAR_ARCHIVE_DATA,
+    };
+};
+
+
