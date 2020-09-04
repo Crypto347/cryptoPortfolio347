@@ -603,6 +603,8 @@ import ArchiveCoverPic13 from '../images/archiveCoverPictures/laura-chouette-upd
 import ArchiveCoverPic14 from '../images/archiveCoverPictures/meghan-schiereck--2eJaLtf_bI-updated-archive-unsplash.png';
 import ArchiveCoverPic15 from '../images/archiveCoverPictures/dose-media-bU6JyhSI6zo-updated-archive-unsplash.png';
 import ArchiveCoverPic16 from '../images/archiveCoverPictures/cristina-matos-albers-WhxeSQ671SM-updated-archive-unsplash.png';
+import ArchiveCoverPic17 from '../images/archiveCoverPictures/clay-banks-_wkd7XBRfU4-updated-archive-unsplash.png';
+import ArchiveCoverPic18 from '../images/archiveCoverPictures/eyeshadow-4713577_1920-archive-updated.png';
 
 export const ARCHIVE_COVER_PIC_1 = ArchiveCoverPic1;
 export const ARCHIVE_COVER_PIC_2 = ArchiveCoverPic2;
@@ -620,3 +622,5 @@ export const ARCHIVE_COVER_PIC_13 = ArchiveCoverPic13;
 export const ARCHIVE_COVER_PIC_14 = ArchiveCoverPic14;
 export const ARCHIVE_COVER_PIC_15 = ArchiveCoverPic15;
 export const ARCHIVE_COVER_PIC_16 = ArchiveCoverPic16;
+export const ARCHIVE_COVER_PIC_17 = ArchiveCoverPic17;
+export const ARCHIVE_COVER_PIC_18 = ArchiveCoverPic18;

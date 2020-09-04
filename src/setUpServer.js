@@ -4246,6 +4246,149 @@ console.log(category)
                     ]    
                 }
             ]
+        },
+        {
+            id: 6,
+            category: "lifestyle",
+            disableLoadMoreButton: false,
+            archiveData: [
+                {
+                    id: 1,
+                    key: "smallImages4",
+                    header: "Small Images",
+                    path: "portfolio-item/small-images/4",
+                    coverImage: {
+                        id: 1,
+                        key: "lifestyleCover1",
+                        isHover: "init",
+                        imageName: "clay-banks-_wkd7XBRfU4-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            isHover: "init",
+                            path: "portfolio-category/lifestyle"
+                        }
+                    ]    
+                },
+                {
+                    id: 2,
+                    key: "bigSlider1",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/1",
+                    coverImage: {
+                        id: 1,
+                        key: "lifestyleCover2",
+                        isHover: "init",
+                        imageName: "laura-chouette-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Music",
+                            key: "music",
+                            isHover: "init",
+                            path: "portfolio-category/music",
+                        },
+                        {
+                            id: 2,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            isHover: "init",
+                            path: "portfolio-category/lifestyle",
+                        }
+                    ]    
+                },
+                {
+                    id: 3,
+                    key: "bigImages1",
+                    header: "Big Images",
+                    path: "portfolio-item/big-images/1",
+                    coverImage: {
+                        id: 1,
+                        key: "lifestyleCover3",
+                        isHover: "init",
+                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Art Direction",
+                            key: "artDirection",
+                            isHover: "init",
+                            path: "portfolio-category/art-direction"
+                        },
+                        {
+                            id: 2,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            isHover: "init",
+                            path: "portfolio-category/lifestyle"
+                        }
+                    ]    
+                },
+                {
+                    id: 4,
+                    key: "smallGallery2",
+                    header: "Small Gallery",
+                    path: "portfolio-item/small-gallery/2",
+                    coverImage: {
+                        id: 1,
+                        key: "lifestyleCover4",
+                        isHover: "init",
+                        imageName: "hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Design",
+                            key: "design",
+                            isHover: "init",
+                            path: "portfolio-category/design"
+                        },
+                        {
+                            id: 2,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            isHover: "init",
+                            path: "portfolio-category/lifestyle"
+                        }
+                    ]    
+                },
+                {
+                    id: 5,
+                    key: "smallGallery3",
+                    header: "Small Gallery",
+                    path: "portfolio-item/small-gallery/3",
+                    coverImage: {
+                        id: 1,
+                        key: "lifestyleCover5",
+                        isHover: "init",
+                        imageName: "eyeshadow-4713577_1920-archive-updated.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Lifestyle",
+                            key: "lifestyle",
+                            isHover: "init",
+                            path: "portfolio-category/lifestyle"
+                        }
+                    ]    
+                }
+            ]
         }
     ]
 
