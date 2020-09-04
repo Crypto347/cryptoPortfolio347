@@ -169,6 +169,7 @@ export const Toolbar = (props) => {
                 props.setMenuDotsState("on", page)
                 return;
             case 'portfolioGallery':
+            case 'switchImage':
                 props.setMenuDotsState("on", page)
                 return;
         }

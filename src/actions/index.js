@@ -12,3 +12,4 @@ export * from './galleryPortfolioActions';
 export * from './smallSliderPortfolioActions';
 export * from './portfolioGalleryPageActions';
 export * from './archiveActions';
+export * from './switchImagePageActions';

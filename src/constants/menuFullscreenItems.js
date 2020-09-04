@@ -127,7 +127,7 @@ export const menuFullscreenItemsArray = [
                         id: 311,
                         text: "Switch Image",
                         itemId: "switchImage",
-                        path: "",
+                        path: "switch-image",
                         active: true,
                         isHover: "init",
                         subOptions: []

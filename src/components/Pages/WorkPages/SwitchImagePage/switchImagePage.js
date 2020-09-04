@@ -20,7 +20,7 @@ import {
 * Styles
 */
 
-import './portfolioGallery.scss';
+import './switchImagePage.scss';
 
 /**
 * Components
@@ -57,7 +57,7 @@ import * as Selectors from '../../../../reducers/selectors';
 import { 
     H15,
     H19,
-    H22,
+    H45,
     H70,
     EH10,
     EH30,
@@ -75,17 +75,19 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* PortfolioGallery component definition and export
+* SwitchImagePage component definition and export
 */
 
-export const PortfolioGallery = (props) => {
+export const SwitchImagePage = (props) => {
 
     /**
     * State
     */
 
     const size = useWindowSize();
+    // const itemRef = useRef(null);
     const resizeRef = useRef();
+    const [scrollingUp, setScrollingUp] = useState(false);
   
     const initCoordinateRange = [
         {
@@ -168,14 +170,14 @@ export const PortfolioGallery = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error && props.historyPopFromItem !== "scrollToTop"){
+        if(!props.switchImagePage.loading && !props.switchImagePage.error && props.historyPopFromItem !== "scrollToTop"){
             let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
             window.scrollTo(0, itemOffsetTop - 30);
         }else{
             window.scrollTo(0, 0);
         }
 
-        props.fetchPortfolioGalleryPage();
+        props.fetchSwitchImagePage();
         const resize = () => {
             resizeRef.current();
         }
@@ -191,33 +193,33 @@ export const PortfolioGallery = (props) => {
     });
 
     const handleResize = () => {
-        props.forgetCoordinateRangeForPortfolioGalleryPage(initCoordinateRange);
+        props.forgetCoordinateRangeForSwitchImagePage(initCoordinateRange);
     }
 
     const handleMouseEnter = (opt, id, pathOfIds) => {
         switch(opt){
-            case 'portfolioCategory': 
-                props.setPortfolioGalleryPageIsHoveringCategory("on", pathOfIds);
+            case 'switchImageCategory': 
+                props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
                 break;
             case 'arrow': 
-                props.setPortfolioGalleryPageIsHoveringArrow("on", id);
+                props.setSwitchImagePageIsHoveringArrow("on", id);
                 break;
         }
     }
 
     const handleMouseLeave = (opt, id, pathOfIds) => {
         switch(opt){
-            case 'portfolioCategory': 
-                props.setPortfolioGalleryPageIsHoveringCategory("off", pathOfIds);
+            case 'switchImageCategory': 
+                props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
                 break;
             case 'arrow': 
-                props.setPortfolioGalleryPageIsHoveringArrow("off", id);
+                props.setSwitchImagePageIsHoveringArrow("off", id);
                 break;
         }
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "portfolioCategory"){
+        if(opt === "switchImageCategory"){
             switch(isHovering){
                 case 'init':
                     return "h15-nobel-lustria-animated";
@@ -239,12 +241,33 @@ export const PortfolioGallery = (props) => {
         }
     }
 
+    // const handleOnWheel = (e) => {
+    //     let scrollHeight = document.body.scrollTop;
+    //     let el = document.getElementById("bigImages");
+    
+    //     // Check scroll direction
+
+    //     if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+    //         setScrollingUp(false);
+    //     }else{
+    //         setScrollingUp(true);
+    //     }
+    // }
+
+    // const checkScrollDirectionIsUp = (e)  => {
+    //     if (e.wheelDelta) {
+    //       return e.wheelDelta > 0;
+    //     }
+    //     return e.deltaY < 0;
+    // }
+
     const renderToolbars = () => {
         return(
             <Toolbar 
                 style="toolbarVersion2" 
+                // scrollingUp={scrollingUp}
                 toolbarMainColor="white"
-                page="portfolioGallery"
+                page="switchImage"
             />
         )
     }
@@ -252,106 +275,107 @@ export const PortfolioGallery = (props) => {
 
     const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, "portfolioGallery");
+        props.unmountComponent(null, null, "switchImagePage");
         props.clearArchiveData();
     }
 
     const renderCategories = (obj) => {
         return(
-            <div className="portfolio-gallery-page-item-categories">{obj.categories.map((el, i) => {
+            <div className="switch-image-page-item-categories">{obj.categories.map((el, i) => {
                 let pathOfIds = [obj.id, el.id];
                 return(
                     <div 
                         key={i}
-                        className="portfolio-gallery-page-item-category"
+                        className="switch-image-page-item-category"
                         onClick={() => onClickHandler(el.path)}
-                        onMouseEnter={() => handleMouseEnter(`portfolioCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`portfolioCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`switchImageCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`switchImageCategory`, null, pathOfIds)} 
                     >
-                        {i !== 0 ? <div className="portfolio-gallery-page-item-category-slash">/</div> : null}
-                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{el.label}</H15>
+                        {i !== 0 ? <div className="switch-image-page-item-category-slash">/</div> : null}
+                        <H15 className={renderClassName("switchImageCategory", el.isHover)}>{el.label}</H15>
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderPortfolioGalleryPageItems = () => {
+    const renderSwitchImagePageData = () => {
         return(
-            <>
-                <EH110/>
-                <div className="portfolio-gallery-page-items">{props.portfolioGalleryPage.items.map((el, i) => {
-                    let imgCoordinateRange = props.portfolioGalleryPage.itemsCooradinateRange.find(item => item.id === el.id);
-                    return(
-                        <div 
-                            key={i}
-                            className="portfolio-gallery-page-item"
-                            id={el.key}
-                        >
-                            <div className="portfolio-gallery-page-item-image">
-                                <SwitchImage  
-                                    component="portfolioGallery"
-                                    id={el.id}
-                                    option={el.option}
-                                    imagesArray={el.pictures}
-                                    alt={el.alt}
-                                    path={el.path}
-                                    // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                                    rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
-                                    imgCoordinateRange={imgCoordinateRange}
-                                    setUnmountComponentValues={props.setUnmountComponentValues}
-                                    unmountComponent={props.unmountComponent}
-                                />
-                            </div>
-                            <EH30/>
-                            {renderCategories(el)}
-                            <EH10/>
-                            <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
-                            <div 
-                                className={renderClassName("arrow", el.arrowIsHovering)}
-                                onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
-                                onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
-                                onClick={() => onClickHandler(el.path)}
-                            >
-                                <div className="arrow-horizontal-line"/>
-                                <div className="arrow-wrapper2">
-                                    <div className="arrow-top-line"></div>
-                                    <div className="arrow-bottom-line"></div>
-                                </div>
-                            </div>
-                            <EH30/>
+            <div className="switch-image-page-items">{props.switchImagePage.items.map((el, i) => {
+                let imgCoordinateRange = props.switchImagePage.itemsCooradinateRange.find(item => item.id === el.id);
+                return(
+                    <div 
+                        key={i}
+                        className="switch-image-page-item"
+                        id={el.key}
+                    >
+                        <div className="switch-image-page-item-image">
+                            <SwitchImage  
+                                component="switchImagePage"
+                                id={el.id}
+                                option={el.option}
+                                imagesArray={el.pictures}
+                                alt={el.alt}
+                                path={el.path}
+                                // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                                rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
+                                imgCoordinateRange={imgCoordinateRange}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                            />
                         </div>
-                    )
-                })}</div>
-            </>
+                        <EH30/>
+                        {renderCategories(el)}
+                        <EH10/>
+                        <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
+                        <div 
+                            className={renderClassName("arrow", el.arrowIsHovering)}
+                            onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
+                            onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
+                            onClick={() => onClickHandler(el.path)}
+                        >
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div>
+                        <EH30/>
+                    </div>
+                )
+            })}</div>
         )
     }
 
-    const renderPortfolioGalleryPageData = () => {
-        if(props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error){
+    const renderSwitchImagePageContent = () => {
+        if(props.switchImagePage.loading && !props.switchImagePage.error){
             return(
                 <div 
-                    className="portfolio-gallery-loading-error" 
+                    className="switch-image-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error){
+        if(!props.switchImagePage.loading && !props.switchImagePage.error){
             return(
-                <>
-                    {renderPortfolioGalleryPageItems()}
-                </>
+                <div className="switch-image-page-wrapper">
+                    <div className="switch-image-page-header">
+                        <H45 className="h45-nero-lustria">Switch Image</H45>
+                    </div>
+                    <div className="grey-line"/>
+                    {renderSwitchImagePageData()}
+                </div>
             )
         }
-        if(!props.portfolioGalleryPage.loading && props.portfolioGalleryPage.error){
+        if(!props.switchImagePage.loading && props.switchImagePage.error){
             return(
                 <div 
-                    className="portfolio-gallery-loading-error" 
+                    className="switch-image-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.portfolioGalleryPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.switchImagePage.error}`}</H15>
                 </div>
             )
         }
@@ -363,18 +387,9 @@ export const PortfolioGallery = (props) => {
 
     return(
         <>
-            <div className="portfolio-gallery">
+            <div className="switch-image-page">
                 {renderToolbars()}
-                <div className="portfolio-gallery-wrapper">
-                    <div className="portfolio-gallery-header-wrapper">
-                        <div className="header-wrapper">
-                            <div className="portfolio-gallery-header-bold">Welcome!</div>
-                            <div className="portfolio-gallery-header-text1">Take a Look</div>
-                        </div>
-                        <div className="portfolio-gallery-header-text2">at Our Portfolio.</div>
-                    </div>
-                    {renderPortfolioGalleryPageData()}
-                </div>
+                {renderSwitchImagePageContent()}
                 <Footer/>
             </div>
             {props.menuDotsState.state === "on" ? 
@@ -390,23 +405,24 @@ export const PortfolioGallery = (props) => {
 export default connect(
     (state) => {
         return {
-            portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
+            switchImagePage: Selectors.getSwitchImagePageState(state),
+
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
-            rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
-            forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
-            setPortfolioGalleryPageIsHoveringCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringCategory, dispatch),
-            setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
+            fetchSwitchImagePage: bindActionCreators(Services.fetchSwitchImagePage, dispatch),
+            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
+            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
+            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
+            setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
-)(PortfolioGallery);
+)(SwitchImagePage);
  

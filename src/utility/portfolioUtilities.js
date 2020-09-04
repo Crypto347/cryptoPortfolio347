@@ -10,6 +10,8 @@ export const findPathOfIds = (path) => {
             return []; 
         case 'portfolio-category':
             return []; 
+        case 'switch-image':
+            return []; 
     }
 
     //Portfolio items

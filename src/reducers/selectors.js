@@ -225,3 +225,10 @@ export const getHistoryPopFromPortfolioItemeState = createSelector(
     [getHistoryPopFromPortfolioItem],
     (x) => x
 );
+
+const getSwitchImagePage = (state) => state.switchImagePage;
+
+export const getSwitchImagePageState = createSelector(
+    [getSwitchImagePage],
+    (x) => x
+);

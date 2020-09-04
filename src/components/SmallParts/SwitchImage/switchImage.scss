@@ -36,8 +36,40 @@
     }
 }
 
+.switch-image-page-image-item {
+    width: 100%;
+    height: 250.5px;
+    cursor: pointer;
+    .picture-board-image {
+        >img{
+            width: 100%;
+            height: 250.5px;
+        }
+    }
+    .picture-board-image-black-and-white {
+        filter: grayscale(70%);
+        >img{
+            width: 100%;
+            height: 250.5px;
+        }
+    }
+}
+
 @media only screen and (min-width: 1700px){
     .portfolio-gallery-image-item {
+        height: 350px;
+        .picture-board-image {
+            >img{
+                height: 350px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 350px;
+            }
+        }
+    }
+    .switch-image-page-image-item {
         height: 350px;
         .picture-board-image {
             >img{
@@ -66,10 +98,36 @@
             }
         }
     }
+    .switch-image-page-image-item {
+        height: 300px;
+        .picture-board-image {
+            >img{
+                height: 300px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 300px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1300px){
     .portfolio-gallery-image-item {
+        height: 240px;
+        .picture-board-image {
+            >img{
+                height: 230px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 230px;
+            }
+        }
+    }
+    .switch-image-page-image-item {
         height: 240px;
         .picture-board-image {
             >img{
@@ -115,6 +173,19 @@
             }
         }
     }
+    .switch-image-page-image-item {
+        height: 200px;
+        .picture-board-image {
+            >img{
+                height: 200px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 200px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1120px){
@@ -131,10 +202,37 @@
             }
         }
     }
+    .switch-image-page-image-item {
+        height: 270px;
+        .picture-board-image {
+            >img{
+                height: 270px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 270px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1050px){
     .portfolio-gallery-image-item {
+        height: 250px;
+        .picture-board-image {
+            >img{
+                height: 250px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 250px;
+            }
+        }
+    }
+
+    .switch-image-page-image-item {
         height: 250px;
         .picture-board-image {
             >img{
@@ -168,6 +266,19 @@
         }
     }
     .portfolio-gallery-image-item {
+        height: 450px;
+        .picture-board-image {
+            >img{
+                height: 450px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 450px;
+            }
+        }
+    }
+    .switch-image-page-image-item {
         height: 450px;
         .picture-board-image {
             >img{
@@ -216,10 +327,36 @@
             }
         }
     }
+    .switch-image-page-image-item {
+        height: 400px;
+        .picture-board-image {
+            >img{
+                height: 400px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 400px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 650px){
     .portfolio-gallery-image-item {
+        height: 330px;
+        .picture-board-image {
+            >img{
+                height: 330px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 330px;
+            }
+        }
+    }
+    .switch-image-page-image-item {
         height: 330px;
         .picture-board-image {
             >img{
@@ -265,10 +402,36 @@
             }
         }
     }
+    .switch-image-page-image-item {
+        height: 270px;
+        .picture-board-image {
+            >img{
+                height: 270px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 270px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 470px){
     .portfolio-gallery-image-item {
+        height: 230px;
+        .picture-board-image {
+            >img{
+                height: 230px;
+            }
+        }
+        .picture-board-image-black-and-white {
+            >img{
+                height: 230px;
+            }
+        }
+    }
+    .switch-image-page-image-item {
         height: 230px;
         .picture-board-image {
             >img{

@@ -500,12 +500,14 @@ export const SwitchImage = (props) => {
                 return 'picture-board-image-item';
             case 'portfolioGallery':
                 return "portfolio-gallery-image-item";
+            case 'switchImagePage':
+                return "switch-image-page-image-item";
         }
     }
 
     const pictureBoardItemOnClick = (path) => {
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, "portfolioGallery");
+        props.unmountComponent(null, null, props.component);
         // props.history.push(`/crypto-portfolio/${path}`);
         // props.clearActivityOfMenuItems();
     }

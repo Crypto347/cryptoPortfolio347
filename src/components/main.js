@@ -43,6 +43,7 @@ import Gallery from './Pages/PortfolioPages/Gallery/gallery';
 import SmallSlider from './Pages/PortfolioPages/SmallSlider/smallSlider';
 import PortfolioGallery from './Pages/HomePages/PortfolioGallery/portfolioGallery';
 import Archive from './Pages/Archive/archive';
+import SwitchImagePage from './Pages/WorkPages/SwitchImagePage/switchImagePage';
 // import Category from './Pages/Category/category';
 
 /**
@@ -96,6 +97,14 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/switch-image"}
+                    // render={(props) => (
+                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
+                    // }
+                    component={SwitchImagePage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-category/:category"}
