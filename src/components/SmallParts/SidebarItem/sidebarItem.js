@@ -99,7 +99,7 @@ export const SidebarItem = (props) => {
                 if(el.subOptions.length === 0){
                     return(
                         <div 
-                            key={i} 
+                            key={el} 
                             className="sidebar-option-item"
                             onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
                         >

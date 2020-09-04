@@ -500,19 +500,6 @@ export const Toolbar = (props) => {
                             </div>
                         </div>
                     </div>
-                    {/* {showOptions ? 
-                    <div 
-                        className="toolbar-regular-screen-options"
-                        onMouseEnter={() => handleMouseEnterToolbarItem('regular', toolbarItemData, toolbarItemData.id)} 
-                        onMouseLeave={() => handleMouseLeaveToolbarItem('regular', toolbarItemData)}
-                    >
-                        <div  className="grey-line"/>
-                        <EH20/>
-                        <EH10/>
-                        {renderToolbarOptions()}
-                        <EH10/>
-                        <EH20/>
-                    </div> : null} */}
                 </>
             )
         }
@@ -603,10 +590,11 @@ export const Toolbar = (props) => {
     return(
         <> 
             {renderToolbar(props.style)}
+            {props.style !== "toolbarVersion2" ? 
             <Sidebar 
                 sidebarState={props.sidebarState}
                 logoOnClick={logoOnClick}
-            />
+            /> : null}
             <Backdrop
                 show={props.sidebarState === "open"}
                 onClick={() => props.setSidebarState("close")}

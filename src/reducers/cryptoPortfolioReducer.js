@@ -539,19 +539,19 @@ const setSidebarState = (state, action) => {
 const activateMenuItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
 
-    let item = {
-        ...updatedMenuItems
-        .find(item => item.id === action.pathOfIds[0]),
-        active: true
-    }
-    
-    let itemIndex = updatedMenuItems
-        .findIndex(item => item.id === action.pathOfIds[0]);
-        
-    updatedMenuItems
-        .splice(itemIndex, 1, item);
-
     if(action.pathOfIds.length === 3){
+        let item = {
+            ...updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]),
+            active: true
+        }
+        console.log("KJHH",action.pathOfIds[0])
+        let itemIndex = updatedMenuItems
+            .findIndex(item => item.id === action.pathOfIds[0]);
+            
+        updatedMenuItems
+            .splice(itemIndex, 1, item);
+
         let optionItem = {
             ...updatedMenuItems
             .find(item => item.id === action.pathOfIds[0]).options
@@ -573,6 +573,18 @@ const activateMenuItem = (state, action) => {
     }
  
     if(action.pathOfIds.length === 4){
+        let item = {
+            ...updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]),
+            active: true
+        }
+        console.log("KJHH",action.pathOfIds[0])
+        let itemIndex = updatedMenuItems
+            .findIndex(item => item.id === action.pathOfIds[0]);
+            
+        updatedMenuItems
+            .splice(itemIndex, 1, item);
+            
         let subOptionItem = {
             ...updatedMenuItems
             .find(item => item.id === action.pathOfIds[0]).options

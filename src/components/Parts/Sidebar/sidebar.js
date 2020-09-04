@@ -96,7 +96,7 @@ export const Sidebar = (props) => {
     const renderSidebarItems = () => {
         return(
             <div className="sidebar-items">
-                {props.menuItems.map((el) => {
+                {props.menuItems.map((el, i) => {
                     return(
                         <SidebarItem 
                             key={el.id}

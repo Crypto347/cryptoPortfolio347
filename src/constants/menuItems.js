@@ -419,7 +419,7 @@ export const menuItemsArray = [
                         id: 235,
                         text: "Switch Image",
                         itemId: "switchImage",
-                        path: "gallery-switch-image",
+                        path: "switch-image",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -1157,8 +1157,7 @@ export const menuItemsArray = [
                         active: false,
                         isHover: "init",
                         subOptions: []
-                    }
-                    ,
+                    },
                     {
                         id: 638,
                         text: "Blog List",

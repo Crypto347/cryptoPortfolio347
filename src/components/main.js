@@ -84,6 +84,7 @@ export const Main = (props) => {
             pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
+            console.log("activateMenuItem", pathOfIds)
             props.photoViewerOpen("all", false, []);
         });
     }, []);

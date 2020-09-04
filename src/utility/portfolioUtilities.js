@@ -4,17 +4,17 @@ export const findPathOfIds = (path) => {
         return [1, 11, 111];
     }
 
-    //Home items
+    //First element of updatedPath array
     switch(updatedPath[0]){
         case 'portfolio-gallery':
             return []; 
         case 'portfolio-category':
             return []; 
         case 'switch-image':
-            return []; 
+            return [2, 23, 235]; 
     }
 
-    //Portfolio items
+    //Second element of updatedPath array
     switch(updatedPath[1]){
         // case '':
         //     return [1, 11, 111];
@@ -30,8 +30,8 @@ export const findPathOfIds = (path) => {
             return [2, 21, 217];
         case 'small-gallery':
             return [2, 21, 218];
-       
     }
+
 }
 
 export const categoryPathToKey = (path) => {
