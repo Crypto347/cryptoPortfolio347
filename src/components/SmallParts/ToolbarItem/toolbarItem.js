@@ -258,7 +258,7 @@ export const ToolbarItem = (props) => {
             className="toolbar-item-wrapper"
             onMouseEnter={props.onMouseEnter} 
             onMouseLeave={props.onMouseLeave}
-           >
+        >
             <div className={props.data.active ? `toolbar-item-${props.toolbarMainColor}-active` : `toolbar-item-${props.toolbarMainColor}`}>
                 {props.data.text}
             </div>

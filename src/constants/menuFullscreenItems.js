@@ -73,7 +73,7 @@ export const menuFullscreenItemsArray = [
                         text: "About Me",
                         itemId: "aboutMe",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: "init",
                         subOptions: []
         
@@ -128,7 +128,7 @@ export const menuFullscreenItemsArray = [
                         text: "Switch Image",
                         itemId: "switchImage",
                         path: "switch-image",
-                        active: true,
+                        active: false,
                         isHover: "init",
                         subOptions: []
         

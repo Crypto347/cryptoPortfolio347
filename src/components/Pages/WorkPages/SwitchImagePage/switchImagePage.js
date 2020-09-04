@@ -406,7 +406,6 @@ export default connect(
     (state) => {
         return {
             switchImagePage: Selectors.getSwitchImagePageState(state),
-
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };

@@ -539,6 +539,18 @@ const setSidebarState = (state, action) => {
 const activateMenuItem = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
 
+    let item = {
+        ...updatedMenuItems
+        .find(item => item.id === action.pathOfIds[0]),
+        active: true
+    }
+    
+    let itemIndex = updatedMenuItems
+        .findIndex(item => item.id === action.pathOfIds[0]);
+        
+    updatedMenuItems
+        .splice(itemIndex, 1, item);
+
     if(action.pathOfIds.length === 3){
         let optionItem = {
             ...updatedMenuItems
