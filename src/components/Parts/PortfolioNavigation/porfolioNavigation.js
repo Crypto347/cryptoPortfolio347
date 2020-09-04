@@ -183,6 +183,9 @@ export const PorfolioNavigation = (props) => {
             case 'archive':
                 props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state.category}`);
                 break;
+            case 'switchImagePage':
+                props.history.push(`/crypto-portfolio/switch-image`);
+                break;
             default: 
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 return;
@@ -199,6 +202,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'archive':
                 updatedItems = [...props.archive.items];
+                break;
+            case 'switchImagePage':
+                updatedItems = [...props.switchImagePage.items];
                 break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
@@ -275,6 +281,7 @@ export default connect(
         return {
             portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
             archive: Selectors.getArchiveState(state),
+            switchImagePage: Selectors.getSwitchImagePageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
