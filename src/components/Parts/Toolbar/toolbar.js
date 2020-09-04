@@ -60,6 +60,15 @@ import {
     EH20
 } from '../../UtilityComponents';
 
+
+/**
+* Hooks
+*/
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
 /**
 * Constants
 */
@@ -78,6 +87,7 @@ export const Toolbar = (props) => {
     * State
     */
 
+    const size = useWindowSize();
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
     const [isHovering, setIsHovering] = useState(null);
     const [showOptions, setShowOptions] = useState(false);
@@ -90,6 +100,9 @@ export const Toolbar = (props) => {
 
     useEffect(() => {
         props.initMenuItems(menuItemsArray);
+        if(size.width > 1120){
+            props.setSidebarState("init");
+        }
     }, []);
 
     const handleMouseEnterMenuIcon = () => {
