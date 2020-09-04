@@ -233,6 +233,14 @@ export const Gallery = (props) => {
         return e.deltaY < 0;
     }
 
+    const onClickHandler = (path, key) => {
+        if(props.archive.category !== key){
+            props.clearArchiveData();
+        }
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(key, path, "gallery");
+    }
+
     const openPhotoViewer = (array, activeIndex) => {
         let slidesForPhotoViewer = [...array];
         let removedSlides = [];
@@ -324,6 +332,7 @@ export const Gallery = (props) => {
                     <div 
                         key={i}
                         className="gallery-category"
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`galleryCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`galleryCategory`, el.id)} 
                     >
@@ -428,7 +437,8 @@ export default connect(
     (state) => {
         return {
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
-            photoViewerForGalleryOpen: Selectors.getPhotoViewerForGalleryOpenState(state)
+            photoViewerForGalleryOpen: Selectors.getPhotoViewerForGalleryOpenState(state),
+            archive: Selectors.getArchiveState(state)
         };
     },
     (dispatch) => {
@@ -439,6 +449,8 @@ export default connect(
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setGalleryIsHoveringImage: bindActionCreators(Actions.setGalleryIsHoveringImage, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(Gallery);

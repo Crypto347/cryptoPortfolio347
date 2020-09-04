@@ -41,8 +41,8 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
             if(state$.value.archive.category){
                 categoryToPath = Utility.categoryKeyToPath(category);
             }
-            
-            if(action.repeatedKey === category){
+            console.log("action.repeatedPath",action.repeatedPath)
+            if(action.repeatedKey === category && action.page === "archive"){
                 return of(
                     Actions.setUnmountComponentValues(false, action.repeatedPath)
                 )

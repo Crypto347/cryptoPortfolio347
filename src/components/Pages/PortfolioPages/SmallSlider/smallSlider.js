@@ -196,6 +196,15 @@ export const SmallSlider = (props) => {
         return e.deltaY < 0;
     }
 
+    const onClickHandler = (path, key) => {
+        console.log("LKJHG",path, key)
+        if(props.archive.category !== key){
+            props.clearArchiveData();
+        }
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(key, path, "smallSlider");
+    }
+
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -239,6 +248,7 @@ export const SmallSlider = (props) => {
                     <div 
                         key={i}
                         className="small-slider-category"
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`smallSliderCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`smallSliderCategory`, el.id)} 
                     >
@@ -367,6 +377,7 @@ export default connect(
         return {
             smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state),
             photoViewerForSmallSliderOpen: Selectors.getPhotoViewerForSmallSliderOpenState(state),
+            archive: Selectors.getArchiveState(state)
         };
     },
     (dispatch) => {
@@ -376,6 +387,8 @@ export default connect(
             setSmallSliderIsHoveringTag: bindActionCreators(Actions.setSmallSliderIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(SmallSlider);

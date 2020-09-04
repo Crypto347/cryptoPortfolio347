@@ -1067,13 +1067,15 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/design"
                 }
             ],
             date: "07.20.2020",
@@ -1122,19 +1124,22 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                     id: 1,
                     label: "Art Direction",
                     key: "artDirection",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
                 },
                 {
                     id: 2,
                     label: "Music",
                     key: "music",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/music"
                 },
                 {
                     id: 3,
                     label: "Architecture",
                     key: "architecture",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
                 }
             ],
             date: "05.13.2020",
@@ -1168,13 +1173,15 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 },
                 {
                     id: 2,
                     label: "Art Direction",
                     key: "artDirection",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
                 },
             ],
             date: "12.08.2020",
@@ -1213,7 +1220,8 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                     id: 1,
                     label: "Lifestyle",
                     key: "lifestyle",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
                 }
             ],
             date: "26.06.2020",
@@ -1271,13 +1279,15 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                     id: 1,
                     label: "Music",
                     key: "music",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/music"
                 },
                 {
                     id: 2,
                     label: "Lifestyle",
                     key: "lifestyle",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
                 }
             ],
             date: "06.22.2020",
@@ -1326,13 +1336,15 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                     id: 1,
                     label: "Editorial",
                     key: "editorial",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
                 },
                 {
                     id: 2,
                     label: "Architecture",
                     key: "architecture",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
                 }
             ],
             date: "07.10.2017",
@@ -1391,19 +1403,22 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/design"
                 },
                 {
                     id: 3,
                     label: "Music",
                     key: "music",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/music"
                 }
             ],
             date: "07.10.2017",
@@ -1476,13 +1491,15 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
                     id: 1,
                     label: "Art Direction",
                     key: "artDirection",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
                 },
                 {
                     id: 2,
                     label: "Lifestyle",
                     key: "lifestyle",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
                 }
             ],
             date: "08.17.2020",
@@ -1536,19 +1553,22 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/design"
                 },
                 {
                     id: 3,
                     label: "Editorial",
                     key: "editorial",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
                 }
             ],
             date: "07.17.2020",
@@ -1616,19 +1636,22 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 },
                 {
                     id: 2,
                     label: "Editorial",
                     key: "editorial",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
                 },
                 {
                     id: 3,
                     label: "Architecture",
                     key: "architecture",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
                 }
             ],
             date: "07.18.2020",
@@ -1693,13 +1716,15 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     id: 1,
                     label: "Design",
                     key: "design",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/design"
                 },
                 {
                     id: 2,
                     label: "Lifestyle",
                     key: "lifestyle",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
                 }
             ],
             date: "08.18.2020",
@@ -1747,7 +1772,8 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
                     id: 1,
                     label: "Lifestyle",
                     key: "lifestyle",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
                 }
             ],
             date: "08.18.2020",
@@ -1821,7 +1847,8 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 }
             ],
             date: "07.18.2020",
@@ -1886,7 +1913,8 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     id: 1,
                     label: "Architecture",
                     key: "architecture",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
                 }
             ],
             date: "07.19.2020",
@@ -1945,13 +1973,15 @@ app.get('/api/portfolio-item/gallery/:id', (req, res) => {
                     id: 1,
                     label: "Design",
                     key: "design",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/design"
                 },
                 {
                     id: 2,
                     label: "Editorial",
                     key: "editorial",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
                 }
             ],
             date: "07.19.2020",
@@ -2025,19 +2055,22 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
                     id: 1,
                     label: "Graphic Design",
                     key: "graphicDesign",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
                 },
                 {
                     id: 2,
                     label: "Editorial",
                     key: "editorial",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
                 },
                 {
                     id: 3,
                     label: "Architecture",
                     key: "architecture",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
                 }
             ],
             date: "07.18.2020",
@@ -2097,13 +2130,15 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
                     id: 1,
                     label: "Art Direction",
                     key: "artDirection",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
                 },
                 {
                     id: 2,
                     label: "Design",
                     key: "design",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/design"
                 }
             ],
             date: "08.20.2020",
@@ -2157,7 +2192,8 @@ app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
                     id: 1,
                     label: "Music",
                     key: "music",
-                    isHover: "init"
+                    isHover: "init",
+                    path: "portfolio-category/music"
                 }
             ],
             date: "08.20.2020",

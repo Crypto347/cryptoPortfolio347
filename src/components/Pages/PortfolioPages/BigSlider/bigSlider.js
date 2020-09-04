@@ -172,6 +172,14 @@ export const BigSlader = (props) => {
         return e.deltaY < 0;
     }
 
+    const onClickHandler = (path, key) => {
+        if(props.archive.category !== key){
+            props.clearArchiveData();
+        }
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(key, path, "bigSlider");
+    }
+
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -215,6 +223,7 @@ export const BigSlader = (props) => {
                     <div 
                         key={i}
                         className="big-slider-category"
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`bigSliderCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`bigSliderCategory`, el.id)} 
                     >
@@ -320,7 +329,8 @@ export const BigSlader = (props) => {
 export default connect(
     (state) => {
         return {
-            bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state)
+            bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
+            archive: Selectors.getArchiveState(state)
         };
     },
     (dispatch) => {
@@ -329,6 +339,8 @@ export default connect(
             setBigSliderIsHoveringCategory: bindActionCreators(Actions.setBigSliderIsHoveringCategory, dispatch),
             setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(BigSlader);

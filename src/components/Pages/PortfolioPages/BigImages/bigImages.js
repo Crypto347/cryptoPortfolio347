@@ -203,6 +203,14 @@ export const BigImages = (props) => {
         return e.deltaY < 0;
     }
 
+    const onClickHandler = (path, key) => {
+        if(props.archive.category !== key){
+            props.clearArchiveData();
+        }
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(key, path, "bigImages");
+    }
+   
     const openPhotoViewer = (array, activeIndex) => {
         let slidesForPhotoViewer = [...array];
         let removedSlides = [];
@@ -259,7 +267,7 @@ export const BigImages = (props) => {
             )
         }
     }
-   
+
     const renderCategories = () => {
         return(
             <div className="big-images-categories">{props.bigImagesPortfolio.item.categories.map((el, i) => {
@@ -267,6 +275,7 @@ export const BigImages = (props) => {
                     <div 
                         key={i}
                         className="big-images-category"
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`bigImagesCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`bigImagesCategory`, el.id)} 
                     >
@@ -393,7 +402,8 @@ export default connect(
     (state) => {
         return {
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
-            photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state)
+            photoViewerForBigImagesOpen: Selectors.getPhotoViewerForBigImagesOpenState(state),
+            archive: Selectors.getArchiveState(state)
         };
     },
     (dispatch) => {
@@ -403,6 +413,8 @@ export default connect(
             setBigImagesIsHoveringTag: bindActionCreators(Actions.setBigImagesIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(BigImages);

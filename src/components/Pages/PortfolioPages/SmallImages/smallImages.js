@@ -231,6 +231,14 @@ export const SmallImages = (props) => {
         return e.deltaY < 0;
     }
 
+    const onClickHandler = (path, key) => {
+        if(props.archive.category !== key){
+            props.clearArchiveData();
+        }
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(key, path, "smallImages");
+    }
+
     const openPhotoViewer = (array, activeIndex) => {
         let slidesForPhotoViewer = [...array];
         let removedSlides = [];
@@ -317,6 +325,7 @@ export const SmallImages = (props) => {
                     <div 
                         key={i}
                         className="small-images-category"
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`smallImagesCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`smallImagesCategory`, el.id)} 
                     >
@@ -422,7 +431,8 @@ export default connect(
     (state) => {
         return {
             smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
-            photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state)
+            photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state),
+            archive: Selectors.getArchiveState(state)
         };
     },
     (dispatch) => {
@@ -432,6 +442,8 @@ export default connect(
             setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
 )(SmallImages);

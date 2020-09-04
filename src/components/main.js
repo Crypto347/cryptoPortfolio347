@@ -92,7 +92,7 @@ export const Main = (props) => {
     */
 
     return(
-        <div className={props.unmountComponent.state ? "main-unmount" : "main"}>
+        <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
@@ -181,7 +181,7 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            unmountComponent: Selectors.getUnmountComponentState(state)
+            unmountComp: Selectors.getUnmountComponentState(state)
         };
     },
     (dispatch) => {
