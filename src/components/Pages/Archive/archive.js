@@ -154,11 +154,14 @@ export const Archive = (props) => {
                 return Images.ARCHIVE_COVER_PIC_2;
             case 'graphicDesignCover3':
             case 'architectureCover3':
+            case 'editorialCover4':
                 return Images.ARCHIVE_COVER_PIC_3;
             case 'graphicDesignCover4':
             case 'architectureCover5':
+            case 'editorialCover6':
                 return Images.ARCHIVE_COVER_PIC_4;
             case 'graphicDesignCover5':
+            case 'editorialCover3':
                 return Images.ARCHIVE_COVER_PIC_5;
             case 'graphicDesignCover6':
             case 'artDirectionCover4':
@@ -182,13 +185,16 @@ export const Archive = (props) => {
             case 'lifestyleCover4':
                 return Images.ARCHIVE_COVER_PIC_11;
             case 'designCover5':
+            case 'editorialCover5':
                 return Images.ARCHIVE_COVER_PIC_12;
             case 'musicCover2':
             case 'lifestyleCover2':
+            case 'editorialCover2':
                 return Images.ARCHIVE_COVER_PIC_13;
             case 'musicCover4':
                 return Images.ARCHIVE_COVER_PIC_14;
             case 'architectureCover2':
+            case 'editorialCover1':
                 return Images.ARCHIVE_COVER_PIC_15;
             case 'architectureCover4':
                 return Images.ARCHIVE_COVER_PIC_16;

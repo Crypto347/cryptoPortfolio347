@@ -4389,6 +4389,221 @@ console.log(category)
                     ]    
                 }
             ]
+        },
+        {
+            id: 7,
+            category: "editorial",
+            disableLoadMoreButton: false,
+            archiveData: [
+                {
+                    id: 1,
+                    key: "bigSlider2",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/2",
+                    coverImage: {
+                        id: 1,
+                        key: "editorialCover1",
+                        isHover: "init",
+                        imageName: "dose-media-bU6JyhSI6zo-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        },
+                        {
+                            id: 2,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                },
+                {
+                    id: 2,
+                    key: "bigSlider1",
+                    header: "Big Slider",
+                    path: "portfolio-item/big-slider/1",
+                    coverImage: {
+                        id: 1,
+                        key: "editorialCover2",
+                        isHover: "init",
+                        imageName: "laura-chouette-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            isHover: "init",
+                            path: "portfolio-category/design"
+                        },
+                        {
+                            id: 3,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        }
+                    ]    
+                },
+                {
+                    id: 3,
+                    key: "bigImages2",
+                    header: "Big Images",
+                    path: "portfolio-item/big-images/2",
+                    coverImage: {
+                        id: 1,
+                        key: "editorialCover3",
+                        isHover: "init",
+                        imageName: "uby-yanes-LMwW0ARHc4o-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Design",
+                            key: "design",
+                            isHover: "init",
+                            path: "portfolio-category/design"
+                        },
+                        {
+                            id: 3,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        }
+                    ]    
+                },
+                {
+                    id: 4,
+                    key: "smallGallery1",
+                    header: "Small Gallery",
+                    path: "portfolio-item/small-gallery/1",
+                    coverImage: {
+                        id: 1,
+                        key: "editorialCover4",
+                        isHover: "init",
+                        imageName: "ash-from-modern-afflatus-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                },
+                {
+                    id: 5,
+                    key: "gallery3",
+                    header: "Gallery",
+                    path: "portfolio-item/gallery/3",
+                    coverImage: {
+                        id: 1,
+                        key: "editorialCover5",
+                        isHover: "init",
+                        imageName: "chris-lee-70l1tDAI6rM-updated-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Design",
+                            key: "design",
+                            isHover: "init",
+                            path: "portfolio-category/design"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        }
+                    ]    
+                },
+                {
+                    id: 6,
+                    key: "smallSlider1",
+                    header: "Small Slider",
+                    path: "portfolio-item/small-slider/1",
+                    coverImage: {
+                        id: 1,
+                        key: "editorialCover6",
+                        isHover: "init",
+                        imageName: "damian-patkowski--pahtnAMuFo-archive-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    categories: [
+                        {
+                            id: 1,
+                            label: "Graphic Design",
+                            key: "graphicDesign",
+                            isHover: "init",
+                            path: "portfolio-category/graphic-design"
+                        },
+                        {
+                            id: 2,
+                            label: "Editorial",
+                            key: "editorial",
+                            isHover: "init",
+                            path: "portfolio-category/editorial"
+                        },
+                        {
+                            id: 3,
+                            label: "Architecture",
+                            key: "architecture",
+                            isHover: "init",
+                            path: "portfolio-category/architecture"
+                        }
+                    ]    
+                }
+            ]
         }
     ]
 
