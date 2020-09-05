@@ -182,9 +182,11 @@ export const SwitchImagePage = (props) => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
+        window.addEventListener('wheel', handleOnWheel);
         return () => {
             window.removeEventListener('resize', resize);
-            props.setMenuDotsState("init", "")
+            window.removeEventListener('wheel', handleOnWheel);
+            props.setMenuDotsState("init", "");
         }
     }, []);
 
@@ -194,6 +196,26 @@ export const SwitchImagePage = (props) => {
 
     const handleResize = () => {
         props.forgetCoordinateRangeForSwitchImagePage(initCoordinateRange);
+    }
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("switchImagePage");
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
     }
 
     const handleMouseEnter = (opt, id, pathOfIds) => {
@@ -241,38 +263,41 @@ export const SwitchImagePage = (props) => {
         }
     }
 
-    // const handleOnWheel = (e) => {
-    //     let scrollHeight = document.body.scrollTop;
-    //     let el = document.getElementById("bigImages");
-    
-    //     // Check scroll direction
-
-    //     if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-    //         setScrollingUp(false);
-    //     }else{
-    //         setScrollingUp(true);
-    //     }
-    // }
-
-    // const checkScrollDirectionIsUp = (e)  => {
-    //     if (e.wheelDelta) {
-    //       return e.wheelDelta > 0;
-    //     }
-    //     return e.deltaY < 0;
-    // }
-
     const renderToolbars = () => {
-        return(
-            <Toolbar 
-                style="toolbarVersion2" 
-                // scrollingUp={scrollingUp}
-                toolbarMainColor="white"
-                page="switchImage"
-            />
-        )
+        if(size.width < 1120){
+            return(
+                <>
+                    <Toolbar 
+                        style="smallScreenAnimated" 
+                        scrollingUp={scrollingUp}
+                        toolbarMainColor="white"
+                        page="bigImages"
+                    />
+                    <Toolbar 
+                        style="smallScreen"
+                        toolbarMainColor="regular"
+                        page="bigImages"
+                    />
+                </>
+            )
+        }else{
+            return(
+                <>
+                    <Toolbar 
+                        style="regularScreenAnimated" 
+                        scrollingUp={scrollingUp}
+                        toolbarMainColor="white"
+                        page="bigImages"
+                    />
+                    <Toolbar 
+                        style="regularScreenWhite"
+                        toolbarMainColor="white"
+                        page="bigImages"
+                    />
+                </>
+            )
+        }
     }
-
-
     const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, "switchImagePage");
@@ -387,7 +412,7 @@ export const SwitchImagePage = (props) => {
 
     return(
         <>
-            <div className="switch-image-page">
+            <div className="switch-image-page" id="switchImagePage">
                 {renderToolbars()}
                 {renderSwitchImagePageContent()}
                 <Footer/>
