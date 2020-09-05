@@ -28,7 +28,7 @@ import './simpleOverlayPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
+import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 
@@ -209,59 +209,37 @@ export const SimpleOverlayPage = (props) => {
             )
         }
     }
+    
     const onClickHandler = (path) => {
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, "switchImagePage");
         props.clearArchiveData();
     }
 
-    // const renderSwitchImagePageData = () => {
-    //     return(
-    //         <div className="switch-image-page-items">{props.switchImagePage.items.map((el, i) => {
-    //             let imgCoordinateRange = props.switchImagePage.itemsCooradinateRange.find(item => item.id === el.id);
-    //             return(
-    //                 <div 
-    //                     key={i}
-    //                     className="switch-image-page-item"
-    //                     id={el.key}
-    //                 >
-    //                     <div className="switch-image-page-item-image">
-    //                         <SwitchImage  
-    //                             component="switchImagePage"
-    //                             id={el.id}
-    //                             option={el.option}
-    //                             imagesArray={el.pictures}
-    //                             alt={el.alt}
-    //                             path={el.path}
-    //                             // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-    //                             rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
-    //                             imgCoordinateRange={imgCoordinateRange}
-    //                             setUnmountComponentValues={props.setUnmountComponentValues}
-    //                             unmountComponent={props.unmountComponent}
-    //                         />
-    //                     </div>
-    //                     <EH30/>
-    //                     {renderCategories(el)}
-    //                     <EH10/>
-    //                     <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
-    //                     <div 
-    //                         className={renderClassName("arrow", el.arrowIsHovering)}
-    //                         onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
-    //                         onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
-    //                         onClick={() => onClickHandler(el.path)}
-    //                     >
-    //                         <div className="arrow-horizontal-line"/>
-    //                         <div className="arrow-wrapper2">
-    //                             <div className="arrow-top-line"></div>
-    //                             <div className="arrow-bottom-line"></div>
-    //                         </div>
-    //                     </div>
-    //                     <EH30/>
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
+    const renderSimpleOverlayPageData = () => {
+        return(
+            <div className="simple-overlay-page-items">{props.simpleOverlayPage.items.map((el, i) => {
+                return(
+                    <SimpleOverlayImage  
+                        key={i}
+                        imageKey={el.coverImage.key}
+                        alt={el.coverImage.alt}
+                        // component="switchImagePage"
+                        // id={el.id}
+                        // option={el.option}
+                        // imagesArray={el.pictures}
+                  
+                        // path={el.path}
+                        // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                        // rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
+                        // imgCoordinateRange={imgCoordinateRange}
+                        // setUnmountComponentValues={props.setUnmountComponentValues}
+                        // unmountComponent={props.unmountComponent}
+                    />
+                )
+            })}</div>
+        )
+    }
 
     const renderSimpleOverlayPageContent = () => {
         if(props.simpleOverlayPage.loading && !props.simpleOverlayPage.error){
@@ -281,7 +259,7 @@ export const SimpleOverlayPage = (props) => {
                         <H45 className="h45-nero-lustria">Simple Overlay</H45>
                     </div>
                     <div className="grey-line"/>
-                    {/* {renderSwitchImagePageData()} */}
+                    {renderSimpleOverlayPageData()}
                 </div>
             )
         }

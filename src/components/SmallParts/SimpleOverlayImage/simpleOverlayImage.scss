@@ -1,0 +1,7 @@
+.simple-overlay-image {
+    width: calc(33.3% - 30px);
+    margin-right: 30px;
+    >img {
+        width: 100%;
+    }
+}

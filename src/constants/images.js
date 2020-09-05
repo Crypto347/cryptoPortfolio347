@@ -624,3 +624,45 @@ export const ARCHIVE_COVER_PIC_15 = ArchiveCoverPic15;
 export const ARCHIVE_COVER_PIC_16 = ArchiveCoverPic16;
 export const ARCHIVE_COVER_PIC_17 = ArchiveCoverPic17;
 export const ARCHIVE_COVER_PIC_18 = ArchiveCoverPic18;
+
+/**
+* Simple overlay
+*/
+
+import SimpleOverlayCoverPic1 from '../images/simpleOverlayCoverPictures/adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic2 from '../images/simpleOverlayCoverPictures/laura-chouette-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic3 from '../images/simpleOverlayCoverPictures/nadine-shaabana-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic4 from '../images/simpleOverlayCoverPictures/ash-from-modern-afflatus-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic5 from '../images/simpleOverlayCoverPictures/joshua-reddekopp-cNe8GsQR-OQ-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic6 from '../images/simpleOverlayCoverPictures/damian-patkowski--pahtnAMuFo-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic7 from '../images/simpleOverlayCoverPictures/fallon-michael-_lKsxGjOzk8-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic8 from '../images/simpleOverlayCoverPictures/cristina-matos-albers-WhxeSQ671SM-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic9 from '../images/simpleOverlayCoverPictures/hope-house-press-leather-diary-studio-PJzc7LOt2Ig-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic10 from '../images/simpleOverlayCoverPictures/jess-bailey-MSH3ldaRZsg-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic11 from '../images/simpleOverlayCoverPictures/dose-media-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic12 from '../images/simpleOverlayCoverPictures/uby-yanes-LMwW0ARHc4o-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic13 from '../images/simpleOverlayCoverPictures/chris-lee-70l1tDAI6rM-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic14 from '../images/simpleOverlayCoverPictures/meghan-schiereck--2eJaLtf_bI-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic15 from '../images/simpleOverlayCoverPictures/eyeshadow-4713577_1920-simple-overlay-updated.png';
+import SimpleOverlayCoverPic16 from '../images/simpleOverlayCoverPictures/jess-bailey-dWKqZcPLc8Y-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic17 from '../images/simpleOverlayCoverPictures/angele-kamp-KaeaUITiWnc-simple-overlay-unsplash.png';
+import SimpleOverlayCoverPic18 from '../images/simpleOverlayCoverPictures/clay-banks-_wkd7XBRfU4-simple-overlay-unsplash.png';
+
+export const SIMPLE_OVERLAY_COVER_PIC_1 = SimpleOverlayCoverPic1;
+export const SIMPLE_OVERLAY_COVER_PIC_2 = SimpleOverlayCoverPic2;
+export const SIMPLE_OVERLAY_COVER_PIC_3 = SimpleOverlayCoverPic3;
+export const SIMPLE_OVERLAY_COVER_PIC_4 = SimpleOverlayCoverPic4;
+export const SIMPLE_OVERLAY_COVER_PIC_5 = SimpleOverlayCoverPic5;
+export const SIMPLE_OVERLAY_COVER_PIC_6 = SimpleOverlayCoverPic6;
+export const SIMPLE_OVERLAY_COVER_PIC_7 = SimpleOverlayCoverPic7;
+export const SIMPLE_OVERLAY_COVER_PIC_8 = SimpleOverlayCoverPic8;
+export const SIMPLE_OVERLAY_COVER_PIC_9 = SimpleOverlayCoverPic9;
+export const SIMPLE_OVERLAY_COVER_PIC_10 = SimpleOverlayCoverPic10;
+export const SIMPLE_OVERLAY_COVER_PIC_11 = SimpleOverlayCoverPic11;
+export const SIMPLE_OVERLAY_COVER_PIC_12 = SimpleOverlayCoverPic12;
+export const SIMPLE_OVERLAY_COVER_PIC_13 = SimpleOverlayCoverPic13;
+export const SIMPLE_OVERLAY_COVER_PIC_14 = SimpleOverlayCoverPic14;
+export const SIMPLE_OVERLAY_COVER_PIC_15 = SimpleOverlayCoverPic15;
+export const SIMPLE_OVERLAY_COVER_PIC_16 = SimpleOverlayCoverPic16;
+export const SIMPLE_OVERLAY_COVER_PIC_17 = SimpleOverlayCoverPic17;
+export const SIMPLE_OVERLAY_COVER_PIC_18 = SimpleOverlayCoverPic18;
