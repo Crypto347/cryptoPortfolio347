@@ -232,3 +232,10 @@ export const getSwitchImagePageState = createSelector(
     [getSwitchImagePage],
     (x) => x
 );
+
+const getSimpleOverlayPage = (state) => state.simpleOverlayPage;
+
+export const getSimpleOverlayPageState = createSelector(
+    [getSimpleOverlayPage],
+    (x) => x
+);

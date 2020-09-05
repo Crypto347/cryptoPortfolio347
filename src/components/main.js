@@ -43,8 +43,8 @@ import Gallery from './Pages/PortfolioPages/Gallery/gallery';
 import SmallSlider from './Pages/PortfolioPages/SmallSlider/smallSlider';
 import PortfolioGallery from './Pages/HomePages/PortfolioGallery/portfolioGallery';
 import Archive from './Pages/Archive/archive';
-import SwitchImagePage from './Pages/WorkPages/SwitchImagePage/switchImagePage';
-// import Category from './Pages/Category/category';
+import SwitchImagePage from './Pages/PortfolioPages/SwitchImagePage/switchImagePage';
+import SimpleOverlayPage from './Pages/PortfolioPages/SimpleOverlayPage/simpleOverlayPage';
 
 /**
 * Actions
@@ -98,6 +98,14 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/simple-overlay"}
+                    // render={(props) => (
+                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
+                    // }
+                    component={SimpleOverlayPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/switch-image"}

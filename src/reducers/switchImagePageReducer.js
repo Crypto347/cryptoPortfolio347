@@ -174,7 +174,6 @@ const setSwitchImagePageIsHoveringArrow = (state, action) => {
     };
 }
 
-
 const switchImagePageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SWITCH_IMAGE_PAGE_BEGIN:

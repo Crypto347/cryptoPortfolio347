@@ -545,7 +545,7 @@ const activateMenuItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[0]),
             active: true
         }
-        console.log("KJHH",action.pathOfIds[0])
+        
         let itemIndex = updatedMenuItems
             .findIndex(item => item.id === action.pathOfIds[0]);
             
@@ -578,7 +578,7 @@ const activateMenuItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[0]),
             active: true
         }
-        console.log("KJHH",action.pathOfIds[0])
+        
         let itemIndex = updatedMenuItems
             .findIndex(item => item.id === action.pathOfIds[0]);
             

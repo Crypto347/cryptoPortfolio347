@@ -411,19 +411,19 @@ export const SwitchImagePage = (props) => {
     */
 
     return(
-        <>
+        // <>
             <div className="switch-image-page" id="switchImagePage">
                 {renderToolbars()}
                 {renderSwitchImagePageContent()}
                 <Footer/>
             </div>
-            {props.menuDotsState.state === "on" ? 
+            /* {props.menuDotsState.state === "on" ? 
             <MenuFullScreen 
                 page="portfolioGallery"
                 state={props.menuDotsState.state}
             /> : null
-            }     
-        </> 
+            }      */
+        /* </>  */
     );
 }
 

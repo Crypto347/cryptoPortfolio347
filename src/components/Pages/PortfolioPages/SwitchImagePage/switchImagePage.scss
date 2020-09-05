@@ -79,10 +79,10 @@
                         border: 1px solid black;
                         background: black;
                         width: 60px;
-                        -webkit-animation: lengthenHorizontalLinePortfolioGallery .1s linear;
-                        -moz-animation: lengthenHorizontalLinePortfolioGallery .1s linear;
-                        -o-animation: lengthenHorizontalLinePortfolioGallery .1s linear;
-                        animation: lengthenHorizontalLinePortfolioGallery .1s linear;
+                        -webkit-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+                        -moz-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+                        -o-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+                        animation: lengthenHorizontalLineSwitchImagePage .1s linear;
                     }
                     .arrow-wrapper2 {
                         transform: translate(-5px);
@@ -95,10 +95,10 @@
                             background: black;
                             height: 10px;
                             transform: translate(-1px, 2.5px) rotate(-45deg);
-                            -webkit-animation: lengthenArrowLinePortfolioGallery .1s linear;
-                            -moz-animation: lengthenArrowLinePortfolioGallery .1s linear;
-                            -o-animation: lengthenArrowLinePortfolioGallery .1s linear;
-                            animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            -webkit-animation: lengthenArrowLineSwitchImagePage .1s linear;
+                            -moz-animation: lengthenArrowLineSwitchImagePage .1s linear;
+                            -o-animation: lengthenArrowLineSwitchImagePage .1s linear;
+                            animation: lengthenArrowLineSwitchImagePage .1s linear;
                             animation-delay: .2s;
                             animation-fill-mode: both;
                         }
@@ -107,10 +107,10 @@
                             background: black;
                             height: 10px;
                             transform: translate(-1px, -2.5px) rotate(45deg);
-                            -webkit-animation: lengthenArrowLinePortfolioGallery .1s linear;
-                            -moz-animation: lengthenArrowLinePortfolioGallery .1s linear;
-                            -o-animation: lengthenArrowLinePortfolioGallery .1s linear;
-                            animation: lengthenArrowLinePortfolioGallery .1s linear;
+                            -webkit-animation: lengthenArrowLineSwitchImagePage .1s linear;
+                            -moz-animation: lengthenArrowLineSwitchImagePage .1s linear;
+                            -o-animation: lengthenArrowLineSwitchImagePage .1s linear;
+                            animation: lengthenArrowLineSwitchImagePage .1s linear;
                             animation-delay: .2s;
                             animation-fill-mode: both;
                         }
@@ -125,10 +125,10 @@
                         border: 1px solid black;
                         background: black;
                         width: 50px;
-                        -webkit-animation: shortenHorizontalLinePortfolioGallery .1s linear;
-                        -moz-animation: shortenHorizontalLinePortfolioGallery .1s linear;
-                        -o-animation: shortenHorizontalLinePortfolioGallery .1s linear;
-                        animation: shortenHorizontalLinePortfolioGallery .1s linear;
+                        -webkit-animation: shortenHorizontalLineSwitchImagePage .1s linear;
+                        -moz-animation: shortenHorizontalLineSwitchImagePage .1s linear;
+                        -o-animation: shortenHorizontalLineSwitchImagePage .1s linear;
+                        animation: shortenHorizontalLineSwitchImagePage .1s linear;
                         animation-delay: .1s;
                         animation-fill-mode: both;
                     }
@@ -142,19 +142,19 @@
                             border: 1px solid transparent;
                             height: 0px;
                             transform: translate(-1px, 1px) rotate(-45deg);
-                            -webkit-animation: shortenArrowLinePortfolioGallery .1s linear;
-                            -moz-animation: shortenArrowLinePortfolioGallery .1s linear;
-                            -o-animation: shortenArrowLinePortfolioGallery .1s linear;
-                            animation: shortenArrowLinePortfolioGallery .1s linear;
+                            -webkit-animation: shortenArrowLineSwitchImagePage .1s linear;
+                            -moz-animation: shortenArrowLineSwitchImagePage .1s linear;
+                            -o-animation: shortenArrowLineSwitchImagePage .1s linear;
+                            animation: shortenArrowLineSwitchImagePage .1s linear;
                         }
                         .arrow-bottom-line {
                             border: 1px solid transparent;
                             height: 0px;
                             transform: translate(-1px, -1px) rotate(45deg);
-                            -webkit-animation: shortenArrowLinePortfolioGallery .1s linear;
-                            -moz-animation: shortenArrowLinePortfolioGallery .1s linear;
-                            -o-animation: shortenArrowLinePortfolioGallery .1s linear;
-                            animation: shortenArrowLinePortfolioGallery .1s linear;
+                            -webkit-animation: shortenArrowLineSwitchImagePage .1s linear;
+                            -moz-animation: shortenArrowLineSwitchImagePage .1s linear;
+                            -o-animation: shortenArrowLineSwitchImagePage .1s linear;
+                            animation: shortenArrowLineSwitchImagePage .1s linear;
                         }
                     }
                 }
@@ -162,26 +162,6 @@
         }
     }
 }
-
-// @media only screen and (max-width: 1290px){
-//     .switch-image-page {
-//         .switch-image-page-wrapper {
-//             .switch-image-page-header-wrapper {
-//                 .header-wrapper {
-//                     .switch-image-page-header-bold {
-//                         font-size: 70px;
-//                     }
-//                     .switch-image-page-header-text1 {
-//                         font-size: 70px;
-//                     }
-//                 }
-//                 .switch-image-page-header-text2 {
-//                     font-size: 70px;
-//                 }
-//             }
-//         }
-//     }
-// }
 
 @media only screen and (max-width: 1120px){
     .switch-image-page {
@@ -194,26 +174,6 @@
         }
     }
 }
-
-// @media only screen and (max-width: 1050px){
-//     .switch-image-page {
-//         .switch-image-page-wrapper {
-//             .switch-image-page-header-wrapper {
-//                 .header-wrapper {
-//                     .switch-image-page-header-bold {
-//                         font-size: 55px;
-//                     }
-//                     .switch-image-page-header-text1 {
-//                         font-size: 55px;
-//                     }
-//                 }
-//                 .switch-image-page-header-text2 {
-//                     font-size: 55px;
-//                 }
-//             }
-//         }
-//     }
-// }
 
 @media only screen and (max-width: 945px){
     .switch-image-page {
@@ -238,11 +198,6 @@
                 padding: 130px 40px 100px 70px;
             }
         }
-        // .switch-image-page-wrapper {
-        //     display: flex;
-        //     flex-direction: column;
-        //     padding: 70px 70px 70px 70px;
-        // }
     }
 }
 
@@ -260,88 +215,7 @@
     }
 }
 
-// @media only screen and (max-width: 690px){
-//     .switch-image-page {
-//         .switch-image-page-wrapper {
-//             .switch-image-page-header-wrapper {
-//                 .header-wrapper {
-//                     .switch-image-page-header-bold {
-//                         font-size: 45px;
-//                     }
-//                     .switch-image-page-header-text1 {
-//                         font-size: 45px;
-//                     }
-//                 }
-//                 .switch-image-page-header-text2 {
-//                     font-size: 45px;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 500px){
-//     .switch-image-page {
-//         .switch-image-page-wrapper {
-//             .switch-image-page-header-wrapper {
-//                 .header-wrapper {
-//                     .switch-image-page-header-bold {
-//                         font-size: 40px;
-//                     }
-//                     .switch-image-page-header-text1 {
-//                         font-size: 35px;
-//                     }
-//                 }
-//                 .switch-image-page-header-text2 {
-//                     font-size: 35px;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-@keyframes poortfolioGalleryHeaderTextAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(-20%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-@-moz-keyframes poortfolioGalleryHeaderTextAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(-20%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-@-webkit-keyframes poortfolioGalleryHeaderTextAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(-20%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-@-o-keyframes poortfolioGalleryHeaderTextAppear {
-    0% {
-        opacity: 0;
-        transform: translateY(-20%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-
-@-webkit-keyframes lengthenArrowLinePortfolioGallery {
+@-webkit-keyframes lengthenArrowLineSwitchImagePage {
     from{
         height: 0px;
         border: 0px solid black;
@@ -351,7 +225,7 @@
         border: 1px solid black;
     }
 }
-@-moz-keyframes lengthenArrowLinePortfolioGallery {
+@-moz-keyframes lengthenArrowLineSwitchImagePage {
     from{
         height: 0px;
         border: 0px solid black;
@@ -361,7 +235,7 @@
         border: 1px solid black;
     }
 }
-@-o-keyframes lengthenArrowLinePortfolioGallery {
+@-o-keyframes lengthenArrowLineSwitchImagePage {
     from{
         height: 0px;
         border: 0px solid black;
@@ -371,7 +245,7 @@
         border: 1px solid black;
     }
 }
-@keyframes lengthenArrowLinePortfolioGallery {
+@keyframes lengthenArrowLineSwitchImagePage {
     from{
         height: 0px;
         border: 0px solid black;
@@ -382,7 +256,7 @@
     }
 }
 
-@-webkit-keyframes shortenArrowLinePortfolioGallery {
+@-webkit-keyframes shortenArrowLineSwitchImagePage {
     from{
         border: 1px solid black;
         background: black;
@@ -394,7 +268,7 @@
         height: 0px;
     }
 }
-@-moz-keyframes shortenArrowLinePortfolioGallery {
+@-moz-keyframes shortenArrowLineSwitchImagePage {
     from{
         border: 1px solid black;
         background: black;
@@ -406,7 +280,7 @@
         height: 0px;
     }
 }
-@-o-keyframes shortenArrowLinePortfolioGallery {
+@-o-keyframes shortenArrowLineSwitchImagePage {
     from{
         border: 1px solid black;
         background: black;
@@ -418,7 +292,7 @@
         height: 0px;
     }
 }
-@keyframes shortenArrowLinePortfolioGallery {
+@keyframes shortenArrowLineSwitchImagePage {
     from{
         border: 1px solid black;
         background: black;
@@ -431,36 +305,36 @@
     }
 }
 
-@-webkit-keyframes lengthenHorizontalLinePortfolioGallery {
+@-webkit-keyframes lengthenHorizontalLineSwitchImagePage {
     from{width: 50px;}
     to{width: 60px;}
 }
-@-moz-keyframes lengthenHorizontalLinePortfolioGallery {
+@-moz-keyframes lengthenHorizontalLineSwitchImagePage {
     from{width: 50px;}
     to{width: 60px;}
 }
-@-o-keyframes lengthenHorizontalLinePortfolioGallery {
+@-o-keyframes lengthenHorizontalLineSwitchImagePage {
     from{width: 50px;}
     to{width: 60px;}
 }
-@keyframes lengthenHorizontalLinePortfolioGallery {
+@keyframes lengthenHorizontalLineSwitchImagePage {
     from{width: 50px;}
     to{width: 60px;}
 }
 
-@-webkit-keyframes shortenHorizontalLinePortfolioGallery {
+@-webkit-keyframes shortenHorizontalLineSwitchImagePage {
     from{width: 60px;}
     to{width: 50px;}
 }
-@-moz-keyframes shortenHorizontalLinePortfolioGallery {
+@-moz-keyframes shortenHorizontalLineSwitchImagePage {
     from{width: 60px;}
     to{width: 50px;}
 }
-@-o-keyframes shortenHorizontalLinePortfolioGallery {
+@-o-keyframes shortenHorizontalLineSwitchImagePage {
     from{width: 60px;}
     to{width: 50px;}
 }
-@keyframes shortenHorizontalLinePortfolioGallery {
+@keyframes shortenHorizontalLineSwitchImagePage {
     from{width: 60px;}
     to{width: 50px;}
 }

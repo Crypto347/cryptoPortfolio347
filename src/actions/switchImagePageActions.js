@@ -20,7 +20,6 @@ export function fetchSwitchImagePageFailur(err) {
     };
 };
 
-
 export function rememberCoordinateRangeForSwitchImagePage(id, coordinateRange) {
     return { 
         type: actionTypes.REMEMBER_COORDINATE_RANGE_FOR_SWITCH_IMAGE_PAGE,
