@@ -163,7 +163,7 @@ export const TeamInformationCard = (props) => {
                         alt={props.alt}
                     />
                 </div>
-                {isHovering ? 
+                {/* {isHovering ?  */}
                 <div 
                     className={renderClassName("teamInfoCard", isHovering)}
                     style={{height: `${cardHeight}px`}}
@@ -179,7 +179,7 @@ export const TeamInformationCard = (props) => {
                     />
                     <EH40/>
                 </div> 
-                :  null}
+                {/* :  null} */}
             </div>
            
         </div>

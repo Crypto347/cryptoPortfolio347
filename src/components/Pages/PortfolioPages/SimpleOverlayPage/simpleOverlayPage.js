@@ -92,18 +92,23 @@ export const SimpleOverlayPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error && props.historyPopFromItem !== "scrollToTop"){
-            let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-            window.scrollTo(0, itemOffsetTop - 30);
-        }else{
-            window.scrollTo(0, 0);
+        if(props.simpleOverlayPage.items.length === 0){
+            props.fetchSimpleOverlayPage();
         }
-
-        props.fetchSimpleOverlayPage();
+        let timeout = setTimeout(() => {
+            if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error && props.historyPopFromItem !== "scrollToTop"){
+                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
+                console.log("PPP",itemOffsetTop)
+                window.scrollTo(0, itemOffsetTop - 30);
+            }else{
+                window.scrollTo(0, 0);
+            }
+        }, 2);
 
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
         }
@@ -220,26 +225,31 @@ export const SimpleOverlayPage = (props) => {
         return(
             <div className="simple-overlay-page-items">{props.simpleOverlayPage.items.map((el, i) => {
                 return(
-                    <SimpleOverlayImage  
-                        key={i}
-                        imageKey={el.coverImage.key}
-                        alt={el.coverImage.alt}
-                        header={el.header}
-                        isHover={el.coverImage.isHover}
-                        path={el.path}
-                        setUnmountComponentValues={props.setUnmountComponentValues}
-                        unmountComponent={props.unmountComponent}
-                        page="simpleOverlayPage"
-                        // id={el.id}
-                        // option={el.option}
-                        // imagesArray={el.pictures}
-                  
+                    <div 
+                        key={i} 
+                        id={el.key}
+                        className="simple-overlay-page-item"
+                    >
+                        <SimpleOverlayImage
+                            imageKey={el.coverImage.key}
+                            alt={el.coverImage.alt}
+                            header={el.header}
+                            isHover={el.coverImage.isHover}
+                            path={el.path}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            page="simpleOverlayPage"
+                            id={el.id}
+                            // option={el.option}
+                            // imagesArray={el.pictures}
                     
-                        // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                        // rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
-                        // imgCoordinateRange={imgCoordinateRange}
-                      
-                    />
+                        
+                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            // rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
+                            // imgCoordinateRange={imgCoordinateRange}
+                        
+                        />
+                    </div>
                 )
             })}</div>
         )

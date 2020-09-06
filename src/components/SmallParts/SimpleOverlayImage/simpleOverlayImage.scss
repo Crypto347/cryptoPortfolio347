@@ -1,14 +1,11 @@
 .simple-overlay-image {
     position: relative;
-    width: calc(33.3% - 30px);
-    margin-right: 30px;
+    width: 100%;
     cursor: pointer;
     >img {
         width: 100%;
     }
-    .simple-overlay-curtain {
-        opacity: 0;
-    }
+    
     .simple-overlay-curtain-hover-on {
         background: white;
         width: calc(100% - 60px);
@@ -45,6 +42,10 @@
         -o-animation: simpleOverlayImageHoverOff .5s linear;
         animation: simpleOverlayImageHoverOff .5s linear;
     }
+}
+
+.display-none{
+    display: none;
 }
 
 @-webkit-keyframes simpleOverlayImageHoverOn {

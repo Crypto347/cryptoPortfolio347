@@ -138,7 +138,7 @@ export const SimpleOverlayImage = (props) => {
         if(opt === "image"){
             switch(isHovering){
                 case 'init':
-                    return "simple-overlay-curtain";
+                    return "display-none";
                 case 'on':
                     return "simple-overlay-curtain-hover-on";
                 case 'off':
@@ -162,15 +162,13 @@ export const SimpleOverlayImage = (props) => {
                 src={loadImg(props.imageKey)} 
                 alt={props.alt}
             />
-            {isHovering ? 
-                <div 
-                    className={renderClassName("image", isHovering)}
-                    style={{height: `${cardHeight}px`}}
-                    onClick={() => simpleOverlayImageOnClick(props.path)}
-                >
-                    <H35 className="h35-nero-poppins">{props.header}</H35>
-                </div> 
-                :  null}
+            <div 
+                className={renderClassName("image", isHovering)}
+                style={{height: `${cardHeight}px`}}
+                onClick={() => simpleOverlayImageOnClick(props.path)}
+            >
+                <H35 className="h35-nero-poppins">{props.header}</H35>
+            </div> 
             <EH30/>
         </div>
     );
