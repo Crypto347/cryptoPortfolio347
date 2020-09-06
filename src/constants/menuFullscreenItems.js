@@ -137,7 +137,7 @@ export const menuFullscreenItemsArray = [
                         id: 312,
                         text: "Simple Overlay",
                         itemId: "simpleOverlay",
-                        path: "",
+                        path: "simple-overlay",
                         active: false,
                         isHover: "init",
                         subOptions: []

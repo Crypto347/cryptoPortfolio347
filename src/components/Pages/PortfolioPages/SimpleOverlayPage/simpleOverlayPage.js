@@ -224,17 +224,21 @@ export const SimpleOverlayPage = (props) => {
                         key={i}
                         imageKey={el.coverImage.key}
                         alt={el.coverImage.alt}
-                        // component="switchImagePage"
+                        header={el.header}
+                        isHover={el.coverImage.isHover}
+                        path={el.path}
+                        setUnmountComponentValues={props.setUnmountComponentValues}
+                        unmountComponent={props.unmountComponent}
+                        page="simpleOverlayPage"
                         // id={el.id}
                         // option={el.option}
                         // imagesArray={el.pictures}
                   
-                        // path={el.path}
+                    
                         // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                         // rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
                         // imgCoordinateRange={imgCoordinateRange}
-                        // setUnmountComponentValues={props.setUnmountComponentValues}
-                        // unmountComponent={props.unmountComponent}
+                      
                     />
                 )
             })}</div>

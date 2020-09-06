@@ -26,7 +26,7 @@ import * as Utility from '../../../utility';
 
 import { 
     H15,
-    H19,
+    H35,
     H45,
     H70,
     EH10,
@@ -52,34 +52,39 @@ export const SimpleOverlayImage = (props) => {
     * State
     */
 
-    // const resizeRef = useRef();
-    // const [imgToLoad, setImgToLoad] = useState({});
+    const resizeRef = useRef();
+    const [isHovering, setIsHovering] = useState("init");
+    const [cardHeight, setCardHeight] = useState(0);
  
     /**
     * Methods
     */
 
     useEffect(() => {   
-        // const resize = () => {
-        //     resizeRef.current();
-        // }
-
-        // setImgToLoad(props.imagesArray[0]);
-        // setImageCoordinateRange();
-        
-
-        // window.addEventListener('mousemove', handleMouseMove);
-        // window.addEventListener('resize', resize);
-
-        // return () => {
-        //     window.removeEventListener('mousemove', handleMouseMove);
-        //     window.removeEventListener('resize', resize);
-        // }
+        const resize = () => {
+            resizeRef.current();
+        }
+        window.addEventListener('resize', resize);
+        return () =>  window.removeEventListener('resize', resize);
     }, []);
 
-    // useEffect(() => {
-    //     resizeRef.current = handleResize;
-    // });
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    })
+
+    const handleResize = () => {
+        let cardHeight = document.getElementById("img").clientHeight;
+        setCardHeight(cardHeight);
+    }
+
+    const handleMouseEnter = () => {
+        setIsHovering("on");
+        handleResize();
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering("off");
+    }
 
     const loadImg = (key) => {
         switch(key) {
@@ -124,20 +129,22 @@ export const SimpleOverlayImage = (props) => {
         }
     }
 
-    const renderClassName = (opt) => {
-        switch(opt) {
-            case 'pictureBoard':
-                return 'picture-board-image-item';
-            case 'portfolioGallery':
-                return "portfolio-gallery-image-item";
-            case 'switchImagePage':
-                return "switch-image-page-image-item";
-        }
+    const simpleOverlayImageOnClick = (path) => {
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(null, null, props.page);
     }
 
-    const pictureBoardItemOnClick = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.component);
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "image"){
+            switch(isHovering){
+                case 'init':
+                    return "simple-overlay-curtain";
+                case 'on':
+                    return "simple-overlay-curtain-hover-on";
+                case 'off':
+                    return "simple-overlay-curtain-hover-off"
+            }
+        }
     }
 
     /**
@@ -147,13 +154,23 @@ export const SimpleOverlayImage = (props) => {
     return(
         <div 
             className="simple-overlay-image"
-            // onMouseEnter={() => handleMouseEnter(`switchImageCategory`, null, pathOfIds)} 
-            // onMouseLeave={() => handleMouseLeave(`switchImageCategory`, null, pathOfIds)} 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
         >
             <img 
+                id="img"
                 src={loadImg(props.imageKey)} 
                 alt={props.alt}
             />
+            {isHovering ? 
+                <div 
+                    className={renderClassName("image", isHovering)}
+                    style={{height: `${cardHeight}px`}}
+                    onClick={() => simpleOverlayImageOnClick(props.path)}
+                >
+                    <H35 className="h35-nero-poppins">{props.header}</H35>
+                </div> 
+                :  null}
             <EH30/>
         </div>
     );

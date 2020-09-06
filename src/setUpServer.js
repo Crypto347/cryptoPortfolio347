@@ -959,7 +959,8 @@ app.get('/api/section3/teamInformation', (req, res) => {
             photo: "Photo1",
             instaName: "ChristinaKinslee",
             path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
-            hover: false
+            hover: false,
+            alt: "image"
         },
         {
             id: 2,
@@ -968,7 +969,8 @@ app.get('/api/section3/teamInformation', (req, res) => {
             photo: "Photo2",
             instaName: "ChristinaKinslee",
             path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
-            hover: false
+            hover: false,
+            alt: "image"
         },
         {
             id: 3,
@@ -977,7 +979,8 @@ app.get('/api/section3/teamInformation', (req, res) => {
             photo: "Photo3",
             instaName: "ChristinaKinslee",
             path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
-            hover: false
+            hover: false,
+            alt: "image"
         },
         {
             id: 4,
@@ -986,7 +989,8 @@ app.get('/api/section3/teamInformation', (req, res) => {
             photo: "Photo4",
             instaName: "ChristinaKinslee",
             path: "photo-1540569014015-19a7be504e3a.png",
-            hover: false
+            hover: false,
+            alt: "image"
         },
         {
             id: 5,
@@ -995,7 +999,8 @@ app.get('/api/section3/teamInformation', (req, res) => {
             photo: "Photo5",
             instaName: "ChristinaKinslee",
             path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
-            hover: false
+            hover: false,
+            alt: "image"
         },
     ]
     res.json(teamInfo);
@@ -5815,6 +5820,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 1,
             key: "smallImages1",
+            header: "Small Images",
             option: "colorful",
             categories: [
                 {
@@ -5847,6 +5853,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 2,
             key: "bigSlider1",
+            header: "Big Slider",
             option: "colorful",
             categories: [
                 {
@@ -5879,6 +5886,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 3,
             key: "gallery1",
+            header: "Gallery",
             option: "colorful",
             categories: [
                 {
@@ -5904,6 +5912,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 4,
             key: "smallGallery1",
+            header: "Small Gallery",
             option: "colorful",
             categories: [
                 {
@@ -5943,6 +5952,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 5,
             key: "bigImages1",
+            header: "Big Images",
             option: "colorful",
             categories: [
                 {
@@ -5975,6 +5985,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 6,
             key: "smallSlider1",
+            header: "Small Slider",
             option: "colorful",
             categories: [
                 {
@@ -6014,6 +6025,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 7,
             key: "smallSlider2",
+            header: "Small Slider",
             option: "colorful",
             categories: [
                 {
@@ -6046,6 +6058,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 8,
             key: "gallery2",
+            header: "Gallery",
             option: "colorful",
             categories: [
                 {
@@ -6071,6 +6084,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 9,
             key: "smallGallery2",
+            header: "Small Gallery",
             option: "blackAndWhite",
             categories: [
                 {
@@ -6103,6 +6117,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 10,
             key: "smallImages2",
+            header: "Small Images",
             option: "colorful",
             categories: [
                 {
@@ -6142,6 +6157,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 11,
             key: "bigSlider2",
+            header: "Big Slider",
             option: "blackAndWhite",
             categories: [
                 {
@@ -6174,6 +6190,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 12,
             key: "bigImages2",
+            header: "Big Images",
             option: "colorful",
             categories: [
                 {
@@ -6213,6 +6230,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 13,
             key: "gallery3",
+            header: "Gallery",
             option: "colorful",
             categories: [
                 {
@@ -6245,6 +6263,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 14,
             key: "smallSlider3",
+            header: "Small Slider",
             option: "blackAndWhite",
             categories: [
                 {
@@ -6270,6 +6289,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 15,
             key: "smallGallery3",
+            header: "Small Gallery",
             option: "colorful",
             categories: [
                 {
@@ -6295,6 +6315,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 16,
             key: "smallImages3",
+            header: "Small Images",
             option: "colorful",
             categories: [
                 {
@@ -6327,6 +6348,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 17,
             key: "bigSlider3",
+            header: "Big Slider",
             option: "colorful",
             categories: [
                 {
@@ -6366,6 +6388,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
         {
             id: 18,
             key: "smallImages4",
+            header: "Small Images",
             option: "blackAndWhite",
             categories: [
                 {

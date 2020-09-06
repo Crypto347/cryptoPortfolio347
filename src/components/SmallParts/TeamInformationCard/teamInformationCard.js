@@ -61,19 +61,6 @@ export const TeamInformationCard = (props) => {
     * Methods
     */
 
-    const handleMouseEnter = () => {
-        setIsHovering("on");
-        handleResize();
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovering("off");
-    }
-
-    useEffect(() => {
-        resizeRef.current = handleResize;
-    })
-
     useEffect(()=>{
         const resize = () => {
             resizeRef.current();
@@ -82,9 +69,22 @@ export const TeamInformationCard = (props) => {
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    })
+
     const handleResize = () => {
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight);
+    }
+
+    const handleMouseEnter = () => {
+        setIsHovering("on");
+        handleResize();
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering("off");
     }
 
     const loadPhoto = (img) => {
@@ -160,6 +160,7 @@ export const TeamInformationCard = (props) => {
                     <img 
                         id="img"
                         src={loadPhoto(props.photo)}
+                        alt={props.alt}
                     />
                 </div>
                 {isHovering ? 

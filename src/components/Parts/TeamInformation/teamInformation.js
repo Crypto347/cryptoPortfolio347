@@ -94,6 +94,7 @@ export const TeamInformation = (props) => {
                             name={el.name}
                             position={el.position}
                             instaName={el.instaName}
+                            alt={el.alt}
                         />
                     )})}
                 </div>
