@@ -170,20 +170,26 @@ export const SwitchImagePage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(!props.switchImagePage.loading && !props.switchImagePage.error && props.historyPopFromItem !== "scrollToTop"){
-            let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-            window.scrollTo(0, itemOffsetTop - 30);
-        }else{
-            window.scrollTo(0, 0);
+        if(props.switchImagePage.items.length === 0){
+            props.fetchSwitchImagePage();
         }
 
-        props.fetchSwitchImagePage();
+        let timeout = setTimeout(() => {
+            if(!props.switchImagePage.loading && !props.switchImagePage.error && props.historyPopFromItem !== "scrollToTop"){
+                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
+                window.scrollTo(0, itemOffsetTop - 30);
+            }else{
+                window.scrollTo(0, 0);
+            }
+        }, 2);
+     
         const resize = () => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
         return () => {
+            clearTimeout(timeout);
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
