@@ -31,10 +31,10 @@
 }
 
 @media only screen and (max-width: 1120px){
-    .switch-image-page {
-        .switch-image-page-wrapper {
-            .switch-image-page-items {
-                .switch-image-page-item {
+    .simple-overlay-page {
+        .simple-overlay-page-wrapper {
+            .simple-overlay-page-items {
+                .simple-overlay-page-item {
                     width: calc(50% - 30px);
                 }
             }
@@ -43,10 +43,10 @@
 }
 
 @media only screen and (max-width: 945px){
-    .switch-image-page {
-        .switch-image-page-wrapper {
-            .switch-image-page-items {
-                .switch-image-page-item {
+    .simple-overlay-page {
+        .simple-overlay-page-wrapper {
+            .simple-overlay-page-items {
+                .simple-overlay-page-item {
                     width: calc(100% - 30px);
                 }
             }
@@ -55,12 +55,12 @@
 }
 
 @media only screen and (max-width: 890px){
-    .switch-image-page {
-        .switch-image-page-wrapper {
-            .switch-image-page-header {
+    .simple-overlay-page {
+        .simple-overlay-page-wrapper {
+            .simple-overlay-page-header {
                 padding: 90px 70px 90px 70px;
             }
-            .switch-image-page-items {
+            .simple-overlay-page-items {
                 width: calc(100% - 110px);
                 padding: 130px 40px 100px 70px;
             }
@@ -69,12 +69,12 @@
 }
 
 @media only screen and (max-width: 780px){
-    .switch-image-page {
-        .switch-image-page-wrapper {
-            .switch-image-page-header {
+    .simple-overlay-page {
+        .simple-overlay-page-wrapper {
+            .simple-overlay-page-header {
                 padding: 90px 30px 90px 30px;
             }
-            .switch-image-page-items {
+            .simple-overlay-page-items {
                 width: calc(100% - 30px);
                 padding: 130px 0px 100px 30px;
             }
