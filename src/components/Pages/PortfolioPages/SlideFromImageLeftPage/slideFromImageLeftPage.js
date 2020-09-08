@@ -28,7 +28,7 @@ import './slideFromImageLeftPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
+import SlideFromImageLeft from '../../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 
@@ -116,7 +116,7 @@ export const SlideFromImageLeftPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("simpleOverlayPage");
+        let el = document.getElementById("slideFromImageLeft");
     
         // Check scroll direction
 
@@ -133,51 +133,6 @@ export const SlideFromImageLeftPage = (props) => {
         }
         return e.deltaY < 0;
     }
-
-    // const handleMouseEnter = (opt, id, pathOfIds) => {
-    //     switch(opt){
-    //         case 'switchImageCategory': 
-    //             props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
-    //             break;
-    //         case 'arrow': 
-    //             props.setSwitchImagePageIsHoveringArrow("on", id);
-    //             break;
-    //     }
-    // }
-
-    // const handleMouseLeave = (opt, id, pathOfIds) => {
-    //     switch(opt){
-    //         case 'switchImageCategory': 
-    //             props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
-    //             break;
-    //         case 'arrow': 
-    //             props.setSwitchImagePageIsHoveringArrow("off", id);
-    //             break;
-    //     }
-    // }
-
-    // const renderClassName = (opt, isHovering) => {
-    //     if(opt === "switchImageCategory"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h15-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h15-nobel-lora-nero-hover-on";
-    //             case 'off':
-    //                 return "h15-nobel-lora-nero-hover-off"
-    //         }
-    //     }
-    //     if(opt === "arrow"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "arrow-wrapper";
-    //             case 'on':
-    //                 return "arrow-wrapper-lengthen";
-    //             case 'off':
-    //                 return "arrow-wrapper-shorten"
-    //         }
-    //     }
-    // }
 
     const renderToolbars = () => {
         if(size.width < 1120){
@@ -215,16 +170,16 @@ export const SlideFromImageLeftPage = (props) => {
         }
     }
     
-    const renderSimpleOverlayPageData = () => {
+    const renderSlideFromImageLeftPageData = () => {
         return(
-            <div className="simple-overlay-page-items">{props.slideFromImageLeftPage.items.map((el, i) => {
+            <div className="slide-from-image-left-page-items">{props.slideFromImageLeftPage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
                         id={el.key}
-                        className="simple-overlay-page-item"
+                        className="slide-from-image-left-page-item"
                     >
-                        <SimpleOverlayImage
+                        <SlideFromImageLeft
                             imageKey={el.coverImage.key}
                             alt={el.coverImage.alt}
                             header={el.header}
@@ -234,26 +189,29 @@ export const SlideFromImageLeftPage = (props) => {
                             unmountComponent={props.unmountComponent}
                             page="simpleOverlayPage"
                             id={el.id}
-                            // option={el.option}
-                            // imagesArray={el.pictures}
-                    
-                        
-                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                            // rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
-                            // imgCoordinateRange={imgCoordinateRange}
-                        
                         />
+                        {/* <SimpleOverlayImage
+                            imageKey={el.coverImage.key}
+                            alt={el.coverImage.alt}
+                            header={el.header}
+                            isHover={el.coverImage.isHover}
+                            path={el.path}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            page="simpleOverlayPage"
+                            id={el.id}
+                        /> */}
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderSimpleOverlayPageContent = () => {
+    const renderSlideFromImageLeftPageContent = () => {
         if(props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error){
             return(
                 <div 
-                    className="simple-overlay-page-loading-error" 
+                    className="slide-from-image-left-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -262,19 +220,19 @@ export const SlideFromImageLeftPage = (props) => {
         }
         if(!props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error){
             return(
-                <div className="simple-overlay-page-wrapper">
-                    <div className="simple-overlay-page-header">
-                        <H45 className="h45-nero-lustria">Simple Overlay</H45>
+                <div className="slide-from-image-left-page-wrapper">
+                    <div className="slide-from-image-left-page-header">
+                        <H45 className="h45-nero-lustria">Slide From Image Left</H45>
                     </div>
                     <div className="grey-line"/>
-                    {renderSimpleOverlayPageData()}
+                    {renderSlideFromImageLeftPageData()}
                 </div>
             )
         }
         if(!props.slideFromImageLeftPage.loading && props.slideFromImageLeftPage.error){
             return(
                 <div 
-                    className="simple-overlay-page-loading-error" 
+                    className="slide-from-image-left-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 slideFromImageLeftPage="h19-nobel-lora">{`${props.slideFromImageLeftPage.error}`}</H15>
@@ -288,9 +246,9 @@ export const SlideFromImageLeftPage = (props) => {
     */
 
     return(
-        <div className="simple-overlay-page" id="simpleOverlayPage">
+        <div className="slide-from-image-left-page" id="slideFromImageLeft">
             {renderToolbars()}
-            {renderSimpleOverlayPageContent()}
+            {renderSlideFromImageLeftPageContent()}
             <Footer/>
         </div>   
     );

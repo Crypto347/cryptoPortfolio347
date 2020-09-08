@@ -234,14 +234,6 @@ export const SimpleOverlayPage = (props) => {
                             unmountComponent={props.unmountComponent}
                             page="simpleOverlayPage"
                             id={el.id}
-                            // option={el.option}
-                            // imagesArray={el.pictures}
-                    
-                        
-                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                            // rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
-                            // imgCoordinateRange={imgCoordinateRange}
-                        
                         />
                     </div>
                 )

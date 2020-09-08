@@ -12,7 +12,7 @@ import React, {
 * Styles
 */
 
-import './simpleOverlayImage.scss';
+import './slideFromImageLeft.scss';
 
 /**
 * Utility
@@ -39,10 +39,10 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
-* SimpleOverlayImage component definition and export
+* SlideFromImageLeft component definition and export
 */
 
-export const SimpleOverlayImage = (props) => {
+export const SlideFromImageLeft = (props) => {
 
     /**
     * State
@@ -170,4 +170,4 @@ export const SimpleOverlayImage = (props) => {
     );
 }
 
-export default SimpleOverlayImage;
+export default SlideFromImageLeft;
