@@ -14,3 +14,4 @@ export * from './portfolioGalleryPageActions';
 export * from './archiveActions';
 export * from './switchImagePageActions';
 export * from './simpleOverlayPageActions';
+export * from './slideFromImageLeftPageActions';

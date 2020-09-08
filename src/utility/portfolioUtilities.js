@@ -12,8 +12,11 @@ export const findPathOfIds = (path) => {
             return []; 
         case 'simple-overlay':
             return [2, 23, 233]; 
+        case 'slide-from-image-left':
+            return [2, 23, 234]; 
         case 'switch-image':
             return [2, 23, 235]; 
+    
     }
 
     //Second element of updatedPath array

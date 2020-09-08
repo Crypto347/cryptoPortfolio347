@@ -359,6 +359,24 @@ export function fetchSimpleOverlayPage() {
     };
 }
 
+export function fetchSlideFromImageLeftPage() {
+    return dispatch => {
+        dispatch(Actions.fetchSlideFromImageLeftPageBegin());
+        return fetch(`http://localhost:3005/api/slide-from-image-left-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchSlideFromImageLeftPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchSlideFromImageLeftPageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

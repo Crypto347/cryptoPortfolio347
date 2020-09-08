@@ -20,7 +20,7 @@ import {
 * Styles
 */
 
-import './simpleOverlayPage.scss';
+import './slideFromImageLeftPage.scss';
 
 /**
 * Components
@@ -75,10 +75,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* SimpleOverlayPage component definition and export
+* SlideFromImageLeftPage component definition and export
 */
 
-export const SimpleOverlayPage = (props) => {
+export const SlideFromImageLeftPage = (props) => {
 
     /**
     * State
@@ -92,11 +92,11 @@ export const SimpleOverlayPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.simpleOverlayPage.items.length === 0){
-            props.fetchSimpleOverlayPage();
+        if(props.slideFromImageLeftPage.items.length === 0){
+            props.fetchSlideFromImageLeftPage();
         }
         let timeout = setTimeout(() => {
-            if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
@@ -217,7 +217,7 @@ export const SimpleOverlayPage = (props) => {
     
     const renderSimpleOverlayPageData = () => {
         return(
-            <div className="simple-overlay-page-items">{props.simpleOverlayPage.items.map((el, i) => {
+            <div className="simple-overlay-page-items">{props.slideFromImageLeftPage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
@@ -250,7 +250,7 @@ export const SimpleOverlayPage = (props) => {
     }
 
     const renderSimpleOverlayPageContent = () => {
-        if(props.simpleOverlayPage.loading && !props.simpleOverlayPage.error){
+        if(props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error){
             return(
                 <div 
                     className="simple-overlay-page-loading-error" 
@@ -260,7 +260,7 @@ export const SimpleOverlayPage = (props) => {
                 </div>
             )
         }
-        if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error){
+        if(!props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error){
             return(
                 <div className="simple-overlay-page-wrapper">
                     <div className="simple-overlay-page-header">
@@ -271,13 +271,13 @@ export const SimpleOverlayPage = (props) => {
                 </div>
             )
         }
-        if(!props.simpleOverlayPage.loading && props.simpleOverlayPage.error){
+        if(!props.slideFromImageLeftPage.loading && props.slideFromImageLeftPage.error){
             return(
                 <div 
                     className="simple-overlay-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 simpleOverlayPage="h19-nobel-lora">{`${props.simpleOverlayPage.error}`}</H15>
+                    <H15 slideFromImageLeftPage="h19-nobel-lora">{`${props.slideFromImageLeftPage.error}`}</H15>
                 </div>
             )
         }
@@ -299,14 +299,14 @@ export const SimpleOverlayPage = (props) => {
 export default connect(
     (state) => {
         return {
-            simpleOverlayPage: Selectors.getSimpleOverlayPageState(state),
+            slideFromImageLeftPage: Selectors.getSlideFromImageLeftPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),
+            fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
@@ -317,5 +317,5 @@ export default connect(
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
-)(SimpleOverlayPage);
+)(SlideFromImageLeftPage);
  

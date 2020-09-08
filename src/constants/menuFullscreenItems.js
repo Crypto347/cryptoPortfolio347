@@ -146,7 +146,7 @@ export const menuFullscreenItemsArray = [
                         id: 313,
                         text: "Slide From Image Left",
                         itemId: "slideFromImageLeft",
-                        path: "",
+                        path: "slide-from-image-left",
                         active: false,
                         isHover: "init",
                         subOptions: []
