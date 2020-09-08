@@ -43,13 +43,13 @@ export function setSwitchImagePageIsHoveringCategory(val, pathOfIds) {
     };
 };
 
-export function setSwitchImagePageIsHoveringArrow(val, id) {
-    return { 
-        type: actionTypes.SET_SWITCH_IMAGE_PAGE_IS_HOVERING_ARROW,
-        val: val,
-        id: id
-    };
-};
+// export function setSwitchImagePageIsHoveringArrow(val, id) {
+//     return { 
+//         type: actionTypes.SET_SWITCH_IMAGE_PAGE_IS_HOVERING_ARROW,
+//         val: val,
+//         id: id
+//     };
+// };
 
 export function setHistoryPopFromPortfolioItem(val) {
     return { 

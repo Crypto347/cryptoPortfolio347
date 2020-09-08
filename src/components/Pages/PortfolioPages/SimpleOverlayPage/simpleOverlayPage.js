@@ -134,50 +134,50 @@ export const SimpleOverlayPage = (props) => {
         return e.deltaY < 0;
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
-        switch(opt){
-            case 'switchImageCategory': 
-                props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
-                break;
-            case 'arrow': 
-                props.setSwitchImagePageIsHoveringArrow("on", id);
-                break;
-        }
-    }
+    // const handleMouseEnter = (opt, id, pathOfIds) => {
+    //     switch(opt){
+    //         case 'switchImageCategory': 
+    //             props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
+    //             break;
+    //         case 'arrow': 
+    //             props.setSwitchImagePageIsHoveringArrow("on", id);
+    //             break;
+    //     }
+    // }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
-        switch(opt){
-            case 'switchImageCategory': 
-                props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
-                break;
-            case 'arrow': 
-                props.setSwitchImagePageIsHoveringArrow("off", id);
-                break;
-        }
-    }
+    // const handleMouseLeave = (opt, id, pathOfIds) => {
+    //     switch(opt){
+    //         case 'switchImageCategory': 
+    //             props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
+    //             break;
+    //         case 'arrow': 
+    //             props.setSwitchImagePageIsHoveringArrow("off", id);
+    //             break;
+    //     }
+    // }
 
-    const renderClassName = (opt, isHovering) => {
-        if(opt === "switchImageCategory"){
-            switch(isHovering){
-                case 'init':
-                    return "h15-nobel-lustria-animated";
-                case 'on':
-                    return "h15-nobel-lora-nero-hover-on";
-                case 'off':
-                    return "h15-nobel-lora-nero-hover-off"
-            }
-        }
-        if(opt === "arrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper";
-                case 'on':
-                    return "arrow-wrapper-lengthen";
-                case 'off':
-                    return "arrow-wrapper-shorten"
-            }
-        }
-    }
+    // const renderClassName = (opt, isHovering) => {
+    //     if(opt === "switchImageCategory"){
+    //         switch(isHovering){
+    //             case 'init':
+    //                 return "h15-nobel-lustria-animated";
+    //             case 'on':
+    //                 return "h15-nobel-lora-nero-hover-on";
+    //             case 'off':
+    //                 return "h15-nobel-lora-nero-hover-off"
+    //         }
+    //     }
+    //     if(opt === "arrow"){
+    //         switch(isHovering){
+    //             case 'init':
+    //                 return "arrow-wrapper";
+    //             case 'on':
+    //                 return "arrow-wrapper-lengthen";
+    //             case 'off':
+    //                 return "arrow-wrapper-shorten"
+    //         }
+    //     }
+    // }
 
     const renderToolbars = () => {
         if(size.width < 1120){
@@ -316,7 +316,7 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
+            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

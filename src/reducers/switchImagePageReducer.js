@@ -161,18 +161,18 @@ const setSwitchImagePageIsHoveringCategory = (state, action) => {
     };
 }
 
-const setSwitchImagePageIsHoveringArrow = (state, action) => {
-    let updatedItems = [...state.items];
+// const setSwitchImagePageIsHoveringArrow = (state, action) => {
+//     let updatedItems = [...state.items];
 
-    let item = {...updatedItems.find(item => item.id === action.id), arrowIsHovering: action.val};
-    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
-    updatedItems.splice(itemIndex, 1, item);
+//     let item = {...updatedItems.find(item => item.id === action.id), arrowIsHovering: action.val};
+//     let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+//     updatedItems.splice(itemIndex, 1, item);
 
-    return {
-        ...state,
-        items: updatedItems
-    };
-}
+//     return {
+//         ...state,
+//         items: updatedItems
+//     };
+// }
 
 const switchImagePageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -188,8 +188,8 @@ const switchImagePageReducer = (state = initialState, action) => {
             return forgetCoordinateRangeForSwitchImagePage(state, action);
         case actionTypes.SET_SWITCH_IMAGE_PAGE_IS_HOVERING_CATEGORY:
             return setSwitchImagePageIsHoveringCategory(state, action);
-        case actionTypes.SET_SWITCH_IMAGE_PAGE_IS_HOVERING_ARROW:
-            return setSwitchImagePageIsHoveringArrow(state, action);
+        // case actionTypes.SET_SWITCH_IMAGE_PAGE_IS_HOVERING_ARROW:
+        //     return setSwitchImagePageIsHoveringArrow(state, action);
         default: 
             return state;
     }

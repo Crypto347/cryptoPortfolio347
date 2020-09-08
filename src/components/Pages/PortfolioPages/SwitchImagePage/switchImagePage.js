@@ -29,7 +29,7 @@ import './switchImagePage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
-import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
+import PortfolioItemCard from '../../../SmallParts/PortfolioItemCard/portfolioItemCard';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -223,52 +223,7 @@ export const SwitchImagePage = (props) => {
         }
         return e.deltaY < 0;
     }
-
-    const handleMouseEnter = (opt, id, pathOfIds) => {
-        switch(opt){
-            case 'switchImageCategory': 
-                props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
-                break;
-            case 'arrow': 
-                props.setSwitchImagePageIsHoveringArrow("on", id);
-                break;
-        }
-    }
-
-    const handleMouseLeave = (opt, id, pathOfIds) => {
-        switch(opt){
-            case 'switchImageCategory': 
-                props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
-                break;
-            case 'arrow': 
-                props.setSwitchImagePageIsHoveringArrow("off", id);
-                break;
-        }
-    }
-
-    const renderClassName = (opt, isHovering) => {
-        if(opt === "switchImageCategory"){
-            switch(isHovering){
-                case 'init':
-                    return "h15-nobel-lustria-animated";
-                case 'on':
-                    return "h15-nobel-lora-nero-hover-on";
-                case 'off':
-                    return "h15-nobel-lora-nero-hover-off"
-            }
-        }
-        if(opt === "arrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper";
-                case 'on':
-                    return "arrow-wrapper-lengthen";
-                case 'off':
-                    return "arrow-wrapper-shorten"
-            }
-        }
-    }
-
+   
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -304,74 +259,28 @@ export const SwitchImagePage = (props) => {
             )
         }
     }
-    const onClickHandler = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, "switchImagePage");
-        props.clearArchiveData();
-    }
-
-    const renderCategories = (obj) => {
-        return(
-            <div className="switch-image-page-item-categories">{obj.categories.map((el, i) => {
-                let pathOfIds = [obj.id, el.id];
-                return(
-                    <div 
-                        key={i}
-                        className="switch-image-page-item-category"
-                        onClick={() => onClickHandler(el.path)}
-                        onMouseEnter={() => handleMouseEnter(`switchImageCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`switchImageCategory`, null, pathOfIds)} 
-                    >
-                        {i !== 0 ? <div className="switch-image-page-item-category-slash">/</div> : null}
-                        <H15 className={renderClassName("switchImageCategory", el.isHover)}>{el.label}</H15>
-                    </div>
-                )
-            })}</div>
-        )
-    }
 
     const renderSwitchImagePageData = () => {
         return(
             <div className="switch-image-page-items">{props.switchImagePage.items.map((el, i) => {
                 let imgCoordinateRange = props.switchImagePage.itemsCooradinateRange.find(item => item.id === el.id);
                 return(
-                    <div 
+                    <div
                         key={i}
                         className="switch-image-page-item"
                         id={el.key}
                     >
-                        <div className="switch-image-page-item-image">
-                            <SwitchImage  
-                                component="switchImagePage"
-                                id={el.id}
-                                option={el.option}
-                                imagesArray={el.pictures}
-                                alt={el.alt}
-                                path={el.path}
-                                // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                                rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
-                                imgCoordinateRange={imgCoordinateRange}
-                                setUnmountComponentValues={props.setUnmountComponentValues}
-                                unmountComponent={props.unmountComponent}
-                            />
-                        </div>
-                        <EH30/>
-                        {renderCategories(el)}
-                        <EH10/>
-                        <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
-                        <div 
-                            className={renderClassName("arrow", el.arrowIsHovering)}
-                            onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
-                            onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
-                            onClick={() => onClickHandler(el.path)}
-                        >
-                            <div className="arrow-horizontal-line"/>
-                            <div className="arrow-wrapper2">
-                                <div className="arrow-top-line"></div>
-                                <div className="arrow-bottom-line"></div>
-                            </div>
-                        </div>
-                        <EH30/>
+                        <PortfolioItemCard
+                            component="switchImagePage"
+                            obj={el}
+                            rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
+                            imgCoordinateRange={imgCoordinateRange}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            setIsHoveringCategory={props.setSwitchImagePageIsHoveringCategory}
+                            // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
+                            clearArchiveData={props.clearArchiveData}
+                        />
                     </div>
                 )
             })}</div>
@@ -447,7 +356,7 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
+            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

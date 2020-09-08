@@ -29,7 +29,7 @@ import './portfolioGallery.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
-import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
+import PortfolioItemCard from '../../../SmallParts/PortfolioItemCard/portfolioItemCard';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -200,51 +200,6 @@ export const PortfolioGallery = (props) => {
         props.forgetCoordinateRangeForPortfolioGalleryPage(initCoordinateRange);
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
-        switch(opt){
-            case 'portfolioCategory': 
-                props.setPortfolioGalleryPageIsHoveringCategory("on", pathOfIds);
-                break;
-            case 'arrow': 
-                props.setPortfolioGalleryPageIsHoveringArrow("on", id);
-                break;
-        }
-    }
-
-    const handleMouseLeave = (opt, id, pathOfIds) => {
-        switch(opt){
-            case 'portfolioCategory': 
-                props.setPortfolioGalleryPageIsHoveringCategory("off", pathOfIds);
-                break;
-            case 'arrow': 
-                props.setPortfolioGalleryPageIsHoveringArrow("off", id);
-                break;
-        }
-    }
-
-    const renderClassName = (opt, isHovering) => {
-        if(opt === "portfolioCategory"){
-            switch(isHovering){
-                case 'init':
-                    return "h15-nobel-lustria-animated";
-                case 'on':
-                    return "h15-nobel-lora-nero-hover-on";
-                case 'off':
-                    return "h15-nobel-lora-nero-hover-off"
-            }
-        }
-        if(opt === "arrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper";
-                case 'on':
-                    return "arrow-wrapper-lengthen";
-                case 'off':
-                    return "arrow-wrapper-shorten"
-            }
-        }
-    }
-
     const renderToolbars = () => {
         return(
             <Toolbar 
@@ -262,26 +217,6 @@ export const PortfolioGallery = (props) => {
         props.clearArchiveData();
     }
 
-    const renderCategories = (obj) => {
-        return(
-            <div className="portfolio-gallery-page-item-categories">{obj.categories.map((el, i) => {
-                let pathOfIds = [obj.id, el.id];
-                return(
-                    <div 
-                        key={i}
-                        className="portfolio-gallery-page-item-category"
-                        onClick={() => onClickHandler(el.path)}
-                        onMouseEnter={() => handleMouseEnter(`portfolioCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`portfolioCategory`, null, pathOfIds)} 
-                    >
-                        {i !== 0 ? <div className="portfolio-gallery-page-item-category-slash">/</div> : null}
-                        <H15 className={renderClassName("portfolioCategory", el.isHover)}>{el.label}</H15>
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
     const renderPortfolioGalleryPageItems = () => {
         return(
             <>
@@ -294,38 +229,17 @@ export const PortfolioGallery = (props) => {
                             className="portfolio-gallery-page-item"
                             id={el.key}
                         >
-                            <div className="portfolio-gallery-page-item-image">
-                                <SwitchImage  
-                                    component="portfolioGallery"
-                                    id={el.id}
-                                    option={el.option}
-                                    imagesArray={el.pictures}
-                                    alt={el.alt}
-                                    path={el.path}
-                                    // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                                    rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
-                                    imgCoordinateRange={imgCoordinateRange}
-                                    setUnmountComponentValues={props.setUnmountComponentValues}
-                                    unmountComponent={props.unmountComponent}
-                                />
-                            </div>
-                            <EH30/>
-                            {renderCategories(el)}
-                            <EH10/>
-                            <H19 className="h19-nero-poppins">{el.portfolioType}</H19>
-                            <div 
-                                className={renderClassName("arrow", el.arrowIsHovering)}
-                                onMouseEnter={() => handleMouseEnter("arrow", el.id)} 
-                                onMouseLeave={() => handleMouseLeave("arrow", el.id)} 
-                                onClick={() => onClickHandler(el.path)}
-                            >
-                                <div className="arrow-horizontal-line"/>
-                                <div className="arrow-wrapper2">
-                                    <div className="arrow-top-line"></div>
-                                    <div className="arrow-bottom-line"></div>
-                                </div>
-                            </div>
-                            <EH30/>
+                            <PortfolioItemCard
+                                component="portfolioGallery"
+                                obj={el}
+                                rememberCoordinateRange={props.rememberCoordinateRangeForPortfolioGalleryPage}
+                                imgCoordinateRange={imgCoordinateRange}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                setIsHoveringCategory={props.setPortfolioGalleryPageIsHoveringCategory}
+                                // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
+                                clearArchiveData={props.clearArchiveData}
+                            />
                         </div>
                     )
                 })}</div>
@@ -407,7 +321,7 @@ export default connect(
             rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
             setPortfolioGalleryPageIsHoveringCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringCategory, dispatch),
-            setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
+            // setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

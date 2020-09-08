@@ -44,13 +44,13 @@ export function setPortfolioGalleryPageIsHoveringCategory(val, pathOfIds) {
     };
 };
 
-export function setPortfolioGalleryPageIsHoveringArrow(val, id) {
-    return { 
-        type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW,
-        val: val,
-        id: id
-    };
-};
+// export function setPortfolioGalleryPageIsHoveringArrow(val, id) {
+//     return { 
+//         type: actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW,
+//         val: val,
+//         id: id
+//     };
+// };
 
 export function setHistoryPopFromPortfolioItem(val) {
     return { 

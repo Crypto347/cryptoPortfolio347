@@ -161,19 +161,18 @@ const setPortfolioGalleryPageIsHoveringCategory = (state, action) => {
     };
 }
 
-const setPortfolioGalleryPageIsHoveringArrow = (state, action) => {
-    let updatedItems = [...state.items];
+// const setPortfolioGalleryPageIsHoveringArrow = (state, action) => {
+//     let updatedItems = [...state.items];
 
-    let item = {...updatedItems.find(item => item.id === action.id), arrowIsHovering: action.val};
-    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
-    updatedItems.splice(itemIndex, 1, item);
+//     let item = {...updatedItems.find(item => item.id === action.id), arrowIsHovering: action.val};
+//     let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+//     updatedItems.splice(itemIndex, 1, item);
 
-    return {
-        ...state,
-        items: updatedItems
-    };
-}
-
+//     return {
+//         ...state,
+//         items: updatedItems
+//     };
+// }
 
 const portfolioGalleryPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -189,8 +188,8 @@ const portfolioGalleryPageReducer = (state = initialState, action) => {
             return forgetCoordinateRangeForPortfolioGalleryPage(state, action);
         case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_CATEGORY:
             return setPortfolioGalleryPageIsHoveringCategory(state, action);
-        case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW:
-            return setPortfolioGalleryPageIsHoveringArrow(state, action);
+        // case actionTypes.SET_PORTFOLIO_GALLERY_PAGE_IS_HOVERING_ARROW:
+        //     return setPortfolioGalleryPageIsHoveringArrow(state, action);
         default: 
             return state;
     }
