@@ -134,11 +134,21 @@ export const SlideFromImageLeft = (props) => {
         if(opt === "image"){
             switch(isHovering){
                 case 'init':
+                    return "slide-from-image-left-image-wrapper";
+                case 'on':
+                    return "slide-from-image-left-image-wrapper-hover-on";
+                case 'off':
+                    return "slide-from-image-left-image-wrapper-hover-off"
+            }
+        }
+        if(opt === "curtain"){
+            switch(isHovering){
+                case 'init':
                     return "display-none";
                 case 'on':
-                    return "simple-overlay-curtain-hover-on";
+                    return "slide-from-image-left-curtain-hover-on";
                 case 'off':
-                    return "simple-overlay-curtain-hover-off"
+                    return "slide-from-image-left-curtain-hover-off"
             }
         }
     }
@@ -149,22 +159,26 @@ export const SlideFromImageLeft = (props) => {
 
     return(
         <div 
-            className="simple-overlay-image"
+            className="slide-from-image-left"
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
-            <img 
-                id="img"
-                src={loadImg(props.imageKey)} 
-                alt={props.alt}
-            />
             <div 
                 className={renderClassName("image", isHovering)}
+            >
+                <img 
+                    id="img"
+                    src={loadImg(props.imageKey)} 
+                    alt={props.alt}
+                />
+            </div>
+            {/* <div 
+                className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
                 onClick={() => simpleOverlayImageOnClick(props.path)}
             >
                 <H35 className="h35-nero-poppins">{props.header}</H35>
-            </div> 
+            </div>  */}
             <EH30/>
         </div>
     );

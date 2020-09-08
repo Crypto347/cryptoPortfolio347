@@ -131,7 +131,7 @@ export const SimpleOverlayImage = (props) => {
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "image"){
+        if(opt === "curtain"){
             switch(isHovering){
                 case 'init':
                     return "display-none";
@@ -159,7 +159,7 @@ export const SimpleOverlayImage = (props) => {
                 alt={props.alt}
             />
             <div 
-                className={renderClassName("image", isHovering)}
+                className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
                 onClick={() => simpleOverlayImageOnClick(props.path)}
             >

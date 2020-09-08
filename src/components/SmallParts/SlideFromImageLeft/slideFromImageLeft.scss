@@ -1,12 +1,38 @@
-.simple-overlay-image {
+.slide-from-image-left {
     position: relative;
     width: 100%;
+    overflow: hidden;
     cursor: pointer;
-    >img {
+    .slide-from-image-left-image-wrapper {
         width: 100%;
+        transform: translateX(0px);
+        >img {
+            width: 100%;
+        }
     }
-    
-    .simple-overlay-curtain-hover-on {
+    .slide-from-image-left-image-wrapper-hover-on {
+        width: 100%;
+        transform: translateX(20px);
+        -webkit-animation: slideFromImageLeftImageHoverOn .3s linear;
+        -moz-animation: slideFromImageLeftImageHoverOn .3s linear;
+        -o-animation: slideFromImageLeftImageHoverOn .3s linear;
+        animation: slideFromImageLeftImageHoverOn .3s linear;
+        >img {
+            width: 100%;
+        }
+    }
+    .slide-from-image-left-image-wrapper-hover-off {
+        width: 100%;
+        transform: translateX(0px);
+        -webkit-animation: slideFromImageLeftImageHoverOff .3s linear;
+        -moz-animation: slideFromImageLeftImageHoverOff .3s linear;
+        -o-animation: slideFromImageLeftImageHoverOff .3s linear;
+        animation: slideFromImageLeftImageHoverOff .3s linear;
+        >img {
+            width: 100%;
+        }
+    }
+    .slide-from-image-left-curtain-hover-on {
         background: white;
         width: calc(100% - 60px);
         position: absolute;
@@ -24,7 +50,7 @@
         -o-animation: simpleOverlayImageHoverOn 0.5s linear;
         animation: simpleOverlayImageHoverOn 0.5s linear;
     }
-    .simple-overlay-curtain-hover-off {
+    .slide-from-image-left-curtain-hover-off {
         background: white;
         width: calc(100% - 60px);
         position: absolute;
@@ -48,36 +74,71 @@
     display: none;
 }
 
-@-webkit-keyframes simpleOverlayImageHoverOn {
-    from{opacity: 0;}
-    to{opacity:1;}
+
+@-webkit-keyframes slideFromImageLeftImageHoverOn {
+    from{transform: translateX(0px);}
+    to{transform: translateX(20px);}
 }
-@-moz-keyframes simpleOverlayImageHoverOn {
-    from{opacity: 0;}
-    to{opacity:1;}
+@-moz-keyframes slideFromImageLeftImageHoverOn {
+    from{transform: translateX(0px);}
+    to{transform: translateX(20px);}
 }
-@-o-keyframes simpleOverlayImageHoverOn {
-    from{opacity: 0;}
-    to{opacity:1;}
+@-o-keyframes slideFromImageLeftImageHoverOn {
+    from{transform: translateX(0px);}
+    to{transform: translateX(20px);}
 }
-@keyframes simpleOverlayImageHoverOn {
-    from{opacity: 0;}
-    to{opacity:1;}
+@keyframes slideFromImageLeftImageHoverOn {
+    from{transform: translateX(0px);}
+    to{transform: translateX(20px);}
 }
 
-@-webkit-keyframes simpleOverlayImageHoverOff {
-    from{opacity: 1;}
-    to{opacity:0;}
+@-webkit-keyframes slideFromImageLeftImageHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
 }
-@-moz-keyframes simpleOverlayImageHoverOff {
-    from{opacity: 1;}
-    to{opacity:0;}
+@-moz-keyframes slideFromImageLeftImageHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
 }
-@-o-keyframes simpleOverlayImageHoverOff {
-    from{opacity: 1;}
-    to{opacity:0;}
+@-o-keyframes slideFromImageLeftImageHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
 }
-@keyframes simpleOverlayImageHoverOff {
-    from{opacity: 1;}
-    to{opacity:0;}
+@keyframes slideFromImageLeftImageHoverOff {
+    from{transform: translateX(20px);}
+    to{transform: translateX(0px);}
 }
+
+// @-webkit-keyframes simpleOverlayImageHoverOn {
+//     from{opacity: 0;}
+//     to{opacity:1;}
+// }
+// @-moz-keyframes simpleOverlayImageHoverOn {
+//     from{opacity: 0;}
+//     to{opacity:1;}
+// }
+// @-o-keyframes simpleOverlayImageHoverOn {
+//     from{opacity: 0;}
+//     to{opacity:1;}
+// }
+// @keyframes simpleOverlayImageHoverOn {
+//     from{opacity: 0;}
+//     to{opacity:1;}
+// }
+
+// @-webkit-keyframes simpleOverlayImageHoverOff {
+//     from{opacity: 1;}
+//     to{opacity:0;}
+// }
+// @-moz-keyframes simpleOverlayImageHoverOff {
+//     from{opacity: 1;}
+//     to{opacity:0;}
+// }
+// @-o-keyframes simpleOverlayImageHoverOff {
+//     from{opacity: 1;}
+//     to{opacity:0;}
+// }
+// @keyframes simpleOverlayImageHoverOff {
+//     from{opacity: 1;}
+//     to{opacity:0;}
+// }
