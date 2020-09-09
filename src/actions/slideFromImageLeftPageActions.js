@@ -19,3 +19,11 @@ export function fetchSlideFromImageLeftPageFailur(err) {
         err: err
     };
 };
+
+export function setSlideFromImageLeftPageIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_SLIDE_FROM_IMAGE_LEFT_PAGE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};

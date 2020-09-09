@@ -21,8 +21,8 @@ import './slideFromImageLeft.scss';
 import * as Utility from '../../../utility';
 
 import { 
-    H15,
-    H35,
+    H17,
+    H22,
     H45,
     H70,
     EH10,
@@ -70,16 +70,26 @@ export const SlideFromImageLeft = (props) => {
 
     const handleResize = () => {
         let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight);
+        setCardHeight(cardHeight - 80);
     }
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = (opt, id, pathOfIds) => {
         setIsHovering("on");
         handleResize();
+        switch(opt){
+            case 'slideFromImageLeftCategory': 
+                props.setIsHoveringCategory("on", pathOfIds);
+            break;
+        }
     }
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (opt, id, pathOfIds) => {
         setIsHovering("off");
+        switch(opt){
+            case 'slideFromImageLeftCategory': 
+                props.setIsHoveringCategory("off", pathOfIds);
+                break;
+        }
     }
 
     const loadImg = (key) => {
@@ -151,6 +161,46 @@ export const SlideFromImageLeft = (props) => {
                     return "slide-from-image-left-curtain-hover-off"
             }
         }
+        if(opt === "slideFromImageLeftCategory"){
+            switch(isHovering){
+                case 'init':
+                    return "h17-white-lustria-animated";
+                case 'on':
+                    return "h17-white-lustria-nobel-hover-on";
+                case 'off':
+                    return "h17-nobel-lustria-nobel-hover-off"
+            }
+        }
+        if(opt === "header"){
+            switch(isHovering){
+                case 'init':
+                    return "display-none";
+                case 'on':
+                    return "h22-white-poppins-animated-opacity-hover-on";
+                case 'off':
+                    return "h22-white-poppins-animated-opacity-hover-off"
+            }
+        }
+    }
+
+    const renderCategories = (obj) => {
+        return(
+            <div className="slide-from-image-left-categories">{obj.categories.map((el, i) => {
+                let pathOfIds = [obj.id, el.id];
+                return(
+                    <div 
+                        key={i}
+                        className="slide-from-image-left-category"
+                        onClick={() => onClickHandler(el.path)}
+                        onMouseEnter={() => handleMouseEnter(`slideFromImageLeftCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`slideFromImageLeftCategory`, null, pathOfIds)} 
+                    >
+                        {i !== 0 ? <div className="slide-from-image-left-category-slash">/</div> : null}
+                        <H17 className={renderClassName("slideFromImageLeftCategory", el.isHover)}>{el.label}</H17>
+                    </div>
+                )
+            })}</div>
+        )
     }
 
     /**
@@ -172,13 +222,18 @@ export const SlideFromImageLeft = (props) => {
                     alt={props.alt}
                 />
             </div>
-            {/* <div 
+            <div 
+                // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
                 onClick={() => simpleOverlayImageOnClick(props.path)}
             >
-                <H35 className="h35-nero-poppins">{props.header}</H35>
-            </div>  */}
+                {renderCategories(props.obj)}
+                <div className="slide-from-image-left-header-wrapper">
+                    <H22 className={renderClassName("header", isHovering)}>{props.header}</H22>
+                    <div className="slide-from-image-left-line"/>
+                </div>
+            </div> 
             <EH30/>
         </div>
     );

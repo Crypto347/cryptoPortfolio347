@@ -180,6 +180,7 @@ export const SlideFromImageLeftPage = (props) => {
                         className="slide-from-image-left-page-item"
                     >
                         <SlideFromImageLeft
+                            obj={el}
                             imageKey={el.coverImage.key}
                             alt={el.coverImage.alt}
                             header={el.header}
@@ -187,6 +188,7 @@ export const SlideFromImageLeftPage = (props) => {
                             path={el.path}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
+                            setIsHoveringCategory={props.setSlideFromImageLeftPageIsHoveringCategory}
                             page="simpleOverlayPage"
                             id={el.id}
                         />
@@ -265,8 +267,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
+            setSlideFromImageLeftPageIsHoveringCategory: bindActionCreators(Actions.setSlideFromImageLeftPageIsHoveringCategory, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
             // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),

@@ -87,9 +87,9 @@ export const PortfolioItemCard = (props) => {
                 case 'init':
                     return "h15-nobel-lustria-animated";
                 case 'on':
-                    return "h15-nobel-lora-nero-hover-on";
+                    return "h15-nobel-lustria-nero-hover-on";
                 case 'off':
-                    return "h15-nobel-lora-nero-hover-off"
+                    return "h15-nobel-lustria-nero-hover-off"
             }
         }
         if(opt === "arrow"){

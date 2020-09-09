@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-.h15-nobel-lora-nero-hover-on {
+.h15-nobel-lustria-nero-hover-on {
     font-size: 15px;
     color: rgb(37, 37, 37);
     font-family: 'Lustria', serif;
@@ -39,7 +39,7 @@
     animation: h15NobelNeroHoverOn .5s linear;
 }
 
-.h15-nobel-lora-nero-hover-off {
+.h15-nobel-lustria-nero-hover-off {
     font-size: 15px;
     color: rgb(155, 155, 155);
     font-family: 'Lustria', serif;
@@ -122,19 +122,19 @@
     to {color: white;}
 }
 
-@-webkit-keyframes h15NobelNeroHoverOn{
+@-webkit-keyframes h15NobelNeroHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
-@-moz-keyframes h15NobelNeroHoverOn{
+@-moz-keyframes h15NobelNeroHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
-@-o-keyframes h15NobelNeroHoverOn{
+@-o-keyframes h15NobelNeroHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }
-@keyframes h15NobelNeroHoverOn{
+@keyframes h15NobelNeroHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
 }

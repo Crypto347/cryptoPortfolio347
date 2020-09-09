@@ -46,6 +46,28 @@ const fetchSlideFromImageLeftPageFailur = (state, action) => {
     };
 }
 
+const setSlideFromImageLeftPageIsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const slideFromImageLeftPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SLIDE_FROM_IMAGE_LEFT_PAGE_BEGIN:
@@ -54,6 +76,8 @@ const slideFromImageLeftPageReducer = (state = initialState, action) => {
             return fetchSlideFromImageLeftPageSuccess (state, action);
         case actionTypes.FETCH_SLIDE_FROM_IMAGE_LEFT_PAGE_FAILURE:
             return fetchSlideFromImageLeftPageFailur(state, action);
+        case actionTypes.SET_SLIDE_FROM_IMAGE_LEFT_PAGE_IS_HOVERING_CATEGORY:
+            return setSlideFromImageLeftPageIsHoveringCategory(state, action);
         default: 
             return state;
     }

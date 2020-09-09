@@ -15,6 +15,29 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.h22-white-poppins-animated-opacity-hover-on {
+    font-size: 22px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 1;
+    -webkit-animation: h22OpacityHoverOn .1s linear;
+    -moz-animation: h22OpacityHoverOn .1s linear;
+    -o-animation: h22OpacityHoverOn .1s linear;
+    animation: h22OpacityHoverOn .1s linear;
+    animation-delay: .3s;
+    animation-fill-mode: both;
+}
+.h22-white-poppins-animated-opacity-hover-off {
+    font-size: 22px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    -webkit-animation: h22OpacityHoverOff .1s linear;
+    -moz-animation: h22OpacityHoverOff .1s linear;
+    -o-animation: h22OpacityHoverOff .1s linear;
+    animation: h22OpacityHoverOff .1s linear;
+}
+
 .h22-nero-lustria-animated {
     font-size: 22px;
     color: rgb(37, 37, 37);
@@ -44,19 +67,53 @@
     animation: h22NeroNobelHoverOff .5s linear;
 }
 
-@-webkit-keyframes h22NeroNobelHoverOn{
+@-webkit-keyframes h22OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-moz-keyframes h22OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-o-keyframes h22OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes h22OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@-webkit-keyframes h22OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-moz-keyframes h22OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-o-keyframes h22OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes h22OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+
+@-webkit-keyframes h22NeroNobelHoverOn {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
-@-moz-keyframes h22NeroNobelHoverOn{
+@-moz-keyframes h22NeroNobelHoverOn {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
-@-o-keyframes h22NeroNobelHoverOn{
+@-o-keyframes h22NeroNobelHoverOn {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
-@keyframes h22NeroNobelHoverOn{
+@keyframes h22NeroNobelHoverOn {
     from{color: rgb(37, 37, 37);}
     to{color: rgb(155, 155, 155);}
 }
