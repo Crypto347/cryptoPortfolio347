@@ -135,11 +135,11 @@ export const TeamInformationCard = (props) => {
         if(opt === "teamCardImage"){
             switch(isHovering){
                 case 'init':
-                    return "team-information-card-image-wrapper";
+                    return "team-information-card-image";
                 case 'on':
-                    return "team-information-card-image-wrapper-hover-on";
+                    return "team-information-card-image-hover-on";
                 case 'off':
-                    return "team-information-card-image-wrapper-hover-off"
+                    return "team-information-card-image-hover-off"
             }
         }
     }
@@ -155,7 +155,7 @@ export const TeamInformationCard = (props) => {
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
-            <div className="team-information-card-image">
+            {/* <div className="team-information-card-image"> */}
                 <div className={renderClassName("teamCardImage", isHovering)}>
                     <img 
                         id="img"
@@ -180,7 +180,7 @@ export const TeamInformationCard = (props) => {
                     <EH40/>
                 </div> 
                 {/* :  null} */}
-            </div>
+            {/* </div> */}
            
         </div>
     );

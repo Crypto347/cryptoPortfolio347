@@ -22,6 +22,7 @@ import archiveReducer from './archiveReducer';
 import switchImagePageReducer from './switchImagePageReducer';
 import simpleOverlayPageReducer from './simpleOverlayPageReducer';
 import slideFromImageLeftPageReducer from './slideFromImageLeftPageReducer';
+import overlayPageReducer from './overlayPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -41,5 +42,6 @@ export default (history) => combineReducers({
     archive: archiveReducer,
     switchImagePage: switchImagePageReducer,
     simpleOverlayPage: simpleOverlayPageReducer,
-    slideFromImageLeftPage: slideFromImageLeftPageReducer
+    slideFromImageLeftPage: slideFromImageLeftPageReducer,
+    overlayPage: overlayPageReducer
 });

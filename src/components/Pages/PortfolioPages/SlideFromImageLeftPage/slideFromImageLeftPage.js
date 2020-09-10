@@ -239,7 +239,7 @@ export const SlideFromImageLeftPage = (props) => {
                     className="slide-from-image-left-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 slideFromImageLeftPage="h19-nobel-lora">{`${props.slideFromImageLeftPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.slideFromImageLeftPage.error}`}</H15>
                 </div>
             )
         }

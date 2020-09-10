@@ -269,7 +269,7 @@ export const SimpleOverlayPage = (props) => {
                     className="simple-overlay-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 simpleOverlayPage="h19-nobel-lora">{`${props.simpleOverlayPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.simpleOverlayPage.error}`}</H15>
                 </div>
             )
         }

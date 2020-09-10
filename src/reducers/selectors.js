@@ -246,3 +246,10 @@ export const getSlideFromImageLeftPageState = createSelector(
     [getSlideFromImageLeftPage],
     (x) => x
 );
+
+const getOverlayPage = (state) => state.overlayPage;
+
+export const getOverlayPageState = createSelector(
+    [getOverlayPage],
+    (x) => x
+);

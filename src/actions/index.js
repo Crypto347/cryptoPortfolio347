@@ -15,3 +15,4 @@ export * from './archiveActions';
 export * from './switchImagePageActions';
 export * from './simpleOverlayPageActions';
 export * from './slideFromImageLeftPageActions';
+export * from './overlayPageActions';

@@ -28,7 +28,7 @@ import './overlayPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
+import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 
@@ -92,11 +92,11 @@ export const OverlayPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.simpleOverlayPage.items.length === 0){
-            props.fetchSimpleOverlayPage();
+        if(props.overlayPage.items.length === 0){
+            props.fetchOverlayPage();
         }
         let timeout = setTimeout(() => {
-            if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.overlayPage.loading && !props.overlayPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
@@ -116,7 +116,7 @@ export const OverlayPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("simpleOverlayPage");
+        let el = document.getElementById("overlayPage");
     
         // Check scroll direction
 
@@ -133,51 +133,6 @@ export const OverlayPage = (props) => {
         }
         return e.deltaY < 0;
     }
-
-    // const handleMouseEnter = (opt, id, pathOfIds) => {
-    //     switch(opt){
-    //         case 'switchImageCategory': 
-    //             props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
-    //             break;
-    //         case 'arrow': 
-    //             props.setSwitchImagePageIsHoveringArrow("on", id);
-    //             break;
-    //     }
-    // }
-
-    // const handleMouseLeave = (opt, id, pathOfIds) => {
-    //     switch(opt){
-    //         case 'switchImageCategory': 
-    //             props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
-    //             break;
-    //         case 'arrow': 
-    //             props.setSwitchImagePageIsHoveringArrow("off", id);
-    //             break;
-    //     }
-    // }
-
-    // const renderClassName = (opt, isHovering) => {
-    //     if(opt === "switchImageCategory"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h15-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h15-nobel-lora-nero-hover-on";
-    //             case 'off':
-    //                 return "h15-nobel-lora-nero-hover-off"
-    //         }
-    //     }
-    //     if(opt === "arrow"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "arrow-wrapper";
-    //             case 'on':
-    //                 return "arrow-wrapper-lengthen";
-    //             case 'off':
-    //                 return "arrow-wrapper-shorten"
-    //         }
-    //     }
-    // }
 
     const renderToolbars = () => {
         if(size.width < 1120){
@@ -215,16 +170,17 @@ export const OverlayPage = (props) => {
         }
     }
     
-    const renderSimpleOverlayPageData = () => {
+    const renderOverlayPageData = () => {
         return(
-            <div className="simple-overlay-page-items">{props.simpleOverlayPage.items.map((el, i) => {
+            <div className="overlay-page-items">{props.overlayPage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
                         id={el.key}
-                        className="simple-overlay-page-item"
+                        className="overlay-page-item"
                     >
-                        <SimpleOverlayImage
+                        <OverlayImage
+                            page="overlayPage"
                             imageKey={el.coverImage.key}
                             alt={el.coverImage.alt}
                             header={el.header}
@@ -232,7 +188,6 @@ export const OverlayPage = (props) => {
                             path={el.path}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            page="simpleOverlayPage"
                             id={el.id}
                         />
                     </div>
@@ -241,35 +196,35 @@ export const OverlayPage = (props) => {
         )
     }
 
-    const renderSimpleOverlayPageContent = () => {
-        if(props.simpleOverlayPage.loading && !props.simpleOverlayPage.error){
+    const renderOverlayPageContent = () => {
+        if(props.overlayPage.loading && !props.overlayPage.error){
             return(
                 <div 
-                    className="simple-overlay-page-loading-error" 
+                    className="overlay-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error){
+        if(!props.overlayPage.loading && !props.overlayPage.error){
             return(
-                <div className="simple-overlay-page-wrapper">
-                    <div className="simple-overlay-page-header">
-                        <H45 className="h45-nero-lustria">Simple Overlay</H45>
+                <div className="overlay-page-wrapper">
+                    <div className="overlay-page-header">
+                        <H45 className="h45-nero-lustria">Overlay</H45>
                     </div>
                     <div className="grey-line"/>
-                    {renderSimpleOverlayPageData()}
+                    {renderOverlayPageData()}
                 </div>
             )
         }
-        if(!props.simpleOverlayPage.loading && props.simpleOverlayPage.error){
+        if(!props.overlayPage.loading && props.overlayPage.error){
             return(
                 <div 
-                    className="simple-overlay-page-loading-error" 
+                    className="overlay-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 simpleOverlayPage="h19-nobel-lora">{`${props.simpleOverlayPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.overlayPage.error}`}</H15>
                 </div>
             )
         }
@@ -280,9 +235,9 @@ export const OverlayPage = (props) => {
     */
 
     return(
-        <div className="simple-overlay-page" id="simpleOverlayPage">
+        <div className="overlay-page" id="overlayPage">
             {renderToolbars()}
-            {renderSimpleOverlayPageContent()}
+            {renderOverlayPageContent()}
             <Footer/>
         </div>   
     );
@@ -291,18 +246,15 @@ export const OverlayPage = (props) => {
 export default connect(
     (state) => {
         return {
-            simpleOverlayPage: Selectors.getSimpleOverlayPageState(state),
+            overlayPage: Selectors.getOverlayPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
+            fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

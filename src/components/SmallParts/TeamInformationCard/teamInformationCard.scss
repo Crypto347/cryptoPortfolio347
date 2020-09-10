@@ -1,15 +1,15 @@
 .team-information-card {
     width: 20%;
     position: relative;
-    .team-information-card-image {
-        width: 100%;
-        .team-information-card-image-wrapper {
+    // .team-information-card-image {
+    //     width: 100%;
+        .team-information-card-image {
             overflow: hidden;
             >img {
                 width: 100%;
             }
         }
-        .team-information-card-image-wrapper-hover-on {
+        .team-information-card-image-hover-on {
             overflow: hidden;
             >img {
                 width: 100%;
@@ -20,7 +20,7 @@
                 animation: teamCardImageOn .3s linear;
             }
         }
-        .team-information-card-image-wrapper-hover-off {
+        .team-information-card-image-hover-off {
             overflow: hidden;
             >img {
                 width: 100%;
@@ -73,7 +73,7 @@
                 cursor: pointer;
             }
         }
-    }
+    // }
 }
 
 .display-none{

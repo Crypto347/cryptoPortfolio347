@@ -1,137 +1,136 @@
-
-    .portfolio-item-card-image {
-        width: 100%;
-    }
-    .portfolio-item-card-categories {
+.portfolio-item-card-image {
+    width: 100%;
+}
+.portfolio-item-card-categories {
+    display: flex;
+    flex-wrap: wrap;
+    .portfolio-item-card-category {
+        padding-right: 6px;
         display: flex;
-        flex-wrap: wrap;
-        .portfolio-item-card-category {
-            padding-right: 6px;
-            display: flex;
-            align-items: flex-end;
-            .portfolio-item-card-category-slash {
-                font-size: 14px;
-                color: rgb(155, 155, 155);
-                padding-right: 2px;
-            }
+        align-items: flex-end;
+        .portfolio-item-card-category-slash {
+            font-size: 14px;
+            color: rgb(155, 155, 155);
+            padding-right: 2px;
         }
     }
-    .portfolio-item-card-arrow-wrapper {
-        display: flex;
-        margin-top: 10px;
-        align-items: center;
-        cursor: pointer;
-       .arrow-horizontal-line {
-            border: 1px solid black;
-            background: black;
-            width: 60px;
-       }
-       .arrow-wrapper2 {
-            transform: translate(-5px);
-            height: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-           .arrow-top-line {
-                border: 1px solid transparent;
-                height: 0px;
-                transform: translate(-1px, 1px) rotate(-45deg);
-           }
-           .arrow-bottom-line {
-                border: 1px solid transparent;
-                height: 0px;
-                transform: translate(-1px, -1px) rotate(45deg);
-           }
-       }
+}
+.portfolio-item-card-arrow-wrapper {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
+    .arrow-horizontal-line {
+        border: 1px solid black;
+        background: black;
+        width: 60px;
     }
-    .portfolio-item-card-arrow-wrapper-lengthen {
+    .arrow-wrapper2 {
+        transform: translate(-5px);
+        height: 30px;
         display: flex;
-        margin-top: 10px;
-        align-items: center;
-        cursor: pointer;
-        .arrow-horizontal-line {
-            border: 1px solid black;
-            background: black;
-            width: 60px;
-            -webkit-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
-            -moz-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
-            -o-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
-            animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+        flex-direction: column;
+        justify-content: center;
+        .arrow-top-line {
+            border: 1px solid transparent;
+            height: 0px;
+            transform: translate(-1px, 1px) rotate(-45deg);
         }
-        .arrow-wrapper2 {
-            transform: translate(-5px);
-            height: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            .arrow-top-line {
-                border: 0px solid black;
-                background: black;
-                height: 10px;
-                transform: translate(-1px, 2.5px) rotate(-45deg);
-                -webkit-animation: lengthenArrowLineSwitchImagePage .1s linear;
-                -moz-animation: lengthenArrowLineSwitchImagePage .1s linear;
-                -o-animation: lengthenArrowLineSwitchImagePage .1s linear;
-                animation: lengthenArrowLineSwitchImagePage .1s linear;
-                animation-delay: .2s;
-                animation-fill-mode: both;
-            }
-            .arrow-bottom-line {
-                border: 0px solid black;
-                background: black;
-                height: 10px;
-                transform: translate(-1px, -2.5px) rotate(45deg);
-                -webkit-animation: lengthenArrowLineSwitchImagePage .1s linear;
-                -moz-animation: lengthenArrowLineSwitchImagePage .1s linear;
-                -o-animation: lengthenArrowLineSwitchImagePage .1s linear;
-                animation: lengthenArrowLineSwitchImagePage .1s linear;
-                animation-delay: .2s;
-                animation-fill-mode: both;
-            }
+        .arrow-bottom-line {
+            border: 1px solid transparent;
+            height: 0px;
+            transform: translate(-1px, -1px) rotate(45deg);
         }
     }
-    .portfolio-item-card-arrow-wrapper-shorten {
+}
+.portfolio-item-card-arrow-wrapper-lengthen {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
+    .arrow-horizontal-line {
+        border: 1px solid black;
+        background: black;
+        width: 60px;
+        -webkit-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+        -moz-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+        -o-animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+        animation: lengthenHorizontalLineSwitchImagePage .1s linear;
+    }
+    .arrow-wrapper2 {
+        transform: translate(-5px);
+        height: 30px;
         display: flex;
-        margin-top: 10px;
-        align-items: center;
-        cursor: pointer;
-        .arrow-horizontal-line {
-            border: 1px solid black;
+        flex-direction: column;
+        justify-content: center;
+        .arrow-top-line {
+            border: 0px solid black;
             background: black;
-            width: 50px;
-            -webkit-animation: shortenHorizontalLineSwitchImagePage .1s linear;
-            -moz-animation: shortenHorizontalLineSwitchImagePage .1s linear;
-            -o-animation: shortenHorizontalLineSwitchImagePage .1s linear;
-            animation: shortenHorizontalLineSwitchImagePage .1s linear;
-            animation-delay: .1s;
+            height: 10px;
+            transform: translate(-1px, 2.5px) rotate(-45deg);
+            -webkit-animation: lengthenArrowLineSwitchImagePage .1s linear;
+            -moz-animation: lengthenArrowLineSwitchImagePage .1s linear;
+            -o-animation: lengthenArrowLineSwitchImagePage .1s linear;
+            animation: lengthenArrowLineSwitchImagePage .1s linear;
+            animation-delay: .2s;
             animation-fill-mode: both;
         }
-        .arrow-wrapper2 {
-            transform: translate(-5px);
-            height: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            .arrow-top-line {
-                border: 1px solid transparent;
-                height: 0px;
-                transform: translate(-1px, 1px) rotate(-45deg);
-                -webkit-animation: shortenArrowLineSwitchImagePage .1s linear;
-                -moz-animation: shortenArrowLineSwitchImagePage .1s linear;
-                -o-animation: shortenArrowLineSwitchImagePage .1s linear;
-                animation: shortenArrowLineSwitchImagePage .1s linear;
-            }
-            .arrow-bottom-line {
-                border: 1px solid transparent;
-                height: 0px;
-                transform: translate(-1px, -1px) rotate(45deg);
-                -webkit-animation: shortenArrowLineSwitchImagePage .1s linear;
-                -moz-animation: shortenArrowLineSwitchImagePage .1s linear;
-                -o-animation: shortenArrowLineSwitchImagePage .1s linear;
-                animation: shortenArrowLineSwitchImagePage .1s linear;
-            }
+        .arrow-bottom-line {
+            border: 0px solid black;
+            background: black;
+            height: 10px;
+            transform: translate(-1px, -2.5px) rotate(45deg);
+            -webkit-animation: lengthenArrowLineSwitchImagePage .1s linear;
+            -moz-animation: lengthenArrowLineSwitchImagePage .1s linear;
+            -o-animation: lengthenArrowLineSwitchImagePage .1s linear;
+            animation: lengthenArrowLineSwitchImagePage .1s linear;
+            animation-delay: .2s;
+            animation-fill-mode: both;
         }
     }
+}
+.portfolio-item-card-arrow-wrapper-shorten {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
+    .arrow-horizontal-line {
+        border: 1px solid black;
+        background: black;
+        width: 50px;
+        -webkit-animation: shortenHorizontalLineSwitchImagePage .1s linear;
+        -moz-animation: shortenHorizontalLineSwitchImagePage .1s linear;
+        -o-animation: shortenHorizontalLineSwitchImagePage .1s linear;
+        animation: shortenHorizontalLineSwitchImagePage .1s linear;
+        animation-delay: .1s;
+        animation-fill-mode: both;
+    }
+    .arrow-wrapper2 {
+        transform: translate(-5px);
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .arrow-top-line {
+            border: 1px solid transparent;
+            height: 0px;
+            transform: translate(-1px, 1px) rotate(-45deg);
+            -webkit-animation: shortenArrowLineSwitchImagePage .1s linear;
+            -moz-animation: shortenArrowLineSwitchImagePage .1s linear;
+            -o-animation: shortenArrowLineSwitchImagePage .1s linear;
+            animation: shortenArrowLineSwitchImagePage .1s linear;
+        }
+        .arrow-bottom-line {
+            border: 1px solid transparent;
+            height: 0px;
+            transform: translate(-1px, -1px) rotate(45deg);
+            -webkit-animation: shortenArrowLineSwitchImagePage .1s linear;
+            -moz-animation: shortenArrowLineSwitchImagePage .1s linear;
+            -o-animation: shortenArrowLineSwitchImagePage .1s linear;
+            animation: shortenArrowLineSwitchImagePage .1s linear;
+        }
+    }
+}
 
 @-webkit-keyframes lengthenArrowLineSwitchImagePage {
     from{
