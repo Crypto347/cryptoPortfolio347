@@ -135,11 +135,6 @@ export const SlideFromImageLeft = (props) => {
         }
     }
 
-    const simpleOverlayImageOnClick = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
-    }
-
     const renderClassName = (opt, isHovering) => {
         if(opt === "image"){
             switch(isHovering){
@@ -183,6 +178,13 @@ export const SlideFromImageLeft = (props) => {
         }
     }
 
+    const onClickHandler = (e, path) => {
+        e.stopPropagation();
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(null, null, props.page);
+        props.clearArchiveData();
+    }
+
     const renderCategories = (obj) => {
         return(
             <div className="slide-from-image-left-categories">{obj.categories.map((el, i) => {
@@ -191,12 +193,12 @@ export const SlideFromImageLeft = (props) => {
                     <div 
                         key={i}
                         className="slide-from-image-left-category"
-                        onClick={() => onClickHandler(el.path)}
+                        onClick={(e) => onClickHandler(e, el.path)}
                         onMouseEnter={() => handleMouseEnter(`slideFromImageLeftCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`slideFromImageLeftCategory`, null, pathOfIds)} 
                     >
-                        {i !== 0 ? <div className="slide-from-image-left-category-slash">/</div> : null}
                         <H17 className={renderClassName("slideFromImageLeftCategory", el.isHover)}>{el.label}</H17>
+                        {i !== obj.categories.length-1 ? <div className="slide-from-image-left-category-slash">/</div> : null}
                     </div>
                 )
             })}</div>
@@ -218,23 +220,22 @@ export const SlideFromImageLeft = (props) => {
             >
                 <img 
                     id="img"
-                    src={loadImg(props.imageKey)} 
-                    alt={props.alt}
+                    src={loadImg(props.obj.coverImage.key)} 
+                    alt={props.obj.coverImage.alt}
                 />
             </div>
             <div 
                 // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-                onClick={() => simpleOverlayImageOnClick(props.path)}
+                onClick={(e) => onClickHandler(e, props.obj.path)}
             >
                 {renderCategories(props.obj)}
                 <div className="slide-from-image-left-header-wrapper">
-                    <H22 className={renderClassName("header", isHovering)}>{props.header}</H22>
+                    <H22 className={renderClassName("header", isHovering)}>{props.obj.header}</H22>
                     <div className="slide-from-image-left-line"/>
                 </div>
-            </div> 
-            <EH30/>
+            </div>
         </div>
     );
 }

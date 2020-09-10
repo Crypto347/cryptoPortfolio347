@@ -181,16 +181,18 @@ export const SlideFromImageLeftPage = (props) => {
                     >
                         <SlideFromImageLeft
                             obj={el}
-                            imageKey={el.coverImage.key}
-                            alt={el.coverImage.alt}
-                            header={el.header}
-                            isHover={el.coverImage.isHover}
-                            path={el.path}
+                            // id={el.id}
+                            page="slideFromImageLeftPage"
+                      
+                            // imageKey={el.coverImage.key}
+                            // alt={el.coverImage.alt}
+                            // header={el.header}
+                            // isHover={el.coverImage.isHover}
+                            // path={el.path}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             setIsHoveringCategory={props.setSlideFromImageLeftPageIsHoveringCategory}
-                            page="simpleOverlayPage"
-                            id={el.id}
+                            clearArchiveData={props.clearArchiveData}                        
                         />
                         {/* <SimpleOverlayImage
                             imageKey={el.coverImage.key}
