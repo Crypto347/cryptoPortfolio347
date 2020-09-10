@@ -164,8 +164,7 @@ export const SimpleOverlayImage = (props) => {
                 onClick={() => simpleOverlayImageOnClick(props.path)}
             >
                 <H35 className="h35-nero-poppins">{props.header}</H35>
-            </div> 
-            <EH30/>
+            </div>
         </div>
     );
 }

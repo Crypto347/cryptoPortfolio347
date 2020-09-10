@@ -46,6 +46,7 @@ import Archive from './Pages/Archive/archive';
 import SwitchImagePage from './Pages/PortfolioPages/SwitchImagePage/switchImagePage';
 import SimpleOverlayPage from './Pages/PortfolioPages/SimpleOverlayPage/simpleOverlayPage';
 import SlideFromImageLeftPage from './Pages/PortfolioPages/SlideFromImageLeftPage/slideFromImageLeftPage';
+import OverlayPage from './Pages/PortfolioPages/OverlayPage/overlayPage';
 
 /**
 * Actions
@@ -99,6 +100,15 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+
+                <Route 
+                    exact 
+                    path={props.match.url + "/overlay"}
+                    // render={(props) => (
+                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
+                    // }
+                    component={OverlayPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/slide-from-image-left"}

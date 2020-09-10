@@ -20,7 +20,7 @@ import {
 * Styles
 */
 
-import './simpleOverlayPage.scss';
+import './overlayPage.scss';
 
 /**
 * Components
@@ -75,10 +75,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* SimpleOverlayPage component definition and export
+* OverlayPage component definition and export
 */
 
-export const SimpleOverlayPage = (props) => {
+export const OverlayPage = (props) => {
 
     /**
     * State
@@ -225,7 +225,6 @@ export const SimpleOverlayPage = (props) => {
                         className="simple-overlay-page-item"
                     >
                         <SimpleOverlayImage
-                            page="simpleOverlayPage"
                             imageKey={el.coverImage.key}
                             alt={el.coverImage.alt}
                             header={el.header}
@@ -233,6 +232,7 @@ export const SimpleOverlayPage = (props) => {
                             path={el.path}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
+                            page="simpleOverlayPage"
                             id={el.id}
                         />
                     </div>
@@ -309,5 +309,5 @@ export default connect(
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
-)(SimpleOverlayPage);
+)(OverlayPage);
  

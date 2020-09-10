@@ -10,6 +10,8 @@ export const findPathOfIds = (path) => {
             return []; 
         case 'portfolio-category':
             return []; 
+        case 'overlay':
+            return [2, 23, 231]; 
         case 'simple-overlay':
             return [2, 23, 233]; 
         case 'slide-from-image-left':
