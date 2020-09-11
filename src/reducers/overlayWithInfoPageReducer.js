@@ -68,7 +68,6 @@ const setOverlayWithInfoPageIsHoveringCategory = (state, action) => {
     };
 }
 
-
 const overlayWithInfoPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_OVERLAY_WITH_INFO_PAGE_BEGIN:

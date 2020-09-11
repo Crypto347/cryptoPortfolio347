@@ -12,7 +12,7 @@ import React, {
 * Styles
 */
 
-import './slideFromImageLeft.scss';
+import './standardPortfolioItem.scss';
 
 /**
 * Utility
@@ -21,8 +21,8 @@ import './slideFromImageLeft.scss';
 import * as Utility from '../../../utility';
 
 import { 
-    H17,
     H22,
+    H35,
     H45,
     H70,
     EH10,
@@ -39,10 +39,10 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
-* SlideFromImageLeft component definition and export
+* StandardPortfolioItem component definition and export
 */
 
-export const SlideFromImageLeft = (props) => {
+export const StandardPortfolioItem = (props) => {
 
     /**
     * State
@@ -70,7 +70,7 @@ export const SlideFromImageLeft = (props) => {
 
     const handleResize = () => {
         let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - 80);
+        setCardHeight(cardHeight);
     }
 
     const handleMouseEnter = (opt, id, pathOfIds) => {
@@ -79,7 +79,7 @@ export const SlideFromImageLeft = (props) => {
                 setIsHovering("on");
                 handleResize();
                 break;
-            case 'slideFromImageLeftCategory': 
+            case 'standardPortfolioItemCategory': 
                 props.setIsHoveringCategory("on", pathOfIds);
                 break;
         }
@@ -90,7 +90,7 @@ export const SlideFromImageLeft = (props) => {
             case 'curtain': 
                 setIsHovering("off");
                 break;
-            case 'slideFromImageLeftCategory': 
+            case 'standardPortfolioItemCategory': 
                 props.setIsHoveringCategory("off", pathOfIds);
                 break;
         }
@@ -139,70 +139,49 @@ export const SlideFromImageLeft = (props) => {
         }
     }
 
-    const renderClassName = (opt, isHovering) => {
-        if(opt === "image"){
-            switch(isHovering){
-                case 'init':
-                    return "slide-from-image-left-image-wrapper";
-                case 'on':
-                    return "slide-from-image-left-image-wrapper-hover-on";
-                case 'off':
-                    return "slide-from-image-left-image-wrapper-hover-off"
-            }
-        }
-        if(opt === "curtain"){
-            switch(isHovering){
-                case 'init':
-                    return "display-none";
-                case 'on':
-                    return "slide-from-image-left-curtain-hover-on";
-                case 'off':
-                    return "slide-from-image-left-curtain-hover-off"
-            }
-        }
-        if(opt === "slideFromImageLeftCategory"){
-            switch(isHovering){
-                case 'init':
-                    return "h17-white-lustria-animated";
-                case 'on':
-                    return "h17-white-lustria-nobel-hover-on";
-                case 'off':
-                    return "h17-nobel-lustria-nobel-hover-off"
-            }
-        }
-        if(opt === "header"){
-            switch(isHovering){
-                case 'init':
-                    return "display-none";
-                case 'on':
-                    return "h22-white-poppins-animated-opacity-hover-on";
-                case 'off':
-                    return "h22-white-poppins-animated-opacity-hover-off"
-            }
-        }
-    }
-
-    const onClickHandler = (e, path) => {
-        e.stopPropagation();
+    const simpleOverlayImageOnClick = (path) => {
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, props.page);
         props.clearArchiveData();
     }
 
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "curtain"){
+            switch(isHovering){
+                case 'init':
+                    return "display-none";
+                case 'on':
+                    return "standard-portfolio-item-curtain-hover-on";
+                case 'off':
+                    return "standard-portfolio-item-curtain-hover-off"
+            }
+        }
+        if(opt === "standardPortfolioItemCategory"){
+            switch(isHovering){
+                case 'init':
+                    return "h22-nero-lustria-animated";
+                case 'on':
+                    return "h22-nero-lora-nobel-hover-on";
+                case 'off':
+                    return "h22-nero-lora-nobel-hover-off"
+            }
+        }
+    }
+    
     const renderCategories = (obj) => {
         return(
-            <div className="slide-from-image-left-categories">{obj.categories.map((el, i) => {
+            <div className="standard-portfolio-item-categories">{obj.categories.map((el, i) => {
                 let pathOfIds = [obj.id, el.id];
                 return(
                     <div 
                         key={i}
-                        className="slide-from-image-left-category"
+                        className="standard-portfolio-item-category"
                         onClick={(e) => onClickHandler(e, el.path)}
-                        onMouseEnter={() => handleMouseEnter(`slideFromImageLeftCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`slideFromImageLeftCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`standardPortfolioItemCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`standardPortfolioItemCategory`, null, pathOfIds)} 
                     >
-                        <H17 className={renderClassName("slideFromImageLeftCategory", el.isHover)}>{el.label}</H17>
-                        {i !== obj.categories.length-1 ? <div className="slide-from-image-left-category-slash">/</div> : null}
+                        <H22 className={renderClassName("standardPortfolioItemCategory", el.isHover)}>{el.label}</H22>
+                        {i !== obj.categories.length-1 ? <div className="standard-portfolio-item-category-slash">/</div> : null}
                     </div>
                 )
             })}</div>
@@ -215,33 +194,26 @@ export const SlideFromImageLeft = (props) => {
 
     return(
         <div 
-            className="slide-from-image-left"
+            className="standard-portfolio-item"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
         >
+            <img 
+                id="img"
+                src={loadImg(props.obj.coverImage.key)} 
+                alt={props.obj.coverImage.alt}
+            />
             <div 
-                className={renderClassName("image", isHovering)}
-            >
-                <img 
-                    id="img"
-                    src={loadImg(props.obj.coverImage.key)} 
-                    alt={props.obj.coverImage.alt}
-                />
-            </div>
-            <div 
-                // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-                onClick={(e) => onClickHandler(e, props.obj.path)}
-            >
-                {renderCategories(props.obj)}
-                <div className="slide-from-image-left-header-wrapper">
-                    <H22 className={renderClassName("header", isHovering)}>{props.obj.header}</H22>
-                    <div className="slide-from-image-left-line"/>
-                </div>
-            </div>
+                onClick={() => simpleOverlayImageOnClick(props.obj.path)}
+            />
+            <EH30/>
+            <H35 className="h35-nero-poppins">{props.obj.header}</H35>
+            {renderCategories(props.obj)}
+            <EH30/>
         </div>
     );
 }
 
-export default SlideFromImageLeft;
+export default StandardPortfolioItem;

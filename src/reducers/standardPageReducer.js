@@ -46,6 +46,28 @@ const fetchStandardPageFailur = (state, action) => {
     };
 }
 
+const setStandardPageIsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const standardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_STANDARD_PAGE_BEGIN:
@@ -54,6 +76,8 @@ const standardPageReducer = (state = initialState, action) => {
             return fetchStandardPageSuccess (state, action);
         case actionTypes.FETCH_STANDARD_PAGE_FAILURE:
             return fetchStandardPageFailur(state, action);
+        case actionTypes.SET_STANDARD_PAGE_IS_HOVERING_CATEGORY:
+            return setStandardPageIsHoveringCategory(state, action);
         default: 
             return state;
     }

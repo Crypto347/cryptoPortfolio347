@@ -185,7 +185,6 @@ export const OverlayPage = (props) => {
                             // id={el.id}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                  
                         />
                     </div>
                 )

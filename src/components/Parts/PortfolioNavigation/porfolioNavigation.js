@@ -198,6 +198,9 @@ export const PorfolioNavigation = (props) => {
             case 'overlayWithInfoPage':
                 props.history.push(`/crypto-portfolio/overlay-with-info`);
                 break;
+            case 'standardPage':
+                props.history.push(`/crypto-portfolio/portfolio-standard`);
+                break;
             default: 
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 return;
@@ -229,6 +232,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'overlayWithInfoPage':
                 updatedItems = [...props.overlayWithInfoPage.items];
+                break;
+            case 'standardPage':
+                updatedItems = [...props.standardPage.items];
                 break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
@@ -310,6 +316,7 @@ export default connect(
             slideFromImageLeftPage: Selectors.getSlideFromImageLeftPageState(state),
             overlayPage: Selectors.getOverlayPageState(state),
             overlayWithInfoPage: Selectors.getOverlayWithInfoPageState(state),
+            standardPage: Selectors.getStandardPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),

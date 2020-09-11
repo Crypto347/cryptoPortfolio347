@@ -19,3 +19,11 @@ export function fetchStandardPageFailur(err) {
         err: err
     };
 };
+
+export function setStandardPageIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_STANDARD_PAGE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};

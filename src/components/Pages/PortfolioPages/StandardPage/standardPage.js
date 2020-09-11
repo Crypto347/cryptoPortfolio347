@@ -28,7 +28,7 @@ import './standardPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
+import StandardPortfolioItem from '../../../SmallParts/StandardPortfolioItem/standardPortfolioItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -178,16 +178,13 @@ export const StandardPage = (props) => {
                         id={el.key}
                         className="standard-page-item"
                     >
-                        <SimpleOverlayImage
+                        <StandardPortfolioItem
                             page="standardPage"
-                            imageKey={el.coverImage.key}
-                            alt={el.coverImage.alt}
-                            header={el.header}
-                            isHover={el.coverImage.isHover}
-                            path={el.path}
+                            obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
+                            setIsHoveringCategory={props.setStandardPageIsHoveringCategory}
                             unmountComponent={props.unmountComponent}
-                            id={el.id}
+                            clearArchiveData={props.clearArchiveData}     
                         />
                     </div>
                 )
@@ -256,7 +253,7 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
+            setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

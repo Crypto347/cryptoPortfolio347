@@ -56,10 +56,10 @@
             display: flex;
             flex-wrap: wrap;
             opacity: 1;
-            -webkit-animation: slideFromImageLeftCategoriesHoverOn .1s linear;
-            -moz-animation: slideFromImageLeftCategoriesHoverOn .1s linear;
-            -o-animation: slideFromImageLeftCategoriesHoverOn .1s linear;
-            animation: slideFromImageLeftCategoriesHoverOn .1s linear;
+            -webkit-animation: overlayWithInfoCategoriesHoverOn .1s linear;
+            -moz-animation: overlayWithInfoCategoriesHoverOn .1s linear;
+            -o-animation: overlayWithInfoCategoriesHoverOn .1s linear;
+            animation: overlayWithInfoCategoriesHoverOn .1s linear;
             animation-delay: .3s;
             animation-fill-mode: both;
             .overlay-with-info-category {
@@ -146,10 +146,10 @@
             display: flex;
             flex-wrap: wrap;
             opacity: 0;
-            -webkit-animation: slideFromImageLeftCategoriesHoverOff .1s linear;
-            -moz-animation: slideFromImageLeftCategoriesHoverOff .1s linear;
-            -o-animation: slideFromImageLeftCategoriesHoverOff .1s linear;
-            animation: slideFromImageLeftCategoriesHoverOff .1s linear;
+            -webkit-animation: overlayWithInfoCategoriesHoverOff .1s linear;
+            -moz-animation: overlayWithInfoCategoriesHoverOff .1s linear;
+            -o-animation: overlayWithInfoCategoriesHoverOff .1s linear;
+            animation: overlayWithInfoCategoriesHoverOff .1s linear;
             .overlay-with-info-category {
                 padding-right: 6px;
                 display: flex;
@@ -209,6 +209,40 @@
 
 .display-none{
     display: none;
+}
+
+@-webkit-keyframes overlayWithInfoCategoriesHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-moz-keyframes overlayWithInfoCategoriesHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-o-keyframes overlayWithInfoCategoriesHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes overlayWithInfoCategoriesHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@-webkit-keyframes overlayWithInfoCategoriesHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-moz-keyframes overlayWithInfoCategoriesHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-o-keyframes overlayWithInfoCategoriesHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes overlayWithInfoCategoriesHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
 }
 
 @-webkit-keyframes lengthenArrowLineOverlayPage {
