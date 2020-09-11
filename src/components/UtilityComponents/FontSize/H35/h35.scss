@@ -9,3 +9,60 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.h35-white-poppins-animated-opacity-hover-on {
+    font-size: 35px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 1;
+    -webkit-animation: h35OpacityHoverOn .1s linear;
+    -moz-animation: h35OpacityHoverOn .1s linear;
+    -o-animation: h35OpacityHoverOn .1s linear;
+    animation: h35OpacityHoverOn .1s linear;
+    animation-delay: .3s;
+    animation-fill-mode: both;
+}
+
+.h35-white-poppins-animated-opacity-hover-off {
+    font-size: 35px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    -webkit-animation: h35OpacityHoverOff .1s linear;
+    -moz-animation: h35OpacityHoverOff .1s linear;
+    -o-animation: h35OpacityHoverOff .1s linear;
+    animation: h35OpacityHoverOff .1s linear;
+}
+
+@-webkit-keyframes h35OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-moz-keyframes h35OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-o-keyframes h35OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes h35OpacityHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@-webkit-keyframes h35OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-moz-keyframes h35OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-o-keyframes h35OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes h35OpacityHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}

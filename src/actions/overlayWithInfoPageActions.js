@@ -19,3 +19,11 @@ export function fetchOverlayWithInfoPageFailur(err) {
         err: err
     };
 };
+
+export function setOverlayWithInfoPageIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_OVERLAY_WITH_INFO_PAGE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};

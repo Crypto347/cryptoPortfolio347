@@ -189,6 +189,15 @@ export const PorfolioNavigation = (props) => {
             case 'simpleOverlayPage':
                 props.history.push(`/crypto-portfolio/simple-overlay`);
                 break;
+            case 'slideFromImageLeftPage':
+                props.history.push(`/crypto-portfolio/slide-from-image-left`);
+                break;
+            case 'overlayPage':
+                props.history.push(`/crypto-portfolio/overlay`);
+                break;
+            case 'overlayWithInfoPage':
+                props.history.push(`/crypto-portfolio/overlay-with-info`);
+                break;
             default: 
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 return;
@@ -211,6 +220,15 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'simpleOverlayPage':
                 updatedItems = [...props.simpleOverlayPage.items];
+                break;
+            case 'slideFromImageLeftPage':
+                updatedItems = [...props.slideFromImageLeftPage.items];
+                break;
+            case 'overlayPage':
+                updatedItems = [...props.overlayPage.items];
+                break;
+            case 'overlayWithInfoPage':
+                updatedItems = [...props.overlayWithInfoPage.items];
                 break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
@@ -289,6 +307,9 @@ export default connect(
             archive: Selectors.getArchiveState(state),
             switchImagePage: Selectors.getSwitchImagePageState(state),
             simpleOverlayPage: Selectors.getSimpleOverlayPageState(state),
+            slideFromImageLeftPage: Selectors.getSlideFromImageLeftPageState(state),
+            overlayPage: Selectors.getOverlayPageState(state),
+            overlayWithInfoPage: Selectors.getOverlayWithInfoPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),

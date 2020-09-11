@@ -181,14 +181,11 @@ export const OverlayPage = (props) => {
                     >
                         <OverlayImage
                             page="overlayPage"
-                            imageKey={el.coverImage.key}
-                            alt={el.coverImage.alt}
-                            header={el.header}
-                            isHover={el.coverImage.isHover}
-                            path={el.path}
+                            obj={el}
+                            // id={el.id}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            id={el.id}
+                  
                         />
                     </div>
                 )

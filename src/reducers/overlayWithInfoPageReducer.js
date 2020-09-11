@@ -46,6 +46,29 @@ const fetchOverlayWithInfoPageFailur = (state, action) => {
     };
 }
 
+const setOverlayWithInfoPageIsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
+
 const overlayWithInfoPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_OVERLAY_WITH_INFO_PAGE_BEGIN:
@@ -54,6 +77,8 @@ const overlayWithInfoPageReducer = (state = initialState, action) => {
             return fetchOverlayWithInfoPageSuccess (state, action);
         case actionTypes.FETCH_OVERLAY_WITH_INFO_PAGE_FAILURE:
             return fetchOverlayWithInfoPageFailur(state, action);
+        case actionTypes.SET_OVERLAY_WITH_INFO_PAGE_IS_HOVERING_CATEGORY:
+            return setOverlayWithInfoPageIsHoveringCategory(state, action);
         default: 
             return state;
     }

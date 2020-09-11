@@ -180,14 +180,12 @@ export const OverlayWithInfoPage = (props) => {
                     >
                         <OverlayImage
                             page="overlayWithInfoPage"
-                            imageKey={el.coverImage.key}
-                            alt={el.coverImage.alt}
-                            header={el.header}
-                            isHover={el.coverImage.isHover}
-                            path={el.path}
+                            obj={el}
+                            // id={el.id}
+                            setIsHoveringCategory={props.setOverlayWithInfoPageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            id={el.id}
+                            clearArchiveData={props.clearArchiveData}       
                         />
                     </div>
                 )
@@ -253,7 +251,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchOverlayWithInfoPage: bindActionCreators(Services.fetchOverlayWithInfoPage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
+            setOverlayWithInfoPageIsHoveringCategory: bindActionCreators(Actions.setOverlayWithInfoPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

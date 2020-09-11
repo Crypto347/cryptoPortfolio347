@@ -74,9 +74,11 @@ export const SlideFromImageLeft = (props) => {
     }
 
     const handleMouseEnter = (opt, id, pathOfIds) => {
-        setIsHovering("on");
-        handleResize();
         switch(opt){
+            case 'curtain': 
+                setIsHovering("on");
+                handleResize();
+            break;
             case 'slideFromImageLeftCategory': 
                 props.setIsHoveringCategory("on", pathOfIds);
             break;
@@ -84,8 +86,10 @@ export const SlideFromImageLeft = (props) => {
     }
 
     const handleMouseLeave = (opt, id, pathOfIds) => {
-        setIsHovering("off");
         switch(opt){
+            case 'curtain': 
+                setIsHovering("off");
+                break;
             case 'slideFromImageLeftCategory': 
                 props.setIsHoveringCategory("off", pathOfIds);
                 break;
@@ -212,8 +216,8 @@ export const SlideFromImageLeft = (props) => {
     return(
         <div 
             className="slide-from-image-left"
-            onMouseEnter={handleMouseEnter} 
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
+            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
         >
             <div 
                 className={renderClassName("image", isHovering)}

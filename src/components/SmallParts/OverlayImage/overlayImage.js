@@ -21,12 +21,12 @@ import './overlayImage.scss';
 import * as Utility from '../../../utility';
 
 import { 
-    H15,
+    H17,
     H35,
     H45,
     H70,
     EH10,
-    EH30,
+    EH20,
     EH40,
     EH70,
     EH110
@@ -73,13 +73,27 @@ export const OverlayImage = (props) => {
         setCardHeight(cardHeight - 80);
     }
 
-    const handleMouseEnter = () => {
-        setIsHovering("on");
-        handleResize();
+    const handleMouseEnter = (opt, id, pathOfIds) => {
+        switch(opt){
+            case 'curtain': 
+                setIsHovering("on");
+                handleResize();
+            break;
+            case 'overlayWithInfoCategory': 
+                props.setIsHoveringCategory("on", pathOfIds);
+            break;
+        }
     }
 
-    const handleMouseLeave = () => {
-        setIsHovering("off");
+    const handleMouseLeave = (opt, id, pathOfIds) => {
+        switch(opt){
+            case 'curtain': 
+                setIsHovering("off");
+            break;
+            case 'overlayWithInfoCategory': 
+                props.setIsHoveringCategory("off", pathOfIds);
+                break;
+        }
     }
 
     const loadImg = (key) => {
@@ -151,7 +165,26 @@ export const OverlayImage = (props) => {
                     return "overlay-image-hover-off"
             }
         }
-
+        if(opt === "overlayWithInfoCategory"){
+            switch(isHovering){
+                case 'init':
+                    return "h17-white-lustria-animated";
+                case 'on':
+                    return "h17-white-lustria-nobel-hover-on";
+                case 'off':
+                    return "h17-nobel-lustria-nobel-hover-off"
+            }
+        }
+        if(opt === "header"){
+            switch(isHovering){
+                case 'init':
+                    return "display-none";
+                case 'on':
+                    return "h35-white-poppins-animated-opacity-hover-on";
+                case 'off':
+                    return "h35-white-poppins-animated-opacity-hover-off"
+            }
+        }
         if(opt === "arrow"){
             switch(isHovering){
                 case 'init':
@@ -164,6 +197,33 @@ export const OverlayImage = (props) => {
         }
     }
 
+    const onClickHandler = (e, path) => {
+        e.stopPropagation();
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(null, null, props.page);
+        props.clearArchiveData();
+    }
+
+    const renderCategories = (obj) => {
+        return(
+            <div className="overlay-with-info-categories">{obj.categories.map((el, i) => {
+                let pathOfIds = [obj.id, el.id];
+                return(
+                    <div 
+                        key={i}
+                        className="overlay-with-info-category"
+                        onClick={(e) => onClickHandler(e, el.path)}
+                        onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, null, pathOfIds)} 
+                    >
+                        <H17 className={renderClassName("overlayWithInfoCategory", el.isHover)}>{el.label}</H17>
+                        {i !== obj.categories.length-1 ? <div className="overlay-with-info-category-slash">/</div> : null}
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -171,28 +231,29 @@ export const OverlayImage = (props) => {
     return(
         <div 
             className="overlay-image"
-            onMouseEnter={handleMouseEnter} 
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
+            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
         >
             <div className={renderClassName("overlayImage", isHovering)}>
                 <img 
                     id="img"
-                    src={loadImg(props.imageKey)} 
-                    alt={props.alt}
+                    src={loadImg(props.obj.coverImage.key)} 
+                    alt={props.obj.coverImage.alt}
                 />
             </div>
-      
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-                onClick={() => simpleOverlayImageOnClick(props.path)}
+                onClick={() => simpleOverlayImageOnClick(props.obj.path)}
             >
-               <div 
-                    className={renderClassName("arrow", isHovering)}
-                    onMouseEnter={() => handleMouseEnter("arrow")} 
-                    onMouseLeave={() => handleMouseLeave("arrow")} 
-                    onClick={() => onClickHandler(props.obj.path)}
-                >
+                {props.page === "overlayWithInfoPage" ? 
+                <>
+                    {renderCategories(props.obj)}
+                    <EH10/>
+                    <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
+                    <EH20/>
+                </> : null}
+               <div className={renderClassName("arrow", isHovering)}>
                     <div className="arrow-horizontal-line"/>
                     <div className="arrow-wrapper2">
                         <div className="arrow-top-line"></div>

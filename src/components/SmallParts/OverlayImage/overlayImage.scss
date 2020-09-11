@@ -37,7 +37,6 @@
         position: absolute;
         left: 0%;
         top: 0%;
-        z-index: 100;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -50,6 +49,30 @@
         .overlay-icon {
             color: white;
             cursor: pointer;
+        }
+        .overlay-with-info-categories {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            opacity: 1;
+            -webkit-animation: slideFromImageLeftCategoriesHoverOn .1s linear;
+            -moz-animation: slideFromImageLeftCategoriesHoverOn .1s linear;
+            -o-animation: slideFromImageLeftCategoriesHoverOn .1s linear;
+            animation: slideFromImageLeftCategoriesHoverOn .1s linear;
+            animation-delay: .3s;
+            animation-fill-mode: both;
+            .overlay-with-info-category {
+                padding-right: 6px;
+                display: flex;
+                align-items: center;
+                .overlay-with-info-category-slash {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: rgb(155, 155, 155);
+                    padding-left: 2px;
+                }
+            }
         }
         .overlay-image-arrow-wrapper-lengthen {
             display: flex;
@@ -106,7 +129,6 @@
         position: absolute;
         left: 0%;
         top: 0%;
-        z-index: 100;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -119,6 +141,26 @@
         .overlay-icon {
             color: white;
             cursor: pointer;
+        }
+        .overlay-with-info-categories {
+            display: flex;
+            flex-wrap: wrap;
+            opacity: 0;
+            -webkit-animation: slideFromImageLeftCategoriesHoverOff .1s linear;
+            -moz-animation: slideFromImageLeftCategoriesHoverOff .1s linear;
+            -o-animation: slideFromImageLeftCategoriesHoverOff .1s linear;
+            animation: slideFromImageLeftCategoriesHoverOff .1s linear;
+            .overlay-with-info-category {
+                padding-right: 6px;
+                display: flex;
+                align-items: center;
+                .overlay-with-info-category-slash {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: rgb(155, 155, 155);
+                    padding-left: 2px;
+                }
+            }
         }
         .overlay-image-arrow-wrapper-shorten {
             display: flex;
