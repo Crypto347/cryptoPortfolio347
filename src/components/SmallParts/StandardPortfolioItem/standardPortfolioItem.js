@@ -167,6 +167,12 @@ export const StandardPortfolioItem = (props) => {
             }
         }
     }
+
+    const onClickHandler = (e, path) => {
+        props.setUnmountComponentValues(true, path);
+        props.unmountComponent(null, null, props.page);
+        props.clearArchiveData();
+    }
     
     const renderCategories = (obj) => {
         return(
