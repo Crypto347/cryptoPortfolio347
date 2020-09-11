@@ -20,7 +20,8 @@ export const findPathOfIds = (path) => {
             return [2, 23, 234]; 
         case 'switch-image':
             return [2, 23, 235]; 
-    
+        case 'portfolio-standard':
+            return [2, 24, 241]; 
     }
 
     //Second element of updatedPath array

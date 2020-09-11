@@ -413,6 +413,24 @@ export function fetchOverlayWithInfoPage() {
     };
 }
 
+export function fetchStandardPage() {
+    return dispatch => {
+        dispatch(Actions.fetchStandardPageBegin());
+        return fetch(`http://localhost:3005/api/standard-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchStandardPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchStandardPageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

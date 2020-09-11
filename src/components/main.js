@@ -48,6 +48,7 @@ import SimpleOverlayPage from './Pages/PortfolioPages/SimpleOverlayPage/simpleOv
 import SlideFromImageLeftPage from './Pages/PortfolioPages/SlideFromImageLeftPage/slideFromImageLeftPage';
 import OverlayPage from './Pages/PortfolioPages/OverlayPage/overlayPage';
 import OverlayWithInfoPage from './Pages/PortfolioPages/OverlayWithInfoPage/overlayWithInfoPage';
+import StandardPage from './Pages/PortfolioPages/StandardPage/standardPage';
 
 /**
 * Actions
@@ -101,6 +102,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/portfolio-standard"}
+                    component={StandardPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/overlay-with-info"}
