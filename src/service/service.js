@@ -395,6 +395,24 @@ export function fetchOverlayPage() {
     };
 }
 
+export function fetchOverlayWithInfoPage() {
+    return dispatch => {
+        dispatch(Actions.fetchOverlayWithInfoPageBegin());
+        return fetch(`http://localhost:3005/api/overlay-with-info-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchOverlayWithInfoPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchOverlayWithInfoPageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

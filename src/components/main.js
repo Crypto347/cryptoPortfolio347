@@ -47,6 +47,7 @@ import SwitchImagePage from './Pages/PortfolioPages/SwitchImagePage/switchImageP
 import SimpleOverlayPage from './Pages/PortfolioPages/SimpleOverlayPage/simpleOverlayPage';
 import SlideFromImageLeftPage from './Pages/PortfolioPages/SlideFromImageLeftPage/slideFromImageLeftPage';
 import OverlayPage from './Pages/PortfolioPages/OverlayPage/overlayPage';
+import OverlayWithInfoPage from './Pages/PortfolioPages/OverlayWithInfoPage/overlayWithInfoPage';
 
 /**
 * Actions
@@ -100,37 +101,29 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
-
+                <Route 
+                    exact 
+                    path={props.match.url + "/overlay-with-info"}
+                    component={OverlayWithInfoPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/overlay"}
-                    // render={(props) => (
-                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
-                    // }
                     component={OverlayPage}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/slide-from-image-left"}
-                    // render={(props) => (
-                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
-                    // }
                     component={SlideFromImageLeftPage}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/simple-overlay"}
-                    // render={(props) => (
-                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
-                    // }
                     component={SimpleOverlayPage}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/switch-image"}
-                    // render={(props) => (
-                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
-                    // }
                     component={SwitchImagePage}
                 />
                 <Route 
@@ -143,9 +136,6 @@ export const Main = (props) => {
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-gallery"}
-                    // render={(props) => (
-                    //     <PortfolioGallery key={props.match.params.id} {...props} />)
-                    // }
                     component={PortfolioGallery}
                 />
                 <Route 

@@ -253,3 +253,11 @@ export const getOverlayPageState = createSelector(
     [getOverlayPage],
     (x) => x
 );
+
+const getOverlayWithInfoPage = (state) => state.overlayWithInfoPage;
+
+export const getOverlayWithInfoPageState = createSelector(
+    [getOverlayWithInfoPage],
+    (x) => x
+);
+

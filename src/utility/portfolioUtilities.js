@@ -12,6 +12,8 @@ export const findPathOfIds = (path) => {
             return []; 
         case 'overlay':
             return [2, 23, 231]; 
+        case 'overlay-with-info':
+            return [2, 23, 232]; 
         case 'simple-overlay':
             return [2, 23, 233]; 
         case 'slide-from-image-left':
