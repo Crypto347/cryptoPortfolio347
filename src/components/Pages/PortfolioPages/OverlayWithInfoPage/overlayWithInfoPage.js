@@ -181,7 +181,6 @@ export const OverlayWithInfoPage = (props) => {
                         <OverlayImage
                             page="overlayWithInfoPage"
                             obj={el}
-                            // id={el.id}
                             setIsHoveringCategory={props.setOverlayWithInfoPageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}

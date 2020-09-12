@@ -204,6 +204,9 @@ export const PorfolioNavigation = (props) => {
             case 'galleryPage':
                 props.history.push(`/crypto-portfolio/gallery`);
                 break;
+            case 'galleryWithSpacePage':
+                props.history.push(`/crypto-portfolio/gallery-with-space`);
+                break;
             default: 
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 return;
@@ -213,8 +216,10 @@ export const PorfolioNavigation = (props) => {
 
     const arrowOnClick = (opt, key) => {
         let updatedItems = [];
-       
-        switch(props.location.state.page){
+        let page = props.location.state ? props.location.state.page : null;
+        let category = props.location.state ? props.location.state.category : null;
+       console.log(page)
+        switch(page){
             case 'portfolioGallery':
                 updatedItems = [...props.portfolioGalleryPage.items];
                 break;
@@ -242,25 +247,28 @@ export const PorfolioNavigation = (props) => {
             case 'galleryPage':
                 updatedItems = [...props.galleryPage.items];
                 break;
+            // case 'galleryWithSpacePage':
+            //     updatedItems = [...props.galleryWithSpacePage.items];
+            //     break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
-                return;
+                break;
         }
-        console.log(updatedItems)
+        console.log("updatedItems", updatedItems)
         let updatedItemIndex = updatedItems.findIndex(item => item.key === key);
         switch(opt) {
             case 'prev':
                 if(updatedItemIndex === 0){
-                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: props.location.state.page, category: props.location.state.category});
+                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: page, category: category});
                 }else{
-                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: props.location.state.page, category: props.location.state.category});
+                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: page, category: category});
                 }
                 return;
             case 'next':
                 if(updatedItemIndex === updatedItems.length - 1){
-                    props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: props.location.state.page, category: props.location.state.category});
+                    props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: page, category: category});
                 }else{
-                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: props.location.state.page, category: props.location.state.category});
+                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: page, category: category});
                 }
                 return;
         }
@@ -324,6 +332,7 @@ export default connect(
             overlayWithInfoPage: Selectors.getOverlayWithInfoPageState(state),
             standardPage: Selectors.getStandardPageState(state),
             galleryPage: Selectors.getGalleryPageState(state),
+            galleryWithSpacePage: Selectors.getGalleryWithSpacePageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),

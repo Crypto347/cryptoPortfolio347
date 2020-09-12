@@ -20,7 +20,7 @@ import {
 * Styles
 */
 
-import './overlayPage.scss';
+import './galleryWithSpacePage.scss';
 
 /**
 * Components
@@ -75,10 +75,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* OverlayPage component definition and export
+* GalleryWithSpacePage component definition and export
 */
 
-export const OverlayPage = (props) => {
+export const GalleryWithSpacePage = (props) => {
 
     /**
     * State
@@ -92,13 +92,12 @@ export const OverlayPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.overlayPage.items.length === 0){
-            props.fetchOverlayPage();
+        if(props.galleryWithSpacePage.items.length === 0){
+            props.fetchGalleryWithSpacePage();
         }
         let timeout = setTimeout(() => {
-            if(!props.overlayPage.loading && !props.overlayPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.galleryWithSpacePage.loading && !props.galleryWithSpacePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -116,7 +115,7 @@ export const OverlayPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("overlayPage");
+        let el = document.getElementById("galleryWithSpacePage");
     
         // Check scroll direction
 
@@ -170,20 +169,23 @@ export const OverlayPage = (props) => {
         }
     }
     
-    const renderOverlayPageData = () => {
+    const renderGalleryWithSpacePageData = () => {
         return(
-            <div className="overlay-page-items">{props.overlayPage.items.map((el, i) => {
+            <div className="gallery-with-space-page-items">{props.galleryWithSpacePage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
                         id={el.key}
-                        className="overlay-page-item"
+                        className="gallery-with-space-page-item"
                     >
                         <OverlayImage
-                            page="overlayPage"
+                            page="galleryWithSpacePage"
                             obj={el}
+                            // id={el.id}
+                            setIsHoveringCategory={props.setgalleryWithSpacePageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
+                            // clearArchiveData={props.clearArchiveData}
                         />
                     </div>
                 )
@@ -191,35 +193,35 @@ export const OverlayPage = (props) => {
         )
     }
 
-    const renderOverlayPageContent = () => {
-        if(props.overlayPage.loading && !props.overlayPage.error){
+    const renderGalleryWithSpacePageContent = () => {
+        if(props.galleryWithSpacePage.loading && !props.galleryWithSpacePage.error){
             return(
                 <div 
-                    className="overlay-page-loading-error" 
+                    className="gallery-with-space-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.overlayPage.loading && !props.overlayPage.error){
+        if(!props.galleryWithSpacePage.loading && !props.galleryWithSpacePage.error){
             return(
-                <div className="overlay-page-wrapper">
-                    <div className="overlay-page-header">
-                        <H45 className="h45-nero-lustria">Overlay</H45>
+                <div className="gallery-with-space-page-wrapper">
+                    <div className="gallery-with-space-page-header">
+                        <H45 className="h45-nero-lustria">Gallery With Space</H45>
                     </div>
                     <div className="grey-line"/>
-                    {renderOverlayPageData()}
+                    {renderGalleryWithSpacePageData()}
                 </div>
             )
         }
-        if(!props.overlayPage.loading && props.overlayPage.error){
+        if(!props.galleryWithSpacePage.loading && props.galleryWithSpacePage.error){
             return(
                 <div 
-                    className="overlay-page-loading-error" 
+                    className="gallery-with-space-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.overlayPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.galleryWithSpacePage.error}`}</H15>
                 </div>
             )
         }
@@ -230,9 +232,9 @@ export const OverlayPage = (props) => {
     */
 
     return(
-        <div className="overlay-page" id="overlayPage">
+        <div className="gallery-with-space-page" id="galleryWithSpacePage">
             {renderToolbars()}
-            {renderOverlayPageContent()}
+            {renderGalleryWithSpacePageContent()}
             <Footer/>
         </div>   
     );
@@ -241,20 +243,19 @@ export const OverlayPage = (props) => {
 export default connect(
     (state) => {
         return {
-            overlayPage: Selectors.getOverlayPageState(state),
+            galleryWithSpacePage: Selectors.getGalleryWithSpacePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
+            fetchGalleryWithSpacePage: bindActionCreators(Services.fetchGalleryWithSpacePage, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
         };
     }
-)(OverlayPage);
+)(GalleryWithSpacePage);
  

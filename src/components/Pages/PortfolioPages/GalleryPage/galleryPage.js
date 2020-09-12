@@ -181,11 +181,8 @@ export const GalleryPage = (props) => {
                         <OverlayImage
                             page="galleryPage"
                             obj={el}
-                            // id={el.id}
-                            // setIsHoveringCategory={props.setOverlayWithInfoPageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            clearArchiveData={props.clearArchiveData}       
                         />
                     </div>
                 )

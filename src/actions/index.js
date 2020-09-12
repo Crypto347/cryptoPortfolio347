@@ -19,3 +19,4 @@ export * from './overlayPageActions';
 export * from './overlayWithInfoPageActions';
 export * from './standardPageActions';
 export * from './galleryPageActions';
+export * from './galleryWithSpacePageActions';

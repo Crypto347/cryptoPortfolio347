@@ -82,6 +82,7 @@ export const OverlayImage = (props) => {
                 return 80;
             case 'overlayWithInfoPage':
             case 'galleryPage':
+            case 'galleryWithSpacePage':
                 return 40;
         }
     }
@@ -267,7 +268,7 @@ export const OverlayImage = (props) => {
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                     <EH20/>
                 </> : null}
-                {props.page === "galleryPage" ? 
+                {props.page === "galleryPage" || props.page === "galleryWithSpacePage" ? 
                 <>
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                     <EH20/>

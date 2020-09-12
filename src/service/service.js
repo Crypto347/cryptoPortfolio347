@@ -449,6 +449,24 @@ export function fetchGalleryPage() {
     };
 }
 
+export function fetchGalleryWithSpacePage() {
+    return dispatch => {
+        dispatch(Actions.fetchGalleryWithSpacePageBegin());
+        return fetch(`http://localhost:3005/api/gallery-with-space-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchGalleryWithSpacePageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchGalleryWithSpacePageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

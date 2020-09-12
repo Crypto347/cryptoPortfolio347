@@ -50,6 +50,8 @@ import OverlayPage from './Pages/PortfolioPages/OverlayPage/overlayPage';
 import OverlayWithInfoPage from './Pages/PortfolioPages/OverlayWithInfoPage/overlayWithInfoPage';
 import StandardPage from './Pages/PortfolioPages/StandardPage/standardPage';
 import GalleryPage from './Pages/PortfolioPages/GalleryPage/galleryPage';
+import GalleryWithSpacePage from './Pages/PortfolioPages/GalleryWithSpacePage/galleryWithSpacePage';
+
 
 /**
 * Actions
@@ -103,6 +105,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/gallery-with-space"}
+                    component={GalleryWithSpacePage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/gallery"}

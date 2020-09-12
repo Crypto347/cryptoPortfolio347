@@ -274,3 +274,10 @@ export const getGalleryPageState = createSelector(
     [getGalleryPage],
     (x) => x
 );
+
+const getGalleryWithSpacePage = (state) => state.galleryWithSpacePage;
+
+export const getGalleryWithSpacePageState = createSelector(
+    [getGalleryWithSpacePage],
+    (x) => x
+);

@@ -26,6 +26,7 @@ import overlayPageReducer from './overlayPageReducer';
 import overlayWithInfoPageReducer from './overlayWithInfoPageReducer';
 import standardPageReducer from './standardPageReducer';
 import galleryPageReducer from './galleryPageReducer';
+import galleryWithSpacePageReducer from './galleryWithSpacePageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -49,5 +50,6 @@ export default (history) => combineReducers({
     overlayPage: overlayPageReducer,
     overlayWithInfoPage: overlayWithInfoPageReducer,
     standardPage: standardPageReducer,
-    galleryPage: galleryPageReducer
+    galleryPage: galleryPageReducer,
+    galleryWithSpacePage: galleryWithSpacePageReducer
 });
