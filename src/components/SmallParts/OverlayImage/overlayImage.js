@@ -73,8 +73,7 @@ export const OverlayImage = (props) => {
         let paddingLeftRightVal = setPadding(props.page);
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight - paddingLeftRightVal);
-        setPaddingLeftRight(paddingLeftRightVal)
-        console.log(cardHeight)
+        setPaddingLeftRight(paddingLeftRightVal);
     }
 
     const setPadding = (page) => {
