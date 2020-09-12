@@ -5,6 +5,7 @@
     cursor: pointer;
     >img {
         width: 100%;
+        filter: grayscale(40%);
     }
     
     .simple-overlay-curtain-hover-on {

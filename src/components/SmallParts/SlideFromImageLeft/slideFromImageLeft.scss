@@ -9,6 +9,7 @@
         transform: translateX(0px);
         >img {
             width: 100%;
+            filter: grayscale(40%);
         }
     }
     .slide-from-image-left-image-wrapper-hover-on {
@@ -20,6 +21,7 @@
         animation: slideFromImageLeftImageHoverOn .2s linear;
         >img {
             width: 100%;
+            filter: grayscale(40%);
         }
     }
     .slide-from-image-left-image-wrapper-hover-off {
@@ -31,6 +33,7 @@
         // animation: slideFromImageLeftImageHoverOff .3s linear;
         >img {
             width: 100%;
+            filter: grayscale(40%);
         }
     }
     .slide-from-image-left-curtain-hover-on {

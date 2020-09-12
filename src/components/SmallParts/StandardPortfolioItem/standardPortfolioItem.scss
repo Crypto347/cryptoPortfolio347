@@ -8,6 +8,7 @@
     cursor: pointer;
     >img {
         width: 100%;
+        filter: grayscale(40%);
     }    
     .standard-portfolio-item-curtain-hover-on {
         background: rgba(0, 0, 0, 0.7);;
