@@ -51,6 +51,7 @@ export const OverlayImage = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
+    const [paddingLeftRight, setPaddingLeftRight] = useState(0);
  
     /**
     * Methods
@@ -69,8 +70,21 @@ export const OverlayImage = (props) => {
     })
 
     const handleResize = () => {
+        let paddingLeftRightVal = setPadding(props.page);
         let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - 80);
+        setCardHeight(cardHeight - paddingLeftRightVal);
+        setPaddingLeftRight(paddingLeftRightVal)
+        console.log(cardHeight)
+    }
+
+    const setPadding = (page) => {
+        switch(page){
+            case 'overlayPage':
+                return 80;
+            case 'overlayWithInfoPage':
+            case 'galleryPage':
+                return 40;
+        }
     }
 
     const handleMouseEnter = (opt, id, pathOfIds) => {
@@ -89,7 +103,7 @@ export const OverlayImage = (props) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
-            break;
+                break;
             case 'overlayWithInfoCategory': 
                 props.setIsHoveringCategory("off", pathOfIds);
                 break;
@@ -233,6 +247,7 @@ export const OverlayImage = (props) => {
             className="overlay-image"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
         >
             <div className={renderClassName("overlayImage", isHovering)}>
                 <img 
@@ -243,13 +258,18 @@ export const OverlayImage = (props) => {
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `${cardHeight}px`}}
+                style={{height: `${cardHeight}px`, padding: `${paddingLeftRight/2} 20px ${paddingLeftRight/2} 20px`}}
                 onClick={() => simpleOverlayImageOnClick(props.obj.path)}
             >
                 {props.page === "overlayWithInfoPage" ? 
                 <>
                     {renderCategories(props.obj)}
                     <EH10/>
+                    <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
+                    <EH20/>
+                </> : null}
+                {props.page === "galleryPage" ? 
+                <>
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                     <EH20/>
                 </> : null}

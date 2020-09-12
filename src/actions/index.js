@@ -18,3 +18,4 @@ export * from './slideFromImageLeftPageActions';
 export * from './overlayPageActions';
 export * from './overlayWithInfoPageActions';
 export * from './standardPageActions';
+export * from './galleryPageActions';

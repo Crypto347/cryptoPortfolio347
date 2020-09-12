@@ -431,6 +431,24 @@ export function fetchStandardPage() {
     };
 }
 
+export function fetchGalleryPage() {
+    return dispatch => {
+        dispatch(Actions.fetchGalleryPageBegin());
+        return fetch(`http://localhost:3005/api/gallery-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchGalleryPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchGalleryPageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

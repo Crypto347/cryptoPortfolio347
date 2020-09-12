@@ -267,3 +267,10 @@ export const getStandardPageState = createSelector(
     [getStandardPage],
     (x) => x
 );
+
+const getGalleryPage = (state) => state.galleryPage;
+
+export const getGalleryPageState = createSelector(
+    [getGalleryPage],
+    (x) => x
+);

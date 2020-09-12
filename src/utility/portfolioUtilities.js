@@ -7,21 +7,23 @@ export const findPathOfIds = (path) => {
     //First element of updatedPath array
     switch(updatedPath[0]){
         case 'portfolio-gallery':
-            return []; 
+            return [];
         case 'portfolio-category':
-            return []; 
+            return [];
         case 'overlay':
-            return [2, 23, 231]; 
+            return [2, 23, 231];
         case 'overlay-with-info':
-            return [2, 23, 232]; 
+            return [2, 23, 232];
         case 'simple-overlay':
-            return [2, 23, 233]; 
+            return [2, 23, 233];
         case 'slide-from-image-left':
-            return [2, 23, 234]; 
+            return [2, 23, 234];
         case 'switch-image':
-            return [2, 23, 235]; 
+            return [2, 23, 235];
         case 'portfolio-standard':
-            return [2, 24, 241]; 
+            return [2, 24, 241];
+        case 'gallery':
+            return [2, 24, 242]; 
     }
 
     //Second element of updatedPath array

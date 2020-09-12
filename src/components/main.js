@@ -49,6 +49,7 @@ import SlideFromImageLeftPage from './Pages/PortfolioPages/SlideFromImageLeftPag
 import OverlayPage from './Pages/PortfolioPages/OverlayPage/overlayPage';
 import OverlayWithInfoPage from './Pages/PortfolioPages/OverlayWithInfoPage/overlayWithInfoPage';
 import StandardPage from './Pages/PortfolioPages/StandardPage/standardPage';
+import GalleryPage from './Pages/PortfolioPages/GalleryPage/galleryPage';
 
 /**
 * Actions
@@ -102,6 +103,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/gallery"}
+                    component={GalleryPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/portfolio-standard"}
