@@ -102,7 +102,18 @@ export const StoneWallPage = (props) => {
             }else{
                 window.scrollTo(0, 0);
             }
+
+            // let imag1 = document.getElementById("smallImages4") ? document.getElementById("smallImages4").clientWidth : 0;
+            // let imag2 = document.getElementById(props.historyPopFromItem) ? document.getElementById("gallery2").offsetTop : 0;
+            // let imag3 = document.getElementById(props.historyPopFromItem) ? document.getElementById("bigSlider3").offsetTop : 0;
+            // let imag4 = document.getElementById(props.historyPopFromItem) ? document.getElementById("smallGallery2").offsetTop : 0;
+            // let imag5 = document.getElementById(props.historyPopFromItem) ? document.getElementById("gallery3").offsetTop : 0;
+    
+            // console.log("WIdth", imag1)
         }, 2);
+
+    
+        
 
         window.addEventListener('wheel', handleOnWheel);
 
@@ -176,7 +187,7 @@ export const StoneWallPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        className="stone-wall-page-item"
+                        className={`stone-wall-page-item-id${el.id}`}
                     >
                         <StoneWallItem
                             page="stoneWallPage"
@@ -206,8 +217,7 @@ export const StoneWallPage = (props) => {
                 <div className="stone-wall-page-wrapper">
                     <div className="stone-wall-page-header">
                         <H65 className="h65-nero-poppins">Stone Wall</H65>
-                    </div>
-                    <div className="grey-line"/>
+                    </div> 
                     {renderStoneWallPageData()}
                 </div>
             )

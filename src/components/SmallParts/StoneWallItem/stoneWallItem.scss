@@ -7,6 +7,7 @@
         overflow: hidden;
         >img {
             width: 100%;
+            height: 100%;
             filter: grayscale(40%);
         }
     }
@@ -14,6 +15,7 @@
         overflow: hidden;
         >img {
             width: 100%;
+            height: 100%;
             transform: scale(1.05);
             filter: grayscale(40%);
             -webkit-animation: stoneWallItemImageHoverOn .3s linear;
@@ -26,6 +28,7 @@
         overflow: hidden;
         >img {
             width: 100%;
+            height: 100%;
             transform: scale(1);
             filter: grayscale(40%);
             -webkit-animation: stoneWallItemImageHoverOff .3s linear;
