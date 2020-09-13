@@ -50,8 +50,9 @@ export const Section1DataItem = (props) => {
         setIsHovering(false);
     }
 
-    const arrowOnClick = (path) => {
-        props.history.push(props.match.url + (path === "" ? path : `/${path}`))
+    const arrowOnClick = (path, e) => {
+        console.log(path)
+        props.history.push(props.match.url + path)
     }
 
     /**
@@ -79,7 +80,8 @@ export const Section1DataItem = (props) => {
                     className="arrow-wrapper"
                     onMouseEnter={handleMouseEnter} 
                     onMouseLeave={handleMouseLeave}
-                    onClick={() => arrowOnClick(props.path)}
+                    onClick={(e) => arrowOnClick(props.path, e)}
+                    // onMouseDown={() => arrowOnClick(props.path)}
                 >
                     <div className="arrow-horizontal-line"></div>
                     <div className="arrow-wrapper2">

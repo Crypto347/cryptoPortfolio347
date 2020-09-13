@@ -281,3 +281,10 @@ export const getGalleryWithSpacePageState = createSelector(
     [getGalleryWithSpacePage],
     (x) => x
 );
+
+const getStoneWallPage = (state) => state.stoneWallPage;
+
+export const getStoneWallPageState = createSelector(
+    [getStoneWallPage],
+    (x) => x
+);

@@ -1,0 +1,247 @@
+.stone-wall-page {
+    width: calc(100% + 18px);
+    .stone-wall-page-loading-error {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stone-wall-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        .stone-wall-page-header {
+            display: flex;
+            justify-content: center;
+            padding: 90px 130px 90px 130px;
+        }
+        .stone-wall-page-items {
+            width: calc(100% - 230px);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 100px 40px 130px;
+            .stone-wall-page-item {
+                width: calc(33.3% - 30px);
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1120px){
+    .stone-wall-page {
+        .stone-wall-page-wrapper {
+            .stone-wall-page-items {
+                .stone-wall-page-item {
+                    width: calc(50% - 30px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 945px){
+    .stone-wall-page {
+        .stone-wall-page-wrapper {
+            .stone-wall-page-items {
+                .stone-wall-page-item {
+                    width: calc(100% - 30px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 890px){
+    .stone-wall-page {
+        .stone-wall-page-wrapper {
+            .stone-wall-page-header {
+                padding: 90px 70px 90px 70px;
+            }
+            .stone-wall-page-items {
+                width: calc(100% - 110px);
+                padding: 130px 40px 100px 70px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .stone-wall-page {
+        .stone-wall-page-wrapper {
+            .stone-wall-page-header {
+                padding: 90px 30px 90px 30px;
+            }
+            .stone-wall-page-items {
+                width: calc(100% - 30px);
+                padding: 130px 0px 100px 30px;
+            }
+        }
+    }
+}
+
+// @keyframes poortfolioGalleryHeaderTextAppear {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-20%);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0%);
+//     }
+// }
+// @-moz-keyframes poortfolioGalleryHeaderTextAppear {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-20%);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0%);
+//     }
+// }
+// @-webkit-keyframes poortfolioGalleryHeaderTextAppear {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-20%);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0%);
+//     }
+// }
+// @-o-keyframes poortfolioGalleryHeaderTextAppear {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-20%);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0%);
+//     }
+// }
+
+// @-webkit-keyframes lengthenArrowLinePortfolioGallery {
+//     from{
+//         height: 0px;
+//         border: 0px solid black;
+//     }
+//     to{
+//         height: 15px;
+//         border: 1px solid black;
+//     }
+// }
+// @-moz-keyframes lengthenArrowLinePortfolioGallery {
+//     from{
+//         height: 0px;
+//         border: 0px solid black;
+//     }
+//     to{
+//         height: 15px;
+//         border: 1px solid black;
+//     }
+// }
+// @-o-keyframes lengthenArrowLinePortfolioGallery {
+//     from{
+//         height: 0px;
+//         border: 0px solid black;
+//     }
+//     to{
+//         height: 15px;
+//         border: 1px solid black;
+//     }
+// }
+// @keyframes lengthenArrowLinePortfolioGallery {
+//     from{
+//         height: 0px;
+//         border: 0px solid black;
+//     }
+//     to{
+//         height: 15px;
+//         border: 1px solid black;
+//     }
+// }
+
+// @-webkit-keyframes shortenArrowLinePortfolioGallery {
+//     from{
+//         border: 1px solid black;
+//         background: black;
+//         height: 15px;
+//     }
+//     to{
+//         border: 1px solid transparent;
+//         background: black;
+//         height: 0px;
+//     }
+// }
+// @-moz-keyframes shortenArrowLinePortfolioGallery {
+//     from{
+//         border: 1px solid black;
+//         background: black;
+//         height: 15px;
+//     }
+//     to{
+//         border: 1px solid transparent;
+//         background: black;
+//         height: 0px;
+//     }
+// }
+// @-o-keyframes shortenArrowLinePortfolioGallery {
+//     from{
+//         border: 1px solid black;
+//         background: black;
+//         height: 15px;
+//     }
+//     to{
+//         border: 1px solid transparent;
+//         background: black;
+//         height: 0px;
+//     }
+// }
+// @keyframes shortenArrowLinePortfolioGallery {
+//     from{
+//         border: 1px solid black;
+//         background: black;
+//         height: 15px;
+//     }
+//     to{
+//         border: 1px solid transparent;
+//         background: black;
+//         height: 0px;
+//     }
+// }
+
+// @-webkit-keyframes lengthenHorizontalLinePortfolioGallery {
+//     from{width: 50px;}
+//     to{width: 60px;}
+// }
+// @-moz-keyframes lengthenHorizontalLinePortfolioGallery {
+//     from{width: 50px;}
+//     to{width: 60px;}
+// }
+// @-o-keyframes lengthenHorizontalLinePortfolioGallery {
+//     from{width: 50px;}
+//     to{width: 60px;}
+// }
+// @keyframes lengthenHorizontalLinePortfolioGallery {
+//     from{width: 50px;}
+//     to{width: 60px;}
+// }
+
+// @-webkit-keyframes shortenHorizontalLinePortfolioGallery {
+//     from{width: 60px;}
+//     to{width: 50px;}
+// }
+// @-moz-keyframes shortenHorizontalLinePortfolioGallery {
+//     from{width: 60px;}
+//     to{width: 50px;}
+// }
+// @-o-keyframes shortenHorizontalLinePortfolioGallery {
+//     from{width: 60px;}
+//     to{width: 50px;}
+// }
+// @keyframes shortenHorizontalLinePortfolioGallery {
+//     from{width: 60px;}
+//     to{width: 50px;}
+// }
+
+

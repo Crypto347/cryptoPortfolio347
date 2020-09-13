@@ -584,7 +584,7 @@ export const PHOTO_4 = Photo4;
 export const PHOTO_5 = Photo5;
 
 /**
-* Archive cover pictures
+* Archive Cover Pictures
 */
 
 import ArchiveCoverPic1 from '../images/archiveCoverPictures/adam-wilson-1QZYZib7eYs-archive-unsplash.png';
@@ -626,7 +626,7 @@ export const ARCHIVE_COVER_PIC_17 = ArchiveCoverPic17;
 export const ARCHIVE_COVER_PIC_18 = ArchiveCoverPic18;
 
 /**
-* Simple overlay
+* Simple Overlay Cover Pictures
 */
 
 import SimpleOverlayCoverPic1 from '../images/simpleOverlayCoverPictures/adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png';
@@ -666,3 +666,19 @@ export const SIMPLE_OVERLAY_COVER_PIC_15 = SimpleOverlayCoverPic15;
 export const SIMPLE_OVERLAY_COVER_PIC_16 = SimpleOverlayCoverPic16;
 export const SIMPLE_OVERLAY_COVER_PIC_17 = SimpleOverlayCoverPic17;
 export const SIMPLE_OVERLAY_COVER_PIC_18 = SimpleOverlayCoverPic18;
+
+/**
+* Stone Wall Page Cover Pictures
+*/
+
+import StoneWallPageCoverPic1 from '../images/stoneWallPageCoverPictures/ohmky-lQwWZI_WjSU-stone-wall-unsplash.png';
+import StoneWallPageCoverPic2 from '../images/stoneWallPageCoverPictures/nathan-dumlao-pMW4jzELQCw-stone-wall-unsplash.png';
+import StoneWallPageCoverPic3 from '../images/stoneWallPageCoverPictures/daily-nouri-E5Oo4nENq2M-stone-wall-unsplash.png';
+import StoneWallPageCoverPic4 from '../images/stoneWallPageCoverPictures/nahuel-hawkes-Ki6JO9sraB8-stone-wall-unsplash.png';
+import StoneWallPageCoverPic5 from '../images/stoneWallPageCoverPictures/leone-venter-pVt9j3iWtPM-stone-wall-unsplash.png';
+
+export const STONE_WALL_PAGE_COVER_PIC_1 = StoneWallPageCoverPic1;
+export const STONE_WALL_PAGE_COVER_PIC_2 = StoneWallPageCoverPic2;
+export const STONE_WALL_PAGE_COVER_PIC_3 = StoneWallPageCoverPic3;
+export const STONE_WALL_PAGE_COVER_PIC_4 = StoneWallPageCoverPic4;
+export const STONE_WALL_PAGE_COVER_PIC_5 = StoneWallPageCoverPic5;

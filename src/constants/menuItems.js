@@ -140,9 +140,9 @@ export const menuItemsArray = [
                     },
                     {
                         id: 133,
-                        text: "Masonry Portfolio",
-                        itemId: "masonryPortfolio",
-                        path: "masonry-portfolio",
+                        text: "Stone Wall Portfolio",
+                        itemId: "stoneWallPortfolio",
+                        path: "stone-wall-portfolio",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -184,9 +184,9 @@ export const menuItemsArray = [
                     },
                     {
                         id: 142,
-                        text: "Shop Masonry",
-                        itemId: "shopMasonry",
-                        path: "shop-masonry",
+                        text: "Shop Stone Wall",
+                        itemId: "shopStoneWall",
+                        path: "shop-stone-wall",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -461,18 +461,18 @@ export const menuItemsArray = [
                     },
                     {
                         id: 244,
-                        text: "Masonry",
-                        itemId: "masonry",
-                        path: "masonry",
+                        text: "Stone Wall",
+                        itemId: "stoneWall",
+                        path: "stone-wall",
                         active: false,
                         isHover: "init",
                         subOptions: []
                     },
                     {
                         id: 245,
-                        text: "Masonry Wide",
-                        itemId: "masonryWide",
-                        path: "masonry-wide",
+                        text: "Stone Wall Wide",
+                        itemId: "stoneWallWide",
+                        path: "stone-wall-wide",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -652,9 +652,9 @@ export const menuItemsArray = [
                     },
                     {
                         id: 414,
-                        text: "Masonry Blog",
-                        itemId: "masonryBlog",
-                        path: "masonry-blog",
+                        text: "Stone Wall Blog",
+                        itemId: "stoneWallBlog",
+                        path: "stone-wall-blog",
                         active: false,
                         isHover: "init",
                         subOptions: []
@@ -753,9 +753,9 @@ export const menuItemsArray = [
                     },
                     {
                         id: 512,
-                        text: "Mansory Shop",
-                        itemId: "mansoryShop",
-                        path: "shop-masonry",
+                        text: "Stone Wall Shop",
+                        itemId: "stoneWallShop",
+                        path: "shop-stone-wall",
                         active: false,
                         isHover: "init",
                         subOptions: []

@@ -25,7 +25,9 @@ export const findPathOfIds = (path) => {
         case 'gallery':
             return [2, 24, 242]; 
         case 'gallery-with-space':
-            return [2, 24, 243]; 
+            return [2, 24, 243];
+        case 'stone-wall':
+            return [2, 24, 244];
     }
 
     //Second element of updatedPath array
