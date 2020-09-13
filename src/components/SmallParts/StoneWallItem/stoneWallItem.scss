@@ -1,40 +1,40 @@
-.overlay-image {
+.stone-wall-item {
     position: relative;
     width: 100%;
     // margin-bottom: 30px;
     cursor: pointer;
-    .overlay-image {
+    .stone-wall-item-image {
         overflow: hidden;
         >img {
             width: 100%;
             filter: grayscale(40%);
         }
     }
-    .overlay-image-hover-on {
+    .stone-wall-item-image-hover-on {
         overflow: hidden;
         >img {
             width: 100%;
             transform: scale(1.05);
             filter: grayscale(40%);
-            -webkit-animation: overlayImageHoverOn .3s linear;
-            -moz-animation: overlayImageHoverOn .3s linear;
-            -o-animation: overlayImageHoverOn .3s linear;
-            animation: overlayImageHoverOn .3s linear;
+            -webkit-animation: stoneWallItemImageHoverOn .3s linear;
+            -moz-animation: stoneWallItemImageHoverOn .3s linear;
+            -o-animation: stoneWallItemImageHoverOn .3s linear;
+            animation: stoneWallItemImageHoverOn .3s linear;
         }
     }
-    .overlay-image-hover-off {
+    .stone-wall-item-image-hover-off {
         overflow: hidden;
         >img {
             width: 100%;
             transform: scale(1);
             filter: grayscale(40%);
-            -webkit-animation: overlayImageHoverOff .3s linear;
-            -moz-animation: overlayImageHoverOff .3s linear;
-            -o-animation: overlayImageHoverOff .3s linear;
-            animation: overlayImageHoverOff .3s linear;
+            -webkit-animation: stoneWallItemImageHoverOff .3s linear;
+            -moz-animation: stoneWallItemImageHoverOff .3s linear;
+            -o-animation: stoneWallItemImageHoverOff .3s linear;
+            animation: stoneWallItemImageHoverOff .3s linear;
         }
     }
-    .overlay-curtain-hover-on {
+    .stone-wall-item-curtain-hover-on {
         background: rgba(0, 0, 0, 0.7);
         width: calc(100% - 40px);
         position: absolute;
@@ -45,39 +45,15 @@
         justify-content: flex-start;
         // padding: 0px 20px 0px 20px;
         opacity: 1;
-        -webkit-animation: overlayCurtainHoverOn 0.3s linear;
-        -moz-animation: overlayCurtainHoverOn 0.3s linear;
-        -o-animation: overlayCurtainHoverOn 0.3s linear;
-        animation: overlayCurtainHoverOn 0.3s linear;
-        .overlay-icon {
+        -webkit-animation: stoneWallItemCurtainHoverOn 0.3s linear;
+        -moz-animation: stoneWallItemCurtainHoverOn 0.3s linear;
+        -o-animation: stoneWallItemCurtainHoverOn 0.3s linear;
+        animation: stoneWallItemCurtainHoverOn 0.3s linear;
+        .stone-wall-icon {
             color: white;
             cursor: pointer;
         }
-        .overlay-with-info-categories {
-            position: relative;
-            z-index: 100;
-            display: flex;
-            flex-wrap: wrap;
-            opacity: 1;
-            -webkit-animation: overlayWithInfoCategoriesHoverOn .1s linear;
-            -moz-animation: overlayWithInfoCategoriesHoverOn .1s linear;
-            -o-animation: overlayWithInfoCategoriesHoverOn .1s linear;
-            animation: overlayWithInfoCategoriesHoverOn .1s linear;
-            animation-delay: .3s;
-            animation-fill-mode: both;
-            .overlay-with-info-category {
-                padding-right: 6px;
-                display: flex;
-                align-items: center;
-                .overlay-with-info-category-slash {
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: rgb(155, 155, 155);
-                    padding-left: 2px;
-                }
-            }
-        }
-        .overlay-image-arrow-wrapper-lengthen {
+        .stone-wall-item-image-arrow-wrapper-lengthen {
             display: flex;
             margin-top: 10px;
             align-items: center;
@@ -86,10 +62,10 @@
                 width: 60px;
                 height: 2px;
                 background: white;
-                -webkit-animation: lengthenHorizontalLineOverlayPage .1s linear;
-                -moz-animation: lengthenHorizontalLineOverlayPage .1s linear;
-                -o-animation: lengthenHorizontalLineOverlayPage .1s linear;
-                animation: lengthenHorizontalLineOverlayPage .1s linear;
+                -webkit-animation: lengthenHorizontalLineStoneWallItem .1s linear;
+                -moz-animation: lengthenHorizontalLineStoneWallItem .1s linear;
+                -o-animation: lengthenHorizontalLineStoneWallItem .1s linear;
+                animation: lengthenHorizontalLineStoneWallItem .1s linear;
                 animation-delay: .3s;
                 animation-fill-mode: both;
             }
@@ -104,10 +80,10 @@
                     background: white;
                     height: 10px;
                     transform: translate(-1px, 2.5px) rotate(-45deg);
-                    -webkit-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -moz-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -o-animation: lengthenArrowLineOverlayPage .1s linear;
-                    animation: lengthenArrowLineOverlayPage .1s linear;
+                    -webkit-animation: lengthenArrowLineStoneWallItem .1s linear;
+                    -moz-animation: lengthenArrowLineStoneWallItem .1s linear;
+                    -o-animation: lengthenArrowLineStoneWallItem .1s linear;
+                    animation: lengthenArrowLineStoneWallItem .1s linear;
                     animation-delay: .4s;
                     animation-fill-mode: both;
                 }
@@ -116,17 +92,17 @@
                     background: white;
                     height: 10px;
                     transform: translate(-1px, -2.5px) rotate(45deg);
-                    -webkit-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -moz-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -o-animation: lengthenArrowLineOverlayPage .1s linear;
-                    animation: lengthenArrowLineOverlayPage .1s linear;
+                    -webkit-animation: lengthenArrowLineStoneWallItem .1s linear;
+                    -moz-animation: lengthenArrowLineStoneWallItem .1s linear;
+                    -o-animation: lengthenArrowLineStoneWallItem .1s linear;
+                    animation: lengthenArrowLineStoneWallItem .1s linear;
                     animation-delay: .4s;
                     animation-fill-mode: both;
                 }
             }
         }
     }
-    .overlay-curtain-hover-off {
+    .stone-wall-item-curtain-hover-off {
         background: rgba(0, 0, 0, 0.7);
         width: calc(100% - 40px);
         position: absolute;
@@ -137,35 +113,11 @@
         justify-content: flex-start;
         // padding: 0px 20px 0px 20px;
         opacity: 0;
-        -webkit-animation: overlayCurtainHoverOff .1s linear;
-        -moz-animation: overlayCurtainHoverOff .1s linear;
-        -o-animation: overlayCurtainHoverOff .1s linear;
-        animation: overlayCurtainHoverOff .1s linear;
-        .overlay-icon {
-            color: white;
-            cursor: pointer;
-        }
-        .overlay-with-info-categories {
-            display: flex;
-            flex-wrap: wrap;
-            opacity: 0;
-            -webkit-animation: overlayWithInfoCategoriesHoverOff .1s linear;
-            -moz-animation: overlayWithInfoCategoriesHoverOff .1s linear;
-            -o-animation: overlayWithInfoCategoriesHoverOff .1s linear;
-            animation: overlayWithInfoCategoriesHoverOff .1s linear;
-            .overlay-with-info-category {
-                padding-right: 6px;
-                display: flex;
-                align-items: center;
-                .overlay-with-info-category-slash {
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: rgb(155, 155, 155);
-                    padding-left: 2px;
-                }
-            }
-        }
-        .overlay-image-arrow-wrapper-shorten {
+        -webkit-animation: stoneWallItemCurtainHoverOff .1s linear;
+        -moz-animation: stoneWallItemCurtainHoverOff .1s linear;
+        -o-animation: stoneWallItemCurtainHoverOff .1s linear;
+        animation: stoneWallItemCurtainHoverOff .1s linear;
+        .stone-wall-item-image-arrow-wrapper-shorten {
             display: flex;
             margin-top: 10px;
             align-items: center;
@@ -174,10 +126,6 @@
                 width: 0px;
                 height: 2px;
                 background: white;
-                // -webkit-animation: shortenHorizontalLineOverlayPage .1s linear;
-                // -moz-animation: shortenHorizontalLineOverlayPage .1s linear;
-                // -o-animation: shortenHorizontalLineOverlayPage .1s linear;
-                // animation: shortenHorizontalLineOverlayPage .1s linear;
                 animation-delay: .1s;
                 animation-fill-mode: both;
             }
@@ -191,19 +139,11 @@
                     border: 1px solid transparent;
                     height: 0px;
                     transform: translate(-1px, 1px) rotate(-45deg);
-                    // -webkit-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -moz-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -o-animation: shortenArrowLineOverlayPage .1s linear;
-                    // animation: shortenArrowLineOverlayPage .1s linear;
                 }
                 .arrow-bottom-line {
                     border: 1px solid transparent;
                     height: 0px;
                     transform: translate(-1px, -1px) rotate(45deg);
-                    // -webkit-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -moz-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -o-animation: shortenArrowLineOverlayPage .1s linear;
-                    // animation: shortenArrowLineOverlayPage .1s linear;
                 }
             }
         }
@@ -214,41 +154,7 @@
     display: none;
 }
 
-@-webkit-keyframes overlayWithInfoCategoriesHoverOn {
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-@-moz-keyframes overlayWithInfoCategoriesHoverOn {
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-@-o-keyframes overlayWithInfoCategoriesHoverOn {
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-@keyframes overlayWithInfoCategoriesHoverOn {
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-
-@-webkit-keyframes overlayWithInfoCategoriesHoverOff {
-    from{opacity: 1;}
-    to{opacity: 0;}
-}
-@-moz-keyframes overlayWithInfoCategoriesHoverOff {
-    from{opacity: 1;}
-    to{opacity: 0;}
-}
-@-o-keyframes overlayWithInfoCategoriesHoverOff {
-    from{opacity: 1;}
-    to{opacity: 0;}
-}
-@keyframes overlayWithInfoCategoriesHoverOff {
-    from{opacity: 1;}
-    to{opacity: 0;}
-}
-
-@-webkit-keyframes lengthenArrowLineOverlayPage {
+@-webkit-keyframes lengthenArrowLineStoneWallItem {
     from{
         height: 0px;
         border: 0px solid white;
@@ -258,7 +164,7 @@
         border: 1px solid white;
     }
 }
-@-moz-keyframes lengthenArrowLineOverlayPage {
+@-moz-keyframes lengthenArrowLineStoneWallItem {
     from{
         height: 0px;
         border: 0px solid white;
@@ -268,7 +174,7 @@
         border: 1px solid white;
     }
 }
-@-o-keyframes lengthenArrowLineOverlayPage {
+@-o-keyframes lengthenArrowLineStoneWallItem {
     from{
         height: 0px;
         border: 0px solid white;
@@ -278,7 +184,7 @@
         border: 1px solid white;
     }
 }
-@keyframes lengthenArrowLineOverlayPage {
+@keyframes lengthenArrowLineStoneWallItem {
     from{
         height: 0px;
         border: 0px solid white;
@@ -289,153 +195,87 @@
     }
 }
 
-@-webkit-keyframes shortenArrowLineOverlayPage {
-    from{
-        border: 1px solid white;
-        background: white;
-        height: 15px;
-    }
-    to{
-        border: 1px solid transparent;
-        background: white;
-        height: 0px;
-    }
-}
-@-moz-keyframes shortenArrowLineOverlayPage {
-    from{
-        border: 1px solid white;
-        background: white;
-        height: 15px;
-    }
-    to{
-        border: 1px solid transparent;
-        background: white;
-        height: 0px;
-    }
-}
-@-o-keyframes shortenArrowLineOverlayPage {
-    from{
-        border: 1px solid white;
-        background: white;
-        height: 15px;
-    }
-    to{
-        border: 1px solid transparent;
-        background: white;
-        height: 0px;
-    }
-}
-@keyframes shortenArrowLineOverlayPage {
-    from{
-        border: 1px solid white;
-        background: white;
-        height: 15px;
-    }
-    to{
-        border: 1px solid transparent;
-        background: white;
-        height: 0px;
-    }
-}
-
-@-webkit-keyframes lengthenHorizontalLineOverlayPage {
+@-webkit-keyframes lengthenHorizontalLineStoneWallItem {
     from{width: 0px;}
     to{width: 60px;}
 }
-@-moz-keyframes lengthenHorizontalLineOverlayPage {
+@-moz-keyframes lengthenHorizontalLineStoneWallItem {
     from{width: 0px;}
     to{width: 60px;}
 }
-@-o-keyframes lengthenHorizontalLineOverlayPage {
+@-o-keyframes lengthenHorizontalLineStoneWallItem {
     from{width: 0px;}
     to{width: 60px;}
 }
-@keyframes lengthenHorizontalLineOverlayPage {
+@keyframes lengthenHorizontalLineStoneWallItem {
     from{width: 0px;}
     to{width: 60px;}
 }
 
-@-webkit-keyframes shortenHorizontalLineOverlayPage {
-    from{width: 60px;}
-    to{width: 0px;}
-}
-@-moz-keyframes shortenHorizontalLineOverlayPage {
-    from{width: 60px;}
-    to{width: 0px;}
-}
-@-o-keyframes shortenHorizontalLineOverlayPage {
-    from{width: 60px;}
-    to{width: 0px;}
-}
-@keyframes shortenHorizontalLineOverlayPage {
-    from{width: 60px;}
-    to{width: 0px;}
-}
-
-@-webkit-keyframes overlayImageHoverOn {
+@-webkit-keyframes stoneWallItemImageHoverOn {
     from{transform: scale(1);}
     to{transform: scale(1.05);}
 }
-@-moz-keyframes overlayImageHoverOn {
+@-moz-keyframes stoneWallItemImageHoverOn {
     from{transform: scale(1);}
     to{transform: scale(1.05);}
 }
-@-o-keyframes overlayImageHoverOn {
+@-o-keyframes stoneWallItemImageHoverOn {
     from{transform: scale(1);}
     to{transform: scale(1.05);}
 }
-@keyframes overlayImageHoverOn {
+@keyframes stoneWallItemImageHoverOn {
     from{transform: scale(1);}
     to{transform: scale(1.05);}
 }
 
-@-webkit-keyframes overlayImageHoverOff {
+@-webkit-keyframes stoneWallItemImageHoverOff {
     from{transform: scale(1.05);}
     to{transform: scale(1);}
 }
-@-moz-keyframes overlayImageHoverOff {
+@-moz-keyframes stoneWallItemImageHoverOff {
     from{transform: scale(1.05);}
     to{transform: scale(1);}
 }
-@-o-keyframes overlayImageHoverOff {
+@-o-keyframes stoneWallItemImageHoverOff {
     from{transform: scale(1.05);}
     to{transform: scale(1);}
 }
-@keyframes overlayImageHoverOff {
+@keyframes stoneWallItemImageHoverOff {
     from{transform: scale(1.05);}
     to{transform: scale(1);}
 }
 
-@-webkit-keyframes overlayCurtainHoverOn {
+@-webkit-keyframes stoneWallItemCurtainHoverOn {
     from{opacity: 0;}
     to{opacity:1;}
 }
-@-moz-keyframes overlayCurtainHoverOn {
+@-moz-keyframes stoneWallItemCurtainHoverOn {
     from{opacity: 0;}
     to{opacity:1;}
 }
-@-o-keyframes overlayCurtainHoverOn {
+@-o-keyframes stoneWallItemCurtainHoverOn {
     from{opacity: 0;}
     to{opacity:1;}
 }
-@keyframes overlayCurtainHoverOn {
+@keyframes stoneWallItemCurtainHoverOn {
     from{opacity: 0;}
     to{opacity:1;}
 }
 
-@-webkit-keyframes overlayCurtainHoverOff {
+@-webkit-keyframes stoneWallItemCurtainHoverOff {
     from{opacity: 1;}
     to{opacity:0;}
 }
-@-moz-keyframes overlayCurtainHoverOff {
+@-moz-keyframes stoneWallItemCurtainHoverOff {
     from{opacity: 1;}
     to{opacity:0;}
 }
-@-o-keyframes overlayCurtainHoverOff {
+@-o-keyframes stoneWallItemCurtainHoverOff {
     from{opacity: 1;}
     to{opacity:0;}
 }
-@keyframes overlayCurtainHoverOff {
+@keyframes stoneWallItemCurtainHoverOff {
     from{opacity: 1;}
     to{opacity:0;}
 }

@@ -49,10 +49,10 @@
         -moz-animation: overlayCurtainHoverOn 0.3s linear;
         -o-animation: overlayCurtainHoverOn 0.3s linear;
         animation: overlayCurtainHoverOn 0.3s linear;
-        .overlay-icon {
-            color: white;
-            cursor: pointer;
-        }
+        // .overlay-icon {
+        //     color: white;
+        //     cursor: pointer;
+        // }
         .overlay-with-info-categories {
             position: relative;
             z-index: 100;
@@ -86,10 +86,10 @@
                 width: 60px;
                 height: 2px;
                 background: white;
-                -webkit-animation: lengthenHorizontalLineOverlayPage .1s linear;
-                -moz-animation: lengthenHorizontalLineOverlayPage .1s linear;
-                -o-animation: lengthenHorizontalLineOverlayPage .1s linear;
-                animation: lengthenHorizontalLineOverlayPage .1s linear;
+                -webkit-animation: lengthenHorizontalLineOverlayImage .1s linear;
+                -moz-animation: lengthenHorizontalLineOverlayImage .1s linear;
+                -o-animation: lengthenHorizontalLineOverlayImage .1s linear;
+                animation: lengthenHorizontalLineOverlayImage .1s linear;
                 animation-delay: .3s;
                 animation-fill-mode: both;
             }
@@ -104,10 +104,10 @@
                     background: white;
                     height: 10px;
                     transform: translate(-1px, 2.5px) rotate(-45deg);
-                    -webkit-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -moz-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -o-animation: lengthenArrowLineOverlayPage .1s linear;
-                    animation: lengthenArrowLineOverlayPage .1s linear;
+                    -webkit-animation: lengthenArrowLineOverlayImage .1s linear;
+                    -moz-animation: lengthenArrowLineOverlayImage .1s linear;
+                    -o-animation: lengthenArrowLineOverlayImage .1s linear;
+                    animation: lengthenArrowLineOverlayImage .1s linear;
                     animation-delay: .4s;
                     animation-fill-mode: both;
                 }
@@ -116,10 +116,10 @@
                     background: white;
                     height: 10px;
                     transform: translate(-1px, -2.5px) rotate(45deg);
-                    -webkit-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -moz-animation: lengthenArrowLineOverlayPage .1s linear;
-                    -o-animation: lengthenArrowLineOverlayPage .1s linear;
-                    animation: lengthenArrowLineOverlayPage .1s linear;
+                    -webkit-animation: lengthenArrowLineOverlayImage .1s linear;
+                    -moz-animation: lengthenArrowLineOverlayImage .1s linear;
+                    -o-animation: lengthenArrowLineOverlayImage .1s linear;
+                    animation: lengthenArrowLineOverlayImage .1s linear;
                     animation-delay: .4s;
                     animation-fill-mode: both;
                 }
@@ -141,10 +141,10 @@
         -moz-animation: overlayCurtainHoverOff .1s linear;
         -o-animation: overlayCurtainHoverOff .1s linear;
         animation: overlayCurtainHoverOff .1s linear;
-        .overlay-icon {
-            color: white;
-            cursor: pointer;
-        }
+        // .overlay-icon {
+        //     color: white;
+        //     cursor: pointer;
+        // }
         .overlay-with-info-categories {
             display: flex;
             flex-wrap: wrap;
@@ -174,10 +174,10 @@
                 width: 0px;
                 height: 2px;
                 background: white;
-                // -webkit-animation: shortenHorizontalLineOverlayPage .1s linear;
-                // -moz-animation: shortenHorizontalLineOverlayPage .1s linear;
-                // -o-animation: shortenHorizontalLineOverlayPage .1s linear;
-                // animation: shortenHorizontalLineOverlayPage .1s linear;
+                // -webkit-animation: shortenHorizontalLineOverlayImage .1s linear;
+                // -moz-animation: shortenHorizontalLineOverlayImage .1s linear;
+                // -o-animation: shortenHorizontalLineOverlayImage .1s linear;
+                // animation: shortenHorizontalLineOverlayImage .1s linear;
                 animation-delay: .1s;
                 animation-fill-mode: both;
             }
@@ -191,19 +191,19 @@
                     border: 1px solid transparent;
                     height: 0px;
                     transform: translate(-1px, 1px) rotate(-45deg);
-                    // -webkit-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -moz-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -o-animation: shortenArrowLineOverlayPage .1s linear;
-                    // animation: shortenArrowLineOverlayPage .1s linear;
+                    // -webkit-animation: shortenArrowLineOverlayImage .1s linear;
+                    // -moz-animation: shortenArrowLineOverlayImage .1s linear;
+                    // -o-animation: shortenArrowLineOverlayImage .1s linear;
+                    // animation: shortenArrowLineOverlayImage .1s linear;
                 }
                 .arrow-bottom-line {
                     border: 1px solid transparent;
                     height: 0px;
                     transform: translate(-1px, -1px) rotate(45deg);
-                    // -webkit-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -moz-animation: shortenArrowLineOverlayPage .1s linear;
-                    // -o-animation: shortenArrowLineOverlayPage .1s linear;
-                    // animation: shortenArrowLineOverlayPage .1s linear;
+                    // -webkit-animation: shortenArrowLineOverlayImage .1s linear;
+                    // -moz-animation: shortenArrowLineOverlayImage .1s linear;
+                    // -o-animation: shortenArrowLineOverlayImage .1s linear;
+                    // animation: shortenArrowLineOverlayImage .1s linear;
                 }
             }
         }
@@ -248,7 +248,7 @@
     to{opacity: 0;}
 }
 
-@-webkit-keyframes lengthenArrowLineOverlayPage {
+@-webkit-keyframes lengthenArrowLineOverlayImage {
     from{
         height: 0px;
         border: 0px solid white;
@@ -258,7 +258,7 @@
         border: 1px solid white;
     }
 }
-@-moz-keyframes lengthenArrowLineOverlayPage {
+@-moz-keyframes lengthenArrowLineOverlayImage {
     from{
         height: 0px;
         border: 0px solid white;
@@ -268,7 +268,7 @@
         border: 1px solid white;
     }
 }
-@-o-keyframes lengthenArrowLineOverlayPage {
+@-o-keyframes lengthenArrowLineOverlayImage {
     from{
         height: 0px;
         border: 0px solid white;
@@ -278,7 +278,7 @@
         border: 1px solid white;
     }
 }
-@keyframes lengthenArrowLineOverlayPage {
+@keyframes lengthenArrowLineOverlayImage {
     from{
         height: 0px;
         border: 0px solid white;
@@ -289,7 +289,7 @@
     }
 }
 
-@-webkit-keyframes shortenArrowLineOverlayPage {
+@-webkit-keyframes shortenArrowLineOverlayImage {
     from{
         border: 1px solid white;
         background: white;
@@ -301,7 +301,7 @@
         height: 0px;
     }
 }
-@-moz-keyframes shortenArrowLineOverlayPage {
+@-moz-keyframes shortenArrowLineOverlayImage {
     from{
         border: 1px solid white;
         background: white;
@@ -313,7 +313,7 @@
         height: 0px;
     }
 }
-@-o-keyframes shortenArrowLineOverlayPage {
+@-o-keyframes shortenArrowLineOverlayImage {
     from{
         border: 1px solid white;
         background: white;
@@ -325,7 +325,7 @@
         height: 0px;
     }
 }
-@keyframes shortenArrowLineOverlayPage {
+@keyframes shortenArrowLineOverlayImage {
     from{
         border: 1px solid white;
         background: white;
@@ -338,36 +338,36 @@
     }
 }
 
-@-webkit-keyframes lengthenHorizontalLineOverlayPage {
+@-webkit-keyframes lengthenHorizontalLineOverlayImage {
     from{width: 0px;}
     to{width: 60px;}
 }
-@-moz-keyframes lengthenHorizontalLineOverlayPage {
+@-moz-keyframes lengthenHorizontalLineOverlayImage {
     from{width: 0px;}
     to{width: 60px;}
 }
-@-o-keyframes lengthenHorizontalLineOverlayPage {
+@-o-keyframes lengthenHorizontalLineOverlayImage {
     from{width: 0px;}
     to{width: 60px;}
 }
-@keyframes lengthenHorizontalLineOverlayPage {
+@keyframes lengthenHorizontalLineOverlayImage {
     from{width: 0px;}
     to{width: 60px;}
 }
 
-@-webkit-keyframes shortenHorizontalLineOverlayPage {
+@-webkit-keyframes shortenHorizontalLineOverlayImage {
     from{width: 60px;}
     to{width: 0px;}
 }
-@-moz-keyframes shortenHorizontalLineOverlayPage {
+@-moz-keyframes shortenHorizontalLineOverlayImage {
     from{width: 60px;}
     to{width: 0px;}
 }
-@-o-keyframes shortenHorizontalLineOverlayPage {
+@-o-keyframes shortenHorizontalLineOverlayImage {
     from{width: 60px;}
     to{width: 0px;}
 }
-@keyframes shortenHorizontalLineOverlayPage {
+@keyframes shortenHorizontalLineOverlayImage {
     from{width: 60px;}
     to{width: 0px;}
 }

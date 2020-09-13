@@ -78,11 +78,7 @@ export const StoneWallItem = (props) => {
 
     const setPadding = (page) => {
         switch(page){
-            case 'overlayPage':
-                return 80;
-            case 'overlayWithInfoPage':
             case 'stoneWallPage':
-            case 'galleryWithSpacePage':
                 return 40;
         }
     }
@@ -93,9 +89,6 @@ export const StoneWallItem = (props) => {
                 setIsHovering("on");
                 handleResize();
             break;
-            case 'overlayWithInfoCategory': 
-                props.setIsHoveringCategory("on", pathOfIds);
-            break;
         }
     }
 
@@ -103,9 +96,6 @@ export const StoneWallItem = (props) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
-                break;
-            case 'overlayWithInfoCategory': 
-                props.setIsHoveringCategory("off", pathOfIds);
                 break;
         }
     }
@@ -127,7 +117,7 @@ export const StoneWallItem = (props) => {
         }
     }
 
-    const simpleOverlayImageOnClick = (path) => {
+    const stoneWallOnClick = (path) => {
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, props.page);
     }
@@ -138,29 +128,19 @@ export const StoneWallItem = (props) => {
                 case 'init':
                     return "display-none";
                 case 'on':
-                    return "overlay-curtain-hover-on";
+                    return "stone-wall-item-curtain-hover-on";
                 case 'off':
-                    return "overlay-curtain-hover-off"
+                    return "stone-wall-item-curtain-hover-off"
             }
         }
-        if(opt === "overlayImage"){
+        if(opt === "stoneWallItemImage"){
             switch(isHovering){
                 case 'init':
-                    return "overlay-image";
+                    return "stone-wall-item-image";
                 case 'on':
-                    return "overlay-image-hover-on";
+                    return "stone-wall-item-image-hover-on";
                 case 'off':
-                    return "overlay-image-hover-off"
-            }
-        }
-        if(opt === "overlayWithInfoCategory"){
-            switch(isHovering){
-                case 'init':
-                    return "h17-white-lustria-animated";
-                case 'on':
-                    return "h17-white-lustria-nobel-hover-on";
-                case 'off':
-                    return "h17-nobel-lustria-nobel-hover-off"
+                    return "stone-wall-item-image-hover-off"
             }
         }
         if(opt === "header"){
@@ -178,38 +158,11 @@ export const StoneWallItem = (props) => {
                 case 'init':
                     return "display-none";
                 case 'on':
-                    return "overlay-image-arrow-wrapper-lengthen";
+                    return "stone-wall-item-image-arrow-wrapper-lengthen";
                 case 'off':
-                    return "overlay-image-arrow-wrapper-shorten"
+                    return "stone-wall-item-image-arrow-wrapper-shorten"
             }
         }
-    }
-
-    const onClickHandler = (e, path) => {
-        e.stopPropagation();
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
-        props.clearArchiveData();
-    }
-
-    const renderCategories = (obj) => {
-        return(
-            <div className="overlay-with-info-categories">{obj.categories.map((el, i) => {
-                let pathOfIds = [obj.id, el.id];
-                return(
-                    <div 
-                        key={i}
-                        className="overlay-with-info-category"
-                        onClick={(e) => onClickHandler(e, el.path)}
-                        onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, null, pathOfIds)} 
-                    >
-                        <H17 className={renderClassName("overlayWithInfoCategory", el.isHover)}>{el.label}</H17>
-                        {i !== obj.categories.length-1 ? <div className="overlay-with-info-category-slash">/</div> : null}
-                    </div>
-                )
-            })}</div>
-        )
     }
 
     /**
@@ -218,12 +171,12 @@ export const StoneWallItem = (props) => {
 
     return(
         <div 
-            className="overlay-image"
+            className="stone-wall-item"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
         >
-            <div className={renderClassName("overlayImage", isHovering)}>
+            <div className={renderClassName("stoneWallItemImage", isHovering)}>
                 <img 
                     id="img"
                     src={loadImg(props.obj.coverImage.key)} 
@@ -233,20 +186,10 @@ export const StoneWallItem = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`, padding: `${paddingLeftRight/2} 20px ${paddingLeftRight/2} 20px`}}
-                onClick={() => simpleOverlayImageOnClick(props.obj.path)}
+                onClick={() => stoneWallOnClick(props.obj.path)}
             >
-                {props.page === "overlayWithInfoPage" ? 
-                <>
-                    {renderCategories(props.obj)}
-                    <EH10/>
-                    <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
-                    <EH20/>
-                </> : null}
-                {props.page === "stoneWallPage" || props.page === "galleryWithSpacePage" ? 
-                <>
-                    <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
-                    <EH20/>
-                </> : null}
+                <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
+                <EH20/>
                <div className={renderClassName("arrow", isHovering)}>
                     <div className="arrow-horizontal-line"/>
                     <div className="arrow-wrapper2">

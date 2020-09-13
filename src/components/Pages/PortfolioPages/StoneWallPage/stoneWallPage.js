@@ -181,10 +181,8 @@ export const StoneWallPage = (props) => {
                         <StoneWallItem
                             page="stoneWallPage"
                             obj={el}
-                            setIsHoveringCategory={props.setOverlayWithInfoPageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            clearArchiveData={props.clearArchiveData}       
+                            unmountComponent={props.unmountComponent} 
                         />
                     </div>
                 )
