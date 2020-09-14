@@ -51,7 +51,7 @@ export const StoneWallItem = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
-    const [paddingLeftRight, setPaddingLeftRight] = useState(0);
+    const [paddingTopBottom, setPaddingTopBottom] = useState(0);
  
     /**
     * Methods
@@ -70,10 +70,11 @@ export const StoneWallItem = (props) => {
     })
 
     const handleResize = () => {
-        let paddingLeftRightVal = setPadding(props.page);
+        let paddingTopBottomVal = setPadding(props.page);
         let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - paddingLeftRightVal);
-        setPaddingLeftRight(paddingLeftRightVal);
+        setCardHeight(cardHeight - paddingTopBottomVal);
+        setPaddingTopBottom(paddingTopBottomVal);
+        console.log(cardHeight)
     }
 
     const setPadding = (page) => {
@@ -185,7 +186,7 @@ export const StoneWallItem = (props) => {
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `${cardHeight}px`, padding: `${paddingLeftRight/2} 20px ${paddingLeftRight/2} 20px`}}
+                style={{height: `calc(100% - ${paddingTopBottom}px)`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
                 onClick={() => stoneWallOnClick(props.obj.path)}
             >
                 <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>

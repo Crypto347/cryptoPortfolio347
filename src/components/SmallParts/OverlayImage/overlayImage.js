@@ -51,7 +51,7 @@ export const OverlayImage = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
-    const [paddingLeftRight, setPaddingLeftRight] = useState(0);
+    const [paddingTopBottom, setPaddingTopBottom] = useState(0);
  
     /**
     * Methods
@@ -70,10 +70,10 @@ export const OverlayImage = (props) => {
     })
 
     const handleResize = () => {
-        let paddingLeftRightVal = setPadding(props.page);
+        let paddingTopBottomVal = setPadding(props.page);
         let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - paddingLeftRightVal);
-        setPaddingLeftRight(paddingLeftRightVal);
+        setCardHeight(cardHeight - paddingTopBottomVal);
+        setPaddingTopBottom(paddingTopBottomVal);
     }
 
     const setPadding = (page) => {
@@ -258,7 +258,7 @@ export const OverlayImage = (props) => {
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `${cardHeight}px`, padding: `${paddingLeftRight/2} 20px ${paddingLeftRight/2} 20px`}}
+                style={{height: `${cardHeight}px`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
                 onClick={() => simpleOverlayImageOnClick(props.obj.path)}
             >
                 {props.page === "overlayWithInfoPage" ? 
