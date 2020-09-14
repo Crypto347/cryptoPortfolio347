@@ -83,8 +83,16 @@ export const StoneWallPage = (props) => {
     * State
     */
 
+    const resizeRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
+    const [classNameImg1, setClassNameImg1] = useState('stone-wall-page-item-id1');
+    const [classNameImg2, setClassNameImg2] = useState('stone-wall-page-item-id2');
+    const [classNameImg3, setClassNameImg3] = useState('stone-wall-page-item-id3');
+    const [classNameImg4, setClassNameImg4] = useState('stone-wall-page-item-id4');
+    const [classNameImg5, setClassNameImg5] = useState('stone-wall-page-item-id5');
+
     /**
     * Methods
     */
@@ -102,27 +110,55 @@ export const StoneWallPage = (props) => {
             }else{
                 window.scrollTo(0, 0);
             }
-
-            // let imag1 = document.getElementById("smallImages4") ? document.getElementById("smallImages4").clientWidth : 0;
-            // let imag2 = document.getElementById(props.historyPopFromItem) ? document.getElementById("gallery2").offsetTop : 0;
-            // let imag3 = document.getElementById(props.historyPopFromItem) ? document.getElementById("bigSlider3").offsetTop : 0;
-            // let imag4 = document.getElementById(props.historyPopFromItem) ? document.getElementById("smallGallery2").offsetTop : 0;
-            // let imag5 = document.getElementById(props.historyPopFromItem) ? document.getElementById("gallery3").offsetTop : 0;
-    
-            // console.log("WIdth", imag1)
         }, 2);
 
-    
-        
-
+        const resize = () => {
+            resizeRef.current();
+        }
+ 
         window.addEventListener('wheel', handleOnWheel);
+        window.addEventListener('resize', resize);
 
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
+            window.removeEventListener('resize', resize);
             props.setMenuDotsState("init", "");
         }
     }, []);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = (e) => {
+        // setPrevScreenWidthVal(size.width);
+        console.log(prevScreenWidthVal, size.width)
+        if(size.width > 1200){
+            setClassNameImg3("stone-wall-page-item-id3");
+            setClassNameImg4("stone-wall-page-item-id4");
+        }
+        if(size.width < 1200 && size.width > 1025){
+            setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
+            setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
+        }
+        if(size.width < 1025 && size.width > 770){
+            setClassNameImg3("stone-wall-page-item-id3-animation-narrow-screen");
+            setClassNameImg4("stone-wall-page-item-id4-animation-narrow-screen");
+            console.log("short1")
+        }
+        if(size.width < 1025 && size.width > 770){
+            console.log("long1")
+            // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
+        }
+
+        // if(size.width < 770 && size.width > 680 && size.width < prevScreenWidthVal){
+        //     console.log("short2");
+        // }
+        // if(size.width < 770 && size.width > 680 && size.width > prevScreenWidthVal){
+        //     console.log("long2");
+        // }
+    }
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -179,6 +215,21 @@ export const StoneWallPage = (props) => {
             )
         }
     }
+
+    const renderClassName = (id) => {
+        switch(id){
+            case 1:
+                return classNameImg1;
+            case 2:
+                return classNameImg2;
+            case 3:
+                return classNameImg3;
+            case 4:
+                return classNameImg4;
+            case 5:
+                return classNameImg5;
+        }
+    }
     
     const renderStoneWallPageData = () => {
         return(
@@ -187,7 +238,8 @@ export const StoneWallPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        className={`stone-wall-page-item-id${el.id}`}
+                        // className={`stone-wall-page-item-id${el.id}`}
+                        className={renderClassName(el.id)}
                     >
                         <StoneWallItem
                             page="stoneWallPage"

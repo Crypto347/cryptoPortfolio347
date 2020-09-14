@@ -67,7 +67,7 @@ export const StoneWallItem = (props) => {
 
     useEffect(() => {
         resizeRef.current = handleResize;
-    })
+    });
 
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
