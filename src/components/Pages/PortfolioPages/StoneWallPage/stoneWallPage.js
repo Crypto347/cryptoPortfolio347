@@ -135,16 +135,22 @@ export const StoneWallPage = (props) => {
         // setPrevScreenWidthVal(size.width);
         console.log(prevScreenWidthVal, size.width)
         if(size.width > 1200){
+            setClassNameImg2("stone-wall-page-item-id2");
             setClassNameImg3("stone-wall-page-item-id3");
             setClassNameImg4("stone-wall-page-item-id4");
+            setClassNameImg5("stone-wall-page-item-id5");
         }
-        if(size.width < 1200 && size.width > 1025){
+        if(size.width < 1200 && size.width > 1024){
+            setClassNameImg2("stone-wall-page-item-id2-animation-expand-screen");
             setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
             setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
+            setClassNameImg5("stone-wall-page-item-id5-animation-expand-screen");
         }
         if(size.width < 1025 && size.width > 770){
+            setClassNameImg2("stone-wall-page-item-id2-animation-narrow-screen");
             setClassNameImg3("stone-wall-page-item-id3-animation-narrow-screen");
             setClassNameImg4("stone-wall-page-item-id4-animation-narrow-screen");
+            setClassNameImg5("stone-wall-page-item-id5-animation-narrow-screen");
             console.log("short1")
         }
         if(size.width < 1025 && size.width > 770){
