@@ -44,10 +44,10 @@
             }
             .stone-wall-page-item-id2-animation-narrow-screen {
                 position: absolute;
-                top: 979.99px;
+                top: 1196px;
                 left: 0px;
-                width: 296.66px;
-                height: 623.33px;
+                width: 368px;
+                height: 768px;
                 margin-right: 30px;
                 margin-bottom: 30px;
                 -webkit-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
@@ -60,14 +60,40 @@
                 position: absolute;
                 top: 326.66px;
                 left: 0;
-                width: 296.66px;
-                height: 623.33px;
+                width: 420px;
+                height: 420px;
                 margin-right: 30px;
                 margin-bottom: 30px;
                 -webkit-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
                 -moz-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
                 -o-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
                 animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+            }
+            .stone-wall-page-item-id2-animation-narrow2-screen {
+                position: absolute;
+                top: 900px;
+                left: 0px;
+                width: 420px;
+                height: 868.55px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+            }
+            .stone-wall-page-item-id2-animation-expand2-screen {
+                position: absolute;
+                top: 945px;
+                left: 0px;
+                width: 285px;
+                height: 600px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
             }
             .stone-wall-page-item-id3 {
                 position: absolute;
@@ -80,10 +106,10 @@
             }
             .stone-wall-page-item-id3-animation-narrow-screen {
                 position: absolute;
-                top: 326.66px;
+                top: 398px;
                 left: 0;
-                width: 623.33px;
-                height: 623.33px;
+                width: 768px;
+                height: 768px;
                 margin-right: 30px;
                 margin-bottom: 30px;
                 -webkit-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
@@ -104,6 +130,32 @@
                 -o-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
                 animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
             }
+            .stone-wall-page-item-id3-animation-narrow2-screen {
+                position: absolute;
+                top: 450px;
+                left: 0;
+                width: 420px;
+                height: 420px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+                animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+            }
+            .stone-wall-page-item-id3-animation-expand2-screen {
+                position: absolute;
+                top: 326.66px;
+                left: 0px;
+                width: 600px;
+                height: 600px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+            }
             .stone-wall-page-item-id4 {
                 position: absolute;
                 top: 753.33px;
@@ -116,9 +168,9 @@
             .stone-wall-page-item-id4-animation-narrow-screen {
                 position: absolute;
                 top: 0px;
-                left: 326.66px;
-                width: 296.66px;
-                height: 296.66px;
+                left: 398px;
+                width: 368px;
+                height: 368px;
                 margin-right: 30px;
                 margin-bottom: 30px;
                 -webkit-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
@@ -150,10 +202,10 @@
             }
             .stone-wall-page-item-id5-animation-narrow-screen {
                 position: absolute;
-                top: 979.99px;
-                left: 326.66px;
-                width: 296.66px;
-                height: 296.66px;
+                top: 1196px;
+                left: 398px;
+                width: 368px;
+                height: 368px;
                 margin-right: 30px;
                 margin-bottom: 30px;
                 -webkit-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
@@ -221,35 +273,113 @@
     .stone-wall-page {
         .stone-wall-page-wrapper {
             .stone-wall-page-items {
-                width: 623.33px;
-                height: 1673.32px;
+                width: 766px;
+                height: 2034px;
                 .stone-wall-page-item-id1 {
-                    width: 296.66px;
-                    height: 296.66px;
+                    width: 368px;
+                    height: 368px;
                 }
                 .stone-wall-page-item-id2 {
-                    top: 979.99px;
+                    top: 1196px;
                     left: 0px;
-                    width: 296.66px;
-                    height: 623.33px;
+                    width: 368px;
+                    height: 768px;
                 }
                 .stone-wall-page-item-id3 {
-                    top: 326.66px;
+                    top: 398px;
                     left: 0;
-                    width: 623.33px;
-                    height: 623.33px;
+                    width: 768px;
+                    height: 768px;
                 }
                 .stone-wall-page-item-id4 {
                     top: 0px;
-                    left: 326.66px;
-                    width: 296.66px;
-                    height: 296.66px;
+                    left: 398px;
+                    width: 368px;
+                    height: 368px;
                 }
                 .stone-wall-page-item-id5 {
-                    top: 979.99px;
-                    left: 326.66px;
-                    width: 296.66px;
-                    height: 296.66px;
+                    top: 1196px;
+                    left: 398px;
+                    width: 368px;
+                    height: 368px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 840px){
+    .stone-wall-page {
+        .stone-wall-page-wrapper {
+            .stone-wall-page-items {
+                width: 600px;
+                height: 1615px;
+                .stone-wall-page-item-id1 {
+                    width: 285px;
+                    height: 285px;
+                }
+                .stone-wall-page-item-id2 {
+                    top: 945px;
+                    left: 0px;
+                    width: 285px;
+                    height: 600px;
+                }
+                .stone-wall-page-item-id3 {
+                    top: 315px;
+                    left: 0;
+                    width: 600px;
+                    height: 600px;
+                }
+                .stone-wall-page-item-id4 {
+                    top: 0px;
+                    left: 316px;
+                    width: 285px;
+                    height: 285px;
+                }
+                .stone-wall-page-item-id5 {
+                    top: 945px;
+                    left: 315px;
+                    width: 285px;
+                    height: 285px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 670px){
+    .stone-wall-page {
+        .stone-wall-page-wrapper {
+            .stone-wall-page-items {
+                width: 420px;
+                height: 2738.55px;
+                .stone-wall-page-item-id1 {
+                    width: 420px;
+                    height: 420px;
+                }
+                .stone-wall-page-item-id2 {
+                    top: 900px;
+                    left: 0px;
+                    width: 420px;
+                    height: 868.55px;
+                }
+                .stone-wall-page-item-id3 {
+                    top: 450px;
+                    left: 0px;
+                    width: 420px;
+                    height: 420px;
+                }
+                .stone-wall-page-item-id4 {
+                    top: 1798.55px;
+                    left: 0px;
+                    width: 420px;
+                    height: 420px;
+                }
+                .stone-wall-page-item-id5 {
+                    top: 2248.55px;
+                    left: 0px;
+                    width: 420px;
+                    height: 420px;
                 }
             }
         }
@@ -262,8 +392,8 @@
         left: 653.32;
     }
     to{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
 }
 @-moz-keyframes stoneWallPageItemId5NarrowScreen {
@@ -272,8 +402,8 @@
         left: 653.32;
     }
     to{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
 }
 @-o-keyframes stoneWallPageItemId5NarrowScreen {
@@ -282,8 +412,8 @@
         left: 326.66px;
     }
     to{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
 }
 @keyframes stoneWallPageItemId5NarrowScreen {
@@ -292,15 +422,15 @@
         left: 326.66px;
     }
     to{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
 }
 
 @-webkit-keyframes stoneWallPageItemId5ExpandScreen {
     from{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -309,8 +439,8 @@
 }
 @-moz-keyframes stoneWallPageItemId5ExpandScreen {
     from{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -319,8 +449,8 @@
 }
 @-o-keyframes stoneWallPageItemId5ExpandScreen {
     from{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -329,8 +459,8 @@
 }
 @keyframes stoneWallPageItemId5ExpandScreen {
     from{
-        top: 979.99px;
-        left: 326.66px;
+        top: 1196px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -345,7 +475,7 @@
     }
     to{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
 }
 @-moz-keyframes stoneWallPageItemId4NarrowScreen {
@@ -355,7 +485,7 @@
     }
     to{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
 }
 @-o-keyframes stoneWallPageItemId4NarrowScreen {
@@ -365,7 +495,7 @@
     }
     to{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
 }
 @keyframes stoneWallPageItemId4NarrowScreen {
@@ -375,14 +505,14 @@
     }
     to{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
 }
 
 @-webkit-keyframes stoneWallPageItemId4ExpandScreen {
     from{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -392,7 +522,7 @@
 @-moz-keyframes stoneWallPageItemId4ExpandScreen {
     from{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -402,7 +532,7 @@
 @-o-keyframes stoneWallPageItemId4ExpandScreen {
     from{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -412,7 +542,7 @@
 @keyframes stoneWallPageItemId4ExpandScreen {
     from{
         top: 0px;
-        left: 326.66px;
+        left: 398px;
     }
     to{
         top: 653.33px;
@@ -426,7 +556,7 @@
         left: 376.66px;
     }
     to{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
 }
@@ -436,7 +566,7 @@
         left: 376.66px;
     }
     to{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
 }
@@ -456,14 +586,14 @@
         left: 376.66px;
     }
     to{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
 }
 
 @-webkit-keyframes stoneWallPageItemId3ExpandScreen {
     from{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
     to{
@@ -473,7 +603,7 @@
 }
 @-moz-keyframes stoneWallPageItemId3ExpandScreen {
     from{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
     to{
@@ -483,7 +613,7 @@
 }
 @-o-keyframes stoneWallPageItemId3ExpandScreen {
     from{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
     to{
@@ -493,12 +623,78 @@
 }
 @keyframes stoneWallPageItemId3ExpandScreen {
     from{
-        top: 326.66px;
+        top: 398px;
         left: 0;
     }
     to{
         top: 0px;
         left: 326.66px;
+    }
+}
+
+@-webkit-keyframes stoneWallPageItemId3Narrow2Screen {
+    from{
+        top: 326.66px;
+    }
+    to{
+        top: 450px;
+    }
+}
+@-moz-keyframes stoneWallPageItemId3Narrow2Screen {
+    from{
+        top: 326.66px;
+    }
+    to{
+        top: 450px;
+    }
+}
+@-o-keyframes stoneWallPageItemId3Narrow2Screen {
+    from{
+        top: 326.66px;
+    }
+    to{
+        top: 450px;
+    }
+}
+@keyframes stoneWallPageItemId3Narrow2Screen {
+    from{
+        top: 326.66px;
+    }
+    to{
+        top: 450px;
+    }
+}
+
+@-webkit-keyframes stoneWallPageItemId3Expand2Screen {
+    from{
+        top: 450px;
+    }
+    to{
+        top: 326.66px;
+    }
+}
+@-moz-keyframes stoneWallPageItemId3Expand2Screen {
+    from{
+        top: 450px;
+    }
+    to{
+        top: 326.66px;
+    }
+}
+@-o-keyframes stoneWallPageItemId3Expand2Screen {
+    from{
+        top: 450px;
+    }
+    to{
+        top: 326.66px;
+    }
+}
+@keyframes stoneWallPageItemId3Expand2Screen {
+    from{
+        top: 450px;
+    }
+    to{
+        top: 326.66px;
     }
 }
 
@@ -508,7 +704,7 @@
         left: 0;
     }
     to{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
 }
@@ -518,7 +714,7 @@
         left: 0;
     }
     to{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
 }
@@ -528,7 +724,7 @@
         left: 0;
     }
     to{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
 }
@@ -538,14 +734,14 @@
         left: 0;
     }
     to{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
 }
 
 @-webkit-keyframes stoneWallPageItemId2ExpandScreen {
     from{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
     to{
@@ -555,7 +751,7 @@
 }
 @-moz-keyframes stoneWallPageItemId2ExpandScreen {
     from{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
     to{
@@ -565,7 +761,7 @@
 }
 @-o-keyframes stoneWallPageItemId2ExpandScreen {
     from{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
     to{
@@ -575,11 +771,93 @@
 }
 @keyframes stoneWallPageItemId2ExpandScreen {
     from{
-        top: 979.99px;
+        top: 1196px;
         left: 0px;
     }
     to{
         top: 326.66px;
         left: 0;
+    }
+}
+
+@-webkit-keyframes stoneWallPageItemId2Narrow2Screen {
+    from{
+        width: 623.33px;
+        height: 623.33px;
+    }
+    to{
+        width: 420px;
+        height: 420px;
+    }
+}
+@-moz-keyframes stoneWallPageItemId2Narrow2Screen {
+    from{
+        width: 623.33px;
+        height: 623.33px;
+    }
+    to{
+        width: 420px;
+        height: 420px;
+    }
+}
+@-o-keyframes stoneWallPageItemId2Narrow2Screen {
+    from{
+        width: 623.33px;
+        height: 623.33px;
+    }
+    to{
+        width: 420px;
+        height: 420px;
+    }
+}
+@keyframes stoneWallPageItemId2Narrow2Screen {
+    from{
+        width: 623.33px;
+        height: 623.33px;
+    }
+    to{
+        width: 420px;
+        height: 420px;
+    }
+}
+
+@-webkit-keyframes stoneWallPageItemId2Expand2Screen {
+    from{
+        top: 900px;
+        left: 0px;
+    }
+    to{
+        top: 945px;
+        left: 0px;
+    }
+}
+@-moz-keyframes stoneWallPageItemId2Expand2Screen {
+    from{
+        top: 900px;
+        left: 0px;
+    }
+    to{
+        top: 945px;
+        left: 0px;
+    }
+}
+@-o-keyframes stoneWallPageItemId2Expand2Screen {
+    from{
+        top: 900px;
+        left: 0px;
+    }
+    to{
+        top: 945px;
+        left: 0px;
+    }
+}
+@keyframes stoneWallPageItemId2Expand2Screen {
+    from{
+        top: 900px;
+        left: 0px;
+    }
+    to{
+        top: 945px;
+        left: 0px;
     }
 }

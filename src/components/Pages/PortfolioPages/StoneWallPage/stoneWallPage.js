@@ -132,7 +132,7 @@ export const StoneWallPage = (props) => {
     });
 
     const handleResize = (e) => {
-        // setPrevScreenWidthVal(size.width);
+        setPrevScreenWidthVal(size.width);
         console.log(prevScreenWidthVal, size.width)
         if(size.width > 1200){
             setClassNameImg2("stone-wall-page-item-id2");
@@ -140,21 +140,39 @@ export const StoneWallPage = (props) => {
             setClassNameImg4("stone-wall-page-item-id4");
             setClassNameImg5("stone-wall-page-item-id5");
         }
-        if(size.width < 1200 && size.width > 1024){
+        if(size.width < 1200 && size.width > 1024 && prevScreenWidthVal < size.width){
             setClassNameImg2("stone-wall-page-item-id2-animation-expand-screen");
             setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
             setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
             setClassNameImg5("stone-wall-page-item-id5-animation-expand-screen");
         }
-        if(size.width < 1025 && size.width > 770){
+        if(size.width < 1025 && size.width > 840){
             setClassNameImg2("stone-wall-page-item-id2-animation-narrow-screen");
             setClassNameImg3("stone-wall-page-item-id3-animation-narrow-screen");
             setClassNameImg4("stone-wall-page-item-id4-animation-narrow-screen");
             setClassNameImg5("stone-wall-page-item-id5-animation-narrow-screen");
-            console.log("short1")
         }
-        if(size.width < 1025 && size.width > 770){
+        if(size.width < 840 && size.width > 670 && prevScreenWidthVal > size.width){
+            setClassNameImg2("stone-wall-page-item-id2");
+            setClassNameImg3("stone-wall-page-item-id3");
+            setClassNameImg4("stone-wall-page-item-id4");
+            setClassNameImg5("stone-wall-page-item-id5");
+        }
+        if(size.width < 840 && size.width > 670 && prevScreenWidthVal < size.width){
+            setClassNameImg2("stone-wall-page-item-id2-animation-expand2-screen");
+            setClassNameImg3("stone-wall-page-item-id3-animation-expand2-screen");
+            // setClassNameImg4("stone-wall-page-item-id4-animation-expand2-screen");
+            // setClassNameImg5("stone-wall-page-item-id5-animation-expand2-screen");
+        }
+        if(size.width < 670 && size.width > 480){
+            setClassNameImg2("stone-wall-page-item-id2-animation-narrow2-screen");
+            setClassNameImg3("stone-wall-page-item-id3-animation-narrow2-screen");
+            // setClassNameImg4("stone-wall-page-item-id4-animation-narrow2-screen");
+            // setClassNameImg5("stone-wall-page-item-id5-animation-narrow2-screen");
+        }
+        if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
             console.log("long1")
+
             // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
         }
 
