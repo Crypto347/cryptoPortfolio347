@@ -207,6 +207,9 @@ export const PorfolioNavigation = (props) => {
             case 'galleryWithSpacePage':
                 props.history.push(`/crypto-portfolio/gallery-with-space`);
                 break;
+            case 'stoneWallPage':
+                props.history.push(`/crypto-portfolio/stone-wall`);
+                break;
             default: 
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 return;
@@ -247,9 +250,12 @@ export const PorfolioNavigation = (props) => {
             case 'galleryPage':
                 updatedItems = [...props.galleryPage.items];
                 break;
-            // case 'galleryWithSpacePage':
-            //     updatedItems = [...props.galleryWithSpacePage.items];
-            //     break;
+            case 'galleryWithSpacePage':
+                updatedItems = [...props.galleryWithSpacePage.items];
+                break;
+            case 'stoneWallPage':
+                updatedItems = [...props.stoneWallPage.items];
+                break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
                 break;
@@ -333,6 +339,7 @@ export default connect(
             standardPage: Selectors.getStandardPageState(state),
             galleryPage: Selectors.getGalleryPageState(state),
             galleryWithSpacePage: Selectors.getGalleryWithSpacePageState(state),
+            stoneWallPage: Selectors.getStoneWallPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
