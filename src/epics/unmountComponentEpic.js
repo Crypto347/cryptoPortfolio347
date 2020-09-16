@@ -31,11 +31,18 @@ export const unmountComponentEpic = (action$) =>
         ofType(actionTypes.UNMOUNT_COMPONENT),
         mergeMap(action => {
             console.log(action.page)
-            return of(
-                Actions.gotoNewPage(action.repeatedKey, action.repeatedPath, action.page)
-            ).pipe(
-                delay(1000)
-            )
+            if(action.button !== 1){
+                return of(
+                    Actions.gotoNewPage(action.repeatedKey, action.repeatedPath, action.page, action.button)
+                ).pipe(
+                    delay(1000)
+                )
+            }else{
+                return of(
+                    Actions.gotoNewPage(action.repeatedKey, action.repeatedPath, action.page, action.button)
+                )
+            }
+            
         })
     )
 

@@ -47,7 +47,12 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
                 )
             }else{
                 console.log(action.page)
-                dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, {page: action.page, category: categoryToPath});
+                if(action.button === 0){
+                    dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, {page: action.page, category: categoryToPath});
+                }
+                if(action.button === 1){
+                    window.open(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, "_blank");
+                }
                 return empty();
             }
         })

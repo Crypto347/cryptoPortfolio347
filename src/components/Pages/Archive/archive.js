@@ -288,12 +288,19 @@ export const Archive = (props) => {
         }
     }
 
-    const onClickHandler = (opt, path, key) => {
-        if(opt === 'goToArchive' && props.archive.category !== key){
+    const onClickHandler = (opt, path, key, e) => {
+        if(e.button === 2){
+            return;
+        }
+        if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(key, path, "archive");
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(key, path, "archive", e.button);
     }
    
     const renderCategories = (obj) => {
@@ -304,7 +311,7 @@ export const Archive = (props) => {
                     <div 
                         key={i}
                         className="archive-item-category"
-                        onClick={() => onClickHandler("goToArchive", el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler("goToArchive", el.path, el.key, e)}
                         onMouseEnter={() => handleMouseEnter(`archiveCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`archiveCategory`, null, pathOfIds)} 
                     >
@@ -327,7 +334,7 @@ export const Archive = (props) => {
                     >
                         <div 
                             className="archive-image"
-                            onClick={() => onClickHandler("goToPortfolioItem", el.path)}
+                            onMouseDown={(e) => onClickHandler("goToPortfolioItem", el.path, null, e)}
                             onMouseEnter={() => handleMouseEnter(`image`, el.id)} 
                             onMouseLeave={() => handleMouseLeave(`image`, el.id)}
                         >

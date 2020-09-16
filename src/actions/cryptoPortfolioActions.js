@@ -138,21 +138,23 @@ export function setUnmountComponentValues(val, path) {
     };
 };
 
-export function unmountComponent(repeatedKey, repeatedPath, page) {
+export function unmountComponent(repeatedKey, repeatedPath, page, button) {
     return { 
         type: actionTypes.UNMOUNT_COMPONENT,
         repeatedKey: repeatedKey,
         repeatedPath: repeatedPath,
-        page: page
+        page: page,
+        button: button
     };
 };
 
-export function gotoNewPage(repeatedKey, repeatedPath, page) {
+export function gotoNewPage(repeatedKey, repeatedPath, page, button) {
     return { 
         type: actionTypes.GO_TO_NEW_PAGE,
         repeatedKey: repeatedKey,
         repeatedPath: repeatedPath,
-        page: page
+        page: page,
+        button: button
     };
 };
 

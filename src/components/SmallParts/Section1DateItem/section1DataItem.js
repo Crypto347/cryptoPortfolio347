@@ -62,7 +62,6 @@ export const Section1DataItem = (props) => {
             case 2:
                 return;
         }
-
     }
 
     /**
