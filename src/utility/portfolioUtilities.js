@@ -10,6 +10,12 @@ export const findPathOfIds = (path) => {
             return [];
         case 'portfolio-category':
             return [];
+        case 'about-us':
+            return [];
+        case 'process':
+            return [];
+        case 'happy-team':
+            return [];
         case 'overlay':
             return [2, 23, 231];
         case 'overlay-with-info':

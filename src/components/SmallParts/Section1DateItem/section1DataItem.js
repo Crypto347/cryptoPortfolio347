@@ -51,8 +51,18 @@ export const Section1DataItem = (props) => {
     }
 
     const arrowOnClick = (path, e) => {
-        console.log(path)
-        props.history.push(props.match.url + path)
+        switch(e.button){
+            case 0: 
+                console.log(e.button)
+                props.history.push(props.match.url + path)
+                return;
+            case 1:
+                window.open(props.match.url + path, "_blank");
+                return;
+            case 2:
+                return;
+        }
+
     }
 
     /**
@@ -80,8 +90,8 @@ export const Section1DataItem = (props) => {
                     className="arrow-wrapper"
                     onMouseEnter={handleMouseEnter} 
                     onMouseLeave={handleMouseLeave}
-                    onClick={(e) => arrowOnClick(props.path, e)}
-                    // onMouseDown={() => arrowOnClick(props.path)}
+                    // onClick={(e) => arrowOnClick(props.path, e)}
+                    onMouseDown={(e) => arrowOnClick(props.path, e)}
                 >
                     <div className="arrow-horizontal-line"></div>
                     <div className="arrow-wrapper2">
