@@ -218,12 +218,12 @@ export const StoneWallWidePage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="stoneWallWidePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="stoneWallWidePage"
                     />
                 </>
             )
@@ -234,12 +234,12 @@ export const StoneWallWidePage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="stoneWallWidePage"
                     />
                     <Toolbar 
                         style="regularScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="stoneWallWidePage"
                     />
                 </>
             )

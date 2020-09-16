@@ -141,12 +141,12 @@ export const GalleryWithSpacePage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="galleryWithSpacePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="galleryWithSpacePage"
                     />
                 </>
             )
@@ -157,12 +157,12 @@ export const GalleryWithSpacePage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="galleryWithSpacePage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="galleryWithSpacePage"
                     />
                 </>
             )

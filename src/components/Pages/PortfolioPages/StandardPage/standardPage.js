@@ -141,12 +141,12 @@ export const StandardPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="standardPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="standardPage"
                     />
                 </>
             )
@@ -157,12 +157,12 @@ export const StandardPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="standardPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="standardPage"
                     />
                 </>
             )

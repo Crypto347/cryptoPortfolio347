@@ -232,12 +232,12 @@ export const SwitchImagePage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="switchImagePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="switchImagePage"
                     />
                 </>
             )
@@ -248,12 +248,12 @@ export const SwitchImagePage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="switchImagePage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="switchImagePage"
                     />
                 </>
             )

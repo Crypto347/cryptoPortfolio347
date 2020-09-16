@@ -179,8 +179,19 @@ export const Toolbar = (props) => {
             case 'smallGallery':
             case 'smallImages':
             case 'smallSlider':
-                props.setMenuDotsState("on", page)
-                return;
+            case 'archive':
+            case 'galleryPage':
+            case 'galleryWithSpacePage':
+            case 'overlayPage':
+            case 'overlayWithInfoPage':
+            case 'simpleOverlayPage':
+            case 'slideFromImageLeftPage':
+            case 'standardPage':
+            case 'stoneWallPage':
+            case 'stoneWallWidePage':
+            case 'switchImagePage':
+                // props.setMenuDotsState("on", page)
+                // return;
             case 'portfolioGallery':
             case 'switchImage':
                 props.setMenuDotsState("on", page)

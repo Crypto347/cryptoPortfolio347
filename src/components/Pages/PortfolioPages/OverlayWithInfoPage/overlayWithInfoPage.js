@@ -141,12 +141,12 @@ export const OverlayWithInfoPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="overlayWithInfoPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="overlayWithInfoPage"
                     />
                 </>
             )
@@ -157,12 +157,12 @@ export const OverlayWithInfoPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="overlayWithInfoPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="overlayWithInfoPage"
                     />
                 </>
             )

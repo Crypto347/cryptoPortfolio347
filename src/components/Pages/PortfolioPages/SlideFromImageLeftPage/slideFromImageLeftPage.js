@@ -142,12 +142,12 @@ export const SlideFromImageLeftPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="slideFromImageLeftPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bigImages"
+                        page="slideFromImageLeftPage"
                     />
                 </>
             )
@@ -158,12 +158,12 @@ export const SlideFromImageLeftPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="slideFromImageLeftPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="bigImages"
+                        page="slideFromImageLeftPage"
                     />
                 </>
             )
