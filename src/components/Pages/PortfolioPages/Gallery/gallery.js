@@ -233,14 +233,22 @@ export const Gallery = (props) => {
         return e.deltaY < 0;
     }
 
-    const onClickHandler = (path, key) => {
+    const onClickHandler = (path, key, e) => {
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", "Gallery");
-        if(props.archive.category !== key){
+
+        if(e.button === 2) return;
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", "Gallery");
+        if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(key, path, "gallery");
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(key, path, "gallery", e.button);
     }
 
     const openPhotoViewer = (array, activeIndex) => {
@@ -334,7 +342,7 @@ export const Gallery = (props) => {
                     <div 
                         key={i}
                         className="gallery-category"
-                        onClick={() => onClickHandler(el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(el.path, el.key,e)}
                         onMouseEnter={() => handleMouseEnter(`galleryCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`galleryCategory`, el.id)} 
                     >
