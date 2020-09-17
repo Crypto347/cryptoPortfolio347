@@ -234,9 +234,6 @@ export const Gallery = (props) => {
     }
 
     const onClickHandler = (path, key, e) => {
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", "Gallery");
-
         if(e.button === 2) return;
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", "Gallery");

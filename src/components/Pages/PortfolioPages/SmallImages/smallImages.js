@@ -231,13 +231,19 @@ export const SmallImages = (props) => {
         return e.deltaY < 0;
     }
 
-    const onClickHandler = (path, key) => {
+    const onClickHandler = (path, key, e) => {
+        if(e.button === 2) return;
         localStorage.setItem("archiveCategory", key);
-        if(props.archive.category !== key){
+        localStorage.setItem("page", "SmallImages");
+        if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(key, path, "smallImages");
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(key, path, "smallImages", e.button);
     }
 
     const openPhotoViewer = (array, activeIndex) => {
@@ -326,7 +332,7 @@ export const SmallImages = (props) => {
                     <div 
                         key={i}
                         className="small-images-category"
-                        onClick={() => onClickHandler(el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(el.path, el.key, e)}
                         onMouseEnter={() => handleMouseEnter(`smallImagesCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`smallImagesCategory`, el.id)} 
                     >
