@@ -142,10 +142,7 @@ export const Toolbar = (props) => {
     }
 
     const itemOnClick = (opt, path, pathOfIds, e) => {
-        if(e.button === 2){
-            return;
-        }
-   
+        if(e.button === 2) return;
         if(e.button !== 1){
             props.setUnmountComponentValues(true, path);
             props.setHistoryPopFromPortfolioItem("scrollToTop");
@@ -273,9 +270,18 @@ export const Toolbar = (props) => {
         )
     }
 
-    const logoOnClick = () => {
-        props.history.push(`/crypto-portfolio`);
-        window.location.reload();
+    const logoOnClick = (e) => {      
+        switch(e.button){
+            case 0: 
+                props.history.push(`/crypto-portfolio`);
+                window.location.reload();
+                return;
+            case 1:
+                window.open(`/crypto-portfolio`, "_blank");
+                return;
+            case 2:
+                return;
+        }
     }
 
     const renderToolbar = (option) => {
@@ -285,7 +291,7 @@ export const Toolbar = (props) => {
                     <div className="toolbar-regular-screen">
                         <div 
                             className="toolbar-logo"
-                            onClick={logoOnClick}
+                            onMouseDown={(e) => logoOnClick(e)}
                         >
                             crypto.
                         </div>
@@ -323,7 +329,7 @@ export const Toolbar = (props) => {
                     <div className="toolbar-regular-screen-white">
                         <div 
                             className="toolbar-logo"
-                            onClick={logoOnClick}
+                            onMouseDown={(e) => logoOnClick(e)}
                         >
                             crypto.
                         </div>
@@ -373,7 +379,7 @@ export const Toolbar = (props) => {
                         <div className={props.scrollingUp ? "toolbar-regular-screen-animated-mounted" : "toolbar-regular-screen-animated-unmounted"}>
                             <div 
                                 className="toolbar-logo"
-                                onClick={logoOnClick}
+                                onMouseDown={(e) => logoOnClick(e)}
                             >
                                 crypto.
                             </div>
@@ -442,7 +448,7 @@ export const Toolbar = (props) => {
                         </div>
                         <div 
                             className="toolbar-logo"
-                            onClick={logoOnClick}
+                            onMouseDown={(e) => logoOnClick(e)}
                         >
                             crypto.
                         </div>
@@ -485,7 +491,7 @@ export const Toolbar = (props) => {
                         </div>
                         <div 
                             className="toolbar-logo"
-                            onClick={logoOnClick}
+                            onMouseDown={(e) => logoOnClick(e)}
                         >
                             crypto.
                         </div>
@@ -500,7 +506,7 @@ export const Toolbar = (props) => {
                     <div className="toolbarVersion2-white">
                         <div 
                             className="toolbar-logo"
-                            onClick={logoOnClick}
+                            onMouseDown={(e) => logoOnClick(e)}
                         >
                             crypto.
                         </div>
@@ -608,7 +614,7 @@ export const Toolbar = (props) => {
             {props.style !== "toolbarVersion2" ? 
             <Sidebar 
                 sidebarState={props.sidebarState}
-                logoOnClick={logoOnClick}
+                logoOnClick={(e) => logoOnClick(e)}
             /> : null}
             <Backdrop
                 show={props.sidebarState === "open"}

@@ -289,9 +289,7 @@ export const Archive = (props) => {
     }
 
     const onClickHandler = (opt, path, key, e) => {
-        if(e.button === 2){
-            return;
-        }
+        if(e.button === 2) return;
         if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }

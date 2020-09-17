@@ -73,24 +73,26 @@ export const Sidebar = (props) => {
         setShowOptions(false);
     }
 
-    const itemOnClick = (opt, path, pathOfIds) => {
-        console.log(path, pathOfIds)
-        // props.history.push(`/crypto-portfolio/${path}`);
-        props.setHistoryPopFromPortfolioItem("scrollToTop");
-        props.clearActivityOfMenuItems();
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent();
-
-        props.setSidebarState("init");
-        // window.location.reload();
-        switch(opt){
-            case 'optionItem': 
-                props.setActivityOfToolbarOptionItem(pathOfIds);
-                return;
-            case 'subOptionItem': 
-                props.setActivityOfToolbarSubOptionItem(pathOfIds);
-                return;
+    const itemOnClick = (opt, path, pathOfIds, e) => {
+        if(e.button === 2) return;
+        
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+            props.setHistoryPopFromPortfolioItem("scrollToTop");
+            props.clearActivityOfMenuItems();
+            props.setSidebarState("init");
+            switch(opt){
+                case 'optionItem': 
+                    props.setActivityOfToolbarOptionItem(pathOfIds);
+                    break;
+                case 'subOptionItem': 
+                    props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                    break;
+            }
+        }else{
+            props.setUnmountComponentValues(false, path);
         }
+        props.unmountComponent(null, null, null, e.button);
     }
 
     const renderSidebarItems = () => {
@@ -106,7 +108,7 @@ export const Sidebar = (props) => {
                             showOptions={showOptions}
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                            itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
+                            itemOnClick={(opt, path, pathOfIds, e) => itemOnClick(opt, path, pathOfIds, e)}
                         />
                     )
             })}</div>
@@ -131,7 +133,7 @@ export const Sidebar = (props) => {
         <div className={renderClassName(props.sidebarState)}>
             <div 
                 className="sidebar-logo"
-                onClick={props.logoOnClick}
+                onMouseDown={(e) => props.logoOnClick(e)}
             >
                 crypto.
             </div>
