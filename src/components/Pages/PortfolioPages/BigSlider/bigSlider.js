@@ -172,12 +172,17 @@ export const BigSlader = (props) => {
         return e.deltaY < 0;
     }
 
-    const onClickHandler = (path, key) => {
-        if(props.archive.category !== key){
+    const onClickHandler = (path, key, e) => {
+        if(e.button === 2) return;
+        if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(key, path, "bigSlider");
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(key, path, "bigSlider", e.button);
     }
 
     const renderToolbars = () => {
@@ -223,7 +228,7 @@ export const BigSlader = (props) => {
                     <div 
                         key={i}
                         className="big-slider-category"
-                        onClick={() => onClickHandler(el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(el.path, el.key, e)}
                         onMouseEnter={() => handleMouseEnter(`bigSliderCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`bigSliderCategory`, el.id)} 
                     >
