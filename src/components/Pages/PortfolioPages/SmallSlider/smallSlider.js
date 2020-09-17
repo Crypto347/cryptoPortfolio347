@@ -196,15 +196,19 @@ export const SmallSlider = (props) => {
         return e.deltaY < 0;
     }
 
-    const onClickHandler = (path, key) => {
+    const onClickHandler = (path, key, e) => {
+        if(e.button === 2) return;
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", "smallSlider");
-        console.log("LKJHG",path, key)
-        if(props.archive.category !== key){
+        if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(key, path, "smallSlider");
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(key, path, "smallSlider", e.button);
     }
 
     const renderToolbars = () => {
@@ -250,7 +254,7 @@ export const SmallSlider = (props) => {
                     <div 
                         key={i}
                         className="small-slider-category"
-                        onClick={() => onClickHandler(el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(el.path, el.key, e)}
                         onMouseEnter={() => handleMouseEnter(`smallSliderCategory`, el.id)} 
                         onMouseLeave={() => handleMouseLeave(`smallSliderCategory`, el.id)} 
                     >
