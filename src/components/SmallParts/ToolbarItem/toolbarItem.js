@@ -35,19 +35,6 @@ export const ToolbarItem = (props) => {
     * Methods
     */
 
-    // const itemOnClick = (opt, path, pathOfIds) => {
-    //     switch(opt){
-    //         case 'optionItem': 
-    //             props.setActivityOfToolbarOptionItem(pathOfIds);
-    //             return;
-    //         case 'subOptionItem': 
-    //             props.setActivityOfToolbarOptionItem(pathOfIds);
-    //             return;
-    //     }
-    //     console.log(path, pathOfIds)
-       
-    // }
-
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "arrow"){
             switch(isHovering){
@@ -98,7 +85,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-option-item"
-                            onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
+                            onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e)}
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
@@ -131,7 +118,7 @@ export const ToolbarItem = (props) => {
                             <div 
                                 key={i} 
                                 className="toolbar-option-item"
-                                onClick={() => props.itemOnClick("optionItem", el.path, pathOfIds)}
+                                onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e)}
                             >
                                 <div 
                                     className={renderClassName("text", el.isHover, el.active)}
@@ -217,7 +204,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-sub-option-item"
-                            onClick={() => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds)}
+                            onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e)}
                         >
                             <div 
                                 className={renderClassName("text", el.isHover, el.active)}

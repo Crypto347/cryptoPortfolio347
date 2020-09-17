@@ -141,23 +141,27 @@ export const Toolbar = (props) => {
         }
     }
 
-    const itemOnClick = (opt, path, pathOfIds) => {
-        console.log(path, pathOfIds);
-        // props.history.push(`/crypto-portfolio/${path}`);
-        props.setHistoryPopFromPortfolioItem("scrollToTop");
-        props.clearActivityOfMenuItems();
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent();
-    
-        // window.location.reload();
-        switch(opt){
-            case 'optionItem': 
-                props.setActivityOfToolbarOptionItem(pathOfIds);
-                return;
-            case 'subOptionItem': 
-                props.setActivityOfToolbarSubOptionItem(pathOfIds);
-                return;
+    const itemOnClick = (opt, path, pathOfIds, e) => {
+        if(e.button === 2){
+            return;
         }
+   
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+            props.setHistoryPopFromPortfolioItem("scrollToTop");
+            props.clearActivityOfMenuItems();
+            switch(opt){
+                case 'optionItem': 
+                    props.setActivityOfToolbarOptionItem(pathOfIds);
+                    break;
+                case 'subOptionItem': 
+                    props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                    break;
+            }
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null, null, e.button);
     }
 
     const menuOnClick = () => {
@@ -528,7 +532,7 @@ export const Toolbar = (props) => {
                         showOptionsRegular={showOptionsLessThan3Regular}
                         onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                         onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                        itemOnClick={(opt, path, pathOfIds) => itemOnClick(opt, path, pathOfIds)}
+                        itemOnClick={(opt, path, pathOfIds, e) => itemOnClick(opt, path, pathOfIds, e)}
                         renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                         data={el}
                     />
@@ -563,7 +567,7 @@ export const Toolbar = (props) => {
                     <div 
                         key={i} 
                         className="toolbar-option-item"
-                        onClick={() => itemOnClick("optionItem", el.path, pathOfIds)}
+                        onMouseDown={(e) => itemOnClick("optionItem", el.path, pathOfIds, e)}
                     >
                         {el.active ? 
                         <div className="arrow-wrapper-active">

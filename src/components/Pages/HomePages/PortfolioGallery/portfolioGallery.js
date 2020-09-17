@@ -211,11 +211,11 @@ export const PortfolioGallery = (props) => {
     }
 
 
-    const onClickHandler = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, "portfolioGallery");
-        props.clearArchiveData();
-    }
+    // const onClickHandler = (path) => {
+    //     props.setUnmountComponentValues(true, path);
+    //     props.unmountComponent(null, null, "portfolioGallery");
+    //     props.clearArchiveData();
+    // }
 
     const renderPortfolioGalleryPageItems = () => {
         return(
