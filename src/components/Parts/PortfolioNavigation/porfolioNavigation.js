@@ -219,9 +219,8 @@ export const PorfolioNavigation = (props) => {
 
     const arrowOnClick = (opt, key) => {
         let updatedItems = [];
-        let page = props.location.state ? props.location.state.page : null;
-        let category = props.location.state ? props.location.state.category : null;
-       console.log(page)
+        let page = props.location.state?.page;
+        let category = props.location.state?.category;
         switch(page){
             case 'portfolioGallery':
                 updatedItems = [...props.portfolioGalleryPage.items];
