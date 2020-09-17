@@ -186,6 +186,7 @@ export const GalleryWithSpacePage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             // clearArchiveData={props.clearArchiveData}
+                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -246,6 +247,7 @@ export default connect(
             galleryWithSpacePage: Selectors.getGalleryWithSpacePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

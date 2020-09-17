@@ -184,7 +184,8 @@ export const OverlayWithInfoPage = (props) => {
                             setIsHoveringCategory={props.setOverlayWithInfoPageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            clearArchiveData={props.clearArchiveData}       
+                            clearArchiveData={props.clearArchiveData}
+                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -245,6 +246,7 @@ export default connect(
             overlayWithInfoPage: Selectors.getOverlayWithInfoPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

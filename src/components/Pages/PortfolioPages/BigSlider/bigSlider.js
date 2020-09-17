@@ -174,6 +174,8 @@ export const BigSlader = (props) => {
 
     const onClickHandler = (path, key, e) => {
         if(e.button === 2) return;
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", "bigSlider");
         if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }

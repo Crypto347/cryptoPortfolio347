@@ -211,8 +211,10 @@ export const OverlayImage = (props) => {
         }
     }
 
-    const onClickHandler = (e, path) => {
+    const onClickHandler = (e, path, key) => {
         e.stopPropagation();
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", props.page);
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, props.page);
         props.clearArchiveData();
@@ -226,7 +228,7 @@ export const OverlayImage = (props) => {
                     <div 
                         key={i}
                         className="overlay-with-info-category"
-                        onClick={(e) => onClickHandler(e, el.path)}
+                        onClick={(e) => onClickHandler(e, el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, null, pathOfIds)} 
                     >

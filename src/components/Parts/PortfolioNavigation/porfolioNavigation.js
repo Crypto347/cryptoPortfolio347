@@ -175,13 +175,13 @@ export const PorfolioNavigation = (props) => {
     }
 
     const handleMenuOnClick = () => {
-        let page = props.location.state ? props.location.state.page : null;
+        let page = props.location.state ? props.location.state.page : localStorage.getItem('page');
         switch(page){
             case 'portfolioGallery':
                 props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 break;
             case 'archive':
-                props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state.category}`);
+                props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : localStorage.getItem('archiveCategory')}`);
                 break;
             case 'switchImagePage':
                 props.history.push(`/crypto-portfolio/switch-image`);

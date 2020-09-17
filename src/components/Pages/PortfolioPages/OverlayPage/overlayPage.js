@@ -184,6 +184,7 @@ export const OverlayPage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
+                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -244,6 +245,7 @@ export default connect(
             overlayPage: Selectors.getOverlayPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

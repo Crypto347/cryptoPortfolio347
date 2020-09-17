@@ -280,6 +280,7 @@ export const SwitchImagePage = (props) => {
                             setIsHoveringCategory={props.setSwitchImagePageIsHoveringCategory}
                             // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
                             clearArchiveData={props.clearArchiveData}
+                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -348,6 +349,7 @@ export default connect(
             switchImagePage: Selectors.getSwitchImagePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

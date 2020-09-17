@@ -184,7 +184,8 @@ export const StandardPage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             setIsHoveringCategory={props.setStandardPageIsHoveringCategory}
                             unmountComponent={props.unmountComponent}
-                            clearArchiveData={props.clearArchiveData}     
+                            clearArchiveData={props.clearArchiveData}
+                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -245,6 +246,7 @@ export default connect(
             standardPage: Selectors.getStandardPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

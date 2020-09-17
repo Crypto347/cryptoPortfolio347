@@ -192,7 +192,8 @@ export const SlideFromImageLeftPage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             setIsHoveringCategory={props.setSlideFromImageLeftPageIsHoveringCategory}
-                            clearArchiveData={props.clearArchiveData}                        
+                            clearArchiveData={props.clearArchiveData}
+                            // archiveCategory={props.archive.category}
                         />
                         {/* <SimpleOverlayImage
                             imageKey={el.coverImage.key}
@@ -264,6 +265,7 @@ export default connect(
             slideFromImageLeftPage: Selectors.getSlideFromImageLeftPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

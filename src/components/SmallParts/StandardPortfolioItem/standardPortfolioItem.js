@@ -168,7 +168,9 @@ export const StandardPortfolioItem = (props) => {
         }
     }
 
-    const onClickHandler = (e, path) => {
+    const onClickHandler = (e, path, key) => {
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", props.page);
         props.setUnmountComponentValues(true, path);
         props.unmountComponent(null, null, props.page);
         props.clearArchiveData();
@@ -182,7 +184,7 @@ export const StandardPortfolioItem = (props) => {
                     <div 
                         key={i}
                         className="standard-portfolio-item-category"
-                        onClick={(e) => onClickHandler(e, el.path)}
+                        onClick={(e) => onClickHandler(e, el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`standardPortfolioItemCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`standardPortfolioItemCategory`, null, pathOfIds)} 
                     >

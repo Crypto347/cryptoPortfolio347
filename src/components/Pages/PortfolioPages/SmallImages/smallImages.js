@@ -232,6 +232,7 @@ export const SmallImages = (props) => {
     }
 
     const onClickHandler = (path, key) => {
+        localStorage.setItem("archiveCategory", key);
         if(props.archive.category !== key){
             props.clearArchiveData();
         }

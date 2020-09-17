@@ -104,9 +104,12 @@ export const PortfolioItemCard = (props) => {
         }
     }
 
-    const onClickHandler = (path) => {
+    const onClickHandler = (path, key) => {
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", props.component);
+        console.log(props.component)
         props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, "switchImagePage");
+        props.unmountComponent(null, null, props.component);
         props.clearArchiveData();
     }
 
@@ -118,7 +121,7 @@ export const PortfolioItemCard = (props) => {
                     <div 
                         key={i}
                         className="portfolio-item-card-category"
-                        onClick={() => onClickHandler(el.path)}
+                        onClick={() => onClickHandler(el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`portfolioItemCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`portfolioItemCategory`, null, pathOfIds)} 
                     >

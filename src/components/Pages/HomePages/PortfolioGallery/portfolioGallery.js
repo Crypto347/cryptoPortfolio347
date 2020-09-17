@@ -239,6 +239,7 @@ export const PortfolioGallery = (props) => {
                                 setIsHoveringCategory={props.setPortfolioGalleryPageIsHoveringCategory}
                                 // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
                                 clearArchiveData={props.clearArchiveData}
+                                // archiveCategory={props.archive.category}
                             />
                         </div>
                     )
@@ -313,6 +314,7 @@ export default connect(
             portfolioGalleryPage: Selectors.getPortfolioGalleryPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

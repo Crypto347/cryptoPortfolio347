@@ -183,6 +183,7 @@ export const GalleryPage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
+                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -243,6 +244,7 @@ export default connect(
             galleryPage: Selectors.getGalleryPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            archive: Selectors.getArchiveState(state),
         };
     },
     (dispatch) => {

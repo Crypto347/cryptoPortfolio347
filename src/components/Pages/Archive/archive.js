@@ -290,6 +290,9 @@ export const Archive = (props) => {
 
     const onClickHandler = (opt, path, key, e) => {
         if(e.button === 2) return;
+        localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
+        localStorage.setItem("page", "archive");
+        console.log("JHGHJ", opt)
         if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }

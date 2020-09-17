@@ -234,6 +234,8 @@ export const Gallery = (props) => {
     }
 
     const onClickHandler = (path, key) => {
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", "Gallery");
         if(props.archive.category !== key){
             props.clearArchiveData();
         }
