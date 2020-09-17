@@ -3863,7 +3863,7 @@ console.log(category)
                         id: 1,
                         key: "designCover3",
                         isHover: "init",
-                        imageName: "joshua-reddekopp-cNe8GsQR-OQ-archive-unsplash.png",
+                        imageName: "uby-yanes-LMwW0ARHc4o-updated-archive-unsplash.png",
                         folderName: "colorful",
                         alt: "image"
                     },

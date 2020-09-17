@@ -42,9 +42,15 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
                 categoryToPath = Utility.categoryKeyToPath(category);
             }
             if(action.repeatedKey === category && action.page === "archive"){
-                return of(
-                    Actions.setUnmountComponentValues(false, action.repeatedPath)
-                )
+                if(action.button === 0){
+                    return of(
+                        Actions.setUnmountComponentValues(false, action.repeatedPath)
+                    )
+                }
+                if(action.button === 1){  
+                    window.open(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, "_blank");
+                    return empty();
+                }
             }else{
                 console.log(action.page)
                 if(action.button === 0){
