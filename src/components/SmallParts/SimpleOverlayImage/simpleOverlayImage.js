@@ -125,9 +125,15 @@ export const SimpleOverlayImage = (props) => {
         }
     }
 
-    const simpleOverlayImageOnClick = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
+    const simpleOverlayImageOnClick = (path, e) => {
+        if(e.button === 2) return; 
+        localStorage.setItem("page", props.page);
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const renderClassName = (opt, isHovering) => {
@@ -161,7 +167,7 @@ export const SimpleOverlayImage = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-                onClick={() => simpleOverlayImageOnClick(props.path)}
+                onMouseDown={(e) => simpleOverlayImageOnClick(props.path, e)}
             >
                 <H35 className="h35-nero-poppins">{props.header}</H35>
             </div>

@@ -206,7 +206,7 @@ export const OverlayImage = (props) => {
         }
     }
 
-    const simpleOverlayImageOnClick = (e, path) => {
+    const overlayImageOnClick = (e, path) => {
         if(e.button === 2) return;
         localStorage.setItem("page", props.page);
         if(e.button !== 1){
@@ -272,7 +272,7 @@ export const OverlayImage = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
-                onMouseDown={(e) => simpleOverlayImageOnClick(e, props.obj.path)}
+                onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
             >
                 {props.page === "overlayWithInfoPage" ? 
                 <>
