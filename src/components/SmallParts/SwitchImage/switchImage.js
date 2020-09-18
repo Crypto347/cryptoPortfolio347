@@ -505,7 +505,7 @@ export const SwitchImage = (props) => {
         }
     }
 
-    const pictureBoardItemOnClick = (path, e) => {
+    const pictureBoardItemOnClick = (e, path) => {
         if(e.button === 2) return;
         localStorage.setItem("page", props.component);
         if(e.button !== 1){
@@ -524,7 +524,7 @@ export const SwitchImage = (props) => {
         <div 
             className={renderClassName(props.component)}
             id={`switchImage${props.id}`}
-            onMouseDown={(e) => pictureBoardItemOnClick(props.path, e)}
+            onMouseDown={(e) => pictureBoardItemOnClick(e, props.path)}
         >
             <div className={props.option === "colorful" ? "picture-board-image" : "picture-board-image-black-and-white"}>
                 <img 

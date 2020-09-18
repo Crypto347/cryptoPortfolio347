@@ -83,8 +83,17 @@ export const Video = () => {
         setIsHoveringPlayButton("off")
     }
 
-    const showVideo = () => {
-        setVideoShown(true);
+    const showVideo = (e) => {
+        switch(e.button){
+            case 0: 
+                setVideoShown(true);
+                return;
+            case 1:
+                window.open("https://www.pexels.com/", "_blank");
+                return;
+            case 2:
+                return;
+        }      
     }
 
     const videoOnFinish = () => {
@@ -99,7 +108,7 @@ export const Video = () => {
                 <div className="video-play-button-wrapper">
                     <div 
                         className={renderClassName(isHoveringPlayButton)}
-                        onClick={showVideo}
+                        onMouseDown={(e) => showVideo(e)}
                         onMouseEnter={() => handleMouseEnter('expand')} 
                         onMouseLeave={() => handleMouseLeave('expand')}
                     >

@@ -118,9 +118,15 @@ export const StoneWallItem = (props) => {
         }
     }
 
-    const stoneWallOnClick = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
+    const stoneWallOnClick = (e, path) => {
+        if(e.button === 2) return; 
+        localStorage.setItem("page", props.page);
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const renderClassName = (opt, isHovering) => {
@@ -187,7 +193,7 @@ export const StoneWallItem = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `calc(100% - ${paddingTopBottom}px)`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
-                onClick={() => stoneWallOnClick(props.obj.path)}
+                onMouseDown={(e) => stoneWallOnClick(e, props.obj.path)}
             >
                 <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                 <EH20/>
