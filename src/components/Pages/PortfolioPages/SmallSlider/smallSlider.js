@@ -199,7 +199,7 @@ export const SmallSlider = (props) => {
     const onClickHandler = (path, key, e) => {
         if(e.button === 2) return;
         localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", "smallSlider");
+        localStorage.setItem("page", localStorage.getItem("page"));
         if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }

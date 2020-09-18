@@ -104,13 +104,17 @@ export const PortfolioItemCard = (props) => {
         }
     }
 
-    const onClickHandler = (path, key) => {
+    const onClickHandler = (path, key, e) => {
+        if(e.button === 2) return;
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.component);
-        console.log(props.component)
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.component);
-        props.clearArchiveData();
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+            props.clearArchiveData();
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(key, path, props.component, e.button);
     }
 
     const renderCategories = (obj) => {
@@ -121,7 +125,7 @@ export const PortfolioItemCard = (props) => {
                     <div 
                         key={i}
                         className="portfolio-item-card-category"
-                        onClick={() => onClickHandler(el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(el.path, el.key, e)}
                         onMouseEnter={() => handleMouseEnter(`portfolioItemCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`portfolioItemCategory`, null, pathOfIds)} 
                     >
@@ -161,7 +165,7 @@ export const PortfolioItemCard = (props) => {
                 className={renderClassName("arrow", isHovering)}
                 onMouseEnter={() => handleMouseEnter("arrow")} 
                 onMouseLeave={() => handleMouseLeave("arrow")} 
-                onClick={() => onClickHandler(props.obj.path)}
+                onMouseDown={(e) => onClickHandler(props.obj.path, null, e)}
             >
                 <div className="arrow-horizontal-line"/>
                 <div className="arrow-wrapper2">
