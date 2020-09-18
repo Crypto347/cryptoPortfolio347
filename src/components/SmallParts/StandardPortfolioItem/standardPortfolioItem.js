@@ -139,12 +139,6 @@ export const StandardPortfolioItem = (props) => {
         }
     }
 
-    const simpleOverlayImageOnClick = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
-        props.clearArchiveData();
-    }
-
     const renderClassName = (opt, isHovering) => {
         if(opt === "curtain"){
             switch(isHovering){
@@ -168,12 +162,29 @@ export const StandardPortfolioItem = (props) => {
         }
     }
 
+    const standardPortfolioImageOnClick = (e, path) => {
+        if(e.button === 2) return;
+        localStorage.setItem("page", props.page);
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+            // props.clearArchiveData();
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
+    }
+
     const onClickHandler = (e, path, key) => {
+        if(e.button === 2) return;
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
-        props.clearArchiveData();
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+            props.clearArchiveData();
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null, props.page, e.button);
     }
     
     const renderCategories = (obj) => {
@@ -184,7 +195,7 @@ export const StandardPortfolioItem = (props) => {
                     <div 
                         key={i}
                         className="standard-portfolio-item-category"
-                        onClick={(e) => onClickHandler(e, el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`standardPortfolioItemCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`standardPortfolioItemCategory`, null, pathOfIds)} 
                     >
@@ -214,7 +225,7 @@ export const StandardPortfolioItem = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-                onClick={() => simpleOverlayImageOnClick(props.obj.path)}
+                onMouseDown={(e) => standardPortfolioImageOnClick(e, props.obj.path)}
             />
             <EH30/>
             <H35 className="h35-nero-poppins">{props.obj.header}</H35>
