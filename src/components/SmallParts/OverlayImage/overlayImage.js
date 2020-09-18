@@ -153,11 +153,6 @@ export const OverlayImage = (props) => {
         }
     }
 
-    const simpleOverlayImageOnClick = (path) => {
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
-    }
-
     const renderClassName = (opt, isHovering) => {
         if(opt === "curtain"){
             switch(isHovering){
@@ -211,13 +206,29 @@ export const OverlayImage = (props) => {
         }
     }
 
+    const simpleOverlayImageOnClick = (e, path) => {
+        if(e.button === 2) return;
+        localStorage.setItem("page", props.page);
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
+    }
+
     const onClickHandler = (e, path, key) => {
-        e.stopPropagation();
+        if(e.button === 2) return;
+        e.stopPropagation();       
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
         props.clearArchiveData();
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const renderCategories = (obj) => {
@@ -228,7 +239,7 @@ export const OverlayImage = (props) => {
                     <div 
                         key={i}
                         className="overlay-with-info-category"
-                        onClick={(e) => onClickHandler(e, el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, null, pathOfIds)} 
                     >
@@ -261,7 +272,7 @@ export const OverlayImage = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
-                onClick={() => simpleOverlayImageOnClick(props.obj.path)}
+                onMouseDown={(e) => simpleOverlayImageOnClick(e, props.obj.path)}
             >
                 {props.page === "overlayWithInfoPage" ? 
                 <>
