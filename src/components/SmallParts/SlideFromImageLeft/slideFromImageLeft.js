@@ -182,13 +182,29 @@ export const SlideFromImageLeft = (props) => {
         }
     }
 
+    const slideFromImageLeftOnClick = (e, path) => {
+        if(e.button === 2) return;
+        localStorage.setItem("page", props.page);
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
+    }
+
     const onClickHandler = (e, path, key) => {
-        e.stopPropagation();
+        if(e.button === 2) return;
+        e.stopPropagation();       
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent(null, null, props.page);
         props.clearArchiveData();
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const renderCategories = (obj) => {
@@ -199,7 +215,7 @@ export const SlideFromImageLeft = (props) => {
                     <div 
                         key={i}
                         className="slide-from-image-left-category"
-                        onClick={(e) => onClickHandler(e, el.path, el.key)}
+                        onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`slideFromImageLeftCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`slideFromImageLeftCategory`, null, pathOfIds)} 
                     >
@@ -234,7 +250,7 @@ export const SlideFromImageLeft = (props) => {
                 // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-                onClick={(e) => onClickHandler(e, props.obj.path)}
+                onMouseDown={(e) => slideFromImageLeftOnClick(e, props.obj.path)}
             >
                 {renderCategories(props.obj)}
                 <div className="slide-from-image-left-header-wrapper">
