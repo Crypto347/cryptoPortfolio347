@@ -117,19 +117,34 @@ export const MenuFullScreen = (props) => {
         }
     }
 
-    const menuFullscreenSubOptionOnClick = (path) => {
+    const menuFullscreenSubOptionOnClick = (e, path) => {
+        if(e.button === 2) return;
+        localStorage.setItem("page", props.page);
         props.setMenuDotsState("off", props.page);
-        // props.history.push(`/crypto-portfolio/${path}`);
-        props.setUnmountComponentValues(true, path);
-        props.unmountComponent();
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null, props.page, e.button);
+       
     }
 
 
-    const menuFullScreenItemOnClick = (id, hasOptions, path) => {
-        props.setActivityOfMenuFullscreenItem("on", id);
+    const menuFullScreenItemOnClick = (e, id, hasOptions, path) => {
+        if(e.button === 2) return;
         if(!hasOptions){
-            props.setUnmountComponentValues(true, path);
-            props.unmountComponent();
+            localStorage.setItem("page", props.page);
+            if(e.button !== 1){
+                props.setUnmountComponentValues(true, path);
+            }else{
+                props.setUnmountComponentValues(false, path);
+            }
+            props.unmountComponent(null, null, props.page, e.button);
+        }else{
+            if(e.button !== 1){
+                props.setActivityOfMenuFullscreenItem("on", id);
+            }
         }
     }
 
@@ -140,7 +155,7 @@ export const MenuFullScreen = (props) => {
                     <div 
                         key={i} 
                         className={`menu-fullscreen-item${i+1}`}
-                        onClick={() => menuFullScreenItemOnClick(el.id, el.hasOptions, el.path)}
+                        onMouseDown={(e) => menuFullScreenItemOnClick(e, el.id, el.hasOptions, el.path)}
                     >
                         {el.active ? 
                         <div className="arrow-wrapper-active">
@@ -184,7 +199,7 @@ export const MenuFullScreen = (props) => {
                                 className={`menu-fullscreen-item${i1+1}-option`}
                                 onMouseEnter={() => props.setIsHoveringMenuFullscreenOptionItem("on", pathOfIds)} 
                                 onMouseLeave={() => props.setIsHoveringMenuFullscreenOptionItem("off", pathOfIds)}
-                                onClick={() => menuFullscreenSubOptionOnClick(el1.path)}
+                                onMouseDown={(e) => menuFullscreenSubOptionOnClick(e, el1.path)}
                             >
                                 <H15 className={renderClassName("optionItem", el1.isHover)}>{el1.text}</H15>
                                 <EH10/>
