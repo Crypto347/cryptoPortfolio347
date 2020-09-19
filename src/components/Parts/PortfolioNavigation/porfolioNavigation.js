@@ -174,53 +174,108 @@ export const PorfolioNavigation = (props) => {
         }
     }
 
-    const handleMenuOnClick = () => {
+    const handleMenuOnClick = (e) => {
+        if(e.button === 2) return;
         let page = props.location.state ? props.location.state.page : localStorage.getItem('page');
+        localStorage.setItem("page", page);
         switch(page){
             case 'portfolioGallery':
-                props.history.push(`/crypto-portfolio/portfolio-gallery`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/portfolio-gallery`);
+                }else{
+                    window.open(`/crypto-portfolio/portfolio-gallery`, "_blank");
+                }
                 break;
             case 'archive':
-                props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : localStorage.getItem('archiveCategory')}`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : localStorage.getItem('archiveCategory')}`);
+                }else{
+                    window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : localStorage.getItem('archiveCategory')}`, "_blank");
+                }
                 break;
             case 'switchImagePage':
-                props.history.push(`/crypto-portfolio/switch-image`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/switch-image`);
+                }else{
+                    window.open(`/crypto-portfolio/switch-image`, "_blank");
+                }
                 break;
             case 'simpleOverlayPage':
-                props.history.push(`/crypto-portfolio/simple-overlay`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/simple-overlay`);
+                }else{
+                    window.open(`/crypto-portfolio/simple-overlay`, "_blank");
+                }
                 break;
             case 'slideFromImageLeftPage':
-                props.history.push(`/crypto-portfolio/slide-from-image-left`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/slide-from-image-left`);
+                }else{
+                    window.open(`/crypto-portfolio/slide-from-image-left`, "_blank");
+                }
                 break;
             case 'overlayPage':
-                props.history.push(`/crypto-portfolio/overlay`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/overlay`);
+                }else{
+                    window.open(`/crypto-portfolio/overlay`, "_blank");
+                }
                 break;
             case 'overlayWithInfoPage':
-                props.history.push(`/crypto-portfolio/overlay-with-info`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/overlay-with-info`);
+                }else{
+                    window.open(`/crypto-portfolio/overlay-with-info`, "_blank");
+                }
                 break;
             case 'standardPage':
-                props.history.push(`/crypto-portfolio/portfolio-standard`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/portfolio-standard`);
+                }else{
+                    window.open(`/crypto-portfolio/portfolio-standard`, "_blank");
+                }
                 break;
             case 'galleryPage':
-                props.history.push(`/crypto-portfolio/gallery`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/gallery`);
+                }else{
+                    window.open(`/crypto-portfolio/gallery`, "_blank");
+                }
                 break;
             case 'galleryWithSpacePage':
-                props.history.push(`/crypto-portfolio/gallery-with-space`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/gallery-with-space`);
+                }else{
+                    window.open(`/crypto-portfolio/gallery-with-space`, "_blank");
+                }
                 break;
             case 'stoneWallPage':
-                props.history.push(`/crypto-portfolio/stone-wall`);
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/stone-wall`);
+                }else{
+                    window.open(`/crypto-portfolio/stone-wall`, "_blank");
+                }
                 break;
-            default: 
-                props.history.push(`/crypto-portfolio/portfolio-gallery`);
+            default:
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/portfolio-gallery`);
+                }else{
+                    window.open(`/crypto-portfolio/portfolio-gallery`, "_blank");
+                }
                 return;
         }
         props.setHistoryPopFromPortfolioItem("scrollToTop");
     }
 
-    const arrowOnClick = (opt, key) => {
+    const arrowOnClick = (opt, key, e) => {
+        console.log(e.button)
+        if(e.button === 2) return;
         let updatedItems = [];
         let page = props.location.state?.page;
         let category = props.location.state?.category;
+        localStorage.setItem("page", page);
+        // localStorage.setItem("archiveCategory", category);
+
         switch(page){
             case 'portfolioGallery':
                 updatedItems = [...props.portfolioGalleryPage.items];
@@ -259,23 +314,44 @@ export const PorfolioNavigation = (props) => {
                 updatedItems = [...props.portfolioGalleryPage.items];
                 break;
         }
+
         console.log("updatedItems", updatedItems)
         let updatedItemIndex = updatedItems.findIndex(item => item.key === key);
-        switch(opt) {
-            case 'prev':
-                if(updatedItemIndex === 0){
-                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: page, category: category});
-                }else{
-                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: page, category: category});
-                }
-                return;
-            case 'next':
-                if(updatedItemIndex === updatedItems.length - 1){
-                    props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: page, category: category});
-                }else{
-                    props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: page, category: category});
-                }
-                return;
+
+        if(e.button !== 1){
+            switch(opt) {
+                case 'prev':
+                    if(updatedItemIndex === 0){
+                        props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: page, category: category});
+                    }else{
+                        props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: page, category: category});
+                    }
+                    return;
+                case 'next':
+                    if(updatedItemIndex === updatedItems.length - 1){
+                        props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: page, category: category});
+                    }else{
+                        props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: page, category: category});
+                    }
+                    return;
+            }
+        }else{
+            switch(opt) {
+                case 'prev':
+                    if(updatedItemIndex === 0){
+                        window.open(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`,"_blank");
+                    }else{
+                        window.open(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`,"_blank");
+                    }
+                    return;
+                case 'next':
+                    if(updatedItemIndex === updatedItems.length - 1){
+                        window.open(`/crypto-portfolio/${updatedItems[0].path}`,"_blank");
+                    }else{
+                        window.open(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`,"_blank");
+                    }
+                    return;
+            }
         }
     }
 
@@ -289,7 +365,7 @@ export const PorfolioNavigation = (props) => {
                 className={renderClassName("leftArrow", isHoveringLeftArrow)}
                 onMouseEnter={() => handleMouseEnter("leftArrow")} 
                 onMouseLeave={() => handleMouseLeave("leftArrow")} 
-                onClick={() => arrowOnClick('prev', key)}
+                onMouseDown={(e) => arrowOnClick('prev', key, e)}
             >
                 <div className="arrow-wrapper">
                     <div className="arrow-top-line"></div>
@@ -300,7 +376,7 @@ export const PorfolioNavigation = (props) => {
 
             <div 
                 className="navigation-menu"
-                onClick={handleMenuOnClick}
+                onMouseDown={(e) => handleMenuOnClick(e)}
                 onMouseEnter={() => handleMouseEnter("menuButton")} 
                 onMouseLeave={() => handleMouseLeave("menuButton")} 
             >
@@ -313,7 +389,7 @@ export const PorfolioNavigation = (props) => {
                 className={renderClassName("rightArrow", isHoveringRightArrow)}
                 onMouseEnter={() => handleMouseEnter("rightArrow")} 
                 onMouseLeave={() => handleMouseLeave("rightArrow")} 
-                onClick={() => arrowOnClick('next', key)}
+                onMouseDown={(e) => arrowOnClick('next', key, e)}
             >
                 <div className="arrow-horizontal-line"/>
                 <div className="arrow-wrapper">
