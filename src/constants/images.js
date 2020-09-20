@@ -682,3 +682,23 @@ export const STONE_WALL_PAGE_COVER_PIC_2 = StoneWallPageCoverPic2;
 export const STONE_WALL_PAGE_COVER_PIC_3 = StoneWallPageCoverPic3;
 export const STONE_WALL_PAGE_COVER_PIC_4 = StoneWallPageCoverPic4;
 export const STONE_WALL_PAGE_COVER_PIC_5 = StoneWallPageCoverPic5;
+
+/**
+* Stone Wall Wide Page Cover Pictures
+*/
+
+import StoneWallWidePageCoverPic1 from '../images/stoneWallWidePageCoverPictures/jane-palash-iaofnd2IdFU-stone-wall-wide-unsplash.png';
+import StoneWallWidePageCoverPic2 from '../images/stoneWallWidePageCoverPictures/nathan-dumlao-pnmRtTHWqDM-stone-wall-wide-unsplash.png';
+import StoneWallWidePageCoverPic3 from '../images/stoneWallWidePageCoverPictures/freestocks-A11MXTzUhLE-stone-wall-wide-unsplash.png';
+import StoneWallWidePageCoverPic4 from '../images/stoneWallWidePageCoverPictures/kara-eads-Uq9o9uUIT08-stone-wall-wide-unsplash.png';
+import StoneWallWidePageCoverPic5 from '../images/stoneWallWidePageCoverPictures/glenn-carstens-peters-RLw-UC03Gwc-stone-wall-wide-unsplash.png';
+import StoneWallWidePageCoverPic6 from '../images/stoneWallWidePageCoverPictures/paper-3025558_1920-stone-wall-wide.png';
+import StoneWallWidePageCoverPic7 from '../images/stoneWallWidePageCoverPictures/angele-kamp-KaeaUITiWnc-stone-wall-wide-unsplash.png';
+
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_1 = StoneWallWidePageCoverPic1;
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_2 = StoneWallWidePageCoverPic2;
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_3 = StoneWallWidePageCoverPic3;
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_4 = StoneWallWidePageCoverPic4;
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_5 = StoneWallWidePageCoverPic5;
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_6 = StoneWallWidePageCoverPic6;
+export const STONE_WALL_WIDE_PAGE_COVER_PIC_7 = StoneWallWidePageCoverPic7;

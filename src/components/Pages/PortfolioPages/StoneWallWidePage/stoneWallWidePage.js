@@ -28,7 +28,7 @@ import './stoneWallWidePage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import StoneWallItem from '../../../SmallParts/StoneWallItem/stoneWallItem';
+import StoneWallWideItem from '../../../SmallParts/StoneWallWideItem/stoneWallWideItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -271,8 +271,8 @@ export const StoneWallWidePage = (props) => {
                         // className={`stone-wall-wide-page-item-id${el.id}`}
                         className={renderClassName(el.id)}
                     >
-                        <StoneWallItem
-                            page="stoneWallPage"
+                        <StoneWallWideItem
+                            page="stoneWallWidePage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent} 

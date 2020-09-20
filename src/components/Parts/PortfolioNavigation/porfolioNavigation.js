@@ -188,7 +188,7 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'archive':
                 if(e.button !== 1){
-                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : props.archive.category}`);
+                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state.category}`);
                 }else{
                     window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : props.archive.category}`, "_blank");
                 }
