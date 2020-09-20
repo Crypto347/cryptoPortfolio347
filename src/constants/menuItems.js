@@ -10,6 +10,7 @@ export const menuItemsArray = [
         options: [
             {
                 id: 11,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -63,6 +64,7 @@ export const menuItemsArray = [
             },
             {
                 id: 12,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -116,6 +118,7 @@ export const menuItemsArray = [
             },
             {
                 id: 13,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -169,6 +172,7 @@ export const menuItemsArray = [
             },
             {
                 id: 14,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -224,6 +228,7 @@ export const menuItemsArray = [
         options: [
             {
                 id: 21,
+                active: false,
                 header: "Featured Projects",
                 itemId: "featuredProjects",
                 array: [
@@ -304,6 +309,7 @@ export const menuItemsArray = [
             },
             {
                 id: 22,
+                active: false,
                 header: "Columns",
                 itemId: "columns",
                 array: [
@@ -375,6 +381,7 @@ export const menuItemsArray = [
             },
             {
                 id: 23,
+                active: false,
                 header: "Hover types",
                 itemId: "hoverTypes",
                 array: [
@@ -428,6 +435,7 @@ export const menuItemsArray = [
             },
             {
                 id: 24,
+                active: false,
                 header: "Portfolio Types",
                 itemId: "portfolioTypes",
                 array: [
@@ -510,6 +518,7 @@ export const menuItemsArray = [
         options: [
             {
                 id: 31,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -619,6 +628,7 @@ export const menuItemsArray = [
         options: [
             {
                 id: 41,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -630,7 +640,6 @@ export const menuItemsArray = [
                         active: false,
                         isHover: "init",
                         subOptions: []
-        
                     },
                     {
                         id: 412,
@@ -738,6 +747,7 @@ export const menuItemsArray = [
         options: [
             {
                 id: 51,
+                active: false,
                 header: null,
                 itemId: null,
                 array: [
@@ -931,6 +941,7 @@ export const menuItemsArray = [
         options: [
             {
                 id: 61,
+                active: false,
                 header: "Standard",
                 itemId: "standard",
                 array: [
@@ -1020,6 +1031,7 @@ export const menuItemsArray = [
             },
             {
                 id: 62,
+                active: false,
                 header: "Infographis",
                 itemId: "infographis",
                 array: [
@@ -1091,6 +1103,7 @@ export const menuItemsArray = [
             },
             {
                 id: 63,
+                active: false,
                 header: "Typography",
                 itemId: "typography",
                 array: [
@@ -1171,6 +1184,7 @@ export const menuItemsArray = [
             },
             {
                 id: 64,
+                active: false,
                 header: "Presentation",
                 itemId: "presentation",
                 array: [

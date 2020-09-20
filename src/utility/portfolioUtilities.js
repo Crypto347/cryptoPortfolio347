@@ -54,6 +54,8 @@ export const findPathOfIds = (path) => {
             return [2, 21, 217];
         case 'small-gallery':
             return [2, 21, 218];
+        // default:
+        //     return [];
     }
 
 }

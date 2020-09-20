@@ -334,6 +334,7 @@ const setActivityOfToolbarOptionItem = (state, action) => {
     updatedMenuItems.map((el, i) => {
         updatedMenuItems[i].active = false;
         updatedMenuItems[i].options.map((el2, i2) => {
+            updatedMenuItems[i].options[i2].active = false;
             updatedMenuItems[i].options[i2].array.map((el3, i3) => {
                 updatedMenuItems[i].options[i2].array[i3].active = false;
                 updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
@@ -347,27 +348,20 @@ const setActivityOfToolbarOptionItem = (state, action) => {
     let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
     updatedMenuItems.splice(objNewActiveToolbarItemIndex, 1, objNewActiveToolbarItem);
         
-    // }
+    let optionObj = {
+        ...updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .find(item => item.id === action.pathOfIds[0]),
+        active: true
+    }
 
-    // updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-    //     updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
-    //         return{
-    //             ...el2,
-    //             active: false
-    //         }
-    //     })
-    // })
-    
-    // updatedMenuItems[previouslyActiveToolbarItemIndex].options.map((el, i) => {
-    //     updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array.map((el2, i2) => {
-    //         updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions = updatedMenuItems[previouslyActiveToolbarItemIndex].options[i].array[i2].subOptions.map((el3, i3) => {
-    //             return{
-    //                 ...el3,
-    //                 active: false
-    //             }
-    //         })
-    //     })
-    // })
+    let optionObjIndex = updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .findIndex(item => item.id === action.pathOfIds[0]);
+        
+    updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .splice(optionObjIndex, 1, optionObj);
 
     let optionItem = {
         ...updatedMenuItems
@@ -404,7 +398,18 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
     //     let objPrevActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === previouslyActiveToolbarItemId);
     //     updatedMenuItems.splice(objPrevActiveToolbarItemIndex, 1, objPrevActiveToolbarItem);
 
- 
+    updatedMenuItems.map((el, i) => {
+        updatedMenuItems[i].active = false;
+        updatedMenuItems[i].options.map((el2, i2) => {
+            updatedMenuItems[i].options[i2].active = false;
+            updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+                updatedMenuItems[i].options[i2].array[i3].active = false;
+                updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+                    updatedMenuItems[i].options[i2].array[i3].subOptions[i4].active = false;
+                })
+            })
+        })
+    })
 
     let objNewActiveToolbarItem = {...updatedMenuItems.find(item => item.id === hoveredToolbarItemId), active: true};
     let objNewActiveToolbarItemIndex = updatedMenuItems.findIndex(item => item.id === hoveredToolbarItemId);
@@ -431,6 +436,21 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
     //     })
     // })
 
+    let optionObj = {
+        ...updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .find(item => item.id === action.pathOfIds[0]),
+        active: true
+    }
+
+    let optionObjIndex = updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .findIndex(item => item.id === action.pathOfIds[0]);
+        
+    updatedMenuItems
+        .find(item => item.isHover === "on").options
+        .splice(optionObjIndex, 1, optionObj);
+
     let optionItem = {
         ...updatedMenuItems
         .find(item => item.isHover === "on").options
@@ -448,7 +468,6 @@ const setActivityOfToolbarSubOptionItem = (state, action) => {
         .find(item => item.isHover === "on").options
         .find(item => item.id === action.pathOfIds[0]).array
         .splice(optionItemIndex, 1, optionItem);
-
     
     let subOptionItem = {
         ...updatedMenuItems
@@ -551,6 +570,21 @@ const activateMenuItem = (state, action) => {
             
         updatedMenuItems
             .splice(itemIndex, 1, item);
+
+        let optionObj = {
+            ...updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .find(item => item.id === action.pathOfIds[1]),
+            active: true
+        }
+        
+        let optionObjIndex = updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .findIndex(item => item.id === action.pathOfIds[1]);
+            
+        updatedMenuItems
+            .find(item => item.id === action.pathOfIds[0]).options
+            .splice(optionObjIndex, 1, optionObj);
 
         let optionItem = {
             ...updatedMenuItems

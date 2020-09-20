@@ -274,7 +274,6 @@ export const PorfolioNavigation = (props) => {
         let page = props.location.state?.page;
         let category = props.location.state?.category;
         localStorage.setItem("page", page);
-        // localStorage.setItem("archiveCategory", category);
 
         switch(page){
             case 'portfolioGallery':
