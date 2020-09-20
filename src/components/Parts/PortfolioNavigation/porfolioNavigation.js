@@ -176,7 +176,7 @@ export const PorfolioNavigation = (props) => {
 
     const handleMenuOnClick = (e) => {
         if(e.button === 2) return;
-        let page = props.location.state ? props.location.state.page : localStorage.getItem('page');
+        let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
         localStorage.setItem("page", page);
         switch(page){
             case 'portfolioGallery':
@@ -188,9 +188,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'archive':
                 if(e.button !== 1){
-                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : localStorage.getItem('archiveCategory')}`);
+                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : props.archive.category}`);
                 }else{
-                    window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : localStorage.getItem('archiveCategory')}`, "_blank");
+                    window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : props.archive.category}`, "_blank");
                 }
                 break;
             case 'switchImagePage':
@@ -419,7 +419,8 @@ export default connect(
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
             smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
             smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
-            smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state)
+            smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state),
+            unmountComp: Selectors.getUnmountComponentState(state)
         };
     },
     (dispatch) => {

@@ -130,11 +130,12 @@ export function clearActivityOfMenuItems() {
     };
 };
 
-export function setUnmountComponentValues(val, path) {
+export function setUnmountComponentValues(val, path, prevPage) {
     return { 
         type: actionTypes.SET_UNMOUNT_COMPONENT_VALUES,
         val: val,
-        path: path
+        path: path,
+        prevPage: prevPage
     };
 };
 

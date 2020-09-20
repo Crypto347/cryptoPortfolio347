@@ -37,7 +37,9 @@ export const initialState = {
     sidebarState: "init",
     unmountComponent: {
         state: false,
-        gotoPage: ''
+        gotoPage: '',
+        prevPage: ''
+
     },
     menuDotsState: {
         page: "",
@@ -672,7 +674,8 @@ const setUnmountComponentValues = (state, action) => {
         ...state,
         unmountComponent: {
             state: action.val,
-            gotoPage: action.path
+            gotoPage: action.path,
+            prevPage: action.prevPage
         }
     };
 }

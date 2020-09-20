@@ -87,7 +87,8 @@ export const Main = (props) => {
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
-        props.setArchiveCategory(localStorage.getItem('archiveCategory'))
+        props.setArchiveCategory(localStorage.getItem('archiveCategory'));
+        props.setUnmountComponentValues(false, '', localStorage.getItem('page'))
         props.history.listen((location, action) => {
             path = location.pathname.slice(18);
             pathOfIds = Utility.findPathOfIds(path);
@@ -248,7 +249,7 @@ export default connect(
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
-            // startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch)
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
         };
     }
 )(Main);
