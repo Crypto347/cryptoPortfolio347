@@ -50,8 +50,8 @@ export const StoneWallWideItem = (props) => {
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
-    const [cardHeight, setCardHeight] = useState(0);
     const [paddingTopBottom, setPaddingTopBottom] = useState(0);
+    const [upload, setUpload] = useState(false)
  
     /**
     * Methods
@@ -61,9 +61,42 @@ export const StoneWallWideItem = (props) => {
         const resize = () => {
             resizeRef.current();
         } 
+        setUpload(true);
+        if(upload){
+            // props.getImagesWidthAndHeight({
+            //     img1: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     }, 
+            //     img2: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     }, 
+            //     img3: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     },
+            //     img4: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     },
+            //     img5: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     },
+            //     img6: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     },
+            //     img7: {
+            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            //     }
+            // })
+        }       
         window.addEventListener('resize', resize);
         return () =>  window.removeEventListener('resize', resize);
-    }, []);
+    }, [upload]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -71,10 +104,39 @@ export const StoneWallWideItem = (props) => {
 
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
-        // let cardHeight = document.getElementById("img").clientHeight;
-        // setCardHeight(cardHeight - paddingTopBottomVal);
+
         setPaddingTopBottom(paddingTopBottomVal);
-        // console.log(cardHeight)
+        console.log(document.getElementById("stoneWallWideItemId1").clientWidth)
+        // props.getImagesWidthAndHeight({
+        //     img1: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     }, 
+        //     img2: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     }, 
+        //     img3: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     },
+        //     img4: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     },
+        //     img5: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     },
+        //     img6: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     },
+        //     img7: {
+        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
+        //     }
+        // })
     }
 
     const setPadding = (page) => {
@@ -186,6 +248,7 @@ export const StoneWallWideItem = (props) => {
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
+            id={`stoneWallWideItemId${props.obj.id}`}
         >
             <div className={renderClassName("stoneWallWideItemImage", isHovering)}>
                 <img 

@@ -87,6 +87,11 @@ export const StoneWallWidePage = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
+    // const [imgSize1, setImgSize1] = useState({
+    //     width: (size.width - 80)/3,
+    //     height: (size.width - 80)/3,
+    // })
+    const [imagesSize, setImagesSize] = useState({});
     const [classNameImg1, setClassNameImg1] = useState('stone-wall-wide-page-item-id1');
     const [classNameImg2, setClassNameImg2] = useState('stone-wall-wide-page-item-id2');
     const [classNameImg3, setClassNameImg3] = useState('stone-wall-wide-page-item-id3');
@@ -105,7 +110,7 @@ export const StoneWallWidePage = (props) => {
         let timeout = setTimeout(() => {
             if(!props.stoneWallWidePage.loading && !props.stoneWallWidePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
+                // console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -115,6 +120,39 @@ export const StoneWallWidePage = (props) => {
         const resize = () => {
             resizeRef.current();
         }
+
+        let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems').clientWidth;
+        
+        setImagesSize({
+            img1: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/4,
+            }, 
+            img2: {
+                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+                height: (stoneWallWidePageItemsWidth)/3,
+            }, 
+            img3: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img4: {
+                width: (stoneWallWidePageItemsWidth)/3,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img5: {
+                width: (stoneWallWidePageItemsWidth)/3,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img6: {
+                width: (stoneWallWidePageItemsWidth)/3,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img7: {
+                width: (stoneWallWidePageItemsWidth)/3,
+                height: (stoneWallWidePageItemsWidth)/3,
+            }
+        })
  
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
@@ -132,8 +170,40 @@ export const StoneWallWidePage = (props) => {
     });
 
     const handleResize = (e) => {
+        let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems').clientWidth;
+        
+        setImagesSize({
+            img1: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/4,
+            }, 
+            img2: {
+                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+                height: (stoneWallWidePageItemsWidth)/3,
+            }, 
+            img3: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img4: {
+                width: (stoneWallWidePageItemsWidth - 80)/3,
+                height: (stoneWallWidePageItemsWidth - 80)/3,
+            },
+            img5: {
+                width: (stoneWallWidePageItemsWidth - 80)/3,
+                height: (stoneWallWidePageItemsWidth - 80)/3,
+            },
+            img6: {
+                width: (stoneWallWidePageItemsWidth - 80)/3,
+                height: (stoneWallWidePageItemsWidth - 80)/3,
+            },
+            img7: {
+                width: (stoneWallWidePageItemsWidth - 80)/3,
+                height: (stoneWallWidePageItemsWidth - 80)/3,
+            }
+        })
         setPrevScreenWidthVal(size.width);
-        console.log(prevScreenWidthVal, size.width)
+        // console.log(imgSize1.width)
         if(size.width > 1200){
             // setClassNameImg2("stone-wall-wide-page-item-id2");
             // setClassNameImg3("stone-wall-wide-page-item-id3");
@@ -249,54 +319,69 @@ export const StoneWallWidePage = (props) => {
         switch(id){
             case 1:
                 return {
-                    width: `${100/4}%`,
-                    height: `${100/3}%`
+                    width: `${imagesSize.img1.width}`,
+                    // height: `${100/3}%`
                 };
             case 2:
                 return {
-                    width: `${100/2}%`,
-                    height: `${100/3*2}%`
-
+                    position: "absolute",
+                    width: `${imagesSize.img2.width}`,
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40}`
                 };
             case 3:
                 return {
+                    position: "absolute",
                     width: `${100/4}%`,
-                    height: `${100/3}%`
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40}`
                 };
             case 4:
                 return {
+                    position: "absolute",
                     width: `${100/4}%`,
-                    height: `${100/3*2}%`
+                    // height: `${100/3*2}%`
                 };
             case 5:
                 return {
+                    position: "absolute",
                     width: `${100/4}%`,
-                    height: `${100/3}%`
+                    // height: `${100/3}%`
                 };
             case 6:
                 return {
+                    position: "absolute",
                     width: `${100/4}%`,
-                    height: `${100/3}%`
+                    // height: `${100/3}%`
                 };
             case 7:
                 return {
+                    position: "absolute",
                     width: `${100/2}%`,
-                    height: `${100/3}%`
+                    // height: `${100/3}%`
                 };
         }
     }
     
+    // const getImagesWidthAndHeight = (obj) => {
+        // console.log(obj.img1.width)
+        // setImgSize1({
+        //     width: obj.img1.width,
+        //     height: obj.img1.height
+        // });
+        // console.log(imagesSize)
+    // }
     const renderStoneWallWidePageData = () => {
         return(
             <div 
-            // className="stone-wall-wide-page-items"
-            style={{
-                position: "relative",
-                width: `100%`,
-                height: "1169.99px",
-                border: "2px solid red"
-            }}
-            
+                id="stoneWallWidePageItems"
+                // className="stone-wall-wide-page-items"
+                style={{
+                    position: "relative",
+                    width: `100%`,
+                    // height: "1169.99px",
+                    border: "2px solid red"
+                }}
             >{props.stoneWallWidePage.items.map((el, i) => {
                 return(
                     <div 
@@ -310,7 +395,8 @@ export const StoneWallWidePage = (props) => {
                             page="stoneWallWidePage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent} 
+                            unmountComponent={props.unmountComponent}
+                            // getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
                         />
                     </div>
                 )
