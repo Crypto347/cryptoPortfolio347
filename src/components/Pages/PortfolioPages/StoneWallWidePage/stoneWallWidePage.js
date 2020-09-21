@@ -327,14 +327,14 @@ export const StoneWallWidePage = (props) => {
                     position: "absolute",
                     width: `${imagesSize.img2.width}`,
                     top: "0px",
-                    left: `${imagesSize.img1.width + 40}`
+                    left: `${imagesSize.img1.width + 30}`
                 };
             case 3:
                 return {
                     position: "absolute",
                     width: `${100/4}%`,
                     top: "0px",
-                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40}`
+                    left: `${imagesSize.img1.width + 30 + imagesSize.img2.width + 30}`
                 };
             case 4:
                 return {
