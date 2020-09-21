@@ -155,31 +155,31 @@ export const StoneWallWidePage = (props) => {
         setImagesSize({
             img1: {
                 width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/4,
+                height: 0,
             }, 
             img2: {
                 width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth - 80)/4*2,
+                height: 0,
             }, 
             img3: {
                 width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                height: 0,
             },
             img4: {
                 width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/3,
+                height: 0,
             },
             img5: {
                 width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                height: 0,
             },
             img6: {
                 width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                height: 0,
             },
             img7: {
                 width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth)/3,
+                height: 0,
             }
         })
  
@@ -396,14 +396,41 @@ export const StoneWallWidePage = (props) => {
         }
     }
     
-    // const getImagesWidthAndHeight = (obj) => {
-        // console.log(obj.img1.width)
-        // setImgSize1({
-        //     width: obj.img1.width,
-        //     height: obj.img1.height
-        // });
-        // console.log(imagesSize)
-    // }
+    const getImagesWidthAndHeight = (obj) => {
+        console.log(obj.img1.width)
+        setImagesSize({
+            img1: {
+                ...imagesSize.img1,
+                height: obj.img1.height
+            }, 
+            img2: {
+                ...imagesSize.img2,
+                height: obj.img2.height
+            }, 
+            img3: {
+                ...imagesSize.img3,
+                height: obj.img3.height
+            },
+            img4: {
+                ...imagesSize.img4,
+                height: obj.img4.height
+            },
+            img5: {
+                ...imagesSize.img5,
+                height: obj.img5.height
+            },
+            img6: {
+                ...imagesSize.img6,
+                height: obj.img6.height
+            },
+            img7: {
+                ...imagesSize.img7,
+                height: obj.img7.height,
+            }
+        })
+        console.log(imagesSize)
+    }
+
     const renderStoneWallWidePageData = () => {
         return(
             <div 
@@ -429,7 +456,7 @@ export const StoneWallWidePage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            // getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
+                            getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
                         />
                     </div>
                 )

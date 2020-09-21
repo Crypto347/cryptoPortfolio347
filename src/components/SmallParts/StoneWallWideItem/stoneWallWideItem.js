@@ -63,36 +63,36 @@ export const StoneWallWideItem = (props) => {
         } 
         setUpload(true);
         if(upload){
-            // props.getImagesWidthAndHeight({
-            //     img1: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     }, 
-            //     img2: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     }, 
-            //     img3: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     },
-            //     img4: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     },
-            //     img5: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     },
-            //     img6: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     },
-            //     img7: {
-            //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-            //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-            //     }
-            // })
+            props.getImagesWidthAndHeight({
+                img1: {
+                    // width: document.getElementById("stoneWallWideItemId1").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId1").clientHeight,
+                }, 
+                img2: {
+                    // width: document.getElementById("stoneWallWideItemId2").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId2").clientHeight,
+                }, 
+                img3: {
+                    // width: document.getElementById("stoneWallWideItemId3").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId3").clientHeight,
+                },
+                img4: {
+                    // width: document.getElementById("stoneWallWideItemId4").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId4").clientHeight,
+                },
+                img5: {
+                    // width: document.getElementById("stoneWallWideItemId5").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId5").clientHeight,
+                },
+                img6: {
+                    // width: document.getElementById("stoneWallWideItemId6").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId6").clientHeight,
+                },
+                img7: {
+                    // width: document.getElementById("stoneWallWideItemId7").clientWidth,
+                    height: document.getElementById("stoneWallWideItemId7").clientHeight,
+                }
+            })
         }       
         window.addEventListener('resize', resize);
         return () =>  window.removeEventListener('resize', resize);
@@ -107,36 +107,36 @@ export const StoneWallWideItem = (props) => {
 
         setPaddingTopBottom(paddingTopBottomVal);
         console.log(document.getElementById("stoneWallWideItemId1").clientWidth)
-        // props.getImagesWidthAndHeight({
-        //     img1: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     }, 
-        //     img2: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     }, 
-        //     img3: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     },
-        //     img4: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     },
-        //     img5: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     },
-        //     img6: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     },
-        //     img7: {
-        //         width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //         height: document.getElementById("stoneWallWideItemId1").clientHeight,
-        //     }
-        // })
+        props.getImagesWidthAndHeight({
+            img1: {
+                // width: document.getElementById("stoneWallWideItemId1").clientWidth,
+                height: document.getElementById("stoneWallWideItemId1").clientHeight,
+            }, 
+            img2: {
+                // width: document.getElementById("stoneWallWideItemId2").clientWidth,
+                height: document.getElementById("stoneWallWideItemId2").clientHeight,
+            }, 
+            img3: {
+                // width: document.getElementById("stoneWallWideItemId3").clientWidth,
+                height: document.getElementById("stoneWallWideItemId3").clientHeight,
+            },
+            img4: {
+                // width: document.getElementById("stoneWallWideItemId4").clientWidth,
+                height: document.getElementById("stoneWallWideItemId4").clientHeight,
+            },
+            img5: {
+                // width: document.getElementById("stoneWallWideItemId5").clientWidth,
+                height: document.getElementById("stoneWallWideItemId5").clientHeight,
+            },
+            img6: {
+                // width: document.getElementById("stoneWallWideItemId6").clientWidth,
+                height: document.getElementById("stoneWallWideItemId6").clientHeight,
+            },
+            img7: {
+                // width: document.getElementById("stoneWallWideItemId7").clientWidth,
+                height: document.getElementById("stoneWallWideItemId7").clientHeight,
+            }
+        })
     }
 
     const setPadding = (page) => {
