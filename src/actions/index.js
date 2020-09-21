@@ -21,3 +21,4 @@ export * from './standardPageActions';
 export * from './galleryPageActions';
 export * from './galleryWithSpacePageActions';
 export * from './stoneWallPageActions';
+export * from './stoneWallWidePageActions';

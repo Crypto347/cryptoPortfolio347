@@ -10332,7 +10332,7 @@ app.get('/api/stone-wall-wide-page', (req, res) => {
             path: "portfolio-item/small-slider/3",
             coverImage: {
                 id: 1,
-                key: "stoneWallWideCover4",
+                key: "stoneWallWideCover5",
                 isHover: "init",
                 imageName: "glenn-carstens-peters-RLw-UC03Gwc-stone-wall-wide-unsplash.png",
                 folderName: "colorful",

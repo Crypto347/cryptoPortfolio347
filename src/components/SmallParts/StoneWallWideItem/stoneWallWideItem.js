@@ -71,10 +71,10 @@ export const StoneWallWideItem = (props) => {
 
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
-        let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - paddingTopBottomVal);
+        // let cardHeight = document.getElementById("img").clientHeight;
+        // setCardHeight(cardHeight - paddingTopBottomVal);
         setPaddingTopBottom(paddingTopBottomVal);
-        console.log(cardHeight)
+        // console.log(cardHeight)
     }
 
     const setPadding = (page) => {
@@ -103,16 +103,20 @@ export const StoneWallWideItem = (props) => {
 
     const loadImg = (key) => {
         switch(key) {
-            case 'stoneWallCover1':
-                return Images.STONE_WALL_PAGE_COVER_PIC_1;
-            case 'stoneWallCover2':
-                return Images.STONE_WALL_PAGE_COVER_PIC_2;
-            case 'stoneWallCover3':
-                return Images.STONE_WALL_PAGE_COVER_PIC_3;
-            case 'stoneWallCover4':
-                return Images.STONE_WALL_PAGE_COVER_PIC_4;
-            case 'stoneWallCover5':
-                return Images.STONE_WALL_PAGE_COVER_PIC_5;
+            case 'stoneWallWideCover1':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_1;
+            case 'stoneWallWideCover2':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_2;
+            case 'stoneWallWideCover3':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_3;
+            case 'stoneWallWideCover4':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_4;
+            case 'stoneWallWideCover5':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_5;
+            case 'stoneWallWideCover6':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_6;
+            case 'stoneWallWideCover7':
+                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_7;
             default:
                 return "";
         }

@@ -99,11 +99,11 @@ export const StoneWallWidePage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.stoneWallPage.items.length === 0){
-            props.fetchStoneWallPage();
+        if(props.stoneWallWidePage.items.length === 0){
+            props.fetchStoneWallWidePage();
         }
         let timeout = setTimeout(() => {
-            if(!props.stoneWallPage.loading && !props.stoneWallPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.stoneWallWidePage.loading && !props.stoneWallWidePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
@@ -135,49 +135,48 @@ export const StoneWallWidePage = (props) => {
         setPrevScreenWidthVal(size.width);
         console.log(prevScreenWidthVal, size.width)
         if(size.width > 1200){
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
+            // setClassNameImg2("stone-wall-wide-page-item-id2");
+            // setClassNameImg3("stone-wall-wide-page-item-id3");
+            // setClassNameImg4("stone-wall-wide-page-item-id4");
+            // setClassNameImg5("stone-wall-wide-page-item-id5");
         }
         if(size.width < 1200 && size.width > 1024 && prevScreenWidthVal < size.width){
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
+            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
+            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
+            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
+            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
         }
         if(size.width < 1025 && size.width > 840){
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
+            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
+            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
+            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
+            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
         }
         if(size.width < 840 && size.width > 670 && prevScreenWidthVal > size.width){
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
+            // setClassNameImg2("stone-wall-wide-page-item-id2");
+            // setClassNameImg3("stone-wall-wide-page-item-id3");
+            // setClassNameImg4("stone-wall-wide-page-item-id4");
+            // setClassNameImg5("stone-wall-wide-page-item-id5");
         }
         if(size.width < 840 && size.width > 670 && prevScreenWidthVal < size.width){
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
+            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
+            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
+            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
+            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
+            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
+            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
+            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
+            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
         }
         if(size.width < 480){
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
+            // setClassNameImg2("stone-wall-wide-page-item-id2");
+            // setClassNameImg3("stone-wall-wide-page-item-id3");
+            // setClassNameImg4("stone-wall-wide-page-item-id4");
+            // setClassNameImg5("stone-wall-wide-page-item-id5");
         }
         if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
-            console.log("long1")
 
             // setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
         }
@@ -192,7 +191,7 @@ export const StoneWallWidePage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("stoneWallPage");
+        let el = document.getElementById("stoneWallWidePage");
     
         // Check scroll direction
 
@@ -246,30 +245,66 @@ export const StoneWallWidePage = (props) => {
         }
     }
 
-    const renderClassName = (id) => {
+    const renderStyle = (id) => {
         switch(id){
             case 1:
-                return classNameImg1;
+                return {
+                    width: `${100/4}%`,
+                    height: `${100/3}%`
+                };
             case 2:
-                return classNameImg2;
+                return {
+                    width: `${100/2}%`,
+                    height: `${100/3*2}%`
+
+                };
             case 3:
-                return classNameImg3;
+                return {
+                    width: `${100/4}%`,
+                    height: `${100/3}%`
+                };
             case 4:
-                return classNameImg4;
+                return {
+                    width: `${100/4}%`,
+                    height: `${100/3*2}%`
+                };
             case 5:
-                return classNameImg5;
+                return {
+                    width: `${100/4}%`,
+                    height: `${100/3}%`
+                };
+            case 6:
+                return {
+                    width: `${100/4}%`,
+                    height: `${100/3}%`
+                };
+            case 7:
+                return {
+                    width: `${100/2}%`,
+                    height: `${100/3}%`
+                };
         }
     }
     
-    const renderStoneWallPageData = () => {
+    const renderStoneWallWidePageData = () => {
         return(
-            <div className="stone-wall-wide-page-items">{props.stoneWallPage.items.map((el, i) => {
+            <div 
+            // className="stone-wall-wide-page-items"
+            style={{
+                position: "relative",
+                width: `100%`,
+                height: "1169.99px",
+                border: "2px solid red"
+            }}
+            
+            >{props.stoneWallWidePage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
                         id={el.key}
                         // className={`stone-wall-wide-page-item-id${el.id}`}
-                        className={renderClassName(el.id)}
+                        // className={renderClassName(el.id)}
+                        style={renderStyle(el.id)}
                     >
                         <StoneWallWideItem
                             page="stoneWallWidePage"
@@ -283,8 +318,8 @@ export const StoneWallWidePage = (props) => {
         )
     }
 
-    const renderStoneWallContent = () => {
-        if(props.stoneWallPage.loading && !props.stoneWallPage.error){
+    const renderStoneWallWideContent = () => {
+        if(props.stoneWallWidePage.loading && !props.stoneWallWidePage.error){
             return(
                 <div 
                     className="stone-wall-wide-page-loading-error" 
@@ -294,20 +329,20 @@ export const StoneWallWidePage = (props) => {
                 </div>
             )
         }
-        if(!props.stoneWallPage.loading && !props.stoneWallPage.error){
+        if(!props.stoneWallWidePage.loading && !props.stoneWallWidePage.error){
             return(
                 <div className="stone-wall-wide-page-wrapper">
-                    {renderStoneWallPageData()}
+                    {renderStoneWallWidePageData()}
                 </div>
             )
         }
-        if(!props.stoneWallPage.loading && props.stoneWallPage.error){
+        if(!props.stoneWallWidePage.loading && props.stoneWallWidePage.error){
             return(
                 <div 
                     className="stone-wall-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.stoneWallPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.stoneWallWidePage.error}`}</H15>
                 </div>
             )
         }
@@ -318,7 +353,7 @@ export const StoneWallWidePage = (props) => {
     */
 
     return(
-        <div className="stone-wall-wide-page" id="stoneWallPage">
+        <div className="stone-wall-wide-page" id="stoneWallWidePage">
             {renderToolbars()}
             <div className="stone-wall-wide-page-header">
                 <H65 className="h65-white-poppins">Tiam convallis,</H65>
@@ -326,7 +361,7 @@ export const StoneWallWidePage = (props) => {
                 <EH30/>
                 <H22 className="h22-nobel-lustria">Lorem ipsum dolor sit amet, quot nusquam mei cu diceret .</H22>
             </div> 
-            {renderStoneWallContent()}
+            {renderStoneWallWideContent()}
             <Footer/>
         </div>   
     );
@@ -335,14 +370,14 @@ export const StoneWallWidePage = (props) => {
 export default connect(
     (state) => {
         return {
-            stoneWallPage: Selectors.getStoneWallPageState(state),
+            stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
+            fetchStoneWallWidePage: bindActionCreators(Services.fetchStoneWallWidePage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),

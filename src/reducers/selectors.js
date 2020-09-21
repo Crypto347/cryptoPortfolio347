@@ -288,3 +288,10 @@ export const getStoneWallPageState = createSelector(
     [getStoneWallPage],
     (x) => x
 );
+
+const getStoneWallWidePage = (state) => state.stoneWallWidePage;
+
+export const getStoneWallWidePageState = createSelector(
+    [getStoneWallWidePage],
+    (x) => x
+);

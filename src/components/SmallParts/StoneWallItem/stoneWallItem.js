@@ -71,10 +71,10 @@ export const StoneWallItem = (props) => {
 
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
-        let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - paddingTopBottomVal);
+        // let cardHeight = document.getElementById("img").clientHeight;
+        // setCardHeight(cardHeight - paddingTopBottomVal);
         setPaddingTopBottom(paddingTopBottomVal);
-        console.log(cardHeight)
+        // console.log(cardHeight)
     }
 
     const setPadding = (page) => {

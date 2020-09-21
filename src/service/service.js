@@ -485,6 +485,24 @@ export function fetchStoneWallPage() {
     };
 }
 
+export function fetchStoneWallWidePage() {
+    return dispatch => {
+        dispatch(Actions.fetchStoneWallWidePageBegin());
+        return fetch(`http://localhost:3005/api/stone-wall-wide-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchStoneWallWidePageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchStoneWallWidePageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

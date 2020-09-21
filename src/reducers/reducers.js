@@ -28,6 +28,7 @@ import standardPageReducer from './standardPageReducer';
 import galleryPageReducer from './galleryPageReducer';
 import galleryWithSpacePageReducer from './galleryWithSpacePageReducer';
 import stoneWallPageReducer from './stoneWallPageReducer';
+import stoneWallWidePageReducer from './stoneWallWidePageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -53,5 +54,6 @@ export default (history) => combineReducers({
     standardPage: standardPageReducer,
     galleryPage: galleryPageReducer,
     galleryWithSpacePage: galleryWithSpacePageReducer,
-    stoneWallPage: stoneWallPageReducer
+    stoneWallPage: stoneWallPageReducer,
+    stoneWallWidePage: stoneWallWidePageReducer
 });
