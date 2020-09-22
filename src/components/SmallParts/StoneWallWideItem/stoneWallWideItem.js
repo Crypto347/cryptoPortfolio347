@@ -106,7 +106,6 @@ export const StoneWallWideItem = (props) => {
         let paddingTopBottomVal = setPadding(props.page);
 
         setPaddingTopBottom(paddingTopBottomVal);
-        console.log(document.getElementById("stoneWallWideItemId1").clientWidth)
         props.getImagesWidthAndHeight({
             img1: {
                 // width: document.getElementById("stoneWallWideItemId1").clientWidth,

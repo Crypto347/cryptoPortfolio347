@@ -73,6 +73,8 @@ import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
+import injectStyle from '../../../../Hooks/injectStyle';
+
 /**
 * StoneWallWidePage component definition and export
 */
@@ -87,6 +89,13 @@ export const StoneWallWidePage = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
+    const [classNameImg1, setClassNameImg1] = useState('stone-wall-wide-page-item-id1');
+    const [classNameImg2, setClassNameImg2] = useState('stone-wall-wide-page-item-id2');
+    const [classNameImg3, setClassNameImg3] = useState('stone-wall-wide-page-item-id3');
+    const [classNameImg4, setClassNameImg4] = useState('stone-wall-wide-page-item-id4');
+    const [classNameImg5, setClassNameImg5] = useState('stone-wall-wide-page-item-id5');
+    const [classNameImg6, setClassNameImg6] = useState('stone-wall-wide-page-item-id6');
+    const [classNameImg7, setClassNameImg7] = useState('stone-wall-wide-page-item-id7');
     // const [imgSize1, setImgSize1] = useState({
     //     width: (size.width - 80)/3,
     //     height: (size.width - 80)/3,
@@ -121,11 +130,33 @@ export const StoneWallWidePage = (props) => {
             height: 0,
         }
     });
-    const [classNameImg1, setClassNameImg1] = useState('stone-wall-wide-page-item-id1');
-    const [classNameImg2, setClassNameImg2] = useState('stone-wall-wide-page-item-id2');
-    const [classNameImg3, setClassNameImg3] = useState('stone-wall-wide-page-item-id3');
-    const [classNameImg4, setClassNameImg4] = useState('stone-wall-wide-page-item-id4');
-    const [classNameImg5, setClassNameImg5] = useState('stone-wall-wide-page-item-id5');
+    // const stoneWallWidePageItemId2NarrowScreen = keyframes`
+    //         from{
+    //             top: 653.33px;
+    //             left: 326.66px;
+    //         }
+    //         to{
+    //             top: 1196px;
+    //             left: 398px;
+    //         }
+    // `;
+
+    const [style, setStyle] = useState({
+        WebkitAnimation: `stoneWallWidePageItemId2NarrowScreen .5s linear`
+    })
+    const keyframesStyle = `
+        @keyframes stoneWallWidePageItemId2NarrowScreen {
+            from{
+                top: 0px,
+                left: ${imagesSize.img1.width + 40}
+            }
+            to{
+                top:  30,
+                left: 10px,
+            }
+        }
+    `;
+    injectStyle(keyframesStyle);
 
     /**
     * Methods
@@ -139,7 +170,6 @@ export const StoneWallWidePage = (props) => {
         let timeout = setTimeout(() => {
             if(!props.stoneWallWidePage.loading && !props.stoneWallWidePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                // console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -232,52 +262,52 @@ export const StoneWallWidePage = (props) => {
             }
         })
         setPrevScreenWidthVal(size.width);
-        // console.log(imgSize1.width)
         if(size.width > 1200){
-            // setClassNameImg2("stone-wall-wide-page-item-id2");
-            // setClassNameImg3("stone-wall-wide-page-item-id3");
-            // setClassNameImg4("stone-wall-wide-page-item-id4");
-            // setClassNameImg5("stone-wall-wide-page-item-id5");
+            // setClassNameImg2("stone-wall-page-item-id2");
+            // setClassNameImg3("stone-wall-page-item-id3");
+            // setClassNameImg4("stone-wall-page-item-id4");
+            // setClassNameImg5("stone-wall-page-item-id5");
         }
         if(size.width < 1200 && size.width > 1024 && prevScreenWidthVal < size.width){
-            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
-            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
-            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
-            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
+            // setClassNameImg2("stone-wall-page-item-id2-animation-expand-screen");
+            // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
+            // setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
+            // setClassNameImg5("stone-wall-page-item-id5-animation-expand-screen");
         }
         if(size.width < 1025 && size.width > 840){
-            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
-            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
-            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
-            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
+            // setClassNameImg2("stone-wall-page-item-id2-animation-narrow-screen");
+            // setClassNameImg3("stone-wall-page-item-id3-animation-narrow-screen");
+            // setClassNameImg4("stone-wall-page-item-id4-animation-narrow-screen");
+            // setClassNameImg5("stone-wall-page-item-id5-animation-narrow-screen");
         }
         if(size.width < 840 && size.width > 670 && prevScreenWidthVal > size.width){
-            // setClassNameImg2("stone-wall-wide-page-item-id2");
-            // setClassNameImg3("stone-wall-wide-page-item-id3");
-            // setClassNameImg4("stone-wall-wide-page-item-id4");
-            // setClassNameImg5("stone-wall-wide-page-item-id5");
+            // setClassNameImg2("stone-wall-page-item-id2");
+            // setClassNameImg3("stone-wall-page-item-id3");
+            // setClassNameImg4("stone-wall-page-item-id4");
+            // setClassNameImg5("stone-wall-page-item-id5");
         }
         if(size.width < 840 && size.width > 670 && prevScreenWidthVal < size.width){
-            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
-            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
-            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
-            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
+            // setClassNameImg2("stone-wall-page-item-id2-animation-expand2-screen");
+            // setClassNameImg3("stone-wall-page-item-id3-animation-expand2-screen");
+            // setClassNameImg4("stone-wall-page-item-id4-animation-expand2-screen");
+            // setClassNameImg5("stone-wall-page-item-id5-animation-expand2-screen");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
-            // setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
-            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
-            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
-            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
+            // setClassNameImg2("stone-wall-page-item-id2-animation-narrow2-screen");
+            // setClassNameImg3("stone-wall-page-item-id3-animation-narrow2-screen");
+            // setClassNameImg4("stone-wall-page-item-id4-animation-narrow2-screen");
+            // setClassNameImg5("stone-wall-page-item-id5-animation-narrow2-screen");
         }
         if(size.width < 480){
-            // setClassNameImg2("stone-wall-wide-page-item-id2");
-            // setClassNameImg3("stone-wall-wide-page-item-id3");
-            // setClassNameImg4("stone-wall-wide-page-item-id4");
-            // setClassNameImg5("stone-wall-wide-page-item-id5");
+            // setClassNameImg2("stone-wall-page-item-id2");
+            // setClassNameImg3("stone-wall-page-item-id3");
+            // setClassNameImg4("stone-wall-page-item-id4");
+            // setClassNameImg5("stone-wall-page-item-id5");
         }
         if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
+            // console.log("long1")
 
-            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
+            // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
         }
 
         // if(size.width < 770 && size.width > 680 && size.width < prevScreenWidthVal){
@@ -344,7 +374,9 @@ export const StoneWallWidePage = (props) => {
         }
     }
 
-    const renderStyle = (id) => {
+    const renderStyle = (id, ) => {
+        if(size.width < 1024) return null;
+        
         switch(id){
             case 1:
                 return {
@@ -395,9 +427,28 @@ export const StoneWallWidePage = (props) => {
                 };
         }
     }
+
+    const renderClassName = (id) => {
+        if(size.width > 1024) return null;
+        switch(id){
+            case 1:
+                return classNameImg1;
+            case 2:
+                return classNameImg2;
+            case 3:
+                return classNameImg3;
+            case 4:
+                return classNameImg4;
+            case 5:
+                return classNameImg5;
+            case 6:
+                return classNameImg6;
+            case 7:
+                return classNameImg7;
+        }
+    }
     
     const getImagesWidthAndHeight = (obj) => {
-        console.log(obj.img1.width)
         setImagesSize({
             img1: {
                 ...imagesSize.img1,
@@ -428,7 +479,6 @@ export const StoneWallWidePage = (props) => {
                 height: obj.img7.height,
             }
         })
-        console.log(imagesSize)
     }
 
     const renderStoneWallWidePageData = () => {
@@ -448,7 +498,7 @@ export const StoneWallWidePage = (props) => {
                         key={i} 
                         id={el.key}
                         // className={`stone-wall-wide-page-item-id${el.id}`}
-                        // className={renderClassName(el.id)}
+                        className={renderClassName(el.id)}
                         style={renderStyle(el.id)}
                     >
                         <StoneWallWideItem

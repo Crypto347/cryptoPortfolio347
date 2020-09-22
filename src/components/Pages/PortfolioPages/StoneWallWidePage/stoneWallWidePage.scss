@@ -21,267 +21,267 @@
         width: calc(100% - 80px);
         padding: 40px;
         background: white;
-        // .stone-wall-wide-page-items {
-        //     position: relative;
-        //     width: 1099.99px;
-        //     height: 1169.99px;
-        //     // display: flex;
-        //     // flex-wrap: wrap;
-        //     // padding: 40px 100px 40px 130px;
-        //     .stone-wall-wide-page-item-id1 {
-        //         position: absolute;
-        //         top: 0px;
-        //         left: 0px;
-        //         width: 346.66px;
-        //         height: 346.66px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //     }
-        //     .stone-wall-wide-page-item-id2 {
-        //         position: absolute;
-        //         top: 376.66px;
-        //         left: 0;
-        //         width: 346.66px;
-        //         height: 723.33px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //     }
-        //     .stone-wall-wide-page-item-id2-animation-narrow-screen {
-        //         position: absolute;
-        //         top: 1196px;
-        //         left: 0px;
-        //         width: 368px;
-        //         height: 768px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
-        //         animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id2-animation-expand-screen {
-        //         position: absolute;
-        //         top: 326.66px;
-        //         left: 0;
-        //         width: 420px;
-        //         height: 420px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-        //         animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id2-animation-narrow2-screen {
-        //         position: absolute;
-        //         top: 900px;
-        //         left: 0px;
-        //         width: 420px;
-        //         height: 868.55px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id2-animation-expand2-screen {
-        //         position: absolute;
-        //         top: 945px;
-        //         left: 0px;
-        //         width: 285px;
-        //         height: 600px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id3 {
-        //         position: absolute;
-        //         top: 0px;
-        //         left: 376.66px;
-        //         width: 723.33px;
-        //         height: 723.33px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //     }
-        //     .stone-wall-wide-page-item-id3-animation-narrow-screen {
-        //         position: absolute;
-        //         top: 398px;
-        //         left: 0;
-        //         width: 768px;
-        //         height: 768px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
-        //         animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id3-animation-expand-screen {
-        //         position: absolute;
-        //         top: 0px;
-        //         left: 326.66px;
-        //         width: 623.33px;
-        //         height: 623.33px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-        //         animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id3-animation-narrow2-screen {
-        //         position: absolute;
-        //         top: 450px;
-        //         left: 0;
-        //         width: 420px;
-        //         height: 420px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id3-animation-expand2-screen {
-        //         position: absolute;
-        //         top: 315px;
-        //         left: 0px;
-        //         width: 600px;
-        //         height: 600px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id4 {
-        //         position: absolute;
-        //         top: 753.33px;
-        //         left: 376.66px;
-        //         width: 346.66px;
-        //         height: 346.66px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //     }
-        //     .stone-wall-wide-page-item-id4-animation-narrow-screen {
-        //         position: absolute;
-        //         top: 0px;
-        //         left: 398px;
-        //         width: 368px;
-        //         height: 368px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
-        //         animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id4-animation-expand-screen {
-        //         position: absolute;
-        //         top: 653.33px;
-        //         left: 326.66px;
-        //         width: 296.66px;
-        //         height: 296.66px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-        //         animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id4-animation-narrow2-screen {
-        //         position: absolute;
-        //         top: 1798.55px;
-        //         left: 0px;
-        //         width: 420px;
-        //         height: 420px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id4-animation-expand2-screen {
-        //         position: absolute;
-        //         top: 0px;
-        //         left: 316px;
-        //         width: 285px;
-        //         height: 285px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id5 {
-        //         position: absolute;
-        //         top: 753.33px;
-        //         left: 753.32px;
-        //         width: 346.66px;
-        //         height: 346.66px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //     }
-        //     .stone-wall-wide-page-item-id5-animation-narrow-screen {
-        //         position: absolute;
-        //         top: 1196px;
-        //         left: 398px;
-        //         width: 368px;
-        //         height: 368px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
-        //         animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id5-animation-expand-screen {
-        //         position: absolute;
-        //         top: 653.33px;
-        //         left: 653.32px;
-        //         width: 296.66px;
-        //         height: 296.66px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-        //         animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id5-animation-narrow2-screen {
-        //         position: absolute;
-        //         top: 2248.55px;
-        //         left: 0px;
-        //         width: 420px;
-        //         height: 420px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
-        //     }
-        //     .stone-wall-wide-page-item-id5-animation-expand2-screen {
-        //         position: absolute;
-        //         top: 945px;
-        //         left: 315px;
-        //         width: 285px;
-        //         height: 285px;
-        //         margin-right: 30px;
-        //         margin-bottom: 30px;
-        //         -webkit-animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
-        //         -moz-animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
-        //         -o-animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
-        //         animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
-        //     }
-        // }
+        .stone-wall-wide-page-items {
+            position: relative;
+            width: 1099.99px;
+            height: 1169.99px;
+            // display: flex;
+            // flex-wrap: wrap;
+            // padding: 40px 100px 40px 130px;
+            .stone-wall-wide-page-item-id1 {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 346.66px;
+                height: 346.66px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+            .stone-wall-wide-page-item-id2 {
+                position: absolute;
+                top: 376.66px;
+                left: 0;
+                width: 346.66px;
+                height: 723.33px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+            .stone-wall-wide-page-item-id2-animation-narrow-screen {
+                position: absolute;
+                top: 1196px;
+                left: 0px;
+                width: 368px;
+                height: 768px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
+                animation: stoneWallPageItemId2NarrowScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id2-animation-expand-screen {
+                position: absolute;
+                top: 326.66px;
+                left: 0;
+                width: 420px;
+                height: 420px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+                animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id2-animation-narrow2-screen {
+                position: absolute;
+                top: 900px;
+                left: 0px;
+                width: 420px;
+                height: 868.55px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id2-animation-expand2-screen {
+                position: absolute;
+                top: 945px;
+                left: 0px;
+                width: 285px;
+                height: 600px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId2Expand2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id3 {
+                position: absolute;
+                top: 0px;
+                left: 376.66px;
+                width: 723.33px;
+                height: 723.33px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+            .stone-wall-wide-page-item-id3-animation-narrow-screen {
+                position: absolute;
+                top: 398px;
+                left: 0;
+                width: 768px;
+                height: 768px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
+                animation: stoneWallPageItemId3NarrowScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id3-animation-expand-screen {
+                position: absolute;
+                top: 0px;
+                left: 326.66px;
+                width: 623.33px;
+                height: 623.33px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
+                animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id3-animation-narrow2-screen {
+                position: absolute;
+                top: 450px;
+                left: 0;
+                width: 420px;
+                height: 420px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+                animation: stoneWallPageItemId3Narrow2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id3-animation-expand2-screen {
+                position: absolute;
+                top: 315px;
+                left: 0px;
+                width: 600px;
+                height: 600px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId3Expand2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id4 {
+                position: absolute;
+                top: 753.33px;
+                left: 376.66px;
+                width: 346.66px;
+                height: 346.66px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+            .stone-wall-wide-page-item-id4-animation-narrow-screen {
+                position: absolute;
+                top: 0px;
+                left: 398px;
+                width: 368px;
+                height: 368px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
+                animation: stoneWallPageItemId4NarrowScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id4-animation-expand-screen {
+                position: absolute;
+                top: 653.33px;
+                left: 326.66px;
+                width: 296.66px;
+                height: 296.66px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
+                animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id4-animation-narrow2-screen {
+                position: absolute;
+                top: 1798.55px;
+                left: 0px;
+                width: 420px;
+                height: 420px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
+                animation: stoneWallPageItemId4Narrow2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id4-animation-expand2-screen {
+                position: absolute;
+                top: 0px;
+                left: 316px;
+                width: 285px;
+                height: 285px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId4Expand2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id5 {
+                position: absolute;
+                top: 753.33px;
+                left: 753.32px;
+                width: 346.66px;
+                height: 346.66px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+            .stone-wall-wide-page-item-id5-animation-narrow-screen {
+                position: absolute;
+                top: 1196px;
+                left: 398px;
+                width: 368px;
+                height: 368px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
+                animation: stoneWallPageItemId5NarrowScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id5-animation-expand-screen {
+                position: absolute;
+                top: 653.33px;
+                left: 653.32px;
+                width: 296.66px;
+                height: 296.66px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
+                -moz-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
+                -o-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
+                animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id5-animation-narrow2-screen {
+                position: absolute;
+                top: 2248.55px;
+                left: 0px;
+                width: 420px;
+                height: 420px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
+                animation: stoneWallPageItemId5Narrow2Screen 0.3s linear;
+            }
+            .stone-wall-wide-page-item-id5-animation-expand2-screen {
+                position: absolute;
+                top: 945px;
+                left: 315px;
+                width: 285px;
+                height: 285px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
+                -moz-animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
+                -o-animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
+                animation: stoneWallPageItemId5Expand2Screen 0.3s linear;
+            }
+        }
     }
 }
 
@@ -483,7 +483,7 @@
     }
 }
 
-@-webkit-keyframes stoneWallPageItemId5NarrowScreen {
+@-webkit-keyframes stoneWallWidePageItemId2NarrowScreen {
     from{
         top: 653.33px;
         left: 653.32;
@@ -493,7 +493,7 @@
         left: 398px;
     }
 }
-@-moz-keyframes stoneWallPageItemId5NarrowScreen {
+@-moz-keyframes stoneWallWidePageItemId2NarrowScreen {
     from{
         top: 653.33px;
         left: 653.32;
@@ -503,7 +503,7 @@
         left: 398px;
     }
 }
-@-o-keyframes stoneWallPageItemId5NarrowScreen {
+@-o-keyframes stoneWallWidePageItemId2NarrowScreen {
     from{
         top: 653.33px;
         left: 326.66px;
@@ -513,7 +513,7 @@
         left: 398px;
     }
 }
-@keyframes stoneWallPageItemId5NarrowScreen {
+@keyframes stoneWallWidePageItemId2NarrowScreen {
     from{
         top: 653.33px;
         left: 326.66px;
@@ -523,6 +523,10 @@
         left: 398px;
     }
 }
+
+
+
+
 
 @-webkit-keyframes stoneWallPageItemId5ExpandScreen {
     from{
