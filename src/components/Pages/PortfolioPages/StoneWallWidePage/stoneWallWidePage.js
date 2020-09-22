@@ -262,17 +262,19 @@ export const StoneWallWidePage = (props) => {
             }
         })
         setPrevScreenWidthVal(size.width);
-        if(size.width > 1200){
-            // setClassNameImg2("stone-wall-page-item-id2");
-            // setClassNameImg3("stone-wall-page-item-id3");
-            // setClassNameImg4("stone-wall-page-item-id4");
-            // setClassNameImg5("stone-wall-page-item-id5");
+        if(size.width > 1040){
+            return ;
         }
-        if(size.width < 1200 && size.width > 1024 && prevScreenWidthVal < size.width){
-            // setClassNameImg2("stone-wall-page-item-id2-animation-expand-screen");
-            // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
-            // setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
-            // setClassNameImg5("stone-wall-page-item-id5-animation-expand-screen");
+        if(size.width < 1040 && size.width > 1024 && prevScreenWidthVal > size.width){
+            console.log("kjlhl")
+            setClassNameImg1("stone-wall-page-item-id1");
+            setClassNameImg2("stone-wall-page-item-id2");
+            setClassNameImg3("stone-wall-page-item-id3");
+            setClassNameImg4("stone-wall-page-item-id4");
+            setClassNameImg5("stone-wall-page-item-id5");
+            setClassNameImg6("stone-wall-page-item-id6");
+            setClassNameImg7("stone-wall-page-item-id7");
+        
         }
         if(size.width < 1025 && size.width > 840){
             // setClassNameImg2("stone-wall-page-item-id2-animation-narrow-screen");
@@ -375,7 +377,7 @@ export const StoneWallWidePage = (props) => {
     }
 
     const renderStyle = (id, ) => {
-        if(size.width < 1024) return null;
+        if(size.width < 1040) return;
         
         switch(id){
             case 1:
@@ -429,7 +431,7 @@ export const StoneWallWidePage = (props) => {
     }
 
     const renderClassName = (id) => {
-        if(size.width > 1024) return null;
+        if(size.width > 1040) return null;
         switch(id){
             case 1:
                 return classNameImg1;
@@ -485,7 +487,7 @@ export const StoneWallWidePage = (props) => {
         return(
             <div 
                 id="stoneWallWidePageItems"
-                // className="stone-wall-wide-page-items"
+                className="stone-wall-wide-page-items"
                 style={{
                     position: "relative",
                     width: "100%",
