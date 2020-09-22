@@ -263,17 +263,16 @@ export const StoneWallWidePage = (props) => {
         })
         setPrevScreenWidthVal(size.width);
         if(size.width > 1040){
-            return ;
+            return null;
         }
         if(size.width < 1040 && size.width > 1024 && prevScreenWidthVal > size.width){
-            console.log("kjlhl")
-            setClassNameImg1("stone-wall-page-item-id1");
-            setClassNameImg2("stone-wall-page-item-id2");
-            setClassNameImg3("stone-wall-page-item-id3");
-            setClassNameImg4("stone-wall-page-item-id4");
-            setClassNameImg5("stone-wall-page-item-id5");
-            setClassNameImg6("stone-wall-page-item-id6");
-            setClassNameImg7("stone-wall-page-item-id7");
+            setClassNameImg1("stone-wall-wide-page-item-id1");
+            setClassNameImg2("stone-wall-wide-page-item-id2");
+            setClassNameImg3("stone-wall-wide-page-item-id3");
+            setClassNameImg4("stone-wall-wide-page-item-id4");
+            setClassNameImg5("stone-wall-wide-page-item-id5");
+            setClassNameImg6("stone-wall-wide-page-item-id6");
+            setClassNameImg7("stone-wall-wide-page-item-id7");
         
         }
         if(size.width < 1025 && size.width > 840){
@@ -377,7 +376,7 @@ export const StoneWallWidePage = (props) => {
     }
 
     const renderStyle = (id, ) => {
-        if(size.width < 1040) return;
+        if(size.width < 1040) return null;
         
         switch(id){
             case 1:
