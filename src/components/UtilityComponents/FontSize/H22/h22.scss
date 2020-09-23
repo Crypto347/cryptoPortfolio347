@@ -74,6 +74,12 @@
     animation: h22NeroNobelHoverOff .5s linear;
 }
 
+@media only screen and (max-width: 870px){
+    .h22-nobel-lustria-centered {
+        font-size: 19px;
+    }
+}
+
 @-webkit-keyframes h22OpacityHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}

@@ -46,13 +46,31 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 1025px){
+    .h65-white-poppins-centered {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 870px){
+    .h65-white-poppins-centered {
+        font-size: 40px;
+    }
+}
+
 @media only screen and (max-width: 690px){
-    
     .h65-black-teko {
         font-size: 55px;
     }
     .h65-black-lustria {
         font-size: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 650px){
+    .h65-white-poppins-centered {
+        font-size: 30px;
     }
 }
 

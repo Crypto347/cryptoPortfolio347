@@ -152,13 +152,13 @@ export const StoneWallPage = (props) => {
             setClassNameImg4("stone-wall-page-item-id4-animation-narrow-screen");
             setClassNameImg5("stone-wall-page-item-id5-animation-narrow-screen");
         }
-        if(size.width < 840 && size.width > 670 && prevScreenWidthVal > size.width){
+        if(size.width < 840 && size.width > 670 ){
             setClassNameImg2("stone-wall-page-item-id2");
             setClassNameImg3("stone-wall-page-item-id3");
             setClassNameImg4("stone-wall-page-item-id4");
             setClassNameImg5("stone-wall-page-item-id5");
         }
-        if(size.width < 840 && size.width > 670 && prevScreenWidthVal < size.width){
+        if(size.width < 670 && size.width > 480 && prevScreenWidthVal < size.width){
             setClassNameImg2("stone-wall-page-item-id2-animation-expand2-screen");
             setClassNameImg3("stone-wall-page-item-id3-animation-expand2-screen");
             setClassNameImg4("stone-wall-page-item-id4-animation-expand2-screen");

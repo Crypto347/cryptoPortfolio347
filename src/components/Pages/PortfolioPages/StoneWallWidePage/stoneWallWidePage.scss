@@ -434,52 +434,55 @@
     }
 }
 
-@media only screen and (max-width: 700px){
+// @media only screen and (max-width: 700px){
+//     .stone-wall-wide-page {
+//         .stone-wall-wide-page-header {
+//             padding: 90px 40px 150px 40px;
+//         }
+//     }
+// }
+
+@media only screen and (max-width: 840px){
     .stone-wall-wide-page {
         .stone-wall-wide-page-header {
             padding: 90px 40px 150px 40px;
         }
+        // .stone-wall-wide-page-wrapper {
+        //     .stone-wall-wide-page-items {
+        //         width: 600px;
+        //         height: 1615px;
+        //         .stone-wall-wide-page-item-id1 {
+        //             width: 285px;
+        //             height: 285px;
+        //         }
+        //         .stone-wall-wide-page-item-id2 {
+        //             top: 945px;
+        //             left: 0px;
+        //             width: 285px;
+        //             height: 600px;
+        //         }
+        //         .stone-wall-wide-page-item-id3 {
+        //             top: 315px;
+        //             left: 0;
+        //             width: 600px;
+        //             height: 600px;
+        //         }
+        //         .stone-wall-wide-page-item-id4 {
+        //             top: 0px;
+        //             left: 316px;
+        //             width: 285px;
+        //             height: 285px;
+        //         }
+        //         .stone-wall-wide-page-item-id5 {
+        //             top: 945px;
+        //             left: 315px;
+        //             width: 285px;
+        //             height: 285px;
+        //         }
+        //     }
+        // }
     }
 }
-
-// @media only screen and (max-width: 840px){
-//     .stone-wall-wide-page {
-//         .stone-wall-wide-page-wrapper {
-//             .stone-wall-wide-page-items {
-//                 width: 600px;
-//                 height: 1615px;
-//                 .stone-wall-wide-page-item-id1 {
-//                     width: 285px;
-//                     height: 285px;
-//                 }
-//                 .stone-wall-wide-page-item-id2 {
-//                     top: 945px;
-//                     left: 0px;
-//                     width: 285px;
-//                     height: 600px;
-//                 }
-//                 .stone-wall-wide-page-item-id3 {
-//                     top: 315px;
-//                     left: 0;
-//                     width: 600px;
-//                     height: 600px;
-//                 }
-//                 .stone-wall-wide-page-item-id4 {
-//                     top: 0px;
-//                     left: 316px;
-//                     width: 285px;
-//                     height: 285px;
-//                 }
-//                 .stone-wall-wide-page-item-id5 {
-//                     top: 945px;
-//                     left: 315px;
-//                     width: 285px;
-//                     height: 285px;
-//                 }
-//             }
-//         }
-//     }
-// }
 
 // @media only screen and (max-width: 670px){
 //     .stone-wall-wide-page {
