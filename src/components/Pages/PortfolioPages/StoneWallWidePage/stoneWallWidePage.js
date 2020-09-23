@@ -530,10 +530,10 @@ export const StoneWallWidePage = (props) => {
         <div className="stone-wall-wide-page" id="stoneWallWidePage">
             {renderToolbars()}
             <div className="stone-wall-wide-page-header">
-                <H65 className="h65-white-poppins">Tiam convallis,</H65>
-                <H65 className="h65-white-poppins">Felis quis dapibus libero.</H65>
+                <H65 className="h65-white-poppins-centered">Tiam convallis,</H65>
+                <H65 className="h65-white-poppins-centered">Felis quis dapibus libero.</H65>
                 <EH30/>
-                <H22 className="h22-nobel-lustria">Lorem ipsum dolor sit amet, quot nusquam mei cu diceret .</H22>
+                <H22 className="h22-nobel-lustria-centered">Lorem ipsum dolor sit amet, quot nusquam mei cu diceret .</H22>
             </div> 
             {renderStoneWallWideContent()}
             <Footer/>
