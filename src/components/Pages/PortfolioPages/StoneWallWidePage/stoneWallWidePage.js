@@ -258,7 +258,7 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
             setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
             setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
-            // setClassNameImg5("stone-wall-page-item-id5");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
         }
         // if(size.width < 840 && size.width > 670 && prevScreenWidthVal < size.width){
             // setClassNameImg2("stone-wall-page-item-id2-animation-expand2-screen");
