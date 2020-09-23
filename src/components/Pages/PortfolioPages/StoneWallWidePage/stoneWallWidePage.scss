@@ -45,17 +45,17 @@
             }
             
             .stone-wall-wide-page-item-id2-animation-expand-screen {
-                // position: absolute;
-                // top: 326.66px;
-                // left: 0;
-                // width: 420px;
-                // height: 420px;
-                // margin-right: 30px;
-                // margin-bottom: 30px;
-                // -webkit-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-                // -moz-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-                // -o-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-                // animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+                position: absolute;
+                top: 0px;
+                left: 253.25px;
+                width: 426.5px;
+                height: 459.5px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: stoneWallWidePageItemId2ExpandScreen 0.3s linear;
+                -moz-animation: stoneWallWidePageItemId2ExpandScreen 0.3s linear;
+                -o-animation: stoneWallWidePageItemId2ExpandScreen 0.3s linear;
+                animation: stoneWallWidePageItemId2ExpandScreen 0.3s linear;
             }
             .stone-wall-wide-page-item-id2-animation-narrow2-screen {
                 // position: absolute;
@@ -579,6 +579,49 @@
         left: 0px;
     }
 }
+
+@-webkit-keyframes stoneWallWidePageItemId2ExpandScreen {
+    from{
+        top: 408px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 253.25px;
+    }
+}
+@-moz-keyframes stoneWallWidePageItemId2ExpandScreen {
+    from{
+        top: 408px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 253.25px;
+    }
+}
+@-o-keyframes stoneWallWidePageItemId2ExpandScreen {
+    from{
+        top: 408px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 253.25px;
+    }
+}
+@keyframes stoneWallWidePageItemId2ExpandScreen {
+    from{
+        top: 408px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 253.25px;
+    }
+}
+
+
 
 @-webkit-keyframes stoneWallWidePageItemId3NarrowScreen {
     from{
