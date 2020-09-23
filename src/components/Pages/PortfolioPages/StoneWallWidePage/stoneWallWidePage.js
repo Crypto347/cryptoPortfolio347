@@ -249,11 +249,11 @@ export const StoneWallWidePage = (props) => {
         if(size.width < 1026 && size.width > 680 && prevScreenWidthVal < size.width){
             console.log("1")
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
-            // setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
-            // setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
-            // setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
-            // setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow-screen");
-            // setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow-screen");
+            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
+            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
+            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
+            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
         }
         if(size.width < 1026 && size.width > 680 && prevScreenWidthVal > size.width){
             console.log("2")
