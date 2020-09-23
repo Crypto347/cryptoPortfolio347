@@ -1,16 +1,16 @@
-html { 
-    height: 100%; 
-    // overflow:auto; 
-}
-body { height: 100%; }
-#app {
-    height: auto;
-}
-.app{
-    height: auto;
-}
+// html { 
+//     height: 100%; 
+//     // overflow:auto; 
+// }
+// body { height: 100%; }
+// #app {
+//     height: auto;
+// }
+// .app{
+//     height: auto;
+// }
 .main {
-    height: auto;
+    height: calc(100% - 16px);
     position: relative;
     top: -10px;
     left: -10px;

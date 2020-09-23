@@ -36,7 +36,7 @@ export class App extends Component {
 
    render(){
       return(
-         <div className="app">
+         // <div>
             <Switch>
                <Route 
                   path="/crypto-portfolio"
@@ -44,7 +44,7 @@ export class App extends Component {
                />
                <Redirect exact from="/" to="/crypto-portfolio"/>
             </Switch>
-         </div>
+         // </div>
       );
    }
 }

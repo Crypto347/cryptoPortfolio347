@@ -103,7 +103,7 @@ export const StoneWallWidePage = (props) => {
     const [imagesSize, setImagesSize] = useState({
         img1: {
             width: 0,
-            height:0,
+            height: 1500,
         }, 
         img2: {
             width: 0,
@@ -115,7 +115,7 @@ export const StoneWallWidePage = (props) => {
         },
         img4: {
             width: 0,
-            height: 0,
+            height: 1500,
         },
         img5: {
             width: 0,
