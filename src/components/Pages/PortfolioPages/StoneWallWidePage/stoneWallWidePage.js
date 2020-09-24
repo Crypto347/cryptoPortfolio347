@@ -246,7 +246,7 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg7("stone-wall-wide-page-item-id7");
         
         }
-        if(size.width < 1026 && size.width > 680 && prevScreenWidthVal < size.width){
+        if(size.width < 1026 && size.width > 841 && prevScreenWidthVal < size.width){
             console.log("1")
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
             setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
@@ -255,7 +255,7 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
             setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
         }
-        if(size.width < 1026 && size.width > 680 && prevScreenWidthVal > size.width){
+        if(size.width < 1026 && size.width > 841 && prevScreenWidthVal > size.width){
             console.log("2")
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
             setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
@@ -264,7 +264,7 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow-screen");
             setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow-screen");
         }
-        if(size.width < 840 && size.width > 670){
+        if(size.width < 840 && size.width > 670 ){
             setClassNameImg2("stone-wall-wide-page-item-id2");
             setClassNameImg3("stone-wall-wide-page-item-id3");
             setClassNameImg4("stone-wall-wide-page-item-id4");
@@ -273,10 +273,12 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg7("stone-wall-wide-page-item-id7");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal < size.width){
-            // setClassNameImg2("stone-wall-page-item-id2-animation-expand2-screen");
-            // setClassNameImg3("stone-wall-page-item-id3-animation-expand2-screen");
-            // setClassNameImg4("stone-wall-page-item-id4-animation-expand2-screen");
-            // setClassNameImg5("stone-wall-page-item-id5-animation-expand2-screen");
+            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
+            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
+            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
+            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand2-screen");
+            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand2-screen");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
