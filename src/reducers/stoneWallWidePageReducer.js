@@ -46,6 +46,28 @@ const fetchStoneWallWidePageFailur = (state, action) => {
     };
 }
 
+const setStoneWallWidePageIsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const stoneWallWidePageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_STONE_WALL_WIDE_PAGE_BEGIN:
@@ -54,6 +76,8 @@ const stoneWallWidePageReducer = (state = initialState, action) => {
             return fetchStoneWallWidePageSuccess (state, action);
         case actionTypes.FETCH_STONE_WALL_WIDE_PAGE_FAILURE:
             return fetchStoneWallWidePageFailur(state, action);
+        case actionTypes.SET_STONE_WALL_WIDE_PAGE_IS_HOVERING_CATEGORY:
+            return setStoneWallWidePageIsHoveringCategory(state, action);
         default: 
             return state;
     }

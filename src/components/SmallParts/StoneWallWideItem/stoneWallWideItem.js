@@ -51,7 +51,8 @@ export const StoneWallWideItem = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [paddingTopBottom, setPaddingTopBottom] = useState(0);
-    const [upload, setUpload] = useState(false)
+    const [upload, setUpload] = useState(false);
+    const [cardHeight, setCardHeight] = useState({});
  
     /**
     * Methods
@@ -105,8 +106,7 @@ export const StoneWallWideItem = (props) => {
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
 
-        setPaddingTopBottom(paddingTopBottomVal);
-        props.getImagesWidthAndHeight({
+        let obj = {
             img1: {
                 // width: document.getElementById("stoneWallWideItemId1").clientWidth,
                 height: document.getElementById("stoneWallWideItemId1").clientHeight,
@@ -135,7 +135,33 @@ export const StoneWallWideItem = (props) => {
                 // width: document.getElementById("stoneWallWideItemId7").clientWidth,
                 height: document.getElementById("stoneWallWideItemId7").clientHeight,
             }
-        })
+        }
+        setPaddingTopBottom(paddingTopBottomVal);
+        props.getImagesWidthAndHeight(obj)
+
+        switch(props.obj.id){
+            case 1:
+                setCardHeight(obj.img1.height - 80)
+                break;
+            case 2:
+                setCardHeight(obj.img2.height - 80)
+                break;
+            case 3:
+                setCardHeight(obj.img3.height - 80)
+                break;
+            case 4:
+                setCardHeight(obj.img4.height - 80)
+                break;
+            case 5:
+                setCardHeight(obj.img5.height - 80)
+                break;
+            case 6:
+                setCardHeight(obj.img6.height - 80)
+                break;
+            case 7:
+                setCardHeight(obj.img7.height - 80)
+                break;
+        }
     }
 
     const setPadding = (page) => {
@@ -150,7 +176,10 @@ export const StoneWallWideItem = (props) => {
             case 'curtain': 
                 setIsHovering("on");
                 handleResize();
-            break;
+                break;
+            case 'stoneWallWideItemCategory': 
+                props.setIsHoveringCategory("on", pathOfIds);
+                break;
         }
     }
 
@@ -158,6 +187,9 @@ export const StoneWallWideItem = (props) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
+                break;
+            case 'stoneWallWideItemCategory': 
+                props.setIsHoveringCategory("off", pathOfIds);
                 break;
         }
     }
@@ -183,8 +215,8 @@ export const StoneWallWideItem = (props) => {
         }
     }
 
-    const stoneWallOnClick = (e, path) => {
-        if(e.button === 2) return; 
+    const stoneWallWideItemOnClick = (e, path) => {
+        if(e.button === 2) return;
         localStorage.setItem("page", props.page);
         if(e.button !== 1){
             props.setUnmountComponentValues(true, path);
@@ -194,7 +226,32 @@ export const StoneWallWideItem = (props) => {
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
+    const onClickHandler = (e, path, key) => {
+        if(e.button === 2) return;
+        e.stopPropagation();       
+        localStorage.setItem("archiveCategory", key);
+        localStorage.setItem("page", props.page);
+        props.clearArchiveData();
+        if(e.button !== 1){
+            props.setUnmountComponentValues(true, path);
+        }else{
+            props.setUnmountComponentValues(false, path);
+        }
+        props.unmountComponent(null, null,  props.page, e.button);
+    }
+
+
     const renderClassName = (opt, isHovering) => {
+        if(opt === "stoneWallWideItemImage"){
+            switch(isHovering){
+                case 'init':
+                    return "stone-wall-wide-item-image-wrapper";
+                case 'on':
+                    return "stone-wall-wide-item-image-wrapper-hover-on";
+                case 'off':
+                    return "stone-wall-wide-item-image-wrapper-hover-off"
+            }
+        }
         if(opt === "curtain"){
             switch(isHovering){
                 case 'init':
@@ -205,14 +262,14 @@ export const StoneWallWideItem = (props) => {
                     return "stone-wall-wide-item-curtain-hover-off"
             }
         }
-        if(opt === "stoneWallWideItemImage"){
+        if(opt === "stoneWallWideItemCategory"){
             switch(isHovering){
                 case 'init':
-                    return "stone-wall-wide-item-image";
+                    return "h17-white-lustria-animated";
                 case 'on':
-                    return "stone-wall-wide-item-image-hover-on";
+                    return "h17-white-lustria-nobel-hover-on";
                 case 'off':
-                    return "stone-wall-wide-item-image-hover-off"
+                    return "h17-nobel-lustria-nobel-hover-off"
             }
         }
         if(opt === "header"){
@@ -225,16 +282,26 @@ export const StoneWallWideItem = (props) => {
                     return "h35-white-poppins-animated-opacity-hover-off"
             }
         }
-        if(opt === "arrow"){
-            switch(isHovering){
-                case 'init':
-                    return "display-none";
-                case 'on':
-                    return "stone-wall-item-image-arrow-wrapper-lengthen";
-                case 'off':
-                    return "stone-wall-item-image-arrow-wrapper-shorten"
-            }
-        }
+    }
+
+    const renderCategories = (obj) => {
+        return(
+            <div className="stone-wall-wide-item-categories">{obj.categories.map((el, i) => {
+                let pathOfIds = [obj.id, el.id];
+                return(
+                    <div 
+                        key={i}
+                        className="stone-wall-wide-item-category"
+                        onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
+                        onMouseEnter={() => handleMouseEnter(`stoneWallWideItemCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`stoneWallWideItemCategory`, null, pathOfIds)} 
+                    >
+                        <H17 className={renderClassName("stoneWallWideItemCategory", el.isHover)}>{el.label}</H17>
+                        {i !== obj.categories.length-1 ? <div className="stone-wall-wide-item-category-slash">/</div> : null}
+                    </div>
+                )
+            })}</div>
+        )
     }
 
     /**
@@ -257,18 +324,15 @@ export const StoneWallWideItem = (props) => {
                 />
             </div>
             <div 
+                // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `calc(100% - ${paddingTopBottom}px)`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
-                onMouseDown={(e) => stoneWallOnClick(e, props.obj.path)}
+                style={{height: `${cardHeight}px`}}
+                onMouseDown={(e) => stoneWallWideItemOnClick(e, props.obj.path)}
             >
-                <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
-                <EH20/>
-               <div className={renderClassName("arrow", isHovering)}>
-                    <div className="arrow-horizontal-line"/>
-                    <div className="arrow-wrapper2">
-                        <div className="arrow-top-line"></div>
-                        <div className="arrow-bottom-line"></div>
-                    </div>
+                {renderCategories(props.obj)}
+                <div className="stone-wall-wide-item-header-wrapper">
+                    <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
+                    <div className="stone-wall-wide-item-line"/>
                 </div>
             </div>
         </div>

@@ -19,3 +19,11 @@ export function fetchStoneWallWidePageFailur(err) {
         err: err
     };
 };
+
+export function setStoneWallWidePageIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_STONE_WALL_WIDE_PAGE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};

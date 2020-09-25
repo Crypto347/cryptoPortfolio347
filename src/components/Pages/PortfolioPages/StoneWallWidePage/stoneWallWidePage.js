@@ -497,6 +497,8 @@ export const StoneWallWidePage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
+                            setIsHoveringCategory={props.setStoneWallWidePageIsHoveringCategory}
+                            clearArchiveData={props.clearArchiveData}
                         />
                     </div>
                 )
@@ -559,6 +561,7 @@ export default connect(
             stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+          
         };
     },
     (dispatch) => {
@@ -567,7 +570,7 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
+            setStoneWallWidePageIsHoveringCategory: bindActionCreators(Actions.setStoneWallWidePageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
