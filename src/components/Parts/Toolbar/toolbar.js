@@ -151,7 +151,7 @@ export const Toolbar = (props) => {
             switch(opt){
                 case 'optionItem': 
                     currentItemId = props.menuItems
-                        .find(item => item.active === true).options
+                        .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
                         .find(item => item.active === true).id;
 
@@ -167,7 +167,7 @@ export const Toolbar = (props) => {
                 case 'subOptionItem': 
                 // need to updated portfolioUtility
                     currentItemId = props.menuItems
-                        .find(item => item.active === true).options
+                        .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
                         .find(item => item.active === true).subOptions
                         .find(item => item.active === true).id;

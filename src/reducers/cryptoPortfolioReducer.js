@@ -654,6 +654,7 @@ const clearActivityOfMenuItems = (state, action) => {
     updatedMenuItems.map((el, i) => {
         updatedMenuItems[i].active = false;
         updatedMenuItems[i].options.map((el2, i2) => {
+            // updatedMenuItems[i].options[i2].active = false;
             updatedMenuItems[i].options[i2].array.map((el3, i3) => {
                 updatedMenuItems[i].options[i2].array[i3].active = false;
                 updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
