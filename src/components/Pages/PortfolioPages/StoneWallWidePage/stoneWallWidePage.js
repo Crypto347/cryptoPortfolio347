@@ -151,8 +151,8 @@ export const StoneWallWidePage = (props) => {
             resizeRef.current();
         }
 
-        let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems').clientWidth;
-        
+        let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems')?.clientWidth;
+
         setImagesSize({
             img1: {
                 width: (stoneWallWidePageItemsWidth - 80)/4,
@@ -183,7 +183,7 @@ export const StoneWallWidePage = (props) => {
                 height: 0,
             }
         })
- 
+        
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
 
@@ -371,7 +371,7 @@ export const StoneWallWidePage = (props) => {
             case 1:
                 return {
                     width: `${imagesSize.img1.width}`,
-                    // height: `${100/3}%`
+                    height: `${100/3}%`
                 };
             case 2:
                 return {
@@ -391,28 +391,28 @@ export const StoneWallWidePage = (props) => {
                 return {
                     position: "absolute",
                     width: `${imagesSize.img4.width}`,
-                    top: `${imagesSize.img1.height + 40}`,
+                    top: `${imagesSize.img1.width + 40}`,
                     left: "0px"
                 };
             case 5:
                 return {
                     position: "absolute",
                     width: `${imagesSize.img5.width}`,
-                    top: `${imagesSize.img1.height + 40}`,
+                    top: `${imagesSize.img1.width + 40}`,
                     left: `${imagesSize.img4.width + 40 + imagesSize.img2.width + 40}`
                 };
             case 6:
                 return {
                     position: "absolute",
                     width: `${imagesSize.img6.width}`,
-                    top: `${imagesSize.img2.height + 40}`,
+                    top: `${imagesSize.img2.width + 80}`,
                     left: `${imagesSize.img4.width + 40}`
                 };
             case 7:
                 return {
                     position: "absolute",
                     width: `${imagesSize.img7.width}`,
-                    top: `${imagesSize.img2.height + 40}`,
+                    top: `${imagesSize.img2.width + 80}`,
                     left: `${imagesSize.img4.width + 40 + imagesSize.img5.width + 40}`
                 };
         }
