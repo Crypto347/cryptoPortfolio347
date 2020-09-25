@@ -236,7 +236,7 @@ export const StoneWallWidePage = (props) => {
         if(size.width > 1040){
             return null;
         }
-        if(size.width < 1040 && size.width > 1026 && prevScreenWidthVal > size.width){
+        if(size.width > 1026){
             setClassNameImg1("stone-wall-wide-page-item-id1");
             setClassNameImg2("stone-wall-wide-page-item-id2");
             setClassNameImg3("stone-wall-wide-page-item-id3");
@@ -246,8 +246,7 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg7("stone-wall-wide-page-item-id7");
         
         }
-        if(size.width < 1026 && size.width > 841 && prevScreenWidthVal < size.width){
-            console.log("1")
+        if(size.width < 1026 && size.width > 1024 && prevScreenWidthVal < size.width){
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
             setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
             setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
@@ -255,8 +254,7 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
             setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
         }
-        if(size.width < 1026 && size.width > 841 && prevScreenWidthVal > size.width){
-            console.log("2")
+        if(size.width < 1025 && size.width > 839 && prevScreenWidthVal > size.width){
             setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
             setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
             setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
@@ -288,12 +286,14 @@ export const StoneWallWidePage = (props) => {
             setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow2-screen");
             setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow2-screen");
         }
-        // if(size.width < 480){
-            // setClassNameImg2("stone-wall-page-item-id2");
-            // setClassNameImg3("stone-wall-page-item-id3");
-            // setClassNameImg4("stone-wall-page-item-id4");
-            // setClassNameImg5("stone-wall-page-item-id5");
-        // }
+        if(size.width < 480){
+            setClassNameImg2("stone-wall-wide-page-item-id2");
+            setClassNameImg3("stone-wall-wide-page-item-id3");
+            setClassNameImg4("stone-wall-wide-page-item-id4");
+            setClassNameImg5("stone-wall-wide-page-item-id5");
+            setClassNameImg6("stone-wall-wide-page-item-id6");
+            setClassNameImg7("stone-wall-wide-page-item-id7");
+        }
         // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
             // console.log("long1")
 
@@ -480,7 +480,7 @@ export const StoneWallWidePage = (props) => {
                     position: "relative",
                     width: "100%",
                     height: `${imagesSize.img1.height + 40 + imagesSize.img4.height}`,
-                    border: "2px solid red"
+                    // border: "2px solid red"
                 }}
             >{props.stoneWallWidePage.items.map((el, i) => {
                 return(

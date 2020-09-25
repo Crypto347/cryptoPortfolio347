@@ -140,7 +140,7 @@ export const StoneWallPage = (props) => {
             setClassNameImg4("stone-wall-page-item-id4");
             setClassNameImg5("stone-wall-page-item-id5");
         }
-        if(size.width < 1200 && size.width > 1024 && prevScreenWidthVal < size.width){
+        if(size.width < 1200 && size.width > 1027 && prevScreenWidthVal < size.width){
             setClassNameImg2("stone-wall-page-item-id2-animation-expand-screen");
             setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
             setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
