@@ -28,7 +28,7 @@ import './metroPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import StoneWallItem from '../../../SmallParts/StoneWallItem/stoneWallItem';
+import MetroItem from '../../../SmallParts/MetroItem/metroItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -92,6 +92,59 @@ export const MetroPage = (props) => {
     const [classNameImg3, setClassNameImg3] = useState('stone-wall-page-item-id3');
     const [classNameImg4, setClassNameImg4] = useState('stone-wall-page-item-id4');
     const [classNameImg5, setClassNameImg5] = useState('stone-wall-page-item-id5');
+    const [classNameImg6, setClassNameImg6] = useState('stone-wall-page-item-id6');
+    const [classNameImg7, setClassNameImg7] = useState('stone-wall-page-item-id7');
+    const [classNameImg8, setClassNameImg8] = useState('stone-wall-page-item-id8');
+    const [classNameImg9, setClassNameImg9] = useState('stone-wall-page-item-id9');
+    const [classNameImg10, setClassNameImg10] = useState('stone-wall-page-item-id10');
+    const [classNameImg11, setClassNameImg11] = useState('stone-wall-page-item-id11');
+
+    const [imagesSize, setImagesSize] = useState({
+        img1: {
+            width: 0,
+            height: 0,
+        }, 
+        img2: {
+            width: 0,
+            height: 0,
+        }, 
+        img3: {
+            width: 0,
+            height: 0,
+        },
+        img4: {
+            width: 0,
+            height: 0,
+        },
+        img5: {
+            width: 0,
+            height: 0,
+        },
+        img6: {
+            width: 0,
+            height: 0,
+        },
+        img7: {
+            width: 0,
+            height: 0,
+        },
+        img8: {
+            width: 0,
+            height: 0,
+        },
+        img9: {
+            width: 0,
+            height: 0,
+        },
+        img10: {
+            width: 0,
+            height: 0,
+        },
+        img11: {
+            width: 0,
+            height: 0,
+        }
+    });
 
     /**
     * Methods
@@ -99,11 +152,11 @@ export const MetroPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.stoneWallPage.items.length === 0){
-            props.fetchStoneWallPage();
+        if(props.metroPage.items.length === 0){
+            props.fetchMetroPage();
         }
         let timeout = setTimeout(() => {
-            if(!props.stoneWallPage.loading && !props.stoneWallPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.metroPage.loading && !props.metroPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
@@ -132,55 +185,127 @@ export const MetroPage = (props) => {
     });
 
     const handleResize = (e) => {
+        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems').clientWidth;
+        
+        setImagesSize({
+            img1: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/4,
+            }, 
+            img2: {
+                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+                height: (stoneWallWidePageItemsWidth - 80)/4*2,
+            }, 
+            img3: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth - 80)/4,
+            },
+            img4: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img5: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth - 80)/4,
+            },
+            img6: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth - 80)/4,
+            },
+            img7: {
+                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img8: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth)/3,
+            },
+            img9: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth - 80)/4,
+            },
+            img10: {
+                width: (stoneWallWidePageItemsWidth - 80)/4,
+                height: (stoneWallWidePageItemsWidth - 80)/4,
+            },
+            img11: {
+                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+                height: (stoneWallWidePageItemsWidth)/3,
+            }
+        })
         setPrevScreenWidthVal(size.width);
-        console.log(prevScreenWidthVal, size.width)
-        if(size.width > 1200){
-            setClassNameImg2("stone-wall-page-item-id2");
-            setClassNameImg3("stone-wall-page-item-id3");
-            setClassNameImg4("stone-wall-page-item-id4");
-            setClassNameImg5("stone-wall-page-item-id5");
+        if(size.width > 1040){
+            return null;
         }
-        if(size.width < 1200 && size.width > 1027 && prevScreenWidthVal < size.width){
-            setClassNameImg2("stone-wall-page-item-id2-animation-expand-screen");
-            setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
-            setClassNameImg4("stone-wall-page-item-id4-animation-expand-screen");
-            setClassNameImg5("stone-wall-page-item-id5-animation-expand-screen");
+        if(size.width > 1026){
+            setClassNameImg1("stone-wall-wide-page-item-id1");
+            setClassNameImg2("stone-wall-wide-page-item-id2");
+            setClassNameImg3("stone-wall-wide-page-item-id3");
+            setClassNameImg4("stone-wall-wide-page-item-id4");
+            setClassNameImg5("stone-wall-wide-page-item-id5");
+            setClassNameImg6("stone-wall-wide-page-item-id6");
+            setClassNameImg7("stone-wall-wide-page-item-id7");
+        
         }
-        if(size.width < 1025 && size.width > 840){
-            setClassNameImg2("stone-wall-page-item-id2-animation-narrow-screen");
-            setClassNameImg3("stone-wall-page-item-id3-animation-narrow-screen");
-            setClassNameImg4("stone-wall-page-item-id4-animation-narrow-screen");
-            setClassNameImg5("stone-wall-page-item-id5-animation-narrow-screen");
+        if(size.width < 1026 && size.width > 1024 && prevScreenWidthVal < size.width){
+            setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand-screen");
+            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
+            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
+            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
+            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
+            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
+        }
+        if(size.width < 1025 && size.width > 840 && prevScreenWidthVal > size.width){
+            setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow-screen");
+            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
+            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
+            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
+            setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow-screen");
+            setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow-screen");
         }
         if(size.width < 840 && size.width > 670 ){
-            setClassNameImg2("stone-wall-page-item-id2");
-            setClassNameImg3("stone-wall-page-item-id3");
-            setClassNameImg4("stone-wall-page-item-id4");
-            setClassNameImg5("stone-wall-page-item-id5");
+            setClassNameImg1("stone-wall-wide-page-item-id1");
+            setClassNameImg2("stone-wall-wide-page-item-id2");
+            setClassNameImg3("stone-wall-wide-page-item-id3");
+            setClassNameImg4("stone-wall-wide-page-item-id4");
+            setClassNameImg5("stone-wall-wide-page-item-id5");
+            setClassNameImg6("stone-wall-wide-page-item-id6");
+            setClassNameImg7("stone-wall-wide-page-item-id7");
         }
-        if(size.width < 670 && size.width > 480 && prevScreenWidthVal < size.width){
-            setClassNameImg2("stone-wall-page-item-id2-animation-expand2-screen");
-            setClassNameImg3("stone-wall-page-item-id3-animation-expand2-screen");
-            setClassNameImg4("stone-wall-page-item-id4-animation-expand2-screen");
-            setClassNameImg5("stone-wall-page-item-id5-animation-expand2-screen");
+        if(size.width < 480 && prevScreenWidthVal < size.width){
+            setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand2-screen");
+            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
+            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
+            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
+            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand2-screen");
+            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand2-screen");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
-            setClassNameImg2("stone-wall-page-item-id2-animation-narrow2-screen");
-            setClassNameImg3("stone-wall-page-item-id3-animation-narrow2-screen");
-            setClassNameImg4("stone-wall-page-item-id4-animation-narrow2-screen");
-            setClassNameImg5("stone-wall-page-item-id5-animation-narrow2-screen");
+            setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow2-screen");
+            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
+            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
+            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
+            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
+            setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow2-screen");
+            setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow2-screen");
         }
         if(size.width < 480){
-            setClassNameImg2("stone-wall-page-item-id2");
-            setClassNameImg3("stone-wall-page-item-id3");
-            setClassNameImg4("stone-wall-page-item-id4");
-            setClassNameImg5("stone-wall-page-item-id5");
+            setClassNameImg1("stone-wall-wide-page-item-id1");
+            setClassNameImg2("stone-wall-wide-page-item-id2");
+            setClassNameImg3("stone-wall-wide-page-item-id3");
+            setClassNameImg4("stone-wall-wide-page-item-id4");
+            setClassNameImg5("stone-wall-wide-page-item-id5");
+            setClassNameImg6("stone-wall-wide-page-item-id6");
+            setClassNameImg7("stone-wall-wide-page-item-id7");
         }
-        if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
-            console.log("long1")
+        // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
+            // console.log("long1")
 
             // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
-        }
+        // }
 
         // if(size.width < 770 && size.width > 680 && size.width < prevScreenWidthVal){
         //     console.log("short2");
@@ -192,7 +317,7 @@ export const MetroPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("stoneWallPage");
+        let el = document.getElementById("metroPage");
     
         // Check scroll direction
 
@@ -218,12 +343,12 @@ export const MetroPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="stoneWallPage"
+                        page="metroPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="stoneWallPage"
+                        page="metroPage"
                     />
                 </>
             )
@@ -234,19 +359,102 @@ export const MetroPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="stoneWallPage"
+                        page="metroPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="stoneWallPage"
+                        page="metroPage"
                     />
                 </>
             )
         }
     }
 
+    const renderStyle = (id, ) => {
+        if(size.width < 1040) return null;
+        
+        switch(id){
+            case 1:
+                return {
+                    width: `${imagesSize.img1.width}`,
+                    height: `${100/3}%`
+                };
+            case 2:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img2.width}`,
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40}`
+                };
+            case 3:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img3.width}`,
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40}`
+                };
+            case 4:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img4.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: "0px"
+                };
+            case 5:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img5.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: `${imagesSize.img4.width + 40 + imagesSize.img2.width + 40}`
+                };
+            case 6:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img6.width}`,
+                    top: `${imagesSize.img2.width + 80}`,
+                    left: `${imagesSize.img4.width + 40}`
+                };
+            case 7:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img7.width}`,
+                    top: `${imagesSize.img2.width + 80}`,
+                    left: `${imagesSize.img4.width + 40 + imagesSize.img5.width + 40}`
+                };
+            case 8:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img4.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: "0px"
+                };
+            case 9:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img5.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: `${imagesSize.img4.width + 40 + imagesSize.img2.width + 40}`
+                };
+            case 10:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img6.width}`,
+                    top: `${imagesSize.img2.width + 80}`,
+                    left: `${imagesSize.img4.width + 40}`
+                };
+            case 11:
+                return {
+                    position: "absolute",
+                    width: `${imagesSize.img7.width}`,
+                    top: `${imagesSize.img2.width + 80}`,
+                    left: `${imagesSize.img4.width + 40 + imagesSize.img5.width + 40}`
+                };
+        }
+    }
+
     const renderClassName = (id) => {
+        if(size.width > 1040) return null;
         switch(id){
             case 1:
                 return classNameImg1;
@@ -258,24 +466,98 @@ export const MetroPage = (props) => {
                 return classNameImg4;
             case 5:
                 return classNameImg5;
+            case 6:
+                return classNameImg6;
+            case 7:
+                return classNameImg7;
+            case 8:
+                return classNameImg8;
+            case 9:
+                return classNameImg9;
+            case 10:
+                return classNameImg10;
+            case 11:
+                return classNameImg11;
         }
     }
+
+    const getImagesWidthAndHeight = (obj) => {
+        setImagesSize({
+            img1: {
+                ...imagesSize.img1,
+                height: obj.img1.height
+            }, 
+            img2: {
+                ...imagesSize.img2,
+                height: obj.img2.height
+            }, 
+            img3: {
+                ...imagesSize.img3,
+                height: obj.img3.height
+            },
+            img4: {
+                ...imagesSize.img4,
+                height: obj.img4.height
+            },
+            img5: {
+                ...imagesSize.img5,
+                height: obj.img5.height
+            },
+            img6: {
+                ...imagesSize.img6,
+                height: obj.img6.height
+            },
+            img7: {
+                ...imagesSize.img7,
+                height: obj.img7.height,
+            },
+            img8: {
+                ...imagesSize.img4,
+                height: obj.img4.height
+            },
+            img9: {
+                ...imagesSize.img5,
+                height: obj.img5.height
+            },
+            img10: {
+                ...imagesSize.img6,
+                height: obj.img6.height
+            },
+            img11: {
+                ...imagesSize.img7,
+                height: obj.img7.height,
+            }
+        })
+    }
     
-    const renderStoneWallPageData = () => {
+    const renderMetroPageData = () => {
         return(
-            <div className="stone-wall-page-items">{props.stoneWallPage.items.map((el, i) => {
+            <div 
+                id="metroPageItems"
+                className="stone-wall-wide-page-items"
+                style={{
+                    position: "relative",
+                    width: "100%",
+                    height: `${imagesSize.img1.height + 40 + imagesSize.img4.height}`,
+                    // border: "2px solid red"
+                }}
+            >{props.metroPage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
                         id={el.key}
-                        // className={`stone-wall-page-item-id${el.id}`}
+                        // className={`stone-wall-wide-page-item-id${el.id}`}
                         className={renderClassName(el.id)}
+                        style={renderStyle(el.id)}
                     >
-                        <StoneWallItem
-                            page="stoneWallPage"
+                        <MetroItem
+                            page="metroPage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent} 
+                            unmountComponent={props.unmountComponent}
+                            getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
+                            setIsHoveringCategory={props.setStoneWallWidePageIsHoveringCategory}
+                            clearArchiveData={props.clearArchiveData}
                         />
                     </div>
                 )
@@ -283,8 +565,8 @@ export const MetroPage = (props) => {
         )
     }
 
-    const renderStoneWallContent = () => {
-        if(props.stoneWallPage.loading && !props.stoneWallPage.error){
+    const renderMetroContent = () => {
+        if(props.metroPage.loading && !props.metroPage.error){
             return(
                 <div 
                     className="stone-wall-page-loading-error" 
@@ -294,23 +576,23 @@ export const MetroPage = (props) => {
                 </div>
             )
         }
-        if(!props.stoneWallPage.loading && !props.stoneWallPage.error){
+        if(!props.metroPage.loading && !props.metroPage.error){
             return(
                 <div className="stone-wall-page-wrapper">
                     <div className="stone-wall-page-header">
                         <H65 className="h65-nero-poppins">Metro</H65>
                     </div> 
-                    {renderStoneWallPageData()}
+                    {renderMetroPageData()}
                 </div>
             )
         }
-        if(!props.stoneWallPage.loading && props.stoneWallPage.error){
+        if(!props.metroPage.loading && props.metroPage.error){
             return(
                 <div 
                     className="stone-wall-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.stoneWallPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.metroPage.error}`}</H15>
                 </div>
             )
         }
@@ -321,9 +603,9 @@ export const MetroPage = (props) => {
     */
 
     return(
-        <div className="stone-wall-page" id="stoneWallPage">
+        <div className="stone-wall-page" id="metroPage">
             {renderToolbars()}
-            {renderStoneWallContent()}
+            {renderMetroContent()}
             <Footer/>
         </div>   
     );
@@ -332,14 +614,14 @@ export const MetroPage = (props) => {
 export default connect(
     (state) => {
         return {
-            stoneWallPage: Selectors.getStoneWallPageState(state),
+            metroPage: Selectors.getMetroPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
+            fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),

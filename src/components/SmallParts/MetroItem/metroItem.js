@@ -12,7 +12,7 @@ import React, {
 * Styles
 */
 
-import './stoneWallWideItem.scss';
+import './metroItem.scss';
 
 /**
 * Utility
@@ -39,10 +39,10 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
-* StoneWallWideItem component definition and export
+* MetroItem component definition and export
 */
 
-export const StoneWallWideItem = (props) => {
+export const MetroItem = (props) => {
 
     /**
     * State
@@ -67,31 +67,47 @@ export const StoneWallWideItem = (props) => {
             props.getImagesWidthAndHeight({
                 img1: {
                     // width: document.getElementById("stoneWallWideItemId1").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId1").clientHeight,
+                    height: document.getElementById("metroItemId1").clientHeight,
                 }, 
                 img2: {
-                    // width: document.getElementById("stoneWallWideItemId2").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId2").clientHeight,
+                    // width: document.getElementById("metroItemId2").clientWidth,
+                    height: document.getElementById("metroItemId2").clientHeight,
                 }, 
                 img3: {
-                    // width: document.getElementById("stoneWallWideItemId3").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId3").clientHeight,
+                    // width: document.getElementById("metroItemId3").clientWidth,
+                    height: document.getElementById("metroItemId3").clientHeight,
                 },
                 img4: {
-                    // width: document.getElementById("stoneWallWideItemId4").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId4").clientHeight,
+                    // width: document.getElementById("metroItemId4").clientWidth,
+                    height: document.getElementById("metroItemId4").clientHeight,
                 },
                 img5: {
-                    // width: document.getElementById("stoneWallWideItemId5").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId5").clientHeight,
+                    // width: document.getElementById("metroItemId5").clientWidth,
+                    height: document.getElementById("metroItemId5").clientHeight,
                 },
                 img6: {
-                    // width: document.getElementById("stoneWallWideItemId6").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId6").clientHeight,
+                    // width: document.getElementById("metroItemId6").clientWidth,
+                    height: document.getElementById("metroItemId6").clientHeight,
                 },
                 img7: {
-                    // width: document.getElementById("stoneWallWideItemId7").clientWidth,
-                    height: document.getElementById("stoneWallWideItemId7").clientHeight,
+                    // width: document.getElementById("metroItemId7").clientWidth,
+                    height: document.getElementById("metroItemId7").clientHeight,
+                },
+                img8: {
+                    // width: document.getElementById("metroItemId8").clientWidth,
+                    height: document.getElementById("metroItemId8").clientHeight,
+                },
+                img9: {
+                    // width: document.getElementById("metroItemId9").clientWidth,
+                    height: document.getElementById("metroItemId9").clientHeight,
+                },
+                img10: {
+                    // width: document.getElementById("metroItemId10").clientWidth,
+                    height: document.getElementById("metroItemId10").clientHeight,
+                },
+                img11: {
+                    // width: document.getElementById("metroItemId11").clientWidth,
+                    height: document.getElementById("metroItemId11").clientHeight,
                 }
             })
         }       
@@ -108,32 +124,48 @@ export const StoneWallWideItem = (props) => {
 
         let obj = {
             img1: {
-                // width: document.getElementById("stoneWallWideItemId1").clientWidth,
-                height: document.getElementById("stoneWallWideItemId1").clientHeight,
+                // width: document.getElementById("metroItemId1").clientWidth,
+                height: document.getElementById("metroItemId1").clientHeight,
             }, 
             img2: {
-                // width: document.getElementById("stoneWallWideItemId2").clientWidth,
-                height: document.getElementById("stoneWallWideItemId2").clientHeight,
+                // width: document.getElementById("metroItemId2").clientWidth,
+                height: document.getElementById("metroItemId2").clientHeight,
             }, 
             img3: {
-                // width: document.getElementById("stoneWallWideItemId3").clientWidth,
-                height: document.getElementById("stoneWallWideItemId3").clientHeight,
+                // width: document.getElementById("metroItemId3").clientWidth,
+                height: document.getElementById("metroItemId3").clientHeight,
             },
             img4: {
-                // width: document.getElementById("stoneWallWideItemId4").clientWidth,
-                height: document.getElementById("stoneWallWideItemId4").clientHeight,
+                // width: document.getElementById("metroItemId4").clientWidth,
+                height: document.getElementById("metroItemId4").clientHeight,
             },
             img5: {
-                // width: document.getElementById("stoneWallWideItemId5").clientWidth,
-                height: document.getElementById("stoneWallWideItemId5").clientHeight,
+                // width: document.getElementById("metroItemId5").clientWidth,
+                height: document.getElementById("metroItemId5").clientHeight,
             },
             img6: {
-                // width: document.getElementById("stoneWallWideItemId6").clientWidth,
-                height: document.getElementById("stoneWallWideItemId6").clientHeight,
+                // width: document.getElementById("metroItemId6").clientWidth,
+                height: document.getElementById("metroItemId6").clientHeight,
             },
             img7: {
-                // width: document.getElementById("stoneWallWideItemId7").clientWidth,
-                height: document.getElementById("stoneWallWideItemId7").clientHeight,
+                // width: document.getElementById("metroItemId7").clientWidth,
+                height: document.getElementById("metroItemId7").clientHeight,
+            },
+            img8: {
+                // width: document.getElementById("metroItemId8").clientWidth,
+                height: document.getElementById("metroItemId8").clientHeight,
+            },
+            img9: {
+                // width: document.getElementById("metroItemId9").clientWidth,
+                height: document.getElementById("metroItemId9").clientHeight,
+            },
+            img10: {
+                // width: document.getElementById("metroItemId10").clientWidth,
+                height: document.getElementById("metroItemId10").clientHeight,
+            },
+            img11: {
+                // width: document.getElementById("metroItemId11").clientWidth,
+                height: document.getElementById("metroItemId11").clientHeight,
             }
         }
         setPaddingTopBottom(paddingTopBottomVal);
@@ -161,12 +193,24 @@ export const StoneWallWideItem = (props) => {
             case 7:
                 setCardHeight(obj.img7.height - 80);
                 break;
+            case 8:
+                setCardHeight(obj.img8.height - 80);
+                break;
+            case 9:
+                setCardHeight(obj.img9.height - 80);
+                break;
+            case 10:
+                setCardHeight(obj.img10.height - 80);
+                break;
+            case 11:
+                setCardHeight(obj.img11.height - 80);
+                break;
         }
     }
 
     const setPadding = (page) => {
         switch(page){
-            case 'stoneWallWidePage':
+            case 'metroPage':
                 return 40;
         }
     }
@@ -177,7 +221,7 @@ export const StoneWallWideItem = (props) => {
                 setIsHovering("on");
                 handleResize();
                 break;
-            case 'stoneWallWideItemCategory': 
+            case 'metroItemCategory': 
                 props.setIsHoveringCategory("on", pathOfIds);
                 break;
         }
@@ -188,7 +232,7 @@ export const StoneWallWideItem = (props) => {
             case 'curtain': 
                 setIsHovering("off");
                 break;
-            case 'stoneWallWideItemCategory': 
+            case 'metroItemCategory': 
                 props.setIsHoveringCategory("off", pathOfIds);
                 break;
         }
@@ -196,19 +240,19 @@ export const StoneWallWideItem = (props) => {
 
     const loadImg = (key) => {
         switch(key) {
-            case 'stoneWallWideCover1':
+            case 'metroCover1':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_1;
-            case 'stoneWallWideCover2':
+            case 'metroCover2':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_2;
-            case 'stoneWallWideCover3':
+            case 'metroCover3':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_3;
-            case 'stoneWallWideCover4':
+            case 'metroCover4':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_4;
-            case 'stoneWallWideCover5':
+            case 'metroCover5':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_5;
-            case 'stoneWallWideCover6':
+            case 'metroCover6':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_6;
-            case 'stoneWallWideCover7':
+            case 'metroCover7':
                 return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_7;
             default:
                 return "";
@@ -242,7 +286,7 @@ export const StoneWallWideItem = (props) => {
 
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "stoneWallWideItemImage"){
+        if(opt === "metroItemImage"){
             switch(isHovering){
                 case 'init':
                     return "stone-wall-wide-item-image-wrapper";
@@ -262,7 +306,7 @@ export const StoneWallWideItem = (props) => {
                     return "stone-wall-wide-item-curtain-hover-off"
             }
         }
-        if(opt === "stoneWallWideItemCategory"){
+        if(opt === "metroItemCategory"){
             switch(isHovering){
                 case 'init':
                     return "h17-white-lustria-animated";
@@ -293,10 +337,10 @@ export const StoneWallWideItem = (props) => {
                         key={i}
                         className="stone-wall-wide-item-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`stoneWallWideItemCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`stoneWallWideItemCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`metroItemCategory`, null, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`metroItemCategory`, null, pathOfIds)} 
                     >
-                        <H17 className={renderClassName("stoneWallWideItemCategory", el.isHover)}>{el.label}</H17>
+                        <H17 className={renderClassName("metroItemCategory", el.isHover)}>{el.label}</H17>
                         {i !== obj.categories.length-1 ? <div className="stone-wall-wide-item-category-slash">/</div> : null}
                     </div>
                 )
@@ -314,9 +358,9 @@ export const StoneWallWideItem = (props) => {
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
-            id={`stoneWallWideItemId${props.obj.id}`}
+            id={`metroItemId${props.obj.id}`}
         >
-            <div className={renderClassName("stoneWallWideItemImage", isHovering)}>
+            <div className={renderClassName("metroItemImage", isHovering)}>
                 <img 
                     id="img"
                     src={loadImg(props.obj.coverImage.key)} 
@@ -339,4 +383,4 @@ export const StoneWallWideItem = (props) => {
     );
 }
 
-export default StoneWallWideItem;
+export default MetroItem;

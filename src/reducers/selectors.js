@@ -295,3 +295,10 @@ export const getStoneWallWidePageState = createSelector(
     [getStoneWallWidePage],
     (x) => x
 );
+
+const getMetroPage = (state) => state.metroPage;
+
+export const getMetroPageState = createSelector(
+    [getMetroPage],
+    (x) => x
+);

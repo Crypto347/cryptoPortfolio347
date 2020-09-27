@@ -503,6 +503,24 @@ export function fetchStoneWallWidePage() {
     };
 }
 
+export function fetchMetroPage() {
+    return dispatch => {
+        dispatch(Actions.fetchMetroPageBegin());
+        return fetch(`http://localhost:3005/api/metro-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchMetroPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchMetroPageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

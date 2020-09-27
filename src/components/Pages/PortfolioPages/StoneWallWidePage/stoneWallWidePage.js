@@ -370,7 +370,7 @@ export const StoneWallWidePage = (props) => {
         }
     }
 
-    const renderStyle = (id, ) => {
+    const renderStyle = (id) => {
         if(size.width < 1040) return null;
         
         switch(id){
