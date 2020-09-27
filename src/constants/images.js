@@ -702,3 +702,31 @@ export const STONE_WALL_WIDE_PAGE_COVER_PIC_4 = StoneWallWidePageCoverPic4;
 export const STONE_WALL_WIDE_PAGE_COVER_PIC_5 = StoneWallWidePageCoverPic5;
 export const STONE_WALL_WIDE_PAGE_COVER_PIC_6 = StoneWallWidePageCoverPic6;
 export const STONE_WALL_WIDE_PAGE_COVER_PIC_7 = StoneWallWidePageCoverPic7;
+
+/**
+* Metro Page Cover Pictures
+*/
+
+import MetroPageCoverPic1 from '../images/metroPageCoverPictures/daily-nouri-E5Oo4nENq2M-metro-page-unsplash.png';
+import MetroPageCoverPic2 from '../images/metroPageCoverPictures/nathan-dumlao-pnmRtTHWqDM-metro-page-unsplash.png';
+import MetroPageCoverPic3 from '../images/metroPageCoverPictures/dose-media-bU6JyhSI6zo-metro-page-unsplash.png';
+import MetroPageCoverPic4 from '../images/metroPageCoverPictures/paper-3025558_1920-metro-page.png';
+import MetroPageCoverPic5 from '../images/metroPageCoverPictures/jason-blackeye-DKCgibUVLNc-metro-page-unsplash.png';
+import MetroPageCoverPic6 from '../images/metroPageCoverPictures/jess-bailey-_969XXSgWc0-metro-page-unsplash.png';
+import MetroPageCoverPic7 from '../images/metroPageCoverPictures/glenn-carstens-peters-RLw-UC03Gwc-metro-page-unsplash.png';
+import MetroPageCoverPic8 from '../images/metroPageCoverPictures/jane-palash-iaofnd2IdFU-metro-page-unsplash.png';
+import MetroPageCoverPic9 from '../images/metroPageCoverPictures/leone-venter-pVt9j3iWtPM-metro-page-unsplash.png';
+import MetroPageCoverPic10 from '../images/metroPageCoverPictures/freestocks-A11MXTzUhLE-metro-page-unsplash.png';
+import MetroPageCoverPic11 from '../images/metroPageCoverPictures/ohmky-lQwWZI_WjSU-metro-page-unsplash.png';
+
+export const METRO_PAGE_COVER_PIC_1 = MetroPageCoverPic1;
+export const METRO_PAGE_COVER_PIC_2 = MetroPageCoverPic2;
+export const METRO_PAGE_COVER_PIC_3 = MetroPageCoverPic3;
+export const METRO_PAGE_COVER_PIC_4 = MetroPageCoverPic4;
+export const METRO_PAGE_COVER_PIC_5 = MetroPageCoverPic5;
+export const METRO_PAGE_COVER_PIC_6 = MetroPageCoverPic6;
+export const METRO_PAGE_COVER_PIC_7 = MetroPageCoverPic7;
+export const METRO_PAGE_COVER_PIC_8 = MetroPageCoverPic8;
+export const METRO_PAGE_COVER_PIC_9 = MetroPageCoverPic9;
+export const METRO_PAGE_COVER_PIC_10 = MetroPageCoverPic10;
+export const METRO_PAGE_COVER_PIC_11 = MetroPageCoverPic11;

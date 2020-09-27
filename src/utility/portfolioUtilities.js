@@ -36,6 +36,8 @@ export const findPathOfIds = (path) => {
             return [2, 24, 244];
         case 'stone-wall-wide':
             return [2, 24, 245];
+        case 'metro':
+            return [2, 24, 246];
     }
 
     //Second element of updatedPath array

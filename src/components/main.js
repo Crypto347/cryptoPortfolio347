@@ -53,6 +53,7 @@ import GalleryPage from './Pages/PortfolioPages/GalleryPage/galleryPage';
 import GalleryWithSpacePage from './Pages/PortfolioPages/GalleryWithSpacePage/galleryWithSpacePage';
 import StoneWallPage from './Pages/PortfolioPages/StoneWallPage/stoneWallPage';
 import StoneWallWidePage from './Pages/PortfolioPages/StoneWallWidePage/stoneWallWidePage';
+import MetroPage from './Pages/PortfolioPages/MetroPage/metroPage';
 
 /**
 * Actions
@@ -108,6 +109,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/metro"}
+                    component={MetroPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/stone-wall-wide"}
