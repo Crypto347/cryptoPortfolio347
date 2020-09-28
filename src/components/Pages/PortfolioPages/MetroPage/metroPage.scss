@@ -55,16 +55,16 @@
             }
             .metro-page-item-id2-animation-expand-screen {
                 position: absolute;
-                top: 326.66px;
-                left: 0;
-                width: 296.66px;
-                height: 623.33px;
+                top: 0px;
+                left: 303.8px;
+                width: 527.59px;
+                height: 263.8px;
                 margin-right: 30px;
                 margin-bottom: 30px;
-                -webkit-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-                -moz-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-                -o-animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
-                animation: stoneWallPageItemId2ExpandScreen 0.3s linear;
+                -webkit-animation: metroPageItemId2ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId2ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId2ExpandScreen 0.3s linear;
+                animation: metroPageItemId2ExpandScreen 0.3s linear;
             }
             .metro-page-item-id2-animation-narrow2-screen {
                 position: absolute;
@@ -109,15 +109,15 @@
             .metro-page-item-id3-animation-expand-screen {
                 position: absolute;
                 top: 0px;
-                left: 326.66px;
-                width: 623.33px;
-                height: 623.33px;
+                left: 871.39px;
+                width: 263.8px;
+                height: 263.8px;
                 margin-right: 30px;
                 margin-bottom: 30px;
-                -webkit-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-                -moz-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-                -o-animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
-                animation: stoneWallPageItemId3ExpandScreen 0.3s linear;
+                -webkit-animation: metroPageItemId3ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId3ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId3ExpandScreen 0.3s linear;
+                animation: metroPageItemId3ExpandScreen 0.3s linear;
             }
             .metro-page-item-id3-animation-narrow2-screen {
                 position: absolute;
@@ -161,16 +161,16 @@
             }
             .metro-page-item-id4-animation-expand-screen {
                 position: absolute;
-                top: 653.33px;
-                left: 326.66px;
-                width: 296.66px;
-                height: 296.66px;
+                top: 0px;
+                left: 1175.19px;
+                width: 263.8px;
+                height: 263.8px;
                 margin-right: 30px;
                 margin-bottom: 30px;
-                -webkit-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-                -moz-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-                -o-animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
-                animation: stoneWallPageItemId4ExpandScreen 0.3s linear;
+                -webkit-animation: metroPageItemId4ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId4ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId4ExpandScreen 0.3s linear;
+                animation: metroPageItemId4ExpandScreen 0.3s linear;
             }
             .metro-page-item-id4-animation-narrow2-screen {
                 position: absolute;
@@ -214,16 +214,16 @@
             }
             .metro-page-item-id5-animation-expand-screen {
                 position: absolute;
-                top: 653.33px;
-                left: 653.32px;
-                width: 296.66px;
-                height: 296.66px;
+                top: 303.8px;
+                left: 0px;
+                width: 527.59px;
+                height: 527.59px;
                 margin-right: 30px;
                 margin-bottom: 30px;
-                -webkit-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-                -moz-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-                -o-animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
-                animation: stoneWallPageItemId5ExpandScreen 0.3s linear;
+                -webkit-animation: metroPageItemId5ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId5ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId5ExpandScreen 0.3s linear;
+                animation: metroPageItemId5ExpandScreen 0.3s linear;
             }
             .metro-page-item-id5-animation-narrow2-screen {
                 position: absolute;
@@ -265,6 +265,19 @@
                 -o-animation: metroPageItemId6NarrowScreen 0.3s linear;
                 animation: metroPageItemId6NarrowScreen 0.3s linear;
             }
+            .metro-page-item-id6-animation-expand-screen {
+                position: absolute;
+                top: 303.8px;
+                left: 567.59px;
+                width: 263.8px;
+                height: 263.8px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: metroPageItemId6ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId6ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId6ExpandScreen 0.3s linear;
+                animation: metroPageItemId6ExpandScreen 0.3s linear;
+            }
 
             .metro-page-item-id7-animation-narrow-screen {
                 position: absolute;
@@ -278,6 +291,19 @@
                 -moz-animation: metroPageItemId7NarrowScreen 0.3s linear;
                 -o-animation: metroPageItemId7NarrowScreen 0.3s linear;
                 animation: metroPageItemId7NarrowScreen 0.3s linear;
+            }
+            .metro-page-item-id7-animation-expand-screen {
+                position: absolute;
+                top: 303.8px;
+                left: 871.39px;
+                width: 567.59px;
+                height: 623.33px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: metroPageItemId7ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId7ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId7ExpandScreen 0.3s linear;
+                animation: metroPageItemId7ExpandScreen 0.3s linear;
             }
 
             .metro-page-item-id8-animation-narrow-screen {
@@ -293,6 +319,19 @@
                 -o-animation: metroPageItemId8NarrowScreen 0.3s linear;
                 animation: metroPageItemId8NarrowScreen 0.3s linear;
             }
+            .metro-page-item-id8-animation-expand-screen {
+                position: absolute;
+                top: 607.6px;
+                left: 567.59px;
+                width: 263.8px;
+                height: 263.8px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: metroPageItemId8ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId8ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId8ExpandScreen 0.3s linear;
+                animation: metroPageItemId8ExpandScreen 0.3s linear;
+            }
 
             .metro-page-item-id9-animation-narrow-screen {
                 position: absolute;
@@ -306,6 +345,19 @@
                 -moz-animation: metroPageItemId9NarrowScreen 0.3s linear;
                 -o-animation: metroPageItemId9NarrowScreen 0.3s linear;
                 animation: metroPageItemId9NarrowScreen 0.3s linear;
+            }
+            .metro-page-item-id9-animation-expand-screen {
+                position: absolute;
+                top: 607.6px;
+                left: 871.39px;
+                width: 569.59px;
+                height: 527.59px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: metroPageItemId9ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId9ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId9ExpandScreen 0.3s linear;
+                animation: metroPageItemId9ExpandScreen 0.3s linear;
             }
 
             .metro-page-item-id10-animation-narrow-screen {
@@ -321,6 +373,19 @@
                 -o-animation: metroPageItemId10NarrowScreen 0.3s linear;
                 animation: metroPageItemId10NarrowScreen 0.3s linear;
             }
+            .metro-page-item-id10-animation-expand-screen {
+                position: absolute;
+                top: 911.39px;
+                left: 0px;
+                width: 527.59px;
+                height: 251.34px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: metroPageItemId10ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId10ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId10ExpandScreen 0.3s linear;
+                animation: metroPageItemId10ExpandScreen 0.3s linear;
+            }
 
             .metro-page-item-id11-animation-narrow-screen {
                 position: absolute;
@@ -334,6 +399,20 @@
                 -moz-animation: metroPageItemId11NarrowScreen 0.3s linear;
                 -o-animation: metroPageItemId11NarrowScreen 0.3s linear;
                 animation: metroPageItemId11NarrowScreen 0.3s linear;
+            }
+
+            .metro-page-item-id11-animation-expand-screen {
+                position: absolute;
+                top: 911.39px;
+                left: 567.59px;
+                width: 263.8px;
+                height: 263.8px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                -webkit-animation: metroPageItemId11ExpandScreen 0.3s linear;
+                -moz-animation: metroPageItemId11ExpandScreen 0.3s linear;
+                -o-animation: metroPageItemId11ExpandScreen 0.3s linear;
+                animation: metroPageItemId11ExpandScreen 0.3s linear;
             }
         }
     }
@@ -457,7 +536,6 @@
             .metro-page-items {
                 width: 1351px !important;
                 height: 1810px !important;
-                border: 2px solid red;
                 .metro-page-item-id1 {
                     width: 318px;
                     height: 318px;
@@ -650,7 +728,7 @@
 @-webkit-keyframes metroPageItemId2NarrowScreen {
     from{
         top: 0px;
-        left: 871.39px;
+        left: 303.8px;
     }
     to{
         top: 0px;
@@ -660,7 +738,7 @@
 @-moz-keyframes metroPageItemId2NarrowScreen {
     from{
         top: 0px;
-        left: 871.39px;
+        left: 303.8px;
     }
     to{
         top: 0px;
@@ -670,7 +748,7 @@
 @-o-keyframes metroPageItemId2NarrowScreen {
     from{
         top: 0px;
-        left: 871.39px;
+        left: 303.8px;
     }
     to{
         top: 0px;
@@ -680,11 +758,52 @@
 @keyframes metroPageItemId2NarrowScreen {
     from{
         top: 0px;
-        left: 871.39px;
+        left: 303.8px;
     }
     to{
         top: 0px;
         left: 358px;
+    }
+}
+
+@-webkit-keyframes metroPageItemId2ExpandScreen {
+    from{
+        top: 0px;
+        left: 358px;
+    }
+    to{
+        top: 0px;
+        left: 303.8px;
+    }
+}
+@-moz-keyframes metroPageItemId2ExpandScreen {
+    from{
+        top: 0px;
+        left: 358px;
+    }
+    to{
+        top: 0px;
+        left: 303.8px;
+    }
+}
+@-o-keyframes metroPageItemId2ExpandScreen {
+    from{
+        top: 0px;
+        left: 358px;
+    }
+    to{
+        top: 0px;
+        left: 303.8px;
+    }
+}
+@keyframes metroPageItemId2ExpandScreen {
+    from{
+        top: 0px;
+        left: 358px;
+    }
+    to{
+        top: 0px;
+        left: 303.8px;
     }
 }
 
@@ -729,6 +848,47 @@
     }
 }
 
+@-webkit-keyframes metroPageItemId3ExpandScreen {
+    from{
+        top: 0px;
+        left: 1033px;
+    }
+    to{
+        top: 0px;
+        left: 871.39px;
+    }
+}
+@-moz-keyframes metroPageItemId3ExpandScreen {
+    from{
+        top: 0px;
+        left: 1033px;
+    }
+    to{
+        top: 0px;
+        left: 871.39px;
+    }
+}
+@-o-keyframes metroPageItemId3ExpandScreen {
+    from{
+        top: 0px;
+        left: 1033px;
+    }
+    to{
+        top: 0px;
+        left: 871.39px;
+    }
+}
+@keyframes metroPageItemId3ExpandScreen {
+    from{
+        top: 0px;
+        left: 1033px;
+    }
+    to{
+        top: 0px;
+        left: 871.39px;
+    }
+}
+
 @-webkit-keyframes metroPageItemId4NarrowScreen {
     from{
         top: 0px;
@@ -770,6 +930,47 @@
     }
 }
 
+@-webkit-keyframes metroPageItemId4ExpandScreen {
+    from{
+        top: 358px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 1175.19px;
+    }
+}
+@-moz-keyframes metroPageItemId4ExpandScreen {
+    from{
+        top: 358px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 1175.19px;
+    }
+}
+@-o-keyframes metroPageItemId4ExpandScreen {
+    from{
+        top: 358px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 1175.19px;
+    }
+}
+@keyframes metroPageItemId4ExpandScreen {
+    from{
+        top: 358px;
+        left: 0px;
+    }
+    to{
+        top: 0px;
+        left: 1175.19px;
+    }
+}
+
 @-webkit-keyframes metroPageItemId5NarrowScreen {
     from{
         top: 303.8px;
@@ -807,6 +1008,47 @@
     }
     to{
         top: 716px;
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes metroPageItemId5ExpandScreen {
+    from{
+        top: 716px;
+        left: 0px;
+    }
+    to{
+        top: 303.8px;
+        left: 0px;
+    }
+}
+@-moz-keyframes metroPageItemId5ExpandScreen {
+    from{
+        top: 716px;
+        left: 0px;
+    }
+    to{
+        top: 303.8px;
+        left: 0px;
+    }
+}
+@-o-keyframes metroPageItemId5ExpandScreen {
+    from{
+        top: 716px;
+        left: 0px;
+    }
+    to{
+        top: 303.8px;
+        left: 0px;
+    }
+}
+@keyframes metroPageItemId5ExpandScreen {
+    from{
+        top: 716px;
+        left: 0px;
+    }
+    to{
+        top: 303.8px;
         left: 0px;
     }
 }
@@ -852,6 +1094,47 @@
     }
 }
 
+@-webkit-keyframes metroPageItemId6ExpandScreen {
+    from{
+        top: 358px;
+        left: 1033px;
+    }
+    to{
+        top: 303.8px;
+        left: 567.59px;
+    }
+}
+@-moz-keyframes metroPageItemId6ExpandScreen {
+    from{
+        top: 358px;
+        left: 1033px;
+    }
+    to{
+        top: 303.8px;
+        left: 567.59px;
+    }
+}
+@-o-keyframes metroPageItemId6ExpandScreen {
+    from{
+        top: 358px;
+        left: 1033px;
+    }
+    to{
+        top: 303.8px;
+        left: 567.59px;
+    }
+}
+@keyframes metroPageItemId6ExpandScreen {
+    from{
+        top: 358px;
+        left: 1033px;
+    }
+    to{
+        top: 303.8px;
+        left: 567.59px;
+    }
+}
+
 @-webkit-keyframes metroPageItemId7NarrowScreen {
     from{
         top: 303.8px;
@@ -890,6 +1173,47 @@
     to{
         top: 358px;
         left: 358px;
+    }
+}
+
+@-webkit-keyframes metroPageItemId7ExpandScreen {
+    from{
+        top: 358px;
+        left: 358px;
+    }
+    to{
+        top: 303.8px;
+        left: 871.39px;
+    }
+}
+@-moz-keyframes metroPageItemId7ExpandScreen {
+    from{
+        top: 358px;
+        left: 358px;
+    }
+    to{
+        top: 303.8px;
+        left: 871.39px;
+    }
+}
+@-o-keyframes metroPageItemId7ExpandScreen {
+    from{
+        top: 358px;
+        left: 358px;
+    }
+    to{
+        top: 303.8px;
+        left: 871.39px;
+    }
+}
+@keyframes metroPageItemId7ExpandScreen {
+    from{
+        top: 358px;
+        left: 358px;
+    }
+    to{
+        top: 303.8px;
+        left: 871.39px;
     }
 }
 
@@ -934,6 +1258,47 @@
     }
 }
 
+@-webkit-keyframes metroPageItemId8ExpandScreen {
+    from{
+        top: 1451px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 567.59px;
+    }
+}
+@-moz-keyframes metroPageItemId8ExpandScreen {
+    from{
+        top: 1451px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 567.59px;
+    }
+}
+@-o-keyframes metroPageItemId8ExpandScreen {
+    from{
+        top: 1451px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 567.59px;
+    }
+}
+@keyframes metroPageItemId8ExpandScreen {
+    from{
+        top: 1451px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 567.59px;
+    }
+}
+
 @-webkit-keyframes metroPageItemId9NarrowScreen {
     from{
         top: 607.6px;
@@ -974,6 +1339,48 @@
         left: 675px;
     }
 }
+
+@-webkit-keyframes metroPageItemId9ExpandScreen {
+    from{
+        top: 716px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 871.39px;
+    }
+}
+@-moz-keyframes metroPageItemId9ExpandScreen {
+    from{
+        top: 716px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 871.39px;
+    }
+}
+@-o-keyframes metroPageItemId9ExpandScreen {
+    from{
+        top: 716px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 871.39px;
+    }
+}
+@keyframes metroPageItemId9ExpandScreen {
+    from{
+        top: 716px;
+        left: 675px;
+    }
+    to{
+        top: 607.6px;
+        left: 871.39px;
+    }
+}
+
 
 @-webkit-keyframes metroPageItemId10NarrowScreen {
     from{
@@ -1016,6 +1423,47 @@
     }
 }
 
+@-webkit-keyframes metroPageItemId10ExpandScreen {
+    from{
+        top: 1451px;
+        left: 0px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+@-moz-keyframes metroPageItemId10ExpandScreen {
+    from{
+        top: 1451px;
+        left: 0px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+@-o-keyframes metroPageItemId10ExpandScreen {
+    from{
+        top: 1451px;
+        left: 0px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+@keyframes metroPageItemId10ExpandScreen {
+    from{
+        top: 1451px;
+        left: 0px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+
 @-webkit-keyframes metroPageItemId11NarrowScreen {
     from{
         top: 911.39px;
@@ -1054,5 +1502,46 @@
     to{
         top: 1451px;
         left: 1033px;
+    }
+}
+
+@-webkit-keyframes metroPageItemId11ExpandScreen {
+    from{
+        top: 1451px;
+        left: 1033px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+@-moz-keyframes metroPageItemId11ExpandScreen {
+    from{
+        top: 1451px;
+        left: 1033px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+@-o-keyframes metroPageItemId11ExpandScreen {
+    from{
+        top: 1451px;
+        left: 1033px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
+    }
+}
+@keyframes metroPageItemId11ExpandScreen {
+    from{
+        top: 1451px;
+        left: 1033px;
+    }
+    to{
+        top: 911.39px;
+        left: 567.59px;
     }
 }
