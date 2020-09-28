@@ -270,7 +270,7 @@ export const MetroPage = (props) => {
                 height: 0,
             },
             img9: {
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
                 height: 0,
             },
             img10: {
@@ -283,72 +283,76 @@ export const MetroPage = (props) => {
             }
         })
         setPrevScreenWidthVal(size.width);
-        if(size.width > 1040){
+        if(size.width > 1530){
             return null;
         }
-        if(size.width > 1026){
-            setClassNameImg1("metro-wide-page-item-id1");
-            setClassNameImg2("metro-wide-page-item-id2");
-            setClassNameImg3("metro-wide-page-item-id3");
-            setClassNameImg4("metro-wide-page-item-id4");
-            setClassNameImg5("metro-wide-page-item-id5");
-            setClassNameImg6("metro-wide-page-item-id6");
-            setClassNameImg7("metro-wide-page-item-id7");
+        if(size.width > 1500){
+            setClassNameImg1("metro-page-item-id1");
+            setClassNameImg2("metro-page-item-id2");
+            setClassNameImg3("metro-page-item-id3");
+            setClassNameImg4("metro-page-item-id4");
+            setClassNameImg5("metro-page-item-id5");
+            setClassNameImg6("metro-page-item-id6");
+            setClassNameImg7("metro-page-item-id7");
+            setClassNameImg8("metro-page-item-id8");
+            setClassNameImg9("metro-page-item-id9");
+            setClassNameImg10("metro-page-item-id10");
+            setClassNameImg11("metro-page-item-id11");
         
         }
-        if(size.width < 1026 && size.width > 1024 && prevScreenWidthVal < size.width){
-            setClassNameImg1("metro-wide-page-item-id1-animation-expand-screen");
-            setClassNameImg2("metro-wide-page-item-id2-animation-expand-screen");
-            setClassNameImg3("metro-wide-page-item-id3-animation-expand-screen");
-            setClassNameImg4("metro-wide-page-item-id4-animation-expand-screen");
-            setClassNameImg5("metro-wide-page-item-id5-animation-expand-screen");
-            setClassNameImg6("metro-wide-page-item-id6-animation-expand-screen");
-            setClassNameImg7("metro-wide-page-item-id7-animation-expand-screen");
+        if(size.width < 1500 && size.width > 1024 && prevScreenWidthVal < size.width){
+            // setClassNameImg1("metro-page-item-id1-animation-expand-screen");
+            // setClassNameImg2("metro-page-item-id2-animation-expand-screen");
+            // setClassNameImg3("metro-page-item-id3-animation-expand-screen");
+            // setClassNameImg4("metro-page-item-id4-animation-expand-screen");
+            // setClassNameImg5("metro-page-item-id5-animation-expand-screen");
+            // setClassNameImg6("metro-page-item-id6-animation-expand-screen");
+            // setClassNameImg7("metro-page-item-id7-animation-expand-screen");
         }
         if(size.width < 1025 && size.width > 840 && prevScreenWidthVal > size.width){
-            setClassNameImg1("metro-wide-page-item-id1-animation-narrow-screen");
-            setClassNameImg2("metro-wide-page-item-id2-animation-narrow-screen");
-            setClassNameImg3("metro-wide-page-item-id3-animation-narrow-screen");
-            setClassNameImg4("metro-wide-page-item-id4-animation-narrow-screen");
-            setClassNameImg5("metro-wide-page-item-id5-animation-narrow-screen");
-            setClassNameImg6("metro-wide-page-item-id6-animation-narrow-screen");
-            setClassNameImg7("metro-wide-page-item-id7-animation-narrow-screen");
+            // setClassNameImg1("metro-page-item-id1-animation-narrow-screen");
+            // setClassNameImg2("metro-page-item-id2-animation-narrow-screen");
+            // setClassNameImg3("metro-page-item-id3-animation-narrow-screen");
+            // setClassNameImg4("metro-page-item-id4-animation-narrow-screen");
+            // setClassNameImg5("metro-page-item-id5-animation-narrow-screen");
+            // setClassNameImg6("metro-page-item-id6-animation-narrow-screen");
+            // setClassNameImg7("metro-page-item-id7-animation-narrow-screen");
         }
         if(size.width < 840 && size.width > 670){
-            setClassNameImg1("metro-wide-page-item-id1");
-            setClassNameImg2("metro-wide-page-item-id2");
-            setClassNameImg3("metro-wide-page-item-id3");
-            setClassNameImg4("metro-wide-page-item-id4");
-            setClassNameImg5("metro-wide-page-item-id5");
-            setClassNameImg6("metro-wide-page-item-id6");
-            setClassNameImg7("metro-wide-page-item-id7");
+            // setClassNameImg1("metro-page-item-id1");
+            // setClassNameImg2("metro-page-item-id2");
+            // setClassNameImg3("metro-page-item-id3");
+            // setClassNameImg4("metro-page-item-id4");
+            // setClassNameImg5("metro-page-item-id5");
+            // setClassNameImg6("metro-page-item-id6");
+            // setClassNameImg7("metro-page-item-id7");
         }
         if(size.width < 480 && prevScreenWidthVal < size.width){
-            setClassNameImg1("metro-wide-page-item-id1-animation-expand2-screen");
-            setClassNameImg2("metro-wide-page-item-id2-animation-expand2-screen");
-            setClassNameImg3("metro-wide-page-item-id3-animation-expand2-screen");
-            setClassNameImg4("metro-wide-page-item-id4-animation-expand2-screen");
-            setClassNameImg5("metro-wide-page-item-id5-animation-expand2-screen");
-            setClassNameImg6("metro-wide-page-item-id6-animation-expand2-screen");
-            setClassNameImg7("metro-wide-page-item-id7-animation-expand2-screen");
+            // setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
+            // setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
+            // setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
+            // setClassNameImg4("metro-page-item-id4-animation-expand2-screen");
+            // setClassNameImg5("metro-page-item-id5-animation-expand2-screen");
+            // setClassNameImg6("metro-page-item-id6-animation-expand2-screen");
+            // setClassNameImg7("metro-page-item-id7-animation-expand2-screen");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
-            setClassNameImg1("metro-wide-page-item-id1-animation-narrow2-screen");
-            setClassNameImg2("metro-wide-page-item-id2-animation-narrow2-screen");
-            setClassNameImg3("metro-wide-page-item-id3-animation-narrow2-screen");
-            setClassNameImg4("metro-wide-page-item-id4-animation-narrow2-screen");
-            setClassNameImg5("metro-wide-page-item-id5-animation-narrow2-screen");
-            setClassNameImg6("metro-wide-page-item-id6-animation-narrow2-screen");
-            setClassNameImg7("metro-wide-page-item-id7-animation-narrow2-screen");
+            // setClassNameImg1("metro-page-item-id1-animation-narrow2-screen");
+            // setClassNameImg2("metro-page-item-id2-animation-narrow2-screen");
+            // setClassNameImg3("metro-page-item-id3-animation-narrow2-screen");
+            // setClassNameImg4("metro-page-item-id4-animation-narrow2-screen");
+            // setClassNameImg5("metro-page-item-id5-animation-narrow2-screen");
+            // setClassNameImg6("metro-page-item-id6-animation-narrow2-screen");
+            // setClassNameImg7("metro-page-item-id7-animation-narrow2-screen");
         }
         if(size.width < 480){
-            setClassNameImg1("metro-wide-page-item-id1");
-            setClassNameImg2("metro-wide-page-item-id2");
-            setClassNameImg3("metro-wide-page-item-id3");
-            setClassNameImg4("metro-wide-page-item-id4");
-            setClassNameImg5("metro-wide-page-item-id5");
-            setClassNameImg6("metro-wide-page-item-id6");
-            setClassNameImg7("metro-wide-page-item-id7");
+            // setClassNameImg1("metro-page-item-id1");
+            // setClassNameImg2("metro-page-item-id2");
+            // setClassNameImg3("metro-page-item-id3");
+            // setClassNameImg4("metro-page-item-id4");
+            // setClassNameImg5("metro-page-item-id5");
+            // setClassNameImg6("metro-page-item-id6");
+            // setClassNameImg7("metro-page-item-id7");
         }
         // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
             // console.log("long1")
@@ -421,7 +425,7 @@ export const MetroPage = (props) => {
     }
 
     const renderStyle = (id, ) => {
-        if(size.width < 1040) return null;
+        if(size.width < 1530) return null;
         
         switch(id){
             case 1:
@@ -455,7 +459,7 @@ export const MetroPage = (props) => {
                     position: "absolute",
                     width: `${imagesSize.img5.width}`,
                     top: `${imagesSize.img1.width + 40}`,
-                    left: "0px"
+                    left: "0px",
                 };
             case 6:
                 return {
@@ -489,7 +493,7 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${imagesSize.img10.width}`,
-                    top: `${imagesSize.img1.width + 40 + imagesSize.img5.width + 40}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img5.width + 80}`,
                     left: "0px"
                 };
             case 11:
@@ -503,7 +507,7 @@ export const MetroPage = (props) => {
     }
 
     const renderClassName = (id) => {
-        if(size.width > 1040) return null;
+        if(size.width > 1530) return null;
         switch(id){
             case 1:
                 return classNameImg1;

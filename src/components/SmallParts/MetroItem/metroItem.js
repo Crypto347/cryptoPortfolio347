@@ -170,8 +170,7 @@ export const MetroItem = (props) => {
             }
         }
         setPaddingTopBottom(paddingTopBottomVal);
-        props.getImagesWidthAndHeight(obj)
-        console.log(obj)
+        props.getImagesWidthAndHeight(obj);
         switch(props.obj.id){
             case 1:
                 setCardHeight(obj.img1.height - 80);
