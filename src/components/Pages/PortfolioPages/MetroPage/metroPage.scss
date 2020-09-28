@@ -281,6 +281,10 @@
 @media only screen and (max-width: 1530px){
     .metro-page {
         .metro-page-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             .metro-page-items {
                 width: 1438.99px !important;
                 height: 1182.73px !important;
