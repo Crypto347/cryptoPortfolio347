@@ -197,7 +197,7 @@ export const MetroPage = (props) => {
                 height: 0,
             },
             img7: {
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
                 height: 0,
             },
             img8: {
@@ -205,7 +205,7 @@ export const MetroPage = (props) => {
                 height: 0,
             },
             img9: {
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
                 height: 0,
             },
             img10: {
@@ -262,7 +262,7 @@ export const MetroPage = (props) => {
                 height: 0,
             },
             img7: {
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
                 height: 0,
             },
             img8: {
@@ -605,7 +605,7 @@ export const MetroPage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
-                            setIsHoveringCategory={props.setStoneWallWidePageIsHoveringCategory}
+                            setIsHoveringCategory={props.setMetroPageIsHoveringCategory}
                             clearArchiveData={props.clearArchiveData}
                         />
                     </div>
@@ -674,7 +674,7 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
+            setMetroPageIsHoveringCategory: bindActionCreators(Actions.setMetroPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

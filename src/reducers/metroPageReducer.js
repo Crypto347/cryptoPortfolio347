@@ -46,27 +46,27 @@ const fetchMetroPageFailur = (state, action) => {
     };
 }
 
-// const setStoneWallWidePageIsHoveringCategory = (state, action) => {
-//     let updatedItems = [...state.items];
+const setMetroPageIsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.items];
 
-//     let category = {
-//         ...updatedItems
-//         .find(item => item.id === action.pathOfIds[0]).categories
-//         .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
 
-//     let categoryIndex = updatedItems
-//         .find(item => item.id === action.pathOfIds[0]).categories
-//         .findIndex(item => item.id === action.pathOfIds[1]);
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
         
-//         updatedItems
-//         .find(item => item.id === action.pathOfIds[0]).categories
-//         .splice(categoryIndex, 1, category);
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
 
-//     return {
-//         ...state,
-//         items: updatedItems
-//     };
-// }
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
 
 const metroPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -76,8 +76,8 @@ const metroPageReducer = (state = initialState, action) => {
             return fetchMetroPageSuccess (state, action);
         case actionTypes.FETCH_METRO_PAGE_FAILURE:
             return fetchMetroPageFailur(state, action);
-        // case actionTypes.SET_STONE_WALL_WIDE_PAGE_IS_HOVERING_CATEGORY:
-        //     return setStoneWallWidePageIsHoveringCategory(state, action);
+        case actionTypes.SET_METRO_PAGE_IS_HOVERING_CATEGORY:
+            return setMetroPageIsHoveringCategory(state, action);
         default: 
             return state;
     }

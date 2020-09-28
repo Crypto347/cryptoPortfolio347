@@ -20,10 +20,10 @@ export function fetchMetroPageFailur(err) {
     };
 };
 
-// export function setStandardPageIsHoveringCategory(val, pathOfIds) {
-//     return { 
-//         type: actionTypes.SET_STANDARD_PAGE_IS_HOVERING_CATEGORY,
-//         val: val,
-//         pathOfIds: pathOfIds
-//     };
-// };
+export function setMetroPageIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_METRO_PAGE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};
