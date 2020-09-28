@@ -1,10 +1,10 @@
-.stone-wall-wide-item {
+.metro-item {
     position: relative;
     width: 100%;
     overflow: hidden;
     margin-bottom: 30px;
     cursor: pointer;
-    .stone-wall-wide-item-image-wrapper {
+    .metro-item-image-wrapper {
         width: 100%;
         transform: translateX(0px);
         >img {
@@ -12,7 +12,7 @@
             filter: grayscale(40%);
         }
     }
-    .stone-wall-wide-item-image-wrapper-hover-on {
+    .metro-item-image-wrapper-hover-on {
         width: 100%;
         transform: translateX(30px);
         -webkit-animation: stoneWallWideItemImageHoverOn .2s linear;
@@ -24,7 +24,7 @@
             filter: grayscale(40%);
         }
     }
-    .stone-wall-wide-item-image-wrapper-hover-off {
+    .metro-item-image-wrapper-hover-off {
         width: 100%;
         transform: translateX(0px);
         // -webkit-animation: stoneWallWIdeItemImageHoverOff .3s linear;
@@ -36,7 +36,7 @@
             filter: grayscale(40%);
         }
     }
-    .stone-wall-wide-item-curtain-hover-on {
+    .metro-item-curtain-hover-on {
         background: rgb(37, 37, 37);
         width: calc(100% - 80px);
         position: absolute;
@@ -52,7 +52,7 @@
         -moz-animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
         -o-animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
         animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
-        .stone-wall-wide-item-categories {
+        .metro-item-categories {
             position: relative;
             z-index: 100;
             display: flex;
@@ -64,11 +64,11 @@
             animation: stoneWallWIdeItemCategoriesHoverOn .1s linear;
             animation-delay: .3s;
             animation-fill-mode: both;
-            .stone-wall-wide-item-category {
+            .metro-item-category {
                 padding-right: 6px;
                 display: flex;
                 align-items: center;
-                .stone-wall-wide-item-category-slash {
+                .metro-item-category-slash {
                     font-size: 16px;
                     font-weight: bold;
                     color: rgb(155, 155, 155);
@@ -76,9 +76,9 @@
                 }
             }
         }
-        .stone-wall-wide-item-header-wrapper {
+        .metro-item-header-wrapper {
             width: 100%;
-            .stone-wall-wide-item-line {
+            .metro-item-line {
                 width: 100%;
                 height: 2px;
                 background: white;
@@ -90,7 +90,7 @@
             }
         }
     }
-    .stone-wall-wide-item-curtain-hover-off {
+    .metro-item-curtain-hover-off {
         background: rgb(37, 37, 37);
         width: 0;
         position: absolute;
@@ -108,7 +108,7 @@
         animation: stoneWallWideItemCurtainHoverOff .5s ease-out;
         animation-delay: .2s;
         animation-fill-mode: both;
-        .stone-wall-wide-item-categories {
+        .metro-item-categories {
             display: flex;
             flex-wrap: wrap;
             opacity: 0;
@@ -116,11 +116,11 @@
             -moz-animation: stoneWallWideItemCategoriesHoverOff .1s linear;
             -o-animation: stoneWallWideItemCategoriesHoverOff .1s linear;
             animation: stoneWallWideItemCategoriesHoverOff .1s linear;
-            .stone-wall-wide-item-category {
+            .metro-item-category {
                 padding-right: 6px;
                 display: flex;
                 align-items: center;
-                .stone-wall-wide-item-category-slash {
+                .metro-item-category-slash {
                     font-size: 16px;
                     font-weight: bold;
                     color: rgb(155, 155, 155);
@@ -128,9 +128,9 @@
                 }
             }
         }
-        .stone-wall-wide-item-header-wrapper {
+        .metro-item-header-wrapper {
             width: 100%;
-            .stone-wall-wide-item-line {
+            .metro-item-line {
                 width: 0;
                 height: 2px;
                 background: white;

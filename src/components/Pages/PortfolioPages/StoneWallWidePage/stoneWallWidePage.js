@@ -377,7 +377,7 @@ export const StoneWallWidePage = (props) => {
             case 1:
                 return {
                     width: `${imagesSize.img1.width}`,
-                    height: `${100/3}%`
+                    // height: `${100/3}%`
                 };
             case 2:
                 return {
@@ -485,7 +485,7 @@ export const StoneWallWidePage = (props) => {
                 style={{
                     position: "relative",
                     width: "100%",
-                    height: `${imagesSize.img1.height + 40 + imagesSize.img4.height}`,
+                    height: `${3*imagesSize.img1.width + 2*40}`,
                     // border: "2px solid red"
                 }}
             >{props.stoneWallWidePage.items.map((el, i) => {

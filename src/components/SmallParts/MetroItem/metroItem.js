@@ -110,7 +110,8 @@ export const MetroItem = (props) => {
                     height: document.getElementById("metroItemId11").clientHeight,
                 }
             })
-        }       
+        }
+
         window.addEventListener('resize', resize);
         return () =>  window.removeEventListener('resize', resize);
     }, [upload]);
@@ -170,7 +171,7 @@ export const MetroItem = (props) => {
         }
         setPaddingTopBottom(paddingTopBottomVal);
         props.getImagesWidthAndHeight(obj)
-
+        console.log(obj)
         switch(props.obj.id){
             case 1:
                 setCardHeight(obj.img1.height - 80);
@@ -241,19 +242,27 @@ export const MetroItem = (props) => {
     const loadImg = (key) => {
         switch(key) {
             case 'metroCover1':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_1;
+                return Images.METRO_PAGE_COVER_PIC_1;
             case 'metroCover2':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_2;
+                return Images.METRO_PAGE_COVER_PIC_2;
             case 'metroCover3':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_3;
+                return Images.METRO_PAGE_COVER_PIC_3;
             case 'metroCover4':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_4;
+                return Images.METRO_PAGE_COVER_PIC_4;
             case 'metroCover5':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_5;
+                return Images.METRO_PAGE_COVER_PIC_5;
             case 'metroCover6':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_6;
+                return Images.METRO_PAGE_COVER_PIC_6;
             case 'metroCover7':
-                return Images.STONE_WALL_WIDE_PAGE_COVER_PIC_7;
+                return Images.METRO_PAGE_COVER_PIC_7;
+            case 'metroCover8':
+                return Images.METRO_PAGE_COVER_PIC_8;
+            case 'metroCover9':
+                return Images.METRO_PAGE_COVER_PIC_9;
+            case 'metroCover10':
+                return Images.METRO_PAGE_COVER_PIC_10;
+            case 'metroCover11':
+                return Images.METRO_PAGE_COVER_PIC_11;
             default:
                 return "";
         }
@@ -289,11 +298,11 @@ export const MetroItem = (props) => {
         if(opt === "metroItemImage"){
             switch(isHovering){
                 case 'init':
-                    return "stone-wall-wide-item-image-wrapper";
+                    return "metro-item-image-wrapper";
                 case 'on':
-                    return "stone-wall-wide-item-image-wrapper-hover-on";
+                    return "metro-item-image-wrapper-hover-on";
                 case 'off':
-                    return "stone-wall-wide-item-image-wrapper-hover-off"
+                    return "metro-item-image-wrapper-hover-off"
             }
         }
         if(opt === "curtain"){
@@ -301,9 +310,9 @@ export const MetroItem = (props) => {
                 case 'init':
                     return "display-none";
                 case 'on':
-                    return "stone-wall-wide-item-curtain-hover-on";
+                    return "metro-item-curtain-hover-on";
                 case 'off':
-                    return "stone-wall-wide-item-curtain-hover-off"
+                    return "metro-item-curtain-hover-off"
             }
         }
         if(opt === "metroItemCategory"){
@@ -330,18 +339,18 @@ export const MetroItem = (props) => {
 
     const renderCategories = (obj) => {
         return(
-            <div className="stone-wall-wide-item-categories">{obj.categories.map((el, i) => {
+            <div className="metro-item-categories">{obj.categories.map((el, i) => {
                 let pathOfIds = [obj.id, el.id];
                 return(
                     <div 
                         key={i}
-                        className="stone-wall-wide-item-category"
+                        className="metro-item-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
                         onMouseEnter={() => handleMouseEnter(`metroItemCategory`, null, pathOfIds)} 
                         onMouseLeave={() => handleMouseLeave(`metroItemCategory`, null, pathOfIds)} 
                     >
                         <H17 className={renderClassName("metroItemCategory", el.isHover)}>{el.label}</H17>
-                        {i !== obj.categories.length-1 ? <div className="stone-wall-wide-item-category-slash">/</div> : null}
+                        {i !== obj.categories.length-1 ? <div className="metro-item-category-slash">/</div> : null}
                     </div>
                 )
             })}</div>
@@ -354,7 +363,7 @@ export const MetroItem = (props) => {
 
     return(
         <div 
-            className="stone-wall-wide-item"
+            className="metro-item"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
@@ -374,9 +383,9 @@ export const MetroItem = (props) => {
                 onMouseDown={(e) => stoneWallWideItemOnClick(e, props.obj.path)}
             >
                 {renderCategories(props.obj)}
-                <div className="stone-wall-wide-item-header-wrapper">
+                <div className="metro-item-header-wrapper">
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
-                    <div className="stone-wall-wide-item-line"/>
+                    <div className="metro-item-line"/>
                 </div>
             </div>
         </div>

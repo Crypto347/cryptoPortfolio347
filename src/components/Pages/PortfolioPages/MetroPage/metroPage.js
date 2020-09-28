@@ -87,17 +87,17 @@ export const MetroPage = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
-    const [classNameImg1, setClassNameImg1] = useState('stone-wall-page-item-id1');
-    const [classNameImg2, setClassNameImg2] = useState('stone-wall-page-item-id2');
-    const [classNameImg3, setClassNameImg3] = useState('stone-wall-page-item-id3');
-    const [classNameImg4, setClassNameImg4] = useState('stone-wall-page-item-id4');
-    const [classNameImg5, setClassNameImg5] = useState('stone-wall-page-item-id5');
-    const [classNameImg6, setClassNameImg6] = useState('stone-wall-page-item-id6');
-    const [classNameImg7, setClassNameImg7] = useState('stone-wall-page-item-id7');
-    const [classNameImg8, setClassNameImg8] = useState('stone-wall-page-item-id8');
-    const [classNameImg9, setClassNameImg9] = useState('stone-wall-page-item-id9');
-    const [classNameImg10, setClassNameImg10] = useState('stone-wall-page-item-id10');
-    const [classNameImg11, setClassNameImg11] = useState('stone-wall-page-item-id11');
+    const [classNameImg1, setClassNameImg1] = useState('metro-page-item-id1');
+    const [classNameImg2, setClassNameImg2] = useState('metro-page-item-id2');
+    const [classNameImg3, setClassNameImg3] = useState('metro-page-item-id3');
+    const [classNameImg4, setClassNameImg4] = useState('metro-page-item-id4');
+    const [classNameImg5, setClassNameImg5] = useState('metro-page-item-id5');
+    const [classNameImg6, setClassNameImg6] = useState('metro-page-item-id6');
+    const [classNameImg7, setClassNameImg7] = useState('metro-page-item-id7');
+    const [classNameImg8, setClassNameImg8] = useState('metro-page-item-id8');
+    const [classNameImg9, setClassNameImg9] = useState('metro-page-item-id9');
+    const [classNameImg10, setClassNameImg10] = useState('metro-page-item-id10');
+    const [classNameImg11, setClassNameImg11] = useState('metro-page-item-id11');
 
     const [imagesSize, setImagesSize] = useState({
         img1: {
@@ -169,6 +169,55 @@ export const MetroPage = (props) => {
             resizeRef.current();
         }
  
+        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
+
+        setImagesSize({
+            img1: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            }, 
+            img2: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            }, 
+            img3: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img4: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img5: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            },
+            img6: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img7: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            },
+            img8: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img9: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            },
+            img10: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            },
+            img11: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            }
+        })
+
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
 
@@ -189,48 +238,48 @@ export const MetroPage = (props) => {
         
         setImagesSize({
             img1: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/4,
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
             }, 
             img2: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth - 80)/4*2,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
             }, 
             img3: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
             },
             img4: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/3,
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
             },
             img5: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
             },
             img6: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
             },
             img7: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth)/3,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
             },
             img8: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/3,
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
             },
             img9: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
             },
             img10: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
             },
             img11: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth)/3,
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
             }
         })
         setPrevScreenWidthVal(size.width);
@@ -238,73 +287,73 @@ export const MetroPage = (props) => {
             return null;
         }
         if(size.width > 1026){
-            setClassNameImg1("stone-wall-wide-page-item-id1");
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
-            setClassNameImg6("stone-wall-wide-page-item-id6");
-            setClassNameImg7("stone-wall-wide-page-item-id7");
+            setClassNameImg1("metro-wide-page-item-id1");
+            setClassNameImg2("metro-wide-page-item-id2");
+            setClassNameImg3("metro-wide-page-item-id3");
+            setClassNameImg4("metro-wide-page-item-id4");
+            setClassNameImg5("metro-wide-page-item-id5");
+            setClassNameImg6("metro-wide-page-item-id6");
+            setClassNameImg7("metro-wide-page-item-id7");
         
         }
         if(size.width < 1026 && size.width > 1024 && prevScreenWidthVal < size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
+            setClassNameImg1("metro-wide-page-item-id1-animation-expand-screen");
+            setClassNameImg2("metro-wide-page-item-id2-animation-expand-screen");
+            setClassNameImg3("metro-wide-page-item-id3-animation-expand-screen");
+            setClassNameImg4("metro-wide-page-item-id4-animation-expand-screen");
+            setClassNameImg5("metro-wide-page-item-id5-animation-expand-screen");
+            setClassNameImg6("metro-wide-page-item-id6-animation-expand-screen");
+            setClassNameImg7("metro-wide-page-item-id7-animation-expand-screen");
         }
         if(size.width < 1025 && size.width > 840 && prevScreenWidthVal > size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow-screen");
+            setClassNameImg1("metro-wide-page-item-id1-animation-narrow-screen");
+            setClassNameImg2("metro-wide-page-item-id2-animation-narrow-screen");
+            setClassNameImg3("metro-wide-page-item-id3-animation-narrow-screen");
+            setClassNameImg4("metro-wide-page-item-id4-animation-narrow-screen");
+            setClassNameImg5("metro-wide-page-item-id5-animation-narrow-screen");
+            setClassNameImg6("metro-wide-page-item-id6-animation-narrow-screen");
+            setClassNameImg7("metro-wide-page-item-id7-animation-narrow-screen");
         }
-        if(size.width < 840 && size.width > 670 ){
-            setClassNameImg1("stone-wall-wide-page-item-id1");
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
-            setClassNameImg6("stone-wall-wide-page-item-id6");
-            setClassNameImg7("stone-wall-wide-page-item-id7");
+        if(size.width < 840 && size.width > 670){
+            setClassNameImg1("metro-wide-page-item-id1");
+            setClassNameImg2("metro-wide-page-item-id2");
+            setClassNameImg3("metro-wide-page-item-id3");
+            setClassNameImg4("metro-wide-page-item-id4");
+            setClassNameImg5("metro-wide-page-item-id5");
+            setClassNameImg6("metro-wide-page-item-id6");
+            setClassNameImg7("metro-wide-page-item-id7");
         }
         if(size.width < 480 && prevScreenWidthVal < size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand2-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand2-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand2-screen");
+            setClassNameImg1("metro-wide-page-item-id1-animation-expand2-screen");
+            setClassNameImg2("metro-wide-page-item-id2-animation-expand2-screen");
+            setClassNameImg3("metro-wide-page-item-id3-animation-expand2-screen");
+            setClassNameImg4("metro-wide-page-item-id4-animation-expand2-screen");
+            setClassNameImg5("metro-wide-page-item-id5-animation-expand2-screen");
+            setClassNameImg6("metro-wide-page-item-id6-animation-expand2-screen");
+            setClassNameImg7("metro-wide-page-item-id7-animation-expand2-screen");
         }
         if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow2-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow2-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow2-screen");
+            setClassNameImg1("metro-wide-page-item-id1-animation-narrow2-screen");
+            setClassNameImg2("metro-wide-page-item-id2-animation-narrow2-screen");
+            setClassNameImg3("metro-wide-page-item-id3-animation-narrow2-screen");
+            setClassNameImg4("metro-wide-page-item-id4-animation-narrow2-screen");
+            setClassNameImg5("metro-wide-page-item-id5-animation-narrow2-screen");
+            setClassNameImg6("metro-wide-page-item-id6-animation-narrow2-screen");
+            setClassNameImg7("metro-wide-page-item-id7-animation-narrow2-screen");
         }
         if(size.width < 480){
-            setClassNameImg1("stone-wall-wide-page-item-id1");
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
-            setClassNameImg6("stone-wall-wide-page-item-id6");
-            setClassNameImg7("stone-wall-wide-page-item-id7");
+            setClassNameImg1("metro-wide-page-item-id1");
+            setClassNameImg2("metro-wide-page-item-id2");
+            setClassNameImg3("metro-wide-page-item-id3");
+            setClassNameImg4("metro-wide-page-item-id4");
+            setClassNameImg5("metro-wide-page-item-id5");
+            setClassNameImg6("metro-wide-page-item-id6");
+            setClassNameImg7("metro-wide-page-item-id7");
         }
         // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
             // console.log("long1")
 
-            // setClassNameImg3("stone-wall-page-item-id3-animation-expand-screen");
+            // setClassNameImg3("metro-page-item-id3-animation-expand-screen");
         // }
 
         // if(size.width < 770 && size.width > 680 && size.width < prevScreenWidthVal){
@@ -378,7 +427,7 @@ export const MetroPage = (props) => {
             case 1:
                 return {
                     width: `${imagesSize.img1.width}`,
-                    height: `${100/3}%`
+                    // height: `${100/3}%`
                 };
             case 2:
                 return {
@@ -398,57 +447,57 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${imagesSize.img4.width}`,
-                    top: `${imagesSize.img1.width + 40}`,
-                    left: "0px"
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40 + imagesSize.img3.width + 40}`
                 };
             case 5:
                 return {
                     position: "absolute",
                     width: `${imagesSize.img5.width}`,
                     top: `${imagesSize.img1.width + 40}`,
-                    left: `${imagesSize.img4.width + 40 + imagesSize.img2.width + 40}`
+                    left: "0px"
                 };
             case 6:
                 return {
                     position: "absolute",
                     width: `${imagesSize.img6.width}`,
-                    top: `${imagesSize.img2.width + 80}`,
-                    left: `${imagesSize.img4.width + 40}`
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: `${imagesSize.img5.width + 40}`
                 };
             case 7:
                 return {
                     position: "absolute",
                     width: `${imagesSize.img7.width}`,
-                    top: `${imagesSize.img2.width + 80}`,
-                    left: `${imagesSize.img4.width + 40 + imagesSize.img5.width + 40}`
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: `${imagesSize.img5.width + 40 + imagesSize.img6.width + 40}`
                 };
             case 8:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img4.width}`,
-                    top: `${imagesSize.img1.width + 40}`,
-                    left: "0px"
+                    width: `${imagesSize.img8.width}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img6.width + 40}`,
+                    left: `${imagesSize.img5.width + 40}`
                 };
             case 9:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img5.width}`,
-                    top: `${imagesSize.img1.width + 40}`,
-                    left: `${imagesSize.img4.width + 40 + imagesSize.img2.width + 40}`
+                    width: `${imagesSize.img9.width}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img6.width + 40}`,
+                    left: `${imagesSize.img5.width + 40 + imagesSize.img6.width + 40}`
                 };
             case 10:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img6.width}`,
-                    top: `${imagesSize.img2.width + 80}`,
-                    left: `${imagesSize.img4.width + 40}`
+                    width: `${imagesSize.img10.width}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img5.width + 40}`,
+                    left: "0px"
                 };
             case 11:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img7.width}`,
-                    top: `${imagesSize.img2.width + 80}`,
-                    left: `${imagesSize.img4.width + 40 + imagesSize.img5.width + 40}`
+                    width: `${imagesSize.img11.width}`,
+                    top: `${3 * imagesSize.img1.width + 120}`,
+                    left: `${imagesSize.img5.width + 40}`
                 };
         }
     }
@@ -512,20 +561,20 @@ export const MetroPage = (props) => {
                 height: obj.img7.height,
             },
             img8: {
-                ...imagesSize.img4,
-                height: obj.img4.height
+                ...imagesSize.img8,
+                height: obj.img8.height
             },
             img9: {
-                ...imagesSize.img5,
-                height: obj.img5.height
+                ...imagesSize.img9,
+                height: obj.img9.height
             },
             img10: {
-                ...imagesSize.img6,
-                height: obj.img6.height
+                ...imagesSize.img10,
+                height: obj.img10.height
             },
             img11: {
-                ...imagesSize.img7,
-                height: obj.img7.height,
+                ...imagesSize.img11,
+                height: obj.img11.height,
             }
         })
     }
@@ -534,11 +583,11 @@ export const MetroPage = (props) => {
         return(
             <div 
                 id="metroPageItems"
-                className="stone-wall-wide-page-items"
+                className="metro-page-items"
                 style={{
                     position: "relative",
                     width: "100%",
-                    height: `${imagesSize.img1.height + 40 + imagesSize.img4.height}`,
+                    height: `${5*imagesSize.img1.width + 4*40}`,
                     // border: "2px solid red"
                 }}
             >{props.metroPage.items.map((el, i) => {
@@ -546,7 +595,7 @@ export const MetroPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        // className={`stone-wall-wide-page-item-id${el.id}`}
+                        // className={`metro-wide-page-item-id${el.id}`}
                         className={renderClassName(el.id)}
                         style={renderStyle(el.id)}
                     >
@@ -569,7 +618,7 @@ export const MetroPage = (props) => {
         if(props.metroPage.loading && !props.metroPage.error){
             return(
                 <div 
-                    className="stone-wall-page-loading-error" 
+                    className="metro-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -578,10 +627,7 @@ export const MetroPage = (props) => {
         }
         if(!props.metroPage.loading && !props.metroPage.error){
             return(
-                <div className="stone-wall-page-wrapper">
-                    <div className="stone-wall-page-header">
-                        <H65 className="h65-nero-poppins">Metro</H65>
-                    </div> 
+                <div className="metro-page-wrapper">
                     {renderMetroPageData()}
                 </div>
             )
@@ -589,7 +635,7 @@ export const MetroPage = (props) => {
         if(!props.metroPage.loading && props.metroPage.error){
             return(
                 <div 
-                    className="stone-wall-page-loading-error" 
+                    className="metro-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.metroPage.error}`}</H15>
@@ -603,8 +649,11 @@ export const MetroPage = (props) => {
     */
 
     return(
-        <div className="stone-wall-page" id="metroPage">
+        <div className="metro-page" id="metroPage">
             {renderToolbars()}
+            <div className="metro-page-header">
+                <H65 className="h65-nero-poppins">Metro</H65>
+            </div> 
             {renderMetroContent()}
             <Footer/>
         </div>   
