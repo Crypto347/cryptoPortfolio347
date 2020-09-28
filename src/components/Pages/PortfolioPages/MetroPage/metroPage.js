@@ -308,15 +308,23 @@ export const MetroPage = (props) => {
             // setClassNameImg5("metro-page-item-id5-animation-expand-screen");
             // setClassNameImg6("metro-page-item-id6-animation-expand-screen");
             // setClassNameImg7("metro-page-item-id7-animation-expand-screen");
+            // setClassNameImg8("metro-page-item-id8-animation-expand-screen");
+            // setClassNameImg9("metro-page-item-id9-animation-expand-screen");
+            // setClassNameImg10("metro-page-item-id10-animation-expand-screen");
+            // setClassNameImg11("metro-page-item-id11-animation-expand-screen");
         }
-        if(size.width < 1025 && size.width > 840 && prevScreenWidthVal > size.width){
-            // setClassNameImg1("metro-page-item-id1-animation-narrow-screen");
-            // setClassNameImg2("metro-page-item-id2-animation-narrow-screen");
-            // setClassNameImg3("metro-page-item-id3-animation-narrow-screen");
-            // setClassNameImg4("metro-page-item-id4-animation-narrow-screen");
-            // setClassNameImg5("metro-page-item-id5-animation-narrow-screen");
-            // setClassNameImg6("metro-page-item-id6-animation-narrow-screen");
-            // setClassNameImg7("metro-page-item-id7-animation-narrow-screen");
+        if(size.width < 1500 && size.width > 1430 && prevScreenWidthVal > size.width){
+            setClassNameImg1("metro-page-item-id1-animation-narrow-screen");
+            setClassNameImg2("metro-page-item-id2-animation-narrow-screen");
+            setClassNameImg3("metro-page-item-id3-animation-narrow-screen");
+            setClassNameImg4("metro-page-item-id4-animation-narrow-screen");
+            setClassNameImg5("metro-page-item-id5-animation-narrow-screen");
+            setClassNameImg6("metro-page-item-id6-animation-narrow-screen");
+            setClassNameImg7("metro-page-item-id7-animation-narrow-screen");
+            setClassNameImg8("metro-page-item-id8-animation-narrow-screen");
+            setClassNameImg9("metro-page-item-id9-animation-narrow-screen");
+            setClassNameImg10("metro-page-item-id10-animation-narrow-screen");
+            setClassNameImg11("metro-page-item-id11-animation-narrow-screen");
         }
         if(size.width < 840 && size.width > 670){
             // setClassNameImg1("metro-page-item-id1");
