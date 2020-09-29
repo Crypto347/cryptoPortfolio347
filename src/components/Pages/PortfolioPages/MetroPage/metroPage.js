@@ -339,7 +339,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10");
             setClassNameImg11("metro-page-item-id11");
         }
-        if(size.width < 1225 && size.width > 480 && prevScreenWidthVal < size.width){
+        if(size.width < 1225 && size.width > 1060 && prevScreenWidthVal < size.width){
             setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
             setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
             setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
@@ -352,7 +352,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-expand2-screen");
             setClassNameImg11("metro-page-item-id11-animation-expand2-screen");
         }
-        if(size.width < 1235 && size.width > 480 && prevScreenWidthVal > size.width){
+        if(size.width < 1235 && size.width > 1060 && prevScreenWidthVal > size.width){
             setClassNameImg1("metro-page-item-id1-animation-narrow2-screen");
             setClassNameImg2("metro-page-item-id2-animation-narrow2-screen");
             setClassNameImg3("metro-page-item-id3-animation-narrow2-screen");
@@ -365,7 +365,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-narrow2-screen");
             setClassNameImg11("metro-page-item-id11-animation-narrow2-screen");
         }
-        if(size.width < 480){
+        if(size.width < 1060 && size.width > 480 && prevScreenWidthVal < size.width){
             // setClassNameImg1("metro-page-item-id1");
             // setClassNameImg2("metro-page-item-id2");
             // setClassNameImg3("metro-page-item-id3");
@@ -373,6 +373,19 @@ export const MetroPage = (props) => {
             // setClassNameImg5("metro-page-item-id5");
             // setClassNameImg6("metro-page-item-id6");
             // setClassNameImg7("metro-page-item-id7");
+        }
+        if(size.width < 1060 && size.width > 480 && prevScreenWidthVal > size.width){
+            setClassNameImg1("metro-page-item-id1-animation-narrow3-screen");
+            setClassNameImg2("metro-page-item-id2-animation-narrow3-screen");
+            setClassNameImg3("metro-page-item-id3-animation-narrow3-screen");
+            setClassNameImg4("metro-page-item-id4-animation-narrow3-screen");
+            setClassNameImg5("metro-page-item-id5-animation-narrow3-screen");
+            setClassNameImg6("metro-page-item-id6-animation-narrow3-screen");
+            setClassNameImg7("metro-page-item-id7-animation-narrow3-screen");
+            setClassNameImg8("metro-page-item-id8-animation-narrow3-screen");
+            setClassNameImg9("metro-page-item-id9-animation-narrow3-screen");
+            setClassNameImg10("metro-page-item-id10-animation-narrow3-screen");
+            setClassNameImg11("metro-page-item-id11-animation-narrow3-screen");
         }
         // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
             // console.log("long1")
