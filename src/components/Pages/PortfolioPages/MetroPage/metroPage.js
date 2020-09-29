@@ -618,8 +618,8 @@ export const MetroPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        // className={`metro-wide-page-item-id${el.id}`}
-                        className={renderClassName(el.id)}
+                        className={`metro-wide-page-item-id${el.id}`}
+                        // className="card"
                         style={renderStyle(el.id)}
                     >
                         <MetroItem
