@@ -300,7 +300,7 @@ export const MetroPage = (props) => {
             setClassNameImg11("metro-page-item-id11");
         
         }
-        if(size.width > 1500 && prevScreenWidthVal < size.width){
+        if(size.width > 1495 && prevScreenWidthVal < size.width){
             setClassNameImg1("metro-page-item-id1-animation-expand-screen");
             setClassNameImg2("metro-page-item-id2-animation-expand-screen");
             setClassNameImg3("metro-page-item-id3-animation-expand-screen");
@@ -313,7 +313,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-expand-screen");
             setClassNameImg11("metro-page-item-id11-animation-expand-screen");
         }
-        if(size.width < 1500 && size.width > 1430 && prevScreenWidthVal > size.width && classNameImg1 !== "metro-page-item-id1-small"){
+        if(size.width < 1505 && size.width > 1430 && prevScreenWidthVal > size.width && classNameImg1 !== "metro-page-item-id1-small"){
             setClassNameImg1("metro-page-item-id1-animation-narrow-screen");
             setClassNameImg2("metro-page-item-id2-animation-narrow-screen");
             setClassNameImg3("metro-page-item-id3-animation-narrow-screen");
@@ -326,7 +326,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-narrow-screen");
             setClassNameImg11("metro-page-item-id11-animation-narrow-screen");
         }
-        if(size.width < 1430 && size.width > 670){
+        if(size.width < 1430 && size.width > 1230){
             setClassNameImg1("metro-page-item-id1-small");
             setClassNameImg2("metro-page-item-id2");
             setClassNameImg3("metro-page-item-id3");
@@ -339,7 +339,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10");
             setClassNameImg11("metro-page-item-id11");
         }
-        if(size.width > 1225 && prevScreenWidthVal < size.width){
+        if(size.width < 1225 && size.width > 480 && prevScreenWidthVal < size.width){
             setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
             setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
             setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
