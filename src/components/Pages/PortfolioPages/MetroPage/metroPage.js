@@ -326,14 +326,18 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-narrow-screen");
             setClassNameImg11("metro-page-item-id11-animation-narrow-screen");
         }
-        if(size.width < 840 && size.width > 670){
-            // setClassNameImg1("metro-page-item-id1");
-            // setClassNameImg2("metro-page-item-id2");
-            // setClassNameImg3("metro-page-item-id3");
-            // setClassNameImg4("metro-page-item-id4");
-            // setClassNameImg5("metro-page-item-id5");
-            // setClassNameImg6("metro-page-item-id6");
-            // setClassNameImg7("metro-page-item-id7");
+        if(size.width < 1430 && size.width > 670){
+            setClassNameImg1("metro-page-item-id1");
+            setClassNameImg2("metro-page-item-id2");
+            setClassNameImg3("metro-page-item-id3");
+            setClassNameImg4("metro-page-item-id4");
+            setClassNameImg5("metro-page-item-id5");
+            setClassNameImg6("metro-page-item-id6");
+            setClassNameImg7("metro-page-item-id7");
+            setClassNameImg8("metro-page-item-id8");
+            setClassNameImg9("metro-page-item-id9");
+            setClassNameImg10("metro-page-item-id10");
+            setClassNameImg11("metro-page-item-id11");
         }
         if(size.width < 480 && prevScreenWidthVal < size.width){
             // setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
