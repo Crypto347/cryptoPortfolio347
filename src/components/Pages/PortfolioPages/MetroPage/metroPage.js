@@ -300,7 +300,7 @@ export const MetroPage = (props) => {
             setClassNameImg11("metro-page-item-id11");
         
         }
-        if(size.width < 1500 && size.width > 1490 && prevScreenWidthVal < size.width){
+        if(size.width > 1500 && prevScreenWidthVal < size.width){
             setClassNameImg1("metro-page-item-id1-animation-expand-screen");
             setClassNameImg2("metro-page-item-id2-animation-expand-screen");
             setClassNameImg3("metro-page-item-id3-animation-expand-screen");
@@ -339,14 +339,18 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10");
             setClassNameImg11("metro-page-item-id11");
         }
-        if(size.width < 1230 && prevScreenWidthVal < size.width){
-            // setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
-            // setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
-            // setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
-            // setClassNameImg4("metro-page-item-id4-animation-expand2-screen");
-            // setClassNameImg5("metro-page-item-id5-animation-expand2-screen");
-            // setClassNameImg6("metro-page-item-id6-animation-expand2-screen");
-            // setClassNameImg7("metro-page-item-id7-animation-expand2-screen");
+        if(size.width > 1230 && prevScreenWidthVal < size.width){
+            setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
+            setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
+            setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
+            setClassNameImg4("metro-page-item-id4-animation-expand2-screen");
+            setClassNameImg5("metro-page-item-id5-animation-expand2-screen");
+            setClassNameImg6("metro-page-item-id6-animation-expand2-screen");
+            setClassNameImg7("metro-page-item-id7-animation-expand2-screen");
+            setClassNameImg8("metro-page-item-id8-animation-expand2-screen");
+            setClassNameImg9("metro-page-item-id9-animation-expand2-screen");
+            setClassNameImg10("metro-page-item-id10-animation-expand2-screen");
+            setClassNameImg11("metro-page-item-id11-animation-expand2-screen");
         }
         if(size.width < 1230 && size.width > 480 && prevScreenWidthVal > size.width){
             setClassNameImg1("metro-page-item-id1-animation-narrow2-screen");
