@@ -53,7 +53,7 @@ import GalleryPage from './Pages/PortfolioPages/GalleryPage/galleryPage';
 import GalleryWithSpacePage from './Pages/PortfolioPages/GalleryWithSpacePage/galleryWithSpacePage';
 import StoneWallPage from './Pages/PortfolioPages/StoneWallPage/stoneWallPage';
 import StoneWallWidePage from './Pages/PortfolioPages/StoneWallWidePage/stoneWallWidePage';
-import MetroPage from './Pages/PortfolioPages/MetroPage/metroPage';
+import MetroPage2 from './Pages/PortfolioPages/MetroPage/metroPage2';
 
 /**
 * Actions
@@ -112,7 +112,7 @@ export const Main = (props) => {
                 <Route 
                     exact 
                     path={props.match.url + "/metro"}
-                    component={MetroPage}
+                    component={MetroPage2}
                 />
                 <Route 
                     exact 

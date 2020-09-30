@@ -27,3 +27,11 @@ export function setMetroPageIsHoveringCategory(val, pathOfIds) {
         pathOfIds: pathOfIds
     };
 };
+
+export function updateItemsStyleValues(image, obj) {
+    return { 
+        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES,
+        image: image,
+        obj: obj
+    };
+};
