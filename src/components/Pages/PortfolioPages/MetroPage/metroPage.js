@@ -338,7 +338,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10");
             setClassNameImg11("metro-page-item-id11");
         }
-        if(size.width < 1225 && size.width > 1060 && prevScreenWidthVal < size.width){
+        if(size.width < 1225 && size.width > 1200 && prevScreenWidthVal < size.width){
             setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
             setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
             setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
@@ -364,7 +364,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-narrow2-screen");
             setClassNameImg11("metro-page-item-id11-animation-narrow2-screen");
         }
-        if(size.width < 1060 && size.width > 480 && prevScreenWidthVal < size.width){
+        if(size.width < 1055 && size.width > 1025 && prevScreenWidthVal < size.width){
             setClassNameImg1("metro-page-item-id1-animation-expand3-screen");
             setClassNameImg2("metro-page-item-id2-animation-expand3-screen");
             setClassNameImg3("metro-page-item-id3-animation-expand3-screen");
@@ -377,7 +377,7 @@ export const MetroPage = (props) => {
             setClassNameImg10("metro-page-item-id10-animation-expand3-screen")
             setClassNameImg11("metro-page-item-id11-animation-expand3-screen");
         }
-        if(size.width < 1060 && size.width > 480 && prevScreenWidthVal > size.width){
+        if(size.width < 1065 && size.width > 480 && prevScreenWidthVal > size.width){
             setClassNameImg1("metro-page-item-id1-animation-narrow3-screen");
             setClassNameImg2("metro-page-item-id2-animation-narrow3-screen");
             setClassNameImg3("metro-page-item-id3-animation-narrow3-screen");
