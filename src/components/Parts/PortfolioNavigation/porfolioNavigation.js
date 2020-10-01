@@ -263,6 +263,13 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/stone-wall-wide`, "_blank");
                 }
                 break;
+            case 'metroPage':
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/metro`);
+                }else{
+                    window.open(`/crypto-portfolio/metro`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
@@ -318,6 +325,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'stoneWallWidePage':
                 updatedItems = [...props.stoneWallWidePage.items];
+                break;
+            case 'metroPage':
+                updatedItems = [...props.metroPage.items];
                 break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
@@ -424,7 +434,8 @@ export default connect(
             galleryPage: Selectors.getGalleryPageState(state),
             galleryWithSpacePage: Selectors.getGalleryWithSpacePageState(state),
             stoneWallPage: Selectors.getStoneWallPageState(state),
-            stoneWallPage: Selectors.getStoneWallWidePageState(state),
+            stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
+            metroPage: Selectors.getMetroPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
