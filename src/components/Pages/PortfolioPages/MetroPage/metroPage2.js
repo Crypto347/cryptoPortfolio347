@@ -84,7 +84,6 @@ export const MetroPage2 = (props) => {
     */
 
     const resizeRef = useRef();
-    const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
@@ -100,6 +99,53 @@ export const MetroPage2 = (props) => {
     const [classNameImg10, setClassNameImg10] = useState('metro-page-item-id10');
     const [classNameImg11, setClassNameImg11] = useState('metro-page-item-id11');
 
+    const [imagesSize, setImagesSize] = useState({
+        img1: {
+            width: 0,
+            height: 0,
+        }, 
+        img2: {
+            width: 0,
+            height: 0,
+        }, 
+        img3: {
+            width: 0,
+            height: 0,
+        },
+        img4: {
+            width: 0,
+            height: 0,
+        },
+        img5: {
+            width: 0,
+            height: 0,
+        },
+        img6: {
+            width: 0,
+            height: 0,
+        },
+        img7: {
+            width: 0,
+            height: 0,
+        },
+        img8: {
+            width: 0,
+            height: 0,
+        },
+        img9: {
+            width: 0,
+            height: 0,
+        },
+        img10: {
+            width: 0,
+            height: 0,
+        },
+        img11: {
+            width: 0,
+            height: 0,
+        }
+    });
+
     /**
     * Methods
     */
@@ -112,575 +158,250 @@ export const MetroPage2 = (props) => {
         let timeout = setTimeout(() => {
             if(!props.metroPage.loading && !props.metroPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
+                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
             }
         }, 2);
 
-        const smooth = e => {
-          
-            // if(e.target.className.includes("metro-page-item-id5")){
-            //     console.log("fagr")
-            //         transitionRef.current()
-            // }
-            if(['metro-page-item-id1',
-                'metro-page-item-id2',
-                'metro-page-item-id3',
-                'metro-page-item-id4',
-                'metro-page-item-id5',
-                'metro-page-item-id6',
-                'metro-page-item-id7',
-                'metro-page-item-id8',
-                'metro-page-item-id9',
-                'metro-page-item-id10',
-                'metro-page-item-id11'
-                ].includes(e.target.className)){
-                    console.log("fagr")
-                        transitionRef.current()
-            }
-        }
-
         const resize = () => {
             resizeRef.current();
         }
  
+        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
 
-        setImagesState();
+        setImagesSize({
+            img1: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            }, 
+            img2: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            }, 
+            img3: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img4: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img5: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            },
+            img6: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img7: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
+                height: 0,
+            },
+            img8: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            },
+            img9: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
+                height: 0,
+            },
+            img10: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+                height: 0,
+            },
+            img11: {
+                width: (stoneWallWidePageItemsWidth - 120)/5,
+                height: 0,
+            }
+        })
+
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
-        window.addEventListener('transitionend', smooth);
 
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
-            window.removeEventListener('transitionend', smooth);
             props.setMenuDotsState("init", "");
         }
     }, []);
 
     useEffect(() => {
-        transitionRef.current = smoothTransition;
         resizeRef.current = handleResize;
     });
 
-    useEffect(() => {
-        if(props.metroPage.itemsStyleValues.img1.transition === 0 ||
-            props.metroPage.itemsStyleValues.img2.transition === 0 ||
-            props.metroPage.itemsStyleValues.img3.transition === 0 ||
-            props.metroPage.itemsStyleValues.img4.transition === 0 ||
-            props.metroPage.itemsStyleValues.img5.transition === 0 ||
-            props.metroPage.itemsStyleValues.img6.transition === 0 ||
-            props.metroPage.itemsStyleValues.img7.transition === 0 ||
-            props.metroPage.itemsStyleValues.img8.transition === 0 ||
-            props.metroPage.itemsStyleValues.img9.transition === 0 ||
-            props.metroPage.itemsStyleValues.img10.transition === 0 ||
-            props.metroPage.itemsStyleValues.img11.transition === 0
-            ) {           
-            props.updateItemsStyleValues("img1",{
-                ...props.metroPage.itemsStyleValues.img1,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img2",{
-                ...props.metroPage.itemsStyleValues.img2,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img3",{
-                ...props.metroPage.itemsStyleValues.img3,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img4",{
-                ...props.metroPage.itemsStyleValues.img4,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img5",{
-                ...props.metroPage.itemsStyleValues.img5,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img6",{
-                ...props.metroPage.itemsStyleValues.img6,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img7",{
-                ...props.metroPage.itemsStyleValues.img7,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img8",{
-                ...props.metroPage.itemsStyleValues.img8,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img9",{
-                ...props.metroPage.itemsStyleValues.img9,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img10",{
-                ...props.metroPage.itemsStyleValues.img10,
-                transition: 0.45
-            })
-            props.updateItemsStyleValues("img11",{
-                ...props.metroPage.itemsStyleValues.img11,
-                transition: 0.45
-            })
-        }
-    }, [props.metroPage.itemsStyleValues.img1.transition,props.metroPage.itemsStyleValues.img2.transition,
-        props.metroPage.itemsStyleValues.img3.transition,props.metroPage.itemsStyleValues.img4.transition,
-        props.metroPage.itemsStyleValues.img5.transition,props.metroPage.itemsStyleValues.img6.transition,
-        props.metroPage.itemsStyleValues.img7.transition,props.metroPage.itemsStyleValues.img8.transition,
-        props.metroPage.itemsStyleValues.img9.transition,props.metroPage.itemsStyleValues.img10.transition,
-        props.metroPage.itemsStyleValues.img11.transition])
-
-    const smoothTransition = () => {
-      console.log("Fired")
-            props.updateItemsStyleValues("img1",{
-                ...props.metroPage.itemsStyleValues.img1,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                ...props.metroPage.itemsStyleValues.img2,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                ...props.metroPage.itemsStyleValues.img3,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                ...props.metroPage.itemsStyleValues.img4,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                ...props.metroPage.itemsStyleValues.img5,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                ...props.metroPage.itemsStyleValues.img6,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                ...props.metroPage.itemsStyleValues.img7,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                ...props.metroPage.itemsStyleValues.img8,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                ...props.metroPage.itemsStyleValues.img9,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                ...props.metroPage.itemsStyleValues.img10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                ...props.metroPage.itemsStyleValues.img11,
-                transition: 0
-            })
-      
-    }
-
     const handleResize = (e) => {
-        // setPrevScreenWidthVal(size.width);
-        setImagesState();
-    }
-
-    const setImagesState = () => {
-        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
-        if(size.width > 1500){
-            props.updateItemsStyleValues("img1",{
+        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems').clientWidth;
+        
+        setImagesSize({
+            img1: {
                 width: (stoneWallWidePageItemsWidth - 120)/5,
                 height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
+            }, 
+            img2: {
                 width: (stoneWallWidePageItemsWidth - 120)/5*2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
+            }, 
+            img3: {
                 width: (stoneWallWidePageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-                translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
+            },
+            img4: {
                 width: (stoneWallWidePageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*4 + 120,
-                translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
+            },
+            img5: {
                 width: (stoneWallWidePageItemsWidth - 120)/5*2,
                 height: 0,
-                translateX: 0,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
+            },
+            img6: {
                 width: (stoneWallWidePageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
+            },
+            img7: {
                 width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
+            },
+            img8: {
                 width: (stoneWallWidePageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5 + 65,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
+            },
+            img9: {
+                width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5 + 65,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
+            },
+            img10: {
                 width: (stoneWallWidePageItemsWidth - 120)/5*2,
                 height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5*2 + 115,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
+            },
+            img11: {
                 width: (stoneWallWidePageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5*2 + 100,
-                transition: 0
-            })
+            }
+        })
+        setPrevScreenWidthVal(size.width);
+        if(size.width > 1530){
+            return null;
         }
-        if(size.width <= 1500 && size.width > 1430){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 80)/4 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*3 + 80,
-                translateY: -(stoneWallWidePageItemsWidth - 80)/4 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-                translateX: 0,
-                translateY: 20,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4 + 70,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*3 + 80,
-                translateY: 20,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4 + 40,
-                translateY: 20,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 80)/4 - 15,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*2 + 60,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4*3 + 180,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2 + 20,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*2 + 60,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4 + 70,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4*3 + 180,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 80)/4 - 15,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*3 + 94,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4*3 + 180,
-                transition: 0
-            })
+        if(size.width > 1500){
+            setClassNameImg1("metro-page-item-id1");
+            setClassNameImg2("metro-page-item-id2");
+            setClassNameImg3("metro-page-item-id3");
+            setClassNameImg4("metro-page-item-id4");
+            setClassNameImg5("metro-page-item-id5");
+            setClassNameImg6("metro-page-item-id6");
+            setClassNameImg7("metro-page-item-id7");
+            setClassNameImg8("metro-page-item-id8");
+            setClassNameImg9("metro-page-item-id9");
+            setClassNameImg10("metro-page-item-id10");
+            setClassNameImg11("metro-page-item-id11");
         }
-        if(size.width <= 1430 && size.width > 1200){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 40)/3 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3*2 + 40,
-                translateY: 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3 + 100,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
-                height: 0,
-                translateX: 0,
-                translateY: 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*2 + 165,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*2 + 165,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*3 + 225,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*3 + 225,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*5 + 345,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*4 + 285,
-                transition: 0
-            })
+        if(size.width > 1495 && prevScreenWidthVal < size.width){
+            setClassNameImg1("metro-page-item-id1-animation-expand-screen");
+            setClassNameImg2("metro-page-item-id2-animation-expand-screen");
+            setClassNameImg3("metro-page-item-id3-animation-expand-screen");
+            setClassNameImg4("metro-page-item-id4-animation-expand-screen");
+            setClassNameImg5("metro-page-item-id5-animation-expand-screen");
+            setClassNameImg6("metro-page-item-id6-animation-expand-screen");
+            setClassNameImg7("metro-page-item-id7-animation-expand-screen");
+            setClassNameImg8("metro-page-item-id8-animation-expand-screen");
+            setClassNameImg9("metro-page-item-id9-animation-expand-screen");
+            setClassNameImg10("metro-page-item-id10-animation-expand-screen");
+            setClassNameImg11("metro-page-item-id11-animation-expand-screen");
         }
-        if(size.width <= 1200 && size.width > 900){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 40)/2 - 30,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2 + 70,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*3 + 145,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2 + 70,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*2 + 110,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*7 + 408,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*5 + 327,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*8 + 450,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*7 + 408,
-                transition: 0
-            })
+        if(size.width < 1505 && size.width > 1430 && prevScreenWidthVal > size.width && classNameImg1 !== "metro-page-item-id1-small"){
+            setClassNameImg1("metro-page-item-id1-animation-narrow-screen");
+            setClassNameImg2("metro-page-item-id2-animation-narrow-screen");
+            setClassNameImg3("metro-page-item-id3-animation-narrow-screen");
+            setClassNameImg4("metro-page-item-id4-animation-narrow-screen");
+            setClassNameImg5("metro-page-item-id5-animation-narrow-screen");
+            setClassNameImg6("metro-page-item-id6-animation-narrow-screen");
+            setClassNameImg7("metro-page-item-id7-animation-narrow-screen");
+            setClassNameImg8("metro-page-item-id8-animation-narrow-screen");
+            setClassNameImg9("metro-page-item-id9-animation-narrow-screen");
+            setClassNameImg10("metro-page-item-id10-animation-narrow-screen");
+            setClassNameImg11("metro-page-item-id11-animation-narrow-screen");
         }
-        if(size.width <= 900){
-            props.updateItemsStyleValues("img1",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: 20,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth/2 + 70,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth + stoneWallWidePageItemsWidth/2 + 120,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*2 + stoneWallWidePageItemsWidth/2 + 170,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*3 + stoneWallWidePageItemsWidth/2 + 290,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*4 + stoneWallWidePageItemsWidth/2 + 340,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*5 + 370,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*6 + 420,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*7 + 470,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*7 + stoneWallWidePageItemsWidth/2 + 500,
-                transition: 0
-            })
+        if(size.width < 1430 && size.width > 1230){
+            setClassNameImg1("metro-page-item-id1-small");
+            setClassNameImg2("metro-page-item-id2");
+            setClassNameImg3("metro-page-item-id3");
+            setClassNameImg4("metro-page-item-id4");
+            setClassNameImg5("metro-page-item-id5");
+            setClassNameImg6("metro-page-item-id6");
+            setClassNameImg7("metro-page-item-id7");
+            setClassNameImg8("metro-page-item-id8");
+            setClassNameImg9("metro-page-item-id9");
+            setClassNameImg10("metro-page-item-id10");
+            setClassNameImg11("metro-page-item-id11");
         }
+        if(size.width < 1225 && size.width > 1200 && prevScreenWidthVal < size.width){
+            setClassNameImg1("metro-page-item-id1-animation-expand2-screen");
+            setClassNameImg2("metro-page-item-id2-animation-expand2-screen");
+            setClassNameImg3("metro-page-item-id3-animation-expand2-screen");
+            setClassNameImg4("metro-page-item-id4-animation-expand2-screen");
+            setClassNameImg5("metro-page-item-id5-animation-expand2-screen");
+            setClassNameImg6("metro-page-item-id6-animation-expand2-screen");
+            setClassNameImg7("metro-page-item-id7-animation-expand2-screen");
+            setClassNameImg8("metro-page-item-id8-animation-expand2-screen");
+            setClassNameImg9("metro-page-item-id9-animation-expand2-screen");
+            setClassNameImg10("metro-page-item-id10-animation-expand2-screen");
+            setClassNameImg11("metro-page-item-id11-animation-expand2-screen");
+        }
+        if(size.width < 1235 && size.width > 1060 && prevScreenWidthVal > size.width){
+            setClassNameImg1("metro-page-item-id1-animation-narrow2-screen");
+            setClassNameImg2("metro-page-item-id2-animation-narrow2-screen");
+            setClassNameImg3("metro-page-item-id3-animation-narrow2-screen");
+            setClassNameImg4("metro-page-item-id4-animation-narrow2-screen");
+            setClassNameImg5("metro-page-item-id5-animation-narrow2-screen");
+            setClassNameImg6("metro-page-item-id6-animation-narrow2-screen");
+            setClassNameImg7("metro-page-item-id7-animation-narrow2-screen");
+            setClassNameImg8("metro-page-item-id8-animation-narrow2-screen");
+            setClassNameImg9("metro-page-item-id9-animation-narrow2-screen");
+            setClassNameImg10("metro-page-item-id10-animation-narrow2-screen");
+            setClassNameImg11("metro-page-item-id11-animation-narrow2-screen");
+        }
+        if(size.width < 1055 && size.width > 1025 && prevScreenWidthVal < size.width){
+            setClassNameImg1("metro-page-item-id1-animation-expand3-screen");
+            setClassNameImg2("metro-page-item-id2-animation-expand3-screen");
+            setClassNameImg3("metro-page-item-id3-animation-expand3-screen");
+            setClassNameImg4("metro-page-item-id4-animation-expand3-screen");
+            setClassNameImg5("metro-page-item-id5-animation-expand3-screen");
+            setClassNameImg6("metro-page-item-id6-animation-expand3-screen");
+            setClassNameImg7("metro-page-item-id7-animation-expand3-screen");
+            setClassNameImg8("metro-page-item-id8-animation-expand3-screen");
+            setClassNameImg9("metro-page-item-id9-animation-expand3-screen");
+            setClassNameImg10("metro-page-item-id10-animation-expand3-screen")
+            setClassNameImg11("metro-page-item-id11-animation-expand3-screen");
+        }
+        if(size.width < 1065 && size.width > 480 && prevScreenWidthVal > size.width){
+            setClassNameImg1("metro-page-item-id1-animation-narrow3-screen");
+            setClassNameImg2("metro-page-item-id2-animation-narrow3-screen");
+            setClassNameImg3("metro-page-item-id3-animation-narrow3-screen");
+            setClassNameImg4("metro-page-item-id4-animation-narrow3-screen");
+            setClassNameImg5("metro-page-item-id5-animation-narrow3-screen");
+            setClassNameImg6("metro-page-item-id6-animation-narrow3-screen");
+            setClassNameImg7("metro-page-item-id7-animation-narrow3-screen");
+            setClassNameImg8("metro-page-item-id8-animation-narrow3-screen");
+            setClassNameImg9("metro-page-item-id9-animation-narrow3-screen");
+            setClassNameImg10("metro-page-item-id10-animation-narrow3-screen");
+            setClassNameImg11("metro-page-item-id11-animation-narrow3-screen");
+        }
+        // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
+            // console.log("long1")
+
+            // setClassNameImg3("metro-page-item-id3-animation-expand-screen");
+        // }
+
+        // if(size.width < 770 && size.width > 680 && size.width < prevScreenWidthVal){
+        //     console.log("short2");
+        // }
+        // if(size.width < 770 && size.width > 680 && size.width > prevScreenWidthVal){
+        //     console.log("long2");
+        // }
     }
 
     const handleOnWheel = (e) => {
@@ -739,108 +460,89 @@ export const MetroPage2 = (props) => {
         }
     }
 
-    const renderMetroWidePageItemStyle = (id) => {
-        // console.log(props.metroPage.itemsStyleValues.img2.width)
+    const renderStyle = (id, ) => {
+        if(size.width < 1530) return null;
         switch(id){
             case 1:
                 return {
-                    width: `${props.metroPage.itemsStyleValues.img1.width}`,
+                    width: `${imagesSize.img1.width}`,
                     // height: `${100/3}%`
                 };
             case 2:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img2.width}`,
-                    // top: "0px",
-                    // left: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img2.translateX}px, ${props.metroPage.itemsStyleValues.img2.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img2.transition}s ease-out`,
+                    width: `${imagesSize.img2.width}`,
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40}`
                 };
             case 3:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img3.width}`,
-                    // top: "0px",
-                    // left: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img2.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img3.translateX}px, ${props.metroPage.itemsStyleValues.img3.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img3.transition}s ease-out`,
+                    width: `${imagesSize.img3.width}`,
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40}`
                 };
             case 4:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img4.width}`,
-                    // top: "0px",
-                    // left: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img2.width + 40 + props.metroPage.itemsStyleValues.img3.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img4.translateX}px, ${props.metroPage.itemsStyleValues.img4.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img4.transition}s ease-out`,
+                    width: `${imagesSize.img4.width}`,
+                    top: "0px",
+                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40 + imagesSize.img3.width + 40}`
                 };
             case 5:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img5.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    // left: "0px",
-                    transform: `translate(${props.metroPage.itemsStyleValues.img5.translateX}px, ${props.metroPage.itemsStyleValues.img5.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img5.transition}s ease-out`,
+                    width: `${imagesSize.img5.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: "0px",
                 };
             case 6:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img6.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img6.translateX}px, ${props.metroPage.itemsStyleValues.img6.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img6.transition}s ease-out`,
+                    width: `${imagesSize.img6.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: `${imagesSize.img5.width + 40}`
                 };
             case 7:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img7.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img7.translateX}px, ${props.metroPage.itemsStyleValues.img7.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img7.transition}s ease-out`,
+                    width: `${imagesSize.img7.width}`,
+                    top: `${imagesSize.img1.width + 40}`,
+                    left: `${imagesSize.img5.width + 40 + imagesSize.img6.width + 40}`
                 };
             case 8:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img8.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img8.translateX}px, ${props.metroPage.itemsStyleValues.img8.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img8.transition}s ease-out`,
+                    width: `${imagesSize.img8.width}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img6.width + 40}`,
+                    left: `${imagesSize.img5.width + 40}`
                 };
             case 9:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img9.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img9.translateX}px, ${props.metroPage.itemsStyleValues.img9.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img9.transition}s ease-out`,
+                    width: `${imagesSize.img9.width}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img6.width + 40}`,
+                    left: `${imagesSize.img5.width + 40 + imagesSize.img6.width + 40}`
                 };
             case 10:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img10.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img5.width + 80}`,
-                    // left: "0px",
-                    transform: `translate(${props.metroPage.itemsStyleValues.img10.translateX}px, ${props.metroPage.itemsStyleValues.img10.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img10.transition}s ease-out`,
+                    width: `${imagesSize.img10.width}`,
+                    top: `${imagesSize.img1.width + 40 + imagesSize.img5.width + 80}`,
+                    left: "0px"
                 };
             case 11:
                 return {
                     position: "absolute",
-                    width: `${props.metroPage.itemsStyleValues.img11.width}`,
-                    // top: `${3 * props.metroPage.itemsStyleValues.img1.width + 120}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40}`,
-                    transform: `translate(${props.metroPage.itemsStyleValues.img11.translateX}px, ${props.metroPage.itemsStyleValues.img11.translateY}px)`,
-                    transition: `transform ${props.metroPage.itemsStyleValues.img11.transition}s ease-out`,
+                    width: `${imagesSize.img11.width}`,
+                    top: `${3 * imagesSize.img1.width + 120}`,
+                    left: `${imagesSize.img5.width + 40}`
                 };
         }
     }
 
     const renderClassName = (id) => {
+        if(size.width > 1530) return null;
         switch(id){
             case 1:
                 return classNameImg1;
@@ -868,97 +570,53 @@ export const MetroPage2 = (props) => {
     }
 
     const getImagesWidthAndHeight = (obj) => {
-        props.updateItemsStyleValues({
+        setImagesSize({
             img1: {
-                ...props.metroPage.itemsStyleValues.img1,
+                ...imagesSize.img1,
                 height: obj.img1.height
             }, 
             img2: {
-                ...props.metroPage.itemsStyleValues.img2,
+                ...imagesSize.img2,
                 height: obj.img2.height
             }, 
             img3: {
-                ...props.metroPage.itemsStyleValues.img3,
+                ...imagesSize.img3,
                 height: obj.img3.height
             },
             img4: {
-                ...props.metroPage.itemsStyleValues.img4,
+                ...imagesSize.img4,
                 height: obj.img4.height
             },
             img5: {
-                ...props.metroPage.itemsStyleValues.img5,
+                ...imagesSize.img5,
                 height: obj.img5.height
             },
             img6: {
-                ...props.metroPage.itemsStyleValues.img6,
+                ...imagesSize.img6,
                 height: obj.img6.height
             },
             img7: {
-                ...props.metroPage.itemsStyleValues.img7,
+                ...imagesSize.img7,
                 height: obj.img7.height,
             },
             img8: {
-                ...props.metroPage.itemsStyleValues.img8,
+                ...imagesSize.img8,
                 height: obj.img8.height
             },
             img9: {
-                ...props.metroPage.itemsStyleValues.img9,
+                ...imagesSize.img9,
                 height: obj.img9.height
             },
             img10: {
-                ...props.metroPage.itemsStyleValues.img10,
+                ...imagesSize.img10,
                 height: obj.img10.height
             },
             img11: {
-                ...props.metroPage.itemsStyleValues.img11,
+                ...imagesSize.img11,
                 height: obj.img11.height,
             }
         })
     }
-
-    const renderMetroPageItemsStyle = () => {
-        if(size.width > 1500){
-            return 4*props.metroPage.itemsStyleValues.img1.width + 4*40;
-        }
-        if(size.width <= 1500 && size.width > 1430){
-            return 5*props.metroPage.itemsStyleValues.img1.width + 5*40 - 5;
-        }
-        if(size.width <= 1430 && size.width > 1200){
-            return 8*props.metroPage.itemsStyleValues.img1.width + 4*40 + 20;
-        }
-        if(size.width <= 1200 && size.width > 900){
-            return 10*props.metroPage.itemsStyleValues.img1.width + 12*40 - 4;
-        }
-        if(size.width <= 900){
-            return 9*props.metroPage.itemsStyleValues.img1.width + props.metroPage.itemsStyleValues.img1.width/2 + 13*40 + 10;
-        }
-    }
-    // const renderMetroPageWrapper = () => {
-    //     if(size.width > 1500){
-    //         return{
-    //             width: `calc(100% - 80px)`,
-    //             padding: `40px`
-    //         }
-    //     }
-    //     if(size.width <= 1500 && size.width > 1430){
-    //         return{
-    //             width: `calc(100% - 160px)`,
-    //             padding: `80px`
-    //         }
-    //     }
-    //     if(size.width <= 1430 && size.width > 1200){
-    //         return{
-    //             width: `calc(100% - 240px)`,
-    //             padding: `120px`
-    //         }
-    //     }
-    //     if(size.width <= 1200 && size.width > 600){
-    //         return{
-    //             width: `calc(100% - 80px)`,
-    //             padding: `40px`
-    //         }
-    //     }
-    // }
     
     const renderMetroPageData = () => {
         return(
@@ -968,7 +626,8 @@ export const MetroPage2 = (props) => {
                 style={{
                     position: "relative",
                     width: "100%",
-                    height: `${renderMetroPageItemsStyle()}`
+                    height: `${5*imagesSize.img1.width + 4*40}`,
+                    // border: "2px solid red"
                 }}
             >{props.metroPage.items.map((el, i) => {
                 return(
@@ -976,8 +635,8 @@ export const MetroPage2 = (props) => {
                         key={i} 
                         id={el.key}
                         // className={`metro-wide-page-item-id${el.id}`}
-                        // className={renderClassName(el.id)}
-                        style={renderMetroWidePageItemStyle(el.id)}
+                        className={renderClassName(el.id)}
+                        style={renderStyle(el.id)}
                     >
                         <MetroItem
                             page="metroPage"
@@ -1007,10 +666,7 @@ export const MetroPage2 = (props) => {
         }
         if(!props.metroPage.loading && !props.metroPage.error){
             return(
-                <div 
-                    className="metro-page-wrapper" 
-                    // style={renderMetroPageWrapper()}
-                >
+                <div className="metro-page-wrapper">
                     {renderMetroPageData()}
                 </div>
             )
@@ -1032,7 +688,7 @@ export const MetroPage2 = (props) => {
     */
 
     return(
-        <div className="metro-page2" id="metroPage">
+        <div className="metro-page" id="metroPage">
             {renderToolbars()}
             <div className="metro-page-header">
                 <H65 className="h65-nero-poppins">Metro</H65>
@@ -1062,7 +718,6 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
-            updateItemsStyleValues: bindActionCreators(Actions.updateItemsStyleValues, dispatch),
         };
     }
 )(MetroPage2);
