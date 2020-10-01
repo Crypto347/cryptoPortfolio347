@@ -145,85 +145,8 @@ export const MetroPage2 = (props) => {
             resizeRef.current();
         }
  
-        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
-        props.updateItemsStyleValues("img1",{
-            width: (stoneWallWidePageItemsWidth - 120)/5,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img2",{
-            width: (stoneWallWidePageItemsWidth - 120)/5*2,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5 + 40,
-            translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img3",{
-            width: (stoneWallWidePageItemsWidth - 120)/5,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-            translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img4",{
-            width: (stoneWallWidePageItemsWidth - 120)/5,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*4 + 120,
-            translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img5",{
-            width: (stoneWallWidePageItemsWidth - 120)/5*2,
-            height: 0,
-            translateX: 0,
-            translateY: 10,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img6",{
-            width: (stoneWallWidePageItemsWidth - 120)/5,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-            translateY: 10,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img7",{
-            width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-            translateY: 10,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img8",{
-            width: (stoneWallWidePageItemsWidth - 120)/5,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-            translateY: (stoneWallWidePageItemsWidth - 120)/5 + 65,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img9",{
-            width: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-            translateY: (stoneWallWidePageItemsWidth - 120)/5 + 65,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img10",{
-            width: (stoneWallWidePageItemsWidth - 120)/5*2,
-            height: 0,
-            translateX: 0,
-            translateY: (stoneWallWidePageItemsWidth - 120)/5*2 + 115,
-            transition: 0.45
-        })
-        props.updateItemsStyleValues("img11",{
-            width: (stoneWallWidePageItemsWidth - 120)/5,
-            height: 0,
-            translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-            translateY: (stoneWallWidePageItemsWidth - 120)/5*2 + 100,
-            transition: 0.45
-        })
-     
+
+        setImagesState();
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
@@ -357,8 +280,12 @@ export const MetroPage2 = (props) => {
     }
 
     const handleResize = (e) => {
-        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems').clientWidth;
-        setPrevScreenWidthVal(size.width);
+        // setPrevScreenWidthVal(size.width);
+        setImagesState();
+    }
+
+    const setImagesState = () => {
+        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
         if(size.width > 1500){
             props.updateItemsStyleValues("img1",{
                 width: (stoneWallWidePageItemsWidth - 120)/5,
@@ -1049,7 +976,7 @@ export const MetroPage2 = (props) => {
                         key={i} 
                         id={el.key}
                         // className={`metro-wide-page-item-id${el.id}`}
-                        className={renderClassName(el.id)}
+                        // className={renderClassName(el.id)}
                         style={renderMetroWidePageItemStyle(el.id)}
                     >
                         <MetroItem
