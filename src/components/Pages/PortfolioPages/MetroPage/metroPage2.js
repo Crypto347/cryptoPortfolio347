@@ -596,7 +596,6 @@ export const MetroPage2 = (props) => {
                 transition: 0
             })
         }
-
         if(size.width <= 1200 && size.width > 900){
             props.updateItemsStyleValues("img1",{
                 width: (stoneWallWidePageItemsWidth - 40)/2,
@@ -673,6 +672,85 @@ export const MetroPage2 = (props) => {
                 height: 0,
                 translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
                 translateY: (stoneWallWidePageItemsWidth - 40)/2*7 + 408,
+                transition: 0
+            })
+        }
+        if(size.width <= 900){
+            props.updateItemsStyleValues("img1",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img2",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: 20,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img3",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth/2 + 70,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img4",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth + stoneWallWidePageItemsWidth/2 + 120,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img5",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*2 + stoneWallWidePageItemsWidth/2 + 170,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img6",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*3 + stoneWallWidePageItemsWidth/2 + 290,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img7",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*4 + stoneWallWidePageItemsWidth/2 + 340,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img8",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*5 + 370,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img9",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*6 + 420,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img10",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*7 + 470,
+                transition: 0
+            })
+            props.updateItemsStyleValues("img11",{
+                width: stoneWallWidePageItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWidePageItemsWidth*7 + stoneWallWidePageItemsWidth/2 + 500,
                 transition: 0
             })
         }
@@ -922,7 +1000,10 @@ export const MetroPage2 = (props) => {
             return 8*props.metroPage.itemsStyleValues.img1.width + 4*40 + 20;
         }
         if(size.width <= 1200 && size.width > 900){
-            return 10*props.metroPage.itemsStyleValues.img1.width + 12*40 - 4;   
+            return 10*props.metroPage.itemsStyleValues.img1.width + 12*40 - 4;
+        }
+        if(size.width <= 900){
+            return 9*props.metroPage.itemsStyleValues.img1.width + props.metroPage.itemsStyleValues.img1.width/2 + 13*40 + 10;
         }
     }
     // const renderMetroPageWrapper = () => {
@@ -960,8 +1041,7 @@ export const MetroPage2 = (props) => {
                 style={{
                     position: "relative",
                     width: "100%",
-                    height: `${renderMetroPageItemsStyle()}`,
-                    border: "2px solid green"
+                    height: `${renderMetroPageItemsStyle()}`
                 }}
             >{props.metroPage.items.map((el, i) => {
                 return(
