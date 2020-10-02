@@ -611,59 +611,6 @@ export const StoneWallWidePage = (props) => {
         }
     }
 
-    // const renderClassName = (id) => {
-    //     if(size.width > 1040) return null;
-    //     switch(id){
-    //         case 1:
-    //             return classNameImg1;
-    //         case 2:
-    //             return classNameImg2;
-    //         case 3:
-    //             return classNameImg3;
-    //         case 4:
-    //             return classNameImg4;
-    //         case 5:
-    //             return classNameImg5;
-    //         case 6:
-    //             return classNameImg6;
-    //         case 7:
-    //             return classNameImg7;
-    //     }
-    // }
-    
-    // const getImagesWidthAndHeight = (obj) => {
-    //     setImagesSize({
-    //         img1: {
-    //             ...imagesSize.img1,
-    //             height: obj.img1.height
-    //         }, 
-    //         img2: {
-    //             ...imagesSize.img2,
-    //             height: obj.img2.height
-    //         }, 
-    //         img3: {
-    //             ...imagesSize.img3,
-    //             height: obj.img3.height
-    //         },
-    //         img4: {
-    //             ...imagesSize.img4,
-    //             height: obj.img4.height
-    //         },
-    //         img5: {
-    //             ...imagesSize.img5,
-    //             height: obj.img5.height
-    //         },
-    //         img6: {
-    //             ...imagesSize.img6,
-    //             height: obj.img6.height
-    //         },
-    //         img7: {
-    //             ...imagesSize.img7,
-    //             height: obj.img7.height,
-    //         }
-    //     })
-    // }
-
     const renderStoneWallWidePageItemsStyleHeight = () => {
         if(size.width > 1020){
             return 3*props.stoneWallWidePage.itemsStyleValues.img1.width + 2*40 + 15;
@@ -675,15 +622,6 @@ export const StoneWallWidePage = (props) => {
         if(size.width <= 700){
             return 7*props.stoneWallWidePage.itemsStyleValues.img1.width + props.stoneWallWidePage.itemsStyleValues.img1.width/2 + 9*40;
         }
-        // if(size.width <= 1430 && size.width > 1200){
-        //     return 8*props.stoneWallWidePage.itemsStyleValues.img1.width + 4*40 + 20;
-        // }
-        // if(size.width <= 1200 && size.width > 900){
-        //     return 10*props.stoneWallWidePage.itemsStyleValues.img1.width + 12*40 - 4;
-        // }
-        // if(size.width <= 900){
-        //     return 9*props.stoneWallWidePage.itemsStyleValues.img1.width + props.stoneWallWidePage.itemsStyleValues.img1.width/2 + 13*40 + 10;
-        // }
     }
 
     const renderStoneWallWidePageData = () => {

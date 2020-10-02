@@ -177,7 +177,7 @@ export const StoneWallPage = (props) => {
         }
     }, [props.stoneWallPage.itemsStyleValues.img1.transition,props.stoneWallPage.itemsStyleValues.img2.transition,
         props.stoneWallPage.itemsStyleValues.img3.transition,props.stoneWallPage.itemsStyleValues.img4.transition,
-        props.stoneWallPage.itemsStyleValues.img5.transition,props.stoneWallPage.itemsStyleValues.img6.transition])
+        props.stoneWallPage.itemsStyleValues.img5.transition])
 
     const smoothTransition = () => {
         props.updateItemsStyleValuesStoneWallPage("img1",{
