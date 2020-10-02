@@ -87,18 +87,6 @@ export const MetroPage = (props) => {
     const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
-    const [classNameImg1, setClassNameImg1] = useState('metro-page-item-id1');
-    const [classNameImg2, setClassNameImg2] = useState('metro-page-item-id2');
-    const [classNameImg3, setClassNameImg3] = useState('metro-page-item-id3');
-    const [classNameImg4, setClassNameImg4] = useState('metro-page-item-id4');
-    const [classNameImg5, setClassNameImg5] = useState('metro-page-item-id5');
-    const [classNameImg6, setClassNameImg6] = useState('metro-page-item-id6');
-    const [classNameImg7, setClassNameImg7] = useState('metro-page-item-id7');
-    const [classNameImg8, setClassNameImg8] = useState('metro-page-item-id8');
-    const [classNameImg9, setClassNameImg9] = useState('metro-page-item-id9');
-    const [classNameImg10, setClassNameImg10] = useState('metro-page-item-id10');
-    const [classNameImg11, setClassNameImg11] = useState('metro-page-item-id11');
 
     /**
     * Methods
@@ -119,11 +107,6 @@ export const MetroPage = (props) => {
         }, 2);
 
         const smooth = e => {
-          
-            // if(e.target.className.includes("metro-page-item-id5")){
-            //     console.log("fagr")
-            //         transitionRef.current()
-            // }
             if(['metro-page-item-id1',
                 'metro-page-item-id2',
                 'metro-page-item-id3',
@@ -144,7 +127,6 @@ export const MetroPage = (props) => {
         const resize = () => {
             resizeRef.current();
         }
- 
 
         setImagesState();
         window.addEventListener('wheel', handleOnWheel);
@@ -178,50 +160,50 @@ export const MetroPage = (props) => {
             props.metroPage.itemsStyleValues.img10.transition === 0 ||
             props.metroPage.itemsStyleValues.img11.transition === 0
             ) {           
-            props.updateItemsStyleValues("img1",{
+            props.updateItemsStyleValuesMetroPage("img1",{
                 ...props.metroPage.itemsStyleValues.img1,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img2",{
+            });
+            props.updateItemsStyleValuesMetroPage("img2",{
                 ...props.metroPage.itemsStyleValues.img2,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img3",{
+            });
+            props.updateItemsStyleValuesMetroPage("img3",{
                 ...props.metroPage.itemsStyleValues.img3,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img4",{
+            });
+            props.updateItemsStyleValuesMetroPage("img4",{
                 ...props.metroPage.itemsStyleValues.img4,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img5",{
+            });
+            props.updateItemsStyleValuesMetroPage("img5",{
                 ...props.metroPage.itemsStyleValues.img5,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img6",{
+            });
+            props.updateItemsStyleValuesMetroPage("img6",{
                 ...props.metroPage.itemsStyleValues.img6,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img7",{
+            });
+            props.updateItemsStyleValuesMetroPage("img7",{
                 ...props.metroPage.itemsStyleValues.img7,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img8",{
+            });
+            props.updateItemsStyleValuesMetroPage("img8",{
                 ...props.metroPage.itemsStyleValues.img8,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img9",{
+            });
+            props.updateItemsStyleValuesMetroPage("img9",{
                 ...props.metroPage.itemsStyleValues.img9,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img10",{
+            });
+            props.updateItemsStyleValuesMetroPage("img10",{
                 ...props.metroPage.itemsStyleValues.img10,
                 transition: 0.45
-            })
-            props.updateItemsStyleValues("img11",{
+            });
+            props.updateItemsStyleValuesMetroPage("img11",{
                 ...props.metroPage.itemsStyleValues.img11,
                 transition: 0.45
-            })
+            });
         }
     }, [props.metroPage.itemsStyleValues.img1.transition,props.metroPage.itemsStyleValues.img2.transition,
         props.metroPage.itemsStyleValues.img3.transition,props.metroPage.itemsStyleValues.img4.transition,
@@ -231,453 +213,450 @@ export const MetroPage = (props) => {
         props.metroPage.itemsStyleValues.img11.transition])
 
     const smoothTransition = () => {
-      console.log("Fired")
-            props.updateItemsStyleValues("img1",{
-                ...props.metroPage.itemsStyleValues.img1,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                ...props.metroPage.itemsStyleValues.img2,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                ...props.metroPage.itemsStyleValues.img3,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                ...props.metroPage.itemsStyleValues.img4,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                ...props.metroPage.itemsStyleValues.img5,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                ...props.metroPage.itemsStyleValues.img6,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                ...props.metroPage.itemsStyleValues.img7,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                ...props.metroPage.itemsStyleValues.img8,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                ...props.metroPage.itemsStyleValues.img9,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                ...props.metroPage.itemsStyleValues.img10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                ...props.metroPage.itemsStyleValues.img11,
-                transition: 0
-            })
-      
+        props.updateItemsStyleValuesMetroPage("img1",{
+            ...props.metroPage.itemsStyleValues.img1,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img2",{
+            ...props.metroPage.itemsStyleValues.img2,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img3",{
+            ...props.metroPage.itemsStyleValues.img3,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img4",{
+            ...props.metroPage.itemsStyleValues.img4,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img5",{
+            ...props.metroPage.itemsStyleValues.img5,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img6",{
+            ...props.metroPage.itemsStyleValues.img6,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img7",{
+            ...props.metroPage.itemsStyleValues.img7,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img8",{
+            ...props.metroPage.itemsStyleValues.img8,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img9",{
+            ...props.metroPage.itemsStyleValues.img9,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img10",{
+            ...props.metroPage.itemsStyleValues.img10,
+            transition: 0
+        });
+        props.updateItemsStyleValuesMetroPage("img11",{
+            ...props.metroPage.itemsStyleValues.img11,
+            transition: 0
+        });
     }
 
     const handleResize = (e) => {
-        // setPrevScreenWidthVal(size.width);
         setImagesState();
     }
 
     const setImagesState = () => {
-        let stoneWallWidePageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
+        let metroPageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
         if(size.width > 1500){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 120)/5,
+            props.updateItemsStyleValuesMetroPage("img1",{
+                width: (metroPageItemsWidth - 120)/5,
                 height: 0,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
-            })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+            });
+            props.updateItemsStyleValuesMetroPage("img2",{
+                width: (metroPageItemsWidth - 120)/5*2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
+                translateX: (metroPageItemsWidth - 120)/5 + 40,
+                translateY: -(metroPageItemsWidth - 120)/5 - 30,
                 transition: 0
-            })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 120)/5,
+            });
+            props.updateItemsStyleValuesMetroPage("img3",{
+                width: (metroPageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-                translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
+                translateX: (metroPageItemsWidth - 120)/5*3 + 80,
+                translateY: -(metroPageItemsWidth - 120)/5 - 30,
                 transition: 0
-            })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 120)/5,
+            });
+            props.updateItemsStyleValuesMetroPage("img4",{
+                width: (metroPageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*4 + 120,
-                translateY: -(stoneWallWidePageItemsWidth - 120)/5 - 30,
+                translateX: (metroPageItemsWidth - 120)/5*4 + 120,
+                translateY: -(metroPageItemsWidth - 120)/5 - 30,
                 transition: 0
-            })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
-                height: 0,
-                translateX: 0,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 120)/5,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 120)/5*2  + 40,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-                translateY: 10,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 120)/5,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5 + 65,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*3 + 80,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5 + 65,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img10",{
-                width: (stoneWallWidePageItemsWidth - 120)/5*2,
+            });
+            props.updateItemsStyleValuesMetroPage("img5",{
+                width: (metroPageItemsWidth - 120)/5*2,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5*2 + 115,
+                translateY: 10,
                 transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 120)/5,
+            });
+            props.updateItemsStyleValuesMetroPage("img6",{
+                width: (metroPageItemsWidth - 120)/5,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 120)/5*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 120)/5*2 + 100,
+                translateX: (metroPageItemsWidth - 120)/5*2 + 40,
+                translateY: 10,
                 transition: 0
-            })
+            });
+            props.updateItemsStyleValuesMetroPage("img7",{
+                width: (metroPageItemsWidth - 120)/5*2  + 40,
+                height: 0,
+                translateX: (metroPageItemsWidth - 120)/5*3 + 80,
+                translateY: 10,
+                transition: 0
+            });
+            props.updateItemsStyleValuesMetroPage("img8",{
+                width: (metroPageItemsWidth - 120)/5,
+                height: 0,
+                translateX: (metroPageItemsWidth - 120)/5*2 + 40,
+                translateY: (metroPageItemsWidth - 120)/5 + 65,
+                transition: 0
+            });
+            props.updateItemsStyleValuesMetroPage("img9",{
+                width: (metroPageItemsWidth - 120)/5*2 + 40,
+                height: 0,
+                translateX: (metroPageItemsWidth - 120)/5*3 + 80,
+                translateY: (metroPageItemsWidth - 120)/5 + 65,
+                transition: 0
+            });
+            props.updateItemsStyleValuesMetroPage("img10",{
+                width: (metroPageItemsWidth - 120)/5*2,
+                height: 0,
+                translateX: 0,
+                translateY: (metroPageItemsWidth - 120)/5*2 + 115,
+                transition: 0
+            });
+            props.updateItemsStyleValuesMetroPage("img11",{
+                width: (metroPageItemsWidth - 120)/5,
+                height: 0,
+                translateX: (metroPageItemsWidth - 120)/5*2 + 40,
+                translateY: (metroPageItemsWidth - 120)/5*2 + 100,
+                transition: 0
+            });
         }
         if(size.width <= 1500 && size.width > 1430){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
+            props.updateItemsStyleValuesMetroPage("img1",{
+                width: (metroPageItemsWidth - 80)/4,
                 height: 0,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
             })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+            props.updateItemsStyleValuesMetroPage("img2",{
+                width: (metroPageItemsWidth - 80)/4*2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 80)/4 - 30,
+                translateX: (metroPageItemsWidth - 80)/4 + 40,
+                translateY: -(metroPageItemsWidth - 80)/4 - 30,
                 transition: 0
             })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
+            props.updateItemsStyleValuesMetroPage("img3",{
+                width: (metroPageItemsWidth - 80)/4,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*3 + 80,
-                translateY: -(stoneWallWidePageItemsWidth - 80)/4 - 30,
+                translateX: (metroPageItemsWidth - 80)/4*3 + 80,
+                translateY: -(metroPageItemsWidth - 80)/4 - 30,
                 transition: 0
             })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
+            props.updateItemsStyleValuesMetroPage("img4",{
+                width: (metroPageItemsWidth - 80)/4,
                 height: 0,
                 translateX: 0,
                 translateY: 20,
                 transition: 0
             })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+            props.updateItemsStyleValuesMetroPage("img5",{
+                width: (metroPageItemsWidth - 80)/4*2,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4 + 70,
+                translateY: (metroPageItemsWidth - 80)/4 + 70,
                 transition: 0
             })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 80)/4,
+            props.updateItemsStyleValuesMetroPage("img6",{
+                width: (metroPageItemsWidth - 80)/4,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*3 + 80,
+                translateX: (metroPageItemsWidth - 80)/4*3 + 80,
                 translateY: 20,
                 transition: 0
             })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+            props.updateItemsStyleValuesMetroPage("img7",{
+                width: (metroPageItemsWidth - 80)/4*2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4 + 40,
+                translateX: (metroPageItemsWidth - 80)/4 + 40,
                 translateY: 20,
                 transition: 0
             })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 80)/4 - 15,
+            props.updateItemsStyleValuesMetroPage("img8",{
+                width: (metroPageItemsWidth - 80)/4 - 15,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*2 + 60,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4*3 + 180,
+                translateX: (metroPageItemsWidth - 80)/4*2 + 60,
+                translateY: (metroPageItemsWidth - 80)/4*3 + 180,
                 transition: 0
             })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2 + 20,
+            props.updateItemsStyleValuesMetroPage("img9",{
+                width: (metroPageItemsWidth - 80)/4*2 + 20,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*2 + 60,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4 + 70,
+                translateX: (metroPageItemsWidth - 80)/4*2 + 60,
+                translateY: (metroPageItemsWidth - 80)/4 + 70,
                 transition: 0
             })
-            props.updateItemsStyleValues("img10",{
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
+            props.updateItemsStyleValuesMetroPage("img10",{
+                width: (metroPageItemsWidth - 80)/4*2,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4*3 + 180,
+                translateY: (metroPageItemsWidth - 80)/4*3 + 180,
                 transition: 0
             })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 80)/4 - 15,
+            props.updateItemsStyleValuesMetroPage("img11",{
+                width: (metroPageItemsWidth - 80)/4 - 15,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 80)/4*3 + 94,
-                translateY: (stoneWallWidePageItemsWidth - 80)/4*3 + 180,
+                translateX: (metroPageItemsWidth - 80)/4*3 + 94,
+                translateY: (metroPageItemsWidth - 80)/4*3 + 180,
                 transition: 0
             })
         }
         if(size.width <= 1430 && size.width > 1200){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
+            props.updateItemsStyleValuesMetroPage("img1",{
+                width: (metroPageItemsWidth - 40)/3,
                 height: 0,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
             })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
+            props.updateItemsStyleValuesMetroPage("img2",{
+                width: (metroPageItemsWidth - 40)/3*2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 40)/3 - 30,
+                translateX: (metroPageItemsWidth - 40)/3 + 40,
+                translateY: -(metroPageItemsWidth - 40)/3 - 30,
                 transition: 0
             })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
+            props.updateItemsStyleValuesMetroPage("img3",{
+                width: (metroPageItemsWidth - 40)/3,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3*2 + 40,
+                translateX: (metroPageItemsWidth - 40)/3*2 + 40,
                 translateY: 30,
                 transition: 0
             })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
+            props.updateItemsStyleValuesMetroPage("img4",{
+                width: (metroPageItemsWidth - 40)/3,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3 + 100,
+                translateX: (metroPageItemsWidth - 40)/3*2 + 40,
+                translateY: (metroPageItemsWidth - 40)/3 + 100,
                 transition: 0
             })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
+            props.updateItemsStyleValuesMetroPage("img5",{
+                width: (metroPageItemsWidth - 40)/3*2,
                 height: 0,
                 translateX: 0,
                 translateY: 30,
                 transition: 0
             })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
+            props.updateItemsStyleValuesMetroPage("img6",{
+                width: (metroPageItemsWidth - 40)/3,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3*2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*2 + 165,
+                translateX: (metroPageItemsWidth - 40)/3*2 + 40,
+                translateY: (metroPageItemsWidth - 40)/3*2 + 165,
                 transition: 0
             })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
+            props.updateItemsStyleValuesMetroPage("img7",{
+                width: (metroPageItemsWidth - 40)/3*2,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*2 + 165,
+                translateY: (metroPageItemsWidth - 40)/3*2 + 165,
                 transition: 0
             })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
+            props.updateItemsStyleValuesMetroPage("img8",{
+                width: (metroPageItemsWidth - 40)/3,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*3 + 225,
+                translateY: (metroPageItemsWidth - 40)/3*3 + 225,
                 transition: 0
             })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 40)/3*2,
+            props.updateItemsStyleValuesMetroPage("img9",{
+                width: (metroPageItemsWidth - 40)/3*2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/3 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*3 + 225,
+                translateX: (metroPageItemsWidth - 40)/3 + 40,
+                translateY: (metroPageItemsWidth - 40)/3*3 + 225,
                 transition: 0
             })
-            props.updateItemsStyleValues("img10",{
-                width: stoneWallWidePageItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*5 + 345,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 40)/3,
+            props.updateItemsStyleValuesMetroPage("img10",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/3*4 + 285,
+                translateY: (metroPageItemsWidth - 40)/3*5 + 345,
+                transition: 0
+            })
+            props.updateItemsStyleValuesMetroPage("img11",{
+                width: (metroPageItemsWidth - 40)/3,
+                height: 0,
+                translateX: 0,
+                translateY: (metroPageItemsWidth - 40)/3*4 + 285,
                 transition: 0
             })
         }
         if(size.width <= 1200 && size.width > 900){
-            props.updateItemsStyleValues("img1",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
+            props.updateItemsStyleValuesMetroPage("img1",{
+                width: (metroPageItemsWidth - 40)/2,
                 height: 0,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
             })
-            props.updateItemsStyleValues("img2",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
+            props.updateItemsStyleValuesMetroPage("img2",{
+                width: (metroPageItemsWidth - 40)/2*2 + 40,
                 height: 0,
                 translateX: 0,
                 translateY: 10,
                 transition: 0
             })
-            props.updateItemsStyleValues("img3",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
+            props.updateItemsStyleValuesMetroPage("img3",{
+                width: (metroPageItemsWidth - 40)/2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
-                translateY: -(stoneWallWidePageItemsWidth - 40)/2 - 30,
+                translateX: (metroPageItemsWidth - 40)/2 + 40,
+                translateY: -(metroPageItemsWidth - 40)/2 - 30,
                 transition: 0
             })
-            props.updateItemsStyleValues("img4",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
+            props.updateItemsStyleValuesMetroPage("img4",{
+                width: (metroPageItemsWidth - 40)/2,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2 + 70,
+                translateY: (metroPageItemsWidth - 40)/2 + 70,
                 transition: 0
             })
-            props.updateItemsStyleValues("img5",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
+            props.updateItemsStyleValuesMetroPage("img5",{
+                width: (metroPageItemsWidth - 40)/2*2 + 40,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*3 + 145,
+                translateY: (metroPageItemsWidth - 40)/2*3 + 145,
                 transition: 0
             })
-            props.updateItemsStyleValues("img6",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
+            props.updateItemsStyleValuesMetroPage("img6",{
+                width: (metroPageItemsWidth - 40)/2,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2 + 70,
+                translateX: (metroPageItemsWidth - 40)/2 + 40,
+                translateY: (metroPageItemsWidth - 40)/2 + 70,
                 transition: 0
             })
-            props.updateItemsStyleValues("img7",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*2 + 110,
-                transition: 0
-            })
-            props.updateItemsStyleValues("img8",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
+            props.updateItemsStyleValuesMetroPage("img7",{
+                width: (metroPageItemsWidth - 40)/2*2 + 40,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*7 + 408,
+                translateY: (metroPageItemsWidth - 40)/2*2 + 110,
                 transition: 0
             })
-            props.updateItemsStyleValues("img9",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
+            props.updateItemsStyleValuesMetroPage("img8",{
+                width: (metroPageItemsWidth - 40)/2,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*5 + 327,
+                translateY: (metroPageItemsWidth - 40)/2*7 + 408,
                 transition: 0
             })
-            props.updateItemsStyleValues("img10",{
-                width: (stoneWallWidePageItemsWidth - 40)/2*2 + 40,
+            props.updateItemsStyleValuesMetroPage("img9",{
+                width: (metroPageItemsWidth - 40)/2*2 + 40,
                 height: 0,
                 translateX: 0,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*8 + 450,
+                translateY: (metroPageItemsWidth - 40)/2*5 + 327,
                 transition: 0
             })
-            props.updateItemsStyleValues("img11",{
-                width: (stoneWallWidePageItemsWidth - 40)/2,
+            props.updateItemsStyleValuesMetroPage("img10",{
+                width: (metroPageItemsWidth - 40)/2*2 + 40,
                 height: 0,
-                translateX: (stoneWallWidePageItemsWidth - 40)/2 + 40,
-                translateY: (stoneWallWidePageItemsWidth - 40)/2*7 + 408,
+                translateX: 0,
+                translateY: (metroPageItemsWidth - 40)/2*8 + 450,
+                transition: 0
+            })
+            props.updateItemsStyleValuesMetroPage("img11",{
+                width: (metroPageItemsWidth - 40)/2,
+                height: 0,
+                translateX: (metroPageItemsWidth - 40)/2 + 40,
+                translateY: (metroPageItemsWidth - 40)/2*7 + 408,
                 transition: 0
             })
         }
         if(size.width <= 900){
-            props.updateItemsStyleValues("img1",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img1",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
             })
-            props.updateItemsStyleValues("img2",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img2",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
                 translateY: 20,
                 transition: 0
             })
-            props.updateItemsStyleValues("img3",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img3",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth/2 + 70,
+                translateY: metroPageItemsWidth/2 + 70,
                 transition: 0
             })
-            props.updateItemsStyleValues("img4",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img4",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth + stoneWallWidePageItemsWidth/2 + 120,
+                translateY: metroPageItemsWidth + metroPageItemsWidth/2 + 120,
                 transition: 0
             })
-            props.updateItemsStyleValues("img5",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img5",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*2 + stoneWallWidePageItemsWidth/2 + 170,
+                translateY: metroPageItemsWidth*2 + metroPageItemsWidth/2 + 170,
                 transition: 0
             })
-            props.updateItemsStyleValues("img6",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img6",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*3 + stoneWallWidePageItemsWidth/2 + 290,
+                translateY: metroPageItemsWidth*3 + metroPageItemsWidth/2 + 290,
                 transition: 0
             })
-            props.updateItemsStyleValues("img7",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img7",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*4 + stoneWallWidePageItemsWidth/2 + 340,
+                translateY: metroPageItemsWidth*4 + metroPageItemsWidth/2 + 340,
                 transition: 0
             })
-            props.updateItemsStyleValues("img8",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img8",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*5 + 370,
+                translateY: metroPageItemsWidth*5 + 370,
                 transition: 0
             })
-            props.updateItemsStyleValues("img9",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img9",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*6 + 420,
+                translateY: metroPageItemsWidth*6 + 420,
                 transition: 0
             })
-            props.updateItemsStyleValues("img10",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img10",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*7 + 470,
+                translateY: metroPageItemsWidth*7 + 470,
                 transition: 0
             })
-            props.updateItemsStyleValues("img11",{
-                width: stoneWallWidePageItemsWidth,
+            props.updateItemsStyleValuesMetroPage("img11",{
+                width: metroPageItemsWidth,
                 height: 0,
                 translateX: 0,
-                translateY: stoneWallWidePageItemsWidth*7 + stoneWallWidePageItemsWidth/2 + 500,
+                translateY: metroPageItemsWidth*7 + metroPageItemsWidth/2 + 500,
                 transition: 0
             })
         }
@@ -739,8 +718,7 @@ export const MetroPage = (props) => {
         }
     }
 
-    const renderMetroWidePageItemStyle = (id) => {
-        // console.log(props.metroPage.itemsStyleValues.img2.width)
+    const renderMetroPageItemStyle = (id) => {
         switch(id){
             case 1:
                 return {
@@ -840,35 +818,8 @@ export const MetroPage = (props) => {
         }
     }
 
-    const renderClassName = (id) => {
-        switch(id){
-            case 1:
-                return classNameImg1;
-            case 2:
-                return classNameImg2;
-            case 3:
-                return classNameImg3;
-            case 4:
-                return classNameImg4;
-            case 5:
-                return classNameImg5;
-            case 6:
-                return classNameImg6;
-            case 7:
-                return classNameImg7;
-            case 8:
-                return classNameImg8;
-            case 9:
-                return classNameImg9;
-            case 10:
-                return classNameImg10;
-            case 11:
-                return classNameImg11;
-        }
-    }
-
     const getImagesWidthAndHeight = (obj) => {
-        props.updateItemsStyleValues({
+        props.updateItemsStyleValuesMetroPage({
             img1: {
                 ...props.metroPage.itemsStyleValues.img1,
                 height: obj.img1.height
@@ -916,7 +867,7 @@ export const MetroPage = (props) => {
         })
     }
 
-    const renderMetroPageItemsStyle = () => {
+    const renderMetroPageItemsStyleHeight = () => {
         if(size.width > 1500){
             return 4*props.metroPage.itemsStyleValues.img1.width + 4*40;
         }
@@ -933,32 +884,6 @@ export const MetroPage = (props) => {
             return 9*props.metroPage.itemsStyleValues.img1.width + props.metroPage.itemsStyleValues.img1.width/2 + 13*40 + 10;
         }
     }
-    // const renderMetroPageWrapper = () => {
-    //     if(size.width > 1500){
-    //         return{
-    //             width: `calc(100% - 80px)`,
-    //             padding: `40px`
-    //         }
-    //     }
-    //     if(size.width <= 1500 && size.width > 1430){
-    //         return{
-    //             width: `calc(100% - 160px)`,
-    //             padding: `80px`
-    //         }
-    //     }
-    //     if(size.width <= 1430 && size.width > 1200){
-    //         return{
-    //             width: `calc(100% - 240px)`,
-    //             padding: `120px`
-    //         }
-    //     }
-    //     if(size.width <= 1200 && size.width > 600){
-    //         return{
-    //             width: `calc(100% - 80px)`,
-    //             padding: `40px`
-    //         }
-    //     }
-    // }
     
     const renderMetroPageData = () => {
         return(
@@ -968,7 +893,7 @@ export const MetroPage = (props) => {
                 style={{
                     position: "relative",
                     width: "100%",
-                    height: `${renderMetroPageItemsStyle()}`
+                    height: `${renderMetroPageItemsStyleHeight()}px`
                 }}
             >{props.metroPage.items.map((el, i) => {
                 return(
@@ -977,7 +902,7 @@ export const MetroPage = (props) => {
                         id={el.key}
                         // className={`metro-wide-page-item-id${el.id}`}
                         // className={renderClassName(el.id)}
-                        style={renderMetroWidePageItemStyle(el.id)}
+                        style={renderMetroPageItemStyle(el.id)}
                     >
                         <MetroItem
                             page="metroPage"
@@ -1007,10 +932,7 @@ export const MetroPage = (props) => {
         }
         if(!props.metroPage.loading && !props.metroPage.error){
             return(
-                <div 
-                    className="metro-page-wrapper" 
-                    // style={renderMetroPageWrapper()}
-                >
+                <div className="metro-page-wrapper">
                     {renderMetroPageData()}
                 </div>
             )
@@ -1062,7 +984,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
-            updateItemsStyleValues: bindActionCreators(Actions.updateItemsStyleValues, dispatch),
+            updateItemsStyleValuesMetroPage: bindActionCreators(Actions.updateItemsStyleValuesMetroPage, dispatch),
         };
     }
 )(MetroPage);

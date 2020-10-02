@@ -122,7 +122,6 @@ export const MetroItem = (props) => {
 
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
-
         let obj = {
             img1: {
                 // width: document.getElementById("metroItemId1").clientWidth,

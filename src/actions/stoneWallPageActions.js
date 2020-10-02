@@ -19,3 +19,11 @@ export function fetchStoneWallPageFailur(err) {
         err: err
     };
 };
+
+export function updateItemsStyleValuesStoneWallPage(image, obj) {
+    return { 
+        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_STONE_WALL_PAGE,
+        image: image,
+        obj: obj
+    };
+};

@@ -52,6 +52,7 @@ export const StoneWallItem = (props) => {
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
     const [paddingTopBottom, setPaddingTopBottom] = useState(0);
+    const [upload, setUpload] = useState(false);
  
     /**
     * Methods
@@ -61,9 +62,35 @@ export const StoneWallItem = (props) => {
         const resize = () => {
             resizeRef.current();
         } 
+        setUpload(true);
+        if(upload){
+            // console.log("HH",document.getElementById("stoneWallItemId1"))
+            props.getImagesWidthAndHeight({
+                img1: {
+                    // width: document.getElementById("stoneWallWideItemId1").clientWidth,
+                    height: document.getElementById("stoneWallItemId1").clientHeight,
+                }, 
+                img2: {
+                    // width: document.getElementById("stoneWallItemId2").clientWidth,
+                    height: document.getElementById("stoneWallItemId2").clientHeight,
+                }, 
+                img3: {
+                    // width: document.getElementById("stoneWallItemId3").clientWidth,
+                    height: document.getElementById("stoneWallItemId3").clientHeight,
+                },
+                img4: {
+                    // width: document.getElementById("stoneWallItemId4").clientWidth,
+                    height: document.getElementById("stoneWallItemId4").clientHeight,
+                },
+                img5: {
+                    // width: document.getElementById("stoneWallItemId5").clientWidth,
+                    height: document.getElementById("stoneWallItemId5").clientHeight,
+                }
+            })
+        }
         window.addEventListener('resize', resize);
         return () =>  window.removeEventListener('resize', resize);
-    }, []);
+    }, [upload]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -71,10 +98,47 @@ export const StoneWallItem = (props) => {
 
     const handleResize = () => {
         let paddingTopBottomVal = setPadding(props.page);
-        // let cardHeight = document.getElementById("img").clientHeight;
-        // setCardHeight(cardHeight - paddingTopBottomVal);
+        let obj = {
+            img1: {
+                // width: document.getElementById("stoneWallItemId1").clientWidth,
+                height: document.getElementById("stoneWallItemId1").clientHeight,
+            }, 
+            img2: {
+                // width: document.getElementById("stoneWallItemId2").clientWidth,
+                height: document.getElementById("stoneWallItemId2").clientHeight,
+            }, 
+            img3: {
+                // width: document.getElementById("stoneWallItemId3").clientWidth,
+                height: document.getElementById("stoneWallItemId3").clientHeight,
+            },
+            img4: {
+                // width: document.getElementById("stoneWallItemId4").clientWidth,
+                height: document.getElementById("stoneWallItemId4").clientHeight,
+            },
+            img5: {
+                // width: document.getElementById("stoneWallItemId5").clientWidth,
+                height: document.getElementById("stoneWallItemId5").clientHeight,
+            }
+        }
         setPaddingTopBottom(paddingTopBottomVal);
-        // console.log(cardHeight)
+        props.getImagesWidthAndHeight(obj);
+        switch(props.obj.id){
+            case 1:
+                setCardHeight(obj.img1.height - 40);
+                break;
+            case 2:
+                setCardHeight(obj.img2.height - 40);
+                break;
+            case 3:
+                setCardHeight(obj.img3.height - 40);
+                break;
+            case 4:
+                setCardHeight(obj.img4.height - 40);
+                break;
+            case 5:
+                setCardHeight(obj.img5.height - 40);
+                break;
+        }
     }
 
     const setPadding = (page) => {
@@ -182,6 +246,7 @@ export const StoneWallItem = (props) => {
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
+            id={`stoneWallItemId${props.obj.id}`}
         >
             <div className={renderClassName("stoneWallItemImage", isHovering)}>
                 <img 
@@ -192,7 +257,7 @@ export const StoneWallItem = (props) => {
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `calc(100% - ${paddingTopBottom}px)`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
+                style={{height: `${cardHeight}px`}}
                 onMouseDown={(e) => stoneWallOnClick(e, props.obj.path)}
             >
                 <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>

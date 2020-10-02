@@ -147,7 +147,7 @@ const setMetroPageIsHoveringCategory = (state, action) => {
     };
 }
 
-const updateItemsStyleValues = (state, action) => {
+const updateItemsStyleValuesMetroPage = (state, action) => {
     let updatedItemsStyleValues = {...state.itemsStyleValues}
     switch(action.image) {
         case 'img1':
@@ -244,8 +244,8 @@ const metroPageReducer = (state = initialState, action) => {
             return fetchMetroPageFailur(state, action);
         case actionTypes.SET_METRO_PAGE_IS_HOVERING_CATEGORY:
             return setMetroPageIsHoveringCategory(state, action);
-        case actionTypes.UPDATED_ITEMS_STYLE_VALUES:
-            return updateItemsStyleValues(state, action);
+        case actionTypes.UPDATED_ITEMS_STYLE_VALUES_METRO_PAGE:
+            return updateItemsStyleValuesMetroPage(state, action);
         default: 
             return state;
     }

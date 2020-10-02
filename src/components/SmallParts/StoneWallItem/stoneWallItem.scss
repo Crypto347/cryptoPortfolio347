@@ -1,7 +1,7 @@
 .stone-wall-item {
     position: relative;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     // margin-bottom: 30px;
     cursor: pointer;
     .stone-wall-item-image {
@@ -41,6 +41,7 @@
     .stone-wall-item-curtain-hover-on {
         background: rgba(0, 0, 0, 0.7);
         width: calc(100% - 40px);
+        padding: 20px 20px 20px 20px;
         position: absolute;
         left: 0%;
         top: 0%;
@@ -109,6 +110,7 @@
     .stone-wall-item-curtain-hover-off {
         background: rgba(0, 0, 0, 0.7);
         width: calc(100% - 40px);
+        padding: 20px 20px 20px 20px;
         position: absolute;
         left: 0%;
         top: 0%;

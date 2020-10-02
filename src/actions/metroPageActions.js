@@ -28,9 +28,9 @@ export function setMetroPageIsHoveringCategory(val, pathOfIds) {
     };
 };
 
-export function updateItemsStyleValues(image, obj) {
+export function updateItemsStyleValuesMetroPage(image, obj) {
     return { 
-        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES,
+        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_METRO_PAGE,
         image: image,
         obj: obj
     };
