@@ -98,12 +98,7 @@ export const StoneWallWidePage = (props) => {
             props.fetchStoneWallWidePage();
         }
         let timeout = setTimeout(() => {
-            if(!props.stoneWallWidePage.loading && !props.stoneWallWidePage.error && props.historyPopFromItem !== "scrollToTop"){
-                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                window.scrollTo(0, itemOffsetTop - 30);
-            }else{
-                window.scrollTo(0, 0);
-            }
+            window.scrollTo(0, 0);
         }, 2);
 
         const smooth = e => {
