@@ -54,48 +54,6 @@ export const initialState = {
             translateX: 0,
             translateY: 0,
             transition: 0.45
-        },
-        img6: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img7: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img8: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img9: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img10: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img11: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
         }
     }
 }
@@ -162,48 +120,6 @@ const updateItemsStyleValuesStoneWallPage = (state, action) => {
             updatedItemsStyleValues['img5'].translateX = action.obj.translateX;
             updatedItemsStyleValues['img5'].translateY = action.obj.translateY;
             updatedItemsStyleValues['img5'].transition = action.obj.transition;
-            break;
-        case 'img6':
-            updatedItemsStyleValues['img6'].width = action.obj.width;
-            updatedItemsStyleValues['img6'].height = action.obj.height;
-            updatedItemsStyleValues['img6'].translateX = action.obj.translateX;
-            updatedItemsStyleValues['img6'].translateY = action.obj.translateY;
-            updatedItemsStyleValues['img6'].transition = action.obj.transition;
-            break;
-        case 'img7':
-            updatedItemsStyleValues['img7'].width = action.obj.width;
-            updatedItemsStyleValues['img7'].height = action.obj.height;
-            updatedItemsStyleValues['img7'].translateX = action.obj.translateX;
-            updatedItemsStyleValues['img7'].translateY = action.obj.translateY;
-            updatedItemsStyleValues['img7'].transition = action.obj.transition;
-            break;
-        case 'img8':
-            updatedItemsStyleValues['img8'].width = action.obj.width;
-            updatedItemsStyleValues['img8'].height = action.obj.height;
-            updatedItemsStyleValues['img8'].translateX = action.obj.translateX;
-            updatedItemsStyleValues['img8'].translateY = action.obj.translateY;
-            updatedItemsStyleValues['img8'].transition = action.obj.transition;
-            break;
-        case 'img9':
-            updatedItemsStyleValues['img9'].width = action.obj.width;
-            updatedItemsStyleValues['img9'].height = action.obj.height;
-            updatedItemsStyleValues['img9'].translateX = action.obj.translateX;
-            updatedItemsStyleValues['img9'].translateY = action.obj.translateY;
-            updatedItemsStyleValues['img9'].transition = action.obj.transition;
-            break;
-        case 'img10':
-            updatedItemsStyleValues['img10'].width = action.obj.width;
-            updatedItemsStyleValues['img10'].height = action.obj.height;
-            updatedItemsStyleValues['img10'].translateX = action.obj.translateX;
-            updatedItemsStyleValues['img10'].translateY = action.obj.translateY;
-            updatedItemsStyleValues['img10'].transition = action.obj.transition;
-            break;
-        case 'img11':
-            updatedItemsStyleValues['img11'].width = action.obj.width;
-            updatedItemsStyleValues['img11'].height = action.obj.height;
-            updatedItemsStyleValues['img11'].translateX = action.obj.translateX;
-            updatedItemsStyleValues['img11'].translateY = action.obj.translateY;
-            updatedItemsStyleValues['img11'].transition = action.obj.transition;
             break;
     }
     return {

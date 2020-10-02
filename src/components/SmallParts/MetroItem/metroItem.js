@@ -51,7 +51,7 @@ export const MetroItem = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [paddingTopBottom, setPaddingTopBottom] = useState(0);
-    const [upload, setUpload] = useState(false);
+    // const [upload, setUpload] = useState(false);
     const [cardHeight, setCardHeight] = useState({});
  
     /**
@@ -62,59 +62,59 @@ export const MetroItem = (props) => {
         const resize = () => {
             resizeRef.current();
         } 
-        setUpload(true);
-        if(upload){
-            props.getImagesWidthAndHeight({
-                img1: {
-                    // width: document.getElementById("stoneWallWideItemId1").clientWidth,
-                    height: document.getElementById("metroItemId1").clientHeight,
-                }, 
-                img2: {
-                    // width: document.getElementById("metroItemId2").clientWidth,
-                    height: document.getElementById("metroItemId2").clientHeight,
-                }, 
-                img3: {
-                    // width: document.getElementById("metroItemId3").clientWidth,
-                    height: document.getElementById("metroItemId3").clientHeight,
-                },
-                img4: {
-                    // width: document.getElementById("metroItemId4").clientWidth,
-                    height: document.getElementById("metroItemId4").clientHeight,
-                },
-                img5: {
-                    // width: document.getElementById("metroItemId5").clientWidth,
-                    height: document.getElementById("metroItemId5").clientHeight,
-                },
-                img6: {
-                    // width: document.getElementById("metroItemId6").clientWidth,
-                    height: document.getElementById("metroItemId6").clientHeight,
-                },
-                img7: {
-                    // width: document.getElementById("metroItemId7").clientWidth,
-                    height: document.getElementById("metroItemId7").clientHeight,
-                },
-                img8: {
-                    // width: document.getElementById("metroItemId8").clientWidth,
-                    height: document.getElementById("metroItemId8").clientHeight,
-                },
-                img9: {
-                    // width: document.getElementById("metroItemId9").clientWidth,
-                    height: document.getElementById("metroItemId9").clientHeight,
-                },
-                img10: {
-                    // width: document.getElementById("metroItemId10").clientWidth,
-                    height: document.getElementById("metroItemId10").clientHeight,
-                },
-                img11: {
-                    // width: document.getElementById("metroItemId11").clientWidth,
-                    height: document.getElementById("metroItemId11").clientHeight,
-                }
-            })
-        }
+        // setUpload(true);
+        // if(upload){
+        //     props.getImagesWidthAndHeight({
+        //         img1: {
+        //             // width: document.getElementById("stoneWallWideItemId1").clientWidth,
+        //             height: document.getElementById("metroItemId1").clientHeight,
+        //         }, 
+        //         img2: {
+        //             // width: document.getElementById("metroItemId2").clientWidth,
+        //             height: document.getElementById("metroItemId2").clientHeight,
+        //         }, 
+        //         img3: {
+        //             // width: document.getElementById("metroItemId3").clientWidth,
+        //             height: document.getElementById("metroItemId3").clientHeight,
+        //         },
+        //         img4: {
+        //             // width: document.getElementById("metroItemId4").clientWidth,
+        //             height: document.getElementById("metroItemId4").clientHeight,
+        //         },
+        //         img5: {
+        //             // width: document.getElementById("metroItemId5").clientWidth,
+        //             height: document.getElementById("metroItemId5").clientHeight,
+        //         },
+        //         img6: {
+        //             // width: document.getElementById("metroItemId6").clientWidth,
+        //             height: document.getElementById("metroItemId6").clientHeight,
+        //         },
+        //         img7: {
+        //             // width: document.getElementById("metroItemId7").clientWidth,
+        //             height: document.getElementById("metroItemId7").clientHeight,
+        //         },
+        //         img8: {
+        //             // width: document.getElementById("metroItemId8").clientWidth,
+        //             height: document.getElementById("metroItemId8").clientHeight,
+        //         },
+        //         img9: {
+        //             // width: document.getElementById("metroItemId9").clientWidth,
+        //             height: document.getElementById("metroItemId9").clientHeight,
+        //         },
+        //         img10: {
+        //             // width: document.getElementById("metroItemId10").clientWidth,
+        //             height: document.getElementById("metroItemId10").clientHeight,
+        //         },
+        //         img11: {
+        //             // width: document.getElementById("metroItemId11").clientWidth,
+        //             height: document.getElementById("metroItemId11").clientHeight,
+        //         }
+        //     })
+        // }
 
         window.addEventListener('resize', resize);
         return () =>  window.removeEventListener('resize', resize);
-    }, [upload]);
+    }, []);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -169,7 +169,7 @@ export const MetroItem = (props) => {
             }
         }
         setPaddingTopBottom(paddingTopBottomVal);
-        props.getImagesWidthAndHeight(obj);
+        // props.getImagesWidthAndHeight(obj);
         switch(props.obj.id){
             case 1:
                 setCardHeight(obj.img1.height - 80);

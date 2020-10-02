@@ -27,3 +27,11 @@ export function setStoneWallWidePageIsHoveringCategory(val, pathOfIds) {
         pathOfIds: pathOfIds
     };
 };
+
+export function updateItemsStyleValuesStoneWallWidePage(image, obj) {
+    return { 
+        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_STONE_WALL_WIDE_PAGE,
+        image: image,
+        obj: obj
+    };
+};

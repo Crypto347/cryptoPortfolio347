@@ -84,50 +84,9 @@ export const StoneWallWidePage = (props) => {
     */
 
     const resizeRef = useRef();
+    const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [prevScreenWidthVal, setPrevScreenWidthVal] = useState(0);
-    const [classNameImg1, setClassNameImg1] = useState('stone-wall-wide-page-item-id1');
-    const [classNameImg2, setClassNameImg2] = useState('stone-wall-wide-page-item-id2');
-    const [classNameImg3, setClassNameImg3] = useState('stone-wall-wide-page-item-id3');
-    const [classNameImg4, setClassNameImg4] = useState('stone-wall-wide-page-item-id4');
-    const [classNameImg5, setClassNameImg5] = useState('stone-wall-wide-page-item-id5');
-    const [classNameImg6, setClassNameImg6] = useState('stone-wall-wide-page-item-id6');
-    const [classNameImg7, setClassNameImg7] = useState('stone-wall-wide-page-item-id7');
-    // const [imgSize1, setImgSize1] = useState({
-    //     width: (size.width - 80)/3,
-    //     height: (size.width - 80)/3,
-    // })
-    const [imagesSize, setImagesSize] = useState({
-        img1: {
-            width: 0,
-            height: 1500,
-        }, 
-        img2: {
-            width: 0,
-            height: 0,
-        }, 
-        img3: {
-            width: 0,
-            height: 0,
-        },
-        img4: {
-            width: 0,
-            height: 1500,
-        },
-        img5: {
-            width: 0,
-            height: 0,
-        },
-        img6: {
-            width: 0,
-            height: 0,
-        },
-        img7: {
-            width: 0,
-            height: 0,
-        }
-    });
 
     /**
     * Methods
@@ -147,159 +106,218 @@ export const StoneWallWidePage = (props) => {
             }
         }, 2);
 
+        const smooth = e => {
+            if(['stone-wall-wide-item-id1',
+                'stone-wall-wide-item-id2',
+                'stone-wall-wide-item-id3',
+                'stone-wall-wide-item-id4',
+                'stone-wall-wide-item-id5',
+                'stone-wall-wide-item-id6',
+                'stone-wall-wide-item-id7'
+                ].includes(e.target.className)){
+                    transitionRef.current()
+            }
+        }
+
         const resize = () => {
             resizeRef.current();
         }
 
-        let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems')?.clientWidth;
-
-        setImagesSize({
-            img1: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-            }, 
-            img2: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: 0,
-            }, 
-            img3: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-            },
-            img4: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-            },
-            img5: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-            },
-            img6: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: 0,
-            },
-            img7: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: 0,
-            }
-        })
+        setImagesState();
         
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
+        window.addEventListener('transitionend', smooth);
 
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
+            window.removeEventListener('transitionend', smooth);
             props.setMenuDotsState("init", "");
         }
     }, []);
 
     useEffect(() => {
+        transitionRef.current = smoothTransition;
         resizeRef.current = handleResize;
     });
 
+    useEffect(() => {
+        if(props.stoneWallWidePage.itemsStyleValues.img1.transition === 0 ||
+            props.stoneWallWidePage.itemsStyleValues.img2.transition === 0 ||
+            props.stoneWallWidePage.itemsStyleValues.img3.transition === 0 ||
+            props.stoneWallWidePage.itemsStyleValues.img4.transition === 0 ||
+            props.stoneWallWidePage.itemsStyleValues.img5.transition === 0 ||
+            props.stoneWallWidePage.itemsStyleValues.img6.transition === 0 ||
+            props.stoneWallWidePage.itemsStyleValues.img7.transition === 0) {           
+            props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                ...props.stoneWallWidePage.itemsStyleValues.img1,
+                transition: 0.45
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                ...props.stoneWallWidePage.itemsStyleValues.img2,
+                transition: 0.45
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                ...props.stoneWallWidePage.itemsStyleValues.img3,
+                transition: 0.45
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                ...props.stoneWallWidePage.itemsStyleValues.img4,
+                transition: 0.45
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                ...props.stoneWallWidePage.itemsStyleValues.img5,
+                transition: 0.45
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                ...props.stoneWallWidePage.itemsStyleValues.img6,
+                transition: 0.45
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                ...props.stoneWallWidePage.itemsStyleValues.img7,
+                transition: 0.45
+            });
+        }
+    }, [props.stoneWallWidePage.itemsStyleValues.img1.transition,props.stoneWallWidePage.itemsStyleValues.img2.transition,
+        props.stoneWallWidePage.itemsStyleValues.img3.transition,props.stoneWallWidePage.itemsStyleValues.img4.transition,
+        props.stoneWallWidePage.itemsStyleValues.img5.transition,props.stoneWallWidePage.itemsStyleValues.img6.transition,
+        props.stoneWallWidePage.itemsStyleValues.img7.transition])
+
+    const smoothTransition = () => {
+        props.updateItemsStyleValuesStoneWallWidePage("img1",{
+            ...props.stoneWallWidePage.itemsStyleValues.img1,
+            transition: 0
+        });
+        props.updateItemsStyleValuesStoneWallWidePage("img2",{
+            ...props.stoneWallWidePage.itemsStyleValues.img2,
+            transition: 0
+        });
+        props.updateItemsStyleValuesStoneWallWidePage("img3",{
+            ...props.stoneWallWidePage.itemsStyleValues.img3,
+            transition: 0
+        });
+        props.updateItemsStyleValuesStoneWallWidePage("img4",{
+            ...props.stoneWallWidePage.itemsStyleValues.img4,
+            transition: 0
+        });
+        props.updateItemsStyleValuesStoneWallWidePage("img5",{
+            ...props.stoneWallWidePage.itemsStyleValues.img5,
+            transition: 0
+        });
+        props.updateItemsStyleValuesStoneWallWidePage("img6",{
+            ...props.stoneWallWidePage.itemsStyleValues.img6,
+            transition: 0
+        });
+        props.updateItemsStyleValuesStoneWallWidePage("img7",{
+            ...props.stoneWallWidePage.itemsStyleValues.img7,
+            transition: 0
+        });
+    }
+
     const handleResize = (e) => {
-        let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems').clientWidth;
+        setImagesState();
+        // let stoneWallWidePageItemsWidth = document.getElementById('stoneWallWidePageItems').clientWidth;
         
-        setImagesSize({
-            img1: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/4,
-            }, 
-            img2: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth - 80)/4*2,
-            }, 
-            img3: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
-            },
-            img4: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth)/3,
-            },
-            img5: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
-            },
-            img6: {
-                width: (stoneWallWidePageItemsWidth - 80)/4,
-                height: (stoneWallWidePageItemsWidth - 80)/4,
-            },
-            img7: {
-                width: (stoneWallWidePageItemsWidth - 80)/4*2,
-                height: (stoneWallWidePageItemsWidth)/3,
-            }
-        })
-        setPrevScreenWidthVal(size.width);
-        if(size.width > 1040){
-            return null;
-        }
-        if(size.width > 1026){
-            setClassNameImg1("stone-wall-wide-page-item-id1");
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
-            setClassNameImg6("stone-wall-wide-page-item-id6");
-            setClassNameImg7("stone-wall-wide-page-item-id7");
+        // setImagesSize({
+        //     img1: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4,
+        //         height: (stoneWallWidePageItemsWidth)/4,
+        //     }, 
+        //     img2: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4*2,
+        //         height: (stoneWallWidePageItemsWidth - 80)/4*2,
+        //     }, 
+        //     img3: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4,
+        //         height: (stoneWallWidePageItemsWidth - 80)/4,
+        //     },
+        //     img4: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4,
+        //         height: (stoneWallWidePageItemsWidth)/3,
+        //     },
+        //     img5: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4,
+        //         height: (stoneWallWidePageItemsWidth - 80)/4,
+        //     },
+        //     img6: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4,
+        //         height: (stoneWallWidePageItemsWidth - 80)/4,
+        //     },
+        //     img7: {
+        //         width: (stoneWallWidePageItemsWidth - 80)/4*2,
+        //         height: (stoneWallWidePageItemsWidth)/3,
+        //     }
+        // })
+        // setPrevScreenWidthVal(size.width);
+        // if(size.width > 1040){
+        //     return null;
+        // }
+        // if(size.width > 1026){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7");
         
-        }
-        if(size.width < 1026 && size.width > 840 && prevScreenWidthVal < size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
-        }
-        if(size.width < 1025 && size.width > 840 && prevScreenWidthVal > size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow-screen");
-        }
-        if(size.width < 840 && size.width > 670 ){
-            setClassNameImg1("stone-wall-wide-page-item-id1");
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
-            setClassNameImg6("stone-wall-wide-page-item-id6");
-            setClassNameImg7("stone-wall-wide-page-item-id7");
-        }
-        if(size.width < 480 && prevScreenWidthVal < size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand2-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand2-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand2-screen");
-        }
-        if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
-            setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow2-screen");
-            setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
-            setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
-            setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
-            setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
-            setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow2-screen");
-            setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow2-screen");
-        }
-        if(size.width < 480){
-            setClassNameImg1("stone-wall-wide-page-item-id1");
-            setClassNameImg2("stone-wall-wide-page-item-id2");
-            setClassNameImg3("stone-wall-wide-page-item-id3");
-            setClassNameImg4("stone-wall-wide-page-item-id4");
-            setClassNameImg5("stone-wall-wide-page-item-id5");
-            setClassNameImg6("stone-wall-wide-page-item-id6");
-            setClassNameImg7("stone-wall-wide-page-item-id7");
-        }
+        // }
+        // if(size.width < 1026 && size.width > 840 && prevScreenWidthVal < size.width){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand-screen");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand-screen");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand-screen");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand-screen");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand-screen");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand-screen");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand-screen");
+        // }
+        // if(size.width < 1025 && size.width > 840 && prevScreenWidthVal > size.width){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow-screen");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow-screen");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow-screen");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow-screen");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow-screen");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow-screen");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow-screen");
+        // }
+        // if(size.width < 840 && size.width > 670 ){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7");
+        // }
+        // if(size.width < 480 && prevScreenWidthVal < size.width){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1-animation-expand2-screen");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2-animation-expand2-screen");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3-animation-expand2-screen");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4-animation-expand2-screen");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5-animation-expand2-screen");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6-animation-expand2-screen");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7-animation-expand2-screen");
+        // }
+        // if(size.width < 670 && size.width > 480 && prevScreenWidthVal > size.width){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1-animation-narrow2-screen");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2-animation-narrow2-screen");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3-animation-narrow2-screen");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4-animation-narrow2-screen");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5-animation-narrow2-screen");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6-animation-narrow2-screen");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7-animation-narrow2-screen");
+        // }
+        // if(size.width < 480){
+        //     setClassNameImg1("stone-wall-wide-page-item-id1");
+        //     setClassNameImg2("stone-wall-wide-page-item-id2");
+        //     setClassNameImg3("stone-wall-wide-page-item-id3");
+        //     setClassNameImg4("stone-wall-wide-page-item-id4");
+        //     setClassNameImg5("stone-wall-wide-page-item-id5");
+        //     setClassNameImg6("stone-wall-wide-page-item-id6");
+        //     setClassNameImg7("stone-wall-wide-page-item-id7");
+        // }
         // if(size.width < 1025 && size.width > 770 && prevScreenWidthVal < size.width){
             // console.log("long1")
 
@@ -313,6 +331,165 @@ export const StoneWallWidePage = (props) => {
         //     console.log("long2");
         // }
     }
+
+    const setImagesState = () => {
+        let stoneWallWideItemsWidth = document.getElementById('stoneWallWidePageItems')?.clientWidth;
+        console.log(stoneWallWideItemsWidth)
+        if(size.width > 1020){
+            props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                width: (stoneWallWideItemsWidth - 80)/4,
+                height: 0,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                width: (stoneWallWideItemsWidth - 80)/4*2,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
+                translateY: -(stoneWallWideItemsWidth - 80)/4 - 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                width: (stoneWallWideItemsWidth - 80)/4,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 80)/4*3 + 80,
+                translateY: -(stoneWallWideItemsWidth - 80)/4 - 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                width: (stoneWallWideItemsWidth - 80)/4,
+                height: 0,
+                translateX: 0,
+                translateY: 10,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                width: (stoneWallWideItemsWidth - 80)/4,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 80)/4*3 + 80,
+                translateY: 10,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                width: (stoneWallWideItemsWidth - 80)/4,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
+                translateY: (stoneWallWideItemsWidth - 80)/4 + 60,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                width: (stoneWallWideItemsWidth - 80)/4*2,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 80)/4*2 + 80,
+                translateY: (stoneWallWideItemsWidth - 80)/4 + 60,
+                transition: 0
+            });
+        }
+        if(size.width <= 1020 && size.width > 700){
+            props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                width: (stoneWallWideItemsWidth - 40)/2,
+                height: 0,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
+                height: 0,
+                translateX: 0,
+                translateY: 10,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                width: (stoneWallWideItemsWidth - 40)/2,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
+                translateY: -(stoneWallWideItemsWidth - 40)/2 - 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                width: (stoneWallWideItemsWidth - 40)/2,
+                height: 0,
+                translateX: 0,
+                translateY: (stoneWallWideItemsWidth - 40)/2*2 + 160,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                width: (stoneWallWideItemsWidth - 40)/2,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
+                translateY: (stoneWallWideItemsWidth - 40)/2*2 + 160,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                width: (stoneWallWideItemsWidth - 40)/2,
+                height: 0,
+                translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
+                translateY: (stoneWallWideItemsWidth - 40)/2*3 + 225,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
+                height: 0,
+                translateX: 0,
+                translateY: (stoneWallWideItemsWidth - 40)/2*4 + 265,
+                transition: 0
+            });
+        }
+        if(size.width <= 700){
+            props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: 10,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWideItemsWidth + 90,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWideItemsWidth*2 + 130,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWideItemsWidth*4 + 250,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWideItemsWidth*5 + 290,
+                transition: 0
+            });
+            props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                width: stoneWallWideItemsWidth,
+                height: 0,
+                translateX: 0,
+                translateY: stoneWallWideItemsWidth*6 + 330,
+                transition: 0
+            });
+        }
+    }
+
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -370,111 +547,143 @@ export const StoneWallWidePage = (props) => {
         }
     }
 
-    const renderStyle = (id) => {
-        if(size.width < 1040) return null;
-        
+    const renderStoneWallWidePageItemStyle = (id) => {
         switch(id){
             case 1:
                 return {
-                    width: `${imagesSize.img1.width}`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img1.width}`,
                     // height: `${100/3}%`
                 };
             case 2:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img2.width}`,
-                    top: "0px",
-                    left: `${imagesSize.img1.width + 40}`
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img2.width}`,
+                    // top: "0px",
+                    // left: `${props.stoneWallWidePage.itemsStyleValues.img1.width + 40}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img2.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img2.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img2.transition}s ease-out`,
                 };
             case 3:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img3.width}`,
-                    top: "0px",
-                    left: `${imagesSize.img1.width + 40 + imagesSize.img2.width + 40}`
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img3.width}`,
+                    // top: "0px",
+                    // left: `${props.stoneWallWidePage.itemsStyleValues.img1.width + 40 + props.stoneWallWidePage.itemsStyleValues.img2.width + 40}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img3.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img3.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img3.transition}s ease-out`,
                 };
             case 4:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img4.width}`,
-                    top: `${imagesSize.img1.width + 40}`,
-                    left: "0px"
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img4.width}`,
+                    // top: "0px",
+                    // left: `${props.stoneWallWidePage.itemsStyleValues.img1.width + 40 + props.stoneWallWidePage.itemsStyleValues.img2.width + 40 + props.stoneWallWidePage.itemsStyleValues.img3.width + 40}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img4.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img4.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img4.transition}s ease-out`,
                 };
             case 5:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img5.width}`,
-                    top: `${imagesSize.img1.width + 40}`,
-                    left: `${imagesSize.img4.width + 40 + imagesSize.img2.width + 40}`
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img5.width}`,
+                    // top: `${props.stoneWallWidePage.itemsStyleValues.img1.width + 40}`,
+                    // left: "0px",
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img5.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img5.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img5.transition}s ease-out`,
                 };
             case 6:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img6.width}`,
-                    top: `${imagesSize.img2.width + 80}`,
-                    left: `${imagesSize.img4.width + 40}`
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img6.width}`,
+                    // top: `${props.stoneWallWidePage.itemsStyleValues.img1.width + 40}`,
+                    // left: `${props.stoneWallWidePage.itemsStyleValues.img5.width + 40}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img6.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img6.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img6.transition}s ease-out`,
                 };
             case 7:
                 return {
                     position: "absolute",
-                    width: `${imagesSize.img7.width}`,
-                    top: `${imagesSize.img2.width + 80}`,
-                    left: `${imagesSize.img4.width + 40 + imagesSize.img5.width + 40}`
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img7.width}`,
+                    // top: `${props.stoneWallWidePage.itemsStyleValues.img1.width + 40}`,
+                    // left: `${props.stoneWallWidePage.itemsStyleValues.img5.width + 40 + props.stoneWallWidePage.itemsStyleValues.img6.width + 40}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img7.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img7.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img7.transition}s ease-out`,
                 };
         }
     }
 
-    const renderClassName = (id) => {
-        if(size.width > 1040) return null;
-        switch(id){
-            case 1:
-                return classNameImg1;
-            case 2:
-                return classNameImg2;
-            case 3:
-                return classNameImg3;
-            case 4:
-                return classNameImg4;
-            case 5:
-                return classNameImg5;
-            case 6:
-                return classNameImg6;
-            case 7:
-                return classNameImg7;
-        }
-    }
+    // const renderClassName = (id) => {
+    //     if(size.width > 1040) return null;
+    //     switch(id){
+    //         case 1:
+    //             return classNameImg1;
+    //         case 2:
+    //             return classNameImg2;
+    //         case 3:
+    //             return classNameImg3;
+    //         case 4:
+    //             return classNameImg4;
+    //         case 5:
+    //             return classNameImg5;
+    //         case 6:
+    //             return classNameImg6;
+    //         case 7:
+    //             return classNameImg7;
+    //     }
+    // }
     
-    const getImagesWidthAndHeight = (obj) => {
-        setImagesSize({
-            img1: {
-                ...imagesSize.img1,
-                height: obj.img1.height
-            }, 
-            img2: {
-                ...imagesSize.img2,
-                height: obj.img2.height
-            }, 
-            img3: {
-                ...imagesSize.img3,
-                height: obj.img3.height
-            },
-            img4: {
-                ...imagesSize.img4,
-                height: obj.img4.height
-            },
-            img5: {
-                ...imagesSize.img5,
-                height: obj.img5.height
-            },
-            img6: {
-                ...imagesSize.img6,
-                height: obj.img6.height
-            },
-            img7: {
-                ...imagesSize.img7,
-                height: obj.img7.height,
-            }
-        })
+    // const getImagesWidthAndHeight = (obj) => {
+    //     setImagesSize({
+    //         img1: {
+    //             ...imagesSize.img1,
+    //             height: obj.img1.height
+    //         }, 
+    //         img2: {
+    //             ...imagesSize.img2,
+    //             height: obj.img2.height
+    //         }, 
+    //         img3: {
+    //             ...imagesSize.img3,
+    //             height: obj.img3.height
+    //         },
+    //         img4: {
+    //             ...imagesSize.img4,
+    //             height: obj.img4.height
+    //         },
+    //         img5: {
+    //             ...imagesSize.img5,
+    //             height: obj.img5.height
+    //         },
+    //         img6: {
+    //             ...imagesSize.img6,
+    //             height: obj.img6.height
+    //         },
+    //         img7: {
+    //             ...imagesSize.img7,
+    //             height: obj.img7.height,
+    //         }
+    //     })
+    // }
+
+    const renderStoneWallWidePageItemsStyleHeight = () => {
+        if(size.width > 1020){
+            return 3*props.stoneWallWidePage.itemsStyleValues.img1.width + 2*40 + 15;
+        }
+
+        if(size.width <= 1020 && size.width > 700){
+            return 6*props.stoneWallWidePage.itemsStyleValues.img1.width + 8*40 - 5;
+        }
+        if(size.width <= 700){
+            return 7*props.stoneWallWidePage.itemsStyleValues.img1.width + props.stoneWallWidePage.itemsStyleValues.img1.width/2 + 9*40;
+        }
+        // if(size.width <= 1430 && size.width > 1200){
+        //     return 8*props.stoneWallWidePage.itemsStyleValues.img1.width + 4*40 + 20;
+        // }
+        // if(size.width <= 1200 && size.width > 900){
+        //     return 10*props.stoneWallWidePage.itemsStyleValues.img1.width + 12*40 - 4;
+        // }
+        // if(size.width <= 900){
+        //     return 9*props.stoneWallWidePage.itemsStyleValues.img1.width + props.stoneWallWidePage.itemsStyleValues.img1.width/2 + 13*40 + 10;
+        // }
     }
 
     const renderStoneWallWidePageData = () => {
@@ -485,8 +694,7 @@ export const StoneWallWidePage = (props) => {
                 style={{
                     position: "relative",
                     width: "100%",
-                    height: `${3*imagesSize.img1.width + 2*40}`,
-                    // border: "2px solid red"
+                    height: `${renderStoneWallWidePageItemsStyleHeight()}px`
                 }}
             >{props.stoneWallWidePage.items.map((el, i) => {
                 return(
@@ -494,15 +702,15 @@ export const StoneWallWidePage = (props) => {
                         key={i} 
                         id={el.key}
                         // className={`stone-wall-wide-page-item-id${el.id}`}
-                        className={renderClassName(el.id)}
-                        style={renderStyle(el.id)}
+                        // className={renderClassName(el.id)}
+                        style={renderStoneWallWidePageItemStyle(el.id)}
                     >
                         <StoneWallWideItem
                             page="stoneWallWidePage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
+                            // getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
                             setIsHoveringCategory={props.setStoneWallWidePageIsHoveringCategory}
                             clearArchiveData={props.clearArchiveData}
                         />
@@ -581,6 +789,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            updateItemsStyleValuesStoneWallWidePage: bindActionCreators(Actions.updateItemsStyleValuesStoneWallWidePage, dispatch),
         };
     }
 )(StoneWallWidePage);

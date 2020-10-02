@@ -119,8 +119,7 @@ export const MetroPage = (props) => {
                 'metro-page-item-id10',
                 'metro-page-item-id11'
                 ].includes(e.target.className)){
-                    console.log("fagr")
-                        transitionRef.current()
+                    transitionRef.current()
             }
         }
 
@@ -158,8 +157,7 @@ export const MetroPage = (props) => {
             props.metroPage.itemsStyleValues.img8.transition === 0 ||
             props.metroPage.itemsStyleValues.img9.transition === 0 ||
             props.metroPage.itemsStyleValues.img10.transition === 0 ||
-            props.metroPage.itemsStyleValues.img11.transition === 0
-            ) {           
+            props.metroPage.itemsStyleValues.img11.transition === 0) {           
             props.updateItemsStyleValuesMetroPage("img1",{
                 ...props.metroPage.itemsStyleValues.img1,
                 transition: 0.45
@@ -909,7 +907,7 @@ export const MetroPage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
+                            // getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
                             setIsHoveringCategory={props.setMetroPageIsHoveringCategory}
                             clearArchiveData={props.clearArchiveData}
                         />

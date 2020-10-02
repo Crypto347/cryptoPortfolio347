@@ -153,14 +153,7 @@ export const StoneWallPage = (props) => {
             props.stoneWallPage.itemsStyleValues.img2.transition === 0 ||
             props.stoneWallPage.itemsStyleValues.img3.transition === 0 ||
             props.stoneWallPage.itemsStyleValues.img4.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img5.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img6.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img7.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img8.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img9.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img10.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img11.transition === 0
-            ) {           
+            props.stoneWallPage.itemsStyleValues.img5.transition === 0) {           
             props.updateItemsStyleValuesStoneWallPage("img1",{
                 ...props.stoneWallPage.itemsStyleValues.img1,
                 transition: 0.45
