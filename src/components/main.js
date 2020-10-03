@@ -54,6 +54,7 @@ import GalleryWithSpacePage from './Pages/PortfolioPages/GalleryWithSpacePage/ga
 import StoneWallPage from './Pages/PortfolioPages/StoneWallPage/stoneWallPage';
 import StoneWallWidePage from './Pages/PortfolioPages/StoneWallWidePage/stoneWallWidePage';
 import MetroPage from './Pages/PortfolioPages/MetroPage/metroPage';
+import Pinterest3ColumnsPage from './Pages/PortfolioPages/Pinterest3ColumnsPage/pinterest3ColumnsPage';
 
 /**
 * Actions
@@ -109,6 +110,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/pinterest-3-columns"}
+                    component={Pinterest3ColumnsPage}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/metro"}

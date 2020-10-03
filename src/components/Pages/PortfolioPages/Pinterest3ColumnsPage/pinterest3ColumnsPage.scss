@@ -1,0 +1,30 @@
+.stone-wall-page {
+    width: calc(100% + 18px);
+    .stone-wall-page-loading-error {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stone-wall-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .stone-wall-page-header {
+            display: flex;
+            justify-content: center;
+            padding: 90px 0px 90px 0px;
+        }
+        .stone-wall-page-items {
+            position: relative;
+            // width: 1099.99px;
+            // height: 1169.99px;
+            border: 2px solid red;
+            // display: flex;
+            // flex-wrap: wrap;
+            // padding: 40px 100px 40px 130px;
+        }
+    }
+}

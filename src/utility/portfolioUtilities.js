@@ -38,6 +38,8 @@ export const findPathOfIds = (path) => {
             return [2, 24, 245];
         case 'metro':
             return [2, 24, 246];
+        case 'pinterest-3-columns':
+            return [2, 24, 247];
     }
 
     //Second element of updatedPath array
