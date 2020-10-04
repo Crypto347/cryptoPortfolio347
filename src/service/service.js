@@ -520,6 +520,23 @@ export function fetchMetroPage() {
             });
     };
 }
+export function fetchPinterest3ColumnsPage() {
+    return dispatch => {
+        dispatch(Actions.fetchPinterest3ColumnsPageBegin());
+        return fetch(`http://localhost:3005/api/pinterest-3-columns-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchPinterest3ColumnsPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchPinterest3ColumnsPageFailur(error))
+            });
+    };
+}
 
 function handleErrors(response) {
     if (!response.ok) {

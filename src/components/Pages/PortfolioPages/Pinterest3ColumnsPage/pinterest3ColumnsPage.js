@@ -94,8 +94,8 @@ export const Pinterest3ColumnsPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.stoneWallPage.items.length === 0){
-            props.fetchStoneWallPage();
+        if(props.pinterest3ColumnsPage.items.length === 0){
+            props.fetchPinterest3ColumnsPage();
         }
         let timeout = setTimeout(() => {
             window.scrollTo(0, 0);
@@ -143,55 +143,55 @@ export const Pinterest3ColumnsPage = (props) => {
     });
 
     useEffect(() => {
-        if(props.stoneWallPage.itemsStyleValues.img1.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img2.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img3.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img4.transition === 0 ||
-            props.stoneWallPage.itemsStyleValues.img5.transition === 0) {           
+        if(props.pinterest3ColumnsPage.itemsStyleValues.img1.transition === 0 ||
+            props.pinterest3ColumnsPage.itemsStyleValues.img2.transition === 0 ||
+            props.pinterest3ColumnsPage.itemsStyleValues.img3.transition === 0 ||
+            props.pinterest3ColumnsPage.itemsStyleValues.img4.transition === 0 ||
+            props.pinterest3ColumnsPage.itemsStyleValues.img5.transition === 0) {           
             props.updateItemsStyleValuesStoneWallPage("img1",{
-                ...props.stoneWallPage.itemsStyleValues.img1,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img1,
                 transition: 0.45
             });
             props.updateItemsStyleValuesStoneWallPage("img2",{
-                ...props.stoneWallPage.itemsStyleValues.img2,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img2,
                 transition: 0.45
             });
             props.updateItemsStyleValuesStoneWallPage("img3",{
-                ...props.stoneWallPage.itemsStyleValues.img3,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img3,
                 transition: 0.45
             });
             props.updateItemsStyleValuesStoneWallPage("img4",{
-                ...props.stoneWallPage.itemsStyleValues.img4,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img4,
                 transition: 0.45
             });
             props.updateItemsStyleValuesStoneWallPage("img5",{
-                ...props.stoneWallPage.itemsStyleValues.img5,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img5,
                 transition: 0.45
             });
         }
-    }, [props.stoneWallPage.itemsStyleValues.img1.transition,props.stoneWallPage.itemsStyleValues.img2.transition,
-        props.stoneWallPage.itemsStyleValues.img3.transition,props.stoneWallPage.itemsStyleValues.img4.transition,
-        props.stoneWallPage.itemsStyleValues.img5.transition])
+    }, [props.pinterest3ColumnsPage.itemsStyleValues.img1.transition,props.pinterest3ColumnsPage.itemsStyleValues.img2.transition,
+        props.pinterest3ColumnsPage.itemsStyleValues.img3.transition,props.pinterest3ColumnsPage.itemsStyleValues.img4.transition,
+        props.pinterest3ColumnsPage.itemsStyleValues.img5.transition])
 
     const smoothTransition = () => {
         props.updateItemsStyleValuesStoneWallPage("img1",{
-            ...props.stoneWallPage.itemsStyleValues.img1,
+            ...props.pinterest3ColumnsPage.itemsStyleValues.img1,
             transition: 0
         });
-        props.updateItemsStyleValuesStoneWallPage("img2",{
-            ...props.stoneWallPage.itemsStyleValues.img2,
+        props.updateItemsStyleValuespinterest3ColumnsPage("img2",{
+            ...props.pinterest3ColumnsPage.itemsStyleValues.img2,
             transition: 0
         });
         props.updateItemsStyleValuesStoneWallPage("img3",{
-            ...props.stoneWallPage.itemsStyleValues.img3,
+            ...props.pinterest3ColumnsPage.itemsStyleValues.img3,
             transition: 0
         });
         props.updateItemsStyleValuesStoneWallPage("img4",{
-            ...props.stoneWallPage.itemsStyleValues.img4,
+            ...props.pinterest3ColumnsPage.itemsStyleValues.img4,
             transition: 0
         });
         props.updateItemsStyleValuesStoneWallPage("img5",{
-            ...props.stoneWallPage.itemsStyleValues.img5,
+            ...props.pinterest3ColumnsPage.itemsStyleValues.img5,
             transition: 0
         });
     }
@@ -465,7 +465,7 @@ export const Pinterest3ColumnsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("stoneWallPage");
+        let el = document.getElementById("pinterest3ColumnsPage");
     
         // Check scroll direction
 
@@ -491,12 +491,12 @@ export const Pinterest3ColumnsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="stoneWallPage"
+                        page="pinterest3ColumnsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="stoneWallPage"
+                        page="pinterest3ColumnsPage"
                     />
                 </>
             )
@@ -507,12 +507,12 @@ export const Pinterest3ColumnsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="stoneWallPage"
+                        page="pinterest3ColumnsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="stoneWallPage"
+                        page="pinterest3ColumnsPage"
                     />
                 </>
             )
@@ -523,48 +523,48 @@ export const Pinterest3ColumnsPage = (props) => {
         switch(id){
             case 1:
                 return {
-                    width: `${props.stoneWallPage.itemsStyleValues.img1.width}px`,
-                    height: `${props.stoneWallPage.itemsStyleValues.img1.height}px`
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width}px`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.height}px`
                 };
             case 2:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallPage.itemsStyleValues.img2.width}`,
-                    height: `${props.stoneWallPage.itemsStyleValues.img2.height}px`,
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img2.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img2.height}px`,
                     // top: "0px",
-                    // left: `${props.stoneWallPage.itemsStyleValues.img1.width + 40}`,
-                    transform: `translate(${props.stoneWallPage.itemsStyleValues.img2.translateX}px, ${props.stoneWallPage.itemsStyleValues.img2.translateY}px)`,
-                    transition: `transform ${props.stoneWallPage.itemsStyleValues.img2.transition}s ease-out`,
+                    // left: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40}`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img2.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img2.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
                 };
             case 3:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallPage.itemsStyleValues.img3.width}`,
-                    height: `${props.stoneWallPage.itemsStyleValues.img3.height}px`,
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img3.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img3.height}px`,
                     // top: "0px",
-                    // left: `${props.stoneWallPage.itemsStyleValues.img1.width + 40 + props.stoneWallPage.itemsStyleValues.img2.width + 40}`,
-                    transform: `translate(${props.stoneWallPage.itemsStyleValues.img3.translateX}px, ${props.stoneWallPage.itemsStyleValues.img3.translateY}px)`,
-                    transition: `transform ${props.stoneWallPage.itemsStyleValues.img3.transition}s ease-out`,
+                    // left: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40 + props.pinterest3ColumnsPage.itemsStyleValues.img2.width + 40}`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img3.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img3.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img3.transition}s ease-out`,
                 };
             case 4:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallPage.itemsStyleValues.img4.width}`,
-                    height: `${props.stoneWallPage.itemsStyleValues.img4.height}px`,
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img4.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img4.height}px`,
                     // top: "0px",
-                    // left: `${props.stoneWallPage.itemsStyleValues.img1.width + 40 + props.stoneWallPage.itemsStyleValues.img2.width + 40 + props.stoneWallPage.itemsStyleValues.img3.width + 40}`,
-                    transform: `translate(${props.stoneWallPage.itemsStyleValues.img4.translateX}px, ${props.stoneWallPage.itemsStyleValues.img4.translateY}px)`,
-                    transition: `transform ${props.stoneWallPage.itemsStyleValues.img4.transition}s ease-out`,
+                    // left: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40 + props.pinterest3ColumnsPage.itemsStyleValues.img2.width + 40 + props.pinterest3ColumnsPage.itemsStyleValues.img3.width + 40}`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img4.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img4.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img4.transition}s ease-out`,
                 };
             case 5:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallPage.itemsStyleValues.img5.width}`,
-                    height: `${props.stoneWallPage.itemsStyleValues.img5.height}px`,
-                    // top: `${props.stoneWallPage.itemsStyleValues.img1.width + 40}`,
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img5.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img5.height}px`,
+                    // top: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40}`,
                     // left: "0px",
-                    transform: `translate(${props.stoneWallPage.itemsStyleValues.img5.translateX}px, ${props.stoneWallPage.itemsStyleValues.img5.translateY}px)`,
-                    transition: `transform ${props.stoneWallPage.itemsStyleValues.img5.transition}s ease-out`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img5.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img5.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img5.transition}s ease-out`,
                 };
         }
     }
@@ -572,23 +572,23 @@ export const Pinterest3ColumnsPage = (props) => {
     const getImagesWidthAndHeight = (obj) => {
         props.updateItemsStyleValuesStoneWallPage({
             img1: {
-                ...props.stoneWallPage.itemsStyleValues.img1,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img1,
                 height: obj.img1.height
             }, 
             img2: {
-                ...props.stoneWallPage.itemsStyleValues.img2,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img2,
                 height: obj.img2.height
             }, 
             img3: {
-                ...props.stoneWallPage.itemsStyleValues.img3,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img3,
                 height: obj.img3.height
             },
             img4: {
-                ...props.stoneWallPage.itemsStyleValues.img4,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img4,
                 height: obj.img4.height
             },
             img5: {
-                ...props.stoneWallPage.itemsStyleValues.img5,
+                ...props.pinterest3ColumnsPage.itemsStyleValues.img5,
                 height: obj.img5.height
             }
         })
@@ -639,14 +639,14 @@ export const Pinterest3ColumnsPage = (props) => {
     const renderStoneWallPageData = () => {
         return(
             <div 
-                id="stoneWallPageItems"
+                id="pinterest3ColumnsPageItems"
                 // className="stone-wall-page-items"
                 style={{
                     position: "relative",
                     width: `${renderStoneWallItemsStyleWidth()}px`,
                     height: `${renderStoneWallItemsStyleHeight()}px`
                 }}
-            >{props.stoneWallPage.items.map((el, i) => {
+            >{props.pinterest3ColumnsPage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
@@ -656,7 +656,7 @@ export const Pinterest3ColumnsPage = (props) => {
                         style={renderStoneWallPageItemStyle(el.id)}
                     >
                         <StoneWallItem
-                            page="stoneWallPage"
+                            page="pinterest3ColumnsPage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
@@ -669,7 +669,7 @@ export const Pinterest3ColumnsPage = (props) => {
     }
 
     const renderStoneWallContent = () => {
-        if(props.stoneWallPage.loading && !props.stoneWallPage.error){
+        if(props.pinterest3ColumnsPage.loading && !props.pinterest3ColumnsPage.error){
             return(
                 <div 
                     className="stone-wall-page-loading-error" 
@@ -679,23 +679,23 @@ export const Pinterest3ColumnsPage = (props) => {
                 </div>
             )
         }
-        if(!props.stoneWallPage.loading && !props.stoneWallPage.error){
+        if(!props.pinterest3ColumnsPage.loading && !props.pinterest3ColumnsPage.error){
             return(
                 <div className="stone-wall-page-wrapper">
                     <div className="stone-wall-page-header">
-                        <H65 className="h65-nero-poppins">Stone Wall</H65>
+                        <H65 className="h65-nero-poppins">Pinterest 3 columns</H65>
                     </div> 
                     {renderStoneWallPageData()}
                 </div>
             )
         }
-        if(!props.stoneWallPage.loading && props.stoneWallPage.error){
+        if(!props.pinterest3ColumnsPage.loading && props.pinterest3ColumnsPage.error){
             return(
                 <div 
                     className="stone-wall-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.stoneWallPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.pinterest3ColumnsPage.error}`}</H15>
                 </div>
             )
         }
@@ -706,7 +706,7 @@ export const Pinterest3ColumnsPage = (props) => {
     */
 
     return(
-        <div className="stone-wall-page" id="stoneWallPage">
+        <div className="stone-wall-page" id="pinterest3ColumnsPage">
             {renderToolbars()}
             {renderStoneWallContent()}
             <Footer/>
@@ -717,14 +717,14 @@ export const Pinterest3ColumnsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            stoneWallPage: Selectors.getStoneWallPageState(state),
+            pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
+            fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),

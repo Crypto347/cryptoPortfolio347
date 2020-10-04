@@ -302,3 +302,11 @@ export const getMetroPageState = createSelector(
     [getMetroPage],
     (x) => x
 );
+
+const getPinterest3ColumnsPage = (state) => state.pinterest3ColumnsPage;
+
+export const getPinterest3ColumnsPageState = createSelector(
+    [getPinterest3ColumnsPage],
+    (x) => x
+);
+
