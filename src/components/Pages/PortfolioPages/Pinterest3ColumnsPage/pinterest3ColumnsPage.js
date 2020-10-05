@@ -513,154 +513,327 @@ export const Pinterest3ColumnsPage = (props) => {
                 transition: 0
             });
         }
-        // if(size.width <= 1040 && size.width > 840){
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
-        //         width: 368,
-        //         height: 368,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
-        //         width: 368,
-        //         height: 768,
-        //         translateX: 0,
-        //         translateY: 828,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
-        //         width: 768,
-        //         height: 768,
-        //         translateX: 0,
-        //         translateY: 30,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
-        //         width: 368,
-        //         height: 368,
-        //         translateX: 398,
-        //         translateY: -368,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
-        //         width: 368,
-        //         height: 368,
-        //         translateX: 398,
-        //         translateY: 828,
-        //         transition: 0
-        //     });
-        // } 
-        // if(size.width <= 840 && size.width > 680){
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
-        //         width: 285,
-        //         height: 285,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
-        //         width: 285,
-        //         height: 600,
-        //         translateX: 0,
-        //         translateY: 660,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
-        //         width: 600,
-        //         height: 600,
-        //         translateX: 0,
-        //         translateY: 30,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
-        //         width: 285,
-        //         height: 285,
-        //         translateX: 315,
-        //         translateY: -285,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
-        //         width: 285,
-        //         height: 285,
-        //         translateX: 315,
-        //         translateY: 660,
-        //         transition: 0
-        //     });
-        // }
-        // if(size.width <= 680 && size.width > 500){
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
-        //         width: 420,
-        //         height: 420,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
-        //         width: 420,
-        //         height: 868.55,
-        //         translateX: 0,
-        //         translateY: 480,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
-        //         width: 420,
-        //         height: 420,
-        //         translateX: 0,
-        //         translateY: 30,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
-        //         width: 420,
-        //         height: 420,
-        //         translateX: 0,
-        //         translateY: 1378.55,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
-        //         width: 420,
-        //         height: 420,
-        //         translateX: 0,
-        //         translateY: 1828.55,
-        //         transition: 0
-        //     });
-        // }
-        // if(size.width <= 500){
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
-        //         width: 300,
-        //         height: 300,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
-        //         width: 300,
-        //         height: 620.39,
-        //         translateX: 0,
-        //         translateY: 360,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
-        //         width: 300,
-        //         height: 300,
-        //         translateX: 0,
-        //         translateY: 30,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
-        //         width: 300,
-        //         height: 300,
-        //         translateX: 0,
-        //         translateY: 1010.39,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
-        //         width: 300,
-        //         height: 300,
-        //         translateX: 0,
-        //         translateY: 1340.39,
-        //         transition: 0
-        //     });
-        // }
+        if(size.width <= 1200 && size.width > 940){
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 443.33,
+                translateY: -413.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 443.33,
+                translateY: 473.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 473.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 916.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 443.33,
+                translateY: 916.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 443.33,
+                translateY: 1359.99,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 1803.32,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 443.33,
+                translateY: 2246.45,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 2246.45,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 2689.78,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 443.33,
+                translateY: 3133.11,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 3576.44,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 4019.77,
+                transition: 0
+            });
+        }
+        if(size.width <= 940 && size.width > 710){
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 326.66,
+                translateY: -296.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 326.66,
+                translateY: 356.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 356.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 683.32,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 326.66,
+                translateY: 683.32,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 326.66,
+                translateY: 1009.98,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 1336.64,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 326.66,
+                translateY: 1663.3,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 1663.3,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 1989.96,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 326.66,
+                translateY: 2316.62,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 2643.28,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 2969.94,
+                transition: 0
+            });
+        }
+        if(size.width <= 710 && size.width > 500){
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 915.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 1358.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 1801.99,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 2688.65,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 2245.32,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 3574,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 4460,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 4903.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 5789,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 6232.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 7119,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 8005,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 8448.33,
+                transition: 0
+            });
+        }
     }
 
     const handleOnWheel = (e) => {
@@ -848,15 +1021,15 @@ export const Pinterest3ColumnsPage = (props) => {
         if(size.width <= 1400 && size.width > 1200){
             return 949.98;
         }
-        // if(size.width <= 1040 && size.width > 840){
-        //     return 766;
-        // }
-        // if(size.width <= 840 && size.width > 680){
-        //     return 600;
-        // }
-        // if(size.width <= 680 && size.width > 500){
-        //     return 420;
-        // }
+        if(size.width <= 1200 && size.width > 940){
+            return 856.66;
+        }
+        if(size.width <= 940 && size.width > 710){
+            return 623.32;
+        }
+        if(size.width <= 710 && size.width > 500){
+            return 413.33;
+        }
         // if(size.width <= 500){
         //     return 300;
         // }
@@ -867,17 +1040,17 @@ export const Pinterest3ColumnsPage = (props) => {
             return 3170;
         }
         if(size.width <= 1400 && size.width > 1200){
-            return 3170;
+            return 2346.62;
         }
-        // if(size.width <= 1040 && size.width > 840){
-        //     return 2034;
-        // }
-        // if(size.width <= 840 && size.width > 680){
-        //     return 1615;
-        // }
-        // if(size.width <= 680 && size.width > 500){
-        //     return 2738.55;
-        // }
+        if(size.width <= 1200 && size.width > 940){
+            return 4946.43;
+        }
+        if(size.width <= 940 && size.width > 710){
+            return 3662;
+        }
+        if(size.width <= 710 && size.width > 500){
+            return 9372.5;
+        }
         // if(size.width <= 500){
         //     return 2010.39;
         // }
