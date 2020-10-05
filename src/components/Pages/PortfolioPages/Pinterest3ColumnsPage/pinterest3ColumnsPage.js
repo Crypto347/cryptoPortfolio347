@@ -292,158 +292,227 @@ export const Pinterest3ColumnsPage = (props) => {
             ...props.pinterest3ColumnsPage.itemsStyleValues.img15,
             transition: 0
         });
-    }
-    
+    }  
 
     const handleResize = (e) => {
         setImagesState("onResize");
     }
 
     const setImagesState = (opt) => {
-        if(size.width > 1200){
+        if(size.width > 1400){
             props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
-                width: 346.66,
-                height: 346.66,
+                width: 413.33,
+                height: 413.33,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
-                width: 346.66,
+                width: 413.33,
                 height: 723.33,
-                translateX: 0,
-                translateY: 30,
+                translateX: 443.33,
+                translateY: -413.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
-                width: 723.33,
-                height: 723.33,
-                translateX: 376.66,
-                translateY: -346.66,
+                width: 413.33,
+                height: 413.33,
+                translateX: 886.66,
+                translateY: -413.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
-                width: 346.663,
-                height: 346.66,
-                translateX: 376.66,
-                translateY: 406.66,
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 30,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
-                width: 346.66,
-                height: 346.66,
-                translateX: 752.66,
-                translateY: 406.66,
+                width: 413.33,
+                height: 413.33,
+                translateX: 886.66,
+                translateY: 30,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
-                width: 346.66,
-                height: 346.66,
+                width: 413.33,
+                height: 723.33,
                 translateX: 0,
-                translateY: 0,
+                translateY: 473.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
-                width: 346.66,
-                height: 723.33,
-                translateX: 0,
-                translateY: 30,
+                width: 413.33,
+                height: 413.33,
+                translateX: 443.33,
+                translateY: 473.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
-                width: 723.33,
+                width: 413.33,
                 height: 723.33,
-                translateX: 376.66,
-                translateY: -346.66,
+                translateX: 886.66,
+                translateY: 473.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
-                width: 346.663,
-                height: 346.66,
-                translateX: 376.66,
-                translateY: 406.66,
+                width: 413.33,
+                height: 413.33,
+                translateX: 443.33,
+                translateY: 916.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
-                width: 346.66,
-                height: 346.66,
-                translateX: 752.66,
-                translateY: 406.66,
+                width: 413.33,
+                height: 723.33,
+                translateX: 0,
+                translateY: 1359.99,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
-                width: 346.66,
-                height: 346.66,
+                width: 413.33,
+                height: 723.33,
+                translateX: 443.33,
+                translateY: 1359.99,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 886.66,
+                translateY: 1359.99,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
+                width: 413.33,
+                height: 723.33,
+                translateX: 443.33,
+                translateY: 1803.32,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 0,
+                translateY: 2244,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
+                width: 413.33,
+                height: 413.33,
+                translateX: 886.66,
+                translateY: 2244,
+                transition: 0
+            });
+        }
+        if(size.width <= 1400 && size.width > 1200){
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
+                width: 296.66,
+                height: 296.66,
                 translateX: 0,
                 translateY: 0,
                 transition: 0
             });
-            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
-                width: 346.66,
-                height: 723.33,
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 336.66,
+                translateY: -296.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 663.32,
+                translateY: -296.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
+                width: 296.66,
+                height: 296.66,
                 translateX: 0,
                 translateY: 30,
                 transition: 0
             });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 663.32,
+                translateY: 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 356.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 336.66,
+                translateY: 356.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 663.32,
+                translateY: 356.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 336.66,
+                translateY: 683.32,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 1009.98,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 336.66,
+                translateY: 1009.98,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 663.32,
+                translateY: 1009.98,
+                transition: 0
+            });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
-                width: 723.33,
-                height: 723.33,
-                translateX: 376.66,
-                translateY: -346.66,
+                width: 296.66,
+                height: 623.32,
+                translateX: 336.66,
+                translateY: 1336.64,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
-                width: 346.663,
-                height: 346.66,
-                translateX: 376.66,
-                translateY: 406.66,
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 1657,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
-                width: 346.66,
-                height: 346.66,
-                translateX: 752.66,
-                translateY: 406.66,
+                width: 296.66,
+                height: 296.66,
+                translateX: 663.32,
+                translateY: 1657,
                 transition: 0
             });
         }
-        // if(size.width <= 1200 && size.width > 1040){
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
-        //         width: 296.66,
-        //         height: 296.66,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
-        //         width: 296.66,
-        //         height: 623.33,
-        //         translateX: 0,
-        //         translateY: 30,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
-        //         width: 623.33,
-        //         height: 623.33,
-        //         translateX: 326.66,
-        //         translateY: -296.66,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
-        //         width: 296.66,
-        //         height: 296.66,
-        //         translateX: 326.66,
-        //         translateY: 356.66,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
-        //         width: 296.66,
-        //         height: 296.66,
-        //         translateX: 653.32,
-        //         translateY: 356.66,
-        //         transition: 0
-        //     });
-        // }
         // if(size.width <= 1040 && size.width > 840){
         //     props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
         //         width: 368,
@@ -650,7 +719,7 @@ export const Pinterest3ColumnsPage = (props) => {
         }
     }
 
-    const renderStoneWallPageItemStyle = (id) => {
+    const renderPinterest3ColumnsPageItemStyle = (id) => {
         switch(id){
             case 1:
                 return {
@@ -662,8 +731,6 @@ export const Pinterest3ColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.pinterest3ColumnsPage.itemsStyleValues.img2.width}`,
                     height: `${props.pinterest3ColumnsPage.itemsStyleValues.img2.height}px`,
-                    // top: "0px",
-                    // left: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40}`,
                     transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img2.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img2.translateY}px)`,
                     transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
                 };
@@ -672,8 +739,6 @@ export const Pinterest3ColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.pinterest3ColumnsPage.itemsStyleValues.img3.width}`,
                     height: `${props.pinterest3ColumnsPage.itemsStyleValues.img3.height}px`,
-                    // top: "0px",
-                    // left: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40 + props.pinterest3ColumnsPage.itemsStyleValues.img2.width + 40}`,
                     transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img3.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img3.translateY}px)`,
                     transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img3.transition}s ease-out`,
                 };
@@ -682,8 +747,6 @@ export const Pinterest3ColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.pinterest3ColumnsPage.itemsStyleValues.img4.width}`,
                     height: `${props.pinterest3ColumnsPage.itemsStyleValues.img4.height}px`,
-                    // top: "0px",
-                    // left: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40 + props.pinterest3ColumnsPage.itemsStyleValues.img2.width + 40 + props.pinterest3ColumnsPage.itemsStyleValues.img3.width + 40}`,
                     transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img4.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img4.translateY}px)`,
                     transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img4.transition}s ease-out`,
                 };
@@ -692,65 +755,143 @@ export const Pinterest3ColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.pinterest3ColumnsPage.itemsStyleValues.img5.width}`,
                     height: `${props.pinterest3ColumnsPage.itemsStyleValues.img5.height}px`,
-                    // top: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width + 40}`,
-                    // left: "0px",
                     transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img5.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img5.translateY}px)`,
                     transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img5.transition}s ease-out`,
+                };
+            case 6:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img6.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img6.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img6.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img6.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img6.transition}s ease-out`,
+                };
+            case 7:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img7.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img7.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img7.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img7.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img7.transition}s ease-out`,
+                };
+            case 8:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img8.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img8.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img8.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img8.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img8.transition}s ease-out`,
+                };
+            case 9:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img9.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img9.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img9.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img9.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img9.transition}s ease-out`,
+                };
+            case 10:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img10.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img10.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img10.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img10.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img10.transition}s ease-out`,
+                };
+            case 11:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img11.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img11.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img11.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img11.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img11.transition}s ease-out`,
+                };
+            case 12:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img12.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img12.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img12.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img12.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img12.transition}s ease-out`,
+                };
+            case 13:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img13.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img13.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img13.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img13.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img13.transition}s ease-out`,
+                };
+            case 14:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img14.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img14.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img14.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img14.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img14.transition}s ease-out`,
+                };
+            case 15:
+                return {
+                    position: "absolute",
+                    width: `${props.pinterest3ColumnsPage.itemsStyleValues.img15.width}`,
+                    height: `${props.pinterest3ColumnsPage.itemsStyleValues.img15.height}px`,
+                    transform: `translate(${props.pinterest3ColumnsPage.itemsStyleValues.img15.translateX}px, ${props.pinterest3ColumnsPage.itemsStyleValues.img15.translateY}px)`,
+                    transition: `transform ${props.pinterest3ColumnsPage.itemsStyleValues.img15.transition}s ease-out`,
                 };
         }
     }
 
-    const renderStoneWallItemsStyleWidth = () => {
-        if(size.width > 1200){
-            return 1099.99;
+    const renderPinterest3ColumnsItemsStyleWidth = () => {
+        if(size.width > 1400){
+            return 1299.99;
         }
-        if(size.width <= 1200 && size.width > 1040){
-            return 949.99;
+        if(size.width <= 1400 && size.width > 1200){
+            return 949.98;
         }
-        if(size.width <= 1040 && size.width > 840){
-            return 766;
-        }
-        if(size.width <= 840 && size.width > 680){
-            return 600;
-        }
-        if(size.width <= 680 && size.width > 500){
-            return 420;
-        }
-        if(size.width <= 500){
-            return 300;
-        }
+        // if(size.width <= 1040 && size.width > 840){
+        //     return 766;
+        // }
+        // if(size.width <= 840 && size.width > 680){
+        //     return 600;
+        // }
+        // if(size.width <= 680 && size.width > 500){
+        //     return 420;
+        // }
+        // if(size.width <= 500){
+        //     return 300;
+        // }
     }
 
-    const renderStoneWallItemsStyleHeight = () => {
-        if(size.width > 1200){
-            return 1169.99;
+    const renderPinterest3ColumnsItemsStyleHeight = () => {
+        if(size.width > 1400){
+            return 3170;
         }
-        if(size.width <= 1200 && size.width > 1040){
-            return 1019.99;
+        if(size.width <= 1400 && size.width > 1200){
+            return 3170;
         }
-        if(size.width <= 1040 && size.width > 840){
-            return 2034;
-        }
-        if(size.width <= 840 && size.width > 680){
-            return 1615;
-        }
-        if(size.width <= 680 && size.width > 500){
-            return 2738.55;
-        }
-        if(size.width <= 500){
-            return 2010.39;
-        }
+        // if(size.width <= 1040 && size.width > 840){
+        //     return 2034;
+        // }
+        // if(size.width <= 840 && size.width > 680){
+        //     return 1615;
+        // }
+        // if(size.width <= 680 && size.width > 500){
+        //     return 2738.55;
+        // }
+        // if(size.width <= 500){
+        //     return 2010.39;
+        // }
     }
 
-    const renderStoneWallPageData = () => {
+    const renderPinterest3ColumnsPageData = () => {
         return(
             <div 
                 id="pinterest3ColumnsPageItems"
                 // className="stone-wall-page-items"
                 style={{
                     position: "relative",
-                    width: `${renderStoneWallItemsStyleWidth()}px`,
-                    height: `${renderStoneWallItemsStyleHeight()}px`
+                    width: `${renderPinterest3ColumnsItemsStyleWidth()}px`,
+                    height: `${renderPinterest3ColumnsItemsStyleHeight()}px`
                 }}
             >{props.pinterest3ColumnsPage.items.map((el, i) => {
                 return(
@@ -759,7 +900,7 @@ export const Pinterest3ColumnsPage = (props) => {
                         id={el.key}
                         // className={`stone-wall-page-item-id${el.id}`}
                         // className={renderClassName(el.id)}
-                        style={renderStoneWallPageItemStyle(el.id)}
+                        style={renderPinterest3ColumnsPageItemStyle(el.id)}
                     >
                         <Pinterest3ColumnsItem
                             page="pinterest3ColumnsPage"
@@ -775,7 +916,7 @@ export const Pinterest3ColumnsPage = (props) => {
         )
     }
 
-    const renderStoneWallContent = () => {
+    const renderPinterest3ColumnsContent = () => {
         if(props.pinterest3ColumnsPage.loading && !props.pinterest3ColumnsPage.error){
             return(
                 <div 
@@ -792,7 +933,7 @@ export const Pinterest3ColumnsPage = (props) => {
                     <div className="stone-wall-page-header">
                         <H65 className="h65-nero-poppins">Pinterest 3 columns</H65>
                     </div> 
-                    {renderStoneWallPageData()}
+                    {renderPinterest3ColumnsPageData()}
                 </div>
             )
         }
@@ -815,7 +956,7 @@ export const Pinterest3ColumnsPage = (props) => {
     return(
         <div className="stone-wall-page" id="pinterest3ColumnsPage">
             {renderToolbars()}
-            {renderStoneWallContent()}
+            {renderPinterest3ColumnsContent()}
             <Footer/>
         </div>   
     );
