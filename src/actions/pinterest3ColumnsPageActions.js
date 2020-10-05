@@ -20,6 +20,15 @@ export function fetchPinterest3ColumnsPageFailur(err) {
     };
 };
 
+
+export function setPinterest3ColumnsPageIsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_PINTEREST_3_COLUMNS_PAGE_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};
+
 // export function updateItemsStyleValuesPinterest3ColumnsPage(image, obj) {
 //     return { 
 //         type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_PINTEREST_3_COLUMNS_PAGE,

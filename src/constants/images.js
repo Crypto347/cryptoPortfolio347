@@ -730,3 +730,39 @@ export const METRO_PAGE_COVER_PIC_8 = MetroPageCoverPic8;
 export const METRO_PAGE_COVER_PIC_9 = MetroPageCoverPic9;
 export const METRO_PAGE_COVER_PIC_10 = MetroPageCoverPic10;
 export const METRO_PAGE_COVER_PIC_11 = MetroPageCoverPic11;
+
+/**
+* Pinterest 3 Columns Page Cover Pictures
+*/
+
+import Pinterest3ColumnsPageCoverPic1 from '../images/Pinterest3ColumnsPageCoverPictures/daily-nouri-E5Oo4nENq2M-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic2 from '../images/Pinterest3ColumnsPageCoverPictures/nathan-dumlao-pMW4jzELQCw-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic3 from '../images/Pinterest3ColumnsPageCoverPictures/nahuel-hawkes-Ki6JO9sraB8-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic4 from '../images/Pinterest3ColumnsPageCoverPictures/melanie-mauer-x-agyuDQHJA-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic5 from '../images/Pinterest3ColumnsPageCoverPictures/siora-photography-G8RdOUjVuJo-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic6 from '../images/Pinterest3ColumnsPageCoverPictures/jason-blackeye-DKCgibUVLNc-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic7 from '../images/Pinterest3ColumnsPageCoverPictures/freestocks-A11MXTzUhLE-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic8 from '../images/Pinterest3ColumnsPageCoverPictures/laura-chouette-HTowfw8ascU-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic9 from '../images/Pinterest3ColumnsPageCoverPictures/clay-banks-_wkd7XBRfU4-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic10 from '../images/Pinterest3ColumnsPageCoverPictures/kara-eads-Uq9o9uUIT08-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic11 from '../images/Pinterest3ColumnsPageCoverPictures/paper-3025558_1920-pinterest-3-columns.png';
+import Pinterest3ColumnsPageCoverPic12 from '../images/Pinterest3ColumnsPageCoverPictures/heather-ford-6fiz86Ql3UA-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic13 from '../images/Pinterest3ColumnsPageCoverPictures/meghan-schiereck--2eJaLtf_bI-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic14 from '../images/Pinterest3ColumnsPageCoverPictures/jess-bailey-L71uKsAVo4g-pinterest-3-columns-unsplash.png';
+import Pinterest3ColumnsPageCoverPic15 from '../images/Pinterest3ColumnsPageCoverPictures/nadine-shaabana-updated-pinterest-3-columns-unsplash.png';
+
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_1 = Pinterest3ColumnsPageCoverPic1;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_2 = Pinterest3ColumnsPageCoverPic2;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_3 = Pinterest3ColumnsPageCoverPic3;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_4 = Pinterest3ColumnsPageCoverPic4;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_5 = Pinterest3ColumnsPageCoverPic5;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_6 = Pinterest3ColumnsPageCoverPic6;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_7 = Pinterest3ColumnsPageCoverPic7;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_8 = Pinterest3ColumnsPageCoverPic8;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_9 = Pinterest3ColumnsPageCoverPic9;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_10 = Pinterest3ColumnsPageCoverPic10;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_11 = Pinterest3ColumnsPageCoverPic11;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_12 = Pinterest3ColumnsPageCoverPic12;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_13 = Pinterest3ColumnsPageCoverPic13;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_14 = Pinterest3ColumnsPageCoverPic14;
+export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_15 = Pinterest3ColumnsPageCoverPic15;

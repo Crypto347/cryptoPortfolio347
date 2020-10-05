@@ -28,7 +28,7 @@ import './pinterest3ColumnsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import StoneWallItem from '../../../SmallParts/StoneWallItem/stoneWallItem';
+import Pinterest3ColumnsItem from '../../../SmallParts/Pinterest3ColumnsItem/pinterest3ColumnsItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
@@ -102,20 +102,23 @@ export const Pinterest3ColumnsPage = (props) => {
         }, 2);
 
         const smooth = e => {
-            if(['stone-wall-item-id1',
-                'stone-wall-item-id2',
-                'stone-wall-item-id3',
-                'stone-wall-item-id4',
-                'stone-wall-item-id5',
-                'stone-wall-item-id6',
-                'stone-wall-item-id7',
-                'stone-wall-item-id8',
-                'stone-wall-item-id9',
-                'stone-wall-item-id10',
-                'stone-wall-item-id11'
+            if(['pinterest-3-columns-item-id1',
+                'pinterest-3-columns-item-id2',
+                'pinterest-3-columns-item-id3',
+                'pinterest-3-columns-item-id4',
+                'pinterest-3-columns-item-id5',
+                'pinterest-3-columns-item-id6',
+                'pinterest-3-columns-item-id7',
+                'pinterest-3-columns-item-id8',
+                'pinterest-3-columns-item-id9',
+                'pinterest-3-columns-item-id10',
+                'pinterest-3-columns-item-id11',
+                'pinterest-3-columns-item-id12',
+                'pinterest-3-columns-item-id13',
+                'pinterest-3-columns-item-id14',
+                'pinterest-3-columns-item-id15'
                 ].includes(e.target.className)){
-                    console.log("fagr")
-                        transitionRef.current()
+                    transitionRef.current()
             }
         }
 
@@ -424,43 +427,6 @@ export const Pinterest3ColumnsPage = (props) => {
                 transition: 0
             });
         }
-        // if(size.width <= 900){
-        //     props.updateItemsStyleValuesStoneWallPage("img1",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img2",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: 20,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img3",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: stoneWallPageItemsWidth/2 + 70,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img4",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: stoneWallPageItemsWidth + stoneWallPageItemsWidth/2 + 120,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img5",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: stoneWallPageItemsWidth*2 + stoneWallPageItemsWidth/2 + 170,
-        //         transition: 0
-        //     });
-        // }
     }
 
     const handleOnWheel = (e) => {
@@ -569,31 +535,6 @@ export const Pinterest3ColumnsPage = (props) => {
         }
     }
 
-    const getImagesWidthAndHeight = (obj) => {
-        props.updateItemsStyleValuesStoneWallPage({
-            img1: {
-                ...props.pinterest3ColumnsPage.itemsStyleValues.img1,
-                height: obj.img1.height
-            }, 
-            img2: {
-                ...props.pinterest3ColumnsPage.itemsStyleValues.img2,
-                height: obj.img2.height
-            }, 
-            img3: {
-                ...props.pinterest3ColumnsPage.itemsStyleValues.img3,
-                height: obj.img3.height
-            },
-            img4: {
-                ...props.pinterest3ColumnsPage.itemsStyleValues.img4,
-                height: obj.img4.height
-            },
-            img5: {
-                ...props.pinterest3ColumnsPage.itemsStyleValues.img5,
-                height: obj.img5.height
-            }
-        })
-    }
-
     const renderStoneWallItemsStyleWidth = () => {
         if(size.width > 1200){
             return 1099.99;
@@ -655,12 +596,13 @@ export const Pinterest3ColumnsPage = (props) => {
                         // className={renderClassName(el.id)}
                         style={renderStoneWallPageItemStyle(el.id)}
                     >
-                        <StoneWallItem
+                        <Pinterest3ColumnsItem
                             page="pinterest3ColumnsPage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
+                            setIsHoveringCategory={props.setPinterest3ColumnsPageIsHoveringCategory}
+                            clearArchiveData={props.clearArchiveData}
                         />
                     </div>
                 )
@@ -728,7 +670,7 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
+            setPinterest3ColumnsPageIsHoveringCategory: bindActionCreators(Actions.setPinterest3ColumnsPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

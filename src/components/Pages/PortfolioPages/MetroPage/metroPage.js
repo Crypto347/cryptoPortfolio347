@@ -811,55 +811,6 @@ export const MetroPage = (props) => {
         }
     }
 
-    const getImagesWidthAndHeight = (obj) => {
-        props.updateItemsStyleValuesMetroPage({
-            img1: {
-                ...props.metroPage.itemsStyleValues.img1,
-                height: obj.img1.height
-            }, 
-            img2: {
-                ...props.metroPage.itemsStyleValues.img2,
-                height: obj.img2.height
-            }, 
-            img3: {
-                ...props.metroPage.itemsStyleValues.img3,
-                height: obj.img3.height
-            },
-            img4: {
-                ...props.metroPage.itemsStyleValues.img4,
-                height: obj.img4.height
-            },
-            img5: {
-                ...props.metroPage.itemsStyleValues.img5,
-                height: obj.img5.height
-            },
-            img6: {
-                ...props.metroPage.itemsStyleValues.img6,
-                height: obj.img6.height
-            },
-            img7: {
-                ...props.metroPage.itemsStyleValues.img7,
-                height: obj.img7.height,
-            },
-            img8: {
-                ...props.metroPage.itemsStyleValues.img8,
-                height: obj.img8.height
-            },
-            img9: {
-                ...props.metroPage.itemsStyleValues.img9,
-                height: obj.img9.height
-            },
-            img10: {
-                ...props.metroPage.itemsStyleValues.img10,
-                height: obj.img10.height
-            },
-            img11: {
-                ...props.metroPage.itemsStyleValues.img11,
-                height: obj.img11.height,
-            }
-        })
-    }
-
     const renderMetroPageItemsStyleHeight = () => {
         if(size.width > 1500){
             return 4*props.metroPage.itemsStyleValues.img1.width + 4*40;
@@ -902,7 +853,6 @@ export const MetroPage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            // getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
                             setIsHoveringCategory={props.setMetroPageIsHoveringCategory}
                             clearArchiveData={props.clearArchiveData}
                         />

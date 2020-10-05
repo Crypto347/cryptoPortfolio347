@@ -10820,7 +10820,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/big-slider/3",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover1",
+                key: "pinterest3ColumnsCover1",
                 isHover: "init",
                 imageName: "daily-nouri-E5Oo4nENq2M-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -10846,7 +10846,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/gallery/2",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover2",
+                key: "pinterest3ColumnsCover2",
                 isHover: "init",
                 imageName: "nathan-dumlao-pMW4jzELQCw-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -10879,7 +10879,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-gallery/2",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover3",
+                key: "pinterest3ColumnsCover3",
                 isHover: "init",
                 imageName: "nahuel-hawkes-Ki6JO9sraB8-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -10912,7 +10912,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/big-images/1",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover4",
+                key: "pinterest3ColumnsCover4",
                 isHover: "init",
                 imageName: "melanie-mauer-x-agyuDQHJA-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -10945,7 +10945,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-slider/2",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover5",
+                key: "pinterest3ColumnsCover5",
                 isHover: "init",
                 imageName: "siora-photography-G8RdOUjVuJo-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -10978,7 +10978,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-images/1",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover6",
+                key: "pinterest3ColumnsCover6",
                 isHover: "init",
                 imageName: "jason-blackeye-DKCgibUVLNc-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -11018,7 +11018,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/big-images/2",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover7",
+                key: "pinterest3ColumnsCover7",
                 isHover: "init",
                 imageName: "freestocks-A11MXTzUhLE-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -11044,9 +11044,9 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-gallery/3",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover8",
+                key: "pinterest3ColumnsCover8",
                 isHover: "init",
-                imageName: "laura-chouette-HTowfw8ascU-pinterest-3-columns-unsplash.jpg.png",
+                imageName: "laura-chouette-HTowfw8ascU-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -11070,7 +11070,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-images/4",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover9",
+                key: "pinterest3ColumnsCover9",
                 isHover: "init",
                 imageName: "clay-banks-_wkd7XBRfU4-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -11103,7 +11103,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/gallery/3",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover10",
+                key: "pinterest3ColumnsCover10",
                 isHover: "init",
                 imageName: "kara-eads-Uq9o9uUIT08-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -11143,7 +11143,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-images/2",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover11",
+                key: "pinterest3ColumnsCover11",
                 isHover: "init",
                 imageName: "paper-3025558_1920-pinterest-3-columns.png",
                 folderName: "colorful",
@@ -11176,7 +11176,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/big-slider/2",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover12",
+                key: "pinterest3ColumnsCover12",
                 isHover: "init",
                 imageName: "heather-ford-6fiz86Ql3UA-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -11202,9 +11202,9 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-slider/3",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover13",
+                key: "pinterest3ColumnsCover13",
                 isHover: "init",
-                imageName: "meghan-schiereck--2eJaLtf_bI-pinterest-3-columns-unsplash.jpg.png",
+                imageName: "meghan-schiereck--2eJaLtf_bI-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -11235,7 +11235,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/small-images/3",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover14",
+                key: "pinterest3ColumnsCover14",
                 isHover: "init",
                 imageName: "jess-bailey-L71uKsAVo4g-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",
@@ -11261,7 +11261,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
             path: "portfolio-item/gallery/1",
             coverImage: {
                 id: 1,
-                key: "pinterest3ColumnCover15",
+                key: "pinterest3ColumnsCover15",
                 isHover: "init",
                 imageName: "nadine-shaabana-updated-pinterest-3-columns-unsplash.png",
                 folderName: "colorful",

@@ -52,7 +52,6 @@ export const StoneWallItem = (props) => {
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
     const [paddingTopBottom, setPaddingTopBottom] = useState(0);
-    const [upload, setUpload] = useState(false);
  
     /**
     * Methods
@@ -61,36 +60,10 @@ export const StoneWallItem = (props) => {
     useEffect(() => {   
         const resize = () => {
             resizeRef.current();
-        } 
-        setUpload(true);
-        if(upload){
-            // console.log("HH",document.getElementById("stoneWallItemId1"))
-            props.getImagesWidthAndHeight({
-                img1: {
-                    // width: document.getElementById("stoneWallWideItemId1").clientWidth,
-                    height: document.getElementById("stoneWallItemId1").clientHeight,
-                }, 
-                img2: {
-                    // width: document.getElementById("stoneWallItemId2").clientWidth,
-                    height: document.getElementById("stoneWallItemId2").clientHeight,
-                }, 
-                img3: {
-                    // width: document.getElementById("stoneWallItemId3").clientWidth,
-                    height: document.getElementById("stoneWallItemId3").clientHeight,
-                },
-                img4: {
-                    // width: document.getElementById("stoneWallItemId4").clientWidth,
-                    height: document.getElementById("stoneWallItemId4").clientHeight,
-                },
-                img5: {
-                    // width: document.getElementById("stoneWallItemId5").clientWidth,
-                    height: document.getElementById("stoneWallItemId5").clientHeight,
-                }
-            })
         }
         window.addEventListener('resize', resize);
         return () =>  window.removeEventListener('resize', resize);
-    }, [upload]);
+    }, []);
 
     useEffect(() => {
         resizeRef.current = handleResize;
