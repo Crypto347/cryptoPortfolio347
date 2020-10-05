@@ -29,10 +29,10 @@ export function setPinterest3ColumnsPageIsHoveringCategory(val, pathOfIds) {
     };
 };
 
-// export function updateItemsStyleValuesPinterest3ColumnsPage(image, obj) {
-//     return { 
-//         type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_PINTEREST_3_COLUMNS_PAGE,
-//         image: image,
-//         obj: obj
-//     };
-// };
+export function updateItemsStyleValuesPinterest3ColumnsPage(image, obj) {
+    return { 
+        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_PINTEREST_3_COLUMNS_PAGE,
+        image: image,
+        obj: obj
+    };
+};
