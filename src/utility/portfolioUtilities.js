@@ -95,3 +95,7 @@ export const categoryKeyToPath = (key) => {
     }
     return categoryToArray.join("");
 }
+
+export const categoryFromLocationPathname = (path) => {
+    return path.split("/")[3];
+}

@@ -92,10 +92,12 @@ export const Main = (props) => {
         props.setArchiveCategory(localStorage.getItem('archiveCategory'));
         props.setUnmountComponentValues(false, '', localStorage.getItem('page'))
         props.history.listen((location, action) => {
+            let category = Utility.categoryFromLocationPathname(location.pathname)
             path = location.pathname.slice(18);
             pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
+            props.setArchiveCategory(category);
             console.log("activateMenuItem", pathOfIds)
             props.photoViewerOpen("all", false, []);
         });
