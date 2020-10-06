@@ -270,6 +270,13 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/metro`, "_blank");
                 }
                 break;
+            case 'pinterest3ColumnsPage':
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/pinterest-3-columns`);
+                }else{
+                    window.open(`/crypto-portfolio/pinterest-3-columns`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
@@ -328,6 +335,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'metroPage':
                 updatedItems = [...props.metroPage.items];
+                break;
+            case 'pinterest3ColumnsPage':
+                updatedItems = [...props.pinterest3ColumnsPage.items];
                 break;
             default: 
                 updatedItems = [...props.portfolioGalleryPage.items];
@@ -436,6 +446,7 @@ export default connect(
             stoneWallPage: Selectors.getStoneWallPageState(state),
             stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
             metroPage: Selectors.getMetroPageState(state),
+            pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
