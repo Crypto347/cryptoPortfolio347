@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -86,6 +87,8 @@ export const SimpleOverlayPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
     /**
     * Methods
     */
@@ -117,6 +120,14 @@ export const SimpleOverlayPage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("simpleOverlayPage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -284,6 +295,7 @@ export const SimpleOverlayPage = (props) => {
             {renderToolbars()}
             {renderSimpleOverlayPageContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
