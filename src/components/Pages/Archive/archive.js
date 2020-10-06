@@ -28,6 +28,7 @@ import './archive.scss';
 import Loading from '../../SmallParts/Loading/loading';
 import LoadingVersion2 from '../../SmallParts/LoadingVersion2/loadingVersion2';
 import Toolbar from '../../Parts/Toolbar/toolbar';
+import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
 
 // import Swiper from '../../../../library/Swiper/swiper';
@@ -96,6 +97,7 @@ export const Archive = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
@@ -128,6 +130,12 @@ export const Archive = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("archive");
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -432,6 +440,7 @@ export const Archive = (props) => {
             {renderArchiveContent()}
             {/* {showContent ? renderArchiveContent() : null} */}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
