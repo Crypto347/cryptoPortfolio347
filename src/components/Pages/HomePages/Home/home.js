@@ -32,6 +32,7 @@ import Section3 from '../../../Parts/Section3/section3';
 import Section4 from '../../../Parts/Section4/section4';
 import Section5 from '../../../Parts/Section5/section5';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -156,6 +157,7 @@ export const Home = (props) => {
                 height={457}
                 component="pictureBoardForTextItem"
             /> : null}
+            <BackToTop/>
         </div>
     );
 }
