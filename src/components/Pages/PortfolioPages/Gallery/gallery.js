@@ -30,6 +30,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -90,6 +91,7 @@ export const Gallery = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -217,6 +219,14 @@ export const Gallery = (props) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("gallery");
     
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+
         // Check scroll direction
 
         if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
@@ -436,6 +446,7 @@ export const Gallery = (props) => {
                 height={457}
                 component="gallery"
             /> : null}
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
