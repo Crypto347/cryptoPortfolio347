@@ -30,6 +30,7 @@ import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import StoneWallItem from '../../../SmallParts/StoneWallItem/stoneWallItem';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -87,6 +88,7 @@ export const StoneWallPage = (props) => {
     const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -124,14 +126,14 @@ export const StoneWallPage = (props) => {
         }
  
         setImagesState("onInit");
-        window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
+        window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('transitionend', smooth);
 
         return () => {
             clearTimeout(timeout);
-            window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
+            window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('transitionend', smooth);
             props.setMenuDotsState("init", "");
         }
@@ -196,9 +198,36 @@ export const StoneWallPage = (props) => {
         });
     }
     
-
     const handleResize = (e) => {
         setImagesState("onResize");
+    }
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("stoneWallPage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
     }
 
     const setImagesState = (opt) => {
@@ -463,26 +492,6 @@ export const StoneWallPage = (props) => {
         // }
     }
 
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("stoneWallPage");
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
-    }
-
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -710,6 +719,7 @@ export const StoneWallPage = (props) => {
             {renderToolbars()}
             {renderStoneWallContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }

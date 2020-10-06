@@ -86,6 +86,8 @@ export const StandardPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
+    
     /**
     * Methods
     */
