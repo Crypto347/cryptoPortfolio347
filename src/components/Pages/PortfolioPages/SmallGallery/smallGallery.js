@@ -30,6 +30,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -90,6 +91,7 @@ export const SmallGallery = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -110,6 +112,34 @@ export const SmallGallery = (props) => {
             window.removeEventListener('wheel', handleOnWheel);
         }
     }, []);
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("smallGallery");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     const loadImg = (key) => {
         switch(key) {
@@ -209,26 +239,6 @@ export const SmallGallery = (props) => {
                     return "small-gallery-portfolio-image-curtain-hover-off"
             }
         }
-    }
-
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("smallGallery");
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
     }
 
     const onClickHandler = (path, key, e) => {
@@ -431,6 +441,7 @@ export const SmallGallery = (props) => {
                 height={457}
                 component="smallGallery"
             /> : null}
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
