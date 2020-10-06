@@ -32,6 +32,7 @@ import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -88,6 +89,7 @@ export const SmallSlider = (props) => {
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [onePercentToPx, setOnePercentToPx] = useState(0);
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -106,13 +108,14 @@ export const SmallSlider = (props) => {
         setShowContent(true);
 
         // window.addEventListener('scroll', handleScroll);
-        window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
-
+        window.addEventListener('wheel', handleOnWheel);
+        
         return () => {
             // window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
-            window.removeEventListener('resize', resize)
+         
         }
     }, []);
 
@@ -122,6 +125,34 @@ export const SmallSlider = (props) => {
 
     const handleResize = () => {
         calculateOnePercent(size.width);
+    }
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("smallSlider");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
     }
     
     const calculateOnePercent = (scrWidth) => {
@@ -174,26 +205,6 @@ export const SmallSlider = (props) => {
                     return "h19-nobel-lustria-nero-hover-off"
             }
         }
-    }
-
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("smallSlider");
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
     }
 
     const onClickHandler = (path, key, e) => {
@@ -374,6 +385,7 @@ export const SmallSlider = (props) => {
                 height={457}
                 component="smallSlider"
             /> : null}
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }

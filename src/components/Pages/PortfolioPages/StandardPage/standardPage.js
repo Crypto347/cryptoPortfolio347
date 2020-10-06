@@ -30,6 +30,7 @@ import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import StandardPortfolioItem from '../../../SmallParts/StandardPortfolioItem/standardPortfolioItem';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -116,6 +117,14 @@ export const StandardPage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("standardPage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -236,6 +245,7 @@ export const StandardPage = (props) => {
             {renderToolbars()}
             {renderStandardPageContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
