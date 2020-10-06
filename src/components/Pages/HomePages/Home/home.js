@@ -66,6 +66,7 @@ export const Home = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -84,7 +85,11 @@ export const Home = (props) => {
     const checkScrollDirection = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("home");
-        
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
         if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
             setScrollingUp(false);
         }else{
@@ -157,7 +162,7 @@ export const Home = (props) => {
                 height={457}
                 component="pictureBoardForTextItem"
             /> : null}
-            <BackToTop/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
