@@ -73,11 +73,10 @@ export const BackToTop = (props) => {
         }
     }
 
-    const arrowOnClick = (path, e) => {
+    const arrowOnClick = (e, path) => {
         switch(e.button){
             case 0: 
-                console.log(e.button)
-                props.history.push(props.match.url + path)
+                window.scrollTo(0,0)
                 return;
             case 1:
                 window.open(props.match.url + path, "_blank");
@@ -94,6 +93,7 @@ export const BackToTop = (props) => {
     return(
         <div 
             className="back-to-top"
+            onMouseDown={(e) => arrowOnClick(e, null)}
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
