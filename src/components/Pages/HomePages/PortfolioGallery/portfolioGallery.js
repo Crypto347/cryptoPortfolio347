@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
 import PortfolioItemCard from '../../../SmallParts/PortfolioItemCard/portfolioItemCard';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -86,6 +87,7 @@ export const PortfolioGallery = (props) => {
 
     const size = useWindowSize();
     const resizeRef = useRef();
+    const [showBackToTop, setShowBackToTop] = useState(false);
   
     const initCoordinateRange = [
         {
@@ -185,9 +187,11 @@ export const PortfolioGallery = (props) => {
             resizeRef.current();
         }
         window.addEventListener('resize', resize);
+        window.addEventListener('wheel', handleOnWheel);
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('resize', resize);
+            window.removeEventListener('wheel', handleOnWheel)
             props.setMenuDotsState("init", "")
         }
     }, []);
@@ -198,6 +202,15 @@ export const PortfolioGallery = (props) => {
 
     const handleResize = () => {
         props.forgetCoordinateRangeForPortfolioGalleryPage(initCoordinateRange);
+    }
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     }
 
     const renderToolbars = () => {
@@ -302,8 +315,8 @@ export const PortfolioGallery = (props) => {
             <MenuFullScreen 
                 page="portfolioGallery"
                 state={props.menuDotsState.state}
-            /> : null
-            }     
+            /> : null}
+            {showBackToTop ? <BackToTop/> : null}     
         </> 
     );
 }
