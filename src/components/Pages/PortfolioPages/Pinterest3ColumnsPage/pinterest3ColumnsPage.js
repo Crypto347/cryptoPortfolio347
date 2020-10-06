@@ -834,6 +834,113 @@ export const Pinterest3ColumnsPage = (props) => {
                 transition: 0
             });
         }
+        if(size.width <= 500){
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 0,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img2",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 30,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 674,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 1000.33,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 1326.99,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 1653.65,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 2298,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 2624.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 3269,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 3595.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 4240,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 4566.66,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
+                width: 296.66,
+                height: 623.32,
+                translateX: 0,
+                translateY: 5211,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 5855,
+                transition: 0
+            });
+            props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
+                width: 296.66,
+                height: 296.66,
+                translateX: 0,
+                translateY: 6181.66,
+                transition: 0
+            });
+        }
     }
 
     const handleOnWheel = (e) => {
@@ -1030,9 +1137,9 @@ export const Pinterest3ColumnsPage = (props) => {
         if(size.width <= 710 && size.width > 500){
             return 413.33;
         }
-        // if(size.width <= 500){
-        //     return 300;
-        // }
+        if(size.width <= 500){
+            return 296.66;
+        }
     }
 
     const renderPinterest3ColumnsItemsStyleHeight = () => {
@@ -1051,16 +1158,16 @@ export const Pinterest3ColumnsPage = (props) => {
         if(size.width <= 710 && size.width > 500){
             return 9372.5;
         }
-        // if(size.width <= 500){
-        //     return 2010.39;
-        // }
+        if(size.width <= 500){
+            return 6872;
+        }
     }
 
     const renderPinterest3ColumnsPageData = () => {
         return(
             <div 
                 id="pinterest3ColumnsPageItems"
-                // className="stone-wall-page-items"
+                // className="pinterest-3-columns-page-items"
                 style={{
                     position: "relative",
                     width: `${renderPinterest3ColumnsItemsStyleWidth()}px`,
@@ -1071,7 +1178,7 @@ export const Pinterest3ColumnsPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        // className={`stone-wall-page-item-id${el.id}`}
+                        // className={`pinterest-3-columns-page-item-id${el.id}`}
                         // className={renderClassName(el.id)}
                         style={renderPinterest3ColumnsPageItemStyle(el.id)}
                     >
@@ -1093,7 +1200,7 @@ export const Pinterest3ColumnsPage = (props) => {
         if(props.pinterest3ColumnsPage.loading && !props.pinterest3ColumnsPage.error){
             return(
                 <div 
-                    className="stone-wall-page-loading-error" 
+                    className="pinterest-3-columns-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -1102,8 +1209,8 @@ export const Pinterest3ColumnsPage = (props) => {
         }
         if(!props.pinterest3ColumnsPage.loading && !props.pinterest3ColumnsPage.error){
             return(
-                <div className="stone-wall-page-wrapper">
-                    <div className="stone-wall-page-header">
+                <div className="pinterest-3-columns-page-wrapper">
+                    <div className="pinterest-3-columns-page-header">
                         <H65 className="h65-nero-poppins">Pinterest 3 columns</H65>
                     </div> 
                     {renderPinterest3ColumnsPageData()}
@@ -1113,7 +1220,7 @@ export const Pinterest3ColumnsPage = (props) => {
         if(!props.pinterest3ColumnsPage.loading && props.pinterest3ColumnsPage.error){
             return(
                 <div 
-                    className="stone-wall-page-loading-error" 
+                    className="pinterest-3-columns-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.pinterest3ColumnsPage.error}`}</H15>
@@ -1127,7 +1234,7 @@ export const Pinterest3ColumnsPage = (props) => {
     */
 
     return(
-        <div className="stone-wall-page" id="pinterest3ColumnsPage">
+        <div className="pinterest-3-columns-page" id="pinterest3ColumnsPage">
             {renderToolbars()}
             {renderPinterest3ColumnsContent()}
             <Footer/>
