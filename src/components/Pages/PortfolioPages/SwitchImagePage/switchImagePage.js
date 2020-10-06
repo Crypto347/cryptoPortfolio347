@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
 import PortfolioItemCard from '../../../SmallParts/PortfolioItemCard/portfolioItemCard';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -88,6 +89,7 @@ export const SwitchImagePage = (props) => {
     // const itemRef = useRef(null);
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
   
     const initCoordinateRange = [
         {
@@ -207,6 +209,14 @@ export const SwitchImagePage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("switchImagePage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -332,6 +342,7 @@ export const SwitchImagePage = (props) => {
                 {renderToolbars()}
                 {renderSwitchImagePageContent()}
                 <Footer/>
+                {showBackToTop ? <BackToTop/> : null}
             </div>
             /* {props.menuDotsState.state === "on" ? 
             <MenuFullScreen 
