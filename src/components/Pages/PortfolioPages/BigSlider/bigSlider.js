@@ -30,6 +30,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -90,6 +91,7 @@ export const BigSlader = (props) => {
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -106,6 +108,34 @@ export const BigSlader = (props) => {
 
         return () => window.removeEventListener('wheel', handleOnWheel);
     }, []);
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("bigSlider");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     const handleMouseEnter = (opt, id) => {
         switch(opt){
@@ -150,26 +180,6 @@ export const BigSlader = (props) => {
                     return "h19-nobel-lustria-nero-hover-off"
             }
         }
-    }
-
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("bigSlider");
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
     }
 
     const onClickHandler = (path, key, e) => {
@@ -329,6 +339,7 @@ export const BigSlader = (props) => {
             {renderToolbars()}
             {showContent ? renderBigSliderContent() : null}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
