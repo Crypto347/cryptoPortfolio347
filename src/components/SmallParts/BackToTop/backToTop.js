@@ -79,7 +79,7 @@ export const BackToTop = (props) => {
                 window.scrollTo(0,0)
                 return;
             case 1:
-                window.open(props.match.url + path, "_blank");
+                window.open(path, "_blank");
                 return;
             case 2:
                 return;
@@ -93,7 +93,7 @@ export const BackToTop = (props) => {
     return(
         <div 
             className="back-to-top"
-            onMouseDown={(e) => arrowOnClick(e, null)}
+            onMouseDown={(e) => arrowOnClick(e, location.pathname)}
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
@@ -105,5 +105,5 @@ export const BackToTop = (props) => {
     );
 }
 
-export default BackToTop;
+export default withRouter(BackToTop);
  
