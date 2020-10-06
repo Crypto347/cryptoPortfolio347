@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -86,6 +87,8 @@ export const OverlayWithInfoPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
     /**
     * Methods
     */
@@ -116,6 +119,14 @@ export const OverlayWithInfoPage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("overlayWithInfoPage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -236,6 +247,7 @@ export const OverlayWithInfoPage = (props) => {
             {renderToolbars()}
             {renderOverlayWithInfoPageContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
