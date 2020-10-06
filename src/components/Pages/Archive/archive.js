@@ -131,6 +131,8 @@ export const Archive = (props) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("archive");
 
+        // Show or hide BackToTop component
+        
         if(scrollHeight > screen.height/2){
             setShowBackToTop(true);
         }else{

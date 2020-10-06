@@ -206,6 +206,9 @@ export const PortfolioGallery = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
+
+        // Show or hide BackToTop component
+
         if(scrollHeight > screen.height/2){
             setShowBackToTop(true);
         }else{

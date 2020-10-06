@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -91,6 +92,7 @@ export const BigImages = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
+    const [showBackToTop, setShowBackToTop] = useState(false);
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
@@ -186,6 +188,14 @@ export const BigImages = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("bigImages");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -401,6 +411,7 @@ export const BigImages = (props) => {
                 height={457}
                 component="bigImages"
             /> : null}
+            {showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }

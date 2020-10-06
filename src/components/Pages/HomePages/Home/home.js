@@ -85,11 +85,17 @@ export const Home = (props) => {
     const checkScrollDirection = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("home");
+
+        // Show or hide BackToTop component
+
         if(scrollHeight > screen.height/2){
             setShowBackToTop(true);
         }else{
             setShowBackToTop(false);
         }
+
+        // Check scroll direction
+
         if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
             setScrollingUp(false);
         }else{
