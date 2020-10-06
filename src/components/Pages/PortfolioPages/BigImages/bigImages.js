@@ -111,6 +111,27 @@ export const BigImages = (props) => {
         return () => window.removeEventListener('wheel', handleOnWheel);
     }, []);
 
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("bigImages");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
     const loadImg = (key) => {
         switch(key) {
             case 'id1BigImages1':
@@ -182,27 +203,6 @@ export const BigImages = (props) => {
                 case 'off':
                     return "h19-nobel-lustria-nero-hover-off"
             }
-        }
-    }
-
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("bigImages");
-
-        // Show or hide BackToTop component
-
-        if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
-        }else{
-            setShowBackToTop(false);
-        }
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
         }
     }
 

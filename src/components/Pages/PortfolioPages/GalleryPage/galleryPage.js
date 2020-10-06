@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -86,6 +87,8 @@ export const GalleryPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
     /**
     * Methods
     */
@@ -117,6 +120,14 @@ export const GalleryPage = (props) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("galleryPage");
     
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+
         // Check scroll direction
 
         if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
@@ -234,6 +245,7 @@ export const GalleryPage = (props) => {
             {renderToolbars()}
             {renderGalleryPageContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
