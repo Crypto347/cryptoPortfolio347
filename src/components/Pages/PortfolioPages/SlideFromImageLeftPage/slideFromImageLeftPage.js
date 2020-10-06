@@ -31,6 +31,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import SlideFromImageLeft from '../../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
 import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -86,6 +87,8 @@ export const SlideFromImageLeftPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
     /**
     * Methods
     */
@@ -117,6 +120,14 @@ export const SlideFromImageLeftPage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("slideFromImageLeft");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
     
         // Check scroll direction
 
@@ -255,6 +266,7 @@ export const SlideFromImageLeftPage = (props) => {
             {renderToolbars()}
             {renderSlideFromImageLeftPageContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
