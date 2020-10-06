@@ -30,6 +30,7 @@ import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MetroItem from '../../../SmallParts/MetroItem/metroItem';
 import Footer from '../../../Parts/Footer/footer';
+import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
@@ -87,6 +88,7 @@ export const MetroPage = (props) => {
     const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -254,6 +256,34 @@ export const MetroPage = (props) => {
 
     const handleResize = (e) => {
         setImagesState();
+    }
+
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("metroPage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            setShowBackToTop(true);
+        }else{
+            setShowBackToTop(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
     }
 
     const setImagesState = () => {
@@ -655,26 +685,6 @@ export const MetroPage = (props) => {
         }
     }
 
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("metroPage");
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
-    }
-
     const renderToolbars = () => {
         if(size.width < 1120){
             return(
@@ -904,6 +914,7 @@ export const MetroPage = (props) => {
             </div> 
             {renderMetroContent()}
             <Footer/>
+            {showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
