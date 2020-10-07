@@ -46,6 +46,7 @@ export const initialState = {
         state: "init"
     },
     historyPopFromItem: "scrollToTop",
+    scrollBehavior: "none"
 }
 
 const initMenuItems = (state, action) => {
@@ -698,7 +699,12 @@ const setHistoryPopFromPortfolioItem = (state, action) => {
     };
 }
 
-
+const setScrollBehavior = (state, action) => {
+    return {
+        ...state,
+        scrollBehavior: action.val
+    };
+}
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
 //     let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
@@ -851,6 +857,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setMenuDotsState(state, action); 
         case actionTypes.SET_HISTORY_POP_FROM_PORTFOLIO_ITEM:
             return setHistoryPopFromPortfolioItem(state, action);
+        case actionTypes.SET_SCROLL_BEHAVIOR:
+            return setScrollBehavior(state, action);
         default: 
             return state;
     }

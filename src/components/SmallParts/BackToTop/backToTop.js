@@ -3,6 +3,7 @@
 */
 
 import React, {
+    useEffect,
     useState
 } from 'react';
 
@@ -42,6 +43,13 @@ export const BackToTop = (props) => {
     * Methods
     */
 
+    // useEffect(()=>{
+    //     setTimeout(()=>{
+    //         document.getElementById("html").style.scrollBehavior = "smooth";
+    //     }, 1000)
+       
+    // },[])
+
     const handleMouseEnter = () => {
        setIsHovering("on");
     }
@@ -74,6 +82,8 @@ export const BackToTop = (props) => {
     }
 
     const arrowOnClick = (e, path) => {
+        let id = uuid()
+        console.log("ID",id)
         switch(e.button){
             case 0: 
                 window.scrollTo(0,0)

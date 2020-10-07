@@ -3,6 +3,7 @@
 */
 
 import React, {
+    useState,
     useEffect
 } from 'react';
 
@@ -79,7 +80,7 @@ import * as Utility from '../utility';
 */
 
 export const Main = (props) => {
-
+   
     /**
     * Methods
     */
@@ -92,15 +93,21 @@ export const Main = (props) => {
         props.setArchiveCategory(localStorage.getItem('archiveCategory'));
         props.setUnmountComponentValues(false, '', localStorage.getItem('page'))
         props.history.listen((location, action) => {
-            let category = Utility.categoryFromLocationPathname(location.pathname)
+            let category = Utility.categoryFromLocationPathname(location.pathname);
+            if(action === "POP" && category){
+                props.setArchiveCategory(category);
+                window.location.reload();
+            }
+            
             path = location.pathname.slice(18);
             pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
-            props.setArchiveCategory(category);
             console.log("activateMenuItem", pathOfIds)
             props.photoViewerOpen("all", false, []);
+            // document.getElementById("html").style.scrollBehavior = "none";
         });
+        // document.getElementById("html").style.scrollBehavior = "none";
     }, []);
 
     /**
@@ -254,7 +261,8 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            unmountComp: Selectors.getUnmountComponentState(state)
+            unmountComp: Selectors.getUnmountComponentState(state),
+            scrollBehavior: Selectors.getScrollBehaviorState(state)
         };
     },
     (dispatch) => {

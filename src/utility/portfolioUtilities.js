@@ -80,7 +80,6 @@ export const categoryPathToKey = (path) => {
 export const categoryKeyToPath = (key) => {
     let categoryToArray = key.split("");        
     let indexOfUpperCaseLetter;
-
     indexOfUpperCaseLetter = categoryToArray.map((item, i) => {
         if(item === item.toUpperCase()){
             return i;
@@ -97,5 +96,11 @@ export const categoryKeyToPath = (key) => {
 }
 
 export const categoryFromLocationPathname = (path) => {
-    return path.split("/")[3];
+    console.log(path)
+    let arr = path.split("/");
+    if(arr.length === 4 && arr[2] === "portfolio-category"){
+        return categoryPathToKey(arr[3]);
+    }else{
+        return;
+    }
 }

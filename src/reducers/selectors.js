@@ -310,3 +310,9 @@ export const getPinterest3ColumnsPageState = createSelector(
     (x) => x
 );
 
+const getScrollBehavior = (state) => state.home.scrollBehavior;
+
+export const getScrollBehaviorState = createSelector(
+    [getScrollBehavior],
+    (x) => x
+);

@@ -61,6 +61,8 @@ import {
     EH40
 } from '../../UtilityComponents';
 
+import * as Utility from '../../../utility';
+
 /**
 * Images
 */
@@ -188,9 +190,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'archive':
                 if(e.button !== 1){
-                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state.category}`);
+                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category)}`);
                 }else{
-                    window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : props.archive.category}`, "_blank");
+                    window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category)}`, "_blank");
                 }
                 break;
             case 'switchImagePage':

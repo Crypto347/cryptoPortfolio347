@@ -167,3 +167,9 @@ export function setMenuDotsState(val, page) {
     };
 };
 
+export function setScrollBehavior(val) {
+    return { 
+        type: actionTypes.SET_SCROLL_BEHAVIOR,
+        val: val
+    };
+};
