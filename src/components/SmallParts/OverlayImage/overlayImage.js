@@ -149,6 +149,42 @@ export const OverlayImage = (props) => {
                 return Images.SIMPLE_OVERLAY_COVER_PIC_17;
             case 'id4SmallImages1':
                 return Images.SIMPLE_OVERLAY_COVER_PIC_18;
+            case 'twoColumnWideCover1':
+                return Images.ID_1_SMALL_IMAGES_2;
+            case 'twoColumnWideCover2': 
+                return Images.ID_1_BIG_SLIDER_5;
+            case 'twoColumnWideCover3':
+                return Images.ID_1_GALLERY_4;
+            case 'twoColumnWideCover4':
+                return Images.ID_1_SMALL_GALLERY_2;
+            case 'twoColumnWideCover5':
+                return Images.ID_1_BIG_IMAGES_5;
+            case 'twoColumnWideCover6': 
+                return Images.ID_1_SMALL_SLIDER_5;
+            case 'twoColumnWideCover7': 
+                return Images.ID_2_SMALL_SLIDER_2;
+            case 'twoColumnWideCover8':
+                return Images.ID_2_GALLERY_1;
+            case 'twoColumnWideCover9':
+                return Images.ID_2_SMALL_GALLERY_1;
+            case 'twoColumnWideCover10':
+                return Images.ID_2_SMALL_IMAGES_1;
+            case 'twoColumnWideCover11': 
+                return Images.ID_2_BIG_SLIDER_6;
+            case 'twoColumnWideCover12':
+                return Images.ID_2_BIG_IMAGES_5;
+            case 'twoColumnWideCover13':
+                return Images.ID_3_GALLERY_4;
+            case 'twoColumnWideCover14': 
+                return Images.ID_3_SMALL_SLIDER_2;
+            case 'twoColumnWideCover15':
+                return Images.ID_3_SMALL_GALLERY_3;
+            case 'twoColumnWideCover16':
+                return Images.ID_3_SMALL_IMAGES_2;
+            case 'twoColumnWideCover17': 
+                return Images.ID_3_BIG_SLIDER_4;
+            case 'twoColumnWideCover18':
+                return Images.ID_4_SMALL_IMAGES_3;
             default:
                 return "";
         }
@@ -261,7 +297,7 @@ export const OverlayImage = (props) => {
             className="overlay-image"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
-            style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
+            style={{marginBottom: `${['galleryPage','twoColumnsWidePage'].includes(props.page) ? 0 : 30}px`}}
         >
             <div className={renderClassName("overlayImage", isHovering)}>
                 <img 
@@ -272,7 +308,11 @@ export const OverlayImage = (props) => {
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `${cardHeight}px`, padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} 20px`}}
+                style={{
+                    width: `calc(100% - ${['galleryPage','overlayPage','twoColumnsWidePage'].includes(props.page) ? 60 : 40}px)`,
+                    height: `${cardHeight}px`, 
+                    padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage','overlayPage','twoColumnsWidePage'].includes(props.page) ? 40 : 20}px`}
+                }
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
             >
                 {props.page === "overlayWithInfoPage" ? 

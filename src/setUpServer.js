@@ -11299,9 +11299,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-images/1",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover1",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "jason-blackeye-DKCgibUVLNc-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11368,9 +11368,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/big-slider/1",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover2",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "nadine-shaabana-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11430,9 +11430,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/gallery/1",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover3",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11519,9 +11519,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-gallery/1",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover4",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "estee-janssens-updated1-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11601,9 +11601,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/big-images/1",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover5",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "nathan-dumlao-KEniowKfX3k-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11677,9 +11677,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-slider/1",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover6",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "lee-campbell-gA-km82BywY-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11759,9 +11759,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-slider/2",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover7",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "gaelle-marcel-yO9ZVNFbpao-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11826,9 +11826,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/gallery/2",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover8",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11900,9 +11900,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-gallery/2",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover9",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "hope-house-press-leather-diary-studio-PJzc7LOt2Ig-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -11973,9 +11973,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-images/2",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover10",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12021,9 +12021,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/big-slider/2",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover11",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "computer-820281_1920-updated.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12104,9 +12104,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/big-images/2",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover12",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "freestocks-A11MXTzUhLE-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12180,9 +12180,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/gallery/3",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover13",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "leone-venter-pVt9j3iWtPM-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12255,9 +12255,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-slider/3",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover14",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12314,9 +12314,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-gallery/3",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover15",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "jess-bailey-_969XXSgWc0-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12396,9 +12396,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-images/3",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover16",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "jess-bailey-L71uKsAVo4g-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12458,9 +12458,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/big-slider/3",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover17",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "jess-bailey-YFn6rpnyeRY-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12534,9 +12534,9 @@ app.get('/api/two-columns-wide-page', (req, res) => {
             path: "portfolio-item/small-images/4",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "twoColumnWideCover18",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "ohmky-lQwWZI_WjSU-updated-unsplash.png",
                 folderName: "colorful",
                 alt: "image"
             },
@@ -12563,7 +12563,7 @@ app.get('/api/two-columns-wide-page', (req, res) => {
                     alt: "image"
                 }
             ]
-        },
+        }
     ]
     res.json(twoColumnsWidePage);
 });

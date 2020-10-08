@@ -182,23 +182,19 @@ export const TwoColumnsWidePage = (props) => {
 
     const renderTwoColumnsWidePageData = () => {
         return(
-            <div className="switch-image-page-items">{props.twoColumnsWidePage.items.map((el, i) => {
+            <div className="two-columns-wide-page-items">{props.twoColumnsWidePage.items.map((el, i) => {
                 
                 return(
                     <div
                         key={i}
-                        className="switch-image-page-item"
+                        className="two-columns-wide-page-item"
                         id={el.key}
                     >
-                          <OverlayImage
+                        <OverlayImage
                             page="twoColumnsWidePage"
                             obj={el}
-                            // id={el.id}
-                            // setIsHoveringCategory={props.setgalleryWithSpacePageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            // clearArchiveData={props.clearArchiveData}
-                            // archiveCategory={props.archive.category}
                         />
                         {/* <PortfolioItemCard
                             component="twoColumnsWidePage"
@@ -222,7 +218,7 @@ export const TwoColumnsWidePage = (props) => {
         if(props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
             return(
                 <div 
-                    className="switch-image-page-loading-error" 
+                    className="two-columns-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -231,8 +227,8 @@ export const TwoColumnsWidePage = (props) => {
         }
         if(!props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
             return(
-                <div className="switch-image-page-wrapper">
-                    <div className="switch-image-page-header">
+                <div className="two-columns-wide-page-wrapper">
+                    <div className="two-columns-wide-page-header">
                         <H70 className="h70-nero-poppins">2 Columns Wide</H70>
                     </div>
                     {renderTwoColumnsWidePageData()}
@@ -242,7 +238,7 @@ export const TwoColumnsWidePage = (props) => {
         if(!props.twoColumnsWidePage.loading && props.twoColumnsWidePage.error){
             return(
                 <div 
-                    className="switch-image-page-loading-error" 
+                    className="two-columns-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.twoColumnsWidePage.error}`}</H15>
@@ -257,7 +253,7 @@ export const TwoColumnsWidePage = (props) => {
 
     return(
         // <>
-            <div className="switch-image-page" id="twoColumnsWidePage">
+            <div className="two-columns-wide-page" id="twoColumnsWidePage">
                 {renderToolbars()}
                 {renderTwoColumnsWidePageContent()}
                 <Footer/>

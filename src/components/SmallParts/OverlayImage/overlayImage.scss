@@ -36,7 +36,7 @@
     }
     .overlay-curtain-hover-on {
         background: rgba(0, 0, 0, 0.7);
-        width: calc(100% - 40px);
+        // width: calc(100% - 40px);
         position: absolute;
         left: 0%;
         top: 0%;
@@ -128,7 +128,7 @@
     }
     .overlay-curtain-hover-off {
         background: rgba(0, 0, 0, 0.7);
-        width: calc(100% - 40px);
+        // width: calc(100% - 40px);
         position: absolute;
         left: 0%;
         top: 0%;
