@@ -24,3 +24,4 @@ export * from './stoneWallPageActions';
 export * from './stoneWallWidePageActions';
 export * from './metroPageActions';
 export * from './pinterest3ColumnsPageActions';
+export * from './twoColumnsWidePageActions';

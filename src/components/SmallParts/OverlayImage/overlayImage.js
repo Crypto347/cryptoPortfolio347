@@ -79,6 +79,7 @@ export const OverlayImage = (props) => {
     const setPadding = (page) => {
         switch(page){
             case 'overlayPage':
+            case 'twoColumnsWidePage':
                 return 80;
             case 'overlayWithInfoPage':
             case 'galleryPage':

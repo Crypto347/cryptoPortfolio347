@@ -520,6 +520,7 @@ export function fetchMetroPage() {
             });
     };
 }
+
 export function fetchPinterest3ColumnsPage() {
     return dispatch => {
         dispatch(Actions.fetchPinterest3ColumnsPageBegin());
@@ -534,6 +535,24 @@ export function fetchPinterest3ColumnsPage() {
             .catch(error => {
                 console.log("error",error)
                 dispatch(Actions.fetchPinterest3ColumnsPageFailur(error))
+            });
+    };
+}
+
+export function fetchTwoColumnsWidePage() {
+    return dispatch => {
+        dispatch(Actions.fetchTwoColumnsWidePageBegin());
+        return fetch(`http://localhost:3005/api/two-columns-wide-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTwoColumnsWidePageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTwoColumnsWidePageFailur(error))
             });
     };
 }

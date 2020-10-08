@@ -29,7 +29,7 @@ import './twoColumnsWidePage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
-import PortfolioItemCard from '../../../SmallParts/PortfolioItemCard/portfolioItemCard';
+import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -86,129 +86,39 @@ export const TwoColumnsWidePage = (props) => {
     */
 
     const size = useWindowSize();
-    // const itemRef = useRef(null);
-    const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
   
-    const initCoordinateRange = [
-        {
-            id: 1,
-            updated: false
-        },
-        {
-            id: 2,
-            updated: false
-        },
-        {
-            id: 3,
-            updated: false
-        },
-        {
-            id: 4,
-            updated: false
-        },
-        {
-            id: 5,
-            updated: false
-        },
-        {
-            id: 6,
-            updated: false
-        },
-        {
-            id: 7,
-            updated: false
-        },
-        {
-            id: 8,
-            updated: false
-        },
-        {
-            id: 9,
-            updated: false
-        },
-        {
-            id: 10,
-            updated: false
-        },
-        {
-            id: 11,
-            updated: false
-        },
-        {
-            id: 12,
-            updated: false
-        },
-        {
-            id: 13,
-            updated: false
-        },
-        {
-            id: 14,
-            updated: false
-        },
-        {
-            id: 15,
-            updated: false
-        },
-        {
-            id: 16,
-            updated: false
-        },
-        {
-            id: 17,
-            updated: false
-        },
-        {
-            id: 18,
-            updated: false
-        }
-    ]
-
     /**
     * Methods
     */
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.switchImagePage.items.length === 0){
-            props.fetchSwitchImagePage();
+        if(props.twoColumnsWidePage.items.length === 0){
+            props.fetchTwoColumnsWidePage();
         }
 
         let timeout = setTimeout(() => {
-            if(!props.switchImagePage.loading && !props.switchImagePage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
             }
         }, 2);
-     
-        const resize = () => {
-            resizeRef.current();
-        }
-        window.addEventListener('resize', resize);
+    
         window.addEventListener('wheel', handleOnWheel);
         return () => {
             clearTimeout(timeout);
-            window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
     }, []);
 
-    useEffect(() => {
-        resizeRef.current = handleResize;
-    });
-
-    const handleResize = () => {
-        props.forgetCoordinateRangeForSwitchImagePage(initCoordinateRange);
-    }
-
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("switchImagePage");
+        let el = document.getElementById("twoColumnsWidePage");
 
         // Show or hide BackToTop component
 
@@ -242,12 +152,12 @@ export const TwoColumnsWidePage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="switchImagePage"
+                        page="twoColumnsWidePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="switchImagePage"
+                        page="twoColumnsWidePage"
                     />
                 </>
             )
@@ -258,30 +168,40 @@ export const TwoColumnsWidePage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="switchImagePage"
+                        page="twoColumnsWidePage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="switchImagePage"
+                        page="twoColumnsWidePage"
                     />
                 </>
             )
         }
     }
 
-    const renderSwitchImagePageData = () => {
+    const renderTwoColumnsWidePageData = () => {
         return(
-            <div className="switch-image-page-items">{props.switchImagePage.items.map((el, i) => {
-                let imgCoordinateRange = props.switchImagePage.itemsCooradinateRange.find(item => item.id === el.id);
+            <div className="switch-image-page-items">{props.twoColumnsWidePage.items.map((el, i) => {
+                
                 return(
                     <div
                         key={i}
                         className="switch-image-page-item"
                         id={el.key}
                     >
-                        <PortfolioItemCard
-                            component="switchImagePage"
+                          <OverlayImage
+                            page="twoColumnsWidePage"
+                            obj={el}
+                            // id={el.id}
+                            // setIsHoveringCategory={props.setgalleryWithSpacePageIsHoveringCategory}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            // clearArchiveData={props.clearArchiveData}
+                            // archiveCategory={props.archive.category}
+                        />
+                        {/* <PortfolioItemCard
+                            component="twoColumnsWidePage"
                             obj={el}
                             rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
                             imgCoordinateRange={imgCoordinateRange}
@@ -291,15 +211,15 @@ export const TwoColumnsWidePage = (props) => {
                             // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
                             clearArchiveData={props.clearArchiveData}
                             // archiveCategory={props.archive.category}
-                        />
+                        /> */}
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderSwitchImagePageContent = () => {
-        if(props.switchImagePage.loading && !props.switchImagePage.error){
+    const renderTwoColumnsWidePageContent = () => {
+        if(props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
             return(
                 <div 
                     className="switch-image-page-loading-error" 
@@ -309,24 +229,23 @@ export const TwoColumnsWidePage = (props) => {
                 </div>
             )
         }
-        if(!props.switchImagePage.loading && !props.switchImagePage.error){
+        if(!props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
             return(
                 <div className="switch-image-page-wrapper">
                     <div className="switch-image-page-header">
                         <H70 className="h70-nero-poppins">2 Columns Wide</H70>
                     </div>
-                    <div className="grey-line"/>
-                    {renderSwitchImagePageData()}
+                    {renderTwoColumnsWidePageData()}
                 </div>
             )
         }
-        if(!props.switchImagePage.loading && props.switchImagePage.error){
+        if(!props.twoColumnsWidePage.loading && props.twoColumnsWidePage.error){
             return(
                 <div 
                     className="switch-image-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.switchImagePage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.twoColumnsWidePage.error}`}</H15>
                 </div>
             )
         }
@@ -338,9 +257,9 @@ export const TwoColumnsWidePage = (props) => {
 
     return(
         // <>
-            <div className="switch-image-page" id="switchImagePage">
+            <div className="switch-image-page" id="twoColumnsWidePage">
                 {renderToolbars()}
-                {renderSwitchImagePageContent()}
+                {renderTwoColumnsWidePageContent()}
                 <Footer/>
                 {props.showBackToTop ? <BackToTop/> : null}
             </div>
@@ -357,7 +276,7 @@ export const TwoColumnsWidePage = (props) => {
 export default connect(
     (state) => {
         return {
-            switchImagePage: Selectors.getSwitchImagePageState(state),
+            twoColumnsWidePage: Selectors.getTwoColumnsWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
@@ -366,7 +285,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchSwitchImagePage: bindActionCreators(Services.fetchSwitchImagePage, dispatch),
+            fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),

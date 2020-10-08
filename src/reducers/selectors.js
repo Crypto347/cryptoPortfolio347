@@ -323,3 +323,10 @@ export const getShowBackToTopState = createSelector(
     [getShowBackToTop],
     (x) => x
 );
+
+const getTwoColumnsWidePage = (state) => state.twoColumnsWidePage;
+
+export const getTwoColumnsWidePageState = createSelector(
+    [getTwoColumnsWidePage],
+    (x) => x
+);
