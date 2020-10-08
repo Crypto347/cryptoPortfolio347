@@ -30,6 +30,7 @@ export const unmountComponentEpic = (action$) =>
     action$.pipe(
         ofType(actionTypes.UNMOUNT_COMPONENT),
         mergeMap(action => {
+            document.getElementById("html").style.scrollBehavior = null;
             console.log(action.page)
             if(action.button !== 1){
                 return of(

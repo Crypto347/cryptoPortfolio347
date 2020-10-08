@@ -98,16 +98,14 @@ export const Main = (props) => {
                 props.setArchiveCategory(category);
                 window.location.reload();
             }
-            
             path = location.pathname.slice(18);
             pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
             console.log("activateMenuItem", pathOfIds)
             props.photoViewerOpen("all", false, []);
-            // document.getElementById("html").style.scrollBehavior = "none";
+            // props.setShowBackToTopComponent(false);
         });
-        // document.getElementById("html").style.scrollBehavior = "none";
     }, []);
 
     /**
@@ -272,6 +270,7 @@ export default connect(
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(Main);

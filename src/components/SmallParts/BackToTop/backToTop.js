@@ -44,11 +44,9 @@ export const BackToTop = (props) => {
     */
 
     useEffect(()=>{
-        setTimeout(()=>{
             document.getElementById("html").style.scrollBehavior = "smooth";
-        }, 2000);
         return () => {
-            document.getElementById("html").style.scrollBehavior = "none";
+            document.getElementById("html").style.scrollBehavior = null;
         }
     },[])
 
