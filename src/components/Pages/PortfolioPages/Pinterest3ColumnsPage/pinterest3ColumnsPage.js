@@ -88,7 +88,6 @@ export const Pinterest3ColumnsPage = (props) => {
     const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -139,6 +138,7 @@ export const Pinterest3ColumnsPage = (props) => {
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('transitionend', smooth);
             props.setMenuDotsState("init", "");
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -307,9 +307,9 @@ export const Pinterest3ColumnsPage = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -1248,7 +1248,7 @@ export const Pinterest3ColumnsPage = (props) => {
             {renderToolbars()}
             {renderPinterest3ColumnsContent()}
             <Footer/>
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
@@ -1259,6 +1259,7 @@ export default connect(
             pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -1273,6 +1274,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             updateItemsStyleValuesPinterest3ColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesPinterest3ColumnsPage, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(Pinterest3ColumnsPage);

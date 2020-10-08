@@ -91,7 +91,6 @@ export const SmallGallery = (props) => {
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -110,6 +109,7 @@ export const SmallGallery = (props) => {
         return () => {
             // window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('wheel', handleOnWheel);
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -120,9 +120,9 @@ export const SmallGallery = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -441,7 +441,7 @@ export const SmallGallery = (props) => {
                 height={457}
                 component="smallGallery"
             /> : null}
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
@@ -451,7 +451,8 @@ export default connect(
         return {
             smallGalleryPortfolio: Selectors.getSmallGalleryPortfolioState(state),
             photoViewerForSmallGalleryOpen: Selectors.getPhotoViewerForSmallGalleryOpenState(state),
-            archive: Selectors.getArchiveState(state)
+            archive: Selectors.getArchiveState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -464,6 +465,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(SmallGallery);

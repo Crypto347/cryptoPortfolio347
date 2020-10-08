@@ -89,7 +89,6 @@ export const SwitchImagePage = (props) => {
     // const itemRef = useRef(null);
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
   
     const initCoordinateRange = [
         {
@@ -195,6 +194,7 @@ export const SwitchImagePage = (props) => {
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
+            props.setShowBackToTopComponent(fasle);
         }
     }, []);
 
@@ -213,9 +213,9 @@ export const SwitchImagePage = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -342,7 +342,7 @@ export const SwitchImagePage = (props) => {
                 {renderToolbars()}
                 {renderSwitchImagePageContent()}
                 <Footer/>
-                {showBackToTop ? <BackToTop/> : null}
+                {props.showBackToTop ? <BackToTop/> : null}
             </div>
             /* {props.menuDotsState.state === "on" ? 
             <MenuFullScreen 
@@ -361,6 +361,7 @@ export default connect(
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -374,6 +375,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(SwitchImagePage);

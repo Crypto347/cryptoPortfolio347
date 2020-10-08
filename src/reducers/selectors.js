@@ -316,3 +316,10 @@ export const getScrollBehaviorState = createSelector(
     [getScrollBehavior],
     (x) => x
 );
+
+const getShowBackToTop = (state) => state.home.showBackToTop;
+
+export const getShowBackToTopState = createSelector(
+    [getShowBackToTop],
+    (x) => x
+);

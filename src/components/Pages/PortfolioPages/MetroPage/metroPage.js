@@ -88,7 +88,6 @@ export const MetroPage = (props) => {
     const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -135,6 +134,7 @@ export const MetroPage = (props) => {
             window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
             props.setMenuDotsState("init", "");
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -265,9 +265,9 @@ export const MetroPage = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -914,7 +914,7 @@ export const MetroPage = (props) => {
             </div> 
             {renderMetroContent()}
             <Footer/>
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
@@ -925,6 +925,7 @@ export default connect(
             metroPage: Selectors.getMetroPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -939,6 +940,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             updateItemsStyleValuesMetroPage: bindActionCreators(Actions.updateItemsStyleValuesMetroPage, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(MetroPage);

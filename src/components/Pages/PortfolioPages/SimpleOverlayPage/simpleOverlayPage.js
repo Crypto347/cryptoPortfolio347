@@ -87,7 +87,6 @@ export const SimpleOverlayPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -114,6 +113,7 @@ export const SimpleOverlayPage = (props) => {
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -124,9 +124,9 @@ export const SimpleOverlayPage = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -295,7 +295,7 @@ export const SimpleOverlayPage = (props) => {
             {renderToolbars()}
             {renderSimpleOverlayPageContent()}
             <Footer/>
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
@@ -306,6 +306,7 @@ export default connect(
             simpleOverlayPage: Selectors.getSimpleOverlayPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -319,6 +320,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(SimpleOverlayPage);

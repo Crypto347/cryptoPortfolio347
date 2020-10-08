@@ -88,7 +88,6 @@ export const StoneWallWidePage = (props) => {
     const transitionRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -132,6 +131,7 @@ export const StoneWallWidePage = (props) => {
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('transitionend', smooth);
             props.setMenuDotsState("init", "");
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -224,9 +224,9 @@ export const StoneWallWidePage = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -595,7 +595,7 @@ export const StoneWallWidePage = (props) => {
             </div> 
             {renderStoneWallWideContent()}
             <Footer/>
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>   
     );
 }
@@ -606,6 +606,7 @@ export default connect(
             stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
           
         };
     },
@@ -621,6 +622,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             updateItemsStyleValuesStoneWallWidePage: bindActionCreators(Actions.updateItemsStyleValuesStoneWallWidePage, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(StoneWallWidePage);

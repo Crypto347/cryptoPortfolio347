@@ -91,7 +91,6 @@ export const BigSlader = (props) => {
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -106,7 +105,10 @@ export const BigSlader = (props) => {
 
         window.addEventListener('wheel', handleOnWheel);
 
-        return () => window.removeEventListener('wheel', handleOnWheel);
+        return () => {
+            window.removeEventListener('wheel', handleOnWheel);
+            props.setShowBackToTopComponent(false);
+        }
     }, []);
 
     const handleOnWheel = (e) => {
@@ -116,9 +118,9 @@ export const BigSlader = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -339,7 +341,7 @@ export const BigSlader = (props) => {
             {renderToolbars()}
             {showContent ? renderBigSliderContent() : null}
             <Footer/>
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
@@ -348,7 +350,8 @@ export default connect(
     (state) => {
         return {
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
-            archive: Selectors.getArchiveState(state)
+            archive: Selectors.getArchiveState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -359,6 +362,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(BigSlader);

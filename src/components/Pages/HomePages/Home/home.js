@@ -66,7 +66,6 @@ export const Home = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -77,7 +76,10 @@ export const Home = (props) => {
         window.scrollTo(0, 0);
         window.addEventListener('wheel', checkScrollDirection);
 
-        return () => window.removeEventListener('wheel', checkScrollDirection);
+        return () => {
+            window.removeEventListener('wheel', checkScrollDirection);
+            props.setShowBackToTopComponent(false);
+        }
     }, []);
 
 
@@ -89,9 +91,9 @@ export const Home = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
 
         // Check scroll direction
@@ -168,7 +170,7 @@ export const Home = (props) => {
                 height={457}
                 component="pictureBoardForTextItem"
             /> : null}
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
@@ -177,12 +179,13 @@ export default connect(
     (state) => {
         return {
             photoViewerForPictureBoardTextItemOpen: Selectors.getPhotoViewerForPictureBoardTextItemOpenState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(Home);

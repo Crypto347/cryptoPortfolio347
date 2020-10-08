@@ -167,9 +167,9 @@ export function setMenuDotsState(val, page) {
     };
 };
 
-export function setScrollBehavior(val) {
+export function setShowBackToTopComponent(val) {
     return { 
-        type: actionTypes.SET_SCROLL_BEHAVIOR,
+        type: actionTypes.SET_SHOW_BACK_TO_TOP_COMPONENT,
         val: val
     };
 };

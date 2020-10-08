@@ -87,7 +87,6 @@ export const PortfolioGallery = (props) => {
 
     const size = useWindowSize();
     const resizeRef = useRef();
-    const [showBackToTop, setShowBackToTop] = useState(false);
   
     const initCoordinateRange = [
         {
@@ -191,8 +190,9 @@ export const PortfolioGallery = (props) => {
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('resize', resize);
-            window.removeEventListener('wheel', handleOnWheel)
-            props.setMenuDotsState("init", "")
+            window.removeEventListener('wheel', handleOnWheel);
+            props.setMenuDotsState("init", "");
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -210,9 +210,9 @@ export const PortfolioGallery = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     }
 
@@ -319,7 +319,7 @@ export const PortfolioGallery = (props) => {
                 page="portfolioGallery"
                 state={props.menuDotsState.state}
             /> : null}
-            {showBackToTop ? <BackToTop/> : null}     
+            {props.showBackToTop ? <BackToTop/> : null}     
         </> 
     );
 }
@@ -331,6 +331,7 @@ export default connect(
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -344,6 +345,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(PortfolioGallery);

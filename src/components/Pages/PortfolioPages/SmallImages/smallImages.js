@@ -92,7 +92,6 @@ export const SmallImages = (props) => {
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -111,6 +110,7 @@ export const SmallImages = (props) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('wheel', handleOnWheel);
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -142,9 +142,9 @@ export const SmallImages = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -440,7 +440,7 @@ export const SmallImages = (props) => {
                 height={457}
                 component="smallImages"
             /> : null}
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
@@ -450,7 +450,8 @@ export default connect(
         return {
             smallImagesPortfolio: Selectors.getSmallImagesPortfolioState(state),
             photoViewerForSmallImagesOpen: Selectors.getPhotoViewerForSmallImagesOpenState(state),
-            archive: Selectors.getArchiveState(state)
+            archive: Selectors.getArchiveState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -462,6 +463,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(SmallImages);

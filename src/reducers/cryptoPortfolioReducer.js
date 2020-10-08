@@ -46,7 +46,7 @@ export const initialState = {
         state: "init"
     },
     historyPopFromItem: "scrollToTop",
-    scrollBehavior: "none"
+    showBackToTop: false
 }
 
 const initMenuItems = (state, action) => {
@@ -699,10 +699,10 @@ const setHistoryPopFromPortfolioItem = (state, action) => {
     };
 }
 
-const setScrollBehavior = (state, action) => {
+const setShowBackToTopComponent = (state, action) => {
     return {
         ...state,
-        scrollBehavior: action.val
+        showBackToTop: action.val
     };
 }
 // const setInputFiledValueAndCheckValidation = (state, action) => {
@@ -857,8 +857,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setMenuDotsState(state, action); 
         case actionTypes.SET_HISTORY_POP_FROM_PORTFOLIO_ITEM:
             return setHistoryPopFromPortfolioItem(state, action);
-        case actionTypes.SET_SCROLL_BEHAVIOR:
-            return setScrollBehavior(state, action);
+        case actionTypes.SET_SHOW_BACK_TO_TOP_COMPONENT:
+            return setShowBackToTopComponent(state, action);
         default: 
             return state;
     }

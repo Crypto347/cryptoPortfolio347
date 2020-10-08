@@ -97,7 +97,6 @@ export const Archive = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showBackToTop, setShowBackToTop] = useState(false);
     // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
@@ -124,6 +123,7 @@ export const Archive = (props) => {
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -134,9 +134,9 @@ export const Archive = (props) => {
         // Show or hide BackToTop component
         
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -442,7 +442,7 @@ export const Archive = (props) => {
             {renderArchiveContent()}
             {/* {showContent ? renderArchiveContent() : null} */}
             <Footer/>
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
@@ -452,6 +452,7 @@ export default connect(
         return {
             archive: Selectors.getArchiveState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -462,6 +463,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(Archive);

@@ -89,7 +89,6 @@ export const SmallSlider = (props) => {
     const [showContent, setShowContent] = useState(false);
     const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [onePercentToPx, setOnePercentToPx] = useState(0);
-    const [showBackToTop, setShowBackToTop] = useState(false);
 
     /**
     * Methods
@@ -115,7 +114,7 @@ export const SmallSlider = (props) => {
             // window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
-         
+            props.setShowBackToTopComponent(false);
         }
     }, []);
 
@@ -134,9 +133,9 @@ export const SmallSlider = (props) => {
         // Show or hide BackToTop component
 
         if(scrollHeight > screen.height/2){
-            setShowBackToTop(true);
+            props.setShowBackToTopComponent(true);
         }else{
-            setShowBackToTop(false);
+            props.setShowBackToTopComponent(false);
         }
     
         // Check scroll direction
@@ -385,7 +384,7 @@ export const SmallSlider = (props) => {
                 height={457}
                 component="smallSlider"
             /> : null}
-            {showBackToTop ? <BackToTop/> : null}
+            {props.showBackToTop ? <BackToTop/> : null}
         </div>
     );
 }
@@ -395,7 +394,8 @@ export default connect(
         return {
             smallSliderPortfolio: Selectors.getSmallSliderPortfolioState(state),
             photoViewerForSmallSliderOpen: Selectors.getPhotoViewerForSmallSliderOpenState(state),
-            archive: Selectors.getArchiveState(state)
+            archive: Selectors.getArchiveState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -407,6 +407,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(SmallSlider);
