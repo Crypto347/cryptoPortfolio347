@@ -16,6 +16,8 @@ export const findPathOfIds = (path) => {
             return [];
         case 'happy-team':
             return [];
+        case 'two-columns-wide':
+            return [2, 22, 222];
         case 'overlay':
             return [2, 23, 231];
         case 'overlay-with-info':

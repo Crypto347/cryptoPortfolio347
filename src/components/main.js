@@ -56,6 +56,7 @@ import StoneWallPage from './Pages/PortfolioPages/StoneWallPage/stoneWallPage';
 import StoneWallWidePage from './Pages/PortfolioPages/StoneWallWidePage/stoneWallWidePage';
 import MetroPage from './Pages/PortfolioPages/MetroPage/metroPage';
 import Pinterest3ColumnsPage from './Pages/PortfolioPages/Pinterest3ColumnsPage/pinterest3ColumnsPage';
+import TwoColumnsWidePage from './Pages/PortfolioPages/TwoColumnsWidePage/twoColumnsWidePage';
 
 /**
 * Actions
@@ -104,7 +105,6 @@ export const Main = (props) => {
             props.activateMenuItem(pathOfIds);
             console.log("activateMenuItem", pathOfIds)
             props.photoViewerOpen("all", false, []);
-            // props.setShowBackToTopComponent(false);
         });
     }, []);
 
@@ -117,6 +117,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/two-columns-wide"}
+                    component={TwoColumnsWidePage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/pinterest-3-columns"}

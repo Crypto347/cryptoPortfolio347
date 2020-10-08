@@ -20,7 +20,7 @@ import {
 * Styles
 */
 
-import './switchImagePage.scss';
+import './twoColumnsWidePage.scss';
 
 /**
 * Components
@@ -76,10 +76,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* SwitchImagePage component definition and export
+* TwoColumnsWidePage component definition and export
 */
 
-export const SwitchImagePage = (props) => {
+export const TwoColumnsWidePage = (props) => {
 
     /**
     * State
@@ -313,7 +313,7 @@ export const SwitchImagePage = (props) => {
             return(
                 <div className="switch-image-page-wrapper">
                     <div className="switch-image-page-header">
-                        <H45 className="h45-nero-lustria">Switch Image</H45>
+                        <H70 className="h70-nero-poppins">2 Columns Wide</H70>
                     </div>
                     <div className="grey-line"/>
                     {renderSwitchImagePageData()}
@@ -378,5 +378,5 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(SwitchImagePage);
+)(TwoColumnsWidePage);
  
