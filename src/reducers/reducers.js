@@ -32,6 +32,7 @@ import stoneWallWidePageReducer from './stoneWallWidePageReducer';
 import metroPageReducer from './metroPageReducer';
 import pinterest3ColumnsPageReducer from './pinterest3ColumnsPageReduser';
 import twoColumnsWidePageReducer from './twoColumnsWidePageReducer';
+import threeColumnsWidePageReducer from './threeColumnsWidePageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -61,5 +62,6 @@ export default (history) => combineReducers({
     stoneWallWidePage: stoneWallWidePageReducer,
     metroPage: metroPageReducer,
     pinterest3ColumnsPage: pinterest3ColumnsPageReducer,
-    twoColumnsWidePage: twoColumnsWidePageReducer
+    twoColumnsWidePage: twoColumnsWidePageReducer,
+    threeColumnsWidePage: threeColumnsWidePageReducer,
 });

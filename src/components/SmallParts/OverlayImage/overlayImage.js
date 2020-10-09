@@ -80,6 +80,7 @@ export const OverlayImage = (props) => {
         switch(page){
             case 'overlayPage':
             case 'twoColumnsWidePage':
+            case 'threeColumnsWidePage':
                 return 80;
             case 'overlayWithInfoPage':
             case 'galleryPage':
@@ -150,40 +151,58 @@ export const OverlayImage = (props) => {
             case 'id4SmallImages1':
                 return Images.SIMPLE_OVERLAY_COVER_PIC_18;
             case 'twoColumnWideCover1':
+            case 'threeColumnWideCover1':
                 return Images.ID_1_SMALL_IMAGES_2;
-            case 'twoColumnWideCover2': 
+            case 'twoColumnWideCover2':
+            case 'threeColumnWideCover2': 
                 return Images.ID_1_BIG_SLIDER_5;
             case 'twoColumnWideCover3':
+            case 'threeColumnWideCover3':
                 return Images.ID_1_GALLERY_4;
             case 'twoColumnWideCover4':
+            case 'threeColumnWideCover4':
                 return Images.ID_1_SMALL_GALLERY_2;
             case 'twoColumnWideCover5':
+            case 'threeColumnWideCover5':
                 return Images.ID_1_BIG_IMAGES_5;
-            case 'twoColumnWideCover6': 
+            case 'twoColumnWideCover6':
+            case 'threeColumnWideCover6': 
                 return Images.ID_1_SMALL_SLIDER_5;
-            case 'twoColumnWideCover7': 
+            case 'twoColumnWideCover7':
+            case 'threeColumnWideCover7': 
                 return Images.ID_2_SMALL_SLIDER_2;
             case 'twoColumnWideCover8':
+            case 'threeColumnWideCover8':
                 return Images.ID_2_GALLERY_1;
             case 'twoColumnWideCover9':
+            case 'threeColumnWideCover9':
                 return Images.ID_2_SMALL_GALLERY_1;
             case 'twoColumnWideCover10':
+            case 'threeColumnWideCover10':
                 return Images.ID_2_SMALL_IMAGES_1;
-            case 'twoColumnWideCover11': 
+            case 'twoColumnWideCover11':
+            case 'threeColumnWideCover11': 
                 return Images.ID_2_BIG_SLIDER_6;
             case 'twoColumnWideCover12':
+            case 'threeColumnWideCover12':
                 return Images.ID_2_BIG_IMAGES_5;
             case 'twoColumnWideCover13':
+            case 'threeColumnWideCover13':
                 return Images.ID_3_GALLERY_4;
-            case 'twoColumnWideCover14': 
+            case 'twoColumnWideCover14':
+            case 'threeColumnWideCover14': 
                 return Images.ID_3_SMALL_SLIDER_2;
             case 'twoColumnWideCover15':
+            case 'threeColumnWideCover15':
                 return Images.ID_3_SMALL_GALLERY_3;
             case 'twoColumnWideCover16':
+            case 'threeColumnWideCover16':
                 return Images.ID_3_SMALL_IMAGES_2;
-            case 'twoColumnWideCover17': 
+            case 'twoColumnWideCover17':
+            case 'threeColumnWideCover17': 
                 return Images.ID_3_BIG_SLIDER_4;
             case 'twoColumnWideCover18':
+            case 'threeColumnWideCover18':
                 return Images.ID_4_SMALL_IMAGES_3;
             default:
                 return "";
@@ -297,7 +316,7 @@ export const OverlayImage = (props) => {
             className="overlay-image"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
-            style={{marginBottom: `${['galleryPage','twoColumnsWidePage'].includes(props.page) ? 0 : 30}px`}}
+            style={{marginBottom: `${['galleryPage','twoColumnsWidePage','threeColumnsWidePage'].includes(props.page) ? 0 : 30}px`}}
         >
             <div className={renderClassName("overlayImage", isHovering)}>
                 <img 
@@ -309,9 +328,9 @@ export const OverlayImage = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{
-                    width: `calc(100% - ${['galleryPage','overlayPage','twoColumnsWidePage'].includes(props.page) ? 50 : 40}px)`,
+                    width: `calc(100% - ${['galleryPage','overlayPage','twoColumnsWidePage','threeColumnsWidePage'].includes(props.page) ? 50 : 40}px)`,
                     height: `${cardHeight}px`, 
-                    padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage','overlayPage','twoColumnsWidePage'].includes(props.page) ? 30 : 20}px`}
+                    padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage','overlayPage','twoColumnsWidePage','threeColumnsWidePage'].includes(props.page) ? 30 : 20}px`}
                 }
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
             >

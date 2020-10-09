@@ -330,3 +330,11 @@ export const getTwoColumnsWidePageState = createSelector(
     [getTwoColumnsWidePage],
     (x) => x
 );
+
+const getThreeColumnsWidePage = (state) => state.threeColumnsWidePage;
+
+export const getThreeColumnsWidePageState = createSelector(
+    [getThreeColumnsWidePage],
+    (x) => x
+);
+

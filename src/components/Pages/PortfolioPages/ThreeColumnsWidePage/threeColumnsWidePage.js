@@ -94,12 +94,12 @@ export const ThreeColumnsWidePage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.twoColumnsWidePage.items.length === 0){
-            props.fetchTwoColumnsWidePage();
+        if(props.threeColumnsWidePage.items.length === 0){
+            props.fetchThreeColumnsWidePage();
         }
 
         let timeout = setTimeout(() => {
-            if(!props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.threeColumnsWidePage.loading && !props.threeColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
@@ -118,7 +118,7 @@ export const ThreeColumnsWidePage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("twoColumnsWidePage");
+        let el = document.getElementById("threeColumnsWidePage");
 
         // Show or hide BackToTop component
 
@@ -152,12 +152,12 @@ export const ThreeColumnsWidePage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="twoColumnsWidePage"
+                        page="threeColumnsWidePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="twoColumnsWidePage"
+                        page="threeColumnsWidePage"
                     />
                 </>
             )
@@ -168,21 +168,21 @@ export const ThreeColumnsWidePage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="twoColumnsWidePage"
+                        page="threeColumnsWidePage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="twoColumnsWidePage"
+                        page="threeColumnsWidePage"
                     />
                 </>
             )
         }
     }
 
-    const renderTwoColumnsWidePageData = () => {
+    const renderThreeColumnsWidePageData = () => {
         return(
-            <div className="three-columns-wide-page-items">{props.twoColumnsWidePage.items.map((el, i) => {
+            <div className="three-columns-wide-page-items">{props.threeColumnsWidePage.items.map((el, i) => {
                 
                 return(
                     <div
@@ -191,31 +191,19 @@ export const ThreeColumnsWidePage = (props) => {
                         id={el.key}
                     >
                         <OverlayImage
-                            page="twoColumnsWidePage"
+                            page="threeColumnsWidePage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                         />
-                        {/* <PortfolioItemCard
-                            component="twoColumnsWidePage"
-                            obj={el}
-                            rememberCoordinateRange={props.rememberCoordinateRangeForSwitchImagePage}
-                            imgCoordinateRange={imgCoordinateRange}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            setIsHoveringCategory={props.setSwitchImagePageIsHoveringCategory}
-                            // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
-                            clearArchiveData={props.clearArchiveData}
-                            // archiveCategory={props.archive.category}
-                        /> */}
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderTwoColumnsWidePageContent = () => {
-        if(props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
+    const renderThreeColumnsWidePageContent = () => {
+        if(props.threeColumnsWidePage.loading && !props.threeColumnsWidePage.error){
             return(
                 <div 
                     className="three-columns-wide-page-loading-error" 
@@ -225,23 +213,23 @@ export const ThreeColumnsWidePage = (props) => {
                 </div>
             )
         }
-        if(!props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
+        if(!props.threeColumnsWidePage.loading && !props.threeColumnsWidePage.error){
             return(
                 <div className="three-columns-wide-page-wrapper">
                     <div className="three-columns-wide-page-header">
                         <H45 className="h45-nero-lustria">Three Columns Wide</H45>
                     </div>
-                    {renderTwoColumnsWidePageData()}
+                    {renderThreeColumnsWidePageData()}
                 </div>
             )
         }
-        if(!props.twoColumnsWidePage.loading && props.twoColumnsWidePage.error){
+        if(!props.threeColumnsWidePage.loading && props.threeColumnsWidePage.error){
             return(
                 <div 
                     className="three-columns-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.twoColumnsWidePage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.threeColumnsWidePage.error}`}</H15>
                 </div>
             )
         }
@@ -253,9 +241,9 @@ export const ThreeColumnsWidePage = (props) => {
 
     return(
         // <>
-            <div className="three-columns-wide-page" id="twoColumnsWidePage">
+            <div className="three-columns-wide-page" id="threeColumnsWidePage">
                 {renderToolbars()}
-                {renderTwoColumnsWidePageContent()}
+                {renderThreeColumnsWidePageContent()}
                 <Footer/>
                 {props.showBackToTop ? <BackToTop/> : null}
             </div>
@@ -272,7 +260,7 @@ export const ThreeColumnsWidePage = (props) => {
 export default connect(
     (state) => {
         return {
-            twoColumnsWidePage: Selectors.getTwoColumnsWidePageState(state),
+            threeColumnsWidePage: Selectors.getThreeColumnsWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
@@ -281,7 +269,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
+            fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
