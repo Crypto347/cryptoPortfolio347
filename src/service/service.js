@@ -593,6 +593,24 @@ export function fetchFourColumnsWidePage() {
     };
 }
 
+export function fetchFiveColumnsWidePage() {
+    return dispatch => {
+        dispatch(Actions.fetchFiveColumnsWidePageBegin());
+        return fetch(`http://localhost:3005/api/five-columns-wide-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchFiveColumnsWidePageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchFiveColumnsWidePageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

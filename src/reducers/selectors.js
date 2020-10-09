@@ -344,3 +344,10 @@ export const getFourColumnsWidePageState = createSelector(
     [getFourColumnsWidePage],
     (x) => x
 );
+
+const getFiveColumnsWidePage = (state) => state.fiveColumnsWidePage;
+
+export const getFiveColumnsWidePageState = createSelector(
+    [getFiveColumnsWidePage],
+    (x) => x
+);

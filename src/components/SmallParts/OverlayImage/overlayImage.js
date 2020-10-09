@@ -82,6 +82,7 @@ export const OverlayImage = (props) => {
             case 'twoColumnsWidePage':
             case 'threeColumnsWidePage':
             case 'fourColumnsWidePage':
+            case 'fiveColumnsWidePage':
                 return 80;
             case 'overlayWithInfoPage':
             case 'galleryPage':
@@ -348,7 +349,12 @@ export const OverlayImage = (props) => {
             className="overlay-image"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
-            style={{marginBottom: `${['galleryPage','twoColumnsWidePage','threeColumnsWidePage','fourColumnsWidePage'].includes(props.page) ? 0 : 30}px`}}
+            style={{marginBottom: `${['galleryPage',
+                                        'twoColumnsWidePage',
+                                        'threeColumnsWidePage',
+                                        'fourColumnsWidePage',
+                                        'fiveColumnsWidePage'
+                                    ].includes(props.page) ? 0 : 30}px`}}
         >
             <div className={renderClassName("overlayImage", isHovering)}>
                 <img 
@@ -360,9 +366,21 @@ export const OverlayImage = (props) => {
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{
-                    width: `calc(100% - ${['galleryPage','overlayPage','twoColumnsWidePage','threeColumnsWidePage','fourColumnsWidePage'].includes(props.page) ? 50 : 40}px)`,
+                    width: `calc(100% - ${['galleryPage',
+                                            'overlayPage',
+                                            'twoColumnsWidePage',
+                                            'threeColumnsWidePage',
+                                            'fourColumnsWidePage',
+                                            'fiveColumnsWidePage'
+                                        ].includes(props.page) ? 50 : 40}px)`,
                     height: `${cardHeight}px`, 
-                    padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage','overlayPage','twoColumnsWidePage','threeColumnsWidePage','fourColumnsWidePage'].includes(props.page) ? 30 : 20}px`}
+                    padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage',
+                                                                                    'overlayPage',
+                                                                                    'twoColumnsWidePage',
+                                                                                    'threeColumnsWidePage',
+                                                                                    'fourColumnsWidePage',
+                                                                                    'fiveColumnsWidePage'
+                                                                                ].includes(props.page) ? 30 : 20}px`}
                 }
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
             >

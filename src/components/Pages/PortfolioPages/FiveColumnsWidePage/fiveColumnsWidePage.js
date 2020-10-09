@@ -94,12 +94,12 @@ export const FiveColumnsWidePage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.fourColumnsWidePage.items.length === 0){
-            props.fetchFourColumnsWidePage();
+        if(props.fiveColumnsWidePage.items.length === 0){
+            props.fetchFiveColumnsWidePage();
         }
 
         let timeout = setTimeout(() => {
-            if(!props.fourColumnsWidePage.loading && !props.fourColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.fiveColumnsWidePage.loading && !props.fiveColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
@@ -118,7 +118,7 @@ export const FiveColumnsWidePage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("fourColumnsWidePage");
+        let el = document.getElementById("fiveColumnsWidePage");
 
         // Show or hide BackToTop component
 
@@ -152,12 +152,12 @@ export const FiveColumnsWidePage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="fourColumnsWidePage"
+                        page="fiveColumnsWidePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="fourColumnsWidePage"
+                        page="fiveColumnsWidePage"
                     />
                 </>
             )
@@ -168,21 +168,21 @@ export const FiveColumnsWidePage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="fourColumnsWidePage"
+                        page="fiveColumnsWidePage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="fourColumnsWidePage"
+                        page="fiveColumnsWidePage"
                     />
                 </>
             )
         }
     }
 
-    const renderFourColumnsWidePageData = () => {
+    const renderFiveColumnsWidePageData = () => {
         return(
-            <div className="five-columns-wide-page-items">{props.fourColumnsWidePage.items.map((el, i) => {
+            <div className="five-columns-wide-page-items">{props.fiveColumnsWidePage.items.map((el, i) => {
                 
                 return(
                     <div
@@ -191,7 +191,7 @@ export const FiveColumnsWidePage = (props) => {
                         id={el.key}
                     >
                         <OverlayImage
-                            page="fourColumnsWidePage"
+                            page="fiveColumnsWidePage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
@@ -202,8 +202,8 @@ export const FiveColumnsWidePage = (props) => {
         )
     }
 
-    const renderFourColumnsWidePageContent = () => {
-        if(props.fourColumnsWidePage.loading && !props.fourColumnsWidePage.error){
+    const renderFiveColumnsWidePageContent = () => {
+        if(props.fiveColumnsWidePage.loading && !props.fiveColumnsWidePage.error){
             return(
                 <div 
                     className="five-columns-wide-page-loading-error" 
@@ -213,23 +213,23 @@ export const FiveColumnsWidePage = (props) => {
                 </div>
             )
         }
-        if(!props.fourColumnsWidePage.loading && !props.fourColumnsWidePage.error){
+        if(!props.fiveColumnsWidePage.loading && !props.fiveColumnsWidePage.error){
             return(
                 <div className="five-columns-wide-page-wrapper">
                     <div className="five-columns-wide-page-header">
                         <H45 className="h45-nero-lustria">Four Columns Wide</H45>
                     </div>
-                    {renderFourColumnsWidePageData()}
+                    {renderFiveColumnsWidePageData()}
                 </div>
             )
         }
-        if(!props.fourColumnsWidePage.loading && props.fourColumnsWidePage.error){
+        if(!props.fiveColumnsWidePage.loading && props.fiveColumnsWidePage.error){
             return(
                 <div 
                     className="five-columns-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.fourColumnsWidePage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.fiveColumnsWidePage.error}`}</H15>
                 </div>
             )
         }
@@ -241,9 +241,9 @@ export const FiveColumnsWidePage = (props) => {
 
     return(
         // <>
-            <div className="five-columns-wide-page" id="fourColumnsWidePage">
+            <div className="five-columns-wide-page" id="fiveColumnsWidePage">
                 {renderToolbars()}
-                {renderFourColumnsWidePageContent()}
+                {renderFiveColumnsWidePageContent()}
                 <Footer/>
                 {props.showBackToTop ? <BackToTop/> : null}
             </div>
@@ -260,7 +260,7 @@ export const FiveColumnsWidePage = (props) => {
 export default connect(
     (state) => {
         return {
-            fourColumnsWidePage: Selectors.getFourColumnsWidePageState(state),
+            fiveColumnsWidePage: Selectors.getFiveColumnsWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
@@ -269,7 +269,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
+            fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
