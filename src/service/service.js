@@ -575,6 +575,24 @@ export function fetchThreeColumnsWidePage() {
     };
 }
 
+export function fetchFourColumnsWidePage() {
+    return dispatch => {
+        dispatch(Actions.fetchFourColumnsWidePageBegin());
+        return fetch(`http://localhost:3005/api/four-columns-wide-page`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchFourColumnsWidePageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchFourColumnsWidePageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

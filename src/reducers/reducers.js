@@ -33,6 +33,7 @@ import metroPageReducer from './metroPageReducer';
 import pinterest3ColumnsPageReducer from './pinterest3ColumnsPageReduser';
 import twoColumnsWidePageReducer from './twoColumnsWidePageReducer';
 import threeColumnsWidePageReducer from './threeColumnsWidePageReducer';
+import fourColumnsWidePageReducer from './fourColumnsWidePageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -64,4 +65,5 @@ export default (history) => combineReducers({
     pinterest3ColumnsPage: pinterest3ColumnsPageReducer,
     twoColumnsWidePage: twoColumnsWidePageReducer,
     threeColumnsWidePage: threeColumnsWidePageReducer,
+    fourColumnsWidePage: fourColumnsWidePageReducer,
 });

@@ -26,3 +26,4 @@ export * from './metroPageActions';
 export * from './pinterest3ColumnsPageActions';
 export * from './twoColumnsWidePageActions';
 export * from './threeColumnsWidePageActions';
+export * from './fourColumnsWidePageActions';
