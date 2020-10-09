@@ -73,20 +73,67 @@ export const Sidebar = (props) => {
         setShowOptions(false);
     }
 
+    // const itemOnClick = (opt, path, pathOfIds, e) => {
+    //     if(e.button === 2) return;
+        
+    //     if(e.button !== 1){
+    //         props.setUnmountComponentValues(true, path);
+    //         props.setHistoryPopFromPortfolioItem("scrollToTop");
+    //         props.clearActivityOfMenuItems();
+    //         props.setSidebarState("init");
+    //         switch(opt){
+    //             case 'optionItem': 
+    //                 props.setActivityOfToolbarOptionItem(pathOfIds);
+    //                 break;
+    //             case 'subOptionItem': 
+    //                 props.setActivityOfToolbarSubOptionItem(pathOfIds);
+    //                 break;
+    //         }
+    //     }else{
+    //         props.setUnmountComponentValues(false, path);
+    //     }
+    //     props.unmountComponent(null, null, null, e.button);
+    // }
     const itemOnClick = (opt, path, pathOfIds, e) => {
         if(e.button === 2) return;
-        
         if(e.button !== 1){
-            props.setUnmountComponentValues(true, path);
-            props.setHistoryPopFromPortfolioItem("scrollToTop");
-            props.clearActivityOfMenuItems();
-            props.setSidebarState("init");
+            let currentItemId;
+            // props.setUnmountComponentValues(true, path);
+            // props.setHistoryPopFromPortfolioItem("scrollToTop");
+            // props.clearActivityOfMenuItems();
             switch(opt){
                 case 'optionItem': 
-                    props.setActivityOfToolbarOptionItem(pathOfIds);
+                    currentItemId = props.menuItems
+                        .find(item => item.active === true)?.options
+                        .find(item => item.active === true).array
+                        .find(item => item.active === true).id;
+
+                        if(currentItemId === pathOfIds[1]){
+                            return;
+                        }else{
+                            props.setSidebarState("init");
+                            props.setUnmountComponentValues(true, path);
+                            props.setHistoryPopFromPortfolioItem("scrollToTop");
+                            props.clearActivityOfMenuItems();
+                            props.setActivityOfToolbarOptionItem(pathOfIds);
+                        }
                     break;
                 case 'subOptionItem': 
-                    props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                // need to updated portfolioUtility
+                    currentItemId = props.menuItems
+                        .find(item => item.active === true)?.options
+                        .find(item => item.active === true).array
+                        .find(item => item.active === true).subOptions
+                        .find(item => item.active === true).id;
+                        if(currentItemId === pathOfIds[2]){
+                            return;
+                        }else{
+                            props.setSidebarState("init");
+                            props.setUnmountComponentValues(true, path);
+                            props.setHistoryPopFromPortfolioItem("scrollToTop");
+                            props.clearActivityOfMenuItems();
+                            props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                        }
                     break;
             }
         }else{
