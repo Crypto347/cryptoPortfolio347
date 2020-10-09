@@ -217,7 +217,7 @@ export const FiveColumnsWidePage = (props) => {
             return(
                 <div className="five-columns-wide-page-wrapper">
                     <div className="five-columns-wide-page-header">
-                        <H45 className="h45-nero-lustria">Four Columns Wide</H45>
+                        <H45 className="h45-nero-lustria">5 Columns Wide</H45>
                     </div>
                     {renderFiveColumnsWidePageData()}
                 </div>

@@ -230,7 +230,7 @@ export const TwoColumnsWidePage = (props) => {
                 <div className="two-columns-wide-page-wrapper">
                     <div className="two-columns-wide-page-header">
                         {/* <H70 className="h70-nero-poppins">2 Columns Wide</H70> */}
-                        <H45 className="h45-nero-lustria">Two Columns Wide</H45>
+                        <H45 className="h45-nero-lustria">2 Columns Wide</H45>
                     </div>
                     {renderTwoColumnsWidePageData()}
                 </div>

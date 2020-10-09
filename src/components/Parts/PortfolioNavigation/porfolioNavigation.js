@@ -230,8 +230,13 @@ export const PorfolioNavigation = (props) => {
                 }
                 break;
             case 'fourColumnsWidePage':
-                if(props.threeColumnsWidePage.items.length === 0){
+                if(props.fourColumnsWidePage.items.length === 0){
                     props.fetchFourColumnsWidePage();
+                }
+                break;
+            case 'fiverColumnsWidePage':
+                if(props.fiveColumnsWidePage.items.length === 0){
+                    props.fetchFiveColumnsWidePage();
                 }
                 break;
             default:
@@ -278,6 +283,8 @@ export const PorfolioNavigation = (props) => {
                 return [...props.threeColumnsWidePage.items];
             case 'fourColumnsWidePage':
                 return [...props.fourColumnsWidePage.items];
+            case 'fiveColumnsWidePage':
+                return [...props.fiveColumnsWidePage.items];
             default:
                 return [...props.portfolioGalleryPage.items];
         }
@@ -439,6 +446,13 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/four-columns-wide`, "_blank");
                 }
                 break;
+            case 'fiveColumnsWidePage':
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/five-columns-wide`);
+                }else{
+                    window.open(`/crypto-portfolio/five-columns-wide`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
@@ -564,6 +578,7 @@ export default connect(
             twoColumnsWidePage: Selectors.getTwoColumnsWidePageState(state),
             threeColumnsWidePage: Selectors.getThreeColumnsWidePageState(state),
             fourColumnsWidePage: Selectors.getFourColumnsWidePageState(state),
+            fiveColumnsWidePage: Selectors.getFiveColumnsWidePageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
@@ -592,6 +607,7 @@ export default connect(
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
             fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
             fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
+            fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
             portfolioNavigationOnClickStart: bindActionCreators(Actions.portfolioNavigationOnClickStart, dispatch),
         };

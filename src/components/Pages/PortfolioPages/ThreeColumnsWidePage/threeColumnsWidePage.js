@@ -217,7 +217,7 @@ export const ThreeColumnsWidePage = (props) => {
             return(
                 <div className="three-columns-wide-page-wrapper">
                     <div className="three-columns-wide-page-header">
-                        <H45 className="h45-nero-lustria">Three Columns Wide</H45>
+                        <H45 className="h45-nero-lustria">3 Columns Wide</H45>
                     </div>
                     {renderThreeColumnsWidePageData()}
                 </div>
