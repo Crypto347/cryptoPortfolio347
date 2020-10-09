@@ -81,15 +81,19 @@ export const PorfolioNavigation = (props) => {
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringMenuButton, setIsHoveringMenuButton] = useState("init");
     const [key, setKey] = useState("");
+    const [page, setPage] = useState("");
+    const [category, setCategory] = useState("");
 
     /**
     * Methods
     */
 
     useEffect(() => {
-        if(props.portfolioGalleryPage.items.length === 0){
-            props.fetchPortfolioGalleryPage();
-        }
+        let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
+        let category = props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category);
+        setPage(page);
+        setCategory(category);
+        fetchContentItems(page);
         let key;
         switch(props.component){
             case 'bigImages':
@@ -143,6 +147,128 @@ export const PorfolioNavigation = (props) => {
         }
     }
     
+    const fetchContentItems = (page) => {
+        switch(page){
+            case 'portfolioGallery':
+                if(props.portfolioGalleryPage.items.length === 0){
+                    props.fetchPortfolioGalleryPage();
+                }
+                return [...props.portfolioGalleryPage.items];
+            case 'archive':
+                if(props.archive.items.length === 0){
+                    props.fetchArchive();
+                }
+                return [...props.archive.items];
+            case 'switchImagePage':
+                if(props.switchImagePage.items.length === 0){
+                    props.fetchSwitchImagePage();
+                }
+                return [...props.switchImagePage.items];
+            case 'simpleOverlayPage':
+                if(props.simpleOverlayPage.items.length === 0){
+                    props.fetchSimpleOverlayPage();
+                }
+                return [...props.simpleOverlayPage.items];
+            case 'slideFromImageLeftPage':
+                if(props.slideFromImageLeftPage.items.length === 0){
+                    props.fetchSlideFromImageLeftPage();
+                }
+                return [...props.slideFromImageLeftPage.items];
+            case 'overlayPage':
+                if(props.overlayPage.items.length === 0){
+                    props.fetchOverlayPage();
+                }
+                return [...props.overlayPage.items];
+            case 'overlayWithInfoPage':
+                if(props.overlayWithInfoPage.items.length === 0){
+                    props.fetchOverlayWithInfoPage();
+                }
+                return [...props.overlayWithInfoPage.items];
+            case 'standardPage':
+                if(props.standardPage.items.length === 0){
+                    props.fetchStandardPage();
+                }
+                return [...props.standardPage.items];
+            case 'galleryPage':
+                if(props.galleryPage.items.length === 0){
+                    props.fetchGalleryPage();
+                }
+                return [...props.galleryPage.items];
+            case 'galleryWithSpacePage':
+                if(props.galleryWithSpacePage.items.length === 0){
+                    props.fetchGalleryWithSpacePage();
+                }
+                return [...props.galleryWithSpacePage.items];
+            case 'stoneWallPage':
+                if(props.stoneWallPage.items.length === 0){
+                    props.fetchStoneWallPage();
+                }
+                return [...props.stoneWallPage.items];
+            case 'stoneWallWidePage':
+                if(props.stoneWallWidePage.items.length === 0){
+                    props.fetchStoneWallWidePage();
+                }
+                return [...props.stoneWallWidePage.items];
+            case 'metroPage':
+                if(props.metroPage.items.length === 0){
+                    props.fetchMetroPage();
+                }
+                return [...props.metroPage.items];
+            case 'pinterest3ColumnsPage':
+                if(props.pinterest3ColumnsPage.items.length === 0){
+                    props.fetchPinterest3ColumnsPage();
+                }
+                return [...props.pinterest3ColumnsPage.items];
+            case 'twoColumnsWidePage':
+                if(props.twoColumnsWidePage.items.length === 0){
+                    props.fetchTwoColumnsWidePage();
+                }
+                return [...props.twoColumnsWidePage.items];
+            default:
+                if(props.portfolioGalleryPage.items.length === 0){
+                    props.fetchPortfolioGalleryPage();
+                }
+                return [...props.portfolioGalleryPage.items];
+        }
+    }
+
+    const setContentItems = () => {
+        switch(page){
+            case 'portfolioGallery':
+                return [...props.portfolioGalleryPage.items];
+            case 'archive':
+                return [...props.archive.items];
+            case 'switchImagePage':
+                return [...props.switchImagePage.items];
+            case 'simpleOverlayPage':
+                return [...props.simpleOverlayPage.items];
+            case 'slideFromImageLeftPage':
+                return [...props.slideFromImageLeftPage.items];
+            case 'overlayPage':
+                return [...props.overlayPage.items];
+            case 'overlayWithInfoPage':
+                return [...props.overlayWithInfoPage.items];
+            case 'standardPage':
+                return [...props.standardPage.items];
+            case 'galleryPage':
+                return [...props.galleryPage.items];
+            case 'galleryWithSpacePage':
+                return [...props.galleryWithSpacePage.items];
+            case 'stoneWallPage':
+                return [...props.stoneWallPage.items];
+            case 'stoneWallWidePage':
+                return [...props.stoneWallWidePage.items];
+            case 'metroPage':
+                return [...props.metroPage.items];
+            case 'pinterest3ColumnsPage':
+                return [...props.pinterest3ColumnsPage.items];
+            case 'twoColumnsWidePage':
+                return [...props.twoColumnsWidePage.items];
+            default:
+                return [...props.portfolioGalleryPage.items];
+        }
+    }
+
     const renderClassName = (opt, isHovering) => {
         if(opt === "leftArrow"){
             switch(isHovering){
@@ -178,7 +304,7 @@ export const PorfolioNavigation = (props) => {
 
     const handleMenuOnClick = (e) => {
         if(e.button === 2) return;
-        let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
+        // let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
         localStorage.setItem("page", page);
         switch(page){
             case 'portfolioGallery':
@@ -190,9 +316,9 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'archive':
                 if(e.button !== 1){
-                    props.history.push(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category)}`);
+                    props.history.push(`/crypto-portfolio/portfolio-category/${category}`);
                 }else{
-                    window.open(`/crypto-portfolio/portfolio-category/${props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category)}`, "_blank");
+                    window.open(`/crypto-portfolio/portfolio-category/${category}`, "_blank");
                 }
                 break;
             case 'switchImagePage':
@@ -279,6 +405,13 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/pinterest-3-columns`, "_blank");
                 }
                 break;
+            case 'twoColumnsWidePage':
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/two-columns-wide`);
+                }else{
+                    window.open(`/crypto-portfolio/two-columns-wide`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
@@ -291,65 +424,22 @@ export const PorfolioNavigation = (props) => {
     }
 
     const arrowOnClick = (opt, key, e) => {
-        console.log(e.button)
+      
         if(e.button === 2) return;
-        let updatedItems = [];
-        let page = props.location.state?.page;
-        let category = props.location.state?.category;
+        let updatedItems = setContentItems();
+        // let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
+        // console.log(page)
+        // let category = props.location.state?.category;
+        // let category = props.location.state.category ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category)
         localStorage.setItem("page", page);
 
-        switch(page){
-            case 'portfolioGallery':
-                updatedItems = [...props.portfolioGalleryPage.items];
-                break;
-            case 'archive':
-                updatedItems = [...props.archive.items];
-                break;
-            case 'switchImagePage':
-                updatedItems = [...props.switchImagePage.items];
-                break;
-            case 'simpleOverlayPage':
-                updatedItems = [...props.simpleOverlayPage.items];
-                break;
-            case 'slideFromImageLeftPage':
-                updatedItems = [...props.slideFromImageLeftPage.items];
-                break;
-            case 'overlayPage':
-                updatedItems = [...props.overlayPage.items];
-                break;
-            case 'overlayWithInfoPage':
-                updatedItems = [...props.overlayWithInfoPage.items];
-                break;
-            case 'standardPage':
-                updatedItems = [...props.standardPage.items];
-                break;
-            case 'galleryPage':
-                updatedItems = [...props.galleryPage.items];
-                break;
-            case 'galleryWithSpacePage':
-                updatedItems = [...props.galleryWithSpacePage.items];
-                break;
-            case 'stoneWallPage':
-                updatedItems = [...props.stoneWallPage.items];
-                break;
-            case 'stoneWallWidePage':
-                updatedItems = [...props.stoneWallWidePage.items];
-                break;
-            case 'metroPage':
-                updatedItems = [...props.metroPage.items];
-                break;
-            case 'pinterest3ColumnsPage':
-                updatedItems = [...props.pinterest3ColumnsPage.items];
-                break;
-            default: 
-                updatedItems = [...props.portfolioGalleryPage.items];
-                break;
-        }
-
+       
+        
         console.log("updatedItems", updatedItems)
         let updatedItemIndex = updatedItems.findIndex(item => item.key === key);
 
         if(e.button !== 1){
+            document.getElementById("html").style.scrollBehavior = null;
             switch(opt) {
                 case 'prev':
                     if(updatedItemIndex === 0){
@@ -449,6 +539,7 @@ export default connect(
             stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
             metroPage: Selectors.getMetroPageState(state),
             pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
+            twoColumnsWidePage: Selectors.getTwoColumnsWidePageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
@@ -461,6 +552,20 @@ export default connect(
     (dispatch) => {
         return {
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
+            fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
+            fetchSwitchImagePage: bindActionCreators(Services.fetchSwitchImagePage, dispatch),
+            fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),
+            fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
+            fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
+            fetchOverlayWithInfoPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
+            fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
+            fetchGalleryPage: bindActionCreators(Services.fetchGalleryPage, dispatch),
+            fetchGalleryWithSpacePage: bindActionCreators(Services.fetchGalleryWithSpacePage, dispatch),
+            fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
+            fetchStoneWallWidePage: bindActionCreators(Services.fetchStoneWallWidePage, dispatch),
+            fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
+            fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
+            fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
         };
     }
