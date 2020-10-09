@@ -20,7 +20,7 @@ import {
 * Styles
 */
 
-import './twoColumnsWidePage.scss';
+import './threeColumnsWidePage.scss';
 
 /**
 * Components
@@ -76,10 +76,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* TwoColumnsWidePage component definition and export
+* ThreeColumnsWidePage component definition and export
 */
 
-export const TwoColumnsWidePage = (props) => {
+export const ThreeColumnsWidePage = (props) => {
 
     /**
     * State
@@ -182,12 +182,12 @@ export const TwoColumnsWidePage = (props) => {
 
     const renderTwoColumnsWidePageData = () => {
         return(
-            <div className="two-columns-wide-page-items">{props.twoColumnsWidePage.items.map((el, i) => {
+            <div className="three-columns-wide-page-items">{props.twoColumnsWidePage.items.map((el, i) => {
                 
                 return(
                     <div
                         key={i}
-                        className="two-columns-wide-page-item"
+                        className="three-columns-wide-page-item"
                         id={el.key}
                     >
                         <OverlayImage
@@ -218,7 +218,7 @@ export const TwoColumnsWidePage = (props) => {
         if(props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
             return(
                 <div 
-                    className="two-columns-wide-page-loading-error" 
+                    className="three-columns-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -227,10 +227,9 @@ export const TwoColumnsWidePage = (props) => {
         }
         if(!props.twoColumnsWidePage.loading && !props.twoColumnsWidePage.error){
             return(
-                <div className="two-columns-wide-page-wrapper">
-                    <div className="two-columns-wide-page-header">
-                        {/* <H70 className="h70-nero-poppins">2 Columns Wide</H70> */}
-                        <H45 className="h45-nero-lustria">Two Columns Wide</H45>
+                <div className="three-columns-wide-page-wrapper">
+                    <div className="three-columns-wide-page-header">
+                        <H45 className="h45-nero-lustria">Three Columns Wide</H45>
                     </div>
                     {renderTwoColumnsWidePageData()}
                 </div>
@@ -239,7 +238,7 @@ export const TwoColumnsWidePage = (props) => {
         if(!props.twoColumnsWidePage.loading && props.twoColumnsWidePage.error){
             return(
                 <div 
-                    className="two-columns-wide-page-loading-error" 
+                    className="three-columns-wide-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.twoColumnsWidePage.error}`}</H15>
@@ -254,7 +253,7 @@ export const TwoColumnsWidePage = (props) => {
 
     return(
         // <>
-            <div className="two-columns-wide-page" id="twoColumnsWidePage">
+            <div className="three-columns-wide-page" id="twoColumnsWidePage">
                 {renderToolbars()}
                 {renderTwoColumnsWidePageContent()}
                 <Footer/>
@@ -294,5 +293,5 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(TwoColumnsWidePage);
+)(ThreeColumnsWidePage);
  

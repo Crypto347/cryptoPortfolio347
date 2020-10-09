@@ -57,6 +57,7 @@ import StoneWallWidePage from './Pages/PortfolioPages/StoneWallWidePage/stoneWal
 import MetroPage from './Pages/PortfolioPages/MetroPage/metroPage';
 import Pinterest3ColumnsPage from './Pages/PortfolioPages/Pinterest3ColumnsPage/pinterest3ColumnsPage';
 import TwoColumnsWidePage from './Pages/PortfolioPages/TwoColumnsWidePage/twoColumnsWidePage';
+import ThreeColumnsWidePage from './Pages/PortfolioPages/ThreeColumnsWidePage/threeColumnsWidePage';
 
 /**
 * Actions
@@ -117,6 +118,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/three-columns-wide"}
+                    component={ThreeColumnsWidePage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/two-columns-wide"}
