@@ -229,6 +229,11 @@ export const PorfolioNavigation = (props) => {
                     props.fetchThreeColumnsWidePage();
                 }
                 break;
+            case 'fourColumnsWidePage':
+                if(props.threeColumnsWidePage.items.length === 0){
+                    props.fetchFourColumnsWidePage();
+                }
+                break;
             default:
                 if(props.portfolioGalleryPage.items.length === 0){
                     props.fetchPortfolioGalleryPage();
@@ -271,6 +276,8 @@ export const PorfolioNavigation = (props) => {
                 return [...props.twoColumnsWidePage.items];
             case 'threeColumnsWidePage':
                 return [...props.threeColumnsWidePage.items];
+            case 'fourColumnsWidePage':
+                return [...props.fourColumnsWidePage.items];
             default:
                 return [...props.portfolioGalleryPage.items];
         }
@@ -425,6 +432,13 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/three-columns-wide`, "_blank");
                 }
                 break;
+            case 'fourColumnsWidePage':
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/four-columns-wide`);
+                }else{
+                    window.open(`/crypto-portfolio/four-columns-wide`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
@@ -549,6 +563,7 @@ export default connect(
             pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
             twoColumnsWidePage: Selectors.getTwoColumnsWidePageState(state),
             threeColumnsWidePage: Selectors.getThreeColumnsWidePageState(state),
+            fourColumnsWidePage: Selectors.getFourColumnsWidePageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
@@ -576,6 +591,7 @@ export default connect(
             fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
             fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
+            fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
             portfolioNavigationOnClickStart: bindActionCreators(Actions.portfolioNavigationOnClickStart, dispatch),
         };
