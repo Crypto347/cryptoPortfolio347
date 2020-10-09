@@ -80,7 +80,10 @@ export const categoryPathToKey = (path) => {
 }
 
 export const categoryKeyToPath = (key) => {
-    let categoryToArray = key.split("");        
+    let categoryToArray = key.split("");
+
+    let hasDash = categoryToArray.some(x => x === "-");
+    if(hasDash) return "The key cannot be converted to path";
     let indexOfUpperCaseLetter;
     indexOfUpperCaseLetter = categoryToArray.map((item, i) => {
         if(item === item.toUpperCase()){

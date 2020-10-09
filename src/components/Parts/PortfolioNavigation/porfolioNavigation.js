@@ -91,10 +91,10 @@ export const PorfolioNavigation = (props) => {
     useEffect(() => {
         let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
         let category = props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category);
+        let key;
         setPage(page);
         setCategory(category);
-        fetchContentItems(page);
-        let key;
+        fetchContentItems(page, category);
         switch(props.component){
             case 'bigImages':
                 key = props.bigImagesPortfolio.item.key
@@ -147,88 +147,88 @@ export const PorfolioNavigation = (props) => {
         }
     }
     
-    const fetchContentItems = (page) => {
+    const fetchContentItems = (page, category) => {
         switch(page){
             case 'portfolioGallery':
                 if(props.portfolioGalleryPage.items.length === 0){
                     props.fetchPortfolioGalleryPage();
                 }
-                return [...props.portfolioGalleryPage.items];
+                break;
             case 'archive':
                 if(props.archive.items.length === 0){
-                    props.fetchArchive();
+                    props.fetchArchive(category, 1);
                 }
-                return [...props.archive.items];
+                break;
             case 'switchImagePage':
                 if(props.switchImagePage.items.length === 0){
                     props.fetchSwitchImagePage();
                 }
-                return [...props.switchImagePage.items];
+                break;
             case 'simpleOverlayPage':
                 if(props.simpleOverlayPage.items.length === 0){
                     props.fetchSimpleOverlayPage();
                 }
-                return [...props.simpleOverlayPage.items];
+                break;
             case 'slideFromImageLeftPage':
                 if(props.slideFromImageLeftPage.items.length === 0){
                     props.fetchSlideFromImageLeftPage();
                 }
-                return [...props.slideFromImageLeftPage.items];
+                break;
             case 'overlayPage':
                 if(props.overlayPage.items.length === 0){
                     props.fetchOverlayPage();
                 }
-                return [...props.overlayPage.items];
+                break;
             case 'overlayWithInfoPage':
                 if(props.overlayWithInfoPage.items.length === 0){
                     props.fetchOverlayWithInfoPage();
                 }
-                return [...props.overlayWithInfoPage.items];
+                break;
             case 'standardPage':
                 if(props.standardPage.items.length === 0){
                     props.fetchStandardPage();
                 }
-                return [...props.standardPage.items];
+                break;
             case 'galleryPage':
                 if(props.galleryPage.items.length === 0){
                     props.fetchGalleryPage();
                 }
-                return [...props.galleryPage.items];
+                break;
             case 'galleryWithSpacePage':
                 if(props.galleryWithSpacePage.items.length === 0){
                     props.fetchGalleryWithSpacePage();
                 }
-                return [...props.galleryWithSpacePage.items];
+                break;
             case 'stoneWallPage':
                 if(props.stoneWallPage.items.length === 0){
                     props.fetchStoneWallPage();
                 }
-                return [...props.stoneWallPage.items];
+                break;
             case 'stoneWallWidePage':
                 if(props.stoneWallWidePage.items.length === 0){
                     props.fetchStoneWallWidePage();
                 }
-                return [...props.stoneWallWidePage.items];
+                break;
             case 'metroPage':
                 if(props.metroPage.items.length === 0){
                     props.fetchMetroPage();
                 }
-                return [...props.metroPage.items];
+                break;
             case 'pinterest3ColumnsPage':
                 if(props.pinterest3ColumnsPage.items.length === 0){
                     props.fetchPinterest3ColumnsPage();
                 }
-                return [...props.pinterest3ColumnsPage.items];
+                break;
             case 'twoColumnsWidePage':
                 if(props.twoColumnsWidePage.items.length === 0){
                     props.fetchTwoColumnsWidePage();
                 }
-                return [...props.twoColumnsWidePage.items];
+                break;
             default:
                 if(props.portfolioGalleryPage.items.length === 0){
                     props.fetchPortfolioGalleryPage();
                 }
-                return [...props.portfolioGalleryPage.items];
+                break;
         }
     }
 
@@ -304,7 +304,6 @@ export const PorfolioNavigation = (props) => {
 
     const handleMenuOnClick = (e) => {
         if(e.button === 2) return;
-        // let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
         localStorage.setItem("page", page);
         switch(page){
             case 'portfolioGallery':
@@ -424,20 +423,11 @@ export const PorfolioNavigation = (props) => {
     }
 
     const arrowOnClick = (opt, key, e) => {
-      
         if(e.button === 2) return;
         let updatedItems = setContentItems();
-        // let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
-        // console.log(page)
-        // let category = props.location.state?.category;
-        // let category = props.location.state.category ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category)
         localStorage.setItem("page", page);
-
-       
-        
         console.log("updatedItems", updatedItems)
         let updatedItemIndex = updatedItems.findIndex(item => item.key === key);
-
         if(e.button !== 1){
             document.getElementById("html").style.scrollBehavior = null;
             switch(opt) {
