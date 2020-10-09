@@ -59,6 +59,7 @@ import Pinterest3ColumnsPage from './Pages/PortfolioPages/Pinterest3ColumnsPage/
 import TwoColumnsWidePage from './Pages/PortfolioPages/TwoColumnsWidePage/twoColumnsWidePage';
 import ThreeColumnsWidePage from './Pages/PortfolioPages/ThreeColumnsWidePage/threeColumnsWidePage';
 import FourColumnsWidePage from './Pages/PortfolioPages/FourColumnsWidePage/fourColumnsWidePage';
+import FiveColumnsWidePage from './Pages/PortfolioPages/FiveColumnsWidePage/fiveColumnsWidePage';
 
 /**
 * Actions
@@ -119,6 +120,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/five-columns-wide"}
+                    component={FiveColumnsWidePage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/four-columns-wide"}

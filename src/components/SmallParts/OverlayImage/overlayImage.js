@@ -154,6 +154,7 @@ export const OverlayImage = (props) => {
             case 'twoColumnWideCover1':
             case 'threeColumnWideCover1':
             case 'fourColumnWideCover1':
+            case 'fiveColumnWideCover1':
                 return Images.ID_1_SMALL_IMAGES_2;
             case 'twoColumnWideCover2':
             case 'threeColumnWideCover2':
@@ -168,58 +169,72 @@ export const OverlayImage = (props) => {
             case 'twoColumnWideCover5':
             case 'threeColumnWideCover5':
             case 'fourColumnWideCover3':
+            case 'fiveColumnWideCover2':
                 return Images.ID_1_BIG_IMAGES_5;
             case 'twoColumnWideCover6':
             case 'threeColumnWideCover6':
-            case 'fourColumnWideCover4': 
+            case 'fourColumnWideCover4':
+            case 'fiveColumnWideCover3':
                 return Images.ID_1_SMALL_SLIDER_5;
             case 'twoColumnWideCover7':
             case 'threeColumnWideCover7':
-            case 'fourColumnWideCover5': 
+            case 'fourColumnWideCover5':
+            case 'fiveColumnWideCover4':
                 return Images.ID_2_SMALL_SLIDER_2;
             case 'twoColumnWideCover8':
             case 'threeColumnWideCover8':
             case 'fourColumnWideCover6':
+            case 'fiveColumnWideCover5':
                 return Images.ID_2_GALLERY_1;
             case 'twoColumnWideCover9':
             case 'threeColumnWideCover9':
             case 'fourColumnWideCover7':
+            case 'fiveColumnWideCover6':
                 return Images.ID_2_SMALL_GALLERY_1;
             case 'twoColumnWideCover10':
             case 'threeColumnWideCover10':
             case 'fourColumnWideCover8':
+            case 'fiveColumnWideCover7':
                 return Images.ID_2_SMALL_IMAGES_1;
             case 'twoColumnWideCover11':
             case 'threeColumnWideCover11':
-            case 'fourColumnWideCover9': 
+            case 'fourColumnWideCover9':
+            case 'fiveColumnWideCover8':
                 return Images.ID_2_BIG_SLIDER_6;
             case 'twoColumnWideCover12':
             case 'threeColumnWideCover12':
             case 'fourColumnWideCover10':
+            case 'fiveColumnWideCover9':
                 return Images.ID_2_BIG_IMAGES_5;
             case 'twoColumnWideCover13':
             case 'threeColumnWideCover13':
             case 'fourColumnWideCover11':
+            case 'fiveColumnWideCover10':
                 return Images.ID_3_GALLERY_4;
             case 'twoColumnWideCover14':
             case 'threeColumnWideCover14':
-            case 'fourColumnWideCover12': 
+            case 'fourColumnWideCover12':
+            case 'fiveColumnWideCover11': 
                 return Images.ID_3_SMALL_SLIDER_2;
             case 'twoColumnWideCover15':
             case 'threeColumnWideCover15':
             case 'fourColumnWideCover13':
+            case 'fiveColumnWideCover12':
                 return Images.ID_3_SMALL_GALLERY_3;
             case 'twoColumnWideCover16':
             case 'threeColumnWideCover16':
             case 'fourColumnWideCover14':
+            case 'fiveColumnWideCover13':
                 return Images.ID_3_SMALL_IMAGES_2;
             case 'twoColumnWideCover17':
             case 'threeColumnWideCover17':
-            case 'fourColumnWideCover15': 
+            case 'fourColumnWideCover15':
+            case 'fiveColumnWideCover14':
                 return Images.ID_3_BIG_SLIDER_4;
             case 'twoColumnWideCover18':
             case 'threeColumnWideCover18':
             case 'fourColumnWideCover16':
+            case 'fiveColumnWideCover15':
                 return Images.ID_4_SMALL_IMAGES_3;
             default:
                 return "";

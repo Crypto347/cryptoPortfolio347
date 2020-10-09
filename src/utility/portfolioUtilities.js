@@ -22,6 +22,8 @@ export const findPathOfIds = (path) => {
             return [2, 22, 224];
         case 'four-columns-wide':
             return [2, 22, 226];
+        case 'five-columns-wide':
+            return [2, 22, 227];
         case 'overlay':
             return [2, 23, 231];
         case 'overlay-with-info':
