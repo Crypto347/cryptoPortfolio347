@@ -3,5 +3,7 @@ import * as Epic from './index'
 
 export const rootEpic = combineEpics(
     Epic.unmountComponentEpic,
-    Epic.gotoNewPageEpic
+    Epic.gotoNewPageEpic,
+    Epic.portfolioNavigationOnClickStartEpic,
+    Epic.portfolioNavigationOnClickEpic
 );

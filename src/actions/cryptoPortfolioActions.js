@@ -173,3 +173,20 @@ export function setShowBackToTopComponent(val) {
         val: val
     };
 };
+
+export function portfolioNavigationOnClickStart(path, page, category) {
+    return { 
+        type: actionTypes.PORTFOLIO_NAVIGATION_ON_CLICK_START,
+        path: path,
+        page: page,
+        category: category
+    };
+};
+export function portfolioNavigationOnClick(path, page, category) {
+    return { 
+        type: actionTypes.PORTFOLIO_NAVIGATION_ON_CLICK,
+        path: path,
+        page: page,
+        category: category
+    };
+};

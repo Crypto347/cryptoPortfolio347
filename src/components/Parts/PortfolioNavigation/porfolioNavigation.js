@@ -224,6 +224,11 @@ export const PorfolioNavigation = (props) => {
                     props.fetchTwoColumnsWidePage();
                 }
                 break;
+            case 'threeColumnsWidePage':
+                if(props.threeColumnsWidePage.items.length === 0){
+                    props.fetchThreeColumnsWidePage();
+                }
+                break;
             default:
                 if(props.portfolioGalleryPage.items.length === 0){
                     props.fetchPortfolioGalleryPage();
@@ -264,6 +269,8 @@ export const PorfolioNavigation = (props) => {
                 return [...props.pinterest3ColumnsPage.items];
             case 'twoColumnsWidePage':
                 return [...props.twoColumnsWidePage.items];
+            case 'threeColumnsWidePage':
+                return [...props.threeColumnsWidePage.items];
             default:
                 return [...props.portfolioGalleryPage.items];
         }
@@ -411,6 +418,13 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/two-columns-wide`, "_blank");
                 }
                 break;
+            case 'threeColumnsWidePage':
+                if(e.button !== 1){
+                    props.history.push(`/crypto-portfolio/three-columns-wide`);
+                }else{
+                    window.open(`/crypto-portfolio/three-columns-wide`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
@@ -433,16 +447,20 @@ export const PorfolioNavigation = (props) => {
             switch(opt) {
                 case 'prev':
                     if(updatedItemIndex === 0){
-                        props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[updatedItems.length - 1].path, page, category)
+                        // props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: page, category: category});
                     }else{
-                        props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[updatedItemIndex - 1].path, page, category)
+                        // props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: page, category: category});
                     }
                     return;
                 case 'next':
                     if(updatedItemIndex === updatedItems.length - 1){
-                        props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[0].path, page, category)
+                        // props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: page, category: category});
                     }else{
-                        props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[updatedItemIndex + 1].path, page, category)
+                        // props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: page, category: category});
                     }
                     return;
             }
@@ -530,6 +548,7 @@ export default connect(
             metroPage: Selectors.getMetroPageState(state),
             pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
             twoColumnsWidePage: Selectors.getTwoColumnsWidePageState(state),
+            threeColumnsWidePage: Selectors.getThreeColumnsWidePageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
@@ -556,7 +575,9 @@ export default connect(
             fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
             fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
-            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
+            fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
+            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
+            portfolioNavigationOnClickStart: bindActionCreators(Actions.portfolioNavigationOnClickStart, dispatch),
         };
     }
 )(withRouter(PorfolioNavigation));
