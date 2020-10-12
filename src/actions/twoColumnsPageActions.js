@@ -26,10 +26,9 @@ export function loadMoreTwoColumnsPageBegin() {
     };
 };
 
-export function loadMoreTwoColumnsPageSuccess(array) {
+export function loadMoreTwoColumnsPageSuccess() {
     return { 
-        type: actionTypes.LOAD_MORE_TWO_COLUMNS_PAGE_SUCCESS,
-        array: array
+        type: actionTypes.LOAD_MORE_TWO_COLUMNS_PAGE_SUCCESS
     };
 };
 

@@ -17059,8 +17059,10 @@ app.post('/api/two-columns-page', (req, res) => {
         twoColumnsData: []
     };
     let takeItems = req.body.step * 4;
+    console.log(takeItems, takeItems > twoColumnsPage.length)
     if(takeItems > twoColumnsPage.length){
         updatedTwoColumnsObj.disableLoadMoreButton = true;
+        updatedTwoColumnsObj.twoColumnsData = twoColumnsPage;
     }else{
         updatedTwoColumnsObj.twoColumnsData = twoColumnsPage.slice(0, takeItems)
     }

@@ -88,6 +88,7 @@ export const TwoColumnsPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [loadMoreStep, setLoadMoreStep] = useState(1);
     
     /**
     * Methods
@@ -96,12 +97,12 @@ export const TwoColumnsPage = (props) => {
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
         if(props.twoColumnsPage.items.length === 0){
-            props.fetchTwoColumnsPage(1);
+            props.fetchTwoColumnsPage(loadMoreStep);
+            setLoadMoreStep(loadMoreStep + 1);
         }
         let timeout = setTimeout(() => {
             if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -181,6 +182,11 @@ export const TwoColumnsPage = (props) => {
             )
         }
     }
+
+    const loadMoreOnClick = () => {
+        props.fetchTwoColumnsPage(loadMoreStep);
+        setLoadMoreStep(loadMoreStep + 1);
+    }
     
     const renderTwoColumnsPageData = () => {
         return(
@@ -221,8 +227,8 @@ export const TwoColumnsPage = (props) => {
                     <Button
                         className="archive-load-more"
                         text="load more."
-                        onClick={() => props.fetchArchive(props.match.params.category, 2)}
-                        disabled={props.archive.disableLoadMoreButton}
+                        onClick={loadMoreOnClick}
+                        disabled={props.twoColumnsPage.disableLoadMoreButton}
                     />
                 </div> 
             )

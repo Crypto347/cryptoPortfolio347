@@ -62,7 +62,7 @@ const loadMoreTwoColumnsPageDataSuccess = (state, action) => {
     return {
         ...state,
         loadingMoreData: false,
-        items: action.array
+        // items: action.array
     };
 }
 

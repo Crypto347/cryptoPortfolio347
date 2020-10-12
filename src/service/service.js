@@ -633,6 +633,7 @@ export function fetchTwoColumnsPage(step) {
             .then(json => {
                 console.log("JSON",json)
                 dispatch(Actions.fetchTwoColumnsPageSuccess(json.twoColumnsData));
+                dispatch(Actions.loadMoreTwoColumnsPageSuccess());
                 dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));
                 // return json;
             })
