@@ -119,5 +119,15 @@ export const categoryFromLocationPathname = (path) => {
 }
 
 export const removeDublicatesFromArray = (data) => {
-    return data.reduce((acc, curr) => acc.includes(curr) ? acc : [...acc, curr], [])
+    return data.reduce((acc, curr) => acc.includes(curr) ? acc : [...acc, curr], []);
 }
+
+export const changeKeyToLabel = (val) => {
+    let label = val.split("");
+    let firstLetter = label[0].toUpperCase();
+    let indexOfUppercase = label.map(el => el === el.toUpperCase()).findIndex(item => item === true);
+    if(indexOfUppercase !== -1) label.splice(indexOfUppercase, 0, " ");
+    label.splice(0, 1, firstLetter);
+    return label.join("");
+}
+
