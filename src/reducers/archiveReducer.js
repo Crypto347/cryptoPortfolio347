@@ -75,7 +75,7 @@ const loadMoreArchiveDataFailur = (state, action) => {
     };
 }
 
-const loadMoreDisableButtonState = (state, action) => {
+const loadMoreDisableButtonStateForArchive = (state, action) => {
     return {
         ...state,
         disableLoadMoreButton: action.val
@@ -150,8 +150,8 @@ const archiveReducer = (state = initialState, action) => {
             return loadMoreArchiveDataSuccess (state, action);
         case actionTypes.LOAD_MORE_ARCHIVE_DATA_FAILURE:
             return loadMoreArchiveDataFailur(state, action);
-        case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE:
-            return loadMoreDisableButtonState(state, action);
+        case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE_FOR_ARCHIVE:
+            return loadMoreDisableButtonStateForArchive(state, action);
         case actionTypes.SET_ARCHIVE_CATEGORY:
             return setArchiveCategory(state, action);
         case actionTypes.SET_ARCHIVE_IS_HOVERING_IMAGE:

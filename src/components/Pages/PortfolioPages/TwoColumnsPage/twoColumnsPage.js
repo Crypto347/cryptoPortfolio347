@@ -27,8 +27,10 @@ import './twoColumnsPage.scss';
 */
 
 import Loading from '../../../SmallParts/Loading/loading';
+import LoadingVersion2 from '../../../SmallParts/LoadingVersion2/loadingVersion2';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import StandardPortfolioItem from '../../../SmallParts/StandardPortfolioItem/standardPortfolioItem';
+import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
+import Button from '../../../../library/Button/button';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -93,11 +95,11 @@ export const TwoColumnsPage = (props) => {
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
-        if(props.standardPage.items.length === 0){
-            props.fetchStandardPage();
+        if(props.twoColumnsPage.items.length === 0){
+            props.fetchTwoColumnsPage(1);
         }
         let timeout = setTimeout(() => {
-            if(!props.standardPage.loading && !props.standardPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
@@ -118,7 +120,7 @@ export const TwoColumnsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("standardPage");
+        let el = document.getElementById("twoColumnsPage");
 
         // Show or hide BackToTop component
 
@@ -152,12 +154,12 @@ export const TwoColumnsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="standardPage"
+                        page="twoColumnsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="standardPage"
+                        page="twoColumnsPage"
                     />
                 </>
             )
@@ -168,71 +170,103 @@ export const TwoColumnsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="standardPage"
+                        page="twoColumnsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="standardPage"
+                        page="twoColumnsPage"
                     />
                 </>
             )
         }
     }
     
-    const renderStandardPageData = () => {
+    const renderTwoColumnsPageData = () => {
         return(
-            <div className="standard-page-items">{props.standardPage.items.map((el, i) => {
+            <div className="two-columns-page-items">{props.twoColumnsPage.items.map((el, i) => {
                 return(
                     <div 
                         key={i} 
                         id={el.key}
-                        className="standard-page-item"
+                        className="two-columns-page-item"
                     >
-                        <StandardPortfolioItem
-                            page="standardPage"
+                        <OverlayImage
+                            page="twoColumnsPage"
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
-                            setIsHoveringCategory={props.setStandardPageIsHoveringCategory}
                             unmountComponent={props.unmountComponent}
-                            clearArchiveData={props.clearArchiveData}
-                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
-            })}</div>
+            })}
+            {renderLoadMoreButton()}
+            </div>
         )
     }
 
-    const renderStandardPageContent = () => {
-        if(props.standardPage.loading && !props.standardPage.error){
+    const renderLoadMoreButton = () => {
+        if(props.twoColumnsPage.loadingMoreData && !props.twoColumnsPage.errorMoreData){
             return(
                 <div 
-                    className="standard-page-loading-error" 
+                    className="two-columns-page-button-load-more-loading-error"
+                >
+                    <LoadingVersion2 color="rgb(37, 37, 37)"/>
+                </div>
+            )
+        }
+        if(!props.twoColumnsPage.loadingMoreData && !props.twoColumnsPage.errorMoreData){
+            return(
+                <div className="two-columns-page-button-load-more">
+                    <Button
+                        className="archive-load-more"
+                        text="load more."
+                        onClick={() => props.fetchArchive(props.match.params.category, 2)}
+                        disabled={props.archive.disableLoadMoreButton}
+                    />
+                </div> 
+            )
+        }
+        if(!props.twoColumnsPage.loadingMoreData && props.twoColumnsPage.errorMoreData){
+            return(
+                <div 
+                    className="two-columns-page-button-load-more-loading-error" 
+                >
+                    <H19 className="h19-nobel-lora">{`${props.archive.error}`}</H19>
+                </div>
+            )
+        }
+    }
+
+    const renderTwoColumnsPageContent = () => {
+        if(props.twoColumnsPage.loading && !props.twoColumnsPage.error){
+            return(
+                <div 
+                    className="two-columns-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.standardPage.loading && !props.standardPage.error){
+        if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error){
             return(
-                <div className="standard-page-wrapper">
-                    <div className="standard-page-header">
+                <div className="two-columns-page-wrapper">
+                    <div className="two-columns-page-header">
                         <H45 className="h45-nero-lustria">Standard</H45>
                     </div>
                     <div className="grey-line"/>
-                    {renderStandardPageData()}
+                    {renderTwoColumnsPageData()}
                 </div>
             )
         }
-        if(!props.standardPage.loading && props.standardPage.error){
+        if(!props.twoColumnsPage.loading && props.twoColumnsPage.error){
             return(
                 <div 
-                    className="standard-page-loading-error" 
+                    className="two-columns-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.standardPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.twoColumnsPage.error}`}</H15>
                 </div>
             )
         }
@@ -243,9 +277,9 @@ export const TwoColumnsPage = (props) => {
     */
 
     return(
-        <div className="standard-page" id="standardPage">
+        <div className="two-columns-page" id="twoColumnsPage">
             {renderToolbars()}
-            {renderStandardPageContent()}
+            {renderTwoColumnsPageContent()}
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
         </div>   
@@ -255,7 +289,7 @@ export const TwoColumnsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            standardPage: Selectors.getStandardPageState(state),
+            twoColumnsPage: Selectors.getTwoColumnsPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
@@ -264,7 +298,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
+            fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),

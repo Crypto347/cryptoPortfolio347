@@ -28,3 +28,4 @@ export * from './twoColumnsWidePageActions';
 export * from './threeColumnsWidePageActions';
 export * from './fourColumnsWidePageActions';
 export * from './fiveColumnsWidePageActions';
+export * from './twoColumnsPageActions';

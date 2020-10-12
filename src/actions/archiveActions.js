@@ -40,9 +40,9 @@ export function loadMoreArchiveDataFailur(err) {
     };
 };
 
-export function loadMoreDisableButtonState(val) {
+export function loadMoreDisableButtonStateForArchive(val) {
     return { 
-        type: actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE,
+        type: actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE_FOR_ARCHIVE,
         val: val
     };
 };

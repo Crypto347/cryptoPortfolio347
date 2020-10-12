@@ -351,3 +351,10 @@ export const getFiveColumnsWidePageState = createSelector(
     [getFiveColumnsWidePage],
     (x) => x
 );
+
+const getTwoColumnsPage = (state) => state.twoColumnsPage;
+
+export const getTwoColumnsPageState = createSelector(
+    [getTwoColumnsPage],
+    (x) => x
+);

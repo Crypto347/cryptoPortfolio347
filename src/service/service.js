@@ -304,12 +304,12 @@ export function fetchArchive(category, step) {
                 if(step === 1){
                     dispatch(Actions.fetchArchiveSuccess(json.archiveData));
                     dispatch(Actions.setArchiveCategory(json.category));
-                    dispatch(Actions.loadMoreDisableButtonState(json.disableLoadMoreButton));
-                }else{
-                    dispatch(Actions.loadMoreArchiveDataSuccess(json.archiveData));
-                    dispatch(Actions.loadMoreDisableButtonState(json.disableLoadMoreButton));
+                    dispatch(Actions.loadMoreDisableButtonStateForArchive(json.disableLoadMoreButton));
                 }
-              
+                else{
+                    dispatch(Actions.loadMoreArchiveDataSuccess(json.archiveData));
+                    dispatch(Actions.loadMoreDisableButtonStateForArchive(json.disableLoadMoreButton));
+                }
                 // return json;
             })
             .catch(error => {
@@ -607,6 +607,42 @@ export function fetchFiveColumnsWidePage() {
             .catch(error => {
                 console.log("error",error)
                 dispatch(Actions.fetchFiveColumnsWidePageFailur(error))
+            });
+    };
+}
+
+export function fetchTwoColumnsPage(step) {
+    return dispatch => {
+        if(step === 1){
+            dispatch(Actions.fetchTwoColumnsPageBegin());
+        }else{
+            dispatch(Actions.loadMoreTwoColumnsPageBegin());
+        }
+        return fetch(`http://localhost:3005/api/two-columns-page`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                step: step
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                console.log("JSON",json)
+                dispatch(Actions.fetchTwoColumnsPageSuccess(json.twoColumnsData));
+                dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                if(step === 1){
+                    dispatch(Actions.fetchTwoColumnsPageFailur(error))
+                }else{
+                    dispatch(Actions.loadMoreTwoColumnsPageFailur(error))
+                }
             });
     };
 }

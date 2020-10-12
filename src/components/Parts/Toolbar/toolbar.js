@@ -222,6 +222,7 @@ export const Toolbar = (props) => {
             case 'threeColumnsWidePage':
             case 'fourColumnsWidePage':
             case 'fiveColumnsWidePage':
+            case 'twoColumnsPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':

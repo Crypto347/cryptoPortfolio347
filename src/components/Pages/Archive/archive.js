@@ -28,13 +28,9 @@ import './archive.scss';
 import Loading from '../../SmallParts/Loading/loading';
 import LoadingVersion2 from '../../SmallParts/LoadingVersion2/loadingVersion2';
 import Toolbar from '../../Parts/Toolbar/toolbar';
-import BackToTop from '../../SmallParts/BackToTop/backToTop';
-
-
-// import Swiper from '../../../../library/Swiper/swiper';
-// import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import Button from '../../../library/Button/button';
 import Footer from '../../Parts/Footer/footer';
+import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
 /**
 * Actions
