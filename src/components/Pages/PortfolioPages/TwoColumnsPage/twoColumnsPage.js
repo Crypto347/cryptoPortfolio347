@@ -259,7 +259,7 @@ export const TwoColumnsPage = (props) => {
             return(
                 <div className="two-columns-page-wrapper">
                     <div className="two-columns-page-header">
-                        <H45 className="h45-nero-lustria">Standard</H45>
+                        <H45 className="h45-nero-lustria">Two Columns</H45>
                     </div>
                     <div className="grey-line"/>
                     {renderTwoColumnsPageData()}
