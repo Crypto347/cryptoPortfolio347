@@ -8,7 +8,7 @@ import * as Actions from "../actions";
 * Utility
 */
 
-// import * as Utility from "../utility";
+import * as Utility from "../utility";
 
 export function fetchHeaderImagesArray() {
     return dispatch => {
@@ -631,7 +631,18 @@ export function fetchTwoColumnsPage(step) {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log("JSON",json)
+                console.log("JSON",json);
+                let categories = [];
+                categories = json.twoColumnsData
+                    .map(el => {
+                        return el.categories
+                    })
+                    .flat()
+                    .map((el, i) => {
+                        return el.key
+                    })
+                categories = Utility.removeDublicatesFromArray(categories);
+                console.log(categories)
                 dispatch(Actions.fetchTwoColumnsPageSuccess(json.twoColumnsData));
                 dispatch(Actions.loadMoreTwoColumnsPageSuccess());
                 dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));

@@ -117,3 +117,7 @@ export const categoryFromLocationPathname = (path) => {
         return;
     }
 }
+
+export const removeDublicatesFromArray = (data) => {
+    return data.reduce((acc, curr) => acc.includes(curr) ? acc : [...acc, curr], [])
+}
