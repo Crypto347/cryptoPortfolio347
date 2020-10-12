@@ -16,6 +16,8 @@ export const findPathOfIds = (path) => {
             return [];
         case 'happy-team':
             return [];
+        case 'two-columns':
+            return [2, 22, 221];
         case 'two-columns-wide':
             return [2, 22, 222];
         case 'three-columns-wide':

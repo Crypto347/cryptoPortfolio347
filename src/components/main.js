@@ -60,6 +60,7 @@ import TwoColumnsWidePage from './Pages/PortfolioPages/TwoColumnsWidePage/twoCol
 import ThreeColumnsWidePage from './Pages/PortfolioPages/ThreeColumnsWidePage/threeColumnsWidePage';
 import FourColumnsWidePage from './Pages/PortfolioPages/FourColumnsWidePage/fourColumnsWidePage';
 import FiveColumnsWidePage from './Pages/PortfolioPages/FiveColumnsWidePage/fiveColumnsWidePage';
+import TwoColumnsPage from './Pages/PortfolioPages/TwoColumnsPage/twoColumnsPage';
 
 /**
 * Actions
@@ -120,6 +121,11 @@ export const Main = (props) => {
             {/* <Toolbar/> */}
             {/* <Sidebar/> */}
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/two-columns"}
+                    component={TwoColumnsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/five-columns-wide"}
