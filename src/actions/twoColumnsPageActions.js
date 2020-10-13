@@ -60,3 +60,11 @@ export function setTwoColumnsPageIsHoveringCategoryFromHeader(val, id) {
         id: id
     };
 };
+
+export function updateItemsStyleValuesTwoColumnsPage(image, obj) {
+    return { 
+        type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_TWO_COLUMNS_PAGE,
+        image: image,
+        obj: obj
+    };
+};

@@ -103,21 +103,21 @@ export const StoneWallPage = (props) => {
         }, 2);
 
         const smooth = e => {
-            if(['stone-wall-item-id1',
-                'stone-wall-item-id2',
-                'stone-wall-item-id3',
-                'stone-wall-item-id4',
-                'stone-wall-item-id5',
-                'stone-wall-item-id6',
-                'stone-wall-item-id7',
-                'stone-wall-item-id8',
-                'stone-wall-item-id9',
-                'stone-wall-item-id10',
-                'stone-wall-item-id11'
-                ].includes(e.target.className)){
-                    console.log("fagr")
+            // if(['stone-wall-item-id1',
+            //     'stone-wall-item-id2',
+            //     'stone-wall-item-id3',
+            //     'stone-wall-item-id4',
+            //     'stone-wall-item-id5',
+            //     'stone-wall-item-id6',
+            //     'stone-wall-item-id7',
+            //     'stone-wall-item-id8',
+            //     'stone-wall-item-id9',
+            //     'stone-wall-item-id10',
+            //     'stone-wall-item-id11'
+            //     ].includes(e.target.className)){
+                    // console.log("fagr")
                         transitionRef.current()
-            }
+            // }
         }
 
         const resize = () => {
@@ -173,7 +173,7 @@ export const StoneWallPage = (props) => {
         }
     }, [props.stoneWallPage.itemsStyleValues.img1.transition,props.stoneWallPage.itemsStyleValues.img2.transition,
         props.stoneWallPage.itemsStyleValues.img3.transition,props.stoneWallPage.itemsStyleValues.img4.transition,
-        props.stoneWallPage.itemsStyleValues.img5.transition])
+        props.stoneWallPage.itemsStyleValues.img5.transition]);
 
     const smoothTransition = () => {
         props.updateItemsStyleValuesStoneWallPage("img1",{
@@ -453,43 +453,6 @@ export const StoneWallPage = (props) => {
                 transition: 0
             });
         }
-        // if(size.width <= 900){
-        //     props.updateItemsStyleValuesStoneWallPage("img1",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: 0,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img2",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: 20,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img3",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: stoneWallPageItemsWidth/2 + 70,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img4",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: stoneWallPageItemsWidth + stoneWallPageItemsWidth/2 + 120,
-        //         transition: 0
-        //     });
-        //     props.updateItemsStyleValuesStoneWallPage("img5",{
-        //         width: stoneWallPageItemsWidth,
-        //         height: 0,
-        //         translateX: 0,
-        //         translateY: stoneWallPageItemsWidth*2 + stoneWallPageItemsWidth/2 + 170,
-        //         transition: 0
-        //     });
-        // }
     }
 
     const renderToolbars = () => {

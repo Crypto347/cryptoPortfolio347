@@ -103,16 +103,16 @@ export const StoneWallWidePage = (props) => {
         }, 2);
 
         const smooth = e => {
-            if(['stone-wall-wide-item-id1',
-                'stone-wall-wide-item-id2',
-                'stone-wall-wide-item-id3',
-                'stone-wall-wide-item-id4',
-                'stone-wall-wide-item-id5',
-                'stone-wall-wide-item-id6',
-                'stone-wall-wide-item-id7'
-                ].includes(e.target.className)){
+            // if(['stone-wall-wide-item-id1',
+            //     'stone-wall-wide-item-id2',
+            //     'stone-wall-wide-item-id3',
+            //     'stone-wall-wide-item-id4',
+            //     'stone-wall-wide-item-id5',
+            //     'stone-wall-wide-item-id6',
+            //     'stone-wall-wide-item-id7'
+            //     ].includes(e.target.className)){
                     transitionRef.current()
-            }
+            // }
         }
 
         const resize = () => {
