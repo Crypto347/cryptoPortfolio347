@@ -613,8 +613,9 @@ export const TwoColumnsPage = (props) => {
         setLoadMoreStep(loadMoreStep + 1);
     }
 
-    const renderClassName = (opt, isHovering) => {
+    const renderClassName = (opt, isHovering, active) => {
         if(opt === "categoryFromHeader"){
+            if(active) return "h15-nobel-poppins";
             switch(isHovering){
                 case 'init':
                     return "h15-black-poppins-animated";
@@ -647,70 +648,88 @@ export const TwoColumnsPage = (props) => {
             case 1:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img1.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img1.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img1.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img1.transition}s ease-out`,
                 };
             case 2:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img2.width}% - 30px)`,
-                    paddingRight: "30px"
-                    // top: "0px",
-                    // left: `${props.twoColumnsPage.itemsStyleValues.img1.width + 40}`,
-                    // transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
-                    // transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
                 };
             case 3:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img3.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img3.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img3.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img3.transition}s ease-out`,
                 };
             case 4:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img4.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img4.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img4.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img4.transition}s ease-out`,
                 };
             case 5:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img5.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img5.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img5.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img5.transition}s ease-out`,
                 };
             case 6:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img6.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img6.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img6.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img6.transition}s ease-out`,
                 };
             case 7:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img7.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
                     // top: "0px",
                     // left: `${props.twoColumnsPage.itemsStyleValues.img1.width + 40}`,
-                    // transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
-                    // transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img7.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img7.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img7.transition}s ease-out`,
                 };
             case 8:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img8.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img8.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img8.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img8.transition}s ease-out`,
                 };
             case 9:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img9.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img9.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img9.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img9.transition}s ease-out`,
                 };
             case 10:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img10.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img10.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img10.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img10.transition}s ease-out`,
                 };
             case 11:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img11.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img11.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img11.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img11.transition}s ease-out`,
                 };
             case 12:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img12.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img12.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img12.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12.transition}s ease-out`,
                     // top: "0px",
                     // left: `${props.twoColumnsPage.itemsStyleValues.img1.width + 40}`,
                     // transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
@@ -719,32 +738,44 @@ export const TwoColumnsPage = (props) => {
             case 13:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img13.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img13.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img13.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img13.transition}s ease-out`,
                 };
             case 14:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img14.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img14.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img14.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img14.transition}s ease-out`,
                 };
             case 15:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img15.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img15.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img15.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img15.transition}s ease-out`,
                 };
             case 16:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img16.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img16.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img16.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img16.transition}s ease-out`,
                 };
             case 17:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img17.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img17.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img17.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img17.transition}s ease-out`,
                 };
             case 18:
                 return {
                     width: `calc(${props.twoColumnsPage.itemsStyleValues.img18.width}% - 30px)`,
-                    paddingRight: "30px"
+                    paddingRight: "30px",
+                    transform: `translate(${props.twoColumnsPage.itemsStyleValues.img18.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img18.translateY}px)`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img18.transition}s ease-out`,
                 };
         }
     }
@@ -760,7 +791,7 @@ export const TwoColumnsPage = (props) => {
                             onMouseEnter={() => handleMouseEnter("categoryFromHeader", el.id)} 
                             onMouseLeave={() => handleMouseLeave("categoryFromHeader", el.id)}
                         >
-                            <H15 className={renderClassName("categoryFromHeader", el.isHover)}>{el.label}</H15>
+                            <H15 className={renderClassName("categoryFromHeader", el.isHover, el.active)}>{el.label}</H15>
                         </div>
                     )
                 })}
