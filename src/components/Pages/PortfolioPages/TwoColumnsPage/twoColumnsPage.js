@@ -187,27 +187,72 @@ export const TwoColumnsPage = (props) => {
         props.fetchTwoColumnsPage(loadMoreStep);
         setLoadMoreStep(loadMoreStep + 1);
     }
+
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "categoryFromHeader"){
+            switch(isHovering){
+                case 'init':
+                    return "h15-black-poppins-animated";
+                case 'on':
+                    return "h15-black-poppins-nobel-hover-on";
+                case 'off':
+                    return "h15-black-poppins-nobel-hover-off"
+            }
+        }
+    }
     
+    const handleMouseEnter = (opt, id) => {
+        switch(opt){
+            case 'categoryFromHeader':
+                props.setTwoColumnsPageIsHoveringCategoryFromHeader("on", id)
+                break;
+        }
+    }
+
+    const handleMouseLeave = (opt, id) => {
+        switch(opt){
+            case 'categoryFromHeader':
+                props.setTwoColumnsPageIsHoveringCategoryFromHeader("off", id)
+                break;
+        }
+    }
+
     const renderTwoColumnsPageData = () => {
         return(
-            <div className="two-columns-page-items">{props.twoColumnsPage.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i} 
-                        id={el.key}
-                        className="two-columns-page-item"
-                    >
-                        <OverlayImage
-                            page="twoColumnsPage"
-                            obj={el}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                        />
-                    </div>
-                )
-            })}
-            {renderLoadMoreButton()}
-            </div>
+            <>
+                <div className="two-columns-page-categories-from-header">{props.twoColumnsPage.categories.map((el, i) => {
+                    return(
+                        <div 
+                            key={i}
+                            className="two-columns-page-category-from-header"
+                            onMouseEnter={() => handleMouseEnter("categoryFromHeader", el.id)} 
+                            onMouseLeave={() => handleMouseLeave("categoryFromHeader", el.id)}
+                        >
+                            <H15 className={renderClassName("categoryFromHeader", el.isHover)}>{el.label}</H15>
+                        </div>
+                    )
+                })}
+
+                </div>
+                <div className="two-columns-page-items">{props.twoColumnsPage.items.map((el, i) => {
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="two-columns-page-item"
+                        >
+                            <OverlayImage
+                                page="twoColumnsPage"
+                                obj={el}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                            />
+                        </div>
+                    )
+                })}
+                {renderLoadMoreButton()}
+                </div>
+            </>
         )
     }
 
@@ -299,7 +344,7 @@ export default connect(
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
-            showBackToTop: Selectors.getShowBackToTopState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state)
         };
     },
     (dispatch) => {
@@ -307,7 +352,7 @@ export default connect(
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
+            setTwoColumnsPageIsHoveringCategoryFromHeader: bindActionCreators(Actions.setTwoColumnsPageIsHoveringCategoryFromHeader, dispatch),
             setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

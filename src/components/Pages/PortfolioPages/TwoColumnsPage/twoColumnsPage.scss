@@ -24,11 +24,19 @@
             height: 10px;
             background-color: rgb(239, 239, 239);
         }
+        .two-columns-page-categories-from-header {
+            display: flex;
+            width: calc(100% - 230px);
+            padding: 100px 100px 0px 130px;
+            .two-columns-page-category-from-header {
+                margin-left: 10px;
+            }
+        }
         .two-columns-page-items {
             width: calc(100% - 230px);
             display: flex;
             flex-wrap: wrap;
-            padding: 100px 100px 100px 130px;
+            padding: 60px 100px 100px 130px;
             .two-columns-page-item {
                 width: calc(33.3% - 30px);
                 margin-right: 30px;

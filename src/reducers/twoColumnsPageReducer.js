@@ -22,7 +22,7 @@ export const initialState = {
     loadingMoreData: false,
     errorMoreData: null,
     disableLoadMoreButton: false,
-    category: ""
+    categories: []
 }
 
 const fetchTwoColumnsPageBegin = (state, action) => {
@@ -82,6 +82,24 @@ const loadMoreDisableButtonStateForTwoColumnsPage = (state, action) => {
     };
 }
 
+const setCategoriesTwoColumnsPage = (state, action) => {
+    return {
+        ...state,
+        categories: action.array
+    };
+}
+
+const setTwoColumnsPageIsHoveringCategoryFromHeader = (state, action) => {
+    let updatedCategories = [...state.categories];
+    let categoryObj = {...updatedCategories.find(item => item.id === action.id), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.id === action.id);
+    updatedCategories.splice(categoryIndex, 1, categoryObj);
+    return {
+        ...state,
+        categories: updatedCategories
+    };
+}
+
 const twoColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TWO_COLUMNS_PAGE_BEGIN:
@@ -98,6 +116,10 @@ const twoColumnsPageReducer = (state = initialState, action) => {
             return loadMoreTwoColumnsPageDataFailur(state, action);
         case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE_FOR_TWO_COLUMNS_PAGE:
             return loadMoreDisableButtonStateForTwoColumnsPage(state, action);
+        case actionTypes.SET_CATEGORIES_TWO_COLUMNS_PAGE:
+            return setCategoriesTwoColumnsPage(state, action);
+        case actionTypes.SET_TWO_COLUMNS_PAGE_IS_HOVERING_CATEGORY_FROM_HEADER:
+            return setTwoColumnsPageIsHoveringCategoryFromHeader(state, action);
         default: 
             return state;
     }

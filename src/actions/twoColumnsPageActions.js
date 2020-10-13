@@ -46,4 +46,17 @@ export function loadMoreDisableButtonStateForTwoColumnsPage(val) {
     };
 };
 
+export function setCategoriesTwoColumnsPage(array) {
+    return { 
+        type: actionTypes.SET_CATEGORIES_TWO_COLUMNS_PAGE,
+        array: array
+    };
+};
 
+export function setTwoColumnsPageIsHoveringCategoryFromHeader(val, id) {
+    return { 
+        type: actionTypes.SET_TWO_COLUMNS_PAGE_IS_HOVERING_CATEGORY_FROM_HEADER,
+        val: val,
+        id: id
+    };
+};

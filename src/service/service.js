@@ -644,15 +644,23 @@ export function fetchTwoColumnsPage(step) {
                 categories = Utility.removeDublicatesFromArray(categories);
                 categories = categories.map((el, i) => {
                     return {
-                        id: i,
+                        id: i + 2,
                         key: el,
-                        label: Utility.changeKeyToLabel(el),
-                        isHover: false,
+                        label: `${Utility.changeKeyToLabel(el)}.`,
+                        isHover: "init",
                         active: false
                     }
                 })
+                categories.unshift({
+                    id: 1,
+                    key: "showAll",
+                    label: "Show all.",
+                    isHover: "init",
+                    active: true
+                });
                 console.log(categories)
                 dispatch(Actions.fetchTwoColumnsPageSuccess(json.twoColumnsData));
+                dispatch(Actions.setCategoriesTwoColumnsPage(categories));
                 dispatch(Actions.loadMoreTwoColumnsPageSuccess());
                 dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));
                 // return json;

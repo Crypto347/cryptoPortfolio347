@@ -63,7 +63,6 @@
     }
 }
 
-
 .h15-white-poppins-animated {
     font-size: 15px;
     color: white;
@@ -93,6 +92,35 @@
     animation: h15WhiteNobelHoverOff .5s linear;
 }
 
+.h15-black-poppins-animated {
+    font-size: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.h15-black-poppins-nobel-hover-on {
+    font-size: 15px;
+    color: rgb(155, 155, 155);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    -webkit-animation: h15BlackNobelHoverOn .5s linear;
+    -moz-animation: h15BlackNobelHoverOn .5s linear;
+    -o-animation: h15BlackNobelHoverOn .5s linear;
+    animation: h15BlackNobelHoverOn .5s linear;
+}
+
+.h15-black-poppins-nobel-hover-off {
+    font-size: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    -webkit-animation: h15BlackNobelHoverOff .5s linear;
+    -moz-animation: h15BlackNobelHoverOff .5s linear;
+    -o-animation: h15BlackNobelHoverOff .5s linear;
+    animation: h15BlackNobelHoverOff .5s linear;
+}
+
 // .h15-pink-grey-yanone-suva {
 //     font-size: 14px;
 //     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -120,6 +148,40 @@
 @keyframes appearPictureBoardHeader {
     from{color: rgb(155, 155, 155);}
     to {color: white;}
+}
+
+@-webkit-keyframes h15BlackNobelHoverOn {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+@-moz-keyframes h15BlackNobelHoverOn {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+@-o-keyframes h15BlackNobelHoverOn {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+@keyframes h15BlackNobelHoverOn {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+
+@-webkit-keyframes h15BlackNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+@-moz-keyframes h15BlackNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+@-o-keyframes h15BlackNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+@keyframes h15BlackNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
 }
 
 @-webkit-keyframes h15NobelNeroHoverOn {
