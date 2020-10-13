@@ -124,7 +124,7 @@ export const StoneWallPage = (props) => {
             resizeRef.current();
         }
  
-        setImagesState("onInit");
+        setImagesState();
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('transitionend', smooth);
@@ -199,7 +199,7 @@ export const StoneWallPage = (props) => {
     }
     
     const handleResize = (e) => {
-        setImagesState("onResize");
+        setImagesState();
     }
 
     const handleOnWheel = (e) => {
@@ -230,7 +230,7 @@ export const StoneWallPage = (props) => {
         return e.deltaY < 0;
     }
 
-    const setImagesState = (opt) => {
+    const setImagesState = () => {
         if(size.width > 1200){
             props.updateItemsStyleValuesStoneWallPage("img1",{
                 width: 346.66,

@@ -119,7 +119,7 @@ export const TwoColumnsPage = (props) => {
             resizeRef.current();
         }
 
-        setImagesState("onInit");
+        setImagesState();
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
@@ -318,10 +318,10 @@ export const TwoColumnsPage = (props) => {
     }
 
     const handleResize = (e) => {
-        setImagesState("onResize");
+        setImagesState();
     }
 
-    const setImagesState = (opt) => {
+    const setImagesState = (opt, elementToUpdate) => {
         if(size.width > 945){
             props.updateItemsStyleValuesTwoColumnsPage("img1",{
                 width: 50,
@@ -541,6 +541,9 @@ export const TwoColumnsPage = (props) => {
                 // translateY: -346.66,
                 // transition: 0
             });
+        }
+        if(opt === "categoryFromHeaderOnClick"){
+console.log(elementToUpdate)
         }
     }
 
@@ -780,6 +783,16 @@ export const TwoColumnsPage = (props) => {
         }
     }
 
+    const categoryFromHeanderOnClickHandler = (key) => {
+        props.twoColumnsPage.items.map(el => {
+            el.categories.map(category => {
+                if(category.key === key){
+                    setImagesState("categoryFromHeaderOnClick", el.id);
+                }
+            })
+        })
+    }
+
     const renderTwoColumnsPageData = () => {
         return(
             <>
@@ -790,6 +803,7 @@ export const TwoColumnsPage = (props) => {
                             className="two-columns-page-category-from-header"
                             onMouseEnter={() => handleMouseEnter("categoryFromHeader", el.id)} 
                             onMouseLeave={() => handleMouseLeave("categoryFromHeader", el.id)}
+                            onClick={() => categoryFromHeanderOnClickHandler(el.key)}
                         >
                             <H15 className={renderClassName("categoryFromHeader", el.isHover, el.active)}>{el.label}</H15>
                         </div>
