@@ -68,3 +68,10 @@ export function updateItemsStyleValuesTwoColumnsPage(image, obj) {
         obj: obj
     };
 };
+
+export function setActivityOfTwoColumnsPageCategoriesFromHeader(key) {
+    return { 
+        type: actionTypes.SET_ACTIVITY_OF_TWO_COLUMNS_PAGE_CATEGORIES_FROM_HEADER,
+        key: key
+    };
+};

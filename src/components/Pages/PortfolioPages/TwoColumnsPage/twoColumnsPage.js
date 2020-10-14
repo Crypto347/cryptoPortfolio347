@@ -542,8 +542,153 @@ export const TwoColumnsPage = (props) => {
                 // transition: 0
             });
         }
-        if(opt === "categoryFromHeaderOnClick"){
-console.log(elementToUpdate)
+        if(opt === "categoryFromHeaderOnClick"){           
+            switch(elementToUpdate){
+                case '1':
+                    props.updateItemsStyleValuesTwoColumnsPage("img1",{
+                        width: 100,
+                        // translateX: 0,
+                        // translateY: 0,
+                        transition: 0
+                    });
+                    return;
+                case '2':
+                    props.updateItemsStyleValuesTwoColumnsPage("img2",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '3':
+                    props.updateItemsStyleValuesTwoColumnsPage("img3",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '4':
+                    props.updateItemsStyleValuesTwoColumnsPage("img4",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '5':
+                    props.updateItemsStyleValuesTwoColumnsPage("img5",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '6':
+                    props.updateItemsStyleValuesTwoColumnsPage("img6",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '7':
+                    props.updateItemsStyleValuesTwoColumnsPage("img7",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '8':
+                    props.updateItemsStyleValuesTwoColumnsPage("img8",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '9':
+                    props.updateItemsStyleValuesTwoColumnsPage("img9",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '10':
+                    props.updateItemsStyleValuesTwoColumnsPage("img10",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '11':
+                    props.updateItemsStyleValuesTwoColumnsPage("img11",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '12':
+                    props.updateItemsStyleValuesTwoColumnsPage("img12",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '13':
+                    props.updateItemsStyleValuesTwoColumnsPage("img13",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '14':
+                    props.updateItemsStyleValuesTwoColumnsPage("img14",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '15':
+                    props.updateItemsStyleValuesTwoColumnsPage("img15",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '16':
+                    props.updateItemsStyleValuesTwoColumnsPage("img16",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '17':
+                    props.updateItemsStyleValuesTwoColumnsPage("img17",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+                case '18':
+                    props.updateItemsStyleValuesTwoColumnsPage("img18",{
+                        width: 100,
+                        // translateX: 376.66,
+                        // translateY: -346.66,
+                        transition: 0
+                    });
+                    return;
+            }
         }
     }
 
@@ -784,6 +929,7 @@ console.log(elementToUpdate)
     }
 
     const categoryFromHeanderOnClickHandler = (key) => {
+        props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         props.twoColumnsPage.items.map(el => {
             el.categories.map(category => {
                 if(category.key === key){
@@ -938,6 +1084,7 @@ export default connect(
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
+            setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
         };
     }
 )(TwoColumnsPage);

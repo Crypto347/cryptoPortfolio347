@@ -328,6 +328,24 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
     };
 }
 
+
+const setActivityOfTwoColumnsPageCategoriesFromHeader = (state, action) => {
+    let updatedCategories = [...state.categories];
+    updatedCategories = updatedCategories.map(el => {
+        return {
+            ...el,
+            active: false
+        }
+    })
+    let categoryObj = {...updatedCategories.find(item => item.key === action.key), active: true};
+    let categoryIndex = updatedCategories.findIndex(item => item.key === action.key);
+    updatedCategories.splice(categoryIndex, 1, categoryObj);
+    return {
+        ...state,
+        categories: updatedCategories
+    };
+}
+ 
 const twoColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TWO_COLUMNS_PAGE_BEGIN:
@@ -350,6 +368,8 @@ const twoColumnsPageReducer = (state = initialState, action) => {
             return setTwoColumnsPageIsHoveringCategoryFromHeader(state, action);
         case actionTypes.UPDATED_ITEMS_STYLE_VALUES_TWO_COLUMNS_PAGE:
             return updateItemsStyleValuesTwoColumnsPage(state, action);
+        case actionTypes.SET_ACTIVITY_OF_TWO_COLUMNS_PAGE_CATEGORIES_FROM_HEADER:
+            return setActivityOfTwoColumnsPageCategoriesFromHeader(state, action);
         default: 
             return state;
     }
