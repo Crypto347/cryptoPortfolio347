@@ -611,7 +611,7 @@ export function fetchFiveColumnsWidePage() {
     };
 }
 
-export function fetchTwoColumnsPage(step) {
+export function fetchTwoColumnsPage(step, category) {
     return dispatch => {
         if(step === 1){
             dispatch(Actions.fetchTwoColumnsPageBegin());
@@ -631,7 +631,6 @@ export function fetchTwoColumnsPage(step) {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log("JSON",json);
                 let categories = [];
                 categories = json.twoColumnsData
                     .map(el => {
@@ -658,7 +657,21 @@ export function fetchTwoColumnsPage(step) {
                     isHover: "init",
                     active: true
                 });
-                console.log(categories)
+                if(category){
+                    categories = categories.map(el => {
+                        if(el.key === category){
+                            return {
+                                ...el,
+                                active: true
+                            }
+                        }else{
+                            return {
+                                ...el,
+                                active: false
+                            }
+                        }
+                    })
+                }
                 dispatch(Actions.fetchTwoColumnsPageSuccess(json.twoColumnsData));
                 dispatch(Actions.setCategoriesTwoColumnsPage(categories));
                 dispatch(Actions.loadMoreTwoColumnsPageSuccess());

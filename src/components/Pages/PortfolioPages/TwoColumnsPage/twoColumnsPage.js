@@ -91,6 +91,7 @@ export const TwoColumnsPage = (props) => {
     const transitionRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [loadMoreStep, setLoadMoreStep] = useState(1);
+    const [categoryFromHeader, setCategoryFromHeader] = useState("showAll");
     
     /**
     * Methods
@@ -324,7 +325,6 @@ export const TwoColumnsPage = (props) => {
     }
 
     const setImagesState = (opt, elementToUpdate, action) => {
-        console.log(opt)
         if(opt === "categoryFromHeaderOnClick"){
             switch(elementToUpdate){
                 case 1:
@@ -865,7 +865,7 @@ export const TwoColumnsPage = (props) => {
     }
 
     const loadMoreOnClick = () => {
-        props.fetchTwoColumnsPage(loadMoreStep);
+        props.fetchTwoColumnsPage(loadMoreStep, categoryFromHeader);
         setLoadMoreStep(loadMoreStep + 1);
     }
 
@@ -1054,6 +1054,7 @@ export const TwoColumnsPage = (props) => {
 
     const categoryFromHeanderOnClickHandler = (key) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
+        setCategoryFromHeader(key)
         if(key !== "showAll"){
             props.twoColumnsPage.items.map(el => {
                 el.categories.map(category => {
