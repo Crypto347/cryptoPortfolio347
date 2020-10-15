@@ -611,7 +611,7 @@ export function fetchFiveColumnsWidePage() {
     };
 }
 
-export function fetchTwoColumnsPage(step, category) {
+export function fetchTwoColumnsPage(step, category, windowWidthSize) {
     return dispatch => {
         if(step === 1){
             dispatch(Actions.fetchTwoColumnsPageBegin());
@@ -676,14 +676,45 @@ export function fetchTwoColumnsPage(step, category) {
                 dispatch(Actions.setCategoriesTwoColumnsPage(categories));
                 dispatch(Actions.loadMoreTwoColumnsPageSuccess());
                 dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));
+                if(step > 1 && category !== "showAll"){
+                    let addedElemntsArray = json.twoColumnsData.slice(json.twoColumnsData.length-4, json.twoColumnsData.length);
+                    dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
+                        width: windowWidthSize > 945 ? 50 : 100,
+                        scale: addedElemntsArray[0].categories.some(el => el.key === category) ? 1 : 0,
+                        // translateX: 0,
+                        // translateY: 0,
+                        transition: 0.45
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
+                        width: windowWidthSize > 945 ? 50 : 100,
+                        scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
+                        // translateX: 0,
+                        // translateY: 0,
+                        transition: 0.45
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
+                        width: windowWidthSize > 945 ? 50 : 100,
+                        scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
+                        // translateX: 0,
+                        // translateY: 0,
+                        transition: 0.45
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
+                        width: windowWidthSize > 945 ? 50 : 100,
+                        scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
+                        // translateX: 0,
+                        // translateY: 0,
+                        transition: 0.45
+                    }));
+                }
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
                 if(step === 1){
-                    dispatch(Actions.fetchTwoColumnsPageFailur(error))
+                    dispatch(Actions.fetchTwoColumnsPageFailur(error));
                 }else{
-                    dispatch(Actions.loadMoreTwoColumnsPageFailur(error))
+                    dispatch(Actions.loadMoreTwoColumnsPageFailur(error));
                 }
             });
     };

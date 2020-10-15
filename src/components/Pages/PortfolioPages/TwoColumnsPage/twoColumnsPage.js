@@ -865,7 +865,7 @@ export const TwoColumnsPage = (props) => {
     }
 
     const loadMoreOnClick = () => {
-        props.fetchTwoColumnsPage(loadMoreStep, categoryFromHeader);
+        props.fetchTwoColumnsPage(loadMoreStep, categoryFromHeader, size.width);
         setLoadMoreStep(loadMoreStep + 1);
     }
 
@@ -1059,9 +1059,9 @@ export const TwoColumnsPage = (props) => {
             props.twoColumnsPage.items.map(el => {
                 el.categories.map(category => {
                     if(category.key === key){
-                        setImagesState("categoryFromHeaderOnClick", el.id, 'disappear');
-                    }else{
                         setImagesState("categoryFromHeaderOnClick", el.id, 'appear');
+                    }else{
+                        setImagesState("categoryFromHeaderOnClick", el.id, 'disappear');
                     }
                 })
             })
