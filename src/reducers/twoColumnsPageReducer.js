@@ -289,7 +289,7 @@ let updatedItemsStyleValues = {};
             translateX: 0,
             translateY: 0,
             transition: 0.45,
-            rendered: i === 0 ? true : false
+            rendered: true
         }
         Object.assign(updatedItemsStyleValues, {[`img${i + 1}`]: setObj});
     })
