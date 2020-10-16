@@ -133,7 +133,7 @@ export const TwoColumnsPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.twoColumnsPage.itemsStyleValues.img1?.rendered]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -233,15 +233,15 @@ export const TwoColumnsPage = (props) => {
         //     });
         // }
     }, [
-        props.twoColumnsPage.itemsStyleValues.img1.transition,props.twoColumnsPage.itemsStyleValues.img2.transition,
-        props.twoColumnsPage.itemsStyleValues.img3.transition,props.twoColumnsPage.itemsStyleValues.img4.transition,
-        props.twoColumnsPage.itemsStyleValues.img5.transition,props.twoColumnsPage.itemsStyleValues.img6.transition,
-        props.twoColumnsPage.itemsStyleValues.img7.transition,props.twoColumnsPage.itemsStyleValues.img8.transition,
-        props.twoColumnsPage.itemsStyleValues.img9.transition,props.twoColumnsPage.itemsStyleValues.img10.transition,
-        props.twoColumnsPage.itemsStyleValues.img11.transition,props.twoColumnsPage.itemsStyleValues.img12.transition,
-        props.twoColumnsPage.itemsStyleValues.img13.transition,props.twoColumnsPage.itemsStyleValues.img14.transition,
-        props.twoColumnsPage.itemsStyleValues.img15.transition,props.twoColumnsPage.itemsStyleValues.img16.transition,
-        props.twoColumnsPage.itemsStyleValues.img17.transition,props.twoColumnsPage.itemsStyleValues.img18.transition
+        props.twoColumnsPage.itemsStyleValues.img1?.transition,props.twoColumnsPage.itemsStyleValues.img2?.transition,
+        props.twoColumnsPage.itemsStyleValues.img3?.transition,props.twoColumnsPage.itemsStyleValues.img4?.transition,
+        props.twoColumnsPage.itemsStyleValues.img5?.transition,props.twoColumnsPage.itemsStyleValues.img6?.transition,
+        props.twoColumnsPage.itemsStyleValues.img7?.transition,props.twoColumnsPage.itemsStyleValues.img8?.transition,
+        props.twoColumnsPage.itemsStyleValues.img9?.transition,props.twoColumnsPage.itemsStyleValues.img10?.transition,
+        props.twoColumnsPage.itemsStyleValues.img11?.transition,props.twoColumnsPage.itemsStyleValues.img12?.transition,
+        props.twoColumnsPage.itemsStyleValues.img13?.transition,props.twoColumnsPage.itemsStyleValues.img14?.transition,
+        props.twoColumnsPage.itemsStyleValues.img15?.transition,props.twoColumnsPage.itemsStyleValues.img16?.transition,
+        props.twoColumnsPage.itemsStyleValues.img17?.transition,props.twoColumnsPage.itemsStyleValues.img18?.transition
     ]);
 
 
@@ -330,473 +330,565 @@ export const TwoColumnsPage = (props) => {
                 case 1:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 2:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 3:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 4:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 5:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 6:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 7:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 8:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 9:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 10:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 11:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 12:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 13:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 14:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 15:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 16:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 17:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
                 case 18:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 0,
                             // translateX: 376.66,
                             // translateY: -346.66,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                            width: size.width > 945 ? 50 : 100,
+                            width: size.width > 945 ? 635 : 400,
                             scale: 1,
                             // translateX: 0,
                             // translateY: 0,
-                            transition: 0.45
+                            transition: 0.45,
+                            rendered: true
                         });
                     }
                     break;
             }
         }else{
-            props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img1.scale,
-                // translateX: 0,
-                // translateY: 0,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img2.scale,
-                // translateX: 0,
-                // translateY: 30,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img3.scale,
-                // translateX: 376.66,
-                // translateY: -346.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img4.scale,
-                // translateX: 376.66,
-                // translateY: 406.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img5.scale,
-                // translateX: 752.66,
-                // translateY: 406.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img6.scale,
-                // translateX: 0,
-                // translateY: 0,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img7.scale,
-                // translateX: 0,
-                // translateY: 30,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img8.scale,
-                // translateX: 376.66,
-                // translateY: -346.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img9.scale,
-                // translateX: 376.66,
-                // translateY: 406.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img10.scale,
-                // translateX: 752.66,
-                // translateY: 406.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img11.scale,
-                // translateX: 0,
-                // translateY: 0,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img12.scale,
-                // translateX: 0,
-                // translateY: 30,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img13.scale,
-                // translateX: 376.66,
-                // translateY: -346.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img14.scale,
-                // translateX: 376.66,
-                // translateY: 406.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img15.scale,
-                // translateX: 752.66,
-                // translateY: 406.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img16.scale,
-                // translateX: 0,
-                // translateY: 0,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img17.scale,
-                // translateX: 0,
-                // translateY: 30,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
-            props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                width: size.width > 945 ? 50 : 100,
-                scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img18.scale,
-                // translateX: 376.66,
-                // translateY: -346.66,
-                transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
-            });
+            if(props.twoColumnsPage.itemsStyleValues.img1?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img1",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img1.scale,
+                    // translateX: 0,
+                    // translateY: 0,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+           
+            if(props.twoColumnsPage.itemsStyleValues.img?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img2",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img2.scale,
+                    // translateX: 0,
+                    // translateY: 30,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+
+            if(props.twoColumnsPage.itemsStyleValues.img3?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img3",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img3.scale,
+                    // translateX: 376.66,
+                    // translateY: -346.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img4?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img4",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img4.scale,
+                    // translateX: 376.66,
+                    // translateY: 406.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img5?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img5",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img5.scale,
+                    // translateX: 752.66,
+                    // translateY: 406.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img6?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img6",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img6.scale,
+                    // translateX: 0,
+                    // translateY: 0,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img7?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img7",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img7.scale,
+                    // translateX: 0,
+                    // translateY: 30,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img8?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img8",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img8.scale,
+                    // translateX: 376.66,
+                    // translateY: -346.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img9?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img9",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img9.scale,
+                    // translateX: 376.66,
+                    // translateY: 406.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img10?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img10",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img10.scale,
+                    // translateX: 752.66,
+                    // translateY: 406.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img11?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img11",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img11.scale,
+                    // translateX: 0,
+                    // translateY: 0,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img12?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img12",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img12.scale,
+                    // translateX: 0,
+                    // translateY: 30,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img13?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img13",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img13.scale,
+                    // translateX: 376.66,
+                    // translateY: -346.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img14?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img14",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img14.scale,
+                    // translateX: 376.66,
+                    // translateY: 406.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img15?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img15",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img15.scale,
+                    // translateX: 752.66,
+                    // translateY: 406.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img16?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img16",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img16.scale,
+                    // translateX: 0,
+                    // translateY: 0,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img17?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img17",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img17.scale,
+                    // translateX: 0,
+                    // translateY: 30,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
+            if(props.twoColumnsPage.itemsStyleValues.img18?.rendered){
+                props.updateItemsStyleValuesTwoColumnsPage("img18",{
+                    width: size.width > 945 ? 535 : 400,
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img18.scale,
+                    // translateX: 376.66,
+                    // translateY: -346.66,
+                    transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    rendered: true
+                });
+            }
         }
     }
 
@@ -903,99 +995,111 @@ export const TwoColumnsPage = (props) => {
         switch(id){
             case 1:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img1.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img1?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img1.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img1.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img1?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img1?.transition}s ease-out`,
                 };
             case 2:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img2.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img2?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img2.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img2?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
                 };
             case 3:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img3.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img3?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img3.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img3.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img3?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
                 };
             case 4:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img4.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img4?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img4.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img4.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img4?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
                 };
             case 5:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img5.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img5?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img5.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img5.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img5?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
                 };
             case 6:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img6.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img6?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img6.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img6.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img6?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
                 };
             case 7:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img7.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img7?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img7.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img7.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img7?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
                 };
             case 8:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img8.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img8?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img8.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img8.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img8?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
                 };
             case 9:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img9.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img9?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img9.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img9.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img9?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
                 };
             case 10:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img10.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img10?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img10.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img10.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img10?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
                 };
             case 11:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img11.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img11?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img11.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img11.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img11?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
                 };
             case 12:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img12.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img12?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img12.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img12?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
                     // top: "0px",
                     // left: `${props.twoColumnsPage.itemsStyleValues.img1.width + 40}`,
                     // transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
@@ -1003,51 +1107,57 @@ export const TwoColumnsPage = (props) => {
                 };
             case 13:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img13.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img13?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img13.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img13.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img13?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
                 };
             case 14:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img14.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img14?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img14.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img14.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img14?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
                 };
             case 15:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img15.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img15?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img15.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img15.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img15?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
                 };
             case 16:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img16.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img16?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img16.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img16.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img16?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
                 };
             case 17:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img17.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img17?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img17.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img17.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img17?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
                 };
             case 18:
                 return {
-                    width: `calc(${props.twoColumnsPage.itemsStyleValues.img18.width}% - 30px)`,
+                    position: "absolute",
+                    width: `${props.twoColumnsPage.itemsStyleValues.img18?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img18.scale})`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img18.transition}s ease-out`,
+                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img18?.scale})`,
+                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
                 };
         }
     }
@@ -1072,10 +1182,59 @@ export const TwoColumnsPage = (props) => {
        
     }
 
+    const renderStoneWallItemsStyleWidth = () => {
+        if(size.width > 945){
+            return 1100;
+        }
+        // if(size.width <= 1200 && size.width > 1040){
+        //     return 949.99;
+        // }
+        // if(size.width <= 1040 && size.width > 840){
+        //     return 766;
+        // }
+        // if(size.width <= 840 && size.width > 680){
+        //     return 600;
+        // }
+        // if(size.width <= 680 && size.width > 500){
+        //     return 420;
+        // }
+        // if(size.width <= 500){
+        //     return 300;
+        // }
+    }
+
+    const renderStoneWallItemsStyleHeight = () => {
+        let numOfAppearElements = props.twoColumnsPage.items.length
+        console.log("length", numOfAppearElements)
+        if(size.width > 945){
+            return numOfAppearElements/2 * (size.width > 945 ? 535 : 400) + numOfAppearElements/2 * 30;
+        }
+        // if(size.width <= 1200 && size.width > 1040){
+        //     return 1019.99;
+        // }
+        // if(size.width <= 1040 && size.width > 840){
+        //     return 2034;
+        // }
+        // if(size.width <= 840 && size.width > 680){
+        //     return 1615;
+        // }
+        // if(size.width <= 680 && size.width > 500){
+        //     return 2738.55;
+        // }
+        // if(size.width <= 500){
+        //     return 2010.39;
+        // }
+    }
+
     const renderTwoColumnsPageData = () => {
         return(
-            <>
-                <div className="two-columns-page-categories-from-header">{props.twoColumnsPage.categories.map((el, i) => {
+            <div className="two-columns-page-data-wrapper">
+                <div 
+                    className="two-columns-page-categories-from-header"
+                    style={{
+                        width: `${renderStoneWallItemsStyleWidth()}px`
+                    }}
+                >{props.twoColumnsPage.categories.map((el, i) => {
                     return(
                         <div 
                             key={i}
@@ -1088,9 +1247,14 @@ export const TwoColumnsPage = (props) => {
                         </div>
                     )
                 })}
-
                 </div>
-                <div className="two-columns-page-items">{props.twoColumnsPage.items.map((el, i) => {
+                <div  
+                    style={{
+                        position: "relative",
+                        width: `${renderStoneWallItemsStyleWidth()}px`,
+                        height: `${renderStoneWallItemsStyleHeight()}px`
+                    }}
+                >{props.twoColumnsPage.items.map((el, i) => {
                     return(
                         <div 
                             key={i} 
@@ -1107,9 +1271,8 @@ export const TwoColumnsPage = (props) => {
                         </div>
                     )
                 })}
-                {renderLoadMoreButton()}
                 </div>
-            </>
+            </div>
         )
     }
 
@@ -1165,6 +1328,7 @@ export const TwoColumnsPage = (props) => {
                     </div>
                     <div className="grey-line"/>
                     {renderTwoColumnsPageData()}
+                    {renderLoadMoreButton()}
                 </div>
             )
         }

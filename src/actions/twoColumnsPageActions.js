@@ -75,3 +75,10 @@ export function setActivityOfTwoColumnsPageCategoriesFromHeader(key) {
         key: key
     };
 };
+
+export function initItemsStylesStateForTwoColumnsPage(arr) {
+    return { 
+        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_TWO_COLUMNS_PAGE,
+        arr: arr
+    };
+};

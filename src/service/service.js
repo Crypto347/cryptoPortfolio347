@@ -672,7 +672,9 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize) {
                         }
                     })
                 }
+                let itemsState = Utility.getArrayOfEmptyVal(json.twoColumnsData.length)
                 dispatch(Actions.fetchTwoColumnsPageSuccess(json.twoColumnsData));
+                dispatch(Actions.initItemsStylesStateForTwoColumnsPage(itemsState));
                 dispatch(Actions.setCategoriesTwoColumnsPage(categories));
                 dispatch(Actions.loadMoreTwoColumnsPageSuccess());
                 dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));

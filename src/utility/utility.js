@@ -112,7 +112,7 @@ export const getCurrentDateAndTime = () => {
             break;
     }
     return `${month} ${date.getDate()}, ${date.getFullYear()} AT ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
-} 
+}
 
 // export const filterObject = (obj, predicate) => 
 //     Object.keys(obj)
