@@ -118,6 +118,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img1'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img1'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img1'].transition = action.obj.transition;
+                updatedItemsStyleValues['img1'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img1'].rendered = action.obj.rendered;
             }
             break;
@@ -128,6 +129,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img2'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img2'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img2'].transition = action.obj.transition;
+                updatedItemsStyleValues['img2'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img2'].rendered = action.obj.rendered;
             }
             break;
@@ -138,6 +140,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img3'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img3'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img3'].transition = action.obj.transition;
+                updatedItemsStyleValues['img3'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img3'].rendered = action.obj.rendered;
             }
             break;
@@ -148,6 +151,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img4'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img4'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img4'].transition = action.obj.transition;
+                updatedItemsStyleValues['img4'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img4'].rendered = action.obj.rendered;
             }
             break;
@@ -158,6 +162,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img5'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img5'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img5'].transition = action.obj.transition;
+                updatedItemsStyleValues['img5'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img5'].rendered = action.obj.rendered;
             }
             break;
@@ -168,6 +173,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img6'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img6'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img6'].transition = action.obj.transition;
+                updatedItemsStyleValues['img6'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img6'].rendered = action.obj.rendered;
             }
             break;
@@ -178,6 +184,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img7'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img7'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img7'].transition = action.obj.transition;
+                updatedItemsStyleValues['img7'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img7'].rendered = action.obj.rendered;
             }
             break;
@@ -188,6 +195,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img8'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img8'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img8'].transition = action.obj.transition;
+                updatedItemsStyleValues['img8'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img8'].rendered = action.obj.rendered;
             }
             break;
@@ -198,6 +206,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img9'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img9'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img9'].transition = action.obj.transition;
+                updatedItemsStyleValues['img9'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img9'].rendered = action.obj.rendered;
             }
             break;
@@ -208,6 +217,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img10'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img10'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img10'].transition = action.obj.transition;
+                updatedItemsStyleValues['img10'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img10'].rendered = action.obj.rendered;
             }
             break;
@@ -218,6 +228,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img11'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img11'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img11'].transition = action.obj.transition;
+                updatedItemsStyleValues['img11'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img11'].rendered = action.obj.rendered;
             }
             break;
@@ -228,6 +239,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img12'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img12'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img12'].transition = action.obj.transition;
+                updatedItemsStyleValues['img12'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img12'].rendered = action.obj.rendered;
             }
             break;
@@ -238,6 +250,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img13'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img13'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img13'].transition = action.obj.transition;
+                updatedItemsStyleValues['img13'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img13'].rendered = action.obj.rendered;
             }
             break;
@@ -248,6 +261,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img14'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img14'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img14'].transition = action.obj.transition;
+                updatedItemsStyleValues['img14'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img14'].rendered = action.obj.rendered;
             }
             break;
@@ -258,6 +272,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img15'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img15'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img15'].transition = action.obj.transition;
+                updatedItemsStyleValues['img15'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img15'].rendered = action.obj.rendered;
             }
             break;
@@ -268,6 +283,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img16'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img16'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img16'].transition = action.obj.transition;
+                updatedItemsStyleValues['img16'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img16'].rendered = action.obj.rendered;
             }
             break;
@@ -278,6 +294,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img17'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img17'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img17'].transition = action.obj.transition;
+                updatedItemsStyleValues['img17'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img17'].rendered = action.obj.rendered;
             }
             break;
@@ -288,6 +305,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img18'].translateX = action.obj.translateX;
                 updatedItemsStyleValues['img18'].translateY = action.obj.translateY;
                 updatedItemsStyleValues['img18'].transition = action.obj.transition;
+                updatedItemsStyleValues['img18'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img18'].rendered = action.obj.rendered;
             }
             break;
@@ -325,6 +343,7 @@ const initItemsStylesStateForTwoColumnsPage = (state, action) => {
             translateX: 0,
             translateY: 0,
             transition: 0.45,
+            zIndex: 0,
             rendered: true
         }
         Object.assign(updatedItemsStyleValues, {[`img${i + 1}`]: setObj});
@@ -346,6 +365,7 @@ const addMoreItemsStylesStateForTwoColumnsPage = (state, action) => {
             translateX: 0,
             translateY: 0,
             transition: 0.45,
+            zIndex: 0,
             rendered: true
         }
         Object.assign(moreItemsStyleValues, {[`img${Object.keys(state.itemsStyleValues).length + i + 1}`]: setObj});

@@ -68,6 +68,8 @@ import {
     EH110
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
 * Hooks
 */
@@ -352,6 +354,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -361,6 +364,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -373,6 +377,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -382,6 +387,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -394,6 +400,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -403,6 +410,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -415,6 +423,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -424,6 +433,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -436,6 +446,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -445,6 +456,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -457,6 +469,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -466,6 +479,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -478,6 +492,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -487,6 +502,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -499,6 +515,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -508,6 +525,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -520,6 +538,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -529,6 +548,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -541,6 +561,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -550,6 +571,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -562,6 +584,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -571,6 +594,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -583,6 +607,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -592,6 +617,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -604,6 +630,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -613,6 +640,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -625,6 +653,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -634,6 +663,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -646,6 +676,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -655,6 +686,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -667,6 +699,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -676,6 +709,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -688,6 +722,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -697,6 +732,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -709,6 +745,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 376.66,
                             translateY: -346.66,
                             transition: 0.45,
+                            zIndex: 10,
                             rendered: true
                         });
                     }else if(action === "appear"){
@@ -718,6 +755,7 @@ export const TwoColumnsPage = (props) => {
                             translateX: 0,
                             translateY: 0,
                             transition: 0.45,
+                            zIndex: 20,
                             rendered: true
                         });
                     }
@@ -731,6 +769,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 0,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -742,6 +781,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 0,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -753,6 +793,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 565,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -763,6 +804,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 565,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -773,6 +815,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 1130,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -783,6 +826,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 1130,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -793,6 +837,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 1695,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -803,6 +848,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 1695,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -813,6 +859,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 2260,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -823,6 +870,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 2260,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -833,6 +881,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 2825,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -843,6 +892,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 2825,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -853,6 +903,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 3390,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -863,6 +914,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 3390,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -873,6 +925,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 3955,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -883,6 +936,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 3955,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -893,6 +947,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 0,
                     translateY: 4520,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -903,6 +958,7 @@ export const TwoColumnsPage = (props) => {
                     translateX: 565,
                     translateY: 4520,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
+                    zIndex: 0,
                     rendered: true
                 });
             }
@@ -1019,6 +1075,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img1?.scale}) 
                                 translate(${props.twoColumnsPage.itemsStyleValues.img1?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img1?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img1?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img1?.zIndex}`
                 };
             case 2:
                 return {
@@ -1029,6 +1086,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img2?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img2?.zIndex}`
                 };
             case 3:
                 return {
@@ -1039,6 +1097,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img3?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img3?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img3?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img3?.zIndex}`
                 };
             case 4:
                 return {
@@ -1049,6 +1108,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img4?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img4?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img4?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img4?.zIndex}`
                 };
             case 5:
                 return {
@@ -1059,6 +1119,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img5?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img5?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img5?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img5?.zIndex}`
                 };
             case 6:
                 return {
@@ -1069,6 +1130,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img6?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img6?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img6?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img6?.zIndex}`
                 };
             case 7:
                 return {
@@ -1079,6 +1141,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img7?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img7?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img7?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img7?.zIndex}`
                 };
             case 8:
                 return {
@@ -1089,6 +1152,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img8?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img8?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img8?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img8?.zIndex}`
                 };
             case 9:
                 return {
@@ -1099,6 +1163,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img9?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img9?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img9?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img9?.zIndex}`
                 };
             case 10:
                 return {
@@ -1109,6 +1174,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img10?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img10?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img10?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img10?.zIndex}`
                 };
             case 11:
                 return {
@@ -1119,6 +1185,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img11?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img11?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img11?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img11?.zIndex}`
                 };
             case 12:
                 return {
@@ -1129,6 +1196,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img12?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img12?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img12?.zIndex}`
                     // top: "0px",
                     // left: `${props.twoColumnsPage.itemsStyleValues.img1.width + 40}`,
                     // transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
@@ -1143,6 +1211,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img13?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img13?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img13?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img13?.zIndex}`
                 };
             case 14:
                 return {
@@ -1153,6 +1222,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img14?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img14?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img14?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img14?.zIndex}`
                 };
             case 15:
                 return {
@@ -1163,6 +1233,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img15?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img15?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img15?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img15?.zIndex}`
                 };
             case 16:
                 return {
@@ -1173,6 +1244,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img16?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img16?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img16?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img16?.zIndex}`
                 };
             case 17:
                 return {
@@ -1183,6 +1255,7 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img17?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img17?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img17?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img17?.zIndex}`
                 };
             case 18:
                 return {
@@ -1193,13 +1266,15 @@ export const TwoColumnsPage = (props) => {
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img18?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img18?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img18?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img18?.zIndex}`
                 };
         }
     }
 
     const categoryFromHeanderOnClickHandler = (key) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
-        setCategoryFromHeader(key)
+        setCategoryFromHeader(key);
+        renderStoneWallItemsStyleHeight("onCategoryFromHeaderClick");
         if(key !== "showAll"){
             props.twoColumnsPage.items.map(el => {
                 el.categories.map(category => {
@@ -1238,11 +1313,42 @@ export const TwoColumnsPage = (props) => {
         // }
     }
 
-    const renderStoneWallItemsStyleHeight = () => {
-        let numOfAppearElements = props.twoColumnsPage.items.length;
+    const renderStoneWallItemsStyleHeight = (opt) => {
+        let numOfAppearElements;
+        
+        switch(opt){
+            case 'onInit':
+                numOfAppearElements = props.twoColumnsPage.items.length;
+                break;
+            case 'onCategoryFromHeaderClick':
+                let objToArray = [];
+                numOfAppearElements = props.twoColumnsPage.itemsStyleValues
+                objToArray = Utility.getArrayOfEmptyVal(Object.keys(props.twoColumnsPage.itemsStyleValues).length);
+                objToArray = objToArray.map((el,i) => {
+                    return {
+                        imageId: `img${i + 1}`,
+                        obj: {
+                            ...props.twoColumnsPage.itemsStyleValues[`img${i + 1}`]
+                        }
+                    }
+                })
+                objToArray = objToArray.map(el => {
+                    if(el.obj.scale === 1){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                })
+                numOfAppearElements = objToArray.filter(item => item === true).length
+                console.log(numOfAppearElements)
+                break;
+        }
+ 
         if(size.width > 1200){
             return numOfAppearElements/2 * (size.width > 1200 ? 535 : 400) + numOfAppearElements/2 * 30;
         }
+       
+       
         // if(size.width <= 1200 && size.width > 1040){
         //     return 1019.99;
         // }
@@ -1286,7 +1392,7 @@ export const TwoColumnsPage = (props) => {
                     style={{
                         position: "relative",
                         width: `${renderStoneWallItemsStyleWidth()}px`,
-                        height: `${renderStoneWallItemsStyleHeight()}px`
+                        height: `${renderStoneWallItemsStyleHeight("onInit")}px`
                     }}
                 >{props.twoColumnsPage.items.map((el, i) => {
                     return(
