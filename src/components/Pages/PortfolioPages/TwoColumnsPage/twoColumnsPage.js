@@ -349,8 +349,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -358,8 +358,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -370,8 +370,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -379,8 +379,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -391,8 +391,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -400,8 +400,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -412,8 +412,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -421,8 +421,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -433,8 +433,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -442,8 +442,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -454,8 +454,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -463,8 +463,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -475,8 +475,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -484,8 +484,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -496,8 +496,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -505,8 +505,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -517,8 +517,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -526,8 +526,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -538,8 +538,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -547,8 +547,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -559,8 +559,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -568,8 +568,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -580,8 +580,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -589,8 +589,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -601,8 +601,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -610,8 +610,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -622,8 +622,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -631,8 +631,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -643,8 +643,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -652,8 +652,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -664,8 +664,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -673,8 +673,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -685,8 +685,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -694,8 +694,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -706,8 +706,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            // translateX: 376.66,
-                            // translateY: -346.66,
+                            translateX: 376.66,
+                            translateY: -346.66,
                             transition: 0.45,
                             rendered: true
                         });
@@ -715,8 +715,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            // translateX: 0,
-                            // translateY: 0,
+                            translateX: 0,
+                            translateY: 0,
                             transition: 0.45,
                             rendered: true
                         });
@@ -770,8 +770,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img5",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img5.scale,
-                    // translateX: 752.66,
-                    // translateY: 406.66,
+                    translateX: 0,
+                    translateY: 1130,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -780,8 +780,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img6",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img6.scale,
-                    // translateX: 0,
-                    // translateY: 0,
+                    translateX: 565,
+                    translateY: 1130,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -790,8 +790,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img7",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img7.scale,
-                    // translateX: 0,
-                    // translateY: 30,
+                    translateX: 0,
+                    translateY: 1695,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -800,8 +800,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img8",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img8.scale,
-                    // translateX: 376.66,
-                    // translateY: -346.66,
+                    translateX: 565,
+                    translateY: 1695,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -810,8 +810,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img9",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img9.scale,
-                    // translateX: 376.66,
-                    // translateY: 406.66,
+                    translateX: 0,
+                    translateY: 2260,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -820,8 +820,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img10",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img10.scale,
-                    // translateX: 752.66,
-                    // translateY: 406.66,
+                    translateX: 565,
+                    translateY: 2260,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -830,8 +830,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img11",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img11.scale,
-                    // translateX: 0,
-                    // translateY: 0,
+                    translateX: 0,
+                    translateY: 2825,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -840,8 +840,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img12",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img12.scale,
-                    // translateX: 0,
-                    // translateY: 30,
+                    translateX: 565,
+                    translateY: 2825,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -850,8 +850,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img13",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img13.scale,
-                    // translateX: 376.66,
-                    // translateY: -346.66,
+                    translateX: 0,
+                    translateY: 3390,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -860,8 +860,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img14",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img14.scale,
-                    // translateX: 376.66,
-                    // translateY: 406.66,
+                    translateX: 565,
+                    translateY: 3390,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -870,8 +870,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img15",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img15.scale,
-                    // translateX: 752.66,
-                    // translateY: 406.66,
+                    translateX: 0,
+                    translateY: 3955,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -880,8 +880,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img16",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img16.scale,
-                    // translateX: 0,
-                    // translateY: 0,
+                    translateX: 565,
+                    translateY: 3955,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -890,8 +890,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img17",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img17.scale,
-                    // translateX: 0,
-                    // translateY: 30,
+                    translateX: 0,
+                    translateY: 4520,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
@@ -900,8 +900,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img18",{
                     width: size.width > 1200 ? 535 : 400,
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img18.scale,
-                    // translateX: 376.66,
-                    // translateY: -346.66,
+                    translateX: 565,
+                    translateY: 4520,
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     rendered: true
                 });
