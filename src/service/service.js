@@ -723,15 +723,15 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                         width: windowWidthSize > 1200 ? 535 : 400,
                         scale: 1,
                         translateX: 0,
-                        translateY: (numOfElelmentsInArray/2 + 30) * (windowWidthSize > 1200 ? 535 : 400),
+                        translateY: (numOfElelmentsInArray/2) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
                         transition: 0.45,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
                         width: windowWidthSize > 1200 ? 535 : 400,
                         scale: 1,
-                        translateX: 665,
-                        translateY: (numOfElelmentsInArray/2 + 30) * (windowWidthSize > 1200 ? 535 : 400),
+                        translateX: 565,
+                        translateY: (numOfElelmentsInArray/2) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
                         transition: 0.45,
                         rendered: true
                     }));
@@ -739,15 +739,15 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                         width: windowWidthSize > 1200 ? 535 : 400,
                         scale: 1,
                         translateX: 0,
-                        translateY: ((numOfElelmentsInArray + 1)/2 + 30) * (windowWidthSize > 1200 ? 535 : 400),
+                        translateY: ((numOfElelmentsInArray)/2 + 1) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
                         transition: 0.45,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
                         width: windowWidthSize > 1200 ? 535 : 400,
                         scale: 1,
-                        translateX: 665,
-                        translateY: ((numOfElelmentsInArray + 1)/2 + 30) * (windowWidthSize > 1200 ? 535 : 400),
+                        translateX: 565,
+                        translateY: ((numOfElelmentsInArray)/2 + 1) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
                         transition: 0.45,
                         rendered: true
                     }));
