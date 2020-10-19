@@ -82,3 +82,10 @@ export function initItemsStylesStateForTwoColumnsPage(arr) {
         arr: arr
     };
 };
+
+export function addMoreItemsStylesStateForTwoColumnsPage(arr) {
+    return { 
+        type: actionTypes.ADD_MORE_ITEMS_STYLES_STATE_FOR_TWO_COLUMNS_PAGE,
+        arr: arr
+    };
+};
