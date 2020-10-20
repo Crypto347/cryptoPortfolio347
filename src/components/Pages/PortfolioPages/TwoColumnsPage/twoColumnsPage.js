@@ -1274,6 +1274,7 @@ export const TwoColumnsPage = (props) => {
     const categoryFromHeanderOnClickHandler = (key) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
+        props.disappearenceAndAppearanceOfElementsDueToTheCategory("twoColumnsPage", key);
         renderStoneWallItemsStyleHeight("onCategoryFromHeaderClick");
         if(key !== "showAll"){
             props.twoColumnsPage.items.map(el => {
@@ -1315,38 +1316,28 @@ export const TwoColumnsPage = (props) => {
 
     const renderStoneWallItemsStyleHeight = (opt) => {
         let numOfAppearElements;
-        
-        switch(opt){
-            case 'onInit':
-                numOfAppearElements = props.twoColumnsPage.items.length;
-                break;
-            case 'onCategoryFromHeaderClick':
-                let objToArray = [];
-                numOfAppearElements = props.twoColumnsPage.itemsStyleValues
-                objToArray = Utility.getArrayOfEmptyVal(Object.keys(props.twoColumnsPage.itemsStyleValues).length);
-                objToArray = objToArray.map((el,i) => {
-                    return {
-                        imageId: `img${i + 1}`,
-                        obj: {
-                            ...props.twoColumnsPage.itemsStyleValues[`img${i + 1}`]
-                        }
-                    }
-                })
-                objToArray = objToArray.map(el => {
-                    if(el.obj.scale === 1){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                })
-                numOfAppearElements = objToArray.filter(item => item === true).length
-                console.log(numOfAppearElements)
-                break;
-        }
- 
-        if(size.width > 1200){
-            return numOfAppearElements/2 * (size.width > 1200 ? 535 : 400) + numOfAppearElements/2 * 30;
-        }
+
+        let objToArray = [];
+        numOfAppearElements = props.twoColumnsPage.itemsStyleValues
+        objToArray = Utility.getArrayOfEmptyVal(Object.keys(props.twoColumnsPage.itemsStyleValues).length);
+        objToArray = objToArray.map((el,i) => {
+            return {
+                imageId: `img${i + 1}`,
+                obj: {
+                    ...props.twoColumnsPage.itemsStyleValues[`img${i + 1}`]
+                }
+            }
+        })
+        objToArray = objToArray.map(el => {
+            if(el.obj.scale === 1){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        numOfAppearElements = objToArray.filter(item => item === true).length;
+        console.log(+(numOfAppearElements/2).toFixed())
+        return (+numOfAppearElements/2).toFixed()* (size.width > 1200 ? 535 : 400) + +(numOfAppearElements/2).toFixed() * 30;
        
        
         // if(size.width <= 1200 && size.width > 1040){
@@ -1522,6 +1513,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
             setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
+            disappearenceAndAppearanceOfElementsDueToTheCategory: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategory, dispatch),
         };
     }
 )(TwoColumnsPage);

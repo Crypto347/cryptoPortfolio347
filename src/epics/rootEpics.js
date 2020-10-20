@@ -5,5 +5,6 @@ export const rootEpic = combineEpics(
     Epic.unmountComponentEpic,
     Epic.gotoNewPageEpic,
     Epic.portfolioNavigationOnClickStartEpic,
-    Epic.portfolioNavigationOnClickEpic
+    Epic.portfolioNavigationOnClickEpic,
+    Epic.disappearanceAndAppearanceOfElementsDueToTheCategoryEpic
 );
