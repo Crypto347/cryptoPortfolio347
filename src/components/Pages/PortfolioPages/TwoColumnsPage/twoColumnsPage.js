@@ -379,12 +379,27 @@ export const TwoColumnsPage = (props) => {
         setImagesState("onResize");
     }
 
-    const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAppearElemnts, elementId, itemsStyleVal) => {
-        if(arrayOfDisappearAndAppearElemnts.find(item => item.id === elementId).disappear) return;
-        else if(!arrayOfDisappearAndAppearElemnts.find(item => item.id === elementId - 1).disappear) {
-            console.log(itemsStyleVal[`img${elementId - 1}`])
-            return {...itemsStyleVal[`img${elementId - 1}`]}
-        };
+    const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAppearElements, elementId, itemsStyleVal) => {
+        // if(arrayOfDisappearAndAppearElements.find(item => item.id === elementId).disappear) return;
+
+        let appearElementsArray = [];
+        arrayOfDisappearAndAppearElements.map(el => {
+            if(!el.disappear){
+                appearElementsArray.push(el);
+            }
+        })
+
+        appearElementsArray = appearElementsArray.map((el, i) => {
+            let translateX = (i%2 === 0 ? 0 : (size.width > 1200 ? 565 : 430) );
+            return {
+                id: el.id,
+                translateX: translateX,
+                translateY: translateX
+            }
+        })
+        
+        console.log(appearElementsArray)
+      return appearElementsArray;
     }
 
     const setImagesState = (opt, elementToUpdate, action, arrayOfDisappearAndAppearElements) => {
@@ -416,7 +431,7 @@ export const TwoColumnsPage = (props) => {
                     break;
                 case 2:
                     updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    console.log()
+                  
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: size.width > 1200 ? 535 : 400,
@@ -441,7 +456,7 @@ export const TwoColumnsPage = (props) => {
                     break;
                 case 3:
                     // updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    console.log("HH3", updatedTranslateCoordinates)
+        
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: size.width > 1200 ? 535 : 400,
@@ -466,7 +481,7 @@ export const TwoColumnsPage = (props) => {
                     break;
                 case 4:
                     updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    console.log("HH4", updatedTranslateCoordinates)
+           
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: size.width > 1200 ? 535 : 400,
