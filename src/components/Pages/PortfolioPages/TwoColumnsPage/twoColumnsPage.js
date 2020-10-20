@@ -265,78 +265,114 @@ export const TwoColumnsPage = (props) => {
 
 
     const smoothTransition = () => {
-        props.updateItemsStyleValuesTwoColumnsPage("img1",{
-            ...props.twoColumnsPage.itemsStyleValues.img1,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img2",{
-            ...props.twoColumnsPage.itemsStyleValues.img2,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img3",{
-            ...props.twoColumnsPage.itemsStyleValues.img3,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img4",{
-            ...props.twoColumnsPage.itemsStyleValues.img4,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img5",{
-            ...props.twoColumnsPage.itemsStyleValues.img5,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img6",{
-            ...props.twoColumnsPage.itemsStyleValues.img6,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img7",{
-            ...props.twoColumnsPage.itemsStyleValues.img7,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img8",{
-            ...props.twoColumnsPage.itemsStyleValues.img8,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img9",{
-            ...props.twoColumnsPage.itemsStyleValues.img9,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img10",{
-            ...props.twoColumnsPage.itemsStyleValues.img10,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img11",{
-            ...props.twoColumnsPage.itemsStyleValues.img11,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img12",{
-            ...props.twoColumnsPage.itemsStyleValues.img12,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img13",{
-            ...props.twoColumnsPage.itemsStyleValues.img13,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img14",{
-            ...props.twoColumnsPage.itemsStyleValues.img14,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img15",{
-            ...props.twoColumnsPage.itemsStyleValues.img15,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img16",{
-            ...props.twoColumnsPage.itemsStyleValues.img16,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img17",{
-            ...props.twoColumnsPage.itemsStyleValues.img17,
-            transition: 0
-        });
-        props.updateItemsStyleValuesTwoColumnsPage("img18",{
-            ...props.twoColumnsPage.itemsStyleValues.img18,
-            transition: 0
-        });
+        if(props.twoColumnsPage.itemsStyleValues.img1){
+            props.updateItemsStyleValuesTwoColumnsPage("img1",{
+                ...props.twoColumnsPage.itemsStyleValues.img1,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img2){
+            props.updateItemsStyleValuesTwoColumnsPage("img2",{
+                ...props.twoColumnsPage.itemsStyleValues.img2,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img3){
+            props.updateItemsStyleValuesTwoColumnsPage("img3",{
+                ...props.twoColumnsPage.itemsStyleValues.img3,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img4){
+            props.updateItemsStyleValuesTwoColumnsPage("img4",{
+                ...props.twoColumnsPage.itemsStyleValues.img4,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img5){
+            props.updateItemsStyleValuesTwoColumnsPage("img5",{
+                ...props.twoColumnsPage.itemsStyleValues.img5,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img6){
+            props.updateItemsStyleValuesTwoColumnsPage("img6",{
+                ...props.twoColumnsPage.itemsStyleValues.img6,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img7){
+            props.updateItemsStyleValuesTwoColumnsPage("img7",{
+                ...props.twoColumnsPage.itemsStyleValues.img7,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img8){
+            props.updateItemsStyleValuesTwoColumnsPage("img8",{
+                ...props.twoColumnsPage.itemsStyleValues.img8,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img9){
+            props.updateItemsStyleValuesTwoColumnsPage("img9",{
+                ...props.twoColumnsPage.itemsStyleValues.img9,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img10){
+            props.updateItemsStyleValuesTwoColumnsPage("img10",{
+                ...props.twoColumnsPage.itemsStyleValues.img10,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img11){
+            props.updateItemsStyleValuesTwoColumnsPage("img11",{
+                ...props.twoColumnsPage.itemsStyleValues.img11,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img12){
+            props.updateItemsStyleValuesTwoColumnsPage("img12",{
+                ...props.twoColumnsPage.itemsStyleValues.img12,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img13){
+            props.updateItemsStyleValuesTwoColumnsPage("img13",{
+                ...props.twoColumnsPage.itemsStyleValues.img13,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img14){
+            props.updateItemsStyleValuesTwoColumnsPage("img14",{
+                ...props.twoColumnsPage.itemsStyleValues.img14,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img15){
+            props.updateItemsStyleValuesTwoColumnsPage("img15",{
+                ...props.twoColumnsPage.itemsStyleValues.img15,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img16){
+            props.updateItemsStyleValuesTwoColumnsPage("img16",{
+                ...props.twoColumnsPage.itemsStyleValues.img16,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img17){
+            props.updateItemsStyleValuesTwoColumnsPage("img17",{
+                ...props.twoColumnsPage.itemsStyleValues.img17,
+                transition: 0
+            });
+        }
+        if(props.twoColumnsPage.itemsStyleValues.img18){
+            props.updateItemsStyleValuesTwoColumnsPage("img18",{
+                ...props.twoColumnsPage.itemsStyleValues.img18,
+                transition: 0
+            });
+        }
     }
 
     const handleResize = (e) => {
@@ -1274,18 +1310,36 @@ export const TwoColumnsPage = (props) => {
     const categoryFromHeanderOnClickHandler = (key) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
-        props.disappearenceAndAppearanceOfElementsDueToTheCategory("twoColumnsPage", key);
         renderStoneWallItemsStyleHeight("onCategoryFromHeaderClick");
         if(key !== "showAll"){
+            let arrayOfAppearAndDisapperElements = [];
             props.twoColumnsPage.items.map(el => {
-                el.categories.map(category => {
-                    if(category.key === key){
-                        setImagesState("categoryFromHeaderOnClick", el.id, 'appear');
-                    }else{
-                        setImagesState("categoryFromHeaderOnClick", el.id, 'disappear');
-                    }
-                })
+                let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === key);
+                if(checkIfElementHasSelectedCategory){
+                    setImagesState("categoryFromHeaderOnClick", el.id, 'appear');
+                    arrayOfAppearAndDisapperElements.push({
+                        id: el.id,
+                        disappear: false
+                    })
+                }else{
+                    setImagesState("categoryFromHeaderOnClick", el.id, 'disappear');
+                    arrayOfAppearAndDisapperElements.push({
+                        id: el.id,
+                        disappear: true
+                    })
+                }
             })
+            console.log("checkIfElementHasSelectedCategory",arrayOfAppearAndDisapperElements)
+            // props.twoColumnsPage.items.map(el => {
+            //     el.categories.map(category => {
+            //         if(category.key === key){
+            //             setImagesState("categoryFromHeaderOnClick", el.id, 'appear');
+            //             console.log("APPEAR",el.id)
+            //         }else{
+            //             setImagesState("categoryFromHeaderOnClick", el.id, 'disappear');
+            //         }
+            //     })
+            // })
         }
         else{
             setImagesState("showAllCategories", -1);
@@ -1513,7 +1567,6 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
             setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
-            disappearenceAndAppearanceOfElementsDueToTheCategory: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategory, dispatch),
         };
     }
 )(TwoColumnsPage);

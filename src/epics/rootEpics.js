@@ -6,5 +6,5 @@ export const rootEpic = combineEpics(
     Epic.gotoNewPageEpic,
     Epic.portfolioNavigationOnClickStartEpic,
     Epic.portfolioNavigationOnClickEpic,
-    Epic.disappearanceAndAppearanceOfElementsDueToTheCategoryEpic
+    // Epic.disappearanceAndAppearanceOfElementsDueToTheCategoryEpic
 );

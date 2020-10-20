@@ -24,7 +24,8 @@ export const initialState = {
     errorMoreData: null,
     disableLoadMoreButton: false,
     categories: [],
-    itemsStyleValues: {}
+    itemsStyleValues: {},
+    arrayOfDisapperAndAppearElements: []
 }
 
 const fetchTwoColumnsPageBegin = (state, action) => {

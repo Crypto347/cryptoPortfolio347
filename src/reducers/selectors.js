@@ -358,3 +358,4 @@ export const getTwoColumnsPageState = createSelector(
     [getTwoColumnsPage],
     (x) => x
 );
+

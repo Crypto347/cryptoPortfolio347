@@ -25,28 +25,26 @@ import * as Actions from '../actions';
 * Epic
 */
 
-export const disappearanceAndAppearanceOfElementsDueToTheCategoryEpic = (action$) => 
+export const disappearanceAndAppearanceOfElementsDueToTheCategoryEpic = (action$, state$) => 
     action$.pipe(
         ofType(actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY),
         mergeMap((action) => {
-            // let updatedTranslateX;
-            // let updatedTranslateY;
-            // let arrayOfAppearAndDisapperElements = [];
-            // arrayOfAppearAndDisapperElements = props.twoColumnsPage.items.map(el => {
-            //     let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === categoryFromHeader);
-            //     if(checkIfElementHasSelectedCategory){
-            //         arrayOfAppearAndDisapperElements.push({
-            //             id: el.id,
-            //             dissapear: false
-            //         })
-            //     }else{
-            //         arrayOfAppearAndDisapperElements.push({
-            //             id: el.id,
-            //             dissapear: true
-            //         })
-            //     }
-            // })
-               console.log(action.page)
+            let arrayOfAppearAndDisapperElements = [];
+            state$.value.twoColumnsPage.items.map(el => {
+                let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === action.category);
+                if(checkIfElementHasSelectedCategory){
+                    arrayOfAppearAndDisapperElements.push({
+                        id: el.id,
+                        disappear: false
+                    })
+                }else{
+                    arrayOfAppearAndDisapperElements.push({
+                        id: el.id,
+                        disappear: true
+                    })
+                }
+            })
+            console.log("checkIfElementHasSelectedCategory",arrayOfAppearAndDisapperElements, state$.value.twoColumnsPage.items)
             return of(
                 // Actions.initCategories(updatedCategoriesArray),
                 // Actions.initCategoryStories(categoryObj),
