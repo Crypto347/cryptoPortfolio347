@@ -379,6 +379,42 @@ export const TwoColumnsPage = (props) => {
         setImagesState("onResize");
     }
 
+    const calculateTranslateY = (i) => {
+        switch(i){
+            case 2:
+            case 3:
+                return (size.width > 1200 ? 565 : 430);
+            case 4:
+            case 5:
+                return 2 * (size.width > 1200 ? 565 : 430);
+            case 6:
+            case 7:
+                return 3 * (size.width > 1200 ? 565 : 430);
+            case 6:
+            case 7:
+                return 4 * (size.width > 1200 ? 565 : 430);
+            case 8:
+            case 9:
+                return 5 * (size.width > 1200 ? 565 : 430);
+            case 10:
+            case 11:
+                return 6 * (size.width > 1200 ? 565 : 430);
+            case 12:
+            case 13:
+                return 7 * (size.width > 1200 ? 565 : 430);
+            case 14:
+            case 15:
+                return 8 * (size.width > 1200 ? 565 : 430);
+            case 16:
+            case 17:
+                return 9 * (size.width > 1200 ? 565 : 430);
+            case 18:
+            case 19:
+                return 10 * (size.width > 1200 ? 565 : 430);
+            default:
+                return 0;
+        }
+    }
     const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAppearElements, elementId, itemsStyleVal) => {
         // if(arrayOfDisappearAndAppearElements.find(item => item.id === elementId).disappear) return;
 
@@ -388,25 +424,28 @@ export const TwoColumnsPage = (props) => {
                 appearElementsArray.push(el);
             }
         })
-
         appearElementsArray = appearElementsArray.map((el, i) => {
-            let translateX = (i%2 === 0 ? 0 : (size.width > 1200 ? 565 : 430) );
+            let translateX = (i%2 === 0 ? 0 : (size.width > 1200 ? 565 : 430));
+            let translateY = calculateTranslateY(i);
+            console.log(translateY)
+           
             return {
                 id: el.id,
                 translateX: translateX,
-                translateY: translateX
-            }
-        })
-        
-        console.log(appearElementsArray)
+                translateY: translateY
+            };
+        });
       return appearElementsArray;
     }
 
     const setImagesState = (opt, elementToUpdate, action, arrayOfDisappearAndAppearElements) => {
         let updatedTranslateCoordinates;
+        let translateCoordinatesObj
         if(opt === "categoryFromHeaderOnClick"){
             switch(elementToUpdate){
                 case 1:
+                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
+                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
                             width: size.width > 1200 ? 535 : 400,
@@ -421,8 +460,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -431,7 +470,7 @@ export const TwoColumnsPage = (props) => {
                     break;
                 case 2:
                     updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                  
+                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: size.width > 1200 ? 535 : 400,
@@ -446,8 +485,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -455,8 +494,8 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 3:
-                    // updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-        
+                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
+                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: size.width > 1200 ? 535 : 400,
@@ -471,8 +510,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: updatedTranslateCoordinates ? updatedTranslateCoordinates.translateX : props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`].translateX,
-                            translateY: updatedTranslateCoordinates ? updatedTranslateCoordinates.translateY : props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`].translateY,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -481,7 +520,7 @@ export const TwoColumnsPage = (props) => {
                     break;
                 case 4:
                     updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-           
+                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: size.width > 1200 ? 535 : 400,
@@ -496,8 +535,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: updatedTranslateCoordinates ? updatedTranslateCoordinates.translateX : props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`].translateX,
-                            translateY: updatedTranslateCoordinates ? updatedTranslateCoordinates.translateY : props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`].translateY,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
