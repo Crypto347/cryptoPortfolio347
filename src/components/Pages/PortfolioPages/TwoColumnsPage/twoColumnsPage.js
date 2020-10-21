@@ -415,9 +415,7 @@ export const TwoColumnsPage = (props) => {
                 return 0;
         }
     }
-    const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAppearElements, elementId, itemsStyleVal) => {
-        // if(arrayOfDisappearAndAppearElements.find(item => item.id === elementId).disappear) return;
-
+    const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAppearElements) => {
         let appearElementsArray = [];
         arrayOfDisappearAndAppearElements.map(el => {
             if(!el.disappear){
@@ -427,7 +425,6 @@ export const TwoColumnsPage = (props) => {
         appearElementsArray = appearElementsArray.map((el, i) => {
             let translateX = (i%2 === 0 ? 0 : (size.width > 1200 ? 565 : 430));
             let translateY = calculateTranslateY(i);
-            console.log(translateY)
            
             return {
                 id: el.id,
@@ -439,19 +436,18 @@ export const TwoColumnsPage = (props) => {
     }
 
     const setImagesState = (opt, elementToUpdate, action, arrayOfDisappearAndAppearElements) => {
-        let updatedTranslateCoordinates;
-        let translateCoordinatesObj
         if(opt === "categoryFromHeaderOnClick"){
+            let updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements);
+            let translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
+            let itemsStylesObj = props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`];
             switch(elementToUpdate){
                 case 1:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -469,14 +465,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 2:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -494,14 +488,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 3:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -519,14 +511,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 4:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
-                    translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -544,13 +534,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 5:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -559,8 +548,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -568,13 +557,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 6:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -583,8 +571,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -592,13 +580,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 7:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -607,8 +594,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -616,13 +603,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 8:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -631,8 +617,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -640,13 +626,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 9:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -655,8 +640,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -664,13 +649,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 10:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -679,8 +663,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -688,13 +672,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 11:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -703,8 +686,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -712,13 +695,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 12:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -727,8 +709,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -736,13 +718,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 13:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -751,8 +732,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -760,13 +741,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 14:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -775,8 +755,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -784,13 +764,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 15:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -799,8 +778,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -808,13 +787,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 16:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -823,8 +801,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -832,13 +810,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 17:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -847,8 +824,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -856,13 +833,12 @@ export const TwoColumnsPage = (props) => {
                     }
                     break;
                 case 18:
-                    updatedTranslateCoordinates = updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, elementToUpdate, props.twoColumnsPage.itemsStyleValues);
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 0,
-                            translateX: 376.66,
-                            translateY: -346.66,
+                            translateX: itemsStylesObj.translateX,
+                            translateY: itemsStylesObj.translateY,
                             transition: 0.45,
                             zIndex: 10,
                             rendered: true
@@ -871,8 +847,8 @@ export const TwoColumnsPage = (props) => {
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
                             width: size.width > 1200 ? 535 : 400,
                             scale: 1,
-                            translateX: 0,
-                            translateY: 0,
+                            translateX: translateCoordinatesObj.translateX,
+                            translateY: translateCoordinatesObj.translateY,
                             transition: 0.45,
                             zIndex: 20,
                             rendered: true
@@ -1098,7 +1074,7 @@ export const TwoColumnsPage = (props) => {
     
         // Check scroll direction
 
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 50){
             setScrollingUp(false);
         }else{
             setScrollingUp(true);
@@ -1184,6 +1160,7 @@ export const TwoColumnsPage = (props) => {
     }
     
     const renderStoneWallPageItemStyle = (id) => {
+        let checkIfDisappear = props.twoColumnsPage.arrayOfDisapperAndAppearElements.find(item => item.id === id)?.disappear;
         switch(id){
             case 1:
                 return {
@@ -1192,7 +1169,7 @@ export const TwoColumnsPage = (props) => {
                     paddingRight: "30px",
                     transformOrigin: "center",
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img1?.scale}) 
-                                translate(${props.twoColumnsPage.itemsStyleValues.img1?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img1?.translateY}px)`,
+                               translate(${props.twoColumnsPage.itemsStyleValues.img1?.translateX}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img1?.transition}s ease-out`,
                     zIndex: `${props.twoColumnsPage.itemsStyleValues.img1?.zIndex}`
                 };
@@ -1201,18 +1178,18 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img2?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img2?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img2?.zIndex}`
+                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img2?.zIndex}`,
                 };
             case 3:
                 return {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img3?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img3?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img3?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img3?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
@@ -1223,7 +1200,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img4?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img4?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img4?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img4?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img4?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img4?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
@@ -1234,7 +1211,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img5?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img5?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img5?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img5?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img5?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img5?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
@@ -1245,7 +1222,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img6?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img6?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img6?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img6?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img6?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img6?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
@@ -1256,7 +1233,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img7?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img7?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img7?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img7?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img7?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img7?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
@@ -1267,7 +1244,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img8?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img8?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img8?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img8?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img8?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img8?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
@@ -1278,7 +1255,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img9?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img9?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img9?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img9?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img9?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img9?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
@@ -1289,7 +1266,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img10?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img10?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img10?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img10?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img10?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img10?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
@@ -1300,7 +1277,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img11?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img11?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img11?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img11?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img11?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img11?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
@@ -1311,7 +1288,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img12?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img12?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img12?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img12?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img12?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
@@ -1326,7 +1303,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img13?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img13?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img13?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img13?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img13?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img13?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
@@ -1337,7 +1314,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img14?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img14?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img14?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img14?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img14?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img14?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
@@ -1348,7 +1325,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img15?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img15?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img15?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img15?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img15?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img15?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
@@ -1359,7 +1336,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img16?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img16?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img16?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img16?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img16?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img16?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
@@ -1370,7 +1347,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img17?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img17?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img17?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img17?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img17?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img17?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
@@ -1381,7 +1358,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img18?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: "center",
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img18?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img18?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img18?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img18?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img18?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
@@ -1410,6 +1387,7 @@ export const TwoColumnsPage = (props) => {
                     })
                 }
             })
+            props.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(arrayOfAppearAndDisapperElements)
             props.twoColumnsPage.items.map(el => {
                 let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === key);
                 if(checkIfElementHasSelectedCategory){
@@ -1521,6 +1499,7 @@ export const TwoColumnsPage = (props) => {
                 })}
                 </div>
                 <div  
+                    // className="two-columns-page-items"
                     style={{
                         position: "relative",
                         width: `${renderStoneWallItemsStyleWidth()}px`,
@@ -1654,6 +1633,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
             setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
+            disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage, dispatch),
         };
     }
 )(TwoColumnsPage);

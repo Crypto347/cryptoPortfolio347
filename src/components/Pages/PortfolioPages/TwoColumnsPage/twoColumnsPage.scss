@@ -41,16 +41,11 @@
                     margin-left: 10px;
                 }
             }
-            .two-columns-page-items {
-                // width: calc(100% - 230px);
-                // display: flex;
-                // flex-wrap: wrap;
-                // padding: 60px 100px 100px 130px;
-                .two-columns-page-item {
-                    width: calc(50% - 30px);
-                    margin-right: 30px;
-                }
-            }
+            // .two-columns-page-items {
+            //     .two-columns-page-item {
+            //         transition-delay: 5s;
+            //     }
+            // }
             .two-columns-page-button-load-more {
                 width: 100%;
                 display: flex;

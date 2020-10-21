@@ -380,6 +380,13 @@ const addMoreItemsStylesStateForTwoColumnsPage = (state, action) => {
     };
 }
  
+const disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage = (state, action) => {
+    return {
+        ...state,
+        arrayOfDisapperAndAppearElements: action.arr
+    };
+}
+
 const twoColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TWO_COLUMNS_PAGE_BEGIN:
@@ -408,6 +415,8 @@ const twoColumnsPageReducer = (state = initialState, action) => {
             return initItemsStylesStateForTwoColumnsPage(state, action);
         case actionTypes.ADD_MORE_ITEMS_STYLES_STATE_FOR_TWO_COLUMNS_PAGE:
             return addMoreItemsStylesStateForTwoColumnsPage(state, action);
+        case actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY_TWO_COLUMNS_PAGE:
+            return disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(state, action);
         default: 
             return state;
     }

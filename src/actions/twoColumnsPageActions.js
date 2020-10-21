@@ -89,3 +89,10 @@ export function addMoreItemsStylesStateForTwoColumnsPage(arr) {
         arr: arr
     };
 };
+
+export function disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(arr) {
+    return { 
+        type: actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY_TWO_COLUMNS_PAGE,
+        arr: arr
+    };
+};

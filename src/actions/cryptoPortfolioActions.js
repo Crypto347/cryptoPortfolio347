@@ -191,10 +191,3 @@ export function portfolioNavigationOnClick(path, page, category) {
     };
 };
 
-export function disappearenceAndAppearanceOfElementsDueToTheCategory(page, category) {
-    return { 
-        type: actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY,
-        page: page,
-        category: category
-    };
-};
