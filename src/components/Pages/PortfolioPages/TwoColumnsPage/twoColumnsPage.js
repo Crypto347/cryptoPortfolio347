@@ -1127,6 +1127,7 @@ export const TwoColumnsPage = (props) => {
     const loadMoreOnClick = () => {
         props.fetchTwoColumnsPage(loadMoreStep, categoryFromHeader, size.width, props.twoColumnsPage.items.length);
         setLoadMoreStep(loadMoreStep + 1);
+        renderStoneWallItemsStyleHeight();
     }
 
     const renderClassName = (opt, isHovering, active) => {
@@ -1370,7 +1371,7 @@ export const TwoColumnsPage = (props) => {
     const categoryFromHeanderOnClickHandler = (key) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
-        renderStoneWallItemsStyleHeight("onCategoryFromHeaderClick");
+        renderStoneWallItemsStyleHeight();
         if(key !== "showAll"){
             let arrayOfAppearAndDisapperElements = [];
             props.twoColumnsPage.items.map(el => {
@@ -1434,7 +1435,7 @@ export const TwoColumnsPage = (props) => {
         // }
     }
 
-    const renderStoneWallItemsStyleHeight = (opt) => {
+    const renderStoneWallItemsStyleHeight = () => {
         let numOfAppearElements;
 
         let objToArray = [];
