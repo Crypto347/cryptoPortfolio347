@@ -113,15 +113,24 @@ export const TwoColumnsPage = (props) => {
             }
         }, 2);
 
+        
+        console.log(props.location)
         const smooth = e => {
             transitionRef.current()
         }
 
         const resize = () => {
             resizeRef.current();
-        }
+        }  
 
-        setImagesState("onInit");
+        if(props.twoColumnsPage.categories.length !== 0){
+            let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
+            console.log("LISTEN",categeryKey)
+            categoryFromHeanderOnClickHandler(categeryKey);
+        }else{
+            setImagesState("onInit");
+        }
+      
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
@@ -142,6 +151,20 @@ export const TwoColumnsPage = (props) => {
     });
 
     useEffect(() => {
+        updateTransitionValue();
+    }, [
+        props.twoColumnsPage.itemsStyleValues.img1?.transition,props.twoColumnsPage.itemsStyleValues.img2?.transition,
+        props.twoColumnsPage.itemsStyleValues.img3?.transition,props.twoColumnsPage.itemsStyleValues.img4?.transition,
+        props.twoColumnsPage.itemsStyleValues.img5?.transition,props.twoColumnsPage.itemsStyleValues.img6?.transition,
+        props.twoColumnsPage.itemsStyleValues.img7?.transition,props.twoColumnsPage.itemsStyleValues.img8?.transition,
+        props.twoColumnsPage.itemsStyleValues.img9?.transition,props.twoColumnsPage.itemsStyleValues.img10?.transition,
+        props.twoColumnsPage.itemsStyleValues.img11?.transition,props.twoColumnsPage.itemsStyleValues.img12?.transition,
+        props.twoColumnsPage.itemsStyleValues.img13?.transition,props.twoColumnsPage.itemsStyleValues.img14?.transition,
+        props.twoColumnsPage.itemsStyleValues.img15?.transition,props.twoColumnsPage.itemsStyleValues.img16?.transition,
+        props.twoColumnsPage.itemsStyleValues.img17?.transition,props.twoColumnsPage.itemsStyleValues.img18?.transition
+    ]);
+
+    const updateTransitionValue = () => {
         if(props.twoColumnsPage.itemsStyleValues.img1?.transition === 0){
             props.updateItemsStyleValuesTwoColumnsPage("img1",{
                 ...props.twoColumnsPage.itemsStyleValues.img1,
@@ -250,18 +273,7 @@ export const TwoColumnsPage = (props) => {
                 transition: 0.45
             });
         }
-    }, [
-        props.twoColumnsPage.itemsStyleValues.img1?.transition,props.twoColumnsPage.itemsStyleValues.img2?.transition,
-        props.twoColumnsPage.itemsStyleValues.img3?.transition,props.twoColumnsPage.itemsStyleValues.img4?.transition,
-        props.twoColumnsPage.itemsStyleValues.img5?.transition,props.twoColumnsPage.itemsStyleValues.img6?.transition,
-        props.twoColumnsPage.itemsStyleValues.img7?.transition,props.twoColumnsPage.itemsStyleValues.img8?.transition,
-        props.twoColumnsPage.itemsStyleValues.img9?.transition,props.twoColumnsPage.itemsStyleValues.img10?.transition,
-        props.twoColumnsPage.itemsStyleValues.img11?.transition,props.twoColumnsPage.itemsStyleValues.img12?.transition,
-        props.twoColumnsPage.itemsStyleValues.img13?.transition,props.twoColumnsPage.itemsStyleValues.img14?.transition,
-        props.twoColumnsPage.itemsStyleValues.img15?.transition,props.twoColumnsPage.itemsStyleValues.img16?.transition,
-        props.twoColumnsPage.itemsStyleValues.img17?.transition,props.twoColumnsPage.itemsStyleValues.img18?.transition
-    ]);
-
+    }
 
     const smoothTransition = () => {
         if(props.twoColumnsPage.itemsStyleValues.img1){
@@ -462,7 +474,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 2:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
@@ -485,7 +497,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 3:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
@@ -508,7 +520,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 4:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
@@ -531,7 +543,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 5:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
@@ -554,7 +566,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 6:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
@@ -577,7 +589,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 7:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
@@ -600,7 +612,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 8:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
@@ -623,7 +635,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 9:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
@@ -646,7 +658,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 10:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
@@ -669,7 +681,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 11:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
@@ -692,7 +704,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 12:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
@@ -715,7 +727,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 13:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
@@ -738,7 +750,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 14:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
@@ -761,7 +773,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 15:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
@@ -784,7 +796,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 16:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
@@ -807,7 +819,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 17:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
@@ -830,7 +842,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
                 case 18:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
@@ -853,7 +865,7 @@ export const TwoColumnsPage = (props) => {
                             rendered: true
                         });
                     }
-                    break;
+                    return;
             }
         }else{
             if(props.twoColumnsPage.itemsStyleValues.img1?.rendered){
@@ -1371,6 +1383,7 @@ export const TwoColumnsPage = (props) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
         renderStoneWallItemsStyleHeight();
+        console.log("ORIGIN", key)
         if(key !== "showAll"){
             let arrayOfAppearAndDisapperElements = [];
             props.twoColumnsPage.items.map(el => {

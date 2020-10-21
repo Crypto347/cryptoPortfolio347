@@ -122,6 +122,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
                 updatedItemsStyleValues['img1'].transition = action.obj.transition;
                 updatedItemsStyleValues['img1'].zIndex = action.obj.zIndex;
                 updatedItemsStyleValues['img1'].rendered = action.obj.rendered;
+                console.log("Reducer", action.obj.scale)
             }
             break;
         case 'img2':
