@@ -92,7 +92,6 @@ export const TwoColumnsPage = (props) => {
     const resizeRef = useRef();
     const transitionRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [loadMoreStep, setLoadMoreStep] = useState(1);
     const [categoryFromHeader, setCategoryFromHeader] = useState("showAll");
     
     /**
@@ -102,8 +101,8 @@ export const TwoColumnsPage = (props) => {
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
         if(props.twoColumnsPage.items.length === 0){
-            props.fetchTwoColumnsPage(loadMoreStep);
-            setLoadMoreStep(loadMoreStep + 1);
+            props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep);
+            props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
         }
         let timeout = setTimeout(() => {
             if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
@@ -1125,8 +1124,8 @@ export const TwoColumnsPage = (props) => {
     }
 
     const loadMoreOnClick = () => {
-        props.fetchTwoColumnsPage(loadMoreStep, categoryFromHeader, size.width, props.twoColumnsPage.items.length);
-        setLoadMoreStep(loadMoreStep + 1);
+        props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep, categoryFromHeader, size.width, props.twoColumnsPage.items.length);
+        props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
         renderStoneWallItemsStyleHeight();
     }
 
@@ -1631,6 +1630,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
+            setLoadMoreStep: bindActionCreators(Actions.setLoadMoreStep, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
             setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),

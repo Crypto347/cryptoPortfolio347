@@ -25,7 +25,8 @@ export const initialState = {
     disableLoadMoreButton: false,
     categories: [],
     itemsStyleValues: {},
-    arrayOfDisapperAndAppearElements: []
+    arrayOfDisapperAndAppearElements: [],
+    loadMoreStep: 1
 }
 
 const fetchTwoColumnsPageBegin = (state, action) => {
@@ -386,6 +387,12 @@ const disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage = (stat
         arrayOfDisapperAndAppearElements: action.arr
     };
 }
+const setLoadMoreStep = (state, action) => {
+    return {
+        ...state,
+        loadMoreStep: action.step
+    };
+}
 
 const twoColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -417,6 +424,8 @@ const twoColumnsPageReducer = (state = initialState, action) => {
             return addMoreItemsStylesStateForTwoColumnsPage(state, action);
         case actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY_TWO_COLUMNS_PAGE:
             return disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(state, action);
+        case actionTypes.SET_LOAD_MORE_STEP:
+            return setLoadMoreStep(state, action);
         default: 
             return state;
     }

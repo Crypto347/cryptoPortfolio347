@@ -96,3 +96,12 @@ export function disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPa
         arr: arr
     };
 };
+
+export function setLoadMoreStep(step) {
+    return { 
+        type: actionTypes.SET_LOAD_MORE_STEP,
+        step: step
+    };
+};
+
+
