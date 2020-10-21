@@ -687,7 +687,7 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                 if(step > 1 && category !== "showAll"){
                     let addedElemntsArray = json.twoColumnsData.slice(json.twoColumnsData.length-4, json.twoColumnsData.length);
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: addedElemntsArray[0].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -695,7 +695,7 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -703,7 +703,7 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -711,7 +711,7 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -720,34 +720,34 @@ export function fetchTwoColumnsPage(step, category, windowWidthSize, numOfElelme
                     }));
                 }else if(step > 1 && category === "showAll"){
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: 1,
                         translateX: 0,
-                        translateY: (numOfElelmentsInArray/2) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
+                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnPage(windowWidthSize, "widthWithPaddingRight")),
                         transition: 0.45,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: 1,
                         translateX: 565,
-                        translateY: (numOfElelmentsInArray/2) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
+                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnPage(windowWidthSize, "widthWithPaddingRight")),
                         transition: 0.45,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: 1,
                         translateX: 0,
-                        translateY: ((numOfElelmentsInArray)/2 + 1) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
+                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnPage(windowWidthSize, "widthWithPaddingRight")),
                         transition: 0.45,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
-                        width: windowWidthSize > 1200 ? 535 : 400,
+                        width: Utility.setWidthOfImageTwoColumnPage(windowWidthSize),
                         scale: 1,
                         translateX: 565,
-                        translateY: ((numOfElelmentsInArray)/2 + 1) * ((windowWidthSize > 1200 ? 535 : 400) + 30),
+                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnPage(windowWidthSize, "widthWithPaddingRight")),
                         transition: 0.45,
                         rendered: true
                     }));

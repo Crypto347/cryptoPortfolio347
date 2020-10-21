@@ -131,3 +131,19 @@ export const changeKeyToLabel = (val) => {
     return label.join("");
 }
 
+export const setWidthOfImageTwoColumnPage = (screenWidth, opt) => {
+    let width;
+    if(screenWidth > 1200){
+        width = 535;
+    }else if(screenWidth <= 1200 && screenWidth > 1040){
+        width = 400;
+    }else if(screenWidth <= 1040 && screenWidth > 840){
+        width = 300;
+    }else if(screenWidth <= 840){
+        width = 200;
+    }
+    if(opt === "widthWithPaddingRight"){
+        width = width + 30;
+    }
+    return width;
+}
