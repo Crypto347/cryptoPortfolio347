@@ -113,8 +113,6 @@ export const TwoColumnsPage = (props) => {
             }
         }, 2);
 
-        
-        console.log(props.location)
         const smooth = e => {
             transitionRef.current()
         }
@@ -125,7 +123,6 @@ export const TwoColumnsPage = (props) => {
 
         if(props.twoColumnsPage.categories.length !== 0){
             let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
-            console.log("LISTEN",categeryKey)
             categoryFromHeanderOnClickHandler(categeryKey);
         }else{
             setImagesState("onInit");
@@ -1383,7 +1380,6 @@ export const TwoColumnsPage = (props) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
         renderStoneWallItemsStyleHeight();
-        console.log("ORIGIN", key)
         if(key !== "showAll"){
             let arrayOfAppearAndDisapperElements = [];
             props.twoColumnsPage.items.map(el => {
