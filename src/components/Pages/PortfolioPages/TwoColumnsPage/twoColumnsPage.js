@@ -384,7 +384,8 @@ export const TwoColumnsPage = (props) => {
     }
 
     const handleResize = (e) => {
-        setImagesState("onResize");
+        categoryFromHeanderOnClickHandler(categoryFromHeader);
+        // setImagesState("onResize");
     }
 
     const calculateTranslateY = (i) => {
