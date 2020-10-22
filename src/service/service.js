@@ -696,6 +696,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: 0,
                         translateY: 0,
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
@@ -704,6 +705,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: 0,
                         translateY: 0,
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
@@ -712,6 +714,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: 0,
                         translateY: 0,
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
@@ -720,6 +723,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: 0,
                         translateY: 0,
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                 }else if(step > 1 && category === "showAll"){
@@ -729,6 +733,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: 0,
                         translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
@@ -737,6 +742,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight"),
                         translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
@@ -745,6 +751,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: 0,
                         translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
@@ -753,6 +760,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         translateX: Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight"),
                         translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
+                        zIndex: 0,
                         rendered: true
                     }));
                 }
