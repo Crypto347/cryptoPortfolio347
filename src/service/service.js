@@ -611,7 +611,7 @@ export function fetchFiveColumnsWidePage() {
     };
 }
 
-export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsInArray) {
+export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsInArray, itemsStyleValuesObj) {
     return dispatch => {
         if(step === 1){
             dispatch(Actions.fetchTwoColumnsPageBegin());
@@ -678,7 +678,11 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     itemsState = Utility.getArrayOfEmptyVal(json.twoColumnsData.length);
                     dispatch(Actions.initItemsStylesStateForTwoColumnsPage(itemsState));
                 }else{
+                    // let lengthOfItemsStyleValuesObj = Object.keys(itemsStyleValuesObj).length;
                     itemsState = Utility.getArrayOfEmptyVal(4);
+                    // if(lengthOfItemsStyleValuesObj + 4 <= json.twoColumnsData.length){
+                    //     itemsState.splice(-(lengthOfItemsStyleValuesObj - json.twoColumnsData.length + 4), lengthOfItemsStyleValuesObj - json.twoColumnsData.length + 4)
+                    // }
                     dispatch(Actions.addMoreItemsStylesStateForTwoColumnsPage(itemsState));
                 }
                 dispatch(Actions.setCategoriesTwoColumnsPage(categories));

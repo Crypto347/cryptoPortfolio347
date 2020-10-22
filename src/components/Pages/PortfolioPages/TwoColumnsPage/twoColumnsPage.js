@@ -123,7 +123,7 @@ export const TwoColumnsPage = (props) => {
 
         if(props.twoColumnsPage.categories.length !== 0){
             let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
-            categoryFromHeanderOnClickHandler(categeryKey);
+            categoryFromHeaderOnClickHandler(categeryKey);
         }else{
             setImagesState("onInit");
         }
@@ -131,7 +131,6 @@ export const TwoColumnsPage = (props) => {
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
-
         return () => {
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
@@ -384,7 +383,7 @@ export const TwoColumnsPage = (props) => {
     }
 
     const handleResize = (e) => {
-        categoryFromHeanderOnClickHandler(categoryFromHeader);
+        categoryFromHeaderOnClickHandler(categoryFromHeader);
         // setImagesState("onResize");
     }
 
@@ -1132,7 +1131,11 @@ export const TwoColumnsPage = (props) => {
     }
 
     const loadMoreOnClick = () => {
-        props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep, categoryFromHeader, size.width, props.twoColumnsPage.items.length);
+        props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep, 
+                                    categoryFromHeader, 
+                                    size.width, 
+                                    props.twoColumnsPage.items.length, 
+                                    props.twoColumnsPage.itemsStyleValues);
         props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
         renderStoneWallItemsStyleHeight();
     }
@@ -1168,7 +1171,7 @@ export const TwoColumnsPage = (props) => {
     }
     
     const renderStoneWallPageItemStyle = (id) => {
-        let checkIfDisappear = props.twoColumnsPage.arrayOfDisapperAndAppearElements.find(item => item.id === id)?.disappear;
+        let checkIfDisappear = props.twoColumnsPage.arrayOfDisappearAndAppearElements.find(item => item.id === id)?.disappear;
         switch(id){
             case 1:
                 return {
@@ -1375,7 +1378,7 @@ export const TwoColumnsPage = (props) => {
         }
     }
 
-    const categoryFromHeanderOnClickHandler = (key) => {
+    const categoryFromHeaderOnClickHandler = (key) => {
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
         renderStoneWallItemsStyleHeight();
@@ -1489,7 +1492,7 @@ export const TwoColumnsPage = (props) => {
                             className="two-columns-page-category-from-header"
                             onMouseEnter={() => handleMouseEnter("categoryFromHeader", el.id)} 
                             onMouseLeave={() => handleMouseLeave("categoryFromHeader", el.id)}
-                            onClick={() => categoryFromHeanderOnClickHandler(el.key)}
+                            onClick={() => categoryFromHeaderOnClickHandler(el.key)}
                         >
                             <H15 className={renderClassName("categoryFromHeader", el.isHover, el.active)}>{el.label}</H15>
                         </div>

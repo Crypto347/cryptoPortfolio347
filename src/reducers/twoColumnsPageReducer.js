@@ -25,7 +25,7 @@ export const initialState = {
     disableLoadMoreButton: false,
     categories: [],
     itemsStyleValues: {},
-    arrayOfDisapperAndAppearElements: [],
+    arrayOfDisappearAndAppearElements: [],
     loadMoreStep: 1
 }
 
@@ -384,7 +384,7 @@ const addMoreItemsStylesStateForTwoColumnsPage = (state, action) => {
 const disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage = (state, action) => {
     return {
         ...state,
-        arrayOfDisapperAndAppearElements: action.arr
+        arrayOfDisappearAndAppearElements: action.arr
     };
 }
 const setLoadMoreStep = (state, action) => {
