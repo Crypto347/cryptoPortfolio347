@@ -135,15 +135,30 @@ export const setWidthOfImageTwoColumnPage = (screenWidth, opt) => {
     let width;
     if(screenWidth > 1200){
         width = 535;
-    }else if(screenWidth <= 1200 && screenWidth > 1040){
+    }else if(screenWidth <= 1200 && screenWidth > 905){
         width = 400;
-    }else if(screenWidth <= 1040 && screenWidth > 840){
+    }else if(screenWidth <= 905 && screenWidth > 710){
         width = 300;
-    }else if(screenWidth <= 840){
+    }else if(screenWidth <= 710){
         width = 200;
     }
     if(opt === "widthWithPaddingRight"){
         width = width + 30;
     }
     return width;
+}
+
+export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfElelmentsInArray, position) => {
+    if(position === "atTheBeginning") return 0;
+    let widthOfElement = setWidthOfImageTwoColumnPage(screenWidth);
+    if(coordinate === "X") return widthOfElement + 30;
+    if(coordinate === "Y"){
+        switch(position){
+            case 'atTheBeginningSecondRow':
+            case 'oddRow':
+                return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
+            case 'evenRow':
+                return (numOfElelmentsInArray/2) * (widthOfElement + 30);
+        }
+    }
 }
