@@ -131,7 +131,7 @@ export const changeKeyToLabel = (val) => {
     return label.join("");
 }
 
-export const setWidthOfImageTwoColumnPage = (screenWidth, opt) => {
+export const setWidthOfImageTwoColumnsPage = (screenWidth, opt) => {
     let width;
     if(screenWidth > 1200){
         width = 535;
@@ -150,7 +150,7 @@ export const setWidthOfImageTwoColumnPage = (screenWidth, opt) => {
 
 export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfElelmentsInArray, position) => {
     if(position === "atTheBeginning") return 0;
-    let widthOfElement = setWidthOfImageTwoColumnPage(screenWidth);
+    let widthOfElement = setWidthOfImageTwoColumnsPage(screenWidth);
     if(coordinate === "X") return widthOfElement + 30;
     if(coordinate === "Y"){
         switch(position){

@@ -691,7 +691,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                 if(step > 1 && category !== "showAll"){
                     let addedElemntsArray = json.twoColumnsData.slice(json.twoColumnsData.length-4, json.twoColumnsData.length);
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[0].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -700,7 +700,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -709,7 +709,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -718,7 +718,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
                         translateX: 0,
                         translateY: 0,
@@ -728,37 +728,37 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     }));
                 }else if(step > 1 && category === "showAll"){
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
                         translateX: 0,
-                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
+                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
-                        translateX: Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight"),
-                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
+                        translateX: Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight"),
+                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
                         translateX: 0,
-                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
+                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
-                        width: Utility.setWidthOfImageTwoColumnPage(screenWidth),
+                        width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
-                        translateX: Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight"),
-                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnPage(screenWidth, "widthWithPaddingRight")),
+                        translateX: Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight"),
+                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true

@@ -391,34 +391,34 @@ export const TwoColumnsPage = (props) => {
         switch(i){
             case 2:
             case 3:
-                return Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 4:
             case 5:
-                return 2 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 2 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 6:
             case 7:
-                return 3 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 3 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 6:
             case 7:
-                return 4 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 4 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 8:
             case 9:
-                return 5 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 5 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 10:
             case 11:
-                return 6 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 6 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 12:
             case 13:
-                return 7 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 7 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 14:
             case 15:
-                return 8 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 8 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 16:
             case 17:
-                return 9 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 9 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             case 18:
             case 19:
-                return 10 * Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight");
+                return 10 * Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight");
             default:
                 return 0;
         }
@@ -431,7 +431,7 @@ export const TwoColumnsPage = (props) => {
             }
         })
         appearElementsArray = appearElementsArray.map((el, i) => {
-            let translateX = (i%2 === 0 ? 0 : Utility.setWidthOfImageTwoColumnPage(size.width, "widthWithPaddingRight"));
+            let translateX = (i%2 === 0 ? 0 : Utility.setWidthOfImageTwoColumnsPage(size.width, "widthWithPaddingRight"));
             let translateY = calculateTranslateY(i);
            
             return {
@@ -452,7 +452,7 @@ export const TwoColumnsPage = (props) => {
                 case 1:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -462,7 +462,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -475,7 +475,7 @@ export const TwoColumnsPage = (props) => {
                 case 2:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -485,7 +485,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -498,7 +498,7 @@ export const TwoColumnsPage = (props) => {
                 case 3:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -508,7 +508,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -521,7 +521,7 @@ export const TwoColumnsPage = (props) => {
                 case 4:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -531,7 +531,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -544,7 +544,7 @@ export const TwoColumnsPage = (props) => {
                 case 5:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -554,7 +554,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -567,7 +567,7 @@ export const TwoColumnsPage = (props) => {
                 case 6:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -577,7 +577,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -590,7 +590,7 @@ export const TwoColumnsPage = (props) => {
                 case 7:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -600,7 +600,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -613,7 +613,7 @@ export const TwoColumnsPage = (props) => {
                 case 8:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -623,7 +623,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -636,7 +636,7 @@ export const TwoColumnsPage = (props) => {
                 case 9:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -646,7 +646,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -659,7 +659,7 @@ export const TwoColumnsPage = (props) => {
                 case 10:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -669,7 +669,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -682,7 +682,7 @@ export const TwoColumnsPage = (props) => {
                 case 11:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -692,7 +692,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -705,7 +705,7 @@ export const TwoColumnsPage = (props) => {
                 case 12:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -715,7 +715,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -728,7 +728,7 @@ export const TwoColumnsPage = (props) => {
                 case 13:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -738,7 +738,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -751,7 +751,7 @@ export const TwoColumnsPage = (props) => {
                 case 14:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -761,7 +761,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -774,7 +774,7 @@ export const TwoColumnsPage = (props) => {
                 case 15:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -784,7 +784,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -797,7 +797,7 @@ export const TwoColumnsPage = (props) => {
                 case 16:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -807,7 +807,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -820,7 +820,7 @@ export const TwoColumnsPage = (props) => {
                 case 17:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -830,7 +830,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -843,7 +843,7 @@ export const TwoColumnsPage = (props) => {
                 case 18:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -853,7 +853,7 @@ export const TwoColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                            width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -867,7 +867,7 @@ export const TwoColumnsPage = (props) => {
         }else{
             if(props.twoColumnsPage.itemsStyleValues.img1?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img1.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginning"),
@@ -878,7 +878,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img2?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img2.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginning"),
@@ -889,7 +889,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img3?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img3.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginningSecondRow"),
@@ -900,7 +900,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img4?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img4.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginningSecondRow"),
@@ -911,7 +911,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img5?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img5.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -922,7 +922,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img6?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img6.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -933,7 +933,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img7?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img7.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
@@ -944,7 +944,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img8?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img8.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
@@ -955,7 +955,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img9?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img9.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -966,7 +966,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img10?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img10.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -977,7 +977,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img11?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img11.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
@@ -988,7 +988,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img12?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img12.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
@@ -999,7 +999,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img13?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img13.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -1010,7 +1010,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img14?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img14.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -1021,7 +1021,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img15?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img15.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
@@ -1032,7 +1032,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img16?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img16.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
@@ -1043,7 +1043,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img17?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img17.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -1054,7 +1054,7 @@ export const TwoColumnsPage = (props) => {
             }
             if(props.twoColumnsPage.itemsStyleValues.img18?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                    width: Utility.setWidthOfImageTwoColumnPage(size.width),
+                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img18.scale,
                     translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
@@ -1457,7 +1457,7 @@ export const TwoColumnsPage = (props) => {
             }
         })
         numOfAppearElements = objToArray.filter(item => item === true).length;
-        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImageTwoColumnPage(size.width) + +(numOfAppearElements/2).toFixed() * 30;
+        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImageTwoColumnsPage(size.width) + +(numOfAppearElements/2).toFixed() * 30;
        
        
         // if(size.width <= 1200 && size.width > 1040){
