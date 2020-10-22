@@ -155,6 +155,7 @@ export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfEle
     if(coordinate === "Y"){
         switch(position){
             case 'atTheBeginningSecondRow':
+                return widthOfElement + 30;
             case 'oddRow':
                 return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
             case 'evenRow':
