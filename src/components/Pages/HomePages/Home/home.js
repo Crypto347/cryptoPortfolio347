@@ -72,11 +72,20 @@ export const Home = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Scroll to the top of the screen
+
         window.scrollTo(0, 0);
+
+        // Event Listeners
         window.addEventListener('wheel', checkScrollDirection);
 
         return () => {
+            // Cleaning an unmounted component
+
             window.removeEventListener('wheel', checkScrollDirection);
             props.setShowBackToTopComponent(false);
         }

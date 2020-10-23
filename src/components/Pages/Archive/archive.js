@@ -95,12 +95,16 @@ export const Archive = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.archive.items.length === 0){
             props.fetchArchive(props.match.params.category, 1);
         }
 
-        // return to the part of the screen where the link to the selected item is located
+        // Return to the part of the screen where the link to the selected item is located
 
         let timeout = setTimeout(() => {
             if(!props.archive.loading && !props.archive.error && props.historyPopFromItem !== "scrollToTop"){
@@ -116,7 +120,7 @@ export const Archive = (props) => {
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            // cleaning an unmounted component
+            // Cleaning an unmounted component
 
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
@@ -296,28 +300,30 @@ export const Archive = (props) => {
     }
 
     const onClickHandler = (opt, path, key, e) => {
-        // do nothing on right mouse click 
+        // Do nothing on right mouse click 
 
         if(e.button === 2) return;
 
         localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
         localStorage.setItem("page", "archive");
         
-        // clear archive data 
+        // Clear archive data 
 
         if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
 
         if(e.button !== 1){
-            // add fading effect on unmounted component and remember information of unmounted component on left mouse click 
+            // Add fading effect on unmounted component and remember information of unmounted component on left mouse click 
+
             props.setUnmountComponentValues(true, path);
         }else{
-            // remember information of unmounted component on scroll wheel click 
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
 
-        // fire up unmountComponent epic
+        // Fire up unmountComponent epic
 
         props.unmountComponent(key, path, "archive", e.button);
     }
