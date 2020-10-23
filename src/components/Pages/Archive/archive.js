@@ -316,7 +316,10 @@ export const Archive = (props) => {
         }
 
         if(e.button !== 1){
-            // Add fading effect on unmounted component and remember information of unmounted component on left mouse click 
+            /**
+            * Add fading effect on unmounted component and remember 
+            * information of unmounted component on left mouse click 
+            */ 
 
             props.setUnmountComponentValues(true, path);
         }else{

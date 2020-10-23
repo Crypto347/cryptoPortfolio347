@@ -58,7 +58,6 @@ import {
     H19,
     H22,
     H70,
-    EH30,
     EH40,
     EH70
 } from '../../../UtilityComponents';
@@ -70,11 +69,6 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
-
-/**
-* Images
-*/
-
 
 /**
 * BigSlader component definition and export
@@ -89,23 +83,35 @@ export const BigSlader = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
-    const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
     * Methods
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Scroll to the top of the screen
+
         window.scrollTo(0, 0);
+
+        // Fetch data for the component
+
         props.fetchBigSliderPortfolio(props.match.params.id);
 
+        // Show content after successful data fetch
+
         setShowContent(true);
+
+        // Event Listeners
 
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // Cleaning an unmounted component
+
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);
         }
@@ -185,17 +191,36 @@ export const BigSlader = (props) => {
     }
 
     const onClickHandler = (path, key, e) => {
+        // Do nothing on right mouse click 
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", localStorage.getItem("page"));
+
+        // Clear archive data
+
         if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
+
         if(e.button !== 1){
+            /**
+            * Add fading effect on unmounted component and remember 
+            * information of unmounted component on left mouse click 
+            */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+
+        // Fire up unmountComponent epic
+
         props.unmountComponent(key, path, "bigSlider", e.button);
     }
 
