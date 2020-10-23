@@ -157,9 +157,9 @@ export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfEle
             case 'atTheBeginningSecondRow':
                 return widthOfElement + 30;
             case 'oddRow':
-                return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
+                return (numOfElelmentsInArray/2 - 2) * (widthOfElement + 30);
             case 'evenRow':
-                return (numOfElelmentsInArray/2) * (widthOfElement + 30);
+                return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
         }
     }
 }

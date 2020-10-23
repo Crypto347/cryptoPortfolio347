@@ -127,7 +127,7 @@ export const TwoColumnsPage = (props) => {
         }else{
             setImagesState("onInit");
         }
-      
+        
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
