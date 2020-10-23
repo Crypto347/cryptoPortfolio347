@@ -53,7 +53,6 @@ import * as Selectors from '../../../reducers/selectors';
 /**
 * Utility
 */
-import * as Utility from '../../../utility';
 
 import { 
     H19,
@@ -61,11 +60,8 @@ import {
     H35,
     H45,
     EH10,
-    EH20,
     EH30,
-    EH40,
-    EH70,
-    EH90
+    EH70
 } from '../../UtilityComponents';
 
 /**
@@ -93,7 +89,6 @@ export const Archive = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
     * Methods
@@ -104,8 +99,9 @@ export const Archive = (props) => {
         if(props.archive.items.length === 0){
             props.fetchArchive(props.match.params.category, 1);
         }
-        // console.log("1",props.archive.category)
-        // console.log("2", Utility.categoryPathToKey(props.location.state.category))
+
+        // return to the part of the screen where the link to the selected item is located
+
         let timeout = setTimeout(() => {
             if(!props.archive.loading && !props.archive.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
@@ -114,9 +110,14 @@ export const Archive = (props) => {
                 window.scrollTo(0, 0);
             }
         }, 2);
+
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);
@@ -295,18 +296,29 @@ export const Archive = (props) => {
     }
 
     const onClickHandler = (opt, path, key, e) => {
+        // do nothing on right mouse click 
+
         if(e.button === 2) return;
+
         localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
         localStorage.setItem("page", "archive");
-        console.log("JHGHJ", opt)
+        
+        // clear archive data 
+
         if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
+
         if(e.button !== 1){
+            // add fading effect on unmounted component and remember information of unmounted component on left mouse click 
             props.setUnmountComponentValues(true, path);
         }else{
+            // remember information of unmounted component on scroll wheel click 
             props.setUnmountComponentValues(false, path);
         }
+
+        // fire up unmountComponent epic
+
         props.unmountComponent(key, path, "archive", e.button);
     }
    
@@ -436,7 +448,6 @@ export const Archive = (props) => {
         <div className="archive" id="archive">
             {renderToolbars()}
             {renderArchiveContent()}
-            {/* {showContent ? renderArchiveContent() : null} */}
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
         </div>
