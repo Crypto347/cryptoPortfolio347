@@ -28,7 +28,6 @@ import './fiveColumnsWidePage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
@@ -57,14 +56,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
     H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
 } from '../../../UtilityComponents';
 
 /**
@@ -93,10 +85,17 @@ export const FiveColumnsWidePage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.fiveColumnsWidePage.items.length === 0){
             props.fetchFiveColumnsWidePage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
 
         let timeout = setTimeout(() => {
             if(!props.fiveColumnsWidePage.loading && !props.fiveColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
@@ -107,8 +106,13 @@ export const FiveColumnsWidePage = (props) => {
             }
         }, 2);
     
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
+
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -240,20 +244,12 @@ export const FiveColumnsWidePage = (props) => {
     */
 
     return(
-        // <>
-            <div className="five-columns-wide-page" id="fiveColumnsWidePage">
-                {renderToolbars()}
-                {renderFiveColumnsWidePageContent()}
-                <Footer/>
-                {props.showBackToTop ? <BackToTop/> : null}
-            </div>
-            /* {props.menuDotsState.state === "on" ? 
-            <MenuFullScreen 
-                page="portfolioGallery"
-                state={props.menuDotsState.state}
-            /> : null
-            }      */
-        /* </>  */
+        <div className="five-columns-wide-page" id="fiveColumnsWidePage">
+            {renderToolbars()}
+            {renderFiveColumnsWidePageContent()}
+            <Footer/>
+            {props.showBackToTop ? <BackToTop/> : null}
+        </div>
     );
 }
 
@@ -263,21 +259,15 @@ export default connect(
             fiveColumnsWidePage: Selectors.getFiveColumnsWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
-            archive: Selectors.getArchiveState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
             fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
