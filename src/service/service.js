@@ -733,8 +733,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
-                        translateX: 0,
-                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "oddRow"),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -742,8 +742,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
-                        translateX: Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight"),
-                        translateY: (numOfElelmentsInArray/2) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "oddRow"),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -751,8 +751,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
-                        translateX: 0,
-                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "evenRow"),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -760,8 +760,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: 1,
-                        translateX: Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight"),
-                        translateY: ((numOfElelmentsInArray)/2 + 1) * (Utility.setWidthOfImageTwoColumnsPage(screenWidth, "widthWithPaddingRight")),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "evenRow"),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
