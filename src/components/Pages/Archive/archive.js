@@ -304,6 +304,8 @@ export const Archive = (props) => {
 
         if(e.button === 2) return;
 
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
         localStorage.setItem("page", "archive");
         
@@ -319,7 +321,7 @@ export const Archive = (props) => {
             props.setUnmountComponentValues(true, path);
         }else{
             // Remember information of unmounted component on scroll wheel click 
-
+            
             props.setUnmountComponentValues(false, path);
         }
 

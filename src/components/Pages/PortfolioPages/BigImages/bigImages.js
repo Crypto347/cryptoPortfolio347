@@ -27,7 +27,6 @@ import './bigImages.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-// import Swiper from '../../../../library/Swiper/swiper';
 import PortfolioNavigation from '../../../Parts/PortfolioNavigation/porfolioNavigation';
 import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import Footer from '../../../Parts/Footer/footer';
@@ -91,23 +90,35 @@ export const BigImages = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
-    const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
-    // const [moveStepMovablePart, setMoveStepMovablePart] = useState(0);
 
     /**
     * Methods
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Scroll to the top of the screen
+
         window.scrollTo(0, 0);
+
+        // Fetch data for the component
+
         props.fetchBigImagesPortfolio(props.match.params.id);
 
+        // Show content after successful data fetch
+
         setShowContent(true);
+
+        // Event Listeners
 
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // Cleaning an unmounted component
+
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);
         }
@@ -216,25 +227,49 @@ export const BigImages = (props) => {
     }
 
     const onClickHandler = (path, key, e) => {
+        // Do nothing on right mouse click 
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", localStorage.getItem("page"));
+
+        // Clear archive data 
+
         if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
+
         if(e.button !== 1){
+            /**
+            * Add fading effect on unmounted component and remember 
+            * information of unmounted component on left mouse click 
+            */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+        
+        // Fire up unmountComponent epic
+
         props.unmountComponent(key, path, "bigImages", e.button);
     }
    
     const openPhotoViewer = (array, activeIndex) => {
         let slidesForPhotoViewer = [...array];
         let removedSlides = [];
-        // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
-              
+
+        /**
+        * Rearrange the elements in array so that the element
+        * with active index becomes first and the rest are
+        * lined up in the correct order
+        */
+
         slidesForPhotoViewer.map((el, i) => {
             if(i < activeIndex){
                 removedSlides.push(el);
@@ -248,6 +283,9 @@ export const BigImages = (props) => {
 
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
         
+
+        // Open photo viewer for the component
+
         props.photoViewerOpen('bigImages', true, slidesForPhotoViewer);
     }
 

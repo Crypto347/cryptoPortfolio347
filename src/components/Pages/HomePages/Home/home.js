@@ -81,6 +81,7 @@ export const Home = (props) => {
         window.scrollTo(0, 0);
 
         // Event Listeners
+        
         window.addEventListener('wheel', checkScrollDirection);
 
         return () => {
