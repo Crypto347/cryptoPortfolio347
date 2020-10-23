@@ -1510,7 +1510,7 @@ export const TwoColumnsPage = (props) => {
                     </div>
                     <div className="grey-line"/>
                     {renderTwoColumnsPageData()}
-                    {renderLoadMoreButton()}
+                    {categoryFromHeader === "showAll" ? renderLoadMoreButton() : null}
                 </div>
             )
         }
