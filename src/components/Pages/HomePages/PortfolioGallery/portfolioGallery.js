@@ -57,13 +57,6 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H22,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
     EH110
 } from '../../../UtilityComponents';
 
@@ -168,10 +161,17 @@ export const PortfolioGallery = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.portfolioGalleryPage.items.length === 0){
             props.fetchPortfolioGalleryPage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
 
         let timeout = setTimeout(() => {
             if(!props.portfolioGalleryPage.loading && !props.portfolioGalleryPage.error && props.historyPopFromItem !== "scrollToTop"){
@@ -182,12 +182,18 @@ export const PortfolioGallery = (props) => {
             }
         }, 2);
 
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
+
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
@@ -226,13 +232,6 @@ export const PortfolioGallery = (props) => {
         )
     }
 
-
-    // const onClickHandler = (path) => {
-    //     props.setUnmountComponentValues(true, path);
-    //     props.unmountComponent(null, null, "portfolioGallery");
-    //     props.clearArchiveData();
-    // }
-
     const renderPortfolioGalleryPageItems = () => {
         return(
             <>
@@ -253,9 +252,7 @@ export const PortfolioGallery = (props) => {
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
                                 setIsHoveringCategory={props.setPortfolioGalleryPageIsHoveringCategory}
-                                // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
                                 clearArchiveData={props.clearArchiveData}
-                                // archiveCategory={props.archive.category}
                             />
                         </div>
                     )
@@ -340,7 +337,6 @@ export default connect(
             rememberCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.rememberCoordinateRangeForPortfolioGalleryPage, dispatch),
             forgetCoordinateRangeForPortfolioGalleryPage: bindActionCreators(Actions.forgetCoordinateRangeForPortfolioGalleryPage, dispatch),
             setPortfolioGalleryPageIsHoveringCategory: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringCategory, dispatch),
-            // setPortfolioGalleryPageIsHoveringArrow: bindActionCreators(Actions.setPortfolioGalleryPageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
