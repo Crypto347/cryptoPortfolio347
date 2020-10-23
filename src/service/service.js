@@ -690,11 +690,14 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                 dispatch(Actions.loadMoreDisableButtonStateForTwoColumnsPage(json.disableLoadMoreButton));
                 if(step > 1 && category !== "showAll"){
                     let addedElemntsArray = json.twoColumnsData.slice(json.twoColumnsData.length-4, json.twoColumnsData.length);
+                    let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(json.twoColumnsData, category);
+                    let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements(arrayOfAppearAndDisapperElements, screenWidth);
+                    
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[0].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: 0,
-                        translateY: 0,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4-3}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4-3}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -702,8 +705,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: 0,
-                        translateY: 0,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4-2}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4-2}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -711,8 +714,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: 0,
-                        translateY: 0,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4-1}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4-1}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -720,8 +723,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
                         width: Utility.setWidthOfImageTwoColumnsPage(screenWidth),
                         scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: 0,
-                        translateY: 0,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
