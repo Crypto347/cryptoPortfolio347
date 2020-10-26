@@ -39,7 +39,6 @@
                 cursor: pointer;
                 .archive-image {
                     position: relative;
-                    // opacity: 1;
                     .archive-image-curtain {
                         position: absolute;
                         top: 0%;
@@ -108,8 +107,6 @@
     .archive {
         .archive-wrapper {
             .archive-date-items {
-                // width: calc(100% - 230px);
-                // padding: 100px 100px 100px 130px;
                 .archive-date-item {
                     width: calc(100% - 30px);
                 }
@@ -146,14 +143,6 @@
     }
 }
 
-// @media only screen and (max-width: 800px){
-//     .big-images {
-//         .big-images-wrapper {
-//             padding: 70px 30px 70px 30px;
-//         }
-//     }
-// }
-
 @-webkit-keyframes archiveImageHoverOn {
     from{opacity: 0;}
     to{opacity:1;}
@@ -187,5 +176,3 @@
     from{opacity: 1;}
     to{opacity:0;}
 }
-
-
