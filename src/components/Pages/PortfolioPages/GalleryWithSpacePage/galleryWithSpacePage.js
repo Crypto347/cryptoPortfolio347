@@ -4,8 +4,7 @@
 
 import React, {
     useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -29,7 +28,6 @@ import './galleryWithSpacePage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
-import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -57,14 +55,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
     H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
 } from '../../../UtilityComponents';
 
 /**
@@ -93,10 +84,18 @@ export const GalleryWithSpacePage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.galleryWithSpacePage.items.length === 0){
             props.fetchGalleryWithSpacePage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
+
         let timeout = setTimeout(() => {
             if(!props.galleryWithSpacePage.loading && !props.galleryWithSpacePage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
@@ -106,9 +105,13 @@ export const GalleryWithSpacePage = (props) => {
             }
         }, 2);
 
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -192,12 +195,9 @@ export const GalleryWithSpacePage = (props) => {
                         <OverlayImage
                             page="galleryWithSpacePage"
                             obj={el}
-                            // id={el.id}
                             setIsHoveringCategory={props.setgalleryWithSpacePageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            // clearArchiveData={props.clearArchiveData}
-                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -259,7 +259,6 @@ export default connect(
             galleryWithSpacePage: Selectors.getGalleryWithSpacePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
-            archive: Selectors.getArchiveState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
@@ -269,7 +268,6 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
