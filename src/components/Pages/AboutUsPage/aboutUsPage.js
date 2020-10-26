@@ -26,6 +26,7 @@ export const AboutUsPage = () => {
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
+        
     }, []);
 
     /**
