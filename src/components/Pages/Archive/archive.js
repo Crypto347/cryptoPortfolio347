@@ -96,6 +96,7 @@ export const Archive = (props) => {
 
     useEffect(() => {
         // Init state for fading effect when component will unmount
+        
         props.setUnmountComponentValues(false, "");
 
         // Fetch data for the component
