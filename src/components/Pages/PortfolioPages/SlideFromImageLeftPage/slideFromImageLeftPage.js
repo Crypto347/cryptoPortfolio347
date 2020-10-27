@@ -4,8 +4,7 @@
 
 import React, {
     useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -29,7 +28,6 @@ import './slideFromImageLeftPage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import SlideFromImageLeft from '../../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
-import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -57,14 +55,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -93,10 +84,18 @@ export const SlideFromImageLeftPage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.slideFromImageLeftPage.items.length === 0){
             props.fetchSlideFromImageLeftPage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
+
         let timeout = setTimeout(() => {
             if(!props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
@@ -107,9 +106,13 @@ export const SlideFromImageLeftPage = (props) => {
             }
         }, 2);
 
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -192,31 +195,12 @@ export const SlideFromImageLeftPage = (props) => {
                     >
                         <SlideFromImageLeft
                             obj={el}
-                            // id={el.id}
                             page="slideFromImageLeftPage"
-                      
-                            // imageKey={el.coverImage.key}
-                            // alt={el.coverImage.alt}
-                            // header={el.header}
-                            // isHover={el.coverImage.isHover}
-                            // path={el.path}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             setIsHoveringCategory={props.setSlideFromImageLeftPageIsHoveringCategory}
                             clearArchiveData={props.clearArchiveData}
-                            // archiveCategory={props.archive.category}
                         />
-                        {/* <SimpleOverlayImage
-                            imageKey={el.coverImage.key}
-                            alt={el.coverImage.alt}
-                            header={el.header}
-                            isHover={el.coverImage.isHover}
-                            path={el.path}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            page="simpleOverlayPage"
-                            id={el.id}
-                        /> */}
                     </div>
                 )
             })}</div>
@@ -285,8 +269,6 @@ export default connect(
         return {
             fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
             setSlideFromImageLeftPageIsHoveringCategory: bindActionCreators(Actions.setSlideFromImageLeftPageIsHoveringCategory, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

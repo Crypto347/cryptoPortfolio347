@@ -4,8 +4,7 @@
 
 import React, {
     useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -29,7 +28,6 @@ import './simpleOverlayPage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
-import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -57,14 +55,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -93,23 +84,34 @@ export const SimpleOverlayPage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.simpleOverlayPage.items.length === 0){
             props.fetchSimpleOverlayPage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
+
         let timeout = setTimeout(() => {
             if(!props.simpleOverlayPage.loading && !props.simpleOverlayPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
             }
         }, 2);
 
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -144,51 +146,6 @@ export const SimpleOverlayPage = (props) => {
         }
         return e.deltaY < 0;
     }
-
-    // const handleMouseEnter = (opt, id, pathOfIds) => {
-    //     switch(opt){
-    //         case 'switchImageCategory': 
-    //             props.setSwitchImagePageIsHoveringCategory("on", pathOfIds);
-    //             break;
-    //         case 'arrow': 
-    //             props.setSwitchImagePageIsHoveringArrow("on", id);
-    //             break;
-    //     }
-    // }
-
-    // const handleMouseLeave = (opt, id, pathOfIds) => {
-    //     switch(opt){
-    //         case 'switchImageCategory': 
-    //             props.setSwitchImagePageIsHoveringCategory("off", pathOfIds);
-    //             break;
-    //         case 'arrow': 
-    //             props.setSwitchImagePageIsHoveringArrow("off", id);
-    //             break;
-    //     }
-    // }
-
-    // const renderClassName = (opt, isHovering) => {
-    //     if(opt === "switchImageCategory"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "h15-nobel-lustria-animated";
-    //             case 'on':
-    //                 return "h15-nobel-lora-nero-hover-on";
-    //             case 'off':
-    //                 return "h15-nobel-lora-nero-hover-off"
-    //         }
-    //     }
-    //     if(opt === "arrow"){
-    //         switch(isHovering){
-    //             case 'init':
-    //                 return "arrow-wrapper";
-    //             case 'on':
-    //                 return "arrow-wrapper-lengthen";
-    //             case 'off':
-    //                 return "arrow-wrapper-shorten"
-    //         }
-    //     }
-    // }
 
     const renderToolbars = () => {
         if(size.width < 1120){
@@ -312,14 +269,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
