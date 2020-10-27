@@ -4,8 +4,7 @@
 
 import React, {
     useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -28,7 +27,6 @@ import './threeColumnsWidePage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
@@ -57,14 +55,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -93,10 +84,17 @@ export const ThreeColumnsWidePage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.threeColumnsWidePage.items.length === 0){
             props.fetchThreeColumnsWidePage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
 
         let timeout = setTimeout(() => {
             if(!props.threeColumnsWidePage.loading && !props.threeColumnsWidePage.error && props.historyPopFromItem !== "scrollToTop"){
@@ -107,8 +105,13 @@ export const ThreeColumnsWidePage = (props) => {
             }
         }, 2);
     
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
+
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -240,20 +243,12 @@ export const ThreeColumnsWidePage = (props) => {
     */
 
     return(
-        // <>
-            <div className="three-columns-wide-page" id="threeColumnsWidePage">
-                {renderToolbars()}
-                {renderThreeColumnsWidePageContent()}
-                <Footer/>
-                {props.showBackToTop ? <BackToTop/> : null}
-            </div>
-            /* {props.menuDotsState.state === "on" ? 
-            <MenuFullScreen 
-                page="portfolioGallery"
-                state={props.menuDotsState.state}
-            /> : null
-            }      */
-        /* </>  */
+        <div className="three-columns-wide-page" id="threeColumnsWidePage">
+            {renderToolbars()}
+            {renderThreeColumnsWidePageContent()}
+            <Footer/>
+            {props.showBackToTop ? <BackToTop/> : null}
+        </div>
     );
 }
 
@@ -263,21 +258,15 @@ export default connect(
             threeColumnsWidePage: Selectors.getThreeColumnsWidePageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
-            archive: Selectors.getArchiveState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
             fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
