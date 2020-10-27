@@ -11,10 +11,6 @@ import {
     withRouter
 } from 'react-router-dom';
 
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
  * Styles
  */
@@ -26,9 +22,7 @@ import './backToTop.scss';
  */
 
 import {
-    H17,
-    H40,
-    EH20
+    H17
 } from '../../UtilityComponents';
 
 /**
@@ -44,8 +38,11 @@ export const BackToTop = (props) => {
      */
 
     useEffect(()=>{
-            document.getElementById("html").style.scrollBehavior = "smooth";
+        // Set smooth scrollbar behavior
+
+        document.getElementById("html").style.scrollBehavior = "smooth";
         return () => {
+            // Clear smooth scrollbar behavior
             document.getElementById("html").style.scrollBehavior = null;
         }
     },[])
@@ -84,12 +81,15 @@ export const BackToTop = (props) => {
     const arrowOnClick = (e, path) => {
         switch(e.button){
             case 0: 
-                window.scrollTo(0,0)
+                // Scroll to top on left mouse click
+                window.scrollTo(0,0);
                 return;
             case 1:
+                // Open the current page in a new window on scroll wheel click
                 window.open(path, "_blank");
                 return;
             case 2:
+                // Do nothing on right mouse click 
                 return;
         }
     }

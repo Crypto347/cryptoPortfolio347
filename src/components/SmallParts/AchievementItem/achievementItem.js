@@ -4,25 +4,8 @@
 
 import React, {
     useState, 
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
  * Styles
@@ -55,10 +38,6 @@ export const AchievementItem = (props) => {
      * Methods
      */
    
-    useEffect(() => {
-        
-    }, []);
-
     useInterval(() => {
         setValue(value + 1);
     }, value === props.number ? null : delay)
