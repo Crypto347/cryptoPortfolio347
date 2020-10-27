@@ -116,6 +116,7 @@ export const TwoColumnsPage = (props) => {
         }, 2);
 
         if(props.twoColumnsPage.categories.length !== 0){
+            
             /**
              * Set appear and disappear images width, height, transition
              * and translate coordinates according to the category selected from the header
