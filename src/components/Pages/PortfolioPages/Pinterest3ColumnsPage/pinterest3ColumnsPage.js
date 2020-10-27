@@ -56,14 +56,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H65,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H65
 } from '../../../UtilityComponents';
 
 /**
@@ -94,13 +87,27 @@ export const Pinterest3ColumnsPage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.pinterest3ColumnsPage.items.length === 0){
             props.fetchPinterest3ColumnsPage();
         }
+
+        // Scroll to the top of the screen
+
         let timeout = setTimeout(() => {
             window.scrollTo(0, 0);
         }, 2);
+        
+        // Set images width, height, transition and translate coordinates
+
+        setImagesState();
+
+        // Event Listeners
 
         const smooth = e => {
             if(['pinterest-3-columns-item-id1',
@@ -126,13 +133,14 @@ export const Pinterest3ColumnsPage = (props) => {
         const resize = () => {
             resizeRef.current();
         }
- 
-        setImagesState("onInit");
+
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('transitionend', smooth);
 
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
@@ -148,6 +156,8 @@ export const Pinterest3ColumnsPage = (props) => {
     });
 
     useEffect(() => {
+        // Set the transition property to the initial value if its value is 0
+
         if(props.pinterest3ColumnsPage.itemsStyleValues.img1.transition === 0 ||
             props.pinterest3ColumnsPage.itemsStyleValues.img2.transition === 0 ||
             props.pinterest3ColumnsPage.itemsStyleValues.img3.transition === 0 ||
@@ -297,7 +307,7 @@ export const Pinterest3ColumnsPage = (props) => {
     }  
 
     const handleResize = (e) => {
-        setImagesState("onResize");
+        setImagesState();
     }
 
     const handleOnWheel = (e) => {
@@ -328,7 +338,9 @@ export const Pinterest3ColumnsPage = (props) => {
         return e.deltaY < 0;
     }
 
-    const setImagesState = (opt) => {
+    const setImagesState = () => {
+        // Set images state according to the screen width
+
         if(size.width > 1400){
             props.updateItemsStyleValuesPinterest3ColumnsPage("img1",{
                 width: 413.33,
@@ -1177,7 +1189,6 @@ export const Pinterest3ColumnsPage = (props) => {
         return(
             <div 
                 id="pinterest3ColumnsPageItems"
-                // className="pinterest-3-columns-page-items"
                 style={{
                     position: "relative",
                     width: `${renderPinterest3ColumnsItemsStyleWidth()}px`,
@@ -1188,8 +1199,6 @@ export const Pinterest3ColumnsPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        // className={`pinterest-3-columns-page-item-id${el.id}`}
-                        // className={renderClassName(el.id)}
                         style={renderPinterest3ColumnsPageItemStyle(el.id)}
                     >
                         <Pinterest3ColumnsItem
@@ -1257,7 +1266,6 @@ export default connect(
     (state) => {
         return {
             pinterest3ColumnsPage: Selectors.getPinterest3ColumnsPageState(state),
-            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
@@ -1265,9 +1273,6 @@ export default connect(
     (dispatch) => {
         return {
             fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
             setPinterest3ColumnsPageIsHoveringCategory: bindActionCreators(Actions.setPinterest3ColumnsPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
