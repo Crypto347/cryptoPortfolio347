@@ -168,7 +168,7 @@ export const SmallSlider = (props) => {
     }
     
     const calculateOnePercentToPx = (scrWidth) => {
-        //Calculate one percent
+        //Calculate one percent of screen width
 
         let screenWidth = scrWidth / 100;
         setOnePercentToPx(screenWidth);
