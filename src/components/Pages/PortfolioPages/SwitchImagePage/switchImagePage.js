@@ -28,7 +28,6 @@ import './switchImagePage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import MenuFullScreen from '../../../Parts/MenuFullScreen/menuFullScreen';
 import PortfolioItemCard from '../../../SmallParts/PortfolioItemCard/portfolioItemCard';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
@@ -57,14 +56,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -86,7 +78,6 @@ export const SwitchImagePage = (props) => {
     */
 
     const size = useWindowSize();
-    // const itemRef = useRef(null);
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
   
@@ -170,10 +161,17 @@ export const SwitchImagePage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.switchImagePage.items.length === 0){
             props.fetchSwitchImagePage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
 
         let timeout = setTimeout(() => {
             if(!props.switchImagePage.loading && !props.switchImagePage.error && props.historyPopFromItem !== "scrollToTop"){
@@ -184,12 +182,18 @@ export const SwitchImagePage = (props) => {
             }
         }, 2);
      
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
+
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
@@ -288,9 +292,7 @@ export const SwitchImagePage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             setIsHoveringCategory={props.setSwitchImagePageIsHoveringCategory}
-                            // setSwitchImagePageIsHoveringArrow={props.setSwitchImagePageIsHoveringArrow}
                             clearArchiveData={props.clearArchiveData}
-                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -337,20 +339,12 @@ export const SwitchImagePage = (props) => {
     */
 
     return(
-        // <>
-            <div className="switch-image-page" id="switchImagePage">
-                {renderToolbars()}
-                {renderSwitchImagePageContent()}
-                <Footer/>
-                {props.showBackToTop ? <BackToTop/> : null}
-            </div>
-            /* {props.menuDotsState.state === "on" ? 
-            <MenuFullScreen 
-                page="portfolioGallery"
-                state={props.menuDotsState.state}
-            /> : null
-            }      */
-        /* </>  */
+        <div className="switch-image-page" id="switchImagePage">
+            {renderToolbars()}
+            {renderSwitchImagePageContent()}
+            <Footer/>
+            {props.showBackToTop ? <BackToTop/> : null}
+        </div>
     );
 }
 
@@ -370,7 +364,6 @@ export default connect(
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
-            // setSwitchImagePageIsHoveringArrow: bindActionCreators(Actions.setSwitchImagePageIsHoveringArrow, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
