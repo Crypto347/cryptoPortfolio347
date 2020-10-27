@@ -107,6 +107,8 @@ export const StoneWallPage = (props) => {
 
         setImagesState();
 
+        // Event Listeners
+        
         const smooth = () => {
             transitionRef.current();
         }

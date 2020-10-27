@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -17,14 +17,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './twoColumnsPage.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../../SmallParts/Loading/loading';
 import LoadingVersion2 from '../../../SmallParts/LoadingVersion2/loadingVersion2';
@@ -35,58 +35,52 @@ import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import { 
     H15,
     H19,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H45
 } from '../../../UtilityComponents';
 
 import * as Utility from '../../../../utility';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* TwoColumnsPage component definition and export
-*/
+ * TwoColumnsPage component definition and export
+ */
 
 export const TwoColumnsPage = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const resizeRef = useRef();
@@ -95,15 +89,23 @@ export const TwoColumnsPage = (props) => {
     const [categoryFromHeader, setCategoryFromHeader] = useState("showAll");
     
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.twoColumnsPage.items.length === 0){
             props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep);
             props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
         }
+
+        // Return to the part of the screen where the link to the selected item is located
+
         let timeout = setTimeout(() => {
             if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
@@ -113,6 +115,22 @@ export const TwoColumnsPage = (props) => {
             }
         }, 2);
 
+        if(props.twoColumnsPage.categories.length !== 0){
+            /**
+             * Set appear and disappear images width, height, transition
+             * and translate coordinates according to the category selected from the header
+             */
+
+            let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
+            categoryFromHeaderOnClickHandler(categeryKey);
+        }else{
+            // Set all images width, height, transition and translate coordinates 
+
+            setImagesState("onInit");
+        }
+
+        // Event Listeners
+
         const smooth = e => {
             transitionRef.current()
         }
@@ -121,17 +139,13 @@ export const TwoColumnsPage = (props) => {
             resizeRef.current();
         }  
 
-        if(props.twoColumnsPage.categories.length !== 0){
-            let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
-            categoryFromHeaderOnClickHandler(categeryKey);
-        }else{
-            setImagesState("onInit");
-        }
-        
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
+
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
@@ -160,7 +174,37 @@ export const TwoColumnsPage = (props) => {
         props.twoColumnsPage.itemsStyleValues.img17?.transition,props.twoColumnsPage.itemsStyleValues.img18?.transition
     ]);
 
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("twoColumnsPage");
+
+        // Show or hide BackToTop component
+
+        if(scrollHeight > screen.height/2){
+            props.setShowBackToTopComponent(true);
+        }else{
+            props.setShowBackToTopComponent(false);
+        }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 50){
+            setScrollingUp(false);
+        }else{
+            setScrollingUp(true);
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
+
     const updateTransitionValue = () => {
+        // Set the transition property to the initial value if its value is 0
+
         if(props.twoColumnsPage.itemsStyleValues.img1?.transition === 0){
             props.updateItemsStyleValuesTwoColumnsPage("img1",{
                 ...props.twoColumnsPage.itemsStyleValues.img1,
@@ -384,11 +428,12 @@ export const TwoColumnsPage = (props) => {
 
     const handleResize = (e) => {
         categoryFromHeaderOnClickHandler(categoryFromHeader);
-        // setImagesState("onResize");
     }
 
     const setImagesState = (opt, elementToUpdate, action, arrayOfDisappearAndAppearElements) => {
         if(opt === "categoryFromHeaderOnClick"){
+            // Set images state according to the selected category
+
             let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, size.width);
             let translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
             let itemsStylesObj = props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`];
@@ -809,6 +854,8 @@ export const TwoColumnsPage = (props) => {
                     return;
             }
         }else{
+            // Set all images state
+
             if(props.twoColumnsPage.itemsStyleValues.img1?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img1",{
                     width: Utility.setWidthOfImageTwoColumnsPage(size.width),
@@ -1010,34 +1057,6 @@ export const TwoColumnsPage = (props) => {
         }
     }
 
-    const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("twoColumnsPage");
-
-        // Show or hide BackToTop component
-
-        if(scrollHeight > screen.height/2){
-            props.setShowBackToTopComponent(true);
-        }else{
-            props.setShowBackToTopComponent(false);
-        }
-    
-        // Check scroll direction
-
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 50){
-            setScrollingUp(false);
-        }else{
-            setScrollingUp(true);
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
-    }
-
     const renderToolbars = () => {
         if(size.width < 1200){
             return(
@@ -1075,13 +1094,18 @@ export const TwoColumnsPage = (props) => {
     }
 
     const loadMoreOnClick = () => {
+        // Fetch more data for the component
+
         props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep, 
                                     categoryFromHeader, 
                                     size.width, 
                                     props.twoColumnsPage.items.length, 
                                     props.twoColumnsPage.itemsStyleValues);
         props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
-        renderStoneWallItemsStyleHeight();
+
+        // Set height for the twoColumnsPage items div
+
+        renderTwoColumnsPageStyleHeight();
     }
 
     const renderClassName = (opt, isHovering, active) => {
@@ -1114,8 +1138,7 @@ export const TwoColumnsPage = (props) => {
         }
     }
     
-    const renderStoneWallPageItemStyle = (id) => {
-        let checkIfDisappear = props.twoColumnsPage.arrayOfDisappearAndAppearElements.find(item => item.id === id)?.disappear;
+    const renderTwoCloumnsPageItemStyle = (id) => {
         switch(id){
             case 1:
                 return {
@@ -1248,10 +1271,6 @@ export const TwoColumnsPage = (props) => {
                                 translate(${props.twoColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img12?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
                     zIndex: `${props.twoColumnsPage.itemsStyleValues.img12?.zIndex}`
-                    // top: "0px",
-                    // left: `${props.twoColumnsPage.itemsStyleValues.img1.width + 40}`,
-                    // transform: `translate(${props.twoColumnsPage.itemsStyleValues.img2.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2.translateY}px)`,
-                    // transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2.transition}s ease-out`,
                 };
             case 13:
                 return {
@@ -1323,9 +1342,17 @@ export const TwoColumnsPage = (props) => {
     }
 
     const categoryFromHeaderOnClickHandler = (key) => {
+        // Set selected category from the header
+
         props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
-        renderStoneWallItemsStyleHeight();
+
+        // Set height for the twoColumnsPage items div
+
+        renderTwoColumnsPageStyleHeight();
+
+        // Set images state according to the selected category
+
         if(key !== "showAll"){
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(props.twoColumnsPage.items, key);
             props.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(arrayOfAppearAndDisapperElements)
@@ -1344,7 +1371,7 @@ export const TwoColumnsPage = (props) => {
        
     }
 
-    const renderStoneWallItemsStyleWidth = () => {
+    const renderTwoColumnsPageStyleWidth = () => {
         if(size.width > 1200){
             return 1100;
         }
@@ -1357,18 +1384,12 @@ export const TwoColumnsPage = (props) => {
         if(size.width <= 710){
             return 430;
         }
-        // if(size.width <= 680 && size.width > 500){
-        //     return 420;
-        // }
-        // if(size.width <= 500){
-        //     return 300;
-        // }
     }
 
-    const renderStoneWallItemsStyleHeight = () => {
+    const renderTwoColumnsPageStyleHeight = () => {
         let numOfAppearElements;
-
         let objToArray = [];
+        
         numOfAppearElements = props.twoColumnsPage.itemsStyleValues;
         objToArray = Utility.getArrayOfEmptyVal(Object.keys(props.twoColumnsPage.itemsStyleValues).length);
         objToArray = objToArray.map((el,i) => {
@@ -1388,23 +1409,6 @@ export const TwoColumnsPage = (props) => {
         })
         numOfAppearElements = objToArray.filter(item => item === true).length;
         return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImageTwoColumnsPage(size.width) + +(numOfAppearElements/2).toFixed() * 30;
-       
-       
-        // if(size.width <= 1200 && size.width > 1040){
-        //     return 1019.99;
-        // }
-        // if(size.width <= 1040 && size.width > 840){
-        //     return 2034;
-        // }
-        // if(size.width <= 840 && size.width > 680){
-        //     return 1615;
-        // }
-        // if(size.width <= 680 && size.width > 500){
-        //     return 2738.55;
-        // }
-        // if(size.width <= 500){
-        //     return 2010.39;
-        // }
     }
 
     const renderTwoColumnsPageData = () => {
@@ -1413,7 +1417,7 @@ export const TwoColumnsPage = (props) => {
                 <div 
                     className="two-columns-page-categories-from-header"
                     style={{
-                        width: `${renderStoneWallItemsStyleWidth()}px`
+                        width: `${renderTwoColumnsPageStyleWidth()}px`
                     }}
                 >{props.twoColumnsPage.categories.map((el, i) => {
                     return(
@@ -1430,19 +1434,18 @@ export const TwoColumnsPage = (props) => {
                 })}
                 </div>
                 <div  
-                    // className="two-columns-page-items"
+                    id="twoColumnsPageItems"
                     style={{
                         position: "relative",
-                        width: `${renderStoneWallItemsStyleWidth()}px`,
-                        height: `${renderStoneWallItemsStyleHeight("onInit")}px`
+                        width: `${renderTwoColumnsPageStyleWidth()}px`,
+                        height: `${renderTwoColumnsPageStyleHeight("onInit")}px`
                     }}
                 >{props.twoColumnsPage.items.map((el, i) => {
                     return(
                         <div 
                             key={i} 
                             id={el.key}
-                            // className="two-columns-page-item"
-                            style={renderStoneWallPageItemStyle(el.id)}
+                            style={renderTwoCloumnsPageItemStyle(el.id)}
                         >
                             <OverlayImage
                                 page="twoColumnsPage"
@@ -1485,7 +1488,7 @@ export const TwoColumnsPage = (props) => {
                 <div 
                     className="two-columns-page-button-load-more-loading-error" 
                 >
-                    <H19 className="h19-nobel-lora">{`${props.archive.error}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.twoColumnsPage.errorMoreData}`}</H19>
                 </div>
             )
         }
@@ -1553,14 +1556,10 @@ export default connect(
     (dispatch) => {
         return {
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setTwoColumnsPageIsHoveringCategoryFromHeader: bindActionCreators(Actions.setTwoColumnsPageIsHoveringCategoryFromHeader, dispatch),
-            setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setLoadMoreStep: bindActionCreators(Actions.setLoadMoreStep, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
