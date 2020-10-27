@@ -56,14 +56,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H65,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H65
 } from '../../../UtilityComponents';
 
 /**
@@ -94,13 +87,27 @@ export const MetroPage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.metroPage.items.length === 0){
             props.fetchMetroPage();
         }
+
+        // Scroll to the top of the screen
+
         let timeout = setTimeout(() => {
             window.scrollTo(0, 0);
         }, 2);
+
+        // Set images width, height, transition and translate coordinates
+
+        setImagesState();
+
+        // Event Listeners
 
         const smooth = e => {
             if(['metro-page-item-id1',
@@ -123,12 +130,13 @@ export const MetroPage = (props) => {
             resizeRef.current();
         }
 
-        setImagesState();
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
 
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
@@ -144,6 +152,8 @@ export const MetroPage = (props) => {
     });
 
     useEffect(() => {
+        // Set the transition property to the initial value if its value is 0
+
         if(props.metroPage.itemsStyleValues.img1.transition === 0 ||
             props.metroPage.itemsStyleValues.img2.transition === 0 ||
             props.metroPage.itemsStyleValues.img3.transition === 0 ||
@@ -288,6 +298,9 @@ export const MetroPage = (props) => {
 
     const setImagesState = () => {
         let metroPageItemsWidth = document.getElementById('metroPageItems')?.clientWidth;
+
+        // Set images state according to the screen width
+        
         if(size.width > 1500){
             props.updateItemsStyleValuesMetroPage("img1",{
                 width: (metroPageItemsWidth - 120)/5,
@@ -725,15 +738,12 @@ export const MetroPage = (props) => {
         switch(id){
             case 1:
                 return {
-                    width: `${props.metroPage.itemsStyleValues.img1.width}`,
-                    // height: `${100/3}%`
+                    width: `${props.metroPage.itemsStyleValues.img1.width}`
                 };
             case 2:
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img2.width}`,
-                    // top: "0px",
-                    // left: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img2.translateX}px, ${props.metroPage.itemsStyleValues.img2.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img2.transition}s ease-out`,
                 };
@@ -741,8 +751,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img3.width}`,
-                    // top: "0px",
-                    // left: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img2.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img3.translateX}px, ${props.metroPage.itemsStyleValues.img3.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img3.transition}s ease-out`,
                 };
@@ -750,8 +758,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img4.width}`,
-                    // top: "0px",
-                    // left: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img2.width + 40 + props.metroPage.itemsStyleValues.img3.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img4.translateX}px, ${props.metroPage.itemsStyleValues.img4.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img4.transition}s ease-out`,
                 };
@@ -759,8 +765,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img5.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    // left: "0px",
                     transform: `translate(${props.metroPage.itemsStyleValues.img5.translateX}px, ${props.metroPage.itemsStyleValues.img5.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img5.transition}s ease-out`,
                 };
@@ -768,8 +772,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img6.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img6.translateX}px, ${props.metroPage.itemsStyleValues.img6.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img6.transition}s ease-out`,
                 };
@@ -777,8 +779,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img7.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img7.translateX}px, ${props.metroPage.itemsStyleValues.img7.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img7.transition}s ease-out`,
                 };
@@ -786,8 +786,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img8.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img8.translateX}px, ${props.metroPage.itemsStyleValues.img8.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img8.transition}s ease-out`,
                 };
@@ -795,8 +793,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img9.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40 + props.metroPage.itemsStyleValues.img6.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img9.translateX}px, ${props.metroPage.itemsStyleValues.img9.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img9.transition}s ease-out`,
                 };
@@ -804,8 +800,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img10.width}`,
-                    // top: `${props.metroPage.itemsStyleValues.img1.width + 40 + props.metroPage.itemsStyleValues.img5.width + 80}`,
-                    // left: "0px",
                     transform: `translate(${props.metroPage.itemsStyleValues.img10.translateX}px, ${props.metroPage.itemsStyleValues.img10.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img10.transition}s ease-out`,
                 };
@@ -813,8 +807,6 @@ export const MetroPage = (props) => {
                 return {
                     position: "absolute",
                     width: `${props.metroPage.itemsStyleValues.img11.width}`,
-                    // top: `${3 * props.metroPage.itemsStyleValues.img1.width + 120}`,
-                    // left: `${props.metroPage.itemsStyleValues.img5.width + 40}`,
                     transform: `translate(${props.metroPage.itemsStyleValues.img11.translateX}px, ${props.metroPage.itemsStyleValues.img11.translateY}px)`,
                     transition: `transform ${props.metroPage.itemsStyleValues.img11.transition}s ease-out`,
                 };
@@ -854,8 +846,6 @@ export const MetroPage = (props) => {
                     <div 
                         key={i} 
                         id={el.key}
-                        // className={`metro-wide-page-item-id${el.id}`}
-                        // className={renderClassName(el.id)}
                         style={renderMetroPageItemStyle(el.id)}
                     >
                         <MetroItem
@@ -923,7 +913,6 @@ export default connect(
     (state) => {
         return {
             metroPage: Selectors.getMetroPageState(state),
-            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
@@ -931,9 +920,6 @@ export default connect(
     (dispatch) => {
         return {
             fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
-            rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
-            forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
             setMetroPageIsHoveringCategory: bindActionCreators(Actions.setMetroPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
