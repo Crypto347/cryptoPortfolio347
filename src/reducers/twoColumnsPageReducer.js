@@ -1,20 +1,20 @@
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as actionTypes from "../constants/actionTypes";
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from "../utility";
 import uuid from "uuid";
 import { updateItemsStyleValuesMetroPage } from "../actions";
 
 /**
-* Initial State
-*/
+ * Initial State
+ */
 
 export const initialState = {
     items: [],

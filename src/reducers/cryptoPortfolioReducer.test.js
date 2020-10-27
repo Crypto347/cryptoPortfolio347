@@ -1,18 +1,18 @@
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as actionTypes from "../constants/actionTypes";
 
 /**
-* Reducer
-*/
+ * Reducer
+ */
 
 import reducer from './parallaxWebsiteReducer';
 
 /**
-* Initial State
-*/
+ * Initial State
+ */
 
 import { 
     initialState 

@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './h25.scss';
 
 /**
-* H25 component definition and export
-*/
+ * H25 component definition and export
+ */
 
 export const H25 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

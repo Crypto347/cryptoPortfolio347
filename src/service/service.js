@@ -1,12 +1,12 @@
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from "../actions";
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from "../utility";
 

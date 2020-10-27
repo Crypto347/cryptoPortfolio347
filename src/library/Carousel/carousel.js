@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -17,14 +17,14 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './carousel.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import CarouselContent from './CarouselContent/carouselContent';
 import CarouselSlide from './CarouselSlide/carouselSlide';
@@ -32,34 +32,34 @@ import CarouselArrow from './CarouselArrow/carouselArrow';
 import CarouselDots from './CarouselDots/carouselDots';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 // import * as Actions from '../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 // import * as Selectors from '../reducers/selectors';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import {
     slides
 } from '../../constants/slides';
 
 /**
-* Carousel component definition and export
-*/
+ * Carousel component definition and export
+ */
 
 export const Carousel = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const firstSlide = slides[0];
     const secondSlide = slides[1]
@@ -81,8 +81,8 @@ export const Carousel = (props) => {
     const resizeRef = useRef();
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         autoPlayRef.current = nextSlide;
@@ -191,8 +191,8 @@ export const Carousel = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="carousel-slider">

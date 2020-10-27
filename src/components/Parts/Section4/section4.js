@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
@@ -11,39 +11,39 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './section4.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Statistics from '../Statistics/statistics';
 import Achievements from '../Achievements/achievements';
 
 /**
-* Section4 component definition and export
-*/
+ * Section4 component definition and export
+ */
 
 export const Section4 = () => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
 
     }, []);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="section-4">

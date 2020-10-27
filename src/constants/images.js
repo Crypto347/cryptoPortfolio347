@@ -1,15 +1,15 @@
 
 /**
-* Additional
-*/
+ * Additional
+ */
 
 import Map from '../images/addition/footer-img-1-300x156.png';
 
 export const MAP = Map;
 
 /**
-* Backgrond
-*/
+ * Backgrond
+ */
 
 // import Background1 from '../images/background/abstract-3304213_1280.png';
 // import Background2 from '../images/background/augustine-wong-3Om4DHcaAc0-unsplash.jpg';
@@ -30,8 +30,8 @@ export const MAP = Map;
 // export const BACKGROUND_8 = Background8;
 
 /**
-* Header Images
-*/
+ * Header Images
+ */
 
 import HeaderImage1 from '../images/headerImages/annie-spratt-QckxruozjRg-unsplash.jpg';
 import HeaderImage2 from '../images/headerImages/john-schnobrich-2FPjlAyMQTA-unsplash.jpg';
@@ -42,8 +42,8 @@ export const HEADER_IMAGE_2 = HeaderImage2;
 export const HEADER_IMAGE_3 = HeaderImage3;
 
 /**
-* Our Process
-*/
+ * Our Process
+ */
 
 import Process from '../images/ourProcess/home-2-icon-2.png';
 import Design from '../images/ourProcess/home-2-icon-4.png';
@@ -58,8 +58,8 @@ export const DEVELOPMENT = Development;
 export const EVALUATION = Evaluation;
 
 /**
-* Picture Board
-*/
+ * Picture Board
+ */
 
 // B&WFolder1
 
@@ -312,8 +312,8 @@ export const TEXT_26 = text26;
 export const TEXT_27 = text27;
 
 /**
-* Portfolio Page
-*/
+ * Portfolio Page
+ */
 
 // bigImages id1
 
@@ -568,8 +568,8 @@ export const ID_3_SMALL_SLIDER_3 = Id3SmallSlider3;
 export const ID_3_SMALL_SLIDER_4 = Id3SmallSlider4;
 
 /**
-* Team Photos
-*/
+ * Team Photos
+ */
 
 import Photo1 from '../images/teamPhotos/marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png';
 import Photo2 from '../images/teamPhotos/christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png';
@@ -584,8 +584,8 @@ export const PHOTO_4 = Photo4;
 export const PHOTO_5 = Photo5;
 
 /**
-* Archive Cover Pictures
-*/
+ * Archive Cover Pictures
+ */
 
 import ArchiveCoverPic1 from '../images/archiveCoverPictures/adam-wilson-1QZYZib7eYs-archive-unsplash.png';
 import ArchiveCoverPic2 from '../images/archiveCoverPictures/nadine-shaabana-updated-archive-unsplash.png';
@@ -626,8 +626,8 @@ export const ARCHIVE_COVER_PIC_17 = ArchiveCoverPic17;
 export const ARCHIVE_COVER_PIC_18 = ArchiveCoverPic18;
 
 /**
-* Simple Overlay Cover Pictures
-*/
+ * Simple Overlay Cover Pictures
+ */
 
 import SimpleOverlayCoverPic1 from '../images/simpleOverlayCoverPictures/adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png';
 import SimpleOverlayCoverPic2 from '../images/simpleOverlayCoverPictures/laura-chouette-simple-overlay-unsplash.png';
@@ -668,8 +668,8 @@ export const SIMPLE_OVERLAY_COVER_PIC_17 = SimpleOverlayCoverPic17;
 export const SIMPLE_OVERLAY_COVER_PIC_18 = SimpleOverlayCoverPic18;
 
 /**
-* Stone Wall Page Cover Pictures
-*/
+ * Stone Wall Page Cover Pictures
+ */
 
 import StoneWallPageCoverPic1 from '../images/stoneWallPageCoverPictures/ohmky-lQwWZI_WjSU-stone-wall-unsplash.png';
 import StoneWallPageCoverPic2 from '../images/stoneWallPageCoverPictures/nathan-dumlao-pMW4jzELQCw-stone-wall-unsplash.png';
@@ -684,8 +684,8 @@ export const STONE_WALL_PAGE_COVER_PIC_4 = StoneWallPageCoverPic4;
 export const STONE_WALL_PAGE_COVER_PIC_5 = StoneWallPageCoverPic5;
 
 /**
-* Stone Wall Wide Page Cover Pictures
-*/
+ * Stone Wall Wide Page Cover Pictures
+ */
 
 import StoneWallWidePageCoverPic1 from '../images/stoneWallWidePageCoverPictures/jane-palash-iaofnd2IdFU-stone-wall-wide-unsplash.png';
 import StoneWallWidePageCoverPic2 from '../images/stoneWallWidePageCoverPictures/nathan-dumlao-pnmRtTHWqDM-stone-wall-wide-unsplash.png';
@@ -704,8 +704,8 @@ export const STONE_WALL_WIDE_PAGE_COVER_PIC_6 = StoneWallWidePageCoverPic6;
 export const STONE_WALL_WIDE_PAGE_COVER_PIC_7 = StoneWallWidePageCoverPic7;
 
 /**
-* Metro Page Cover Pictures
-*/
+ * Metro Page Cover Pictures
+ */
 
 import MetroPageCoverPic1 from '../images/metroPageCoverPictures/daily-nouri-E5Oo4nENq2M-metro-page-unsplash.png';
 import MetroPageCoverPic2 from '../images/metroPageCoverPictures/nathan-dumlao-pnmRtTHWqDM-metro-page-unsplash.png';
@@ -732,8 +732,8 @@ export const METRO_PAGE_COVER_PIC_10 = MetroPageCoverPic10;
 export const METRO_PAGE_COVER_PIC_11 = MetroPageCoverPic11;
 
 /**
-* Pinterest 3 Columns Page Cover Pictures
-*/
+ * Pinterest 3 Columns Page Cover Pictures
+ */
 
 import Pinterest3ColumnsPageCoverPic1 from '../images/Pinterest3ColumnsPageCoverPictures/daily-nouri-E5Oo4nENq2M-pinterest-3-columns-unsplash.png';
 import Pinterest3ColumnsPageCoverPic2 from '../images/Pinterest3ColumnsPageCoverPictures/nathan-dumlao-pMW4jzELQCw-pinterest-3-columns-unsplash.png';

@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState
@@ -15,14 +15,14 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './section1DataItem.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H25,
@@ -31,16 +31,16 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Section1DataItem component definition and export
-*/
+ * Section1DataItem component definition and export
+ */
 
 export const Section1DataItem = (props) => {
 
     const [isHovering, setIsHovering] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     const handleMouseEnter = () => {
         setIsHovering(true);
@@ -65,8 +65,8 @@ export const Section1DataItem = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="section-1-data-item">

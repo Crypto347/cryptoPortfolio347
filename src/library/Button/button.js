@@ -25,8 +25,8 @@ import './button.scss';
 class Button extends Component {
 
     /**
-    * Constructor
-    */
+     * Constructor
+     */
 
     constructor (props){
         super(props);
@@ -34,8 +34,8 @@ class Button extends Component {
     }
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     // componentDidMount() {
     //     this.buttonRef.current.addEventListener("click", e => {
@@ -44,8 +44,8 @@ class Button extends Component {
     // }
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     render(){
         return(

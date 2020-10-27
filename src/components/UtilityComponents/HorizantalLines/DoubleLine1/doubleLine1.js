@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './doubleLine1.scss';
 
 /**
-* DoubleLine1 component definition and export
-*/
+ * DoubleLine1 component definition and export
+ */
 
 export const DoubleLine1 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="double-line1"/>

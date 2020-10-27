@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './line1.scss';
 
 /**
-* Line1 component definition and export
-*/
+ * Line1 component definition and export
+ */
 
 export const Line1 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="line1"/>

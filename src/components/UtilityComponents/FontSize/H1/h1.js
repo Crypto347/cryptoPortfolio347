@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './h1.scss';
 
 /**
-* H1 component definition and export
-*/
+ * H1 component definition and export
+ */
 
 export const H1 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className={props.className ? props.className : "h1"}>

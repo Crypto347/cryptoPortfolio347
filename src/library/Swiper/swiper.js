@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -21,34 +21,34 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './swiper.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../components/SmallParts/Loading/loading';
 import PhotoViewer from '../../components/Parts/PhotoViewer/photoViewer';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../reducers/selectors';
 
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19,
@@ -58,22 +58,22 @@ import {
 
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useInterval
 } from '../../Hooks/useInterval';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../constants/images';
 
 /**
-* Icons
-*/
+ * Icons
+ */
 
 import { 
     faChevronUp,
@@ -81,8 +81,8 @@ import {
  } from '@fortawesome/free-solid-svg-icons';
 
 /**
-* Swiper component definition and export
-*/
+ * Swiper component definition and export
+ */
 
 export const Swiper = (props) => {
 
@@ -109,8 +109,8 @@ export const Swiper = (props) => {
     const resizeRef = useRef();
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         let slidesArray = [...props.contentArray];
@@ -768,8 +768,8 @@ export const Swiper = (props) => {
 
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <>

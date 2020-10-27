@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './h40.scss';
 
 /**
-* H40 component definition and export
-*/
+ * H40 component definition and export
+ */
 
 export const H40 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

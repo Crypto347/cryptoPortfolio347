@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
@@ -15,32 +15,32 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './ourProcess.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19,
@@ -51,25 +51,25 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 
 /**
-* OurProcess component definition and export
-*/
+ * OurProcess component definition and export
+ */
 
 export const OurProcess = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.fetchOurProcessData();
@@ -131,8 +131,8 @@ export const OurProcess = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="our-process">

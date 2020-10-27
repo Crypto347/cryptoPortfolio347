@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './ew70.scss';
 
 /**
-* EW70 component definition and export
-*/
+ * EW70 component definition and export
+ */
 
 export const EW70 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="ew-70"/>

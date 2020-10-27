@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -16,38 +16,38 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './carouselSlide.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 // import * as Actions from '../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 // import * as Selectors from '../reducers/selectors';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 // import {
 //     storiesArray
 // } from '../constants/storiesArray';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import Image1 from '../../../images/17222.jpg';
 import Image2 from '../../../images/40925569753_4d7f10ac9f_b.jpg';
@@ -55,18 +55,18 @@ import Image3 from '../../../images/caffeine-coffee-coffee-beans-cup-606545.jpg'
 import Image4 from '../../../images/dessert.jpg';
 
 /**
-* CarouselSlide component definition and export
-*/
+ * CarouselSlide component definition and export
+ */
 
 export const CarouselSlide = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
    
     const loadImage = (img) => {
         switch(img){
@@ -82,8 +82,8 @@ export const CarouselSlide = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

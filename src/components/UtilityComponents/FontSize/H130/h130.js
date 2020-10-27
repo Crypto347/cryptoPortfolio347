@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './h130.scss';
 
 /**
-* H130 component definition and export
-*/
+ * H130 component definition and export
+ */
 
 export const H130 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className={props.className ? props.className : "h130"}>

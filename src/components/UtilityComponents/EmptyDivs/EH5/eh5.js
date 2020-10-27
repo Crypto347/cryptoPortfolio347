@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './eh5.scss';
 
 /**
-* EH5 component definition and export
-*/
+ * EH5 component definition and export
+ */
 
 export const EH5 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="eh-5"/>

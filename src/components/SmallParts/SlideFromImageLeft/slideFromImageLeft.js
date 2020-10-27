@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -9,14 +9,14 @@ import React, {
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './slideFromImageLeft.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from '../../../utility';
 
@@ -33,28 +33,28 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* SlideFromImageLeft component definition and export
-*/
+ * SlideFromImageLeft component definition and export
+ */
 
 export const SlideFromImageLeft = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
  
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {   
         const resize = () => {
@@ -228,8 +228,8 @@ export const SlideFromImageLeft = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

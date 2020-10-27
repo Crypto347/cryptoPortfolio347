@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './h22.scss';
 
 /**
-* H22 component definition and export
-*/
+ * H22 component definition and export
+ */
 
 export const H22 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

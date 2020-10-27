@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -8,14 +8,14 @@ import React, {
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './statisticsItem.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H25,
@@ -24,30 +24,30 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useInterval
 } from '../../../Hooks/useInterval';
 
 /**
-* StatisticsItem component definition and export
-*/
+ * StatisticsItem component definition and export
+ */
 
 export const StatisticsItem = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [value, setValue] = useState(0);
     const [delay, setDelay] = useState(10);
     const [showPercent, setShowPercent] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
    
     useEffect(() => {
     }, []);
@@ -57,8 +57,8 @@ export const StatisticsItem = (props) => {
     }, value === props.percent ? null : delay)
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

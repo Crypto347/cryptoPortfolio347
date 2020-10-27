@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -16,14 +16,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './gallery.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
@@ -33,26 +33,26 @@ import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import { 
     H19,
@@ -64,36 +64,36 @@ import {
 } from '../../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../../constants/images';
 
 /**
-* Gallery component definition and export
-*/
+ * Gallery component definition and export
+ */
 
 export const Gallery = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         // Init state for fading effect when component will unmount
@@ -271,9 +271,9 @@ export const Gallery = (props) => {
         }
         if(e.button !== 1){
             /**
-            * Add fading effect on unmounted component and remember 
-            * information of unmounted component on left mouse click 
-            */ 
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
 
             props.setUnmountComponentValues(true, path);
         }else{
@@ -292,10 +292,10 @@ export const Gallery = (props) => {
         let removedSlides = [];
               
         /**
-        * Rearrange the elements in array so that the element
-        * with active index becomes first and the rest are
-        * lined up in the correct order
-        */
+         * Rearrange the elements in array so that the element
+         * with active index becomes first and the rest are
+         * lined up in the correct order
+         */
 
         slidesForPhotoViewer.map((el, i) => {
             if(i < activeIndex){
@@ -468,8 +468,8 @@ export const Gallery = (props) => {
     } 
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="gallery" id="gallery">

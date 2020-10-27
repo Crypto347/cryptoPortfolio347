@@ -1,6 +1,6 @@
 /**
-* Operators
-*/
+ * Operators
+ */
 
 import { 
     of,
@@ -16,8 +16,8 @@ import {
 } from 'redux-observable';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
@@ -27,8 +27,8 @@ import {
 } from '../constants/storiesArray';
 
 /**
-* Epic
-*/
+ * Epic
+ */
 
 export const startInitStoriesEpic = (action$) => 
     action$.pipe(

@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -20,39 +20,39 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './carouselArrow.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 // import * as Actions from '../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 // import * as Selectors from '../reducers/selectors';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 // import {
 //     storiesArray
 // } from '../constants/storiesArray';
 
 /**
-* Icons
-*/
+ * Icons
+ */
 
 import { 
     faArrowAltCircleLeft,
@@ -60,18 +60,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
-* CarouselArrow component definition and export
-*/
+ * CarouselArrow component definition and export
+ */
 
 export const CarouselArrow = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     const loadIconName = (name) => {
         switch(name){
@@ -83,8 +83,8 @@ export const CarouselArrow = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
             <div className={props.name === "left" ? "carousel-arrow-left" : "carousel-arrow-right"}>

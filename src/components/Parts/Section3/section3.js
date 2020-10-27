@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
@@ -11,31 +11,31 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './section3.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Testimonials from '../Testimonials/testimonials';
 import TeamInformation from '../TeamInformation/teamInformation';
 
 /**
-* Section3 component definition and export
-*/
+ * Section3 component definition and export
+ */
 
 export const Section3 = () => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
 
@@ -44,8 +44,8 @@ export const Section3 = () => {
    
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="section-3">

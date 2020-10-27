@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -24,32 +24,32 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './testimonials.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Swiper from '../../../library/Swiper/swiper';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H45,
@@ -58,36 +58,36 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
 /**
-* Testimonials component definition and export
-*/
+ * Testimonials component definition and export
+ */
 
 export const Testimonials = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.fetchTestimonials();
     }, []);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="testimonials">

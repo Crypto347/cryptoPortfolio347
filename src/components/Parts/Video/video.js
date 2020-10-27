@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -8,42 +8,42 @@ import React, {
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './video.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19
 } from '../../UtilityComponents';
 
 /**
-* Video
-*/
+ * Video
+ */
 
 import vid1 from '../../../videos/team_work.mp4';
 import vidCover from '../../../videos/john-schnobrich-unsplash.jpg';
 
 /**
-* Video component definition and export
-*/
+ * Video component definition and export
+ */
 
 export const Video = () => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [isHoveringPlayButton, setIsHoveringPlayButton] = useState("init");
     const [videoShown, setVideoShown] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         let video;
@@ -61,8 +61,8 @@ export const Video = () => {
     }, [videoShown]);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     const renderClassName = (isHovering) => {
         switch(isHovering){

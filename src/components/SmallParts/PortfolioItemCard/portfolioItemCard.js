@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -16,20 +16,20 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './portfolioItemCard.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import SwitchImage from '../SwitchImage/switchImage';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H15,
@@ -39,20 +39,20 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* PortfolioItemCard component definition and export
-*/
+ * PortfolioItemCard component definition and export
+ */
 
 export const PortfolioItemCard = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [isHovering, setIsHovering] = useState("init");
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
     }, []);
@@ -138,8 +138,8 @@ export const PortfolioItemCard = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <>

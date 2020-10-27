@@ -1,19 +1,19 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import configureStore from 'redux-mock-store';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as Actions from '.';
 import * as actionTypes from "../constants/actionTypes";
 
 /**
-* Tests
-*/
+ * Tests
+ */
 
 const mockStore = configureStore();
 const store = mockStore();

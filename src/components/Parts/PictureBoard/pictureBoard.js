@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -16,48 +16,48 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './pictureBoard.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 import PictureBoardTextItem from '../../SmallParts/PictureBoardTextItem/pictureBoardTextItem';
 import SwitchImage from '../../SmallParts/SwitchImage/switchImage';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
    H19
 } from '../../UtilityComponents';
 
 /**
-* PictureBoard component definition and export
-*/
+ * PictureBoard component definition and export
+ */
 
 export const PictureBoard = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const initCoordinateRange = [
@@ -112,8 +112,8 @@ export const PictureBoard = (props) => {
     ]
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         const resize = () => {
@@ -195,8 +195,8 @@ export const PictureBoard = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="picture-board" id="pictureBoard">

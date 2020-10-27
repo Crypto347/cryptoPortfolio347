@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -9,14 +9,14 @@ import React, {
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './standardPortfolioItem.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from '../../../utility';
 
@@ -33,28 +33,28 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* StandardPortfolioItem component definition and export
-*/
+ * StandardPortfolioItem component definition and export
+ */
 
 export const StandardPortfolioItem = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
  
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {   
         const resize = () => {
@@ -208,8 +208,8 @@ export const StandardPortfolioItem = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

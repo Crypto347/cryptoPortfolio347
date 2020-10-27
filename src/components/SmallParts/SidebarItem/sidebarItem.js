@@ -1,18 +1,18 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './sidebarItem.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H15,
@@ -22,18 +22,14 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* SidebarItem component definition and export
-*/
+ * SidebarItem component definition and export
+ */
 
 export const SidebarItem = (props) => {
     
     /**
-    * State
-    */
-    
-    /**
-    * Methods
-    */
+     * Methods
+     */
 
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "sidebarArrow"){
@@ -224,8 +220,8 @@ export const SidebarItem = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
      

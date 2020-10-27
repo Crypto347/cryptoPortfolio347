@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -17,14 +17,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './stoneWallPageOld.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
@@ -32,26 +32,26 @@ import StoneWallItem from '../../../SmallParts/StoneWallItem/stoneWallItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import { 
     H15,
@@ -66,22 +66,22 @@ import {
 } from '../../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* StoneWallPageOld component definition and export
-*/
+ * StoneWallPageOld component definition and export
+ */
 
 export const StoneWallPageOld = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const size = useWindowSize();
@@ -94,8 +94,8 @@ export const StoneWallPageOld = (props) => {
     const [classNameImg5, setClassNameImg5] = useState('stone-wall-page-item-id5');
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
@@ -317,8 +317,8 @@ export const StoneWallPageOld = (props) => {
     } 
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="stone-wall-page" id="stoneWallPage">

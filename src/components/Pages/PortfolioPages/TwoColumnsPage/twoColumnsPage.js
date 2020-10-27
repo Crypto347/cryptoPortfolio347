@@ -1531,8 +1531,8 @@ export const TwoColumnsPage = (props) => {
     } 
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="two-columns-page" id="twoColumnsPage">

@@ -1,26 +1,26 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './happyTeamPage.scss';
 
 /**
-* HappyTeamPage component definition and export
-*/
+ * HappyTeamPage component definition and export
+ */
 
 export const HappyTeamPage = () => {
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         // Scroll to the top of the screen
@@ -30,8 +30,8 @@ export const HappyTeamPage = () => {
     }, []);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="happy-team-page">

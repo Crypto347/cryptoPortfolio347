@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './eh90.scss';
 
 /**
-* EH90 component definition and export
-*/
+ * EH90 component definition and export
+ */
 
 export const EH90 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="eh-90"/>

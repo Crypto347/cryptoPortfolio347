@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -16,14 +16,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './archive.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 import LoadingVersion2 from '../../SmallParts/LoadingVersion2/loadingVersion2';
@@ -33,26 +33,26 @@ import Footer from '../../Parts/Footer/footer';
 import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import { 
     H19,
@@ -65,34 +65,34 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
 /**
-* Images
-*/
+ * Images
+ */
 import * as Images from '../../../constants/images';
 
 /**
-* Archive component definition and export
-*/
+ * Archive component definition and export
+ */
 
 export const Archive = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         // Init state for fading effect when component will unmount
@@ -318,9 +318,9 @@ export const Archive = (props) => {
 
         if(e.button !== 1){
             /**
-            * Add fading effect on unmounted component and remember 
-            * information of unmounted component on left mouse click 
-            */ 
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
 
             props.setUnmountComponentValues(true, path);
         }else{
@@ -453,8 +453,8 @@ export const Archive = (props) => {
     } 
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="archive" id="archive">

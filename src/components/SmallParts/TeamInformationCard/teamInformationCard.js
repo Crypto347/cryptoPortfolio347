@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -13,14 +13,14 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './teamInformationCard.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H25,
@@ -30,36 +30,36 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* Icons
-*/
+ * Icons
+ */
 
 import { 
     faInstagram
 } from '@fortawesome/fontawesome-free-brands';
 
 /**
-* TeamInformationCard component definition and export
-*/
+ * TeamInformationCard component definition and export
+ */
 
 export const TeamInformationCard = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(()=>{
         const resize = () => {
@@ -145,8 +145,8 @@ export const TeamInformationCard = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

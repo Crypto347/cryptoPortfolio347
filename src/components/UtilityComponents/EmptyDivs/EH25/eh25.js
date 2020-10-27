@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './eh25.scss';
 
 /**
-* EH25 component definition and export
-*/
+ * EH25 component definition and export
+ */
 
 export const EH25 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="eh-25"/>

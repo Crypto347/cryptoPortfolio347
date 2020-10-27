@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './ew90.scss';
 
 /**
-* EW90 component definition and export
-*/
+ * EW90 component definition and export
+ */
 
 export const EW90 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="ew-90"/>

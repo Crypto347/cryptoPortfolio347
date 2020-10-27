@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './eh80.scss';
 
 /**
-* EH80 component definition and export
-*/
+ * EH80 component definition and export
+ */
 
 export const EH80 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="eh-80"/>

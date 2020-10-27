@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -25,35 +25,35 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './achievementItem.scss';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useInterval
 } from '../../../Hooks/useInterval';
 
 /**
-* AchievementItem component definition and export
-*/
+ * AchievementItem component definition and export
+ */
 
 export const AchievementItem = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [value, setValue] = useState(0);
     const [delay, setDelay] = useState(70);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
    
     useEffect(() => {
         
@@ -64,8 +64,8 @@ export const AchievementItem = (props) => {
     }, value === props.number ? null : delay)
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="achievement-item">

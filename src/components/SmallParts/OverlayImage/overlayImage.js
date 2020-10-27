@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -9,14 +9,14 @@ import React, {
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './overlayImage.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from '../../../utility';
 
@@ -33,20 +33,20 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* OverlayImage component definition and export
-*/
+ * OverlayImage component definition and export
+ */
 
 export const OverlayImage = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
@@ -54,8 +54,8 @@ export const OverlayImage = (props) => {
     const [paddingTopBottom, setPaddingTopBottom] = useState(0);
  
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {   
         const resize = () => {
@@ -342,8 +342,8 @@ export const OverlayImage = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

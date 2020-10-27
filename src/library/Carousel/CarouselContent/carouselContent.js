@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -16,53 +16,53 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './carouselContent.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 // import * as Actions from '../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 // import * as Selectors from '../reducers/selectors';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 // import {
 //     storiesArray
 // } from '../constants/storiesArray';
 
 /**
-* CarouselContent component definition and export
-*/
+ * CarouselContent component definition and export
+ */
 
 export const CarouselContent = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
    
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
             <div 

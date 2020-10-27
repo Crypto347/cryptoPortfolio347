@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState, 
@@ -13,39 +13,39 @@ import {
 } from 'react-router-dom';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './switchImage.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from '../../../utility';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* SwitchImage component definition and export
-*/
+ * SwitchImage component definition and export
+ */
 
 export const SwitchImage = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const [imgToLoad, setImgToLoad] = useState({});
  
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {   
         const resize = () => {
@@ -517,8 +517,8 @@ export const SwitchImage = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

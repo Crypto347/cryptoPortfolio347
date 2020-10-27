@@ -1,26 +1,26 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './processPage.scss';
 
 /**
-* ProcessPage component definition and export
-*/
+ * ProcessPage component definition and export
+ */
 
 export const ProcessPage = () => {
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         // Scroll to the top of the screen
@@ -29,8 +29,8 @@ export const ProcessPage = () => {
     }, []);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="process-page">

@@ -1,26 +1,26 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './aboutUsPage.scss';
 
 /**
-* AboutUsPage component definition and export
-*/
+ * AboutUsPage component definition and export
+ */
 
 export const AboutUsPage = () => {
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         // Scroll to the top of the screen
@@ -30,8 +30,8 @@ export const AboutUsPage = () => {
     }, []);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="about-us-page">

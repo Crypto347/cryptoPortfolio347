@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -17,14 +17,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './metroPage2.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
@@ -32,26 +32,26 @@ import MetroItem from '../../../SmallParts/MetroItem/metroItem';
 import Footer from '../../../Parts/Footer/footer';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import { 
     H15,
@@ -66,22 +66,22 @@ import {
 } from '../../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* MetroPage2 component definition and export
-*/
+ * MetroPage2 component definition and export
+ */
 
 export const MetroPage2 = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const size = useWindowSize();
@@ -147,8 +147,8 @@ export const MetroPage2 = (props) => {
     });
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
@@ -684,8 +684,8 @@ export const MetroPage2 = (props) => {
     } 
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="metro-page" id="metroPage">

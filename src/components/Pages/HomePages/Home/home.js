@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect, useState
@@ -15,14 +15,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './home.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import HeaderImages from '../../../SmallParts/HeaderImages/headerImages';
@@ -35,41 +35,41 @@ import PhotoViewer from '../../../Parts/PhotoViewer/photoViewer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* Home component definition and export
-*/
+ * Home component definition and export
+ */
 
 export const Home = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         // Init state for fading effect when component will unmount
@@ -159,8 +159,8 @@ export const Home = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="home" id="home">

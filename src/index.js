@@ -20,8 +20,8 @@ import {
 import store from './store/store';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import App from './app';
 

@@ -1,5 +1,5 @@
 /**
-* Libraries
+ * Libraries
 */
 
 import React, {
@@ -15,32 +15,32 @@ import {
 } from 'redux';
 
 /**
-* Styles
+ * Styles
 */
 
 import './footer.scss';
 
 /**
-* Components
+ * Components
 */
 
 // import Loading from '../../SmallParts/Loading/loading';
 // import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
 
 /**
-* Services
+ * Services
 */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
+ * Selectors
 */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
+ * Utility
 */
 
 import {
@@ -56,23 +56,23 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
+ * Images
 */
 
 import * as Images from '../../../constants/images';
 
 /**
-* Footer component definition and export
+ * Footer component definition and export
 */
 
 export const Footer = (props) => {
 
     /**
-    * State
+     * State
     */
 
     /**
-    * Methods
+     * Methods
     */
 
     useEffect(() => {
@@ -84,7 +84,7 @@ export const Footer = (props) => {
     }
 
     /**
-    * Markup
+     * Markup
     */
 
     return(

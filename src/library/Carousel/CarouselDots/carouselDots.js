@@ -1,65 +1,34 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React from 'react';
 
 import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './carouselDots.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import CarouselDot from './CarouselDot/carouselDot';
 
 /**
-* Actions
-*/
-
-// import * as Actions from '../actions';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../reducers/selectors';
-
-/**
-* Constants
-*/
-
-// import {
-//     storiesArray
-// } from '../constants/storiesArray';
-
-/**
-* CarouselDots component definition and export
-*/
+ * CarouselDots component definition and export
+ */
 
 export const CarouselDots = (props) => {
 
     /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+     * Methods
+     */
    
     const renderDots = () => {
         return(<>{props.slides.map((el, i) => {
@@ -70,8 +39,8 @@ export const CarouselDots = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
             <div className="carousel-dots">

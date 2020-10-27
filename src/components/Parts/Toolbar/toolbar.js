@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -24,34 +24,34 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './toolbar.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
 import Sidebar from '../Sidebar/sidebar';
 import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H15,
@@ -62,30 +62,30 @@ import {
 
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import {
     menuItemsArray
 } from '../../../constants/menuItems';
 
 /**
-* Toolbar component definition and export
-*/
+ * Toolbar component definition and export
+ */
 
 export const Toolbar = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const [menuDots, setMenuDots] = useState([1,2,3,4,5,6,7,8,9]);
@@ -95,8 +95,8 @@ export const Toolbar = (props) => {
     const [showOptionsLessThan3Regular, setShowOptionsLessThan3Regular] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.initMenuItems(menuItemsArray);
@@ -637,8 +637,8 @@ export const Toolbar = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <> 

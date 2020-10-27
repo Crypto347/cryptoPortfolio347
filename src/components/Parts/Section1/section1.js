@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
@@ -15,33 +15,33 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './section1.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19,
@@ -49,18 +49,18 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Section1 component definition and export
-*/
+ * Section1 component definition and export
+ */
 
 export const Section1 = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.fetchSection1Data();
@@ -110,8 +110,8 @@ export const Section1 = (props) => {
     } 
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="section-1">

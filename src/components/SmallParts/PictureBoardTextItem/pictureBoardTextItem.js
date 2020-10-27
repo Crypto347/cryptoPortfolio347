@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState
@@ -19,14 +19,14 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './pictureBoardTextItem.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H15,
@@ -35,34 +35,34 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Icons
-*/
+ * Icons
+ */
 
 import { 
     faEye
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* PictureBoardTextItem component definition and export
-*/
+ * PictureBoardTextItem component definition and export
+ */
 
 export const PictureBoardTextItem = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [isHovering, setIsHovering] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     const handleMouseEnter = () => {
         setIsHovering(true);
@@ -77,8 +77,8 @@ export const PictureBoardTextItem = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

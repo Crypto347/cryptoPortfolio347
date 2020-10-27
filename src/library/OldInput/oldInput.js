@@ -23,8 +23,8 @@ import './input.scss';
 class Input extends Component {
 
     /**
-    * Constructor
-    */
+     * Constructor
+     */
 
     // constructor (props){
     //     super(props);
@@ -135,8 +135,8 @@ class Input extends Component {
         }
     }
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     render(){
         return(

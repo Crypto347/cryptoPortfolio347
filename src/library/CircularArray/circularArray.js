@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -16,53 +16,53 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './circularArray.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 // import * as Actions from '../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 // import * as Selectors from '../reducers/selectors';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 // import {
 //     storiesArray
 // } from '../constants/storiesArray';
 
 /**
-* CircularArray component definition and export
-*/
+ * CircularArray component definition and export
+ */
 
 export const CircularArray = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     const [selected, setSelected] = useState(0);
     const [move, setMove] = useState(false)
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     const prevOnClick = () => {
         let value = normolizeIndex(selected - 1, array);
@@ -103,8 +103,8 @@ export const CircularArray = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="circular-array">

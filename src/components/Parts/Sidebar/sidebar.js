@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -20,44 +20,44 @@ import {
 } from 'react-router-dom';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './sidebar.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Sidebar component definition and export
-*/
+ * Sidebar component definition and export
+ */
 
 export const Sidebar = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [showOptions, setShowOptions] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         
@@ -172,9 +172,10 @@ export const Sidebar = (props) => {
                 return "sidebar-close";
        }
     }
+    
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className={renderClassName(props.sidebarState)}>

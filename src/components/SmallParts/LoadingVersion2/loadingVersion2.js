@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './loadingVersion2.scss';
 
 /**
-* LoadingVersion2 component definition and export
-*/
+ * LoadingVersion2 component definition and export
+ */
 
 export const LoadingVersion2 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="loading-version-2">

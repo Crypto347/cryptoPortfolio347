@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -12,28 +12,28 @@ import {
 } from '@fortawesome/react-fontawesome';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './spinner.scss';
 
 /**
-* Spinner component definition and export
-*/
+ * Spinner component definition and export
+ */
 
 export const Spinner = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
    
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="lds-spinner">

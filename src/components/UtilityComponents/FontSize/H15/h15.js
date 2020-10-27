@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './h15.scss';
 
 /**
-* H15 component definition and export
-*/
+ * H15 component definition and export
+ */
 
 export const H15 = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className={props.className ? props.className : "h15"}>

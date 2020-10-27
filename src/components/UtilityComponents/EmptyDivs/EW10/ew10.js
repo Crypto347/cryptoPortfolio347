@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './ew10.scss';
 
 /**
-* EW10 component definition and export
-*/
+ * EW10 component definition and export
+ */
 
 export const EW10 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="ew-10"/>

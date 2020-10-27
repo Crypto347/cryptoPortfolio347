@@ -1,6 +1,6 @@
 /**
-* Operators
-*/
+ * Operators
+ */
 
 import { 
     of,
@@ -17,21 +17,21 @@ import {
 } from 'redux-observable';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from '../utility';
 
 /**
-* Epic
-*/
+ * Epic
+ */
 
 export const portfolioNavigationOnClickStartEpic = (action$, state$, dependencies$) => 
     action$.pipe(

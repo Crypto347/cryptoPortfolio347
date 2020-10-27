@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -23,26 +23,26 @@ import {
 import Fullscreen from "react-full-screen";
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './photoViewer.scss';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
    H19,
@@ -50,22 +50,22 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../Hooks';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* Icons
-*/
+ * Icons
+ */
 
 import {
     faExpand,
@@ -73,14 +73,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
-* PhotoViewer component definition and export
-*/
+ * PhotoViewer component definition and export
+ */
 
 export const PhotoViewer = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const resizeRef = useRef();
@@ -100,8 +100,8 @@ export const PhotoViewer = (props) => {
     })
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         renderStyle(size.width, props.width, props.height);
@@ -525,8 +525,8 @@ export const PhotoViewer = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <>

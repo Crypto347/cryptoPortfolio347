@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -17,14 +17,14 @@ import {
 } from 'react-redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './stoneWallWidePageOld.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
@@ -32,26 +32,26 @@ import StoneWallWideItem from '../../../SmallParts/StoneWallWideItem/stoneWallWi
 import Footer from '../../../Parts/Footer/footer';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import { 
     H15,
@@ -66,22 +66,22 @@ import {
 } from '../../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
 /**
-* StoneWallWidePageOld component definition and export
-*/
+ * StoneWallWidePageOld component definition and export
+ */
 
 export const StoneWallWidePageOld = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const resizeRef = useRef();
     const size = useWindowSize();
@@ -130,8 +130,8 @@ export const StoneWallWidePageOld = (props) => {
     });
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.setUnmountComponentValues(false, "");
@@ -543,8 +543,8 @@ export const StoneWallWidePageOld = (props) => {
     } 
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="stone-wall-wide-page" id="stoneWallWidePage">

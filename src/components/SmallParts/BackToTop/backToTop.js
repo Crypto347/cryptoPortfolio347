@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -16,14 +16,14 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './backToTop.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H17,
@@ -32,16 +32,16 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* BackToTop component definition and export
-*/
+ * BackToTop component definition and export
+ */
 
 export const BackToTop = (props) => {
 
     const [isHovering, setIsHovering] = useState("init");
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(()=>{
             document.getElementById("html").style.scrollBehavior = "smooth";
@@ -95,8 +95,8 @@ export const BackToTop = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -16,33 +16,33 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './statistics.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19,
@@ -53,29 +53,29 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
 /**
-* Statistics component definition and export
-*/
+ * Statistics component definition and export
+ */
 
 export const Statistics = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const [showComponent, setShowComponent] = useState(false)
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.fetchStatisticsData();
@@ -150,8 +150,8 @@ export const Statistics = (props) => {
     } 
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

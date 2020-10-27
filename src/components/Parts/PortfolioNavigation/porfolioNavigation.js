@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -20,38 +20,38 @@ import {
 } from 'react-router-dom';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './porfolioNavigation.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19,
@@ -64,18 +64,18 @@ import {
 import * as Utility from '../../../utility';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 /**
-* PorfolioNavigation component definition and export
-*/
+ * PorfolioNavigation component definition and export
+ */
 
 export const PorfolioNavigation = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
    
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
@@ -85,8 +85,8 @@ export const PorfolioNavigation = (props) => {
     const [category, setCategory] = useState("");
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
@@ -527,8 +527,8 @@ export const PorfolioNavigation = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="porfolio-navigation">

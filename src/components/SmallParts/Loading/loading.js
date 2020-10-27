@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './loading.scss';
 
 /**
-* Loading component definition and export
-*/
+ * Loading component definition and export
+ */
 
 export const Loading = (props) => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="loading">

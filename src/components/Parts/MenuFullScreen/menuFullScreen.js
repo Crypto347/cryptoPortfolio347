@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect
@@ -19,33 +19,33 @@ import {
 } from 'react-router-dom';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './menuFullScreen.scss';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../../../actions';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H15,
@@ -56,26 +56,26 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import {
     menuFullscreenItemsArray
 } from '../../../constants/menuFullscreenItems';
 
 /**
-* MenuFullScreen component definition and export
-*/
+ * MenuFullScreen component definition and export
+ */
 
 export const MenuFullScreen = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.initMenuFullscreenItems(menuFullscreenItemsArray);
@@ -212,8 +212,8 @@ export const MenuFullScreen = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="menu-fullscreen">

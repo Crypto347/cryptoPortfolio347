@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import { 
     configure 
@@ -8,7 +8,7 @@ import {
 import Adapter from 'enzyme-adapter-react-16';
 
 /**
-* Test setup
-*/
+ * Test setup
+ */
 
 configure({ adapter: new Adapter() });

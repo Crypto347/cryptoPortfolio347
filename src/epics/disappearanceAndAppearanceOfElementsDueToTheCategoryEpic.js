@@ -1,6 +1,6 @@
 /**
-* Operators
-*/
+ * Operators
+ */
 
 import { 
     of
@@ -15,15 +15,15 @@ import {
 } from 'redux-observable';
 
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
-* Epic
-*/
+ * Epic
+ */
 
 export const disappearanceAndAppearanceOfElementsDueToTheCategoryEpic = (action$, state$) => 
     action$.pipe(

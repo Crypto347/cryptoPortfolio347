@@ -1,20 +1,20 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './toolbarItem.scss';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H15,
@@ -22,18 +22,18 @@ import {
  } from '../../UtilityComponents';
 
 /**
-* ToolbarItem component definition and export
-*/
+ * ToolbarItem component definition and export
+ */
 
 export const ToolbarItem = (props) => {
     
     /**
-    * State
-    */
+     * State
+     */
     
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     const renderClassName = (opt, isHovering, active) => {
         if(opt === "arrow"){
@@ -237,8 +237,8 @@ export const ToolbarItem = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

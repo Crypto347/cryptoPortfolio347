@@ -1,24 +1,24 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './ew130.scss';
 
 /**
-* EW130 component definition and export
-*/
+ * EW130 component definition and export
+ */
 
 export const EW130 = () => {
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="ew-130"/>

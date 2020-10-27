@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -21,14 +21,14 @@ import {
 } from 'react-router-dom';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './main.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
@@ -63,32 +63,32 @@ import FiveColumnsWidePage from './Pages/PortfolioPages/FiveColumnsWidePage/five
 import TwoColumnsPage from './Pages/PortfolioPages/TwoColumnsPage/twoColumnsPage';
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from '../actions';
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../reducers/selectors';
 
 /**
-* Utilities
-*/
+ * Utilities
+ */
 
 import * as Utility from '../utility';
 
 /**
-* Main component definition and export
-*/
+ * Main component definition and export
+ */
 
 export const Main = (props) => {
    
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         let path = props.location.pathname.slice(18);
@@ -113,8 +113,8 @@ export const Main = (props) => {
     }, []);
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>

@@ -1,19 +1,19 @@
 /**
-* Constants
-*/
+ * Constants
+ */
 
 import * as actionTypes from "../constants/actionTypes";
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import * as Utility from "../utility";
 import uuid from "uuid";
 
 /**
-* Initial State
-*/
+ * Initial State
+ */
 
 export const initialState = {
     pictureBoard: {

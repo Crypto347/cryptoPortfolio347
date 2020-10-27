@@ -38,8 +38,8 @@ useEffect(() => {
 
 
 /**
-* Actions
-*/
+ * Actions
+ */
 
 import * as Actions from "../actions";
 

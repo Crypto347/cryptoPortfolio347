@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useEffect,
@@ -8,24 +8,24 @@ import React, {
 } from 'react';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './input.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 /**
-* Input component definition and export
-*/
+ * Input component definition and export
+ */
 
 export const Input = (props) => {
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     const renderErrorMessage = () => {
         if(props.validField === false && props.touched === true){
@@ -112,8 +112,8 @@ export const Input = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <>

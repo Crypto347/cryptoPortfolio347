@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -16,33 +16,33 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './achievements.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19,
@@ -50,29 +50,29 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
 /**
-* Achievements component definition and export
-*/
+ * Achievements component definition and export
+ */
 
 export const Achievements = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     const size = useWindowSize();
     const [showComponent, setShowComponent] = useState(false);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.fetchAchievementsData();
@@ -138,8 +138,8 @@ export const Achievements = (props) => {
     } 
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div 

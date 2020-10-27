@@ -23,16 +23,16 @@ import './empty.scss';
 class EmptyDivV1 extends Component {
 
     /**
-    * Constructor
-    */
+     * Constructor
+     */
 
     constructor (props){
         super(props);
     }
     
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     render(){
         return(

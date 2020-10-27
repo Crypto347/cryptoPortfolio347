@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
 import React, {
     useState,
@@ -24,41 +24,41 @@ import {
 } from 'react-transition-group';
 
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './headerImages.scss';
 
 /**
-* Components
-*/
+ * Components
+ */
 
 import Loading from '../../SmallParts/Loading/loading';
 import Button from '../../../library/Button/button';
 
 /**
-* Services
-*/
+ * Services
+ */
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ */
 
 import {
     H19
 } from '../../UtilityComponents';
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 import {
     useWindowSize
@@ -69,22 +69,22 @@ import {
 } from '../../../Hooks/useInterval';
 
 /**
-* Images
-*/
+ * Images
+ */
 
 import * as Images from '../../../constants/images';
 
 /**
-* HeaderImages component definition and export
-*/
+ * HeaderImages component definition and export
+ */
 
 export const HeaderImages = (props) => {
 
     const size = useWindowSize();
 
     /**
-    * State
-    */
+     * State
+     */
 
     const [imgShow, setImgShow] = useState(true);
 
@@ -121,8 +121,8 @@ export const HeaderImages = (props) => {
     ]);
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     useEffect(() => {
         props.fetchHeaderImagesArray();
@@ -340,8 +340,8 @@ export const HeaderImages = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
         <div className="header-images">

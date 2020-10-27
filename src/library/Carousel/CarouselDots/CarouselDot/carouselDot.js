@@ -1,68 +1,36 @@
 /**
-* Libraries
-*/
+ * Libraries
+ */
 
-import React, {
-    useEffect,
-    useState
-} from 'react';
+import React from 'react';
 
 import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
-* Styles
-*/
+ * Styles
+ */
 
 import './carouselDot.scss';
 
 /**
-* Components
-*/
-
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../actions';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../reducers/selectors';
-
-/**
-* Constants
-*/
-
-// import {
-//     storiesArray
-// } from '../constants/storiesArray';
-
-/**
-* CarouselDot component definition and export
-*/
+ * CarouselDot component definition and export
+ */
 
 export const CarouselDot = (props) => {
 
     /**
-    * State
-    */
+     * State
+     */
 
     /**
-    * Methods
-    */
+     * Methods
+     */
 
     /**
-    * Markup
-    */
+     * Markup
+     */
 
     return(
             <div className={props.active ? "carousel-dot-active" : 'carousel-dot'}>

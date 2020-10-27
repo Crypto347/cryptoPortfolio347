@@ -1,6 +1,6 @@
 /**
-* Libraries
-*/
+ * Libraries
+ s*/
 
 import React, {
     useEffect
@@ -15,33 +15,33 @@ import {
 } from 'redux';
 
 /**
-* Styles
-*/
+ * Styles
+ s*/
 
 import './section2.scss';
 
 /**
-* Components
-*/
+ * Components
+ s*/
 
 import PictureBoard from '../../Parts/PictureBoard/pictureBoard';
 import OurProcess from '../../Parts/OurProcess/ourProcess';
 
 /**
-* Services
-*/
+ * Services
+ s*/
 
 import * as Services from "../../../service";
 
 /**
-* Selectors
-*/
+ * Selectors
+ s*/
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Utility
-*/
+ * Utility
+ s*/
 
 import {
    H25,
@@ -51,18 +51,18 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Section2 component definition and export
-*/
+ * Section2 component definition and export
+ s*/
 
 export const Section2 = (props) => {
 
     /**
-    * State
-    */
+     * State
+     s*/
 
     /**
-    * Methods
-    */
+     * Methods
+     s*/
 
     useEffect(() => {
         props.fetchPictureBoard();
@@ -103,8 +103,8 @@ export const Section2 = (props) => {
     }
 
     /**
-    * Markup
-    */
+     * Markup
+     s*/
 
     return(
         <div className={renderClassName(props.pictureBoard.loading, props.pictureBoard.error, props.ourProcessDate.loading, props.ourProcessDate.error)}>
