@@ -178,7 +178,6 @@
     }
 }
 
-
 @media only screen and (max-width: 1120px){
     .header-images {
         .header-images-loading {
@@ -358,44 +357,20 @@
 }
 
 @keyframes appearHeaderTextBack {
-    0% {
-        // opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateY(0%);
-    }
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0%);}
 }
 @-moz-keyframes appearHeaderTextBack {
-    0% {
-        // opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateY(0%);
-    }
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0%);}
 }
 @-webkit-keyframes appearHeaderTextBack {
-    0% {
-        // opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateY(0%);
-    }
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0%);}
 }
 @-o-keyframes appearHeaderTextBack {
-    0% {
-        // opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateY(0%);
-    }
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0%);}
 }
 
 @keyframes fadeIn {
