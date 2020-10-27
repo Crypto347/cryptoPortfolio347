@@ -22,14 +22,7 @@ import * as Utility from '../../../utility';
 
 import { 
     H17,
-    H35,
-    H45,
-    H70,
-    EH10,
-    EH20,
-    EH40,
-    EH70,
-    EH110
+    H35
 } from '../../UtilityComponents';
 
 /**
@@ -50,69 +43,22 @@ export const MetroItem = (props) => {
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
-    const [paddingTopBottom, setPaddingTopBottom] = useState(0);
-    // const [upload, setUpload] = useState(false);
     const [cardHeight, setCardHeight] = useState({});
  
     /**
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
-        } 
-        // setUpload(true);
-        // if(upload){
-        //     props.getImagesWidthAndHeight({
-        //         img1: {
-        //             // width: document.getElementById("stoneWallWideItemId1").clientWidth,
-        //             height: document.getElementById("metroItemId1").clientHeight,
-        //         }, 
-        //         img2: {
-        //             // width: document.getElementById("metroItemId2").clientWidth,
-        //             height: document.getElementById("metroItemId2").clientHeight,
-        //         }, 
-        //         img3: {
-        //             // width: document.getElementById("metroItemId3").clientWidth,
-        //             height: document.getElementById("metroItemId3").clientHeight,
-        //         },
-        //         img4: {
-        //             // width: document.getElementById("metroItemId4").clientWidth,
-        //             height: document.getElementById("metroItemId4").clientHeight,
-        //         },
-        //         img5: {
-        //             // width: document.getElementById("metroItemId5").clientWidth,
-        //             height: document.getElementById("metroItemId5").clientHeight,
-        //         },
-        //         img6: {
-        //             // width: document.getElementById("metroItemId6").clientWidth,
-        //             height: document.getElementById("metroItemId6").clientHeight,
-        //         },
-        //         img7: {
-        //             // width: document.getElementById("metroItemId7").clientWidth,
-        //             height: document.getElementById("metroItemId7").clientHeight,
-        //         },
-        //         img8: {
-        //             // width: document.getElementById("metroItemId8").clientWidth,
-        //             height: document.getElementById("metroItemId8").clientHeight,
-        //         },
-        //         img9: {
-        //             // width: document.getElementById("metroItemId9").clientWidth,
-        //             height: document.getElementById("metroItemId9").clientHeight,
-        //         },
-        //         img10: {
-        //             // width: document.getElementById("metroItemId10").clientWidth,
-        //             height: document.getElementById("metroItemId10").clientHeight,
-        //         },
-        //         img11: {
-        //             // width: document.getElementById("metroItemId11").clientWidth,
-        //             height: document.getElementById("metroItemId11").clientHeight,
-        //         }
-        //     })
-        // }
+        }
 
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -121,7 +67,8 @@ export const MetroItem = (props) => {
     });
 
     const handleResize = () => {
-        let paddingTopBottomVal = setPadding(props.page);
+        // Set the height of the curtain when resizing the screen
+
         let obj = {
             img1: {
                 // width: document.getElementById("metroItemId1").clientWidth,
@@ -168,8 +115,7 @@ export const MetroItem = (props) => {
                 height: document.getElementById("metroItemId11").clientHeight,
             }
         }
-        setPaddingTopBottom(paddingTopBottomVal);
-        // props.getImagesWidthAndHeight(obj);
+
         switch(props.obj.id){
             case 1:
                 setCardHeight(obj.img1.height - 80);
@@ -204,13 +150,6 @@ export const MetroItem = (props) => {
             case 11:
                 setCardHeight(obj.img11.height - 80);
                 break;
-        }
-    }
-
-    const setPadding = (page) => {
-        switch(page){
-            case 'metroPage':
-                return 40;
         }
     }
 
@@ -278,19 +217,41 @@ export const MetroItem = (props) => {
     }
 
     const onClickHandler = (e, path, key) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
-        e.stopPropagation();       
+
+        // Prevent function stoneWallWideItemOnClick from running
+        
+        e.stopPropagation();
+        
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
+
+        // Clear archive data
+
         props.clearArchiveData();
+
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
-
 
     const renderClassName = (opt, isHovering) => {
         if(opt === "metroItemImage"){
@@ -374,8 +335,7 @@ export const MetroItem = (props) => {
                     alt={props.obj.coverImage.alt}
                 />
             </div>
-            <div 
-                // className="slide-from-image-left-curtain-hover-on"
+            <div
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
                 onMouseDown={(e) => stoneWallWideItemOnClick(e, props.obj.path)}
