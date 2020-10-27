@@ -8,10 +8,6 @@ import React, {
 } from 'react';
 
 import {
-    withRouter
-} from 'react-router-dom';
-
-import {
     connect
 } from 'react-redux';
 
@@ -80,14 +76,12 @@ import * as Images from '../../../constants/images';
 
 export const HeaderImages = (props) => {
 
-    const size = useWindowSize();
-
     /**
      * State
      */
 
+    const size = useWindowSize();
     const [imgShow, setImgShow] = useState(true);
-
     const [img, setImg] = useState(
         {
             id: 1,
@@ -125,6 +119,8 @@ export const HeaderImages = (props) => {
      */
 
     useEffect(() => {
+        // Fetch data for the component
+
         props.fetchHeaderImagesArray();
     }, []);
 
@@ -134,6 +130,8 @@ export const HeaderImages = (props) => {
     }, true ? 10000 : null);
 
     const handleMouseEnter = (id) => {
+        //Set isHovering property to button with id in order to activate animation
+        
         let updatedSwitchButtons = [...switchButtons];
         let switchButton = {...updatedSwitchButtons.find(x => x.id === id), isHovering: true};
         let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
@@ -143,6 +141,8 @@ export const HeaderImages = (props) => {
     }
 
     const handleMouseLeave = (id) => {
+        //Set isHovering property to button with given id in order to deactivate animation
+
         let updatedSwitchButtons = [...switchButtons];
         let switchButton = {...updatedSwitchButtons.find(x => x.id === id), isHovering: false};
         let switchButtonIndex = updatedSwitchButtons.findIndex(x => x.id === id);
@@ -165,6 +165,8 @@ export const HeaderImages = (props) => {
     }
 
     const switchButtonOnClick = (id) => {
+        // Set active property to button with given id
+
         let updatedSwitchButtons = [...switchButtons];
         updatedSwitchButtons = updatedSwitchButtons.map(el => {
             return {
@@ -181,8 +183,13 @@ export const HeaderImages = (props) => {
         updatedSwitchButtons.splice(switchButtonIndex, 1, switchButton);
         setSwitchButtons(updatedSwitchButtons);
 
+        // Set active image obj for rendering header text
+        
         let headerImageObj = props.headerImages.items.find(item => item.id === id);
         setImg(headerImageObj);
+
+        // Toggle trick to show and hide header text
+
         setImgShow(!imgShow);
     }
     
@@ -218,7 +225,13 @@ export const HeaderImages = (props) => {
         )
     }
 
-    const renderSubtractedPxForTextBack = () => {
+    const calcPxToSubtractForTextBack = () => {
+
+        /** 
+         * Calculate the number of pixels to subtract for different
+         * screen sizes (for the header text on the back)
+         */ 
+
         let windowWidth = size.width;
 
         if(windowWidth > 1120){
@@ -238,7 +251,13 @@ export const HeaderImages = (props) => {
         }
     }
 
-    const renderSubtractedPxForTextFront = () => {
+    const calcPxToSubtractForTextFront = () => {
+  
+        /** 
+         * Calculate the number of pixels to subtract for different
+         * screen sizes (for the header text on the front) 
+         */ 
+
         let windowWidth = size.width;
 
         if(windowWidth > 1120){
@@ -263,7 +282,7 @@ export const HeaderImages = (props) => {
             return(
                 <div 
                     className="header-images-loading"
-                    style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
+                    style={{left: `${size.width/2 - calcPxToSubtractForTextFront()}px`}}
                 >
                     <Loading color="white"/>
                 </div>
@@ -274,19 +293,19 @@ export const HeaderImages = (props) => {
                 <>
                     <div 
                         className={`${imgShow ? "header-text-back" : "hide"}`}
-                        style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
+                        style={{left: `${size.width/2 - calcPxToSubtractForTextBack()}px`}}
                     >
                         {img.headerText}
                     </div>
                     <div 
                         className={`${!imgShow ? "header-text-back" : "hide"}`}
-                        style={{left: `${size.width/2 - renderSubtractedPxForTextBack()}px`}}
+                        style={{left: `${size.width/2 - calcPxToSubtractForTextBack()}px`}}
                     >
                         {img.headerText}
                     </div>
                     <div 
                         className="header-text-front-crop" 
-                        style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
+                        style={{left: `${size.width/2 - calcPxToSubtractForTextFront()}px`}}
                     >
                         <div className={`${imgShow ? "header-text-front" : "hide"}`}>
                             {img.headerText}
@@ -331,7 +350,7 @@ export const HeaderImages = (props) => {
             return(
                 <div 
                     className="header-images-error"
-                    style={{left: `${size.width/2 - renderSubtractedPxForTextFront()}px`}}
+                    style={{left: `${size.width/2 - calcPxToSubtractForTextFront()}px`}}
                 >
                     <H19 className="h19-nobel-lora">{`${props.headerImages.error}`}</H19>
                 </div>
