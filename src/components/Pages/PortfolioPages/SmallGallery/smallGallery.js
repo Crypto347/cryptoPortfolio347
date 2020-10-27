@@ -90,24 +90,35 @@ export const SmallGallery = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
-    const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
 
     /**
     * Methods
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Scroll to the top of the screen
+
         window.scrollTo(0, 0);
+
+        // Fetch data for the component
+
         props.fetchSmallGalleryPortfolio(props.match.params.id);
+
+        // Show content after successful data fetch
 
         setShowContent(true);
 
-        // window.addEventListener('scroll', handleScroll);
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            // window.removeEventListener('scroll', handleScroll);
+            // Cleaning an unmounted component
+
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);
         }
@@ -242,24 +253,48 @@ export const SmallGallery = (props) => {
     }
 
     const onClickHandler = (path, key, e) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", localStorage.getItem("page"));
+
+        // Clear archive data 
+
         if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
+
         if(e.button !== 1){
+            /**
+            * Add fading effect on unmounted component and remember 
+            * information of unmounted component on left mouse click 
+            */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+
+        // Fire up unmountComponent epic
+
         props.unmountComponent(key, path, "smallGallery", e.button);
     }
 
     const openPhotoViewer = (array, activeIndex) => {
         let slidesForPhotoViewer = [...array];
         let removedSlides = [];
-        // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
+        
+        /**
+        * Rearrange the elements in array so that the element
+        * with active index becomes first and the rest are
+        * lined up in the correct order
+        */
               
         slidesForPhotoViewer.map((el, i) => {
             if(i < activeIndex){
@@ -273,6 +308,8 @@ export const SmallGallery = (props) => {
         }
 
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
+        
+        // Open photo viewer for the component
         
         props.photoViewerOpen('smallGallery', true, slidesForPhotoViewer);
     }
