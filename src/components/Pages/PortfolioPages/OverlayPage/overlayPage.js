@@ -4,8 +4,7 @@
 
 import React, {
     useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -29,7 +28,6 @@ import './overlayPage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
-import SwitchImage from '../../../SmallParts/SwitchImage/switchImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -57,14 +55,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -93,23 +84,34 @@ export const OverlayPage = (props) => {
     */
 
     useEffect(() => {
+        // Init state for fading effect when component will unmount
+
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
         if(props.overlayPage.items.length === 0){
             props.fetchOverlayPage();
         }
+
+        // Return to the part of the screen where the link to the selected item is located
+
         let timeout = setTimeout(() => {
             if(!props.overlayPage.loading && !props.overlayPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
             }
         }, 2);
 
+        // Event Listeners
+
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
+            // Cleaning an unmounted component
+
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -195,7 +197,6 @@ export const OverlayPage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            // archiveCategory={props.archive.category}
                         />
                     </div>
                 )
@@ -257,18 +258,15 @@ export default connect(
             overlayPage: Selectors.getOverlayPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
-            archive: Selectors.getArchiveState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
             fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
-            setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
