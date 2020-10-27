@@ -60,7 +60,6 @@ import {
     H19,
     H22,
     H70,
-    EH30,
     EH40,
     EH70
 } from '../../../UtilityComponents';
@@ -87,7 +86,6 @@ export const SmallSlider = (props) => {
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showContent, setShowContent] = useState(false);
-    const [isHoveringCategoryText, setIsHoveringCategoryText] = useState("init");
     const [onePercentToPx, setOnePercentToPx] = useState(0);
 
     /**
@@ -95,23 +93,38 @@ export const SmallSlider = (props) => {
     */
 
     useEffect(() => {
-        props.setUnmountComponentValues(false, "");
-        window.scrollTo(0, 0);
-        props.fetchSmallSliderPortfolio(props.match.params.id);
-        calculateOnePercent(size.width);
+        // Init state for fading effect when component will unmount
 
+        props.setUnmountComponentValues(false, "");
+
+        // Scroll to the top of the screen
+
+        window.scrollTo(0, 0);
+
+        // Fetch data for the component
+
+        props.fetchSmallSliderPortfolio(props.match.params.id);
+
+        // Auxiliary property for swiper to calculate translatedWidth
+
+        calculateOnePercentToPx(size.width);
+
+        // Show content after successful data fetch
+      
+        setShowContent(true);
+
+        // Event Listeners
+        
         const resize = () => {
             resizeRef.current();
         }
 
-        setShowContent(true);
-
-        // window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
         
         return () => {
-            // window.removeEventListener('scroll', handleScroll);
+            // Cleaning an unmounted component
+
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);
@@ -123,7 +136,7 @@ export const SmallSlider = (props) => {
     });
 
     const handleResize = () => {
-        calculateOnePercent(size.width);
+        calculateOnePercentToPx(size.width);
     }
 
     const handleOnWheel = (e) => {
@@ -154,10 +167,10 @@ export const SmallSlider = (props) => {
         return e.deltaY < 0;
     }
     
-    const calculateOnePercent = (scrWidth) => {
-        let screenWidth = scrWidth / 100;
+    const calculateOnePercentToPx = (scrWidth) => {
+        //Calculate one percent
 
-        // console.log(screenWidth)
+        let screenWidth = scrWidth / 100;
         setOnePercentToPx(screenWidth);
     }
 
@@ -207,17 +220,35 @@ export const SmallSlider = (props) => {
     }
 
     const onClickHandler = (path, key, e) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", localStorage.getItem("page"));
+
+        // Clear archive data 
+
         if(props.archive.category !== key && e.button !== 1){
             props.clearArchiveData();
         }
         if(e.button !== 1){
+            /**
+            * Add fading effect on unmounted component and remember 
+            * information of unmounted component on left mouse click 
+            */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+
+        // Fire up unmountComponent epic
+
         props.unmountComponent(key, path, "smallSlider", e.button);
     }
 
@@ -307,19 +338,22 @@ export const SmallSlider = (props) => {
             let translatedValue;
             let paddingOneSide;
             
+            // Calculate translatedWidth property for different screen widths
+
             if(size.width > 1110){
                 translatedValue = onePercentToPx * 69;
-                paddingOneSide = 130;
+                paddingOneSide = 240;
             }else if(size.width < 1100 && size.width > 900){
                 translatedValue = size.width;
-                paddingOneSide = 130;
+                paddingOneSide = 240;
             }else if(size.width < 900 && size.width > 680){
                 translatedValue = size.width;
-                paddingOneSide = 70;
+                paddingOneSide = 150;
             }else if(size.width < 680){
                 translatedValue = size.width;
-                paddingOneSide = 30;
+                paddingOneSide = 70;
             }
+
             return(
                 <div className="small-slider-wrapper">
                     <H70 className="h70-nero-poppins">{props.smallSliderPortfolio.item.header}</H70>
@@ -403,7 +437,6 @@ export default connect(
             fetchSmallSliderPortfolio: bindActionCreators(Services.fetchSmallSliderPortfolio, dispatch),
             setSmallSliderIsHoveringCategory: bindActionCreators(Actions.setSmallSliderIsHoveringCategory, dispatch),
             setSmallSliderIsHoveringTag: bindActionCreators(Actions.setSmallSliderIsHoveringTag, dispatch),
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
