@@ -75,21 +75,31 @@ export const Achievements = (props) => {
      */
 
     useEffect(() => {
+        // Fetch data for the component
+
         props.fetchAchievementsData();
+
+        // Event Listeners
+        
         window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
+        // Cleaning an unmounted component
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     
 
     const handleScroll = () => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("achievements");
+        let el = document.getElementById("achievements")
+
+        // Render the component only when it appears on the screen
+
         if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
             setShowComponent(true);
         }
+
+        // Render the component only when it appears on a vertically oriented screen
+
         if(size.width - size.height < 0){
             if(scrollHeight >= el.offsetTop - size.height/2 - 900){
                 setShowComponent(true);
