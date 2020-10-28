@@ -208,7 +208,7 @@ export const MetroItem = (props) => {
 
         if(e.button === 2) return;
 
-        // Storing data in local storage 
+        // Storing data in local storage
 
         localStorage.setItem("page", props.page);
         

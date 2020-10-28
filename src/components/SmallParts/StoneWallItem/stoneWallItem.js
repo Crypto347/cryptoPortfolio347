@@ -18,18 +18,9 @@ import './stoneWallItem.scss';
  * Utility
  */
 
-import * as Utility from '../../../utility';
-
-import { 
-    H17,
+import {
     H35,
-    H45,
-    H70,
-    EH10,
-    EH20,
-    EH40,
-    EH70,
-    EH110
+    EH20
 } from '../../UtilityComponents';
 
 /**
@@ -51,17 +42,21 @@ export const StoneWallItem = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
-    const [paddingTopBottom, setPaddingTopBottom] = useState(0);
  
     /**
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -70,7 +65,8 @@ export const StoneWallItem = (props) => {
     });
 
     const handleResize = () => {
-        let paddingTopBottomVal = setPadding(props.page);
+        // Set the height of the curtain on window resize
+
         let obj = {
             img1: {
                 // width: document.getElementById("stoneWallItemId1").clientWidth,
@@ -93,8 +89,7 @@ export const StoneWallItem = (props) => {
                 height: document.getElementById("stoneWallItemId5").clientHeight,
             }
         }
-        setPaddingTopBottom(paddingTopBottomVal);
-        props.getImagesWidthAndHeight(obj);
+        
         switch(props.obj.id){
             case 1:
                 setCardHeight(obj.img1.height - 40);
@@ -111,13 +106,6 @@ export const StoneWallItem = (props) => {
             case 5:
                 setCardHeight(obj.img5.height - 40);
                 break;
-        }
-    }
-
-    const setPadding = (page) => {
-        switch(page){
-            case 'stoneWallPage':
-                return 40;
         }
     }
 
@@ -156,13 +144,28 @@ export const StoneWallItem = (props) => {
     }
 
     const stoneWallOnClick = (e, path) => {
-        if(e.button === 2) return; 
+        // Do nothing on right mouse click
+
+        if(e.button === 2) return;
+
+        // Storing data in local storage
+
         localStorage.setItem("page", props.page);
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+        
         props.unmountComponent(null, null,  props.page, e.button);
     }
 

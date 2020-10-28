@@ -531,31 +531,6 @@ export const StoneWallPage = (props) => {
         }
     }
 
-    const getImagesWidthAndHeight = (obj) => {
-        props.updateItemsStyleValuesStoneWallPage({
-            img1: {
-                ...props.stoneWallPage.itemsStyleValues.img1,
-                height: obj.img1.height
-            }, 
-            img2: {
-                ...props.stoneWallPage.itemsStyleValues.img2,
-                height: obj.img2.height
-            }, 
-            img3: {
-                ...props.stoneWallPage.itemsStyleValues.img3,
-                height: obj.img3.height
-            },
-            img4: {
-                ...props.stoneWallPage.itemsStyleValues.img4,
-                height: obj.img4.height
-            },
-            img5: {
-                ...props.stoneWallPage.itemsStyleValues.img5,
-                height: obj.img5.height
-            }
-        })
-    }
-
     const renderStoneWallItemsStyleWidth = () => {
         if(size.width > 1200){
             return 1099.99;
@@ -619,7 +594,6 @@ export const StoneWallPage = (props) => {
                             obj={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            getImagesWidthAndHeight={(obj) => getImagesWidthAndHeight(obj)}
                         />
                     </div>
                 )
