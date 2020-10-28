@@ -182,6 +182,7 @@ export function portfolioNavigationOnClickStart(path, page, category) {
         category: category
     };
 };
+
 export function portfolioNavigationOnClick(path, page, category) {
     return { 
         type: actionTypes.PORTFOLIO_NAVIGATION_ON_CLICK,
@@ -191,3 +192,9 @@ export function portfolioNavigationOnClick(path, page, category) {
     };
 };
 
+export function setFullScreenState(val) {
+    return { 
+        type: actionTypes.SET_FULLSCREEN_STATE,
+        val: val
+    };
+};

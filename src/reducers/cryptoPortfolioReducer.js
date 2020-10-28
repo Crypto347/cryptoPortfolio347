@@ -46,7 +46,8 @@ export const initialState = {
         state: "init"
     },
     historyPopFromItem: "scrollToTop",
-    showBackToTop: false
+    showBackToTop: false,
+    fullScreenState: false
 }
 
 const initMenuItems = (state, action) => {
@@ -705,6 +706,14 @@ const setShowBackToTopComponent = (state, action) => {
         showBackToTop: action.val
     };
 }
+
+const setFullScreenState = (state, action) => {
+    return {
+        ...state,
+        fullScreenState: action.val
+    };
+}
+
 // const setInputFiledValueAndCheckValidation = (state, action) => {
 //     let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
 //     let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
@@ -859,6 +868,9 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setHistoryPopFromPortfolioItem(state, action);
         case actionTypes.SET_SHOW_BACK_TO_TOP_COMPONENT:
             return setShowBackToTopComponent(state, action);
+        case actionTypes.SET_FULLSCREEN_STATE:
+            return setFullScreenState(state, action);
+            
         default: 
             return state;
     }

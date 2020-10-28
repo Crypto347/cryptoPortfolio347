@@ -89,7 +89,7 @@ export const PhotoViewer = (props) => {
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
-    const [fullScreen, setFullScreen] = useState(false);
+    // const [fullScreen, setFullScreen] = useState(false);
     const [photoViewerWindowSize, setPhotoViewerWindowSize] = useState({
         width: 0,
         height: 0
@@ -107,8 +107,17 @@ export const PhotoViewer = (props) => {
         // Set windth and height of photoViwer and fullScreen photoViwer for different pages
 
         renderStyle(size.width, props.width, props.height);
-
+        document.addEventListener('fullscreenchange', (event) => {
+            console.log("EEE", props.fullScreenState)
+           
+            if(props.fullScreenState){
+                console.log("EEE", props.fullScreenState)
+                props.setFullScreenState(false);
+            }
+        });
     }, [size.width]);
+
+   
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -514,13 +523,39 @@ export const PhotoViewer = (props) => {
         setPhotoViewerFullscreenWindowSize(updatedPhotoViewerFullscreenWindowSize)
     }
 
+    const openFullScreen = () => {
+        let elem = document.getElementById("photoViewer");
+
+        if(elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+        props.setFullScreenState(true);
+    }
+
+    function closeFullscreen() {
+        props.setFullScreenState(false);
+
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+          document.msExitFullscreen();
+        }
+    }
+
     /**
      * Markup
      */
 
     return(
         <>
-            <div className="photo-viewer">
+        {!props.fullScreenState ? 
+            <div className="photo-viewer" id="photoViewer">
                 <div 
                     className="photo-viewer-wrapper"
                     style={{width: `${photoViewerWindowSize.width}`}}
@@ -531,6 +566,7 @@ export const PhotoViewer = (props) => {
                             size="lg" 
                             color={isHoveringExpand ? "white" : "rgb(155, 155, 155)"}
                             onClick={() => setFullScreen(true)}
+                            onClick={openFullScreen}
                             onMouseEnter={() => handleMouseEnter('expand')} 
                             onMouseLeave={() => handleMouseLeave('expand')}
                         />
@@ -577,55 +613,49 @@ export const PhotoViewer = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
-            {fullScreen ? 
-                <Fullscreen
-                    enabled={fullScreen}
-                    onChange={(e) => fullscreenOnChangeHandler(e)}
-                >
-                <div className="fullscreen-outer-wrapper">
-                    <div className="fullscreen-close-button">
-                        <div className="small-screen">
-                        <FontAwesomeIcon 
-                            icon={faCompress} 
-                            size="lg" 
-                            color={isHoveringShrink ? "white" : "rgb(155, 155, 155)"}
-                            onClick={() => setFullScreen(false)}
-                            onMouseEnter={() => handleMouseEnter('shrink')} 
-                            onMouseLeave={() => handleMouseLeave('shrink')}
-                        />
-                        </div>
-                    </div>
-                    <div className="fullscreen-wrapper">
-                        <div 
-                            className={renderClassName("leftArrow", isHoveringLeftArrow)}
-                            onClick={props.prevImage}
-                            onMouseEnter={() => handleMouseEnter('leftArrow')} 
-                            onMouseLeave={() => handleMouseLeave('leftArrow')}
-                        >
-                            <div className="arrow-top-line"/>
-                            <div className="arrow-bottom-line"/>
-                        </div>
-                        <EW30/>
-                        <div 
-                            className="fullscreen-photo-viewer-image-item"
-                            style={{height: `${photoViewerFullscreenWindowSize.height}vh`}}
-                        >
-                            <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
-                        </div>
-                        <EW30/>
-                        <div 
-                            className={renderClassName("rightArrow", isHoveringRightArrow)}
-                            onClick={props.nextImage}
-                            onMouseEnter={() => handleMouseEnter('rightArrow')} 
-                            onMouseLeave={() => handleMouseLeave('rightArrow')}
-                        >
-                            <div className="arrow-top-line"/>
-                            <div className="arrow-bottom-line"/>
-                        </div>
+            </div> :
+            <div className="fullscreen-outer-wrapper">
+                <div className="fullscreen-close-button">
+                    <div className="small-screen">
+                    <FontAwesomeIcon 
+                        icon={faCompress} 
+                        size="lg" 
+                        color={isHoveringShrink ? "white" : "rgb(155, 155, 155)"}
+                        onClick={closeFullscreen}
+                        onMouseEnter={() => handleMouseEnter('shrink')} 
+                        onMouseLeave={() => handleMouseLeave('shrink')}
+                    />
                     </div>
                 </div>
-            </Fullscreen> : null}
+                <div className="fullscreen-wrapper">
+                    <div 
+                        className={renderClassName("leftArrow", isHoveringLeftArrow)}
+                        onClick={props.prevImage}
+                        onMouseEnter={() => handleMouseEnter('leftArrow')} 
+                        onMouseLeave={() => handleMouseLeave('leftArrow')}
+                    >
+                        <div className="arrow-top-line"/>
+                        <div className="arrow-bottom-line"/>
+                    </div>
+                    <EW30/>
+                    <div 
+                        className="fullscreen-photo-viewer-image-item"
+                        style={{height: `${photoViewerFullscreenWindowSize.height}vh`}}
+                    >
+                        <img src={loadImg(props.photoViewerImagesArray[0].key)}/>
+                    </div>
+                    <EW30/>
+                    <div 
+                        className={renderClassName("rightArrow", isHoveringRightArrow)}
+                        onClick={props.nextImage}
+                        onMouseEnter={() => handleMouseEnter('rightArrow')} 
+                        onMouseLeave={() => handleMouseLeave('rightArrow')}
+                    >
+                        <div className="arrow-top-line"/>
+                        <div className="arrow-bottom-line"/>
+                    </div>
+                </div>
+            </div>}
         </>
     );
 }
@@ -633,14 +663,16 @@ export const PhotoViewer = (props) => {
 export default connect(
     (state) => {
         return {
-            photoViewerImagesArray: Selectors.getPhotoViewerImagesArrayState(state)
+            photoViewerImagesArray: Selectors.getPhotoViewerImagesArrayState(state),
+            fullScreenState: Selectors.getFullScreenStateState(state)
         };
     },
     (dispatch) => {
         return {
             prevImage: bindActionCreators(Actions.prevImage, dispatch),
             nextImage: bindActionCreators(Actions.nextImage, dispatch),
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            setFullScreenState: bindActionCreators(Actions.setFullScreenState, dispatch),
         };
     }
 )(PhotoViewer);

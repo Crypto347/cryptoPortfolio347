@@ -72,6 +72,13 @@ export const getSwiperDataState = createSelector(
     (x) => x
 );
 
+const getFullScreenState = (state) => state.home.fullScreenState;
+
+export const getFullScreenStateState = createSelector(
+    [getFullScreenState],
+    (x) => x
+);
+
 const getTeamInformation = (state) => state.section3.teamInformation;
 
 export const getTeamInformationState = createSelector(
