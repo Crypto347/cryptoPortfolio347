@@ -18,18 +18,8 @@ import './simpleOverlayImage.scss';
  * Utility
  */
 
-import * as Utility from '../../../utility';
-
 import { 
-    H15,
     H35,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
 } from '../../UtilityComponents';
 
 /**
@@ -56,11 +46,16 @@ export const SimpleOverlayImage = (props) => {
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -69,6 +64,8 @@ export const SimpleOverlayImage = (props) => {
     })
 
     const handleResize = () => {
+        // Set the height of the curtain on window resize
+
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight);
     }
@@ -126,13 +123,28 @@ export const SimpleOverlayImage = (props) => {
     }
 
     const simpleOverlayImageOnClick = (path, e) => {
-        if(e.button === 2) return; 
+        // Do nothing on right mouse click
+
+        if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("page", props.page);
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+        
         props.unmountComponent(null, null,  props.page, e.button);
     }
 

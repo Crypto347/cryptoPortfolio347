@@ -14,6 +14,10 @@ import React, {
 
 import './metroItem.scss';
 
+/**
+ * Utility
+ */
+
 import { 
     H17,
     H35
@@ -216,7 +220,7 @@ export const MetroItem = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            // Remember information of unmounted component on scroll wheel click 
+            // Remember information of unmounted component on scroll wheel click
 
             props.setUnmountComponentValues(false, path);
         }
