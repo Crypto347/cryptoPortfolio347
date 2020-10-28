@@ -104,23 +104,11 @@ export const PhotoViewer = (props) => {
      */
 
     useEffect(() => {
+        // Set windth and height of photoViwer and fullScreen photoViwer for different pages
+
         renderStyle(size.width, props.width, props.height);
-        const resize = () => {
-            resizeRef.current();
-        }
 
-        window.addEventListener('resize', resize);
-
-        return () => window.removeEventListener('resize', resize);
     }, [size.width]);
-
-    useEffect(() => {
-        resizeRef.current = handleResize;
-    });
-
-    const handleResize = () => {
-        // calculateOnePercent(size.width);
-    }
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -448,6 +436,8 @@ export const PhotoViewer = (props) => {
     }
 
     const fullscreenOnChangeHandler = (e) => {
+        // Show  or hide fullScreen
+
         if(!e){
             setFullScreen(e);
         }
