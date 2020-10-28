@@ -7,14 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    withRouter
-} from 'react-router-dom';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
  * Styles
  */
@@ -62,8 +54,7 @@ export const PortfolioItemCard = (props) => {
             case 'portfolioItemCategory': 
                 props.setIsHoveringCategory("on", pathOfIds);
                 break;
-            case 'arrow': 
-                // props.setSwitchImagePageIsHoveringArrow("on", id);
+            case 'arrow':
                 setIsHovering("on");
                 break;
         }
@@ -74,8 +65,7 @@ export const PortfolioItemCard = (props) => {
             case 'portfolioItemCategory': 
                 props.setIsHoveringCategory("off", pathOfIds);
                 break;
-            case 'arrow': 
-                // props.setSwitchImagePageIsHoveringArrow("off", id);
+            case 'arrow':
                 setIsHovering("off");
                 break;
         }
@@ -105,15 +95,33 @@ export const PortfolioItemCard = (props) => {
     }
 
     const onClickHandler = (path, key, e) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.component);
+
+        // Clear archive data
+        
+        props.clearArchiveData();
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
+
             props.setUnmountComponentValues(true, path);
-            props.clearArchiveData();
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(key, path, props.component, e.button);
     }
 
