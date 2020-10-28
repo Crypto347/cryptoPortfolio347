@@ -1,8 +1,6 @@
 .team-information-card {
     width: 20%;
     position: relative;
-    // .team-information-card-image {
-    //     width: 100%;
         .team-information-card-image {
             overflow: hidden;
             >img {
@@ -73,7 +71,6 @@
                 cursor: pointer;
             }
         }
-    // }
 }
 
 .display-none{

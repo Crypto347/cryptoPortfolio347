@@ -62,10 +62,15 @@ export const TeamInformationCard = (props) => {
      */
 
     useEffect(()=>{
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -74,6 +79,8 @@ export const TeamInformationCard = (props) => {
     })
 
     const handleResize = () => {
+        // Set the height of the curtain on window resize
+
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight);
     }
@@ -155,33 +162,28 @@ export const TeamInformationCard = (props) => {
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
-            {/* <div className="team-information-card-image"> */}
-                <div className={renderClassName("teamCardImage", isHovering)}>
-                    <img 
-                        id="img"
-                        src={loadPhoto(props.photo)}
-                        alt={props.alt}
-                    />
-                </div>
-                {/* {isHovering ?  */}
-                <div 
-                    className={renderClassName("teamInfoCard", isHovering)}
-                    style={{height: `${cardHeight}px`}}
-                >
-                    <H25 className="h25-white-teko">{props.name}</H25>
-                    <H15 className="h15-white-lustria">{props.position}</H15>
-                    <EH25/>
-                    <FontAwesomeIcon 
-                        icon={faInstagram} 
-                        size="1x" 
-                        className="team-information-card-icon"
-                        onClick={() => iconOnClick(props.name, props.instaName)}
-                    />
-                    <EH40/>
-                </div> 
-                {/* :  null} */}
-            {/* </div> */}
-           
+            <div className={renderClassName("teamCardImage", isHovering)}>
+                <img 
+                    id="img"
+                    src={loadPhoto(props.photo)}
+                    alt={props.alt}
+                />
+            </div>
+            <div 
+                className={renderClassName("teamInfoCard", isHovering)}
+                style={{height: `${cardHeight}px`}}
+            >
+                <H25 className="h25-white-teko">{props.name}</H25>
+                <H15 className="h15-white-lustria">{props.position}</H15>
+                <EH25/>
+                <FontAwesomeIcon 
+                    icon={faInstagram} 
+                    size="1x" 
+                    className="team-information-card-icon"
+                    onClick={() => iconOnClick(props.name, props.instaName)}
+                />
+                <EH40/>
+            </div>
         </div>
     );
 }

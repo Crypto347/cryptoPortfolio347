@@ -51,6 +51,9 @@ export const SwitchImage = (props) => {
         // Set cover image information
 
         setImgToLoad(props.imagesArray[0]);
+
+        // Calculate image holder coordinates 
+
         setImageCoordinateRange();
 
         // Event Listeners
@@ -120,7 +123,8 @@ export const SwitchImage = (props) => {
     const setImageCoordinateRange = () => {
         //Remember image holder coordinates
 
-        let imgCoordinateRange; 
+        let imgCoordinateRange;
+
         switch(props.id){
             case 1:
                 imgCoordinateRange = evaluateCoordinates(); 
@@ -549,7 +553,7 @@ export const SwitchImage = (props) => {
             props.setUnmountComponentValues(false, path);
         }
         // Fire up unmountComponent epic
-        
+
         props.unmountComponent(null, null, props.component, e.button);
     }
 
