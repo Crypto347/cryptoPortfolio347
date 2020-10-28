@@ -56,7 +56,6 @@ import {
 
 import * as Images from '../../../constants/images';
 
-
 /**
  * OurProcess component definition and export
  */
@@ -64,14 +63,12 @@ import * as Images from '../../../constants/images';
 export const OurProcess = (props) => {
 
     /**
-     * State
-     */
-
-    /**
      * Methods
      */
 
     useEffect(() => {
+        // Fetch data for the component
+        
         props.fetchOurProcessData();
     }, []);
 
