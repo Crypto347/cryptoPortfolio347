@@ -14,12 +14,6 @@ import React, {
 
 import './metroItem.scss';
 
-/**
- * Utility
- */
-
-import * as Utility from '../../../utility';
-
 import { 
     H17,
     H35
@@ -67,7 +61,7 @@ export const MetroItem = (props) => {
     });
 
     const handleResize = () => {
-        // Set the height of the curtain when resizing the screen
+        // Set the height of the curtain on window resize
 
         let obj = {
             img1: {
@@ -226,7 +220,6 @@ export const MetroItem = (props) => {
 
             props.setUnmountComponentValues(false, path);
         }
-
         // Fire up unmountComponent epic
 
         props.unmountComponent(null, null,  props.page, e.button);
@@ -263,7 +256,6 @@ export const MetroItem = (props) => {
 
             props.setUnmountComponentValues(false, path);
         }
-
         // Fire up unmountComponent epic
 
         props.unmountComponent(null, null,  props.page, e.button);

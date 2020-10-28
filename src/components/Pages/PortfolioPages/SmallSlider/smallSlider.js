@@ -246,7 +246,6 @@ export const SmallSlider = (props) => {
 
             props.setUnmountComponentValues(false, path);
         }
-
         // Fire up unmountComponent epic
 
         props.unmountComponent(key, path, "smallSlider", e.button);

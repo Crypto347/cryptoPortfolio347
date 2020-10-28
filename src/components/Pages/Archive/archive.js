@@ -328,7 +328,6 @@ export const Archive = (props) => {
             
             props.setUnmountComponentValues(false, path);
         }
-
         // Fire up unmountComponent epic
 
         props.unmountComponent(key, path, "archive", e.button);

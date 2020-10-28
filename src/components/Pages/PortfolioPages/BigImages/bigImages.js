@@ -254,7 +254,6 @@ export const BigImages = (props) => {
 
             props.setUnmountComponentValues(false, path);
         }
-        
         // Fire up unmountComponent epic
 
         props.unmountComponent(key, path, "bigImages", e.button);

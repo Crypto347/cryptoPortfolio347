@@ -281,7 +281,6 @@ export const SmallImages = (props) => {
 
             props.setUnmountComponentValues(false, path);
         }
-
         // Fire up unmountComponent epic
 
         props.unmountComponent(key, path, "smallImages", e.button);

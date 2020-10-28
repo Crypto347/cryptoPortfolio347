@@ -14,22 +14,11 @@ import React, {
 
 import './overlayImage.scss';
 
-/**
- * Utility
- */
-
-import * as Utility from '../../../utility';
-
 import { 
     H17,
     H35,
-    H45,
-    H70,
     EH10,
-    EH20,
-    EH40,
-    EH70,
-    EH110
+    EH20
 } from '../../UtilityComponents';
 
 /**
@@ -57,11 +46,16 @@ export const OverlayImage = (props) => {
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
-        } 
+        }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -70,6 +64,8 @@ export const OverlayImage = (props) => {
     })
 
     const handleResize = () => {
+        // Set the height of the curtain and padding value on window resize
+
         let paddingTopBottomVal = setPadding(props.page);
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight - paddingTopBottomVal);
@@ -77,6 +73,8 @@ export const OverlayImage = (props) => {
     }
 
     const setPadding = (page) => {
+        // Set curtain padding value for different pages
+
         switch(page){
             case 'overlayPage':
             case 'twoColumnsWidePage':
@@ -297,27 +295,62 @@ export const OverlayImage = (props) => {
     }
 
     const overlayImageOnClick = (e, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("page", props.page);
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const onClickHandler = (e, path, key) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
-        e.stopPropagation();       
+
+        // Prevent function overlayImageItemOnClick from running
+
+        e.stopPropagation();
+        
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
+
+        // Clear archive data
+
         props.clearArchiveData();
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
