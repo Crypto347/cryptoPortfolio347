@@ -43,7 +43,6 @@ export const StatisticsItem = (props) => {
 
     const [value, setValue] = useState(0);
     const [delay, setDelay] = useState(10);
-    const [showPercent, setShowPercent] = useState(false);
 
     /**
      * Methods
