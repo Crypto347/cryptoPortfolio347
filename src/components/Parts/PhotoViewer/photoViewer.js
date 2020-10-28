@@ -108,13 +108,12 @@ export const PhotoViewer = (props) => {
 
         renderStyle(size.width, props.width, props.height);
         document.addEventListener('fullscreenchange', (event) => {
-            console.log("EEE", props.fullScreenState)
-           
-            if(props.fullScreenState){
-                console.log("EEE", props.fullScreenState)
+            console.log("EEE", document.webkitIsFullScreen)
+            if(!document.webkitIsFullScreen){
+               
                 props.setFullScreenState(false);
             }
-        });
+        }, false);
     }, [size.width]);
 
    
