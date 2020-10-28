@@ -18,18 +18,10 @@ import './standardPortfolioItem.scss';
  * Utility
  */
 
-import * as Utility from '../../../utility';
-
 import { 
     H22,
     H35,
-    H45,
-    H70,
-    EH10,
     EH30,
-    EH40,
-    EH70,
-    EH110
 } from '../../UtilityComponents';
 
 /**
@@ -56,11 +48,16 @@ export const StandardPortfolioItem = (props) => {
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -69,6 +66,8 @@ export const StandardPortfolioItem = (props) => {
     })
 
     const handleResize = () => {
+        // Set the height of the curtain on window resize
+
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight);
     }
@@ -163,8 +162,14 @@ export const StandardPortfolioItem = (props) => {
     }
 
     const standardPortfolioImageOnClick = (e, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage
+
         localStorage.setItem("page", props.page);
+
         if(e.button !== 1){
             props.setUnmountComponentValues(true, path);
             // props.clearArchiveData();
@@ -175,15 +180,34 @@ export const StandardPortfolioItem = (props) => {
     }
 
     const onClickHandler = (e, path, key) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
+
+        // Clear archive data
+
+        props.clearArchiveData();
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
+
             props.setUnmountComponentValues(true, path);
-            props.clearArchiveData();
+          
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+        
         props.unmountComponent(null, null, props.page, e.button);
     }
     

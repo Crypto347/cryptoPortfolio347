@@ -127,7 +127,7 @@ export const SimpleOverlayImage = (props) => {
 
         if(e.button === 2) return;
 
-        // Storing data in local storage 
+        // Storing data in local storage
 
         localStorage.setItem("page", props.page);
 
@@ -144,7 +144,7 @@ export const SimpleOverlayImage = (props) => {
             props.setUnmountComponentValues(false, path);
         }
         // Fire up unmountComponent epic
-        
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
