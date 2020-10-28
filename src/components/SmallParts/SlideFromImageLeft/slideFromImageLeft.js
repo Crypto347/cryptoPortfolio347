@@ -18,18 +18,9 @@ import './slideFromImageLeft.scss';
  * Utility
  */
 
-import * as Utility from '../../../utility';
-
 import { 
     H17,
-    H22,
-    H45,
-    H70,
-    EH10,
-    EH30,
-    EH40,
-    EH70,
-    EH110
+    H22
 } from '../../UtilityComponents';
 
 /**
@@ -56,11 +47,16 @@ export const SlideFromImageLeft = (props) => {
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -69,6 +65,8 @@ export const SlideFromImageLeft = (props) => {
     })
 
     const handleResize = () => {
+        // Set the height of the curtain on window resize
+
         let cardHeight = document.getElementById("img").clientHeight;
         setCardHeight(cardHeight - 80);
     }
@@ -183,27 +181,63 @@ export const SlideFromImageLeft = (props) => {
     }
 
     const slideFromImageLeftOnClick = (e, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("page", props.page);
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const onClickHandler = (e, path, key) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
-        e.stopPropagation();       
+
+        // Prevent function stoneWallWideItemOnClick from running
+
+        e.stopPropagation();
+        
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
+
+        // Clear archive data
+
         props.clearArchiveData();
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
@@ -247,7 +281,6 @@ export const SlideFromImageLeft = (props) => {
                 />
             </div>
             <div 
-                // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
                 onMouseDown={(e) => slideFromImageLeftOnClick(e, props.obj.path)}

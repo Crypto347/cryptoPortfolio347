@@ -27,10 +27,6 @@
     .slide-from-image-left-image-wrapper-hover-off {
         width: 100%;
         transform: translateX(0px);
-        // -webkit-animation: slideFromImageLeftImageHoverOff .3s linear;
-        // -moz-animation: slideFromImageLeftImageHoverOff .3s linear;
-        // -o-animation: slideFromImageLeftImageHoverOff .3s linear;
-        // animation: slideFromImageLeftImageHoverOff .3s linear;
         >img {
             width: 100%;
             filter: grayscale(40%);
@@ -83,10 +79,6 @@
                 height: 2px;
                 background: white;
                 margin-top: 10px;
-                // -webkit-animation: slideFromImageLeftLineHoverOn .2s linear;
-                // -moz-animation: slideFromImageLeftLineHoverOn .2s linear;
-                // -o-animation: slideFromImageLeftLineHoverOn .2s linear;
-                // animation: slideFromImageLeftLineHoverOn .2s linear;
             }
         }
     }
