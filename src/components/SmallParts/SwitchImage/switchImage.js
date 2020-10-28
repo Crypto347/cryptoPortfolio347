@@ -47,19 +47,24 @@ export const SwitchImage = (props) => {
      * Methods
      */
 
-    useEffect(() => {   
-        const resize = () => {
-            resizeRef.current();
-        }
+    useEffect(() => {
+        // Set cover image information
 
         setImgToLoad(props.imagesArray[0]);
         setImageCoordinateRange();
-        
+
+        // Event Listeners
+
+        const resize = () => {
+            resizeRef.current();
+        }
 
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('resize', resize);
 
         return () => {
+            // Cleaning an unmounted component
+
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('resize', resize);
         }
@@ -70,12 +75,23 @@ export const SwitchImage = (props) => {
     });
 
     const handleResize = () => {
+        // Update image holder coordinates on window resize
+        
         setImageCoordinateRange();
     }
    
     const handleMouseMove = (e) => {
+
+        /**
+         * Split the image holder into equal parts equal to the number of elements in imagesArray,
+         * and remember the coordinates of each part. Then check if the cursor coordinates are 
+         * inside the part and then render the corresponding image.
+         */
+
         let pageX = e.pageX;
         let pageY = e.pageY;
+
+        // Check if inside the image holder
         if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
             props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
         ){
@@ -84,22 +100,26 @@ export const SwitchImage = (props) => {
             coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
             coordinatesArray.map((el, i) => {
                 if(i !== coordinatesArray.length - 1){
+                    // Check if inside the calculated corresponding part
+
                     if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
                         setImgToLoad(props.imagesArray[i]);
                     }
                 }else{
+                    // Check if inside the calculated corresponding part
+
                     if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
                         setImgToLoad(props.imagesArray[i]);
                     }
                 }
                
             })
-        }else{
-            // console.log("Notmy div", props.id)
         }
     }
 
     const setImageCoordinateRange = () => {
+        //Remember image holder coordinates
+
         let imgCoordinateRange; 
         switch(props.id){
             case 1:
@@ -142,7 +162,7 @@ export const SwitchImage = (props) => {
                 imgCoordinateRange = evaluateCoordinates(); 
                 break;
             case 14:
-                imgCoordinateRange = evaluateCoordinates()
+                imgCoordinateRange = evaluateCoordinates();
                 break;
             case 15:
                 imgCoordinateRange = evaluateCoordinates(); 
@@ -156,12 +176,14 @@ export const SwitchImage = (props) => {
             case 18:
                 imgCoordinateRange = evaluateCoordinates();
                 break;
-        }  
-            props.rememberCoordinateRange(props.id, imgCoordinateRange);
-       
+        }
+
+        props.rememberCoordinateRange(props.id, imgCoordinateRange);
     }
 
     const evaluateCoordinates = () => {
+        //Calculate image holder coordinates
+
         let switchImage = document.getElementById(`switchImage${props.id}`);
         let updatedImgCoordinateRange = {
             id: props.id,
@@ -506,13 +528,28 @@ export const SwitchImage = (props) => {
     }
 
     const pictureBoardItemOnClick = (e, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage
+
         localStorage.setItem("page", props.component);
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+        
         props.unmountComponent(null, null, props.component, e.button);
     }
 
