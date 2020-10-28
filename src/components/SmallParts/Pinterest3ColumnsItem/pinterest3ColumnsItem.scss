@@ -15,10 +15,10 @@
     .pinterest-3-columns-item-image-wrapper-hover-on {
         width: 100%;
         transform: translateX(30px);
-        -webkit-animation: stoneWallWideItemImageHoverOn .2s linear;
-        -moz-animation: stoneWallWideItemImageHoverOn .2s linear;
-        -o-animation: stoneWallWideItemImageHoverOn .2s linear;
-        animation: stoneWallWideItemImageHoverOn .2s linear;
+        -webkit-animation: pinterest3ColumnsItemImageHoverOn .2s linear;
+        -moz-animation: pinterest3ColumnsItemImageHoverOn .2s linear;
+        -o-animation: pinterest3ColumnsItemImageHoverOn .2s linear;
+        animation: pinterest3ColumnsItemImageHoverOn .2s linear;
         >img {
             width: 100%;
             filter: grayscale(40%);
@@ -44,20 +44,20 @@
         justify-content: space-between;
         align-items: flex-start;
         padding: 40px;
-        -webkit-animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
-        -moz-animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
-        -o-animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
-        animation: stoneWallWideItemCurtainHoverOn .5s ease-out;
+        -webkit-animation: pinterest3ColumnsItemCurtainHoverOn .5s ease-out;
+        -moz-animation: pinterest3ColumnsItemCurtainHoverOn .5s ease-out;
+        -o-animation: pinterest3ColumnsItemCurtainHoverOn .5s ease-out;
+        animation: pinterest3ColumnsItemCurtainHoverOn .5s ease-out;
         .pinterest-3-columns-item-categories {
             position: relative;
             z-index: 100;
             display: flex;
             flex-wrap: wrap;
             opacity: 1;
-            -webkit-animation: stoneWallWIdeItemCategoriesHoverOn .1s linear;
-            -moz-animation: stoneWallWIdeItemCategoriesHoverOn .1s linear;
-            -o-animation: stoneWallWIdeItemCategoriesHoverOn .1s linear;
-            animation: stoneWallWIdeItemCategoriesHoverOn .1s linear;
+            -webkit-animation: pinterest3ColumnsItemCategoriesHoverOn .1s linear;
+            -moz-animation: pinterest3ColumnsItemCategoriesHoverOn .1s linear;
+            -o-animation: pinterest3ColumnsItemCategoriesHoverOn .1s linear;
+            animation: pinterest3ColumnsItemCategoriesHoverOn .1s linear;
             animation-delay: .3s;
             animation-fill-mode: both;
             .pinterest-3-columns-item-category {
@@ -94,20 +94,20 @@
         justify-content: space-between;
         align-items: flex-start;
         padding: 40px 0 40px 0;
-        -webkit-animation: stoneWallWideItemCurtainHoverOff .5s ease-out;
-        -moz-animation: stoneWallWideItemCurtainHoverOff .5s ease-out;
-        -o-animation: stoneWallWideItemCurtainHoverOff .5s ease-out;
-        animation: stoneWallWideItemCurtainHoverOff .5s ease-out;
+        -webkit-animation: pinterest3ColumnsItemCurtainHoverOff .5s ease-out;
+        -moz-animation: pinterest3ColumnsItemCurtainHoverOff .5s ease-out;
+        -o-animation: pinterest3ColumnsItemCurtainHoverOff .5s ease-out;
+        animation: pinterest3ColumnsItemCurtainHoverOff .5s ease-out;
         animation-delay: .2s;
         animation-fill-mode: both;
         .pinterest-3-columns-item-categories {
             display: flex;
             flex-wrap: wrap;
             opacity: 0;
-            -webkit-animation: stoneWallWideItemCategoriesHoverOff .1s linear;
-            -moz-animation: stoneWallWideItemCategoriesHoverOff .1s linear;
-            -o-animation: stoneWallWideItemCategoriesHoverOff .1s linear;
-            animation: stoneWallWideItemCategoriesHoverOff .1s linear;
+            -webkit-animation: pinterest3ColumnsItemCategoriesHoverOff .1s linear;
+            -moz-animation: pinterest3ColumnsItemCategoriesHoverOff .1s linear;
+            -o-animation: pinterest3ColumnsItemCategoriesHoverOff .1s linear;
+            animation: pinterest3ColumnsItemCategoriesHoverOff .1s linear;
             .pinterest-3-columns-item-category {
                 padding-right: 6px;
                 display: flex;
@@ -127,10 +127,10 @@
                 height: 2px;
                 background: white;
                 margin-top: 10px;
-                -webkit-animation: stoneWallWIdeItemLineHoverOff .2s linear;
-                -moz-animation: stoneWallWIdeItemLineHoverOff .2s linear;
-                -o-animation: stoneWallWIdeItemLineHoverOff .2s linear;
-                animation: stoneWallWIdeItemLineHoverOff .2s linear;
+                -webkit-animation: pinterest3ColumnsItemLineHoverOff .2s linear;
+                -moz-animation: pinterest3ColumnsItemLineHoverOff .2s linear;
+                -o-animation: pinterest3ColumnsItemLineHoverOff .2s linear;
+                animation: pinterest3ColumnsItemLineHoverOff .2s linear;
             }
         }
     }
@@ -140,126 +140,92 @@
     display: none;
 }
 
-@-webkit-keyframes stoneWallWIdeItemLineHoverOn {
-    from{width: 0%;}
-    to{width: 100%;}
-}
-@-moz-keyframes stoneWallWIdeItemLineHoverOn {
-    from{width: 0%;}
-    to{width: 100%;}
-}
-@-o-keyframes stoneWallWIdeItemLineHoverOn {
-    from{width: 0%;}
-    to{width: 100%;}
-}
-@keyframes stoneWallWIdeItemLineHoverOn {
-    from{width: 0%;}
-    to{width: 100%;}
-}
-
-@-webkit-keyframes stoneWallWIdeItemLineHoverOff {
+@-webkit-keyframes pinterest3ColumnsItemLineHoverOff {
     from{width: 100%;}
     to{width: 0%;}
 }
-@-moz-keyframes stoneWallWIdeItemLineHoverOff {
+@-moz-keyframes pinterest3ColumnsItemLineHoverOff {
     from{width: 100%;}
     to{width: 0%;}
 }
-@-o-keyframes stoneWallWIdeItemLineHoverOff {
+@-o-keyframes pinterest3ColumnsItemLineHoverOff {
     from{width: 100%;}
     to{width: 0%;}
 }
-@keyframes stoneWallWIdeItemLineHoverOff {
+@keyframes pinterest3ColumnsItemLineHoverOff {
     from{width: 100%;}
     to{width: 0%;}
 }
 
-@-webkit-keyframes stoneWallWIdeItemCategoriesHoverOn {
+@-webkit-keyframes pinterest3ColumnsItemCategoriesHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@-moz-keyframes stoneWallWIdeItemCategoriesHoverOn {
+@-moz-keyframes pinterest3ColumnsItemCategoriesHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@-o-keyframes stoneWallWIdeItemCategoriesHoverOn {
+@-o-keyframes pinterest3ColumnsItemCategoriesHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@keyframes stoneWallWIdeItemCategoriesHoverOn {
+@keyframes pinterest3ColumnsItemCategoriesHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
 
-@-webkit-keyframes stoneWallWideItemCategoriesHoverOff {
+@-webkit-keyframes pinterest3ColumnsItemCategoriesHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@-moz-keyframes stoneWallWideItemCategoriesHoverOff {
+@-moz-keyframes pinterest3ColumnsItemCategoriesHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@-o-keyframes stoneWallWideItemCategoriesHoverOff {
+@-o-keyframes pinterest3ColumnsItemCategoriesHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@keyframes stoneWallWideItemCategoriesHoverOff {
+@keyframes pinterest3ColumnsItemCategoriesHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
 
-@-webkit-keyframes stoneWallWideItemImageHoverOn {
+@-webkit-keyframes pinterest3ColumnsItemImageHoverOn {
     from{transform: translateX(0px);}
     to{transform: translateX(30px);}
 }
-@-moz-keyframes stoneWallWideItemImageHoverOn {
+@-moz-keyframes pinterest3ColumnsItemImageHoverOn {
     from{transform: translateX(0px);}
     to{transform: translateX(30px);}
 }
-@-o-keyframes stoneWallWideItemImageHoverOn {
+@-o-keyframes pinterest3ColumnsItemImageHoverOn {
     from{transform: translateX(0px);}
     to{transform: translateX(30px);}
 }
-@keyframes stoneWallWideItemImageHoverOn {
+@keyframes pinterest3ColumnsItemImageHoverOn {
     from{transform: translateX(0px);}
     to{transform: translateX(30px);}
 }
 
-@-webkit-keyframes stoneWallWIdeItemImageHoverOff {
-    from{transform: translateX(30px);}
-    to{transform: translateX(0px);}
-}
-@-moz-keyframes stoneWallWIdeItemImageHoverOff {
-    from{transform: translateX(30px);}
-    to{transform: translateX(0px);}
-}
-@-o-keyframes stoneWallWIdeItemImageHoverOff {
-    from{transform: translateX(30px);}
-    to{transform: translateX(0px);}
-}
-@keyframes stoneWallWIdeItemImageHoverOff {
-    from{transform: translateX(30px);}
-    to{transform: translateX(0px);}
-}
-
-@-webkit-keyframes stoneWallWideItemCurtainHoverOn {
+@-webkit-keyframes pinterest3ColumnsItemCurtainHoverOn {
     from{width: 0;}
     to{width: calc(100% - 80px);}
 }
-@-moz-keyframes stoneWallWideItemCurtainHoverOn {
+@-moz-keyframes pinterest3ColumnsItemCurtainHoverOn {
     from{width: 0;}
     to{width: calc(100% - 80px);}
 }
-@-o-keyframes stoneWallWideItemCurtainHoverOn {
+@-o-keyframes pinterest3ColumnsItemCurtainHoverOn {
     from{width: 0;}
     to{width: calc(100% - 80px);}
 }
-@keyframes stoneWallWideItemCurtainHoverOn {
+@keyframes pinterest3ColumnsItemCurtainHoverOn {
     from{width: 0;}
     to{width: calc(100% - 80px);}
 }
 
-@-webkit-keyframes stoneWallWideItemCurtainHoverOff {
+@-webkit-keyframes pinterest3ColumnsItemCurtainHoverOff {
     from{
         width: calc(100% - 80px);
         padding: 40px;
@@ -269,7 +235,7 @@
         padding: 40px 0 40px 0;
     }
 }
-@-moz-keyframes stoneWallWideItemCurtainHoverOff {
+@-moz-keyframes pinterest3ColumnsItemCurtainHoverOff {
     from{
         width: calc(100% - 80px);
         padding: 40px;
@@ -279,7 +245,7 @@
         padding: 40px 0 40px 0;
     }
 }
-@-o-keyframes stoneWallWideItemCurtainHoverOff {
+@-o-keyframes pinterest3ColumnsItemCurtainHoverOff {
     from{
         width: calc(100% - 80px);
         padding: 40px;
@@ -289,7 +255,7 @@
         padding: 40px 0 40px 0;
     }
 }
-@keyframes stoneWallWideItemCurtainHoverOff {
+@keyframes pinterest3ColumnsItemCurtainHoverOff {
     from{
         width: calc(100% - 80px);
         padding: 40px;
