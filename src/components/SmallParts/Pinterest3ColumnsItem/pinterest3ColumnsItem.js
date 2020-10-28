@@ -254,6 +254,7 @@ export const Pinterest3ColumnsItem = (props) => {
              * Add fading effect on unmounted component and remember 
              * information of unmounted component on left mouse click 
              */
+            
             props.setUnmountComponentValues(true, path);
         }else{
             // Remember information of unmounted component on scroll wheel click

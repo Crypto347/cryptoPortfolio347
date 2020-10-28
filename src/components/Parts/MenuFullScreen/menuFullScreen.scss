@@ -107,10 +107,8 @@
         flex-direction: column;
         align-items: flex-start;
         .menu-fullscreen-item1 {
-            // position: relative;
             display: flex;
             align-items: center;
-            // padding: 5px 5px 5px 20px;
             cursor: pointer;
             -webkit-animation: appearMenuFullscreenItem .3s linear;
             -moz-animation: appearMenuFullscreenItem .3s linear;
@@ -260,10 +258,8 @@
             }
         }
         .menu-fullscreen-item2 {
-            // position: relative;
             display: flex;
             align-items: center;
-            // padding: 5px 5px 5px 20px;
             cursor: pointer;
             -webkit-animation: appearMenuFullscreenItem .3s linear;
             -moz-animation: appearMenuFullscreenItem .3s linear;
@@ -413,10 +409,8 @@
             }
         }
         .menu-fullscreen-item3 {
-            // position: relative;
             display: flex;
             align-items: center;
-            // padding: 5px 5px 5px 20px;
             cursor: pointer;
             -webkit-animation: appearMenuFullscreenItem .3s linear;
             -moz-animation: appearMenuFullscreenItem .3s linear;
@@ -566,10 +560,8 @@
             }
         }
         .menu-fullscreen-item4 {
-            // position: relative;
             display: flex;
             align-items: center;
-            // padding: 5px 5px 5px 20px;
             cursor: pointer;
             -webkit-animation: appearMenuFullscreenItem .3s linear;
             -moz-animation: appearMenuFullscreenItem .3s linear;
@@ -795,44 +787,20 @@
 }
 
 @keyframes appearMenuFullscreenLogo {
-    0% {
-        // opacity: 0;
-        transform: translateX(-30%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateX(0%);
-    }
+    0% {transform: translateX(-30%);}
+    100% {transform: translateX(0%);}
 }
 @-moz-keyframes appearMenuFullscreenLogo {
-    0% {
-        // opacity: 0;
-        transform: translateX(-30%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateX(0%);
-    }
+    0% {transform: translateX(-30%);}
+    100% {transform: translateX(0%);}
 }
 @-webkit-keyframes appearMenuFullscreenLogo {
-    0% {
-        // opacity: 0;
-        transform: translateX(-30%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateX(0%);
-    }
+    0% {transform: translateX(-30%);}
+    100% {transform: translateX(0%);}
 }
 @-o-keyframes appearMenuFullscreenLogo {
-    0% {
-        // opacity: 0;
-        transform: translateX(-30%);
-    }
-    100% {
-        // opacity: 1;
-        transform: translateX(0%);
-    }
+    0% {transform: translateX(-30%);}
+    100% {transform: translateX(0%);}
 }
 
 @keyframes appearMenuFullscreenItem {

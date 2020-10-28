@@ -31,12 +31,6 @@ import './menuFullScreen.scss';
 import * as Actions from '../../../actions';
 
 /**
- * Services
- */
-
-import * as Services from "../../../service";
-
-/**
  * Selectors
  */
 
@@ -50,9 +44,7 @@ import * as Selectors from '../../../reducers/selectors';
 import {
     H15,
     H70,
-    EH10,
-    EH25,
-    EH40
+    EH10
 } from '../../UtilityComponents';
 
 /**
@@ -70,14 +62,12 @@ import {
 export const MenuFullScreen = (props) => {
 
     /**
-     * State
-     */
-
-    /**
      * Methods
      */
 
     useEffect(() => {
+        // Init menu items
+
         props.initMenuFullscreenItems(menuFullscreenItemsArray);
     }, []);
     
@@ -118,31 +108,65 @@ export const MenuFullScreen = (props) => {
     }
 
     const menuFullscreenSubOptionOnClick = (e, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("page", props.page);
+
+        // Close menu
+
         props.setMenuDotsState("off", props.page);
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null, props.page, e.button);
-       
     }
 
 
     const menuFullScreenItemOnClick = (e, id, hasOptions, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
         if(!hasOptions){
+            // Storing data in local storage
+
             localStorage.setItem("page", props.page);
+
             if(e.button !== 1){
+                /**
+                 * Add fading effect on unmounted component and remember 
+                 * information of unmounted component on left mouse click 
+                 */
+
                 props.setUnmountComponentValues(true, path);
             }else{
+                // Remember information of unmounted component on scroll wheel click
+
                 props.setUnmountComponentValues(false, path);
             }
+            // Fire up unmountComponent epic
+
             props.unmountComponent(null, null, props.page, e.button);
         }else{
             if(e.button !== 1){
+                // Highlight the selected option
+
                 props.setActivityOfMenuFullscreenItem("on", id);
             }
         }
