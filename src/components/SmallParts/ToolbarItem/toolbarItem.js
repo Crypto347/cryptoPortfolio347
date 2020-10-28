@@ -2,9 +2,7 @@
  * Libraries
  */
 
-import React, {
-    useState
-} from 'react';
+import React from 'react';
 
 /**
  * Styles
@@ -26,10 +24,6 @@ import {
  */
 
 export const ToolbarItem = (props) => {
-    
-    /**
-     * State
-     */
     
     /**
      * Methods
