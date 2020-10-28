@@ -302,6 +302,7 @@ export const OverlayImage = (props) => {
         // Storing data in local storage 
 
         localStorage.setItem("page", props.page);
+        
         if(e.button !== 1){
             /**
              * Add fading effect on unmounted component and remember 

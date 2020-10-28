@@ -1,7 +1,6 @@
 .overlay-image {
     position: relative;
     width: 100%;
-    // margin-bottom: 30px;
     cursor: pointer;
     .overlay-image {
         overflow: hidden;
@@ -36,23 +35,16 @@
     }
     .overlay-curtain-hover-on {
         background: rgba(0, 0, 0, 0.7);
-        // width: calc(100% - 40px);
-        position: absolute;
         left: 0%;
         top: 0%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        // padding: 0px 20px 0px 20px;
         opacity: 1;
         -webkit-animation: overlayCurtainHoverOn 0.3s linear;
         -moz-animation: overlayCurtainHoverOn 0.3s linear;
         -o-animation: overlayCurtainHoverOn 0.3s linear;
         animation: overlayCurtainHoverOn 0.3s linear;
-        // .overlay-icon {
-        //     color: white;
-        //     cursor: pointer;
-        // }
         .overlay-with-info-categories {
             position: relative;
             z-index: 100;
@@ -128,23 +120,17 @@
     }
     .overlay-curtain-hover-off {
         background: rgba(0, 0, 0, 0.7);
-        // width: calc(100% - 40px);
         position: absolute;
         left: 0%;
         top: 0%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        // padding: 0px 20px 0px 20px;
         opacity: 0;
         -webkit-animation: overlayCurtainHoverOff .1s linear;
         -moz-animation: overlayCurtainHoverOff .1s linear;
         -o-animation: overlayCurtainHoverOff .1s linear;
         animation: overlayCurtainHoverOff .1s linear;
-        // .overlay-icon {
-        //     color: white;
-        //     cursor: pointer;
-        // }
         .overlay-with-info-categories {
             display: flex;
             flex-wrap: wrap;
@@ -174,10 +160,6 @@
                 width: 0px;
                 height: 2px;
                 background: white;
-                // -webkit-animation: shortenHorizontalLineOverlayImage .1s linear;
-                // -moz-animation: shortenHorizontalLineOverlayImage .1s linear;
-                // -o-animation: shortenHorizontalLineOverlayImage .1s linear;
-                // animation: shortenHorizontalLineOverlayImage .1s linear;
                 animation-delay: .1s;
                 animation-fill-mode: both;
             }
@@ -191,19 +173,11 @@
                     border: 1px solid transparent;
                     height: 0px;
                     transform: translate(-1px, 1px) rotate(-45deg);
-                    // -webkit-animation: shortenArrowLineOverlayImage .1s linear;
-                    // -moz-animation: shortenArrowLineOverlayImage .1s linear;
-                    // -o-animation: shortenArrowLineOverlayImage .1s linear;
-                    // animation: shortenArrowLineOverlayImage .1s linear;
                 }
                 .arrow-bottom-line {
                     border: 1px solid transparent;
                     height: 0px;
                     transform: translate(-1px, -1px) rotate(45deg);
-                    // -webkit-animation: shortenArrowLineOverlayImage .1s linear;
-                    // -moz-animation: shortenArrowLineOverlayImage .1s linear;
-                    // -o-animation: shortenArrowLineOverlayImage .1s linear;
-                    // animation: shortenArrowLineOverlayImage .1s linear;
                 }
             }
         }

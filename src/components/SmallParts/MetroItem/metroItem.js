@@ -243,7 +243,6 @@ export const MetroItem = (props) => {
 
         props.clearArchiveData();
 
-
         if(e.button !== 1){
             /**
              * Add fading effect on unmounted component and remember 

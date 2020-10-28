@@ -104,11 +104,7 @@ export const PictureBoardTextItem = (props) => {
 }
 
 export default connect(
-    (state) => {
-        return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state)
-        };
-    },
+   null,
     (dispatch) => {
         return {
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)

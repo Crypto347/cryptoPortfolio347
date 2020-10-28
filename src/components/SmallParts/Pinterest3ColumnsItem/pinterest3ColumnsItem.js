@@ -14,22 +14,9 @@ import React, {
 
 import './pinterest3ColumnsItem.scss';
 
-/**
- * Utility
- */
-
-import * as Utility from '../../../utility';
-
 import { 
     H17,
-    H35,
-    H45,
-    H70,
-    EH10,
-    EH20,
-    EH40,
-    EH70,
-    EH110
+    H35
 } from '../../UtilityComponents';
 
 /**
@@ -50,18 +37,22 @@ export const Pinterest3ColumnsItem = (props) => {
 
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
-    const [paddingTopBottom, setPaddingTopBottom] = useState(0);
     const [cardHeight, setCardHeight] = useState({});
  
     /**
      * Methods
      */
 
-    useEffect(() => {   
+    useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
-        }  
+        }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 
@@ -70,7 +61,7 @@ export const Pinterest3ColumnsItem = (props) => {
     });
 
     const handleResize = () => {
-        let paddingTopBottomVal = setPadding(props.page);
+       // Set the height of the curtain on window resize
 
         let obj = {
             img1: {
@@ -134,8 +125,7 @@ export const Pinterest3ColumnsItem = (props) => {
                 height: document.getElementById("pinterest3ColumnsItemId15").clientHeight,
             }
         }
-        setPaddingTopBottom(paddingTopBottomVal);
-        // props.getImagesWidthAndHeight(obj)
+     
 
         switch(props.obj.id){
             case 1:
@@ -183,13 +173,6 @@ export const Pinterest3ColumnsItem = (props) => {
             case 15:
                 setCardHeight(obj.img12.height - 80);
                 break;
-        }
-    }
-
-    const setPadding = (page) => {
-        switch(page){
-            case 'pinterest3ColumnsPage':
-                return 40;
         }
     }
 
@@ -254,27 +237,61 @@ export const Pinterest3ColumnsItem = (props) => {
     }
 
     const pinterest3ColumnsItemOnClick = (e, path) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage 
+
         localStorage.setItem("page", props.page);
+
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
     const onClickHandler = (e, path, key) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
-        e.stopPropagation();       
+
+        // Prevent function pinterest3ColumnsItem from running
+
+        e.stopPropagation();
+
+        // Storing data in local storage 
+
         localStorage.setItem("archiveCategory", key);
         localStorage.setItem("page", props.page);
+
+        // Clear archive data
+
         props.clearArchiveData();
         if(e.button !== 1){
+            /**
+             * Add fading effect on unmounted component and remember 
+             * information of unmounted component on left mouse click 
+             */ 
+
             props.setUnmountComponentValues(true, path);
         }else{
+            // Remember information of unmounted component on scroll wheel click 
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
@@ -362,7 +379,6 @@ export const Pinterest3ColumnsItem = (props) => {
                 />
             </div>
             <div 
-                // className="slide-from-image-left-curtain-hover-on"
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
                 onMouseDown={(e) => pinterest3ColumnsItemOnClick(e, props.obj.path)}
