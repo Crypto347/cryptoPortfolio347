@@ -10,34 +10,11 @@ import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
  * Styles
 */
 
 import './footer.scss';
-
-/**
- * Components
-*/
-
-// import Loading from '../../SmallParts/Loading/loading';
-// import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
-
-/**
- * Services
-*/
-
-import * as Services from "../../../service";
-
-/**
- * Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
 
 /**
  * Utility
@@ -68,15 +45,10 @@ import * as Images from '../../../constants/images';
 export const Footer = (props) => {
 
     /**
-     * State
-    */
-
-    /**
      * Methods
     */
 
-    useEffect(() => {
-      
+    useEffect(() => { 
     }, []);
 
     const feedOnClick = () => {
@@ -160,16 +132,5 @@ export const Footer = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // section1Data: Selectors.getSection1DateState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch)
-        };
-    }
-)(Footer);
+export default Footer;
  
