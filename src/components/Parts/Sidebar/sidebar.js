@@ -72,27 +72,6 @@ export const Sidebar = (props) => {
         setShowOptions(false);
     }
 
-    // const itemOnClick = (opt, path, pathOfIds, e) => {
-    //     if(e.button === 2) return;
-        
-    //     if(e.button !== 1){
-    //         props.setUnmountComponentValues(true, path);
-    //         props.setHistoryPopFromPortfolioItem("scrollToTop");
-    //         props.clearActivityOfMenuItems();
-    //         props.setSidebarState("init");
-    //         switch(opt){
-    //             case 'optionItem': 
-    //                 props.setActivityOfToolbarOptionItem(pathOfIds);
-    //                 break;
-    //             case 'subOptionItem': 
-    //                 props.setActivityOfToolbarSubOptionItem(pathOfIds);
-    //                 break;
-    //         }
-    //     }else{
-    //         props.setUnmountComponentValues(false, path);
-    //     }
-    //     props.unmountComponent(null, null, null, e.button);
-    // }
     const itemOnClick = (opt, path, pathOfIds, e) => {
         // Do nothing on right mouse click 
 

@@ -99,7 +99,12 @@ export const Toolbar = (props) => {
      */
 
     useEffect(() => {
+        // Initialize menu items
+
         props.initMenuItems(menuItemsArray);
+
+        // Hide sidebar component
+
         if(size.width > 1120){
             props.setSidebarState("init");
         }
@@ -117,6 +122,13 @@ export const Toolbar = (props) => {
         props.setIsHoveringMenuItem("on", id);
         switch(opt){
             case 'regular':
+                /**
+                 *  For the regular version of toolbar, display the menu
+                 * item options box depending on the number of elements
+                 * in the menu item options array and remember the
+                 * necessary data
+                 */
+
                 if(data.options.length > 2){
                     setShowOptions(true);
                     setToolbarItemData(data);
@@ -142,12 +154,23 @@ export const Toolbar = (props) => {
     }
 
     const itemOnClick = (opt, path, pathOfIds, e) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
         if(e.button !== 1){
+            // Menu option or suboption on left mouse click
+
             let currentItemId;
-            // props.setUnmountComponentValues(true, path);
-            // props.setHistoryPopFromPortfolioItem("scrollToTop");
-            // props.clearActivityOfMenuItems();
+
+            /**
+             * Check if the menu option or suboption is active. If it is active,
+             * do nothing, and if it is inactive, initialize and clean some
+             * properties, activate the menu option or suboption, add fading
+             * effect on the unmounted component and remember information of 
+             * unmounted component
+             */
+
             switch(opt){
                 case 'optionItem': 
                     currentItemId = props.menuItems
@@ -165,7 +188,7 @@ export const Toolbar = (props) => {
                         }
                     break;
                 case 'subOptionItem': 
-                // need to updated portfolioUtility
+                // !!!need to updated portfolioUtility
                     currentItemId = props.menuItems
                         .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
@@ -182,12 +205,18 @@ export const Toolbar = (props) => {
                     break;
             }
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null, null, e.button);
     }
 
     const menuOnClick = () => {
+        //Sidebar menu on click handler
+
         switch(props.sidebarState){
             case 'open':
                 return props.setSidebarState("close");
@@ -198,6 +227,7 @@ export const Toolbar = (props) => {
     }
 
     const menuDotsOnClick = (page) => {
+        // in progeres...
         switch(page){
             case 'home':
             case 'bigImages':
@@ -304,19 +334,24 @@ export const Toolbar = (props) => {
 
     const logoOnClick = (e) => {      
         switch(e.button){
-            case 0: 
+            case 0:
+                // Relode the page
                 props.history.push(`/crypto-portfolio`);
                 window.location.reload();
                 return;
             case 1:
+                // Open the page in a new window on scroll wheel click
                 window.open(`/crypto-portfolio`, "_blank");
                 return;
             case 2:
+                // Do nothing on right mouse click
                 return;
         }
     }
 
     const renderToolbar = (option) => {
+        // Different versions of the toolbar
+
         if(option === "regularScreen"){
             return(
                 <>
