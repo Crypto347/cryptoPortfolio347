@@ -1,6 +1,6 @@
 /**
  * Libraries
- s*/
+ */
 
 import React, {
     useEffect
@@ -16,32 +16,32 @@ import {
 
 /**
  * Styles
- s*/
+ */
 
 import './section2.scss';
 
 /**
  * Components
- s*/
+ */
 
 import PictureBoard from '../../Parts/PictureBoard/pictureBoard';
 import OurProcess from '../../Parts/OurProcess/ourProcess';
 
 /**
  * Services
- s*/
+ */
 
 import * as Services from "../../../service";
 
 /**
  * Selectors
- s*/
+ */
 
 import * as Selectors from '../../../reducers/selectors';
 
 /**
  * Utility
- s*/
+ */
 
 import {
    H25,
@@ -52,23 +52,23 @@ import {
 
 /**
  * Section2 component definition and export
- s*/
+ */
 
 export const Section2 = (props) => {
 
     /**
-     * State
-     s*/
-
-    /**
      * Methods
-     s*/
+     */
 
     useEffect(() => {
+        // Fetch data for the component
+
         props.fetchPictureBoard();
     }, []);
 
     const renderClassName = (pictureBoardLoading, pictureBoardError, ourProcessLoading, ourProcessError) => {
+        // Style for loading and error cases for different parts of the section
+
         let opt;
 
         if(!pictureBoardLoading && !pictureBoardError && !ourProcessLoading && !ourProcessError){
@@ -104,7 +104,7 @@ export const Section2 = (props) => {
 
     /**
      * Markup
-     s*/
+     */
 
     return(
         <div className={renderClassName(props.pictureBoard.loading, props.pictureBoard.error, props.ourProcessDate.loading, props.ourProcessDate.error)}>
