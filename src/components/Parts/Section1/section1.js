@@ -55,14 +55,12 @@ import {
 export const Section1 = (props) => {
 
     /**
-     * State
-     */
-
-    /**
      * Methods
      */
 
     useEffect(() => {
+        // Fetch data for the component
+
         props.fetchSection1Data();
     }, []);
 
@@ -72,8 +70,7 @@ export const Section1 = (props) => {
                 return(
                     <div key={i}>
                         <EH20/>
-                        <Section1DateItem 
-                            // key={i}
+                        <Section1DateItem
                             header={el.header}
                             text={el.text}
                             path={el.path}
