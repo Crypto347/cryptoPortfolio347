@@ -6,10 +6,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
 /**
  * Styles
  */
@@ -30,15 +26,10 @@ import Achievements from '../Achievements/achievements';
 export const Section4 = () => {
 
     /**
-     * State
-     */
-
-    /**
      * Methods
      */
 
     useEffect(() => {
-
     }, []);
 
     /**
@@ -53,16 +44,5 @@ export const Section4 = () => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch)
-        };
-    }
-)(Section4);
+export default Section4;
  
