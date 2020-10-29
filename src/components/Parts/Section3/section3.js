@@ -6,10 +6,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
 /**
  * Styles
  */
@@ -30,18 +26,11 @@ import TeamInformation from '../TeamInformation/teamInformation';
 export const Section3 = () => {
 
     /**
-     * State
-     */
-
-    /**
      * Methods
      */
 
     useEffect(() => {
-
     }, []);
-
-   
 
     /**
      * Markup
@@ -55,16 +44,5 @@ export const Section3 = () => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch)
-        };
-    }
-)(Section3);
+export default Section3;
  
