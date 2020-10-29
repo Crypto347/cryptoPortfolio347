@@ -31,12 +31,6 @@
     animation: unmountMainComponent 1s ease;
 }
 
-// .main-scrolling-hidden {
-//     position: relative;
-//     top: -10px;
-//     left: -10px;
-//     height: 30px; 
-// }
 @-webkit-keyframes unmountMainComponent {
     from{opacity: 1;}
     to{opacity: 0;}

@@ -30,8 +30,6 @@ import './main.scss';
  * Components
  */
 
-import Toolbar from './Parts/Toolbar/toolbar';
-import Sidebar from './Parts/Sidebar/sidebar';
 import Home from './Pages/HomePages/Home/home';
 import AboutUsPage from './Pages/AboutUsPage/aboutUsPage';
 import ProcessPage from './Pages/ProcessPage/processPage';
@@ -92,23 +90,47 @@ export const Main = (props) => {
      */
 
     useEffect(() => {
+        /**
+         * Set all necessary information when initializing the application 
+         */
+
+        // Activate menu item according to the location pathname
+        
         let path = props.location.pathname.slice(18);
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
+
+        // Init state for fading effect and remember all necessary information
+
         props.setArchiveCategory(localStorage.getItem('archiveCategory'));
-        props.setUnmountComponentValues(false, '', localStorage.getItem('page'))
+        props.setUnmountComponentValues(false, '', localStorage.getItem('page'));
+
+        /**
+         * Set all necessary information when changing location
+         */
+
         props.history.listen((location, action) => {
+            /** 
+             * If we returned to the archive page, remember
+             * the new category and reload the page
+             */
+            
             let category = Utility.categoryFromLocationPathname(location.pathname);
             if(action === "POP" && category){
                 props.setArchiveCategory(category);
                 window.location.reload();
             }
+
+            // Activate menu item according to the location pathname
+
             path = location.pathname.slice(18);
             pathOfIds = Utility.findPathOfIds(path);
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
-            console.log("activateMenuItem", pathOfIds)
+            console.log("activateMenuItem", pathOfIds);
+
+            // Close photoViewer for all pages
             props.photoViewerOpen("all", false, []);
         });
     }, []);
@@ -119,8 +141,6 @@ export const Main = (props) => {
 
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
-            {/* <Toolbar/> */}
-            {/* <Sidebar/> */}
             <Switch>
                 <Route
                     exact 
@@ -294,8 +314,7 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            unmountComp: Selectors.getUnmountComponentState(state),
-            scrollBehavior: Selectors.getScrollBehaviorState(state)
+            unmountComp: Selectors.getUnmountComponentState(state)
         };
     },
     (dispatch) => {
@@ -304,8 +323,7 @@ export default connect(
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
-            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch)
         };
     }
 )(Main);
