@@ -107,7 +107,7 @@ export const PhotoViewer = (props) => {
 
         document.addEventListener('fullscreenchange', fullScreenOnChange);
 
-        // Cleaning an unmounted component
+        // Cleaning the unmounted component
         return () => document.removeEventListener('fullscreenchange', fullScreenOnChange);
     }, [size.width]);
 

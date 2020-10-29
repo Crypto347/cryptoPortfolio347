@@ -66,7 +66,7 @@ export const SwitchImage = (props) => {
         window.addEventListener('resize', resize);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('resize', resize);

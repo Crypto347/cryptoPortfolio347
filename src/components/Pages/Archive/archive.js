@@ -121,7 +121,7 @@ export const Archive = (props) => {
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);

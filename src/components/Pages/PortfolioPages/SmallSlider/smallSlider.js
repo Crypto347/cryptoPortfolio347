@@ -123,7 +123,7 @@ export const SmallSlider = (props) => {
         window.addEventListener('wheel', handleOnWheel);
         
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);

@@ -83,7 +83,7 @@ export const Achievements = (props) => {
         
         window.addEventListener('scroll', handleScroll);
 
-        // Cleaning an unmounted component
+        // Cleaning the unmounted component
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     

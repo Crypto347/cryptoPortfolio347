@@ -135,7 +135,7 @@ export const MetroPage = (props) => {
         window.addEventListener('transitionend', smooth);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);

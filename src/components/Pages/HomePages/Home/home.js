@@ -85,7 +85,7 @@ export const Home = (props) => {
         window.addEventListener('wheel', checkScrollDirection);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             window.removeEventListener('wheel', checkScrollDirection);
             props.setShowBackToTopComponent(false);

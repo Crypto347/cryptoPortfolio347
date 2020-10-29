@@ -47,13 +47,21 @@ export const Video = () => {
 
     useEffect(() => {
         let video;
+
+        // Play video
+
         if(videoShown){
             video = document.getElementById("video");
             video.play();
+
+            // When the video ends, hide the video itself and show the video cover
+
             video.addEventListener('ended', videoOnFinish);
         }
 
         return () =>  {
+            // Cleaning the unmounted component
+
             if(videoShown){
                 video.removeEventListener('ended', videoOnFinish);
             }
@@ -86,12 +94,15 @@ export const Video = () => {
     const showVideo = (e) => {
         switch(e.button){
             case 0: 
+                // Play video on left mouse click
                 setVideoShown(true);
                 return;
             case 1:
+                // Open the website (from which the vidoe was downloaded) in a new window on scroll wheel click
                 window.open("https://www.pexels.com/", "_blank");
                 return;
             case 2:
+                // Do nothing on right mouse click
                 return;
         }      
     }

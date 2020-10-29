@@ -59,7 +59,7 @@ export const OverlayImage = (props) => {
 
         window.addEventListener('resize', resize);
 
-        // Cleaning an unmounted component
+        // Cleaning the unmounted component
         return () =>  window.removeEventListener('resize', resize);
     }, []);
 

@@ -119,7 +119,7 @@ export const SmallImages = (props) => {
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('wheel', handleOnWheel);

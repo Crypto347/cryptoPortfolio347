@@ -117,7 +117,7 @@ export const SmallGallery = (props) => {
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);

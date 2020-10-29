@@ -73,12 +73,12 @@ export const Sidebar = (props) => {
     }
 
     const itemOnClick = (opt, path, pathOfIds, e) => {
-        // Do nothing on right mouse click 
+        // Do nothing on right mouse click
 
         if(e.button === 2) return;
 
         if(e.button !== 1){
-            // Menu option or suboption on left mouse click 
+            // Menu option or suboption on left mouse click
           
             let currentItemId;
             

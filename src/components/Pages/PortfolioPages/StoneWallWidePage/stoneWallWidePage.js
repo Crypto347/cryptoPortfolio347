@@ -124,7 +124,7 @@ export const StoneWallWidePage = (props) => {
         window.addEventListener('transitionend', smooth);
 
         return () => {
-            // Cleaning an unmounted component
+            // Cleaning the unmounted component
 
             clearTimeout(timeout);
             window.removeEventListener('resize', resize);
