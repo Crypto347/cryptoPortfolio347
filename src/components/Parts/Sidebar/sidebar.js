@@ -60,7 +60,6 @@ export const Sidebar = (props) => {
      */
 
     useEffect(() => {
-        
     }, []);
 
     const handleMouseEnterSidebarItem = (data, id) => {
@@ -95,12 +94,23 @@ export const Sidebar = (props) => {
     //     props.unmountComponent(null, null, null, e.button);
     // }
     const itemOnClick = (opt, path, pathOfIds, e) => {
+        // Do nothing on right mouse click 
+
         if(e.button === 2) return;
+
         if(e.button !== 1){
+            // Menu option or suboption on left mouse click 
+          
             let currentItemId;
-            // props.setUnmountComponentValues(true, path);
-            // props.setHistoryPopFromPortfolioItem("scrollToTop");
-            // props.clearActivityOfMenuItems();
+            
+            /**
+             * Check if the menu option or suboption is active. If it is active,
+             * do nothing, and if it is inactive, initialize and clean some
+             * properties, activate the menu option or suboption, add fading
+             * effect on the unmounted component and remember information of 
+             * unmounted component
+             */
+           
             switch(opt){
                 case 'optionItem': 
                     currentItemId = props.menuItems
@@ -119,7 +129,7 @@ export const Sidebar = (props) => {
                         }
                     break;
                 case 'subOptionItem': 
-                // need to updated portfolioUtility
+                // !!!!need to updated portfolioUtility
                     currentItemId = props.menuItems
                         .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
@@ -137,8 +147,12 @@ export const Sidebar = (props) => {
                     break;
             }
         }else{
+            // Remember information of unmounted component on scroll wheel click
+
             props.setUnmountComponentValues(false, path);
         }
+        // Fire up unmountComponent epic
+
         props.unmountComponent(null, null, null, e.button);
     }
 

@@ -133,13 +133,13 @@ export const SimpleOverlayImage = (props) => {
 
         if(e.button !== 1){
             /**
-             * Add fading effect on unmounted component and remember 
-             * information of unmounted component on left mouse click 
+             * Add fading effect on the unmounted component and remember 
+             * information of the unmounted component on left mouse click 
              */
 
             props.setUnmountComponentValues(true, path);
         }else{
-            // Remember information of unmounted component on scroll wheel click
+            // Remember information of the unmounted component on scroll wheel click
 
             props.setUnmountComponentValues(false, path);
         }
