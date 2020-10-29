@@ -4,8 +4,7 @@
 
 import React, {
     useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -19,8 +18,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import Fullscreen from "react-full-screen";
 
 /**
  * Styles
@@ -83,13 +80,11 @@ export const PhotoViewer = (props) => {
      */
 
     const size = useWindowSize();
-    const resizeRef = useRef();
     const [isHoveringExpand, setIsHoveringExpand] = useState(false);
     const [isHoveringShrink, setIsHoveringShrink] = useState(false);
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     const [isHoveringCloseButton, setIsHoveringCloseButton] = useState("init");
-    // const [fullScreen, setFullScreen] = useState(false);
     const [photoViewerWindowSize, setPhotoViewerWindowSize] = useState({
         width: 0,
         height: 0
@@ -107,16 +102,22 @@ export const PhotoViewer = (props) => {
         // Set windth and height of photoViwer and fullScreen photoViwer for different pages
 
         renderStyle(size.width, props.width, props.height);
-        document.addEventListener('fullscreenchange', (event) => {
-            console.log("EEE", document.webkitIsFullScreen)
-            if(!document.webkitIsFullScreen){
-               
-                props.setFullScreenState(false);
-            }
-        }, false);
+
+        // Event Listeners
+
+        document.addEventListener('fullscreenchange', fullScreenOnChange);
+
+        // Cleaning an unmounted component
+        return () => document.removeEventListener('fullscreenchange', fullScreenOnChange);
     }, [size.width]);
 
-   
+    const fullScreenOnChange = () => {
+        // Show photo viewer when exiting fullscreen mode
+
+        if(!document.webkitIsFullScreen){
+            props.setFullScreenState(false);
+        }
+    }
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -443,15 +444,9 @@ export const PhotoViewer = (props) => {
         }
     }
 
-    const fullscreenOnChangeHandler = (e) => {
-        // Show  or hide fullScreen
-
-        if(!e){
-            setFullScreen(e);
-        }
-    }
-
     const renderStyle = (screenWidth, width, height) => {
+        // Set windth and height of photoViwer and fullScreen photoViwer
+        
         let updatedPhotoViewerWindowSize = {};
         let updatedPhotoViewerFullscreenWindowSize = {};
         if(screenWidth > 1100){
