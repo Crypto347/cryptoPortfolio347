@@ -26,12 +26,6 @@ import {
 import './porfolioNavigation.scss';
 
 /**
- * Components
- */
-
-import Loading from '../../SmallParts/Loading/loading';
-
-/**
  * Actions
  */
 
@@ -53,19 +47,7 @@ import * as Selectors from '../../../reducers/selectors';
  * Utility
  */
 
-import {
-    H19,
-    H25,
-    H45,
-    EH25,
-    EH40
-} from '../../UtilityComponents';
-
 import * as Utility from '../../../utility';
-
-/**
- * Images
- */
 
 /**
  * PorfolioNavigation component definition and export
@@ -89,12 +71,25 @@ export const PorfolioNavigation = (props) => {
      */
 
     useEffect(() => {
+        /**
+         * Fetch data in accordance with the page and category (if the page
+         * was archive) that were previously rendered in the location history
+         */ 
+
         let page = props.location.state ? props.location.state.page : props.unmountComp.prevPage;
         let category = props.location.state ? props.location.state.category : Utility.categoryKeyToPath(props.archive.category);
-        let key;
+
         setPage(page);
         setCategory(category);
         fetchContentItems(page, category);
+      
+        /**
+         * Remember the fetched data key to return (history action pop) to the part
+         * of the screen where the link to the selected item is located
+         */ 
+
+        let key;
+     
         switch(props.component){
             case 'bigImages':
                 key = props.bigImagesPortfolio.item.key
@@ -148,6 +143,8 @@ export const PorfolioNavigation = (props) => {
     }
     
     const fetchContentItems = (page, category) => {
+        // Fetch data according to the page we came from
+
         switch(page){
             case 'portfolioGallery':
                 if(props.portfolioGalleryPage.items.length === 0){
@@ -253,6 +250,8 @@ export const PorfolioNavigation = (props) => {
     }
 
     const setContentItems = () => {
+        // Set data according to the page we came from
+
         switch(page){
             case 'portfolioGallery':
                 return [...props.portfolioGalleryPage.items];
@@ -331,182 +330,246 @@ export const PorfolioNavigation = (props) => {
     }
 
     const handleMenuOnClick = (e) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
+
+        // Storing data in local storage
+
         localStorage.setItem("page", page);
+
+        // Return to the page we came from
+
         switch(page){
             case 'portfolioGallery':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/portfolio-gallery`, "_blank");
                 }
                 break;
             case 'archive':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/portfolio-category/${category}`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/portfolio-category/${category}`, "_blank");
                 }
                 break;
             case 'switchImagePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/switch-image`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/switch-image`, "_blank");
                 }
                 break;
             case 'simpleOverlayPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/simple-overlay`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/simple-overlay`, "_blank");
                 }
                 break;
             case 'slideFromImageLeftPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/slide-from-image-left`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/slide-from-image-left`, "_blank");
                 }
                 break;
             case 'overlayPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/overlay`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/overlay`, "_blank");
                 }
                 break;
             case 'overlayWithInfoPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/overlay-with-info`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/overlay-with-info`, "_blank");
                 }
                 break;
             case 'standardPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/portfolio-standard`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/portfolio-standard`, "_blank");
                 }
                 break;
             case 'galleryPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/gallery`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/gallery`, "_blank");
                 }
                 break;
             case 'galleryWithSpacePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/gallery-with-space`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/gallery-with-space`, "_blank");
                 }
                 break;
             case 'stoneWallPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/stone-wall`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/stone-wall`, "_blank");
                 }
                 break;
             case 'stoneWallWidePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/stone-wall-wide`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/stone-wall-wide`, "_blank");
                 }
                 break;
             case 'metroPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/metro`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/metro`, "_blank");
                 }
                 break;
             case 'pinterest3ColumnsPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/pinterest-3-columns`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/pinterest-3-columns`, "_blank");
                 }
                 break;
             case 'twoColumnsWidePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/two-columns-wide`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/two-columns-wide`, "_blank");
                 }
                 break;
             case 'threeColumnsWidePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/three-columns-wide`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/three-columns-wide`, "_blank");
                 }
                 break;
             case 'fourColumnsWidePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/four-columns-wide`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/four-columns-wide`, "_blank");
                 }
                 break;
             case 'fiveColumnsWidePage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/five-columns-wide`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/five-columns-wide`, "_blank");
                 }
                 break;
             case 'twoColumnsPage':
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/two-columns`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/two-columns`, "_blank");
                 }
                 break;
             default:
                 if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
                     props.history.push(`/crypto-portfolio/portfolio-gallery`);
                 }else{
+                    // Open the link in a new window on scroll wheel click
                     window.open(`/crypto-portfolio/portfolio-gallery`, "_blank");
                 }
                 return;
         }
+
+        // Init the fetched data key
+
         props.setHistoryPopFromPortfolioItem("scrollToTop");
     }
 
     const arrowOnClick = (opt, key, e) => {
+        // Do nothing on right mouse click
+
         if(e.button === 2) return;
-        let updatedItems = setContentItems();
+       
+        // Storing data in local storage
+
         localStorage.setItem("page", page);
-        console.log("updatedItems", updatedItems)
+
+        /**
+         * Navigate to the prev or next element in
+         * fetched data array for the corresponding page
+         */
+
+        let updatedItems = setContentItems();
         let updatedItemIndex = updatedItems.findIndex(item => item.key === key);
+
         if(e.button !== 1){
+            // Clear smooth scrollbar behavior
+
             document.getElementById("html").style.scrollBehavior = null;
+
+            // Follow the link to the next page on left mouse click
+
             switch(opt) {
                 case 'prev':
                     if(updatedItemIndex === 0){
-                        props.portfolioNavigationOnClickStart(updatedItems[updatedItems.length - 1].path, page, category)
-                        // props.history.push(`/crypto-portfolio/${updatedItems[updatedItems.length - 1].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[updatedItems.length - 1].path, page, category);
                     }else{
-                        props.portfolioNavigationOnClickStart(updatedItems[updatedItemIndex - 1].path, page, category)
-                        // props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex - 1].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[updatedItemIndex - 1].path, page, category);
                     }
                     return;
                 case 'next':
                     if(updatedItemIndex === updatedItems.length - 1){
-                        props.portfolioNavigationOnClickStart(updatedItems[0].path, page, category)
-                        // props.history.push(`/crypto-portfolio/${updatedItems[0].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[0].path, page, category);
                     }else{
-                        props.portfolioNavigationOnClickStart(updatedItems[updatedItemIndex + 1].path, page, category)
-                        // props.history.push(`/crypto-portfolio/${updatedItems[updatedItemIndex + 1].path}`, {page: page, category: category});
+                        props.portfolioNavigationOnClickStart(updatedItems[updatedItemIndex + 1].path, page, category);
                     }
                     return;
             }
         }else{
+            // Open the link in a new window on scroll wheel click
             switch(opt) {
                 case 'prev':
                     if(updatedItemIndex === 0){
@@ -611,7 +674,7 @@ export default connect(
             fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),
             fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
             fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
-            fetchOverlayWithInfoPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
+            fetchOverlayWithInfoPage: bindActionCreators(Services.fetchOverlayWithInfoPage, dispatch),
             fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
             fetchGalleryPage: bindActionCreators(Services.fetchGalleryPage, dispatch),
             fetchGalleryWithSpacePage: bindActionCreators(Services.fetchGalleryWithSpacePage, dispatch),
@@ -629,4 +692,3 @@ export default connect(
         };
     }
 )(withRouter(PorfolioNavigation));
- 

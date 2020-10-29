@@ -43,10 +43,10 @@
             border: 1px solid black;
             background: black;
             width: 20px;
-            -webkit-animation: lengthenHorizontalLineSmallImages .1s linear;
-            -moz-animation: lengthenHorizontalLineSmallImages .1s linear;
-            -o-animation: lengthenHorizontalLineSmallImages .1s linear;
-            animation: lengthenHorizontalLineSmallImages .1s linear;
+            -webkit-animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
+            -moz-animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
+            -o-animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
+            animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
         }
         .arrow-wrapper {
             transform: translate(3px);
@@ -59,10 +59,10 @@
                 background: black;
                 height: 7px;
                 transform: translate(1px, 2px) rotate(45deg);
-                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
-                -moz-animation: lengthenArrowLineSmallImages .1s linear;
-                -o-animation: lengthenArrowLineSmallImages .1s linear;
-                animation: lengthenArrowLineSmallImages .1s linear;
+                -webkit-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                animation: lengthenArrowLinePortfolioNavigation .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
             }
@@ -71,10 +71,10 @@
                 background: black;
                 height: 7px;
                 transform: translate(1px, -2px) rotate(-45deg);
-                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
-                -moz-animation: lengthenArrowLineSmallImages .1s linear;
-                -o-animation: lengthenArrowLineSmallImages .1s linear;
-                animation: lengthenArrowLineSmallImages .1s linear;
+                -webkit-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                animation: lengthenArrowLinePortfolioNavigation .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
             }
@@ -90,10 +90,10 @@
             border: 1px solid black;
             background: black;
             width: 15px;
-            -webkit-animation: shorteHorizontalLineSmallImages .1s linear;
-            -moz-animation: shorteHorizontalLineSmallImages .1s linear;
-            -o-animation: shorteHorizontalLineSmallImages .1s linear;
-            animation: shorteHorizontalLineSmallImages .1s linear;
+            -webkit-animation: shorteHorizontalLinePortfolioNavigation .1s linear;
+            -moz-animation: shorteHorizontalLinePortfolioNavigation .1s linear;
+            -o-animation: shorteHorizontalLinePortfolioNavigation .1s linear;
+            animation: shorteHorizontalLinePortfolioNavigation .1s linear;
             animation-delay: .1s;
             animation-fill-mode: both;
         }
@@ -107,19 +107,19 @@
                 border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, 2px) rotate(45deg);
-                -webkit-animation: shortenArrowLineSmallImages .1s linear;
-                -moz-animation: shortenArrowLineSmallImages .1s linear;
-                -o-animation: shortenArrowLineSmallImages .1s linear;
-                animation: shortenArrowLineSmallImages .1s linear;
+                -webkit-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                animation: shortenArrowLinePortfolioNavigation .1s linear;
             }
             .arrow-bottom-line {
                 border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, -2px) rotate(-45deg);
-                -webkit-animation: shortenArrowLineSmallImages .1s linear;
-                -moz-animation: shortenArrowLineSmallImages .1s linear;
-                -o-animation: shortenArrowLineSmallImages .1s linear;
-                animation: shortenArrowLineSmallImages .1s linear;
+                -webkit-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                animation: shortenArrowLinePortfolioNavigation .1s linear;
             }
         }
     }
@@ -144,10 +144,10 @@
             height: 4px;
             border-radius: 50%;
             margin: 2px;
-            -webkit-animation: smallImagesMenuButtonHoverOn .3s linear;
-            -moz-animation: smallImagesMenuButtonHoverOn .3s linear;
-            -o-animation: smallImagesMenuButtonHoverOn .3s linear;
-            animation: smallImagesMenuButtonHoverOn .3s linear;
+            -webkit-animation: portfolioNavigationMenuButtonHoverOn .3s linear;
+            -moz-animation: portfolioNavigationMenuButtonHoverOn .3s linear;
+            -o-animation: portfolioNavigationMenuButtonHoverOn .3s linear;
+            animation: portfolioNavigationMenuButtonHoverOn .3s linear;
         }
         .navigation-menu-dot-hover-off {
             border: 2px solid rgb(37, 37, 37);
@@ -156,10 +156,10 @@
             height: 4px;
             border-radius: 50%;
             margin: 2px;
-            -webkit-animation: smallImagesMenuButtonHoverOff .3s linear;
-            -moz-animation: smallImagesMenuButtonHoverOff .3s linear;
-            -o-animation: smallImagesMenuButtonHoverOff .3s linear;
-            animation: smallImagesMenuButtonHoverOff .3s linear;
+            -webkit-animation: portfolioNavigationMenuButtonHoverOff .3s linear;
+            -moz-animation: portfolioNavigationMenuButtonHoverOff .3s linear;
+            -o-animation: portfolioNavigationMenuButtonHoverOff .3s linear;
+            animation: portfolioNavigationMenuButtonHoverOff .3s linear;
         }
     }
 
@@ -200,10 +200,10 @@
             border: 1px solid black;
             background: black;
             width: 20px;
-            -webkit-animation: lengthenHorizontalLineSmallImages .1s linear;
-            -moz-animation: lengthenHorizontalLineSmallImages .1s linear;
-            -o-animation: lengthenHorizontalLineSmallImages .1s linear;
-            animation: lengthenHorizontalLineSmallImages .1s linear;
+            -webkit-animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
+            -moz-animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
+            -o-animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
+            animation: lengthenHorizontalLinePortfolioNavigation .1s linear;
         }
         .arrow-wrapper {
             transform: translate(-3px);
@@ -216,10 +216,10 @@
                 background: black;
                 height: 7px;
                 transform: translate(1px, 2px) rotate(-45deg);
-                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
-                -moz-animation: lengthenArrowLineSmallImages .1s linear;
-                -o-animation: lengthenArrowLineSmallImages .1s linear;
-                animation: lengthenArrowLineSmallImages .1s linear;
+                -webkit-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                animation: lengthenArrowLinePortfolioNavigation .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
             }
@@ -228,10 +228,10 @@
                 background: black;
                 height: 7px;
                 transform: translate(1px, -2px) rotate(45deg);
-                -webkit-animation: lengthenArrowLineSmallImages .1s linear;
-                -moz-animation: lengthenArrowLineSmallImages .1s linear;
-                -o-animation: lengthenArrowLineSmallImages .1s linear;
-                animation: lengthenArrowLineSmallImages .1s linear;
+                -webkit-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: lengthenArrowLinePortfolioNavigation .1s linear;
+                animation: lengthenArrowLinePortfolioNavigation .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
             }
@@ -263,26 +263,26 @@
                 border: 1px solid transparent;
                 height: 0px;
                 transform: translate(1px, 2px) rotate(-45deg);
-                -webkit-animation: shortenArrowLineSmallImages .1s linear;
-                -moz-animation: shortenArrowLineSmallImages .1s linear;
-                -o-animation: shortenArrowLineSmallImages .1s linear;
-                animation: shortenArrowLineSmallImages .1s linear;
+                -webkit-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                animation: shortenArrowLinePortfolioNavigation .1s linear;
             }
             .arrow-bottom-line {
                 border: 1px solid transparent;
                 height: 0px;
                 transform: translate(1px, -2px) rotate(45deg);
-                -webkit-animation: shortenArrowLineSmallImages .1s linear;
-                -moz-animation: shortenArrowLineSmallImages .1s linear;
-                -o-animation: shortenArrowLineSmallImages .1s linear;
-                animation: shortenArrowLineSmallImages .1s linear;
+                -webkit-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -moz-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                -o-animation: shortenArrowLinePortfolioNavigation .1s linear;
+                animation: shortenArrowLinePortfolioNavigation .1s linear;
             }
         }
     }
 }
 
 
-@-webkit-keyframes smallImagesMenuButtonHoverOn {
+@-webkit-keyframes portfolioNavigationMenuButtonHoverOn {
     from{
         background-color: rgb(37, 37, 37);
         border: 2px solid rgb(37, 37, 37);
@@ -292,7 +292,7 @@
         border: 2px solid rgb(155, 155, 155);
     }
 }
-@-moz-keyframes smallImagesMenuButtonHoverOn {
+@-moz-keyframes portfolioNavigationMenuButtonHoverOn {
     from{
         background-color: rgb(37, 37, 37);
         border: 2px solid rgb(37, 37, 37);
@@ -302,7 +302,7 @@
         border: 2px solid rgb(155, 155, 155);
     }
 }
-@-o-keyframes smallImagesMenuButtonHoverOn {
+@-o-keyframes portfolioNavigationMenuButtonHoverOn {
     from{
         background-color: rgb(37, 37, 37);
         border: 2px solid rgb(37, 37, 37);
@@ -312,7 +312,7 @@
         border: 2px solid rgb(155, 155, 155);
     }
 }
-@keyframes smallImagesMenuButtonHoverOn {
+@keyframes portfolioNavigationMenuButtonHoverOn {
     from{
         background-color: rgb(37, 37, 37);
         border: 2px solid rgb(37, 37, 37);
@@ -323,7 +323,7 @@
     }
 }
 
-@-webkit-keyframes smallImagesMenuButtonHoverOff {
+@-webkit-keyframes portfolioNavigationMenuButtonHoverOff {
     from{
         background-color: rgb(155, 155, 155);
         border: 2px solid rgb(155, 155, 155);
@@ -333,7 +333,7 @@
         border: 2px solid rgb(37, 37, 37);
     }
 }
-@-moz-keyframes smallImagesMenuButtonHoverOff {
+@-moz-keyframes portfolioNavigationMenuButtonHoverOff {
     from{
         background-color: rgb(155, 155, 155);
         border: 2px solid rgb(155, 155, 155);
@@ -343,7 +343,7 @@
         border: 2px solid rgb(37, 37, 37);
     }
 }
-@-o-keyframes smallImagesMenuButtonHoverOff {
+@-o-keyframes portfolioNavigationMenuButtonHoverOff {
     from{
         background-color: rgb(155, 155, 155);
         border: 2px solid rgb(155, 155, 155);
@@ -353,7 +353,7 @@
         border: 2px solid rgb(37, 37, 37);
     }
 }
-@keyframes smallImagesMenuButtonHoverOff {
+@keyframes portfolioNavigationMenuButtonHoverOff {
     from{
         background-color: rgb(155, 155, 155);
         border: 2px solid rgb(155, 155, 155);
@@ -364,7 +364,7 @@
     }
 }
 
-@-webkit-keyframes lengthenArrowLineSmallImages {
+@-webkit-keyframes lengthenArrowLinePortfolioNavigation {
     from{
         height: 0px;
         border: 0px solid black;
@@ -374,7 +374,7 @@
         border: 1px solid black;
     }
 }
-@-moz-keyframes lengthenArrowLineSmallImages {
+@-moz-keyframes lengthenArrowLinePortfolioNavigation {
     from{
         height: 0px;
         border: 0px solid black;
@@ -384,7 +384,7 @@
         border: 1px solid black;
     }
 }
-@-o-keyframes lengthenArrowLineSmallImages {
+@-o-keyframes lengthenArrowLinePortfolioNavigation {
     from{
         height: 0px;
         border: 0px solid black;
@@ -394,7 +394,7 @@
         border: 1px solid black;
     }
 }
-@keyframes lengthenArrowLineSmallImages {
+@keyframes lengthenArrowLinePortfolioNavigation {
     from{
         height: 0px;
         border: 0px solid black;
@@ -405,7 +405,7 @@
     }
 }
 
-@-webkit-keyframes shortenArrowLineSmallImages {
+@-webkit-keyframes shortenArrowLinePortfolioNavigation {
     from{
         border: 1px solid black;
         background: black;
@@ -416,7 +416,7 @@
         height: 0px;
     }
 }
-@-moz-keyframes shortenArrowLineSmallImages {
+@-moz-keyframes shortenArrowLinePortfolioNavigation {
     from{
         border: 1px solid black;
         background: black;
@@ -427,7 +427,7 @@
         height: 0px;
     }
 }
-@-o-keyframes shortenArrowLineSmallImages {
+@-o-keyframes shortenArrowLinePortfolioNavigation {
     from{
         border: 1px solid black;
         background: black;
@@ -438,7 +438,7 @@
         height: 0px;
     }
 }
-@keyframes shortenArrowLineSmallImages {
+@keyframes shortenArrowLinePortfolioNavigation {
     from{
         border: 1px solid black;
         background: black;
@@ -450,36 +450,36 @@
     }
 }
 
-@-webkit-keyframes lengthenHorizontalLineSmallImages {
+@-webkit-keyframes lengthenHorizontalLinePortfolioNavigation {
     from{width: 15px;}
     to{width: 20px;}
 }
-@-moz-keyframes lengthenHorizontalLineSmallImages {
+@-moz-keyframes lengthenHorizontalLinePortfolioNavigation {
     from{width: 15px;}
     to{width: 20px;}
 }
-@-o-keyframes lengthenHorizontalLineSmallImages {
+@-o-keyframes lengthenHorizontalLinePortfolioNavigation {
     from{width: 15px;}
     to{width: 20px;}
 }
-@keyframes lengthenHorizontalLineSmallImages {
+@keyframes lengthenHorizontalLinePortfolioNavigation {
     from{width: 15px;}
     to{width: 20px;}
 }
 
-@-webkit-keyframes shorteHorizontalLineSmallImages {
+@-webkit-keyframes shorteHorizontalLinePortfolioNavigation {
     from{width: 20px;}
     to{width: 15px;}
 }
-@-moz-keyframes shorteHorizontalLineSmallImages {
+@-moz-keyframes shorteHorizontalLinePortfolioNavigation {
     from{width: 20px;}
     to{width: 15px;}
 }
-@-o-keyframes shorteHorizontalLineSmallImages {
+@-o-keyframes shorteHorizontalLinePortfolioNavigation {
     from{width: 20px;}
     to{width: 15px;}
 }
-@keyframes shorteHorizontalLineSmallImages {
+@keyframes shorteHorizontalLinePortfolioNavigation {
     from{width: 20px;}
     to{width: 15px;}
 }
