@@ -94,7 +94,7 @@ export const Achievements = (props) => {
 
         // Render the component only when it appears on the screen
 
-        if(scrollHeight >=el.offsetTop - window.innerHeight/2 - 400){
+        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 400){
             setShowComponent(true);
         }
 

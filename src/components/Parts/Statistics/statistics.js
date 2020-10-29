@@ -78,12 +78,16 @@ export const Statistics = (props) => {
      */
 
     useEffect(() => {
+        // Fetch data for the component
+
         props.fetchStatisticsData();
+
+        // Event Listeners
+
         window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
+        // Cleaning an unmounted component
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     
 
@@ -91,9 +95,14 @@ export const Statistics = (props) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("statistics");
 
+        // Render the component only when it appears on the screen
+
         if(scrollHeight >= el.offsetTop - size.height/2 - 400){
             setShowComponent(true);
         }
+
+        // Render the component only when it appears on a vertically oriented screen
+        
         if(size.width - size.height < 0){
             if(scrollHeight >= el.offsetTop - size.height/2 - 900){
                 setShowComponent(true);
