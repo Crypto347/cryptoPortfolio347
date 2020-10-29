@@ -33,7 +33,6 @@ export const Section5 = () => {
      */
 
     useEffect(() => {
-        
     }, []);
 
     /**
@@ -47,16 +46,5 @@ export const Section5 = () => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // pictureBoard: Selectors.getPictureBoardItemsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch)
-        };
-    }
-)(Section5);
+export default Section5;
  
