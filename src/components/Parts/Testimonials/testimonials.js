@@ -3,13 +3,8 @@
  */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 import {
     connect
@@ -18,10 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
 
 /**
  * Styles
@@ -82,6 +73,8 @@ export const Testimonials = (props) => {
      */
 
     useEffect(() => {
+        // Fetch data for the component
+        
         props.fetchTestimonials();
     }, []);
 
