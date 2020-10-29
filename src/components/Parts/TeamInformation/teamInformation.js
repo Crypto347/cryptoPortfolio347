@@ -72,6 +72,8 @@ export const TeamInformation = (props) => {
      */
 
     useEffect(() => {
+        // Fetch data for the component
+        
         props.fetchTeamInformation();
     }, []);
 
