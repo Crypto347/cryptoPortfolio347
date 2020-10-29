@@ -1,3 +1,7 @@
+/**
+ * Menu items
+*/
+
 export const menuItemsArray = [
     {
         id: 1,

@@ -1,3 +1,7 @@
+/**
+ * Leave a comment input form
+*/
+
 export const leaveACommentInputForm = {
     formIsValid: false,
     inputsArray: [

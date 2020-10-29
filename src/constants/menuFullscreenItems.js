@@ -1,3 +1,7 @@
+/**
+ * Menu fullscreen items 
+*/
+
 export const menuFullscreenItemsArray = [
     {
         id: 1,

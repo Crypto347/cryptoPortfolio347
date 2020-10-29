@@ -1,3 +1,7 @@
+/**
+ * Social media icons
+*/
+
 export const socialMediaIcons = [
     {
         name: "Facebook"
