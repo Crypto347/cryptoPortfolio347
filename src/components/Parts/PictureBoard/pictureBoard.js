@@ -116,10 +116,15 @@ export const PictureBoard = (props) => {
      */
 
     useEffect(() => {
+        // Event Listeners
+
         const resize = () => {
             resizeRef.current();
         }
+
         window.addEventListener('resize', resize);
+
+        // Cleaning an unmounted component
         return () => window.removeEventListener('resize', resize);
     }, []);
 
@@ -128,6 +133,8 @@ export const PictureBoard = (props) => {
     });
 
     const handleResize = () => {
+        // Forget coordinates of all image holders
+
         props.forgetCoordinateRangeForPictureBoard(initCoordinateRange);
     }
 
@@ -170,8 +177,10 @@ export const PictureBoard = (props) => {
                         />
                     )
                 }else{
+                    // Set the coordinates for the image holder
+
                     let imgCoordinateRange = props.pictureBoardImagesCooradinateRange.find(item => item.id === el.id);
-                    // console.log(imgCoordinateRange)
+
                     return(
                         <SwitchImage  
                             key={i}
@@ -181,7 +190,6 @@ export const PictureBoard = (props) => {
                             imagesArray={el.pictures}
                             alt={el.alt}
                             path={el.path}
-                            // clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                             rememberCoordinateRange={props.rememberCoordinateRangeForPictureBoard}
                             imgCoordinateRange={imgCoordinateRange}
                             setUnmountComponentValues={props.setUnmountComponentValues}
@@ -214,7 +222,6 @@ export default connect(
     },
     (dispatch) => {
         return {
-            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             rememberCoordinateRangeForPictureBoard: bindActionCreators(Actions.rememberCoordinateRangeForPictureBoard, dispatch),
             forgetCoordinateRangeForPictureBoard: bindActionCreators(Actions.forgetCoordinateRangeForPictureBoard, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
