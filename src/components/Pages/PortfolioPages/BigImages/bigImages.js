@@ -117,7 +117,7 @@ export const BigImages = (props) => {
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
-            // Cleaning the unmounted component
+            // Cleaning the unmounted component 
 
             window.removeEventListener('wheel', handleOnWheel);
             props.setShowBackToTopComponent(false);
