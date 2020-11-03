@@ -1157,7 +1157,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img2?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img2?.translateX + props.threeColumnsPage.itemsStyleValues.img2?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img2?.translateX + props.threeColumnsPage.itemsStyleValues.img2?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img2?.translateY + props.threeColumnsPage.itemsStyleValues.img2?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img2?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img2?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
@@ -1168,7 +1168,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img3?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX + props.threeColumnsPage.itemsStyleValues.img3?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX + props.threeColumnsPage.itemsStyleValues.img3?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img3?.translateY + props.threeColumnsPage.itemsStyleValues.img3?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img3?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img3?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img3?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
@@ -1179,7 +1179,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img4?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img4?.translateX + props.threeColumnsPage.itemsStyleValues.img4?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img4?.translateX + props.threeColumnsPage.itemsStyleValues.img4?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img4?.translateY + props.threeColumnsPage.itemsStyleValues.img4?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img4?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img4?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img4?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
@@ -1190,7 +1190,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img5?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img5?.translateX + props.threeColumnsPage.itemsStyleValues.img5?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img5?.translateX + props.threeColumnsPage.itemsStyleValues.img5?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img5?.translateY + props.threeColumnsPage.itemsStyleValues.img5?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img5?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img5?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img5?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
@@ -1201,7 +1201,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img6?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img6?.translateX + props.threeColumnsPage.itemsStyleValues.img6?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img6?.translateX + props.threeColumnsPage.itemsStyleValues.img6?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img6?.translateY + props.threeColumnsPage.itemsStyleValues.img6?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img6?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img6?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img6?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
@@ -1212,7 +1212,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img7?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img7?.translateX + props.threeColumnsPage.itemsStyleValues.img7?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img7?.translateX + props.threeColumnsPage.itemsStyleValues.img7?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img7?.translateY + props.threeColumnsPage.itemsStyleValues.img7?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img7?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img7?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img7?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
@@ -1223,7 +1223,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img8?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img8?.translateX + props.threeColumnsPage.itemsStyleValues.img8?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img8?.translateX + props.threeColumnsPage.itemsStyleValues.img8?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img8?.translateY + props.threeColumnsPage.itemsStyleValues.img8?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img8?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img8?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img8?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
@@ -1234,7 +1234,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img9?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img9?.translateX + props.threeColumnsPage.itemsStyleValues.img9?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img9?.translateX + props.threeColumnsPage.itemsStyleValues.img9?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img9?.translateY + props.threeColumnsPage.itemsStyleValues.img9?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img9?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img9?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img9?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
@@ -1245,7 +1245,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img10?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img10?.translateX + props.threeColumnsPage.itemsStyleValues.img10?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img10?.translateX + props.threeColumnsPage.itemsStyleValues.img10?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img10?.translateY + props.threeColumnsPage.itemsStyleValues.img10?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img10?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img10?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img10?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
@@ -1256,7 +1256,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img11?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img11?.translateX + props.threeColumnsPage.itemsStyleValues.img11?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img11?.translateX + props.threeColumnsPage.itemsStyleValues.img11?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img11?.translateY + props.threeColumnsPage.itemsStyleValues.img11?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img11?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img11?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img11?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
@@ -1267,7 +1267,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img12?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img12?.translateX + props.threeColumnsPage.itemsStyleValues.img12?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img12?.translateX + props.threeColumnsPage.itemsStyleValues.img12?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img12?.translateY + props.threeColumnsPage.itemsStyleValues.img12?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img12?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img12?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
@@ -1278,7 +1278,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img13?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img13?.translateX + props.threeColumnsPage.itemsStyleValues.img13?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img13?.translateX + props.threeColumnsPage.itemsStyleValues.img13?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img13?.translateY + props.threeColumnsPage.itemsStyleValues.img13?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img13?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img13?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img13?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
@@ -1289,7 +1289,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img14?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img14?.translateX + props.threeColumnsPage.itemsStyleValues.img14?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img14?.translateX + props.threeColumnsPage.itemsStyleValues.img14?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img14?.translateY + props.threeColumnsPage.itemsStyleValues.img14?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img14?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img14?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img14?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
@@ -1300,7 +1300,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img15?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img15?.translateX + props.threeColumnsPage.itemsStyleValues.img15?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img15?.translateX + props.threeColumnsPage.itemsStyleValues.img15?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img15?.translateY + props.threeColumnsPage.itemsStyleValues.img15?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img15?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img15?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img15?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
@@ -1311,7 +1311,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img16?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img16?.translateX + props.threeColumnsPage.itemsStyleValues.img16?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img16?.translateX + props.threeColumnsPage.itemsStyleValues.img16?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img16?.translateY + props.threeColumnsPage.itemsStyleValues.img16?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img16?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img16?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img16?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
@@ -1322,7 +1322,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img17?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img17?.translateX + props.threeColumnsPage.itemsStyleValues.img17?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img17?.translateX + props.threeColumnsPage.itemsStyleValues.img17?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img17?.translateY + props.threeColumnsPage.itemsStyleValues.img17?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img17?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img17?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img17?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
@@ -1333,7 +1333,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img18?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img18?.translateX + props.threeColumnsPage.itemsStyleValues.img18?.width/2}px 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img18?.translateX + props.threeColumnsPage.itemsStyleValues.img18?.width/2}px ${props.threeColumnsPage.itemsStyleValues.img18?.translateY + props.threeColumnsPage.itemsStyleValues.img18?.width/2}px`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img18?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img18?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img18?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
