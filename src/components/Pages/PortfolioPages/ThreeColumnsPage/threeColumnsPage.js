@@ -1084,7 +1084,7 @@ export const ThreeColumnsPage = (props) => {
                         width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                         scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img3.scale,
                         translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "X", 2, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 2, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 2),
                         transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                         zIndex: 0,
                         rendered: true

@@ -170,13 +170,15 @@ export const setWidthOfImage = (page, screenWidth, opt) => {
 
 export const calcTranslateCoordinates = (page, screenWidth, coordinate, elIndex, position) => {
     if(position === "atTheBeginning") return 0;
-    let widthOfElement = setWidthOfImage(page, screenWidth);
+    let widthOfElement;
     switch(page) {
         case 'twoColumnsPage':
+            widthOfElement = setWidthOfImage(page, screenWidth);
             if(coordinate === "X") return widthOfElement + 30;
             if(coordinate === "Y") return calculateTranslateYForTwoColumnsPage(page, elIndex, screenWidth);
             break;
         case 'threeColumnsPage':
+            widthOfElement = setWidthOfImage(page, screenWidth);
             if(coordinate === "X"){
                 if(position === "secondColumn"){
                     return widthOfElement + 30;
@@ -187,6 +189,7 @@ export const calcTranslateCoordinates = (page, screenWidth, coordinate, elIndex,
             if(coordinate === "Y") return calculateTranslateYForThreeColumnsPage(page, elIndex, screenWidth);
             break;
         case 'threeColumnsPageSmallScreen':
+            widthOfElement = setWidthOfImage("threeColumnsPage", screenWidth);
             if(coordinate === "X") return widthOfElement + 30;
             if(coordinate === "Y") return calculateTranslateYForThreeColumnsPageSmallScreen("threeColumnsPage", elIndex, screenWidth);
             break;
@@ -249,7 +252,7 @@ export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappea
             break;
         case 'threeColumnsPageSmallScreen':
             appearElementsArray = appearElementsArray.map((el, i) => {
-                let translateX = (i%2 === 0 ? 0 : setWidthOfImage(page, screenWidth, "widthWithPaddingRight"));
+                let translateX = (i%2 === 0 ? 0 : setWidthOfImage("threeColumnsPage", screenWidth, "widthWithPaddingRight"));
                 let translateY = calculateTranslateYForThreeColumnsPageSmallScreen("threeColumnsPage", i, screenWidth);
                 
                 return {
