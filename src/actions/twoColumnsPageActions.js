@@ -97,9 +97,9 @@ export function disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPa
     };
 };
 
-export function setLoadMoreStep(step) {
+export function setLoadMoreStepTwoColumnsPage(step) {
     return { 
-        type: actionTypes.SET_LOAD_MORE_STEP,
+        type: actionTypes.SET_LOAD_MORE_STEP_TWO_COLUMNS_PAGE,
         step: step
     };
 };

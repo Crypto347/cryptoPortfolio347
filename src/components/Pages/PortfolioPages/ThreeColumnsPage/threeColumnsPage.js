@@ -99,15 +99,15 @@ export const ThreeColumnsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.twoColumnsPage.items.length === 0){
-            props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep);
-            props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
+        if(props.threeColumnsPage.items.length === 0){
+            props.fetchThreeColumnsPage(props.threeColumnsPage.loadMoreStep);
+            props.setLoadMoreStepThreeColumnsPage(props.threeColumnsPage.loadMoreStep + 1);
         }
 
         // Return to the part of the screen where the link to the selected item is located
 
         let timeout = setTimeout(() => {
-            if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
+            if(!props.threeColumnsPage.loading && !props.threeColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
@@ -115,14 +115,14 @@ export const ThreeColumnsPage = (props) => {
             }
         }, 2);
 
-        if(props.twoColumnsPage.categories.length !== 0){
+        if(props.threeColumnsPage.categories.length !== 0){
             
             /**
              * Set appear and disappear images width, height, transition
              * and translate coordinates according to the category selected from the header
              */
 
-            let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
+            let categeryKey = props.threeColumnsPage.categories.find(item => item.active === true).key;
             categoryFromHeaderOnClickHandler(categeryKey);
         }else{
             // Set all images width, height, transition and translate coordinates 
@@ -154,7 +154,7 @@ export const ThreeColumnsPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, [props.twoColumnsPage.itemsStyleValues.img1?.rendered]);
+    }, [props.threeColumnsPage.itemsStyleValues.img1?.rendered]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -164,20 +164,20 @@ export const ThreeColumnsPage = (props) => {
     useEffect(() => {
         updateTransitionValue();
     }, [
-        props.twoColumnsPage.itemsStyleValues.img1?.transition,props.twoColumnsPage.itemsStyleValues.img2?.transition,
-        props.twoColumnsPage.itemsStyleValues.img3?.transition,props.twoColumnsPage.itemsStyleValues.img4?.transition,
-        props.twoColumnsPage.itemsStyleValues.img5?.transition,props.twoColumnsPage.itemsStyleValues.img6?.transition,
-        props.twoColumnsPage.itemsStyleValues.img7?.transition,props.twoColumnsPage.itemsStyleValues.img8?.transition,
-        props.twoColumnsPage.itemsStyleValues.img9?.transition,props.twoColumnsPage.itemsStyleValues.img10?.transition,
-        props.twoColumnsPage.itemsStyleValues.img11?.transition,props.twoColumnsPage.itemsStyleValues.img12?.transition,
-        props.twoColumnsPage.itemsStyleValues.img13?.transition,props.twoColumnsPage.itemsStyleValues.img14?.transition,
-        props.twoColumnsPage.itemsStyleValues.img15?.transition,props.twoColumnsPage.itemsStyleValues.img16?.transition,
-        props.twoColumnsPage.itemsStyleValues.img17?.transition,props.twoColumnsPage.itemsStyleValues.img18?.transition
+        props.threeColumnsPage.itemsStyleValues.img1?.transition,props.threeColumnsPage.itemsStyleValues.img2?.transition,
+        props.threeColumnsPage.itemsStyleValues.img3?.transition,props.threeColumnsPage.itemsStyleValues.img4?.transition,
+        props.threeColumnsPage.itemsStyleValues.img5?.transition,props.threeColumnsPage.itemsStyleValues.img6?.transition,
+        props.threeColumnsPage.itemsStyleValues.img7?.transition,props.threeColumnsPage.itemsStyleValues.img8?.transition,
+        props.threeColumnsPage.itemsStyleValues.img9?.transition,props.threeColumnsPage.itemsStyleValues.img10?.transition,
+        props.threeColumnsPage.itemsStyleValues.img11?.transition,props.threeColumnsPage.itemsStyleValues.img12?.transition,
+        props.threeColumnsPage.itemsStyleValues.img13?.transition,props.threeColumnsPage.itemsStyleValues.img14?.transition,
+        props.threeColumnsPage.itemsStyleValues.img15?.transition,props.threeColumnsPage.itemsStyleValues.img16?.transition,
+        props.threeColumnsPage.itemsStyleValues.img17?.transition,props.threeColumnsPage.itemsStyleValues.img18?.transition
     ]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("twoColumnsPage");
+        let el = document.getElementById("threeColumnsPage");
 
         // Show or hide BackToTop component
 
@@ -206,222 +206,222 @@ export const ThreeColumnsPage = (props) => {
     const updateTransitionValue = () => {
         // Set the transition property to the initial value if its value is 0
 
-        if(props.twoColumnsPage.itemsStyleValues.img1?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                ...props.twoColumnsPage.itemsStyleValues.img1,
+        if(props.threeColumnsPage.itemsStyleValues.img1?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img1",{
+                ...props.threeColumnsPage.itemsStyleValues.img1,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img2?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                ...props.twoColumnsPage.itemsStyleValues.img2,
+        if(props.threeColumnsPage.itemsStyleValues.img2?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img2",{
+                ...props.threeColumnsPage.itemsStyleValues.img2,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img3?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                ...props.twoColumnsPage.itemsStyleValues.img3,
+        if(props.threeColumnsPage.itemsStyleValues.img3?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img3",{
+                ...props.threeColumnsPage.itemsStyleValues.img3,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img4?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                ...props.twoColumnsPage.itemsStyleValues.img4,
+        if(props.threeColumnsPage.itemsStyleValues.img4?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img4",{
+                ...props.threeColumnsPage.itemsStyleValues.img4,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img5?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                ...props.twoColumnsPage.itemsStyleValues.img5,
+        if(props.threeColumnsPage.itemsStyleValues.img5?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img5",{
+                ...props.threeColumnsPage.itemsStyleValues.img5,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img6?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                ...props.twoColumnsPage.itemsStyleValues.img6,
+        if(props.threeColumnsPage.itemsStyleValues.img6?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img6",{
+                ...props.threeColumnsPage.itemsStyleValues.img6,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img7?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                ...props.twoColumnsPage.itemsStyleValues.img7,
+        if(props.threeColumnsPage.itemsStyleValues.img7?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img7",{
+                ...props.threeColumnsPage.itemsStyleValues.img7,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img8?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                ...props.twoColumnsPage.itemsStyleValues.img8,
+        if(props.threeColumnsPage.itemsStyleValues.img8?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img8",{
+                ...props.threeColumnsPage.itemsStyleValues.img8,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img9?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                ...props.twoColumnsPage.itemsStyleValues.img9,
+        if(props.threeColumnsPage.itemsStyleValues.img9?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img9",{
+                ...props.threeColumnsPage.itemsStyleValues.img9,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img10?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                ...props.twoColumnsPage.itemsStyleValues.img10,
+        if(props.threeColumnsPage.itemsStyleValues.img10?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img10",{
+                ...props.threeColumnsPage.itemsStyleValues.img10,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img11?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                ...props.twoColumnsPage.itemsStyleValues.img11,
+        if(props.threeColumnsPage.itemsStyleValues.img11?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img11",{
+                ...props.threeColumnsPage.itemsStyleValues.img11,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img12?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                ...props.twoColumnsPage.itemsStyleValues.img12,
+        if(props.threeColumnsPage.itemsStyleValues.img12?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img12",{
+                ...props.threeColumnsPage.itemsStyleValues.img12,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img13?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                ...props.twoColumnsPage.itemsStyleValues.img13,
+        if(props.threeColumnsPage.itemsStyleValues.img13?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img13",{
+                ...props.threeColumnsPage.itemsStyleValues.img13,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img14?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                ...props.twoColumnsPage.itemsStyleValues.img14,
+        if(props.threeColumnsPage.itemsStyleValues.img14?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img14",{
+                ...props.threeColumnsPage.itemsStyleValues.img14,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img15?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                ...props.twoColumnsPage.itemsStyleValues.img15,
+        if(props.threeColumnsPage.itemsStyleValues.img15?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img15",{
+                ...props.threeColumnsPage.itemsStyleValues.img15,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img16?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                ...props.twoColumnsPage.itemsStyleValues.img16,
+        if(props.threeColumnsPage.itemsStyleValues.img16?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img16",{
+                ...props.threeColumnsPage.itemsStyleValues.img16,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img17?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                ...props.twoColumnsPage.itemsStyleValues.img17,
+        if(props.threeColumnsPage.itemsStyleValues.img17?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img17",{
+                ...props.threeColumnsPage.itemsStyleValues.img17,
                 transition: 0.45
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img18?.transition === 0){
-            props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                ...props.twoColumnsPage.itemsStyleValues.img18,
+        if(props.threeColumnsPage.itemsStyleValues.img18?.transition === 0){
+            props.updateItemsStyleValuesThreeColumnsPage("img18",{
+                ...props.threeColumnsPage.itemsStyleValues.img18,
                 transition: 0.45
             });
         }
     }
 
     const smoothTransition = () => {
-        if(props.twoColumnsPage.itemsStyleValues.img1){
-            props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                ...props.twoColumnsPage.itemsStyleValues.img1,
+        if(props.threeColumnsPage.itemsStyleValues.img1){
+            props.updateItemsStyleValuesThreeColumnsPage("img1",{
+                ...props.threeColumnsPage.itemsStyleValues.img1,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img2){
-            props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                ...props.twoColumnsPage.itemsStyleValues.img2,
+        if(props.threeColumnsPage.itemsStyleValues.img2){
+            props.updateItemsStyleValuesThreeColumnsPage("img2",{
+                ...props.threeColumnsPage.itemsStyleValues.img2,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img3){
-            props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                ...props.twoColumnsPage.itemsStyleValues.img3,
+        if(props.threeColumnsPage.itemsStyleValues.img3){
+            props.updateItemsStyleValuesThreeColumnsPage("img3",{
+                ...props.threeColumnsPage.itemsStyleValues.img3,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img4){
-            props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                ...props.twoColumnsPage.itemsStyleValues.img4,
+        if(props.threeColumnsPage.itemsStyleValues.img4){
+            props.updateItemsStyleValuesThreeColumnsPage("img4",{
+                ...props.threeColumnsPage.itemsStyleValues.img4,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img5){
-            props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                ...props.twoColumnsPage.itemsStyleValues.img5,
+        if(props.threeColumnsPage.itemsStyleValues.img5){
+            props.updateItemsStyleValuesThreeColumnsPage("img5",{
+                ...props.threeColumnsPage.itemsStyleValues.img5,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img6){
-            props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                ...props.twoColumnsPage.itemsStyleValues.img6,
+        if(props.threeColumnsPage.itemsStyleValues.img6){
+            props.updateItemsStyleValuesThreeColumnsPage("img6",{
+                ...props.threeColumnsPage.itemsStyleValues.img6,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img7){
-            props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                ...props.twoColumnsPage.itemsStyleValues.img7,
+        if(props.threeColumnsPage.itemsStyleValues.img7){
+            props.updateItemsStyleValuesThreeColumnsPage("img7",{
+                ...props.threeColumnsPage.itemsStyleValues.img7,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img8){
-            props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                ...props.twoColumnsPage.itemsStyleValues.img8,
+        if(props.threeColumnsPage.itemsStyleValues.img8){
+            props.updateItemsStyleValuesThreeColumnsPage("img8",{
+                ...props.threeColumnsPage.itemsStyleValues.img8,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img9){
-            props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                ...props.twoColumnsPage.itemsStyleValues.img9,
+        if(props.threeColumnsPage.itemsStyleValues.img9){
+            props.updateItemsStyleValuesThreeColumnsPage("img9",{
+                ...props.threeColumnsPage.itemsStyleValues.img9,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img10){
-            props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                ...props.twoColumnsPage.itemsStyleValues.img10,
+        if(props.threeColumnsPage.itemsStyleValues.img10){
+            props.updateItemsStyleValuesThreeColumnsPage("img10",{
+                ...props.threeColumnsPage.itemsStyleValues.img10,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img11){
-            props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                ...props.twoColumnsPage.itemsStyleValues.img11,
+        if(props.threeColumnsPage.itemsStyleValues.img11){
+            props.updateItemsStyleValuesThreeColumnsPage("img11",{
+                ...props.threeColumnsPage.itemsStyleValues.img11,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img12){
-            props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                ...props.twoColumnsPage.itemsStyleValues.img12,
+        if(props.threeColumnsPage.itemsStyleValues.img12){
+            props.updateItemsStyleValuesThreeColumnsPage("img12",{
+                ...props.threeColumnsPage.itemsStyleValues.img12,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img13){
-            props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                ...props.twoColumnsPage.itemsStyleValues.img13,
+        if(props.threeColumnsPage.itemsStyleValues.img13){
+            props.updateItemsStyleValuesThreeColumnsPage("img13",{
+                ...props.threeColumnsPage.itemsStyleValues.img13,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img14){
-            props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                ...props.twoColumnsPage.itemsStyleValues.img14,
+        if(props.threeColumnsPage.itemsStyleValues.img14){
+            props.updateItemsStyleValuesThreeColumnsPage("img14",{
+                ...props.threeColumnsPage.itemsStyleValues.img14,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img15){
-            props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                ...props.twoColumnsPage.itemsStyleValues.img15,
+        if(props.threeColumnsPage.itemsStyleValues.img15){
+            props.updateItemsStyleValuesThreeColumnsPage("img15",{
+                ...props.threeColumnsPage.itemsStyleValues.img15,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img16){
-            props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                ...props.twoColumnsPage.itemsStyleValues.img16,
+        if(props.threeColumnsPage.itemsStyleValues.img16){
+            props.updateItemsStyleValuesThreeColumnsPage("img16",{
+                ...props.threeColumnsPage.itemsStyleValues.img16,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img17){
-            props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                ...props.twoColumnsPage.itemsStyleValues.img17,
+        if(props.threeColumnsPage.itemsStyleValues.img17){
+            props.updateItemsStyleValuesThreeColumnsPage("img17",{
+                ...props.threeColumnsPage.itemsStyleValues.img17,
                 transition: 0
             });
         }
-        if(props.twoColumnsPage.itemsStyleValues.img18){
-            props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                ...props.twoColumnsPage.itemsStyleValues.img18,
+        if(props.threeColumnsPage.itemsStyleValues.img18){
+            props.updateItemsStyleValuesThreeColumnsPage("img18",{
+                ...props.threeColumnsPage.itemsStyleValues.img18,
                 transition: 0
             });
         }
@@ -437,12 +437,12 @@ export const ThreeColumnsPage = (props) => {
 
             let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, size.width);
             let translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
-            let itemsStylesObj = props.twoColumnsPage.itemsStyleValues[`img${elementToUpdate}`];
+            let itemsStylesObj = props.threeColumnsPage.itemsStyleValues[`img${elementToUpdate}`];
             switch(elementToUpdate){
                 case 1:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img1",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -451,8 +451,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img1",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -464,8 +464,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 2:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img2",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -474,8 +474,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img2",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -487,8 +487,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 3:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img3",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -497,8 +497,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img3",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -510,8 +510,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 4:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img4",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -520,8 +520,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img4",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -533,8 +533,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 5:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img5",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -543,8 +543,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img5",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -556,8 +556,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 6:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img6",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -566,8 +566,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img6",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -579,8 +579,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 7:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img7",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -589,8 +589,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img7",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -602,8 +602,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 8:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img8",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -612,8 +612,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img8",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -625,8 +625,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 9:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img9",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -635,8 +635,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img9",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -648,8 +648,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 10:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img10",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -658,8 +658,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img10",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -671,8 +671,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 11:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img11",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -681,8 +681,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img11",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -694,8 +694,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 12:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img12",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -704,8 +704,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img12",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -717,8 +717,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 13:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img13",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -727,8 +727,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img13",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -740,8 +740,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 14:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img14",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -750,8 +750,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img14",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -763,8 +763,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 15:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img15",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -773,8 +773,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img15",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -786,8 +786,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 16:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img16",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -796,8 +796,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img16",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -809,8 +809,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 17:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img17",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -819,8 +819,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img17",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -832,8 +832,8 @@ export const ThreeColumnsPage = (props) => {
                     return;
                 case 18:
                     if(action === "disappear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img18",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -842,8 +842,8 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }else if(action === "appear"){
-                        props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                            width: Utility.setWidthOfImageTwoColumnsPage(size.width),
+                        props.updateItemsStyleValuesThreeColumnsPage("img18",{
+                            width: Utility.setWidthOfImage(size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -857,199 +857,199 @@ export const ThreeColumnsPage = (props) => {
         }else{
             // Set all images state
 
-            if(props.twoColumnsPage.itemsStyleValues.img1?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img1",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img1.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginning"),
+            if(props.threeColumnsPage.itemsStyleValues.img1?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img1",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img1.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img2?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img2",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img2.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginning"),
+            if(props.threeColumnsPage.itemsStyleValues.img2?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img2",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img2.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img3?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img3",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img3.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginningSecondRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img3?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img3",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img3.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img4?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img4",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img4.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginningSecondRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img4?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img4",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img4.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img5?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img5",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img5.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img5?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img5",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img5.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img6?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img6",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img6.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img6?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img6",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img6.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img7?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img7",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img7.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img7?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img7",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img7.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img8?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img8",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img8.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img8?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img8",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img8.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img9?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img9",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img9.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img9?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img9",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img9.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img10?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img10",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img10.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img10?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img10",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img10.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img11?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img11",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img11.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img11?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img11",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img11.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img12?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img12",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img12.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img12?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img12",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img12.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img13?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img13",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img13.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img13?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img13",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img13.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img14?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img14",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img14.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img14?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img14",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img14.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img15?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img15",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img15.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img15?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img15",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img15.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img16?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img16",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img16.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img16?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img16",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img16.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img17?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img17",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img17.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img17?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img17",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img17.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
                 });
             }
-            if(props.twoColumnsPage.itemsStyleValues.img18?.rendered){
-                props.updateItemsStyleValuesTwoColumnsPage("img18",{
-                    width: Utility.setWidthOfImageTwoColumnsPage(size.width),
-                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img18.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+            if(props.threeColumnsPage.itemsStyleValues.img18?.rendered){
+                props.updateItemsStyleValuesThreeColumnsPage("img18",{
+                    width: Utility.setWidthOfImage(size.width),
+                    scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img18.scale,
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1066,12 +1066,12 @@ export const ThreeColumnsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="twoColumnsPage"
+                        page="threeColumnsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="twoColumnsPage"
+                        page="threeColumnsPage"
                     />
                 </>
             )
@@ -1082,12 +1082,12 @@ export const ThreeColumnsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="twoColumnsPage"
+                        page="threeColumnsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="twoColumnsPage"
+                        page="threeColumnsPage"
                     />
                 </>
             )
@@ -1097,16 +1097,16 @@ export const ThreeColumnsPage = (props) => {
     const loadMoreOnClick = () => {
         // Fetch more data for the component
 
-        props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep, 
+        props.fetchThreeColumnsPage(props.threeColumnsPage.loadMoreStep, 
                                     categoryFromHeader, 
                                     size.width, 
-                                    props.twoColumnsPage.items.length, 
-                                    props.twoColumnsPage.itemsStyleValues);
-        props.setLoadMoreStep(props.twoColumnsPage.loadMoreStep + 1);
+                                    props.threeColumnsPage.items.length, 
+                                    props.threeColumnsPage.itemsStyleValues);
+        props.setLoadMoreStepThreeColumnsPage(props.threeColumnsPage.loadMoreStep + 1);
 
-        // Set height for the twoColumnsPage items div
+        // Set height for the threeColumnsPage items div
 
-        renderTwoColumnsPageStyleHeight();
+        renderThreeColumnsPageStyleHeight();
     }
 
     const renderClassName = (opt, isHovering, active) => {
@@ -1126,7 +1126,7 @@ export const ThreeColumnsPage = (props) => {
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'categoryFromHeader':
-                props.setTwoColumnsPageIsHoveringCategoryFromHeader("on", id)
+                props.setThreeColumnsPageIsHoveringCategoryFromHeader("on", id)
                 break;
         }
     }
@@ -1134,210 +1134,210 @@ export const ThreeColumnsPage = (props) => {
     const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'categoryFromHeader':
-                props.setTwoColumnsPageIsHoveringCategoryFromHeader("off", id)
+                props.setThreeColumnsPageIsHoveringCategoryFromHeader("off", id)
                 break;
         }
     }
     
-    const renderTwoCloumnsPageItemStyle = (id) => {
+    const renderThreeCloumnsPageItemStyle = (id) => {
         switch(id){
             case 1:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img1?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img1?.width}px`,
                     paddingRight: "30px",
                     transformOrigin: "center",
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img1?.scale}) 
-                               translate(${props.twoColumnsPage.itemsStyleValues.img1?.translateX}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img1?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img1?.zIndex}`
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img1?.scale}) 
+                               translate(${props.threeColumnsPage.itemsStyleValues.img1?.translateX}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img1?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img1?.zIndex}`
                 };
             case 2:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img2?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img2?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img2?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img2?.zIndex}`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img2?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img2?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img2?.zIndex}`,
                 };
             case 3:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img3?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img3?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img3?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img3?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img3?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img3?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img3?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img3?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img3?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img3?.zIndex}`
                 };
             case 4:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img4?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img4?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img4?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img4?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img4?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img4?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img4?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img4?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img4?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img4?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img4?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img4?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img4?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img4?.zIndex}`
                 };
             case 5:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img5?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img5?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img5?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img5?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img5?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img5?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img5?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img5?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img5?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img5?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img5?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img5?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img5?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img5?.zIndex}`
                 };
             case 6:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img6?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img6?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img6?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img6?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img6?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img6?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img6?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img6?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img6?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img6?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img6?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img6?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img6?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img6?.zIndex}`
                 };
             case 7:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img7?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img7?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img7?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img7?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img7?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img7?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img7?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img7?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img7?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img7?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img7?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img7?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img7?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img7?.zIndex}`
                 };
             case 8:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img8?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img8?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img8?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img8?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img8?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img8?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img8?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img8?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img8?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img8?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img8?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img8?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img8?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img8?.zIndex}`
                 };
             case 9:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img9?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img9?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img9?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img9?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img9?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img9?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img9?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img9?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img9?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img9?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img9?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img9?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img9?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img9?.zIndex}`
                 };
             case 10:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img10?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img10?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img10?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img10?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img10?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img10?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img10?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img10?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img10?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img10?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img10?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img10?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img10?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img10?.zIndex}`
                 };
             case 11:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img11?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img11?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img11?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img11?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img11?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img11?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img11?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img11?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img11?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img11?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img11?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img11?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img11?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img11?.zIndex}`
                 };
             case 12:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img12?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img12?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img12?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img12?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img12?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img12?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img12?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img12?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img12?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img12?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img12?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img12?.zIndex}`
                 };
             case 13:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img13?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img13?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img13?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img13?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img13?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img13?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img13?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img13?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img13?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img13?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img13?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img13?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img13?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img13?.zIndex}`
                 };
             case 14:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img14?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img14?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img14?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img14?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img14?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img14?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img14?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img14?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img14?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img14?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img14?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img14?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img14?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img14?.zIndex}`
                 };
             case 15:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img15?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img15?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img15?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img15?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img15?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img15?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img15?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img15?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img15?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img15?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img15?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img15?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img15?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img15?.zIndex}`
                 };
             case 16:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img16?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img16?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img16?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img16?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img16?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img16?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img16?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img16?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img16?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img16?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img16?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img16?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img16?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img16?.zIndex}`
                 };
             case 17:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img17?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img17?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img17?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img17?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img17?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img17?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img17?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img17?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img17?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img17?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img17?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img17?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img17?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img17?.zIndex}`
                 };
             case 18:
                 return {
                     position: "absolute",
-                    width: `${props.twoColumnsPage.itemsStyleValues.img18?.width}px`,
+                    width: `${props.threeColumnsPage.itemsStyleValues.img18?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img18?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img18?.translateX * 1.5}px`} 50%`,
-                    transform: `scale(${props.twoColumnsPage.itemsStyleValues.img18?.scale})
-                                translate(${props.twoColumnsPage.itemsStyleValues.img18?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img18?.translateY}px)`,
-                    transition: `transform ${props.twoColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
-                    zIndex: `${props.twoColumnsPage.itemsStyleValues.img18?.zIndex}`
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img18?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img18?.translateX * 1.5}px`} 50%`,
+                    transform: `scale(${props.threeColumnsPage.itemsStyleValues.img18?.scale})
+                                translate(${props.threeColumnsPage.itemsStyleValues.img18?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img18?.translateY}px)`,
+                    transition: `transform ${props.threeColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
+                    zIndex: `${props.threeColumnsPage.itemsStyleValues.img18?.zIndex}`
                 };
         }
     }
@@ -1345,19 +1345,19 @@ export const ThreeColumnsPage = (props) => {
     const categoryFromHeaderOnClickHandler = (key) => {
         // Set selected category from the header
 
-        props.setActivityOfTwoColumnsPageCategoriesFromHeader(key);
+        props.setActivityOfThreeColumnsPageCategoriesFromHeader(key);
         setCategoryFromHeader(key);
 
-        // Set height for the twoColumnsPage items div
+        // Set height for the threeColumnsPage items div
 
-        renderTwoColumnsPageStyleHeight();
+        renderThreeColumnsPageStyleHeight();
 
         // Set images state according to the selected category
 
         if(key !== "showAll"){
-            let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(props.twoColumnsPage.items, key);
-            props.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(arrayOfAppearAndDisapperElements)
-            props.twoColumnsPage.items.map(el => {
+            let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(props.threeColumnsPage.items, key);
+            props.disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage(arrayOfAppearAndDisapperElements)
+            props.threeColumnsPage.items.map(el => {
                 let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === key);
                 if(checkIfElementHasSelectedCategory){
                     setImagesState("categoryFromHeaderOnClick", el.id, 'appear', arrayOfAppearAndDisapperElements);
@@ -1372,7 +1372,7 @@ export const ThreeColumnsPage = (props) => {
        
     }
 
-    const renderTwoColumnsPageStyleWidth = () => {
+    const renderThreeColumnsPageStyleWidth = () => {
         if(size.width > 1200){
             return 1100;
         }
@@ -1387,17 +1387,17 @@ export const ThreeColumnsPage = (props) => {
         }
     }
 
-    const renderTwoColumnsPageStyleHeight = () => {
+    const renderThreeColumnsPageStyleHeight = () => {
         let numOfAppearElements;
         let objToArray = [];
         
-        numOfAppearElements = props.twoColumnsPage.itemsStyleValues;
-        objToArray = Utility.getArrayOfEmptyVal(Object.keys(props.twoColumnsPage.itemsStyleValues).length);
+        numOfAppearElements = props.threeColumnsPage.itemsStyleValues;
+        objToArray = Utility.getArrayOfEmptyVal(Object.keys(props.threeColumnsPage.itemsStyleValues).length);
         objToArray = objToArray.map((el,i) => {
             return {
                 imageId: `img${i + 1}`,
                 obj: {
-                    ...props.twoColumnsPage.itemsStyleValues[`img${i + 1}`]
+                    ...props.threeColumnsPage.itemsStyleValues[`img${i + 1}`]
                 }
             }
         })
@@ -1409,22 +1409,22 @@ export const ThreeColumnsPage = (props) => {
             }
         })
         numOfAppearElements = objToArray.filter(item => item === true).length;
-        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImageTwoColumnsPage(size.width) + +(numOfAppearElements/2).toFixed() * 30;
+        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImage(size.width) + +(numOfAppearElements/2).toFixed() * 30;
     }
 
-    const renderTwoColumnsPageData = () => {
+    const renderThreeColumnsPageData = () => {
         return(
-            <div className="two-columns-page-data-wrapper">
+            <div className="three-columns-page-data-wrapper">
                 <div 
-                    className="two-columns-page-categories-from-header"
+                    className="three-columns-page-categories-from-header"
                     style={{
-                        width: `${renderTwoColumnsPageStyleWidth()}px`
+                        width: `${renderThreeColumnsPageStyleWidth()}px`
                     }}
-                >{props.twoColumnsPage.categories.map((el, i) => {
+                >{props.threeColumnsPage.categories.map((el, i) => {
                     return(
                         <div 
                             key={i}
-                            className="two-columns-page-category-from-header"
+                            className="three-columns-page-category-from-header"
                             onMouseEnter={() => handleMouseEnter("categoryFromHeader", el.id)} 
                             onMouseLeave={() => handleMouseLeave("categoryFromHeader", el.id)}
                             onClick={() => categoryFromHeaderOnClickHandler(el.key)}
@@ -1435,21 +1435,21 @@ export const ThreeColumnsPage = (props) => {
                 })}
                 </div>
                 <div  
-                    id="twoColumnsPageItems"
+                    id="threeColumnsPageItems"
                     style={{
                         position: "relative",
-                        width: `${renderTwoColumnsPageStyleWidth()}px`,
-                        height: `${renderTwoColumnsPageStyleHeight("onInit")}px`
+                        width: `${renderThreeColumnsPageStyleWidth()}px`,
+                        height: `${renderThreeColumnsPageStyleHeight("onInit")}px`
                     }}
-                >{props.twoColumnsPage.items.map((el, i) => {
+                >{props.threeColumnsPage.items.map((el, i) => {
                     return(
                         <div 
                             key={i} 
                             id={el.key}
-                            style={renderTwoCloumnsPageItemStyle(el.id)}
+                            style={renderThreeCloumnsPageItemStyle(el.id)}
                         >
                             <OverlayImage
-                                page="twoColumnsPage"
+                                page="threeColumnsPage"
                                 obj={el}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
@@ -1463,68 +1463,68 @@ export const ThreeColumnsPage = (props) => {
     }
 
     const renderLoadMoreButton = () => {
-        if(props.twoColumnsPage.loadingMoreData && !props.twoColumnsPage.errorMoreData){
+        if(props.threeColumnsPage.loadingMoreData && !props.threeColumnsPage.errorMoreData){
             return(
                 <div 
-                    className="two-columns-page-button-load-more-loading-error"
+                    className="three-columns-page-button-load-more-loading-error"
                 >
                     <LoadingVersion2 color="rgb(37, 37, 37)"/>
                 </div>
             )
         }
-        if(!props.twoColumnsPage.loadingMoreData && !props.twoColumnsPage.errorMoreData){
+        if(!props.threeColumnsPage.loadingMoreData && !props.threeColumnsPage.errorMoreData){
             return(
-                <div className="two-columns-page-button-load-more">
+                <div className="three-columns-page-button-load-more">
                     <Button
                         className="archive-load-more"
                         text="load more."
                         onClick={loadMoreOnClick}
-                        disabled={props.twoColumnsPage.disableLoadMoreButton}
+                        disabled={props.threeColumnsPage.disableLoadMoreButton}
                     />
                 </div> 
             )
         }
-        if(!props.twoColumnsPage.loadingMoreData && props.twoColumnsPage.errorMoreData){
+        if(!props.threeColumnsPage.loadingMoreData && props.threeColumnsPage.errorMoreData){
             return(
                 <div 
-                    className="two-columns-page-button-load-more-loading-error" 
+                    className="three-columns-page-button-load-more-loading-error" 
                 >
-                    <H19 className="h19-nobel-lora">{`${props.twoColumnsPage.errorMoreData}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.threeColumnsPage.errorMoreData}`}</H19>
                 </div>
             )
         }
     }
 
-    const renderTwoColumnsPageContent = () => {
-        if(props.twoColumnsPage.loading && !props.twoColumnsPage.error){
+    const renderThreeColumnsPageContent = () => {
+        if(props.threeColumnsPage.loading && !props.threeColumnsPage.error){
             return(
                 <div 
-                    className="two-columns-page-loading-error" 
+                    className="three-columns-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error){
+        if(!props.threeColumnsPage.loading && !props.threeColumnsPage.error){
             return(
-                <div className="two-columns-page-wrapper">
-                    <div className="two-columns-page-header">
-                        <H45 className="h45-nero-lustria">Two Columns</H45>
+                <div className="three-columns-page-wrapper">
+                    <div className="three-columns-page-header">
+                        <H45 className="h45-nero-lustria">Three Columns</H45>
                     </div>
                     <div className="grey-line"/>
-                    {renderTwoColumnsPageData()}
+                    {renderThreeColumnsPageData()}
                     {categoryFromHeader === "showAll" ? renderLoadMoreButton() : null}
                 </div>
             )
         }
-        if(!props.twoColumnsPage.loading && props.twoColumnsPage.error){
+        if(!props.threeColumnsPage.loading && props.threeColumnsPage.error){
             return(
                 <div 
-                    className="two-columns-page-loading-error" 
+                    className="three-columns-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.twoColumnsPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.threeColumnsPage.error}`}</H15>
                 </div>
             )
         }
@@ -1535,9 +1535,9 @@ export const ThreeColumnsPage = (props) => {
      */
 
     return(
-        <div className="two-columns-page" id="twoColumnsPage">
+        <div className="three-columns-page" id="threeColumnsPage">
             {renderToolbars()}
-            {renderTwoColumnsPageContent()}
+            {renderThreeColumnsPageContent()}
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
         </div>   
@@ -1547,7 +1547,7 @@ export const ThreeColumnsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            twoColumnsPage: Selectors.getTwoColumnsPageState(state),
+            threeColumnsPage: Selectors.getThreeColumnsPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
@@ -1556,16 +1556,16 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
-            setTwoColumnsPageIsHoveringCategoryFromHeader: bindActionCreators(Actions.setTwoColumnsPageIsHoveringCategoryFromHeader, dispatch),
+            fetchThreeColumnsPage: bindActionCreators(Services.fetchThreeColumnsPage, dispatch),
+            setThreeColumnsPageIsHoveringCategoryFromHeader: bindActionCreators(Actions.setThreeColumnsPageIsHoveringCategoryFromHeader, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setLoadMoreStep: bindActionCreators(Actions.setLoadMoreStep, dispatch),
+            setLoadMoreStepThreeColumnsPage: bindActionCreators(Actions.setLoadMoreStepThreeColumnsPage, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
-            setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
-            disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage, dispatch),
+            updateItemsStyleValuesThreeColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesThreeColumnsPage, dispatch),
+            setActivityOfThreeColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfThreeColumnsPageCategoriesFromHeader, dispatch),
+            disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage, dispatch),
         };
     }
 )(ThreeColumnsPage);

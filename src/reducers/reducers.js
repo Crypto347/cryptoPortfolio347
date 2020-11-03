@@ -36,6 +36,7 @@ import threeColumnsWidePageReducer from './threeColumnsWidePageReducer';
 import fourColumnsWidePageReducer from './fourColumnsWidePageReducer';
 import fiveColumnsWidePageReducer from './fiveColumnsWidePageReducer';
 import twoColumnsPageReducer from './twoColumnsPageReducer';
+import threeColumnsPageReducer from './threeColumnsPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -70,4 +71,5 @@ export default (history) => combineReducers({
     fourColumnsWidePage: fourColumnsWidePageReducer,
     fiveColumnsWidePage: fiveColumnsWidePageReducer,
     twoColumnsPage: twoColumnsPageReducer,
+    threeColumnsPage: threeColumnsPageReducer
 });

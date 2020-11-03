@@ -28,7 +28,7 @@ export const initialState = {
     loadMoreStep: 1
 }
 
-const fetchTwoColumnsPageBegin = (state, action) => {
+const fetchThreeColumnsPageBegin = (state, action) => {
     return {
         ...state,
         loading: true,
@@ -36,7 +36,7 @@ const fetchTwoColumnsPageBegin = (state, action) => {
     };
 }
 
-const fetchTwoColumnsPageSuccess = (state, action) => {
+const fetchThreeColumnsPageSuccess = (state, action) => {
     // let updatedItemsStyleValues = Utility.getArrayOfEmptyVal(action.array.length);
     // updatedItemsStyleValues.map(el => {
 
@@ -50,7 +50,7 @@ const fetchTwoColumnsPageSuccess = (state, action) => {
     };
 }
 
-const fetchTwoColumnsPageFailur = (state, action) => {
+const fetchThreeColumnsPageFailur = (state, action) => {
     return {
         ...state,
         loading: false,
@@ -59,7 +59,7 @@ const fetchTwoColumnsPageFailur = (state, action) => {
     };
 }
 
-const loadMoreTwoColumnsPageDataBegin = (state, action) => {
+const loadMoreThreeColumnsPageDataBegin = (state, action) => {
     return {
         ...state,
         loadingMoreData: true,
@@ -67,7 +67,7 @@ const loadMoreTwoColumnsPageDataBegin = (state, action) => {
     };
 }
 
-const loadMoreTwoColumnsPageDataSuccess = (state, action) => {
+const loadMoreThreeColumnsPageDataSuccess = (state, action) => {
     return {
         ...state,
         loadingMoreData: false,
@@ -75,7 +75,7 @@ const loadMoreTwoColumnsPageDataSuccess = (state, action) => {
     };
 }
 
-const loadMoreTwoColumnsPageDataFailur = (state, action) => {
+const loadMoreThreeColumnsPageDataFailur = (state, action) => {
     return {
         ...state,
         loadingMoreData: false,
@@ -84,21 +84,21 @@ const loadMoreTwoColumnsPageDataFailur = (state, action) => {
     };
 }
 
-const loadMoreDisableButtonStateForTwoColumnsPage = (state, action) => {
+const loadMoreDisableButtonStateForThreeColumnsPage = (state, action) => {
     return {
         ...state,
         disableLoadMoreButton: action.val
     };
 }
 
-const setCategoriesTwoColumnsPage = (state, action) => {
+const setCategoriesThreeColumnsPage = (state, action) => {
     return {
         ...state,
         categories: action.array
     };
 }
 
-const setTwoColumnsPageIsHoveringCategoryFromHeader = (state, action) => {
+const setThreeColumnsPageIsHoveringCategoryFromHeader = (state, action) => {
     let updatedCategories = [...state.categories];
     let categoryObj = {...updatedCategories.find(item => item.id === action.id), isHover: action.val};
     let categoryIndex = updatedCategories.findIndex(item => item.id === action.id);
@@ -109,7 +109,7 @@ const setTwoColumnsPageIsHoveringCategoryFromHeader = (state, action) => {
     };
 }
 
-const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
+const updateItemsStyleValuesThreeColumnsPage = (state, action) => {
     let updatedItemsStyleValues = {...state.itemsStyleValues}
     switch(action.image) {
         case 'img1':
@@ -318,7 +318,7 @@ const updateItemsStyleValuesTwoColumnsPage = (state, action) => {
 }
 
 
-const setActivityOfTwoColumnsPageCategoriesFromHeader = (state, action) => {
+const setActivityOfThreeColumnsPageCategoriesFromHeader = (state, action) => {
     let updatedCategories = [...state.categories];
     updatedCategories = updatedCategories.map(el => {
         return {
@@ -335,7 +335,7 @@ const setActivityOfTwoColumnsPageCategoriesFromHeader = (state, action) => {
     };
 }
 
-const initItemsStylesStateForTwoColumnsPage = (state, action) => {
+const initItemsStylesStateForThreeColumnsPage = (state, action) => {
     let updatedItemsStyleValues = {};
         action.arr.map((el, i) => {
         let setObj = {
@@ -356,7 +356,7 @@ const initItemsStylesStateForTwoColumnsPage = (state, action) => {
     };
 }
 
-const addMoreItemsStylesStateForTwoColumnsPage = (state, action) => {
+const addMoreItemsStylesStateForThreeColumnsPage = (state, action) => {
     let updatedItemsStyleValues = {};
     let moreItemsStyleValues = {};
     action.arr.map((el, i) => {
@@ -380,54 +380,54 @@ const addMoreItemsStylesStateForTwoColumnsPage = (state, action) => {
     };
 }
  
-const disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage = (state, action) => {
+const disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage = (state, action) => {
     return {
         ...state,
         arrayOfDisappearAndAppearElements: action.arr
     };
 }
-const setLoadMoreStepTwoColumnsPage = (state, action) => {
+const setLoadMoreStepThreeColumnsPage = (state, action) => {
     return {
         ...state,
         loadMoreStep: action.step
     };
 }
 
-const twoColumnsPageReducer = (state = initialState, action) => {
+const threeColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.FETCH_TWO_COLUMNS_PAGE_BEGIN:
-            return fetchTwoColumnsPageBegin (state, action); 
-        case actionTypes.FETCH_TWO_COLUMNS_PAGE_SUCCESS:
-            return fetchTwoColumnsPageSuccess (state, action);
-        case actionTypes.FETCH_TWO_COLUMNS_PAGE_FAILURE:
-            return fetchTwoColumnsPageFailur(state, action);
-        case actionTypes.LOAD_MORE_TWO_COLUMNS_PAGE_BEGIN:
-            return loadMoreTwoColumnsPageDataBegin (state, action); 
-        case actionTypes.LOAD_MORE_TWO_COLUMNS_PAGE_SUCCESS:
-            return loadMoreTwoColumnsPageDataSuccess (state, action);
-        case actionTypes.LOAD_MORE_TWO_COLUMNS_PAGE_FAILURE:
-            return loadMoreTwoColumnsPageDataFailur(state, action);
-        case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE_FOR_TWO_COLUMNS_PAGE:
-            return loadMoreDisableButtonStateForTwoColumnsPage(state, action);
-        case actionTypes.SET_CATEGORIES_TWO_COLUMNS_PAGE:
-            return setCategoriesTwoColumnsPage(state, action);
-        case actionTypes.SET_TWO_COLUMNS_PAGE_IS_HOVERING_CATEGORY_FROM_HEADER:
-            return setTwoColumnsPageIsHoveringCategoryFromHeader(state, action);
-        case actionTypes.UPDATED_ITEMS_STYLE_VALUES_TWO_COLUMNS_PAGE:
-            return updateItemsStyleValuesTwoColumnsPage(state, action);
-        case actionTypes.SET_ACTIVITY_OF_TWO_COLUMNS_PAGE_CATEGORIES_FROM_HEADER:
-            return setActivityOfTwoColumnsPageCategoriesFromHeader(state, action);
-        case actionTypes.INIT_ITEMS_STYLES_STATE_FOR_TWO_COLUMNS_PAGE:
-            return initItemsStylesStateForTwoColumnsPage(state, action);
-        case actionTypes.ADD_MORE_ITEMS_STYLES_STATE_FOR_TWO_COLUMNS_PAGE:
-            return addMoreItemsStylesStateForTwoColumnsPage(state, action);
-        case actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY_TWO_COLUMNS_PAGE:
-            return disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(state, action);
-        case actionTypes.SET_LOAD_MORE_STEP_TWO_COLUMNS_PAGE:
-            return setLoadMoreStepTwoColumnsPage(state, action);
+        case actionTypes.FETCH_THREE_COLUMNS_PAGE_BEGIN:
+            return fetchThreeColumnsPageBegin (state, action); 
+        case actionTypes.FETCH_THREE_COLUMNS_PAGE_SUCCESS:
+            return fetchThreeColumnsPageSuccess (state, action);
+        case actionTypes.FETCH_THREE_COLUMNS_PAGE_FAILURE:
+            return fetchThreeColumnsPageFailur(state, action);
+        case actionTypes.LOAD_MORE_THREE_COLUMNS_PAGE_BEGIN:
+            return loadMoreThreeColumnsPageDataBegin (state, action); 
+        case actionTypes.LOAD_MORE_THREE_COLUMNS_PAGE_SUCCESS:
+            return loadMoreThreeColumnsPageDataSuccess (state, action);
+        case actionTypes.LOAD_MORE_THREE_COLUMNS_PAGE_FAILURE:
+            return loadMoreThreeColumnsPageDataFailur(state, action);
+        case actionTypes.LOAD_MORE_DISABLE_BUTTON_STATE_FOR_THREE_COLUMNS_PAGE:
+            return loadMoreDisableButtonStateForThreeColumnsPage(state, action);
+        case actionTypes.SET_CATEGORIES_THREE_COLUMNS_PAGE:
+            return setCategoriesThreeColumnsPage(state, action);
+        case actionTypes.SET_THREE_COLUMNS_PAGE_IS_HOVERING_CATEGORY_FROM_HEADER:
+            return setThreeColumnsPageIsHoveringCategoryFromHeader(state, action);
+        case actionTypes.UPDATED_ITEMS_STYLE_VALUES_THREE_COLUMNS_PAGE:
+            return updateItemsStyleValuesThreeColumnsPage(state, action);
+        case actionTypes.SET_ACTIVITY_OF_THREE_COLUMNS_PAGE_CATEGORIES_FROM_HEADER:
+            return setActivityOfThreeColumnsPageCategoriesFromHeader(state, action);
+        case actionTypes.INIT_ITEMS_STYLES_STATE_FOR_THREE_COLUMNS_PAGE:
+            return initItemsStylesStateForThreeColumnsPage(state, action);
+        case actionTypes.ADD_MORE_ITEMS_STYLES_STATE_FOR_THREE_COLUMNS_PAGE:
+            return addMoreItemsStylesStateForThreeColumnsPage(state, action);
+        case actionTypes.DISAPPEARANCE_AND_APPEARANCE_OF_ELEMENTS_DUE_TO_THE_CATEGORY_THREE_COLUMNS_PAGE:
+            return disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage(state, action);
+        case actionTypes.SET_LOAD_MORE_STEP_THREE_COLUMNS_PAGE:
+            return setLoadMoreStepThreeColumnsPage(state, action);
         default: 
             return state;
     }
 }
 
-export default twoColumnsPageReducer;
+export default threeColumnsPageReducer;
