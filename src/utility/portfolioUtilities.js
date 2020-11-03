@@ -148,13 +148,13 @@ export const setWidthOfImage = (page, screenWidth, opt) => {
             }
             break;
         case 'threeColumnsPage':
-            if(screenWidth > 1200){
+            if(screenWidth > 1250){
                 width = 370;
-            }else if(screenWidth <= 1200 && screenWidth > 905){
-                width = 200;
-            }else if(screenWidth <= 905 && screenWidth > 710){
-                width = 200;
-            }else if(screenWidth <= 710){
+            }else if(screenWidth <= 1250 && screenWidth > 1030){
+                width = 300;
+            }else if(screenWidth <= 1030 && screenWidth > 890){
+                width = 250;
+            }else if(screenWidth <= 890){
                 width = 200;
             }
             break;
@@ -245,6 +245,7 @@ export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappea
   
   return appearElementsArray;
 }
+
 const calculateTranslateYForTwoColumnPage = (page, i, screenWidth) => {
     switch(i){
         case 2:
@@ -291,14 +292,14 @@ const calculateTranslateXForThreeColumnPage = (page, i, screenWidth) => {
         case 10:
         case 13:
         case 16:
-            return setWidthOfImage(page, screenWidth, "widthWithPaddingRight") + 30;
+            return setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 2:
         case 5:
         case 8:
         case 11:
         case 14:
         case 17:
-            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight") + 60;
+            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }

@@ -1373,17 +1373,17 @@ export const ThreeColumnsPage = (props) => {
     }
 
     const renderThreeColumnsPageStyleWidth = () => {
-        if(size.width > 1200){
+        if(size.width > 1250){
             return 1170;
         }
-        if(size.width <= 1200 && size.width > 905){
-            return 840;
+        if(size.width <= 1250 && size.width > 1030){
+            return 960;
         }
-        if(size.width <= 905 && size.width > 710){
-            return 630;
+        if(size.width <= 1030 && size.width > 890){
+            return 810;
         }
-        if(size.width <= 710){
-            return 430;
+        if(size.width <= 890){
+            return 660;
         }
     }
 
