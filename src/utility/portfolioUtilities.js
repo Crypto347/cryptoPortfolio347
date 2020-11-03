@@ -166,22 +166,13 @@ export const setWidthOfImage = (page, screenWidth, opt) => {
     return width;
 }
 
-export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfElelmentsInArray, position) => {
+export const calcTranslateCoordinates = (page, screenWidth, coordinate, elIndex, position) => {
     if(position === "atTheBeginning") return 0;
     let widthOfElement = setWidthOfImage(page, screenWidth);
     switch(page) {
         case 'twoColumnsPage':
             if(coordinate === "X") return widthOfElement + 30;
-            if(coordinate === "Y"){
-                switch(position){
-                    case 'atTheBeginningSecondRow':
-                        return widthOfElement + 30;
-                    case 'oddRow':
-                        return (numOfElelmentsInArray/2 - 2) * (widthOfElement + 30);
-                    case 'evenRow':
-                        return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
-                }
-            }
+            if(coordinate === "Y") return calculateTranslateYForTwoColumnPage(page, elIndex, screenWidth)
             break;
         case 'threeColumnsPage':
             if(coordinate === "X"){
@@ -191,16 +182,7 @@ export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfEle
                     return 2*widthOfElement + 60;
                 }
             }
-            if(coordinate === "Y"){
-                switch(position){
-                    case 'atTheBeginningSecondRow':
-                        return widthOfElement + 30;
-                    case 'oddRow':
-                        return (numOfElelmentsInArray/3 - 2) * (widthOfElement + 30);
-                    case 'evenRow':
-                        return (numOfElelmentsInArray/3 - 1) * (widthOfElement + 30);
-                }
-            }
+            if(coordinate === "Y") return calculateTranslateYForThreeColumnPage(page, elIndex, screenWidth);
             break;
     }
     
@@ -274,24 +256,21 @@ const calculateTranslateYForTwoColumnPage = (page, i, screenWidth) => {
         case 6:
         case 7:
             return 3 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
-        case 6:
-        case 7:
-            return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 8:
         case 9:
-            return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 10:
         case 11:
-            return 6 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 12:
         case 13:
-            return 7 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 6 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 14:
         case 15:
-            return 8 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 7 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 16:
         case 17:
-            return 9 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 8 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }

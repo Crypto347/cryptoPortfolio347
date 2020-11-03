@@ -861,8 +861,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img1",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img1.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 0, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 0, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -872,8 +872,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img2",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img2.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 1),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 1, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -883,8 +883,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img3",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img3.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginningSecondRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 2, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 2),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -894,8 +894,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img4",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img4.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "atTheBeginningSecondRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 3),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 3),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -905,8 +905,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img5",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img5.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 4, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 4),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -916,8 +916,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img6",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img6.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 5),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 5),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -927,8 +927,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img7",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img7.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 6, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 6),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -938,8 +938,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img8",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img8.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 7),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 7),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -949,8 +949,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img9",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img9.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 8, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 8),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -960,8 +960,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img10",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img10.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 9),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 9),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -971,8 +971,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img11",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img11.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 10, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 10),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -982,8 +982,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img12",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img12.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 11),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 11),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -993,8 +993,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img13",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img13.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 12, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 12),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1004,8 +1004,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img14",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img14.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 13),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 13),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1015,8 +1015,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img15",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img15.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 14, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 14),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1026,8 +1026,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img16",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img16.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 15),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 15),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1037,8 +1037,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img17",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img17.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 16, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 16),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1048,8 +1048,8 @@ export const TwoColumnsPage = (props) => {
                 props.updateItemsStyleValuesTwoColumnsPage("img18",{
                     width: Utility.setWidthOfImage("twoColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.twoColumnsPage.itemsStyleValues.img18.scale,
-                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", props.twoColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", props.twoColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "X", 17),
+                    translateY: Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 17),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true

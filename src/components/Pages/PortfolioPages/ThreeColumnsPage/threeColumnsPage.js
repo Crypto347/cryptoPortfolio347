@@ -861,8 +861,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img1",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img1.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 0, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 0, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -872,8 +872,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img2",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img2.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 1, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 1, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -883,8 +883,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img3",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img3.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 2, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 2, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -894,8 +894,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img4",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img4.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 3, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 3),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -905,8 +905,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img5",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img5.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 4, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 4),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -916,8 +916,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img6",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img6.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 5, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 5),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -927,8 +927,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img7",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img7.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 6, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 6),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -938,8 +938,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img8",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img8.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 7, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 7),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -949,8 +949,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img9",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img9.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 8, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 8),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -960,8 +960,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img10",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img10.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 9, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 9),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -971,8 +971,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img11",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img11.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 10, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 10),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -982,8 +982,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img12",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img12.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 11, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 11),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -993,8 +993,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img13",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img13.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 12, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 12),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1004,8 +1004,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img14",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img14.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 13, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 13),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1015,8 +1015,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img15",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img15.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 14, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 14),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1026,8 +1026,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img16",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img16.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 15, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 15),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1037,8 +1037,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img17",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img17.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 16, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 16),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1048,8 +1048,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img18",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img18.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", 17, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 17),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true

@@ -733,8 +733,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "oddRow"),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", step*4-4, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-4),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -742,8 +742,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length),
-                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "oddRow"),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", step*4-3),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-3),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -751,8 +751,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "evenRow"),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", step*4-2, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-2),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -760,8 +760,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", json.twoColumnsData.length),
-                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", json.twoColumnsData.length, "evenRow"),
+                        translateX: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "X", step*4-1),
+                        translateY: Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-1),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -920,8 +920,8 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-5}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "oddRow"),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", step*6-6, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", step*6-6),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -929,8 +929,8 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-4}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "secondColumn"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "oddRow"),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", step*6-5, "secondColumn"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", step*6-5),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -938,8 +938,8 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-3}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "thirdColumn"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "oddRow"),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", step*6-4, "thirdColumn"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", step*6-4),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -947,8 +947,8 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-2}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "evenRow"),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", step*6-3, "atTheBeginning"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", step*6-3),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -956,8 +956,8 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-1}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "secondColumn"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "evenRow"),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", step*6-2, "secondColumn"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", step*6-2),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
@@ -965,8 +965,8 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "thirdColumn"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "evenRow"),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", step*6-1, "thirdColumn"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", step*6-1),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
