@@ -435,14 +435,14 @@ export const ThreeColumnsPage = (props) => {
         if(opt === "categoryFromHeaderOnClick"){
             // Set images state according to the selected category
 
-            let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements(arrayOfDisappearAndAppearElements, size.width);
+            let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements("threeColumnsPage", arrayOfDisappearAndAppearElements, size.width);
             let translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);
             let itemsStylesObj = props.threeColumnsPage.itemsStyleValues[`img${elementToUpdate}`];
             switch(elementToUpdate){
                 case 1:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img1",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -452,7 +452,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img1",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -465,7 +465,7 @@ export const ThreeColumnsPage = (props) => {
                 case 2:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img2",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -475,7 +475,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img2",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -488,7 +488,7 @@ export const ThreeColumnsPage = (props) => {
                 case 3:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img3",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -498,7 +498,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img3",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -511,7 +511,7 @@ export const ThreeColumnsPage = (props) => {
                 case 4:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img4",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -521,7 +521,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img4",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -534,7 +534,7 @@ export const ThreeColumnsPage = (props) => {
                 case 5:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img5",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -544,7 +544,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img5",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -557,7 +557,7 @@ export const ThreeColumnsPage = (props) => {
                 case 6:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img6",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -567,7 +567,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img6",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -580,7 +580,7 @@ export const ThreeColumnsPage = (props) => {
                 case 7:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img7",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -590,7 +590,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img7",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -603,7 +603,7 @@ export const ThreeColumnsPage = (props) => {
                 case 8:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img8",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -613,7 +613,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img8",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -626,7 +626,7 @@ export const ThreeColumnsPage = (props) => {
                 case 9:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img9",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -636,7 +636,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img9",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -649,7 +649,7 @@ export const ThreeColumnsPage = (props) => {
                 case 10:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img10",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -659,7 +659,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img10",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -672,7 +672,7 @@ export const ThreeColumnsPage = (props) => {
                 case 11:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img11",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -682,7 +682,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img11",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -695,7 +695,7 @@ export const ThreeColumnsPage = (props) => {
                 case 12:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img12",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -705,7 +705,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img12",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -718,7 +718,7 @@ export const ThreeColumnsPage = (props) => {
                 case 13:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img13",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -728,7 +728,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img13",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -741,7 +741,7 @@ export const ThreeColumnsPage = (props) => {
                 case 14:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img14",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -751,7 +751,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img14",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -764,7 +764,7 @@ export const ThreeColumnsPage = (props) => {
                 case 15:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img15",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -774,7 +774,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img15",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -787,7 +787,7 @@ export const ThreeColumnsPage = (props) => {
                 case 16:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img16",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -797,7 +797,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img16",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -810,7 +810,7 @@ export const ThreeColumnsPage = (props) => {
                 case 17:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img17",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -820,7 +820,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img17",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -833,7 +833,7 @@ export const ThreeColumnsPage = (props) => {
                 case 18:
                     if(action === "disappear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img18",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 0,
                             translateX: itemsStylesObj.translateX,
                             translateY: itemsStylesObj.translateY,
@@ -843,7 +843,7 @@ export const ThreeColumnsPage = (props) => {
                         });
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img18",{
-                            width: Utility.setWidthOfImage(size.width),
+                            width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                             scale: 1,
                             translateX: translateCoordinatesObj.translateX,
                             translateY: translateCoordinatesObj.translateY,
@@ -859,7 +859,7 @@ export const ThreeColumnsPage = (props) => {
 
             if(props.threeColumnsPage.itemsStyleValues.img1?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img1",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img1.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
@@ -870,7 +870,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img2?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img2",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img2.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
@@ -881,7 +881,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img3?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img3",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img3.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
@@ -892,7 +892,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img4?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img4",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img4.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
@@ -903,7 +903,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img5?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img5",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img5.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -914,7 +914,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img6?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img6",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img6.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -925,7 +925,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img7?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img7",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img7.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
@@ -936,7 +936,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img8?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img8",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img8.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
@@ -947,7 +947,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img9?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img9",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img9.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -958,7 +958,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img10?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img10",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img10.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -969,7 +969,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img11?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img11",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img11.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
@@ -980,7 +980,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img12?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img12",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img12.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
@@ -991,7 +991,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img13?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img13",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img13.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -1002,7 +1002,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img14?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img14",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img14.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -1013,7 +1013,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img15?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img15",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img15.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
@@ -1024,7 +1024,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img16?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img16",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img16.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
@@ -1035,7 +1035,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img17?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img17",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img17.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -1046,7 +1046,7 @@ export const ThreeColumnsPage = (props) => {
             }
             if(props.threeColumnsPage.itemsStyleValues.img18?.rendered){
                 props.updateItemsStyleValuesThreeColumnsPage("img18",{
-                    width: Utility.setWidthOfImage(size.width),
+                    width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img18.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
@@ -1409,7 +1409,7 @@ export const ThreeColumnsPage = (props) => {
             }
         })
         numOfAppearElements = objToArray.filter(item => item === true).length;
-        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImage(size.width) + +(numOfAppearElements/2).toFixed() * 30;
+        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImage("threeColumnsPage", size.width) + +(numOfAppearElements/2).toFixed() * 30;
     }
 
     const renderThreeColumnsPageData = () => {

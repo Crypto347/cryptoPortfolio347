@@ -90,6 +90,7 @@ export const OverlayImage = (props) => {
             case 'galleryPage':
             case 'galleryWithSpacePage':
             case 'twoColumnsPage':
+            case 'threeColumnsPage':
                 return 40;
         }
     }

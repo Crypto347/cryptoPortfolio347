@@ -133,7 +133,7 @@ export const changeKeyToLabel = (val) => {
     return label.join("");
 }
 
-export const setWidthOfImage = (screenWidth, opt) => {
+export const setWidthOfImage = (page, screenWidth, opt) => {
     let width;
     if(screenWidth > 1200){
         width = 535;
@@ -152,7 +152,7 @@ export const setWidthOfImage = (screenWidth, opt) => {
 
 export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfElelmentsInArray, position) => {
     if(position === "atTheBeginning") return 0;
-    let widthOfElement = setWidthOfImage(screenWidth);
+    let widthOfElement = setWidthOfImage(page, screenWidth);
     if(coordinate === "X") return widthOfElement + 30;
     if(coordinate === "Y"){
         switch(position){
@@ -185,7 +185,7 @@ export const setArrayOfAppearAndDisapperElements = (itemsArray, category) => {
     return arrayOfAppearAndDisapperElements;
 }
 
-export const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAppearElements, screenWidth) => {
+export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappearAndAppearElements, screenWidth) => {
     let appearElementsArray = [];
     arrayOfDisappearAndAppearElements.map(el => {
         if(!el.disappear){
@@ -193,8 +193,8 @@ export const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAp
         }
     })
     appearElementsArray = appearElementsArray.map((el, i) => {
-        let translateX = (i%2 === 0 ? 0 : setWidthOfImage(screenWidth, "widthWithPaddingRight"));
-        let translateY = calculateTranslateYForTwoColumnPage(i, screenWidth);
+        let translateX = (i%2 === 0 ? 0 : setWidthOfImage(page, screenWidth, "widthWithPaddingRight"));
+        let translateY = calculateTranslateYForTwoColumnPage(page, i, screenWidth);
        
         return {
             id: el.id,
@@ -206,38 +206,38 @@ export const updateTranslateCoordinatesOfAppearElements = (arrayOfDisappearAndAp
   return appearElementsArray;
 }
 
-const calculateTranslateYForTwoColumnPage = (i, screenWidth) => {
+const calculateTranslateYForTwoColumnPage = (page, i, screenWidth) => {
     switch(i){
         case 2:
         case 3:
-            return setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 4:
         case 5:
-            return 2 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 6:
         case 7:
-            return 3 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 3 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 6:
         case 7:
-            return 4 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 8:
         case 9:
-            return 5 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 10:
         case 11:
-            return 6 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 6 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 12:
         case 13:
-            return 7 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 7 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 14:
         case 15:
-            return 8 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 8 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 16:
         case 17:
-            return 9 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 9 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 18:
         case 19:
-            return 10 * setWidthOfImage(screenWidth, "widthWithPaddingRight");
+            return 10 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }
