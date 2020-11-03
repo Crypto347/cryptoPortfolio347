@@ -17059,7 +17059,7 @@ app.post('/api/two-columns-page', (req, res) => {
         twoColumnsData: []
     };
     let takeItems = req.body.step * 4;
-    if(takeItems > twoColumnsPage.length){
+    if(takeItems >= twoColumnsPage.length){
         updatedTwoColumnsObj.disableLoadMoreButton = true;
         updatedTwoColumnsObj.twoColumnsData = twoColumnsPage;
     }else{
@@ -17677,9 +17677,9 @@ app.post('/api/three-columns-page', (req, res) => {
         threeColumnsData: []
     };
     let takeItems = req.body.step * 6;
-    if(takeItems > threeColumnsPage.length){
+    if(takeItems >= threeColumnsPage.length){
         updatedThreeColumnsObj.disableLoadMoreButton = true;
-        updatedThreeColumnsObj.ThreeColumnsData = threeColumnsPage;
+        updatedThreeColumnsObj.threeColumnsData = threeColumnsPage;
     }else{
         updatedThreeColumnsObj.threeColumnsData = threeColumnsPage.slice(0, takeItems)
     }

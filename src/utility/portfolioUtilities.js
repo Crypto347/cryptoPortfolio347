@@ -172,7 +172,7 @@ export const calcTranslateCoordinates = (page, screenWidth, coordinate, elIndex,
     switch(page) {
         case 'twoColumnsPage':
             if(coordinate === "X") return widthOfElement + 30;
-            if(coordinate === "Y") return calculateTranslateYForTwoColumnPage(page, elIndex, screenWidth)
+            if(coordinate === "Y") return calculateTranslateYForTwoColumnPage(page, elIndex, screenWidth);
             break;
         case 'threeColumnsPage':
             if(coordinate === "X"){
