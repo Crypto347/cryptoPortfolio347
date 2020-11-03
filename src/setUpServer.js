@@ -17676,7 +17676,7 @@ app.post('/api/three-columns-page', (req, res) => {
         disableLoadMoreButton: false,
         threeColumnsData: []
     };
-    let takeItems = req.body.step * 4;
+    let takeItems = req.body.step * 6;
     if(takeItems > threeColumnsPage.length){
         updatedThreeColumnsObj.disableLoadMoreButton = true;
         updatedThreeColumnsObj.ThreeColumnsData = threeColumnsPage;

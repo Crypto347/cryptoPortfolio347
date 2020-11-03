@@ -135,15 +135,31 @@ export const changeKeyToLabel = (val) => {
 
 export const setWidthOfImage = (page, screenWidth, opt) => {
     let width;
-    if(screenWidth > 1200){
-        width = 535;
-    }else if(screenWidth <= 1200 && screenWidth > 905){
-        width = 400;
-    }else if(screenWidth <= 905 && screenWidth > 710){
-        width = 300;
-    }else if(screenWidth <= 710){
-        width = 200;
+    switch(page){
+        case 'twoColumnsPage':
+            if(screenWidth > 1200){
+                width = 535;
+            }else if(screenWidth <= 1200 && screenWidth > 905){
+                width = 400;
+            }else if(screenWidth <= 905 && screenWidth > 710){
+                width = 300;
+            }else if(screenWidth <= 710){
+                width = 200;
+            }
+            break;
+        case 'threeColumnsPage':
+            if(screenWidth > 1200){
+                width = 370;
+            }else if(screenWidth <= 1200 && screenWidth > 905){
+                width = 200;
+            }else if(screenWidth <= 905 && screenWidth > 710){
+                width = 200;
+            }else if(screenWidth <= 710){
+                width = 200;
+            }
+            break;
     }
+   
     if(opt === "widthWithPaddingRight"){
         width = width + 30;
     }
@@ -153,17 +169,41 @@ export const setWidthOfImage = (page, screenWidth, opt) => {
 export const calcTranslateCoordinates = (page, screenWidth, coordinate, numOfElelmentsInArray, position) => {
     if(position === "atTheBeginning") return 0;
     let widthOfElement = setWidthOfImage(page, screenWidth);
-    if(coordinate === "X") return widthOfElement + 30;
-    if(coordinate === "Y"){
-        switch(position){
-            case 'atTheBeginningSecondRow':
-                return widthOfElement + 30;
-            case 'oddRow':
-                return (numOfElelmentsInArray/2 - 2) * (widthOfElement + 30);
-            case 'evenRow':
-                return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
-        }
+    switch(page) {
+        case 'twoColumnsPage':
+            if(coordinate === "X") return widthOfElement + 30;
+            if(coordinate === "Y"){
+                switch(position){
+                    case 'atTheBeginningSecondRow':
+                        return widthOfElement + 30;
+                    case 'oddRow':
+                        return (numOfElelmentsInArray/2 - 2) * (widthOfElement + 30);
+                    case 'evenRow':
+                        return (numOfElelmentsInArray/2 - 1) * (widthOfElement + 30);
+                }
+            }
+            break;
+        case 'threeColumnsPage':
+            if(coordinate === "X"){
+                if(position === "secondColumn"){
+                    return widthOfElement + 30;
+                }else if(position === "thirdColumn"){
+                    return 2*widthOfElement + 60;
+                }
+            }
+            if(coordinate === "Y"){
+                switch(position){
+                    case 'atTheBeginningSecondRow':
+                        return widthOfElement + 30;
+                    case 'oddRow':
+                        return (numOfElelmentsInArray/3 - 2) * (widthOfElement + 30);
+                    case 'evenRow':
+                        return (numOfElelmentsInArray/3 - 1) * (widthOfElement + 30);
+                }
+            }
+            break;
     }
+    
 }
 
 export const setArrayOfAppearAndDisapperElements = (itemsArray, category) => {
@@ -192,20 +232,37 @@ export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappea
             appearElementsArray.push(el);
         }
     })
-    appearElementsArray = appearElementsArray.map((el, i) => {
-        let translateX = (i%2 === 0 ? 0 : setWidthOfImage(page, screenWidth, "widthWithPaddingRight"));
-        let translateY = calculateTranslateYForTwoColumnPage(page, i, screenWidth);
-       
-        return {
-            id: el.id,
-            key: `img${el.id}`,
-            translateX: translateX,
-            translateY: translateY
-        };
-    });
+    switch(page){
+        case 'twoColumnsPage':
+            appearElementsArray = appearElementsArray.map((el, i) => {
+                let translateX = (i%2 === 0 ? 0 : setWidthOfImage(page, screenWidth, "widthWithPaddingRight"));
+                let translateY = calculateTranslateYForTwoColumnPage(page, i, screenWidth);
+               
+                return {
+                    id: el.id,
+                    key: `img${el.id}`,
+                    translateX: translateX,
+                    translateY: translateY
+                };
+            });
+            break;
+        case 'threeColumnsPage':
+            appearElementsArray = appearElementsArray.map((el, i) => {
+                let translateX = calculateTranslateXForThreeColumnPage(page, i, screenWidth);
+                let translateY = calculateTranslateYForThreeColumnPage(page, i, screenWidth);
+                
+                return {
+                    id: el.id,
+                    key: `img${el.id}`,
+                    translateX: translateX,
+                    translateY: translateY
+                };
+            });
+            break;
+    }
+  
   return appearElementsArray;
 }
-
 const calculateTranslateYForTwoColumnPage = (page, i, screenWidth) => {
     switch(i){
         case 2:
@@ -235,9 +292,61 @@ const calculateTranslateYForTwoColumnPage = (page, i, screenWidth) => {
         case 16:
         case 17:
             return 9 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
-        case 18:
-        case 19:
-            return 10 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        default:
+            return 0;
+    }
+}
+
+const calculateTranslateXForThreeColumnPage = (page, i, screenWidth) => {
+    switch(i){
+        case 0:
+        case 3:
+        case 6:
+        case 9:
+        case 12:
+        case 15:
+            return 0;
+        case 1:
+        case 4:
+        case 7:
+        case 10:
+        case 13:
+        case 16:
+            return setWidthOfImage(page, screenWidth, "widthWithPaddingRight") + 30;
+        case 2:
+        case 5:
+        case 8:
+        case 11:
+        case 14:
+        case 17:
+            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight") + 60;
+        default:
+            return 0;
+    }
+}
+
+const calculateTranslateYForThreeColumnPage = (page, i, screenWidth) => {
+    switch(i){
+        case 3:
+        case 4:
+        case 5:
+            return setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 6:
+        case 7:
+        case 8:
+            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 9:
+        case 10:
+        case 11:
+            return 3 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 12:
+        case 13:
+        case 14:
+            return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 15:
+        case 16:
+        case 17:
+            return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }

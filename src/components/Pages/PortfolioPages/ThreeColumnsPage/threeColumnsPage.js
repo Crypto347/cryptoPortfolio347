@@ -872,7 +872,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img2",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img2.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -883,8 +883,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img3",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img3.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginning"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -894,7 +894,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img4",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img4.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -905,8 +905,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img5",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img5.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -916,8 +916,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img6",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img6.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "atTheBeginningSecondRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -928,7 +928,7 @@ export const ThreeColumnsPage = (props) => {
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img7.scale,
                     translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -938,8 +938,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img8",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img8.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -949,7 +949,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img9",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img9.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -960,8 +960,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img10",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img10.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -971,7 +971,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img11",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img11.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -982,7 +982,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img12",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img12.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -1004,7 +1004,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img14",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img14.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -1015,8 +1015,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img15",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img15.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1026,7 +1026,7 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img16",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img16.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
                     translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
@@ -1037,8 +1037,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img17",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img17.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "atTheBeginning"),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1048,8 +1048,8 @@ export const ThreeColumnsPage = (props) => {
                 props.updateItemsStyleValuesThreeColumnsPage("img18",{
                     width: Utility.setWidthOfImage("threeColumnsPage", size.width),
                     scale: ['onInit', 'showAllCategories'].includes(opt) ? 1 : props.threeColumnsPage.itemsStyleValues.img18.scale,
-                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length),
-                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "oddRow"),
+                    translateX: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "X", props.threeColumnsPage.items.length, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", props.threeColumnsPage.items.length, "evenRow"),
                     transition: ['showAllCategories'].includes(opt) ? 0.45 : 0,
                     zIndex: 0,
                     rendered: true
@@ -1157,7 +1157,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img2?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img2?.translateX + props.threeColumnsPage.itemsStyleValues.img2?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img2?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img2?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,
@@ -1168,7 +1168,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img3?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img3?.translateX + props.threeColumnsPage.itemsStyleValues.img3?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img3?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img3?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img3?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img3?.transition}s ease-out`,
@@ -1179,7 +1179,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img4?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img4?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img4?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img4?.translateX + props.threeColumnsPage.itemsStyleValues.img4?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img4?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img4?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img4?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img4?.transition}s ease-out`,
@@ -1190,7 +1190,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img5?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img5?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img5?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img5?.translateX + props.threeColumnsPage.itemsStyleValues.img5?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img5?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img5?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img5?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img5?.transition}s ease-out`,
@@ -1201,7 +1201,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img6?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img6?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img6?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img6?.translateX + props.threeColumnsPage.itemsStyleValues.img6?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img6?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img6?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img6?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img6?.transition}s ease-out`,
@@ -1212,7 +1212,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img7?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img7?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img7?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img7?.translateX + props.threeColumnsPage.itemsStyleValues.img7?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img7?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img7?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img7?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img7?.transition}s ease-out`,
@@ -1223,7 +1223,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img8?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img8?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img8?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img8?.translateX + props.threeColumnsPage.itemsStyleValues.img8?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img8?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img8?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img8?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img8?.transition}s ease-out`,
@@ -1234,7 +1234,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img9?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img9?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img9?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img9?.translateX + props.threeColumnsPage.itemsStyleValues.img9?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img9?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img9?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img9?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img9?.transition}s ease-out`,
@@ -1245,7 +1245,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img10?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img10?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img10?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img10?.translateX + props.threeColumnsPage.itemsStyleValues.img10?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img10?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img10?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img10?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img10?.transition}s ease-out`,
@@ -1256,7 +1256,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img11?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img11?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img11?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img11?.translateX + props.threeColumnsPage.itemsStyleValues.img11?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img11?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img11?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img11?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img11?.transition}s ease-out`,
@@ -1267,7 +1267,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img12?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img12?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img12?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img12?.translateX + props.threeColumnsPage.itemsStyleValues.img12?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img12?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img12?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img12?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img12?.transition}s ease-out`,
@@ -1278,7 +1278,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img13?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img13?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img13?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img13?.translateX + props.threeColumnsPage.itemsStyleValues.img13?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img13?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img13?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img13?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img13?.transition}s ease-out`,
@@ -1289,7 +1289,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img14?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img14?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img14?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img14?.translateX + props.threeColumnsPage.itemsStyleValues.img14?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img14?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img14?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img14?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img14?.transition}s ease-out`,
@@ -1300,7 +1300,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img15?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img15?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img15?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img15?.translateX + props.threeColumnsPage.itemsStyleValues.img15?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img15?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img15?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img15?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img15?.transition}s ease-out`,
@@ -1311,7 +1311,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img16?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img16?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img16?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img16?.translateX + props.threeColumnsPage.itemsStyleValues.img16?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img16?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img16?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img16?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img16?.transition}s ease-out`,
@@ -1322,7 +1322,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img17?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img17?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img17?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img17?.translateX + props.threeColumnsPage.itemsStyleValues.img17?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img17?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img17?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img17?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img17?.transition}s ease-out`,
@@ -1333,7 +1333,7 @@ export const ThreeColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.threeColumnsPage.itemsStyleValues.img18?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img18?.translateX === 0 ? '50%' : `${props.threeColumnsPage.itemsStyleValues.img18?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.threeColumnsPage.itemsStyleValues.img18?.translateX + props.threeColumnsPage.itemsStyleValues.img18?.width/2}px 50%`,
                     transform: `scale(${props.threeColumnsPage.itemsStyleValues.img18?.scale})
                                 translate(${props.threeColumnsPage.itemsStyleValues.img18?.translateX}px, ${props.threeColumnsPage.itemsStyleValues.img18?.translateY}px)`,
                     transition: `transform ${props.threeColumnsPage.itemsStyleValues.img18?.transition}s ease-out`,
@@ -1374,7 +1374,7 @@ export const ThreeColumnsPage = (props) => {
 
     const renderThreeColumnsPageStyleWidth = () => {
         if(size.width > 1200){
-            return 1100;
+            return 1170;
         }
         if(size.width <= 1200 && size.width > 905){
             return 840;
@@ -1409,7 +1409,13 @@ export const ThreeColumnsPage = (props) => {
             }
         })
         numOfAppearElements = objToArray.filter(item => item === true).length;
-        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImage("threeColumnsPage", size.width) + +(numOfAppearElements/2).toFixed() * 30;
+        
+        if(Number.isInteger(numOfAppearElements/3)){
+            numOfAppearElements = numOfAppearElements/3;
+        }else{
+            numOfAppearElements = Math.floor(numOfAppearElements/3) + 1;
+        }
+        return numOfAppearElements* Utility.setWidthOfImage("threeColumnsPage", size.width) + numOfAppearElements * 30;
     }
 
     const renderThreeColumnsPageData = () => {

@@ -1157,7 +1157,7 @@ export const TwoColumnsPage = (props) => {
                     position: "absolute",
                     width: `${props.twoColumnsPage.itemsStyleValues.img2?.width}px`,
                     paddingRight: "30px",
-                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img3?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img3?.translateX * 1.5}px`} 50%`,
+                    transformOrigin: `${props.twoColumnsPage.itemsStyleValues.img2?.translateX === 0 ? '50%' : `${props.twoColumnsPage.itemsStyleValues.img2?.translateX * 1.5}px`} 50%`,
                     transform: `scale(${props.twoColumnsPage.itemsStyleValues.img2?.scale})
                                 translate(${props.twoColumnsPage.itemsStyleValues.img2?.translateX}px, ${props.twoColumnsPage.itemsStyleValues.img2?.translateY}px)`,
                     transition: `transform ${props.twoColumnsPage.itemsStyleValues.img2?.transition}s ease-out`,

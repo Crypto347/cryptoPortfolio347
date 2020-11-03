@@ -848,7 +848,7 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     dispatch(Actions.initItemsStylesStateForThreeColumnsPage(itemsState));
                 }else{
                     // let lengthOfItemsStyleValuesObj = Object.keys(itemsStyleValuesObj).length;
-                    itemsState = Utility.getArrayOfEmptyVal(4);
+                    itemsState = Utility.getArrayOfEmptyVal(6);
                     // if(lengthOfItemsStyleValuesObj + 4 <= json.threeColumnsData.length){
                     //     itemsState.splice(-(lengthOfItemsStyleValuesObj - json.threeColumnsData.length + 4), lengthOfItemsStyleValuesObj - json.threeColumnsData.length + 4)
                     // }
@@ -862,44 +862,62 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                     let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(json.threeColumnsData, category);
                     let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements("threeColumnsPage", arrayOfAppearAndDisapperElements, screenWidth);
                     
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4-3}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-5}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: addedElemntsArray[0].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4-3}`)?.translateX,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6-3}`)?.translateX,
                         translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4-3}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4-2}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-4}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4-2}`)?.translateX,
-                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4-2}`)?.translateY,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6-2}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6-2}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4-1}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-3}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4-1}`)?.translateX,
-                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4-1}`)?.translateY,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-2}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
-                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*4}`)?.translateX,
-                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*4}`)?.translateY,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateY,
+                        transition: 0.45,
+                        zIndex: 0,
+                        rendered: true
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-1}`,{
+                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                        scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateY,
+                        transition: 0.45,
+                        zIndex: 0,
+                        rendered: true
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6}`,{
+                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                        scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
+                        translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateX,
+                        translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateY,
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
                 }else if(step > 1 && category === "showAll"){
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4-3}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-5}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
                         translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "atTheBeginning"),
@@ -908,16 +926,25 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                         zIndex: 0,
                         rendered: true
                     }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4-2}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-4}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "secondColumn"),
                         translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "oddRow"),
                         transition: 0.45,
                         zIndex: 0,
                         rendered: true
                     }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4-1}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-3}`,{
+                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                        scale: 1,
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "thirdColumn"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "oddRow"),
+                        transition: 0.45,
+                        zIndex: 0,
+                        rendered: true
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-2}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
                         translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "atTheBeginning"),
@@ -926,10 +953,19 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                         zIndex: 0,
                         rendered: true
                     }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*4}`,{
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-1}`,{
                         width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
                         scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length),
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "secondColumn"),
+                        translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "evenRow"),
+                        transition: 0.45,
+                        zIndex: 0,
+                        rendered: true
+                    }));
+                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6}`,{
+                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                        scale: 1,
+                        translateX: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "X", json.threeColumnsData.length, "thirdColumn"),
                         translateY: Utility.calcTranslateCoordinates("threeColumnsPage", screenWidth, "Y", json.threeColumnsData.length, "evenRow"),
                         transition: 0.45,
                         zIndex: 0,
