@@ -373,13 +373,13 @@ const calculateTranslateYForThreeColumnsPageSmallScreen = (page, i, screenWidth)
             return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 12:
         case 13:
-            return 3 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 6 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 14:
         case 15:
-            return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 7 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         case 16:
         case 17:
-            return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 8 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }
