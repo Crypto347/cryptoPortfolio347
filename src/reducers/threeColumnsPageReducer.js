@@ -25,7 +25,8 @@ export const initialState = {
     categories: [],
     itemsStyleValues: {},
     arrayOfDisappearAndAppearElements: [],
-    loadMoreStep: 1
+    loadMoreStep: 1,
+    itemsTopPosition: [] 
 }
 
 const fetchThreeColumnsPageBegin = (state, action) => {
@@ -350,9 +351,20 @@ const initItemsStylesStateForThreeColumnsPage = (state, action) => {
         Object.assign(updatedItemsStyleValues, {[`img${i + 1}`]: setObj});
     })
     console.log(updatedItemsStyleValues)
+
+    let updatedItemsTopPosition = [];
+    updatedItemsTopPosition = action.arr.map((el, i) => {
+        return {
+            id: `img${i + 1}`,
+            key: state.items[i].key,
+            topPosition: 0
+        }
+    })
+    
     return {
         ...state,
-        itemsStyleValues: updatedItemsStyleValues
+        itemsStyleValues: updatedItemsStyleValues,
+        itemsTopPosition: updatedItemsTopPosition
     };
 }
 
@@ -370,13 +382,23 @@ const addMoreItemsStylesStateForThreeColumnsPage = (state, action) => {
             rendered: true
         }
         Object.assign(moreItemsStyleValues, {[`img${Object.keys(state.itemsStyleValues).length + i + 1}`]: setObj});
-    })
+    });
     console.log(moreItemsStyleValues);
     updatedItemsStyleValues = {...state.itemsStyleValues, ...moreItemsStyleValues}
  
+    let updatedItemsTopPosition = [...state.itemsTopPosition];
+    action.arr.map((el, i) => {
+        updatedItemsTopPosition.push({
+            id: `img${i + 1}`,
+            key: state.items[i].key,
+            topPosition: 0
+        })
+    });
+    
     return {
         ...state,
-        itemsStyleValues: updatedItemsStyleValues
+        itemsStyleValues: updatedItemsStyleValues,
+        itemsTopPosition: updatedItemsTopPosition
     };
 }
  

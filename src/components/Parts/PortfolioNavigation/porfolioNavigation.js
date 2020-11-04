@@ -291,6 +291,8 @@ export const PorfolioNavigation = (props) => {
                 return [...props.fiveColumnsWidePage.items];
             case 'twoColumnsPage':
                 return [...props.twoColumnsPage.items];
+            case 'threeColumnsPage':
+                return [...props.threeColumnsPage.items];
             default:
                 return [...props.portfolioGalleryPage.items];
         }
@@ -512,6 +514,15 @@ export const PorfolioNavigation = (props) => {
                     window.open(`/crypto-portfolio/two-columns`, "_blank");
                 }
                 break;
+            case 'threeColumnsPage':
+                if(e.button !== 1){
+                    // Follow the link to the next page on left mouse click
+                    props.history.push(`/crypto-portfolio/three-columns`);
+                }else{
+                    // Open the link in a new window on scroll wheel click
+                    window.open(`/crypto-portfolio/three-columns`, "_blank");
+                }
+                break;
             default:
                 if(e.button !== 1){
                     // Follow the link to the next page on left mouse click
@@ -657,6 +668,7 @@ export default connect(
             fourColumnsWidePage: Selectors.getFourColumnsWidePageState(state),
             fiveColumnsWidePage: Selectors.getFiveColumnsWidePageState(state),
             twoColumnsPage: Selectors.getTwoColumnsPageState(state),
+            threeColumnsPage: Selectors.getThreeColumnsPageState(state),
             bigImagesPortfolio: Selectors.getBigImagesPortfolioState(state),
             bigSliderPortfolio: Selectors.getBigSliderPortfolioState(state),
             galleryPortfolio: Selectors.getGalleryPortfolioState(state),
@@ -687,6 +699,7 @@ export default connect(
             fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
             fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
+            fetchThreeColumnsPage: bindActionCreators(Services.fetchThreeColumnsPage, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
             portfolioNavigationOnClickStart: bindActionCreators(Actions.portfolioNavigationOnClickStart, dispatch),
         };

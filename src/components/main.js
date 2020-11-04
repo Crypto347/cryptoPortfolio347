@@ -129,7 +129,6 @@ export const Main = (props) => {
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
             console.log("activateMenuItem", pathOfIds);
-
             // Close photoViewer for all pages
             props.photoViewerOpen("all", false, []);
         });

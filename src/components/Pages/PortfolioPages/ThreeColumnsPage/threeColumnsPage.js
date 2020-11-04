@@ -105,15 +105,16 @@ export const ThreeColumnsPage = (props) => {
         }
 
         // Return to the part of the screen where the link to the selected item is located
-
-        let timeout = setTimeout(() => {
-            if(!props.threeColumnsPage.loading && !props.threeColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
-                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                window.scrollTo(0, itemOffsetTop - 30);
-            }else{
-                window.scrollTo(0, 0);
-            }
-        }, 2);
+        
+        // let timeout = setTimeout(() => {
+        //     if(!props.threeColumnsPage.loading && !props.threeColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
+        //         let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).getBoundingClientRect().top : 0;
+        //     window.scrollTo(0, 1000);
+        //     debugger
+        //     }else{
+        //         window.scrollTo(0, 0);
+        //     }
+        // }, 200);
 
         if(props.threeColumnsPage.categories.length !== 0){
             
@@ -147,7 +148,7 @@ export const ThreeColumnsPage = (props) => {
         return () => {
             // Cleaning the unmounted component
 
-            clearTimeout(timeout);
+            // clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
@@ -434,6 +435,7 @@ export const ThreeColumnsPage = (props) => {
     const setImagesState = (opt, elementToUpdate, action, arrayOfDisappearAndAppearElements) => {
         if(opt === "categoryFromHeaderOnClick"){
             // Set images state according to the selected category
+
             let page = size.width > 734 ? "threeColumnsPage" : "threeColumnsPageSmallScreen";
             let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements(page, arrayOfDisappearAndAppearElements, size.width);
             let translateCoordinatesObj = updatedTranslateCoordinates.find(item => item.id === elementToUpdate);

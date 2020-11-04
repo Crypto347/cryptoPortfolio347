@@ -972,62 +972,63 @@ export function fetchThreeColumnsPage(step, category, screenWidth, numOfElelment
                             zIndex: 0,
                             rendered: true
                         }));
-                    }else if(screenWidth <= 734)
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-5}`,{
-                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
-                        scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-6, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-6),
-                        transition: 0.45,
-                        zIndex: 0,
-                        rendered: true
-                    }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-4}`,{
-                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
-                        scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-5),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-5),
-                        transition: 0.45,
-                        zIndex: 0,
-                        rendered: true
-                    }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-3}`,{
-                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
-                        scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-4, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-4),
-                        transition: 0.45,
-                        zIndex: 0,
-                        rendered: true
-                    }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-2}`,{
-                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
-                        scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-3),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-3),
-                        transition: 0.45,
-                        zIndex: 0,
-                        rendered: true
-                    }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-1}`,{
-                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
-                        scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-2, "atTheBeginning"),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-2),
-                        transition: 0.45,
-                        zIndex: 0,
-                        rendered: true
-                    }));
-                    dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6}`,{
-                        width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
-                        scale: 1,
-                        translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-1),
-                        translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-1),
-                        transition: 0.45,
-                        zIndex: 0,
-                        rendered: true
-                    }));
-                }
+                    }else if(screenWidth <= 734){
+                        dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-5}`,{
+                            width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                            scale: 1,
+                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-6, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-6),
+                            transition: 0.45,
+                            zIndex: 0,
+                            rendered: true
+                        }));
+                        dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-4}`,{
+                            width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                            scale: 1,
+                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-5),
+                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-5),
+                            transition: 0.45,
+                            zIndex: 0,
+                            rendered: true
+                        }));
+                        dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-3}`,{
+                            width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                            scale: 1,
+                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-4, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-4),
+                            transition: 0.45,
+                            zIndex: 0,
+                            rendered: true
+                        }));
+                        dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-2}`,{
+                            width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                            scale: 1,
+                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-3),
+                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-3),
+                            transition: 0.45,
+                            zIndex: 0,
+                            rendered: true
+                        }));
+                        dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6-1}`,{
+                            width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                            scale: 1,
+                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-2, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-2),
+                            transition: 0.45,
+                            zIndex: 0,
+                            rendered: true
+                        }));
+                        dispatch(Actions.updateItemsStyleValuesThreeColumnsPage(`img${step*6}`,{
+                            width: Utility.setWidthOfImage("threeColumnsPage", screenWidth),
+                            scale: 1,
+                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*6-1),
+                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*6-1),
+                            transition: 0.45,
+                            zIndex: 0,
+                            rendered: true
+                        }));
+                    }
+                }  
                 // return json;
             })
             .catch(error => {
