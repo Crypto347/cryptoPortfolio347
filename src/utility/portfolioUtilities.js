@@ -156,8 +156,10 @@ export const setWidthOfImage = (page, screenWidth, opt) => {
                 width = 250;
             }else if(screenWidth <= 890 && screenWidth > 734){
                 width = 200;
-            }else if(screenWidth <= 734){
+            }else if(screenWidth <= 734 && screenWidth > 600){
                 width = 250;
+            }else if(screenWidth <= 600){
+                width = 200;
             }
             break;
     }

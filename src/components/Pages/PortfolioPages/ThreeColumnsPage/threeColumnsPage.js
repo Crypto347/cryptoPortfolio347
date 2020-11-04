@@ -1587,8 +1587,11 @@ export const ThreeColumnsPage = (props) => {
         if(size.width <= 890 && size.width > 734){
             return 660;
         }
-        if(size.width <= 734){
+        if(size.width <= 734 && size.width > 600){
             return 530;
+        }
+        if(size.width <= 600){
+            return 430;
         }
     }
 
