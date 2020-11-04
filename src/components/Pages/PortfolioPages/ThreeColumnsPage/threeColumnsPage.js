@@ -452,6 +452,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img1", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img1",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -462,6 +463,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img1", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 2:
@@ -475,6 +477,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img2", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img2",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -485,6 +488,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img2", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 3:
@@ -498,6 +502,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img3", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img3",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -508,6 +513,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img3", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 4:
@@ -521,6 +527,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img4", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img4",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -531,6 +538,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img4", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 5:
@@ -544,6 +552,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img5", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img5",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -554,6 +563,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img5", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 6:
@@ -567,6 +577,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img6", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img6",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -577,6 +588,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img6", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 7:
@@ -590,6 +602,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img7", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img7",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -600,6 +613,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img7", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 8:
@@ -613,6 +627,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img8", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img8",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -623,6 +638,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img8", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 9:
@@ -636,6 +652,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img9", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img9",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -646,6 +663,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img9", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 10:
@@ -659,6 +677,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img10", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img10",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -669,6 +688,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img10", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 11:
@@ -682,6 +702,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img11", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img11",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -692,6 +713,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img11", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 12:
@@ -705,6 +727,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img12", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img12",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -715,6 +738,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img12", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 13:
@@ -728,6 +752,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img13", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img13",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -738,6 +763,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img13", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 14:
@@ -751,6 +777,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img14", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img14",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -761,6 +788,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img14", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 15:
@@ -774,6 +802,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img15", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img15",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -784,6 +813,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img15", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 16:
@@ -797,6 +827,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img16", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img16",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -807,6 +838,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img16", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 17:
@@ -820,6 +852,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img17", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img17",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -830,6 +863,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img17", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 18:
@@ -843,6 +877,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img18", -1);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesThreeColumnsPage("img18",{
                             width: Utility.setWidthOfImage("threeColumnsPage", size.width),
@@ -854,6 +889,7 @@ export const ThreeColumnsPage = (props) => {
                             rendered: true
                         });
                     }
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img18", translateCoordinatesObj.translateY);
                     return;
             }
         }else{
@@ -870,6 +906,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img1", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 0, "atTheBeginning"));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img2?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img2",{
@@ -881,6 +918,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img2", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 1, "atTheBeginning"));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img3?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img3",{
@@ -892,6 +930,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img3", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 2, "atTheBeginning"));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img4?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img4",{
@@ -903,6 +942,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img4", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 3));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img5?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img5",{
@@ -914,6 +954,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img5", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 4));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img6?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img6",{
@@ -925,6 +966,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img6", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 5));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img7?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img7",{
@@ -936,6 +978,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img7", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 6));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img8?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img8",{
@@ -947,6 +990,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img8", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 7));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img9?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img9",{
@@ -958,6 +1002,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img9", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 8));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img10?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img10",{
@@ -969,6 +1014,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img10", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 9));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img11?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img11",{
@@ -980,6 +1026,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img11", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 10));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img12?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img12",{
@@ -991,6 +1038,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img12", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 11));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img13?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img13",{
@@ -1002,6 +1050,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img13", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 12));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img14?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img14",{
@@ -1013,6 +1062,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img14", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 13));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img15?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img15",{
@@ -1024,6 +1074,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img15", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 14));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img16?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img16",{
@@ -1035,6 +1086,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img16", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 15));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img17?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img17",{
@@ -1046,6 +1098,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img17", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 16));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img18?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img18",{
@@ -1057,6 +1110,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img18", Utility.calcTranslateCoordinates("threeColumnsPage", size.width, "Y", 17));
                 }
             }else if(size.width <= 734){
                 if(props.threeColumnsPage.itemsStyleValues.img1?.rendered){
@@ -1069,6 +1123,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img1", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 0, "atTheBeginning"));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img2?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img2",{
@@ -1080,6 +1135,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img2", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 1, "atTheBeginning"));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img3?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img3",{
@@ -1091,6 +1147,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img3", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 2));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img4?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img4",{
@@ -1102,6 +1159,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img4", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 3));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img5?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img5",{
@@ -1113,6 +1171,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img5", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 4));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img6?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img6",{
@@ -1124,6 +1183,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img6", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 5));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img7?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img7",{
@@ -1135,6 +1195,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img7", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 6));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img8?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img8",{
@@ -1146,6 +1207,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img8", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 7));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img9?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img9",{
@@ -1157,6 +1219,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img9", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 8));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img10?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img10",{
@@ -1168,6 +1231,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img10", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 9));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img11?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img11",{
@@ -1179,6 +1243,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img11", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 10));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img12?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img12",{
@@ -1190,6 +1255,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img12", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 11));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img13?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img13",{
@@ -1201,6 +1267,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img13", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 12));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img14?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img14",{
@@ -1212,6 +1279,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img14", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 13));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img15?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img15",{
@@ -1223,6 +1291,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img15", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 14));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img16?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img16",{
@@ -1234,6 +1303,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img16", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 15));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img17?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img17",{
@@ -1245,6 +1315,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img17", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 16));
                 }
                 if(props.threeColumnsPage.itemsStyleValues.img18?.rendered){
                     props.updateItemsStyleValuesThreeColumnsPage("img18",{
@@ -1256,6 +1327,7 @@ export const ThreeColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
+                    props.setTopPositionOfTheItemForThreeColumnsPage("img18", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 17));
                 }
             }
             
@@ -1783,6 +1855,7 @@ export default connect(
             updateItemsStyleValuesThreeColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesThreeColumnsPage, dispatch),
             setActivityOfThreeColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfThreeColumnsPageCategoriesFromHeader, dispatch),
             disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage, dispatch),
+            setTopPositionOfTheItemForThreeColumnsPage: bindActionCreators(Actions.setTopPositionOfTheItemForThreeColumnsPage, dispatch),
         };
     }
 )(ThreeColumnsPage);

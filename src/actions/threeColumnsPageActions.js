@@ -103,3 +103,11 @@ export function setLoadMoreStepThreeColumnsPage(step) {
         step: step
     };
 };
+
+export function setTopPositionOfTheItemForThreeColumnsPage(id, val) {
+    return { 
+        type: actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_THREE_COLUMNS_PAGE,
+        id: id,
+        val: val
+    };
+};

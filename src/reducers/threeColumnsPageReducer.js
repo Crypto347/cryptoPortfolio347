@@ -389,7 +389,7 @@ const addMoreItemsStylesStateForThreeColumnsPage = (state, action) => {
     let updatedItemsTopPosition = [...state.itemsTopPosition];
     action.arr.map((el, i) => {
         updatedItemsTopPosition.push({
-            id: `img${i + 1}`,
+            id: `img${state.itemsTopPosition.length + i + 1}`,
             key: state.items[i].key,
             topPosition: 0
         })
@@ -408,12 +408,28 @@ const disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage = (st
         arrayOfDisappearAndAppearElements: action.arr
     };
 }
+
 const setLoadMoreStepThreeColumnsPage = (state, action) => {
     return {
         ...state,
         loadMoreStep: action.step
     };
 }
+
+const setTopPositionOfTheItemForThreeColumnsPage = (state, action) => {
+    let updatedItemsTopPosition = [...state.itemsTopPosition];
+
+    let obj = {...updatedItemsTopPosition.find(item => item.id === action.id), topPosition: action.val};
+    let objIndex = updatedItemsTopPosition.findIndex(item => item.id === action.id);
+
+    updatedItemsTopPosition.splice(objIndex, 1, obj);
+
+    return {
+        ...state,
+        itemsTopPosition: updatedItemsTopPosition
+    };
+}
+
 
 const threeColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -447,6 +463,8 @@ const threeColumnsPageReducer = (state = initialState, action) => {
             return disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage(state, action);
         case actionTypes.SET_LOAD_MORE_STEP_THREE_COLUMNS_PAGE:
             return setLoadMoreStepThreeColumnsPage(state, action);
+        case actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_THREE_COLUMNS_PAGE:
+            return setTopPositionOfTheItemForThreeColumnsPage(state, action);
         default: 
             return state;
     }
