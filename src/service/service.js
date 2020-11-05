@@ -496,6 +496,8 @@ export function fetchStoneWallWidePage() {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchStoneWallWidePageSuccess(json));
+                let itemsState = Utility.getArrayOfEmptyVal(json.length);
+                dispatch(Actions.initItemsStylesStateForStoneWallWidePage(itemsState));
                 // return json;
             })
             .catch(error => {

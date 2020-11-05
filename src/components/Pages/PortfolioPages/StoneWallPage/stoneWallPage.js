@@ -110,7 +110,6 @@ export const StoneWallPage = (props) => {
             }
         }, 2);
 
-
         // Set images width, height, transition and translate coordinates
 
         setImagesState();
@@ -809,7 +808,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             updateItemsStyleValuesStoneWallPage: bindActionCreators(Actions.updateItemsStyleValuesStoneWallPage, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setTopPositionOfTheItemForStoneWallPage: bindActionCreators(Actions.setTopPositionOfTheItemForStoneWallPage, dispatch),
+            setTopPositionOfTheItemForStoneWallPage: bindActionCreators(Actions.setTopPositionOfTheItemForStoneWallPage, dispatch)
         };
     }
 )(StoneWallPage);

@@ -35,3 +35,18 @@ export function updateItemsStyleValuesStoneWallWidePage(image, obj) {
         obj: obj
     };
 };
+
+export function initItemsStylesStateForStoneWallWidePage(arr) {
+    return { 
+        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_STONE_WALL_WIDE_PAGE,
+        arr: arr
+    };
+};
+
+export function setTopPositionOfTheItemForStoneWallWidePage(id, val) {
+    return { 
+        type: actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_STONE_WALL_WIDE_PAGE,
+        id: id,
+        val: val
+    };
+};

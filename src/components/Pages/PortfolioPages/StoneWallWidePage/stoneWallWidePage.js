@@ -99,10 +99,16 @@ export const StoneWallWidePage = (props) => {
             props.fetchStoneWallWidePage();
         }
 
-        // Scroll to the top of the screen
+        // Return to the part of the screen where the link to the selected item is located (items in absolute position)
 
         let timeout = setTimeout(() => {
-            window.scrollTo(0, 0);
+            if(!props.stoneWallWidePage.loading && !props.stoneWallWidePage.error && props.historyPopFromItem !== "scrollToTop"){
+                let itemsWrapper = document.getElementById("stoneWallWidePageItems").offsetTop;
+                let itemTopPosition = props.stoneWallWidePage.itemsTopPosition.find(item => item.key === props.historyPopFromItem).topPosition;
+                window.scrollTo(0, itemTopPosition + itemsWrapper - 30);
+            }else{
+                window.scrollTo(0, 0);
+            }
         }, 2);
 
         // Set images width, height, transition and translate coordinates
@@ -133,7 +139,7 @@ export const StoneWallWidePage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.stoneWallWidePage.itemsStyleValues.img1?.rendered]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -143,76 +149,96 @@ export const StoneWallWidePage = (props) => {
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
 
-        if(props.stoneWallWidePage.itemsStyleValues.img1.transition === 0 ||
-            props.stoneWallWidePage.itemsStyleValues.img2.transition === 0 ||
-            props.stoneWallWidePage.itemsStyleValues.img3.transition === 0 ||
-            props.stoneWallWidePage.itemsStyleValues.img4.transition === 0 ||
-            props.stoneWallWidePage.itemsStyleValues.img5.transition === 0 ||
-            props.stoneWallWidePage.itemsStyleValues.img6.transition === 0 ||
-            props.stoneWallWidePage.itemsStyleValues.img7.transition === 0) {           
+        if(props.stoneWallWidePage.itemsStyleValues.img1.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img1",{
                 ...props.stoneWallWidePage.itemsStyleValues.img1,
                 transition: 0.45
             });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img2.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img2",{
                 ...props.stoneWallWidePage.itemsStyleValues.img2,
                 transition: 0.45
             });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img3.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img3",{
                 ...props.stoneWallWidePage.itemsStyleValues.img3,
                 transition: 0.45
             });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img4.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img4",{
                 ...props.stoneWallWidePage.itemsStyleValues.img4,
                 transition: 0.45
             });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img5.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img5",{
                 ...props.stoneWallWidePage.itemsStyleValues.img5,
                 transition: 0.45
             });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img6.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img6",{
                 ...props.stoneWallWidePage.itemsStyleValues.img6,
                 transition: 0.45
             });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img7.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img7",{
                 ...props.stoneWallWidePage.itemsStyleValues.img7,
                 transition: 0.45
             });
         }
-    }, [props.stoneWallWidePage.itemsStyleValues.img1.transition,props.stoneWallWidePage.itemsStyleValues.img2.transition,
-        props.stoneWallWidePage.itemsStyleValues.img3.transition,props.stoneWallWidePage.itemsStyleValues.img4.transition,
-        props.stoneWallWidePage.itemsStyleValues.img5.transition,props.stoneWallWidePage.itemsStyleValues.img6.transition,
-        props.stoneWallWidePage.itemsStyleValues.img7.transition])
+    }, [props.stoneWallWidePage.itemsStyleValues.img1?.transition,props.stoneWallWidePage.itemsStyleValues.img2?.transition,
+        props.stoneWallWidePage.itemsStyleValues.img3?.transition,props.stoneWallWidePage.itemsStyleValues.img4?.transition,
+        props.stoneWallWidePage.itemsStyleValues.img5?.transition,props.stoneWallWidePage.itemsStyleValues.img6?.transition,
+        props.stoneWallWidePage.itemsStyleValues.img7?.transition])
 
     const smoothTransition = () => {
-        props.updateItemsStyleValuesStoneWallWidePage("img1",{
-            ...props.stoneWallWidePage.itemsStyleValues.img1,
-            transition: 0
-        });
-        props.updateItemsStyleValuesStoneWallWidePage("img2",{
-            ...props.stoneWallWidePage.itemsStyleValues.img2,
-            transition: 0
-        });
-        props.updateItemsStyleValuesStoneWallWidePage("img3",{
-            ...props.stoneWallWidePage.itemsStyleValues.img3,
-            transition: 0
-        });
-        props.updateItemsStyleValuesStoneWallWidePage("img4",{
-            ...props.stoneWallWidePage.itemsStyleValues.img4,
-            transition: 0
-        });
-        props.updateItemsStyleValuesStoneWallWidePage("img5",{
-            ...props.stoneWallWidePage.itemsStyleValues.img5,
-            transition: 0
-        });
-        props.updateItemsStyleValuesStoneWallWidePage("img6",{
-            ...props.stoneWallWidePage.itemsStyleValues.img6,
-            transition: 0
-        });
-        props.updateItemsStyleValuesStoneWallWidePage("img7",{
-            ...props.stoneWallWidePage.itemsStyleValues.img7,
-            transition: 0
-        });
+        if(props.stoneWallWidePage.itemsStyleValues.img1){
+            props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                ...props.stoneWallWidePage.itemsStyleValues.img1,
+                transition: 0
+            });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img2){
+            props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                ...props.stoneWallWidePage.itemsStyleValues.img2,
+                transition: 0
+            });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img3){
+            props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                ...props.stoneWallWidePage.itemsStyleValues.img3,
+                transition: 0
+            });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img4){
+            props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                ...props.stoneWallWidePage.itemsStyleValues.img4,
+                transition: 0
+            });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img5){
+            props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                ...props.stoneWallWidePage.itemsStyleValues.img5,
+                transition: 0
+            });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img6){
+            props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                ...props.stoneWallWidePage.itemsStyleValues.img6,
+                transition: 0
+            });
+        }
+        if(props.stoneWallWidePage.itemsStyleValues.img7){
+            props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                ...props.stoneWallWidePage.itemsStyleValues.img7,
+                transition: 0
+            });
+        }
     }
 
     const handleResize = (e) => {
@@ -260,6 +286,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: 0,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img2",{
                 width: (stoneWallWideItemsWidth - 80)/4*2,
                 height: 0,
@@ -267,6 +295,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: 0,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img2", 0);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img3",{
                 width: (stoneWallWideItemsWidth - 80)/4,
                 height: 0,
@@ -274,6 +304,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: 0,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img3", 0);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img4",{
                 width: (stoneWallWideItemsWidth - 80)/4,
                 height: 0,
@@ -281,6 +313,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 80)/4 + 30,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img4", (stoneWallWideItemsWidth - 80)/4 + 30);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img5",{
                 width: (stoneWallWideItemsWidth - 80)/4,
                 height: 0,
@@ -288,20 +322,25 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 80)/4 + 40,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img5", (stoneWallWideItemsWidth - 80)/4 + 40);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img6",{
                 width: (stoneWallWideItemsWidth - 80)/4,
                 height: 0,
                 translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
-                translateY: (stoneWallWideItemsWidth - 80)/4 * 2 + 75,
+                translateY: (stoneWallWideItemsWidth - 80)/4*2 + 75,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img6", (stoneWallWideItemsWidth - 80)/4*2 + 75);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img7",{
                 width: (stoneWallWideItemsWidth - 80)/4*2,
                 height: 0,
                 translateX: (stoneWallWideItemsWidth - 80)/4*2 + 80,
-                translateY: (stoneWallWideItemsWidth - 80)/4 * 2 + 75,
+                translateY: (stoneWallWideItemsWidth - 80)/4*2 + 75,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img7", (stoneWallWideItemsWidth - 80)/4*2 + 75);
         }
         if(size.width <= 1020 && size.width > 700){
             props.updateItemsStyleValuesStoneWallWidePage("img1",{
@@ -311,6 +350,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: 0,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img2",{
                 width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
                 height: 0,
@@ -318,6 +359,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 40)/2 + 40,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img2", (stoneWallWideItemsWidth - 40)/2 + 40);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img3",{
                 width: (stoneWallWideItemsWidth - 40)/2,
                 height: 0,
@@ -325,6 +368,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: 0,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img3", 0);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img4",{
                 width: (stoneWallWideItemsWidth - 40)/2,
                 height: 0,
@@ -332,6 +377,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 40)/2*3 + 190,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img4", (stoneWallWideItemsWidth - 40)/2*3 + 190);
+
             props.updateItemsStyleValuesStoneWallWidePage("img5",{
                 width: (stoneWallWideItemsWidth - 40)/2,
                 height: 0,
@@ -339,6 +386,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 40)/2*3 + 190,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img5", (stoneWallWideItemsWidth - 40)/2*3 + 190);
+
             props.updateItemsStyleValuesStoneWallWidePage("img6",{
                 width: (stoneWallWideItemsWidth - 40)/2,
                 height: 0,
@@ -346,6 +395,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 40)/2*4 + 255,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img6", (stoneWallWideItemsWidth - 40)/2*4 + 255);
+
             props.updateItemsStyleValuesStoneWallWidePage("img7",{
                 width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
                 height: 0,
@@ -353,6 +404,7 @@ export const StoneWallWidePage = (props) => {
                 translateY: (stoneWallWideItemsWidth - 40)/2*5 + 295,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img7", (stoneWallWideItemsWidth - 40)/2*5 + 295);
         }
         if(size.width <= 700){
             props.updateItemsStyleValuesStoneWallWidePage("img1",{
@@ -362,6 +414,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: 0,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img2",{
                 width: stoneWallWideItemsWidth,
                 height: 0,
@@ -369,6 +423,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: stoneWallWideItemsWidth + 40,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img2", stoneWallWideItemsWidth + 40);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img3",{
                 width: stoneWallWideItemsWidth,
                 height: 0,
@@ -376,6 +432,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: stoneWallWideItemsWidth*2 + 120,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img3", stoneWallWideItemsWidth*2 + 120);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img4",{
                 width: stoneWallWideItemsWidth,
                 height: 0,
@@ -383,6 +441,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: stoneWallWideItemsWidth*3 + 160,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img4", stoneWallWideItemsWidth*3 + 160);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img5",{
                 width: stoneWallWideItemsWidth,
                 height: 0,
@@ -390,6 +450,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: stoneWallWideItemsWidth*5 + 280,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img5", stoneWallWideItemsWidth*5 + 280);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img6",{
                 width: stoneWallWideItemsWidth,
                 height: 0,
@@ -397,6 +459,8 @@ export const StoneWallWidePage = (props) => {
                 translateY: stoneWallWideItemsWidth*6 + 320,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img6", stoneWallWideItemsWidth*6 + 320);
+            
             props.updateItemsStyleValuesStoneWallWidePage("img7",{
                 width: stoneWallWideItemsWidth,
                 height: 0,
@@ -404,6 +468,7 @@ export const StoneWallWidePage = (props) => {
                 translateY: stoneWallWideItemsWidth*7 + 360,
                 transition: 0
             });
+            props.setTopPositionOfTheItemForStoneWallWidePage("img7", stoneWallWideItemsWidth*7 + 360);
         }
     }
 
@@ -448,49 +513,49 @@ export const StoneWallWidePage = (props) => {
             case 1:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img1.width}`
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img1?.width}`
                 };
             case 2:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img2.width}`,
-                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img2.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img2.translateY}px)`,
-                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img2.transition}s ease-out`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img2?.width}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img2?.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img2?.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img2?.transition}s ease-out`,
                 };
             case 3:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img3.width}`,
-                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img3.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img3.translateY}px)`,
-                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img3.transition}s ease-out`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img3?.width}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img3?.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img3?.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img3?.transition}s ease-out`,
                 };
             case 4:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img4.width}`,
-                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img4.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img4.translateY}px)`,
-                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img4.transition}s ease-out`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img4?.width}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img4?.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img4?.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img4?.transition}s ease-out`,
                 };
             case 5:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img5.width}`,
-                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img5.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img5.translateY}px)`,
-                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img5.transition}s ease-out`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img5?.width}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img5?.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img5?.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img5?.transition}s ease-out`,
                 };
             case 6:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img6.width}`,
-                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img6.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img6.translateY}px)`,
-                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img6.transition}s ease-out`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img6?.width}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img6?.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img6?.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img6?.transition}s ease-out`,
                 };
             case 7:
                 return {
                     position: "absolute",
-                    width: `${props.stoneWallWidePage.itemsStyleValues.img7.width}`,
-                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img7.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img7.translateY}px)`,
-                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img7.transition}s ease-out`,
+                    width: `${props.stoneWallWidePage.itemsStyleValues.img7?.width}`,
+                    transform: `translate(${props.stoneWallWidePage.itemsStyleValues.img7?.translateX}px, ${props.stoneWallWidePage.itemsStyleValues.img7?.translateY}px)`,
+                    transition: `transform ${props.stoneWallWidePage.itemsStyleValues.img7?.transition}s ease-out`,
                 };
         }
     }
@@ -592,6 +657,7 @@ export default connect(
     (state) => {
         return {
             stoneWallWidePage: Selectors.getStoneWallWidePageState(state),
+            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
           
@@ -606,7 +672,8 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             updateItemsStyleValuesStoneWallWidePage: bindActionCreators(Actions.updateItemsStyleValuesStoneWallWidePage, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            setTopPositionOfTheItemForStoneWallWidePage: bindActionCreators(Actions.setTopPositionOfTheItemForStoneWallWidePage, dispatch)
         };
     }
 )(StoneWallWidePage);
