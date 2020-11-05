@@ -284,7 +284,7 @@ export const StoneWallPage = (props) => {
                     transition: 0,
                     rendered: true
                 });
-                props.setTopPositionOfTheItemForStoneWallPage("img3", 376.66);
+                props.setTopPositionOfTheItemForStoneWallPage("img3", 0);
             }
             if(props.stoneWallPage.itemsStyleValues.img4?.rendered){
                 props.updateItemsStyleValuesStoneWallPage("img4",{
