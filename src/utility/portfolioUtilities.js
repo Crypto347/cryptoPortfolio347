@@ -266,7 +266,6 @@ export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappea
             });
             break;
     }
-  
   return appearElementsArray;
 }
 

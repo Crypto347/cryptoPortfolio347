@@ -863,6 +863,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        console.log(translateCoordinatesObj)
                         props.setTopPositionOfTheItemForThreeColumnsPage("img17", translateCoordinatesObj.translateY);
                     }
                     return;
@@ -888,8 +889,8 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForThreeColumnsPage("img18", translateCoordinatesObj.translateY);
                     }
-                    props.setTopPositionOfTheItemForThreeColumnsPage("img18", translateCoordinatesObj.translateY);
                     return;
             }
         }else{
