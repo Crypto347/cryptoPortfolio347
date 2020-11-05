@@ -20,18 +20,18 @@ export function fetchStoneWallPageFailur(err) {
     };
 };
 
+export function initItemsStylesStateForStoneWallPage(arr) {
+    return { 
+        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_STONE_WALL_PAGE,
+        arr: arr
+    };
+};
+
 export function updateItemsStyleValuesStoneWallPage(image, obj) {
     return { 
         type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_STONE_WALL_PAGE,
         image: image,
         obj: obj
-    };
-};
-
-export function initItemsStylesStateForStoneWallPage(arr) {
-    return { 
-        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_STONE_WALL_PAGE,
-        arr: arr
     };
 };
 

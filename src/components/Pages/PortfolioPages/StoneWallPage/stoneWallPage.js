@@ -795,9 +795,9 @@ export default connect(
     (state) => {
         return {
             stoneWallPage: Selectors.getStoneWallPageState(state),
-            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
-            showBackToTop: Selectors.getShowBackToTopState(state),
+            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state)
         };
     },
     (dispatch) => {

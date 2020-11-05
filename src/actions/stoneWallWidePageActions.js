@@ -28,18 +28,18 @@ export function setStoneWallWidePageIsHoveringCategory(val, pathOfIds) {
     };
 };
 
+export function initItemsStylesStateForStoneWallWidePage(arr) {
+    return { 
+        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_STONE_WALL_WIDE_PAGE,
+        arr: arr
+    };
+};
+
 export function updateItemsStyleValuesStoneWallWidePage(image, obj) {
     return { 
         type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_STONE_WALL_WIDE_PAGE,
         image: image,
         obj: obj
-    };
-};
-
-export function initItemsStylesStateForStoneWallWidePage(arr) {
-    return { 
-        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_STONE_WALL_WIDE_PAGE,
-        arr: arr
     };
 };
 

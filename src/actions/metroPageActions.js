@@ -28,10 +28,25 @@ export function setMetroPageIsHoveringCategory(val, pathOfIds) {
     };
 };
 
+export function initItemsStylesStateForMetroPage(arr) {
+    return { 
+        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_METRO_PAGE,
+        arr: arr
+    };
+};
+
 export function updateItemsStyleValuesMetroPage(image, obj) {
     return { 
         type: actionTypes.UPDATED_ITEMS_STYLE_VALUES_METRO_PAGE,
         image: image,
         obj: obj
+    };
+};
+
+export function setTopPositionOfTheItemForMetroPage(id, val) {
+    return { 
+        type: actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_METRO_PAGE,
+        id: id,
+        val: val
     };
 };

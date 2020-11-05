@@ -516,6 +516,8 @@ export function fetchMetroPage() {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchMetroPageSuccess(json));
+                let itemsState = Utility.getArrayOfEmptyVal(json.length);
+                dispatch(Actions.initItemsStylesStateForMetroPage(itemsState));
                 // return json;
             })
             .catch(error => {
