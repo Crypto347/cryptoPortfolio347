@@ -25,7 +25,8 @@ export const initialState = {
     categories: [],
     itemsStyleValues: {},
     arrayOfDisappearAndAppearElements: [],
-    loadMoreStep: 1
+    loadMoreStep: 1,
+    itemsTopPosition: [] 
 }
 
 const fetchTwoColumnsPageBegin = (state, action) => {
@@ -349,10 +350,20 @@ const initItemsStylesStateForTwoColumnsPage = (state, action) => {
         }
         Object.assign(updatedItemsStyleValues, {[`img${i + 1}`]: setObj});
     })
-    console.log(updatedItemsStyleValues)
+
+    let updatedItemsTopPosition = [];
+    updatedItemsTopPosition = action.arr.map((el, i) => {
+        return {
+            id: `img${i + 1}`,
+            key: state.items[i].key,
+            topPosition: 0
+        }
+    })
+
     return {
         ...state,
-        itemsStyleValues: updatedItemsStyleValues
+        itemsStyleValues: updatedItemsStyleValues,
+        itemsTopPosition: updatedItemsTopPosition
     };
 }
 
@@ -371,12 +382,22 @@ const addMoreItemsStylesStateForTwoColumnsPage = (state, action) => {
         }
         Object.assign(moreItemsStyleValues, {[`img${Object.keys(state.itemsStyleValues).length + i + 1}`]: setObj});
     })
-    console.log(moreItemsStyleValues);
+    
     updatedItemsStyleValues = {...state.itemsStyleValues, ...moreItemsStyleValues}
  
+    let updatedItemsTopPosition = [...state.itemsTopPosition];
+    action.arr.map((el, i) => {
+        updatedItemsTopPosition.push({
+            id: `img${state.itemsTopPosition.length + i + 1}`,
+            key: state.items[state.itemsTopPosition.length + i].key,
+            topPosition: 0
+        })
+    });
+
     return {
         ...state,
-        itemsStyleValues: updatedItemsStyleValues
+        itemsStyleValues: updatedItemsStyleValues,
+        itemsTopPosition: updatedItemsTopPosition
     };
 }
  
@@ -390,6 +411,20 @@ const setLoadMoreStepTwoColumnsPage = (state, action) => {
     return {
         ...state,
         loadMoreStep: action.step
+    };
+}
+
+const setTopPositionOfTheItemForTwoColumnsPage = (state, action) => {
+    let updatedItemsTopPosition = [...state.itemsTopPosition];
+
+    let obj = {...updatedItemsTopPosition.find(item => item.id === action.id), topPosition: action.val};
+    let objIndex = updatedItemsTopPosition.findIndex(item => item.id === action.id);
+
+    updatedItemsTopPosition.splice(objIndex, 1, obj);
+
+    return {
+        ...state,
+        itemsTopPosition: updatedItemsTopPosition
     };
 }
 
@@ -425,6 +460,8 @@ const twoColumnsPageReducer = (state = initialState, action) => {
             return disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(state, action);
         case actionTypes.SET_LOAD_MORE_STEP_TWO_COLUMNS_PAGE:
             return setLoadMoreStepTwoColumnsPage(state, action);
+        case actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_TWO_COLUMNS_PAGE:
+            return setTopPositionOfTheItemForTwoColumnsPage(state, action);
         default: 
             return state;
     }

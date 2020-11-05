@@ -350,7 +350,6 @@ const initItemsStylesStateForThreeColumnsPage = (state, action) => {
         }
         Object.assign(updatedItemsStyleValues, {[`img${i + 1}`]: setObj});
     })
-    console.log(updatedItemsStyleValues)
 
     let updatedItemsTopPosition = [];
     updatedItemsTopPosition = action.arr.map((el, i) => {
@@ -383,7 +382,7 @@ const addMoreItemsStylesStateForThreeColumnsPage = (state, action) => {
         }
         Object.assign(moreItemsStyleValues, {[`img${Object.keys(state.itemsStyleValues).length + i + 1}`]: setObj});
     });
-    console.log(moreItemsStyleValues);
+    
     updatedItemsStyleValues = {...state.itemsStyleValues, ...moreItemsStyleValues}
  
     let updatedItemsTopPosition = [...state.itemsTopPosition];
@@ -429,7 +428,6 @@ const setTopPositionOfTheItemForThreeColumnsPage = (state, action) => {
         itemsTopPosition: updatedItemsTopPosition
     };
 }
-
 
 const threeColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){

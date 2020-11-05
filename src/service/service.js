@@ -702,6 +702,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4-3}`, updatedTranslateCoordinates.find(item => item.key === `img${step*4-3}`)?.translateY));
+
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
@@ -711,6 +713,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4-2}`, updatedTranslateCoordinates.find(item => item.key === `img${step*4-2}`)?.translateY));
+
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
@@ -720,6 +724,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4-1}`, updatedTranslateCoordinates.find(item => item.key === `img${step*4-1}`)?.translateY));
+
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
@@ -729,6 +735,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4}`, updatedTranslateCoordinates.find(item => item.key === `img${step*4}`)?.translateY));
+
                 }else if(step > 1 && category === "showAll"){
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-3}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
@@ -739,6 +747,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4-3}`, Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-4)));
+
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-2}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
@@ -748,6 +758,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4-2}`, Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-3)));
+
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4-1}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
@@ -757,6 +769,8 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4-1}`, Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-2)));
+
                     dispatch(Actions.updateItemsStyleValuesTwoColumnsPage(`img${step*4}`,{
                         width: Utility.setWidthOfImage("twoColumnsPage", screenWidth),
                         scale: 1,
@@ -766,6 +780,7 @@ export function fetchTwoColumnsPage(step, category, screenWidth, numOfElelmentsI
                         zIndex: 0,
                         rendered: true
                     }));
+                    dispatch(Actions.setTopPositionOfTheItemForTwoColumnsPage(`img${step*4}`, Utility.calcTranslateCoordinates("twoColumnsPage", screenWidth, "Y", step*4-1)));
                 }
                 // return json;
             })

@@ -104,4 +104,10 @@ export function setLoadMoreStepTwoColumnsPage(step) {
     };
 };
 
-
+export function setTopPositionOfTheItemForTwoColumnsPage(id, val) {
+    return { 
+        type: actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_TWO_COLUMNS_PAGE,
+        id: id,
+        val: val
+    };
+};

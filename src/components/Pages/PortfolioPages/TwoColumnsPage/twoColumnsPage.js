@@ -104,12 +104,13 @@ export const TwoColumnsPage = (props) => {
             props.setLoadMoreStepTwoColumnsPage(props.twoColumnsPage.loadMoreStep + 1);
         }
 
-        // Return to the part of the screen where the link to the selected item is located
+        // Return to the part of the screen where the link to the selected item is located (items in absolute position)
 
         let timeout = setTimeout(() => {
             if(!props.twoColumnsPage.loading && !props.twoColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
-                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                window.scrollTo(0, itemOffsetTop - 30);
+                let itemsWrapper = document.getElementById("twoColumnsPageItems").offsetTop;
+                let itemTopPosition = props.twoColumnsPage.itemsTopPosition.find(item => item.key === props.historyPopFromItem).topPosition;
+                window.scrollTo(0, itemTopPosition + itemsWrapper - 30);
             }else{
                 window.scrollTo(0, 0);
             }
@@ -450,6 +451,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img1", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img1",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -460,6 +462,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img1", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 2:
@@ -473,6 +476,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img2", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img2",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -483,6 +487,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img2", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 3:
@@ -496,6 +501,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img3", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img3",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -506,6 +512,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img3", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 4:
@@ -519,6 +526,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img4", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img4",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -529,6 +537,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img4", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 5:
@@ -542,6 +551,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img5", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img5",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -552,6 +562,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img5", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 6:
@@ -565,6 +576,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img6", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img6",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -575,6 +587,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img6", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 7:
@@ -588,6 +601,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img7", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img7",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -598,6 +612,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img7", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 8:
@@ -611,6 +626,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img8", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img8",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -621,6 +637,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img8", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 9:
@@ -634,6 +651,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img9", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img9",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -644,6 +662,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img9", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 10:
@@ -657,6 +676,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img10", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img10",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -667,6 +687,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img10", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 11:
@@ -680,6 +701,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img11", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img11",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -690,6 +712,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img11", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 12:
@@ -703,6 +726,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img12", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img12",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -713,6 +737,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img12", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 13:
@@ -726,6 +751,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img13", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img13",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -736,6 +762,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img13", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 14:
@@ -749,6 +776,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img14", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img14",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -759,6 +787,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img14", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 15:
@@ -772,6 +801,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img15", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img15",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -782,6 +812,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img15", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 16:
@@ -795,6 +826,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img16", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img16",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -805,6 +837,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img16", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 17:
@@ -818,6 +851,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img17", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img17",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -828,6 +862,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img17", translateCoordinatesObj.translateY);
                     }
                     return;
                 case 18:
@@ -841,6 +876,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 10,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img18", itemsStylesObj.translateY);
                     }else if(action === "appear"){
                         props.updateItemsStyleValuesTwoColumnsPage("img18",{
                             width: Utility.setWidthOfImage("twoColumnsPage", size.width),
@@ -851,6 +887,7 @@ export const TwoColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
+                        props.setTopPositionOfTheItemForTwoColumnsPage("img18", translateCoordinatesObj.translateY);
                     }
                     return;
             }
@@ -867,6 +904,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img1", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 0, "atTheBeginning"));
             }
             if(props.twoColumnsPage.itemsStyleValues.img2?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img2",{
@@ -878,6 +916,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img2", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 1, "atTheBeginning"));
             }
             if(props.twoColumnsPage.itemsStyleValues.img3?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img3",{
@@ -889,6 +928,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img3", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 2));
             }
             if(props.twoColumnsPage.itemsStyleValues.img4?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img4",{
@@ -900,6 +940,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img4", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 3));
             }
             if(props.twoColumnsPage.itemsStyleValues.img5?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img5",{
@@ -911,6 +952,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img5", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 4));
             }
             if(props.twoColumnsPage.itemsStyleValues.img6?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img6",{
@@ -922,6 +964,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img6", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 5));
             }
             if(props.twoColumnsPage.itemsStyleValues.img7?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img7",{
@@ -933,6 +976,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img7", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 6));
             }
             if(props.twoColumnsPage.itemsStyleValues.img8?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img8",{
@@ -944,6 +988,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img8", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 7));
             }
             if(props.twoColumnsPage.itemsStyleValues.img9?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img9",{
@@ -955,6 +1000,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img9", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 8));
             }
             if(props.twoColumnsPage.itemsStyleValues.img10?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img10",{
@@ -966,6 +1012,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img10", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 9));
             }
             if(props.twoColumnsPage.itemsStyleValues.img11?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img11",{
@@ -977,6 +1024,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img11", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 10));
             }
             if(props.twoColumnsPage.itemsStyleValues.img12?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img12",{
@@ -988,6 +1036,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img12", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 11));
             }
             if(props.twoColumnsPage.itemsStyleValues.img13?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img13",{
@@ -999,6 +1048,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img13", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 12));
             }
             if(props.twoColumnsPage.itemsStyleValues.img14?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img14",{
@@ -1010,6 +1060,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img14", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 13));
             }
             if(props.twoColumnsPage.itemsStyleValues.img15?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img15",{
@@ -1021,6 +1072,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img15", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 14));
             }
             if(props.twoColumnsPage.itemsStyleValues.img16?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img16",{
@@ -1032,6 +1084,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img16", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 15));
             }
             if(props.twoColumnsPage.itemsStyleValues.img17?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img17",{
@@ -1043,6 +1096,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img17", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 16));
             }
             if(props.twoColumnsPage.itemsStyleValues.img18?.rendered){
                 props.updateItemsStyleValuesTwoColumnsPage("img18",{
@@ -1054,6 +1108,7 @@ export const TwoColumnsPage = (props) => {
                     zIndex: 0,
                     rendered: true
                 });
+                props.setTopPositionOfTheItemForTwoColumnsPage("img18", Utility.calcTranslateCoordinates("twoColumnsPage", size.width, "Y", 17));
             }
         }
     }
@@ -1566,6 +1621,7 @@ export default connect(
             updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
             setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
             disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage, dispatch),
+            setTopPositionOfTheItemForTwoColumnsPage: bindActionCreators(Actions.setTopPositionOfTheItemForTwoColumnsPage, dispatch),
         };
     }
 )(TwoColumnsPage);
