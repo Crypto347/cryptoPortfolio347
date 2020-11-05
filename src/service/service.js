@@ -476,6 +476,8 @@ export function fetchStoneWallPage() {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchStoneWallPageSuccess(json));
+                let itemsState = Utility.getArrayOfEmptyVal(json.length);
+                dispatch(Actions.initItemsStylesStateForStoneWallPage(itemsState));
                 // return json;
             })
             .catch(error => {

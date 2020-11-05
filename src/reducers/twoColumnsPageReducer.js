@@ -26,7 +26,7 @@ export const initialState = {
     itemsStyleValues: {},
     arrayOfDisappearAndAppearElements: [],
     loadMoreStep: 1,
-    itemsTopPosition: [] 
+    itemsTopPosition: []
 }
 
 const fetchTwoColumnsPageBegin = (state, action) => {

@@ -27,3 +27,18 @@ export function updateItemsStyleValuesStoneWallPage(image, obj) {
         obj: obj
     };
 };
+
+export function initItemsStylesStateForStoneWallPage(arr) {
+    return { 
+        type: actionTypes.INIT_ITEMS_STYLES_STATE_FOR_STONE_WALL_PAGE,
+        arr: arr
+    };
+};
+
+export function setTopPositionOfTheItemForStoneWallPage(id, val) {
+    return { 
+        type: actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_STONE_WALL_PAGE,
+        id: id,
+        val: val
+    };
+};
