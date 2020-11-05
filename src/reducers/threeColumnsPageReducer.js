@@ -390,7 +390,7 @@ const addMoreItemsStylesStateForThreeColumnsPage = (state, action) => {
     action.arr.map((el, i) => {
         updatedItemsTopPosition.push({
             id: `img${state.itemsTopPosition.length + i + 1}`,
-            key: state.items[i].key,
+            key: state.items[state.itemsTopPosition.length + i].key,
             topPosition: 0
         })
     });

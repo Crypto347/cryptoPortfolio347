@@ -104,17 +104,17 @@ export const ThreeColumnsPage = (props) => {
             props.setLoadMoreStepThreeColumnsPage(props.threeColumnsPage.loadMoreStep + 1);
         }
 
-        // Return to the part of the screen where the link to the selected item is located
+        // Return to the part of the screen where the link to the selected item is located (items in absolute position)
         
-        // let timeout = setTimeout(() => {
-        //     if(!props.threeColumnsPage.loading && !props.threeColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
-        //         let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).getBoundingClientRect().top : 0;
-        //     window.scrollTo(0, 1000);
-        //     debugger
-        //     }else{
-        //         window.scrollTo(0, 0);
-        //     }
-        // }, 200);
+        let timeout = setTimeout(() => {
+            if(!props.threeColumnsPage.loading && !props.threeColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
+                let itemsWrapper = document.getElementById("threeColumnsPageItems").offsetTop;
+                let itemTopPosition = props.threeColumnsPage.itemsTopPosition.find(item => item.key === props.historyPopFromItem).topPosition;
+                window.scrollTo(0, itemTopPosition + itemsWrapper - 30);
+            }else{
+                window.scrollTo(0, 0);
+            }
+        }, 2);
 
         if(props.threeColumnsPage.categories.length !== 0){
             
@@ -148,7 +148,7 @@ export const ThreeColumnsPage = (props) => {
         return () => {
             // Cleaning the unmounted component
 
-            // clearTimeout(timeout);
+            clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
