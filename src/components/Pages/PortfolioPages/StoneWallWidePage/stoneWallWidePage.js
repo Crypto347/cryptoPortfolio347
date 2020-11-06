@@ -279,217 +279,241 @@ export const StoneWallWidePage = (props) => {
         // Set images state according to the screen width
 
         if(size.width > 1020){
-            props.updateItemsStyleValuesStoneWallWidePage("img1",{
-                width: (stoneWallWideItemsWidth - 80)/4,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img2",{
-                width: (stoneWallWideItemsWidth - 80)/4*2,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
-                translateY: 0,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img2", 0);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img3",{
-                width: (stoneWallWideItemsWidth - 80)/4,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 80)/4*3 + 80,
-                translateY: 0,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img3", 0);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img4",{
-                width: (stoneWallWideItemsWidth - 80)/4,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWideItemsWidth - 80)/4 + 30,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img4", (stoneWallWideItemsWidth - 80)/4 + 30);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img5",{
-                width: (stoneWallWideItemsWidth - 80)/4,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 80)/4*3 + 80,
-                translateY: (stoneWallWideItemsWidth - 80)/4 + 40,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img5", (stoneWallWideItemsWidth - 80)/4 + 40);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img6",{
-                width: (stoneWallWideItemsWidth - 80)/4,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
-                translateY: (stoneWallWideItemsWidth - 80)/4*2 + 75,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img6", (stoneWallWideItemsWidth - 80)/4*2 + 75);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img7",{
-                width: (stoneWallWideItemsWidth - 80)/4*2,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 80)/4*2 + 80,
-                translateY: (stoneWallWideItemsWidth - 80)/4*2 + 75,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img7", (stoneWallWideItemsWidth - 80)/4*2 + 75);
+            if(props.stoneWallWidePage.itemsStyleValues.img1?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                    width: (stoneWallWideItemsWidth - 80)/4,
+                    height: 0,
+                    translateX: 0,
+                    translateY: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img2?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                    width: (stoneWallWideItemsWidth - 80)/4*2,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
+                    translateY: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img2", 0);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img3?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                    width: (stoneWallWideItemsWidth - 80)/4,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 80)/4*3 + 80,
+                    translateY: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img3", 0);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img4?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                    width: (stoneWallWideItemsWidth - 80)/4,
+                    height: 0,
+                    translateX: 0,
+                    translateY: (stoneWallWideItemsWidth - 80)/4 + 30,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img4", (stoneWallWideItemsWidth - 80)/4 + 30);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img5?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                    width: (stoneWallWideItemsWidth - 80)/4,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 80)/4*3 + 80,
+                    translateY: (stoneWallWideItemsWidth - 80)/4 + 40,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img5", (stoneWallWideItemsWidth - 80)/4 + 40);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img6?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                    width: (stoneWallWideItemsWidth - 80)/4,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 80)/4 + 40,
+                    translateY: (stoneWallWideItemsWidth - 80)/4*2 + 75,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img6", (stoneWallWideItemsWidth - 80)/4*2 + 75);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img7?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                    width: (stoneWallWideItemsWidth - 80)/4*2,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 80)/4*2 + 80,
+                    translateY: (stoneWallWideItemsWidth - 80)/4*2 + 75,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img7", (stoneWallWideItemsWidth - 80)/4*2 + 75);
+            }
         }
         if(size.width <= 1020 && size.width > 700){
-            props.updateItemsStyleValuesStoneWallWidePage("img1",{
-                width: (stoneWallWideItemsWidth - 40)/2,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img2",{
-                width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWideItemsWidth - 40)/2 + 40,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img2", (stoneWallWideItemsWidth - 40)/2 + 40);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img3",{
-                width: (stoneWallWideItemsWidth - 40)/2,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
-                translateY: 0,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img3", 0);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img4",{
-                width: (stoneWallWideItemsWidth - 40)/2,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWideItemsWidth - 40)/2*3 + 190,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img4", (stoneWallWideItemsWidth - 40)/2*3 + 190);
-
-            props.updateItemsStyleValuesStoneWallWidePage("img5",{
-                width: (stoneWallWideItemsWidth - 40)/2,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
-                translateY: (stoneWallWideItemsWidth - 40)/2*3 + 190,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img5", (stoneWallWideItemsWidth - 40)/2*3 + 190);
-
-            props.updateItemsStyleValuesStoneWallWidePage("img6",{
-                width: (stoneWallWideItemsWidth - 40)/2,
-                height: 0,
-                translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
-                translateY: (stoneWallWideItemsWidth - 40)/2*4 + 255,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img6", (stoneWallWideItemsWidth - 40)/2*4 + 255);
-
-            props.updateItemsStyleValuesStoneWallWidePage("img7",{
-                width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
-                height: 0,
-                translateX: 0,
-                translateY: (stoneWallWideItemsWidth - 40)/2*5 + 295,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img7", (stoneWallWideItemsWidth - 40)/2*5 + 295);
+            if(props.stoneWallWidePage.itemsStyleValues.img1?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                    width: (stoneWallWideItemsWidth - 40)/2,
+                    height: 0,
+                    translateX: 0,
+                    translateY: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img2?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                    width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
+                    height: 0,
+                    translateX: 0,
+                    translateY: (stoneWallWideItemsWidth - 40)/2 + 40,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img2", (stoneWallWideItemsWidth - 40)/2 + 40);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img3?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                    width: (stoneWallWideItemsWidth - 40)/2,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
+                    translateY: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img3", 0);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img4?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                    width: (stoneWallWideItemsWidth - 40)/2,
+                    height: 0,
+                    translateX: 0,
+                    translateY: (stoneWallWideItemsWidth - 40)/2*3 + 190,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img4", (stoneWallWideItemsWidth - 40)/2*3 + 190);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img5?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                    width: (stoneWallWideItemsWidth - 40)/2,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
+                    translateY: (stoneWallWideItemsWidth - 40)/2*3 + 190,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img5", (stoneWallWideItemsWidth - 40)/2*3 + 190);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img6?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                    width: (stoneWallWideItemsWidth - 40)/2,
+                    height: 0,
+                    translateX: (stoneWallWideItemsWidth - 40)/2 + 40,
+                    translateY: (stoneWallWideItemsWidth - 40)/2*4 + 255,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img6", (stoneWallWideItemsWidth - 40)/2*4 + 255);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img7?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                    width: (stoneWallWideItemsWidth - 40)/2*2 + 40,
+                    height: 0,
+                    translateX: 0,
+                    translateY: (stoneWallWideItemsWidth - 40)/2*5 + 295,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img7", (stoneWallWideItemsWidth - 40)/2*5 + 295);
+            }
         }
         if(size.width <= 700){
-            props.updateItemsStyleValuesStoneWallWidePage("img1",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: 0,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img2",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWideItemsWidth + 40,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img2", stoneWallWideItemsWidth + 40);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img3",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWideItemsWidth*2 + 120,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img3", stoneWallWideItemsWidth*2 + 120);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img4",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWideItemsWidth*3 + 160,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img4", stoneWallWideItemsWidth*3 + 160);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img5",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWideItemsWidth*5 + 280,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img5", stoneWallWideItemsWidth*5 + 280);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img6",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWideItemsWidth*6 + 320,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img6", stoneWallWideItemsWidth*6 + 320);
-            
-            props.updateItemsStyleValuesStoneWallWidePage("img7",{
-                width: stoneWallWideItemsWidth,
-                height: 0,
-                translateX: 0,
-                translateY: stoneWallWideItemsWidth*7 + 360,
-                transition: 0,
-                rendered: true
-            });
-            props.setTopPositionOfTheItemForStoneWallWidePage("img7", stoneWallWideItemsWidth*7 + 360);
+            if(props.stoneWallWidePage.itemsStyleValues.img1?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img1",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img1", 0);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img2?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img2",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: stoneWallWideItemsWidth + 40,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img2", stoneWallWideItemsWidth + 40);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img3?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img3",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: stoneWallWideItemsWidth*2 + 120,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img3", stoneWallWideItemsWidth*2 + 120);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img4?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img4",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: stoneWallWideItemsWidth*3 + 160,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img4", stoneWallWideItemsWidth*3 + 160);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img5?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img5",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: stoneWallWideItemsWidth*5 + 280,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img5", stoneWallWideItemsWidth*5 + 280);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img6?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img6",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: stoneWallWideItemsWidth*6 + 320,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img6", stoneWallWideItemsWidth*6 + 320);
+            }
+            if(props.stoneWallWidePage.itemsStyleValues.img7?.rendered){
+                props.updateItemsStyleValuesStoneWallWidePage("img7",{
+                    width: stoneWallWideItemsWidth,
+                    height: 0,
+                    translateX: 0,
+                    translateY: stoneWallWideItemsWidth*7 + 360,
+                    transition: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForStoneWallWidePage("img7", stoneWallWideItemsWidth*7 + 360);
+            }
         }
     }
 
