@@ -24,6 +24,8 @@ export const findPathOfIds = (path) => {
             return [2, 22, 223];
         case 'three-columns-wide':
             return [2, 22, 224];
+        case 'four-columns':
+            return [2, 22, 225];
         case 'four-columns-wide':
             return [2, 22, 226];
         case 'five-columns-wide':

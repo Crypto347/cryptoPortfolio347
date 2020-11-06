@@ -60,6 +60,7 @@ import FourColumnsWidePage from './Pages/PortfolioPages/FourColumnsWidePage/four
 import FiveColumnsWidePage from './Pages/PortfolioPages/FiveColumnsWidePage/fiveColumnsWidePage';
 import TwoColumnsPage from './Pages/PortfolioPages/TwoColumnsPage/twoColumnsPage';
 import ThreeColumnsPage from './Pages/PortfolioPages/ThreeColumnsPage/threeColumnsPage';
+import FourColumnsPage from './Pages/PortfolioPages/FourColumnsPage/fourColumnsPage';
 
 /**
  * Actions
@@ -141,6 +142,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/four-columns"}
+                    component={FourColumnsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/three-columns"}
