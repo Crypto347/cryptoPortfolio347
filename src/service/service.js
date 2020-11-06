@@ -1270,7 +1270,7 @@ export function fetchFourColumnsPage(step, category, screenWidth, numOfItemsInAr
                     dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*6}`, updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateY));
 
                 }else if(step > 1 && category === "showAll"){
-                    if(screenWidth > 734){
+                    if(screenWidth > 960){
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-7}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
@@ -1358,94 +1358,94 @@ export function fetchFourColumnsPage(step, category, screenWidth, numOfItemsInAr
                             rendered: true
                         }));
                         dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-1)));
-                    }else if(screenWidth <= 734){
+                    }else if(screenWidth <= 960){
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-7}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-8, "atTheBeginning"),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-8),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-8, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-8),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-7}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-8)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-7}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-8)));
                         
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-6}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-7),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-7),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-7),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-7),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-6}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-7)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-6}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-7)));
 
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-5}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-6, "atTheBeginning"),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-6),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-6, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-6),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-5}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-6)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-5}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-6)));
 
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-4}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-5),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-5),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-5),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-5),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-4}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-5)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-4}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-5)));
 
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-3}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-4, "atTheBeginning"),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-4),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-4, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-4),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-3}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-4)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-3}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-4)));
 
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-2}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-3),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-3),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-3),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-3),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-2}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-3)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-2}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-3)));
                     
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8-1}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-2, "atTheBeginning"),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-2),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-2, "atTheBeginning"),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-2),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-1}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-2)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-1}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-2)));
 
                         dispatch(Actions.updateItemsStyleValuesFourColumnsPage(`img${step*8}`,{
                             width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
                             scale: 1,
-                            translateX: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "X", step*8-1),
-                            translateY: Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-1),
+                            translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-1),
+                            translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-1),
                             transition: 0.45,
                             zIndex: 0,
                             rendered: true
                         }));
-                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8}`, Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", screenWidth, "Y", step*8-1)));
+                        dispatch(Actions.setTopPositionOfTheItemForFourColumnsPage(`img${step*8}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-1)));
                     }
                 }  
                 // return json;

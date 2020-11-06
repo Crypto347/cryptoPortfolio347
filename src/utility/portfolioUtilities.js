@@ -172,7 +172,7 @@ export const setWidthOfImage = (page, screenWidth, opt) => {
             }else if(screenWidth <= 1165 && screenWidth > 960){
                 width = 200;
             }else if(screenWidth <= 960 && screenWidth > 734){
-                width = 200;
+                width = 300;
             }else if(screenWidth <= 734 && screenWidth > 600){
                 width = 250;
             }else if(screenWidth <= 600){
@@ -224,6 +224,11 @@ export const calcTranslateCoordinates = (page, screenWidth, coordinate, elIndex,
                 }
             }
             if(coordinate === "Y") return calculateTranslateYForFourColumnsPage(page, elIndex, screenWidth);
+            break;
+        case 'fourColumnsPageSmallScreen':
+            widthOfElement = setWidthOfImage("fourColumnsPage", screenWidth);
+            if(coordinate === "X") return widthOfElement + 30;
+            if(coordinate === "Y") return calculateTranslateYForFourColumnsPageSmallScreen("fourColumnsPage", elIndex, screenWidth);
             break;
     }
     
@@ -299,6 +304,19 @@ export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappea
             appearElementsArray = appearElementsArray.map((el, i) => {
                 let translateX = calculateTranslateXForFourColumnsPage(page, i, screenWidth);
                 let translateY = calculateTranslateYForFourColumnsPage(page, i, screenWidth);
+                
+                return {
+                    id: el.id,
+                    key: `img${el.id}`,
+                    translateX: translateX,
+                    translateY: translateY
+                };
+            });
+            break;
+        case 'fourColumnsPageSmallScreen':
+            appearElementsArray = appearElementsArray.map((el, i) => {
+                let translateX = (i%2 === 0 ? 0 : setWidthOfImage("fourColumnsPage", screenWidth, "widthWithPaddingRight"));
+                let translateY = calculateTranslateYForFourColumnsPageSmallScreen("fourColumnsPage", i, screenWidth);
                 
                 return {
                     id: el.id,
@@ -478,6 +496,37 @@ const calculateTranslateYForFourColumnsPage = (page, i, screenWidth) => {
         case 16:
         case 17:
             return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        default:
+            return 0;
+    }
+}
+
+const calculateTranslateYForFourColumnsPageSmallScreen = (page, i, screenWidth) => {
+    switch(i){
+        case 2:
+        case 3:
+            return setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 4:
+        case 5:
+            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 6:
+        case 7:
+            return 3 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 8:
+        case 9:
+            return 4 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 10:
+        case 11:
+            return 5 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 12:
+        case 13:
+            return 6 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 14:
+        case 15:
+            return 7 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+        case 16:
+        case 17:
+            return 8 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }
