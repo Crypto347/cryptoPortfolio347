@@ -536,6 +536,8 @@ export function fetchPinterest3ColumnsPage() {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPinterest3ColumnsPageSuccess(json));
+                let itemsState = Utility.getArrayOfEmptyVal(json.length);
+                dispatch(Actions.initItemsStylesStateForPinterest3ColumnsPage(itemsState));
                 // return json;
             })
             .catch(error => {

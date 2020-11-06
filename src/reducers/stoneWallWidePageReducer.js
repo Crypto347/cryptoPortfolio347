@@ -19,57 +19,7 @@ export const initialState = {
     items: [],
     loading: false,
     error: null,
-    itemsStyleValues: {
-        img1: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img2: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img3: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img4: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img5: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img6: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img7: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }
-    },
+    itemsStyleValues: {},
     itemsTopPosition: []
 }
 

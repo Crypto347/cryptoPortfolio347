@@ -19,113 +19,8 @@ export const initialState = {
     items: [],
     loading: false,
     error: null,
-    itemsStyleValues: {
-        img1: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img2: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img3: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img4: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img5: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img6: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img7: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img8: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img9: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img10: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img11: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img12: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }, 
-        img13: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img14: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        },
-        img15: {
-            width: 0,
-            height: 0,
-            translateX: 0,
-            translateY: 0,
-            transition: 0.45
-        }
-    }
+    itemsStyleValues: {},
+    itemsTopPosition: []
 }
 
 const fetchPinterest3ColumnsPageBegin = (state, action) => {
@@ -172,6 +67,36 @@ const setPinterest3ColumnsPageIsHoveringCategory = (state, action) => {
     return {
         ...state,
         items: updatedItems
+    };
+}
+
+const initItemsStylesStateForPinterest3ColumnsPage = (state, action) => {
+    let updatedItemsStyleValues = {};
+        action.arr.map((el, i) => {
+        let setObj = {
+            width: 0,
+            height: 0,
+            translateX: 0,
+            translateY: 0,
+            transition: 0.45,
+            rendered: true
+        }
+        Object.assign(updatedItemsStyleValues, {[`img${i + 1}`]: setObj});
+    })
+
+    let updatedItemsTopPosition = [];
+    updatedItemsTopPosition = action.arr.map((el, i) => {
+        return {
+            id: `img${i + 1}`,
+            key: state.items[i].key,
+            topPosition: 0
+        }
+    })
+
+    return {
+        ...state,
+        itemsStyleValues: updatedItemsStyleValues,
+        itemsTopPosition: updatedItemsTopPosition
     };
 }
 
@@ -290,6 +215,20 @@ const updateItemsStyleValuesPinterest3ColumnsPage = (state, action) => {
     };
 }
 
+const setTopPositionOfTheItemForPinterest3ColumnsPage = (state, action) => {
+    let updatedItemsTopPosition = [...state.itemsTopPosition];
+
+    let obj = {...updatedItemsTopPosition.find(item => item.id === action.id), topPosition: action.val};
+    let objIndex = updatedItemsTopPosition.findIndex(item => item.id === action.id);
+
+    updatedItemsTopPosition.splice(objIndex, 1, obj);
+
+    return {
+        ...state,
+        itemsTopPosition: updatedItemsTopPosition
+    };
+}
+
 const pinterest3ColumnsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PINTEREST_3_COLUMNS_PAGE_BEGIN:
@@ -300,8 +239,12 @@ const pinterest3ColumnsPageReducer = (state = initialState, action) => {
             return fetchPinterest3ColumnsPageFailur(state, action);
         case actionTypes.SET_PINTEREST_3_COLUMNS_PAGE_IS_HOVERING_CATEGORY:
             return setPinterest3ColumnsPageIsHoveringCategory(state, action);
+        case actionTypes.INIT_ITEMS_STYLES_STATE_FOR_PINTEREST_3_COLUMNS_PAGE:
+            return initItemsStylesStateForPinterest3ColumnsPage(state, action);
         case actionTypes.UPDATED_ITEMS_STYLE_VALUES_PINTEREST_3_COLUMNS_PAGE:
             return updateItemsStyleValuesPinterest3ColumnsPage(state, action);
+        case actionTypes.SET_TOP_POSITION_OF_THE_ITEM_FOR_PINTEREST_3_COLUMNS_PAGE:
+            return setTopPositionOfTheItemForPinterest3ColumnsPage(state, action);
         default: 
             return state;
     }
