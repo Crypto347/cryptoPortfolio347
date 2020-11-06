@@ -353,98 +353,98 @@ export const Pinterest3ColumnsPage = (props) => {
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: -413.33,
+                translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 886.66,
-                translateY: -413.33,
+                translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 30,
+                translateY: 443.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 886.66,
-                translateY: 30,
+                translateY: 443.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 473.33,
+                translateY: 886.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 443.33,
-                translateY: 473.33,
+                translateY: 886.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 886.66,
-                translateY: 473.33,
+                translateY: 886.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 443.33,
-                translateY: 916.66,
+                translateY: 1329.99,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 1359.99,
+                translateY: 1773.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: 1359.99,
+                translateY: 1773.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 886.66,
-                translateY: 1359.99,
+                translateY: 1773.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: 1803.32,
+                translateY: 2216.65,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 2244,
+                translateY: 2657.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 886.66,
-                translateY: 2244,
+                translateY: 2657.33,
                 transition: 0
             });
         }
@@ -460,98 +460,98 @@ export const Pinterest3ColumnsPage = (props) => {
                 width: 296.66,
                 height: 623.32,
                 translateX: 336.66,
-                translateY: -296.66,
+                translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 663.32,
-                translateY: -296.66,
+                translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 30,
+                translateY: 326.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 663.32,
-                translateY: 30,
+                translateY: 326.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 356.66,
+                translateY: 653.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 336.66,
-                translateY: 356.66,
+                translateY: 653.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 663.32,
-                translateY: 356.66,
+                translateY: 653.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 336.66,
-                translateY: 683.32,
+                translateY: 979.98,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 1009.98,
+                translateY: 1306.64,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 336.66,
-                translateY: 1009.98,
+                translateY: 1306.64,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 663.32,
-                translateY: 1009.98,
+                translateY: 1306.64,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 336.66,
-                translateY: 1336.64,
+                translateY: 1633.3,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 1657,
+                translateY: 1953.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 663.32,
-                translateY: 1657,
+                translateY: 1953.66,
                 transition: 0
             });
         }
@@ -567,98 +567,98 @@ export const Pinterest3ColumnsPage = (props) => {
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: -413.33,
+                translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 30,
+                translateY: 443.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 443.33,
-                translateY: 473.33,
+                translateY: 886.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 473.33,
+                translateY: 886.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 916.66,
+                translateY: 1329.99,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 443.33,
-                translateY: 916.66,
+                translateY: 1329.99,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: 1359.99,
+                translateY: 1773.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 1803.32,
+                translateY: 2215.65,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: 2246.45,
+                translateY: 2659.78,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 2246.45,
+                translateY: 2659.78,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 2689.78,
+                translateY: 3103.11,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 443.33,
-                translateY: 3133.11,
+                translateY: 3546.44,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 3576.44,
+                translateY: 3989.77,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 4019.77,
+                translateY: 4433.1,
                 transition: 0
             });
         }
@@ -674,98 +674,98 @@ export const Pinterest3ColumnsPage = (props) => {
                 width: 296.66,
                 height: 623.32,
                 translateX: 326.66,
-                translateY: -296.66,
+                translateY: 0,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 30,
+                translateY: 326.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 326.66,
-                translateY: 356.66,
+                translateY: 653.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 356.66,
+                translateY: 653.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 683.32,
+                translateY: 979.98,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 326.66,
-                translateY: 683.32,
+                translateY: 979.98,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 326.66,
-                translateY: 1009.98,
+                translateY: 1306.64,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 1336.64,
+                translateY: 1633.3,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 326.66,
-                translateY: 1663.3,
+                translateY: 1959.96,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 1663.3,
+                translateY: 1959.96,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 1989.96,
+                translateY: 2286.62,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 326.66,
-                translateY: 2316.62,
+                translateY: 2613.28,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 2643.28,
+                translateY: 2939.94,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 2969.94,
+                translateY: 3266.6,
                 transition: 0
             });
         }
@@ -781,98 +781,98 @@ export const Pinterest3ColumnsPage = (props) => {
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 30,
+                translateY: 443.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 915.33,
+                translateY: 1328.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 1358.66,
+                translateY: 1771.99,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 1801.99,
+                translateY: 2215.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 2688.65,
+                translateY: 3101.98,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 2245.32,
+                translateY: 2658.65,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 3574,
+                translateY: 3987.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 4460,
+                translateY: 4873.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 4903.33,
+                translateY: 5316.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 5789,
+                translateY: 6202.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 6232.33,
+                translateY: 6645.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
                 width: 413.33,
                 height: 723.33,
                 translateX: 0,
-                translateY: 7119,
+                translateY: 7532.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 8005,
+                translateY: 8418.33,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
                 width: 413.33,
                 height: 413.33,
                 translateX: 0,
-                translateY: 8448.33,
+                translateY: 8861.66,
                 transition: 0
             });
         }
@@ -888,98 +888,98 @@ export const Pinterest3ColumnsPage = (props) => {
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 30,
+                translateY: 326.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img3",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 674,
+                translateY: 970.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img4",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 1000.33,
+                translateY: 1296.99,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img5",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 1326.99,
+                translateY: 1623.65,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img6",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 1653.65,
+                translateY: 1950.31,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img7",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 2298,
+                translateY: 2594.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img8",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 2624.66,
+                translateY: 2921.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img9",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 3269,
+                translateY: 3565.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img10",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 3595.66,
+                translateY: 3892.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img11",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 4240,
+                translateY: 4536.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img12",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 4566.66,
+                translateY: 4863.32,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img13",{
                 width: 296.66,
                 height: 623.32,
                 translateX: 0,
-                translateY: 5211,
+                translateY: 5507.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img14",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 5855,
+                translateY: 6151.66,
                 transition: 0
             });
             props.updateItemsStyleValuesPinterest3ColumnsPage("img15",{
                 width: 296.66,
                 height: 296.66,
                 translateX: 0,
-                translateY: 6181.66,
+                translateY: 6478.32,
                 transition: 0
             });
         }
@@ -1025,6 +1025,7 @@ export const Pinterest3ColumnsPage = (props) => {
         switch(id){
             case 1:
                 return {
+                    position: "absolute",
                     width: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.width}px`,
                     height: `${props.pinterest3ColumnsPage.itemsStyleValues.img1.height}px`
                 };
