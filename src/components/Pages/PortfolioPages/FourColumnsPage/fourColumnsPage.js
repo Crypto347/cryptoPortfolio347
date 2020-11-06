@@ -1328,7 +1328,7 @@ export const FourColumnsPage = (props) => {
                         zIndex: 0,
                         rendered: true
                     });
-                    props.setTopPositionOfTheItemForFourColumnsPage("img18", Utility.calcTranslateCoordinates("threeColumnsPageSmallScreen", size.width, "Y", 17));
+                    props.setTopPositionOfTheItemForFourColumnsPage("img18", Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", size.width, "Y", 17));
                 }
             }
             
