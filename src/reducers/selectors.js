@@ -372,3 +372,10 @@ export const getThreeColumnsPageState = createSelector(
     [getThreeColumnsPage],
     (x) => x
 );
+
+const getFourColumnsPage = (state) => state.fourColumnsPage;
+
+export const getFourColumnsPageState = createSelector(
+    [getFourColumnsPage],
+    (x) => x
+);

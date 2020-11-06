@@ -30,3 +30,4 @@ export * from './fourColumnsWidePageActions';
 export * from './fiveColumnsWidePageActions';
 export * from './twoColumnsPageActions';
 export * from './threeColumnsPageActions';
+export * from './fourColumnsPageActions';
