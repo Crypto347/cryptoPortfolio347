@@ -54,6 +54,8 @@ export const findPathOfIds = (path) => {
             return [2, 24, 246];
         case 'pinterest-3-columns':
             return [2, 24, 247];
+        case 'accordions':
+            return [6, 61, 611];
     }
 
     //Second element of updatedPath array
