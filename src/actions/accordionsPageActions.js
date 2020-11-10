@@ -19,3 +19,31 @@ export function fetchAccordionsPageSection1DataFailur(err) {
         err: err
     };
 };
+
+export function fetchAccordionsPageSection2DataBegin() {
+    return { 
+        type: actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_2_DATA_BEGIN
+    };
+};
+
+export function fetchAccordionsPageSection2DataSuccess(array) {
+    return { 
+        type: actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_2_DATA_SUCCESS,
+        array: array
+    };
+};
+
+export function fetchAccordionsPageSection2DataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_2_DATA_FAILURE,
+        err: err
+    };
+};
+
+export function setIsHoverSection2ItemAccordionsPage(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_SECTION_2_ITEM_ACCORDIONS_PAGE,
+        val: val,
+        id: id
+    };
+};

@@ -18339,6 +18339,40 @@ app.get('/api/accordions/section1', (req, res) => {
     res.json(accordionsSection1Data);
 });
 
+app.get('/api/accordions/section2', (req, res) => {
+    const accordionsSection2Data = [
+        {
+            id: 1,
+            key: "section2id1",
+            header: "Your small business web design solution?",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            isHover: "init"
+        },
+        {
+            id: 2,
+            key: "section2id2",
+            header: "Your small business web design solution?",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            isHover: "init"
+        },
+        {
+            id: 3,
+            key: "section2id3",
+            header: "Your small business web design solution?",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            isHover: "init"
+        },
+        {
+            id: 4,
+            key: "section2id4",
+            header: "Take the mystery out of selecting and developing leaders?",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            isHover: "init"
+        }
+    ]
+    res.json(accordionsSection2Data);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

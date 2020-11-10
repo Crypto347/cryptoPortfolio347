@@ -1479,6 +1479,24 @@ export function fetchAccordionsPageSection1Data() {
     };
 }
 
+export function fetchAccordionsPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchAccordionsPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/accordions/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchAccordionsPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchAccordionsPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);
