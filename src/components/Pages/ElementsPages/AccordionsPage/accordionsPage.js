@@ -27,7 +27,6 @@ import './accordionsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import StandardPortfolioItem from '../../../SmallParts/StandardPortfolioItem/standardPortfolioItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -55,7 +54,9 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H45
+    H19,
+    H45,
+    EW30
 } from '../../../UtilityComponents';
 
 /**
@@ -114,7 +115,7 @@ export const AccordionsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("standardPage");
+        let el = document.getElementById("accordionsPage");
 
         // Show or hide BackToTop component
 
@@ -176,34 +177,30 @@ export const AccordionsPage = (props) => {
         }
     }
     
-    const renderStandardPageData = () => {
-        // return(
-        //     <div className="standard-page-items">{props.standardPage.items.map((el, i) => {
-        //         return(
-        //             <div 
-        //                 key={i} 
-        //                 id={el.key}
-        //                 className="standard-page-item"
-        //             >
-        //                 <StandardPortfolioItem
-        //                     page="standardPage"
-        //                     obj={el}
-        //                     setUnmountComponentValues={props.setUnmountComponentValues}
-        //                     setIsHoveringCategory={props.setStandardPageIsHoveringCategory}
-        //                     unmountComponent={props.unmountComponent}
-        //                     clearArchiveData={props.clearArchiveData}
-        //                 />
-        //             </div>
-        //         )
-        //     })}</div>
-        // )
+    const renderAccordionsPageSection1Data = () => {
+        return(
+            <div className="accordions-page-section1-items">{props.accordionsPage.section1Data.items.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="accordions-page-section1-item"
+                    >
+                        <H19 className="h19-black-poppins">{el.header}</H19>
+                        <div className="accordions-page-section1-item-plus">
+                            <div className="plus-horizontal-line"/>
+                            <div className="plus-vertical-line"/>
+                        </div>
+                    </div>
+                )
+            })}</div>
+        )
     }
 
-    const renderStandardPageContent = () => {
+    const renderAccordionsPageSection1DataContent = () => {
         if(props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
             return(
                 <div 
-                    className="standard-page-loading-error" 
+                    className="accordions-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -212,19 +209,23 @@ export const AccordionsPage = (props) => {
         }
         if(!props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
             return(
-                <div className="standard-page-wrapper">
-                    <div className="standard-page-header">
+                <div className="accordions-page-wrapper">
+                    <div className="accordions-page-header">
                         <H45 className="h45-nero-lustria">Accordions</H45>
                     </div>
                     <div className="grey-line"/>
-                    {renderStandardPageData()}
+                    <div className="accordions-page-section1-data-wrapper">
+                        {renderAccordionsPageSection1Data()}
+                        <EW30/>
+                        {renderAccordionsPageSection1Data()}
+                    </div>
                 </div>
             )
         }
         if(!props.accordionsPage.section1Data.loading && props.accordionsPage.section1Data.error){
             return(
                 <div 
-                    className="standard-page-loading-error" 
+                    className="accordions-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.accordionsPage.section1Data.error}`}</H15>
@@ -238,9 +239,9 @@ export const AccordionsPage = (props) => {
      */
 
     return(
-        <div className="standard-page" id="standardPage">
+        <div className="accordions-page" id="accordionsPage">
             {renderToolbars()}
-            {renderStandardPageContent()}
+            {renderAccordionsPageSection1DataContent()}
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
         </div>   
@@ -253,18 +254,15 @@ export default connect(
             accordionsPage: Selectors.getAccordionsPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
-            archive: Selectors.getArchiveState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
             fetchAccordionsPageSection1Data: bindActionCreators(Services.fetchAccordionsPageSection1Data, dispatch),
-            setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }

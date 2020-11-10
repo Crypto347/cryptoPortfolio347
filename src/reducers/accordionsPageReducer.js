@@ -30,7 +30,7 @@ export const initialState = {
 
 const fetchAccordionsPageSection1DataBegin = (state, action) => {
     let updateSection1Data = {
-        ...state.updateSection1Data,
+        ...state.section1Data,
         loading: true,
         error: null
     };
@@ -43,7 +43,7 @@ const fetchAccordionsPageSection1DataBegin = (state, action) => {
 
 const fetchAccordionsPageSection1DataSuccess = (state, action) => {
     let updateSection1Data = {
-        ...state.updateSection1Data,
+        ...state.section1Data,
         loading: false,
         items: action.array
     };
@@ -56,7 +56,7 @@ const fetchAccordionsPageSection1DataSuccess = (state, action) => {
 
 const fetchAccordionsPageSection1DataFailur = (state, action) => {
     let updateSection1Data = {
-        ...state.updateSection1Data,
+        ...state.section1Data,
         loading: false,
         error: action.err,
         items: []
@@ -70,11 +70,11 @@ const fetchAccordionsPageSection1DataFailur = (state, action) => {
 
 const accordionsPageReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.FETCH_SECTION_1_BEGIN:
+        case actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_1_DATA_BEGIN:
             return fetchAccordionsPageSection1DataBegin (state, action); 
-        case actionTypes.FETCH_SECTION_1_SUCCESS:
+        case actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_1_DATA_SUCCESS:
             return fetchAccordionsPageSection1DataSuccess (state, action);
-        case actionTypes.FETCH_SECTION_1_FAILURE:
+        case actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_1_DATA_FAILURE:
             return fetchAccordionsPageSection1DataFailur(state, action);
         default: 
             return state;
