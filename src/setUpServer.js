@@ -18315,25 +18315,29 @@ app.get('/api/accordions/section1', (req, res) => {
             id: 1,
             key: "development",
             header: "Development",
-            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
         },
         {
             id: 2,
             key: "process",
             header: "Process",
-            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
         },
         {
             id: 3,
             key: "product",
             header: "Product",
-            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
         },
         {
             id: 4,
             key: "review",
             header: "Review",
-            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
         }
     ]
     res.json(accordionsSection1Data);
@@ -18346,28 +18350,32 @@ app.get('/api/accordions/section2', (req, res) => {
             key: "section2id1",
             header: "Your small business web design solution?",
             text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
-            isHover: "init"
+            isHover: "init",
+            active: false
         },
         {
             id: 2,
             key: "section2id2",
             header: "Your small business web design solution?",
             text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
-            isHover: "init"
+            isHover: "init",
+            active: false
         },
         {
             id: 3,
             key: "section2id3",
             header: "Your small business web design solution?",
             text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
-            isHover: "init"
+            isHover: "init",
+            active: false
         },
         {
             id: 4,
             key: "section2id4",
             header: "Take the mystery out of selecting and developing leaders?",
             text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
-            isHover: "init"
+            isHover: "init",
+            active: false
         }
     ]
     res.json(accordionsSection2Data);
