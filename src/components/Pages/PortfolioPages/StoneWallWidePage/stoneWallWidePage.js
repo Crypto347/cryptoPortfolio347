@@ -149,43 +149,43 @@ export const StoneWallWidePage = (props) => {
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
 
-        if(props.stoneWallWidePage.itemsStyleValues.img1.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img1?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img1",{
                 ...props.stoneWallWidePage.itemsStyleValues.img1,
                 transition: 0.45
             });
         }
-        if(props.stoneWallWidePage.itemsStyleValues.img2.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img2?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img2",{
                 ...props.stoneWallWidePage.itemsStyleValues.img2,
                 transition: 0.45
             });
         }
-        if(props.stoneWallWidePage.itemsStyleValues.img3.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img3?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img3",{
                 ...props.stoneWallWidePage.itemsStyleValues.img3,
                 transition: 0.45
             });
         }
-        if(props.stoneWallWidePage.itemsStyleValues.img4.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img4?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img4",{
                 ...props.stoneWallWidePage.itemsStyleValues.img4,
                 transition: 0.45
             });
         }
-        if(props.stoneWallWidePage.itemsStyleValues.img5.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img5?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img5",{
                 ...props.stoneWallWidePage.itemsStyleValues.img5,
                 transition: 0.45
             });
         }
-        if(props.stoneWallWidePage.itemsStyleValues.img6.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img6?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img6",{
                 ...props.stoneWallWidePage.itemsStyleValues.img6,
                 transition: 0.45
             });
         }
-        if(props.stoneWallWidePage.itemsStyleValues.img7.transition === 0){
+        if(props.stoneWallWidePage.itemsStyleValues.img7?.transition === 0){
             props.updateItemsStyleValuesStoneWallWidePage("img7",{
                 ...props.stoneWallWidePage.itemsStyleValues.img7,
                 transition: 0.45
@@ -607,13 +607,13 @@ export const StoneWallWidePage = (props) => {
 
     const renderStoneWallWidePageItemsStyleHeight = () => {
         if(size.width > 1020){
-            return 3*props.stoneWallWidePage.itemsStyleValues.img1.width + 2*40 + 15;
+            return 3*props.stoneWallWidePage.itemsStyleValues.img1?.width + 2*40 + 15;
         }
         if(size.width <= 1020 && size.width > 700){
-            return 6*props.stoneWallWidePage.itemsStyleValues.img1.width + 8*40 - 5;
+            return 6*props.stoneWallWidePage.itemsStyleValues.img1?.width + 8*40 - 5;
         }
         if(size.width <= 700){
-            return 7*props.stoneWallWidePage.itemsStyleValues.img1.width + props.stoneWallWidePage.itemsStyleValues.img1.width/2 + 9*40;
+            return 7*props.stoneWallWidePage.itemsStyleValues.img1?.width + props.stoneWallWidePage.itemsStyleValues.img1?.width/2 + 9*40;
         }
     }
 
