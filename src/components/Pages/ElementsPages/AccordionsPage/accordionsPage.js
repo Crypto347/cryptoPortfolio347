@@ -90,21 +90,13 @@ export const AccordionsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.standardPage.items.length === 0){
-            props.fetchStandardPage();
+        if(props.accordionsPage.section1Data.items.length === 0){
+            props.fetchAccordionsPageSection1Data();
         }
 
-        // Return to the part of the screen where the link to the selected item is located
+        // Scroll to the top of the screen
 
-        let timeout = setTimeout(() => {
-            if(!props.standardPage.loading && !props.standardPage.error && props.historyPopFromItem !== "scrollToTop"){
-                let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
-                window.scrollTo(0, itemOffsetTop - 30);
-            }else{
-                window.scrollTo(0, 0);
-            }
-        }, 2);
+        window.scrollTo(0, 0);
 
         // Event Listeners
 
@@ -156,12 +148,12 @@ export const AccordionsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="standardPage"
+                        page="accordionsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="standardPage"
+                        page="accordionsPage"
                     />
                 </>
             )
@@ -172,12 +164,12 @@ export const AccordionsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="standardPage"
+                        page="accordionsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="standardPage"
+                        page="accordionsPage"
                     />
                 </>
             )
@@ -185,30 +177,30 @@ export const AccordionsPage = (props) => {
     }
     
     const renderStandardPageData = () => {
-        return(
-            <div className="standard-page-items">{props.standardPage.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i} 
-                        id={el.key}
-                        className="standard-page-item"
-                    >
-                        <StandardPortfolioItem
-                            page="standardPage"
-                            obj={el}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            setIsHoveringCategory={props.setStandardPageIsHoveringCategory}
-                            unmountComponent={props.unmountComponent}
-                            clearArchiveData={props.clearArchiveData}
-                        />
-                    </div>
-                )
-            })}</div>
-        )
+        // return(
+        //     <div className="standard-page-items">{props.standardPage.items.map((el, i) => {
+        //         return(
+        //             <div 
+        //                 key={i} 
+        //                 id={el.key}
+        //                 className="standard-page-item"
+        //             >
+        //                 <StandardPortfolioItem
+        //                     page="standardPage"
+        //                     obj={el}
+        //                     setUnmountComponentValues={props.setUnmountComponentValues}
+        //                     setIsHoveringCategory={props.setStandardPageIsHoveringCategory}
+        //                     unmountComponent={props.unmountComponent}
+        //                     clearArchiveData={props.clearArchiveData}
+        //                 />
+        //             </div>
+        //         )
+        //     })}</div>
+        // )
     }
 
     const renderStandardPageContent = () => {
-        if(props.standardPage.loading && !props.standardPage.error){
+        if(props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
             return(
                 <div 
                     className="standard-page-loading-error" 
@@ -218,7 +210,7 @@ export const AccordionsPage = (props) => {
                 </div>
             )
         }
-        if(!props.standardPage.loading && !props.standardPage.error){
+        if(!props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
             return(
                 <div className="standard-page-wrapper">
                     <div className="standard-page-header">
@@ -229,13 +221,13 @@ export const AccordionsPage = (props) => {
                 </div>
             )
         }
-        if(!props.standardPage.loading && props.standardPage.error){
+        if(!props.accordionsPage.section1Data.loading && props.accordionsPage.section1Data.error){
             return(
                 <div 
                     className="standard-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.standardPage.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.accordionsPage.section1Data.error}`}</H15>
                 </div>
             )
         }
@@ -258,7 +250,7 @@ export const AccordionsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            standardPage: Selectors.getStandardPageState(state),
+            accordionsPage: Selectors.getAccordionsPageState(state),
             historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             archive: Selectors.getArchiveState(state),
@@ -267,7 +259,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
+            fetchAccordionsPageSection1Data: bindActionCreators(Services.fetchAccordionsPageSection1Data, dispatch),
             setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

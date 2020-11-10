@@ -379,3 +379,10 @@ export const getFourColumnsPageState = createSelector(
     [getFourColumnsPage],
     (x) => x
 );
+
+const getAccordionsPage = (state) => state.accordionsPage;
+
+export const getAccordionsPageState = createSelector(
+    [getAccordionsPage],
+    (x) => x
+);

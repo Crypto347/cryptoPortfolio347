@@ -31,3 +31,4 @@ export * from './fiveColumnsWidePageActions';
 export * from './twoColumnsPageActions';
 export * from './threeColumnsPageActions';
 export * from './fourColumnsPageActions';
+export * from './accordionsPageActions';

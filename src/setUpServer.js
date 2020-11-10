@@ -18309,6 +18309,36 @@ app.post('/api/four-columns-page', (req, res) => {
     }
 });
 
+app.get('/api/accordions/section1', (req, res) => {
+    const accordionsSection1Data = [
+        {
+            id: 1,
+            key: "development",
+            header: "Development",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+        },
+        {
+            id: 2,
+            key: "process",
+            header: "Process",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+        },
+        {
+            id: 3,
+            key: "product",
+            header: "Product",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+        },
+        {
+            id: 4,
+            key: "review",
+            header: "Review",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit."
+        }
+    ]
+    res.json(accordionsSection1Data);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

@@ -1461,6 +1461,24 @@ export function fetchFourColumnsPage(step, category, screenWidth, numOfItemsInAr
     };
 }
 
+export function fetchAccordionsPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchAccordionsPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/accordions/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchAccordionsPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchAccordionsPageSection1DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);
