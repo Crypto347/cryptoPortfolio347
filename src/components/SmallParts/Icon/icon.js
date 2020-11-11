@@ -3,9 +3,7 @@
  */
 
 import React, {
-    useState, 
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 /**
@@ -15,25 +13,10 @@ import React, {
 import './icon.scss';
 
 /**
- * Utility
- */
-
-import { 
-    H17,
-    H35,
-    EH10,
-    EH20
-} from '../../UtilityComponents';
-
-/**
  * Icon component definition and export
  */
 
 export const Icon = (props) => {
-
-    /**
-     * State
-     */
  
     /**
      * Methods

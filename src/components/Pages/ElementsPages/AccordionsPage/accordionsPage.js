@@ -55,7 +55,6 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H19,
     H45,
     EW70
 } from '../../../UtilityComponents';
@@ -308,7 +307,6 @@ export default connect(
     (state) => {
         return {
             accordionsPage: Selectors.getAccordionsPageState(state),
-            historyPopFromItem: Selectors.getHistoryPopFromPortfolioItemeState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };

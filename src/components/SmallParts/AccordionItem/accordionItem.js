@@ -3,9 +3,7 @@
  */
 
 import React, {
-    useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 /**
@@ -35,10 +33,6 @@ import {
 
 export const AccordionItem = (props) => {
 
-    /**
-     * State
-     */
- 
     /**
      * Methods
      */
