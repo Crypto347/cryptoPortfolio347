@@ -18316,7 +18316,7 @@ app.get('/api/accordions/section1', (req, res) => {
             key: "development",
             header: "Development",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam varius urna, eu viverra leo suscipit pretium. Duis mollis mollis sapien a luctus. Suspendisse facilisis egestas nunc, sit amet bibendum ex pellentesque vitae. ",
-            active: "init"
+            active: "on"
         },
         {
             id: 2,
@@ -18344,7 +18344,7 @@ app.get('/api/accordions/section1', (req, res) => {
             key: "development",
             header: "Development",
             text: "Donec mattis, nibh id maximus faucibus, tellus elit varius ante, id interdum leo erat at lacus. Quisque sit amet congue ligula, ut facilisis enim. Aenean ut varius mi. Suspendisse potenti. Vestibulum gravida consectetur tempor.",
-            active: "init"
+            active: "on"
         },
         {
             id: 6,
@@ -18379,7 +18379,7 @@ app.get('/api/accordions/section2', (req, res) => {
             header: "Your small business web design solution?",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam varius urna, eu viverra leo suscipit pretium. Duis mollis mollis sapien a luctus. Suspendisse facilisis egestas nunc, sit amet bibendum ex pellentesque vitae. ",
             isHover: "init",
-            active: "init"
+            active: "on"
         },
         {
             id: 2,
