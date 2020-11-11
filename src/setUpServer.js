@@ -18338,6 +18338,34 @@ app.get('/api/accordions/section1', (req, res) => {
             header: "Review",
             text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
             active: false
+        },
+        {
+            id: 5,
+            key: "development",
+            header: "Development",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
+        },
+        {
+            id: 6,
+            key: "process",
+            header: "Process",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
+        },
+        {
+            id: 7,
+            key: "product",
+            header: "Product",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
+        },
+        {
+            id: 8,
+            key: "review",
+            header: "Review",
+            text: "Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla tincidunt malesuada. Sed volu tpat semper elit quis. Lorem ipsum dolor sit amet, consectetur adip iscing elit. Etiam fermentum nulla ac tincidunt malesuada. Sed volu tpat semper elit.",
+            active: false
         }
     ]
     res.json(accordionsSection1Data);

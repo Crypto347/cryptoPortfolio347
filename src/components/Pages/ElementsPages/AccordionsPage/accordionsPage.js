@@ -178,14 +178,15 @@ export const AccordionsPage = (props) => {
         }
     }
 
-    const renderAccordionsPageSection1Data = () => {
+    const renderAccordionsPageSection1Data = (arr) => {
         return(
-            <div className="accordions-page-section1-items">{props.accordionsPage.section1Data.items.map((el, i) => {
+            <div className="accordions-page-section1-items">{arr.map((el, i) => {
                 return(
                     <div key={i}>
                         <AccordionItem 
                             style="simple"
                             obj={el}
+                            activateAccordionItem={props.setActivitySection1ItemAccordionsPage}
                             iconType="plusIcon"
                         />
                     </div>
@@ -204,6 +205,7 @@ export const AccordionsPage = (props) => {
                             hoverEffect
                             obj={el}
                             setIsHoverAccordionItem={props.setIsHoverSection2ItemAccordionsPage}
+                            activateAccordionItem={props.setActivitySection2ItemAccordionsPage}
                             iconType="plusIcon"
                         />
                     </div>
@@ -224,11 +226,17 @@ export const AccordionsPage = (props) => {
             )
         }
         if(!props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
+            // Split an array into two arrays to display in two columns
+
+            let array = [...props.accordionsPage.section1Data.items];
+            let splitedArray1 = array.slice(0, props.accordionsPage.section1Data.items.length/2)
+            let splitedArray2 = array.slice(props.accordionsPage.section1Data.items.length/2, props.accordionsPage.section1Data.items.length);
+
             return(
                 <div className="accordions-page-section1-data-wrapper">
-                    {renderAccordionsPageSection1Data()}
+                    {renderAccordionsPageSection1Data(splitedArray1)}
                     <EW70/>
-                    {renderAccordionsPageSection1Data()}
+                    {renderAccordionsPageSection1Data(splitedArray2)}
                 </div>
             )
         }
@@ -314,6 +322,8 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             setIsHoverSection2ItemAccordionsPage: bindActionCreators(Actions.setIsHoverSection2ItemAccordionsPage, dispatch),
+            setActivitySection1ItemAccordionsPage: bindActionCreators(Actions.setActivitySection1ItemAccordionsPage, dispatch),
+            setActivitySection2ItemAccordionsPage: bindActionCreators(Actions.setActivitySection2ItemAccordionsPage, dispatch),
         };
     }
 )(AccordionsPage);

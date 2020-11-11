@@ -47,3 +47,19 @@ export function setIsHoverSection2ItemAccordionsPage(val, id) {
         id: id
     };
 };
+
+export function setActivitySection1ItemAccordionsPage(val, id) {
+    return { 
+        type: actionTypes.SET_ACTIVITY_SECTION_1_ITEM_ACCORDION_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+export function setActivitySection2ItemAccordionsPage(val, id) {
+    return { 
+        type: actionTypes.SET_ACTIVITY_SECTION_2_ITEM_ACCORDION_PAGE,
+        val: val,
+        id: id
+    };
+};

@@ -3,7 +3,7 @@
  */
 
 import React, {
-    useState, 
+    useState,
     useEffect,
     useRef
 } from 'react';
@@ -24,8 +24,9 @@ import Icon from '../Icon/icon';
  * Utility
  */
 
-import { 
-    H19,
+import {
+    H17,
+    H19
 } from '../../UtilityComponents';
 
 /**
@@ -94,23 +95,35 @@ export const AccordionItem = (props) => {
         }
     }
 
+    const onClickHandler = () => {
+        
+    }
+
     /**
      * Markup
      */
 
     return(
-        <div 
-            className={renderClassName(props.style, "background", props.obj.isHover)}
-            onMouseEnter={props.hoverEffect ? () => handleMouseEnter(props.style, props.obj.id) : null} 
-            onMouseLeave={props.hoverEffect ? () => handleMouseLeave(props.style, props.obj.id) : null}
-        >
-            <H19 className={renderClassName(props.style, "header", props.obj.isHover)}>{props.obj.header}</H19>
-            <Icon
-                iconType={props.iconType}
-                isHover={props.obj.isHover}
-                hoverEffect={props.hoverEffect}
-            />
-        </div>
+        <>
+            <div 
+                className={renderClassName(props.style, "background", props.obj.isHover)}
+                onMouseEnter={props.hoverEffect ? () => handleMouseEnter(props.style, props.obj.id) : null} 
+                onMouseLeave={props.hoverEffect ? () => handleMouseLeave(props.style, props.obj.id) : null}
+                onClick={()=>props.activateAccordionItem(!props.obj.active, props.obj.id)}
+            >
+                <H19 className={renderClassName(props.style, "header", props.obj.isHover)}>{props.obj.header}</H19>
+                <Icon
+                    iconType={props.iconType}
+                    isHover={props.obj.isHover}
+                    hoverEffect={props.hoverEffect}
+                />
+            </div>
+            {props.obj.active ? 
+            <div className="accordion-item-text">
+                <H17 className="h17-nobel-lustria">{props.obj.text}</H17>
+            </div> : null
+        }
+        </>
     );
 }
 

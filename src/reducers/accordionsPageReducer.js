@@ -126,6 +126,60 @@ const setIsHoverSection2ItemAccordionsPage = (state, action) => {
     };
 }
 
+const setActivitySection1ItemAccordionsPage = (state, action) => {
+    let updatedItems = [...state.section1Data.items];
+
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            active: false
+        }
+    })
+    
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), active: action.val};
+
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        section1Data: {
+            ...state.section1Data,
+            items: updatedItems
+        }
+    };
+}
+
+const setActivitySection2ItemAccordionsPage = (state, action) => {
+    let updatedItems = [...state.section2Data.items];
+
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            active: false
+        }
+    })
+
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), active: action.val};
+
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            items: updatedItems
+        }
+    };
+}
+
 const accordionsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_ACCORDIONS_PAGE_SECTION_1_DATA_BEGIN:
@@ -142,6 +196,10 @@ const accordionsPageReducer = (state = initialState, action) => {
             return fetchAccordionsPageSection2DataFailur(state, action);
         case actionTypes.SET_IS_HOVER_SECTION_2_ITEM_ACCORDIONS_PAGE:
             return setIsHoverSection2ItemAccordionsPage(state, action);
+        case actionTypes.SET_ACTIVITY_SECTION_1_ITEM_ACCORDION_PAGE:
+            return setActivitySection1ItemAccordionsPage(state, action);
+        case actionTypes.SET_ACTIVITY_SECTION_2_ITEM_ACCORDION_PAGE:
+            return setActivitySection2ItemAccordionsPage(state, action);
         default: 
             return state;
     }
