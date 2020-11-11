@@ -1,0 +1,47 @@
+.plus-icon {
+    position: relative;
+    .plus-horizontal-line {
+        width: 11px;
+        height: 2px;
+        background:black;
+    }
+    .plus-vertical-line {
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        transform: rotate(90deg);
+        width: 11px;
+        height: 1.5px;
+        background:black;
+    }
+}
+
+.plus-icon-hover-on {
+    position: relative;
+    .plus-horizontal-line {
+        width: 11px;
+        height: 2px;
+        background:white;
+    }
+    .plus-vertical-line {
+      display: none;
+    }
+}
+
+.plus-icon-hover-off {
+    position: relative;
+    .plus-horizontal-line {
+        width: 11px;
+        height: 2px;
+        background:black;
+    }
+    .plus-vertical-line {
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        transform: rotate(90deg);
+        width: 11px;
+        height: 1.5px;
+        background:black;
+    }
+}

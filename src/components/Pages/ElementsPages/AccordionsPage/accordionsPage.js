@@ -27,6 +27,7 @@ import './accordionsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import AccordionItem from '../../../SmallParts/AccordionItem/accordionItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -107,7 +108,6 @@ export const AccordionsPage = (props) => {
         return () => {
             // Cleaning the unmounted component
 
-            clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
@@ -178,74 +178,16 @@ export const AccordionsPage = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, id) => {
-        switch(opt){
-            case 'section2': 
-                props.setIsHoverSection2ItemAccordionsPage("on", id);
-                break;
-        }
-    }
-
-    const handleMouseLeave = (opt, id) => {
-        switch(opt){
-            case 'section2': 
-                props.setIsHoverSection2ItemAccordionsPage("off", id);
-                break;
-        }
-    }
-
-    const renderClassName = (opt, isHovering) => {
-        if(opt === "itemBackground"){
-            switch(isHovering){
-                case 'init':
-                    return "accordions-page-section2-item";
-                case 'on':
-                    return "accordions-page-section2-item-hover-on";
-                case 'off':
-                    return "accordions-page-section2-item-hover-off"
-            }
-        }
-        if(opt === "section2Header"){
-            switch(isHovering){
-                case 'init':
-                    return "h19-nero-poppins ";
-                case 'on':
-                    return "h19-black-poppins-white-hover-on";
-                case 'off':
-                    return "h19-black-poppins-white-hover-off"
-            }
-        }
-        if(opt === "section2PlusIcon"){
-            switch(isHovering){
-                case 'init':
-                    return "accordions-page-item-plus";
-                case 'on':
-                    return "accordions-page-item-plus-hover-on";
-                case 'off':
-                    return "accordions-page-item-plus-hover-off"
-            }
-        }
-    }
-    
-    const renderPlusIcon = (opt, isHover) => {
-        return(
-            <div className={renderClassName(opt, isHover)}>
-                <div className="plus-horizontal-line"/>
-                <div className="plus-vertical-line"/>
-            </div>
-        )
-    }
-
     const renderAccordionsPageSection1Data = () => {
         return(
             <div className="accordions-page-section1-items">{props.accordionsPage.section1Data.items.map((el, i) => {
                 return(
-                    <div 
-                        key={i}
-                        className="accordions-page-section1-item"
-                    >
-                        <H19 className="h19-black-poppins">{el.header}</H19>
-                        {renderPlusIcon()}
+                    <div key={i}>
+                        <AccordionItem 
+                            style="simple"
+                            obj={el}
+                            iconType="plusIcon"
+                        />
                     </div>
                 )
             })}</div>
@@ -256,14 +198,14 @@ export const AccordionsPage = (props) => {
         return(
             <div className="accordions-page-section2-items">{props.accordionsPage.section2Data.items.map((el, i) => {
                 return(
-                    <div 
-                        key={i}
-                        className={renderClassName("itemBackground", el.isHover)}
-                        onMouseEnter={() => handleMouseEnter('section2', el.id)} 
-                        onMouseLeave={() => handleMouseLeave('section2', el.id)}
-                    >
-                        <H19 className={renderClassName("section2Header", el.isHover)}>{el.header}</H19>
-                        {renderPlusIcon("section2PlusIcon", el.isHover)}
+                    <div key={i}>
+                        <AccordionItem
+                            style="hoverBlackAndWhite"
+                            hoverEffect
+                            obj={el}
+                            setIsHoverAccordionItem={props.setIsHoverSection2ItemAccordionsPage}
+                            iconType="plusIcon"
+                        />
                     </div>
                 )
             })}</div>

@@ -23,15 +23,7 @@
             background: rgb(248, 248, 248);
             padding: 130px 0 130px 0;
             .accordions-page-section1-items {
-                .accordions-page-section1-item {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 630px;
-                    padding: 30px 0 15px 0;
-                    border-bottom: 1px solid rgba(155, 155, 155, 0.2);
-                    cursor: pointer;
-                }
+                
             }
         }
         .accordions-page-section2-data-wrapper {
@@ -40,97 +32,8 @@
             padding: 110px;
             .accordions-page-section2-items {
                 width: 100%;
-                .accordions-page-section2-item {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding: 20px;
-                    background: rgb(248, 248, 248);
-                    margin: 15px 0 15px 0;
-                    cursor: pointer;
-                }
-                .accordions-page-section2-item-hover-on {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding: 20px;
-                    background: black;
-                    margin: 15px 0 15px 0;
-                    cursor: pointer;
-                    -webkit-animation: accordionPageSection2ItemBackgroundHoverOn .2s linear;
-                    -moz-animation: accordionPageSection2ItemBackgroundHoverOn .2s linear;
-                    -o-animation: accordionPageSection2ItemBackgroundHoverOn .2s linear;
-                    animation: accordionPageSection2ItemBackgroundHoverOn .2s linear;
-                }
-                .accordions-page-section2-item-hover-off {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding: 20px;
-                    background: rgb(248, 248, 248);
-                    margin: 15px 0 15px 0;
-                    cursor: pointer;
-                    -webkit-animation: accordionPageSection2ItemBackgroundHoverOff .2s linear;
-                    -moz-animation: accordionPageSection2ItemBackgroundHoverOff .2s linear;
-                    -o-animation: accordionPageSection2ItemBackgroundHoverOff .2s linear;
-                    animation: accordionPageSection2ItemBackgroundHoverOff .2s linear;
-                }
             }
         }
-    }
-}
-
-.accordions-page-item-plus {
-    position: relative;
-    .plus-horizontal-line {
-        width: 11px;
-        height: 2px;
-        background:black;
-    }
-    .plus-vertical-line {
-        position: absolute;
-        top: 0%;
-        bottom: 0%;
-        transform: rotate(90deg);
-        width: 11px;
-        height: 1.5px;
-        background:black;
-    }
-}
-
-.accordions-page-item-plus-hover-on {
-    position: relative;
-    .plus-horizontal-line {
-        width: 11px;
-        height: 2px;
-        background:white;
-    }
-    .plus-vertical-line {
-      display: none;
-    }
-}
-
-.accordions-page-item-plus-hover-off {
-    position: relative;
-    .plus-horizontal-line {
-        width: 11px;
-        height: 2px;
-        background:black;
-    }
-    .plus-vertical-line {
-        position: absolute;
-        top: 0%;
-        bottom: 0%;
-        transform: rotate(90deg);
-        width: 11px;
-        height: 1.5px;
-        background:black;
     }
 }
 
@@ -184,38 +87,4 @@
             }
         }
     }
-}
-
-@-webkit-keyframes accordionPageSection2ItemBackgroundHoverOn {
-    from{background: white;}
-    to{background: black;}
-}
-@-moz-keyframes accordionPageSection2ItemBackgroundHoverOn {
-    from{background: white;}
-    to{background: black;}
-}
-@-o-keyframes accordionPageSection2ItemBackgroundHoverOn {
-    from{background: white;}
-    to{background: black;}
-}
-@keyframes accordionPageSection2ItemBackgroundHoverOn {
-    from{background: white;}
-    to{background: black;}
-}
-
-@-webkit-keyframes accordionPageSection2ItemBackgroundHoverOff {
-    from{background: black;}
-    to{background: white;}
-}
-@-moz-keyframes accordionPageSection2ItemBackgroundHoverOff {
-    from{background: black;}
-    to{background: white;}
-}
-@-o-keyframes accordionPageSection2ItemBackgroundHoverOff {
-    from{background: black;}
-    to{background: white;}
-}
-@keyframes accordionPageSection2ItemBackgroundHoverOff {
-    from{background: black;}
-    to{background: white;}
 }
