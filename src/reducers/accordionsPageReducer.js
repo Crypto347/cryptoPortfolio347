@@ -132,10 +132,10 @@ const setActivitySection1ItemAccordionsPage = (state, action) => {
     updatedItems = updatedItems.map(el => {
         return {
             ...el,
-            active: false
+            active: "init"
         }
     })
-    
+
     let item = {
         ...updatedItems
         .find(item => item.id === action.id), active: action.val};
@@ -159,7 +159,7 @@ const setActivitySection2ItemAccordionsPage = (state, action) => {
     updatedItems = updatedItems.map(el => {
         return {
             ...el,
-            active: false
+            active: "init"
         }
     })
 

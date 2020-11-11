@@ -50,9 +50,59 @@
 }
 
 .accordion-item-text {
-    padding: 25px 0 25px 0;
+    padding: 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
+.accordion-item-text-open {
+    padding: 25px 0 25px 0;
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item-text-close {
+    padding: 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+@-webkit-keyframes accordionTextAnimationOpen {
+    from{height: 0;}
+    to{height: 100px;}
+}
+@-moz-keyframes accordionTextAnimationOpen {
+    from{height: 0;}
+    to{height: 100px;}
+}
+@-o-keyframes accordionTextAnimationOpen {
+    from{height: 0;}
+    to{height: 100px;}
+}
+@keyframes accordionTextAnimationOpen {
+    from{height: 0;}
+    to{height: 100px;}
+}
+
+@-webkit-keyframes accordionTextAnimationClose {
+    from{height: 100px;}
+    to{height: 0px;}
+}
+@-moz-keyframes accordionTextAnimationClose {
+    from{height: 100px;}
+    to{height: 0px;}
+}
+@-o-keyframes accordionTextAnimationClose {
+    from{height: 100px;}
+    to{height: 0px;}
+}
+@keyframes accordionTextAnimationClose {
+    from{height: 100px;}
+    to{height: 0px;}
+}
 
 @-webkit-keyframes accordionItemBackgroundHoverOn {
     from{background: white;}

@@ -42,11 +42,14 @@ export const Icon = (props) => {
     useEffect(() => {
     }, []);
     
-    const renderClassName = (opt, isHovering) => {
+    const renderClassName = (opt, isHovering, isActive) => {
         if(opt === "plusIcon" && !props.hoverEffect){
             return "plus-icon";
         }
         if(opt === "plusIcon" && props.hoverEffect){
+            if(isActive === "on"){
+                return "plus-icon-hover-on";
+            }
             switch(isHovering){
                 case 'init':
                     return "plus-icon";
@@ -58,23 +61,15 @@ export const Icon = (props) => {
         }
     }
 
-    const renderIcon = (opt, isHover) => {
-        return(
-            <div className={renderClassName(opt, isHover)}>
-                <div className="plus-horizontal-line"/>
-                <div className="plus-vertical-line"/>
-            </div>
-        )
-    }
-
     /**
      * Markup
      */
 
     return(
-        <>
-            {renderIcon(props.iconType, props.isHover)}
-        </>
+        <div className={renderClassName(props.iconType, props.isHover, props.isActive)}>
+            <div className="plus-horizontal-line"/>
+            <div className="plus-vertical-line"/>
+        </div>
     );
 }
 

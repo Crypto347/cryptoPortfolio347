@@ -62,7 +62,7 @@ export const AccordionItem = (props) => {
         }
     }
     
-    const renderClassName = (style, opt, isHovering) => {
+    const renderClassName = (style, opt, isHovering, isActive) => {
         if(style === "simple"){
             if(opt === "background"){
                 return "accordion-item-simple";
@@ -73,6 +73,9 @@ export const AccordionItem = (props) => {
         }
         if(style === "hoverBlackAndWhite"){
             if(opt === "background"){
+                if(isActive === "on"){
+                    return "accordion-item-black-and-white-hover-on";
+                }
                 switch(isHovering){
                     case 'init':
                         return "accordion-item-black-and-white";
@@ -83,6 +86,9 @@ export const AccordionItem = (props) => {
                 }
             }
             if(opt === "header"){
+                if(isActive === "on"){
+                    return "h19-black-poppins-white-hover-on";
+                }
                 switch(isHovering){
                     case 'init':
                         return "h19-nero-poppins";
@@ -93,10 +99,21 @@ export const AccordionItem = (props) => {
                 }
             }
         }
+        if(opt === "collapsibleArea"){
+            switch(isActive){
+                case 'init':
+                    return "accordion-item-text";
+                case 'on':
+                    return "accordion-item-text-open";
+                case 'off':
+                    return "accordion-item-text-close"
+            }
+        }
     }
 
     const onClickHandler = () => {
-        
+        let val = props.obj.active === "init" || props.obj.active === "off" ? "on" : "off";
+        props.activateAccordionItem(val, props.obj.id);
     }
 
     /**
@@ -106,23 +123,22 @@ export const AccordionItem = (props) => {
     return(
         <>
             <div 
-                className={renderClassName(props.style, "background", props.obj.isHover)}
+                className={renderClassName(props.style, "background", props.obj.isHover, props.obj.active)}
                 onMouseEnter={props.hoverEffect ? () => handleMouseEnter(props.style, props.obj.id) : null} 
                 onMouseLeave={props.hoverEffect ? () => handleMouseLeave(props.style, props.obj.id) : null}
-                onClick={()=>props.activateAccordionItem(!props.obj.active, props.obj.id)}
+                onClick={onClickHandler}
             >
-                <H19 className={renderClassName(props.style, "header", props.obj.isHover)}>{props.obj.header}</H19>
+                <H19 className={renderClassName(props.style, "header", props.obj.isHover, props.obj.active)}>{props.obj.header}</H19>
                 <Icon
                     iconType={props.iconType}
-                    isHover={props.obj.isHover}
                     hoverEffect={props.hoverEffect}
+                    isHover={props.obj.isHover}
+                    isActive={props.obj.active}
                 />
             </div>
-            {props.obj.active ? 
-            <div className="accordion-item-text">
+            <div className={renderClassName(null, "collapsibleArea", null, props.obj.active)}>
                 <H17 className="h17-nobel-lustria">{props.obj.text}</H17>
-            </div> : null
-        }
+            </div> 
         </>
     );
 }
