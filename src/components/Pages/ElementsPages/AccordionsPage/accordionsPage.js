@@ -57,7 +57,7 @@ import {
     H15,
     H19,
     H45,
-    EW30
+    EW70
 } from '../../../UtilityComponents';
 
 /**
@@ -227,7 +227,7 @@ export const AccordionsPage = (props) => {
             return(
                 <div className="accordions-page-section1-data-wrapper">
                     {renderAccordionsPageSection1Data()}
-                    <EW30/>
+                    <EW70/>
                     {renderAccordionsPageSection1Data()}
                 </div>
             )
