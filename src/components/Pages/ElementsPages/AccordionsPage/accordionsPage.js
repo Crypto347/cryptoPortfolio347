@@ -93,6 +93,8 @@ export const AccordionsPage = (props) => {
 
         if(props.accordionsPage.section1Data.itemsLeftColumn.length === 0){
             props.fetchAccordionsPageSection1Data();
+        }
+        if(props.accordionsPage.section2Data.items.length === 0){
             props.fetchAccordionsPageSection2Data();
         }
 

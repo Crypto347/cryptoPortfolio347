@@ -18309,13 +18309,13 @@ app.post('/api/four-columns-page', (req, res) => {
     }
 });
 
-app.get('/api/accordions/section1', (req, res) => {
-    const accordionsSection1Data = [
+app.get('/api/accordions-page/section1', (req, res) => {
+    const accordionsPageSection1Data = [
         {
             id: 1,
             key: "development",
             header: "Development",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam varius urna, eu viverra leo suscipit pretium. Duis mollis mollis sapien a luctus. Suspendisse facilisis egestas nunc, sit amet bibendum ex pellentesque vitae. ",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam varius urna, eu viverra leo suscipit pretium. Duis mollis mollis sapien a luctus. Suspendisse facilisis egestas nunc, sit amet bibendum ex pellentesque vitae.",
             active: "on"
         },
         {
@@ -18329,7 +18329,7 @@ app.get('/api/accordions/section1', (req, res) => {
             id: 3,
             key: "product",
             header: "Product",
-            text: "Cras ultricies massa ut sem sollicitudin hendrerit. Nam semper nulla eget gravida sagittis. Vivamus facilisis sem in semper dictum. In purus erat, varius ac venenatis bibendum, aliquam eget velit. ",
+            text: "Cras ultricies massa ut sem sollicitudin hendrerit. Nam semper nulla eget gravida sagittis. Vivamus facilisis sem in semper dictum. In purus erat, varius ac venenatis bibendum, aliquam eget velit.",
             active: "init"
         },
         {
@@ -18368,16 +18368,16 @@ app.get('/api/accordions/section1', (req, res) => {
             active: "init"
         }
     ]
-    res.json(accordionsSection1Data);
+    res.json(accordionsPageSection1Data);
 });
 
-app.get('/api/accordions/section2', (req, res) => {
-    const accordionsSection2Data = [
+app.get('/api/accordions-page/section2', (req, res) => {
+    const accordionsPageSection2Data = [
         {
             id: 1,
             key: "section2id1",
             header: "Your small business web design solution?",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam varius urna, eu viverra leo suscipit pretium. Duis mollis mollis sapien a luctus. Suspendisse facilisis egestas nunc, sit amet bibendum ex pellentesque vitae. ",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquam varius urna, eu viverra leo suscipit pretium. Duis mollis mollis sapien a luctus. Suspendisse facilisis egestas nunc, sit amet bibendum ex pellentesque vitae.",
             isHover: "init",
             active: "on"
         },
@@ -18393,7 +18393,7 @@ app.get('/api/accordions/section2', (req, res) => {
             id: 3,
             key: "section2id3",
             header: "Your small business web design solution?",
-            text: "Proin vehicula justo libero. Ut a enim blandit, feugiat libero id, vulputate eros. Aenean eget mauris imperdiet, egestas ante nec, lacinia elit. Curabitur ac faucibus leo. ",
+            text: "Proin vehicula justo libero. Ut a enim blandit, feugiat libero id, vulputate eros. Aenean eget mauris imperdiet, egestas ante nec, lacinia elit. Curabitur ac faucibus leo.",
             isHover: "init",
             active: "init"
         },
@@ -18406,7 +18406,37 @@ app.get('/api/accordions/section2', (req, res) => {
             active: "init"
         }
     ]
-    res.json(accordionsSection2Data);
+    res.json(accordionsPageSection2Data);
+});
+
+app.get('/api/tabs-page/section1/column1', (req, res) => {
+    const tabsPageSection1Column1Data = [
+        {
+            id: 1,
+            key: "section1Column1id1",
+            header: "Solutions",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            isHover: "init",
+            active: "on"
+        },
+        {
+            id: 2,
+            key: "section1Column1id2",
+            header: "Ideas",
+            text: "Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
+            isHover: "init",
+            active: "init"
+        },
+        {
+            id: 3,
+            key: "section1Column1id3",
+            header: "Description",
+            text: "Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id.",
+            isHover: "init",
+            active: "init"
+        }
+    ]
+    res.json(tabsPageSection1Column1Data);
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {

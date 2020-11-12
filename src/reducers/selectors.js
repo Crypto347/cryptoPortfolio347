@@ -386,3 +386,10 @@ export const getAccordionsPageState = createSelector(
     [getAccordionsPage],
     (x) => x
 );
+
+const getTabsPage = (state) => state.tabsPage;
+
+export const getTabsPageState = createSelector(
+    [getTabsPage],
+    (x) => x
+);

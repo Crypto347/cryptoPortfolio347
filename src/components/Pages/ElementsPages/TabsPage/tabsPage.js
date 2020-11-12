@@ -27,7 +27,6 @@ import './tabsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import AccordionItem from '../../../SmallParts/AccordionItem/accordionItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -91,9 +90,8 @@ export const TabsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.accordionsPage.section1Data.itemsLeftColumn.length === 0){
-            props.fetchAccordionsPageSection1Data();
-            props.fetchAccordionsPageSection2Data();
+        if(props.tabsPage.section1Column1Data.items.length === 0){
+            props.fetchTabsPageSection1Column1Data();
         }
 
         // Scroll to the top of the screen
@@ -115,7 +113,7 @@ export const TabsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("accordionsPage");
+        let el = document.getElementById("tabsPage");
 
         // Show or hide BackToTop component
 
@@ -149,12 +147,12 @@ export const TabsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="accordionsPage"
+                        page="tabsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="accordionsPage"
+                        page="tabsPage"
                     />
                 </>
             )
@@ -165,113 +163,124 @@ export const TabsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="accordionsPage"
+                        page="tabsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="accordionsPage"
+                        page="tabsPage"
                     />
                 </>
             )
         }
     }
 
-    const renderAccordionsPageSection1Data = (arr, opt) => {
+    const renderTabsPageSection1Data = (arr, opt) => {
         return(
-            <div className="accordions-page-section1-items">{arr.map((el, i) => {
+            <div className="tabs-page-section1-items">{arr.map((el, i) => {
                 return(
                     <div key={i}>
-                        <AccordionItem 
-                            style="simple"
-                            obj={el}
-                            activateAccordionItem={props.setActivitySection1ItemAccordionsPage}
-                            iconType="plusIcon"
-                            option={opt}
-                        />
+                        
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderAccordionsPageSection2Data = () => {
+    const renderTabsPageSection2Data = () => {
         return(
-            <div className="accordions-page-section2-items">{props.accordionsPage.section2Data.items.map((el, i) => {
+            <div className="tabs-page-section2-items">{props.tabsPage.section2Data.items.map((el, i) => {
                 return(
                     <div key={i}>
-                        <AccordionItem
-                            style="hoverBlackAndWhite"
-                            hoverEffect
-                            obj={el}
-                            setIsHoverAccordionItem={props.setIsHoverSection2ItemAccordionsPage}
-                            activateAccordionItem={props.setActivitySection2ItemAccordionsPage}
-                            iconType="plusIcon"
-                        />
+                       
                     </div>
                 )
             })}</div>
         )
     }
 
-    const renderAccordionsPageSection1DataContent = () => {
-        if(props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
+    const renderTabsPageSection1Column1DataContent = () => {
+        if(props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column2Data.error){
             return(
                 <div 
-                    className="accordions-page-loading-error" 
+                    className="tabs-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
+        if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
             return(
-                <div className="accordions-page-section1-data-wrapper">
-                    {renderAccordionsPageSection1Data(props.accordionsPage.section1Data.itemsLeftColumn,"leftColumn")}
-                    <EW70/>
-                    {renderAccordionsPageSection1Data(props.accordionsPage.section1Data.itemsRightColumn,"rightColumn")}
-                </div>
+                renderTabsPageSection1Data(props.tabsPage.section1Column2Data.items,"leftColumn")
             )
         }
-        if(!props.accordionsPage.section1Data.loading && props.accordionsPage.section1Data.error){
+        if(!props.tabsPage.section1Column1Data.loading && props.tabsPage.section1Column1Data.error){
             return(
                 <div 
-                    className="accordions-page-loading-error" 
+                    className="tabs-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.accordionsPage.section1Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column1Data.error}`}</H15>
                 </div>
             )
         }
     } 
     
-    const renderAccordionsPageSection2DataContent = () => {
-        if(props.accordionsPage.section2Data.loading && !props.accordionsPage.section2Data.error){
+    const renderTabsPageSection1Column2DataContent = () => {
+        if(props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
             return(
                 <div 
-                    className="accordions-page-loading-error" 
+                    className="tabs-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.accordionsPage.section2Data.loading && !props.accordionsPage.section2Data.error){
+        if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
             return(
-                <div className="accordions-page-section2-data-wrapper">
-                    {renderAccordionsPageSection2Data()}
+                renderTabsPageSection1Data()
+            )
+        }
+        if(!props.tabsPage.section1Column2Data.loading && props.tabsPage.section1Column2Data.error){
+            return(
+                <div 
+                    className="tabs-page-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column2Data.error}`}</H15>
+                </div>
+            )
+        }
+    }
+
+    const renderTabsPageSection2DataContent = () => {
+        if(props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
+            return(
+                <div 
+                    className="tabs-page-loading-error" 
+                    style={{height: `${size.height}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
+            return(
+                <div className="tabs-page-section2-data-wrapper">
+                    {renderTabsPageSection2Data()}
                 </div>
                
             )
         }
-        if(!props.accordionsPage.section2Data.loading && props.accordionsPage.section2Data.error){
+        if(!props.tabsPage.section2Data.loading && props.tabsPage.section2Data.error){
             return(
                 <div 
-                    className="accordions-page-loading-error" 
+                    className="tabs-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.accordionsPage.section2Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section2Data.error}`}</H15>
                 </div>
             )
         }
@@ -282,15 +291,18 @@ export const TabsPage = (props) => {
      */
 
     return(
-        <div className="accordions-page" id="accordionsPage">
+        <div className="tabs-page" id="tabsPage">
             {renderToolbars()}
-            <div className="accordions-page-wrapper">
-                <div className="accordions-page-header">
+            <div className="tabs-page-wrapper">
+                <div className="tabs-page-header">
                     <H45 className="h45-nero-lustria">Tabs</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderAccordionsPageSection1DataContent()}
-                {renderAccordionsPageSection2DataContent()}
+                <div className="tabs-page-section-1-data-wrapper">
+                    {renderTabsPageSection1Column1DataContent()}
+                    {renderTabsPageSection1Column1DataContent()}
+                </div>
+                {renderTabsPageSection2DataContent()}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -301,14 +313,14 @@ export const TabsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            accordionsPage: Selectors.getAccordionsPageState(state),
+            tabsPage: Selectors.getTabsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchAccordionsPageSection1Data: bindActionCreators(Services.fetchAccordionsPageSection1Data, dispatch),
+            fetchTabsPageSection1Column1Data: bindActionCreators(Services.fetchTabsPageSection1Column1Data, dispatch),
             fetchAccordionsPageSection2Data: bindActionCreators(Services.fetchAccordionsPageSection2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

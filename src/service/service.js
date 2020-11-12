@@ -1464,7 +1464,7 @@ export function fetchFourColumnsPage(step, category, screenWidth, numOfItemsInAr
 export function fetchAccordionsPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchAccordionsPageSection1DataBegin());
-        return fetch(`http://localhost:3005/api/accordions/section1`)
+        return fetch(`http://localhost:3005/api/accordions-page/section1`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
@@ -1482,7 +1482,7 @@ export function fetchAccordionsPageSection1Data() {
 export function fetchAccordionsPageSection2Data() {
     return dispatch => {
         dispatch(Actions.fetchAccordionsPageSection2DataBegin());
-        return fetch(`http://localhost:3005/api/accordions/section2`)
+        return fetch(`http://localhost:3005/api/accordions-page/section2`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
@@ -1493,6 +1493,24 @@ export function fetchAccordionsPageSection2Data() {
             .catch(error => {
                 console.log("error",error)
                 dispatch(Actions.fetchAccordionsPageSection2DataFailur(error))
+            });
+    };
+}
+
+export function fetchTabsPageSection1Column1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTabsPageSection1Column1DataBegin());
+        return fetch(`http://localhost:3005/api/tabs-page/section1/column1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTabsPageSection1Column1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTabsPageSection1Column1DataFailur(error))
             });
     };
 }
