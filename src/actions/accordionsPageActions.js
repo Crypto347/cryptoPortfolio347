@@ -48,11 +48,12 @@ export function setIsHoverSection2ItemAccordionsPage(val, id) {
     };
 };
 
-export function setActivitySection1ItemAccordionsPage(val, id) {
+export function setActivitySection1ItemAccordionsPage(val, id, opt) {
     return { 
         type: actionTypes.SET_ACTIVITY_SECTION_1_ITEM_ACCORDION_PAGE,
         val: val,
-        id: id
+        id: id,
+        opt: opt
     };
 };
 

@@ -91,7 +91,7 @@ export const AccordionsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.accordionsPage.section1Data.items.length === 0){
+        if(props.accordionsPage.section1Data.itemsLeftColumn.length === 0){
             props.fetchAccordionsPageSection1Data();
             props.fetchAccordionsPageSection2Data();
         }
@@ -177,7 +177,7 @@ export const AccordionsPage = (props) => {
         }
     }
 
-    const renderAccordionsPageSection1Data = (arr) => {
+    const renderAccordionsPageSection1Data = (arr, opt) => {
         return(
             <div className="accordions-page-section1-items">{arr.map((el, i) => {
                 return(
@@ -187,6 +187,7 @@ export const AccordionsPage = (props) => {
                             obj={el}
                             activateAccordionItem={props.setActivitySection1ItemAccordionsPage}
                             iconType="plusIcon"
+                            option={opt}
                         />
                     </div>
                 )
@@ -225,17 +226,11 @@ export const AccordionsPage = (props) => {
             )
         }
         if(!props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
-            // Split an array into two arrays to display in two columns
-
-            let array = [...props.accordionsPage.section1Data.items];
-            let splitedArray1 = array.slice(0, props.accordionsPage.section1Data.items.length/2)
-            let splitedArray2 = array.slice(props.accordionsPage.section1Data.items.length/2, props.accordionsPage.section1Data.items.length);
-
             return(
                 <div className="accordions-page-section1-data-wrapper">
-                    {renderAccordionsPageSection1Data(splitedArray1)}
+                    {renderAccordionsPageSection1Data(props.accordionsPage.section1Data.itemsLeftColumn,"leftColumn")}
                     <EW70/>
-                    {renderAccordionsPageSection1Data(splitedArray2)}
+                    {renderAccordionsPageSection1Data(props.accordionsPage.section1Data.itemsRightColumn,"rightColumn")}
                 </div>
             )
         }

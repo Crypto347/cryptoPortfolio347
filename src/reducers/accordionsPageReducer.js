@@ -17,7 +17,8 @@ import uuid from "uuid";
 
 export const initialState = {
     section1Data: {
-        items: [],
+        itemsLeftColumn: [],
+        itemsRightColumn: [],
         loading: false,
         error: null
     },
@@ -42,10 +43,17 @@ const fetchAccordionsPageSection1DataBegin = (state, action) => {
 }
 
 const fetchAccordionsPageSection1DataSuccess = (state, action) => {
+    // Split an array into two arrays to display in two columns
+
+    let array = [...action.array];
+    let splitedArray1 = array.slice(0, array.length/2)
+    let splitedArray2 = array.slice(array.length/2, array.length);
+
     let updateSection1Data = {
-        ...state.section1Data,
+        ...state.section2Data,
         loading: false,
-        items: action.array
+        itemsLeftColumn: splitedArray1,
+        itemsRightColumn: splitedArray2
     };
     
     return {
@@ -59,7 +67,8 @@ const fetchAccordionsPageSection1DataFailur = (state, action) => {
         ...state.section1Data,
         loading: false,
         error: action.err,
-        items: []
+        itemsLeftColumn: [],
+        itemsRightColumn: []
     };
     return {
         ...state,
@@ -98,7 +107,7 @@ const fetchAccordionsPageSection2DataFailur = (state, action) => {
         ...state.section2Data,
         loading: false,
         error: action.err,
-        items: []
+        items: [],
     };
     return {
         ...state,
@@ -127,30 +136,64 @@ const setIsHoverSection2ItemAccordionsPage = (state, action) => {
 }
 
 const setActivitySection1ItemAccordionsPage = (state, action) => {
-    let updatedItems = [...state.section1Data.items];
+    let updatedItems;
+    let item;
+    let itemIndex;
+    switch(action.opt){
+        case 'leftColumn':
+            updatedItems = [...state.section1Data.itemsLeftColumn];
 
-    updatedItems = updatedItems.map(el => {
-        return {
-            ...el,
-            active: "init"
-        }
-    })
-
-    let item = {
-        ...updatedItems
-        .find(item => item.id === action.id), active: action.val};
-
-    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+            updatedItems = updatedItems.map(el => {
+                return {
+                    ...el,
+                    active: "init"
+                }
+            })
         
-    updatedItems.splice(itemIndex, 1, item);
+            item = {
+                ...updatedItems
+                .find(item => item.id === action.id), active: action.val};
+        
+            itemIndex = updatedItems.findIndex(item => item.id === action.id);
+                
+            updatedItems.splice(itemIndex, 1, item);
+        
+            return {
+                ...state,
+                section1Data: {
+                    ...state.section1Data,
+                    itemsLeftColumn: updatedItems
+                }
+            };
+        case 'rightColumn':
+            updatedItems = [...state.section1Data.itemsRightColumn];
 
-    return {
-        ...state,
-        section1Data: {
-            ...state.section1Data,
-            items: updatedItems
-        }
-    };
+            updatedItems = updatedItems.map(el => {
+                return {
+                    ...el,
+                    active: "init"
+                }
+            })
+        
+            item = {
+                ...updatedItems
+                .find(item => item.id === action.id), active: action.val};
+        
+            itemIndex = updatedItems.findIndex(item => item.id === action.id);
+                
+            updatedItems.splice(itemIndex, 1, item);
+        
+            return {
+                ...state,
+                section1Data: {
+                    ...state.section1Data,
+                    itemsRightColumn: updatedItems
+                }
+            };
+        default:
+            return state;
+    }
+
 }
 
 const setActivitySection2ItemAccordionsPage = (state, action) => {

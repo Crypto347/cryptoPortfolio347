@@ -107,7 +107,7 @@ export const AccordionItem = (props) => {
 
     const onClickHandler = () => {
         let val = props.obj.active === "init" || props.obj.active === "off" ? "on" : "off";
-        props.activateAccordionItem(val, props.obj.id);
+        props.activateAccordionItem(val, props.obj.id, props.option);
     }
 
     /**
