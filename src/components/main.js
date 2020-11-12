@@ -62,6 +62,7 @@ import TwoColumnsPage from './Pages/PortfolioPages/TwoColumnsPage/twoColumnsPage
 import ThreeColumnsPage from './Pages/PortfolioPages/ThreeColumnsPage/threeColumnsPage';
 import FourColumnsPage from './Pages/PortfolioPages/FourColumnsPage/fourColumnsPage';
 import AccordionsPage from './Pages/ElementsPages/AccordionsPage/accordionsPage';
+import TabsPage from './Pages/ElementsPages/TabsPage/tabsPage';
 
 /**
  * Actions
@@ -143,6 +144,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/tabs"}
+                    component={TabsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/accordions"}
