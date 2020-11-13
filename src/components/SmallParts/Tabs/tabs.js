@@ -42,12 +42,16 @@ export const Tabs = (props) => {
      * State
      */
 
-     const tab1 = useRef();
-     const tab2 = useRef();
-     const tab3 = useRef();
-     const tab4 = useRef();
-     const transitionRef = useRef();
-     const [widthOfTab, setWidthOfTab] = useState(0);
+    const tab1 = useRef();
+    const tab2 = useRef();
+    const tab3 = useRef();
+    const tab4 = useRef();
+    const section1Column1 = useRef();
+    const section1Column2 = useRef();
+    const section2 = useRef();
+    const resizeRef = useRef();
+    const transitionRef = useRef();
+    const [widthOfTab, setWidthOfTab] = useState(0);
 
     /**
      * Methods
@@ -57,8 +61,11 @@ export const Tabs = (props) => {
         if(props.array.length !== 0){
             let tabInfo = tab1.current.getBoundingClientRect()
             setWidthOfTab(tabInfo.width)
-            console.log(tabInfo);
         }
+
+        // Calculate tabs header holder coordinates 
+
+        setTabCoordinateRange();
 
         // Event Listeners
     
@@ -66,20 +73,65 @@ export const Tabs = (props) => {
             transitionRef.current();
         }
 
+        const resize = () => {
+            resizeRef.current();
+        }
+
         window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
+        
 
         return () => {
             // Cleaning the unmounted component
 
             window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
         }
     }, []);
 
     useEffect(() => {
+        resizeRef.current = handleResize;
         transitionRef.current = smoothTransition;
     });
+
+
+    const handleResize = () => {
+        // Update tabs header holder coordinates on window resize
+        
+        setTabCoordinateRange();
+    }
+
+    const setTabCoordinateRange = () => {
+        //Remember tab header holder coordinates
+
+        let headerHolderCoordinateRange = [];
+        if(props.page === "tabsPage"){
+            headerHolderCoordinateRange = props.array.map(el => {
+                return evaluateCoordinates(el.id)
+            });
+        }
+        console.log("TABCOORDINATES",headerHolderCoordinateRange)
+
+        // props.rememberCoordinateRange(props.tabsKey, headerHolderCoordinateRange);
+    }
+    
+    const evaluateCoordinates = (tabId) => {
+        //Calculate tabs header holder coordinates
+
+        let tabHeaderHolder = setRef("tab", tabId);
+        let updatedTabsHeaderCoordinateRange = {
+            key: props.tabsKey,
+            topCoordinate: tabHeaderHolder.current.getBoundingClientRect().top,
+            bottomCoordinate: tabHeaderHolder.current.getBoundingClientRect().bottom,
+            leftCoordinate: tabHeaderHolder.current.getBoundingClientRect().left,
+            rightCoordinate: tabHeaderHolder.current.getBoundingClientRect().right,
+            width: tabHeaderHolder.current.getBoundingClientRect().width,
+            updated: true
+        };
+        return updatedTabsHeaderCoordinateRange;
+    }
 
     // useEffect(() => {
     //     // Set the transition property to the initial value if its value is 0
@@ -105,16 +157,49 @@ export const Tabs = (props) => {
     }
 
     const handleMouseMove = (e) => {
-        
+        /**
+         * Split the image holder into equal parts equal to the number of elements in imagesArray,
+         * and remember the coordinates of each part. Then check if the cursor coordinates are 
+         * inside the part and then render the corresponding image.
+         */
+
+        let pageX = e.pageX;
+        let pageY = e.pageY;
+
+        // if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
+        //     props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
+        // ){
+        //     let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
+        //     let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
+        //     coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
+        //     coordinatesArray.map((el, i) => {
+        //         if(i !== coordinatesArray.length - 1){
+        //             // Check if inside the calculated corresponding part
+
+        //             if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
+        //                 setImgToLoad(props.imagesArray[i]);
+        //             }
+        //         }else{
+        //             // Check if inside the calculated corresponding part
+
+        //             if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
+        //                 setImgToLoad(props.imagesArray[i]);
+        //             }
+        //         }
+               
+        //     })
+        // }
         // console.log(e)
     }
 
+   
     const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'tab': 
                 props.setIsHoverTab("on", id);
-                let tab = setRef(id);
+                let tab = setRef("tab", id);
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
+                console.log(tab.current.getBoundingClientRect())
                 break;
         }
     }
@@ -132,7 +217,7 @@ export const Tabs = (props) => {
             case 0:
                 // Show and remember data of chosen tab on left mouse click on left mouse click
 
-                let tab = setRef(id);
+                let tab = setRef("tab", id);
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
 
                 props.setActiveTab("on", id);
@@ -148,26 +233,31 @@ export const Tabs = (props) => {
         }
     }
 
-    const setRef = (id) => {
-        switch(id){
-            case 1:
-                return tab1;
-            case 2:
-                return tab2;
-            case 3:
-                return tab3;
-            case 4:
-                return tab4;
+    const setRef = (opt, id) => {
+        if(opt === "tab"){
+            switch(id){
+                case 1:
+                    return tab1;
+                case 2:
+                    return tab2;
+                case 3:
+                    return tab3;
+                case 4:
+                    return tab4;
+            }
         }
+        
     }
 
     const renderTabsHeader = () => {
         return(
-            <div className="tabs-header-items">{props.array.map((el, i) => {
+            <div 
+                className="tabs-header-items"
+            >{props.array.map((el, i) => {
                 return(
                     <div
                         key={i}
-                        ref={setRef(el.id)}
+                        ref={setRef("tab", el.id)}
                         className={i === 0 ? "tabs-header-item-first" : "tabs-header-item"}
                         onMouseEnter={() => handleMouseEnter("tab", el.id)} 
                         onMouseLeave={() => handleMouseLeave("tab", el.id)}

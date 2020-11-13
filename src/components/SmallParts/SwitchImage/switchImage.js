@@ -123,64 +123,7 @@ export const SwitchImage = (props) => {
     const setImageCoordinateRange = () => {
         //Remember image holder coordinates
 
-        let imgCoordinateRange;
-
-        switch(props.id){
-            case 1:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 2:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 3:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 4:
-                imgCoordinateRange = evaluateCoordinates();
-                break;
-            case 5:
-                imgCoordinateRange = evaluateCoordinates();
-                break;
-            case 6:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 7:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 8:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 9:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 10:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 11:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 12:
-                imgCoordinateRange = evaluateCoordinates();
-                break;
-            case 13:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 14:
-                imgCoordinateRange = evaluateCoordinates();
-                break;
-            case 15:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 16:
-                imgCoordinateRange = evaluateCoordinates(); 
-                break;
-            case 17:
-                imgCoordinateRange = evaluateCoordinates();
-                break;
-            case 18:
-                imgCoordinateRange = evaluateCoordinates();
-                break;
-        }
+        let imgCoordinateRange = evaluateCoordinates();
 
         props.rememberCoordinateRange(props.id, imgCoordinateRange);
     }

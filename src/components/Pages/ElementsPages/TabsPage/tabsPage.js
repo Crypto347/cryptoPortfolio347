@@ -200,7 +200,7 @@ export const TabsPage = (props) => {
                 <Tabs
                     array={props.tabsPage.section1Column1Data.items}
                     page="tabsPage"
-                    opt="section1Column1"
+                    tabsKey="section1Column1"
                     setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
                     setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
                 />
@@ -234,7 +234,7 @@ export const TabsPage = (props) => {
                 <Tabs
                     array={props.tabsPage.section1Column2Data.items}
                     page="tabsPage"
-                    opt="section1Column2"
+                    tabsKey="section1Column2"
                     setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
                     setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
                 />
@@ -269,7 +269,7 @@ export const TabsPage = (props) => {
                     <Tabs
                         array={props.tabsPage.section2Data.items}
                         page="tabsPage"
-                        opt="section2"
+                        tabsKey="section2"
                         setActiveTab={props.setActiveTabOfSection2TabsPage}
                         setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
                     />

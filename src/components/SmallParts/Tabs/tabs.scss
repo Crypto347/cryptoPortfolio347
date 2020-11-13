@@ -18,6 +18,7 @@
     
     .tabs-header-items {
         display: flex;
+        max-width: fit-content;
         .tabs-header-item-first {
             padding: 15px 25px 15px 0;
             cursor: pointer;

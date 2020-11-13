@@ -30,7 +30,64 @@ export const initialState = {
         items: [],
         loading: false,
         error: null
-    }
+    },
+    tabsCooradinateRange: [
+        {
+            tabKey: "section1Column1",
+            tabs: [
+                {
+                    id: 1,
+                    updated: false
+                },
+                {
+                    id: 2,
+                    updated: false
+                },
+                {
+                    id: 3,
+                    updated: false
+                }
+            ]
+        },
+        {
+            tabKey: "section1Column2",
+            tabs: [
+                {
+                    id: 1,
+                    updated: false
+                },
+                {
+                    id: 2,
+                    updated: false
+                },
+                {
+                    id: 3,
+                    updated: false
+                }
+            ]
+        },
+        {
+            tabKey: "section2",
+            tabs: [
+                {
+                    id: 1,
+                    updated: false
+                },
+                {
+                    id: 2,
+                    updated: false
+                },
+                {
+                    id: 3,
+                    updated: false
+                },
+                {
+                    id: 4,
+                    updated: false
+                }
+            ]
+        },
+    ],
 }
 
 const fetchTabsPageSection1Column1DataBegin = (state, action) => {
