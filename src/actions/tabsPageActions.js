@@ -60,6 +60,55 @@ export function fetchTabsPageSection2DataFailur(err) {
     };
 };
 
+export function setIsHoverTabOfSection1Column1TabsPage(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_TAB_OF_SECTION_1_COLUMN_1_TABS_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+export function setIsHoverTabOfSection1Column2TabsPage(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_TAB_OF_SECTION_1_COLUMN_2_TABS_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+export function setIsHoverTabOfSection2TabsPage(val, id) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_TAB_OF_SECTION_2_TABS_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+export function setActiveTabOfSection1Column1TabsPage(val, id) {
+    return { 
+        type: actionTypes.SET_ACTIVE_TAB_OF_SECTION_1_COLUMN_1_TABS_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+export function setActiveTabOfSection1Column2TabsPage(val, id) {
+    return { 
+        type: actionTypes.SET_ACTIVE_TAB_OF_SECTION_1_COLUMN_2_TABS_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+export function setActiveTabOfSection2TabsPage(val, id) {
+    return { 
+        type: actionTypes.SET_ACTIVE_TAB_OF_SECTION_2_TABS_PAGE,
+        val: val,
+        id: id
+    };
+};
+
+
 
 // export function setIsHoverSection2ItemAccordionsPage(val, id) {
 //     return { 

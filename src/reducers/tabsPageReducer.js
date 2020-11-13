@@ -170,93 +170,143 @@ const fetchTabsPageSection2DataFailur = (state, action) => {
 //     };
 // }
 
-    // const setActivitySection1ItemAccordionsPage = (state, action) => {
-    //     let updatedItems;
-    //     let item;
-    //     let itemIndex;
-    //     switch(action.opt){
-    //         case 'leftColumn':
-    //             updatedItems = [...state.section1Data.itemsLeftColumn];
+const setIsHoverTabOfSection1Column1TabsPage = (state, action) => {
+    let updatedItems = [...state.section1Column1Data.items];
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), isHover: action.val};
 
-    //             updatedItems = updatedItems.map(el => {
-    //                 return {
-    //                     ...el,
-    //                     active: "init"
-    //                 }
-    //             })
-            
-    //             item = {
-    //                 ...updatedItems
-    //                 .find(item => item.id === action.id), active: action.val};
-            
-    //             itemIndex = updatedItems.findIndex(item => item.id === action.id);
-                    
-    //             updatedItems.splice(itemIndex, 1, item);
-            
-    //             return {
-    //                 ...state,
-    //                 section1Data: {
-    //                     ...state.section1Data,
-    //                     itemsLeftColumn: updatedItems
-    //                 }
-    //             };
-    //         case 'rightColumn':
-    //             updatedItems = [...state.section1Data.itemsRightColumn];
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
 
-    //             updatedItems = updatedItems.map(el => {
-    //                 return {
-    //                     ...el,
-    //                     active: "init"
-    //                 }
-    //             })
-            
-    //             item = {
-    //                 ...updatedItems
-    //                 .find(item => item.id === action.id), active: action.val};
-            
-    //             itemIndex = updatedItems.findIndex(item => item.id === action.id);
-                    
-    //             updatedItems.splice(itemIndex, 1, item);
-            
-    //             return {
-    //                 ...state,
-    //                 section1Data: {
-    //                     ...state.section1Data,
-    //                     itemsRightColumn: updatedItems
-    //                 }
-    //             };
-    //         default:
-    //             return state;
-    //     }
+    return {
+        ...state,
+        section1Column1Data: {
+            ...state.section1Column1Data,
+            items: updatedItems
+        }
+    };
+}
 
-    // }
+const setIsHoverTabOfSection1Column2TabsPage = (state, action) => {
+    let updatedItems = [...state.section1Column2Data.items];
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), isHover: action.val};
 
-    // const setActivitySection2ItemAccordionsPage = (state, action) => {
-    //     let updatedItems = [...state.section2Data.items];
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
 
-    //     updatedItems = updatedItems.map(el => {
-    //         return {
-    //             ...el,
-    //             active: "init"
-    //         }
-    //     })
+    return {
+        ...state,
+        section1Column2Data: {
+            ...state.section1Column2Data,
+            items: updatedItems
+        }
+    };
+}
 
-    //     let item = {
-    //         ...updatedItems
-    //         .find(item => item.id === action.id), active: action.val};
+const setIsHoverTabOfSection2TabsPage = (state, action) => {
+    let updatedItems = [...state.section2Data.items];
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), isHover: action.val};
 
-    //     let itemIndex = updatedItems.findIndex(item => item.id === action.id);
-            
-    //     updatedItems.splice(itemIndex, 1, item);
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
 
-    //     return {
-    //         ...state,
-    //         section2Data: {
-    //             ...state.section2Data,
-    //             items: updatedItems
-    //         }
-    //     };
-    // }
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            items: updatedItems
+        }
+    };
+}
+
+const setActiveTabOfSection1Column1TabsPage = (state, action) => {
+    let updatedItems = [...state.section1Column1Data.items];
+
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            active: "off"
+        }
+    })
+
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), active: action.val};
+
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        section1Column1Data: {
+            ...state.section1Column1Data,
+            items: updatedItems
+        }
+    };
+}
+
+const setActiveTabOfSection1Column2TabsPage = (state, action) => {
+    let updatedItems = [...state.section1Column2Data.items];
+
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            active: "off"
+        }
+    })
+
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), active: action.val};
+
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        section1Column2Data: {
+            ...state.section1Column2Data,
+            items: updatedItems
+        }
+    };
+}
+
+const setActiveTabOfSection2TabsPage = (state, action) => {
+    let updatedItems = [...state.section2Data.items];
+
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            active: "off"
+        }
+    })
+
+    let item = {
+        ...updatedItems
+        .find(item => item.id === action.id), active: action.val};
+
+    let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            items: updatedItems
+        }
+    };
+}
 
 const tabsPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -278,12 +328,18 @@ const tabsPageReducer = (state = initialState, action) => {
             return fetchTabsPageSection2DataSuccess (state, action);
         case actionTypes.FETCH_TABS_PAGE_SECTION_2_DATA_FAILURE:
             return fetchTabsPageSection2DataFailur(state, action);
-        // case actionTypes.SET_IS_HOVER_SECTION_2_ITEM_ACCORDIONS_PAGE:
-        //     return setIsHoverSection2ItemAccordionsPage(state, action);
-        // case actionTypes.SET_ACTIVITY_SECTION_1_ITEM_ACCORDION_PAGE:
-        //     return setActivitySection1ItemAccordionsPage(state, action);
-        // case actionTypes.SET_ACTIVITY_SECTION_2_ITEM_ACCORDION_PAGE:
-        //     return setActivitySection2ItemAccordionsPage(state, action);
+        case actionTypes.SET_IS_HOVER_TAB_OF_SECTION_1_COLUMN_1_TABS_PAGE:
+            return setIsHoverTabOfSection1Column1TabsPage(state, action);
+        case actionTypes.SET_IS_HOVER_TAB_OF_SECTION_1_COLUMN_2_TABS_PAGE:
+            return setIsHoverTabOfSection1Column2TabsPage(state, action);
+        case actionTypes.SET_IS_HOVER_TAB_OF_SECTION_2_TABS_PAGE:
+            return setIsHoverTabOfSection2TabsPage(state, action);
+        case actionTypes.SET_ACTIVE_TAB_OF_SECTION_1_COLUMN_1_TABS_PAGE:
+            return setActiveTabOfSection1Column1TabsPage(state, action);
+        case actionTypes.SET_ACTIVE_TAB_OF_SECTION_1_COLUMN_2_TABS_PAGE:
+            return setActiveTabOfSection1Column2TabsPage(state, action);
+        case actionTypes.SET_ACTIVE_TAB_OF_SECTION_2_TABS_PAGE:
+            return setActiveTabOfSection2TabsPage(state, action);
         default: 
             return state;
     }

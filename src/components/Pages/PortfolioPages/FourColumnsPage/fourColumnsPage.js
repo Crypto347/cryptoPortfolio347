@@ -164,8 +164,7 @@ export const FourColumnsPage = (props) => {
 
     useEffect(() => {
         updateTransitionValue();
-    }, [
-        props.fourColumnsPage.itemsStyleValues.img1?.transition,props.fourColumnsPage.itemsStyleValues.img2?.transition,
+    }, [props.fourColumnsPage.itemsStyleValues.img1?.transition,props.fourColumnsPage.itemsStyleValues.img2?.transition,
         props.fourColumnsPage.itemsStyleValues.img3?.transition,props.fourColumnsPage.itemsStyleValues.img4?.transition,
         props.fourColumnsPage.itemsStyleValues.img5?.transition,props.fourColumnsPage.itemsStyleValues.img6?.transition,
         props.fourColumnsPage.itemsStyleValues.img7?.transition,props.fourColumnsPage.itemsStyleValues.img8?.transition,

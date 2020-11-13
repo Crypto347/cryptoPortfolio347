@@ -27,6 +27,7 @@ import './tabsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Tabs from '../../../SmallParts/Tabs/tabs';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -183,30 +184,6 @@ export const TabsPage = (props) => {
         }
     }
 
-    const renderTabsPageSection1Data = (arr, opt) => {
-        return(
-            <div className="tabs-page-section1-items">{arr.map((el, i) => {
-                return(
-                    <div key={i}>
-                        
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
-    const renderTabsPageSection2Data = () => {
-        return(
-            <div className="tabs-page-section2-items">{props.tabsPage.section2Data.items.map((el, i) => {
-                return(
-                    <div key={i}>
-                       
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
     const renderTabsPageSection1Column1DataContent = () => {
         if(props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column2Data.error){
             return(
@@ -220,7 +197,13 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
             return(
-                renderTabsPageSection1Data(props.tabsPage.section1Column1Data.items,"leftColumn")
+                <Tabs
+                    array={props.tabsPage.section1Column1Data.items}
+                    page="tabsPage"
+                    opt="section1Column1"
+                    setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
+                    setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
+                />
             )
         }
         if(!props.tabsPage.section1Column1Data.loading && props.tabsPage.section1Column1Data.error){
@@ -248,7 +231,13 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
             return(
-                renderTabsPageSection1Data(props.tabsPage.section1Column2Data.items,"rightColumn")
+                <Tabs
+                    array={props.tabsPage.section1Column2Data.items}
+                    page="tabsPage"
+                    opt="section1Column2"
+                    setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
+                    setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
+                />
             )
         }
         if(!props.tabsPage.section1Column2Data.loading && props.tabsPage.section1Column2Data.error){
@@ -277,7 +266,13 @@ export const TabsPage = (props) => {
         if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
             return(
                 <div className="tabs-page-section2-data-wrapper">
-                    {renderTabsPageSection2Data()}
+                    <Tabs
+                        array={props.tabsPage.section2Data.items}
+                        page="tabsPage"
+                        opt="section2"
+                        setActiveTab={props.setActiveTabOfSection2TabsPage}
+                        setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
+                    />
                 </div>
                
             )
@@ -308,6 +303,7 @@ export const TabsPage = (props) => {
                 <div className="grey-line"/>
                 <div className="tabs-page-section-1-data-wrapper">
                     {renderTabsPageSection1Column1DataContent()}
+                    <EW70/>
                     {renderTabsPageSection1Column2DataContent()}
                 </div>
                 {renderTabsPageSection2DataContent()}
@@ -331,14 +327,16 @@ export default connect(
             fetchTabsPageSection1Column1Data: bindActionCreators(Services.fetchTabsPageSection1Column1Data, dispatch),
             fetchTabsPageSection1Column2Data: bindActionCreators(Services.fetchTabsPageSection1Column2Data, dispatch),
             fetchTabsPageSection2Data: bindActionCreators(Services.fetchTabsPageSection2Data, dispatch),
-            fetchAccordionsPageSection2Data: bindActionCreators(Services.fetchAccordionsPageSection2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setIsHoverSection2ItemAccordionsPage: bindActionCreators(Actions.setIsHoverSection2ItemAccordionsPage, dispatch),
-            setActivitySection1ItemAccordionsPage: bindActionCreators(Actions.setActivitySection1ItemAccordionsPage, dispatch),
-            setActivitySection2ItemAccordionsPage: bindActionCreators(Actions.setActivitySection2ItemAccordionsPage, dispatch),
+            setIsHoverTabOfSection1Column1TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection1Column1TabsPage, dispatch),
+            setIsHoverTabOfSection1Column2TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection1Column2TabsPage, dispatch),
+            setIsHoverTabOfSection2TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection2TabsPage, dispatch),
+            setActiveTabOfSection1Column1TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column1TabsPage, dispatch),
+            setActiveTabOfSection1Column2TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column2TabsPage, dispatch),
+            setActiveTabOfSection2TabsPage: bindActionCreators(Actions.setActiveTabOfSection2TabsPage, dispatch),
         };
     }
 )(TabsPage);
