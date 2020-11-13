@@ -94,6 +94,14 @@ export const TabsPage = (props) => {
             props.fetchTabsPageSection1Column1Data();
         }
 
+        if(props.tabsPage.section1Column2Data.items.length === 0){
+            props.fetchTabsPageSection1Column2Data();
+        }
+
+        if(props.tabsPage.section2Data.items.length === 0){
+            props.fetchTabsPageSection2Data();
+        }
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -212,7 +220,7 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
             return(
-                renderTabsPageSection1Data(props.tabsPage.section1Column2Data.items,"leftColumn")
+                renderTabsPageSection1Data(props.tabsPage.section1Column1Data.items,"leftColumn")
             )
         }
         if(!props.tabsPage.section1Column1Data.loading && props.tabsPage.section1Column1Data.error){
@@ -240,7 +248,7 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
             return(
-                renderTabsPageSection1Data()
+                renderTabsPageSection1Data(props.tabsPage.section1Column2Data.items,"rightColumn")
             )
         }
         if(!props.tabsPage.section1Column2Data.loading && props.tabsPage.section1Column2Data.error){
@@ -300,7 +308,7 @@ export const TabsPage = (props) => {
                 <div className="grey-line"/>
                 <div className="tabs-page-section-1-data-wrapper">
                     {renderTabsPageSection1Column1DataContent()}
-                    {renderTabsPageSection1Column1DataContent()}
+                    {renderTabsPageSection1Column2DataContent()}
                 </div>
                 {renderTabsPageSection2DataContent()}
             </div>
@@ -321,6 +329,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchTabsPageSection1Column1Data: bindActionCreators(Services.fetchTabsPageSection1Column1Data, dispatch),
+            fetchTabsPageSection1Column2Data: bindActionCreators(Services.fetchTabsPageSection1Column2Data, dispatch),
+            fetchTabsPageSection2Data: bindActionCreators(Services.fetchTabsPageSection2Data, dispatch),
             fetchAccordionsPageSection2Data: bindActionCreators(Services.fetchAccordionsPageSection2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

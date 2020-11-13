@@ -1515,6 +1515,42 @@ export function fetchTabsPageSection1Column1Data() {
     };
 }
 
+export function fetchTabsPageSection1Column2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTabsPageSection1Column2DataBegin());
+        return fetch(`http://localhost:3005/api/tabs-page/section1/column2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTabsPageSection1Column2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTabsPageSection1Column2DataFailur(error))
+            });
+    };
+}
+
+export function fetchTabsPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTabsPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/tabs-page/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTabsPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTabsPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);
