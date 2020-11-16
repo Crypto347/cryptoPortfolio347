@@ -108,6 +108,28 @@ export function setActiveTabOfSection2TabsPage(val, id) {
     };
 };
 
+export function rememberCoordinateRangeForTabsPage(key, coordinatesRanges) {
+    return { 
+        type: actionTypes.REMEMBER_COORDINATE_RANGE_FOR_TABS_PAGE,
+        key: key,
+        coordinatesRanges: coordinatesRanges
+    };
+};
+
+export function initLinesStylesStateForTabsPage(arr) {
+    return { 
+        type: actionTypes.INIT_LINES_STYLES_STATE_FOR_TABS_PAGE,
+        arr: arr
+    };
+};
+
+export function updateTabsUnderlinesStyleValuesForTabsPage(tabsKey, obj) {
+    return { 
+        type: actionTypes.UPDATED_TABS_UNDERLINES_STYLE_VALUES_TABS_PAGE,
+        tabsKey: tabsKey,
+        obj: obj
+    };
+};
 
 
 // export function setIsHoverSection2ItemAccordionsPage(val, id) {

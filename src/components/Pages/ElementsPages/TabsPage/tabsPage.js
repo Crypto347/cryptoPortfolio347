@@ -59,6 +59,8 @@ import {
     EW70
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
  * Hooks
  */
@@ -103,6 +105,11 @@ export const TabsPage = (props) => {
             props.fetchTabsPageSection2Data();
         }
 
+        // Initialize the lines style for 3 containers with tabs
+
+        let tabsArray = ['section1Column1', 'section1Column2', 'section2']
+        props.initLinesStylesStateForTabsPage(tabsArray);
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -118,7 +125,7 @@ export const TabsPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.tabsPage.itemsCooradinatesRanges[0].updated]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -196,6 +203,8 @@ export const TabsPage = (props) => {
             )
         }
         if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
+            let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column1");
+            // console.log(tabsCoordinateRange)
             return(
                 <Tabs
                     array={props.tabsPage.section1Column1Data.items}
@@ -203,6 +212,10 @@ export const TabsPage = (props) => {
                     tabsKey="section1Column1"
                     setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
                     setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
+                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                    tabsCoordinateRange={tabsCoordinateRange}
+                    tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
+                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
                 />
             )
         }
@@ -230,6 +243,8 @@ export const TabsPage = (props) => {
             )
         }
         if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
+            let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column2");
+            // console.log(tabsCoordinateRange)
             return(
                 <Tabs
                     array={props.tabsPage.section1Column2Data.items}
@@ -237,6 +252,10 @@ export const TabsPage = (props) => {
                     tabsKey="section1Column2"
                     setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
                     setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
+                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                    tabsCoordinateRange={tabsCoordinateRange}
+                    tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
+                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
                 />
             )
         }
@@ -264,6 +283,8 @@ export const TabsPage = (props) => {
             )
         }
         if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
+            let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
+            // console.log(tabsCoordinateRange)
             return(
                 <div className="tabs-page-section2-data-wrapper">
                     <Tabs
@@ -272,6 +293,10 @@ export const TabsPage = (props) => {
                         tabsKey="section2"
                         setActiveTab={props.setActiveTabOfSection2TabsPage}
                         setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                        tabsCoordinateRange={tabsCoordinateRange}
+                        tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
+                        updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
                     />
                 </div>
                
@@ -337,6 +362,9 @@ export default connect(
             setActiveTabOfSection1Column1TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column1TabsPage, dispatch),
             setActiveTabOfSection1Column2TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column2TabsPage, dispatch),
             setActiveTabOfSection2TabsPage: bindActionCreators(Actions.setActiveTabOfSection2TabsPage, dispatch),
+            rememberCoordinateRangeForTabsPage: bindActionCreators(Actions.rememberCoordinateRangeForTabsPage, dispatch),
+            initLinesStylesStateForTabsPage: bindActionCreators(Actions.initLinesStylesStateForTabsPage, dispatch),
+            updateTabsUnderlinesStyleValuesForTabsPage: bindActionCreators(Actions.updateTabsUnderlinesStyleValuesForTabsPage, dispatch),
         };
     }
 )(TabsPage);

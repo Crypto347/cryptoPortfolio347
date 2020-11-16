@@ -31,9 +31,10 @@ export const initialState = {
         loading: false,
         error: null
     },
-    tabsCooradinateRange: [
+    itemsCooradinatesRanges: [
         {
             tabKey: "section1Column1",
+            updated: false,
             tabs: [
                 {
                     id: 1,
@@ -51,6 +52,7 @@ export const initialState = {
         },
         {
             tabKey: "section1Column2",
+            updated: false,
             tabs: [
                 {
                     id: 1,
@@ -68,6 +70,7 @@ export const initialState = {
         },
         {
             tabKey: "section2",
+            updated: false,
             tabs: [
                 {
                     id: 1,
@@ -88,6 +91,7 @@ export const initialState = {
             ]
         },
     ],
+    tabsUnderlinesStyleValues: {}
 }
 
 const fetchTabsPageSection1Column1DataBegin = (state, action) => {
@@ -206,26 +210,6 @@ const fetchTabsPageSection2DataFailur = (state, action) => {
         section2Data: updateSection2Data
     };
 }
-
-// const setIsHoverSection2ItemAccordionsPage = (state, action) => {
-//     let updatedItems = [...state.section2Data.items];
-
-//     let item = {
-//         ...updatedItems
-//         .find(item => item.id === action.id), isHover: action.val};
-
-//     let itemIndex = updatedItems.findIndex(item => item.id === action.id);
-        
-//     updatedItems.splice(itemIndex, 1, item);
-
-//     return {
-//         ...state,
-//         section2Data: {
-//             ...state.section2Data,
-//             items: updatedItems
-//         }
-//     };
-// }
 
 const setIsHoverTabOfSection1Column1TabsPage = (state, action) => {
     let updatedItems = [...state.section1Column1Data.items];
@@ -365,6 +349,75 @@ const setActiveTabOfSection2TabsPage = (state, action) => {
     };
 }
 
+const rememberCoordinateRangeForTabsPage = (state, action) => {
+    if(action.coordinatesRanges.length === 0) return state;
+    let updatedItemsCooradinatesRanges = [...state.itemsCooradinatesRanges];
+    updatedItemsCooradinatesRanges = updatedItemsCooradinatesRanges.map(el => {
+        return {
+            ...el,
+            updated:true
+        }
+    })
+    console.log()
+    let obj = {...updatedItemsCooradinatesRanges.find(item => item.tabKey === action.key), tabs: action.coordinatesRanges};
+    let objIndex = updatedItemsCooradinatesRanges.findIndex(item => item.tabKey === action.key);
+
+    updatedItemsCooradinatesRanges.splice(objIndex, 1, obj);
+
+    return {
+        ...state,
+        itemsCooradinatesRanges: updatedItemsCooradinatesRanges
+    };
+}
+
+const initLinesStylesStateForTabsPage = (state, action) => {
+    let updatedTabsUnderlinesStyleValues = {};
+        action.arr.map((el, i) => {
+        let setObj = {
+            width: 0,
+            translateX: 0,
+            transition: 0.45,
+            rendered: true
+        }
+        Object.assign(updatedTabsUnderlinesStyleValues, {[`${el}`]: setObj});
+    })
+    
+    return {
+        ...state,
+        tabsUnderlinesStyleValues: updatedTabsUnderlinesStyleValues
+    };
+}
+
+const updateTabsUnderlinesStyleValuesForTabsPage = (state, action) => {
+    let updatedTabsUnderlinesStyleValues = {...state.tabsUnderlinesStyleValues}
+
+    switch(action.tabsKey) {
+        case 'section1Column1':
+            updatedTabsUnderlinesStyleValues['section1Column1'].width = action.obj.width;
+            updatedTabsUnderlinesStyleValues['section1Column1'].translateX = action.obj.translateX;
+            updatedTabsUnderlinesStyleValues['section1Column1'].transition = action.obj.transition;
+            updatedTabsUnderlinesStyleValues['section1Column1'].rendered = action.obj.rendered;
+            break;
+        case 'section1Column2':
+            updatedTabsUnderlinesStyleValues['section1Column2'].width = action.obj.width;
+            updatedTabsUnderlinesStyleValues['section1Column2'].translateX = action.obj.translateX;
+            updatedTabsUnderlinesStyleValues['section1Column2'].transition = action.obj.transition;
+            updatedTabsUnderlinesStyleValues['section1Column2'].rendered = action.obj.rendered;
+            break;
+        case 'section2':
+            console.log(action.tabsKey)
+            updatedTabsUnderlinesStyleValues['section2'].width = action.obj.width;
+            updatedTabsUnderlinesStyleValues['section2'].translateX = action.obj.translateX;
+            updatedTabsUnderlinesStyleValues['section2'].transition = action.obj.transition;
+            updatedTabsUnderlinesStyleValues['section2'].rendered = action.obj.rendered;
+            break;
+    }
+    return {
+        ...state,
+        linesStyleValues: updatedTabsUnderlinesStyleValues
+    };
+}
+
 const tabsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TABS_PAGE_SECTION_1_COLUMN_1_DATA_BEGIN:
@@ -397,6 +450,12 @@ const tabsPageReducer = (state = initialState, action) => {
             return setActiveTabOfSection1Column2TabsPage(state, action);
         case actionTypes.SET_ACTIVE_TAB_OF_SECTION_2_TABS_PAGE:
             return setActiveTabOfSection2TabsPage(state, action);
+        case actionTypes.REMEMBER_COORDINATE_RANGE_FOR_TABS_PAGE:
+            return rememberCoordinateRangeForTabsPage(state, action);
+        case actionTypes.INIT_LINES_STYLES_STATE_FOR_TABS_PAGE:
+            return initLinesStylesStateForTabsPage(state, action);
+        case actionTypes.UPDATED_TABS_UNDERLINES_STYLE_VALUES_TABS_PAGE:
+            return updateTabsUnderlinesStyleValuesForTabsPage(state, action);
         default: 
             return state;
     }

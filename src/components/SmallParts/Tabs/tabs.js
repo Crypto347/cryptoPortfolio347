@@ -46,9 +46,6 @@ export const Tabs = (props) => {
     const tab2 = useRef();
     const tab3 = useRef();
     const tab4 = useRef();
-    const section1Column1 = useRef();
-    const section1Column2 = useRef();
-    const section2 = useRef();
     const resizeRef = useRef();
     const transitionRef = useRef();
     const [widthOfTab, setWidthOfTab] = useState(0);
@@ -81,7 +78,6 @@ export const Tabs = (props) => {
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
         
-
         return () => {
             // Cleaning the unmounted component
 
@@ -89,13 +85,59 @@ export const Tabs = (props) => {
             window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
         }
-    }, []);
+    }, [props.tabsCoordinateRange.tabs[0].updated]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
         transitionRef.current = smoothTransition;
     });
 
+    useEffect(() => {
+        // Set the transition property to the initial value if its value is 0
+
+        if(props.tabsUnderlinesStyleValues.section1Column1?.transition === 0){
+            props.updateTabsUnderlinesStyleValues("section1Column1",{
+                ...props.tabsUnderlinesStyleValues.section1Column1,
+                transition: 0.45
+            });
+        }
+        if(props.tabsUnderlinesStyleValues.section1Column2?.transition === 0){
+            props.updateTabsUnderlinesStyleValues("section1Column2",{
+                ...props.tabsUnderlinesStyleValues.section1Column2,
+                transition: 0.45
+            });
+        }
+        if(props.tabsUnderlinesStyleValues.section2?.transition === 0){
+            props.updateTabsUnderlinesStyleValues("section2",{
+                ...props.tabsUnderlinesStyleValues.section2,
+                transition: 0.45
+            });
+        }
+    }, [props.tabsUnderlinesStyleValues.section1Column1?.transition,
+        props.tabsUnderlinesStyleValues.section1Column2?.transition,
+        props.tabsUnderlinesStyleValues.section2?.transition
+    ]);
+
+    const smoothTransition = () => {
+        if(props.tabsUnderlinesStyleValues.section1Column1){
+            props.updateTabsUnderlinesStyleValues("section1Column1",{
+                ...props.tabsUnderlinesStyleValues.section1Column1,
+                transition: 0
+            });
+        }
+        if(props.tabsUnderlinesStyleValues.section1Column2){
+            props.updateTabsUnderlinesStyleValues("section1Column2",{
+                ...props.tabsUnderlinesStyleValues.section1Column2,
+                transition: 0
+            });
+        }
+        if(props.tabsUnderlinesStyleValues.section2){
+            props.updateTabsUnderlinesStyleValues("section2",{
+                ...props.tabsUnderlinesStyleValues.section2,
+                transition: 0
+            });
+        }
+    }
 
     const handleResize = () => {
         // Update tabs header holder coordinates on window resize
@@ -112,16 +154,16 @@ export const Tabs = (props) => {
                 return evaluateCoordinates(el.id)
             });
         }
-        console.log("TABCOORDINATES",headerHolderCoordinateRange)
 
-        // props.rememberCoordinateRange(props.tabsKey, headerHolderCoordinateRange);
+        props.rememberCoordinateRange(props.tabsKey, headerHolderCoordinateRange);
     }
     
     const evaluateCoordinates = (tabId) => {
         //Calculate tabs header holder coordinates
-
+        
         let tabHeaderHolder = setRef("tab", tabId);
         let updatedTabsHeaderCoordinateRange = {
+            id: tabId,
             key: props.tabsKey,
             topCoordinate: tabHeaderHolder.current.getBoundingClientRect().top,
             bottomCoordinate: tabHeaderHolder.current.getBoundingClientRect().bottom,
@@ -133,29 +175,6 @@ export const Tabs = (props) => {
         return updatedTabsHeaderCoordinateRange;
     }
 
-    // useEffect(() => {
-    //     // Set the transition property to the initial value if its value is 0
-
-    //     if(props.stoneWallPage.itemsStyleValues.img1?.transition === 0){
-    //         props.updateItemsStyleValuesStoneWallPage("img1",{
-    //             ...props.stoneWallPage.itemsStyleValues.img1,
-    //             transition: 0.45
-    //         });
-    //     }
-
-    // }, [props.stoneWallPage.itemsStyleValues.img1?.transition,props.stoneWallPage.itemsStyleValues.img2?.transition,
-    //     props.stoneWallPage.itemsStyleValues.img3?.transition,props.stoneWallPage.itemsStyleValues.img4?.transition,
-    //     props.stoneWallPage.itemsStyleValues.img5?.transition]);
-
-    const smoothTransition = () => {
-    //     if(props.stoneWallPage.itemsStyleValues.img1){
-    //         props.updateItemsStyleValuesStoneWallPage("img1",{
-    //             ...props.stoneWallPage.itemsStyleValues.img1,
-    //             transition: 0
-    //         });
-    //     }
-    }
-
     const handleMouseMove = (e) => {
         /**
          * Split the image holder into equal parts equal to the number of elements in imagesArray,
@@ -165,33 +184,18 @@ export const Tabs = (props) => {
 
         let pageX = e.pageX;
         let pageY = e.pageY;
-
-        // if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
-        //     props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
-        // ){
-        //     let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
-        //     let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
-        //     coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
-        //     coordinatesArray.map((el, i) => {
-        //         if(i !== coordinatesArray.length - 1){
-        //             // Check if inside the calculated corresponding part
-
-        //             if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
-        //                 setImgToLoad(props.imagesArray[i]);
-        //             }
-        //         }else{
-        //             // Check if inside the calculated corresponding part
-
-        //             if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
-        //                 setImgToLoad(props.imagesArray[i]);
-        //             }
-        //         }
-               
-        //     })
-        // }
-        // console.log(e)
+        props.tabsCoordinateRange.tabs.map((el, i) => {
+            if(el.leftCoordinate < pageX && pageX < el.rightCoordinate && 
+                el.topCoordinate < pageY && pageY < el.bottomCoordinate){
+                props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                    width: widthOfTab,
+                    translateX: i === 0 ? 0 : props.tabsCoordinateRange.tabs[i-1].leftCoordinate,
+                    transition: 0,
+                    rendered: true
+                });
+            }
+        })
     }
-
    
     const handleMouseEnter = (opt, id) => {
         switch(opt){
@@ -199,7 +203,13 @@ export const Tabs = (props) => {
                 props.setIsHoverTab("on", id);
                 let tab = setRef("tab", id);
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
-                console.log(tab.current.getBoundingClientRect())
+                props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                    width: widthOfTab,
+                    translateX: 0,
+                    transition: 0,
+                    rendered: true
+                });
+                // console.log(tab.current.getBoundingClientRect())
                 break;
         }
     }
@@ -208,6 +218,12 @@ export const Tabs = (props) => {
         switch(opt){
             case 'tab': 
                 props.setIsHoverTab("off", id);
+                props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                    width: widthOfTab,
+                    translateX: 0,
+                    transition: 0,
+                    rendered: true
+                });
                 break;
         }
     }
@@ -281,6 +297,30 @@ export const Tabs = (props) => {
         }
     }
 
+    const renderLinesStyle = (tabKey) => {
+        switch(tabKey){
+            case 'section1Column1':
+                return {
+                    width: `${widthOfTab}px`,
+                    transform: `translateX(${props.tabsUnderlinesStyleValues?.section1Column1?.translateX}px`,
+                    transition: `transform ${props.tabsUnderlinesStyleValues?.section1Column1?.transition}s ease-out`,
+                };
+            case "section1Column2":
+                return {
+                    width: `${widthOfTab}px`,
+                    transform: `translateX(${props.tabsUnderlinesStyleValues?.section1Column2?.translateX}px`,
+                    transition: `transform ${props.tabsUnderlinesStyleValues?.section1Column2?.transition}s ease-out`,
+                  
+                };
+            case 'section2':
+                return {
+                    width: `${widthOfTab}px`,
+                    transform: `translateX(${props.tabsUnderlinesStyleValues?.section2?.translateX}px`,
+                    transition: `transform ${props.tabsUnderlinesStyleValues?.section2?.transition}s ease-out`,
+                };
+        }
+    }
+
     /**
      * Markup
      */
@@ -291,12 +331,8 @@ export const Tabs = (props) => {
             <div className="tabs-gray-line-wrapper">
                 <div className="tabs-gray-line-long"/>
                 <div 
-                    className="tabs-gray-line-short"
-                    style={{
-                        width: `${widthOfTab}px`,
-                        // translate: ,
-                        // transform: 
-                    }}
+                    className="tabs-black-line-short"
+                    style={renderLinesStyle(props.tabsKey)}
                 />
             </div>
             {renderText()}
