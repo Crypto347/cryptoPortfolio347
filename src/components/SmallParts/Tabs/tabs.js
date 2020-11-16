@@ -189,7 +189,7 @@ export const Tabs = (props) => {
                 el.topCoordinate < pageY && pageY < el.bottomCoordinate){
                 props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
                     width: widthOfTab,
-                    translateX: i === 0 ? 0 : props.tabsCoordinateRange.tabs[i-1].leftCoordinate,
+                    translateX: el.leftCoordinate - props.tabsCoordinateRange.tabs[0].leftCoordinate,
                     transition: 0,
                     rendered: true
                 });
