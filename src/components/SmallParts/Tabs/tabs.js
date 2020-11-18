@@ -42,10 +42,16 @@ export const Tabs = (props) => {
      * State
      */
 
-    const tab1 = useRef();
-    const tab2 = useRef();
-    const tab3 = useRef();
-    const tab4 = useRef();
+    const section1Column1Tab1 = useRef();
+    const section1Column1Tab2 = useRef();
+    const section1Column1Tab3 = useRef();
+    const section1Column2Tab1 = useRef();
+    const section1Column2Tab2 = useRef();
+    const section1Column2Tab3 = useRef();
+    const section2Tab1 = useRef();
+    const section2Tab2 = useRef();
+    const section2Tab3 = useRef();
+    const section2Tab4 = useRef();
     const resizeRef = useRef();
     const transitionRef = useRef();
     const [widthOfTab, setWidthOfTab] = useState(0);
@@ -55,11 +61,18 @@ export const Tabs = (props) => {
      */
 
     useEffect(() => {
-        if(props.array.length !== 0){
-            let tabInfo = tab1.current.getBoundingClientRect()
+        if(props.tabsKey === "section1Column1" && props.array.length !== 0){
+            let tabInfo = section1Column1Tab1.current.getBoundingClientRect()
             setWidthOfTab(tabInfo.width)
         }
-
+        if(props.tabsKey === "section1Column2" && props.array.length !== 0){
+            let tabInfo = section1Column2Tab1.current.getBoundingClientRect()
+            setWidthOfTab(tabInfo.width)
+        }
+        if(props.tabsKey === "section2" && props.array.length !== 0){
+            let tabInfo = section2Tab1.current.getBoundingClientRect()
+            setWidthOfTab(tabInfo.width)
+        }
         // Calculate tabs header holder coordinates 
 
         setTabCoordinateRange();
@@ -161,7 +174,7 @@ export const Tabs = (props) => {
     const evaluateCoordinates = (tabId) => {
         //Calculate tabs header holder coordinates
         
-        let tabHeaderHolder = setRef("tab", tabId);
+        let tabHeaderHolder = setRef(`${props.tabsKey}Tab${tabId}`);
         let updatedTabsHeaderCoordinateRange = {
             id: tabId,
             key: props.tabsKey,
@@ -170,10 +183,15 @@ export const Tabs = (props) => {
             leftCoordinate: tabHeaderHolder.current.getBoundingClientRect().left,
             rightCoordinate: tabHeaderHolder.current.getBoundingClientRect().right,
             width: tabHeaderHolder.current.getBoundingClientRect().width,
+            // topCoordinate: tabsId.offsetTop,
+            // bottomCoordinate: tabsId.offsetTop + tabsId.offsetHeight,
+            // leftCoordinate: tabsId.offsetLeft,
+            // rightCoordinate: tabsId.offsetLeft + tabsId.offsetWidth,
+            // width: tabsId.offsetWidth,
             updated: true
         };
 
-        console.log(props.tabsKey,tabHeaderHolder.current.getBoundingClientRect().top)
+        // console.log(props.tabsKey,tabHeaderHolder.current.getBoundingClientRect().top)
         return updatedTabsHeaderCoordinateRange;
     }
 
@@ -205,7 +223,7 @@ export const Tabs = (props) => {
         switch(opt){
             case 'tab': 
                 props.setIsHoverTab("on", id);
-                let tab = setRef("tab", id);
+                let tab = setRef(`${props.tabsKey}Tab${id}`);
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
                 props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
                     width: widthOfTab,
@@ -237,7 +255,7 @@ export const Tabs = (props) => {
             case 0:
                 // Show and remember data of chosen tab on left mouse click on left mouse click
 
-                let tab = setRef("tab", id);
+                let tab = setRef(`${props.tabsKey}Tab${id}`);
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
 
                 props.setActiveTab("on", id);
@@ -253,20 +271,29 @@ export const Tabs = (props) => {
         }
     }
 
-    const setRef = (opt, id) => {
-        if(opt === "tab"){
-            switch(id){
-                case 1:
-                    return tab1;
-                case 2:
-                    return tab2;
-                case 3:
-                    return tab3;
-                case 4:
-                    return tab4;
-            }
+    const setRef = (tabKey) => {
+        switch(tabKey){
+            case 'section1Column1Tab1':
+                return section1Column1Tab1;
+            case 'section1Column1Tab2':
+                return section1Column1Tab2;
+            case 'section1Column1Tab3':
+                return section1Column1Tab3;
+            case 'section1Column2Tab1':
+                return section1Column2Tab1;
+            case 'section1Column2Tab2':
+                return section1Column2Tab2;
+            case 'section1Column2Tab3':
+                return section1Column2Tab3;
+            case 'section2Tab1':
+                return section2Tab1;
+            case 'section2Tab2':
+                return section2Tab2;
+            case 'section2Tab3':
+                return section2Tab3;
+            case 'section2Tab4':
+                return section2Tab4;
         }
-        
     }
 
     const renderTabsHeader = () => {
@@ -277,7 +304,7 @@ export const Tabs = (props) => {
                 return(
                     <div
                         key={i}
-                        ref={setRef("tab", el.id)}
+                        ref={setRef(`${props.tabsKey}Tab${el.id}`)}
                         className={i === 0 ? "tabs-header-item-first" : "tabs-header-item"}
                         onMouseEnter={() => handleMouseEnter("tab", el.id)} 
                         onMouseLeave={() => handleMouseLeave("tab", el.id)}

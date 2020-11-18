@@ -112,7 +112,7 @@ export const TabsPage = (props) => {
 
         // Scroll to the top of the screen
 
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
 
         // Event Listeners
 
@@ -125,7 +125,9 @@ export const TabsPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, [props.tabsPage.itemsCooradinatesRanges[0].updated]);
+    }, [props.tabsPage.itemsCooradinatesRanges[0].updated,
+    // props.tabsPage.section2Data.items.length !==0
+    ]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
