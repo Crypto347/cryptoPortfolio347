@@ -172,6 +172,8 @@ export const Tabs = (props) => {
             width: tabHeaderHolder.current.getBoundingClientRect().width,
             updated: true
         };
+
+        console.log(props.tabsKey,tabHeaderHolder.current.getBoundingClientRect().top)
         return updatedTabsHeaderCoordinateRange;
     }
 
@@ -185,8 +187,10 @@ export const Tabs = (props) => {
         let pageX = e.pageX;
         let pageY = e.pageY;
         props.tabsCoordinateRange.tabs.map((el, i) => {
+            // console.log(props.tabsKey,el.topCoordinate, pageY)
             if(el.leftCoordinate < pageX && pageX < el.rightCoordinate && 
                 el.topCoordinate < pageY && pageY < el.bottomCoordinate){
+         
                 props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
                     width: widthOfTab,
                     translateX: el.leftCoordinate - props.tabsCoordinateRange.tabs[0].leftCoordinate,

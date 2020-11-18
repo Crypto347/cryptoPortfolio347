@@ -405,7 +405,7 @@ const updateTabsUnderlinesStyleValuesForTabsPage = (state, action) => {
             updatedTabsUnderlinesStyleValues['section1Column2'].rendered = action.obj.rendered;
             break;
         case 'section2':
-            console.log(action.tabsKey)
+            // console.log(action.obj)
             updatedTabsUnderlinesStyleValues['section2'].width = action.obj.width;
             updatedTabsUnderlinesStyleValues['section2'].translateX = action.obj.translateX;
             updatedTabsUnderlinesStyleValues['section2'].transition = action.obj.transition;
@@ -414,7 +414,7 @@ const updateTabsUnderlinesStyleValuesForTabsPage = (state, action) => {
     }
     return {
         ...state,
-        linesStyleValues: updatedTabsUnderlinesStyleValues
+        tabsUnderlinesStyleValues: updatedTabsUnderlinesStyleValues
     };
 }
 

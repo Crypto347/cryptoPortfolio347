@@ -286,7 +286,7 @@ export const TabsPage = (props) => {
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
             // console.log(tabsCoordinateRange)
             return(
-                <div className="tabs-page-section2-data-wrapper">
+                <div className="tabs-page-section-2-data-wrapper">
                     <Tabs
                         array={props.tabsPage.section2Data.items}
                         page="tabsPage"
