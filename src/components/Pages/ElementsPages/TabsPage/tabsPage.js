@@ -286,7 +286,7 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
-            // console.log(tabsCoordinateRange)
+            let section1Height = document.getElementById("section-1")? document.getElementById("section-1").offsetParent : 0
             return(
                 <div className="tabs-page-section-2-data-wrapper">
                     <Tabs
@@ -299,9 +299,9 @@ export const TabsPage = (props) => {
                         tabsCoordinateRange={tabsCoordinateRange}
                         tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
                         updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
+                        section1Height={section1Height}
                     />
                 </div>
-               
             )
         }
         if(!props.tabsPage.section2Data.loading && props.tabsPage.section2Data.error){
@@ -328,7 +328,7 @@ export const TabsPage = (props) => {
                     <H45 className="h45-nero-lustria">Tabs</H45>
                 </div>
                 <div className="grey-line"/>
-                <div className="tabs-page-section-1-data-wrapper">
+                <div className="tabs-page-section-1-data-wrapper" id="section-1">
                     {renderTabsPageSection1Column1DataContent()}
                     <EW70/>
                     {renderTabsPageSection1Column2DataContent()}

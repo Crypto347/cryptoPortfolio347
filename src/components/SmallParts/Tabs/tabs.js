@@ -33,6 +33,8 @@ import {
     H19
 } from '../../UtilityComponents';
 
+import * as Utility from '../../../utility';
+
 /**
  * Tabs component definition and export
  */
@@ -61,17 +63,21 @@ export const Tabs = (props) => {
      */
 
     useEffect(() => {
+        let tabHeaderHolder;
         if(props.tabsKey === "section1Column1" && props.array.length !== 0){
-            let tabInfo = section1Column1Tab1.current.getBoundingClientRect()
-            setWidthOfTab(tabInfo.width)
+            tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab1`);
+            // let tabInfo = section1Column1Tab1.current.getBoundingClientRect()
+            setWidthOfTab(tabHeaderHolder.offsetWidth)
         }
         if(props.tabsKey === "section1Column2" && props.array.length !== 0){
-            let tabInfo = section1Column2Tab1.current.getBoundingClientRect()
-            setWidthOfTab(tabInfo.width)
+            tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab2`);
+            // let tabInfo = section1Column2Tab1.current.getBoundingClientRect()
+            setWidthOfTab(tabHeaderHolder.offsetWidth)
         }
         if(props.tabsKey === "section2" && props.array.length !== 0){
-            let tabInfo = section2Tab1.current.getBoundingClientRect()
-            setWidthOfTab(tabInfo.width)
+            tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab3`);
+            // let tabInfo = section2Tab1.current.getBoundingClientRect()
+            setWidthOfTab(tabHeaderHolder.offsetWidth)
         }
         // Calculate tabs header holder coordinates 
 
@@ -108,24 +114,24 @@ export const Tabs = (props) => {
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
 
-        if(props.tabsUnderlinesStyleValues.section1Column1?.transition === 0){
-            props.updateTabsUnderlinesStyleValues("section1Column1",{
-                ...props.tabsUnderlinesStyleValues.section1Column1,
-                transition: 0.45
-            });
-        }
-        if(props.tabsUnderlinesStyleValues.section1Column2?.transition === 0){
-            props.updateTabsUnderlinesStyleValues("section1Column2",{
-                ...props.tabsUnderlinesStyleValues.section1Column2,
-                transition: 0.45
-            });
-        }
-        if(props.tabsUnderlinesStyleValues.section2?.transition === 0){
-            props.updateTabsUnderlinesStyleValues("section2",{
-                ...props.tabsUnderlinesStyleValues.section2,
-                transition: 0.45
-            });
-        }
+        // if(props.tabsUnderlinesStyleValues.section1Column1?.transition === 0){
+        //     props.updateTabsUnderlinesStyleValues("section1Column1",{
+        //         ...props.tabsUnderlinesStyleValues.section1Column1,
+        //         transition: 0.45
+        //     });
+        // } 
+        // if(props.tabsUnderlinesStyleValues.section1Column2?.transition === 0){
+        //     props.updateTabsUnderlinesStyleValues("section1Column2",{
+        //         ...props.tabsUnderlinesStyleValues.section1Column2,
+        //         transition: 0.45
+        //     });
+        // }
+        // if(props.tabsUnderlinesStyleValues.section2?.transition === 0){
+        //     props.updateTabsUnderlinesStyleValues("section2",{
+        //         ...props.tabsUnderlinesStyleValues.section2,
+        //         transition: 0.45
+        //     });
+        // }
     }, [props.tabsUnderlinesStyleValues.section1Column1?.transition,
         props.tabsUnderlinesStyleValues.section1Column2?.transition,
         props.tabsUnderlinesStyleValues.section2?.transition
@@ -156,6 +162,10 @@ export const Tabs = (props) => {
         // Update tabs header holder coordinates on window resize
         
         setTabCoordinateRange();
+        props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+            ...props.tabsUnderlinesStyleValues.section1Column1,
+            transition: 0.45
+        });
     }
 
     const setTabCoordinateRange = () => {
@@ -174,24 +184,25 @@ export const Tabs = (props) => {
     const evaluateCoordinates = (tabId) => {
         //Calculate tabs header holder coordinates
         
-        let tabHeaderHolder = setRef(`${props.tabsKey}Tab${tabId}`);
+        // let tabHeaderHolder = setRef(`${props.tabsKey}Tab${tabId}`);
+        let tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab${tabId}`);
+    
         let updatedTabsHeaderCoordinateRange = {
             id: tabId,
             key: props.tabsKey,
-            topCoordinate: tabHeaderHolder.current.getBoundingClientRect().top,
-            bottomCoordinate: tabHeaderHolder.current.getBoundingClientRect().bottom,
-            leftCoordinate: tabHeaderHolder.current.getBoundingClientRect().left,
-            rightCoordinate: tabHeaderHolder.current.getBoundingClientRect().right,
-            width: tabHeaderHolder.current.getBoundingClientRect().width,
-            // topCoordinate: tabsId.offsetTop,
-            // bottomCoordinate: tabsId.offsetTop + tabsId.offsetHeight,
-            // leftCoordinate: tabsId.offsetLeft,
-            // rightCoordinate: tabsId.offsetLeft + tabsId.offsetWidth,
-            // width: tabsId.offsetWidth,
+            // topCoordinate: tabHeaderHolder.current.getBoundingClientRect().top + document.body.scrollTop,
+            // bottomCoordinate: tabHeaderHolder.current.getBoundingClientRect().bottom,
+            // leftCoordinate: tabHeaderHolder.current.getBoundingClientRect().left,
+            // rightCoordinate: tabHeaderHolder.current.getBoundingClientRect().right,
+            // width: tabHeaderHolder.current.getBoundingClientRect().width,
+            topCoordinate: tabHeaderHolder.offsetTop,
+            bottomCoordinate: tabHeaderHolder.offsetTop + tabHeaderHolder.offsetHeight,
+            leftCoordinate: tabHeaderHolder.offsetLeft,
+            rightCoordinate: tabHeaderHolder.offsetLeft + tabHeaderHolder.offsetWidth,
+            width: tabHeaderHolder.offsetWidth,
             updated: true
         };
-
-        // console.log(props.tabsKey,tabHeaderHolder.current.getBoundingClientRect().top)
+        console.log(tabHeaderHolder.offsetTop)
         return updatedTabsHeaderCoordinateRange;
     }
 
@@ -215,40 +226,65 @@ export const Tabs = (props) => {
                     transition: 0,
                     rendered: true
                 });
+                setWidthOfTab(el.width)
+            }else{
             }
         })
     }
    
-    const handleMouseEnter = (opt, id) => {
-        switch(opt){
-            case 'tab': 
-                props.setIsHoverTab("on", id);
-                let tab = setRef(`${props.tabsKey}Tab${id}`);
-                setWidthOfTab(tab.current.getBoundingClientRect().width);
-                props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
-                    width: widthOfTab,
-                    translateX: 0,
-                    transition: 0,
-                    rendered: true
-                });
-                // console.log(tab.current.getBoundingClientRect())
-                break;
-        }
-    }
+    // const handleMouseEnter = (opt, id) => {
+    //     switch(opt){
+    //         case 'tab': 
+    //             // props.setIsHoverTab("on", id);
+    //             let tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab${id}`);
+    //             setWidthOfTab(tabHeaderHolder.offsetWidth)
+    //             let translateX = props.tabsCoordinateRange.tabs.find(item => item.id === id).leftCoordinate;
+    //             console.log(translateX)
+    //             // let tab = setRef(`${props.tabsKey}Tab${id}`);
+    //             // setWidthOfTab(tab.current.getBoundingClientRect().width);
+    //             if(props.tabsKey === "section1Column1"){
+    //                 props.updateTabsUnderlinesStyleValues("section1Column1",{
+    //                     ...props.tabsUnderlinesStyleValues.section1Column1,
+    //                     transition: 0
+    //                 });
+    //             }
+    //             if(props.tabsKey === "section1Column2"){
+    //                 props.updateTabsUnderlinesStyleValues("section1Column2",{
+    //                     ...props.tabsUnderlinesStyleValues.section1Column2,
+    //                     transition: 0
+    //                 });
+    //             }
+    //             if(props.tabsKey === "section2"){
+    //                 props.updateTabsUnderlinesStyleValues("section2",{
+    //                     ...props.tabsUnderlinesStyleValues.section2,
+    //                     translateX: translateX,
+    //                     transition: 0
+    //                 });
+    //             }
+    //             // console.log(tab.current.getBoundingClientRect())
+    //             break;
+    //     }
+    // }
 
-    const handleMouseLeave = (opt, id) => {
-        switch(opt){
-            case 'tab': 
-                props.setIsHoverTab("off", id);
-                props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
-                    width: widthOfTab,
-                    translateX: 0,
-                    transition: 0,
-                    rendered: true
-                });
-                break;
-        }
-    }
+    // const handleMouseLeave = (opt, id) => {
+    //     switch(opt){
+    //         case 'tab': 
+    //             props.updateTabsUnderlinesStyleValues("section1Column1",{
+    //                 ...props.tabsUnderlinesStyleValues.section1Column1,
+    //                 transition: 0
+    //             });
+    //             props.updateTabsUnderlinesStyleValues("section1Column2",{
+    //                 ...props.tabsUnderlinesStyleValues.section1Column2,
+    //                 transition: 0
+    //             });
+    //             props.updateTabsUnderlinesStyleValues("section2",{
+    //                 ...props.tabsUnderlinesStyleValues.section2,
+    //                 transition: 0
+    //             });
+    //             // props.setIsHoverTab("off", id);
+    //             break;
+    //     }
+    // }
 
     const tabItemOnClick = (e, path, id) => {
         switch(e.button){
@@ -304,10 +340,11 @@ export const Tabs = (props) => {
                 return(
                     <div
                         key={i}
-                        ref={setRef(`${props.tabsKey}Tab${el.id}`)}
+                        // ref={setRef(`${props.tabsKey}Tab${el.id}`)}
+                        id={`${props.tabsKey}Tab${el.id}`}
                         className={i === 0 ? "tabs-header-item-first" : "tabs-header-item"}
-                        onMouseEnter={() => handleMouseEnter("tab", el.id)} 
-                        onMouseLeave={() => handleMouseLeave("tab", el.id)}
+                        // onMouseEnter={() => handleMouseEnter("tab", el.id)} 
+                        // onMouseLeave={() => handleMouseLeave("tab", el.id)}
                         onMouseDown={(e) => tabItemOnClick(e, props.location.pathname, el.id)}
                     >
                         <H17 className="h17-black-poppins">{el.header}</H17>
