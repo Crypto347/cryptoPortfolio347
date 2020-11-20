@@ -206,7 +206,6 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column1");
-            // console.log(tabsCoordinateRange)
             return(
                 <Tabs
                     array={props.tabsPage.section1Column1Data.items}
@@ -216,7 +215,7 @@ export const TabsPage = (props) => {
                     setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
                     rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
                     tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
+                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column1}
                     updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
                 />
             )
@@ -246,7 +245,6 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column2");
-            // console.log(tabsCoordinateRange)
             return(
                 <Tabs
                     array={props.tabsPage.section1Column2Data.items}
@@ -256,7 +254,7 @@ export const TabsPage = (props) => {
                     setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
                     rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
                     tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
+                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column2}
                     updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
                 />
             )
@@ -286,7 +284,6 @@ export const TabsPage = (props) => {
         }
         if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
-            let section1Height = document.getElementById("section-1")? document.getElementById("section-1").offsetParent : 0
             return(
                 <div className="tabs-page-section-2-data-wrapper">
                     <Tabs
@@ -297,9 +294,8 @@ export const TabsPage = (props) => {
                         setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
                         rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
                         tabsCoordinateRange={tabsCoordinateRange}
-                        tabsUnderlinesStyleValues={props.tabsPage.tabsUnderlinesStyleValues}
+                        tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
                         updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                        section1Height={section1Height}
                     />
                 </div>
             )

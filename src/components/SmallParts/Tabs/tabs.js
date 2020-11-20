@@ -36,6 +36,14 @@ import {
 import * as Utility from '../../../utility';
 
 /**
+ * Hooks
+ */
+
+import {
+   usePrevious
+} from '../../../Hooks';
+
+/**
  * Tabs component definition and export
  */
 
@@ -113,7 +121,7 @@ export const Tabs = (props) => {
 
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
-
+        
         // if(props.tabsUnderlinesStyleValues.section1Column1?.transition === 0){
         //     props.updateTabsUnderlinesStyleValues("section1Column1",{
         //         ...props.tabsUnderlinesStyleValues.section1Column1,
@@ -132,27 +140,47 @@ export const Tabs = (props) => {
         //         transition: 0.45
         //     });
         // }
-    }, [props.tabsUnderlinesStyleValues.section1Column1?.transition,
-        props.tabsUnderlinesStyleValues.section1Column2?.transition,
-        props.tabsUnderlinesStyleValues.section2?.transition
+        if(props.tabsKey === "section1Column1" && props.tabsUnderlineStyleValues?.transition === 0)
+            props.updateTabsUnderlinesStyleValues("section1Column1",{
+                ...props.tabsUnderlineStyleValues,
+                transition: 0.45
+            });
+        if(props.tabsKey === "section1Column2" && props.tabsUnderlineStyleValues?.transition === 0){
+            props.updateTabsUnderlinesStyleValues("section1Column2",{
+                ...props.tabsUnderlineStyleValues,
+                transition: 0.45
+            });
+        }
+        if(props.tabsKey === "section2" && props.tabsUnderlineStyleValues?.transition === 0){
+            props.updateTabsUnderlinesStyleValues("section2",{
+                ...props.tabsUnderlineStyleValues,
+                transition: 0.45
+            });
+        }
+    }, [
+        props.tabsUnderlineStyleValues?.transition,
+        // props.array[0]?.isHover === "off",
+        // props.array[1]?.isHover === "off",
+        // props.array[2]?.isHover === "off",
+        // props.array[3]?.isHover === "off",
     ]);
 
     const smoothTransition = () => {
-        if(props.tabsUnderlinesStyleValues.section1Column1){
+        if(props.tabsKey === "section1Column1" && props.tabsUnderlineStyleValues){
             props.updateTabsUnderlinesStyleValues("section1Column1",{
-                ...props.tabsUnderlinesStyleValues.section1Column1,
+                ...props.tabsUnderlineStyleValues,
                 transition: 0
             });
         }
-        if(props.tabsUnderlinesStyleValues.section1Column2){
+        if(props.tabsKey === "section1Column2" && props.tabsUnderlineStyleValues){
             props.updateTabsUnderlinesStyleValues("section1Column2",{
-                ...props.tabsUnderlinesStyleValues.section1Column2,
+                ...props.tabsUnderlineStyleValues,
                 transition: 0
             });
         }
-        if(props.tabsUnderlinesStyleValues.section2){
+        if(props.tabsKey === "section2" && props.tabsUnderlineStyleValues){
             props.updateTabsUnderlinesStyleValues("section2",{
-                ...props.tabsUnderlinesStyleValues.section2,
+                ...props.tabsUnderlineStyleValues,
                 transition: 0
             });
         }
@@ -163,7 +191,7 @@ export const Tabs = (props) => {
         
         setTabCoordinateRange();
         props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
-            ...props.tabsUnderlinesStyleValues.section1Column1,
+            ...props.tabsUnderlineStyleValues,
             transition: 0.45
         });
     }
@@ -219,15 +247,22 @@ export const Tabs = (props) => {
             // console.log(props.tabsKey,el.topCoordinate, pageY)
             if(el.leftCoordinate < pageX && pageX < el.rightCoordinate && 
                 el.topCoordinate < pageY && pageY < el.bottomCoordinate){
-         
-                props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
-                    width: widthOfTab,
-                    translateX: el.leftCoordinate - props.tabsCoordinateRange.tabs[0].leftCoordinate,
-                    transition: 0,
-                    rendered: true
-                });
-                setWidthOfTab(el.width)
+
+                if(props.tabsCoordinateRange.tabs){
+                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                        width: widthOfTab,
+                        translateX: el.leftCoordinate - props.tabsCoordinateRange.tabs[0].leftCoordinate,
+                        transition: 0,
+                        rendered: true
+                    });
+                    setWidthOfTab(el.width)
+                }
+              
+                
+                // props.setIsHoverTab("on", el.id);
+
             }else{
+                // props.setIsHoverTab("off", el.id);
             }
         })
     }
@@ -235,7 +270,7 @@ export const Tabs = (props) => {
     // const handleMouseEnter = (opt, id) => {
     //     switch(opt){
     //         case 'tab': 
-    //             // props.setIsHoverTab("on", id);
+    //             props.setIsHoverTab("on", id);
     //             let tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab${id}`);
     //             setWidthOfTab(tabHeaderHolder.offsetWidth)
     //             let translateX = props.tabsCoordinateRange.tabs.find(item => item.id === id).leftCoordinate;
@@ -266,25 +301,40 @@ export const Tabs = (props) => {
     //     }
     // }
 
-    // const handleMouseLeave = (opt, id) => {
-    //     switch(opt){
-    //         case 'tab': 
-    //             props.updateTabsUnderlinesStyleValues("section1Column1",{
-    //                 ...props.tabsUnderlinesStyleValues.section1Column1,
-    //                 transition: 0
-    //             });
-    //             props.updateTabsUnderlinesStyleValues("section1Column2",{
-    //                 ...props.tabsUnderlinesStyleValues.section1Column2,
-    //                 transition: 0
-    //             });
-    //             props.updateTabsUnderlinesStyleValues("section2",{
-    //                 ...props.tabsUnderlinesStyleValues.section2,
-    //                 transition: 0
-    //             });
-    //             // props.setIsHoverTab("off", id);
-    //             break;
-    //     }
-    // }
+    const handleMouseLeave = (opt, tabsKey) => {
+        switch(opt){
+            case 'tabsHeader':
+                let activeTabId = props.array.find(item => item.active === "on").id;
+                let activeTabTranslateX = props.tabsCoordinateRange.tabs.find(item => item.id === activeTabId).leftCoordinate;
+               
+                console.log(activeTabTranslateX)
+                if(props.tabsKey !== "section1Column1"){
+                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                        width: widthOfTab,
+                        translateX: activeTabTranslateX,
+                        transition: 0,
+                        rendered: true
+                    });
+                }
+                if(props.tabsKey !== "section1Column2"){
+                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                        width: widthOfTab,
+                        translateX: activeTabTranslateX,
+                        transition: 0,
+                        rendered: true
+                    });
+                }
+                if(props.tabsKey !== "section2"){
+                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                        width: widthOfTab,
+                        translateX: activeTabTranslateX,
+                        transition: 0,
+                        rendered: true
+                    });
+                }
+                break;
+        }
+    }
 
     const tabItemOnClick = (e, path, id) => {
         switch(e.button){
@@ -336,11 +386,12 @@ export const Tabs = (props) => {
         return(
             <div 
                 className="tabs-header-items"
+                onMouseLeave={() => handleMouseLeave("tabsHeader", props.tabsKey)}
             >{props.array.map((el, i) => {
                 return(
                     <div
                         key={i}
-                        // ref={setRef(`${props.tabsKey}Tab${el.id}`)}
+                        ref={setRef(`${props.tabsKey}Tab${el.id}`)}
                         id={`${props.tabsKey}Tab${el.id}`}
                         className={i === 0 ? "tabs-header-item-first" : "tabs-header-item"}
                         // onMouseEnter={() => handleMouseEnter("tab", el.id)} 
@@ -370,21 +421,21 @@ export const Tabs = (props) => {
             case 'section1Column1':
                 return {
                     width: `${widthOfTab}px`,
-                    transform: `translateX(${props.tabsUnderlinesStyleValues?.section1Column1?.translateX}px`,
-                    transition: `transform ${props.tabsUnderlinesStyleValues?.section1Column1?.transition}s ease-out`,
+                    transform: `translateX(${props.tabsUnderlineStyleValues?.translateX}px`,
+                    transition: `transform ${props.tabsUnderlineStyleValues?.transition}s ease-out`,
                 };
             case "section1Column2":
                 return {
                     width: `${widthOfTab}px`,
-                    transform: `translateX(${props.tabsUnderlinesStyleValues?.section1Column2?.translateX}px`,
-                    transition: `transform ${props.tabsUnderlinesStyleValues?.section1Column2?.transition}s ease-out`,
+                    transform: `translateX(${props.tabsUnderlineStyleValues?.translateX}px`,
+                    transition: `transform ${props.tabsUnderlineStyleValues?.transition}s ease-out`,
                   
                 };
             case 'section2':
                 return {
                     width: `${widthOfTab}px`,
-                    transform: `translateX(${props.tabsUnderlinesStyleValues?.section2?.translateX}px`,
-                    transition: `transform ${props.tabsUnderlinesStyleValues?.section2?.transition}s ease-out`,
+                    transform: `translateX(${props.tabsUnderlineStyleValues?.translateX}px`,
+                    transition: `transform ${props.tabsUnderlineStyleValues?.transition}s ease-out`,
                 };
         }
     }
