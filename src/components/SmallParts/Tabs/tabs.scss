@@ -1,5 +1,6 @@
 .tabs {
     width: 100%;
+
     .tabs-gray-line-wrapper {
         position: relative;
         .tabs-gray-line-long {
@@ -19,6 +20,7 @@
     .tabs-header-items {
         display: flex;
         max-width: fit-content;
+        margin-bottom: 4px;
         .tabs-header-item-first {
             padding: 15px 25px 15px 0;
             cursor: pointer;

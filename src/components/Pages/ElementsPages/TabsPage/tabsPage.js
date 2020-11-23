@@ -95,16 +95,18 @@ export const TabsPage = (props) => {
 
         if(props.tabsPage.section1Column1Data.items.length === 0){
             props.fetchTabsPageSection1Column1Data();
+            console.log("section11")
         }
 
         if(props.tabsPage.section1Column2Data.items.length === 0){
             props.fetchTabsPageSection1Column2Data();
+            console.log("section12")
         }
 
         if(props.tabsPage.section2Data.items.length === 0){
             props.fetchTabsPageSection2Data();
+            console.log("section2")
         }
-
         // Initialize the lines style for 3 containers with tabs
 
         let tabsArray = ['section1Column1', 'section1Column2', 'section2']
@@ -125,9 +127,7 @@ export const TabsPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, [props.tabsPage.itemsCooradinatesRanges[0].updated,
-    // props.tabsPage.section2Data.items.length !==0
-    ]);
+    }, []);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -194,7 +194,7 @@ export const TabsPage = (props) => {
     }
 
     const renderTabsPageSection1Column1DataContent = () => {
-        if(props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column2Data.error){
+        if(props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
             return(
                 <div 
                     className="tabs-page-loading-error" 
@@ -285,19 +285,17 @@ export const TabsPage = (props) => {
         if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
             return(
-                <div className="tabs-page-section-2-data-wrapper">
-                    <Tabs
-                        array={props.tabsPage.section2Data.items}
-                        page="tabsPage"
-                        tabsKey="section2"
-                        setActiveTab={props.setActiveTabOfSection2TabsPage}
-                        setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
-                        rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                        tabsCoordinateRange={tabsCoordinateRange}
-                        tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
-                        updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                    />
-                </div>
+                <Tabs
+                    array={props.tabsPage.section2Data.items}
+                    page="tabsPage"
+                    tabsKey="section2"
+                    setActiveTab={props.setActiveTabOfSection2TabsPage}
+                    setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
+                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                    tabsCoordinateRange={tabsCoordinateRange}
+                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
+                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
+                />
             )
         }
         if(!props.tabsPage.section2Data.loading && props.tabsPage.section2Data.error){
@@ -329,7 +327,9 @@ export const TabsPage = (props) => {
                     <EW70/>
                     {renderTabsPageSection1Column2DataContent()}
                 </div>
-                {renderTabsPageSection2DataContent()}
+                <div className="tabs-page-section-2-data-wrapper">
+                    {renderTabsPageSection2DataContent()}
+                </div>
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
