@@ -230,7 +230,7 @@ export const Tabs = (props) => {
             width: tabHeaderHolder.offsetWidth,
             updated: true
         };
-        console.log(tabHeaderHolder.offsetTop)
+        // console.log(tabHeaderHolder.offsetTop)
         return updatedTabsHeaderCoordinateRange;
     }
 
@@ -243,8 +243,15 @@ export const Tabs = (props) => {
 
         let pageX = e.pageX;
         let pageY = e.pageY;
+        // let tabsHederCoordinates = {
+        //     top: props.tabsCoordinateRange.tabs[0].topCoordinate,
+        //     right: props.tabsCoordinateRange.tabs[props.tabsCoordinateRange.tabs.length - 1].rightCoordinate,
+        //     bottom: props.tabsCoordinateRange.tabs[0].bottomCoordinate,
+        //     left: props.tabsCoordinateRange.tabs[0].leftCoordinate,
+        // }
+
         props.tabsCoordinateRange.tabs.map((el, i) => {
-            // console.log(props.tabsKey,el.topCoordinate, pageY)
+         
             if(el.leftCoordinate < pageX && pageX < el.rightCoordinate && 
                 el.topCoordinate < pageY && pageY < el.bottomCoordinate){
 
@@ -258,10 +265,9 @@ export const Tabs = (props) => {
                     setWidthOfTab(el.width)
                 }
               
-                
                 // props.setIsHoverTab("on", el.id);
 
-            }else{
+            }else { 
                 // props.setIsHoverTab("off", el.id);
             }
         })
@@ -305,29 +311,33 @@ export const Tabs = (props) => {
         switch(opt){
             case 'tabsHeader':
                 let activeTabId = props.array.find(item => item.active === "on").id;
-                let activeTabTranslateX = props.tabsCoordinateRange.tabs.find(item => item.id === activeTabId).leftCoordinate;
-               
-                console.log(activeTabTranslateX)
-                if(props.tabsKey !== "section1Column1"){
-                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                let activeTabIndex = props.tabsCoordinateRange.tabs.findIndex(item => item.id === activeTabId);
+                let activeTabLeftCoordinate = props.tabsCoordinateRange.tabs.find(item => item.id === activeTabId).leftCoordinate;
+                let firstTabLeftCoordinate = props.tabsCoordinateRange.tabs[0].leftCoordinate;
+                let translateX = activeTabIndex === 0 ? 0 : activeTabLeftCoordinate - firstTabLeftCoordinate;
+
+                let tab = setRef(`${props.tabsCoordinateRange.tabs[activeTabIndex].key}Tab${props.tabsCoordinateRange.tabs[activeTabIndex].id}`);
+                setWidthOfTab(tab.current.getBoundingClientRect().width);
+                if(props.tabsKey === "section1Column1"){
+                    props.updateTabsUnderlinesStyleValues(`section1Column1`,{
                         width: widthOfTab,
-                        translateX: activeTabTranslateX,
+                        translateX: translateX,
                         transition: 0,
                         rendered: true
                     });
                 }
-                if(props.tabsKey !== "section1Column2"){
-                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                if(props.tabsKey === "section1Column2"){
+                    props.updateTabsUnderlinesStyleValues(`section1Column2`,{
                         width: widthOfTab,
-                        translateX: activeTabTranslateX,
+                        translateX: translateX,
                         transition: 0,
                         rendered: true
                     });
                 }
-                if(props.tabsKey !== "section2"){
-                    props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
+                if(props.tabsKey === "section2"){
+                    props.updateTabsUnderlinesStyleValues(`section2`,{
                         width: widthOfTab,
-                        translateX: activeTabTranslateX,
+                        translateX: translateX,
                         transition: 0,
                         rendered: true
                     });
