@@ -56,7 +56,8 @@ import * as Selectors from '../../../../reducers/selectors';
 import { 
     H15,
     H45,
-    EW70
+    EW70,
+    EH70
 } from '../../../UtilityComponents';
 
 import * as Utility from '../../../../utility';
@@ -324,7 +325,7 @@ export const TabsPage = (props) => {
                 <div className="grey-line"/>
                 <div className="tabs-page-section-1-data-wrapper" id="section-1">
                     {renderTabsPageSection1Column1DataContent()}
-                    <EW70/>
+                    <EW70/><EH70/>
                     {renderTabsPageSection1Column2DataContent()}
                 </div>
                 <div className="tabs-page-section-2-data-wrapper">

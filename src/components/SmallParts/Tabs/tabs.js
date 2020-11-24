@@ -65,6 +65,7 @@ export const Tabs = (props) => {
     const resizeRef = useRef();
     const transitionRef = useRef();
     const [widthOfTab, setWidthOfTab] = useState(0);
+    const [relode, setRelode] = useState(false)
 
     /**
      * Methods
@@ -104,7 +105,6 @@ export const Tabs = (props) => {
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
-        
         return () => {
             // Cleaning the unmounted component
 
@@ -112,7 +112,8 @@ export const Tabs = (props) => {
             window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
         }
-    }, [props.tabsCoordinateRange.tabs[0].updated]);
+
+    }, [props.tabsCoordinateRange.tabs[0].updated, relode]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -170,6 +171,7 @@ export const Tabs = (props) => {
             ...props.tabsUnderlineStyleValues,
             transition: 0.45
         });
+        setRelode(!relode)
     }
 
     const setTabCoordinateRange = () => {
@@ -216,19 +218,19 @@ export const Tabs = (props) => {
          * and remember the coordinates of each part. Then check if the cursor coordinates are 
          * inside the part and then render the corresponding image.
          */
-        
+        let tabs = [...props.tabsCoordinateRange.tabs]
         let pageX = e.pageX;
         let pageY = e.pageY;
         
-        props.tabsCoordinateRange.tabs.map((el, i) => {
+        tabs.map((el, i) => {
          
             if(el.leftCoordinate < pageX && pageX < el.rightCoordinate && 
                 el.topCoordinate < pageY && pageY < el.bottomCoordinate){
 
-                if(props.tabsCoordinateRange.tabs){
+                if(tabs){
                     props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
                         width: widthOfTab,
-                        translateX: el.leftCoordinate - props.tabsCoordinateRange.tabs[0].leftCoordinate,
+                        translateX: el.leftCoordinate - tabs[0].leftCoordinate,
                         transition: 0,
                         rendered: true
                     });

@@ -352,13 +352,14 @@ const setActiveTabOfSection2TabsPage = (state, action) => {
 const rememberCoordinateRangeForTabsPage = (state, action) => {
     if(action.coordinatesRanges.length === 0) return state;
     let updatedItemsCooradinatesRanges = [...state.itemsCooradinatesRanges];
-    updatedItemsCooradinatesRanges = updatedItemsCooradinatesRanges.map(el => {
+    updatedItemsCooradinatesRanges = updatedItemsCooradinatesRanges.map((el, i) => {
+        console.log(action.key, !state.itemsCooradinatesRanges[i].updated)
         return {
             ...el,
-            updated:true
+            updated: !state.itemsCooradinatesRanges[i].updated
         }
     })
-    console.log()
+  
     let obj = {...updatedItemsCooradinatesRanges.find(item => item.tabKey === action.key), tabs: action.coordinatesRanges};
     let objIndex = updatedItemsCooradinatesRanges.findIndex(item => item.tabKey === action.key);
 
