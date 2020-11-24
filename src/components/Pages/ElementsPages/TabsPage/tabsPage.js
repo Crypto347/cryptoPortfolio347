@@ -197,7 +197,7 @@ export const TabsPage = (props) => {
             return(
                 <div 
                     className="tabs-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -223,7 +223,7 @@ export const TabsPage = (props) => {
             return(
                 <div 
                     className="tabs-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column1Data.error}`}</H15>
                 </div>
@@ -236,7 +236,7 @@ export const TabsPage = (props) => {
             return(
                 <div 
                     className="tabs-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -262,7 +262,7 @@ export const TabsPage = (props) => {
             return(
                 <div 
                     className="tabs-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column2Data.error}`}</H15>
                 </div>
@@ -275,7 +275,7 @@ export const TabsPage = (props) => {
             return(
                 <div 
                     className="tabs-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -301,7 +301,7 @@ export const TabsPage = (props) => {
             return(
                 <div 
                     className="tabs-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.tabsPage.section2Data.error}`}</H15>
                 </div>
