@@ -58,6 +58,8 @@ export const findPathOfIds = (path) => {
             return [6, 61, 611];
         case 'tabs':
             return [6, 61, 612];
+        case 'call-to-action':
+            return [6, 61, 613];
     }
 
     //Second element of updatedPath array

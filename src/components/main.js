@@ -63,6 +63,8 @@ import ThreeColumnsPage from './Pages/PortfolioPages/ThreeColumnsPage/threeColum
 import FourColumnsPage from './Pages/PortfolioPages/FourColumnsPage/fourColumnsPage';
 import AccordionsPage from './Pages/ElementsPages/AccordionsPage/accordionsPage';
 import TabsPage from './Pages/ElementsPages/TabsPage/tabsPage';
+import CallToActionPage from './Pages/ElementsPages/CallToActionPage/callToActionPage';
+
 
 /**
  * Actions
@@ -132,6 +134,7 @@ export const Main = (props) => {
             props.clearActivityOfMenuItems();
             props.activateMenuItem(pathOfIds);
             console.log("activateMenuItem", pathOfIds);
+            
             // Close photoViewer for all pages
             props.photoViewerOpen("all", false, []);
         });
@@ -144,6 +147,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/call-to-action"}
+                    component={CallToActionPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/tabs"}
