@@ -60,8 +60,6 @@ import {
     EH70
 } from '../../../UtilityComponents';
 
-import * as Utility from '../../../../utility';
-
 /**
  * Hooks
  */
@@ -111,11 +109,11 @@ export const TabsPage = (props) => {
         // Initialize the lines style for 3 containers with tabs
 
         let tabsArray = ['section1Column1', 'section1Column2', 'section2']
-        props.initLinesStylesStateForTabsPage(tabsArray);
+        props.initUnderlinesStyleStateForTabsPage(tabsArray);
 
         // Scroll to the top of the screen
 
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
         // Event Listeners
 
@@ -325,7 +323,8 @@ export const TabsPage = (props) => {
                 <div className="grey-line"/>
                 <div className="tabs-page-section-1-data-wrapper" id="section-1">
                     {renderTabsPageSection1Column1DataContent()}
-                    <EW70/><EH70/>
+                    <EW70/>
+                    <EH70/>
                     {renderTabsPageSection1Column2DataContent()}
                 </div>
                 <div className="tabs-page-section-2-data-wrapper">
@@ -362,7 +361,7 @@ export default connect(
             setActiveTabOfSection1Column2TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column2TabsPage, dispatch),
             setActiveTabOfSection2TabsPage: bindActionCreators(Actions.setActiveTabOfSection2TabsPage, dispatch),
             rememberCoordinateRangeForTabsPage: bindActionCreators(Actions.rememberCoordinateRangeForTabsPage, dispatch),
-            initLinesStylesStateForTabsPage: bindActionCreators(Actions.initLinesStylesStateForTabsPage, dispatch),
+            initUnderlinesStyleStateForTabsPage: bindActionCreators(Actions.initUnderlinesStyleStateForTabsPage, dispatch),
             updateTabsUnderlinesStyleValuesForTabsPage: bindActionCreators(Actions.updateTabsUnderlinesStyleValuesForTabsPage, dispatch),
         };
     }

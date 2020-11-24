@@ -353,10 +353,9 @@ const rememberCoordinateRangeForTabsPage = (state, action) => {
     if(action.coordinatesRanges.length === 0) return state;
     let updatedItemsCooradinatesRanges = [...state.itemsCooradinatesRanges];
     updatedItemsCooradinatesRanges = updatedItemsCooradinatesRanges.map((el, i) => {
-        console.log(action.key, !state.itemsCooradinatesRanges[i].updated)
         return {
             ...el,
-            updated: !state.itemsCooradinatesRanges[i].updated
+            updated: true
         }
     })
   
@@ -371,7 +370,7 @@ const rememberCoordinateRangeForTabsPage = (state, action) => {
     };
 }
 
-const initLinesStylesStateForTabsPage = (state, action) => {
+const initUnderlinesStyleStateForTabsPage = (state, action) => {
     let updatedTabsUnderlinesStyleValues = {};
         action.arr.map((el, i) => {
         let setObj = {
@@ -452,8 +451,8 @@ const tabsPageReducer = (state = initialState, action) => {
             return setActiveTabOfSection2TabsPage(state, action);
         case actionTypes.REMEMBER_COORDINATE_RANGE_FOR_TABS_PAGE:
             return rememberCoordinateRangeForTabsPage(state, action);
-        case actionTypes.INIT_LINES_STYLES_STATE_FOR_TABS_PAGE:
-            return initLinesStylesStateForTabsPage(state, action);
+        case actionTypes.INIT_UNDERLINES_STYLE_STATE_FOR_TABS_PAGE:
+            return initUnderlinesStyleStateForTabsPage(state, action);
         case actionTypes.UPDATED_TABS_UNDERLINES_STYLE_VALUES_TABS_PAGE:
             return updateTabsUnderlinesStyleValuesForTabsPage(state, action);
         default: 

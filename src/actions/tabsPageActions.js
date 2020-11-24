@@ -116,9 +116,9 @@ export function rememberCoordinateRangeForTabsPage(key, coordinatesRanges) {
     };
 };
 
-export function initLinesStylesStateForTabsPage(arr) {
+export function initUnderlinesStyleStateForTabsPage(arr) {
     return { 
-        type: actionTypes.INIT_LINES_STYLES_STATE_FOR_TABS_PAGE,
+        type: actionTypes.INIT_UNDERLINES_STYLE_STATE_FOR_TABS_PAGE,
         arr: arr
     };
 };
@@ -130,29 +130,3 @@ export function updateTabsUnderlinesStyleValuesForTabsPage(tabsKey, obj) {
         obj: obj
     };
 };
-
-
-// export function setIsHoverSection2ItemAccordionsPage(val, id) {
-//     return { 
-//         type: actionTypes.SET_IS_HOVER_SECTION_2_ITEM_ACCORDIONS_PAGE,
-//         val: val,
-//         id: id
-//     };
-// };
-
-// export function setActivitySection1ItemAccordionsPage(val, id, opt) {
-//     return { 
-//         type: actionTypes.SET_ACTIVITY_SECTION_1_ITEM_ACCORDION_PAGE,
-//         val: val,
-//         id: id,
-//         opt: opt
-//     };
-// };
-
-// export function setActivitySection2ItemAccordionsPage(val, id) {
-//     return { 
-//         type: actionTypes.SET_ACTIVITY_SECTION_2_ITEM_ACCORDION_PAGE,
-//         val: val,
-//         id: id
-//     };
-// };

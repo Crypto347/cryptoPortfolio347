@@ -19,29 +19,12 @@ import {
 import './tabs.scss';
 
 /**
- * Components
- */
-
-import Icon from '../Icon/icon';
-
-/**
  * Utility
  */
 
 import {
-    H17,
-    H19
+    H17
 } from '../../UtilityComponents';
-
-import * as Utility from '../../../utility';
-
-/**
- * Hooks
- */
-
-import {
-   usePrevious
-} from '../../../Hooks';
 
 /**
  * Tabs component definition and export
@@ -72,22 +55,21 @@ export const Tabs = (props) => {
      */
 
     useEffect(() => {
-        let tabHeaderHolder;
+        // Set underline width for active tab
+
         if(props.tabsKey === "section1Column1" && props.array.length !== 0){
-            // tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab1`);
             let tabInfo = section1Column1Tab1.current.getBoundingClientRect()
-            setWidthOfTab(tabInfo.width)
+            setWidthOfTab(tabInfo.width);
         }
         if(props.tabsKey === "section1Column2" && props.array.length !== 0){
-            // tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab2`);
             let tabInfo = section1Column2Tab1.current.getBoundingClientRect()
-            setWidthOfTab(tabInfo.width)
+            setWidthOfTab(tabInfo.width);
         }
         if(props.tabsKey === "section2" && props.array.length !== 0){
-            // tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab3`);
             let tabInfo = section2Tab1.current.getBoundingClientRect()
-            setWidthOfTab(tabInfo.width)
+            setWidthOfTab(tabInfo.width);
         }
+
         // Calculate tabs header holder coordinates 
 
         setTabCoordinateRange();
@@ -105,6 +87,7 @@ export const Tabs = (props) => {
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
+
         return () => {
             // Cleaning the unmounted component
 
@@ -175,7 +158,7 @@ export const Tabs = (props) => {
     }
 
     const setTabCoordinateRange = () => {
-        //Remember tab header holder coordinates
+        // Remember tab header holder coordinates
 
         let headerHolderCoordinateRange = [];
         if(props.page === "tabsPage"){
@@ -188,10 +171,9 @@ export const Tabs = (props) => {
     }
     
     const evaluateCoordinates = (tabId) => {
-        //Calculate tabs header holder coordinates
+        // Calculate tabs header holder coordinates
         
         let tabHeaderHolder = setRef(`${props.tabsKey}Tab${tabId}`);
-        // let tabHeaderHolder = document.getElementById(`${props.tabsKey}Tab${tabId}`);
     
         let updatedTabsHeaderCoordinateRange = {
             id: tabId,
@@ -201,44 +183,35 @@ export const Tabs = (props) => {
             leftCoordinate: window.scrollX + tabHeaderHolder.current.getBoundingClientRect().left,
             rightCoordinate: window.scrollX + tabHeaderHolder.current.getBoundingClientRect().right,
             width: tabHeaderHolder.current.getBoundingClientRect().width,
-            // topCoordinate: tabHeaderHolder.offsetTop,
-            // bottomCoordinate: tabHeaderHolder.offsetTop + tabHeaderHolder.offsetHeight,
-            // leftCoordinate: tabHeaderHolder.offsetLeft,
-            // rightCoordinate: tabHeaderHolder.offsetLeft + tabHeaderHolder.offsetWidth,
-            // width: tabHeaderHolder.offsetWidth,
-            // updated: true
+            updated: true
         };
-        console.log(window.scrollY+tabHeaderHolder.current.getBoundingClientRect().top)
         return updatedTabsHeaderCoordinateRange;
     }
 
     const handleMouseMove = (e) => {
         /**
-         * Split the image holder into equal parts equal to the number of elements in imagesArray,
-         * and remember the coordinates of each part. Then check if the cursor coordinates are 
-         * inside the part and then render the corresponding image.
+         * Check if the coordinates of the cursor are inside which tab,
+         * and move the underline under the corresponding tab.
          */
-        let tabs = [...props.tabsCoordinateRange.tabs]
+        
         let pageX = e.pageX;
         let pageY = e.pageY;
         
-        tabs.map((el, i) => {
+        props.tabsCoordinateRange.tabs.map((el, i) => {
          
             if(el.leftCoordinate < pageX && pageX < el.rightCoordinate && 
                 el.topCoordinate < pageY && pageY < el.bottomCoordinate){
 
-                if(tabs){
+                if(props.tabsCoordinateRange.tabs){
                     props.updateTabsUnderlinesStyleValues(`${props.tabsKey}`,{
                         width: widthOfTab,
-                        translateX: el.leftCoordinate - tabs[0].leftCoordinate,
+                        translateX: el.leftCoordinate - props.tabsCoordinateRange.tabs[0].leftCoordinate,
                         transition: 0,
                         rendered: true
                     });
                     setWidthOfTab(el.width)
                 }
-              
                 // props.setIsHoverTab("on", el.id);
-
             }else { 
                 // props.setIsHoverTab("off", el.id);
             }
@@ -248,6 +221,9 @@ export const Tabs = (props) => {
     const handleMouseLeave = (opt, tabsKey) => {
         switch(opt){
             case 'tabsHeader':
+
+                // After exiting a tab, move the underline under the active tab
+
                 let activeTabId = props.array.find(item => item.active === "on").id;
                 let activeTabIndex = props.tabsCoordinateRange.tabs.findIndex(item => item.id === activeTabId);
                 let activeTabLeftCoordinate = props.tabsCoordinateRange.tabs.find(item => item.id === activeTabId).leftCoordinate;
@@ -256,6 +232,7 @@ export const Tabs = (props) => {
 
                 let tab = setRef(`${props.tabsCoordinateRange.tabs[activeTabIndex].key}Tab${props.tabsCoordinateRange.tabs[activeTabIndex].id}`);
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
+
                 if(props.tabsKey === "section1Column1"){
                     props.updateTabsUnderlinesStyleValues(`section1Column1`,{
                         width: widthOfTab,
@@ -287,13 +264,12 @@ export const Tabs = (props) => {
     const tabItemOnClick = (e, path, id) => {
         switch(e.button){
             case 0:
-                // Show and remember data of chosen tab on left mouse click on left mouse click
+                // Show and remember data of chosen tab on left mouse click
 
                 let tab = setRef(`${props.tabsKey}Tab${id}`);
+
                 setWidthOfTab(tab.current.getBoundingClientRect().width);
-
                 props.setActiveTab("on", id);
-
                 return;
             case 1:
                 // Open current page in a new window on scroll wheel click
@@ -340,10 +316,7 @@ export const Tabs = (props) => {
                     <div
                         key={i}
                         ref={setRef(`${props.tabsKey}Tab${el.id}`)}
-                        // id={`${props.tabsKey}Tab${el.id}`}
                         className={i === 0 ? "tabs-header-item-first" : "tabs-header-item"}
-                        // onMouseEnter={() => handleMouseEnter("tab", el.id)} 
-                        // onMouseLeave={() => handleMouseLeave("tab", el.id)}
                         onMouseDown={(e) => tabItemOnClick(e, props.location.pathname, el.id)}
                     >
                         <H17 className="h17-black-poppins">{el.header}</H17>
