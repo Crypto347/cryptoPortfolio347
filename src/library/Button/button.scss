@@ -42,6 +42,46 @@
     }
 }
 
+.call-to-action-get-direction-black {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+    width: 180px;
+    height: 60px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        border: 2px solid black;
+        color: black;
+    }
+}
+
+.call-to-action-get-direction-white {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: none;
+    width: 180px;
+    height: 60px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+}
+
 .archive-load-more {
     font-family: 'Balsamiq Sans', cursive;
     font-size: 14px;

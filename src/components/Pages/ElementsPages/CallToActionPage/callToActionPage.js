@@ -15,6 +15,10 @@ import {
     connect
 } from 'react-redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
  * Styles
  */
@@ -25,9 +29,8 @@ import './callToActionPage.scss';
  * Components
  */
 
-import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import AccordionItem from '../../../SmallParts/AccordionItem/accordionItem';
+import Button from '../../../../library/Button/button';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -54,9 +57,8 @@ import * as Selectors from '../../../../reducers/selectors';
  */
 
 import { 
-    H15,
-    H45,
-    EW70
+    H22,
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -89,15 +91,6 @@ export const CallToActionPage = (props) => {
 
         props.setUnmountComponentValues(false, "");
 
-        // Fetch data for the component
-
-        if(props.accordionsPage.section1Data.itemsLeftColumn.length === 0){
-            props.fetchAccordionsPageSection1Data();
-        }
-        if(props.accordionsPage.section2Data.items.length === 0){
-            props.fetchAccordionsPageSection2Data();
-        }
-
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -117,7 +110,7 @@ export const CallToActionPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("accordionsPage");
+        let el = document.getElementById("callToActionPage");
 
         // Show or hide BackToTop component
 
@@ -151,12 +144,12 @@ export const CallToActionPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="accordionsPage"
+                        page="callToActionPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="accordionsPage"
+                        page="callToActionPage"
                     />
                 </>
             )
@@ -167,132 +160,78 @@ export const CallToActionPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="accordionsPage"
+                        page="callToActionPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="accordionsPage"
+                        page="callToActionPage"
                     />
                 </>
             )
         }
     }
 
-    const renderAccordionsPageSection1Data = (arr, opt) => {
-        return(
-            <div className="accordions-page-section1-items">{arr.map((el, i) => {
-                return(
-                    <div key={i}>
-                        <AccordionItem 
-                            style="simple"
-                            obj={el}
-                            activateAccordionItem={props.setActivitySection1ItemAccordionsPage}
-                            iconType="plusIcon"
-                            option={opt}
-                        />
-                    </div>
-                )
-            })}</div>
-        )
+    const onMouseDownHandler = (e, path) => {
+        switch(e.button){
+            case 0:
+                // Scroll to the top of the page on left mouse click
+                window.scrollTo(0, 0);
+                return;
+            case 1:
+                // Open current page in a new window on scroll wheel click
+                window.open(path , "_blank");
+                return;
+            case 2:
+                // Do nothing on right mouse click 
+                return;
+        }
     }
-
-    const renderAccordionsPageSection2Data = () => {
-        return(
-            <div className="accordions-page-section2-items">{props.accordionsPage.section2Data.items.map((el, i) => {
-                return(
-                    <div key={i}>
-                        <AccordionItem
-                            style="hoverBlackAndWhite"
-                            hoverEffect
-                            obj={el}
-                            setIsHoverAccordionItem={props.setIsHoverSection2ItemAccordionsPage}
-                            activateAccordionItem={props.setActivitySection2ItemAccordionsPage}
-                            iconType="plusIcon"
-                        />
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
-    const renderAccordionsPageSection1DataContent = () => {
-        if(props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
-            return(
-                <div 
-                    className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
-                >
-                    <Loading color="black"/>
-                </div>
-            )
-        }
-        if(!props.accordionsPage.section1Data.loading && !props.accordionsPage.section1Data.error){
-            return(
-                <div className="accordions-page-section1-data-wrapper">
-                    {renderAccordionsPageSection1Data(props.accordionsPage.section1Data.itemsLeftColumn,"leftColumn")}
-                    <EW70/>
-                    {renderAccordionsPageSection1Data(props.accordionsPage.section1Data.itemsRightColumn,"rightColumn")}
-                </div>
-            )
-        }
-        if(!props.accordionsPage.section1Data.loading && props.accordionsPage.section1Data.error){
-            return(
-                <div 
-                    className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
-                >
-                    <H15 className="h19-nobel-lora">{`${props.accordionsPage.section1Data.error}`}</H15>
-                </div>
-            )
-        }
-    } 
-    
-    const renderAccordionsPageSection2DataContent = () => {
-        if(props.accordionsPage.section2Data.loading && !props.accordionsPage.section2Data.error){
-            return(
-                <div 
-                    className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
-                >
-                    <Loading color="black"/>
-                </div>
-            )
-        }
-        if(!props.accordionsPage.section2Data.loading && !props.accordionsPage.section2Data.error){
-            return(
-                <div className="accordions-page-section2-data-wrapper">
-                    {renderAccordionsPageSection2Data()}
-                </div>
-               
-            )
-        }
-        if(!props.accordionsPage.section2Data.loading && props.accordionsPage.section2Data.error){
-            return(
-                <div 
-                    className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
-                >
-                    <H15 className="h19-nobel-lora">{`${props.accordionsPage.section2Data.error}`}</H15>
-                </div>
-            )
-        }
-    } 
 
     /**
      * Markup
      */
 
     return(
-        <div className="accordions-page" id="accordionsPage">
+        <div className="call-to-action-page" id="callToActionPage">
             {renderToolbars()}
-            <div className="accordions-page-wrapper">
-                <div className="accordions-page-header">
-                    <H45 className="h45-nero-lustria">Accordions</H45>
+            <div className="call-to-action-page-wrapper">
+                <div className="call-to-action-page-header">
+                    <H45 className="h45-nero-lustria">Call To Action</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderAccordionsPageSection1DataContent()}
-                {renderAccordionsPageSection2DataContent()}
+                <div className="call-to-action-page-first-line">
+                    <H22 className="h22-black-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <Button
+                        className="call-to-action-get-direction-black"
+                        text="get direction."
+                        onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                    />
+                </div>
+                <div className="call-to-action-page-second-line">
+                    <H22 className="h22-white-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <Button
+                        className="call-to-action-get-direction-white"
+                        text="get direction."
+                        onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                    />
+                </div>
+                <div className="call-to-action-page-third-line">
+                    <H22 className="h22-black-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <Button
+                        className="call-to-action-get-direction-black"
+                        text="get direction."
+                        onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                    />
+                </div>
+                <div className="call-to-action-page-fourth-line">
+                    <H22 className="h22-black-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <Button
+                        className="call-to-action-get-direction-black"
+                        text="get direction."
+                        onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                    />
+                </div>
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -303,23 +242,17 @@ export const CallToActionPage = (props) => {
 export default connect(
     (state) => {
         return {
-            accordionsPage: Selectors.getAccordionsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchAccordionsPageSection1Data: bindActionCreators(Services.fetchAccordionsPageSection1Data, dispatch),
-            fetchAccordionsPageSection2Data: bindActionCreators(Services.fetchAccordionsPageSection2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setIsHoverSection2ItemAccordionsPage: bindActionCreators(Actions.setIsHoverSection2ItemAccordionsPage, dispatch),
-            setActivitySection1ItemAccordionsPage: bindActionCreators(Actions.setActivitySection1ItemAccordionsPage, dispatch),
-            setActivitySection2ItemAccordionsPage: bindActionCreators(Actions.setActivitySection2ItemAccordionsPage, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(CallToActionPage);
+)(withRouter(CallToActionPage));
  

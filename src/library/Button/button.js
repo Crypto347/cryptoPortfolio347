@@ -54,6 +54,7 @@ class Button extends Component {
                     <button 
                         className={this.props.className}
                         onClick={this.props.onClick}
+                        onMouseDown={this.props.onMouseDown}
                         type={this.props.type}
                         disabled={this.props.disabled}
                         // ref={this.buttonRef}
@@ -67,6 +68,7 @@ class Button extends Component {
                 <button 
                     className={this.props.className}
                     onClick={this.props.onClick}
+                    onMouseDown={this.props.onMouseDown}
                     type={this.props.type}
                     disabled={this.props.disabled}
                     // ref={this.buttonRef}

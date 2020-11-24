@@ -106,6 +106,8 @@ export const AccordionItem = (props) => {
     }
 
     const onClickHandler = () => {
+        // Activate accordion item
+
         let val = props.obj.active === "init" || props.obj.active === "off" ? "on" : "off";
         props.activateAccordionItem(val, props.obj.id, props.option);
     }
