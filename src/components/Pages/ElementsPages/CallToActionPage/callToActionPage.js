@@ -58,7 +58,8 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H22,
-    H45
+    H45,
+    EH20
 } from '../../../UtilityComponents';
 
 /**
@@ -202,6 +203,7 @@ export const CallToActionPage = (props) => {
                 <div className="grey-line"/>
                 <div className="call-to-action-page-first-line">
                     <H22 className="h22-black-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <EH20/>
                     <Button
                         className="call-to-action-get-direction-black"
                         text="get direction."
@@ -210,6 +212,7 @@ export const CallToActionPage = (props) => {
                 </div>
                 <div className="call-to-action-page-second-line">
                     <H22 className="h22-white-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <EH20/>
                     <Button
                         className="call-to-action-get-direction-white"
                         text="get direction."
@@ -218,6 +221,7 @@ export const CallToActionPage = (props) => {
                 </div>
                 <div className="call-to-action-page-third-line">
                     <H22 className="h22-black-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <EH20/>
                     <Button
                         className="call-to-action-get-direction-black"
                         text="get direction."
@@ -226,6 +230,7 @@ export const CallToActionPage = (props) => {
                 </div>
                 <div className="call-to-action-page-fourth-line">
                     <H22 className="h22-black-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
+                    <EH20/>
                     <Button
                         className="call-to-action-get-direction-black"
                         text="get direction."

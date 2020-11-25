@@ -57,15 +57,9 @@
 @media only screen and (max-width: 860px){
     .accordions-page {
         .accordions-page-wrapper {
-            .accordions-page-header {
-                padding: 90px 40px 90px 40px;
-            }
             .accordions-page-section1-data-wrapper {
                 flex-direction: column;
-            }
-            .accordions-page-section2-data-wrapper {
-                padding: 110px 40px 110px 40px;
-            }     
+            }  
         }
     }
 }

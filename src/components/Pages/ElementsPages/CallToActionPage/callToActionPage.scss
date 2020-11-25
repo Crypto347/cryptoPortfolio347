@@ -13,6 +13,7 @@
         }
         .call-to-action-page-first-line {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 60px 130px 60px 130px;
@@ -20,6 +21,7 @@
         }
         .call-to-action-page-second-line {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 60px 130px 60px 130px;
@@ -27,6 +29,7 @@
         }
         .call-to-action-page-third-line {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 60px 130px 60px 130px;
@@ -34,6 +37,7 @@
         }
         .call-to-action-page-fourth-line {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 60px 130px 60px 130px;
@@ -47,7 +51,20 @@
         .call-to-action-page-wrapper {
             .call-to-action-page-header {
                 padding: 90px 40px 90px 40px;
-            }     
+            }
+            .call-to-action-page-first-line {
+                padding: 60px 40px 60px 40px;
+            }
+            .call-to-action-page-second-line {
+                padding: 60px 40px 60px 40px;
+            }
+            .call-to-action-page-third-line {
+                padding: 60px 40px 60px 40px;
+                
+            }
+            .call-to-action-page-fourth-line {
+                padding: 60px 40px 60px 40px;
+            }    
         }
     }
 }
@@ -55,9 +72,27 @@
 @media only screen and (max-width: 860px){
     .call-to-action-page {
         .call-to-action-page-wrapper {
-            .call-to-action-page-header {
-                padding: 90px 40px 90px 40px;
-            } 
+            .call-to-action-page-first-line {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .call-to-action-page-second-line {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .call-to-action-page-third-line {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                
+            }
+            .call-to-action-page-fourth-line {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
         }
     }
 }
