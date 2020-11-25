@@ -258,6 +258,7 @@ export const Toolbar = (props) => {
             case 'accordionsPage':
             case 'tabsPage':
             case 'callToActionPage':
+            case 'testimonialsPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':

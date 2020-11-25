@@ -40,6 +40,7 @@ import threeColumnsPageReducer from './threeColumnsPageReducer';
 import fourColumnsPageReducer from './fourColumnsPageReducer';
 import accordionsPageReducer from './accordionsPageReducer';
 import tabsPageReducer from './tabsPageReducer';
+import testimonialsPageReducer from './testimonialsPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -77,5 +78,6 @@ export default (history) => combineReducers({
     threeColumnsPage: threeColumnsPageReducer,
     fourColumnsPage: fourColumnsPageReducer,
     accordionsPage: accordionsPageReducer,
-    tabsPage: tabsPageReducer
+    tabsPage: tabsPageReducer,
+    testimonialsPage: testimonialsPageReducer
 });

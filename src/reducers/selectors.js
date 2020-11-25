@@ -393,3 +393,10 @@ export const getTabsPageState = createSelector(
     [getTabsPage],
     (x) => x
 );
+
+const getTestimonialsPage = (state) => state.testimonialsPage;
+
+export const getTestimonialsPageState = createSelector(
+    [getTestimonialsPage],
+    (x) => x
+);

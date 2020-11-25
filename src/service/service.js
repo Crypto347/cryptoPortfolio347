@@ -1551,6 +1551,59 @@ export function fetchTabsPageSection2Data() {
     };
 }
 
+export function fetchTestimonialsPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTestimonialsPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/testimonials-page/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTestimonialsPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTestimonialsPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchTestimonialsPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTestimonialsPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/testimonials-page/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTestimonialsPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTestimonialsPageSection2DataFailur(error))
+            });
+    };
+}
+
+export function fetchTestimonialsPageSection3Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTestimonialsPageSection3DataBegin());
+        return fetch(`http://localhost:3005/api/testimonials-page/section3`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTestimonialsPageSection3DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTestimonialsPageSection3DataFailur(error))
+            });
+    };
+}
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

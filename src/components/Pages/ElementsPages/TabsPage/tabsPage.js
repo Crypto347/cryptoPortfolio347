@@ -94,18 +94,16 @@ export const TabsPage = (props) => {
 
         if(props.tabsPage.section1Column1Data.items.length === 0){
             props.fetchTabsPageSection1Column1Data();
-            console.log("section11")
         }
 
         if(props.tabsPage.section1Column2Data.items.length === 0){
             props.fetchTabsPageSection1Column2Data();
-            console.log("section12")
         }
 
         if(props.tabsPage.section2Data.items.length === 0){
             props.fetchTabsPageSection2Data();
-            console.log("section2")
         }
+        
         // Initialize the lines style for 3 containers with tabs
 
         let tabsArray = ['section1Column1', 'section1Column2', 'section2']
@@ -321,7 +319,7 @@ export const TabsPage = (props) => {
                     <H45 className="h45-nero-lustria">Tabs</H45>
                 </div>
                 <div className="grey-line"/>
-                <div className="tabs-page-section-1-data-wrapper" id="section-1">
+                <div className="tabs-page-section-1-data-wrapper">
                     {renderTabsPageSection1Column1DataContent()}
                     <EW70/>
                     <EH70/>

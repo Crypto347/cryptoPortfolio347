@@ -27,7 +27,6 @@ import './testimonialsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import Tabs from '../../../SmallParts/Tabs/tabs';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -55,9 +54,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H45,
-    EW70,
-    EH70
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -92,25 +89,18 @@ export const TestimonialsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.tabsPage.section1Column1Data.items.length === 0){
-            props.fetchTabsPageSection1Column1Data();
-            console.log("section11")
+        if(props.testimonialsPage.section1Data.items.length === 0){
+            props.fetchTestimonialsPageSection1Data();
         }
 
-        if(props.tabsPage.section1Column2Data.items.length === 0){
-            props.fetchTabsPageSection1Column2Data();
-            console.log("section12")
+        if(props.testimonialsPage.section2Data.items.length === 0){
+            props.fetchTestimonialsPageSection2Data();
         }
 
-        if(props.tabsPage.section2Data.items.length === 0){
-            props.fetchTabsPageSection2Data();
-            console.log("section2")
+        if(props.testimonialsPage.section3Data.items.length === 0){
+            props.fetchTestimonialsPageSection3Data();
         }
-        // Initialize the lines style for 3 containers with tabs
-
-        let tabsArray = ['section1Column1', 'section1Column2', 'section2']
-        props.initUnderlinesStyleStateForTabsPage(tabsArray);
-
+        
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -130,7 +120,7 @@ export const TestimonialsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("tabsPage");
+        let el = document.getElementById("testimonialsPage");
 
         // Show or hide BackToTop component
 
@@ -164,12 +154,12 @@ export const TestimonialsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="tabsPage"
+                        page="testimonialsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="tabsPage"
+                        page="testimonialsPage"
                     />
                 </>
             )
@@ -180,130 +170,94 @@ export const TestimonialsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="tabsPage"
+                        page="testimonialsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="tabsPage"
+                        page="testimonialsPage"
                     />
                 </>
             )
         }
     }
 
-    const renderTabsPageSection1Column1DataContent = () => {
-        if(props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
+    const renderTestimonialsPageSection1DataContent = () => {
+        if(props.testimonialsPage.section1Data.loading && !props.testimonialsPage.section1Data.error){
             return(
                 <div 
-                    className="tabs-page-loading-error" 
+                    className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
-            let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column1");
-            return(
-                <Tabs
-                    array={props.tabsPage.section1Column1Data.items}
-                    page="tabsPage"
-                    tabsKey="section1Column1"
-                    setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
-                    setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
-                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                    tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column1}
-                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                />
-            )
+        if(!props.testimonialsPage.section1Data.loading && !props.testimonialsPage.section1Data.error){
+            // return(
+            // )
         }
-        if(!props.tabsPage.section1Column1Data.loading && props.tabsPage.section1Column1Data.error){
+        if(!props.testimonialsPage.section1Data.loading && props.testimonialsPage.section1Data.error){
             return(
                 <div 
-                    className="tabs-page-loading-error" 
+                    className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column1Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section1Data.error}`}</H15>
                 </div>
             )
         }
     } 
     
-    const renderTabsPageSection1Column2DataContent = () => {
-        if(props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
+    const renderTestimonialsPageSection2DataContent = () => {
+        if(props.testimonialsPage.section2Data.loading && !props.testimonialsPage.section2Data.error){
             return(
                 <div 
-                    className="tabs-page-loading-error" 
+                    className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
-            let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column2");
-            return(
-                <Tabs
-                    array={props.tabsPage.section1Column2Data.items}
-                    page="tabsPage"
-                    tabsKey="section1Column2"
-                    setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
-                    setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
-                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                    tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column2}
-                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                />
-            )
+        if(!props.testimonialsPage.section2Data.loading && !props.testimonialsPage.section2Data.error){
+            // return(
+            // )
         }
-        if(!props.tabsPage.section1Column2Data.loading && props.tabsPage.section1Column2Data.error){
+        if(!props.testimonialsPage.section2Data.loading && props.testimonialsPage.section2Data.error){
             return(
                 <div 
-                    className="tabs-page-loading-error" 
+                    className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column2Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section2Data.error}`}</H15>
                 </div>
             )
         }
     }
 
-    const renderTabsPageSection2DataContent = () => {
-        if(props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
+    const renderTestimonialsPageSection3DataContent = () => {
+        if(props.testimonialsPage.section3Data.loading && !props.testimonialsPage.section3Data.error){
             return(
                 <div 
-                    className="tabs-page-loading-error" 
+                    className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
-            let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
-            return(
-                <Tabs
-                    array={props.tabsPage.section2Data.items}
-                    page="tabsPage"
-                    tabsKey="section2"
-                    setActiveTab={props.setActiveTabOfSection2TabsPage}
-                    setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
-                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                    tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
-                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                />
-            )
+        if(!props.testimonialsPage.section3Data.loading && !props.testimonialsPage.section3Data.error){
+            // return(
+            // )
         }
-        if(!props.tabsPage.section2Data.loading && props.tabsPage.section2Data.error){
+        if(!props.testimonialsPage.section3Data.loading && props.testimonialsPage.section3Data.error){
             return(
                 <div 
-                    className="tabs-page-loading-error" 
+                    className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section2Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section3Data.error}`}</H15>
                 </div>
             )
         }
@@ -314,22 +268,16 @@ export const TestimonialsPage = (props) => {
      */
 
     return(
-        <div className="tabs-page" id="tabsPage">
+        <div className="testimonials-page" id="testimonialsPage">
             {renderToolbars()}
-            <div className="tabs-page-wrapper">
-                <div className="tabs-page-header">
-                    <H45 className="h45-nero-lustria">Tabs</H45>
+            <div className="testimonials-page-wrapper">
+                <div className="testimonials-page-header">
+                    <H45 className="h45-nero-lustria">Testimonials</H45>
                 </div>
                 <div className="grey-line"/>
-                <div className="tabs-page-section-1-data-wrapper" id="section-1">
-                    {renderTabsPageSection1Column1DataContent()}
-                    <EW70/>
-                    <EH70/>
-                    {renderTabsPageSection1Column2DataContent()}
-                </div>
-                <div className="tabs-page-section-2-data-wrapper">
-                    {renderTabsPageSection2DataContent()}
-                </div>
+                {renderTestimonialsPageSection1DataContent()}
+                {renderTestimonialsPageSection2DataContent()}
+                {renderTestimonialsPageSection3DataContent()}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -340,29 +288,20 @@ export const TestimonialsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            tabsPage: Selectors.getTabsPageState(state),
+            testimonialsPage: Selectors.getTestimonialsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchTabsPageSection1Column1Data: bindActionCreators(Services.fetchTabsPageSection1Column1Data, dispatch),
-            fetchTabsPageSection1Column2Data: bindActionCreators(Services.fetchTabsPageSection1Column2Data, dispatch),
-            fetchTabsPageSection2Data: bindActionCreators(Services.fetchTabsPageSection2Data, dispatch),
+            fetchTestimonialsPageSection1Data: bindActionCreators(Services.fetchTestimonialsPageSection1Data, dispatch),
+            fetchTestimonialsPageSection2Data: bindActionCreators(Services.fetchTestimonialsPageSection2Data, dispatch),
+            fetchTestimonialsPageSection3Data: bindActionCreators(Services.fetchTestimonialsPageSection3Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setIsHoverTabOfSection1Column1TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection1Column1TabsPage, dispatch),
-            setIsHoverTabOfSection1Column2TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection1Column2TabsPage, dispatch),
-            setIsHoverTabOfSection2TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection2TabsPage, dispatch),
-            setActiveTabOfSection1Column1TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column1TabsPage, dispatch),
-            setActiveTabOfSection1Column2TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column2TabsPage, dispatch),
-            setActiveTabOfSection2TabsPage: bindActionCreators(Actions.setActiveTabOfSection2TabsPage, dispatch),
-            rememberCoordinateRangeForTabsPage: bindActionCreators(Actions.rememberCoordinateRangeForTabsPage, dispatch),
-            initUnderlinesStyleStateForTabsPage: bindActionCreators(Actions.initUnderlinesStyleStateForTabsPage, dispatch),
-            updateTabsUnderlinesStyleValuesForTabsPage: bindActionCreators(Actions.updateTabsUnderlinesStyleValuesForTabsPage, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(TestimonialsPage);

@@ -33,3 +33,4 @@ export * from './threeColumnsPageActions';
 export * from './fourColumnsPageActions';
 export * from './accordionsPageActions';
 export * from './tabsPageActions';
+export * from './testimonialsPageActions';
