@@ -60,6 +60,8 @@ export const findPathOfIds = (path) => {
             return [6, 61, 612];
         case 'call-to-action':
             return [6, 61, 613];
+        case 'testimonials':
+            return [6, 61, 614];
     }
 
     //Second element of updatedPath array
