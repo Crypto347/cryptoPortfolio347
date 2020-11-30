@@ -27,6 +27,7 @@ import './testimonialsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Swiper from '../../../../library/Swiper/swiper';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -194,8 +195,20 @@ export const TestimonialsPage = (props) => {
             )
         }
         if(!props.testimonialsPage.section1Data.loading && !props.testimonialsPage.section1Data.error){
-            // return(
-            // )
+            return(
+                <div className="testimonials-page-section-1-data">
+                    <Swiper
+                        component="testimonials"
+                        contentArray={props.testimonialsPage.section1Data.items}
+                        content={props.testimonialsPage.section1Data}
+                        translateWidth={size.width - 130}
+                        showNumbersOfSlides={1}
+                        setSwiperState={props.setSwiperStateForTestimonialsPageSection1}
+                        swiperData={props.testimonialsPage.section1Data.swiper}
+                        // autoPlay
+                    />
+                </div>
+            )
         }
         if(!props.testimonialsPage.section1Data.loading && props.testimonialsPage.section1Data.error){
             return(
@@ -221,8 +234,20 @@ export const TestimonialsPage = (props) => {
             )
         }
         if(!props.testimonialsPage.section2Data.loading && !props.testimonialsPage.section2Data.error){
-            // return(
-            // )
+            return(
+                <div className="testimonials-page-section-2-data">
+                    <Swiper 
+                        component="testimonialsPageSection2"
+                        contentArray={props.testimonialsPage.section2Data.items}
+                        content={props.testimonialsPage.section2Data}
+                        translateWidth={size.width - 130}
+                        showNumbersOfSlides={1}
+                        setSwiperState={props.setSwiperStateForTestimonialsPageSection2}
+                        swiperData={props.testimonialsPage.section2Data.swiper}
+                        // autoPlay
+                    />
+                </div>
+            )
         }
         if(!props.testimonialsPage.section2Data.loading && props.testimonialsPage.section2Data.error){
             return(
@@ -248,8 +273,20 @@ export const TestimonialsPage = (props) => {
             )
         }
         if(!props.testimonialsPage.section3Data.loading && !props.testimonialsPage.section3Data.error){
-            // return(
-            // )
+            return(
+                <div className="testimonials-page-section-3-data">
+                    <Swiper 
+                        component="testimonialsPageSection3"
+                        contentArray={props.testimonialsPage.section3Data.items}
+                        content={props.testimonialsPage.section3Data}
+                        translateWidth={size.width - 130}
+                        showNumbersOfSlides={1}
+                        setSwiperState={props.setSwiperStateForTestimonialsPageSection3}
+                        swiperData={props.testimonialsPage.section3Data.swiper}
+                        // autoPlay
+                    />
+                </div>
+            )
         }
         if(!props.testimonialsPage.section3Data.loading && props.testimonialsPage.section3Data.error){
             return(
@@ -275,8 +312,8 @@ export const TestimonialsPage = (props) => {
                     <H45 className="h45-nero-lustria">Testimonials</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderTestimonialsPageSection1DataContent()}
-                {renderTestimonialsPageSection2DataContent()}
+                {/* {renderTestimonialsPageSection1DataContent()}
+                {renderTestimonialsPageSection2DataContent()} */}
                 {renderTestimonialsPageSection3DataContent()}
             </div>
             <Footer/>
@@ -301,7 +338,10 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            setSwiperStateForTestimonialsPageSection1: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection1, dispatch),
+            setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
+            setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
         };
     }
 )(TestimonialsPage);

@@ -320,6 +320,8 @@ export const BigSlader = (props) => {
                            content={props.bigSliderPortfolio}
                            translateWidth={size.width - 130}
                            showNumbersOfSlides={1}
+                           setSwiperState={props.setSwiperStateForBigSliderPage}
+                           swiperData={props.bigSliderPortfolio.swiper}
                         //    autoPlay
                         />
                         <EH40/>
@@ -386,7 +388,8 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            setSwiperStateForBigSliderPage: bindActionCreators(Actions.setSwiperStateForBigSliderPage, dispatch),
         };
     }
 )(BigSlader);

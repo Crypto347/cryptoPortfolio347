@@ -149,7 +149,7 @@ const nextImage = (state, action) => {
     };
 }
 
-const setSwiperState = (state, action) => {
+const setSwiperStateForHomePage = (state, action) => {
     let updatedSwiper = {
         slides: action.slides,
         _slides: action._slides,
@@ -836,8 +836,8 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return prevImage(state, action); 
         case actionTypes.NEXT_IMAGE:
             return nextImage(state, action); 
-        case actionTypes.SET_SWIPER_STATE:
-            return setSwiperState(state, action); 
+        case actionTypes.SET_SWIPER_STATE_FOR_HOME_PAGE:
+            return setSwiperStateForHomePage(state, action); 
         case actionTypes.SET_IS_HOVERING_MENU_ITEM:
             return setIsHoveringMenuItem(state, action); 
         case actionTypes.SET_IS_HOVERING_TOOLBAR_OPTION_ITEM:

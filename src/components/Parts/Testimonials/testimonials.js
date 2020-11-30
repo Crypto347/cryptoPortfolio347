@@ -27,6 +27,12 @@ import './testimonials.scss';
 import Swiper from '../../../library/Swiper/swiper';
 
 /**
+ * Actions
+ */
+
+import * as Actions from '../../../actions';
+
+/**
  * Services
  */
 
@@ -93,6 +99,8 @@ export const Testimonials = (props) => {
                 content={props.testimonials}
                 translateWidth={size.width - 130}
                 showNumbersOfSlides={1}
+                setSwiperState={props.setSwiperStateForHomePage}
+                swiperData={props.swiperData}
                 autoPlay
             />
             <EH80/>
@@ -103,12 +111,14 @@ export const Testimonials = (props) => {
 export default connect(
     (state) => {
         return {
-            testimonials: Selectors.getTestimonialsState(state)
+            testimonials: Selectors.getTestimonialsState(state),
+            swiperData: Selectors.getSwiperDataState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch)
+            fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch),
+            setSwiperStateForHomePage: bindActionCreators(Actions.setSwiperStateForHomePage, dispatch),
         };
     }
 )(Testimonials);

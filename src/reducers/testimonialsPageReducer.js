@@ -19,17 +19,41 @@ export const initialState = {
     section1Data: {
         items: [],
         loading: false,
-        error: null
+        error: null,
+        swiper: {
+            slides: [],
+            _slides: [],
+            activeIndex: 0,
+            translate: 0,
+            transition: 0.45,
+            rerender: false
+        },
     },
     section2Data: {
         items: [],
         loading: false,
-        error: null
+        error: null,
+        swiper: {
+            slides: [],
+            _slides: [],
+            activeIndex: 0,
+            translate: 0,
+            transition: 0.45,
+            rerender: false
+        },
     },
     section3Data: {
         items: [],
         loading: false,
-        error: null
+        error: null,
+        swiper: {
+            slides: [],
+            _slides: [],
+            activeIndex: 0,
+            translate: 0,
+            transition: 0.45,
+            rerender: false
+        },
     },
 }
 
@@ -150,6 +174,63 @@ const fetchTestimonialsPageSection3DataFailur = (state, action) => {
     };
 }
 
+const setSwiperStateForTestimonialsPageSection1 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+        
+    };
+    return {
+        ...state,
+        section1Data: {
+            ...state.section1Data,
+            swiper: updatedSwiper
+        }
+    };
+}
+
+const setSwiperStateForTestimonialsPageSection2 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+        
+    };
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            swiper: updatedSwiper
+        }
+    };
+}
+
+const setSwiperStateForTestimonialsPageSection3 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+        
+    };
+    return {
+        ...state,
+        section3Data: {
+            ...state.section3Data,
+            swiper: updatedSwiper
+        }
+    };
+}
+
 const testimonialsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TESTIMONIALS_PAGE_SECTION_1_DATA_BEGIN:
@@ -170,6 +251,12 @@ const testimonialsPageReducer = (state = initialState, action) => {
             return fetchTestimonialsPageSection3DataSuccess (state, action);
         case actionTypes.FETCH_TESTIMONIALS_PAGE_SECTION_3_DATA_FAILURE:
             return fetchTestimonialsPageSection3DataFailur(state, action);
+        case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_1:
+            return setSwiperStateForTestimonialsPageSection1(state, action); 
+        case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_2:
+            return setSwiperStateForTestimonialsPageSection2(state, action); 
+        case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_3:
+            return setSwiperStateForTestimonialsPageSection3(state, action);
         default: 
             return state;
     }

@@ -36,9 +36,9 @@ export function nextImage() {
     };
 };
 
-export function setSwiperState(slides, _slides, activeIndex, translate, transition, rerender) {
+export function setSwiperStateForHomePage(slides, _slides, activeIndex, translate, transition, rerender) {
     return { 
-        type: actionTypes.SET_SWIPER_STATE,
+        type: actionTypes.SET_SWIPER_STATE_FOR_HOME_PAGE,
         slides: slides,
         _slides: _slides,
         activeIndex: activeIndex,
@@ -198,3 +198,5 @@ export function setFullScreenState(val) {
         val: val
     };
 };
+
+

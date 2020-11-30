@@ -368,6 +368,8 @@ export const SmallSlider = (props) => {
                                 content={props.smallSliderPortfolio}
                                 translateWidth={translatedValue - paddingOneSide}
                                 showNumbersOfSlides={1}
+                                setSwiperState={props.setSwiperStateForSmallSliderPage}
+                                swiperData={props.smallSliderPortfolio.swiper}
                                 autoPlay
                             />
                         </div>
@@ -439,7 +441,8 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            setSwiperStateForSmallSliderPage: bindActionCreators(Actions.setSwiperStateForSmallSliderPage, dispatch),
         };
     }
 )(SmallSlider);

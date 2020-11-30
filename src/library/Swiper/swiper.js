@@ -53,7 +53,8 @@ import * as Selectors from '../../reducers/selectors';
 import {
     H19,
     H25,
-    EH25
+    H45,
+    EH25,
 } from '../../components/UtilityComponents';
 
 
@@ -213,7 +214,7 @@ export const Swiper = (props) => {
 
     useInterval(() => {
         nextSlide();
-    }, props.autoPlay ? 7000 : null)
+    },props.autoPlay ? 7000 : null)
 
     const slide = (swiperWrapper, swiperContent, translateVal, _slides) => {
         let posX1 = 0;
@@ -433,8 +434,11 @@ export const Swiper = (props) => {
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "testimonials"){
+        if(['testimonials','testimonialsPageSection3'].includes(opt)){
             return "swiper-testimonials"
+        }
+        if(opt === 'testimonialsPageSection2'){
+            return "swiper-testimonials-page-section-2"
         }
         if(opt === "bigSlider"){
             return "swiper-big-slider"
@@ -576,7 +580,26 @@ export const Swiper = (props) => {
                             width: `${getTranslateValue(props.translateWidth, props.translateHeight) * props.contentArray.length}px`
                         }}
                     >{props.swiperData._slides.map((el, i) => {
-                        if(props.component === "testimonials"){
+                        if(['testimonialsPageSection2'].includes(props.component)){
+                            return(
+                                <div 
+                                    key={i} 
+                                    className="slide"
+                                    id="slide"
+                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                                >
+                                <H45 className="h45-nero-lustria">{el.header}</H45>
+                                <EH25/>
+                                <H25 className="h25-nobel-lustria">{el.feedback}</H25>
+                                <EH25/>
+                                    <div className="author-name-wrapper">
+                                        <div className="slide-dash"/>
+                                        <H25 className="h25-nero2-teko">{el.author}</H25>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        if(['testimonials','testimonialsPageSection3'].includes(props.component)){
                             return(
                                 <div 
                                     key={i} 
@@ -676,7 +699,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(['testimonials','bigSlider'].includes(props.component)){
+            if(['testimonials','bigSlider','testimonialsPageSection3'].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
                         <div 
@@ -730,7 +753,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(['testimonials','bigSlider'].includes(props.component)){
+            if(['testimonials','bigSlider','testimonialsPageSection3'].includes(props.component)){
                 return(
                     <div className="swiper-arrow-right">
                         <div 
@@ -802,7 +825,7 @@ export const Swiper = (props) => {
 export default connect(
     (state) => {
         return {
-            swiperData: Selectors.getSwiperDataState(state),
+            // swiperData: Selectors.getSwiperDataState(state),
             photoViewerForBigSliderOpen: Selectors.getPhotoViewerForBigSliderOpenState(state),
             photoViewerForSmallSliderOpen: Selectors.getPhotoViewerForSmallSliderOpenState(state),
         };
@@ -810,7 +833,7 @@ export default connect(
     (dispatch) => {
         return {
             // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
-            setSwiperState: bindActionCreators(Actions.setSwiperState, dispatch),
+            // setSwiperState: bindActionCreators(Actions.setSwiperState, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };

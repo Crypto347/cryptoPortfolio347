@@ -18,7 +18,15 @@ import uuid from "uuid";
 export const initialState = {
     item: {},
     loading: false,
-    error: null
+    error: null,
+    swiper: {
+        slides: [],
+        _slides: [],
+        activeIndex: 0,
+        translate: 0,
+        transition: 0.45,
+        rerender: false
+    }
 }
 
 const fetchSmallSliderPortfolioBegin = (state, action) => {
@@ -78,6 +86,22 @@ const setSmallSliderIsHoveringTag = (state, action) => {
     };
 }
 
+const setSwiperStateForSmallSliderPage = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+        
+    };
+    return {
+        ...state,
+        swiper: updatedSwiper,
+    };
+}
+
 const smallSliderPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SMALL_SLIDER_PORTFOLIO_BEGIN:
@@ -90,6 +114,8 @@ const smallSliderPortfolioReducer = (state = initialState, action) => {
             return setSmallSliderIsHoveringCategory(state, action);
         case actionTypes.SET_SMALL_SLIDER_IS_HOVERING_TAG:
             return setSmallSliderIsHoveringTag(state, action);
+        case actionTypes.SET_SWIPER_STATE_FOR_SMALL_SLIDER_PAGE:
+            return setSwiperStateForSmallSliderPage(state, action); 
         default: 
             return state;
     }

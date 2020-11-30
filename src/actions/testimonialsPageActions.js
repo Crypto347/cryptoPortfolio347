@@ -59,3 +59,39 @@ export function fetchTestimonialsPageSection3DataFailur(err) {
         err: err
     };
 };
+
+export function setSwiperStateForTestimonialsPageSection1(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_1,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
+export function setSwiperStateForTestimonialsPageSection2(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_2,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
+export function setSwiperStateForTestimonialsPageSection3(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_3,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};

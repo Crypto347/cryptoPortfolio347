@@ -35,3 +35,15 @@ export function setSmallSliderIsHoveringTag(val, id) {
         id: id
     };
 };
+
+export function setSwiperStateForSmallSliderPage(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_SMALL_SLIDER_PAGE,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};

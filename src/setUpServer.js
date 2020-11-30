@@ -18531,16 +18531,19 @@ app.get('/api/testimonials-page/section2', (req, res) => {
     const testimonialsPageSection2 = [
         {
             id: 1,
+            header: "Success Stories",
             feedback: "Vix in verterem scribentur. Quo option integre sensibus in. Noster mnesarchum ne usu habemus. An idque possim facilisis mea vim. Vix tale ludus persius cu. In qui meis munere ea evertitur. Id rebum dolor petentium vis, wisi dissen tias.",
             author: "John Eury"
         },
         {
             id: 2,
+            header: "What they’ re saying",
             feedback: "In qui meis munere ea evertitur. Id rebum dolor petentium vis, wisi dissen tias. Vix in verterem scribentur. Noster mnesarchum ne usu habemus. An idque possim facilisis mea vim. Vix tale ludus persius cu. Quo option integre sensibus in.",
             author: "Jo Culp"
         },
         {
             id: 3,
+            header: "So Easy!",
             feedback: "Id rebum dolor petentium vis, wisi dissen tias. Quo option integre sensibus in. Noster mnesarchum ne usu habemus. Vix in verterem scribentur. An idque possim facilisis mea vim. Vix tale ludus persius cu. In qui meis munere ea evertitur.",
             author: "Paul Macha"
         },
