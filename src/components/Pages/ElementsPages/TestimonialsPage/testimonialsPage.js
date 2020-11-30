@@ -312,8 +312,8 @@ export const TestimonialsPage = (props) => {
                     <H45 className="h45-nero-lustria">Testimonials</H45>
                 </div>
                 <div className="grey-line"/>
-                {/* {renderTestimonialsPageSection1DataContent()}
-                {renderTestimonialsPageSection2DataContent()} */}
+                {renderTestimonialsPageSection1DataContent()}
+                {renderTestimonialsPageSection2DataContent()}
                 {renderTestimonialsPageSection3DataContent()}
             </div>
             <Footer/>

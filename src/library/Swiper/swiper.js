@@ -121,8 +121,8 @@ export const Swiper = (props) => {
         let translateVal;
         let _updatedSlides;
         if(!props.content.loading && props.showNumbersOfSlides === 1){
-            swiperWrapper = document.getElementById('swiper-wrapper');   
-            swiperContent = document.getElementById('swiper-content');
+            swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
+            swiperContent = document.getElementById(`swiper-content-${props.component}`);
        
             
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]];
@@ -571,7 +571,7 @@ export const Swiper = (props) => {
                 return(
                     <div 
                         className="swiper-window-width-content" 
-                        id="swiper-content"
+                        id={`swiper-content-${props.component}`}
                         onMouseEnter={handleMouseEnter} 
                         onMouseLeave={handleMouseLeave}
                         style={{
@@ -801,7 +801,7 @@ export const Swiper = (props) => {
                 id="swiper"
             >
                 {renderFirstArrow()}
-                <div className="swiper-wrapper" id="swiper-wrapper">
+                <div className="swiper-wrapper" id={`swiper-wrapper-${props.component}`}>
                     {renderSwiper()}
                 </div>
                 {renderSecondArrow()}
