@@ -87,6 +87,13 @@ import {
 
 export const Swiper = (props) => {
 
+    const testimonialsContent = useRef();
+    const bigSliderContent = useRef();
+    const smallSliderContent  = useRef();
+    const testimonialsPageSection1Content = useRef();
+    const testimonialsPageSection2Content = useRef();
+    const testimonialsPageSection3Content = useRef();
+
     const getHeight = () => window.innerHeight;
     const getWidth = () => window.innerWidth;
     
@@ -124,7 +131,6 @@ export const Swiper = (props) => {
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
        
-            
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]];
             // setState({
             //     ...state,
@@ -155,6 +161,9 @@ export const Swiper = (props) => {
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
         }
 
+        // Calculate swiper content coordinates 
+
+        setTabCoordinateRange();
         return () => {
            
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
@@ -171,7 +180,10 @@ export const Swiper = (props) => {
             // });
             // setSlides([]);
         };
-    }, [props.content.loading, props.swiperData.slides.length, props.swiperData.activeIndex]);
+    }, [props.content.loading, 
+        props.swiperData.slides.length, 
+        props.swiperData.activeIndex, 
+        props.content.itemsCooradinateRange.updated]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -309,7 +321,33 @@ export const Swiper = (props) => {
         //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
         //     transition: 0
         // })
+        setTabCoordinateRange();
         props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
+    }
+
+    const setTabCoordinateRange = () => {
+        // Remember swiper content coordinates
+
+        let swiperContentRange = evaluateCoordinates();
+        
+        props.rememberCoordinateRange(props.component, swiperContentRange);
+    }
+
+    const evaluateCoordinates = () => {
+        // Calculate swiper content coordinates
+        
+        let swiperContent = setRef(`${props.component}Content`);
+    
+        let updatedSwiperContentCoordinateRange = {
+            key: props.component,
+            topCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().top,
+            bottomCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().bottom,
+            leftCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().left,
+            rightCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().right,
+            width: swiperContent.current.getBoundingClientRect().width,
+            updated: true
+        };
+        return updatedSwiperContentCoordinateRange;
     }
 
     const smoothTransition = () => {
@@ -324,7 +362,10 @@ export const Swiper = (props) => {
             //     transition: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
             // })
-            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // if(props.component === "testimonialsPageSection2"){
+                props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // }
+            
         }
         if(props.showNumbersOfSlides === 3){
             if(activeIndex === slides.length - 1){
@@ -565,6 +606,23 @@ export const Swiper = (props) => {
         }
     } 
 
+    const setRef = (opt) => {
+        switch(opt){
+            case 'testimonialsContent':
+                return testimonialsContent;
+            case 'bigSliderContent':
+                return bigSliderContent;
+            case 'smallSliderContent':
+                return smallSliderContent;
+            case 'testimonialsPageSection1Content':
+                return testimonialsPageSection1Content;
+            case 'testimonialsPageSection2Content':
+                return testimonialsPageSection2Content;
+            case 'testimonialsPageSection3Content':
+                return testimonialsPageSection3Content;
+        }
+    }
+
     const swiper = () => {
         if(!props.content.loading){
             if(props.translateWidth){
@@ -799,6 +857,7 @@ export const Swiper = (props) => {
             <div 
                 className={renderClassName(props.component)} 
                 id="swiper"
+                ref={setRef(`${props.component}Content`)}
             >
                 {renderFirstArrow()}
                 <div className="swiper-wrapper" id={`swiper-wrapper-${props.component}`}>
