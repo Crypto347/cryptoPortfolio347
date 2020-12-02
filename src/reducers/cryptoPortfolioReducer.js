@@ -26,20 +26,23 @@ export const initialState = {
     photoViewerForGalleryOpen: false,
     photoViewerForSmallGalleryOpen: false,
     photoViewerImagesArray: [],
-    swiper: {
-        slides: [],
-        _slides: [],
-        activeIndex: 0,
-        translate: 0,
-        transition: 0.45,
-        rerender: false
-    },
+    // swiper: {
+    //     slides: [],
+    //     _slides: [],
+    //     activeIndex: 0,
+    //     translate: 0,
+    //     transition: 0.45,
+    //     rerender: false
+    // },
+    // itemsCooradinateRange: {
+    //     id: 1,
+    //     updated: false
+    // },
     sidebarState: "init",
     unmountComponent: {
         state: false,
         gotoPage: '',
         prevPage: ''
-
     },
     menuDotsState: {
         page: "",
@@ -47,7 +50,8 @@ export const initialState = {
     },
     historyPopFromItem: "scrollToTop",
     showBackToTop: false,
-    fullScreenState: false
+    fullScreenState: false,
+   
 }
 
 const initMenuItems = (state, action) => {
@@ -146,22 +150,6 @@ const nextImage = (state, action) => {
     return {
         ...state,
         photoViewerImagesArray: updatedPhotoViewerImagesArray,
-    };
-}
-
-const setSwiperStateForHomePage = (state, action) => {
-    let updatedSwiper = {
-        slides: action.slides,
-        _slides: action._slides,
-        activeIndex: action.activeIndex,
-        translate: action.translate,
-        transition: action.transition,
-        rerender: action.rerender
-        
-    };
-    return {
-        ...state,
-        swiper: updatedSwiper,
     };
 }
 
@@ -835,9 +823,7 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
         case actionTypes.PREV_IMAGE:
             return prevImage(state, action); 
         case actionTypes.NEXT_IMAGE:
-            return nextImage(state, action); 
-        case actionTypes.SET_SWIPER_STATE_FOR_HOME_PAGE:
-            return setSwiperStateForHomePage(state, action); 
+            return nextImage(state, action);
         case actionTypes.SET_IS_HOVERING_MENU_ITEM:
             return setIsHoveringMenuItem(state, action); 
         case actionTypes.SET_IS_HOVERING_TOOLBAR_OPTION_ITEM:
@@ -870,7 +856,6 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setShowBackToTopComponent(state, action);
         case actionTypes.SET_FULLSCREEN_STATE:
             return setFullScreenState(state, action);
-            
         default: 
             return state;
     }

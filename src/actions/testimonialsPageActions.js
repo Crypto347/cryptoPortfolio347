@@ -96,17 +96,17 @@ export function setSwiperStateForTestimonialsPageSection3(slides, _slides, activ
     };
 };
 
-export function rememberCoordinateRangeForTestimonialsPage(key, coordinateRange) {
+export function rememberCoordinateRangeOfSwiperForTestimonialsPage(key, coordinateRange) {
     return { 
-        type: actionTypes.REMEMBER_COORDINATE_RANGE_FOR_TESTIMONIALS_PAGE,
+        type: actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE,
         key: key,
         coordinateRange: coordinateRange
     };
 };
 
-export function forgetCoordinateRangeForTestimonialsPage(arr) {
+export function forgetCoordinateRangeOfSwiperForTestimonialsPage(arr) {
     return { 
-        type: actionTypes.FORGET_COORDINATE_RANGE_FOR_TESTIMONIALS_PAGE,
+        type: actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE,
         arr: arr
     };
 };

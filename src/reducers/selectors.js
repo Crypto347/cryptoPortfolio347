@@ -65,12 +65,12 @@ export const getTestimonialsState = createSelector(
     (x) => x
 );
 
-const getSwiperData = (state) => state.home.swiper;
+// const getSwiperData = (state) => state.home.swiper;
 
-export const getSwiperDataState = createSelector(
-    [getSwiperData],
-    (x) => x
-);
+// export const getSwiperDataState = createSelector(
+//     [getSwiperData],
+//     (x) => x
+// );
 
 const getFullScreenState = (state) => state.home.fullScreenState;
 

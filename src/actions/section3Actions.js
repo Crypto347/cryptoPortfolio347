@@ -40,3 +40,29 @@ export function fetchTeamInformationFailur(err) {
     };
 };
 
+export function setSwiperStateForHomePage(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_HOME_PAGE,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
+export function rememberCoordinateRangeOfSwiperForHomePage(key, coordinateRange) {
+    return { 
+        type: actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_HOME_PAGE,
+        key: key,
+        coordinateRange: coordinateRange
+    };
+};
+
+export function forgetCoordinateRangeOfSwiperForHomePage(arr) {
+    return { 
+        type: actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_HOME_PAGE,
+        arr: arr
+    };
+};

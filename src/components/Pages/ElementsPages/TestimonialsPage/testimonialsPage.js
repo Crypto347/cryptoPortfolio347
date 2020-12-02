@@ -205,7 +205,7 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection1}
                         swiperData={props.testimonialsPage.section1Data.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeForTestimonialsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         // autoPlay
                     />
                 </div>
@@ -245,7 +245,7 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection2}
                         swiperData={props.testimonialsPage.section2Data.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeForTestimonialsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         // autoPlay
                     />
                 </div>
@@ -285,7 +285,7 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection3}
                         swiperData={props.testimonialsPage.section3Data.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeForTestimonialsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         // autoPlay
                     />
                 </div>
@@ -347,8 +347,8 @@ export default connect(
             setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
             setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
             setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
-            rememberCoordinateRangeForTestimonialsPage: bindActionCreators(Actions.rememberCoordinateRangeForTestimonialsPage, dispatch),
-            forgetCoordinateRangeForTestimonialsPage: bindActionCreators(Actions.forgetCoordinateRangeForTestimonialsPage, dispatch),
+            rememberCoordinateRangeOfSwiperForTestimonialsPage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForTestimonialsPage, dispatch),
+            forgetCoordinateRangeOfSwiperForTestimonialsPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForTestimonialsPage, dispatch),
         };
     }
 )(TestimonialsPage);

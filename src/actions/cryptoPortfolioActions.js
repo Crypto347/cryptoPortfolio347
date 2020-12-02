@@ -36,18 +36,6 @@ export function nextImage() {
     };
 };
 
-export function setSwiperStateForHomePage(slides, _slides, activeIndex, translate, transition, rerender) {
-    return { 
-        type: actionTypes.SET_SWIPER_STATE_FOR_HOME_PAGE,
-        slides: slides,
-        _slides: _slides,
-        activeIndex: activeIndex,
-        translate: translate,
-        transition: transition,
-        rerender: rerender
-    };
-};
-
 export function setIsHoveringMenuItem(val, id) {
     return { 
         type: actionTypes.SET_IS_HOVERING_MENU_ITEM,
@@ -198,5 +186,4 @@ export function setFullScreenState(val) {
         val: val
     };
 };
-
 

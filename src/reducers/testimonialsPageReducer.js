@@ -28,11 +28,10 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange:
-            {
-                id: 1,
-                updated: false
-            }
+        itemsCooradinateRange:{
+            id: 1,
+            updated: false
+        }
     },
     section2Data: {
         items: [],
@@ -46,11 +45,10 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange: 
-            {
-                id: 1,
-                updated: false
-            }
+        itemsCooradinateRange: {
+            id: 1,
+            updated: false
+        }
     },
     section3Data: {
         items: [],
@@ -64,11 +62,10 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange:
-            {
-                id: 1,
-                updated: false
-            }
+        itemsCooradinateRange: {
+            id: 1,
+            updated: false
+        }
     },
 }
 
@@ -246,8 +243,7 @@ const setSwiperStateForTestimonialsPageSection3 = (state, action) => {
     };
 }
 
-const rememberCoordinateRangeForTestimonialsPage = (state, action) => {
-    console.log(action.coordinateRange)
+const rememberCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
     switch(action.key){
         case 'testimonialsPageSection1':
             return {
@@ -278,7 +274,7 @@ const rememberCoordinateRangeForTestimonialsPage = (state, action) => {
     }
 }
 
-const forgetCoordinateRangeForTestimonialsPage = (state, action) => {
+const forgetCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
     return {
         ...state,
         itemsCooradinateRange: action.arr
@@ -311,10 +307,10 @@ const testimonialsPageReducer = (state = initialState, action) => {
             return setSwiperStateForTestimonialsPageSection2(state, action); 
         case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_3:
             return setSwiperStateForTestimonialsPageSection3(state, action);
-        case actionTypes.REMEMBER_COORDINATE_RANGE_FOR_TESTIMONIALS_PAGE:
-            return rememberCoordinateRangeForTestimonialsPage(state, action);
-        case actionTypes.FORGET_COORDINATE_RANGE_FOR_TESTIMONIALS_PAGE:
-            return forgetCoordinateRangeForTestimonialsPage(state, action);
+        case actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE:
+            return rememberCoordinateRangeOfSwiperForTestimonialsPage(state, action);
+        case actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE:
+            return forgetCoordinateRangeOfSwiperForTestimonialsPage(state, action);
         default: 
             return state;
     }

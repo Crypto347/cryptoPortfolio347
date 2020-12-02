@@ -19,7 +19,19 @@ export const initialState = {
     testimonials: {
         items: [],
         loading: false,
-        error: null
+        error: null,
+        swiper: {
+            slides: [],
+            _slides: [],
+            activeIndex: 0,
+            translate: 0,
+            transition: 0.45,
+            rerender: false
+        },
+        itemsCooradinateRange: {
+            id: 1,
+            updated: false
+        },
     },
     teamInformation: {
         items: [],
@@ -103,6 +115,47 @@ const fetchTeamInformationFailur = (state, action) => {
     };
 }
 
+const setSwiperStateForHomePage = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+        
+    };
+    return {
+        ...state,
+        testimonials: {
+            ...state.testimonials,
+            swiper: updatedSwiper
+        }
+    };
+}
+
+const rememberCoordinateRangeOfSwiperForHomePage = (state, action) => {
+    switch(action.key){
+        case 'testimonials':
+            return {
+                ...state,
+                testimonials: {
+                    ...state.testimonials,
+                    itemsCooradinateRange: action.coordinateRange
+                }
+            };
+        default: 
+            return state;
+    }
+}
+
+const forgetCoordinateRangeOfSwiperForHomePage = (state, action) => {
+    return {
+        ...state,
+        itemsCooradinateRange: action.arr
+    };
+}
+
 const section3Reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TESTIMONIALS_BEGIN:
@@ -117,6 +170,12 @@ const section3Reducer = (state = initialState, action) => {
             return fetchTeamInformationSuccess (state, action);
         case actionTypes.FETCH_TEAM_INFORMATION_FAILURE:
             return fetchTeamInformationFailur(state, action);
+        case actionTypes.SET_SWIPER_STATE_FOR_HOME_PAGE:
+            return setSwiperStateForHomePage(state, action);
+        case actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_HOME_PAGE:
+            return rememberCoordinateRangeOfSwiperForHomePage(state, action);
+        case actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_HOME_PAGE:
+            return forgetCoordinateRangeOfSwiperForHomePage(state, action);
         default: 
             return state;
     }

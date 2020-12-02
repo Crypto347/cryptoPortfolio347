@@ -93,6 +93,7 @@ export const Swiper = (props) => {
     const testimonialsPageSection1Content = useRef();
     const testimonialsPageSection2Content = useRef();
     const testimonialsPageSection3Content = useRef();
+    const [currentSwiper, setCurrentSwiper] = useState('');
 
     const getHeight = () => window.innerHeight;
     const getWidth = () => window.innerWidth;
@@ -215,10 +216,12 @@ export const Swiper = (props) => {
 
         let interval = null;
 
+        window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
-
+      
         return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
         };
@@ -289,8 +292,25 @@ export const Swiper = (props) => {
         }
     }
 
+    const handleMouseMove = (e) => {
+        /**
+         * Check if the coordinates of the cursor are inside which tab,
+         * and move the underline under the corresponding tab.
+         */
+        
+        let pageX = e.pageX;
+        let pageY = e.pageY;
+        
+        if(props.content.itemsCooradinateRange.leftCoordinate < pageX && pageX < props.content.itemsCooradinateRange.rightCoordinate && 
+            props.content.itemsCooradinateRange.topCoordinate < pageY && pageY < props.content.itemsCooradinateRange.bottomCoordinate){
+                setCurrentSwiper(props.content.itemsCooradinateRange.key);
+                console.log("key", props.content.itemsCooradinateRange.key)
+               
+        }
+    }
+
     const handleMouseDown = (e, dragStart, swiperContent) => {
-        dragStart(e)
+        dragStart(e);
         swiperContent.classList.add('active');
     }
 
@@ -347,6 +367,7 @@ export const Swiper = (props) => {
             width: swiperContent.current.getBoundingClientRect().width,
             updated: true
         };
+        // console.log(updatedSwiperContentCoordinateRange)
         return updatedSwiperContentCoordinateRange;
     }
 

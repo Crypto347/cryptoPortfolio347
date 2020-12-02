@@ -116,6 +116,13 @@ export function rememberCoordinateRangeForTabsPage(key, coordinatesRanges) {
     };
 };
 
+export function forgetCoordinateRangeForTabsPage(arr) {
+    return { 
+        type: actionTypes.FORGET_COORDINATE_RANGE_FOR_TABS_PAGE,
+        arr: arr
+    };
+};
+
 export function initUnderlinesStyleStateForTabsPage(arr) {
     return { 
         type: actionTypes.INIT_UNDERLINES_STYLE_STATE_FOR_TABS_PAGE,
