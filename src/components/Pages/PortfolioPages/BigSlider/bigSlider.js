@@ -322,6 +322,7 @@ export const BigSlader = (props) => {
                            showNumbersOfSlides={1}
                            setSwiperState={props.setSwiperStateForBigSliderPage}
                            swiperData={props.bigSliderPortfolio.swiper}
+                           rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForBigSliderPage}
                         //    autoPlay
                         />
                         <EH40/>
@@ -390,6 +391,8 @@ export default connect(
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             setSwiperStateForBigSliderPage: bindActionCreators(Actions.setSwiperStateForBigSliderPage, dispatch),
+            rememberCoordinateRangeOfSwiperForBigSliderPage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForBigSliderPage, dispatch),
+            forgetCoordinateRangeOfSwiperForBigSliderPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForBigSliderPage, dispatch),
         };
     }
 )(BigSlader);

@@ -26,6 +26,10 @@ export const initialState = {
         translate: 0,
         transition: 0.45,
         rerender: false
+    },
+    itemsCooradinateRange: {
+        id: 1,
+        updated: false
     }
 }
 
@@ -102,6 +106,25 @@ const setSwiperStateForBigSliderPage = (state, action) => {
     };
 }
 
+const rememberCoordinateRangeOfSwiperForBigSliderPage = (state, action) => {
+    switch(action.key){
+        case 'bigSlider':
+            return {
+                ...state,
+                itemsCooradinateRange: action.coordinateRange
+            };
+        default: 
+            return state;
+    }
+}
+
+const forgetCoordinateRangeOfSwiperForBigSliderPage = (state, action) => {
+    return {
+        ...state,
+        itemsCooradinateRange: action.arr
+    };
+}
+
 const bigSliderPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_BIG_SLIDER_PORTFOLIO_BEGIN:
@@ -115,7 +138,11 @@ const bigSliderPortfolioReducer = (state = initialState, action) => {
         case actionTypes.SET_BIG_SLIDER_IS_HOVERING_TAG:
             return setBigSliderIsHoveringTag(state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_BIG_SLIDER_PAGE:
-            return setSwiperStateForBigSliderPage(state, action); 
+            return setSwiperStateForBigSliderPage(state, action);
+        case actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_BIG_SLIDER_PAGE:
+            return rememberCoordinateRangeOfSwiperForBigSliderPage(state, action);
+        case actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_BIG_SLIDER_PAGE:
+            return forgetCoordinateRangeOfSwiperForBigSliderPage(state, action);
         default: 
             return state;
     }
