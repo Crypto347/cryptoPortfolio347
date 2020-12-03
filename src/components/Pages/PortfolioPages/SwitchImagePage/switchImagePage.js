@@ -277,7 +277,7 @@ export const SwitchImagePage = (props) => {
     const renderSwitchImagePageData = () => {
         return(
             <div className="switch-image-page-items">{props.switchImagePage.items.map((el, i) => {
-                let imgCoordinateRange = props.switchImagePage.itemsCooradinateRange.find(item => item.id === el.id);
+                let imgCoordinateRange = props.switchImagePage.itemsCoordinateRange.find(item => item.id === el.id);
                 return(
                     <div
                         key={i}

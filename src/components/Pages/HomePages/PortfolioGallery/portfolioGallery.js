@@ -237,7 +237,7 @@ export const PortfolioGallery = (props) => {
             <>
                 <EH110/>
                 <div className="portfolio-gallery-page-items">{props.portfolioGalleryPage.items.map((el, i) => {
-                    let imgCoordinateRange = props.portfolioGalleryPage.itemsCooradinateRange.find(item => item.id === el.id);
+                    let imgCoordinateRange = props.portfolioGalleryPage.itemsCoordinateRange.find(item => item.id === el.id);
                     return(
                         <div 
                             key={i}

@@ -19,7 +19,7 @@ export const initialState = {
     items: [],
     loading: false,
     error: null,
-    itemsCooradinateRange: [
+    itemsCoordinateRange: [
         {
             id: 1,
             updated: false
@@ -121,21 +121,21 @@ const fetchSwitchImagePageFailur = (state, action) => {
 }
 
 const rememberCoordinateRangeForSwitchImagePage = (state, action) => {
-    let updatedItemsCooradinateRange = [...state.itemsCooradinateRange];
+    let updatedItemsCoordinateRange = [...state.itemsCoordinateRange];
     
-    let objIndex = updatedItemsCooradinateRange.findIndex(item => item.id === action.id);
-    updatedItemsCooradinateRange.splice(objIndex, 1, action.coordinateRange);
+    let objIndex = updatedItemsCoordinateRange.findIndex(item => item.id === action.id);
+    updatedItemsCoordinateRange.splice(objIndex, 1, action.coordinateRange);
 
     return {
         ...state,
-        itemsCooradinateRange: updatedItemsCooradinateRange
+        itemsCoordinateRange: updatedItemsCoordinateRange
     };
 }
 
 const forgetCoordinateRangeForSwitchImagePage = (state, action) => {
     return {
         ...state,
-        itemsCooradinateRange: action.arr
+        itemsCoordinateRange: action.arr
     };
 }
 

@@ -28,7 +28,7 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange: {
+        itemsCoordinateRange: {
             id: 1,
             updated: false
         },
@@ -141,7 +141,7 @@ const rememberCoordinateRangeOfSwiperForHomePage = (state, action) => {
                 ...state,
                 testimonials: {
                     ...state.testimonials,
-                    itemsCooradinateRange: action.coordinateRange
+                    itemsCoordinateRange: action.coordinateRange
                 }
             };
         default: 
@@ -152,7 +152,7 @@ const rememberCoordinateRangeOfSwiperForHomePage = (state, action) => {
 const forgetCoordinateRangeOfSwiperForHomePage = (state, action) => {
     return {
         ...state,
-        itemsCooradinateRange: action.arr
+        itemsCoordinateRange: action.arr
     };
 }
 

@@ -48,7 +48,7 @@ export const Tabs = (props) => {
     const resizeRef = useRef();
     const transitionRef = useRef();
     const [widthOfTab, setWidthOfTab] = useState(0);
-    const [relode, setRelode] = useState(false)
+    const [relode, setRelode] = useState(false);
 
     /**
      * Methods

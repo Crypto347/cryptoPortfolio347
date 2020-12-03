@@ -28,7 +28,7 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange:{
+        itemsCoordinateRange:{
             id: 1,
             updated: false
         }
@@ -45,7 +45,7 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange: {
+        itemsCoordinateRange: {
             id: 1,
             updated: false
         }
@@ -62,7 +62,7 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCooradinateRange: {
+        itemsCoordinateRange: {
             id: 1,
             updated: false
         }
@@ -244,13 +244,14 @@ const setSwiperStateForTestimonialsPageSection3 = (state, action) => {
 }
 
 const rememberCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
+    // console.log(action.coordinateRange)
     switch(action.key){
         case 'testimonialsPageSection1':
             return {
                 ...state,
                 section1Data: {
                     ...state.section1Data,
-                    itemsCooradinateRange: action.coordinateRange
+                    itemsCoordinateRange: action.coordinateRange
                 }
             };
         case 'testimonialsPageSection2':
@@ -258,7 +259,7 @@ const rememberCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
                 ...state,
                 section2Data: {
                     ...state.section2Data,
-                    itemsCooradinateRange: action.coordinateRange
+                    itemsCoordinateRange: action.coordinateRange
                 }
             };
         case 'testimonialsPageSection3':
@@ -266,7 +267,7 @@ const rememberCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
                 ...state,
                 section3Data: {
                     ...state.section3Data,
-                    itemsCooradinateRange: action.coordinateRange
+                    itemsCoordinateRange: action.coordinateRange
                 }
             };
         default: 
@@ -277,7 +278,7 @@ const rememberCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
 const forgetCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
     return {
         ...state,
-        itemsCooradinateRange: action.arr
+        itemsCoordinateRange: action.arr
     };
 }
 

@@ -198,7 +198,7 @@ export const TestimonialsPage = (props) => {
             return(
                 <div className="testimonials-page-section-1-data">
                     <Swiper
-                        component="testimonials"
+                        component="testimonialsPageSection1"
                         contentArray={props.testimonialsPage.section1Data.items}
                         content={props.testimonialsPage.section1Data}
                         translateWidth={size.width - 130}
@@ -286,6 +286,7 @@ export const TestimonialsPage = (props) => {
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection3}
                         swiperData={props.testimonialsPage.section3Data.swiper}
                         rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
+                        coordinateRange={props.testimonialsPage.section3Data.itemsCoordinateRange}
                         // autoPlay
                     />
                 </div>

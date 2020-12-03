@@ -27,7 +27,7 @@ export const initialState = {
         transition: 0.45,
         rerender: false
     },
-    itemsCooradinateRange: {
+    itemsCoordinateRange: {
         id: 1,
         updated: false
     }
@@ -111,7 +111,7 @@ const rememberCoordinateRangeOfSwiperForSmallSliderPage = (state, action) => {
         case 'smallSlider':
             return {
                 ...state,
-                itemsCooradinateRange: action.coordinateRange
+                itemsCoordinateRange: action.coordinateRange
             };
         default: 
             return state;
@@ -121,7 +121,7 @@ const rememberCoordinateRangeOfSwiperForSmallSliderPage = (state, action) => {
 const forgetCoordinateRangeOfSwiperForSmallSliderPage = (state, action) => {
     return {
         ...state,
-        itemsCooradinateRange: action.arr
+        itemsCoordinateRange: action.arr
     };
 }
 

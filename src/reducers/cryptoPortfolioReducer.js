@@ -34,7 +34,7 @@ export const initialState = {
     //     transition: 0.45,
     //     rerender: false
     // },
-    // itemsCooradinateRange: {
+    // itemsCoordinateRange: {
     //     id: 1,
     //     updated: false
     // },
