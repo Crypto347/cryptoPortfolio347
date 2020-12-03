@@ -206,7 +206,7 @@ export const TestimonialsPage = (props) => {
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection1}
                         swiperData={props.testimonialsPage.section1Data.swiper}
                         rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
-                        // autoPlay
+                        autoPlay
                     />
                 </div>
             )
@@ -246,7 +246,7 @@ export const TestimonialsPage = (props) => {
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection2}
                         swiperData={props.testimonialsPage.section2Data.swiper}
                         rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
-                        // autoPlay
+                        autoPlay
                     />
                 </div>
             )
@@ -287,7 +287,7 @@ export const TestimonialsPage = (props) => {
                         swiperData={props.testimonialsPage.section3Data.swiper}
                         rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         coordinateRange={props.testimonialsPage.section3Data.itemsCoordinateRange}
-                        // autoPlay
+                        autoPlay
                     />
                 </div>
             )

@@ -312,7 +312,8 @@ export const Swiper = (props) => {
             props.content.itemsCoordinateRange.topCoordinate < pageY && pageY < props.content.itemsCoordinateRange.bottomCoordinate){
                 setCurrentSwiper(props.content.itemsCoordinateRange.key);
                 // console.log("key", props.content.itemsCoordinateRange.key)
-               
+        }else{
+            setCurrentSwiper('');
         }
     }
 
