@@ -323,6 +323,7 @@ export const BigSlader = (props) => {
                            setSwiperState={props.setSwiperStateForBigSliderPage}
                            swiperData={props.bigSliderPortfolio.swiper}
                            rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForBigSliderPage}
+                           onlyImages
                         //    autoPlay
                         />
                         <EH40/>

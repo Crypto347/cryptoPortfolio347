@@ -945,7 +945,7 @@ app.get('/api/section3/testimonials', (req, res) => {
             id: 3,
             feedback: "In qui meis munere evertitur. Id rebum dolor petentium vis, wisi dissen tias. Vix in verterem scribentur. Quo option integre sensibus in. Noster mnesarchum ne usu. An idque possim facilisis vim. Vix tale ludus persius cu te vix malis labores.",
             author: "John Eury"
-        },
+        }
     ]
     res.json(testimonials);
 });
@@ -18546,7 +18546,8 @@ app.get('/api/testimonials-page/section2', (req, res) => {
             header: "So Easy!",
             feedback: "Id rebum dolor petentium vis, wisi dissen tias. Quo option integre sensibus in. Noster mnesarchum ne usu habemus. Vix in verterem scribentur. An idque possim facilisis mea vim. Vix tale ludus persius cu. In qui meis munere ea evertitur.",
             author: "Paul Macha"
-        },
+        }
+      
     ]
     res.json(testimonialsPageSection2);
 });
@@ -18567,7 +18568,7 @@ app.get('/api/testimonials-page/section3', (req, res) => {
             id: 3,
             feedback: "Interdum et malesuada fames ac ante ipsum primis in faucibus. In rutrum dignissim diam nec interdum. Ut iaculis nulla ipsum, at luctus massa molestie a. Aenean ligula nulla, lobortis a dui eget, finibus posuere nulla.",
             author: "Jo Culp"
-        },
+        }
     ]
     res.json(testimonialsPageSection3);
 });

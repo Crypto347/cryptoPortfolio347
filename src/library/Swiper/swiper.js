@@ -129,6 +129,8 @@ export const Swiper = (props) => {
         let swiperContent;
         let translateVal;
         let _updatedSlides;
+        let timeout;
+
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
@@ -154,8 +156,13 @@ export const Swiper = (props) => {
             // Calculate swiper content coordinates 
 
             if(!props.content.itemsCoordinateRange.updated && props.swiperData.slides.length !== 0){
-                setTabCoordinateRange("init");
-              
+                if(props.onlyImages){
+                    timeout = setTimeout(()=>{
+                        setTabCoordinateRange("init");
+                    }, 1000);
+                }else {
+                    setTabCoordinateRange("init");
+                } 
             }
         }
 
@@ -168,10 +175,11 @@ export const Swiper = (props) => {
             // })
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
         }
- 
+
         if(props.content.itemsCoordinateRange.updated){
             window.addEventListener('mousemove', handleMouseMove);
         }
+        
         return () => {
            
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
@@ -182,6 +190,7 @@ export const Swiper = (props) => {
             if(props.content.itemsCoordinateRange.updated){
                 window.removeEventListener('mousemove', handleMouseMove);
             }
+            clearTimeout(timeout);
             // setState({
             //     activeIndex: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
@@ -351,7 +360,6 @@ export const Swiper = (props) => {
         // })
         setTabCoordinateRange("onResize");
         props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
-        console.log(relode)
         setRelode(!relode)
     }
 
@@ -361,7 +369,6 @@ export const Swiper = (props) => {
         let swiperContentRange = evaluateCoordinates();
 
         props.rememberCoordinateRange(props.component, swiperContentRange);
-        // console.log(opt,props.content.itemsCoordinateRange.updated,rerender )
       
     }
 
@@ -379,7 +386,7 @@ export const Swiper = (props) => {
             width: swiperContent.current.getBoundingClientRect().width,
             updated: true
         };
-        // console.log(swiperContent.current)
+        
         return updatedSwiperContentCoordinateRange;
     }
 
@@ -717,6 +724,7 @@ export const Swiper = (props) => {
                                 >
                                     <div 
                                         className="slide-image"
+                                        // style={{height:"auto"}}
                                         // onClick={() => openPhotoViewer(el.id)}
                                     >
                                         <img src={loadImage(el.key)}/>
