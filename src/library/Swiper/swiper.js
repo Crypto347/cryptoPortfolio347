@@ -93,7 +93,7 @@ export const Swiper = (props) => {
     const testimonialsPageSection1Content = useRef();
     const testimonialsPageSection2Content = useRef();
     const testimonialsPageSection3Content = useRef();
-    const [currentSwiper, setCurrentSwiper] = useState('');
+    // const [currentSwiper, setCurrentSwiper] = useState('');
     const [relode, setRelode] = useState(false)
 
     const getHeight = () => window.innerHeight;
@@ -130,7 +130,6 @@ export const Swiper = (props) => {
         let translateVal;
         let _updatedSlides;
         let timeout;
-
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
@@ -141,29 +140,30 @@ export const Swiper = (props) => {
             //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
-
+// console.log(props.swiperData.translate)
             if(props.swiperData.rerender) {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
-
+                console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
             slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
 
             // Calculate swiper content coordinates 
 
-            if(!props.content.itemsCoordinateRange.updated && props.swiperData.slides.length !== 0){
-                if(props.onlyImages){
-                    timeout = setTimeout(()=>{
-                        setTabCoordinateRange("init");
-                    }, 1000);
-                }else {
-                    setTabCoordinateRange("init");
-                } 
-            }
+            // if(!props.content.itemsCoordinateRange.updated && props.swiperData.slides.length !== 0){
+            //     if(props.onlyImages){
+            //         timeout = setTimeout(()=>{
+            //             setTabCoordinateRange("init");
+            //         }, 1000);
+            //     }else {
+            //         setTabCoordinateRange("init");
+            //     } 
+            // }
         }
 
         if(!props.content.loading && props.showNumbersOfSlides === 3){
@@ -174,22 +174,24 @@ export const Swiper = (props) => {
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
+            console.log("con3", props.component)
         }
 
-        if(props.content.itemsCoordinateRange.updated){
-            window.addEventListener('mousemove', handleMouseMove);
-        }
+        // if(props.content.itemsCoordinateRange.updated){
+        //     window.addEventListener('mousemove', handleMouseMove);
+        // }
         
         return () => {
            
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+            console.log("con4", props.component)
             if(swiperContent){
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
                 document.removeEventListener('mouseup', handleMouseUp)
             }
-            if(props.content.itemsCoordinateRange.updated){
-                window.removeEventListener('mousemove', handleMouseMove);
-            }
+            // if(props.content.itemsCoordinateRange.updated){
+            //     window.removeEventListener('mousemove', handleMouseMove);
+            // }
             clearTimeout(timeout);
             // setState({
             //     activeIndex: 0,
@@ -217,6 +219,7 @@ export const Swiper = (props) => {
             // })
            
             props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, 0.45, props.swiperData.rerender);
+            console.log("con5", props.component)
         }
     }, [props.swiperData.transition])
 
@@ -234,17 +237,21 @@ export const Swiper = (props) => {
 
         let interval = null;
 
-        window.addEventListener('transitionend', smooth);
+        let swiperContent = setRef(`${props.component}Content`);
+        swiperContent.current.addEventListener('transitionend', smooth)
+        // window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
       
         return () => {
-            window.removeEventListener('transitionend', smooth);
+            swiperContent.current.addEventListener('transitionend', smooth)
+            // window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
         };
     }, [])
 
     useInterval(() => {
         nextSlide();
+        
     },props.autoPlay ? 7000 : null)
 
     const slide = (swiperWrapper, swiperContent, translateVal, _slides) => {
@@ -308,23 +315,23 @@ export const Swiper = (props) => {
         }
     }
 
-    const handleMouseMove = (e) => {
-        /**
-         * Check if the coordinates of the cursor are inside which tab,
-         * and move the underline under the corresponding tab.
-         */
+    // const handleMouseMove = (e) => {
+    //     /**
+    //      * Check if the coordinates of the cursor are inside which tab,
+    //      * and move the underline under the corresponding tab.
+    //      */
         
-        let pageX = e.pageX;
-        let pageY = e.pageY;
+    //     let pageX = e.pageX;
+    //     let pageY = e.pageY;
         
-        if(props.content.itemsCoordinateRange.leftCoordinate < pageX && pageX < props.content.itemsCoordinateRange.rightCoordinate && 
-            props.content.itemsCoordinateRange.topCoordinate < pageY && pageY < props.content.itemsCoordinateRange.bottomCoordinate){
-                setCurrentSwiper(props.content.itemsCoordinateRange.key);
-                // console.log("key", props.content.itemsCoordinateRange.key)
-        }else{
-            setCurrentSwiper('');
-        }
-    }
+    //     if(props.content.itemsCoordinateRange.leftCoordinate < pageX && pageX < props.content.itemsCoordinateRange.rightCoordinate && 
+    //         props.content.itemsCoordinateRange.topCoordinate < pageY && pageY < props.content.itemsCoordinateRange.bottomCoordinate){
+    //             setCurrentSwiper(props.content.itemsCoordinateRange.key);
+    //             // console.log("key", props.content.itemsCoordinateRange.key)
+    //     }else{
+    //         setCurrentSwiper('');
+    //     }
+    // }
 
     const handleMouseDown = (e, dragStart, swiperContent) => {
         dragStart(e);
@@ -358,37 +365,38 @@ export const Swiper = (props) => {
         //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
         //     transition: 0
         // })
-        setTabCoordinateRange("onResize");
+        // setTabCoordinateRange("onResize");
         props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
+        console.log("con6", props.component)
         setRelode(!relode)
     }
 
-    const setTabCoordinateRange = (opt) => {
-        // Remember swiper content coordinates
+    // const setTabCoordinateRange = (opt) => {
+    //     // Remember swiper content coordinates
 
-        let swiperContentRange = evaluateCoordinates();
+    //     let swiperContentRange = evaluateCoordinates();
 
-        props.rememberCoordinateRange(props.component, swiperContentRange);
+    //     props.rememberCoordinateRange(props.component, swiperContentRange);
       
-    }
+    // }
 
-    const evaluateCoordinates = () => {
-        // Calculate swiper content coordinates
+    // const evaluateCoordinates = () => {
+    //     // Calculate swiper content coordinates
         
-        let swiperContent = setRef(`${props.component}Content`);
+    //     let swiperContent = setRef(`${props.component}Content`);
     
-        let updatedSwiperContentCoordinateRange = {
-            key: props.component,
-            topCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().top,
-            bottomCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().bottom,
-            leftCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().left,
-            rightCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().right,
-            width: swiperContent.current.getBoundingClientRect().width,
-            updated: true
-        };
+    //     let updatedSwiperContentCoordinateRange = {
+    //         key: props.component,
+    //         topCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().top,
+    //         bottomCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().bottom,
+    //         leftCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().left,
+    //         rightCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().right,
+    //         width: swiperContent.current.getBoundingClientRect().width,
+    //         updated: true
+    //     };
         
-        return updatedSwiperContentCoordinateRange;
-    }
+    //     return updatedSwiperContentCoordinateRange;
+    // }
 
     const smoothTransition = () => {
         let _slides = [];
@@ -402,10 +410,40 @@ export const Swiper = (props) => {
             //     transition: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
             // })
-            if(props.component === currentSwiper){
+
+            // console.log(props.component === currentSwiper,!props.autoPlay )
+            // if(props.component === currentSwiper){
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            //     console.log("con7", props.component)
+            // }
+            // else{
                 props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            }
+            // }
+
+          
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, props.swiperData.translate, 0, props.swiperData.rerender);
+            // }
+
             
+            // if(props.component === "testimonias"){
+                // props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+                // console.log("con7", props.component)
+            // }
+            // if(props.component === "bigSlider"){
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // }
+            // if(props.component === "smallSlider"){
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // }
+            // if(props.component === "testimonialsPageSection1"){
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // }
+            // if(props.component === "testimonialsPageSection2"){
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // }
+            // if(props.component === "testimonialsPageSection3"){
+            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // }
         }
         if(props.showNumbersOfSlides === 3){
             if(activeIndex === slides.length - 1){
@@ -457,9 +495,11 @@ export const Swiper = (props) => {
         let translate = 0;
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
+        console.log("con8", props.component)
     }
 
     const nextSlide = (_slides, translateVal) => {
+    
         // setState({
         //     ...state,
         //     translate: translate + getTranslateValue(props.translateWidth, props.translateHeight),
@@ -467,9 +507,13 @@ export const Swiper = (props) => {
         // })
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
+        // if(autoPlay){
+        //     translate = getTranslateValue(props.translateWidth, props.translateHeight) + getTranslateValue(props.translateWidth, props.translateHeight)
+        // }
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
-       
+        // console.log(props.component,props.swiperData.translate)
+        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
+        console.log("con9", props.component)    
     }
 
     const openPhotoViewer = (component, activeIndex) => {
@@ -798,7 +842,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(['testimonials','bigSlider','testimonialsPageSection3'].includes(props.component)){
+            if(['testimonials','bigSlider','testimonialsPageSection2','testimonialsPageSection3'].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
                         <div 
@@ -852,7 +896,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(['testimonials','bigSlider','testimonialsPageSection3'].includes(props.component)){
+            if(['testimonials','bigSlider','testimonialsPageSection2','testimonialsPageSection3'].includes(props.component)){
                 return(
                     <div className="swiper-arrow-right">
                         <div 

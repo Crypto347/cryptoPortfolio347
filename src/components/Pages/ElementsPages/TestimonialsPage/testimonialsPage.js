@@ -317,7 +317,7 @@ export const TestimonialsPage = (props) => {
                 </div>
                 <div className="grey-line"/>
                 {renderTestimonialsPageSection1DataContent()}
-                {renderTestimonialsPageSection2DataContent()}
+                {renderTestimonialsPageSection2DataContent()} 
                 {renderTestimonialsPageSection3DataContent()}
             </div>
             <Footer/>

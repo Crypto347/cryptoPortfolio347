@@ -196,6 +196,7 @@ const setSwiperStateForTestimonialsPageSection1 = (state, action) => {
         rerender: action.rerender
         
     };
+    // console.log("1",updatedSwiper)
     return {
         ...state,
         section1Data: {
@@ -215,6 +216,7 @@ const setSwiperStateForTestimonialsPageSection2 = (state, action) => {
         rerender: action.rerender
         
     };
+    // console.log("2",updatedSwiper)
     return {
         ...state,
         section2Data: {
