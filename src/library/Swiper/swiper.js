@@ -140,7 +140,7 @@ export const Swiper = (props) => {
             //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
-// console.log(props.swiperData.translate)
+            
             if(props.swiperData.rerender) {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
                 console.log("con1", props.component)
@@ -237,13 +237,14 @@ export const Swiper = (props) => {
 
         let interval = null;
 
-        let swiperContent = setRef(`${props.component}Content`);
-        swiperContent.current.addEventListener('transitionend', smooth)
+        // let swiper = document.getElementById(`${props.component}Swiper`);
+        let swiper = document.getElementById(`swiper-content-${props.component}`);
+        swiper.addEventListener('transitionend', smooth)
         // window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
       
         return () => {
-            swiperContent.current.addEventListener('transitionend', smooth)
+            swiper.removeEventListener('transitionend', smooth)
             // window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
         };
@@ -411,38 +412,12 @@ export const Swiper = (props) => {
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
             // })
 
-            // console.log(props.component === currentSwiper,!props.autoPlay )
             // if(props.component === currentSwiper){
             //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
             //     console.log("con7", props.component)
             // }
             // else{
                 props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            // }
-
-          
-            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, props.swiperData.translate, 0, props.swiperData.rerender);
-            // }
-
-            
-            // if(props.component === "testimonias"){
-                // props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-                // console.log("con7", props.component)
-            // }
-            // if(props.component === "bigSlider"){
-            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            // }
-            // if(props.component === "smallSlider"){
-            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            // }
-            // if(props.component === "testimonialsPageSection1"){
-            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            // }
-            // if(props.component === "testimonialsPageSection2"){
-            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            // }
-            // if(props.component === "testimonialsPageSection3"){
-            //     props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
             // }
         }
         if(props.showNumbersOfSlides === 3){
@@ -507,11 +482,7 @@ export const Swiper = (props) => {
         // })
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
-        // if(autoPlay){
-        //     translate = getTranslateValue(props.translateWidth, props.translateHeight) + getTranslateValue(props.translateWidth, props.translateHeight)
-        // }
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-        // console.log(props.component,props.swiperData.translate)
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
         console.log("con9", props.component)    
     }
@@ -559,8 +530,11 @@ export const Swiper = (props) => {
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(['testimonialsPageSection1','testimonials','testimonialsPageSection3'].includes(opt)){
+        if(['testimonials','testimonialsPageSection3'].includes(opt)){
             return "swiper-testimonials"
+        }
+        if(opt === 'testimonialsPageSection1'){
+            return "swiper-testimonials-page-section-1"
         }
         if(opt === 'testimonialsPageSection2'){
             return "swiper-testimonials-page-section-2"
@@ -722,6 +696,25 @@ export const Swiper = (props) => {
                             width: `${getTranslateValue(props.translateWidth, props.translateHeight) * props.contentArray.length}px`
                         }}
                     >{props.swiperData._slides.map((el, i) => {
+                        if(['testimonialsPageSection1'].includes(props.component)){
+                            return(
+                                <div 
+                                    key={i} 
+                                    className="slide"
+                                    id="slide"
+                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                                >
+                              
+                                <EH25/>
+                                <H25 className="h25-white-lustria">{el.feedback}</H25>
+                                <EH25/>
+                                    <div className="author-name-wrapper">
+                                        <div className="slide-dash"/>
+                                        <H25 className="h25-white-teko">{el.author}</H25>
+                                    </div>
+                                </div>
+                            )
+                        }
                         if(['testimonialsPageSection2'].includes(props.component)){
                             return(
                                 <div 
@@ -741,7 +734,7 @@ export const Swiper = (props) => {
                                 </div>
                             )
                         }
-                        if(['testimonialsPageSection1','testimonials','testimonialsPageSection3'].includes(props.component)){
+                        if(['testimonials','testimonialsPageSection3'].includes(props.component)){
                             return(
                                 <div 
                                     key={i} 
@@ -941,7 +934,7 @@ export const Swiper = (props) => {
         <>
             <div 
                 className={renderClassName(props.component)} 
-                id="swiper"
+                id={`${props.component}Swiper`}
                 ref={setRef(`${props.component}Content`)}
             >
                 {renderFirstArrow()}

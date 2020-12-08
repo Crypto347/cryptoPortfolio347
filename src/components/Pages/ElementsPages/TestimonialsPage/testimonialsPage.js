@@ -197,6 +197,7 @@ export const TestimonialsPage = (props) => {
         if(!props.testimonialsPage.section1Data.loading && !props.testimonialsPage.section1Data.error){
             return(
                 <div className="testimonials-page-section-1-data">
+                    <H45 className="h45-white-lustria">Testimonials</H45>
                     <Swiper
                         component="testimonialsPageSection1"
                         contentArray={props.testimonialsPage.section1Data.items}

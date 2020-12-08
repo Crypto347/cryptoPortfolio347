@@ -663,6 +663,47 @@
     }
 }
 
+.swiper-testimonials-page-section-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .swiper-wrapper {
+        width: calc(100% - 130px);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        .swiper-window-width-content {
+            display: flex;
+            width: 100%;
+            position: relative;
+            z-index: 100;
+            left: 0px;
+            .slide {
+                padding: 0 170px 0 170px;
+                user-select: none; /* supported by Chrome and Opera */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                .author-name-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .slide-dash {
+                        border: 1.5px solid rgb(23, 23, 23);
+                        background: rgb(23, 23, 23);
+                        width: 10px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .content-array-loading-error {
+            // height: 484px;
+        }
+    }
+}
+
 .swiper-testimonials-page-section-2 {
     display: flex;
     align-items: center;
