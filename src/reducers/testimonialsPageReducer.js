@@ -284,6 +284,26 @@ const forgetCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
     };
 }
 
+const setTestimonialsPageSection1IsHoveringSwiperDot = (state, action) => {
+    let updatedSwiperSlides = [...state.section1Data.swiper.slides];
+
+    let slide = {...updatedSwiperSlides.find(item => item.id === action.id), isHover: action.val}
+    let slideIndex = updatedSwiperSlides.findIndex(item => item.id === action.id);
+
+    updatedSwiperSlides.splice(slideIndex, 1, slide);
+
+    return {
+        ...state,
+        section1Data: {
+            ...state.section1Data,
+            swiper: {
+                ...state.section1Data.swiper,
+                slides: updatedSwiperSlides,
+            }
+        }
+    };
+}
+
 const testimonialsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_TESTIMONIALS_PAGE_SECTION_1_DATA_BEGIN:
@@ -314,6 +334,8 @@ const testimonialsPageReducer = (state = initialState, action) => {
             return rememberCoordinateRangeOfSwiperForTestimonialsPage(state, action);
         case actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE:
             return forgetCoordinateRangeOfSwiperForTestimonialsPage(state, action);
+        case actionTypes.SET_TESTIMONIALS_PAGE_SECTION_1_IS_HOVERING_SWIPER_DOT:
+            return setTestimonialsPageSection1IsHoveringSwiperDot(state, action);
         default: 
             return state;
     }

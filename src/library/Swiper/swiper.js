@@ -507,7 +507,7 @@ export const Swiper = (props) => {
         props.photoViewerOpen(component, true, slidesForPhotoViewer);
     }
 
-    const handleMouseEnter = (opt) => {
+    const handleMouseEnter = (opt, id) => {
         switch(opt){
             case 'leftArrow': 
                 setIsHoveringLeftArrow('on');
@@ -515,10 +515,13 @@ export const Swiper = (props) => {
             case 'rightArrow': 
                 setIsHoveringRightArrow('on');
                 break;
+            case 'swiperDot': 
+                props.setIsHoveringSwipereDot('on', id);
+                break;
         }
     }
 
-    const handleMouseLeave = (opt) => {
+    const handleMouseLeave = (opt, id) => {
         switch(opt){
             case 'leftArrow': 
                 setIsHoveringLeftArrow('off');
@@ -526,15 +529,21 @@ export const Swiper = (props) => {
             case 'rightArrow': 
                 setIsHoveringRightArrow('off');
                 break;
+            case 'swiperDot': 
+                props.setIsHoveringSwipereDot('off', id);
+                break;
         }
     }
 
-    const renderClassName = (opt, isHovering) => {
+    const renderClassName = (opt, isHovering, active) => {
         if(['testimonials','testimonialsPageSection3'].includes(opt)){
             return "swiper-testimonials"
         }
         if(opt === 'testimonialsPageSection1'){
             return "swiper-testimonials-page-section-1"
+        }
+        if(opt === 'testimonialsPageSection1SwiperDots'){
+            return "swiper-testimonials-page-section-1-swiper-dots"
         }
         if(opt === 'testimonialsPageSection2'){
             return "swiper-testimonials-page-section-2"
@@ -564,7 +573,19 @@ export const Swiper = (props) => {
                 case 'off':
                     return "swiper-arrow-right-wrapper-hover-off"
             }
-        }      
+        }
+        if(opt === "swiperDot"){
+            if(active) return "swiper-dot-hover-on";
+            switch(isHovering){
+                case 'init':
+                    return "swiper-dot";
+                case 'on':
+                    return "swiper-dot-hover-on";
+                case 'off':
+                    return "swiper-dot-hover-off"
+            }
+        }
+        
     }
 
     const loadImage = (img) => {
@@ -705,9 +726,9 @@ export const Swiper = (props) => {
                                     style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                                 >
                               
-                                <EH25/>
-                                <H25 className="h25-white-lustria">{el.feedback}</H25>
-                                <EH25/>
+                                    <EH25/>
+                                    <H25 className="h25-white-lustria">{el.feedback}</H25>
+                                    <EH25/>
                                     <div className="author-name-wrapper">
                                         <div className="slide-dash"/>
                                         <H25 className="h25-white-teko">{el.author}</H25>
@@ -925,6 +946,32 @@ export const Swiper = (props) => {
         }
     }
 
+    const dotOnClickHandler = (id) => {
+
+    }
+
+    const renderSwiperDots = () => {
+        return(
+            <div className={renderClassName(`${props.component}SwiperDots`)} >
+                {props.swiperData.slides.map((el, i) => {
+                    let active = props.swiperData.activeIndex + 1 === el.id;
+                    return(
+                        <div 
+                            key={i}
+                            className="swiper-dot-wrapper"
+                            onMouseEnter={() => handleMouseEnter('swiperDot', el.id)} 
+                            onMouseLeave={() => handleMouseLeave('swiperDot', el.id)}
+                        >
+                            <div
+                                className={renderClassName('swiperDot', el.isHover, active)}
+                                onClick={()=>dotOnClickHandler(el.id)}
+                            />
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
 
     /**
      * Markup
@@ -943,6 +990,7 @@ export const Swiper = (props) => {
                 </div>
                 {renderSecondArrow()}
             </div>
+            {props.showDots ? renderSwiperDots() : null}
             {props.photoViewerForBigSliderOpen ? 
             <PhotoViewer
                 width={700}

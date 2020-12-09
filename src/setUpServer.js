@@ -18511,17 +18511,20 @@ app.get('/api/testimonials-page/section1', (req, res) => {
         {
             id: 1,
             feedback: "“Malorum dolorem oportere et pri. Ea vel putent dignissim, no sententiae accommodare mel. Ea ferri graeci oportere has, te mel illum cetero lucilius, eu mei mucius graeco laoreet. Sea clita eleifend cu. No mei habeo debet soleat, te mea.”",
-            author: "Linda Bay"
+            author: "Linda Bay",
+            isHover: "init"
         },
         {
             id: 2,
             feedback: "“Quisque non ante et augue sagittis porttitor. Curabitur vitae posuere lacus, vitae tempus augue. Maecenas maximus quam sit amet enim sagittis, quis efficitur diam consectetur. Pellentesque eget eleifend est. Donec sed est ornare, laoreet ante at, auctor sapien. Curabitur suscipit lacinia accumsan. ”",
-            author: "Nancy Beam"
+            author: "Nancy Beam",
+            isHover: "init"
         },
         {
             id: 3,
             feedback: "“Lorem ipsum dolor sit amet, nec viris ocurreret in, vim corpora deserunt in. Primis cogito sum feugait scriptorem ei est, ne graeco mollis definitiones mei. Eros iriure mediocritatem sed ad, facete bonorum eos ex, congue exerci.”",
-            author: "James Newbie"
+            author: "James Newbie",
+            isHover: "init"
         },
     ]
     res.json(testimonialsPageSection1);

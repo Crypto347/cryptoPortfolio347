@@ -110,3 +110,11 @@ export function forgetCoordinateRangeOfSwiperForTestimonialsPage(arr) {
         arr: arr
     };
 };
+
+export function setTestimonialsPageSection1IsHoveringSwiperDot(val, id) {
+    return { 
+        type: actionTypes.SET_TESTIMONIALS_PAGE_SECTION_1_IS_HOVERING_SWIPER_DOT,
+        val: val,
+        id: id
+    };
+};
