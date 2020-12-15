@@ -469,7 +469,6 @@ export const Swiper = (props) => {
         let activeIndex = props.swiperData.activeIndex === 0 ? props.swiperData.slides.length - 1 : props.swiperData.activeIndex - 1;
         let translate = 0;
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-        console.log("prev", _updatedSlides)
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
         console.log("con8", props.component)
     }
@@ -484,7 +483,6 @@ export const Swiper = (props) => {
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-        console.log("next", _updatedSlides)
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
         console.log("con9", props.component)
     }
@@ -969,18 +967,11 @@ export const Swiper = (props) => {
         if(nextActiveIndex - prevActiveIndex > 0){
             _updatedSlides[2] = nextObj
             props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, translate,  props.swiperData.transition, true);
-            console.log("next", _updatedSlides)
-            // props.swiperOnDotClickStart(props.component, props.swiperData.slides, updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex), nextActiveIndex, translate,  props.swiperData.transition);
             
         }else{
             _updatedSlides[0] = nextObj
             props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, 0, props.swiperData.transition, true);
-            console.log("prev", _updatedSlides)
-            // props.swiperOnDotClickStart(props.component, props.swiperData.slides, updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex), nextActiveIndex, 0, props.swiperData.transition);
         }
-        
-       
-        
     }
 
     const renderSwiperDots = () => {
