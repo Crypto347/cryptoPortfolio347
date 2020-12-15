@@ -28,7 +28,7 @@ export const initialState = {
             transition: 0.45,
             rerender: false
         },
-        itemsCoordinateRange:{
+        itemsCoordinateRange: {
             id: 1,
             updated: false
         }
@@ -194,9 +194,8 @@ const setSwiperStateForTestimonialsPageSection1 = (state, action) => {
         translate: action.translate,
         transition: action.transition,
         rerender: action.rerender
-        
     };
-    // console.log("1",updatedSwiper)
+    // console.log("1",action._slides)
     return {
         ...state,
         section1Data: {
@@ -214,7 +213,6 @@ const setSwiperStateForTestimonialsPageSection2 = (state, action) => {
         translate: action.translate,
         transition: action.transition,
         rerender: action.rerender
-        
     };
     // console.log("2",updatedSwiper)
     return {
@@ -234,8 +232,8 @@ const setSwiperStateForTestimonialsPageSection3 = (state, action) => {
         translate: action.translate,
         transition: action.transition,
         rerender: action.rerender
-        
     };
+
     return {
         ...state,
         section3Data: {

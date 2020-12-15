@@ -210,6 +210,7 @@ export const TestimonialsPage = (props) => {
                         setIsHoveringSwipereDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
                         autoPlay
                         showDots
+                        // swiperOnDotClickStart={props.swiperOnDotClickStart}
                     />
                 </div>
             )
@@ -354,6 +355,7 @@ export default connect(
             rememberCoordinateRangeOfSwiperForTestimonialsPage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForTestimonialsPage, dispatch),
             forgetCoordinateRangeOfSwiperForTestimonialsPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForTestimonialsPage, dispatch),
             setTestimonialsPageSection1IsHoveringSwiperDot: bindActionCreators(Actions.setTestimonialsPageSection1IsHoveringSwiperDot, dispatch),
+            // swiperOnDotClickStart: bindActionCreators(Actions.swiperOnDotClickStart, dispatch),
         };
     }
 )(TestimonialsPage);

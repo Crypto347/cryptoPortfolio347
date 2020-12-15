@@ -469,6 +469,7 @@ export const Swiper = (props) => {
         let activeIndex = props.swiperData.activeIndex === 0 ? props.swiperData.slides.length - 1 : props.swiperData.activeIndex - 1;
         let translate = 0;
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
+        console.log("prev", _updatedSlides)
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
         console.log("con8", props.component)
     }
@@ -483,8 +484,9 @@ export const Swiper = (props) => {
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
+        console.log("next", _updatedSlides)
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
-        console.log("con9", props.component)    
+        console.log("con9", props.component)
     }
 
     const openPhotoViewer = (component, activeIndex) => {
@@ -575,14 +577,16 @@ export const Swiper = (props) => {
             }
         }
         if(opt === "swiperDot"){
-            if(active) return "swiper-dot-hover-on";
+            if(active === "on"){
+                return "swiper-dot-hover-on";
+            }
             switch(isHovering){
                 case 'init':
                     return "swiper-dot";
                 case 'on':
                     return "swiper-dot-hover-on";
                 case 'off':
-                    return "swiper-dot-hover-off"
+                    return "swiper-dot-hover-off";
             }
         }
         
@@ -947,25 +951,52 @@ export const Swiper = (props) => {
     }
 
     const dotOnClickHandler = (id) => {
+        let translate = props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
+        let prevActiveIndex = props.swiperData.activeIndex;
+        let nextActiveIndex = id - 1;
+        if(prevActiveIndex === nextActiveIndex) return;
 
+        let _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex);
+        let currentObj = props.swiperData.slides.find(item => item.id === prevActiveIndex + 1);
+        let nextObj = props.swiperData.slides.find(item => item.id === id);
+        _updatedSlides[1] = currentObj
+  
+
+      
+        // let diff = nextActiveIndex - prevActiveIndex;
+        // let translate =  Math.abs(diff) * getTranslateValue(props.translateWidth, props.translateHeight);
+    
+        if(nextActiveIndex - prevActiveIndex > 0){
+            _updatedSlides[2] = nextObj
+            props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, translate,  props.swiperData.transition, true);
+            console.log("next", _updatedSlides)
+            // props.swiperOnDotClickStart(props.component, props.swiperData.slides, updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex), nextActiveIndex, translate,  props.swiperData.transition);
+            
+        }else{
+            _updatedSlides[0] = nextObj
+            props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, 0, props.swiperData.transition, true);
+            console.log("prev", _updatedSlides)
+            // props.swiperOnDotClickStart(props.component, props.swiperData.slides, updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex), nextActiveIndex, 0, props.swiperData.transition);
+        }
+        
+       
+        
     }
 
     const renderSwiperDots = () => {
         return(
             <div className={renderClassName(`${props.component}SwiperDots`)} >
                 {props.swiperData.slides.map((el, i) => {
-                    let active = props.swiperData.activeIndex + 1 === el.id;
+                    let active = props.swiperData.activeIndex + 1 === el.id ? "on" : "off";
                     return(
                         <div 
                             key={i}
                             className="swiper-dot-wrapper"
                             onMouseEnter={() => handleMouseEnter('swiperDot', el.id)} 
                             onMouseLeave={() => handleMouseLeave('swiperDot', el.id)}
+                            onClick={() => dotOnClickHandler(el.id)}
                         >
-                            <div
-                                className={renderClassName('swiperDot', el.isHover, active)}
-                                onClick={()=>dotOnClickHandler(el.id)}
-                            />
+                            <div className={renderClassName('swiperDot', el.isHover, active)}/>
                         </div>
                     )
                 })}

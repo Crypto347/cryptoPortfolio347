@@ -187,3 +187,14 @@ export function setFullScreenState(val) {
     };
 };
 
+export function swiperOnDotClickStart(opt, slides, _updatedSlides, activeIndex, translate, transition) {
+    return { 
+        type: actionTypes.SWIPER_ON_DOT_CLICK_START,
+        opt: opt,
+        slides: slides,
+        _updatedSlides: _updatedSlides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition
+    };
+};
