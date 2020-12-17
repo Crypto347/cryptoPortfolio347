@@ -96,14 +96,6 @@ export function setSwiperStateForTestimonialsPageSection3(slides, _slides, activ
     };
 };
 
-export function rememberCoordinateRangeOfSwiperForTestimonialsPage(key, coordinateRange) {
-    return { 
-        type: actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE,
-        key: key,
-        coordinateRange: coordinateRange
-    };
-};
-
 export function forgetCoordinateRangeOfSwiperForTestimonialsPage(arr) {
     return { 
         type: actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE,

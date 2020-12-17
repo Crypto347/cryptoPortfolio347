@@ -27,10 +27,6 @@ export const initialState = {
             translate: 0,
             transition: 0.45,
             rerender: false
-        },
-        itemsCoordinateRange: {
-            id: 1,
-            updated: false
         }
     },
     section2Data: {
@@ -44,10 +40,6 @@ export const initialState = {
             translate: 0,
             transition: 0.45,
             rerender: false
-        },
-        itemsCoordinateRange: {
-            id: 1,
-            updated: false
         }
     },
     section3Data: {
@@ -61,10 +53,6 @@ export const initialState = {
             translate: 0,
             transition: 0.45,
             rerender: false
-        },
-        itemsCoordinateRange: {
-            id: 1,
-            updated: false
         }
     },
 }
@@ -243,45 +231,6 @@ const setSwiperStateForTestimonialsPageSection3 = (state, action) => {
     };
 }
 
-const rememberCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
-    // console.log(action.coordinateRange)
-    switch(action.key){
-        case 'testimonialsPageSection1':
-            return {
-                ...state,
-                section1Data: {
-                    ...state.section1Data,
-                    itemsCoordinateRange: action.coordinateRange
-                }
-            };
-        case 'testimonialsPageSection2':
-            return {
-                ...state,
-                section2Data: {
-                    ...state.section2Data,
-                    itemsCoordinateRange: action.coordinateRange
-                }
-            };
-        case 'testimonialsPageSection3':
-            return {
-                ...state,
-                section3Data: {
-                    ...state.section3Data,
-                    itemsCoordinateRange: action.coordinateRange
-                }
-            };
-        default: 
-            return state;
-    }
-}
-
-const forgetCoordinateRangeOfSwiperForTestimonialsPage = (state, action) => {
-    return {
-        ...state,
-        itemsCoordinateRange: action.arr
-    };
-}
-
 const setTestimonialsPageSection1IsHoveringSwiperDot = (state, action) => {
     let updatedSwiperSlides = [...state.section1Data.swiper.slides];
 
@@ -328,10 +277,6 @@ const testimonialsPageReducer = (state = initialState, action) => {
             return setSwiperStateForTestimonialsPageSection2(state, action); 
         case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_3:
             return setSwiperStateForTestimonialsPageSection3(state, action);
-        case actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE:
-            return rememberCoordinateRangeOfSwiperForTestimonialsPage(state, action);
-        case actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE:
-            return forgetCoordinateRangeOfSwiperForTestimonialsPage(state, action);
         case actionTypes.SET_TESTIMONIALS_PAGE_SECTION_1_IS_HOVERING_SWIPER_DOT:
             return setTestimonialsPageSection1IsHoveringSwiperDot(state, action);
         default: 

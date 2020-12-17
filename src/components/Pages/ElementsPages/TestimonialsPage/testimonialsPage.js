@@ -206,9 +206,8 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection1}
                         swiperData={props.testimonialsPage.section1Data.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         setIsHoveringSwipereDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
-                        // autoPlay
+                        autoPlay
                         showDots
                     />
                 </div>
@@ -248,7 +247,6 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection2}
                         swiperData={props.testimonialsPage.section2Data.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         autoPlay
                     />
                 </div>
@@ -288,7 +286,6 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection3}
                         swiperData={props.testimonialsPage.section3Data.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         coordinateRange={props.testimonialsPage.section3Data.itemsCoordinateRange}
                         autoPlay
                     />
@@ -320,8 +317,8 @@ export const TestimonialsPage = (props) => {
                 </div>
                 <div className="grey-line"/>
                 {renderTestimonialsPageSection1DataContent()}
-                {/* {renderTestimonialsPageSection2DataContent()} 
-                {renderTestimonialsPageSection3DataContent()} */}
+                {renderTestimonialsPageSection2DataContent()} 
+                {renderTestimonialsPageSection3DataContent()}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -351,7 +348,6 @@ export default connect(
             setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
             setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
             setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
-            rememberCoordinateRangeOfSwiperForTestimonialsPage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForTestimonialsPage, dispatch),
             forgetCoordinateRangeOfSwiperForTestimonialsPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForTestimonialsPage, dispatch),
             setTestimonialsPageSection1IsHoveringSwiperDot: bindActionCreators(Actions.setTestimonialsPageSection1IsHoveringSwiperDot, dispatch)
         };

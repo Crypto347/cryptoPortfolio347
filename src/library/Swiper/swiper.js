@@ -129,7 +129,6 @@ export const Swiper = (props) => {
         let swiperContent;
         let translateVal;
         let _updatedSlides;
-        let timeout;
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
@@ -152,18 +151,6 @@ export const Swiper = (props) => {
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
             slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
-
-            // Calculate swiper content coordinates 
-
-            // if(!props.content.itemsCoordinateRange.updated && props.swiperData.slides.length !== 0){
-            //     if(props.onlyImages){
-            //         timeout = setTimeout(()=>{
-            //             setTabCoordinateRange("init");
-            //         }, 1000);
-            //     }else {
-            //         setTabCoordinateRange("init");
-            //     } 
-            // }
         }
 
         if(!props.content.loading && props.showNumbersOfSlides === 3){
@@ -176,10 +163,6 @@ export const Swiper = (props) => {
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
             console.log("con3", props.component)
         }
-
-        // if(props.content.itemsCoordinateRange.updated){
-        //     window.addEventListener('mousemove', handleMouseMove);
-        // }
         
         return () => {
            
@@ -189,10 +172,6 @@ export const Swiper = (props) => {
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
                 document.removeEventListener('mouseup', handleMouseUp)
             }
-            // if(props.content.itemsCoordinateRange.updated){
-            //     window.removeEventListener('mousemove', handleMouseMove);
-            // }
-            clearTimeout(timeout);
             // setState({
             //     activeIndex: 0,
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
@@ -203,8 +182,7 @@ export const Swiper = (props) => {
         };
     }, [props.content.loading, 
         props.swiperData.slides.length, 
-        props.swiperData.activeIndex, 
-        props.content.itemsCoordinateRange.updated]);
+        props.swiperData.activeIndex]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -316,24 +294,6 @@ export const Swiper = (props) => {
         }
     }
 
-    // const handleMouseMove = (e) => {
-    //     /**
-    //      * Check if the coordinates of the cursor are inside which tab,
-    //      * and move the underline under the corresponding tab.
-    //      */
-        
-    //     let pageX = e.pageX;
-    //     let pageY = e.pageY;
-        
-    //     if(props.content.itemsCoordinateRange.leftCoordinate < pageX && pageX < props.content.itemsCoordinateRange.rightCoordinate && 
-    //         props.content.itemsCoordinateRange.topCoordinate < pageY && pageY < props.content.itemsCoordinateRange.bottomCoordinate){
-    //             setCurrentSwiper(props.content.itemsCoordinateRange.key);
-    //             // console.log("key", props.content.itemsCoordinateRange.key)
-    //     }else{
-    //         setCurrentSwiper('');
-    //     }
-    // }
-
     const handleMouseDown = (e, dragStart, swiperContent) => {
         dragStart(e);
         swiperContent.classList.add('active');
@@ -366,38 +326,10 @@ export const Swiper = (props) => {
         //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
         //     transition: 0
         // })
-        // setTabCoordinateRange("onResize");
         props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
         console.log("con6", props.component)
         setRelode(!relode)
     }
-
-    // const setTabCoordinateRange = (opt) => {
-    //     // Remember swiper content coordinates
-
-    //     let swiperContentRange = evaluateCoordinates();
-
-    //     props.rememberCoordinateRange(props.component, swiperContentRange);
-      
-    // }
-
-    // const evaluateCoordinates = () => {
-    //     // Calculate swiper content coordinates
-        
-    //     let swiperContent = setRef(`${props.component}Content`);
-    
-    //     let updatedSwiperContentCoordinateRange = {
-    //         key: props.component,
-    //         topCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().top,
-    //         bottomCoordinate: window.scrollY + swiperContent.current.getBoundingClientRect().bottom,
-    //         leftCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().left,
-    //         rightCoordinate: window.scrollX + swiperContent.current.getBoundingClientRect().right,
-    //         width: swiperContent.current.getBoundingClientRect().width,
-    //         updated: true
-    //     };
-        
-    //     return updatedSwiperContentCoordinateRange;
-    // }
 
     const smoothTransition = () => {
         let _slides = [];
@@ -576,23 +508,8 @@ export const Swiper = (props) => {
         }
         if(opt === "swiperDot"){
             let className;
-            if(active === "on"){
-                return "swiper-dot-hover-on";
-            }
-            
-            // switch(active){
-            //     case 'on':
-            //         className = "swiper-dot-hover-on";
-            //         break;
-            //     case 'off':
-            //         className = "swiper-dot-hover-off";
-            //         break;
-            // }
+            if(active === "on") return "swiper-dot-hover-on";
         
-            if(active === "off"){
-                className = "swiper-dot";
-            }
-
             switch(isHovering){
                 case 'init':
                     className = "swiper-dot";
@@ -604,8 +521,9 @@ export const Swiper = (props) => {
                     className = "swiper-dot-hover-off";
                     break;
             }
-console.log(isHovering)
-          
+
+            if(active === "off") className = "swiper-dot";
+
             return className;
         }
     }
@@ -978,11 +896,6 @@ console.log(isHovering)
         let currentObj = props.swiperData.slides.find(item => item.id === prevActiveIndex + 1);
         let nextObj = props.swiperData.slides.find(item => item.id === id);
         _updatedSlides[1] = currentObj
-  
-
-      
-        // let diff = nextActiveIndex - prevActiveIndex;
-        // let translate =  Math.abs(diff) * getTranslateValue(props.translateWidth, props.translateHeight);
     
         if(nextActiveIndex - prevActiveIndex > 0){
             _updatedSlides[2] = nextObj
@@ -1053,17 +966,13 @@ console.log(isHovering)
 export default connect(
     (state) => {
         return {
-            // swiperData: Selectors.getSwiperDataState(state),
             photoViewerForBigSliderOpen: Selectors.getPhotoViewerForBigSliderOpenState(state),
             photoViewerForSmallSliderOpen: Selectors.getPhotoViewerForSmallSliderOpenState(state),
         };
     },
     (dispatch) => {
         return {
-            // fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
-            // setSwiperState: bindActionCreators(Actions.setSwiperState, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
-            // photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }
 )(Swiper);
