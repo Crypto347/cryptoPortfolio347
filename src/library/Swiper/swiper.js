@@ -575,19 +575,39 @@ export const Swiper = (props) => {
             }
         }
         if(opt === "swiperDot"){
+            let className;
             if(active === "on"){
                 return "swiper-dot-hover-on";
             }
+            
+            // switch(active){
+            //     case 'on':
+            //         className = "swiper-dot-hover-on";
+            //         break;
+            //     case 'off':
+            //         className = "swiper-dot-hover-off";
+            //         break;
+            // }
+        
+            if(active === "off"){
+                className = "swiper-dot";
+            }
+
             switch(isHovering){
                 case 'init':
-                    return "swiper-dot";
+                    className = "swiper-dot";
+                    break;
                 case 'on':
-                    return "swiper-dot-hover-on";
+                    className = "swiper-dot-hover-on";
+                    break ;
                 case 'off':
-                    return "swiper-dot-hover-off";
+                    className = "swiper-dot-hover-off";
+                    break;
             }
+console.log(isHovering)
+          
+            return className;
         }
-        
     }
 
     const loadImage = (img) => {
@@ -979,6 +999,7 @@ export const Swiper = (props) => {
             <div className={renderClassName(`${props.component}SwiperDots`)} >
                 {props.swiperData.slides.map((el, i) => {
                     let active = props.swiperData.activeIndex + 1 === el.id ? "on" : "off";
+                    console.log(props.swiperData.activeIndex)
                     return(
                         <div 
                             key={i}

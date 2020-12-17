@@ -208,7 +208,7 @@ export const TestimonialsPage = (props) => {
                         swiperData={props.testimonialsPage.section1Data.swiper}
                         rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForTestimonialsPage}
                         setIsHoveringSwipereDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
-                        autoPlay
+                        // autoPlay
                         showDots
                     />
                 </div>
@@ -320,8 +320,8 @@ export const TestimonialsPage = (props) => {
                 </div>
                 <div className="grey-line"/>
                 {renderTestimonialsPageSection1DataContent()}
-                {renderTestimonialsPageSection2DataContent()} 
-                {renderTestimonialsPageSection3DataContent()}
+                {/* {renderTestimonialsPageSection2DataContent()} 
+                {renderTestimonialsPageSection3DataContent()} */}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
