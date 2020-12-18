@@ -400,3 +400,10 @@ export const getTestimonialsPageState = createSelector(
     [getTestimonialsPage],
     (x) => x
 );
+
+const getTeamPage = (state) => state.teamPage;
+
+export const getTeamPageState = createSelector(
+    [getTeamPage],
+    (x) => x
+);

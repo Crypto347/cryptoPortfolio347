@@ -34,3 +34,4 @@ export * from './fourColumnsPageActions';
 export * from './accordionsPageActions';
 export * from './tabsPageActions';
 export * from './testimonialsPageActions';
+export * from './teamPageActions';

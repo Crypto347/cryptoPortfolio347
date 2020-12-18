@@ -41,6 +41,7 @@ import fourColumnsPageReducer from './fourColumnsPageReducer';
 import accordionsPageReducer from './accordionsPageReducer';
 import tabsPageReducer from './tabsPageReducer';
 import testimonialsPageReducer from './testimonialsPageReducer';
+import teamPageReducer from './teamPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -79,5 +80,6 @@ export default (history) => combineReducers({
     fourColumnsPage: fourColumnsPageReducer,
     accordionsPage: accordionsPageReducer,
     tabsPage: tabsPageReducer,
-    testimonialsPage: testimonialsPageReducer
+    testimonialsPage: testimonialsPageReducer,
+    teamPage: teamPageReducer
 });

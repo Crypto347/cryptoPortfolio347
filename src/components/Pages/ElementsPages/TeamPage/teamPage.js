@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './testimonialsPage.scss';
+import './teamPage.scss';
 
 /**
  * Components
@@ -27,7 +27,7 @@ import './testimonialsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import Swiper from '../../../../library/Swiper/swiper';
+import TeamInformationCard from '../../../SmallParts/TeamInformationCard/teamInformationCard';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -67,10 +67,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * TestimonialsPage component definition and export
+ * TeamPage component definition and export
  */
 
-export const TestimonialsPage = (props) => {
+export const TeamPage = (props) => {
 
     /**
      * State
@@ -90,16 +90,16 @@ export const TestimonialsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.testimonialsPage.section1Data.items.length === 0){
-            props.fetchTestimonialsPageSection1Data();
+        if(props.teamPage.section1Data.items.length === 0){
+            props.fetchTeamPageSection1Data();
         }
 
-        if(props.testimonialsPage.section2Data.items.length === 0){
-            props.fetchTestimonialsPageSection2Data();
+        if(props.teamPage.section2Data.items.length === 0){
+            props.fetchTeamPageSection2Data();
         }
 
-        if(props.testimonialsPage.section3Data.items.length === 0){
-            props.fetchTestimonialsPageSection3Data();
+        if(props.teamPage.section3Data.items.length === 0){
+            props.fetchTeamPageSection3Data();
         }
         
         // Scroll to the top of the screen
@@ -121,7 +121,7 @@ export const TestimonialsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("testimonialsPage");
+        let el = document.getElementById("teamPage");
 
         // Show or hide BackToTop component
 
@@ -155,12 +155,12 @@ export const TestimonialsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="testimonialsPage"
+                        page="teamPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="testimonialsPage"
+                        page="teamPage"
                     />
                 </>
             )
@@ -171,20 +171,20 @@ export const TestimonialsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="testimonialsPage"
+                        page="teamPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="testimonialsPage"
+                        page="teamPage"
                     />
                 </>
             )
         }
     }
 
-    const renderTestimonialsPageSection1DataContent = () => {
-        if(props.testimonialsPage.section1Data.loading && !props.testimonialsPage.section1Data.error){
+    const renderTeamPageSection1DataContent = () => {
+        if(props.teamPage.section1Data.loading && !props.teamPage.section1Data.error){
             return(
                 <div 
                     className="testimonials-page-loading-error" 
@@ -194,39 +194,26 @@ export const TestimonialsPage = (props) => {
                 </div>
             )
         }
-        if(!props.testimonialsPage.section1Data.loading && !props.testimonialsPage.section1Data.error){
+        if(!props.teamPage.section1Data.loading && !props.teamPage.section1Data.error){
             return(
                 <div className="testimonials-page-section-1-data">
-                    <H45 className="h45-white-lustria">Testimonials</H45>
-                    <Swiper
-                        component="testimonialsPageSection1"
-                        contentArray={props.testimonialsPage.section1Data.items}
-                        content={props.testimonialsPage.section1Data}
-                        translateWidth={size.width - 130}
-                        showNumbersOfSlides={1}
-                        setSwiperState={props.setSwiperStateForTestimonialsPageSection1}
-                        swiperData={props.testimonialsPage.section1Data.swiper}
-                        setIsHoveringSwipereDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
-                        autoPlay
-                        showDots
-                    />
                 </div>
             )
         }
-        if(!props.testimonialsPage.section1Data.loading && props.testimonialsPage.section1Data.error){
+        if(!props.teamPage.section1Data.loading && props.teamPage.section1Data.error){
             return(
                 <div 
                     className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section1Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.teamPage.section1Data.error}`}</H15>
                 </div>
             )
         }
     } 
     
-    const renderTestimonialsPageSection2DataContent = () => {
-        if(props.testimonialsPage.section2Data.loading && !props.testimonialsPage.section2Data.error){
+    const renderTeamPageSection2DataContent = () => {
+        if(props.teamPage.section2Data.loading && !props.teamPage.section2Data.error){
             return(
                 <div 
                     className="testimonials-page-loading-error" 
@@ -236,36 +223,37 @@ export const TestimonialsPage = (props) => {
                 </div>
             )
         }
-        if(!props.testimonialsPage.section2Data.loading && !props.testimonialsPage.section2Data.error){
+        if(!props.teamPage.section2Data.loading && !props.teamPage.section2Data.error){
             return(
-                <div className="testimonials-page-section-2-data">
-                    <Swiper 
-                        component="testimonialsPageSection2"
-                        contentArray={props.testimonialsPage.section2Data.items}
-                        content={props.testimonialsPage.section2Data}
-                        translateWidth={size.width - 130}
-                        showNumbersOfSlides={1}
-                        setSwiperState={props.setSwiperStateForTestimonialsPageSection2}
-                        swiperData={props.testimonialsPage.section2Data.swiper}
-                        autoPlay
-                    />
+                <div className="testimonials-page-section-2-data">{props.teamPage.section2Data.items.map((el, i) => {
+                    return(
+                        <TeamInformationCard
+                            photo={el.photo}
+                            key={i}
+                            name={el.name}
+                            position={el.position}
+                            instaName={el.instaName}
+                            alt={el.alt}
+                        />
+                    )
+                })}
                 </div>
             )
         }
-        if(!props.testimonialsPage.section2Data.loading && props.testimonialsPage.section2Data.error){
+        if(!props.teamPage.section2Data.loading && props.teamPage.section2Data.error){
             return(
                 <div 
                     className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section2Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.teamPage.section2Data.error}`}</H15>
                 </div>
             )
         }
     }
 
-    const renderTestimonialsPageSection3DataContent = () => {
-        if(props.testimonialsPage.section3Data.loading && !props.testimonialsPage.section3Data.error){
+    const renderTeamPageSection3DataContent = () => {
+        if(props.teamPage.section3Data.loading && !props.teamPage.section3Data.error){
             return(
                 <div 
                     className="testimonials-page-loading-error" 
@@ -275,30 +263,20 @@ export const TestimonialsPage = (props) => {
                 </div>
             )
         }
-        if(!props.testimonialsPage.section3Data.loading && !props.testimonialsPage.section3Data.error){
+        if(!props.teamPage.section3Data.loading && !props.teamPage.section3Data.error){
             return(
                 <div className="testimonials-page-section-3-data">
-                    <Swiper 
-                        component="testimonialsPageSection3"
-                        contentArray={props.testimonialsPage.section3Data.items}
-                        content={props.testimonialsPage.section3Data}
-                        translateWidth={size.width - 130}
-                        showNumbersOfSlides={1}
-                        setSwiperState={props.setSwiperStateForTestimonialsPageSection3}
-                        swiperData={props.testimonialsPage.section3Data.swiper}
-                        coordinateRange={props.testimonialsPage.section3Data.itemsCoordinateRange}
-                        autoPlay
-                    />
+                 
                 </div>
             )
         }
-        if(!props.testimonialsPage.section3Data.loading && props.testimonialsPage.section3Data.error){
+        if(!props.teamPage.section3Data.loading && props.teamPage.section3Data.error){
             return(
                 <div 
                     className="testimonials-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section3Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.teamPage.section3Data.error}`}</H15>
                 </div>
             )
         }
@@ -309,16 +287,16 @@ export const TestimonialsPage = (props) => {
      */
 
     return(
-        <div className="testimonials-page" id="testimonialsPage">
+        <div className="testimonials-page" id="teamPage">
             {renderToolbars()}
             <div className="testimonials-page-wrapper">
                 <div className="testimonials-page-header">
-                    <H45 className="h45-nero-lustria">Testimonials</H45>
+                    <H45 className="h45-nero-lustria">Team</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderTestimonialsPageSection1DataContent()}
-                {renderTestimonialsPageSection2DataContent()} 
-                {renderTestimonialsPageSection3DataContent()}
+                {renderTeamPageSection1DataContent()}
+                {renderTeamPageSection2DataContent()} 
+                {renderTeamPageSection3DataContent()}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -329,27 +307,21 @@ export const TestimonialsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            testimonialsPage: Selectors.getTestimonialsPageState(state),
+            teamPage: Selectors.getTeamPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchTestimonialsPageSection1Data: bindActionCreators(Services.fetchTestimonialsPageSection1Data, dispatch),
-            fetchTestimonialsPageSection2Data: bindActionCreators(Services.fetchTestimonialsPageSection2Data, dispatch),
-            fetchTestimonialsPageSection3Data: bindActionCreators(Services.fetchTestimonialsPageSection3Data, dispatch),
+            fetchTeamPageSection1Data: bindActionCreators(Services.fetchTeamPageSection1Data, dispatch),
+            fetchTeamPageSection2Data: bindActionCreators(Services.fetchTeamPageSection2Data, dispatch),
+            fetchTeamPageSection3Data: bindActionCreators(Services.fetchTeamPageSection3Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setSwiperStateForTestimonialsPageSection1: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection1, dispatch),
-            setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
-            setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
-            setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
-            setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
-            setTestimonialsPageSection1IsHoveringSwiperDot: bindActionCreators(Actions.setTestimonialsPageSection1IsHoveringSwiperDot, dispatch)
         };
     }
-)(TestimonialsPage);
+)(TeamPage);
  

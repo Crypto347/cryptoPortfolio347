@@ -96,13 +96,6 @@ export function setSwiperStateForTestimonialsPageSection3(slides, _slides, activ
     };
 };
 
-export function forgetCoordinateRangeOfSwiperForTestimonialsPage(arr) {
-    return { 
-        type: actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_TESTIMONIALS_PAGE,
-        arr: arr
-    };
-};
-
 export function setTestimonialsPageSection1IsHoveringSwiperDot(val, id) {
     return { 
         type: actionTypes.SET_TESTIMONIALS_PAGE_SECTION_1_IS_HOVERING_SWIPER_DOT,

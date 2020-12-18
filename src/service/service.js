@@ -1604,6 +1604,61 @@ export function fetchTestimonialsPageSection3Data() {
             });
     };
 }
+
+export function fetchTeamPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTeamPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/team-page/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTeamPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTeamPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchTeamPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTeamPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/team-page/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTeamPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTeamPageSection2DataFailur(error))
+            });
+    };
+}
+
+export function fetchTeamPageSection3Data() {
+    return dispatch => {
+        dispatch(Actions.fetchTeamPageSection3DataBegin());
+        return fetch(`http://localhost:3005/api/team-page/section3`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchTeamPageSection3DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchTeamPageSection3DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

@@ -18575,6 +18575,175 @@ app.get('/api/testimonials-page/section3', (req, res) => {
     ]
     res.json(testimonialsPageSection3);
 });
+
+app.get('/api/team-page/section1', (req, res) => {
+    const teamPageSection1 = [
+        {
+            id: 1,
+            name: "Marcos Paulo",
+            position: "Designer",
+            photo: "Photo1",
+            instaName: "ChristinaKinslee",
+            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 2,
+            name: "Christina Kinslee",
+            position: "UX Designer",
+            photo: "Photo2",
+            instaName: "ChristinaKinslee",
+            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 3,
+            name: "Charlotte Lynn",
+            position: "Developer",
+            photo: "Photo3",
+            instaName: "ChristinaKinslee",
+            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 4,
+            name: "James Wilson",
+            position: "Developer",
+            photo: "Photo4",
+            instaName: "ChristinaKinslee",
+            path: "photo-1540569014015-19a7be504e3a.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 5,
+            name: "Zoe Fernandez",
+            position: "Copywriter",
+            photo: "Photo5",
+            instaName: "ChristinaKinslee",
+            path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+    ]
+    res.json(teamPageSection1);
+});
+
+app.get('/api/team-page/section2', (req, res) => {
+    const teamPageSection2 = [
+        {
+            id: 1,
+            name: "Marcos Paulo",
+            position: "Designer",
+            photo: "Photo1",
+            instaName: "ChristinaKinslee",
+            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 2,
+            name: "Christina Kinslee",
+            position: "UX Designer",
+            photo: "Photo2",
+            instaName: "ChristinaKinslee",
+            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 3,
+            name: "Charlotte Lynn",
+            position: "Developer",
+            photo: "Photo3",
+            instaName: "ChristinaKinslee",
+            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 4,
+            name: "James Wilson",
+            position: "Developer",
+            photo: "Photo4",
+            instaName: "ChristinaKinslee",
+            path: "photo-1540569014015-19a7be504e3a.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 5,
+            name: "Zoe Fernandez",
+            position: "Copywriter",
+            photo: "Photo5",
+            instaName: "ChristinaKinslee",
+            path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+    ]
+    res.json(teamPageSection2);
+});
+
+app.get('/api/team-page/section3', (req, res) => {
+    const teamPageSection3 = [
+        {
+            id: 1,
+            name: "Marcos Paulo",
+            position: "Designer",
+            photo: "Photo1",
+            instaName: "ChristinaKinslee",
+            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 2,
+            name: "Christina Kinslee",
+            position: "UX Designer",
+            photo: "Photo2",
+            instaName: "ChristinaKinslee",
+            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 3,
+            name: "Charlotte Lynn",
+            position: "Developer",
+            photo: "Photo3",
+            instaName: "ChristinaKinslee",
+            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 4,
+            name: "James Wilson",
+            position: "Developer",
+            photo: "Photo4",
+            instaName: "ChristinaKinslee",
+            path: "photo-1540569014015-19a7be504e3a.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 5,
+            name: "Zoe Fernandez",
+            position: "Copywriter",
+            photo: "Photo5",
+            instaName: "ChristinaKinslee",
+            path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+    ]
+    res.json(teamPageSection3);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
