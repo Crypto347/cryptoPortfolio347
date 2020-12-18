@@ -55,7 +55,8 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H45
+    H45,
+    EH135
 } from '../../../UtilityComponents';
 
 /**
@@ -187,7 +188,7 @@ export const TeamPage = (props) => {
         if(props.teamPage.section1Data.loading && !props.teamPage.section1Data.error){
             return(
                 <div 
-                    className="testimonials-page-loading-error" 
+                    className="team-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -196,14 +197,14 @@ export const TeamPage = (props) => {
         }
         if(!props.teamPage.section1Data.loading && !props.teamPage.section1Data.error){
             return(
-                <div className="testimonials-page-section-1-data">
+                <div className="team-page-section-1-data">
                 </div>
             )
         }
         if(!props.teamPage.section1Data.loading && props.teamPage.section1Data.error){
             return(
                 <div 
-                    className="testimonials-page-loading-error" 
+                    className="team-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.teamPage.section1Data.error}`}</H15>
@@ -216,7 +217,7 @@ export const TeamPage = (props) => {
         if(props.teamPage.section2Data.loading && !props.teamPage.section2Data.error){
             return(
                 <div 
-                    className="testimonials-page-loading-error" 
+                    className="team-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -225,7 +226,7 @@ export const TeamPage = (props) => {
         }
         if(!props.teamPage.section2Data.loading && !props.teamPage.section2Data.error){
             return(
-                <div className="testimonials-page-section-2-data">{props.teamPage.section2Data.items.map((el, i) => {
+                <div className="team-page-section-2-data">{props.teamPage.section2Data.items.map((el, i) => {
                     return(
                         <TeamInformationCard
                             photo={el.photo}
@@ -243,7 +244,7 @@ export const TeamPage = (props) => {
         if(!props.teamPage.section2Data.loading && props.teamPage.section2Data.error){
             return(
                 <div 
-                    className="testimonials-page-loading-error" 
+                    className="team-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.teamPage.section2Data.error}`}</H15>
@@ -256,7 +257,7 @@ export const TeamPage = (props) => {
         if(props.teamPage.section3Data.loading && !props.teamPage.section3Data.error){
             return(
                 <div 
-                    className="testimonials-page-loading-error" 
+                    className="team-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -265,7 +266,7 @@ export const TeamPage = (props) => {
         }
         if(!props.teamPage.section3Data.loading && !props.teamPage.section3Data.error){
             return(
-                <div className="testimonials-page-section-3-data">
+                <div className="team-page-section-3-data">
                  
                 </div>
             )
@@ -273,7 +274,7 @@ export const TeamPage = (props) => {
         if(!props.teamPage.section3Data.loading && props.teamPage.section3Data.error){
             return(
                 <div 
-                    className="testimonials-page-loading-error" 
+                    className="team-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.teamPage.section3Data.error}`}</H15>
@@ -287,15 +288,18 @@ export const TeamPage = (props) => {
      */
 
     return(
-        <div className="testimonials-page" id="teamPage">
+        <div className="team-page" id="teamPage">
             {renderToolbars()}
-            <div className="testimonials-page-wrapper">
-                <div className="testimonials-page-header">
+            <div className="team-page-wrapper">
+                <div className="team-page-header">
                     <H45 className="h45-nero-lustria">Team</H45>
                 </div>
                 <div className="grey-line"/>
+                <EH135/>
                 {renderTeamPageSection1DataContent()}
-                {renderTeamPageSection2DataContent()} 
+                <EH135/>
+                {renderTeamPageSection2DataContent()}
+                <EH135/>
                 {renderTeamPageSection3DataContent()}
             </div>
             <Footer/>

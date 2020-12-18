@@ -53,7 +53,7 @@ export function fetchTeamPageSection3DataSuccess(array) {
     };
 };
 
-export function fetchTestimonialsPageSection3DataFailur(err) {
+export function fetchTeamPageSection3DataFailur(err) {
     return { 
         type: actionTypes.FETCH_TEAM_PAGE_SECTION_3_DATA_FAILURE,
         err: err
