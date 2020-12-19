@@ -197,7 +197,18 @@ export const TeamPage = (props) => {
         }
         if(!props.teamPage.section1Data.loading && !props.teamPage.section1Data.error){
             return(
-                <div className="team-page-section-1-data">
+                <div className="team-page-section-1-data">{props.teamPage.section1Data.items.map((el, i) => {
+                    return(
+                        <TeamInformationCard
+                            photo={el.photo}
+                            key={i}
+                            name={el.name}
+                            position={el.position}
+                            instaName={el.instaName}
+                            alt={el.alt}
+                        />
+                    )
+                })}
                 </div>
             )
         }
@@ -266,8 +277,18 @@ export const TeamPage = (props) => {
         }
         if(!props.teamPage.section3Data.loading && !props.teamPage.section3Data.error){
             return(
-                <div className="team-page-section-3-data">
-                 
+                <div className="team-page-section-3-data">{props.teamPage.section3Data.items.map((el, i) => {
+                    return(
+                        <TeamInformationCard
+                            photo={el.photo}
+                            key={i}
+                            name={el.name}
+                            position={el.position}
+                            instaName={el.instaName}
+                            alt={el.alt}
+                        />
+                    )
+                })}
                 </div>
             )
         }

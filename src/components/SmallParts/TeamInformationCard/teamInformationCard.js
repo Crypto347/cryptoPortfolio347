@@ -106,6 +106,38 @@ export const TeamInformationCard = (props) => {
                 return Images.PHOTO_4;
             case 'Photo5':
                 return Images.PHOTO_5;
+            case 'Photo6':
+                return Images.PHOTO_6; 
+            case 'Photo7':
+                return Images.PHOTO_7; 
+            case 'Photo8':
+                return Images.PHOTO_8; 
+            case 'Photo9':
+                return Images.PHOTO_9;
+            case 'Photo10':
+                return Images.PHOTO_10;
+            case 'Photo11':
+                return Images.PHOTO_11; 
+            case 'Photo12':
+                return Images.PHOTO_12; 
+            case 'Photo13':
+                return Images.PHOTO_13; 
+            case 'Photo14':
+                return Images.PHOTO_14;
+            case 'Photo15':
+                return Images.PHOTO_15;
+            case 'Photo16':
+                return Images.PHOTO_16; 
+            case 'Photo17':
+                return Images.PHOTO_17; 
+            case 'Photo18':
+                return Images.PHOTO_18; 
+            case 'Photo19':
+                return Images.PHOTO_19;
+            case 'Photo20':
+                return Images.PHOTO_20;
+            case 'Photo21':
+                return Images.PHOTO_21;
             default:
                 return "";
         }

@@ -18580,51 +18580,81 @@ app.get('/api/team-page/section1', (req, res) => {
     const teamPageSection1 = [
         {
             id: 1,
-            name: "Marcos Paulo",
+            name: "Jack Anderson",
             position: "Designer",
-            photo: "Photo1",
-            instaName: "ChristinaKinslee",
-            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
+            photo: "Photo6",
+            instaName: "JackAnderson",
+            path: "brooke-cagle-C2GI1fuoSQ8-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 2,
-            name: "Christina Kinslee",
+            name: "Olivia Wilson",
             position: "UX Designer",
-            photo: "Photo2",
-            instaName: "ChristinaKinslee",
-            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
+            photo: "Photo7",
+            instaName: "OliviaWilson",
+            path: "christina-wocintechchat-com-0Zx1bDv5BNY-unsplas.png",
             hover: false,
             alt: "image"
         },
         {
             id: 3,
-            name: "Charlotte Lynn",
+            name: "Leo Robinson",
             position: "Developer",
-            photo: "Photo3",
-            instaName: "ChristinaKinslee",
-            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
+            photo: "Photo8",
+            instaName: "LeoRobinson",
+            path: "prince-akachi-4Yv84VgQkRM-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 4,
-            name: "James Wilson",
+            name: "Amelia Lee",
             position: "Developer",
-            photo: "Photo4",
-            instaName: "ChristinaKinslee",
-            path: "photo-1540569014015-19a7be504e3a.png",
+            photo: "Photo9",
+            instaName: "AmeliaLee",
+            path: "alexandre-chambon-eTL5gUK1mt4-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 5,
-            name: "Zoe Fernandez",
+            name: "Mia Flores",
+            position: "Developer",
+            photo: "Photo10",
+            instaName: "MiaFlores",
+            path: "jeffery-erhunse-4XK2oKKvzVU-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 6,
+            name: "Thomas Nelson",
             position: "Copywriter",
-            photo: "Photo5",
-            instaName: "ChristinaKinslee",
-            path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
+            photo: "Photo11",
+            instaName: "ThomasNelson",
+            path: "micah-KgNZGaCEmSE-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 7,
+            name: "Lily Rivera",
+            position: "Developer",
+            photo: "Photo12",
+            instaName: "LilyRivera",
+            path: "noemi-macavei-katocz-6ecsew5yOBE-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 8,
+            name: "Austin Carter",
+            position: "Copywriter",
+            photo: "Photo13",
+            instaName: "AustinCarter",
+            path: "sung-wang-g4DgCF90EM4-unsplash.png",
             hover: false,
             alt: "image"
         },
@@ -18688,58 +18718,91 @@ app.get('/api/team-page/section2', (req, res) => {
     res.json(teamPageSection2);
 });
 
+
+
 app.get('/api/team-page/section3', (req, res) => {
     const teamPageSection3 = [
         {
             id: 1,
-            name: "Marcos Paulo",
+            name: "Chloe Wilson",
             position: "Designer",
-            photo: "Photo1",
-            instaName: "ChristinaKinslee",
-            path: "marcos-paulo-prado-Ur_QOF3mLyA-unsplash.png",
+            photo: "Photo14",
+            instaName: "ChloeWilson",
+            path: "alexis-chloe-TYDkKEgc0Fg-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 2,
-            name: "Christina Kinslee",
-            position: "UX Designer",
-            photo: "Photo2",
-            instaName: "ChristinaKinslee",
-            path: "christina-wocintechchat-com-CtL3eP9ENyA-unsplash.png",
+            name: "Steven Roberts",
+            position: "Copywriter",
+            photo: "Photo15",
+            instaName: "StevenRoberts",
+            path: "nicolas-horn-MTZTGvDsHFY-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 3,
-            name: "Charlotte Lynn",
+            name: "Violet Miller",
             position: "Developer",
-            photo: "Photo3",
-            instaName: "ChristinaKinslee",
-            path: "vinicius-wiesehofer-LS1e59caoNM-unsplash.png",
+            photo: "Photo16",
+            instaName: "VioletMiller",
+            path: "binh-ly-k_4A59MzZTY-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 4,
-            name: "James Wilson",
+            name: "Kevin Jones",
             position: "Developer",
-            photo: "Photo4",
-            instaName: "ChristinaKinslee",
-            path: "photo-1540569014015-19a7be504e3a.png",
+            photo: "Photo17",
+            instaName: "KevinJones",
+            path: "ian-dooley-d1UPkiFd04A-unsplash.png",
             hover: false,
             alt: "image"
         },
         {
             id: 5,
-            name: "Zoe Fernandez",
-            position: "Copywriter",
-            photo: "Photo5",
-            instaName: "ChristinaKinslee",
-            path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
+            name: "Joseph Gonzalez",
+            position: "UX Designer",
+            photo: "Photo18",
+            instaName: "JosephGonzalez",
+            path: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
             hover: false,
             alt: "image"
         },
+        {
+            id: 6,
+            name: "Naomi Hernandez",
+            position: "Copywriter",
+            photo: "Photo19",
+            instaName: "NaomiHernandez",
+            path: "christian-acosta-w1yTGE0mDwE-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 7,
+            name: "Patrick Harris",
+            position: "Developer",
+            photo: "Photo20",
+            instaName: "PatrickHarris",
+            path: "james-marty-h1BuNJZzpC8-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+        {
+            id: 8,
+            name: "Emery Lee",
+            position: "Developer",
+            photo: "Photo21",
+            instaName: "EmeryLee",
+            path: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
+            hover: false,
+            alt: "image"
+        },
+     
     ]
     res.json(teamPageSection3);
 });

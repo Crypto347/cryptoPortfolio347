@@ -576,12 +576,44 @@ import Photo2 from '../images/teamPhotos/christina-wocintechchat-com-CtL3eP9ENyA
 import Photo3 from '../images/teamPhotos/vinicius-wiesehofer-LS1e59caoNM-unsplash.png';
 import Photo4 from '../images/teamPhotos/photo-1540569014015-19a7be504e3a.png';
 import Photo5 from '../images/teamPhotos/zoe-fernandez--zqoE7jnQgw-unsplash.png';
+import Photo6 from '../images/teamPhotos/brooke-cagle-C2GI1fuoSQ8-unsplash.png';
+import Photo7 from '../images/teamPhotos/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.png';
+import Photo8 from '../images/teamPhotos/prince-akachi-4Yv84VgQkRM-unsplash.png';
+import Photo9 from '../images/teamPhotos/alexandre-chambon-eTL5gUK1mt4-unsplash.png';
+import Photo10 from '../images/teamPhotos/jeffery-erhunse-4XK2oKKvzVU-unsplash.png';
+import Photo11 from '../images/teamPhotos/micah-KgNZGaCEmSE-unsplash.png';
+import Photo12 from '../images/teamPhotos/noemi-macavei-katocz-6ecsew5yOBE-unsplash.png';
+import Photo13 from '../images/teamPhotos/sung-wang-g4DgCF90EM4-unsplash.png';
+import Photo14 from '../images/teamPhotos/alexis-chloe-TYDkKEgc0Fg-unsplash.png';
+import Photo15 from '../images/teamPhotos/nicolas-horn-MTZTGvDsHFY-unsplash.png';
+import Photo16 from '../images/teamPhotos/binh-ly-k_4A59MzZTY-unsplash.png';
+import Photo17 from '../images/teamPhotos/ian-dooley-d1UPkiFd04A-unsplash.png';
+import Photo18 from '../images/teamPhotos/joseph-gonzalez-iFgRcqHznqg-unsplash.png';
+import Photo19 from '../images/teamPhotos/christian-acosta-w1yTGE0mDwE-unsplash.png';
+import Photo20 from '../images/teamPhotos/james-marty-h1BuNJZzpC8-unsplash.png';
+import Photo21 from '../images/teamPhotos/vinicius-wiesehofer-UOavP_Z38lE-unsplash.png';
 
 export const PHOTO_1 = Photo1;
 export const PHOTO_2 = Photo2;
 export const PHOTO_3 = Photo3;
 export const PHOTO_4 = Photo4;
 export const PHOTO_5 = Photo5;
+export const PHOTO_6 = Photo6;
+export const PHOTO_7 = Photo7;
+export const PHOTO_8 = Photo8;
+export const PHOTO_9 = Photo9;
+export const PHOTO_10 = Photo10;
+export const PHOTO_11 = Photo11;
+export const PHOTO_12 = Photo12;
+export const PHOTO_13 = Photo13;
+export const PHOTO_14 = Photo14;
+export const PHOTO_15 = Photo15;
+export const PHOTO_16 = Photo16;
+export const PHOTO_17 = Photo17;
+export const PHOTO_18 = Photo18;
+export const PHOTO_19 = Photo19;
+export const PHOTO_20 = Photo20;
+export const PHOTO_21 = Photo21;
 
 /**
  * Archive Cover Pictures
