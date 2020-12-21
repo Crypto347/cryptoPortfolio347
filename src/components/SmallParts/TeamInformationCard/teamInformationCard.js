@@ -80,8 +80,8 @@ export const TeamInformationCard = (props) => {
 
     const handleResize = () => {
         // Set the height of the curtain on window resize
-
-        let cardHeight = document.getElementById("img").clientHeight;
+        
+        let cardHeight = document.getElementById(props.imgKey).clientHeight;
         setCardHeight(cardHeight);
     }
 
@@ -196,7 +196,7 @@ export const TeamInformationCard = (props) => {
         >
             <div className={renderClassName("teamCardImage", isHovering)}>
                 <img 
-                    id="img"
+                    id={props.imgKey}
                     src={loadPhoto(props.photo)}
                     alt={props.alt}
                 />

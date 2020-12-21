@@ -93,6 +93,7 @@ export const TeamInformation = (props) => {
                         <TeamInformationCard
                             photo={el.photo}
                             key={i}
+                            imgKey={el.key}
                             name={el.name}
                             position={el.position}
                             instaName={el.instaName}

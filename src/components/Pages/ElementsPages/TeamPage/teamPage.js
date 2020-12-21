@@ -202,6 +202,7 @@ export const TeamPage = (props) => {
                         <TeamInformationCard
                             photo={el.photo}
                             key={i}
+                            imgKey={el.key}
                             name={el.name}
                             position={el.position}
                             instaName={el.instaName}
@@ -242,6 +243,7 @@ export const TeamPage = (props) => {
                         <TeamInformationCard
                             photo={el.photo}
                             key={i}
+                            imgKey={el.key}
                             name={el.name}
                             position={el.position}
                             instaName={el.instaName}
@@ -282,6 +284,7 @@ export const TeamPage = (props) => {
                         <TeamInformationCard
                             photo={el.photo}
                             key={i}
+                            imgKey={el.key}
                             name={el.name}
                             position={el.position}
                             instaName={el.instaName}
@@ -316,11 +319,11 @@ export const TeamPage = (props) => {
                     <H45 className="h45-nero-lustria">Team</H45>
                 </div>
                 <div className="grey-line"/>
-                <EH135/>
+                <EH135 background="rgb(248, 248, 248)"/>
                 {renderTeamPageSection1DataContent()}
-                <EH135/>
+                <EH135 background="rgb(248, 248, 248)"/>
                 {renderTeamPageSection2DataContent()}
-                <EH135/>
+                <EH135 background="rgb(248, 248, 248)"/>
                 {renderTeamPageSection3DataContent()}
             </div>
             <Footer/>

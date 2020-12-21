@@ -954,6 +954,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
     const teamInfo = [
         {
             id: 1,
+            key: "teamMember1",
             name: "Marcos Paulo",
             position: "Designer",
             photo: "Photo1",
@@ -964,6 +965,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
         },
         {
             id: 2,
+            key: "teamMember2",
             name: "Christina Kinslee",
             position: "UX Designer",
             photo: "Photo2",
@@ -974,6 +976,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
         },
         {
             id: 3,
+            key: "teamMember3",
             name: "Charlotte Lynn",
             position: "Developer",
             photo: "Photo3",
@@ -984,6 +987,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
         },
         {
             id: 4,
+            key: "teamMember4",
             name: "James Wilson",
             position: "Developer",
             photo: "Photo4",
@@ -994,6 +998,7 @@ app.get('/api/section3/teamInformation', (req, res) => {
         },
         {
             id: 5,
+            key: "teamMember5",
             name: "Zoe Fernandez",
             position: "Copywriter",
             photo: "Photo5",
@@ -18580,6 +18585,7 @@ app.get('/api/team-page/section1', (req, res) => {
     const teamPageSection1 = [
         {
             id: 1,
+            key: "teamMember6",
             name: "Jack Anderson",
             position: "Designer",
             photo: "Photo6",
@@ -18590,6 +18596,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 2,
+            key: "teamMember7",
             name: "Olivia Wilson",
             position: "UX Designer",
             photo: "Photo7",
@@ -18600,6 +18607,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 3,
+            key: "teamMember8",
             name: "Leo Robinson",
             position: "Developer",
             photo: "Photo8",
@@ -18610,6 +18618,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 4,
+            key: "teamMember9",
             name: "Amelia Lee",
             position: "Developer",
             photo: "Photo9",
@@ -18620,6 +18629,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 5,
+            key: "teamMember10",
             name: "Mia Flores",
             position: "Developer",
             photo: "Photo10",
@@ -18630,6 +18640,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 6,
+            key: "teamMember11",
             name: "Thomas Nelson",
             position: "Copywriter",
             photo: "Photo11",
@@ -18640,6 +18651,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 7,
+            key: "teamMember12",
             name: "Lily Rivera",
             position: "Developer",
             photo: "Photo12",
@@ -18650,6 +18662,7 @@ app.get('/api/team-page/section1', (req, res) => {
         },
         {
             id: 8,
+            key: "teamMember13",
             name: "Austin Carter",
             position: "Copywriter",
             photo: "Photo13",
@@ -18666,6 +18679,7 @@ app.get('/api/team-page/section2', (req, res) => {
     const teamPageSection2 = [
         {
             id: 1,
+            key: "teamMember14",
             name: "Marcos Paulo",
             position: "Designer",
             photo: "Photo1",
@@ -18676,6 +18690,7 @@ app.get('/api/team-page/section2', (req, res) => {
         },
         {
             id: 2,
+            key: "teamMember15",
             name: "Christina Kinslee",
             position: "UX Designer",
             photo: "Photo2",
@@ -18686,6 +18701,7 @@ app.get('/api/team-page/section2', (req, res) => {
         },
         {
             id: 3,
+            key: "teamMember16",
             name: "Charlotte Lynn",
             position: "Developer",
             photo: "Photo3",
@@ -18696,6 +18712,7 @@ app.get('/api/team-page/section2', (req, res) => {
         },
         {
             id: 4,
+            key: "teamMember17",
             name: "James Wilson",
             position: "Developer",
             photo: "Photo4",
@@ -18706,6 +18723,7 @@ app.get('/api/team-page/section2', (req, res) => {
         },
         {
             id: 5,
+            key: "teamMember18",
             name: "Zoe Fernandez",
             position: "Copywriter",
             photo: "Photo5",
@@ -18724,6 +18742,7 @@ app.get('/api/team-page/section3', (req, res) => {
     const teamPageSection3 = [
         {
             id: 1,
+            key: "teamMember19",
             name: "Chloe Wilson",
             position: "Designer",
             photo: "Photo14",
@@ -18734,6 +18753,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 2,
+            key: "teamMember20",
             name: "Steven Roberts",
             position: "Copywriter",
             photo: "Photo15",
@@ -18744,6 +18764,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 3,
+            key: "teamMember21",
             name: "Violet Miller",
             position: "Developer",
             photo: "Photo16",
@@ -18754,6 +18775,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 4,
+            key: "teamMember22",
             name: "Kevin Jones",
             position: "Developer",
             photo: "Photo17",
@@ -18764,6 +18786,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 5,
+            key: "teamMember23",
             name: "Joseph Gonzalez",
             position: "UX Designer",
             photo: "Photo18",
@@ -18774,6 +18797,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 6,
+            key: "teamMember24",
             name: "Naomi Hernandez",
             position: "Copywriter",
             photo: "Photo19",
@@ -18784,6 +18808,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 7,
+            key: "teamMember25",
             name: "Patrick Harris",
             position: "Developer",
             photo: "Photo20",
@@ -18794,6 +18819,7 @@ app.get('/api/team-page/section3', (req, res) => {
         },
         {
             id: 8,
+            key: "teamMember26",
             name: "Emery Lee",
             position: "Developer",
             photo: "Photo21",
