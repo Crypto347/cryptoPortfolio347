@@ -56,12 +56,33 @@ export const TeamInformationCard = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
+    const [infoCardPadding, setInfoCardPadding] = useState({
+        left: 0,
+        right: 0
+    });
 
     /**
      * Methods
      */
 
     useEffect(()=>{
+        // Set info cart padding values
+
+        switch(props.version){
+            case 'version1':
+            case 'version2':
+                setInfoCardPadding({
+                    left: 40,
+                    right: 20
+                })
+                break;
+            case 'version3':
+                setInfoCardPadding({
+                    left: 40,
+                    right: 40
+                })
+                break;
+        }
         // Event Listeners
 
         const resize = () => {
@@ -183,6 +204,89 @@ export const TeamInformationCard = (props) => {
         }
     }
 
+    const renderInformationAboutMemeber = (version) => {
+       switch(version) {
+            case 'version1':
+                return(
+                    <>
+                        <H25 className="h25-white-teko">{props.name}</H25>
+                        <H15 className="h15-white-lustria">{props.position}</H15>
+                        <EH25/>
+                        <div className="icon-wrapper">
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                        </div>
+                        <EH40/>
+                    </>
+                );
+            case 'version2':
+                return(
+                    <>
+                        <H25 className="h25-white-teko">{props.name}</H25>
+                        <EH40/>
+                    </>
+                );
+            case 'version3':
+                return(
+                    <>
+                        <H25 className="h25-white-teko">{props.name}</H25>
+                        <H15 className="h15-white-lustria">{props.position}</H15>
+                        <EH25/>
+                        <div className="h25-white-teko">
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                                size="1x" 
+                                className="team-information-card-icon"
+                                onClick={() => iconOnClick(props.name, props.instaName)}
+                            />
+                        </div>
+                        <EH40/>
+                        <EH40/>
+                </>
+                );
+       }
+    }
+
     /**
      * Markup
      */
@@ -191,6 +295,7 @@ export const TeamInformationCard = (props) => {
         <div 
             id="team-information-card"
             className="team-information-card"
+            style={{width: `${props.width}%`}}
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
@@ -203,18 +308,14 @@ export const TeamInformationCard = (props) => {
             </div>
             <div 
                 className={renderClassName("teamInfoCard", isHovering)}
-                style={{height: `${cardHeight}px`}}
+                style={{
+                    height: `${cardHeight}px`,
+                    width:`calc(100% - ${infoCardPadding.right + infoCardPadding.left}px)`,
+                    padding: `0px ${infoCardPadding.right}px 0px ${infoCardPadding.left}px`,
+                    alignItems: props.version === "version3" ? "center" : "left"
+                }}
             >
-                <H25 className="h25-white-teko">{props.name}</H25>
-                <H15 className="h15-white-lustria">{props.position}</H15>
-                <EH25/>
-                <FontAwesomeIcon 
-                    icon={faInstagram} 
-                    size="1x" 
-                    className="team-information-card-icon"
-                    onClick={() => iconOnClick(props.name, props.instaName)}
-                />
-                <EH40/>
+                {renderInformationAboutMemeber(props.version)}
             </div>
         </div>
     );

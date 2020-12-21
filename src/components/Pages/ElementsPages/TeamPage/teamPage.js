@@ -207,6 +207,8 @@ export const TeamPage = (props) => {
                             position={el.position}
                             instaName={el.instaName}
                             alt={el.alt}
+                            width={25}
+                            version="version2"
                         />
                     )
                 })}
@@ -248,6 +250,8 @@ export const TeamPage = (props) => {
                             position={el.position}
                             instaName={el.instaName}
                             alt={el.alt}
+                            width={20}
+                            version="version1"
                         />
                     )
                 })}
@@ -289,6 +293,8 @@ export const TeamPage = (props) => {
                             position={el.position}
                             instaName={el.instaName}
                             alt={el.alt}
+                            width={25}
+                            version="version3"
                         />
                     )
                 })}

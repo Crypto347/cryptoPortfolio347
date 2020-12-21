@@ -98,6 +98,8 @@ export const TeamInformation = (props) => {
                             position={el.position}
                             instaName={el.instaName}
                             alt={el.alt}
+                            width={20}
+                            version="version1"
                         />
                     )})}
                 </div>

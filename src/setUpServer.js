@@ -18743,11 +18743,11 @@ app.get('/api/team-page/section3', (req, res) => {
         {
             id: 1,
             key: "teamMember19",
-            name: "Chloe Wilson",
-            position: "Designer",
+            name: "Violet Miller",
+            position: "Developer",
             photo: "Photo14",
-            instaName: "ChloeWilson",
-            path: "alexis-chloe-TYDkKEgc0Fg-unsplash.png",
+            instaName: "VioletMiller",
+            path: "binh-ly-k_4A59MzZTY-unsplash.png",
             hover: false,
             alt: "image"
         },
@@ -18762,14 +18762,15 @@ app.get('/api/team-page/section3', (req, res) => {
             hover: false,
             alt: "image"
         },
+       
         {
-            id: 3,
+            id: 2,
             key: "teamMember21",
-            name: "Violet Miller",
-            position: "Developer",
+            name: "Chloe Wilson",
+            position: "Designer",
             photo: "Photo16",
-            instaName: "VioletMiller",
-            path: "binh-ly-k_4A59MzZTY-unsplash.png",
+            instaName: "ChloeWilson",
+            path: "alexis-chloe-TYDkKEgc0Fg-unsplash.png",
             hover: false,
             alt: "image"
         },

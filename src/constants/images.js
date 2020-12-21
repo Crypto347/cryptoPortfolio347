@@ -584,9 +584,9 @@ import Photo10 from '../images/teamPhotos/jeffery-erhunse-4XK2oKKvzVU-unsplash.p
 import Photo11 from '../images/teamPhotos/micah-KgNZGaCEmSE-unsplash.png';
 import Photo12 from '../images/teamPhotos/noemi-macavei-katocz-6ecsew5yOBE-unsplash.png';
 import Photo13 from '../images/teamPhotos/sung-wang-g4DgCF90EM4-unsplash.png';
-import Photo14 from '../images/teamPhotos/alexis-chloe-TYDkKEgc0Fg-unsplash.png';
+import Photo14 from '../images/teamPhotos/binh-ly-k_4A59MzZTY-unsplash.png';
 import Photo15 from '../images/teamPhotos/nicolas-horn-MTZTGvDsHFY-unsplash.png';
-import Photo16 from '../images/teamPhotos/binh-ly-k_4A59MzZTY-unsplash.png';
+import Photo16 from '../images/teamPhotos/alexis-chloe-TYDkKEgc0Fg-unsplash.png';
 import Photo17 from '../images/teamPhotos/ian-dooley-d1UPkiFd04A-unsplash.png';
 import Photo18 from '../images/teamPhotos/joseph-gonzalez-iFgRcqHznqg-unsplash.png';
 import Photo19 from '../images/teamPhotos/christian-acosta-w1yTGE0mDwE-unsplash.png';

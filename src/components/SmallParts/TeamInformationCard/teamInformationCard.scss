@@ -1,5 +1,5 @@
 .team-information-card {
-    width: 20%;
+    // width: 20%;
     position: relative;
         .team-information-card-image {
             overflow: hidden;
@@ -31,7 +31,6 @@
         }
         .team-information-card-info-hover-on {
             background: rgba(0, 0, 0, 0.7);
-            width: calc(100% - 60px);
             position: absolute;
             left: 0%;
             top: 0%;
@@ -39,20 +38,21 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 0px 20px 0px 40px;
             opacity: 1;
             -webkit-animation: teamInfoCardOn 0.3s linear;
             -moz-animation: teamInfoCardOn 0.3s linear;
             -o-animation: teamInfoCardOn 0.3s linear;
             animation: teamInfoCardOn 0.3s linear;
-            .team-information-card-icon {
-                color: white;
-                cursor: pointer;
+            .icon-wrapper {
+                display: flex;
+                .team-information-card-icon {
+                    color: white;
+                    cursor: pointer;
+                }
             }
         }
         .team-information-card-info-hover-off {
             background: rgba(0, 0, 0, 0.7);
-            width: calc(100% - 60px);
             position: absolute;
             left: 0%;
             top: 0%;
@@ -60,15 +60,17 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 0px 20px 0px 40px;
             opacity: 0;
             -webkit-animation: teamInfoCardOff .3s linear;
             -moz-animation: teamInfoCardOff .3s linear;
             -o-animation: teamInfoCardOff .3s linear;
             animation: teamInfoCardOff .3s linear;
-            .team-information-card-icon {
-                color: white;
-                cursor: pointer;
+            .icon-wrapper {
+                display: flex;
+                .team-information-card-icon {
+                    color: white;
+                    cursor: pointer;
+                }
             }
         }
 }
