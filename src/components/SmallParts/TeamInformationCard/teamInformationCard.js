@@ -8,10 +8,6 @@ import React, {
     useRef
 } from 'react';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
 /**
  * Styles
  */
@@ -19,14 +15,21 @@ import {
 import './teamInformationCard.scss';
 
 /**
+ * Components
+ */
+
+import Icon from '../../SmallParts/Icon/icon';
+
+/**
  * Utility
  */
 
 import {
-    H25,
     H15,
+    H25,
+    EW20,
+    EH25,
     EH40,
-    EH25
 } from '../../UtilityComponents';
 
 /**
@@ -36,13 +39,12 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
- * Icons
+ * Constants
  */
 
-import { 
-    faInstagram
-} from '@fortawesome/fontawesome-free-brands';
-
+ import {
+    socialMediaIcons
+ } from '../../../constants/socialMediaIcons';
 /**
  * TeamInformationCard component definition and export
  */
@@ -164,23 +166,6 @@ export const TeamInformationCard = (props) => {
         }
     }
 
-    const iconOnClick = (name, instaName) => {
-        switch(name){
-            case 'Marcos Paulo':
-                return window.open(`https://www.instagram.com/${instaName}`);
-            case 'Christina Kinslee':
-                return window.open(`https://www.instagram.com/${instaName}`);
-            case 'Charlotte Lynn':
-                return window.open(`https://www.instagram.com/${instaName}`);
-            case 'James Wilson':
-                return window.open(`https://www.instagram.com/${instaName}`);
-            case 'Zoe Fernandez':
-                return window.open(`https://www.instagram.com/${instaName}`);
-            default:
-                return window.open(`https://www.instagram.com/`);
-        }
-    }
-
     const renderClassName = (opt, isHovering) => {
         if(opt === "teamInfoCard"){
             switch(isHovering){
@@ -204,6 +189,30 @@ export const TeamInformationCard = (props) => {
         }
     }
 
+    const renderSocialMediaIcons = () => {
+        return(
+            <div className="team-information-card-icons-wrapper">{socialMediaIcons.map((el, i) => {
+               return(
+                    <div 
+                        key={i}
+                        className="team-information-card-icon-wrapper"
+                    >
+                        <Icon 
+                            key={i}
+                            iconType="fontAwesome"
+                            iconName={el.name} 
+                            icon={el.iconKey} 
+                            iconSize="1x"
+                            instaName={props.instaName}
+                        />
+                        <EW20/>
+                    </div>
+               ) 
+            })}
+            </div>
+        )
+    }
+
     const renderInformationAboutMemeber = (version) => {
        switch(version) {
             case 'version1':
@@ -212,32 +221,7 @@ export const TeamInformationCard = (props) => {
                         <H25 className="h25-white-teko">{props.name}</H25>
                         <H15 className="h15-white-lustria">{props.position}</H15>
                         <EH25/>
-                        <div className="icon-wrapper">
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                        </div>
+                        {renderSocialMediaIcons()}
                         <EH40/>
                     </>
                 );
@@ -254,32 +238,7 @@ export const TeamInformationCard = (props) => {
                         <H25 className="h25-white-teko">{props.name}</H25>
                         <H15 className="h15-white-lustria">{props.position}</H15>
                         <EH25/>
-                        <div className="h25-white-teko">
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                            <FontAwesomeIcon 
-                                icon={faInstagram} 
-                                size="1x" 
-                                className="team-information-card-icon"
-                                onClick={() => iconOnClick(props.name, props.instaName)}
-                            />
-                        </div>
+                        {renderSocialMediaIcons()}
                         <EH40/>
                         <EH40/>
                 </>

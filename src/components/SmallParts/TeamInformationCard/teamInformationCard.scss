@@ -43,13 +43,6 @@
             -moz-animation: teamInfoCardOn 0.3s linear;
             -o-animation: teamInfoCardOn 0.3s linear;
             animation: teamInfoCardOn 0.3s linear;
-            .icon-wrapper {
-                display: flex;
-                .team-information-card-icon {
-                    color: white;
-                    cursor: pointer;
-                }
-            }
         }
         .team-information-card-info-hover-off {
             background: rgba(0, 0, 0, 0.7);
@@ -65,14 +58,15 @@
             -moz-animation: teamInfoCardOff .3s linear;
             -o-animation: teamInfoCardOff .3s linear;
             animation: teamInfoCardOff .3s linear;
-            .icon-wrapper {
-                display: flex;
-                .team-information-card-icon {
-                    color: white;
-                    cursor: pointer;
-                }
-            }
         }
+}
+
+
+.team-information-card-icons-wrapper {
+    display: flex;
+    .team-information-card-icon-wrapper {
+        display: flex;
+    }
 }
 
 .display-none{

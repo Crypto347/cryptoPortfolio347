@@ -4,15 +4,31 @@
 
 export const socialMediaIcons = [
     {
-        name: "Facebook"
+        id: 1,
+        name: "Instagram",
+        key: "instagramIcon",
+        iconKey: "faInstagramSquare",
+        isHover: "init"
     },
     {
-        name: "LinkedIn"
+        id: 2,
+        name: "Twitter",
+        key: "twitterIcon",
+        iconKey: "faTwitter",
+        isHover: "init"
     },
     {
-        name: "Instagram"
+        id: 3,
+        name: "Facebook",
+        key: "facebookIcon",
+        iconKey: "faFacebookF",
+        isHover: "init"
     },
     {
-        name: "Twitter"
-    },
+        id: 4,
+        name: "Tumblr",
+        key: "tumblrIcon",
+        iconKey: "faTumblr",
+        isHover: "init"
+    }  
 ]

@@ -342,7 +342,7 @@ export const Toolbar = (props) => {
     const logoOnClick = (e) => {      
         switch(e.button){
             case 0:
-                // Relode the page
+                // Relode the page on left mouse click
                 props.history.push(`/crypto-portfolio`);
                 window.location.reload();
                 return;
