@@ -85,6 +85,7 @@ export const TeamInformationCard = (props) => {
                 })
                 break;
         }
+        
         // Event Listeners
 
         const resize = () => {

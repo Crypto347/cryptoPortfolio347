@@ -260,6 +260,7 @@ export const Toolbar = (props) => {
             case 'callToActionPage':
             case 'testimonialsPage':
             case 'teamPage':
+            case 'contactFormPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':

@@ -66,6 +66,7 @@ import TabsPage from './Pages/ElementsPages/TabsPage/tabsPage';
 import CallToActionPage from './Pages/ElementsPages/CallToActionPage/callToActionPage';
 import TestimonialsPage from './Pages/ElementsPages/TestimonialsPage/testimonialsPage';
 import TeamPage from './Pages/ElementsPages/TeamPage/teamPage';
+import ContactFormPage from './Pages/ElementsPages/ContactFormPage/contactFormPage';
 
 /**
  * Actions
@@ -148,6 +149,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/contact-form"}
+                    component={ContactFormPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/team"}
