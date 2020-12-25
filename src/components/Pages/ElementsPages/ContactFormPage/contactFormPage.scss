@@ -18,25 +18,26 @@
             background-color: rgb(239, 239, 239);
         }
         .contact-form-page-section-1-data {
-            // text-align: center;
             display: flex;
-            flex-wrap: wrap;
-            // width: calc(100% - 120px);
-            box-sizing: 100%;
-            padding: 0px 60px 0px 60px;
+            flex-direction: column;
+            align-items: center;
+            padding: 110px;
             background: rgb(248, 248, 248);
+            .contact-form-page-section-1-data-inputs-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                .contact-form-page-section-1-form {
+                    width: calc(50% - 20px);
+                }
+            }
         }
         .contact-form-page-section-2-data {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            background: rgb(248, 248, 248);
+            padding: 110px 0 110px 0;
+            background: rgb(23, 23, 23);
         }
         .contact-form-page-section-3-data {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            // text-align: center;
+            padding: 110px 0 110px 0;
             background: rgb(248, 248, 248);
         }
     }

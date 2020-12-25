@@ -407,3 +407,11 @@ export const getTeamPageState = createSelector(
     [getTeamPage],
     (x) => x
 );
+
+const getContactFormPage = (state) => state.contactFormPage;
+
+export const getContactFormPageState = createSelector(
+    [getContactFormPage],
+    (x) => x
+);
+

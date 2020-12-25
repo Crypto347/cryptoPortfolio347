@@ -42,6 +42,7 @@ import accordionsPageReducer from './accordionsPageReducer';
 import tabsPageReducer from './tabsPageReducer';
 import testimonialsPageReducer from './testimonialsPageReducer';
 import teamPageReducer from './teamPageReducer';
+import contactFormPageReducer from './contactFormPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -81,5 +82,6 @@ export default (history) => combineReducers({
     accordionsPage: accordionsPageReducer,
     tabsPage: tabsPageReducer,
     testimonialsPage: testimonialsPageReducer,
-    teamPage: teamPageReducer
+    teamPage: teamPageReducer,
+    contactFormPage: contactFormPageReducer
 });
