@@ -21,7 +21,7 @@ export const getContactFormPageSection1InputForm = {
             errorMessage: [],
             type: "text",
             inputID: 'input1',
-            controlName: "name"
+            controlName: "fullName"
         },
         {
             id: 2,

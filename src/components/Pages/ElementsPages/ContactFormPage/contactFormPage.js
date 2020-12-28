@@ -58,7 +58,8 @@ import {
     H15,
     H45,
     EW20,
-    EH20
+    EH20,
+    EH30
 } from '../../../UtilityComponents';
 
 /**
@@ -101,7 +102,7 @@ export const ContactFormPage = (props) => {
 
         // Init imput forms
 
-        props.initInputForm("section1", getContactFormPageSection1InputForm);
+        props.initInputForm("section1InputForm", getContactFormPageSection1InputForm);
 
         // Scroll to the top of the screen
 
@@ -184,39 +185,55 @@ export const ContactFormPage = (props) => {
         }
     }
 
-    // const onClickHandler = () => {
-    //     props.sendComment();
-    //     if(props.getInTouchInputForm.formIsValid){
-    //         clearInputValue("inputGetInTouch1");
-    //         clearInputValue("inputGetInTouch2");
-    //         clearInputValue("inputGetInTouch3");
-    //         clearInputValue("inputGetInTouch4");
-    //         clearInputValue("inputGetInTouch5");
-    //         clearInputValue("inputGetInTouch6");
-    //         clearInputValue("textareaGetInTouch7");
-    //     }
-    //     props.getInTouchInputForm.inputsArray.map(el => {
-    //         if(!el.validField){
-    //             clearInputValue(el.inputID);
-    //         }
-    //     })
-    // }
+    const onClickHandler = (opt) => {
+        switch(opt){
+            case 'section1InputForm':
+                props.getDirectionContactFormPage();
 
-    const inputChangeHandler = (e, inputFieldId) => {
-        // props.setInputFiledValueAndCheckValidation(props.getInTouchInputForm, e, inputFieldId, 'getInTouchInputForm');
+                if(props.contactFormPage.section1.inputForm.formIsValid){
+                    clearInputValue("input1");
+                    clearInputValue("input2");
+                    clearInputValue("input3");
+                    clearInputValue("input4");
+                }
+
+                props.contactFormPage.section1.inputForm.inputsArray.map(el => {
+                    if(!el.validField){
+                        clearInputValue(el.inputID);
+                    }
+                })
+
+                break;
+            case 'section2InputForm':
+
+                break;
+            case 'section3InputForm':
+
+                break;
+        }
+      
     }
 
-    // const clearInputValue = (fieldId) => {
-    //     document.getElementById(fieldId).value = '';
-    // }
+    const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
+        // Uppercase first letter of the input form name
 
+        let updatedInputForm = inputForm.charAt(0).toUpperCase() + inputForm.slice(1);
+
+        // Set input value and check validation
+
+        props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
+    }
+
+    const clearInputValue = (fieldId) => {
+        document.getElementById(fieldId).value = '';
+    }
 
     const renderContactFormPageSection1DataContent = () => {
-        if(props.contactFormPage.section1InputForm.inputsArray){
+        if(props.contactFormPage.section1.inputForm.inputsArray){
             return(
                 <div className="contact-form-page-section-1-data">
                     <div className="contact-form-page-section-1-data-inputs-wrapper">
-                        {props.contactFormPage.section1InputForm.inputsArray.map((el, i)=>{
+                        {props.contactFormPage.section1.inputForm.inputsArray.map((el, i)=>{
                             return(
                                 <div 
                                     key={i} 
@@ -228,7 +245,7 @@ export const ContactFormPage = (props) => {
                                 >
                                     <Input
                                         className="contact-form-page-section-1-input"
-                                        onChange={(event) => inputChangeHandler(event, el.id)}
+                                        onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
                                         elementType={el.elementType}
                                         rows={el.elementConfig.rows}
                                         validField={el.validField}
@@ -244,9 +261,11 @@ export const ContactFormPage = (props) => {
                             )
                         })}
                     </div>
+                    <EH30/>
                     <Button
                         className="call-to-action-get-direction-black"
                         text="get direction."
+                        onClick={() => onClickHandler('section1InputForm')}
                         // disabled={props.twoColumnsPage.disableLoadMoreButton}
                     />
 
@@ -308,6 +327,8 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             initInputForm: bindActionCreators(Actions.initInputForm, dispatch),
+            setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
+            getDirectionContactFormPage: bindActionCreators(Actions.getDirectionContactFormPage, dispatch),
         };
     }
 )(ContactFormPage);

@@ -186,3 +186,19 @@ export function setFullScreenState(val) {
         val: val
     };
 };
+
+export function setInputFiledValueAndCheckValidation(obj, e, id, formName) {
+    return { 
+        type: actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION,
+        obj: obj,
+        event: e,
+        inputFieldId: id,
+        formName: formName
+    };
+};
+
+export function getDirectionContactFormPage() {
+    return { 
+        type: actionTypes.GET_DIRECTION_CONTACT_FORM_PAGE
+    };
+};
