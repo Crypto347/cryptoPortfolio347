@@ -38,7 +38,7 @@ export const getContactFormPageSection1InputForm = {
                 //     valid: false
                 // }
             ],
-            validField: false,
+            validField: true,
             touched: false,
             errorMessage: [],
             type: "text",
@@ -87,7 +87,7 @@ export const getContactFormPageSection1InputForm = {
                 //     valid: false
                 // }
             ],
-            validField: false,
+            validField: true,
             touched: false,
             errorMessage: [],
             type: "number",

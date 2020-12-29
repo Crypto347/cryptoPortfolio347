@@ -51,6 +51,7 @@ export const errorMessages = (inputIdentifier, rules) => {
 }
 
 export const checkValidityOfField = (validation) => {
+    if(validation.length === 0) return true
     let checkIfTrue=[]
     validation.map((el) => {
         checkIfTrue.push(el.valid)

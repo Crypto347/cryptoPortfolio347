@@ -124,25 +124,66 @@ const getDirectionContactFormPage = (state, action) => {
             phone: `${state.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
         }
         // updatedSingleStory.comments.push(comment);
-        updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
+        // updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
         
         updatedSection1InputForm.formIsValid = false;
-        updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
+        updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {
+            return {
+                ...el, 
+                value: '', 
+                validField: el.validation.length !== 0 ? false : true, 
+                touched: false,
+                validation: el.validation.map(el2 => {
+                    return{
+                        ...el2,
+                        valid: false
+                    }
+                })
+            }
+        });
     }else{
+        let checkIfFormIsValid = [];
         updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map((el, i) => {
-            // if(el.validation.length !== 0){
+            if(Utility.checkValidityOfField(el.validation)){
+                return {
+                    ...el, 
+                    touched: false,
+                    errorMessage: []
+                }
+            }else{
                 return {
                     ...el, 
                     touched: true,
                     errorMessage: ["Fill the field"]
                 }
+            }
+            // if(el.validation.length !== 0){
+            //     return {
+            //         ...el, 
+            //         touched: true,
+            //         errorMessage: ["Fill the field"]
+            //     }
             // }else{
-            //     return el
-            // }
-           
-                
+            //     return {
+            //         ...el, 
+            //         touched: false,
+            //         errorMessage: []
+            //     }
+            // }    
         })
-        // console.log(updatedLeaveACommentInputForm)
+        // updatedSection1InputForm.inputsArray.map(el => {
+        //     if(el.errorMessage.length !== 0){
+        //         checkIfFormIsValid.push(el.controlName)
+        //     }
+        // })
+
+        // console.log(checkIfFormIsValid)
+        // if(checkIfFormIsValid.length === 0){
+        //     updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
+        
+        //     updatedSection1InputForm.formIsValid = false;
+        //     updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
+        // }
     }
     
     

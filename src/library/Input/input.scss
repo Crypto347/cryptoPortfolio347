@@ -145,6 +145,7 @@
     // }
     .error { 
         display: flex;
+        flex-direction: column;
         justify-content: center;
         font-family: 'Lustria', serif;
         width: inherit;
