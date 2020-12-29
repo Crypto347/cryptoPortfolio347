@@ -67,7 +67,8 @@ import {
  */
 
  import {
-    getContactFormPageSection1InputForm
+    getContactFormPageSection1InputForm,
+    getContactFormPageSection2InputForm
  } from '../../../../constants/inputForm';
 /**
  * Hooks
@@ -103,6 +104,7 @@ export const ContactFormPage = (props) => {
         // Init imput forms
 
         props.initInputForm("section1InputForm", getContactFormPageSection1InputForm);
+        props.initInputForm("section2InputForm", getContactFormPageSection2InputForm);
 
         // Scroll to the top of the screen
 
@@ -245,6 +247,7 @@ export const ContactFormPage = (props) => {
                                 >
                                     <Input
                                         className="contact-form-page-section-1-input"
+                                        invalidClassName="invalid-contact-form-page-section-1-input"
                                         onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
                                         elementType={el.elementType}
                                         rows={el.elementConfig.rows}
@@ -268,18 +271,48 @@ export const ContactFormPage = (props) => {
                         onClick={() => onClickHandler('section1InputForm')}
                         // disabled={props.twoColumnsPage.disableLoadMoreButton}
                     />
-
                 </div>
             )
         }
     } 
     
     const renderContactFormPageSection2DataContent = () => {
-        return(
-            <div className="contact-form-page-section-2-data">
-
+        if(props.contactFormPage.section2.inputForm.inputsArray){
+            return(
+                <div className="contact-form-page-section-2-data">{props.contactFormPage.section2.inputForm.inputsArray.map((el, i)=>{
+                    return(
+                        <div 
+                            key={i} 
+                            className="contact-form-page-section-2-form"
+                        >
+                            <Input
+                                className="contact-form-page-section-2-input"
+                                invalidClassName="invalid-contact-form-page-section-2-input"
+                                onChange={(event) => inputChangeHandler(event, el.id, 'section2','inputForm')}
+                                elementType={el.elementType}
+                                rows={el.elementConfig.rows}
+                                validField={el.validField}
+                                touched={el.touched}
+                                erroeMessages={el.errorMessage}
+                                inputID={el.inputID}
+                                textareaID={el.textareaID}
+                                placeholder={el.elementConfig.placeholder}
+                                options={el.elementConfig.options}
+                            />
+                            <EH20/>
+                        </div>
+                    )
+                })}
+                <EW20/>
+                <Button
+                    className="call-to-action-get-direction-white"
+                    text="get direction."
+                    onClick={() => onClickHandler('section1InputForm')}
+                    // disabled={props.twoColumnsPage.disableLoadMoreButton}
+                />
             </div>
-        )
+            )
+        }
     }
 
     const renderContactFormPageSection3DataContent = () => {

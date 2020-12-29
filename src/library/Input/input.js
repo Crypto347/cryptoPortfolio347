@@ -67,7 +67,7 @@ export const Input = (props) => {
         switch(props.elementType){
             case "input":
                 return(
-                    <div className={props.validField === false && props.touched === true ? "invalid" : props.className}>
+                    <div className={props.validField === false && props.touched === true ? props.invalidClassName : props.className}>
                         <input 
                             value={props.value}
                             type={props.type}
@@ -80,7 +80,7 @@ export const Input = (props) => {
                 )
             case "textarea":
                 return(
-                    <div className={props.validField === false && props.touched === true ? "invalid" : props.className}>
+                    <div className={props.validField === false && props.touched === true ? props.invalidClassName : props.className}>
                         <textarea 
                             value={props.value}
                             type={props.type}
@@ -94,7 +94,7 @@ export const Input = (props) => {
                 )
             case "select":
                 return(
-                    <div className={props.validField === false && props.touched === true ? "invalid" : props.className}>
+                    <div className={props.validField === false && props.touched === true ? propsminvalidClassName : props.className}>
                         <select 
                             value={props.value}
                             type={props.type}

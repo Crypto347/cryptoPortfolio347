@@ -33,8 +33,12 @@
             }
         }
         .contact-form-page-section-2-data {
-            padding: 110px 0 110px 0;
-            background: rgb(23, 23, 23);
+            display: flex;
+            padding: 110px 260px 110px 260px;
+            background: black;
+                .contact-form-page-section-2-form {
+                    width: calc(100% - 200px);
+                }
         }
         .contact-form-page-section-3-data {
             padding: 110px 0 110px 0;
