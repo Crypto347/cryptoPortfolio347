@@ -28,13 +28,15 @@
                 flex-wrap: wrap;
                 width: 100%;
                 .contact-form-page-section-1-form {
-                    width: calc(50% - 20px);
+                    // width: calc(100% - 20px);
+                    // border: 2px solid red;
                 }
             }
         }
         .contact-form-page-section-2-data {
             display: flex;
-            padding: 110px 260px 110px 260px;
+            flex-direction: row;
+            padding: 110px 220px 110px 220px;
             background: black;
                 .contact-form-page-section-2-form {
                     width: calc(100% - 200px);
@@ -50,9 +52,28 @@
 @media only screen and (max-width: 1120px){
     .contact-form-page {
         .contact-form-page-wrapper {
-            .contact-form-page-header {
-                padding: 90px 40px 90px 40px;
-            } 
+            .contact-form-page-section-1-data {
+                padding: 110px 130px 110px 130px;
+                .contact-form-page-section-1-data-inputs-wrapper {
+                    // display: flex;
+                    // flex-wrap: wrap;
+                    // width: 100%;
+                    .contact-form-page-section-1-form {
+                        width: 100% !important;
+                        margin-right: 0px !important;
+                    }
+                }
+            }
+            .contact-form-page-section-2-data {
+                padding: 110px 130px 110px 130px;
+                
+                    // .contact-form-page-section-2-form {
+                    //     width: calc(100% - 200px);
+                    // }
+            }
+            // .contact-form-page-section-3-data {
+            //     padding: 110px 0 110px 0;
+            // }
         }
     }
 }
@@ -62,7 +83,60 @@
         .contact-form-page-wrapper {
             .contact-form-page-header {
                 padding: 90px 40px 90px 40px;
-            }    
+            }
+            .contact-form-page-section-1-data {
+                padding: 110px 40px 110px 40px;
+                .contact-form-page-section-1-data-inputs-wrapper {
+                    // display: flex;
+                    // flex-wrap: wrap;
+                    // width: 100%;
+                    .contact-form-page-section-1-form {
+                        width: calc(100% - 20px);
+                    }
+                }
+            }
+            .contact-form-page-section-2-data {
+                padding: 110px 40px 110px 40px;
+                    .contact-form-page-section-2-form {
+                        // width: calc(100% - 200px);
+                    }
+            }
+            // .contact-form-page-section-3-data {
+            //     padding: 110px 0 110px 0;
+            // }
         }
     }
 }
+
+@media only screen and (max-width: 660px){
+    .contact-form-page {
+        .contact-form-page-wrapper {
+            .contact-form-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            .contact-form-page-section-1-data {
+                padding: 110px 40px 110px 40px;
+                .contact-form-page-section-1-data-inputs-wrapper {
+                    // display: flex;
+                    // flex-wrap: wrap;
+                    // width: 100%;
+                    .contact-form-page-section-1-form {
+                        width: calc(100% - 20px);
+                    }
+                }
+            }
+            .contact-form-page-section-2-data {
+                flex-direction: column;
+                align-items: center;
+                padding: 110px 40px 110px 40px;
+                    .contact-form-page-section-2-form {
+                        width: 100%;
+                    }
+            }
+            // .contact-form-page-section-3-data {
+            //     padding: 110px 0 110px 0;
+            // }
+        }
+    }
+}
+
