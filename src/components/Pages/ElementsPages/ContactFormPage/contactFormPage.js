@@ -207,7 +207,17 @@ export const ContactFormPage = (props) => {
 
                 break;
             case 'section2InputForm':
+                props.subscribeContactFormPage();
 
+                if(props.contactFormPage.section2.inputForm.formIsValid){
+                    clearInputValue("input5");
+                }
+
+                props.contactFormPage.section2.inputForm.inputsArray.map(el => {
+                    if(!el.validField){
+                        clearInputValue(el.inputID);
+                    }
+                })
                 break;
             case 'section3InputForm':
 
@@ -306,8 +316,8 @@ export const ContactFormPage = (props) => {
                 <EW20/>
                 <Button
                     className="call-to-action-get-direction-white"
-                    text="get direction."
-                    onClick={() => onClickHandler('section1InputForm')}
+                    text="Subscribe."
+                    onClick={() => onClickHandler('section2InputForm')}
                     // disabled={props.twoColumnsPage.disableLoadMoreButton}
                 />
             </div>
@@ -362,6 +372,7 @@ export default connect(
             initInputForm: bindActionCreators(Actions.initInputForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
             getDirectionContactFormPage: bindActionCreators(Actions.getDirectionContactFormPage, dispatch),
+            subscribeContactFormPage:bindActionCreators(Actions.subscribeContactFormPage, dispatch),
         };
     }
 )(ContactFormPage);

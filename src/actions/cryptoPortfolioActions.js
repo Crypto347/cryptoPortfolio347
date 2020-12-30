@@ -196,9 +196,3 @@ export function setInputFiledValueAndCheckValidation(obj, e, id, formName) {
         formName: formName
     };
 };
-
-export function getDirectionContactFormPage() {
-    return { 
-        type: actionTypes.GET_DIRECTION_CONTACT_FORM_PAGE
-    };
-};

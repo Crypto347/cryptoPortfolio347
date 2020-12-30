@@ -111,7 +111,6 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
 }
 
 const getDirectionContactFormPage = (state, action) => {
-    // let updatedSingleStory = {...state.singleStory};
     let updatedSection1InputForm = {...state.section1.inputForm, inputsArray: [...state.section1.inputForm.inputsArray]};
     let info
     if(state.section1.inputForm.formIsValid && state.section1.inputForm.inputsArray){
@@ -142,7 +141,6 @@ const getDirectionContactFormPage = (state, action) => {
             }
         });
     }else{
-        let checkIfFormIsValid = [];
         updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map((el, i) => {
             if(Utility.checkValidityOfField(el.validation)){
                 return {
@@ -157,36 +155,8 @@ const getDirectionContactFormPage = (state, action) => {
                     errorMessage: ["Fill the field"]
                 }
             }
-            // if(el.validation.length !== 0){
-            //     return {
-            //         ...el, 
-            //         touched: true,
-            //         errorMessage: ["Fill the field"]
-            //     }
-            // }else{
-            //     return {
-            //         ...el, 
-            //         touched: false,
-            //         errorMessage: []
-            //     }
-            // }    
         })
-        // updatedSection1InputForm.inputsArray.map(el => {
-        //     if(el.errorMessage.length !== 0){
-        //         checkIfFormIsValid.push(el.controlName)
-        //     }
-        // })
-
-        // console.log(checkIfFormIsValid)
-        // if(checkIfFormIsValid.length === 0){
-        //     updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
-        
-        //     updatedSection1InputForm.formIsValid = false;
-        //     updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
-        // }
     }
-    
-    
     return {
         ...state,
         section1: {
@@ -196,43 +166,58 @@ const getDirectionContactFormPage = (state, action) => {
     }; 
 }
 
-// const sendComment = (state, action) => {
-//     let updatedCustomerMessages = [...state.customerMessages];
-//     let updatedGetInTouchInputForm = {...state.getInTouchInputForm, inputsArray: [...state.getInTouchInputForm.inputsArray]};
-//     if(state.getInTouchInputForm.formIsValid && state.getInTouchInputForm.inputsArray){
-//         let message = {
-//             id: uuid(),
-//             name: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "name").value}`,
-//             email: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "email").value}`,
-//             phone: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "phoneNumber").value}`,
-//             location: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "location").value}`,
-//             partyOf2: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "partyOf2").value}`,
-//             date: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "date").value}`,
-//             specialNote: state.getInTouchInputForm.inputsArray.find(x => x.controlName === "specialNote").value,
-//         }
-//         updatedCustomerMessages.push(message);
-//         updatedGetInTouchInputForm.inputsArray = updatedGetInTouchInputForm.inputsArray.map(el => {return {...el, value: ''}});
+const subscribeContactFormPage = (state, action) => {
+    let updatedSection2InputForm = {...state.section2.inputForm, inputsArray: [...state.section2.inputForm.inputsArray]};
+    let info
+    if(state.section2.inputForm.formIsValid && state.section2.inputForm.inputsArray){
+        info = {
+            id: uuid(),
+            email: `${state.section2.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
+            // date: Utility.getCurrentDateAndTime(),t
+        }
+        // updatedSingleStory.comments.push(comment);
+        // updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
         
-//         updatedGetInTouchInputForm.formIsValid = false;
-//         updatedGetInTouchInputForm.inputsArray = updatedGetInTouchInputForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
-//     }else{
-//         updatedGetInTouchInputForm.inputsArray = updatedGetInTouchInputForm.inputsArray.map((el, i) => {
-//             return {
-//                     ...el, 
-//                     touched: true,
-//                     errorMessage: ["Fill the field"]
-//                 }
-                
-//         })
-//         // console.log(updatedLeaveACommentInputForm)
-//     }
-    
-//     return {
-//         ...state,
-//         customerMessages: updatedCustomerMessages,
-//         getInTouchInputForms: updatedGetInTouchInputForm
-//     }; 
-// }
+        updatedSection2InputForm.formIsValid = false;
+        updatedSection2InputForm.inputsArray = updatedSection2InputForm.inputsArray.map(el => {
+            return {
+                ...el, 
+                value: '', 
+                validField: el.validation.length !== 0 ? false : true, 
+                touched: false,
+                validation: el.validation.map(el2 => {
+                    return{
+                        ...el2,
+                        valid: false
+                    }
+                })
+            }
+        });
+    }else{
+        updatedSection2InputForm.inputsArray = updatedSection2InputForm.inputsArray.map((el, i) => {
+            if(Utility.checkValidityOfField(el.validation)){
+                return {
+                    ...el, 
+                    touched: false,
+                    errorMessage: []
+                }
+            }else{
+                return {
+                    ...el, 
+                    touched: true,
+                    errorMessage: ["Fill the field"]
+                }
+            }
+        })
+    }
+    return {
+        ...state,
+        section2: {
+            ...state.section2,
+            inputForm: updatedSection2InputForm
+        }
+    }; 
+}
 
 const contactFormPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -242,7 +227,8 @@ const contactFormPageReducer = (state = initialState, action) => {
             return setInputFiledValueAndCheckValidation (state, action);
         case actionTypes.GET_DIRECTION_CONTACT_FORM_PAGE:
             return getDirectionContactFormPage (state, action);
-            
+        case actionTypes.SUBSCRIBE_CONTACT_FORM_PAGE:
+            return subscribeContactFormPage (state, action);
         default: 
             return state;
     }
