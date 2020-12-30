@@ -68,7 +68,8 @@ import {
 
  import {
     getContactFormPageSection1InputForm,
-    getContactFormPageSection2InputForm
+    getContactFormPageSection2InputForm,
+    getContactFormPageSection3InputForm
  } from '../../../../constants/inputForm';
 /**
  * Hooks
@@ -105,7 +106,8 @@ export const ContactFormPage = (props) => {
 
         props.initInputForm("section1InputForm", getContactFormPageSection1InputForm);
         props.initInputForm("section2InputForm", getContactFormPageSection2InputForm);
-
+        props.initInputForm("section3InputForm", getContactFormPageSection3InputForm);
+        
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -316,7 +318,7 @@ export const ContactFormPage = (props) => {
                 <EW20/>
                 <Button
                     className="call-to-action-get-direction-white"
-                    text="Subscribe."
+                    text="subscribe."
                     onClick={() => onClickHandler('section2InputForm')}
                     // disabled={props.twoColumnsPage.disableLoadMoreButton}
                 />
@@ -326,11 +328,42 @@ export const ContactFormPage = (props) => {
     }
 
     const renderContactFormPageSection3DataContent = () => {
-        return(
-            <div className="contact-form-page-section-3-data">
-
+        if(props.contactFormPage.section2.inputForm.inputsArray){
+            return(
+                <div className="contact-form-page-section-3-data">{props.contactFormPage.section3.inputForm.inputsArray.map((el, i)=>{
+                    return(
+                        <div 
+                            key={i} 
+                            className="contact-form-page-section-3-form"
+                        >
+                            <Input
+                                className="contact-form-page-section-3-input"
+                                invalidClassName="invalid-contact-form-page-section-3-input"
+                                onChange={(event) => inputChangeHandler(event, el.id, 'section3','inputForm')}
+                                elementType={el.elementType}
+                                rows={el.elementConfig.rows}
+                                validField={el.validField}
+                                touched={el.touched}
+                                erroeMessages={el.errorMessage}
+                                inputID={el.inputID}
+                                textareaID={el.textareaID}
+                                placeholder={el.elementConfig.placeholder}
+                                options={el.elementConfig.options}
+                            />
+                            <EH20/>
+                        </div>
+                    )
+                })}
+                <EH30/>
+                <Button
+                    className="call-to-action-get-direction-black"
+                    text="submit."
+                    onClick={() => onClickHandler('section3InputForm')}
+                    // disabled={props.twoColumnsPage.disableLoadMoreButton}
+                />
             </div>
-        )
+            )
+        }
     } 
 
     /**

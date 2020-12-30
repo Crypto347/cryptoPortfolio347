@@ -128,3 +128,35 @@ export const getContactFormPageSection2InputForm = {
         }
     ]
 }
+
+export const getContactFormPageSection3InputForm = {
+    formIsValid: false,
+    inputsArray: [
+        { 
+            id: 5,
+            inputFieldName: "Email",
+            elementType: 'input',
+            elementConfig: {
+                type: 'email',
+                placeholder: ' Enter your email*'
+            },
+            value: '',
+            validation: [
+                {
+                    required: true,
+                    valid: false
+                },
+                {
+                    isEmail: true,
+                    valid: false
+                }
+            ],
+            validField: false,
+            touched: false,
+            errorMessage: [],
+            type: "text",
+            inputID: 'input6',
+            controlName: "email"
+        }
+    ]
+}
