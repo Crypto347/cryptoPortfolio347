@@ -142,12 +142,12 @@ export const Swiper = (props) => {
             
             if(props.swiperData.rerender) {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
-                console.log("con1", props.component)
+                // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
-                console.log("con2", props.component)
+                // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
             slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
@@ -161,13 +161,13 @@ export const Swiper = (props) => {
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
             prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
-            console.log("con3", props.component)
+            // console.log("con3", props.component)
         }
         
         return () => {
            
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
-            console.log("con4", props.component)
+            // console.log("con4", props.component)
             if(swiperContent){
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
                 document.removeEventListener('mouseup', handleMouseUp)
@@ -197,7 +197,7 @@ export const Swiper = (props) => {
             // })
            
             props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, 0.45, props.swiperData.rerender);
-            console.log("con5", props.component)
+            // console.log("con5", props.component)
         }
     }, [props.swiperData.transition])
 
@@ -273,7 +273,7 @@ export const Swiper = (props) => {
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
             if(['bigSlider', 'smallSlider'].includes(props.component) && direction === 0){
-                console.log(props.component)
+                // console.log(props.component)
                 openPhotoViewer(props.component, props.swiperData.activeIndex);
             }else if(direction > 0){
                 prevSlide(_slides);
@@ -327,7 +327,7 @@ export const Swiper = (props) => {
         //     transition: 0
         // })
         props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
-        console.log("con6", props.component)
+        // console.log("con6", props.component)
         setRelode(!relode)
     }
 
@@ -368,7 +368,7 @@ export const Swiper = (props) => {
             if(activeIndex === 3){
                 _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]];
             }
-            console.log("7")
+            // console.log("7")
             setState({
                 ...state,
                 _slides,
@@ -402,7 +402,7 @@ export const Swiper = (props) => {
         let translate = 0;
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
-        console.log("con8", props.component)
+        // console.log("con8", props.component)
     }
 
     const nextSlide = (_slides, translateVal) => {
@@ -416,7 +416,7 @@ export const Swiper = (props) => {
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
-        console.log("con9", props.component)
+        // console.log("con9", props.component)
     }
 
     const openPhotoViewer = (component, activeIndex) => {
@@ -912,7 +912,7 @@ export const Swiper = (props) => {
             <div className={renderClassName(`${props.component}SwiperDots`)} >
                 {props.swiperData.slides.map((el, i) => {
                     let active = props.swiperData.activeIndex + 1 === el.id ? "on" : "off";
-                    console.log(props.swiperData.activeIndex)
+                    // console.log(props.swiperData.activeIndex)
                     return(
                         <div 
                             key={i}
