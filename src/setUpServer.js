@@ -18736,8 +18736,6 @@ app.get('/api/team-page/section2', (req, res) => {
     res.json(teamPageSection2);
 });
 
-
-
 app.get('/api/team-page/section3', (req, res) => {
     const teamPageSection3 = [
         {
@@ -18834,6 +18832,23 @@ app.get('/api/team-page/section3', (req, res) => {
     res.json(teamPageSection3);
 });
 
+app.post('/api/get-direction-contact-form-page', (req, res) => {
+    let info = req.body.info;
+
+    res.json(info);
+});
+
+app.post('/api/subscribe-contact-form-page', (req, res) => {
+    let info = req.body.info;
+
+    res.json(info);
+});
+
+app.post('/api/submit-contact-form-page', (req, res) => {
+    let info = req.body.info;
+
+    res.json(info);
+});
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

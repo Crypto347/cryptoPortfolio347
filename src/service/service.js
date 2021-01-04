@@ -1659,6 +1659,87 @@ export function fetchTeamPageSection3Data() {
     };
 }
 
+export function fetchGetDirectionContactFormPage(info) {
+    return dispatch => {
+        dispatch(Actions.fetchGetDirectionContactFormPageBegin());
+        return fetch(`http://localhost:3005/api/get-direction-contact-form-page`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchGetDirectionContactFormPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchGetDirectionContactFormPageFailur(error))
+            });
+    };
+}
+
+export function fetchSubscribeContactFormPage(info) {
+    return dispatch => {
+        dispatch(Actions.fetchSubscribeContactFormPageBegin());
+        return fetch(`http://localhost:3005/api/subscribe-contact-form-page`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchSubscribeContactFormPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchSubscribeContactFormPageFailur(error))
+            });
+    };
+}
+
+export function fetchSubmitContactFormPage(info) {
+    return dispatch => {
+        dispatch(Actions.fetchSubmitContactFormPageBegin());
+        return fetch(`http://localhost:3005/api/submit-contact-form-page`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchSubmitContactFormPageSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchSubmitContactFormPageFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

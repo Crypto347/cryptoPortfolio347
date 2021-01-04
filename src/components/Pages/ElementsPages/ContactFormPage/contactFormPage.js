@@ -15,6 +15,8 @@ import {
     connect
 } from 'react-redux';
 
+import uuid from "uuid";
+
 /**
  * Styles
  */
@@ -190,9 +192,21 @@ export const ContactFormPage = (props) => {
     }
 
     const onClickHandler = (opt) => {
+        let info;
         switch(opt){
             case 'section1InputForm':
                 props.getDirectionContactFormPage();
+
+                info = {
+                    id: uuid(),
+                    fullName: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "fullName").value}`,
+                    company: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "company").value}`,
+                    email: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
+                    // date: Utility.getCurrentDateAndTime(),
+                    phone: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
+                }
+
+                props.fetchGetDirectionContactFormPage(info);
 
                 if(props.contactFormPage.section1.inputForm.formIsValid){
                     clearInputValue("input1");
@@ -211,6 +225,14 @@ export const ContactFormPage = (props) => {
             case 'section2InputForm':
                 props.subscribeContactFormPage();
 
+                info = {
+                    id: uuid(),
+                    email: `${props.contactFormPage.section2.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
+                    // date: Utility.getCurrentDateAndTime(),t
+                }
+               
+                props.fetchSubscribeContactFormPage(info);
+
                 if(props.contactFormPage.section2.inputForm.formIsValid){
                     clearInputValue("input5");
                 }
@@ -222,10 +244,27 @@ export const ContactFormPage = (props) => {
                 })
                 break;
             case 'section3InputForm':
+                props.submitContactFormPage();
 
+                info = {
+                    id: uuid(),
+                    email: `${props.contactFormPage.section3.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
+                    // date: Utility.getCurrentDateAndTime(),t
+                }
+
+                props.fetchSubmitContactFormPage(info);
+
+                if(props.contactFormPage.section3.inputForm.formIsValid){
+                    clearInputValue("input6");
+                }
+
+                props.contactFormPage.section3.inputForm.inputsArray.map(el => {
+                    if(!el.validField){
+                        clearInputValue(el.inputID);
+                    }
+                })
                 break;
         }
-      
     }
 
     const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
@@ -405,7 +444,11 @@ export default connect(
             initInputForm: bindActionCreators(Actions.initInputForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
             getDirectionContactFormPage: bindActionCreators(Actions.getDirectionContactFormPage, dispatch),
-            subscribeContactFormPage:bindActionCreators(Actions.subscribeContactFormPage, dispatch),
+            subscribeContactFormPage: bindActionCreators(Actions.subscribeContactFormPage, dispatch),
+            submitContactFormPage: bindActionCreators(Actions.submitContactFormPage, dispatch),
+            fetchGetDirectionContactFormPage: bindActionCreators(Services.fetchGetDirectionContactFormPage, dispatch),
+            fetchSubscribeContactFormPage: bindActionCreators(Services.fetchSubscribeContactFormPage, dispatch),
+            fetchSubmitContactFormPage: bindActionCreators(Services.fetchSubmitContactFormPage, dispatch),
         };
     }
 )(ContactFormPage);
