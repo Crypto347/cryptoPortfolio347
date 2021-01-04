@@ -387,7 +387,7 @@ const fetchSubscribeContactFormPageFailur = (state, action) => {
 const fetchSubmitContactFormPageBegin = (state, action) => {
     let updateSection3Data = {
         ...state.section3,
-        subscribeResponse: {
+        submitResponse: {
             ...state.section3.submitResponse,
             loading: true,
             error: null
@@ -403,7 +403,7 @@ const fetchSubmitContactFormPageBegin = (state, action) => {
 const fetchSubmitContactFormPageSuccess = (state, action) => {
     let updateSection3Data = {
         ...state.section3,
-        subscribeResponse: {
+        submitResponse: {
             ...state.section3.submitResponse,
             loading: false,
             item: action.obj
@@ -419,7 +419,7 @@ const fetchSubmitContactFormPageSuccess = (state, action) => {
 const fetchSubmitContactFormPageFailur = (state, action) => {
     let updateSection3Data = {
         ...state.section3,
-        subscribeResponse: {
+        submitResponse: {
             ...state.section3.submitResponse,
             loading: false,
             error: action.err,

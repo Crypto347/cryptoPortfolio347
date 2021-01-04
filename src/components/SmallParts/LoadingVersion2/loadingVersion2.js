@@ -22,9 +22,30 @@ export const LoadingVersion2 = (props) => {
 
     return(
         <div className="loading-version-2">
-            <div className="bounce1" style={{background: `${props.color}`}}></div>
-            <div className="bounce2" style={{background: `${props.color}`}}></div>
-            <div className="bounce3" style={{background: `${props.color}`}}></div>
+            <div 
+                className="bounce1"
+                style={{
+                    background: `${props.color}`,
+                    width: `${props.width}px`,
+                    height: `${props.height}px`
+                }}
+            />
+            <div 
+                className="bounce2"
+                style={{
+                    background: `${props.color}`,
+                    width: `${props.width}px`,
+                    height: `${props.height}px`
+                }}
+            />
+            <div 
+                className="bounce3" 
+                style={{
+                    background: `${props.color}`,
+                    width: `${props.width}px`,
+                    height: `${props.height}px`
+                }}
+            />
         </div>
     );
 }

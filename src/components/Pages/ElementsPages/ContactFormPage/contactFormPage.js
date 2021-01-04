@@ -27,7 +27,7 @@ import './contactFormPage.scss';
  * Components
  */
 
-import Loading from '../../../SmallParts/Loading/loading';
+import LoadingVersion2 from '../../../SmallParts/LoadingVersion2/loadingVersion2';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import Button from '../../../../library/Button/button';
 import Input from '../../../../library/Input/input';
@@ -281,6 +281,102 @@ export const ContactFormPage = (props) => {
         document.getElementById(fieldId).value = '';
     }
 
+    const loadingOnButtonClick = (opt) => {
+        if(opt === "getDirection"){
+            if(props.contactFormPage.section1.getDirectionResponse.loading && !props.contactFormPage.section1.getDirectionResponse.error){
+                return(
+                    <div 
+                        className="contact-form-page-loading-error" 
+                        // style={{height: `${size.height}px`}}
+                    >
+                        <LoadingVersion2 
+                            color="black"
+                            width={14}
+                            height={14}
+                        />
+                    </div>
+                )
+            }
+            if(!props.contactFormPage.section1.getDirectionResponse.loading && !props.contactFormPage.section1.getDirectionResponse.error){
+                // return(
+                
+                // )
+            }
+            if(!props.contactFormPage.section1.getDirectionResponse.loading && props.contactFormPage.section1.getDirectionResponse.error){
+                return(
+                    <div 
+                        className="contact-form-page-loading-error" 
+                        // style={{height: `${size.height}px`}}
+                    >
+                        <H15 className="h19-nobel-lora">{`${props.contactFormPage.section1.getDirectionResponse.error}`}</H15>
+                    </div>
+                )
+            }
+        }
+        if(opt === "subscribe"){
+            if(props.contactFormPage.section2.subscribeResponse.loading && !props.contactFormPage.section2.subscribeResponse.error){
+                return(
+                    <div 
+                        className="contact-form-page-loading-error" 
+                        // style={{height: `${size.height}px`}}
+                    >
+                        <LoadingVersion2 
+                            color="white"
+                            width={14}
+                            height={14}
+                        />
+                    </div>
+                )
+            }
+            if(!props.contactFormPage.section2.subscribeResponse.loading && !props.contactFormPage.section2.subscribeResponse.error){
+                // return(
+                
+                // )
+            }
+            if(!props.contactFormPage.section2.subscribeResponse.loading && props.contactFormPage.section2.subscribeResponse.error){
+                return(
+                    <div 
+                        className="contact-form-page-loading-error" 
+                        // style={{height: `${size.height}px`}}
+                    >
+                        <H15 className="h19-nobel-lora">{`${props.contactFormPage.section2.subscribeResponse.error}`}</H15>
+                    </div>
+                )
+            }
+        }
+        if(opt === "submit"){
+            if(props.contactFormPage.section3.submitResponse.loading && !props.contactFormPage.section3.submitResponse.error){
+                return(
+                    <div 
+                        className="contact-form-page-loading-error" 
+                        // style={{height: `${size.height}px`}}
+                    >
+                        <LoadingVersion2 
+                            color="black"
+                            width={14}
+                            height={14}
+                        />
+                    </div>
+                )
+            }
+            if(!props.contactFormPage.section3.submitResponse.loading && !props.contactFormPage.section3.submitResponse.error){
+                // return(
+                
+                // )
+            }
+            if(!props.contactFormPage.section3.submitResponse.loading && props.contactFormPage.section3.submitResponse.error){
+                return(
+                    <div 
+                        className="contact-form-page-loading-error" 
+                        // style={{height: `${size.height}px`}}
+                    >
+                        <H15 className="h19-nobel-lora">{`${props.contactFormPage.section3.submitResponse.error}`}</H15>
+                    </div>
+                )
+            }
+        }
+    } 
+
     const renderContactFormPageSection1DataContent = () => {
         if(props.contactFormPage.section1.inputForm.inputsArray){
             return(
@@ -322,6 +418,8 @@ export const ContactFormPage = (props) => {
                         onClick={() => onClickHandler('section1InputForm')}
                         // disabled={props.twoColumnsPage.disableLoadMoreButton}
                     />
+                    <EH20/>
+                    {loadingOnButtonClick("getDirection")}
                 </div>
             )
         }
@@ -361,6 +459,7 @@ export const ContactFormPage = (props) => {
                     onClick={() => onClickHandler('section2InputForm')}
                     // disabled={props.twoColumnsPage.disableLoadMoreButton}
                 />
+                {loadingOnButtonClick("subscribe")}
             </div>
             )
         }
@@ -400,6 +499,8 @@ export const ContactFormPage = (props) => {
                     onClick={() => onClickHandler('section3InputForm')}
                     // disabled={props.twoColumnsPage.disableLoadMoreButton}
                 />
+                <EH20/>
+                {loadingOnButtonClick("submit")}
             </div>
             )
         }

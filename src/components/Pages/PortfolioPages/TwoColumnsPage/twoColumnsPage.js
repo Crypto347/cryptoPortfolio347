@@ -1523,7 +1523,11 @@ export const TwoColumnsPage = (props) => {
                 <div 
                     className="two-columns-page-button-load-more-loading-error"
                 >
-                    <LoadingVersion2 color="rgb(37, 37, 37)"/>
+                    <LoadingVersion2 
+                        color="rgb(37, 37, 37)"
+                        width={18}
+                        height={18}
+                    />
                 </div>
             )
         }
