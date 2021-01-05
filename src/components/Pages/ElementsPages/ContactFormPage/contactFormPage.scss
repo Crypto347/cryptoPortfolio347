@@ -1,11 +1,5 @@
 .contact-form-page {
     width: calc(100% + 18px);
-    .contact-form-page-loading-error {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .contact-form-page-wrapper {
         // display: flex;
         // flex-direction: column;
@@ -34,13 +28,15 @@
             }
         }
         .contact-form-page-section-2-data {
-            display: flex;
-            flex-direction: row;
             padding: 110px 220px 110px 220px;
             background: black;
+            .contact-form-page-section-2-form-wrapper {
+                display: flex;
+                flex-direction: row;
                 .contact-form-page-section-2-form {
                     width: 100%;
                 }
+            }    
         }
         .contact-form-page-section-3-data {
             display: flex;
@@ -53,6 +49,15 @@
             }
         }
     }
+}
+
+.contact-form-page-loading-error {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    text-align: center;
 }
 
 @media only screen and (max-width: 1120px){
@@ -109,22 +114,16 @@
             }
             .contact-form-page-section-1-data {
                 padding: 110px 40px 110px 40px;
-                .contact-form-page-section-1-data-inputs-wrapper {
-                    .contact-form-page-section-1-form {
-                        width: calc(100% - 20px);
-                    }
-                }
             }
             .contact-form-page-section-2-data {
-                flex-direction: column;
-                align-items: center;
                 padding: 110px 40px 110px 40px;
-                    .contact-form-page-section-2-form {
-                        width: 100%;
-                    }
+                .contact-form-page-section-2-form-wrapper {
+                    // flex-direction: column;
+                    // align-items: center;
+                }
             }
             .contact-form-page-section-3-data {
-                 padding: 110px 40px 110px 40px;
+                padding: 110px 40px 110px 40px;
             }
         }
     }

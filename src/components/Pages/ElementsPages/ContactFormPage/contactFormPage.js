@@ -428,37 +428,39 @@ export const ContactFormPage = (props) => {
     const renderContactFormPageSection2DataContent = () => {
         if(props.contactFormPage.section2.inputForm.inputsArray){
             return(
-                <div className="contact-form-page-section-2-data">{props.contactFormPage.section2.inputForm.inputsArray.map((el, i)=>{
-                    return(
-                        <div 
-                            key={i} 
-                            className="contact-form-page-section-2-form"
-                        >
-                            <Input
-                                className="contact-form-page-section-2-input"
-                                invalidClassName="invalid-contact-form-page-section-2-input"
-                                onChange={(event) => inputChangeHandler(event, el.id, 'section2','inputForm')}
-                                elementType={el.elementType}
-                                rows={el.elementConfig.rows}
-                                validField={el.validField}
-                                touched={el.touched}
-                                erroeMessages={el.errorMessage}
-                                inputID={el.inputID}
-                                textareaID={el.textareaID}
-                                placeholder={el.elementConfig.placeholder}
-                                options={el.elementConfig.options}
-                            />
-                            <EH20/>
-                        </div>
-                    )
-                })}
-                <EW20/>
-                <Button
-                    className="call-to-action-get-direction-white"
-                    text="subscribe."
-                    onClick={() => onClickHandler('section2InputForm')}
-                    // disabled={props.twoColumnsPage.disableLoadMoreButton}
-                />
+                <div className="contact-form-page-section-2-data">
+                    <div className="contact-form-page-section-2-form-wrapper">{props.contactFormPage.section2.inputForm.inputsArray.map((el, i)=>{
+                        return(
+                            <div 
+                                key={i} 
+                                className="contact-form-page-section-2-form"
+                            >
+                                <Input
+                                    className="contact-form-page-section-2-input"
+                                    invalidClassName="invalid-contact-form-page-section-2-input"
+                                    onChange={(event) => inputChangeHandler(event, el.id, 'section2','inputForm')}
+                                    elementType={el.elementType}
+                                    rows={el.elementConfig.rows}
+                                    validField={el.validField}
+                                    touched={el.touched}
+                                    erroeMessages={el.errorMessage}
+                                    inputID={el.inputID}
+                                    textareaID={el.textareaID}
+                                    placeholder={el.elementConfig.placeholder}
+                                    options={el.elementConfig.options}
+                                />
+                                <EH20/>
+                            </div>
+                        )
+                    })}
+                    <EW20/>
+                    <Button
+                        className="call-to-action-get-direction-white"
+                        text="subscribe."
+                        onClick={() => onClickHandler('section2InputForm')}
+                        // disabled={props.twoColumnsPage.disableLoadMoreButton}
+                    />
+                </div>
                 {loadingOnButtonClick("subscribe")}
             </div>
             )
