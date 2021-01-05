@@ -1689,7 +1689,7 @@ export function fetchGetDirectionContactFormPage(info) {
 export function fetchSubscribeContactFormPage(info) {
     return dispatch => {
         dispatch(Actions.fetchSubscribeContactFormPageBegin());
-        return fetch(`http://localhost:3005/api/subscribe-contactform-page`, {
+        return fetch(`http://localhost:3005/api/subscribe-contact-form-page`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
