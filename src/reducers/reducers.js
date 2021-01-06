@@ -44,6 +44,7 @@ import testimonialsPageReducer from './testimonialsPageReducer';
 import teamPageReducer from './teamPageReducer';
 import contactFormPageReducer from './contactFormPageReducer';
 import iconWithTextPageReducer from './iconWithTextPageReducer';
+import bannerPageReducer from './bannerPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -85,5 +86,6 @@ export default (history) => combineReducers({
     testimonialsPage: testimonialsPageReducer,
     teamPage: teamPageReducer,
     contactFormPage: contactFormPageReducer,
-    iconWithTextPage: iconWithTextPageReducer
+    iconWithTextPage: iconWithTextPageReducer,
+    bannerPage: bannerPageReducer
 });

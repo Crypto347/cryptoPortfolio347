@@ -37,3 +37,4 @@ export * from './testimonialsPageActions';
 export * from './teamPageActions';
 export * from './contactFormPageActions';
 export * from './iconWithTextPageActions';
+export * from './bannerPageActions';

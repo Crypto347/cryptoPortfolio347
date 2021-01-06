@@ -1776,6 +1776,150 @@ export function fetchIconWithTextPageSection2Data() {
     };
 }
 
+export function fetchBannerPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection2DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection3Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection3DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section3`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection3DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection3DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection4Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection4DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section4`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection4DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection4DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection5Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection5DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section5`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection5DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection5DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection6Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection6DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section6`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection6DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection6DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection7Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection7DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section7`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection7DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection7DataFailur(error))
+            });
+    };
+}
+
+export function fetchBannerPageSection8Data() {
+    return dispatch => {
+        dispatch(Actions.fetchBannerPageSection8DataBegin());
+        return fetch(`http://localhost:3005/api/banner-page/section8`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchBannerPageSection8DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchBannerPageSection8DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

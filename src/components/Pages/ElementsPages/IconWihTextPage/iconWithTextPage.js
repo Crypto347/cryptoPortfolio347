@@ -186,29 +186,25 @@ export const IconWithTextPage = (props) => {
     }
 
     const renderIconWithTextPageSection1DataContent = () => {
-        if(props.iconWithTextPage.section1Data.items.length !== 0){
-            return(
-                <div className="icon-with-text-page-section-1-data">
-                    <OurProcess
-                        component="iconWithTextPageSection1"
-                        data={props.iconWithTextPage.section1Data}
-                    />
-                </div>
-            )
-        }
+        return(
+            <div className="icon-with-text-page-section-1-data">
+                <OurProcess
+                    component="iconWithTextPageSection1"
+                    data={props.iconWithTextPage.section1Data}
+                />
+            </div>
+        )
     } 
     
     const renderIconWithTextPageSection2DataContent = () => {
-        if(props.iconWithTextPage.section2Data.items.length !== 0){
-            return(
-                <div className="icon-with-text-page-section-2-data">
-                    <OurProcess
-                        component="iconWithTextPageSection2"
-                        data={props.iconWithTextPage.section2Data}
-                    />
-                </div>
-            )
-        }
+        return(
+            <div className="icon-with-text-page-section-2-data">
+                <OurProcess
+                    component="iconWithTextPageSection2"
+                    data={props.iconWithTextPage.section2Data}
+                />
+            </div>
+        )
     }
 
     /**

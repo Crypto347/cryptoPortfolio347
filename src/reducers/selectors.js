@@ -421,3 +421,10 @@ export const getIconWithTextPageState = createSelector(
     [getIconWithTextPage],
     (x) => x
 );
+
+const getBannerPage = (state) => state.bannerPage;
+
+export const getBannerPageState = createSelector(
+    [getBannerPage],
+    (x) => x
+);

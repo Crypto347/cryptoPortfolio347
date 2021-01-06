@@ -68,6 +68,8 @@ export const findPathOfIds = (path) => {
             return [6, 61, 616];
         case 'icon-with-text':
             return [6, 61, 617];
+        case 'banner':
+            return [6, 61, 618];
     }
 
     //Second element of updatedPath array
