@@ -1740,6 +1740,42 @@ export function fetchSubmitContactFormPage(info) {
     };
 }
 
+export function fetchIconWithTextPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchIconWithTextPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/icon-with-text/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchIconWithTextPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchIconWithTextPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchIconWithTextPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchIconWithTextPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/icon-with-text/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchIconWithTextPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchIconWithTextPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

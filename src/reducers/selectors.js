@@ -415,3 +415,9 @@ export const getContactFormPageState = createSelector(
     (x) => x
 );
 
+const getIconWithTextPage = (state) => state.iconWithTextPage;
+
+export const getIconWithTextPageState = createSelector(
+    [getIconWithTextPage],
+    (x) => x
+);

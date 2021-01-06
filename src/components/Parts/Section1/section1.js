@@ -61,7 +61,10 @@ export const Section1 = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        props.fetchSection1Data();
+        if(props.section1Data.items.length === 0){
+            props.fetchSection1Data();
+        }
+ 
     }, []);
 
     const renderSection1DataItems = () => {

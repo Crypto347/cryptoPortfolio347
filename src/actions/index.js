@@ -36,3 +36,4 @@ export * from './tabsPageActions';
 export * from './testimonialsPageActions';
 export * from './teamPageActions';
 export * from './contactFormPageActions';
+export * from './iconWithTextPageActions';

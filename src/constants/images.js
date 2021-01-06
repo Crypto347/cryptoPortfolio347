@@ -47,15 +47,21 @@ export const HEADER_IMAGE_3 = HeaderImage3;
 
 import Process from '../images/ourProcess/home-2-icon-2.png';
 import Design from '../images/ourProcess/home-2-icon-4.png';
-import Sketch from '../images/ourProcess/main-home-gif-1.gif';
-import Development from '../images/ourProcess/main-home-gif-2.gif';
-import Evaluation from '../images/ourProcess/main-home-gif-3.gif';
+import Sketch from '../images/ourProcess/home-2-icon-1.png';
+import SketchGif from '../images/ourProcess/main-home-gif-1.gif';
+import Development from '../images/ourProcess/home-2-icon-3.png';
+import DevelopmentGif from '../images/ourProcess/main-home-gif-2.gif';
+import Evaluation from '../images/ourProcess/home-2-icon-5.png';
+import EvaluationGif from '../images/ourProcess/main-home-gif-3.gif';
 
 export const PROCESS = Process;
 export const DESIGN = Design;
 export const SKETCH = Sketch;
+export const SKETCH_GIF = SketchGif;
 export const DEVELOPMENT = Development;
+export const DEVELOPMENT_GIF = DevelopmentGif;
 export const EVALUATION = Evaluation;
+export const EVALUATION_GIF = EvaluationGif;
 
 /**
  * Picture Board

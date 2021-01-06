@@ -43,9 +43,11 @@ import * as Selectors from '../../../reducers/selectors';
  */
 
 import {
+    H17,
     H19,
     H25,
     H45,
+    EH10,
     EH25,
     EH40
 } from '../../UtilityComponents';
@@ -67,23 +69,26 @@ export const OurProcess = (props) => {
      */
 
     useEffect(() => {
-        // Fetch data for the component
-        
-        props.fetchOurProcessData();
     }, []);
 
     const renderImg = (opt) => {
         switch(opt){
             case 'sketch':
                 return Images.SKETCH;
+            case 'sketchGif':
+                return Images.SKETCH_GIF;
             case 'process':
                 return Images.PROCESS;
             case 'development':
                 return Images.DEVELOPMENT;
+            case 'developmentGif':
+                return Images.DEVELOPMENT_GIF;
             case 'design':
                 return Images.DESIGN;
             case 'evaluation':
                 return Images.EVALUATION;
+            case 'evaluationGif':
+                return Images.EVALUATION_GIF;
             default: 
                 return "";
         }
@@ -91,12 +96,21 @@ export const OurProcess = (props) => {
 
     const renderOurProcessItems = () => {
         return(
-            <div className="our-process-items">{props.ourProcessDate.items.map((el,i) => {
+            <div className="our-process-items">{props.data.items.map((el,i) => {
                 return(
-                    <div key={i}>
+                    <div 
+                        key={i}
+                        className="our-process-item"
+                    >
                         <img src={renderImg(el.img)}/>
                         <EH25/>
                         <H25 className="h25-black-teko">{el.header}</H25>
+                        {props.component === "iconWithTextPageSection2" ? 
+                        <div className="our-process-item-text">
+                            <EH10/>
+                            <H17 className="h17-nobel-lustria">{el.text}</H17>
+                        </div>
+                        : null}
                     </div>
                 )
             })}</div>
@@ -104,24 +118,24 @@ export const OurProcess = (props) => {
     }
 
     const renderOurProcess = () => {
-        if(props.ourProcessDate.loading && !props.ourProcessDate.error){
+        if(props.data.loading && !props.data.error){
             return(
                 <div className="our-process-loading-error">
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.ourProcessDate.loading && !props.ourProcessDate.error){
+        if(!props.data.loading && !props.data.error){
             return(
                 <>
                     {renderOurProcessItems()}
                 </>
             )
         }
-        if(!props.ourProcessDate.loading && props.ourProcessDate.error){
+        if(!props.data.loading && props.data.error){
             return(
                 <div className="picture-board-loading-error">
-                    <H19 className="h19-nobel-lora">{`${props.ourProcessDate.error}`}</H19>
+                    <H19 className="h19-nobel-lora">{`${props.data.error}`}</H19>
                 </div>
             )
         }
@@ -133,7 +147,9 @@ export const OurProcess = (props) => {
 
     return(
         <div className="our-process">
-            <H45 className="h45-black-lustria">Our Process</H45>
+            {props.header ? 
+            <H45 className="h45-black-lustria">{props.header}</H45>
+            : null}
             <EH40/>
             {renderOurProcess()}
         </div>
@@ -143,12 +159,14 @@ export const OurProcess = (props) => {
 export default connect(
     (state) => {
         return {
-            ourProcessDate: Selectors.getOurProcessDataState(state)
+            // ourProcessDate: Selectors.getOurProcessDataState(state)
         };
     },
     (dispatch) => {
         return {
-            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch)
+            // fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
+            // fetchIconWithTextPageSection1Data: bindActionCreators(Services.fetchIconWithTextPageSection1Data, dispatch),
+            // fetchIconWithTextPageSection2Data: bindActionCreators(Services.fetchIconWithTextPageSection2Data, dispatch),
         };
     }
 )(OurProcess);

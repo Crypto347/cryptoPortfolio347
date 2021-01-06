@@ -63,7 +63,14 @@ export const Section2 = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        props.fetchPictureBoard();
+        if(props.pictureBoard.items.length === 0){
+            props.fetchPictureBoard();
+        }
+
+        if(props.ourProcessDate.items.length === 0){
+            props.fetchOurProcessData();
+        }
+
     }, []);
 
     const renderClassName = (pictureBoardLoading, pictureBoardError, ourProcessLoading, ourProcessError) => {
@@ -115,7 +122,11 @@ export const Section2 = (props) => {
                 <EH80/>
                 <PictureBoard/>
                 <EH80/>
-                <OurProcess/>
+                <OurProcess
+                    component="homeSection2"
+                    header="Our Process"
+                    data={props.ourProcessDate}
+                />
             </div>
         </div>
     );
@@ -130,7 +141,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch)
+            fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
+            fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
         };
     }
 )(Section2);

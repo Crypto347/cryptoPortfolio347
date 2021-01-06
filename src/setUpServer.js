@@ -903,7 +903,7 @@ app.get('/api/section2/ourProcess', (req, res) => {
         {
             id: 1,
             header: "Sketch",
-            img: "sketch"
+            img: "sketchGif"
         },
         {
             id: 2,
@@ -913,7 +913,7 @@ app.get('/api/section2/ourProcess', (req, res) => {
         {
             id: 3,
             header: "Development",
-            img: "development"
+            img: "developmentGif"
         },
         {
             id: 4,
@@ -923,7 +923,7 @@ app.get('/api/section2/ourProcess', (req, res) => {
         {
             id: 5,
             header: "Evaluation",
-            img: "evaluation"
+            img: "evaluationGif"
         },
     ]
     res.json(sec2);
@@ -18849,6 +18849,74 @@ app.post('/api/submit-contact-form-page', (req, res) => {
 
     res.json(info);
 });
+
+app.get('/api/icon-with-text/section1', (req, res) => {
+    const sec1 = [
+        {
+            id: 1,
+            header: "Sketch",
+            img: "sketchGif"
+        },
+        {
+            id: 2,
+            header: "Process",
+            img: "process"
+        },
+        {
+            id: 3,
+            header: "Development",
+            img: "developmentGif"
+        },
+        {
+            id: 4,
+            header: "Design",
+            img: "design"
+        },
+        {
+            id: 5,
+            header: "Evaluation",
+            img: "evaluationGif"
+        },
+    ]
+    res.json(sec1);
+});
+
+app.get('/api/icon-with-text/section2', (req, res) => {
+    const sec2 = [
+        {
+            id: 1,
+            header: "Sketch",
+            img: "sketch",
+            text: "Lorem ipsum dolor sit amet, nam propriae ei"
+        },
+        {
+            id: 2,
+            header: "Process",
+            img: "process",
+            text: "Lorem ipsum dolor sit amet, nam propriae ei"
+        },
+        {
+            id: 3,
+            header: "Development",
+            img: "development",
+            text: "Lorem ipsum dolor sit amet, nam propriae ei"
+        },
+        {
+            id: 4,
+            header: "Design",
+            img: "design",
+            text: "Lorem ipsum dolor sit amet, nam propriae ei"
+        },
+        {
+            id: 5,
+            header: "Evaluation",
+            img: "evaluation",
+            text: "Lorem ipsum dolor sit amet, nam propriae ei"
+        },
+    ]
+    res.json(sec2);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
