@@ -67,6 +67,7 @@ import CallToActionPage from './Pages/ElementsPages/CallToActionPage/callToActio
 import TestimonialsPage from './Pages/ElementsPages/TestimonialsPage/testimonialsPage';
 import TeamPage from './Pages/ElementsPages/TeamPage/teamPage';
 import ContactFormPage from './Pages/ElementsPages/ContactFormPage/contactFormPage';
+import IconWithTextPage from './Pages/ElementsPages/IconWihTextPage/iconWithTextPage';
 
 /**
  * Actions
@@ -149,6 +150,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/icon-with-text"}
+                    component={IconWithTextPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/contact-form"}

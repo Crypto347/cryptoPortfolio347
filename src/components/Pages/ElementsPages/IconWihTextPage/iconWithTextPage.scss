@@ -1,6 +1,8 @@
 .contact-form-page {
     width: calc(100% + 18px);
     .contact-form-page-wrapper {
+        // display: flex;
+        // flex-direction: column;
         .contact-form-page-header {
             padding: 90px 130px 90px 130px;
         }
@@ -19,7 +21,10 @@
                 display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-                .contact-form-page-section-1-form {}
+                .contact-form-page-section-1-form {
+                    // width: calc(100% - 20px);
+                    // border: 2px solid red;
+                }
             }
         }
         .contact-form-page-section-2-data {
@@ -122,3 +127,4 @@
         }
     }
 }
+

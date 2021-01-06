@@ -21,7 +21,7 @@ import uuid from "uuid";
  * Styles
  */
 
-import './contactFormPage.scss';
+import './iconWithTextPage.scss';
 
 /**
  * Components
@@ -82,10 +82,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * ContactFormPage component definition and export
+ * IconWithTextPage component definition and export
  */
 
-export const ContactFormPage = (props) => {
+export const IconWithTextPage = (props) => {
 
     /**
      * State
@@ -103,6 +103,7 @@ export const ContactFormPage = (props) => {
 
         props.setUnmountComponentValues(false, "");
         
+
         // Init imput forms
 
         props.initInputForm("section1InputForm", getContactFormPageSection1InputForm);
@@ -194,15 +195,7 @@ export const ContactFormPage = (props) => {
         let info;
         switch(opt){
             case 'section1InputForm':
-                /**
-                 * Check if the input form is valid, if it is valid 
-                 * then initialize input fields (state), if it is not valid
-                 * then show needed error messages
-                 */
-            
                 props.getDirectionContactFormPage();
-
-                // Collect all the information you neet to post
 
                 info = {
                     id: uuid(),
@@ -213,11 +206,7 @@ export const ContactFormPage = (props) => {
                     phone: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
                 }
 
-                // Post the information
-
                 props.fetchGetDirectionContactFormPage(info);
-
-                // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section1.inputForm.formIsValid){
                     clearInputValue("input1");
@@ -225,8 +214,6 @@ export const ContactFormPage = (props) => {
                     clearInputValue("input3");
                     clearInputValue("input4");
                 }
-
-                // Clear input field (visually) if the entered value does not match to the rules of that field
 
                 props.contactFormPage.section1.inputForm.inputsArray.map(el => {
                     if(!el.validField){
@@ -236,15 +223,7 @@ export const ContactFormPage = (props) => {
 
                 break;
             case 'section2InputForm':
-                /**
-                 * Check if the input form is valid, if it is valid 
-                 * then initialize input fields (state), if it is not valid
-                 * then show needed error messages
-                 */
-
                 props.subscribeContactFormPage();
-
-                // Collect all the information you neet to post
 
                 info = {
                     id: uuid(),
@@ -252,17 +231,11 @@ export const ContactFormPage = (props) => {
                     // date: Utility.getCurrentDateAndTime(),t
                 }
                
-                // Post the information
-
                 props.fetchSubscribeContactFormPage(info);
-
-                // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section2.inputForm.formIsValid){
                     clearInputValue("input5");
                 }
-
-                // Clear input field (visually) if the entered value does not match to the rules of that field
 
                 props.contactFormPage.section2.inputForm.inputsArray.map(el => {
                     if(!el.validField){
@@ -271,15 +244,7 @@ export const ContactFormPage = (props) => {
                 })
                 break;
             case 'section3InputForm':
-                /**
-                 * Check if the input form is valid, if it is valid 
-                 * then initialize input fields (state), if it is not valid
-                 * then show needed error messages
-                 */
-
                 props.submitContactFormPage();
-
-                // Collect all the information you neet to post
 
                 info = {
                     id: uuid(),
@@ -287,17 +252,11 @@ export const ContactFormPage = (props) => {
                     // date: Utility.getCurrentDateAndTime(),t
                 }
 
-                // Post the information
-
                 props.fetchSubmitContactFormPage(info);
-
-                // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section3.inputForm.formIsValid){
                     clearInputValue("input6");
                 }
-
-                // Clear input field (visually) if the entered value does not match to the rules of that field
 
                 props.contactFormPage.section3.inputForm.inputsArray.map(el => {
                     if(!el.validField){
@@ -457,6 +416,7 @@ export const ContactFormPage = (props) => {
                         className="call-to-action-get-direction-black"
                         text="get direction."
                         onClick={() => onClickHandler('section1InputForm')}
+                        // disabled={props.twoColumnsPage.disableLoadMoreButton}
                     />
                     <EH20/>
                     {loadingOnButtonClick("getDirection")}
@@ -498,6 +458,7 @@ export const ContactFormPage = (props) => {
                         className="call-to-action-get-direction-white"
                         text="subscribe."
                         onClick={() => onClickHandler('section2InputForm')}
+                        // disabled={props.twoColumnsPage.disableLoadMoreButton}
                     />
                 </div>
                 {loadingOnButtonClick("subscribe")}
@@ -538,6 +499,7 @@ export const ContactFormPage = (props) => {
                     className="call-to-action-get-direction-black"
                     text="submit."
                     onClick={() => onClickHandler('section3InputForm')}
+                    // disabled={props.twoColumnsPage.disableLoadMoreButton}
                 />
                 <EH20/>
                 {loadingOnButtonClick("submit")}
@@ -592,5 +554,5 @@ export default connect(
             fetchSubmitContactFormPage: bindActionCreators(Services.fetchSubmitContactFormPage, dispatch),
         };
     }
-)(ContactFormPage);
+)(IconWithTextPage);
  
