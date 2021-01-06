@@ -156,18 +156,5 @@ export const OurProcess = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // ourProcessDate: Selectors.getOurProcessDataState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
-            // fetchIconWithTextPageSection1Data: bindActionCreators(Services.fetchIconWithTextPageSection1Data, dispatch),
-            // fetchIconWithTextPageSection2Data: bindActionCreators(Services.fetchIconWithTextPageSection2Data, dispatch),
-        };
-    }
-)(OurProcess);
+export default OurProcess;
  
