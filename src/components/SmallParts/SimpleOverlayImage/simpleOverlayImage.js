@@ -132,6 +132,11 @@ export const SimpleOverlayImage = (props) => {
         localStorage.setItem("page", props.page);
 
         if(e.button !== 1){
+
+            // If template page do nothing on left mouse click 
+
+            if(['bannerPageSection5'].includes(props.page)) return;
+
             /**
              * Add fading effect on the unmounted component and remember 
              * information of the unmounted component on left mouse click 
@@ -139,9 +144,18 @@ export const SimpleOverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            // Remember information of the unmounted component on scroll wheel click
+            
+            if(['bannerPageSection5'].includes(props.page)){
+                // Open the template page on scroll wheel click 
+                
+                props.setUnmountComponentValues(false, props.currentPagePathName);
+            }else{
+                // Remember information of the unmounted component on scroll wheel click
+            
+                props.setUnmountComponentValues(false, path);
+            };
 
-            props.setUnmountComponentValues(false, path);
+         
         }
         // Fire up unmountComponent epic
 

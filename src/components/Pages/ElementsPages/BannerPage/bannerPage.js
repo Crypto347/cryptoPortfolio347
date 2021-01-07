@@ -28,6 +28,7 @@ import './bannerPage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
+import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -394,19 +395,26 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section5Data.loading && !props.bannerPage.section5Data.error){
             return(
                 <div className="banner-page-section-5-data">{props.bannerPage.section5Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version5"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-5-item"
+                        >
+                            <SimpleOverlayImage
+                                page="bannerPageSection5"
+                                imageKey={el.coverImage.key}
+                                alt={el.coverImage.alt}
+                                header={el.header}
+                                isHover={el.coverImage.isHover}
+                                path={el.path}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                id={el.id}
+                                currentPagePathName="banner"
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )
