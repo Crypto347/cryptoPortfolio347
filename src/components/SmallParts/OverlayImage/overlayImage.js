@@ -93,6 +93,7 @@ export const OverlayImage = (props) => {
             case 'twoColumnsPage':
             case 'threeColumnsPage':
             case 'fourColumnsPage':
+            case 'bannerPageSection4':
                 return 40;
         }
     }
@@ -311,6 +312,11 @@ export const OverlayImage = (props) => {
         localStorage.setItem("page", props.page);
         
         if(e.button !== 1){
+
+            // If template page do nothing on left mouse click 
+
+            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)) return;
+
             /**
              * Add fading effect on the unmounted component and remember 
              * information of the unmounted component on left mouse click 
@@ -318,9 +324,18 @@ export const OverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            // Remember information of the unmounted component on scroll wheel click 
+            
+            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)){
+                // Open the template page on scroll wheel click 
 
-            props.setUnmountComponentValues(false, path);
+                props.setUnmountComponentValues(false, props.currentPagePathName);
+            }else{
+                // Remember information of the unmounted component on scroll wheel click 
+
+                props.setUnmountComponentValues(false, path);
+            };
+
+           
         }
         // Fire up unmountComponent epic
 
@@ -343,9 +358,16 @@ export const OverlayImage = (props) => {
 
         // Clear archive data
 
-        props.clearArchiveData();
-
+        if(!['bannerPageSection3','bannerPageSection4'].includes(props.page)) {
+            props.clearArchiveData();
+        }
+    
         if(e.button !== 1){
+
+            // If template page do nothing on left mouse click 
+
+            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)) return;
+
             /**
              * Add fading effect on the unmounted component and remember 
              * information of the unmounted component on left mouse click 
@@ -353,9 +375,17 @@ export const OverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            // Remember information of the unmounted component on scroll wheel click 
 
-            props.setUnmountComponentValues(false, path);
+            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)){
+                // Open the template page on scroll wheel click 
+                
+                props.setUnmountComponentValues(false, props.currentPagePathName);
+            }else{
+                // Remember information of the unmounted component on scroll wheel click
+            
+                props.setUnmountComponentValues(false, path);
+            };
+   
         }
         // Fire up unmountComponent epic
 
@@ -428,7 +458,7 @@ export const OverlayImage = (props) => {
                 }
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
             >
-                {props.page === "overlayWithInfoPage" ? 
+                {['overlayWithInfoPage','bannerPageSection4'].includes(props.page) ? 
                 <>
                     {renderCategories(props.obj)}
                     <EH10/>

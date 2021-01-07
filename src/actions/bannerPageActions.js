@@ -159,3 +159,12 @@ export function fetchBannerPageSection8DataFailur(err) {
         err: err
     };
 };
+
+export function setBannerPageSection4IsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_BANNER_PAGE_SECTION_4_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};
+

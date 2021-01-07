@@ -370,6 +370,31 @@ const fetchBannerPageSection8DataFailur = (state, action) => {
     };
 }
 
+const setBannerPageSection4IsHoveringCategory = (state, action) => {
+    let updatedItems = [...state.section4Data.items];
+
+    let category = {
+        ...updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .find(item => item.id === action.pathOfIds[1]), isHover: action.val};
+
+    let categoryIndex = updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .findIndex(item => item.id === action.pathOfIds[1]);
+        
+        updatedItems
+        .find(item => item.id === action.pathOfIds[0]).categories
+        .splice(categoryIndex, 1, category);
+
+    return {
+        ...state,
+        section4Data: {
+            ...state.section4Data,
+            items: updatedItems
+        }
+    };
+}
+
 const bannerPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_BANNER_PAGE_SECTION_1_DATA_BEGIN:
@@ -420,6 +445,8 @@ const bannerPageReducer = (state = initialState, action) => {
             return fetchBannerPageSection8DataSuccess (state, action);
         case actionTypes.FETCH_BANNER_PAGE_SECTION_8_DATA_FAILURE:
             return fetchBannerPageSection8DataFailur(state, action);
+        case actionTypes.SET_BANNER_PAGE_SECTION_4_IS_HOVERING_CATEGORY:
+            return setBannerPageSection4IsHoveringCategory(state, action);
         default: 
             return state;
     }

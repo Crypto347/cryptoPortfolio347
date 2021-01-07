@@ -61,7 +61,7 @@ const loadMoreArchiveDataBegin = (state, action) => {
 const loadMoreArchiveDataSuccess = (state, action) => {
     return {
         ...state,
-        loadingMoreData: true,
+        loadingMoreData: false,
         items: action.array
     };
 }

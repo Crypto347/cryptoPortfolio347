@@ -347,19 +347,23 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section4Data.loading && !props.bannerPage.section4Data.error){
             return(
                 <div className="banner-page-section-4-data">{props.bannerPage.section4Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version3"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-4-item"
+                        >
+                            <OverlayImage
+                                page="bannerPageSection4"
+                                obj={el}
+                                setIsHoveringCategory={props.setBannerPageSection4IsHoveringCategory}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                currentPagePathName="banner"
+                                // clearArchiveData={props.clearArchiveData}
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )
@@ -597,6 +601,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            setBannerPageSection4IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection4IsHoveringCategory, dispatch),
         };
     }
 )(BannerPage);
