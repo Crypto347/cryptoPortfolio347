@@ -85,6 +85,7 @@ export const OverlayImage = (props) => {
             case 'threeColumnsWidePage':
             case 'fourColumnsWidePage':
             case 'fiveColumnsWidePage':
+            case 'bannerPageSection3':
                 return 80;
             case 'overlayWithInfoPage':
             case 'galleryPage':
@@ -412,7 +413,8 @@ export const OverlayImage = (props) => {
                                             'twoColumnsWidePage',
                                             'threeColumnsWidePage',
                                             'fourColumnsWidePage',
-                                            'fiveColumnsWidePage'
+                                            'fiveColumnsWidePage',
+                                            'bannerPageSection3'
                                         ].includes(props.page) ? 50 : 40}px)`,
                     height: `${cardHeight}px`, 
                     padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage',
@@ -420,7 +422,8 @@ export const OverlayImage = (props) => {
                                                                                     'twoColumnsWidePage',
                                                                                     'threeColumnsWidePage',
                                                                                     'fourColumnsWidePage',
-                                                                                    'fiveColumnsWidePage'
+                                                                                    'fiveColumnsWidePage',
+                                                                                    'bannerPageSection3'
                                                                                 ].includes(props.page) ? 30 : 20}px`}
                 }
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}

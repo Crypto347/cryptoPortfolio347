@@ -27,7 +27,7 @@ import './bannerPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import TeamInformationCard from '../../../SmallParts/TeamInformationCard/teamInformationCard';
+import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -208,7 +208,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section1Data.loading && !props.bannerPage.section1Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -217,7 +217,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section1Data.loading && !props.bannerPage.section1Data.error){
             return(
-                <div className="team-page-section-1-data">{props.bannerPage.section1Data.items.map((el, i) => {
+                <div className="banner-page-section-1-data">{props.bannerPage.section1Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -238,7 +238,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section1Data.loading && props.bannerPage.section1Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section1Data.error}`}</H15>
@@ -251,7 +251,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section2Data.loading && !props.bannerPage.section2Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -260,7 +260,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section2Data.loading && !props.bannerPage.section2Data.error){
             return(
-                <div className="team-page-section-2-data">{props.bannerPage.section2Data.items.map((el, i) => {
+                <div className="banner-page-section-2-data">{props.bannerPage.section2Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -281,7 +281,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section2Data.loading && props.bannerPage.section2Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section2Data.error}`}</H15>
@@ -294,7 +294,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section3Data.loading && !props.bannerPage.section3Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -303,28 +303,28 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section3Data.loading && !props.bannerPage.section3Data.error){
             return(
-                <div className="team-page-section-3-data">{props.bannerPage.section3Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version3"
-                    //     />
-                    // )
-                })}
-                </div>
+                <div className="banner-page-section-3-data">{props.bannerPage.section3Data.items.map((el, i) => {
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-3-item"
+                        >
+                            <OverlayImage
+                                page="bannerPageSection3"
+                                obj={el}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                            />
+                        </div>
+                    )
+                })}</div>
             )
         }
         if(!props.bannerPage.section3Data.loading && props.bannerPage.section3Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section3Data.error}`}</H15>
@@ -337,7 +337,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section4Data.loading && !props.bannerPage.section4Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -346,7 +346,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section4Data.loading && !props.bannerPage.section4Data.error){
             return(
-                <div className="team-page-section-4-data">{props.bannerPage.section4Data.items.map((el, i) => {
+                <div className="banner-page-section-4-data">{props.bannerPage.section4Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -367,7 +367,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section4Data.loading && props.bannerPage.section4Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section4Data.error}`}</H15>
@@ -380,7 +380,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section5Data.loading && !props.bannerPage.section5Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -389,7 +389,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section5Data.loading && !props.bannerPage.section5Data.error){
             return(
-                <div className="team-page-section-5-data">{props.bannerPage.section5Data.items.map((el, i) => {
+                <div className="banner-page-section-5-data">{props.bannerPage.section5Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -410,7 +410,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section5Data.loading && props.bannerPage.section5Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section5Data.error}`}</H15>
@@ -423,7 +423,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section6Data.loading && !props.bannerPage.section6Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -432,7 +432,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section6Data.loading && !props.bannerPage.section6Data.error){
             return(
-                <div className="team-page-section-6-data">{props.bannerPage.section6Data.items.map((el, i) => {
+                <div className="banner-page-section-6-data">{props.bannerPage.section6Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -453,7 +453,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section6Data.loading && props.bannerPage.section6Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section6Data.error}`}</H15>
@@ -466,7 +466,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section7Data.loading && !props.bannerPage.section7Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -475,7 +475,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section7Data.loading && !props.bannerPage.section7Data.error){
             return(
-                <div className="team-page-section-7-data">{props.bannerPage.section7Data.items.map((el, i) => {
+                <div className="banner-page-section-7-data">{props.bannerPage.section7Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -496,7 +496,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section7Data.loading && props.bannerPage.section7Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section7Data.error}`}</H15>
@@ -509,7 +509,7 @@ export const BannerPage = (props) => {
         if(props.bannerPage.section8Data.loading && !props.bannerPage.section8Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -518,7 +518,7 @@ export const BannerPage = (props) => {
         }
         if(!props.bannerPage.section8Data.loading && !props.bannerPage.section8Data.error){
             return(
-                <div className="team-page-section-8-data">{props.bannerPage.section8Data.items.map((el, i) => {
+                <div className="banner-page-section-8-data">{props.bannerPage.section8Data.items.map((el, i) => {
                     // return(
                     //     <TeamInformationCard
                     //         photo={el.photo}
@@ -539,7 +539,7 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section8Data.loading && props.bannerPage.section8Data.error){
             return(
                 <div 
-                    className="team-page-loading-error" 
+                    className="banner-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section8Data.error}`}</H15>
@@ -553,11 +553,11 @@ export const BannerPage = (props) => {
      */
 
     return(
-        <div className="team-page" id="bannerPage">
+        <div className="banner-page" id="bannerPage">
             {renderToolbars()}
-            <div className="team-page-wrapper">
-                <div className="team-page-header">
-                    <H45 className="h45-nero-lustria">Team</H45>
+            <div className="banner-page-wrapper">
+                <div className="banner-page-header">
+                    <H45 className="h45-nero-lustria">Banner</H45>
                 </div>
                 <div className="grey-line"/>
                 {renderBannerPageSection1DataContent()}
