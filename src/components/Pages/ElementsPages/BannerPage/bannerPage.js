@@ -30,6 +30,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
 import SlideFromImageLeft from '../../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
+import StandardPortfolioItem from '../../../SmallParts/StandardPortfolioItem/standardPortfolioItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -493,19 +494,22 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section7Data.loading && !props.bannerPage.section7Data.error){
             return(
                 <div className="banner-page-section-7-data">{props.bannerPage.section7Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version7"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-7-item"
+                        >
+                            <StandardPortfolioItem
+                                page="bannerPageSection7"
+                                obj={el}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                setIsHoveringCategory={props.setBannerPageSection7IsHoveringCategory}
+                                unmountComponent={props.unmountComponent}
+                                clearArchiveData={props.clearArchiveData}
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )
@@ -616,6 +620,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             setBannerPageSection4IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection4IsHoveringCategory, dispatch),
             setBannerPageSection6IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection6IsHoveringCategory, dispatch),
+            setBannerPageSection7IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection7IsHoveringCategory, dispatch),
         };
     }
 )(BannerPage);
