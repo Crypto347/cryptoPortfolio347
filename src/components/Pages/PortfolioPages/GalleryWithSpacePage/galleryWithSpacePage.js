@@ -195,7 +195,6 @@ export const GalleryWithSpacePage = (props) => {
                         <OverlayImage
                             page="galleryWithSpacePage"
                             obj={el}
-                            setIsHoveringCategory={props.setgalleryWithSpacePageIsHoveringCategory}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                         />

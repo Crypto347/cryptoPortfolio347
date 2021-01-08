@@ -68,13 +68,20 @@
             width: calc(100% - 230px);
             display: flex;
             flex-wrap: wrap;
-            padding: 70px 100px 40px 130px;
+            padding: 70px 100px 30px 130px;
             .banner-page-section-7-item {
                 width: 33.3%;
             }
         }
         .banner-page-section-8-data {
-            background: rgb(248, 248, 248);
+            background: white;
+            width: calc(100% - 230px);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 70px 100px 70px 130px;
+            .banner-page-section-8-item {
+                width: 33.3%;
+            }
         }
     }
 }

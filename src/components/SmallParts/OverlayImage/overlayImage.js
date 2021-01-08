@@ -94,6 +94,7 @@ export const OverlayImage = (props) => {
             case 'threeColumnsPage':
             case 'fourColumnsPage':
             case 'bannerPageSection4':
+            case 'bannerPageSection8':
                 return 40;
         }
     }
@@ -315,7 +316,7 @@ export const OverlayImage = (props) => {
 
             // If template page do nothing on left mouse click 
 
-            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)) return;
+            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
 
             /**
              * Add fading effect on the unmounted component and remember 
@@ -324,8 +325,7 @@ export const OverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            
-            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)){
+            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
                 // Open the template page on scroll wheel click 
 
                 props.setUnmountComponentValues(false, props.currentPagePathName);
@@ -333,9 +333,7 @@ export const OverlayImage = (props) => {
                 // Remember information of the unmounted component on scroll wheel click 
 
                 props.setUnmountComponentValues(false, path);
-            };
-
-           
+            }
         }
         // Fire up unmountComponent epic
 
@@ -358,7 +356,7 @@ export const OverlayImage = (props) => {
 
         // Clear archive data
 
-        if(!['bannerPageSection3','bannerPageSection4'].includes(props.page)) {
+        if(!['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) {
             props.clearArchiveData();
         }
     
@@ -366,7 +364,7 @@ export const OverlayImage = (props) => {
 
             // If template page do nothing on left mouse click 
 
-            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)) return;
+            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
 
             /**
              * Add fading effect on the unmounted component and remember 
@@ -375,8 +373,7 @@ export const OverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-
-            if(['bannerPageSection3','bannerPageSection4'].includes(props.page)){
+            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
                 // Open the template page on scroll wheel click 
                 
                 props.setUnmountComponentValues(false, props.currentPagePathName);
@@ -384,8 +381,7 @@ export const OverlayImage = (props) => {
                 // Remember information of the unmounted component on scroll wheel click
             
                 props.setUnmountComponentValues(false, path);
-            };
-   
+            }
         }
         // Fire up unmountComponent epic
 
@@ -425,7 +421,8 @@ export const OverlayImage = (props) => {
                                         'twoColumnsWidePage',
                                         'threeColumnsWidePage',
                                         'fourColumnsWidePage',
-                                        'fiveColumnsWidePage'
+                                        'fiveColumnsWidePage',
+                                        'bannerPageSection8'
                                     ].includes(props.page) ? 0 : 30}px`}}
         >
             <div className={renderClassName("overlayImage", isHovering)}>
@@ -444,7 +441,8 @@ export const OverlayImage = (props) => {
                                             'threeColumnsWidePage',
                                             'fourColumnsWidePage',
                                             'fiveColumnsWidePage',
-                                            'bannerPageSection3'
+                                            'bannerPageSection3',
+                                            'bannerPageSection8'
                                         ].includes(props.page) ? 50 : 40}px)`,
                     height: `${cardHeight}px`, 
                     padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage',
@@ -453,7 +451,8 @@ export const OverlayImage = (props) => {
                                                                                     'threeColumnsWidePage',
                                                                                     'fourColumnsWidePage',
                                                                                     'fiveColumnsWidePage',
-                                                                                    'bannerPageSection3'
+                                                                                    'bannerPageSection3',
+                                                                                    'bannerPageSection8'
                                                                                 ].includes(props.page) ? 30 : 20}px`}
                 }
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
@@ -465,7 +464,7 @@ export const OverlayImage = (props) => {
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                     <EH20/>
                 </> : null}
-                {props.page === "galleryPage" || props.page === "galleryWithSpacePage" ? 
+                {['galleryPage','galleryWithSpacePage','bannerPageSection8'].includes(props.page) ? 
                 <>
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                     <EH20/>

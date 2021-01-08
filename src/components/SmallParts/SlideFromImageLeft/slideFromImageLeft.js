@@ -202,7 +202,6 @@ export const SlideFromImageLeft = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            
             if(['bannerPageSection6'].includes(props.page)){
                 // Open the template page on scroll wheel click 
                 
@@ -211,8 +210,7 @@ export const SlideFromImageLeft = (props) => {
                 // Remember information of the unmounted component on scroll wheel click
             
                 props.setUnmountComponentValues(false, path);
-            };
-
+            }
         }
         // Fire up unmountComponent epic
 
@@ -251,7 +249,6 @@ export const SlideFromImageLeft = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-
             if(['bannerPageSection6'].includes(props.page)){
                 // Open the template page on scroll wheel click 
                 
@@ -260,8 +257,7 @@ export const SlideFromImageLeft = (props) => {
                 // Remember information of the unmounted component on scroll wheel click
             
                 props.setUnmountComponentValues(false, path);
-            };
-            
+            }
         }
         // Fire up unmountComponent epic
 

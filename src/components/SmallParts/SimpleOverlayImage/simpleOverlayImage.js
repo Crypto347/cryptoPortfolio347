@@ -144,7 +144,6 @@ export const SimpleOverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-
             if(['bannerPageSection5'].includes(props.page)){
                 // Open the template page on scroll wheel click 
                 
@@ -153,8 +152,7 @@ export const SimpleOverlayImage = (props) => {
                 // Remember information of the unmounted component on scroll wheel click
             
                 props.setUnmountComponentValues(false, path);
-            };
-                     
+            }       
         }
         // Fire up unmountComponent epic
 

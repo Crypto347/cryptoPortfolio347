@@ -507,6 +507,7 @@ export const BannerPage = (props) => {
                                 setIsHoveringCategory={props.setBannerPageSection7IsHoveringCategory}
                                 unmountComponent={props.unmountComponent}
                                 clearArchiveData={props.clearArchiveData}
+                                currentPagePathName="banner"
                             />
                         </div>
                     )
@@ -540,19 +541,21 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section8Data.loading && !props.bannerPage.section8Data.error){
             return(
                 <div className="banner-page-section-8-data">{props.bannerPage.section8Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version8"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-8-item"
+                        >
+                            <OverlayImage
+                                page="bannerPageSection8"
+                                obj={el}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                currentPagePathName="banner"
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )
