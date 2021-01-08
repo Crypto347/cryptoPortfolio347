@@ -55,6 +55,13 @@
         }
         .banner-page-section-6-data {
             background: rgb(248, 248, 248);
+            width: calc(100% - 230px);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 100px 100px 100px 130px;
+            .banner-page-section-6-item {
+                width: 33.3%;
+            }
         }
         .banner-page-section-7-data {
             background: rgb(248, 248, 248);

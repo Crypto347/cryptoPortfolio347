@@ -29,6 +29,7 @@ import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
+import SlideFromImageLeft from '../../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -445,19 +446,23 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section6Data.loading && !props.bannerPage.section6Data.error){
             return(
                 <div className="banner-page-section-6-data">{props.bannerPage.section6Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version6"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-6-item"
+                        >
+                            <SlideFromImageLeft
+                                obj={el}
+                                page="bannerPageSection6"
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                setIsHoveringCategory={props.setBannerPageSection6IsHoveringCategory}
+                                clearArchiveData={props.clearArchiveData}
+                                currentPagePathName="banner"
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )
@@ -610,6 +615,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             setBannerPageSection4IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection4IsHoveringCategory, dispatch),
+            setBannerPageSection6IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection6IsHoveringCategory, dispatch),
         };
     }
 )(BannerPage);

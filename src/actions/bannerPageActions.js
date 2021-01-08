@@ -168,3 +168,10 @@ export function setBannerPageSection4IsHoveringCategory(val, pathOfIds) {
     };
 };
 
+export function setBannerPageSection6IsHoveringCategory(val, pathOfIds) {
+    return { 
+        type: actionTypes.SET_BANNER_PAGE_SECTION_6_IS_HOVERING_CATEGORY,
+        val: val,
+        pathOfIds: pathOfIds
+    };
+};
