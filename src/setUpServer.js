@@ -18921,93 +18921,40 @@ app.get('/api/banner-page/section1', (req, res) => {
     const bannerPageSec1 = [
         {
             id: 1,
-            key: "smallImages1",
-            header: "Small Images",
-            option: "colorful",
-            categories: [
-                {
-                    id: 1,
-                    label: "Graphic Design",
-                    key: "graphicDesign",
-                    path: "portfolio-category/graphic-design",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "portfolio-category/design",
-                    isHover: "init"
-                }
-            ],
-            portfolioType: "Small Images",
-            arrowIsHovering: "init",
-            path: "portfolio-item/small-images/1",
+            key: "aboutUs",
+            header: "About Us",
+            path: "banner",
             coverImage: {
                 id: 1,
                 key: "id1SmallImages1",
                 isHover: "init",
                 imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
-                folderName: "colorful",
                 alt: "image"
             }
         },
         {
             id: 2,
-            key: "bigSlider1",
-            header: "Big Slider",
-            option: "colorful",
-            categories: [
-                {
-                    id: 1,
-                    label: "Music",
-                    key: "music",
-                    path: "portfolio-category/music",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Lifestyle",
-                    key: "lifestyle",
-                    path: "portfolio-category/lifestyle",
-                    isHover: "init"
-                }
-            ],
-            portfolioType: "Big Slider",
-            arrowIsHovering: "init",
-            path: "portfolio-item/big-slider/1",
+            key: "ourWork",
+            header: "Our Work",
+            path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1BigSlider1",
+                key: "id1SmallImages1",
                 isHover: "init",
-                imageName: "laura-chouette-simple-overlay-unsplash.png",
-                folderName: "colorful",
+                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
                 alt: "image"
             }
         },
         {
             id: 3,
-            key: "gallery1",
-            header: "Gallery",
-            option: "colorful",
-            categories: [
-                {
-                    id: 1,
-                    label: "Graphic Design",
-                    key: "graphicDesign",
-                    path: "portfolio-category/graphic-design",
-                    isHover: "init"
-                }
-            ],
-            portfolioType: "Gallery",
-            arrowIsHovering: "init",
-            path: "portfolio-item/gallery/1",
+            key: "contactUs",
+            header: "Contact Us",
+            path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1Gallery1",
+                key: "id1SmallImages1",
                 isHover: "init",
-                imageName: "nadine-shaabana-simple-overlay-unsplash.png",
-                folderName: "colorful",
+                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
                 alt: "image"
             }
         }

@@ -12,7 +12,7 @@ import React, {
  * Styles
  */
 
-import './overlayImage.scss';
+import './bannerImage.scss';
 
 /**
  * Utility
@@ -32,10 +32,10 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
- * OverlayImage component definition and export
+ * BannerImage component definition and export
  */
 
-export const OverlayImage = (props) => {
+export const BannerImage = (props) => {
 
     /**
      * State
@@ -105,9 +105,6 @@ export const OverlayImage = (props) => {
                 setIsHovering("on");
                 handleResize();
             break;
-            case 'overlayWithInfoCategory': 
-                props.setIsHoveringCategory("on", pathOfIds);
-            break;
         }
     }
 
@@ -115,9 +112,6 @@ export const OverlayImage = (props) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
-                break;
-            case 'overlayWithInfoCategory': 
-                props.setIsHoveringCategory("off", pathOfIds);
                 break;
         }
     }
@@ -256,29 +250,19 @@ export const OverlayImage = (props) => {
                 case 'init':
                     return "display-none";
                 case 'on':
-                    return "overlay-curtain-hover-on";
+                    return "banner-curtain-hover-on";
                 case 'off':
-                    return "overlay-curtain-hover-off"
+                    return "banner-curtain-hover-off"
             }
         }
-        if(opt === "overlayImage"){
+        if(opt === "bannerImage"){
             switch(isHovering){
                 case 'init':
-                    return "overlay-image";
+                    return "banner-image";
                 case 'on':
-                    return "overlay-image-hover-on";
+                    return "banner-image-hover-on";
                 case 'off':
-                    return "overlay-image-hover-off"
-            }
-        }
-        if(opt === "overlayWithInfoCategory"){
-            switch(isHovering){
-                case 'init':
-                    return "h17-white-lustria-animated";
-                case 'on':
-                    return "h17-white-lustria-nobel-hover-on";
-                case 'off':
-                    return "h17-nobel-lustria-nobel-hover-off"
+                    return "banner-image-hover-off"
             }
         }
         if(opt === "header"){
@@ -296,14 +280,14 @@ export const OverlayImage = (props) => {
                 case 'init':
                     return "display-none";
                 case 'on':
-                    return "overlay-image-arrow-wrapper-lengthen";
+                    return "banner-image-arrow-wrapper-lengthen";
                 case 'off':
-                    return "overlay-image-arrow-wrapper-shorten"
+                    return "banner-image-arrow-wrapper-shorten"
             }
         }
     }
 
-    const overlayImageOnClick = (e, path) => {
+    const bannerImageOnClick = (e, path) => {
         // Do nothing on right mouse click
 
         if(e.button === 2) return;
@@ -340,81 +324,13 @@ export const OverlayImage = (props) => {
         props.unmountComponent(null, null,  props.page, e.button);
     }
 
-    const onClickHandler = (e, path, key) => {
-        // Do nothing on right mouse click
-
-        if(e.button === 2) return;
-
-        // Prevent function overlayImageItemOnClick from running
-
-        e.stopPropagation();
-        
-        // Storing data in local storage 
-
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", props.page);
-
-        // Clear archive data
-
-        if(!['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) {
-            props.clearArchiveData();
-        }
-    
-        if(e.button !== 1){
-
-            // If template page do nothing on left mouse click 
-
-            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
-
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */ 
-
-            props.setUnmountComponentValues(true, path);
-        }else{
-            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
-                // Open the template page on scroll wheel click 
-                
-                props.setUnmountComponentValues(false, props.currentPagePathName);
-            }else{
-                // Remember information of the unmounted component on scroll wheel click
-            
-                props.setUnmountComponentValues(false, path);
-            }
-        }
-        // Fire up unmountComponent epic
-
-        props.unmountComponent(null, null,  props.page, e.button);
-    }
-
-    const renderCategories = (obj) => {
-        return(
-            <div className="overlay-with-info-categories">{obj.categories.map((el, i) => {
-                let pathOfIds = [obj.id, el.id];
-                return(
-                    <div 
-                        key={i}
-                        className="overlay-with-info-category"
-                        onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, null, pathOfIds)} 
-                    >
-                        <H17 className={renderClassName("overlayWithInfoCategory", el.isHover)}>{el.label}</H17>
-                        {i !== obj.categories.length-1 ? <div className="overlay-with-info-category-slash">/</div> : null}
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
     /**
      * Markup
      */
 
     return(
         <div 
-            className="overlay-image"
+            className="banner-image"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
             style={{marginBottom: `${['galleryPage',
@@ -425,7 +341,7 @@ export const OverlayImage = (props) => {
                                         'bannerPageSection8'
                                     ].includes(props.page) ? 0 : 30}px`}}
         >
-            <div className={renderClassName("overlayImage", isHovering)}>
+            <div className={renderClassName("bannerImage", isHovering)}>
                 <img 
                     id="img"
                     src={loadImg(props.obj.coverImage.key)} 
@@ -455,7 +371,7 @@ export const OverlayImage = (props) => {
                                                                                     'bannerPageSection8'
                                                                                 ].includes(props.page) ? 30 : 20}px`}
                 }
-                onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
+                onMouseDown={(e) => bannerImageOnClick(e, props.obj.path)}
             >
                 {['overlayWithInfoPage','bannerPageSection4'].includes(props.page) ? 
                 <>
@@ -481,4 +397,4 @@ export const OverlayImage = (props) => {
     );
 }
 
-export default OverlayImage;
+export default BannerImage;

@@ -27,6 +27,7 @@ import './bannerPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import BannerImage from '../../../SmallParts/BannerImage/bannerImage';
 import OverlayImage from '../../../SmallParts/OverlayImage/overlayImage';
 import SimpleOverlayImage from '../../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
 import SlideFromImageLeft from '../../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
@@ -221,19 +222,20 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section1Data.loading && !props.bannerPage.section1Data.error){
             return(
                 <div className="banner-page-section-1-data">{props.bannerPage.section1Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={25}
-                    //         version="version2"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-1-item"
+                        >
+                            <BannerImage
+                                page="bannerPageSection1"
+                                obj={el}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )
