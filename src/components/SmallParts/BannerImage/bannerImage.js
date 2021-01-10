@@ -44,7 +44,7 @@ export const BannerImage = (props) => {
     const resizeRef = useRef();
     const [isHovering, setIsHovering] = useState("init");
     const [cardHeight, setCardHeight] = useState(0);
-    const [paddingTopBottom, setPaddingTopBottom] = useState(0);
+    // const [paddingTopBottom, setPaddingTopBottom] = useState(0);
  
     /**
      * Methods
@@ -70,33 +70,33 @@ export const BannerImage = (props) => {
     const handleResize = () => {
         // Set the height of the curtain and padding value on window resize
 
-        let paddingTopBottomVal = setPadding(props.page);
+        // let paddingTopBottomVal = setPadding(props.page);
         let cardHeight = document.getElementById("img").clientHeight;
-        setCardHeight(cardHeight - paddingTopBottomVal);
-        setPaddingTopBottom(paddingTopBottomVal);
+        setCardHeight(cardHeight);
+        // setPaddingTopBottom(paddingTopBottomVal);
     }
 
     const setPadding = (page) => {
         // Set curtain padding value for different pages
 
-        switch(page){
-            case 'overlayPage':
-            case 'twoColumnsWidePage':
-            case 'threeColumnsWidePage':
-            case 'fourColumnsWidePage':
-            case 'fiveColumnsWidePage':
-            case 'bannerPageSection3':
-                return 80;
-            case 'overlayWithInfoPage':
-            case 'galleryPage':
-            case 'galleryWithSpacePage':
-            case 'twoColumnsPage':
-            case 'threeColumnsPage':
-            case 'fourColumnsPage':
-            case 'bannerPageSection4':
-            case 'bannerPageSection8':
-                return 40;
-        }
+        // switch(page){
+        //     case 'overlayPage':
+        //     case 'twoColumnsWidePage':
+        //     case 'threeColumnsWidePage':
+        //     case 'fourColumnsWidePage':
+        //     case 'fiveColumnsWidePage':
+        //     case 'bannerPageSection3':
+        //         return 80;
+        //     case 'overlayWithInfoPage':
+        //     case 'galleryPage':
+        //     case 'galleryWithSpacePage':
+        //     case 'twoColumnsPage':
+        //     case 'threeColumnsPage':
+        //     case 'fourColumnsPage':
+        //     case 'bannerPageSection4':
+        //     case 'bannerPageSection8':
+        //         return 40;
+        // }
     }
 
     const handleMouseEnter = (opt, id, pathOfIds) => {
@@ -118,127 +118,12 @@ export const BannerImage = (props) => {
 
     const loadImg = (key) => {
         switch(key) {
-            case 'id1SmallImages1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_1;
-            case 'id1BigSlider1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_2;
-            case 'id1Gallery1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_3;
-            case 'id1SmallGallery1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_4;
-            case 'id1BigImages1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_5;
-            case 'id1SmallSlider1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_6;
-            case 'id2SmallSlider1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_7;
-            case 'id2Gallery1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_8;
-            case 'id2SmallGallery1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_9;
-            case 'id2SmallImages1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_10;
-            case 'id2BigSlider1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_11;
-            case 'id2BigImages1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_12;
-            case 'id3Gallery1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_13;
-            case 'id3SmallSlider1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_14;
-            case 'id3SmallGallery1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_15;
-            case 'id3SmallImages1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_16;
-            case 'id3BigSlider1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_17;
-            case 'id4SmallImages1':
-                return Images.SIMPLE_OVERLAY_COVER_PIC_18;
-            case 'twoColumnWideCover1':
-            case 'threeColumnWideCover1':
-            case 'fourColumnWideCover1':
-            case 'fiveColumnWideCover1':
-                return Images.ID_1_SMALL_IMAGES_2;
-            case 'twoColumnWideCover2':
-            case 'threeColumnWideCover2':
-            case 'fourColumnWideCover2': 
-                return Images.ID_1_BIG_SLIDER_5;
-            case 'twoColumnWideCover3':
-            case 'threeColumnWideCover3':
-                return Images.ID_1_GALLERY_4;
-            case 'twoColumnWideCover4':
-            case 'threeColumnWideCover4':
-                return Images.ID_1_SMALL_GALLERY_2;
-            case 'twoColumnWideCover5':
-            case 'threeColumnWideCover5':
-            case 'fourColumnWideCover3':
-            case 'fiveColumnWideCover2':
-                return Images.ID_1_BIG_IMAGES_5;
-            case 'twoColumnWideCover6':
-            case 'threeColumnWideCover6':
-            case 'fourColumnWideCover4':
-            case 'fiveColumnWideCover3':
-                return Images.ID_1_SMALL_SLIDER_5;
-            case 'twoColumnWideCover7':
-            case 'threeColumnWideCover7':
-            case 'fourColumnWideCover5':
-            case 'fiveColumnWideCover4':
-                return Images.ID_2_SMALL_SLIDER_2;
-            case 'twoColumnWideCover8':
-            case 'threeColumnWideCover8':
-            case 'fourColumnWideCover6':
-            case 'fiveColumnWideCover5':
-                return Images.ID_2_GALLERY_1;
-            case 'twoColumnWideCover9':
-            case 'threeColumnWideCover9':
-            case 'fourColumnWideCover7':
-            case 'fiveColumnWideCover6':
-                return Images.ID_2_SMALL_GALLERY_1;
-            case 'twoColumnWideCover10':
-            case 'threeColumnWideCover10':
-            case 'fourColumnWideCover8':
-            case 'fiveColumnWideCover7':
-                return Images.ID_2_SMALL_IMAGES_1;
-            case 'twoColumnWideCover11':
-            case 'threeColumnWideCover11':
-            case 'fourColumnWideCover9':
-            case 'fiveColumnWideCover8':
-                return Images.ID_2_BIG_SLIDER_6;
-            case 'twoColumnWideCover12':
-            case 'threeColumnWideCover12':
-            case 'fourColumnWideCover10':
-            case 'fiveColumnWideCover9':
-                return Images.ID_2_BIG_IMAGES_5;
-            case 'twoColumnWideCover13':
-            case 'threeColumnWideCover13':
-            case 'fourColumnWideCover11':
-            case 'fiveColumnWideCover10':
-                return Images.ID_3_GALLERY_4;
-            case 'twoColumnWideCover14':
-            case 'threeColumnWideCover14':
-            case 'fourColumnWideCover12':
-            case 'fiveColumnWideCover11': 
-                return Images.ID_3_SMALL_SLIDER_2;
-            case 'twoColumnWideCover15':
-            case 'threeColumnWideCover15':
-            case 'fourColumnWideCover13':
-            case 'fiveColumnWideCover12':
-                return Images.ID_3_SMALL_GALLERY_3;
-            case 'twoColumnWideCover16':
-            case 'threeColumnWideCover16':
-            case 'fourColumnWideCover14':
-            case 'fiveColumnWideCover13':
-                return Images.ID_3_SMALL_IMAGES_2;
-            case 'twoColumnWideCover17':
-            case 'threeColumnWideCover17':
-            case 'fourColumnWideCover15':
-            case 'fiveColumnWideCover14':
-                return Images.ID_3_BIG_SLIDER_4;
-            case 'twoColumnWideCover18':
-            case 'threeColumnWideCover18':
-            case 'fourColumnWideCover16':
-            case 'fiveColumnWideCover15':
-                return Images.ID_4_SMALL_IMAGES_3;
+            case 'bannerPageCover1':
+                return Images.BANNER_PAGE_COVER_1;
+            case 'bannerPageCover2':
+                return Images.BANNER_PAGE_COVER_2;
+            case 'bannerPageCover3':
+                return Images.BANNER_PAGE_COVER_3;
             default:
                 return "";
         }
@@ -333,13 +218,6 @@ export const BannerImage = (props) => {
             className="banner-image"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
-            style={{marginBottom: `${['galleryPage',
-                                        'twoColumnsWidePage',
-                                        'threeColumnsWidePage',
-                                        'fourColumnsWidePage',
-                                        'fiveColumnsWidePage',
-                                        'bannerPageSection8'
-                                    ].includes(props.page) ? 0 : 30}px`}}
         >
             <div className={renderClassName("bannerImage", isHovering)}>
                 <img 
@@ -350,33 +228,11 @@ export const BannerImage = (props) => {
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{
-                    width: `calc(100% - ${['galleryPage',
-                                            'overlayPage',
-                                            'twoColumnsWidePage',
-                                            'threeColumnsWidePage',
-                                            'fourColumnsWidePage',
-                                            'fiveColumnsWidePage',
-                                            'bannerPageSection3',
-                                            'bannerPageSection8'
-                                        ].includes(props.page) ? 50 : 40}px)`,
-                    height: `${cardHeight}px`, 
-                    padding: `${paddingTopBottom/2} 20px ${paddingTopBottom/2} ${['galleryPage',
-                                                                                    'overlayPage',
-                                                                                    'twoColumnsWidePage',
-                                                                                    'threeColumnsWidePage',
-                                                                                    'fourColumnsWidePage',
-                                                                                    'fiveColumnsWidePage',
-                                                                                    'bannerPageSection3',
-                                                                                    'bannerPageSection8'
-                                                                                ].includes(props.page) ? 30 : 20}px`}
-                }
+                style={{height: `${cardHeight}px`}}
                 onMouseDown={(e) => bannerImageOnClick(e, props.obj.path)}
             >
-                {['overlayWithInfoPage','bannerPageSection4'].includes(props.page) ? 
+                {['bannerPageSection1'].includes(props.page) ? 
                 <>
-                    {renderCategories(props.obj)}
-                    <EH10/>
                     <H35 className={renderClassName("header", isHovering)}>{props.obj.header}</H35>
                     <EH20/>
                 </> : null}

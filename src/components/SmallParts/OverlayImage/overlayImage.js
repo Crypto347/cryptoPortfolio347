@@ -422,6 +422,8 @@ export const OverlayImage = (props) => {
                                         'threeColumnsWidePage',
                                         'fourColumnsWidePage',
                                         'fiveColumnsWidePage',
+                                        'bannerPageSection3',
+                                        'bannerPageSection4',
                                         'bannerPageSection8'
                                     ].includes(props.page) ? 0 : 30}px`}}
         >
@@ -453,8 +455,8 @@ export const OverlayImage = (props) => {
                                                                                     'fiveColumnsWidePage',
                                                                                     'bannerPageSection3',
                                                                                     'bannerPageSection8'
-                                                                                ].includes(props.page) ? 30 : 20}px`}
-                }
+                                                                                ].includes(props.page) ? 30 : 20}px`
+                }}
                 onMouseDown={(e) => overlayImageOnClick(e, props.obj.path)}
             >
                 {['overlayWithInfoPage','bannerPageSection4'].includes(props.page) ? 

@@ -18926,9 +18926,9 @@ app.get('/api/banner-page/section1', (req, res) => {
             path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "bannerPageCover1",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "annie-spratt-MChSQHxGZrQ-unsplash-banner.png",
                 alt: "image"
             }
         },
@@ -18939,9 +18939,9 @@ app.get('/api/banner-page/section1', (req, res) => {
             path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "bannerPageCover2",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "kelly-sikkema-jr61kHaWKek-unsplash-banner.png",
                 alt: "image"
             }
         },
@@ -18952,9 +18952,9 @@ app.get('/api/banner-page/section1', (req, res) => {
             path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "bannerPageCover3",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
+                imageName: "goran-ivos-ly-RWaR0GXI-unsplash-banner.png",
                 alt: "image"
             }
         }

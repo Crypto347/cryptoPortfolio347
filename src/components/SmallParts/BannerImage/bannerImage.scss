@@ -34,7 +34,11 @@
         }
     }
     .banner-curtain-hover-on {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: rgba(0, 0, 0, 0.7);
+        width: 100%;
         position: absolute;
         left: 0%;
         top: 0%;
@@ -96,8 +100,12 @@
         }
     }
     .banner-curtain-hover-off {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: rgba(0, 0, 0, 0.7);
         position: absolute;
+        width: 100%;
         left: 0%;
         top: 0%;
         display: flex;
