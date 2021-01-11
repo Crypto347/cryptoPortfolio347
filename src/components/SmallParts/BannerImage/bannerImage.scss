@@ -33,9 +33,10 @@
             animation: bannerImageHoverOff .3s linear;
         }
     }
-    .banner-header {
+    .banner-cover-info {
         position: absolute;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -44,9 +45,10 @@
         top: 0%;
         z-index: 10;
     }
-    .banner-header-hover-on {
+    .banner-cover-info-hover-on {
         position: absolute;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -60,9 +62,10 @@
         -o-animation: bannerHeaderHoverOn .2s linear;
         animation: bannerHeaderHoverOn .2s linear;
     }
-    .banner-header-hover-off {
+    .banner-cover-info-hover-off {
         position: absolute;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -80,7 +83,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgba(0, 0, 0, 0.7);
+        // background: rgba(0, 0, 0, 0.7);
+        filter: grayscale(40%);
         width: 100%;
         position: absolute;
         left: 0%;
@@ -146,7 +150,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgba(0, 0, 0, 0.7);
+        // background: rgba(0, 0, 0, 0.7);
+        filter: grayscale(40%);
         position: absolute;
         width: 100%;
         left: 0%;

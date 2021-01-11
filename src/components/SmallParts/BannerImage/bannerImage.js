@@ -136,14 +136,14 @@ export const BannerImage = (props) => {
                     return "banner-image-hover-off"
             }
         }
-        if(opt === "bannerHeader"){
+        if(opt === "bannerCoverInfo"){
             switch(isHovering){
                 case 'init':
-                    return "banner-header";
+                    return "banner-cover-info";
                 case 'on':
-                    return "banner-header-hover-on";
+                    return "banner-cover-info-hover-on";
                 case 'off':
-                    return "banner-header-hover-off"
+                    return "banner-cover-info-hover-off"
             }
         }
         if(opt === "arrow"){
@@ -213,15 +213,21 @@ export const BannerImage = (props) => {
                 />
             </div>
             <div
-                className={renderClassName("bannerHeader", isHovering)}
+                className={renderClassName("bannerCoverInfo", isHovering)}
                 onMouseDown={(e) => bannerImageOnClick(e, props.obj.path)}
             >
                 <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.header}</H35>
                 <EH20/>
+                {isHovering === "on"?
+                <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.text}</H35> 
+                : null}
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
-                style={{height: `${cardHeight}px`}}
+                style={{
+                    height: `${cardHeight}px`,
+                    background: `${props.obj.coverImage.backgroundColor}`
+                }}
             >
                 <EH170/>
                 {!['bannerPageSection2'].includes(props.page) ? 
@@ -232,7 +238,6 @@ export const BannerImage = (props) => {
                         <div className="arrow-bottom-line"></div>
                     </div>
                 </div> : null}
-              
             </div>
         </div>
     );

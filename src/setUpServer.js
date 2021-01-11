@@ -18443,6 +18443,7 @@ app.get('/api/tabs-page/section1/column1', (req, res) => {
     ]
     res.json(tabsPageSection1Column2Data);
 });
+
 app.get('/api/tabs-page/section1/column2', (req, res) => {
     const tabsPageSection1Column2Data = [
         {
@@ -18972,13 +18973,16 @@ app.get('/api/banner-page/section2', (req, res) => {
             key: "programme",
             header: "Programme.",
             headerColor: "white",
+            text: "Lorem ipsum dolor sit amet, libris legimus nusquam te eam",
+            textColor: "white",
             path: "banner",
             coverImage: {
                 id: 1,
                 key: "bannerPageCover4",
                 isHover: "init",
                 imageName: "favpng_hexagon-geometry-pattern-banner.png",
-                alt: "image"
+                alt: "image",
+                backgroundColor: "rgb(218, 153, 83)"
             }
         },
         {
@@ -18986,13 +18990,16 @@ app.get('/api/banner-page/section2', (req, res) => {
             key: "billets",
             header: "Billets.",
             headerColor: "black",
+            text: "Lorem ipsum dolor sit amet, libris legimus nusquam te eam",
+            textColor: "black",
             path: "banner",
             coverImage: {
                 id: 1,
                 key: "bannerPageCover5",
                 isHover: "init",
                 imageName: "pattern_3853184-banner.png",
-                alt: "image"
+                alt: "image",           
+                backgroundColor: "white"
             }
         }
     ]
