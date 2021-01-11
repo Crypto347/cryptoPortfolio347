@@ -233,6 +233,7 @@ export const BannerPage = (props) => {
                                 obj={el}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
+                                currentPagePathName="banner"
                             />
                         </div>
                     )
@@ -320,6 +321,7 @@ export const BannerPage = (props) => {
                                 obj={el}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
+                                currentPagePathName="banner"
                             />
                         </div>
                     )

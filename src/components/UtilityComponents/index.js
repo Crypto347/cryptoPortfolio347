@@ -24,6 +24,7 @@ export * from './EmptyDivs/EH80/eh80';
 export * from './EmptyDivs/EH90/eh90';
 export * from './EmptyDivs/EH110/eh110';
 export * from './EmptyDivs/EH135/eh135';
+export * from './EmptyDivs/EH180/eh180';
 
 export * from './EmptyDivs/EW10/ew10';
 export * from './EmptyDivs/EW20/ew20';
