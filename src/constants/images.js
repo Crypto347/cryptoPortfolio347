@@ -812,8 +812,11 @@ export const PINTEREST_3_COLUMNS_PAGE_COVER_PIC_15 = Pinterest3ColumnsPageCoverP
 import BannerPageCover1 from '../images/BannerPage/annie-spratt-MChSQHxGZrQ-unsplash-banner.png';
 import BannerPageCover2 from '../images/BannerPage/kelly-sikkema-jr61kHaWKek-unsplash-banner.png';
 import BannerPageCoved3 from '../images/BannerPage/goran-ivos-ly-RWaR0GXI-unsplash-banner.png';
-
+import BannerPageCover4 from '../images/BannerPage/favpng_hexagon-geometry-pattern-banner.png';
+import BannerPageCoved5 from '../images/BannerPage/pattern_3853184-banner.png';
 
 export const BANNER_PAGE_COVER_1 = BannerPageCover1;
 export const BANNER_PAGE_COVER_2 = BannerPageCover2;
 export const BANNER_PAGE_COVER_3 = BannerPageCoved3;
+export const BANNER_PAGE_COVER_4 = BannerPageCover4;
+export const BANNER_PAGE_COVER_5 = BannerPageCoved5;

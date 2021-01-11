@@ -18923,6 +18923,7 @@ app.get('/api/banner-page/section1', (req, res) => {
             id: 1,
             key: "aboutUs",
             header: "About Us",
+            headerColor: "white",
             path: "banner",
             coverImage: {
                 id: 1,
@@ -18936,6 +18937,7 @@ app.get('/api/banner-page/section1', (req, res) => {
             id: 2,
             key: "ourWork",
             header: "Our Work",
+            headerColor: "white",
             path: "banner",
             coverImage: {
                 id: 1,
@@ -18949,6 +18951,7 @@ app.get('/api/banner-page/section1', (req, res) => {
             id: 3,
             key: "contactUs",
             header: "Contact Us",
+            headerColor: "white",
             path: "banner",
             coverImage: {
                 id: 1,
@@ -18966,67 +18969,29 @@ app.get('/api/banner-page/section2', (req, res) => {
     const bannerPageSec2 = [
         {
             id: 1,
-            key: "smallImages1",
-            header: "Small Images",
-            option: "colorful",
-            categories: [
-                {
-                    id: 1,
-                    label: "Graphic Design",
-                    key: "graphicDesign",
-                    path: "portfolio-category/graphic-design",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "portfolio-category/design",
-                    isHover: "init"
-                }
-            ],
-            portfolioType: "Small Images",
-            arrowIsHovering: "init",
-            path: "portfolio-item/small-images/1",
+            key: "programme",
+            header: "Programme.",
+            headerColor: "white",
+            path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1SmallImages1",
+                key: "bannerPageCover4",
                 isHover: "init",
-                imageName: "adam-wilson-1QZYZib7eYs-simple-overlay-unsplash.png",
-                folderName: "colorful",
+                imageName: "favpng_hexagon-geometry-pattern-banner.png",
                 alt: "image"
             }
         },
         {
             id: 2,
-            key: "bigSlider1",
-            header: "Big Slider",
-            option: "colorful",
-            categories: [
-                {
-                    id: 1,
-                    label: "Music",
-                    key: "music",
-                    path: "portfolio-category/music",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Lifestyle",
-                    key: "lifestyle",
-                    path: "portfolio-category/lifestyle",
-                    isHover: "init"
-                }
-            ],
-            portfolioType: "Big Slider",
-            arrowIsHovering: "init",
-            path: "portfolio-item/big-slider/1",
+            key: "billets",
+            header: "Billets.",
+            headerColor: "black",
+            path: "banner",
             coverImage: {
                 id: 1,
-                key: "id1BigSlider1",
+                key: "bannerPageCover5",
                 isHover: "init",
-                imageName: "laura-chouette-simple-overlay-unsplash.png",
-                folderName: "colorful",
+                imageName: "pattern_3853184-banner.png",
                 alt: "image"
             }
         }

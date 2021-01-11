@@ -267,19 +267,21 @@ export const BannerPage = (props) => {
         if(!props.bannerPage.section2Data.loading && !props.bannerPage.section2Data.error){
             return(
                 <div className="banner-page-section-2-data">{props.bannerPage.section2Data.items.map((el, i) => {
-                    // return(
-                    //     <TeamInformationCard
-                    //         photo={el.photo}
-                    //         key={i}
-                    //         imgKey={el.key}
-                    //         name={el.name}
-                    //         position={el.position}
-                    //         instaName={el.instaName}
-                    //         alt={el.alt}
-                    //         width={20}
-                    //         version="version1"
-                    //     />
-                    // )
+                    return(
+                        <div 
+                            key={i} 
+                            id={el.key}
+                            className="banner-page-section-2-item"
+                        >
+                            <BannerImage
+                                page="bannerPageSection2"
+                                obj={el}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                currentPagePathName="banner"
+                            />
+                        </div>
+                    )
                 })}
                 </div>
             )

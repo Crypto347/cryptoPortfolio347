@@ -21,7 +21,7 @@ import './bannerImage.scss';
 import { 
     H35,
     EH20,
-    EH180
+    EH170
 } from '../../UtilityComponents';
 
 /**
@@ -69,6 +69,15 @@ export const BannerImage = (props) => {
         // Set the height of the curtain and padding value on window resize
 
         let cardHeight = document.getElementById("img").clientHeight;
+        // let translatedVal;
+        // switch(props.page){
+        //     case 'bannerPageSection2':
+        //         // translatedVal = 15;
+        //         break;
+        //     default:
+        //         translatedVal = 0;
+        //         break;
+        // }
         setCardHeight(cardHeight);
     }
 
@@ -97,6 +106,10 @@ export const BannerImage = (props) => {
                 return Images.BANNER_PAGE_COVER_2;
             case 'bannerPageCover3':
                 return Images.BANNER_PAGE_COVER_3;
+            case 'bannerPageCover4':
+                return Images.BANNER_PAGE_COVER_4;
+            case 'bannerPageCover5':
+                return Images.BANNER_PAGE_COVER_5;
             default:
                 return "";
         }
@@ -158,7 +171,7 @@ export const BannerImage = (props) => {
 
             // If template page do nothing on left mouse click 
 
-            if(['bannerPageSection1'].includes(props.page)) return;
+            if(['bannerPageSection1','bannerPageSection2'].includes(props.page)) return;
 
             /**
              * Add fading effect on the unmounted component and remember 
@@ -167,7 +180,7 @@ export const BannerImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            if(['bannerPageSection1'].includes(props.page)){
+            if(['bannerPageSection1','bannerPageSection2'].includes(props.page)){
                 // Open the template page on scroll wheel click 
 
                 props.setUnmountComponentValues(false, props.currentPagePathName);
@@ -203,22 +216,23 @@ export const BannerImage = (props) => {
                 className={renderClassName("bannerHeader", isHovering)}
                 onMouseDown={(e) => bannerImageOnClick(e, props.obj.path)}
             >
-                <H35 className="h35-white-poppins">{props.obj.header}</H35>
+                <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.header}</H35>
                 <EH20/>
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{height: `${cardHeight}px`}}
-               
             >
-                <EH180/>
+                <EH170/>
+                {!['bannerPageSection2'].includes(props.page) ? 
                 <div className={renderClassName("arrow", isHovering)}>
                     <div className="arrow-horizontal-line"/>
                     <div className="arrow-wrapper2">
                         <div className="arrow-top-line"></div>
                         <div className="arrow-bottom-line"></div>
                     </div>
-                </div>
+                </div> : null}
+              
             </div>
         </div>
     );
