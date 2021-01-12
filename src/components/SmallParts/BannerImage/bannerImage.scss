@@ -61,9 +61,13 @@
         -moz-animation: bannerHeaderHoverOn .2s linear;
         -o-animation: bannerHeaderHoverOn .2s linear;
         animation: bannerHeaderHoverOn .2s linear;
-        .banner-image-text-wrapper {
+        
+        .banner-cover-text-open {
             width: 270px;
             text-align: center;
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.2s ease;
         }
         .arrow-wrapper {
             display: flex;
@@ -135,9 +139,12 @@
         -moz-animation: bannerHeaderHoverOff .2s linear;
         -o-animation: bannerHeaderHoverOff .2s linear;
         animation: bannerHeaderHoverOff .2s linear;
-        .banner-image-text-wrapper {
+        .banner-cover-text-close {
             width: 270px;
             text-align: center;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.2s ease;
         }
         .arrow-wrapper {
             display: flex;
@@ -194,7 +201,6 @@
         -moz-animation: bannerCurtainHoverOn 0.3s linear;
         -o-animation: bannerCurtainHoverOn 0.3s linear;
         animation: bannerCurtainHoverOn 0.3s linear;
-        
     }
     .banner-curtain-hover-off {
         display: flex;
@@ -214,11 +220,15 @@
         -moz-animation: bannerCurtainHoverOff .1s linear;
         -o-animation: bannerCurtainHoverOff .1s linear;
         animation: bannerCurtainHoverOff .1s linear;
-       
     }
 }
 
-.display-none{
+.banner-cover-text {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.display-none {
     display: none;
 }
 

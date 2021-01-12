@@ -146,6 +146,16 @@ export const BannerImage = (props) => {
                     return "banner-cover-info-hover-off"
             }
         }
+        if(opt === "bannerCoverText"){
+            switch(isHovering){
+                case 'init':
+                    return "banner-cover-text";
+                case 'on':
+                    return "banner-cover-text-open";
+                case 'off':
+                    return "banner-cover-text-close"
+            }
+        }
         if(opt === "arrow"){
             switch(isHovering){
                 case 'init':
@@ -218,8 +228,8 @@ export const BannerImage = (props) => {
             >
                 <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.header}</H35>
                 <EH20/>
-                {isHovering === "on" && ['bannerPageSection2'].includes(props.page) ?
-                <div className="banner-image-text-wrapper">
+                {['bannerPageSection2'].includes(props.page) ?
+                <div className={renderClassName("bannerCoverText", isHovering)}>
                     <H22 className={`h22-${props.obj.headerColor}-lustria`}>{props.obj.text}</H22> 
                 </div>
                 : null}
