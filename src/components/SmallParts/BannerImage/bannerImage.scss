@@ -61,6 +61,10 @@
         -moz-animation: bannerHeaderHoverOn .2s linear;
         -o-animation: bannerHeaderHoverOn .2s linear;
         animation: bannerHeaderHoverOn .2s linear;
+        .banner-image-text-wrapper {
+            width: 270px;
+            text-align: center;
+        }
         .arrow-wrapper {
             display: flex;
             justify-content: start;
@@ -131,6 +135,10 @@
         -moz-animation: bannerHeaderHoverOff .2s linear;
         -o-animation: bannerHeaderHoverOff .2s linear;
         animation: bannerHeaderHoverOff .2s linear;
+        .banner-image-text-wrapper {
+            width: 270px;
+            text-align: center;
+        }
         .arrow-wrapper {
             display: flex;
             justify-content: start;

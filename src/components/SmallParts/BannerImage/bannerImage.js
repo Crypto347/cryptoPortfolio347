@@ -18,10 +18,10 @@ import './bannerImage.scss';
  * Utility
  */
 
-import { 
+import {
+    H22,
     H35,
-    EH20,
-    EH170
+    EH20
 } from '../../UtilityComponents';
 
 /**
@@ -218,10 +218,12 @@ export const BannerImage = (props) => {
             >
                 <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.header}</H35>
                 <EH20/>
-                {isHovering === "on" && ['bannerPageSection2'].includes(props.page)?
-                <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.text}</H35> 
+                {isHovering === "on" && ['bannerPageSection2'].includes(props.page) ?
+                <div className="banner-image-text-wrapper">
+                    <H22 className={`h22-${props.obj.headerColor}-lustria`}>{props.obj.text}</H22> 
+                </div>
                 : null}
-                {!['bannerPageSection2'].includes(props.page) ? 
+                {isHovering === "on" && !['bannerPageSection2'].includes(props.page) ? 
                 <div className="arrow-wrapper">
                     <div className={renderClassName("arrow", isHovering)}>
                         <div className="arrow-horizontal-line"/>
@@ -230,7 +232,8 @@ export const BannerImage = (props) => {
                             <div className="arrow-bottom-line"></div>
                         </div>
                     </div> 
-                </div>: null}
+                </div>
+                : null}
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
