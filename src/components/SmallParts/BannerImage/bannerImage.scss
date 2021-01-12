@@ -61,6 +61,59 @@
         -moz-animation: bannerHeaderHoverOn .2s linear;
         -o-animation: bannerHeaderHoverOn .2s linear;
         animation: bannerHeaderHoverOn .2s linear;
+        .arrow-wrapper {
+            display: flex;
+            justify-content: start;
+            width: 60px;
+            .banner-image-arrow-wrapper-lengthen {
+                display: flex;
+                margin-top: 10px;
+                align-items: center;
+                cursor: pointer;
+                .arrow-horizontal-line {
+                    width: 60px;
+                    height: 2px;
+                    background: white;
+                    -webkit-animation: lengthenHorizontalLineBannerImage .1s linear;
+                    -moz-animation: lengthenHorizontalLineBannerImage .1s linear;
+                    -o-animation: lengthenHorizontalLineBannerImage .1s linear;
+                    animation: lengthenHorizontalLineBannerImage .1s linear;
+                    animation-delay: .3s;
+                    animation-fill-mode: both;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border: 0px solid white;
+                        background: white;
+                        height: 10px;
+                        transform: translate(-1px, 2.5px) rotate(-45deg);
+                        -webkit-animation: lengthenArrowLineBannerImage .1s linear;
+                        -moz-animation: lengthenArrowLineBannerImage .1s linear;
+                        -o-animation: lengthenArrowLineBannerImage .1s linear;
+                        animation: lengthenArrowLineBannerImage .1s linear;
+                        animation-delay: .4s;
+                        animation-fill-mode: both;
+                    }
+                    .arrow-bottom-line {
+                        border: 0px solid white;
+                        background: white;
+                        height: 10px;
+                        transform: translate(-1px, -2.5px) rotate(45deg);
+                        -webkit-animation: lengthenArrowLineBannerImage .1s linear;
+                        -moz-animation: lengthenArrowLineBannerImage .1s linear;
+                        -o-animation: lengthenArrowLineBannerImage .1s linear;
+                        animation: lengthenArrowLineBannerImage .1s linear;
+                        animation-delay: .4s;
+                        animation-fill-mode: both;
+                    }
+                }
+            }
+        }        
     }
     .banner-cover-info-hover-off {
         position: absolute;
@@ -78,6 +131,42 @@
         -moz-animation: bannerHeaderHoverOff .2s linear;
         -o-animation: bannerHeaderHoverOff .2s linear;
         animation: bannerHeaderHoverOff .2s linear;
+        .arrow-wrapper {
+            display: flex;
+            justify-content: start;
+            width: 60px;
+            .banner-image-arrow-wrapper-shorten {
+                display: flex;
+                margin-top: 10px;
+                align-items: center;
+                cursor: pointer;
+                .arrow-horizontal-line {
+                    width: 0px;
+                    height: 2px;
+                    background: white;
+                    animation-delay: .1s;
+                    animation-fill-mode: both;
+                }
+                .arrow-wrapper2 {
+                    transform: translate(-5px);
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .arrow-top-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(-1px, 1px) rotate(-45deg);
+                    }
+                    .arrow-bottom-line {
+                        border: 1px solid transparent;
+                        height: 0px;
+                        transform: translate(-1px, -1px) rotate(45deg);
+                    }
+                }
+            }
+        }
+        
     }
     .banner-curtain-hover-on {
         display: flex;
@@ -97,54 +186,7 @@
         -moz-animation: bannerCurtainHoverOn 0.3s linear;
         -o-animation: bannerCurtainHoverOn 0.3s linear;
         animation: bannerCurtainHoverOn 0.3s linear;
-        .banner-image-arrow-wrapper-lengthen {
-            display: flex;
-            margin-top: 10px;
-            align-items: center;
-            cursor: pointer;
-            .arrow-horizontal-line {
-                width: 60px;
-                height: 2px;
-                background: white;
-                -webkit-animation: lengthenHorizontalLineBannerImage .1s linear;
-                -moz-animation: lengthenHorizontalLineBannerImage .1s linear;
-                -o-animation: lengthenHorizontalLineBannerImage .1s linear;
-                animation: lengthenHorizontalLineBannerImage .1s linear;
-                animation-delay: .3s;
-                animation-fill-mode: both;
-            }
-            .arrow-wrapper2 {
-                transform: translate(-5px);
-                height: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                .arrow-top-line {
-                    border: 0px solid white;
-                    background: white;
-                    height: 10px;
-                    transform: translate(-1px, 2.5px) rotate(-45deg);
-                    -webkit-animation: lengthenArrowLineBannerImage .1s linear;
-                    -moz-animation: lengthenArrowLineBannerImage .1s linear;
-                    -o-animation: lengthenArrowLineBannerImage .1s linear;
-                    animation: lengthenArrowLineBannerImage .1s linear;
-                    animation-delay: .4s;
-                    animation-fill-mode: both;
-                }
-                .arrow-bottom-line {
-                    border: 0px solid white;
-                    background: white;
-                    height: 10px;
-                    transform: translate(-1px, -2.5px) rotate(45deg);
-                    -webkit-animation: lengthenArrowLineBannerImage .1s linear;
-                    -moz-animation: lengthenArrowLineBannerImage .1s linear;
-                    -o-animation: lengthenArrowLineBannerImage .1s linear;
-                    animation: lengthenArrowLineBannerImage .1s linear;
-                    animation-delay: .4s;
-                    animation-fill-mode: both;
-                }
-            }
-        }
+        
     }
     .banner-curtain-hover-off {
         display: flex;
@@ -164,36 +206,7 @@
         -moz-animation: bannerCurtainHoverOff .1s linear;
         -o-animation: bannerCurtainHoverOff .1s linear;
         animation: bannerCurtainHoverOff .1s linear;
-        .banner-image-arrow-wrapper-shorten {
-            display: flex;
-            margin-top: 10px;
-            align-items: center;
-            cursor: pointer;
-            .arrow-horizontal-line {
-                width: 0px;
-                height: 2px;
-                background: white;
-                animation-delay: .1s;
-                animation-fill-mode: both;
-            }
-            .arrow-wrapper2 {
-                transform: translate(-5px);
-                height: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                .arrow-top-line {
-                    border: 1px solid transparent;
-                    height: 0px;
-                    transform: translate(-1px, 1px) rotate(-45deg);
-                }
-                .arrow-bottom-line {
-                    border: 1px solid transparent;
-                    height: 0px;
-                    transform: translate(-1px, -1px) rotate(45deg);
-                }
-            }
-        }
+       
     }
 }
 

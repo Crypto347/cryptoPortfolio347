@@ -218,26 +218,28 @@ export const BannerImage = (props) => {
             >
                 <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.header}</H35>
                 <EH20/>
-                {isHovering === "on"?
+                {isHovering === "on" && ['bannerPageSection2'].includes(props.page)?
                 <H35 className={`h35-${props.obj.headerColor}-poppins`}>{props.obj.text}</H35> 
                 : null}
+                {!['bannerPageSection2'].includes(props.page) ? 
+                <div className="arrow-wrapper">
+                    <div className={renderClassName("arrow", isHovering)}>
+                        <div className="arrow-horizontal-line"/>
+                        <div className="arrow-wrapper2">
+                            <div className="arrow-top-line"></div>
+                            <div className="arrow-bottom-line"></div>
+                        </div>
+                    </div> 
+                </div>: null}
             </div>
             <div 
                 className={renderClassName("curtain", isHovering)}
                 style={{
                     height: `${cardHeight}px`,
-                    background: `${props.obj.coverImage.backgroundColor}`
+                    background: `${props.obj.curtainBackgroundColor}`
                 }}
             >
-                <EH170/>
-                {!['bannerPageSection2'].includes(props.page) ? 
-                <div className={renderClassName("arrow", isHovering)}>
-                    <div className="arrow-horizontal-line"/>
-                    <div className="arrow-wrapper2">
-                        <div className="arrow-top-line"></div>
-                        <div className="arrow-bottom-line"></div>
-                    </div>
-                </div> : null}
+               
             </div>
         </div>
     );

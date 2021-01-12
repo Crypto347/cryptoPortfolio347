@@ -18925,6 +18925,7 @@ app.get('/api/banner-page/section1', (req, res) => {
             key: "aboutUs",
             header: "About Us",
             headerColor: "white",
+            curtainBackgroundColor: "rgba(0, 0, 0, 0.7)",
             path: "banner",
             coverImage: {
                 id: 1,
@@ -18939,6 +18940,7 @@ app.get('/api/banner-page/section1', (req, res) => {
             key: "ourWork",
             header: "Our Work",
             headerColor: "white",
+            curtainBackgroundColor: "rgba(0, 0, 0, 0.7)",
             path: "banner",
             coverImage: {
                 id: 1,
@@ -18953,6 +18955,7 @@ app.get('/api/banner-page/section1', (req, res) => {
             key: "contactUs",
             header: "Contact Us",
             headerColor: "white",
+            curtainBackgroundColor: "rgba(0, 0, 0, 0.7)",
             path: "banner",
             coverImage: {
                 id: 1,
@@ -18975,14 +18978,14 @@ app.get('/api/banner-page/section2', (req, res) => {
             headerColor: "white",
             text: "Lorem ipsum dolor sit amet, libris legimus nusquam te eam",
             textColor: "white",
+            curtainBackgroundColor: "rgb(218, 153, 83)",
             path: "banner",
             coverImage: {
                 id: 1,
                 key: "bannerPageCover4",
                 isHover: "init",
                 imageName: "favpng_hexagon-geometry-pattern-banner.png",
-                alt: "image",
-                backgroundColor: "rgb(218, 153, 83)"
+                alt: "image"
             }
         },
         {
@@ -18992,14 +18995,14 @@ app.get('/api/banner-page/section2', (req, res) => {
             headerColor: "black",
             text: "Lorem ipsum dolor sit amet, libris legimus nusquam te eam",
             textColor: "black",
+            curtainBackgroundColor: "white",
             path: "banner",
             coverImage: {
                 id: 1,
                 key: "bannerPageCover5",
                 isHover: "init",
                 imageName: "pattern_3853184-banner.png",
-                alt: "image",           
-                backgroundColor: "white"
+                alt: "image"
             }
         }
     ]
