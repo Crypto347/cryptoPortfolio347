@@ -19638,6 +19638,68 @@ app.get('/api/banner-page/section8', (req, res) => {
     ]
     res.json(bannerPageSec8);
 });
+
+app.get('/api/buttons-page/section1', (req, res) => {
+    const buttonsPageSec1 = [
+        {
+            id: 1,
+            key: "buttonsPageSimple",
+            header: "Simple.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "arrow"
+        },
+        {
+            id: 2,
+            key: "buttonsPageWithText",
+            header: "With text.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "arrowWithText"
+        },
+        {
+            id: 3,
+            key: "buttonsPageOutline",
+            header: "Outline.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "buttonOutline"
+        },
+        {
+            id: 4,
+            key: "buttonsPageSolid",
+            header: "Solid.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "buttonSolid"
+        }
+    ]
+    res.json(buttonsPageSec1);
+});
+
+app.get('/api/buttons-page/section2', (req, res) => {
+    const buttonsPageSec2 = [
+        {
+            id: 1,
+            key: "buttonsPageSmall",
+            header: "Small.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "buttonSmall"
+        },
+        {
+            id: 2,
+            key: "buttonsPageMedium",
+            header: "Medium.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "buttonMedium"
+        },
+        {
+            id: 3,
+            key: "buttonsPageLarge",
+            header: "Large.",
+            text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
+            buttonType: "buttonLarge"
+        }
+    ]
+    res.json(buttonsPageSec2);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

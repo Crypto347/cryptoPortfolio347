@@ -69,6 +69,7 @@ import TeamPage from './Pages/ElementsPages/TeamPage/teamPage';
 import ContactFormPage from './Pages/ElementsPages/ContactFormPage/contactFormPage';
 import IconWithTextPage from './Pages/ElementsPages/IconWihTextPage/iconWithTextPage';
 import BannerPage from './Pages/ElementsPages/BannerPage/bannerPage';
+import ButtonsPage from './Pages/ElementsPages/ButtonsPage/buttonsPage';
 
 /**
  * Actions
@@ -151,6 +152,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/buttons"}
+                    component={ButtonsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/banner"}

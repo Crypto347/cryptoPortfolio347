@@ -1920,6 +1920,42 @@ export function fetchBannerPageSection8Data() {
     };
 }
 
+export function fetchButtonsPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchButtonsPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/buttons-page/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchButtonsPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchButtonsPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchButtonsPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchButtonsPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/buttons-page/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchButtonsPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchButtonsPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

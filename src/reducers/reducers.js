@@ -45,6 +45,7 @@ import teamPageReducer from './teamPageReducer';
 import contactFormPageReducer from './contactFormPageReducer';
 import iconWithTextPageReducer from './iconWithTextPageReducer';
 import bannerPageReducer from './bannerPageReducer';
+import buttonsPageReducer from './buttonsPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -87,5 +88,6 @@ export default (history) => combineReducers({
     teamPage: teamPageReducer,
     contactFormPage: contactFormPageReducer,
     iconWithTextPage: iconWithTextPageReducer,
-    bannerPage: bannerPageReducer
+    bannerPage: bannerPageReducer,
+    buttonsPage: buttonsPageReducer
 });

@@ -428,3 +428,11 @@ export const getBannerPageState = createSelector(
     [getBannerPage],
     (x) => x
 );
+
+const getButtonsPage = (state) => state.buttonsPage;
+
+export const getButtonsPageState = createSelector(
+    [getButtonsPage],
+    (x) => x
+);
+

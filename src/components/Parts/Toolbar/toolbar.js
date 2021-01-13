@@ -263,6 +263,7 @@ export const Toolbar = (props) => {
             case 'contactFormPage':
             case 'iconWithTextPage':
             case 'bannerPage':
+            case 'buttonsPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':
