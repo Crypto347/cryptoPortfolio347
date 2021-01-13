@@ -67,7 +67,7 @@ export const SlideFromImageLeft = (props) => {
     const handleResize = () => {
         // Set the height of the curtain on window resize
 
-        let cardHeight = document.getElementById("img").clientHeight;
+        let cardHeight = document.getElementById(`${props.obj.coverImage.key}Img`).clientHeight;
         setCardHeight(cardHeight - 80);
     }
 
@@ -293,12 +293,13 @@ export const SlideFromImageLeft = (props) => {
             className="slide-from-image-left"
             onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            style={{marginBottom: `${['bannerPageSection6'].includes(props.page) ? 0 : 30}px`}}
         >
             <div 
                 className={renderClassName("image", isHovering)}
             >
                 <img 
-                    id="img"
+                    id={`${props.obj.coverImage.key}Img`}
                     src={loadImg(props.obj.coverImage.key)} 
                     alt={props.obj.coverImage.alt}
                 />

@@ -68,7 +68,7 @@ export const StandardPortfolioItem = (props) => {
     const handleResize = () => {
         // Set the height of the curtain on window resize
 
-        let cardHeight = document.getElementById("img").clientHeight;
+        let cardHeight = document.getElementById(`${props.obj.coverImage.key}Img`).clientHeight;
         setCardHeight(cardHeight);
     }
 
@@ -272,7 +272,7 @@ export const StandardPortfolioItem = (props) => {
             onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
         >
             <img 
-                id="img"
+                id={`${props.obj.coverImage.key}Img`}
                 src={loadImg(props.obj.coverImage.key)} 
                 alt={props.obj.coverImage.alt}
             />

@@ -68,7 +68,7 @@ export const BannerImage = (props) => {
     const handleResize = () => {
         // Set the height of the curtain and padding value on window resize
 
-        let cardHeight = document.getElementById("img").clientHeight;
+        let cardHeight = document.getElementById(`${props.obj.coverImage.key}Img`).clientHeight;
         // let translatedVal;
         // switch(props.page){
         //     case 'bannerPageSection2':
@@ -217,7 +217,7 @@ export const BannerImage = (props) => {
         >
             <div className={renderClassName("bannerImage", isHovering)}>
                 <img 
-                    id="img"
+                    id={`${props.obj.coverImage.key}Img`}
                     src={loadImg(props.obj.coverImage.key)} 
                     alt={props.obj.coverImage.alt}
                 />

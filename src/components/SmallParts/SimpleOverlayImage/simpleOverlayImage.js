@@ -66,7 +66,7 @@ export const SimpleOverlayImage = (props) => {
     const handleResize = () => {
         // Set the height of the curtain on window resize
 
-        let cardHeight = document.getElementById("img").clientHeight;
+        let cardHeight = document.getElementById(`${props.imageKey}Img`).clientHeight;
         setCardHeight(cardHeight);
     }
 
@@ -181,9 +181,10 @@ export const SimpleOverlayImage = (props) => {
             className="simple-overlay-image"
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
+            style={{marginBottom: `${['bannerPageSection5'].includes(props.page) ? 0 : 30}px`}}
         >
             <img 
-                id="img"
+                id={`${props.imageKey}Img`}
                 src={loadImg(props.imageKey)} 
                 alt={props.alt}
             />

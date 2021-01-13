@@ -71,7 +71,7 @@ export const OverlayImage = (props) => {
         // Set the height of the curtain and padding value on window resize
 
         let paddingTopBottomVal = setPadding(props.page);
-        let cardHeight = document.getElementById("img").clientHeight;
+        let cardHeight = document.getElementById(`${props.obj.coverImage.key}Img`).clientHeight;
         setCardHeight(cardHeight - paddingTopBottomVal);
         setPaddingTopBottom(paddingTopBottomVal);
     }
@@ -429,7 +429,7 @@ export const OverlayImage = (props) => {
         >
             <div className={renderClassName("overlayImage", isHovering)}>
                 <img 
-                    id="img"
+                    id={`${props.obj.coverImage.key}Img`}
                     src={loadImg(props.obj.coverImage.key)} 
                     alt={props.obj.coverImage.alt}
                 />
