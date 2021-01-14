@@ -27,7 +27,7 @@ import './buttonsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import AccordionItem from '../../../SmallParts/AccordionItem/accordionItem';
+import ButtonsPageCardItem from '../../../SmallParts/ButtonsPageCardItem/buttonsPageCardItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -55,8 +55,8 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H45,
-    EW70
+    H35,
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -179,27 +179,23 @@ export const ButtonsPage = (props) => {
         }
     }
 
-    const renderButtonsPageSection1Data = () => {
+    const renderButtonsSection1PageData = (arr) => {
         return(
-            <div className="accordions-page-section1-items">{props.buttonsPage.section1Data.items.map((el, i) => {
-                // return(
-                //     <div key={i}>
-                //         <AccordionItem 
-                //             style="simple"
-                //             obj={el}
-                //             activateAccordionItem={props.setActivitySection1ItemAccordionsPage}
-                //             iconType="plusIcon"
-                //             option={opt}
-                //         />
-                //     </div>
-                // )
+            <div className="buttons-page-section1-data-items">{arr.items.map((el, i) => {
+                return(
+                    <div key={i}>
+                        <ButtonsPageCardItem
+                            data={el}
+                        />
+                    </div>
+                )
             })}</div>
         )
     }
 
-    const renderButtonsPageSection2Data = () => {
+    const renderButtonsSection2PageData = (arr) => {
         return(
-            <div className="accordions-page-section2-items">{props.buttonsPage.section2Data.items.map((el, i) => {
+            <div className="buttons-page-section2-data-items">{arr.items.map((el, i) => {
                 // return(
                 //     <div key={i}>
                 //         <AccordionItem
@@ -215,63 +211,41 @@ export const ButtonsPage = (props) => {
             })}</div>
         )
     }
-
-    const renderButtonsPageSection1DataContent = () => {
-        if(props.buttonsPage.section1Data.loading && !props.buttonsPage.section1Data.error){
-            return(
-                <div 
-                    className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
-                >
-                    <Loading color="black"/>
-                </div>
-            )
-        }
-        if(!props.buttonsPage.section1Data.loading && !props.buttonsPage.section1Data.error){
-            return(
-                <div className="accordions-page-section1-data-wrapper">
-                    {renderButtonsPageSection1Data()}
-                </div>
-            )
-        }
-        if(!props.buttonsPage.section1Data.loading && props.buttonsPage.section1Data.error){
-            return(
-                <div 
-                    className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
-                >
-                    <H15 className="h19-nobel-lora">{`${props.buttonsPage.section1Data.error}`}</H15>
-                </div>
-            )
-        }
-    } 
     
-    const renderButtonsPageSection2DataContent = () => {
-        if(props.buttonsPage.section2Data.loading && !props.buttonsPage.section2Data.error){
+    const renderButtonsPageDataContent = (section, arr) => {
+        if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="accordions-page-loading-error" 
+                    className="buttons-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.buttonsPage.section2Data.loading && !props.buttonsPage.section2Data.error){
-            return(
-                <div className="accordions-page-section2-data-wrapper">
-                    {renderButtonsPageSection2Data()}
-                </div>
-               
-            )
+        if(!arr.loading && !arr.error){
+            switch(section){
+                case 'section1':
+                    return(
+                        <div className="buttons-page-section1-data-wrapper">
+                            {renderButtonsSection1PageData(arr)}
+                        </div>
+                    );
+                case 'section2':
+                    return(
+                        <div className="buttons-page-section2-data-wrapper">
+                            {renderButtonsSection2PageData(arr)}
+                        </div>
+                    );
+            }
         }
-        if(!props.buttonsPage.section2Data.loading && props.buttonsPage.section2Data.error){
+        if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="accordions-page-loading-error" 
+                    className="buttons-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.buttonsPage.section2Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
                 </div>
             )
         }
@@ -282,15 +256,15 @@ export const ButtonsPage = (props) => {
      */
 
     return(
-        <div className="accordions-page" id="buttonsPage">
+        <div className="buttons-page" id="buttonsPage">
             {renderToolbars()}
-            <div className="accordions-page-wrapper">
-                <div className="accordions-page-header">
+            <div className="buttons-page-wrapper">
+                <div className="buttons-page-header">
                     <H45 className="h45-nero-lustria">Buttons</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderButtonsPageSection1DataContent()}
-                {renderButtonsPageSection2DataContent()}
+                {renderButtonsPageDataContent("section1", props.buttonsPage.section1Data)}
+                {renderButtonsPageDataContent("section2", props.buttonsPage.section2Data)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}

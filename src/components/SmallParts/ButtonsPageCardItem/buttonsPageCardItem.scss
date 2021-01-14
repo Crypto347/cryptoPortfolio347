@@ -1,6 +1,5 @@
-.section-1-data-item {
-    margin: 0 10px 0 10px;
-    .arrow-wrapper {
+.buttons-page-card-item {
+    .buttons-page-card-item-button-type-arrow-wrapper {
         display: flex;
         margin-top: 30px;
         align-items: center;
@@ -29,7 +28,7 @@
            }
        }
     }
-   .arrow-wrapper-lengthen {
+   .buttons-page-card-item-button-type-arrow-wrapper-lengthen {
         display: flex;
         margin-top: 30px;
         align-items: center;
@@ -38,10 +37,10 @@
             height: 2.5px;
             background: black;
             width: 60px;
-            -webkit-animation: lengthenHorizontalLineSection1 .1s linear;
-            -moz-animation: lengthenHorizontalLineSection1 .1s linear;
-            -o-animation: lengthenHorizontalLineSection1 .1s linear;
-            animation: lengthenHorizontalLineSection1 .1s linear;
+            -webkit-animation: lengthenHorizontalLineButtonsPageCardItem .1s linear;
+            -moz-animation: lengthenHorizontalLineButtonsPageCardItem .1s linear;
+            -o-animation: lengthenHorizontalLineButtonsPageCardItem .1s linear;
+            animation: lengthenHorizontalLineButtonsPageCardItem .1s linear;
        }
        .arrow-wrapper2 {
             transform: translate(-5px);
@@ -54,10 +53,10 @@
                 background: black;
                 height: 10px;
                 transform: translate(-1px, 2.5px) rotate(-45deg);
-                -webkit-animation: lengthenArrowLineSection1 .1s linear;
-                -moz-animation: lengthenArrowLineSection1 .1s linear;
-                -o-animation: lengthenArrowLineSection1 .1s linear;
-                animation: lengthenArrowLineSection1 .1s linear;
+                -webkit-animation: lengthenArrowLineButtonsPageCardItem .1s linear;
+                -moz-animation: lengthenArrowLineButtonsPageCardItem .1s linear;
+                -o-animation: lengthenArrowLineButtonsPageCardItem .1s linear;
+                animation: lengthenArrowLineButtonsPageCardItem .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
            }
@@ -66,16 +65,16 @@
                 background: black;
                 height: 10px;
                 transform: translate(-1px, -2.5px) rotate(45deg);
-                -webkit-animation: lengthenArrowLineSection1 .1s linear;
-                -moz-animation: lengthenArrowLineSection1 .1s linear;
-                -o-animation: lengthenArrowLineSection1 .1s linear;
-                animation: lengthenArrowLineSection1 .1s linear;
+                -webkit-animation: lengthenArrowLineButtonsPageCardItem .1s linear;
+                -moz-animation: lengthenArrowLineButtonsPageCardItem .1s linear;
+                -o-animation: lengthenArrowLineButtonsPageCardItem .1s linear;
+                animation: lengthenArrowLineButtonsPageCardItem .1s linear;
                 animation-delay: .2s;
                 animation-fill-mode: both;
            }
        }
    }
-   .arrow-wrapper-shorten {
+   .buttons-page-card-item-button-type-arrow-wrapper-shorten {
         display: flex;
         margin-top: 30px;
         align-items: center;
@@ -84,10 +83,10 @@
             height: 2.5px;
             background: black;
             width: 50px;
-            -webkit-animation: shortenHorizontalLineSection1 .1s linear;
-            -moz-animation: shortenHorizontalLineSection1 .1s linear;
-            -o-animation: shortenHorizontalLineSection1 .1s linear;
-            animation: shortenHorizontalLineSection1 .1s linear;
+            -webkit-animation: shortenHorizontalLineButtonsPageCardItem .1s linear;
+            -moz-animation: shortenHorizontalLineButtonsPageCardItem .1s linear;
+            -o-animation: shortenHorizontalLineButtonsPageCardItem .1s linear;
+            animation: shortenHorizontalLineButtonsPageCardItem .1s linear;
             animation-delay: .1s;
             animation-fill-mode: both;
         }
@@ -101,25 +100,25 @@
                 border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, 1px) rotate(-45deg);
-                -webkit-animation: shortenArrowLineSection1 .1s linear;
-                -moz-animation: shortenArrowLineSection1 .1s linear;
-                -o-animation: shortenArrowLineSection1 .1s linear;
-                animation: shortenArrowLineSection1 .1s linear;
+                -webkit-animation: shortenArrowLineButtonsPageCardItem .1s linear;
+                -moz-animation: shortenArrowLineButtonsPageCardItem .1s linear;
+                -o-animation: shortenArrowLineButtonsPageCardItem .1s linear;
+                animation: shortenArrowLineButtonsPageCardItem .1s linear;
             }
             .arrow-bottom-line {
                 border: 1px solid transparent;
                 height: 0px;
                 transform: translate(-1px, -1px) rotate(45deg);
-                -webkit-animation: shortenArrowLineSection1 .1s linear;
-                -moz-animation: shortenArrowLineSection1 .1s linear;
-                -o-animation: shortenArrowLineSection1 .1s linear;
-                animation: shortenArrowLineSection1 .1s linear;
+                -webkit-animation: shortenArrowLineButtonsPageCardItem .1s linear;
+                -moz-animation: shortenArrowLineButtonsPageCardItem .1s linear;
+                -o-animation: shortenArrowLineButtonsPageCardItem .1s linear;
+                animation: shortenArrowLineButtonsPageCardItem .1s linear;
             }
         }
     }
 }
 
-@-webkit-keyframes lengthenArrowLineSection1 {
+@-webkit-keyframes lengthenArrowLineButtonsPageCardItem {
     from{
         height: 0px;
         border: 0px solid black;
@@ -129,7 +128,7 @@
         border: 1px solid black;
     }
 }
-@-moz-keyframes lengthenArrowLineSection1 {
+@-moz-keyframes lengthenArrowLineButtonsPageCardItem {
     from{
         height: 0px;
         border: 0px solid black;
@@ -139,7 +138,7 @@
         border: 1px solid black;
     }
 }
-@-o-keyframes lengthenArrowLineSection1 {
+@-o-keyframes lengthenArrowLineButtonsPageCardItem {
     from{
         height: 0px;
         border: 0px solid black;
@@ -149,7 +148,7 @@
         border: 1px solid black;
     }
 }
-@keyframes lengthenArrowLineSection1 {
+@keyframes lengthenArrowLineButtonsPageCardItem {
     from{
         height: 0px;
         border: 0px solid black;
@@ -160,7 +159,7 @@
     }
 }
 
-@-webkit-keyframes shortenArrowLineSection1 {
+@-webkit-keyframes shortenArrowLineButtonsPageCardItem {
     from{
         border: 1px solid black;
         background: black;
@@ -172,7 +171,7 @@
         height: 0px;
     }
 }
-@-moz-keyframes shortenArrowLineSection1 {
+@-moz-keyframes shortenArrowLineButtonsPageCardItem {
     from{
         border: 1px solid black;
         background: black;
@@ -184,7 +183,7 @@
         height: 0px;
     }
 }
-@-o-keyframes shortenArrowLineSection1 {
+@-o-keyframes shortenArrowLineButtonsPageCardItem {
     from{
         border: 1px solid black;
         background: black;
@@ -196,7 +195,7 @@
         height: 0px;
     }
 }
-@keyframes shortenArrowLineSection1 {
+@keyframes shortenArrowLineButtonsPageCardItem {
     from{
         border: 1px solid black;
         background: black;
@@ -209,36 +208,36 @@
     }
 }
 
-@-webkit-keyframes lengthenHorizontalLineSection1 {
+@-webkit-keyframes lengthenHorizontalLineButtonsPageCardItem {
     from{width: 50px;}
     to{width: 60px;}
 }
-@-moz-keyframes lengthenHorizontalLineSection1 {
+@-moz-keyframes lengthenHorizontalLineButtonsPageCardItem {
     from{width: 50px;}
     to{width: 60px;}
 }
-@-o-keyframes lengthenHorizontalLineSection1 {
+@-o-keyframes lengthenHorizontalLineButtonsPageCardItem {
     from{width: 50px;}
     to{width: 60px;}
 }
-@keyframes lengthenHorizontalLineSection1 {
+@keyframes lengthenHorizontalLineButtonsPageCardItem {
     from{width: 50px;}
     to{width: 60px;}
 }
 
-@-webkit-keyframes shortenHorizontalLineSection1 {
+@-webkit-keyframes shortenHorizontalLineButtonsPageCardItem {
     from{width: 60px;}
     to{width: 50px;}
 }
-@-moz-keyframes shortenHorizontalLineSection1 {
+@-moz-keyframes shortenHorizontalLineButtonsPageCardItem {
     from{width: 60px;}
     to{width: 50px;}
 }
-@-o-keyframes shortenHorizontalLineSection1 {
+@-o-keyframes shortenHorizontalLineButtonsPageCardItem {
     from{width: 60px;}
     to{width: 50px;}
 }
-@keyframes shortenHorizontalLineSection1 {
+@keyframes shortenHorizontalLineButtonsPageCardItem {
     from{width: 60px;}
     to{width: 50px;}
 }

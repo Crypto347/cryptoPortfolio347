@@ -69,15 +69,6 @@ export const BannerImage = (props) => {
         // Set the height of the curtain and padding value on window resize
 
         let cardHeight = document.getElementById(`${props.obj.coverImage.key}Img`).clientHeight;
-        // let translatedVal;
-        // switch(props.page){
-        //     case 'bannerPageSection2':
-        //         // translatedVal = 15;
-        //         break;
-        //     default:
-        //         translatedVal = 0;
-        //         break;
-        // }
         setCardHeight(cardHeight);
     }
 
