@@ -9,7 +9,7 @@
        .arrow-horizontal-line {
             height: 2.5px;
             background: black;
-            width: 60px;
+            width: 50px;
        }
        .arrow-wrapper2 {
             transform: translate(-5px);
@@ -52,7 +52,7 @@
            .arrow-top-line {
                 border: 0px solid black;
                 background: black;
-                height: 10px;
+                height: 15px;
                 transform: translate(-1px, 2.5px) rotate(-45deg);
                 -webkit-animation: lengthenArrowLineSection1 .1s linear;
                 -moz-animation: lengthenArrowLineSection1 .1s linear;
@@ -64,7 +64,7 @@
            .arrow-bottom-line {
                 border: 0px solid black;
                 background: black;
-                height: 10px;
+                height: 15px;
                 transform: translate(-1px, -2.5px) rotate(45deg);
                 -webkit-animation: lengthenArrowLineSection1 .1s linear;
                 -moz-animation: lengthenArrowLineSection1 .1s linear;

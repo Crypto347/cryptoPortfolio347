@@ -260,7 +260,7 @@
                         animation: toolbarItemTextHoverOnAlignEnd .2s ease;
                     }
                     .toolbar-option-item-text-hover-off {
-                        transform: translateX(-0px);
+                        transform: translateX(0px);
                         -webkit-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
                         -moz-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
                         -o-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
@@ -427,7 +427,7 @@
                             animation: toolbarItemTextHoverOnAlignEnd .2s ease;
                         }
                         .toolbar-option-item-text-hover-off {
-                            transform: translateX(-0px);
+                            transform: translateX(0px);
                             -webkit-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
                             -moz-animation: toolbarItemTextHoverOffAlignEnd .2s ease;
                             -o-animation: toolbarItemTextHoverOffAlignEnd .2s ease;

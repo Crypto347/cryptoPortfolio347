@@ -18,6 +18,7 @@ import './buttonsPageCardItem.scss';
  */
 
 import {
+    H15,
     H17,
     H35,
 } from '../../UtilityComponents';
@@ -60,6 +61,26 @@ export const ButtonsPageCardItem = (props) => {
                     return "buttons-page-card-item-button-type-arrow-wrapper-shorten"
             }
         }
+        if(opt === "arrowWithTextPartArrow"){
+            switch(isHovering){
+                case 'init':
+                    return "arrow-wrapper";
+                case 'on':
+                    return "arrow-wrapper-hover-on";
+                case 'off':
+                    return "arrow-wrapper-hover-off";
+            }
+        }
+        if(opt === "arrowWithTextPartText"){
+            switch(isHovering){
+                case 'init':
+                    return "text";
+                case 'on':
+                    return "text-hover-on";
+                case 'off':
+                    return "text-hover-off";
+            }
+        }
     }
 
     const renderButtons = (buttonType) => {
@@ -80,8 +101,21 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'arrowWithText': 
                 return(
-                    <div>
-                        
+                    <div className="buttons-page-card-item-button-type-arrow-with-text-wrapper" >
+                        <div className={renderClassName("arrowWithTextPartArrow", isHovering)}>
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div>
+                        <div 
+                            className={renderClassName("arrowWithTextPartText", isHovering)}
+                            onMouseEnter={handleMouseEnter} 
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <H15 className="h15-black-lustria">view detail</H15>
+                        </div>
                     </div>
                 );
             case 'buttonOutline': 
