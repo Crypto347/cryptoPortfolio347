@@ -495,7 +495,7 @@ export const ContactFormPage = (props) => {
                     })}
                     <EW20/>
                     <Button
-                        className="call-to-action-get-direction-white"
+                        className="call-to-action-get-direction-clear"
                         text="subscribe."
                         onClick={() => onClickHandler('section2InputForm')}
                     />

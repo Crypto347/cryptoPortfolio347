@@ -14,6 +14,12 @@ import React, {
 import './buttonsPageCardItem.scss';
 
 /**
+ * Components
+ */
+
+import Button from '../../../library/Button/button';
+
+/**
  * Utility
  */
 
@@ -101,7 +107,7 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'arrowWithText': 
                 return(
-                    <div className="buttons-page-card-item-button-type-arrow-with-text-wrapper" >
+                    <div className="buttons-page-card-item-button-type-arrow-with-text-wrapper">
                         <div className={renderClassName("arrowWithTextPartArrow", isHovering)}>
                             <div className="arrow-horizontal-line"/>
                             <div className="arrow-wrapper2">
@@ -120,14 +126,22 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonOutline': 
                 return(
-                    <div>
-                        
+                    <div className="buttons-page-card-item-button-type-outline">
+                        <Button
+                            className="buttons-page-outline"
+                            text="get direction."
+                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                        />
                     </div>
                 );
             case 'buttonSolid': 
                 return(
-                    <div>
-                        
+                    <div className="buttons-page-card-item-button-type-solid">
+                        <Button
+                            className="buttons-page-solid"
+                            text="get direction."
+                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                        />
                     </div>
                 );
             case 'buttonSmall': 

@@ -214,7 +214,7 @@ export const CallToActionPage = (props) => {
                     <H22 className="h22-white-lustria">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</H22>
                     <EH20/>
                     <Button
-                        className="call-to-action-get-direction-white"
+                        className="call-to-action-get-direction-clear"
                         text="get direction."
                         onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
                     />

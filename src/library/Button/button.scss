@@ -62,7 +62,7 @@
     }
 }
 
-.call-to-action-get-direction-white {
+.call-to-action-get-direction-clear {
     font-family: 'Balsamiq Sans', cursive;
     font-size: 14px;
     font-weight: bold;
@@ -104,9 +104,70 @@
     }
 }
 
-.call-to-action-get-direction-white:focus {     
+.buttons-page-outline {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    color: black;
+    border: none;
+    width: 180px;
+    height: 60px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    border: 2px solid black;
+    cursor: pointer;
+    &:hover {
+        background: black;
+        color: white;
+    }
+}
+
+.buttons-page-solid {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 180px;
+    height: 60px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        border: 2px solid black;
+        color: black;
+    }
+}
+
+.header-get-direction:focus {
     outline: none; 
 }
+
+.call-to-action-get-direction-black:focus {
+    outline: none; 
+}
+
+.call-to-action-get-direction-clear:focus {
+    outline: none; 
+}
+
+.archive-load-more:focus {
+    outline: none; 
+}
+
+.buttons-page-outline:focus {     
+    outline: none; 
+}
+
+.buttons-page-solid:focus {     
+    outline: none; 
+}
+
 
 .none {
     width: none;
@@ -114,8 +175,6 @@
 .hide {
     display: none;
 }
-
-
 
 @media only screen and (max-width: 1120px){
     .header-get-direction {
