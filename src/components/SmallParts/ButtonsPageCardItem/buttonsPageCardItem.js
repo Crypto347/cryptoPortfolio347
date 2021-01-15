@@ -114,7 +114,7 @@ export const ButtonsPageCardItem = (props) => {
                             onMouseEnter={handleMouseEnter} 
                             onMouseLeave={handleMouseLeave}
                         >
-                            <H15 className="h15-black-lustria">view detail</H15>
+                            <H15 className="h15-black-poppins">view detail</H15>
                         </div>
                     </div>
                 );

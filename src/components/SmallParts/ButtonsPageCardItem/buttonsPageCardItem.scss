@@ -235,23 +235,23 @@
                 }
             }
         }
-        // .text {
-        //     transform: translateX(0px);
-        // }
-        // .text-hover-on {
-        //     transform: translateX(20px);
-        //     -webkit-animation: buttonsPageCardItemTextHoverOn .2s ease;
-        //     -moz-animation: buttonsPageCardItemTextHoverOn .2s ease;
-        //     -o-animation: buttonsPageCardItemTextHoverOn .2s ease;
-        //     animation: buttonsPageCardItemTextHoverOn .2s ease;
-        // }
-        // .text-hover-off {
-        //     transform: translateX(0px);
-        //     -webkit-animation: buttonsPageCardItemTextHoverOff .2s ease;
-        //     -moz-animation: buttonsPageCardItemTextHoverOff .2s ease;
-        //     -o-animation: buttonsPageCardItemTextHoverOff .2s ease;
-        //     animation: buttonsPageCardItemTextHoverOff .2s ease;
-        // }
+        .text {
+            transform: translateX(10px);
+        }
+        .text-hover-on {
+            transform: translateX(15px);
+            -webkit-animation: buttonsPageCardItemTextHoverOn .4s ease;
+            -moz-animation: buttonsPageCardItemTextHoverOn .4s ease;
+            -o-animation: buttonsPageCardItemTextHoverOn .4s ease;
+            animation: buttonsPageCardItemTextHoverOn .4s ease;
+        }
+        .text-hover-off {
+            transform: translateX(10px);
+            -webkit-animation: buttonsPageCardItemTextHoverOff .4s ease;
+            -moz-animation: buttonsPageCardItemTextHoverOff .4s ease;
+            -o-animation: buttonsPageCardItemTextHoverOff .4s ease;
+            animation: buttonsPageCardItemTextHoverOff .4s ease;
+        }
     }
 }
 
@@ -528,35 +528,35 @@
 }
 
 @-webkit-keyframes buttonsPageCardItemTextHoverOn {
-    from{transform: translateX(0);}
-    to{transform: translateX(20px);}
+    from{transform: translateX(10px);}
+    to{transform: translateX(15px);}
 }
 @-moz-keyframes buttonsPageCardItemTextHoverOn {
-    from{transform: translateX(0);}
-    to{transform: translateX(20px);}
+    from{transform: translateX(10px);}
+    to{transform: translateX(15px);}
 }
 @-o-keyframes buttonsPageCardItemTextHoverOn {
-    from{transform: translateX(0);}
-    to{transform: translateX(20px);}
+    from{transform: translateX(10px);}
+    to{transform: translateX(15px);}
 }
 @keyframes buttonsPageCardItemTextHoverOn {
-    from{transform: translateX(0);}
-    to{transform: translateX(20px);}
+    from{transform: translateX(10px);}
+    to{transform: translateX(15px);}
 }
 
 @-webkit-keyframes buttonsPageCardItemTextHoverOff {
-    from{transform: translateX(20px);}
-    to{transform: translateX(0px);}
+    from{transform: translateX(15px);}
+    to{transform: translateX(10px);}
 }
 @-moz-keyframes buttonsPageCardItemTextHoverOff {
-    from{transform: translateX(20px);}
-    to{transform: translateX(0px);}
+    from{transform: translateX(15px);}
+    to{transform: translateX(10px);}
 }
 @-o-keyframes buttonsPageCardItemTextHoverOff {
-    from{transform: translateX(20px);}
-    to{transform: translateX(0px);}
+    from{transform: translateX(15px);}
+    to{transform: translateX(10px);}
 }
 @keyframes buttonsPageCardItemTextHoverOff {
-    from{transform: translateX(20px);}
-    to{transform: translateX(0px);}
+    from{transform: translateX(15px);}
+    to{transform: translateX(10px);}
 }
