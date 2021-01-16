@@ -37,18 +37,42 @@
     }
 }
 
-@media only screen and (max-width: 1120px){
+@media only screen and (max-width: 1450px){
     .buttons-page {
         .buttons-page-wrapper {
             .buttons-page-header {
                 padding: 90px 40px 90px 40px;
             }
-            .buttons-page-section1-data-wrapper {
+            .buttons-page-section1-data-items {
                 padding: 130px 40px 130px 40px;
             }
-            .buttons-page-section2-data-wrapper {
+            .buttons-page-section2-data-items {
                 padding: 110px 40px 110px 40px;
-            }     
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1260px){
+    .buttons-page {
+        .buttons-page-wrapper {
+            .buttons-page-header {
+                padding: 90px 130px 90px 130px;
+            }
+            .buttons-page-section1-data-items {
+                padding: 90px 130px 90px 130px;
+                .buttons-page-section1-data-item {
+                    padding-top: 40px;
+                    width: 50%;
+                }
+            }
+            .buttons-page-section2-data-items {
+                padding: 70px 110px 70px 110px;
+                .buttons-page-section2-data-item {
+                    padding-top: 40px;
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -56,9 +80,28 @@
 @media only screen and (max-width: 860px){
     .buttons-page {
         .buttons-page-wrapper {
-            .buttons-page-section1-data-wrapper {
-                flex-direction: column;
-            }  
+            .buttons-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            .buttons-page-section1-data-items {
+                padding: 90px 40px 90px 40px;
+            }
+            .buttons-page-section2-data-items {
+                padding: 70px 40px 70px 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 660px){
+    .buttons-page {
+        .buttons-page-wrapper {
+            .buttons-page-section1-data-items {
+                .buttons-page-section1-data-item {
+                    padding-top: 40px;
+                    width: 100%;
+                }
+            }
         }
     }
 }

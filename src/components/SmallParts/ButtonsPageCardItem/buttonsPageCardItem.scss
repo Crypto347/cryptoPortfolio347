@@ -1,9 +1,9 @@
 .buttons-page-card-item {
-    .buttons-page-card-item-section-1-text-wrapper {
-        width: 280px;
+    .buttons-page-card-item-section1-text-wrapper {
+        width: 95%;
         line-height: 1.6;
     }
-    .buttons-page-card-item-section-2-text-wrapper {
+    .buttons-page-card-item-section2-text-wrapper {
         width: 370px;
         line-height: 1.6;
     }
@@ -270,6 +270,14 @@
     
 }
 
+@media only screen and (max-width: 1260px){
+    .buttons-page-card-item {
+        .buttons-page-card-item-section2-text-wrapper {
+            width: 100%;
+            line-height: 1.6;
+        }
+    }
+}
 
 @-webkit-keyframes lengthenHorizontalLineButtonsPageCardItemTypeArrow {
     from{width: 50px;}
