@@ -190,6 +190,9 @@ export const ButtonsPage = (props) => {
                         <ButtonsPageCardItem
                             page="buttonsPageSection1"
                             data={el}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            currentPagePathName="buttons"
                         />
                     </div>
                 )
@@ -208,6 +211,9 @@ export const ButtonsPage = (props) => {
                         <ButtonsPageCardItem
                             page="buttonsPageSection2"
                             data={el}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            currentPagePathName="buttons"
                         />
                     </div>
                 )
@@ -290,10 +296,7 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setIsHoverSection2ItemAccordionsPage: bindActionCreators(Actions.setIsHoverSection2ItemAccordionsPage, dispatch),
-            setActivitySection1ItemAccordionsPage: bindActionCreators(Actions.setActivitySection1ItemAccordionsPage, dispatch),
-            setActivitySection2ItemAccordionsPage: bindActionCreators(Actions.setActivitySection2ItemAccordionsPage, dispatch),
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
 )(ButtonsPage);

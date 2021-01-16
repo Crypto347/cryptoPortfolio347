@@ -91,6 +91,26 @@ export const ButtonsPageCardItem = (props) => {
         }
     }
 
+    const onMouseDownHandler = (e) => {
+        // Do nothing on right mouse click
+
+        if(e.button === 2) return;
+        
+        if(e.button !== 1){
+            // Scroll to the top of the page on left mouse click
+
+            window.scrollTo(0, 0);
+        }else{
+            // Open the template page on scroll wheel click  
+
+            props.setUnmountComponentValues(false, props.currentPagePathName);
+        }
+        // Fire up unmountComponent epic
+
+        props.unmountComponent(null, null,  props.page, e.button);
+    }
+
+
     const renderButtons = (buttonType) => {
         switch(buttonType){
             case 'arrow': 
@@ -99,6 +119,7 @@ export const ButtonsPageCardItem = (props) => {
                     className={renderClassName("arrow", isHovering)}
                     onMouseEnter={handleMouseEnter} 
                     onMouseLeave={handleMouseLeave}
+                    onMouseDown={(e) => onMouseDownHandler(e)}
                 >
                     <div className="arrow-horizontal-line"/>
                     <div className="arrow-wrapper2">
@@ -121,6 +142,7 @@ export const ButtonsPageCardItem = (props) => {
                             className={renderClassName("arrowWithTextPartText", isHovering)}
                             onMouseEnter={handleMouseEnter} 
                             onMouseLeave={handleMouseLeave}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
                         >
                             <H15 className="h15-black-poppins">view detail</H15>
                         </div>
@@ -132,7 +154,7 @@ export const ButtonsPageCardItem = (props) => {
                         <Button
                             className="buttons-page-outline"
                             text="get direction."
-                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
                         />
                     </div>
                 );
@@ -142,7 +164,7 @@ export const ButtonsPageCardItem = (props) => {
                         <Button
                             className="buttons-page-solid"
                             text="get direction."
-                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
                         />
                     </div>
                 );
@@ -152,7 +174,7 @@ export const ButtonsPageCardItem = (props) => {
                         <Button
                             className="buttons-page-small"
                             text="get direction."
-                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
                         />
                     </div>
                 );
@@ -162,7 +184,7 @@ export const ButtonsPageCardItem = (props) => {
                         <Button
                             className="buttons-page-medium"
                             text="get direction."
-                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
                         />
                     </div>
                 );
@@ -172,7 +194,7 @@ export const ButtonsPageCardItem = (props) => {
                         <Button
                             className="buttons-page-large"
                             text="get direction."
-                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
                         />
                     </div>
                 );
