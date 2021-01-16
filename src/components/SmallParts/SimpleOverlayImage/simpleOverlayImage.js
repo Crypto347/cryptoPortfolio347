@@ -132,17 +132,24 @@ export const SimpleOverlayImage = (props) => {
         localStorage.setItem("page", props.page);
 
         if(e.button !== 1){
+            if(['bannerPageSection5'].includes(props.page)){
+                // If template page scroll to the top of the page on left mouse click 
 
-            // If template page do nothing on left mouse click 
+                window.scrollTo(0, 0);
+            }else{
+                /**
+                 * Add fading effect on the unmounted component and remember 
+                 * information of the unmounted component on left mouse click 
+                 */
 
-            if(['bannerPageSection5'].includes(props.page)) return;
+                props.setUnmountComponentValues(true, path);
 
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */
+                // Fire up unmountComponent epic
 
-            props.setUnmountComponentValues(true, path);
+                props.unmountComponent(null, null,  props.page, e.button);
+            }
+
+           
         }else{
             if(['bannerPageSection5'].includes(props.page)){
                 // Open the template page on scroll wheel click 
@@ -152,11 +159,12 @@ export const SimpleOverlayImage = (props) => {
                 // Remember information of the unmounted component on scroll wheel click
             
                 props.setUnmountComponentValues(false, path);
-            }       
-        }
-        // Fire up unmountComponent epic
+            }
+            // Fire up unmountComponent epic
 
-        props.unmountComponent(null, null,  props.page, e.button);
+            props.unmountComponent(null, null,  props.page, e.button);
+        }
+ 
     }
 
     const renderClassName = (opt, isHovering) => {

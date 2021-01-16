@@ -104,10 +104,11 @@ export const ButtonsPageCardItem = (props) => {
             // Open the template page on scroll wheel click  
 
             props.setUnmountComponentValues(false, props.currentPagePathName);
-        }
-        // Fire up unmountComponent epic
 
-        props.unmountComponent(null, null,  props.page, e.button);
+            // Fire up unmountComponent epic
+            
+            props.unmountComponent(null, null,  props.page, e.button);
+        }
     }
 
 

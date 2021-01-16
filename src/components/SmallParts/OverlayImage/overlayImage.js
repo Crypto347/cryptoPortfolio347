@@ -313,17 +313,22 @@ export const OverlayImage = (props) => {
         localStorage.setItem("page", props.page);
         
         if(e.button !== 1){
+            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
+                // If template page scroll to the top of the page on left mouse click 
 
-            // If template page do nothing on left mouse click 
+                window.scrollTo(0, 0);
+            }else{
+                /**
+                 * Add fading effect on the unmounted component and remember 
+                 * information of the unmounted component on left mouse click 
+                 */
 
-            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
+                props.setUnmountComponentValues(true, path);
 
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */
+                // Fire up unmountComponent epic
 
-            props.setUnmountComponentValues(true, path);
+                props.unmountComponent(null, null,  props.page, e.button);
+            }
         }else{
             if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
                 // Open the template page on scroll wheel click 
@@ -334,21 +339,22 @@ export const OverlayImage = (props) => {
 
                 props.setUnmountComponentValues(false, path);
             }
-        }
-        // Fire up unmountComponent epic
+            // Fire up unmountComponent epic
 
-        props.unmountComponent(null, null,  props.page, e.button);
+            props.unmountComponent(null, null,  props.page, e.button);
+        }
     }
 
     const onClickHandler = (e, path, key) => {
         // Do nothing on right mouse click
 
         if(e.button === 2) return;
+        if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
 
         // Prevent function overlayImageItemOnClick from running
 
         e.stopPropagation();
-        
+
         // Storing data in local storage 
 
         localStorage.setItem("archiveCategory", key);
@@ -356,16 +362,9 @@ export const OverlayImage = (props) => {
 
         // Clear archive data
 
-        if(!['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) {
-            props.clearArchiveData();
-        }
+        props.clearArchiveData();
     
         if(e.button !== 1){
-
-            // If template page do nothing on left mouse click 
-
-            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
-
             /**
              * Add fading effect on the unmounted component and remember 
              * information of the unmounted component on left mouse click 
@@ -373,15 +372,9 @@ export const OverlayImage = (props) => {
 
             props.setUnmountComponentValues(true, path);
         }else{
-            if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
-                // Open the template page on scroll wheel click 
-                
-                props.setUnmountComponentValues(false, props.currentPagePathName);
-            }else{
-                // Remember information of the unmounted component on scroll wheel click
-            
-                props.setUnmountComponentValues(false, path);
-            }
+            // Remember information of the unmounted component on scroll wheel click
+        
+            props.setUnmountComponentValues(false, path);
         }
         // Fire up unmountComponent epic
 

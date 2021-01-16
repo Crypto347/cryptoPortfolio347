@@ -173,14 +173,22 @@ export const StandardPortfolioItem = (props) => {
         if(e.button !== 1){
             // If template page do nothing on left mouse click 
 
-            if(['bannerPageSection7'].includes(props.page)) return;
+            if(['bannerPageSection7'].includes(props.page)){
+                // If template page scroll to the top of the page on left mouse click 
 
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */
+                window.scrollTo(0, 0);
+            }else{
+                /**
+                 * Add fading effect on the unmounted component and remember 
+                 * information of the unmounted component on left mouse click 
+                 */
 
-            props.setUnmountComponentValues(true, path);
+                props.setUnmountComponentValues(true, path);
+
+                // Fire up unmountComponent epic
+
+                props.unmountComponent(null, null,  props.page, e.button);
+            }            
         }else{
             if(['bannerPageSection7'].includes(props.page)){
                 // Open the template page on scroll wheel click 
@@ -191,10 +199,10 @@ export const StandardPortfolioItem = (props) => {
 
                 props.setUnmountComponentValues(false, path);
             }
-        }
-        // Fire up unmountComponent epic
+            // Fire up unmountComponent epic
 
-        props.unmountComponent(null, null,  props.page, e.button);
+            props.unmountComponent(null, null,  props.page, e.button);
+        }
     }
 
     const onClickHandler = (e, path, key) => {
@@ -216,15 +224,22 @@ export const StandardPortfolioItem = (props) => {
         if(e.button !== 1){
             // If template page do nothing on left mouse click 
 
-            if(['bannerPageSection7'].includes(props.page)) return;
+            if(['bannerPageSection7'].includes(props.page)){
+                // If template page scroll to the top of the page on left mouse click 
 
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */ 
+                window.scrollTo(0, 0);
+            }else{
+                /**
+                 * Add fading effect on the unmounted component and remember 
+                 * information of the unmounted component on left mouse click 
+                 */ 
 
-            props.setUnmountComponentValues(true, path);
-          
+                props.setUnmountComponentValues(true, path);
+
+                // Fire up unmountComponent epic
+        
+                props.unmountComponent(null, null, props.page, e.button);
+            }
         }else{
             if(['bannerPageSection7'].includes(props.page)){
                 // Open the template page on scroll wheel click 
@@ -235,10 +250,10 @@ export const StandardPortfolioItem = (props) => {
             
                 props.setUnmountComponentValues(false, path);
             }
-        }
-        // Fire up unmountComponent epic
+            // Fire up unmountComponent epic
         
-        props.unmountComponent(null, null, props.page, e.button);
+            props.unmountComponent(null, null, props.page, e.button);
+        }
     }
     
     const renderCategories = (obj) => {
