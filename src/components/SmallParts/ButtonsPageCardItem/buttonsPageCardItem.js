@@ -26,7 +26,9 @@ import Button from '../../../library/Button/button';
 import {
     H15,
     H17,
+    H22,
     H35,
+    EH30
 } from '../../UtilityComponents';
 
 /**
@@ -146,20 +148,32 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonSmall': 
                 return(
-                    <div>
-                        
+                    <div className="buttons-page-card-item-button-type-small">
+                        <Button
+                            className="buttons-page-small"
+                            text="get direction."
+                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                        />
                     </div>
                 );
             case 'buttonMedium': 
                 return(
-                    <div>
-                        
+                    <div className="buttons-page-card-item-button-type-medium">
+                        <Button
+                            className="buttons-page-medium"
+                            text="get direction."
+                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                        />
                     </div>
                 );
             case 'buttonLarge': 
                 return(
-                    <div>
-                        
+                    <div className="buttons-page-card-item-button-type-large">
+                        <Button
+                            className="buttons-page-large"
+                            text="get direction."
+                            // onMouseDown={(e) => onMouseDownHandler(e, props.location.pathname)}
+                        />
                     </div>
                 );
         }
@@ -176,7 +190,15 @@ export const ButtonsPageCardItem = (props) => {
             onMouseLeave={() => handleMouseLeave(isHovering)}
         >
             <H35 className="h35-black-poppins">{props.data.header}</H35>
-            <H17 className="h17-nobel-lustria">{props.data.text}</H17>
+            <EH30/>
+            {props.page === "buttonsPageSection1" ?
+            <div className="buttons-page-card-item-section-1-text-wrapper">
+                <H17 className="h17-nobel-lustria">{props.data.text}</H17>
+            </div> : 
+            <div className="buttons-page-card-item-section-2-text-wrapper">
+                <H22 className="h22-nobel-lustria">{props.data.text}</H22>
+            </div>
+            }
             {renderButtons(props.data.buttonType)}
         </div>
     );

@@ -111,7 +111,7 @@
     background-color: transparent;
     color: black;
     border: none;
-    width: 180px;
+    width: 225px;
     height: 60px;
     z-index: 500;
     animation-delay: 4s;
@@ -131,7 +131,67 @@
     background-color: black;
     color: white;
     border: none;
+    width: 225px;
+    height: 60px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        border: 2px solid black;
+        color: black;
+    }
+}
+
+.buttons-page-small {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 170px;
+    height: 55px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        border: 2px solid black;
+        color: black;
+    }
+}
+
+.buttons-page-medium {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
     width: 180px;
+    height: 60px;
+    z-index: 500;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+    cursor: pointer;
+    &:hover {
+        background: transparent;
+        border: 2px solid black;
+        color: black;
+    }
+}
+
+.buttons-page-large {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 225px;
     height: 60px;
     z-index: 500;
     animation-delay: 4s;
@@ -168,6 +228,17 @@
     outline: none; 
 }
 
+.buttons-page-small:focus {
+    outline: none; 
+}
+
+.buttons-page-medium:focus {
+    outline: none; 
+}
+
+.buttons-page-large:focus {
+    outline: none; 
+}
 
 .none {
     width: none;

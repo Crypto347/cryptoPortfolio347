@@ -183,8 +183,12 @@ export const ButtonsPage = (props) => {
         return(
             <div className="buttons-page-section1-data-items">{arr.items.map((el, i) => {
                 return(
-                    <div key={i}>
+                    <div 
+                        key={i}
+                        className="buttons-page-section1-data-item"
+                    >
                         <ButtonsPageCardItem
+                            page="buttonsPageSection1"
                             data={el}
                         />
                     </div>
@@ -196,18 +200,17 @@ export const ButtonsPage = (props) => {
     const renderButtonsSection2PageData = (arr) => {
         return(
             <div className="buttons-page-section2-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div key={i}>
-                //         <AccordionItem
-                //             style="hoverBlackAndWhite"
-                //             hoverEffect
-                //             obj={el}
-                //             setIsHoverAccordionItem={props.setIsHoverSection2ItemAccordionsPage}
-                //             activateAccordionItem={props.setActivitySection2ItemAccordionsPage}
-                //             iconType="plusIcon"
-                //         />
-                //     </div>
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="buttons-page-section2-data-item"
+                    >
+                        <ButtonsPageCardItem
+                            page="buttonsPageSection2"
+                            data={el}
+                        />
+                    </div>
+                )
             })}</div>
         )
     }
