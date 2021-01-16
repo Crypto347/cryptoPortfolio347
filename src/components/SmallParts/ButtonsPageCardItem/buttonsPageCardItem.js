@@ -128,7 +128,7 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonOutline': 
                 return(
-                    <div className="buttons-page-card-item-button-type-outline">
+                    <div className="buttons-page-card-item-button-wrapper">
                         <Button
                             className="buttons-page-outline"
                             text="get direction."
@@ -138,7 +138,7 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonSolid': 
                 return(
-                    <div className="buttons-page-card-item-button-type-solid">
+                    <div className="buttons-page-card-item-button-wrapper">
                         <Button
                             className="buttons-page-solid"
                             text="get direction."
@@ -148,7 +148,7 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonSmall': 
                 return(
-                    <div className="buttons-page-card-item-button-type-small">
+                    <div className="buttons-page-card-item-button-wrapper">
                         <Button
                             className="buttons-page-small"
                             text="get direction."
@@ -158,7 +158,7 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonMedium': 
                 return(
-                    <div className="buttons-page-card-item-button-type-medium">
+                    <div className="buttons-page-card-item-button-wrapper">
                         <Button
                             className="buttons-page-medium"
                             text="get direction."
@@ -168,7 +168,7 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'buttonLarge': 
                 return(
-                    <div className="buttons-page-card-item-button-type-large">
+                    <div className="buttons-page-card-item-button-wrapper">
                         <Button
                             className="buttons-page-large"
                             text="get direction."
