@@ -8,7 +8,7 @@
         line-height: 1.6;
     }
     .buttons-page-card-item-button-type-arrow-wrapper {
-        display: flex;
+        display: inline-flex;
         margin-top: 40px;
         align-items: center;
         cursor: pointer;
@@ -36,7 +36,7 @@
        }
     }
     .buttons-page-card-item-button-type-arrow-wrapper-lengthen {
-        display: flex;
+        display: inline-flex;
         margin-top: 40px;
         align-items: center;
         cursor: pointer;
@@ -82,7 +82,7 @@
         }
     }
     .buttons-page-card-item-button-type-arrow-wrapper-shorten {
-        display: flex;
+        display: inline-flex;
         margin-top: 40px;
         align-items: center;
         cursor: pointer;

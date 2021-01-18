@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './buttonsPage.scss';
+import './pricingTablesPage.scss';
 
 /**
  * Components
@@ -67,10 +67,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * ButtonsPage component definition and export
+ * PricingTablesPage component definition and export
  */
 
-export const ButtonsPage = (props) => {
+export const PricingTablesPage = (props) => {
 
     /**
      * State
@@ -178,7 +178,7 @@ export const ButtonsPage = (props) => {
         }
     }
 
-    const renderButtonsPageSection1PageData = (arr) => {
+    const renderPricingTablePageSection1PageData = (arr) => {
         return(
             <div className="buttons-page-section1-data-items">{arr.items.map((el, i) => {
                 return(
@@ -199,7 +199,7 @@ export const ButtonsPage = (props) => {
         )
     }
 
-    const renderButtonsPageSection2PageData = (arr) => {
+    const renderPricingTablePageSection2PageData = (arr) => {
         return(
             <div className="buttons-page-section2-data-items">{arr.items.map((el, i) => {
                 return(
@@ -220,7 +220,7 @@ export const ButtonsPage = (props) => {
         )
     }
     
-    const renderButtonsPageDataContent = (section, arr) => {
+    const renderPricingTablePageDataContent = (section, arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
@@ -236,13 +236,13 @@ export const ButtonsPage = (props) => {
                 case 'section1':
                     return(
                         <div className="buttons-page-section1-data-wrapper">
-                            {renderButtonsPageSection1PageData(arr)}
+                            {renderPricingTablePageSection1PageData(arr)}
                         </div>
                     );
                 case 'section2':
                     return(
                         <div className="buttons-page-section2-data-wrapper">
-                            {renderButtonsPageSection2PageData(arr)}
+                            {renderPricingTablePageSection2PageData(arr)}
                         </div>
                     );
             }
@@ -271,8 +271,8 @@ export const ButtonsPage = (props) => {
                     <H45 className="h45-nero-lustria">Buttons</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderButtonsPageDataContent("section1", props.buttonsPage.section1Data)}
-                {renderButtonsPageDataContent("section2", props.buttonsPage.section2Data)}
+                {renderPricingTablePageDataContent("section1", props.buttonsPage.section1Data)}
+                {renderPricingTablePageDataContent("section2", props.buttonsPage.section2Data)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -298,5 +298,5 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(ButtonsPage);
+)(PricingTablesPage);
  

@@ -72,6 +72,8 @@ export const findPathOfIds = (path) => {
             return [6, 61, 618];
         case 'buttons':
             return [6, 61, 619];
+        case 'pricing-tables':
+            return [6, 62, 621];
     }
 
     //Second element of updatedPath array

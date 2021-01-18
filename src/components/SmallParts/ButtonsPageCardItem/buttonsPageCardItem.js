@@ -207,11 +207,7 @@ export const ButtonsPageCardItem = (props) => {
      */
 
     return(
-        <div 
-            className="buttons-page-card-item"
-            onMouseEnter={() => handleMouseEnter(isHovering)} 
-            onMouseLeave={() => handleMouseLeave(isHovering)}
-        >
+        <div className="buttons-page-card-item">
             <H35 className="h35-black-poppins">{props.data.header}</H35>
             <EH30/>
             {props.page === "buttonsPageSection1" ?

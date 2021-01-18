@@ -70,6 +70,7 @@ import ContactFormPage from './Pages/ElementsPages/ContactFormPage/contactFormPa
 import IconWithTextPage from './Pages/ElementsPages/IconWihTextPage/iconWithTextPage';
 import BannerPage from './Pages/ElementsPages/BannerPage/bannerPage';
 import ButtonsPage from './Pages/ElementsPages/ButtonsPage/buttonsPage';
+import PricingTablesPage from './Pages/ElementsPages/PricingTablesPage/pricingTablesPage';
 
 /**
  * Actions
@@ -152,6 +153,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/pricing-tables"}
+                    component={PricingTablesPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/buttons"}
