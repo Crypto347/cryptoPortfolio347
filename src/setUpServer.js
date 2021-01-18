@@ -19653,7 +19653,8 @@ app.get('/api/buttons-page/section1', (req, res) => {
             key: "buttonsPageWithText",
             header: "With text.",
             text: "Lorem ipsum dolor sit amet, nam propriae atomorum sensibus ei sed errem populo.",
-            buttonType: "arrowWithText"
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
         },
         {
             id: 3,
@@ -19698,6 +19699,84 @@ app.get('/api/buttons-page/section2', (req, res) => {
         }
     ]
     res.json(buttonsPageSec2);
+});
+
+app.get('/api/pricing-tables-page/section1', (req, res) => {
+    const pricingTablesPageSec1 = [
+        {
+            id: 1,
+            key: "pricigTablesPageSection1Id1",
+            header: "Basic",
+            priceValue: 30,
+            priceCurrency: "USD",
+            priceOption: "weekly",
+            text: "for the new users",
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
+        },
+        {
+            id: 2,
+            key: "pricigTablesPageSection1Id2",
+            header: "Standard",
+            priceValue: 100,
+            priceCurrency: "USD",
+            priceOption: "monthly",
+            text: "for the new users",
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
+        },
+        {
+            id: 3,
+            key: "pricigTablesPageSection1Id3",
+            header: "Professional",
+            priceValue: 350,
+            priceCurrency: "USD",
+            priceOption: "yearly",
+            text: "for the new users",
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
+        }
+    ]
+    res.json(pricingTablesPageSec1);
+});
+
+app.get('/api/pricing-tables-page/section2', (req, res) => {
+    const pricingTablesPageSec2 = [
+        {
+            id: 1,
+            key: "pricigTablesPageSection2Id1",
+            header: "Basic",
+            priceValue: 30,
+            priceCurrency: "USD",
+            priceOption: "weekly",
+            text: "for the new users",
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
+        },
+        {
+            id: 2,
+            key: "pricigTablesPageSection2Id2",
+            header: "Standard",
+            priceValue: 100,
+            priceCurrency: "USD",
+            priceOption: "monthly",
+            text: "for the new users",
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
+        },
+        {
+            id: 3,
+            key: "pricigTablesPageSection2Id3",
+            header: "Professional",
+            priceValue: 350,
+            priceCurrency: "USD",
+            priceOption: "yearly",
+            text: "for the new users",
+            buttonType: "arrowWithText",
+            buttonText: "view detail"
+        }
+    ]
+    res.json(pricingTablesPageSec2);
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {

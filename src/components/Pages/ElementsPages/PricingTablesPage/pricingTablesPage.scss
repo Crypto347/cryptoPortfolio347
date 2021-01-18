@@ -1,15 +1,15 @@
-.buttons-page {
+.pricing-tables-page {
     width: calc(100% + 18px);
-    .buttons-page-loading-error {
+    .pricing-tables-page-loading-error {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .buttons-page-wrapper {
+    .pricing-tables-page-wrapper {
         display: flex;
         flex-direction: column;
-        .buttons-page-header {
+        .pricing-tables-page-header {
             padding: 90px 130px 90px 130px;
         }
         .grey-line {
@@ -17,20 +17,21 @@
             height: 10px;
             background-color: rgb(239, 239, 239);
         }
-        .buttons-page-section1-data-items {
+        .pricing-tables-page-section1-data-items {
             display: flex;
             flex-wrap: wrap;
             background: rgb(248, 248, 248);
             padding: 130px;
-            .buttons-page-section1-data-item {
+            .pricing-tables-page-section1-data-item {
                 width: 25%;
             }
         }
-        .buttons-page-section2-data-items {
+        .pricing-tables-page-section2-data-items {
             display: flex;
             flex-wrap: wrap;
+            background: black;
             padding: 110px 130px 110px 130px;
-            .buttons-page-section2-data-item {
+            .pricing-tables-page-section2-data-item {
                 width: 33.3%;
             }
         }
@@ -38,15 +39,15 @@
 }
 
 @media only screen and (max-width: 1450px){
-    .buttons-page {
-        .buttons-page-wrapper {
-            .buttons-page-header {
+    .pricing-tables-page {
+        .pricing-tables-page-wrapper {
+            .pricing-tables-page-header {
                 padding: 90px 40px 90px 40px;
             }
-            .buttons-page-section1-data-items {
+            .pricing-tables-page-section1-data-items {
                 padding: 110px 40px 110px 40px;
             }
-            .buttons-page-section2-data-items {
+            .pricing-tables-page-section2-data-items {
                 padding: 110px 40px 110px 40px;
             }
         }
@@ -54,21 +55,21 @@
 }
 
 @media only screen and (max-width: 1260px){
-    .buttons-page {
-        .buttons-page-wrapper {
-            .buttons-page-header {
+    .pricing-tables-page {
+        .pricing-tables-page-wrapper {
+            .pricing-tables-page-header {
                 padding: 90px 130px 90px 130px;
             }
-            .buttons-page-section1-data-items {
+            .pricing-tables-page-section1-data-items {
                 padding: 90px 130px 90px 130px;
-                .buttons-page-section1-data-item {
+                .pricing-tables-page-section1-data-item {
                     padding-top: 40px;
                     width: 50%;
                 }
             }
-            .buttons-page-section2-data-items {
+            .pricing-tables-page-section2-data-items {
                 padding: 70px 130px 70px 130px;
-                .buttons-page-section2-data-item {
+                .pricing-tables-page-section2-data-item {
                     padding-top: 40px;
                     width: 100%;
                 }
@@ -78,15 +79,15 @@
 }
 
 @media only screen and (max-width: 860px){
-    .buttons-page {
-        .buttons-page-wrapper {
-            .buttons-page-header {
+    .pricing-tables-page {
+        .pricing-tables-page-wrapper {
+            .pricing-tables-page-header {
                 padding: 90px 40px 90px 40px;
             }
-            .buttons-page-section1-data-items {
+            .pricing-tables-page-section1-data-items {
                 padding: 90px 40px 90px 40px;
             }
-            .buttons-page-section2-data-items {
+            .pricing-tables-page-section2-data-items {
                 padding: 70px 40px 70px 40px;
             }
         }
@@ -94,10 +95,10 @@
 }
 
 @media only screen and (max-width: 660px){
-    .buttons-page {
-        .buttons-page-wrapper {
-            .buttons-page-section1-data-items {
-                .buttons-page-section1-data-item {
+    .pricing-tables-page {
+        .pricing-tables-page-wrapper {
+            .pricing-tables-page-section1-data-items {
+                .pricing-tables-page-section1-data-item {
                     padding-top: 40px;
                     width: 100%;
                 }

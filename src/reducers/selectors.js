@@ -436,3 +436,9 @@ export const getButtonsPageState = createSelector(
     (x) => x
 );
 
+const getPricingTablesPage = (state) => state.pricingTablesPage;
+
+export const getPricingTablesPageState = createSelector(
+    [getPricingTablesPage],
+    (x) => x
+);

@@ -27,7 +27,6 @@ import './pricingTablesPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import ButtonsPageCardItem from '../../../SmallParts/ButtonsPageCardItem/buttonsPageCardItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -90,11 +89,11 @@ export const PricingTablesPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.buttonsPage.section1Data.items.length === 0){
-            props.fetchButtonsPageSection1Data();
+        if(props.pricingTablesPage.section1Data.items.length === 0){
+            props.fetchPricingTablesPageSection1Data();
         }
-        if(props.buttonsPage.section2Data.items.length === 0){
-            props.fetchButtonsPageSection2Data();
+        if(props.pricingTablesPage.section2Data.items.length === 0){
+            props.fetchPricingTablesPageSection2Data();
         }
 
         // Scroll to the top of the screen
@@ -116,7 +115,7 @@ export const PricingTablesPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("buttonsPage");
+        let el = document.getElementById("pricingTablesPage");
 
         // Show or hide BackToTop component
 
@@ -150,12 +149,12 @@ export const PricingTablesPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="buttonsPage"
+                        page="pricingTablesPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="buttonsPage"
+                        page="pricingTablesPage"
                     />
                 </>
             )
@@ -166,12 +165,12 @@ export const PricingTablesPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="buttonsPage"
+                        page="pricingTablesPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="buttonsPage"
+                        page="pricingTablesPage"
                     />
                 </>
             )
@@ -180,42 +179,28 @@ export const PricingTablesPage = (props) => {
 
     const renderPricingTablePageSection1PageData = (arr) => {
         return(
-            <div className="buttons-page-section1-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="buttons-page-section1-data-item"
-                    >
-                        <ButtonsPageCardItem
-                            page="buttonsPageSection1"
-                            data={el}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            currentPagePathName="buttons"
-                        />
-                    </div>
-                )
+            <div className="pricing-tables-page-section1-data-items">{arr.items.map((el, i) => {
+                // return(
+                //     <div 
+                //         key={i}
+                //         className="pricing-tables-page-section1-data-item"
+                //     >
+                //     </div>
+                // )
             })}</div>
         )
     }
 
     const renderPricingTablePageSection2PageData = (arr) => {
         return(
-            <div className="buttons-page-section2-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="buttons-page-section2-data-item"
-                    >
-                        <ButtonsPageCardItem
-                            page="buttonsPageSection2"
-                            data={el}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            currentPagePathName="buttons"
-                        />
-                    </div>
-                )
+            <div className="pricing-tables-page-section2-data-items">{arr.items.map((el, i) => {
+                // return(
+                //     <div 
+                //         key={i}
+                //         className="pricing-tables-page-section2-data-item"
+                //     >
+                //     </div>
+                // )
             })}</div>
         )
     }
@@ -224,7 +209,7 @@ export const PricingTablesPage = (props) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="buttons-page-loading-error" 
+                    className="pricing-tables-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -235,13 +220,13 @@ export const PricingTablesPage = (props) => {
             switch(section){
                 case 'section1':
                     return(
-                        <div className="buttons-page-section1-data-wrapper">
+                        <div className="pricing-tables-page-section1-data-wrapper">
                             {renderPricingTablePageSection1PageData(arr)}
                         </div>
                     );
                 case 'section2':
                     return(
-                        <div className="buttons-page-section2-data-wrapper">
+                        <div className="pricing-tables-page-section2-data-wrapper">
                             {renderPricingTablePageSection2PageData(arr)}
                         </div>
                     );
@@ -250,7 +235,7 @@ export const PricingTablesPage = (props) => {
         if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="buttons-page-loading-error" 
+                    className="pricing-tables-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
@@ -264,15 +249,15 @@ export const PricingTablesPage = (props) => {
      */
 
     return(
-        <div className="buttons-page" id="buttonsPage">
+        <div className="pricing-tables-page" id="pricingTablesPage">
             {renderToolbars()}
-            <div className="buttons-page-wrapper">
-                <div className="buttons-page-header">
+            <div className="pricing-tables-page-wrapper">
+                <div className="pricing-tables-page-header">
                     <H45 className="h45-nero-lustria">Buttons</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderPricingTablePageDataContent("section1", props.buttonsPage.section1Data)}
-                {renderPricingTablePageDataContent("section2", props.buttonsPage.section2Data)}
+                {renderPricingTablePageDataContent("section1", props.pricingTablesPage.section1Data)}
+                {renderPricingTablePageDataContent("section2", props.pricingTablesPage.section2Data)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -283,15 +268,15 @@ export const PricingTablesPage = (props) => {
 export default connect(
     (state) => {
         return {
-            buttonsPage: Selectors.getButtonsPageState(state),
+            pricingTablesPage: Selectors.getPricingTablesPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchButtonsPageSection1Data: bindActionCreators(Services.fetchButtonsPageSection1Data, dispatch),
-            fetchButtonsPageSection2Data: bindActionCreators(Services.fetchButtonsPageSection2Data, dispatch),
+            fetchPricingTablesPageSection1Data: bindActionCreators(Services.fetchPricingTablesPageSection1Data, dispatch),
+            fetchPricingTablesPageSection2Data: bindActionCreators(Services.fetchPricingTablesPageSection2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

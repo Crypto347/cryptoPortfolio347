@@ -1956,6 +1956,42 @@ export function fetchButtonsPageSection2Data() {
     };
 }
 
+export function fetchPricingTablesPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchPricingTablesPageSection1DataBegin());
+        return fetch(`http://localhost:3005/api/pricing-tables-page/section1`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchPricingTablesPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchPricingTablesPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchPricingTablesPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchPricingTablesPageSection2DataBegin());
+        return fetch(`http://localhost:3005/api/pricing-tables-page/section2`)
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchPricingTablesPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchPricingTablesPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

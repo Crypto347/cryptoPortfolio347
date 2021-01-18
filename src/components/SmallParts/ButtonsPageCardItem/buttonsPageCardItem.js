@@ -145,7 +145,7 @@ export const ButtonsPageCardItem = (props) => {
                             onMouseLeave={handleMouseLeave}
                             onMouseDown={(e) => onMouseDownHandler(e)}
                         >
-                            <H15 className="h15-black-poppins">view detail</H15>
+                            <H15 className="h15-black-poppins">{props.data.buttonText}</H15>
                         </div>
                     </div>
                 );

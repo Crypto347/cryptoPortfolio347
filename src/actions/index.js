@@ -39,3 +39,4 @@ export * from './contactFormPageActions';
 export * from './iconWithTextPageActions';
 export * from './bannerPageActions';
 export * from './buttonsPageActions';
+export * from './pricingTablesPageActions';
