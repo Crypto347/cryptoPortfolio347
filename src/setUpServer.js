@@ -19707,9 +19707,11 @@ app.get('/api/pricing-tables-page/section1', (req, res) => {
             id: 1,
             key: "pricigTablesPageSection1Id1",
             header: "Basic",
-            priceValue: 30,
-            priceCurrency: "USD",
-            priceOption: "weekly",
+            price: {
+                currency: "USD",
+                value: 30,
+                option: "weekly",
+            },
             text: "for the new users",
             buttonType: "arrowWithText",
             buttonText: "view detail"
@@ -19718,9 +19720,11 @@ app.get('/api/pricing-tables-page/section1', (req, res) => {
             id: 2,
             key: "pricigTablesPageSection1Id2",
             header: "Standard",
-            priceValue: 100,
-            priceCurrency: "USD",
-            priceOption: "monthly",
+            price: {
+                currency: "USD",
+                value: 100,
+                option: "monthly",
+            },
             text: "for the new users",
             buttonType: "arrowWithText",
             buttonText: "view detail"
@@ -19729,9 +19733,11 @@ app.get('/api/pricing-tables-page/section1', (req, res) => {
             id: 3,
             key: "pricigTablesPageSection1Id3",
             header: "Professional",
-            priceValue: 350,
-            priceCurrency: "USD",
-            priceOption: "yearly",
+            price: {
+                currency: "USD",
+                value: 350,
+                option: "yearly",
+            },
             text: "for the new users",
             buttonType: "arrowWithText",
             buttonText: "view detail"
@@ -19746,9 +19752,11 @@ app.get('/api/pricing-tables-page/section2', (req, res) => {
             id: 1,
             key: "pricigTablesPageSection2Id1",
             header: "Basic",
-            priceValue: 30,
-            priceCurrency: "USD",
-            priceOption: "weekly",
+            price: {
+                currency: "USD",
+                value: 30,
+                option: "weekly",
+            },
             text: "for the new users",
             buttonType: "arrowWithText",
             buttonText: "view detail"
@@ -19757,9 +19765,11 @@ app.get('/api/pricing-tables-page/section2', (req, res) => {
             id: 2,
             key: "pricigTablesPageSection2Id2",
             header: "Standard",
-            priceValue: 100,
-            priceCurrency: "USD",
-            priceOption: "monthly",
+            price: {
+                currency: "USD",
+                value: 100,
+                option: "monthly",
+            },
             text: "for the new users",
             buttonType: "arrowWithText",
             buttonText: "view detail"
@@ -19768,9 +19778,11 @@ app.get('/api/pricing-tables-page/section2', (req, res) => {
             id: 3,
             key: "pricigTablesPageSection2Id3",
             header: "Professional",
-            priceValue: 350,
-            priceCurrency: "USD",
-            priceOption: "yearly",
+            price: {
+                currency: "USD",
+                value: 350,
+                option: "yearly",
+            },
             text: "for the new users",
             buttonType: "arrowWithText",
             buttonText: "view detail"

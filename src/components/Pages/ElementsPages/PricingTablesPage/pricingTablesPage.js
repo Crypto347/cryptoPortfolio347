@@ -27,6 +27,7 @@ import './pricingTablesPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import PricingTablesCardItem from '../../../SmallParts/PricingTablesCardItem/pricingTablesCardItem.js';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -180,13 +181,20 @@ export const PricingTablesPage = (props) => {
     const renderPricingTablePageSection1PageData = (arr) => {
         return(
             <div className="pricing-tables-page-section1-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div 
-                //         key={i}
-                //         className="pricing-tables-page-section1-data-item"
-                //     >
-                //     </div>
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="pricing-tables-page-section1-data-item"
+                    >
+                        <PricingTablesCardItem
+                            page="pricingTablesPageSection1"
+                            data={el}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            currentPagePathName="pricingTables"
+                        />
+                    </div>
+                )
             })}</div>
         )
     }
@@ -194,13 +202,20 @@ export const PricingTablesPage = (props) => {
     const renderPricingTablePageSection2PageData = (arr) => {
         return(
             <div className="pricing-tables-page-section2-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div 
-                //         key={i}
-                //         className="pricing-tables-page-section2-data-item"
-                //     >
-                //     </div>
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="pricing-tables-page-section2-data-item"
+                    >
+                        <PricingTablesCardItem
+                            page="pricingTablesPageSection2"
+                            data={el}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
+                            currentPagePathName="pricingTables"
+                        />
+                    </div>
+                )
             })}</div>
         )
     }
@@ -253,7 +268,7 @@ export const PricingTablesPage = (props) => {
             {renderToolbars()}
             <div className="pricing-tables-page-wrapper">
                 <div className="pricing-tables-page-header">
-                    <H45 className="h45-nero-lustria">Buttons</H45>
+                    <H45 className="h45-nero-lustria">Pricing Tables</H45>
                 </div>
                 <div className="grey-line"/>
                 {renderPricingTablePageDataContent("section1", props.pricingTablesPage.section1Data)}

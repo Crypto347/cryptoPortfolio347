@@ -11,13 +11,12 @@ import React, {
  * Styles
  */
 
-import './buttonsPageCardItem.scss';
+import './pricingTablesCardItem.scss';
 
 /**
  * Components
  */
 
-import Button from '../../../library/Button/button';
 import ButtonWithText from '../../../library/ButtonWithText/buttonWithText';
 
 /**
@@ -26,17 +25,17 @@ import ButtonWithText from '../../../library/ButtonWithText/buttonWithText';
 
 import {
     H15,
-    H17,
-    H22,
+    H19,
     H35,
-    EH30
+    H65
 } from '../../UtilityComponents';
 
+
 /**
- * ButtonsPageCardItem component definition and export
+ * PricingTablesCardItem component definition and export
  */
 
-export const ButtonsPageCardItem = (props) => {
+export const PricingTablesCardItem = (props) => {
 
     /**
      * State
@@ -131,12 +130,23 @@ export const ButtonsPageCardItem = (props) => {
                 );
             case 'arrowWithText': 
                 return(
-                    <ButtonWithText 
-                        buttonText={props.data.buttonText}
-                        setUnmountComponentValues={props.setUnmountComponentValues}
-                        unmountComponent={props.unmountComponent}
-                        currentPagePathName={props.currentPagePathName}
-                    />
+                    <div className="buttons-page-card-item-button-type-arrow-with-text-wrapper">
+                        <div className={renderClassName("arrowWithTextPartArrow", isHovering)}>
+                            <div className="arrow-horizontal-line"/>
+                            <div className="arrow-wrapper2">
+                                <div className="arrow-top-line"></div>
+                                <div className="arrow-bottom-line"></div>
+                            </div>
+                        </div>
+                        <div 
+                            className={renderClassName("arrowWithTextPartText", isHovering)}
+                            onMouseEnter={handleMouseEnter} 
+                            onMouseLeave={handleMouseLeave}
+                            onMouseDown={(e) => onMouseDownHandler(e)}
+                        >
+                            <H15 className="h15-black-poppins">{props.data.buttonText}</H15>
+                        </div>
+                    </div>
                 );
             case 'buttonOutline': 
                 return(
@@ -191,26 +201,42 @@ export const ButtonsPageCardItem = (props) => {
         }
     }
 
+    const renderCurrency = (currency) => {
+        switch(currency){
+            case 'AZE':
+                return "₼"
+            case 'USD':
+                return "$";
+            case 'EUR':
+                return "€";
+            default:
+                return "₼";
+        }
+    }
+
     /**
      * Markup
      */
 
     return(
-        <div className="buttons-page-card-item">
+        <div className="pricing-tables-page-card-item">
             <H35 className="h35-black-poppins">{props.data.header}</H35>
-            <EH30/>
-            {props.page === "buttonsPageSection1" ?
-            <div className="buttons-page-card-item-section1-text-wrapper">
-                <H17 className="h17-nobel-lustria">{props.data.text}</H17>
-            </div> : 
-            <div className="buttons-page-card-item-section2-text-wrapper">
-                <H22 className="h22-nobel-lustria">{props.data.text}</H22>
+            <div className="pricing-tables-page-card-item-price-wrapper">
+                <H35 className="h35-black-poppins">{renderCurrency(props.data.price.currency)}</H35>
+                <H65 className="h65-black-poppins">{props.data.price.value}</H65>
+                <H19 className="h19-black-poppins">/</H19>
+                <H19 className="h19-black-poppins">{props.data.price.option}</H19>
             </div>
-            }
-            {renderButtons(props.data.buttonType)}
+            <H19 className="h19-black-poppins">{props.data.price.option}</H19>
+            <ButtonWithText
+                buttonText={props.data.buttonText}
+                setUnmountComponentValues={props.setUnmountComponentValues}
+                unmountComponent={props.unmountComponent}
+                currentPagePathName={props.currentPagePathName}
+            />
         </div>
     );
 }
 
-export default ButtonsPageCardItem;
+export default PricingTablesCardItem;
  
