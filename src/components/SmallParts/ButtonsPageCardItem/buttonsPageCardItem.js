@@ -70,26 +70,6 @@ export const ButtonsPageCardItem = (props) => {
                     return "buttons-page-card-item-button-type-arrow-wrapper-shorten"
             }
         }
-        if(opt === "arrowWithTextPartArrow"){
-            switch(isHovering){
-                case 'init':
-                    return "arrow-wrapper";
-                case 'on':
-                    return "arrow-wrapper-hover-on";
-                case 'off':
-                    return "arrow-wrapper-hover-off";
-            }
-        }
-        if(opt === "arrowWithTextPartText"){
-            switch(isHovering){
-                case 'init':
-                    return "text";
-                case 'on':
-                    return "text-hover-on";
-                case 'off':
-                    return "text-hover-off";
-            }
-        }
     }
 
     const onMouseDownHandler = (e) => {
