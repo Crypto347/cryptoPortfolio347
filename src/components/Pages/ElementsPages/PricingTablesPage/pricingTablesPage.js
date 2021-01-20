@@ -191,7 +191,7 @@ export const PricingTablesPage = (props) => {
                             data={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            currentPagePathName="pricingTables"
+                            currentPagePathName="pricing-tables"
                         />
                     </div>
                 )
@@ -212,7 +212,7 @@ export const PricingTablesPage = (props) => {
                             data={el}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
-                            currentPagePathName="pricingTables"
+                            currentPagePathName="pricing-tables"
                         />
                     </div>
                 )
