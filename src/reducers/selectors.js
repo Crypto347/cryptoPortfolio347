@@ -442,3 +442,11 @@ export const getPricingTablesPageState = createSelector(
     [getPricingTablesPage],
     (x) => x
 );
+
+const getPieChartsPage = (state) => state.pieChartsPage;
+
+export const getPieChartsPageState = createSelector(
+    [getPieChartsPage],
+    (x) => x
+);
+

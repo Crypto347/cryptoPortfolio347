@@ -178,7 +178,7 @@ export const ButtonsPage = (props) => {
         }
     }
 
-    const renderButtonsPageSection1PageData = (arr) => {
+    const renderButtonsPageSection1Data = (arr) => {
         return(
             <div className="buttons-page-section1-data-items">{arr.items.map((el, i) => {
                 return(
@@ -199,7 +199,7 @@ export const ButtonsPage = (props) => {
         )
     }
 
-    const renderButtonsPageSection2PageData = (arr) => {
+    const renderButtonsPageSection2Data = (arr) => {
         return(
             <div className="buttons-page-section2-data-items">{arr.items.map((el, i) => {
                 return(
@@ -236,13 +236,13 @@ export const ButtonsPage = (props) => {
                 case 'section1':
                     return(
                         <div className="buttons-page-section1-data-wrapper">
-                            {renderButtonsPageSection1PageData(arr)}
+                            {renderButtonsPageSection1Data(arr)}
                         </div>
                     );
                 case 'section2':
                     return(
                         <div className="buttons-page-section2-data-wrapper">
-                            {renderButtonsPageSection2PageData(arr)}
+                            {renderButtonsPageSection2Data(arr)}
                         </div>
                     );
             }

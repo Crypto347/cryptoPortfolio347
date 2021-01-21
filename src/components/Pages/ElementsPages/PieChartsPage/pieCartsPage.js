@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './pricingTablesPage.scss';
+import './pieCartsPage.scss';
 
 /**
  * Components
@@ -67,10 +67,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * PricingTablesPage component definition and export
+ * PieCartsPage component definition and export
  */
 
-export const PricingTablesPage = (props) => {
+export const PieCartsPage = (props) => {
 
     /**
      * State
@@ -90,11 +90,11 @@ export const PricingTablesPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.pricingTablesPage.section1Data.items.length === 0){
-            props.fetchPricingTablesPageSection1Data();
+        if(props.pieChartsPage.section1Data.items.length === 0){
+            props.fetchPieChartsPageSection1Data();
         }
-        if(props.pricingTablesPage.section2Data.items.length === 0){
-            props.fetchPricingTablesPageSection2Data();
+        if(props.pieChartsPage.section2Data.items.length === 0){
+            props.fetchPieChartsPageSection2Data();
         }
 
         // Scroll to the top of the screen
@@ -116,7 +116,7 @@ export const PricingTablesPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("pricingTablesPage");
+        let el = document.getElementById("pieChartsPage");
 
         // Show or hide BackToTop component
 
@@ -150,12 +150,12 @@ export const PricingTablesPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="pricingTablesPage"
+                        page="pieChartsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="pricingTablesPage"
+                        page="pieChartsPage"
                     />
                 </>
             )
@@ -166,65 +166,51 @@ export const PricingTablesPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="pricingTablesPage"
+                        page="pieChartsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="pricingTablesPage"
+                        page="pieChartsPage"
                     />
                 </>
             )
         }
     }
 
-    const renderPricingTablePageSection1Data = (arr) => {
+    const renderPieChartsPageSection1Data = (arr) => {
         return(
-            <div className="pricing-tables-page-section1-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="pricing-tables-page-section1-data-item"
-                    >
-                        <PricingTablesCardItem
-                            page="pricingTablesPageSection1"
-                            data={el}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            currentPagePathName="pricing-tables"
-                        />
-                    </div>
-                )
+            <div className="pie-charts-page-section1-data-items">{arr.items.map((el, i) => {
+                // return(
+                //     <div 
+                //         key={i}
+                //         className="pie-charts-page-section1-data-item"
+                //     >
+                //     </div>
+                // )
             })}</div>
         )
     }
 
-    const renderPricingTablePageSection2Data = (arr) => {
+    const renderPieChartsPageSection2Data = (arr) => {
         return(
-            <div className="pricing-tables-page-section2-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="pricing-tables-page-section2-data-item"
-                    >
-                        <PricingTablesCardItem
-                            page="pricingTablesPageSection2"
-                            data={el}
-                            setUnmountComponentValues={props.setUnmountComponentValues}
-                            unmountComponent={props.unmountComponent}
-                            currentPagePathName="pricing-tables"
-                        />
-                    </div>
-                )
+            <div className="pie-charts-page-section2-data-items">{arr.items.map((el, i) => {
+                // return(
+                //     <div 
+                //         key={i}
+                //         className="pie-charts-page-section2-data-item"
+                //     >
+                //     </div>
+                // )
             })}</div>
         )
     }
     
-    const renderPricingTablePageDataContent = (section, arr) => {
+    const renderPieChartsPageDataContent = (section, arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="pricing-tables-page-loading-error" 
+                    className="pie-charts-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <Loading color="black"/>
@@ -235,14 +221,14 @@ export const PricingTablesPage = (props) => {
             switch(section){
                 case 'section1':
                     return(
-                        <div className="pricing-tables-page-section1-data-wrapper">
-                            {renderPricingTablePageSection1Data(arr)}
+                        <div className="pie-charts-page-section1-data-wrapper">
+                            {renderPieChartsPageSection1Data(arr)}
                         </div>
                     );
                 case 'section2':
                     return(
-                        <div className="pricing-tables-page-section2-data-wrapper">
-                            {renderPricingTablePageSection2Data(arr)}
+                        <div className="pie-charts-page-section2-data-wrapper">
+                            {renderPieChartsPageSection2Data(arr)}
                         </div>
                     );
             }
@@ -250,7 +236,7 @@ export const PricingTablesPage = (props) => {
         if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="pricing-tables-page-loading-error" 
+                    className="pie-charts-page-loading-error" 
                     style={{height: `${size.height}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
@@ -264,15 +250,15 @@ export const PricingTablesPage = (props) => {
      */
 
     return(
-        <div className="pricing-tables-page" id="pricingTablesPage">
+        <div className="pie-charts-page" id="pieChartsPage">
             {renderToolbars()}
-            <div className="pricing-tables-page-wrapper">
-                <div className="pricing-tables-page-header">
-                    <H45 className="h45-nero-lustria">Pricing Tables</H45>
+            <div className="pie-charts-page-wrapper">
+                <div className="pie-charts-page-header">
+                    <H45 className="h45-nero-lustria">Pie Charts</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderPricingTablePageDataContent("section1", props.pricingTablesPage.section1Data)}
-                {renderPricingTablePageDataContent("section2", props.pricingTablesPage.section2Data)}
+                {renderPieChartsPageDataContent("section1", props.pieChartsPage.section1Data)}
+                {renderPieChartsPageDataContent("section2", props.pieChartsPage.section2Data)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -283,20 +269,20 @@ export const PricingTablesPage = (props) => {
 export default connect(
     (state) => {
         return {
-            pricingTablesPage: Selectors.getPricingTablesPageState(state),
+            pieChartsPage: Selectors.getPieChartsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchPricingTablesPageSection1Data: bindActionCreators(Services.fetchPricingTablesPageSection1Data, dispatch),
-            fetchPricingTablesPageSection2Data: bindActionCreators(Services.fetchPricingTablesPageSection2Data, dispatch),
+            fetchPieChartsPageSection1Data: bindActionCreators(Services.fetchPieChartsPageSection1Data, dispatch),
+            fetchPieChartsPageSection2Data: bindActionCreators(Services.fetchPieChartsPageSection2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(PricingTablesPage);
+)(PieCartsPage);
  

@@ -47,6 +47,7 @@ import iconWithTextPageReducer from './iconWithTextPageReducer';
 import bannerPageReducer from './bannerPageReducer';
 import buttonsPageReducer from './buttonsPageReducer';
 import pricingTablesPageReducer from './pricingTablesPageReducer';
+import pieChartsPageReducer from './pieChartsPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -91,5 +92,6 @@ export default (history) => combineReducers({
     iconWithTextPage: iconWithTextPageReducer,
     bannerPage: bannerPageReducer,
     buttonsPage: buttonsPageReducer,
-    pricingTablesPage: pricingTablesPageReducer
+    pricingTablesPage: pricingTablesPageReducer,
+    pieChartsPage: pieChartsPageReducer
 });
