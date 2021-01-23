@@ -87,12 +87,11 @@ export const PieChartItem = (props) => {
     }
     
     
-    const calcPercent = (percent) => {
-        let dash = 72 * percent / 100;
-        let gap = 72 - dash;
-console.log(`${dash} ${gap}`)
-        return `${dash} ${gap}`
-    }
+//     const calcPercent = (percent) => {
+//         let dash = 72 * percent / 100;
+//         let gap = 72 - dash;
+//         return `${dash} ${gap}`
+//     }
     
     /**
      * Markup
@@ -100,21 +99,29 @@ console.log(`${dash} ${gap}`)
 
     return(
         <div className="pie-chart-item">
-            <svg width="100%" height="100%" viewBox="0 0 42 42">
+            <svg width="100%" height="100%" viewBox="0 0 60 60">
                 <circle 
                     className={renderClassName("pieChart", props.chartKey)}
-                    cx="21" 
-                    cy="21" 
-                    r="11.5" 
+                    cx="30" 
+                    cy="30" 
+                    r="15.91549430918954"
                     fill="transparent" 
-                    strokeWidth="0.5" 
-                    // strokeDasharray="30 60"
-                    strokeDasharray={calcPercent(props.percent)}
-                    strokeDashoffset="18" // by default strokeDashoffset = 0 and the line starts at 90deg, 
+                    strokeWidth="0.7" 
+                    strokeDasharray={`${props.percent} ${100 - props.percent}`}
+                    strokeDashoffset="25"
+                    // strokeDashoffset="18" // by default strokeDashoffset = 0 and the line starts at 90deg, 
                                         // to move at 0deg we should calc 90 deg of the circumference (2pr => 2 * 3.1415 * 11.5 = 72)
                                         // which equals (72 + 90deg / 360deg = 18)              
-                ></circle>
+                >
+                </circle>
             </svg>
+            <div className="pie-chart-item-percent">
+                <H19 className="h19-black-poppins">{props.percent}</H19>
+                <H19 className="h19-black-poppins">%</H19>
+            </div>
+            <div className="pie-chart-item-header">
+                <H19 className="h19-black-poppins">{props.header}</H19>
+            </div>
         </div>
 
         

@@ -188,8 +188,8 @@ export const PieCartsPage = (props) => {
                     >
                         <PieChartItem
                             chartKey={el.key}
-                            bgColor="rgb(239, 239, 239)"
                             percent={el.percent}
+                            header={el.header}
                         />
                     </div>
                 )
