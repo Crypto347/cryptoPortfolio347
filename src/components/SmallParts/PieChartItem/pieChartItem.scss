@@ -1,0 +1,125 @@
+.pie-chart-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid green;
+    -webkit-animation: pieChartItem 1s ease;
+    -moz-animation: pieChartItem 1s ease;
+    -o-animation: pieChartItem 1s ease;
+    animation: pieChartItem 1s ease;
+    .pie-chart-item-id-1 {
+        stroke: black;
+        -webkit-animation: pieChartItemId1 3s ease;
+        -moz-animation: pieChartItemId1 3s ease;
+        -o-animation: pieChartItemId1 3s ease;
+        animation: pieChartItemId1 3s ease;
+    }
+    .pie-chart-item-id-2 {
+        stroke: black;
+        -webkit-animation: pieChartItemId2 3s ease;
+        -moz-animation: pieChartItemId2 3s ease;
+        -o-animation: pieChartItemId2 3s ease;
+        animation: pieChartItemId2 3s ease;
+    }
+    .pie-chart-item-id-3 {
+        stroke: black;
+        animation: donut1 3s;
+        -webkit-animation: pieChartItemId3 3s ease;
+        -moz-animation: pieChartItemId3 3s ease;
+        -o-animation: pieChartItemId3 3s ease;
+        animation: pieChartItemId3 3s ease;
+    }
+    .pie-chart-item-id-4 {
+        stroke: black;
+        -webkit-animation: pieChartItemId4 3s ease;
+        -moz-animation: pieChartItemId4 3s ease;
+        -o-animation: pieChartItemId4 3s ease;
+        animation: pieChartItemId4 3s ease;
+    }
+}
+
+@-webkit-keyframes pieChartItem {
+    0% {opacity: .2;}
+    100% {opacity: 1;}
+}
+@-moz-keyframes pieChartItem {
+    0% {opacity: .2;}
+    100% {opacity: 1;}
+}
+@-o-keyframes pieChartItem {
+    0% {opacity: .2;}
+    100% {opacity: 1;}
+}
+@keyframes pieChartItem {
+    0% {opacity: .2;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes pieChartItemId1 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 61, 11;}
+}
+@-moz-keyframes pieChartItemId1 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 61, 11;}
+}
+@-o-keyframes pieChartItemId1 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 61, 11;}
+}
+@keyframes pieChartItemId1 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 61, 11;}
+}
+
+@-webkit-keyframes pieChartItemId2 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 47, 25;}
+}
+@-moz-keyframes pieChartItemId2 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 47, 25;}
+}
+@-o-keyframes pieChartItemId2 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 47, 25;}
+}
+@keyframes pieChartItemId2 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 47, 25;}
+}
+
+@-webkit-keyframes pieChartItemId3 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 67, 5;}
+}
+@-moz-keyframes pieChartItemId3 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 67, 5;}
+}
+@-o-keyframes pieChartItemId3 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 67, 5;}
+}
+@keyframes pieChartItemId3 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 67, 5;}
+}
+
+@-webkit-keyframes pieChartItemId4 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 27, 45;}
+}
+@-moz-keyframes pieChartItemId4 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 27, 45;}
+}
+@-o-keyframes pieChartItemId4 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 27, 45;}
+}
+@keyframes pieChartItemId4 {
+    0% {stroke-dasharray: 0, 100;}
+    100% {stroke-dasharray: 27, 45;}
+}

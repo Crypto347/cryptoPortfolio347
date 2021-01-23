@@ -67,7 +67,7 @@ export const ButtonsPageCardItem = (props) => {
                 case 'on':
                     return "buttons-page-card-item-button-type-arrow-wrapper-lengthen";
                 case 'off':
-                    return "buttons-page-card-item-button-type-arrow-wrapper-shorten"
+                    return "buttons-page-card-item-button-type-arrow-wrapper-shorten";
             }
         }
     }

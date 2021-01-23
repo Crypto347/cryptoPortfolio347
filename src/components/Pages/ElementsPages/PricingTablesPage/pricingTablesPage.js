@@ -27,7 +27,7 @@ import './pricingTablesPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import PricingTablesCardItem from '../../../SmallParts/PricingTablesCardItem/pricingTablesCardItem.js';
+import PricingTablesCardItem from '../../../SmallParts/PricingTablesCardItem/pricingTablesCardItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 

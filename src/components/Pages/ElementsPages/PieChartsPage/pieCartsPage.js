@@ -27,7 +27,7 @@ import './pieCartsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import PricingTablesCardItem from '../../../SmallParts/PricingTablesCardItem/pricingTablesCardItem.js';
+import PieChartItem from '../../../SmallParts/PieChartItem/pieChartItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -181,13 +181,18 @@ export const PieCartsPage = (props) => {
     const renderPieChartsPageSection1Data = (arr) => {
         return(
             <div className="pie-charts-page-section1-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div 
-                //         key={i}
-                //         className="pie-charts-page-section1-data-item"
-                //     >
-                //     </div>
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="pie-charts-page-section1-data-item"
+                    >
+                        <PieChartItem
+                            chartKey={el.key}
+                            bgColor="rgb(239, 239, 239)"
+                            percent={el.percent}
+                        />
+                    </div>
+                )
             })}</div>
         )
     }

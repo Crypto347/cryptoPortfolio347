@@ -19797,25 +19797,25 @@ app.get('/api/pie-charts-page/section1', (req, res) => {
             id: 1,
             key: "pieChartsPageSection1Id1",
             header: "Brand Creation",
-            value: 85
+            percent: 85
         },
         {
             id: 2,
             key: "pieChartsPageSection1Id2",
             header: "Design Creation",
-            value: 65
+            percent: 65
         },
         {
             id: 3,
             key: "pieChartsPageSection1Id3",
             header: "Brand Creation",
-            value: 93
+            percent: 93
         },
         {
             id: 4,
             key: "pieChartsPageSection1Id4",
             header: "Design Creation",
-            value: 37
+            percent: 37
         }
     ]
     res.json(pieChartsPageSec1);
@@ -19827,25 +19827,25 @@ app.get('/api/pie-charts-page/section2', (req, res) => {
             id: 1,
             key: "pieChartsPageSection2Id1",
             header: "Brand Creation",
-            value: 85
+            percent: 85
         },
         {
             id: 2,
             key: "pieChartsPageSection2Id2",
             header: "Design Creation",
-            value: 65
+            percent: 65
         },
         {
             id: 3,
             key: "pieChartsPageSection2Id3",
             header: "Brand Creation",
-            value: 93
+            percent: 93
         },
         {
             id: 4,
             key: "pieChartsPageSection2Id4",
             header: "Design Creation",
-            value: 37
+            percent: 37
         }
     ]
     res.json(pieChartsPageSec2);
