@@ -52,7 +52,7 @@ export const PieChartItem = (props) => {
      */
 
     const [value, setValue] = useState(0);
-    const [delay, setDelay] = useState(100);
+    const [delay, setDelay] = useState(30);
 
     /**
      * Methods
@@ -61,10 +61,9 @@ export const PieChartItem = (props) => {
     useEffect(() => {
     }, []);
 
-    // useInterval(() => {
-    //     setValue(value + 1);
-    //     console.log(value)
-    // }, value === props.percent ? null : delay)
+    useInterval(() => {
+        setValue(value + 1);
+    }, value === props.percent ? null : delay)
 
     const renderClassName = (opt, key) => {
         console.log(key)
@@ -99,25 +98,28 @@ export const PieChartItem = (props) => {
 
     return(
         <div className="pie-chart-item">
-            <svg width="100%" height="100%" viewBox="0 0 60 60">
-                <circle 
-                    className={renderClassName("pieChart", props.chartKey)}
-                    cx="30" 
-                    cy="30" 
-                    r="15.91549430918954"
-                    fill="transparent" 
-                    strokeWidth="0.7" 
-                    strokeDasharray={`${props.percent} ${100 - props.percent}`}
-                    strokeDashoffset="25"
-                    // strokeDashoffset="18" // by default strokeDashoffset = 0 and the line starts at 90deg, 
-                                        // to move at 0deg we should calc 90 deg of the circumference (2pr => 2 * 3.1415 * 11.5 = 72)
-                                        // which equals (72 + 90deg / 360deg = 18)              
-                >
-                </circle>
-            </svg>
-            <div className="pie-chart-item-percent">
-                <H19 className="h19-black-poppins">{props.percent}</H19>
-                <H19 className="h19-black-poppins">%</H19>
+            <div className="pie-chart-item-chart-wrapper">
+                <svg width="100%" height="100%" viewBox="0 0 60 60">
+                    <circle 
+                        className={renderClassName("pieChart", props.chartKey)}
+                        cx="30" 
+                        cy="30" 
+                        r="15.91549430918954"
+                        fill="transparent" 
+                        stroke={props.chartColor}
+                        strokeWidth="0.7" 
+                        strokeDasharray={`${props.percent} ${100 - props.percent}`}
+                        strokeDashoffset="25"
+                        // strokeDashoffset="18" // by default strokeDashoffset = 0 and the line starts at 90deg, 
+                                            // to move at 0deg we should calc 90 deg of the circumference (2pr => 2 * 3.1415 * 11.5 = 72)
+                                            // which equals (72 + 90deg / 360deg = 18)              
+                    >
+                    </circle>
+                </svg>
+                <div className="pie-chart-item-percent">
+                    <H19 className="h19-black-poppins">{value}</H19>
+                    <H19 className="h19-black-poppins">%</H19>
+                </div>
             </div>
             <div className="pie-chart-item-header">
                 <H19 className="h19-black-poppins">{props.header}</H19>

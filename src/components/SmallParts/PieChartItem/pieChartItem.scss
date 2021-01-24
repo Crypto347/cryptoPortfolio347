@@ -3,44 +3,47 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     -webkit-animation: pieChartItem 1s ease;
     -moz-animation: pieChartItem 1s ease;
     -o-animation: pieChartItem 1s ease;
     animation: pieChartItem 1s ease;
-    .pie-chart-item-percent {
+    .pie-chart-item-chart-wrapper {
         display: flex;
-        border: 2px solid red;
+        position: relative;
+        .pie-chart-item-percent {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .pie-chart-item-id-1 {
+            -webkit-animation: pieChartItemId1 3s ease;
+            -moz-animation: pieChartItemId1 3s ease;
+            -o-animation: pieChartItemId1 3s ease;
+            animation: pieChartItemId1 3s ease;
+        }
+        .pie-chart-item-id-2 {
+            -webkit-animation: pieChartItemId2 3s ease;
+            -moz-animation: pieChartItemId2 3s ease;
+            -o-animation: pieChartItemId2 3s ease;
+            animation: pieChartItemId2 3s ease;
+        }
+        .pie-chart-item-id-3 {
+            animation: donut1 3s;
+            -webkit-animation: pieChartItemId3 3s ease;
+            -moz-animation: pieChartItemId3 3s ease;
+            -o-animation: pieChartItemId3 3s ease;
+            animation: pieChartItemId3 3s ease;
+        }
+        .pie-chart-item-id-4 {
+            -webkit-animation: pieChartItemId4 3s ease;
+            -moz-animation: pieChartItemId4 3s ease;
+            -o-animation: pieChartItemId4 3s ease;
+            animation: pieChartItemId4 3s ease;
+        }
     }
-    .pie-chart-item-id-1 {
-        stroke: black;
-        -webkit-animation: pieChartItemId1 3s ease;
-        -moz-animation: pieChartItemId1 3s ease;
-        -o-animation: pieChartItemId1 3s ease;
-        animation: pieChartItemId1 3s ease;
-    }
-    .pie-chart-item-id-2 {
-        stroke: black;
-        -webkit-animation: pieChartItemId2 3s ease;
-        -moz-animation: pieChartItemId2 3s ease;
-        -o-animation: pieChartItemId2 3s ease;
-        animation: pieChartItemId2 3s ease;
-    }
-    .pie-chart-item-id-3 {
-        stroke: black;
-        animation: donut1 3s;
-        -webkit-animation: pieChartItemId3 3s ease;
-        -moz-animation: pieChartItemId3 3s ease;
-        -o-animation: pieChartItemId3 3s ease;
-        animation: pieChartItemId3 3s ease;
-    }
-    .pie-chart-item-id-4 {
-        stroke: black;
-        -webkit-animation: pieChartItemId4 3s ease;
-        -moz-animation: pieChartItemId4 3s ease;
-        -o-animation: pieChartItemId4 3s ease;
-        animation: pieChartItemId4 3s ease;
-    }
+    
 }
 
 @-webkit-keyframes pieChartItem {

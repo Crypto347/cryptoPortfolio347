@@ -190,6 +190,7 @@ export const PieCartsPage = (props) => {
                             chartKey={el.key}
                             percent={el.percent}
                             header={el.header}
+                            chartColor="black"
                         />
                     </div>
                 )
@@ -200,13 +201,19 @@ export const PieCartsPage = (props) => {
     const renderPieChartsPageSection2Data = (arr) => {
         return(
             <div className="pie-charts-page-section2-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div 
-                //         key={i}
-                //         className="pie-charts-page-section2-data-item"
-                //     >
-                //     </div>
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="pie-charts-page-section2-data-item"
+                    >
+                        <PieChartItem
+                            chartKey={el.key}
+                            percent={el.percent}
+                            header={el.header}
+                            chartColor="black"
+                        />
+                    </div>
+                )
             })}</div>
         )
     }
