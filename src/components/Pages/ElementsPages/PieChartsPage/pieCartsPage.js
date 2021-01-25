@@ -78,6 +78,8 @@ export const PieCartsPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showComponentSection1, setShowComponentSection1] = useState(false);
+    const [showComponentSection2, setShowComponentSection2] = useState(false);
     
     /**
      * Methods
@@ -96,6 +98,8 @@ export const PieCartsPage = (props) => {
         if(props.pieChartsPage.section2Data.items.length === 0){
             props.fetchPieChartsPageSection2Data();
         }
+
+        setShowComponentSection1(true);
 
         // Scroll to the top of the screen
 
@@ -117,6 +121,7 @@ export const PieCartsPage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("pieChartsPage");
+        let pieChartsPageSection2 = document.getElementById("pieChartsPageSection2");
 
         // Show or hide BackToTop component
 
@@ -133,7 +138,22 @@ export const PieCartsPage = (props) => {
         }else{
             setScrollingUp(true);
         }
+
+        // Render the component only when it appears on the screen
+        
+        if(scrollHeight >= pieChartsPageSection2.offsetTop - size.height/2 - 400){
+            setShowComponentSection2(true);
+        }
+
+        // Render the component only when it appears on a vertically oriented screen
+        
+        if(size.width - size.height < 0){
+            if(scrollHeight >= pieChartsPageSection2.offsetTop - size.height/2 - 900){
+                setShowComponentSection2(true);
+            }
+        }
     }
+
 
     const checkScrollDirectionIsUp = (e)  => {
         if (e.wheelDelta) {
@@ -181,39 +201,44 @@ export const PieCartsPage = (props) => {
     const renderPieChartsPageSection1Data = (arr) => {
         return(
             <div className="pie-charts-page-section1-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="pie-charts-page-section1-data-item"
-                    >
-                        <PieChartItem
-                            chartKey={el.key}
-                            percent={el.percent}
-                            header={el.header}
-                            chartColor="black"
-                        />
-                    </div>
-                )
+                if(showComponentSection1){
+                    return(
+                        <div 
+                            key={i}
+                            className="pie-charts-page-section1-data-item">
+                                <PieChartItem
+                                    chartKey={el.key}
+                                    percent={el.percent}
+                                    header={el.header}
+                                    chartColor="black"
+                                />
+                        </div>
+                    )
+                }
             })}</div>
         )
     }
 
     const renderPieChartsPageSection2Data = (arr) => {
         return(
-            <div className="pie-charts-page-section2-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="pie-charts-page-section2-data-item"
-                    >
-                        <PieChartItem
-                            chartKey={el.key}
-                            percent={el.percent}
-                            header={el.header}
-                            chartColor="black"
-                        />
-                    </div>
-                )
+            <div 
+                className="pie-charts-page-section2-data-items"
+            >{arr.items.map((el, i) => {
+                if(showComponentSection2){
+                    return(
+                        <div 
+                            key={i}
+                            className="pie-charts-page-section2-data-item"
+                        >
+                            <PieChartItem
+                                chartKey={el.key}
+                                percent={el.percent}
+                                header={el.header}
+                                chartColor="black"
+                            />
+                        </div>
+                    )
+                }
             })}</div>
         )
     }
@@ -233,13 +258,19 @@ export const PieCartsPage = (props) => {
             switch(section){
                 case 'section1':
                     return(
-                        <div className="pie-charts-page-section1-data-wrapper">
+                        <div 
+                            id="pieChartsPageSection1"
+                            className="pie-charts-page-section1-data-wrapper"
+                        >
                             {renderPieChartsPageSection1Data(arr)}
                         </div>
                     );
                 case 'section2':
                     return(
-                        <div className="pie-charts-page-section2-data-wrapper">
+                        <div 
+                            id="pieChartsPageSection2"
+                            className="pie-charts-page-section2-data-wrapper"
+                        >
                             {renderPieChartsPageSection2Data(arr)}
                         </div>
                     );

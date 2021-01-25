@@ -66,7 +66,6 @@ export const PieChartItem = (props) => {
     }, value === props.percent ? null : delay)
 
     const renderClassName = (opt, key) => {
-        console.log(key)
         if(opt === "pieChart"){
             switch(key){
                 case 'pieChartsPageSection1Id1':
@@ -125,8 +124,6 @@ export const PieChartItem = (props) => {
                 <H19 className="h19-black-poppins">{props.header}</H19>
             </div>
         </div>
-
-        
     );
 }
 
