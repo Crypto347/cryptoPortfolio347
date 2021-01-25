@@ -187,6 +187,7 @@ export const ButtonsPage = (props) => {
                 return 'white';
         }
     }
+    
     const renderButtonsPageSection1Data = (arr) => {
         return(
             <div className="buttons-page-section1-data-items">{arr.items.map((el, i) => {

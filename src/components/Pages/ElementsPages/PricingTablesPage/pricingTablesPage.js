@@ -177,6 +177,26 @@ export const PricingTablesPage = (props) => {
             )
         }
     }
+    
+    const renderBackgroundColor = (section) => {
+        switch(section) {
+            case 'section1':
+                return 'rgb(239, 239, 239)';
+            case 'section2':
+                return 'black';
+            default:
+                return 'white';
+        }
+    }
+    const renderLoadingBackgroundColor = (section) => {
+        switch(section) {
+            case 'section1':
+                return 'black';
+            case 'section2':
+            default:
+                return 'white';
+        }
+    }
 
     const renderPricingTablePageSection1Data = (arr) => {
         return(
@@ -225,9 +245,12 @@ export const PricingTablesPage = (props) => {
             return(
                 <div 
                     className="pricing-tables-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: `${renderBackgroundColor(section)}`
+                    }}
                 >
-                    <Loading color="black"/>
+                    <Loading color={renderLoadingBackgroundColor(section)}/>
                 </div>
             )
         }
@@ -251,7 +274,10 @@ export const PricingTablesPage = (props) => {
             return(
                 <div 
                     className="pricing-tables-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: `${renderBackgroundColor(section)}`
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
                 </div>
