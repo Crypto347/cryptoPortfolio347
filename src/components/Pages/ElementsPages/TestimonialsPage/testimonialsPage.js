@@ -188,9 +188,12 @@ export const TestimonialsPage = (props) => {
             return(
                 <div 
                     className="testimonials-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'black'
+                    }}
                 >
-                    <Loading color="black"/>
+                    <Loading color="white"/>
                 </div>
             )
         }
@@ -217,7 +220,10 @@ export const TestimonialsPage = (props) => {
             return(
                 <div 
                     className="testimonials-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'black'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section1Data.error}`}</H15>
                 </div>
@@ -230,7 +236,10 @@ export const TestimonialsPage = (props) => {
             return(
                 <div 
                     className="testimonials-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -256,7 +265,10 @@ export const TestimonialsPage = (props) => {
             return(
                 <div 
                     className="testimonials-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section2Data.error}`}</H15>
                 </div>
@@ -269,9 +281,12 @@ export const TestimonialsPage = (props) => {
             return(
                 <div 
                     className="testimonials-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'black'
+                    }}
                 >
-                    <Loading color="black"/>
+                    <Loading color="white"/>
                 </div>
             )
         }
@@ -296,7 +311,10 @@ export const TestimonialsPage = (props) => {
             return(
                 <div 
                     className="testimonials-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'black'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.testimonialsPage.section3Data.error}`}</H15>
                 </div>

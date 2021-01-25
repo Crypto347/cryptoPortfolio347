@@ -223,7 +223,7 @@ export const AccordionsPage = (props) => {
                     className="accordions-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
-                        background: "rgb(248, 248, 248)"
+                        background: 'rgb(248, 248, 248)'
                     }}
                 >
                     <Loading color="black"/>
@@ -245,7 +245,7 @@ export const AccordionsPage = (props) => {
                     className="accordions-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
-                        background: "rgb(248, 248, 248)"
+                        background: 'rgb(248, 248, 248)'
                     }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.accordionsPage.section1Data.error}`}</H15>
