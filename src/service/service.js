@@ -1923,7 +1923,7 @@ export function fetchBannerPageSection8Data() {
 export function fetchButtonsPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchButtonsPageSection1DataBegin());
-        return fetch(`http://localhost:3005/api/bttons-page/section1`)
+        return fetch(`http://localhost:3005/api/buttons-page/section1`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
@@ -1941,7 +1941,7 @@ export function fetchButtonsPageSection1Data() {
 export function fetchButtonsPageSection2Data() {
     return dispatch => {
         dispatch(Actions.fetchButtonsPageSection2DataBegin());
-        return fetch(`http://localhost:3005/api/buttos-page/section2`)
+        return fetch(`http://localhost:3005/api/buttons-page/section2`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
