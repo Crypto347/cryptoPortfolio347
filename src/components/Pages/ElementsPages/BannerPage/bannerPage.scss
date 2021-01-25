@@ -7,8 +7,6 @@
         align-items: center;
     }
     .banner-page-wrapper {
-        // display: flex;
-        // flex-direction: column;
         .banner-page-header {
             padding: 90px 130px 90px 130px;
         }
@@ -62,7 +60,7 @@
             width: calc(100% - 260px);
             display: flex;
             flex-wrap: wrap;
-            padding: 70px 130px 40px 130px;
+            padding: 70px 130px 70px 130px;
             .banner-page-section-5-item {
                 width: 33.3%;
             }
@@ -72,7 +70,7 @@
             width: calc(100% - 260px);
             display: flex;
             flex-wrap: wrap;
-            padding: 70px 130px 40px 130px;
+            padding: 70px 130px 70px 130px;
             .banner-page-section-6-item {
                 width: 33.3%;
             }
@@ -82,7 +80,7 @@
             width: calc(100% - 260px);
             display: flex;
             flex-wrap: wrap;
-            padding: 70px 130px 30px 130px;
+            padding: 70px 130px 10px 130px;
             .banner-page-section-7-item {
                 width: 33.3%;
             }
@@ -123,15 +121,15 @@
                 width: calc(100% - 80px);
             }
             .banner-page-section-5-data {
-                padding: 70px 40px 40px 40px;
+                padding: 70px 40px 7px 40px;
                 width: calc(100% - 80px);
             }
             .banner-page-section-6-data {
-                padding: 70px 40px 40px 40px;
+                padding: 70px 40px 70px 40px;
                 width: calc(100% - 80px);
             }
             .banner-page-section-7-data {
-                padding: 70px 40px 30px 40px;
+                padding: 70px 40px 1px 40px;
                 width: calc(100% - 80px);
             }
             .banner-page-section-8-data {
@@ -174,21 +172,21 @@
                 }
             }
             .banner-page-section-5-data {
-                padding: 70px 150px 40px 150px;
+                padding: 70px 150px 70px 150px;
                 width: calc(100% - 300px);
                 .banner-page-section-5-item {
                     width: 100%;
                 }
             }
             .banner-page-section-6-data {
-                padding: 70px 150px 40px 150px;
+                padding: 70px 150px 70px 150px;
                 width: calc(100% - 300px);
                 .banner-page-section-6-item {
                     width: 100%;
                 }
             }
             .banner-page-section-7-data {
-                padding: 70px 150px 30px 150px;
+                padding: 70px 150px 10px 150px;
                 width: calc(100% - 300px);
                 .banner-page-section-7-item {
                     width: 100%;
@@ -237,21 +235,21 @@
                 }
             }
             .banner-page-section-5-data {
-                padding: 70px 40px 40px 40px;
+                padding: 70px 40px 70px 40px;
                 width: calc(100% - 80px);
                 .banner-page-section-5-item {
                     width: 100%;
                 }
             }
             .banner-page-section-6-data {
-                padding: 70px 40px 40px 40px;
+                padding: 70px 40px 70px 40px;
                 width: calc(100% - 80px);
                 .banner-page-section-6-item {
                     width: 100%;
                 }
             }
             .banner-page-section-7-data {
-                padding: 70px 40px 30px 40px;
+                padding: 70px 40px 10px 40px;
                 width: calc(100% - 80px);
                 .banner-page-section-7-item {
                     width: 100%;

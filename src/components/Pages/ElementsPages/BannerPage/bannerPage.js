@@ -212,7 +212,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -244,7 +247,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section1Data.error}`}</H15>
                 </div>
@@ -257,7 +263,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -289,7 +298,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section2Data.error}`}</H15>
                 </div>
@@ -302,7 +314,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -333,7 +348,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section3Data.error}`}</H15>
                 </div>
@@ -346,7 +364,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -380,7 +401,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section4Data.error}`}</H15>
                 </div>
@@ -393,7 +417,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -430,7 +457,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section5Data.error}`}</H15>
                 </div>
@@ -443,7 +473,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -477,7 +510,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section6Data.error}`}</H15>
                 </div>
@@ -490,7 +526,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -524,7 +563,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'white'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section7Data.error}`}</H15>
                 </div>
@@ -537,7 +579,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -569,7 +614,10 @@ export const BannerPage = (props) => {
             return(
                 <div 
                     className="banner-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: 'rgb(248, 248, 248)'
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.bannerPage.section8Data.error}`}</H15>
                 </div>

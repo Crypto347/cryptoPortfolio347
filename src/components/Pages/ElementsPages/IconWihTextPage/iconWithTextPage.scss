@@ -20,22 +20,12 @@
     }
 }
 
-// @media only screen and (max-width: 1120px){
-//     .team-page {
-//         .team-page-wrapper {
-//             .team-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             } 
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 860px){
-//     .team-page {
-//         .team-page-wrapper {
-//             .team-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }    
-//         }
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .icon-with-text-page {
+        .icon-with-text-page-wrapper {
+            .icon-with-text-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+        }
+    }
+}
