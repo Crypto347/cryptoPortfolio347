@@ -6,14 +6,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
  * Styles
  */
@@ -48,8 +40,7 @@ import {
     H25,
     H45,
     EH10,
-    EH25,
-    EH40
+    EH25
 } from '../../UtilityComponents';
 
 /**
@@ -134,7 +125,7 @@ export const OurProcess = (props) => {
         }
         if(!props.data.loading && props.data.error){
             return(
-                <div className="picture-board-loading-error">
+                <div className="our-process-loading-error">
                     <H19 className="h19-nobel-lora">{`${props.data.error}`}</H19>
                 </div>
             )
@@ -150,7 +141,6 @@ export const OurProcess = (props) => {
             {props.header ? 
             <H45 className="h45-black-lustria">{props.header}</H45>
             : null}
-            <EH40/>
             {renderOurProcess()}
         </div>
     );

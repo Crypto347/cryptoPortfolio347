@@ -55,8 +55,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H45,
-    EH135
+    H45
 } from '../../../UtilityComponents';
 
 /**

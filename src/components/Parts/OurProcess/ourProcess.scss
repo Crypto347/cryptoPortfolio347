@@ -1,12 +1,17 @@
 .our-process {
     text-align: center;
     .our-process-loading-error {
-        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 25px;
     }
     .our-process-items {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        padding-top: 40px;
         .our-process-item {
             display: flex;
             flex-direction: column;
