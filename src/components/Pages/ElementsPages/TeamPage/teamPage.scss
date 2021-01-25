@@ -7,8 +7,6 @@
         align-items: center;
     }
     .team-page-wrapper {
-        // display: flex;
-        // flex-direction: column;
         .team-page-header {
             padding: 90px 130px 90px 130px;
         }
@@ -23,19 +21,21 @@
             flex-wrap: wrap;
             // width: calc(100% - 120px);
             box-sizing: 100%;
-            padding: 0px 60px 0px 60px;
+            padding: 135px 60px 0px 60px;
             background: rgb(248, 248, 248);
         }
         .team-page-section-2-data {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
+            padding-top: 135px;
             background: rgb(248, 248, 248);
         }
         .team-page-section-3-data {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
+            padding-top: 135px;
             // text-align: center;
             background: rgb(248, 248, 248);
         }
