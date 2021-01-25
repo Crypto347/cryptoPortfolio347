@@ -188,6 +188,7 @@ export const PricingTablesPage = (props) => {
                 return 'white';
         }
     }
+    
     const renderLoadingBackgroundColor = (section) => {
         switch(section) {
             case 'section1':
