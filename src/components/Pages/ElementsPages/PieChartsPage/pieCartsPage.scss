@@ -18,93 +18,103 @@
             background-color: rgb(239, 239, 239);
         }
         .pie-charts-page-section1-data-items {
-            width: calc(100% - 220px);
+            width: calc(100% - 190px);
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             background: rgb(248, 248, 248);
-            padding: 75px 110px 130px 110px;
+            padding: 75px 80px 130px 110px;
             .pie-charts-page-section1-data-item {
-                width: calc(25% - 30px);
+                width: 270px;
                 margin-right: 30px;
             }
         }
         .pie-charts-page-section2-data-items {
-            width: calc(100% - 220px);
+            width: calc(100% - 190px);
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             background: white;
-            padding: 75px 110px 110px 110px;
+            padding: 75px 80px 130px 110px;
             .pie-charts-page-section2-data-item {
-                width: 25%;
+                width: 270px;
+                margin-right: 30px;
             }
         }
     }
 }
 
-// @media only screen and (max-width: 1450px){
-//     .pie-charts-page {
-//         .pie-charts-page-wrapper {
-//             .pie-charts-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }
-//             .pie-charts-page-section1-data-items {
-//                 width: calc(100% - 50px);
-//                 padding: 130px 10px 130px 40px;
-//             }
-//             .pie-charts-page-section2-data-items {
-//                 width: calc(100% - 80px);
-//                 padding: 130px 40px 130px 40px;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1460px){
+    .pie-charts-page {
+        .pie-charts-page-wrapper {
+            .pie-charts-page-section1-data-items {
+                .pie-charts-page-section1-data-item {
+                    width: 400px;
+                }
+            }
+            .pie-charts-page-section2-data-items {
+                .pie-charts-page-section2-data-item {
+                    width: 400px;
+                }
+            }
+        }
+    }
+}
 
-// @media only screen and (max-width: 960px){
-//     .pie-charts-page {
-//         .pie-charts-page-wrapper {
-//             .pie-charts-page-header {
-//                 padding: 90px 130px 90px 130px;
-//             }
-//             .pie-charts-page-section1-data-items {
-//                 width: calc(100% - 260px);
-//                 padding: 130px 130px 100px 130px;
-//                 .pie-charts-page-section1-data-item {
-//                     width: 100%;
-//                     margin-right: 0px;
-//                     margin-bottom: 30px;
-//                 }
-//             }
-//             .pie-charts-page-section2-data-items {
-//                 width: calc(100% - 260px);
-//                 padding: 130px;
-//                 .pie-charts-page-section2-data-item {
-//                     width: calc(100% - 2px);
-//                 }
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .pie-charts-page {
+        .pie-charts-page-wrapper {
+            .pie-charts-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            .pie-charts-page-section1-data-items {
+                .pie-charts-page-section1-data-item {
+                    width: 300px;
+                }
+            }
+            .pie-charts-page-section2-data-items {
+                .pie-charts-page-section2-data-item {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
 
-// @media only screen and (max-width: 660px){
-//     .pie-charts-page {
-//         .pie-charts-page-wrapper {
-//             .pie-charts-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }
-//             .pie-charts-page-section1-data-items {
-//                 width: calc(100% - 80px);
-//                 padding: 130px 40px 130px 40px;
-//                 .pie-charts-page-section1-data-item {
-//                     width: 100%;
-//                 }
-//             }
-//             .pie-charts-page-section2-data-items {
-//                 width: calc(100% - 80px);
-//                 padding: 130px 40px 130px 40px;
-//                 .pie-charts-page-section2-data-item {
-//                     width: calc(100% - 2px);
-//                 }
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 910px){
+    .pie-charts-page {
+        .pie-charts-page-wrapper {
+            .pie-charts-page-section1-data-items {
+                width: calc(100% - 80px);
+                padding: 75px 40px 130px 40px;
+                .pie-charts-page-section1-data-item {
+                    width: 300px;
+                }
+            }
+            .pie-charts-page-section2-data-items {
+                width: calc(100% - 80px);
+                padding: 75px 40px 130px 40px;
+                .pie-charts-page-section2-data-item {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 760px){
+    .pie-charts-page {
+        .pie-charts-page-wrapper {
+            .pie-charts-page-section1-data-items {
+                .pie-charts-page-section1-data-item {
+                    margin-right: 0
+                }
+            }
+            .pie-charts-page-section2-data-items {
+                .pie-charts-page-section2-data-item {
+                    margin-right: 0
+                }
+            }
+        }
+    }
+}
