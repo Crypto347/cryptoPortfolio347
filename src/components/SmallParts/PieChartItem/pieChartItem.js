@@ -16,20 +16,11 @@ import React, {
 import './pieChartItem.scss';
 
 /**
- * Components
- */
-
-import ButtonWithText from '../../../library/ButtonWithText/buttonWithText';
-
-/**
  * Utility
  */
 
 import {
-    H15,
-    H19,
-    H35,
-    H65
+    H19
 } from '../../UtilityComponents';
 
 /**
@@ -83,7 +74,6 @@ export const PieChartItem = (props) => {
             }
         }
     }
-    
     
 //     const calcPercent = (percent) => {
 //         let dash = 72 * percent / 100;

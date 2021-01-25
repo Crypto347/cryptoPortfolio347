@@ -248,7 +248,6 @@ export const BannerImage = (props) => {
                     background: `${props.obj.curtainBackgroundColor}`
                 }}
             >
-               
             </div>
         </div>
     );

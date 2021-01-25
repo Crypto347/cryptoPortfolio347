@@ -221,7 +221,10 @@ export const AccordionsPage = (props) => {
             return(
                 <div 
                     className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: "rgb(248, 248, 248)"
+                    }}
                 >
                     <Loading color="black"/>
                 </div>
@@ -240,7 +243,10 @@ export const AccordionsPage = (props) => {
             return(
                 <div 
                     className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{
+                        height: `${size.height/2}px`,
+                        background: "rgb(248, 248, 248)"
+                    }}
                 >
                     <H15 className="h19-nobel-lora">{`${props.accordionsPage.section1Data.error}`}</H15>
                 </div>
@@ -253,7 +259,7 @@ export const AccordionsPage = (props) => {
             return(
                 <div 
                     className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{height: `${size.height/2}px`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -271,7 +277,7 @@ export const AccordionsPage = (props) => {
             return(
                 <div 
                     className="accordions-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{height: `${size.heigh/2}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.accordionsPage.section2Data.error}`}</H15>
                 </div>

@@ -185,8 +185,7 @@ export const ButtonsPageCardItem = (props) => {
             </div> : 
             <div className="buttons-page-card-item-section2-text-wrapper">
                 <H22 className="h22-nobel-lustria">{props.data.text}</H22>
-            </div>
-            }
+            </div>}
             {renderButtons(props.data.buttonType)}
         </div>
     );
