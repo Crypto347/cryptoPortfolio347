@@ -99,6 +99,8 @@ export const PieCartsPage = (props) => {
             props.fetchPieChartsPageSection2Data();
         }
 
+        // On init render section 1
+
         setShowComponentSection1(true);
 
         // Scroll to the top of the screen
@@ -214,13 +216,14 @@ export const PieCartsPage = (props) => {
                     return(
                         <div 
                             key={i}
-                            className="pie-charts-page-section1-data-item">
-                                <PieChartItem
-                                    chartKey={el.key}
-                                    percent={el.percent}
-                                    header={el.header}
-                                    chartColor="black"
-                                />
+                            className="pie-charts-page-section1-data-item"
+                        >
+                            <PieChartItem
+                                chartKey={el.key}
+                                percent={el.percent}
+                                header={el.header}
+                                chartColor="black"
+                            />
                         </div>
                     )
                 }

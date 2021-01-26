@@ -78,6 +78,9 @@ export const CountersPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showComponentSection1, setShowComponentSection1] = useState(false);
+    const [showComponentSection2, setShowComponentSection2] = useState(false);
+    const [showComponentSection3, setShowComponentSection3] = useState(false);
     
     /**
      * Methods
@@ -100,6 +103,10 @@ export const CountersPage = (props) => {
             props.fetchCountersPageSection3Data();
         }
 
+        // On init render section 1
+
+        setShowComponentSection1(true);
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -120,6 +127,8 @@ export const CountersPage = (props) => {
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("countersPage");
+        let countersPageSection2 = document.getElementById("countersPageSection2");
+        let countersPageSection3 = document.getElementById("countersPageSection3");
 
         // Show or hide BackToTop component
 
@@ -135,6 +144,30 @@ export const CountersPage = (props) => {
             setScrollingUp(false);
         }else{
             setScrollingUp(true);
+        }
+
+        // Render the component only when it appears on the screen
+        
+        if(scrollHeight >= countersPageSection2.offsetTop - size.height/2 - 400){
+            setShowComponentSection2(true);
+        }
+        
+        if(scrollHeight >= countersPageSection3.offsetTop - size.height/2 - 400){
+            setShowComponentSection3(true);
+        }
+
+        // Render the component only when it appears on a vertically oriented screen
+        
+        if(size.width - size.height < 0){
+            if(scrollHeight >= countersPageSection2.offsetTop - size.height/2 - 900){
+                setShowComponentSection2(true);
+            }
+        }
+
+        if(size.width - size.height < 0){
+            if(scrollHeight >= countersPageSection3.offsetTop - size.height/2 - 900){
+                setShowComponentSection3(true);
+            }
         }
     }
 
@@ -205,15 +238,17 @@ export const CountersPage = (props) => {
     const renderCountersPageSection1Data = (arr) => {
         return(
             <div className="counters-page-section1-data-items">{arr.items.map((el, i) => {
-                return(
-                    <AchievementItem
-                        key={i}
-                        number={el.number}
-                        achievement={el.achievement}
-                        numberColor="rgba(155, 155, 155, 0.4)"
-                        achievementColor="black"
-                    />
-                )
+                if(showComponentSection1){
+                    return(
+                        <AchievementItem
+                            key={i}
+                            number={el.number}
+                            achievement={el.achievement}
+                            numberColor="rgba(155, 155, 155, 0.4)"
+                            achievementColor="black"
+                        />
+                    )
+                }
             })}</div>
         )
     }
@@ -221,15 +256,17 @@ export const CountersPage = (props) => {
     const renderCountersPageSection2Data = (arr) => {
         return(
             <div className="counters-page-section2-data-items">{arr.items.map((el, i) => {
-                return(
-                    <AchievementItem
-                        key={i}
-                        number={el.number}
-                        achievement={el.achievement}
-                        numberColor="rgb(78, 78, 78)"
-                        achievementColor="white"
-                    />
-                )
+                if(showComponentSection2){
+                    return(
+                        <AchievementItem
+                            key={i}
+                            number={el.number}
+                            achievement={el.achievement}
+                            numberColor="rgb(78, 78, 78)"
+                            achievementColor="white"
+                        />
+                    )
+                }
             })}</div>
         )
     }
@@ -237,16 +274,18 @@ export const CountersPage = (props) => {
     const renderCountersPageSection3Data = (arr) => {
         return(
             <div className="counters-page-section3-data-items">{arr.items.map((el, i) => {
-                return(
-                    <AchievementItem
-                        key={i}
-                        number={el.number}
-                        achievement={el.achievement}
-                        numberColor="rgb(239, 239, 239)"
-                        achievementColor="black"
-                        text={el.text}
-                    />
-                )
+                if(showComponentSection3){
+                    return(
+                        <AchievementItem
+                            key={i}
+                            number={el.number}
+                            achievement={el.achievement}
+                            numberColor="rgb(239, 239, 239)"
+                            achievementColor="black"
+                            text={el.text}
+                        />
+                    )
+                }
             })}</div>
         )
     }
@@ -269,21 +308,27 @@ export const CountersPage = (props) => {
             switch(section){
                 case 'section1':
                     return(
-                        <>
+                        <div
+                            id="countersPageSection1"
+                        >
                             {renderCountersPageSection1Data(arr)}
-                        </>
+                        </div>
                     );
                 case 'section2':
                     return(
-                        <>
+                        <div
+                            id="countersPageSection2"
+                        >
                             {renderCountersPageSection2Data(arr)}
-                        </>
+                        </div>
                     );
                 case 'section3':
                     return(
-                        <>
+                        <div
+                            id="countersPageSection3"
+                        >
                             {renderCountersPageSection3Data(arr)}
-                        </>
+                        </div>
                     );
             }
         }
