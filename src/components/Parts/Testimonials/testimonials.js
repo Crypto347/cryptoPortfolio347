@@ -105,7 +105,7 @@ export const Testimonials = (props) => {
         }
         if(!props.testimonials.loading && !props.testimonials.error){
             return(
-                <div className="testimonials-data">
+                <>
                     <EH80/>
                     <H45 className="h45-white-lustria">Testimonials</H45>
                     <EH25/>
@@ -121,7 +121,7 @@ export const Testimonials = (props) => {
                         autoPlay
                     />
                     <EH80/>
-                </div>
+                </>
             )
         }
         if(!props.testimonials.loading && props.testimonials.error){
