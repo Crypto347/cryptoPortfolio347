@@ -2,11 +2,13 @@
     width: calc(100% + 18px);
     background:  rgb(37, 37, 37);
     .stone-wall-wide-page-loading-error {
-        width: 100%;
+        width: calc(100% - 40px);
         display: flex;
         justify-content: center;
         align-items: center;
         background: white;
+        padding: 0px 20px 0px 20px;
+        text-align: center;
     }
     .stone-wall-wide-page-header {
         display: flex;

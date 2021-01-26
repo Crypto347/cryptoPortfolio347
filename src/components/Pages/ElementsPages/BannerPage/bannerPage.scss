@@ -1,10 +1,12 @@
 .banner-page {
     width: calc(100% + 18px);
     .banner-page-loading-error {
-        width: 100%;
+        width: calc(100% - 40px);
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0px 20px 0px 20px;
+        text-align: center;
     }
     .banner-page-wrapper {
         .banner-page-header {

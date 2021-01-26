@@ -1,10 +1,12 @@
 .testimonials-page {
     width: calc(100% + 18px);
     .testimonials-page-loading-error {
-        width: 100%;
+        width: calc(100% - 40px);
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0px 20px 0px 20px;
+        text-align: center;
     }
     .testimonials-page-wrapper {
         .testimonials-page-header {

@@ -5,10 +5,12 @@
         flex-direction: column;
         padding: 70px 130px 70px 130px;
         .portfolio-gallery-loading-error {
-            width: 100%;
+            width: calc(100% - 40px);
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 0px 20px 0px 20px;
+            text-align: center;
         }
         .portfolio-gallery-header-wrapper {
             cursor: context-menu;
