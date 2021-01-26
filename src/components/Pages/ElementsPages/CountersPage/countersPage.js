@@ -27,6 +27,7 @@ import './countersPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import AchievementItem from '../../../SmallParts/AchievementItem/achievementItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -203,51 +204,51 @@ export const CountersPage = (props) => {
 
     const renderCountersPageSection1Data = (arr) => {
         return(
-            <div className="pricing-tables-page-section1-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div 
-                //         key={i}
-                //         className="pricing-tables-page-section1-data-item"
-                //     >
-                //         <PricingTablesCardItem
-                //             page="pricingTablesPageSection1"
-                //             data={el}
-                //             setUnmountComponentValues={props.setUnmountComponentValues}
-                //             unmountComponent={props.unmountComponent}
-                //             currentPagePathName="pricing-tables"
-                //         />
-                //     </div>
-                // )
+            <div className="counters-page-section1-data-items">{arr.items.map((el, i) => {
+                return(
+                    <AchievementItem
+                        key={i}
+                        number={el.number}
+                        achievement={el.achievement}
+                    />
+                )
             })}</div>
         )
     }
 
     const renderCountersPageSection2Data = (arr) => {
         return(
-            <div className="pricing-tables-page-section2-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <div 
-                //         key={i}
-                //         className="pricing-tables-page-section2-data-item"
-                //     >
-                //         <PricingTablesCardItem
-                //             page="pricingTablesPageSection2"
-                //             data={el}
-                //             setUnmountComponentValues={props.setUnmountComponentValues}
-                //             unmountComponent={props.unmountComponent}
-                //             currentPagePathName="pricing-tables"
-                //         />
-                //     </div>
-                // )
+            <div className="counters-page-section2-data-items">{arr.items.map((el, i) => {
+                return(
+                    <AchievementItem
+                        key={i}
+                        number={el.number}
+                        achievement={el.achievement}
+                    />
+                )
             })}</div>
         )
     }
     
+    const renderCountersPageSection3Data = (arr) => {
+        return(
+            <div className="counters-page-section3-data-items">{arr.items.map((el, i) => {
+                return(
+                    <AchievementItem
+                        key={i}
+                        number={el.number}
+                        achievement={el.achievement}
+                    />
+                )
+            })}</div>
+        )
+    }
+
     const renderCountersPageDataContent = (section, arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="pricing-tables-page-loading-error" 
+                    className="counters-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
                         background: `${renderBackgroundColor(section)}`
@@ -261,22 +262,28 @@ export const CountersPage = (props) => {
             switch(section){
                 case 'section1':
                     return(
-                        <div className="pricing-tables-page-section1-data-wrapper">
+                        <>
                             {renderCountersPageSection1Data(arr)}
-                        </div>
+                        </>
                     );
                 case 'section2':
                     return(
-                        <div className="pricing-tables-page-section2-data-wrapper">
+                        <>
                             {renderCountersPageSection2Data(arr)}
-                        </div>
+                        </>
+                    );
+                case 'section3':
+                    return(
+                        <>
+                            {renderCountersPageSection3Data(arr)}
+                        </>
                     );
             }
         }
         if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="pricing-tables-page-loading-error" 
+                    className="counters-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
                         background: `${renderBackgroundColor(section)}`
@@ -293,15 +300,16 @@ export const CountersPage = (props) => {
      */
 
     return(
-        <div className="pricing-tables-page" id="countersPage">
+        <div className="counters-page" id="countersPage">
             {renderToolbars()}
-            <div className="pricing-tables-page-wrapper">
-                <div className="pricing-tables-page-header">
-                    <H45 className="h45-nero-lustria">Pricing Tables</H45>
+            <div className="counters-page-wrapper">
+                <div className="counters-page-header">
+                    <H45 className="h45-nero-lustria">Counters</H45>
                 </div>
                 <div className="grey-line"/>
                 {renderCountersPageDataContent("section1", props.countersPage.section1Data)}
                 {renderCountersPageDataContent("section2", props.countersPage.section2Data)}
+                {renderCountersPageDataContent("section3", props.countersPage.section3Data)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}

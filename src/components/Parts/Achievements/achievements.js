@@ -77,8 +77,10 @@ export const Achievements = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        props.fetchAchievementsData();
-
+        if(props.achievementsData.items.length === 0){
+            props.fetchAchievementsData();
+        }
+       
         // Event Listeners
         
         window.addEventListener('scroll', handleScroll);

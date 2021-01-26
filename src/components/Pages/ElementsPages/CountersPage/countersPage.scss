@@ -1,6 +1,6 @@
-.pricing-tables-page {
+.counters-page {
     width: calc(100% + 18px);
-    .pricing-tables-page-loading-error {
+    .counters-page-loading-error {
         width: calc(100% - 40px);
         display: flex;
         justify-content: center;
@@ -8,10 +8,10 @@
         padding: 0px 20px 0px 20px;
         text-align: center;
     }
-    .pricing-tables-page-wrapper {
+    .counters-page-wrapper {
         display: flex;
         flex-direction: column;
-        .pricing-tables-page-header {
+        .counters-page-header {
             padding: 90px 130px 90px 130px;
         }
         .grey-line {
@@ -19,95 +19,94 @@
             height: 10px;
             background-color: rgb(239, 239, 239);
         }
-        .pricing-tables-page-section1-data-items {
-            width: calc(100% - 230px);
+        .counters-page-section1-data-items {
+            width: calc(100% - 240px);
             display: flex;
             flex-wrap: wrap;
             background: rgb(248, 248, 248);
-            padding: 130px 100px 130px 130px;
-            .pricing-tables-page-section1-data-item {
-                width: calc(33.3% - 30px);
-                margin-right: 30px;
-            }
+            padding: 70px 120px 70px 120px;
         }
-        .pricing-tables-page-section2-data-items {
-            width: calc(100% - 260px);
+        .counters-page-section2-data-items {
+            width: calc(100% - 240px);
             display: flex;
             flex-wrap: wrap;
-            background: black;
-            padding: 130px;
-            .pricing-tables-page-section2-data-item {
-                width: calc(33.3% - 2px);
-                border: 0.5px solid rgb(239, 239, 239);
-            }
+            background: rgb(37, 37, 37);
+            padding: 70px 120px 70px 120px;
+        }
+        .counters-page-section3-data-items {
+            width: calc(100% - 240px);
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            padding: 70px 120px 70px 120px;
         }
     }
 }
 
-@media only screen and (max-width: 1450px){
-    .pricing-tables-page {
-        .pricing-tables-page-wrapper {
-            .pricing-tables-page-header {
-                padding: 90px 40px 90px 40px;
-            }
-            .pricing-tables-page-section1-data-items {
-                width: calc(100% - 50px);
-                padding: 130px 10px 130px 40px;
-            }
-            .pricing-tables-page-section2-data-items {
-                width: calc(100% - 80px);
-                padding: 130px 40px 130px 40px;
-            }
-        }
-    }
-}
+// @media only screen and (max-width: 1450px){
+//     .counters-page {
+//         .counters-page-wrapper {
+//             .counters-page-header {
+//                 padding: 90px 40px 90px 40px;
+//             }
+//             .counters-page-section1-data-items {
+//                 width: calc(100% - 50px);
+//                 padding: 130px 10px 130px 40px;
+//             }
+//             .counters-page-section2-data-items {
+//                 width: calc(100% - 80px);
+//                 padding: 130px 40px 130px 40px;
+//             }
+//         }
+//     }
+// }
 
-@media only screen and (max-width: 960px){
-    .pricing-tables-page {
-        .pricing-tables-page-wrapper {
-            .pricing-tables-page-header {
-                padding: 90px 130px 90px 130px;
-            }
-            .pricing-tables-page-section1-data-items {
-                width: calc(100% - 260px);
-                padding: 130px 130px 100px 130px;
-                .pricing-tables-page-section1-data-item {
-                    width: 100%;
-                    margin-right: 0px;
-                    margin-bottom: 30px;
-                }
-            }
-            .pricing-tables-page-section2-data-items {
-                width: calc(100% - 260px);
-                padding: 130px;
-                .pricing-tables-page-section2-data-item {
-                    width: calc(100% - 2px);
-                }
-            }
-        }
-    }
-}
+// @media only screen and (max-width: 960px){
+//     .counters-page {
+//         .counters-page-wrapper {
+//             .counters-page-header {
+//                 padding: 90px 130px 90px 130px;
+//             }
+//             .counters-page-section1-data-items {
+//                 width: calc(100% - 260px);
+//                 padding: 130px 130px 100px 130px;
+//                 .counters-page-section1-data-item {
+//                     width: 100%;
+//                     margin-right: 0px;
+//                     margin-bottom: 30px;
+//                 }
+//             }
+//             .counters-page-section2-data-items {
+//                 width: calc(100% - 260px);
+//                 padding: 130px;
+//                 .counters-page-section2-data-item {
+//                     width: calc(100% - 2px);
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media only screen and (max-width: 660px){
-    .pricing-tables-page {
-        .pricing-tables-page-wrapper {
-            .pricing-tables-page-header {
-                padding: 90px 40px 90px 40px;
-            }
-            .pricing-tables-page-section1-data-items {
-                width: calc(100% - 80px);
-                padding: 130px 40px 130px 40px;
-                .pricing-tables-page-section1-data-item {
-                    width: 100%;
-                }
-            }
-            .pricing-tables-page-section2-data-items {
-                width: calc(100% - 80px);
-                padding: 130px 40px 130px 40px;
-                .pricing-tables-page-section2-data-item {
-                    width: calc(100% - 2px);
-                }
-            }
-        }
-    }
-}
+// @media only screen and (max-width: 660px){
+//     .counters-page {
+//         .counters-page-wrapper {
+//             .counters-page-header {
+//                 padding: 90px 40px 90px 40px;
+//             }
+//             .counters-page-section1-data-items {
+//                 width: calc(100% - 80px);
+//                 padding: 130px 40px 130px 40px;
+//                 .counters-page-section1-data-item {
+//                     width: 100%;
+//                 }
+//             }
+//             .counters-page-section2-data-items {
+//                 width: calc(100% - 80px);
+//                 padding: 130px 40px 130px 40px;
+//                 .counters-page-section2-data-item {
+//                     width: calc(100% - 2px);
+//                 }
+//             }
+//         }
+//     }
+// }
