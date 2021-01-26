@@ -201,17 +201,20 @@ export const TeamPage = (props) => {
             return(
                 <div className="team-page-section-1-data">{props.teamPage.section1Data.items.map((el, i) => {
                     return(
-                        <TeamInformationCard
-                            photo={el.photo}
+                        <div 
                             key={i}
-                            imgKey={el.key}
-                            name={el.name}
-                            position={el.position}
-                            instaName={el.instaName}
-                            alt={el.alt}
-                            width={25}
-                            version="version2"
-                        />
+                            className="team-page-section-1-data-item"
+                        >
+                            <TeamInformationCard
+                                photo={el.photo}
+                                imgKey={el.key}
+                                name={el.name}
+                                position={el.position}
+                                instaName={el.instaName}
+                                alt={el.alt}
+                                version="version2"
+                            />
+                        </div>
                     )
                 })}
                 </div>
@@ -250,17 +253,20 @@ export const TeamPage = (props) => {
             return(
                 <div className="team-page-section-2-data">{props.teamPage.section2Data.items.map((el, i) => {
                     return(
-                        <TeamInformationCard
-                            photo={el.photo}
+                        <div 
                             key={i}
-                            imgKey={el.key}
-                            name={el.name}
-                            position={el.position}
-                            instaName={el.instaName}
-                            alt={el.alt}
-                            width={20}
-                            version="version1"
-                        />
+                            className="team-page-section-2-data-item"
+                        >
+                            <TeamInformationCard
+                                photo={el.photo}
+                                imgKey={el.key}
+                                name={el.name}
+                                position={el.position}
+                                instaName={el.instaName}
+                                alt={el.alt}
+                                version="version1"
+                            />
+                        </div>
                     )
                 })}
                 </div>
@@ -299,17 +305,20 @@ export const TeamPage = (props) => {
             return(
                 <div className="team-page-section-3-data">{props.teamPage.section3Data.items.map((el, i) => {
                     return(
-                        <TeamInformationCard
-                            photo={el.photo}
+                        <div 
                             key={i}
-                            imgKey={el.key}
-                            name={el.name}
-                            position={el.position}
-                            instaName={el.instaName}
-                            alt={el.alt}
-                            width={25}
-                            version="version3"
-                        />
+                            className="team-page-section-3-data-item"
+                        >
+                            <TeamInformationCard
+                                photo={el.photo}
+                                imgKey={el.key}
+                                name={el.name}
+                                position={el.position}
+                                instaName={el.instaName}
+                                alt={el.alt}
+                                version="version3"
+                            />
+                        </div>
                     )
                 })}
                 </div>

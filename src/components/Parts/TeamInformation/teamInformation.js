@@ -90,17 +90,20 @@ export const TeamInformation = (props) => {
             return(
                 <div className="team-information-items">{props.teamInformation.items.map((el, i) => {
                     return(
-                        <TeamInformationCard
-                            photo={el.photo}
+                        <div 
                             key={i}
-                            imgKey={el.key}
-                            name={el.name}
-                            position={el.position}
-                            instaName={el.instaName}
-                            alt={el.alt}
-                            width={20}
-                            version="version1"
-                        />
+                            className="team-information-item"
+                        >
+                            <TeamInformationCard
+                                photo={el.photo}
+                                imgKey={el.key}
+                                name={el.name}
+                                position={el.position}
+                                instaName={el.instaName}
+                                alt={el.alt}
+                                version="version1"
+                            />
+                        </div>
                     )})}
                 </div>
             )

@@ -23,6 +23,9 @@
             box-sizing: 100%;
             padding: 135px 60px 0px 60px;
             background: rgb(248, 248, 248);
+            .team-page-section-1-data-item {
+                width: 25%;
+            }
         }
         .team-page-section-2-data {
             display: flex;
@@ -30,6 +33,9 @@
             width: 100%;
             padding-top: 135px;
             background: rgb(248, 248, 248);
+            .team-page-section-2-data-item {
+                width: 20%;
+            }
         }
         .team-page-section-3-data {
             display: flex;
@@ -37,6 +43,9 @@
             width: 100%;
             padding-top: 135px;
             background: rgb(248, 248, 248);
+            .team-page-section-3-data-item {
+                width: 25%;
+            }
         }
     }
 }
@@ -56,7 +65,22 @@
         .team-page-wrapper {
             .team-page-header {
                 padding: 90px 40px 90px 40px;
-            }    
+            }
+            .team-page-section-1-data {
+                .team-page-section-1-data-item {
+                    width: 100%;
+                }
+            }
+            .team-page-section-2-data {
+                .team-page-section-2-data-item {
+                    width: 100%;
+                }
+            }
+            .team-page-section-3-data {
+                .team-page-section-3-data-item {
+                    width: 100%;
+                }
+            }
         }
     }
 }
