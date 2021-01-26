@@ -76,6 +76,8 @@ export const findPathOfIds = (path) => {
             return [6, 62, 621];
         case 'pie-charts':
             return [6, 62, 622];
+        case 'counters':
+            return [6, 62, 623];
     }
 
     //Second element of updatedPath array

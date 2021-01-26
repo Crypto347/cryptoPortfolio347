@@ -450,3 +450,9 @@ export const getPieChartsPageState = createSelector(
     (x) => x
 );
 
+const getCountersPage = (state) => state.countersPage;
+
+export const getCountersPageState = createSelector(
+    [getCountersPage],
+    (x) => x
+);

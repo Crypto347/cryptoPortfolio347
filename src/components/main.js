@@ -72,7 +72,7 @@ import BannerPage from './Pages/ElementsPages/BannerPage/bannerPage';
 import ButtonsPage from './Pages/ElementsPages/ButtonsPage/buttonsPage';
 import PricingTablesPage from './Pages/ElementsPages/PricingTablesPage/pricingTablesPage';
 import PieChartsPage from './Pages/ElementsPages/PieChartsPage/pieCartsPage';
-
+import CountersPage from './Pages/ElementsPages/CountersPage/countersPage';
 /**
  * Actions
  */
@@ -154,6 +154,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/counters"}
+                    component={CountersPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/pie-charts"}

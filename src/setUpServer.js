@@ -19851,6 +19851,87 @@ app.get('/api/pie-charts-page/section2', (req, res) => {
     res.json(pieChartsPageSec2);
 });
 
+app.get('/api/counters-page/section1', (req, res) => {
+    const countersPageSec1 = [
+        {
+            id: 1,
+            achievement: "Finished Yearly Projects",
+            number: 27
+        },
+        {
+            id: 2,
+            achievement: "Different Locations",
+            number: 7
+        },
+        {
+            id: 3,
+            achievement: "Years of Experience",
+            number: 14
+        },
+        {
+            id: 4,
+            achievement: "Released Projects",
+            number: 4
+        }
+    ]
+    res.json(countersPageSec1);
+});
+
+app.get('/api/counters-page/section2', (req, res) => {
+    const countersPageSec2 = [
+        {
+            id: 1,
+            achievement: "Finished Yearly Projects",
+            number: 27
+        },
+        {
+            id: 2,
+            achievement: "Different Locations",
+            number: 7
+        },
+        {
+            id: 3,
+            achievement: "Years of Experience",
+            number: 14
+        },
+        {
+            id: 4,
+            achievement: "Released Projects",
+            number: 4
+        }
+    ]
+    res.json(countersPageSec2);
+});
+
+app.get('/api/counters-page/section3', (req, res) => {
+    const countersPageSec3 = [
+        {
+            id: 1,
+            achievement: "Finished Yearly Projects",
+            number: 27,
+            text: "Lorem ipsum dolor sit amet, minim tantas eu vis, tacimates constituam ea his, partem laoreet."
+        },
+        {
+            id: 2,
+            achievement: "Different Locations",
+            number: 7,
+            text: "Lorem ipsum dolor sit amet, minim tantas eu vis, tacimates constituam ea his, partem laoreet."
+        },
+        {
+            id: 3,
+            achievement: "Years of Experience",
+            number: 14,
+            text: "Lorem ipsum dolor sit amet, minim tantas eu vis, tacimates constituam ea his, partem laoreet."
+        },
+        {
+            id: 4,
+            achievement: "Released Projects",
+            number: 4,
+            text: "Lorem ipsum dolor sit amet, minim tantas eu vis, tacimates constituam ea his, partem laoreet."
+        }
+    ]
+    res.json(countersPageSec3);
+});
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

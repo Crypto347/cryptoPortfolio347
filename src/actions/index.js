@@ -40,4 +40,5 @@ export * from './iconWithTextPageActions';
 export * from './bannerPageActions';
 export * from './buttonsPageActions';
 export * from './pricingTablesPageActions';
-export * from './pieChartsPageActions';;
+export * from './pieChartsPageActions';
+export * from './countersPageActions';

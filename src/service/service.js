@@ -2028,6 +2028,60 @@ export function fetchPieChartsPageSection2Data() {
     };
 }
 
+export function fetchCountersPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchCountersPageSection1DataBegin());
+        return fetch("http://localhost:3005/api/counters-page/section1")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchCountersPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchCountersPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchCountersPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchCountersPageSection2DataBegin());
+        return fetch("http://localhost:3005/api/counters-page/section2")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchCountersPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchCountersPageSection2DataFailur(error))
+            });
+    };
+}
+
+export function fetchCountersPageSection3Data() {
+    return dispatch => {
+        dispatch(Actions.fetchCountersPageSection3DataBegin());
+        return fetch("http://localhost:3005/api/counters-page/section3")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchCountersPageSection3DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchCountersPageSection3DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);
