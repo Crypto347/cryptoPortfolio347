@@ -24,6 +24,7 @@ import './testimonials.scss';
  * Components
  */
 
+import Loading from '../../SmallParts/Loading/loading';
 import Swiper from '../../../library/Swiper/swiper';
 
 /**
@@ -49,6 +50,7 @@ import * as Selectors from '../../../reducers/selectors';
  */
 
 import {
+    H15,
     H45,
     EH25,
     EH80,
@@ -81,30 +83,62 @@ export const Testimonials = (props) => {
     useEffect(() => {
         // Fetch data for the component
         
-        props.fetchTestimonials();
+        if(props.testimonials.items.length === 0){
+            props.fetchTestimonials();
+        }
     }, []);
 
     /**
      * Markup
      */
 
+    const renderTestimonialsDataContent = () => {
+        if(props.testimonials.loading && !props.testimonials.error){
+            return(
+                <div 
+                    className="testimonials-loading-error" 
+                    style={{height: `${size.height/2}px`,}}
+                >
+                    <Loading color="white"/>
+                </div>
+            )
+        }
+        if(!props.testimonials.loading && !props.testimonials.error){
+            return(
+                <div className="testimonials-data">
+                    <EH80/>
+                    <H45 className="h45-white-lustria">Testimonials</H45>
+                    <EH25/>
+                    <Swiper 
+                        component="testimonials"
+                        contentArray={props.testimonials.items}
+                        content={props.testimonials}
+                        translateWidth={size.width - 130}
+                        showNumbersOfSlides={1}
+                        setSwiperState={props.setSwiperStateForHomePage}
+                        swiperData={props.testimonials.swiper}
+                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForHomePage}
+                        autoPlay
+                    />
+                    <EH80/>
+                </div>
+            )
+        }
+        if(!props.testimonials.loading && props.testimonials.error){
+            return(
+                <div 
+                    className="testimonials-loading-error" 
+                    style={{height: `${size.height/2}px`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${props.testimonials.error}`}</H15>
+                </div>
+            )
+        }
+    } 
+    
     return(
         <div className="testimonials">
-            <EH80/>
-            <H45 className="h45-white-lustria">Testimonials</H45>
-            <EH25/>
-            <Swiper 
-                component="testimonials"
-                contentArray={props.testimonials.items}
-                content={props.testimonials}
-                translateWidth={size.width - 130}
-                showNumbersOfSlides={1}
-                setSwiperState={props.setSwiperStateForHomePage}
-                swiperData={props.testimonials.swiper}
-                rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForHomePage}
-                autoPlay
-            />
-            <EH80/>
+            {renderTestimonialsDataContent()}
         </div>
     );
 }

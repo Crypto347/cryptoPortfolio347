@@ -255,7 +255,6 @@ export const TeamInformationCard = (props) => {
         <div 
             id="team-information-card"
             className="team-information-card"
-            // style={{width: `${props.width}%`}}
             onMouseEnter={handleMouseEnter} 
             onMouseLeave={handleMouseLeave}
         >
