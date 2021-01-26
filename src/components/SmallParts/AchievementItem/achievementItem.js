@@ -14,6 +14,14 @@ import React, {
 import './achievementItem.scss';
 
 /**
+ * Utility
+ */
+
+import {
+    H17
+} from '../../UtilityComponents';
+
+/**
  * Hooks
  */
 
@@ -48,10 +56,22 @@ export const AchievementItem = (props) => {
 
     return(
         <div className="achievement-item">
-            <div className="achievement-item-number">
+            <div 
+                className="achievement-item-number"
+                style={{color: `${props.numberColor}`}}
+            >
                 {value}
-                <div className="achievement">{props.achievement}</div>
+                <div 
+                    className="achievement"
+                    style={{color: `${props.achievementColor}`}}
+                >
+                    {props.achievement}
+                </div>
             </div>
+            {props.text ? 
+            <div className="achievement-item-text">
+                <H17 className="h17-nobel-lustria">{props.text}</H17>
+            </div>: null}
         </div>
     );
 }

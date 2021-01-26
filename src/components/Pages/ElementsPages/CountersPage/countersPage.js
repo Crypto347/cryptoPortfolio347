@@ -210,6 +210,8 @@ export const CountersPage = (props) => {
                         key={i}
                         number={el.number}
                         achievement={el.achievement}
+                        numberColor="rgba(155, 155, 155, 0.4)"
+                        achievementColor="black"
                     />
                 )
             })}</div>
@@ -224,6 +226,8 @@ export const CountersPage = (props) => {
                         key={i}
                         number={el.number}
                         achievement={el.achievement}
+                        numberColor="rgb(78, 78, 78)"
+                        achievementColor="white"
                     />
                 )
             })}</div>
@@ -238,6 +242,9 @@ export const CountersPage = (props) => {
                         key={i}
                         number={el.number}
                         achievement={el.achievement}
+                        numberColor="rgb(239, 239, 239)"
+                        achievementColor="black"
+                        text={el.text}
                     />
                 )
             })}</div>

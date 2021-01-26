@@ -118,6 +118,8 @@ export const Achievements = (props) => {
                             key={i}
                             number={el.number}
                             achievement={el.achievement}
+                            numberColor="rgb(239, 239, 239)"
+                            achievementColor="black"
                         />
                     )
                 })}</div>
