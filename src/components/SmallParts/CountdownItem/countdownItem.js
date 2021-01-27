@@ -48,22 +48,11 @@ export const CountdownItem = (props) => {
      * State
      */
 
-    // const [countdownValueSec, setCountdownValueSec] = useState(0);
-    // const [countdownValueMin, setCountdownValueMin] = useState(0);
-    // const [countdownValueHours, setCountdownValueHours] = useState(0);
-    // const [countdownValueDays, setCountdownValueDays] = useState(0);
-    // const [countdownValueMounth, setCountdownValueMounth] = useState(0);
-
     /**
      * Methods
      */
    
     useEffect(() => {
-        // setCountdownValueSec
-        // setCountdownValueMin
-        // setCountdownValueHours
-        // setCountdownValueDays
-        // setCountdownValueMounth
     }, []);
 
     useInterval(() => {
