@@ -123,10 +123,10 @@ const countdownValueForCountdownPageSection1 = (state, action) => {
 
     return {
         ...state,
-        // section1Data: {
-        //     ...state.section1Data,
-        //     items: updatedItems
-        // }
+        section1Data: {
+            ...state.section1Data,
+            items: updatedItems
+        }
     };
 }
 
@@ -147,10 +147,10 @@ const countdownValueForCountdownPageSection2 = (state, action) => {
 
     return {
         ...state,
-        // section2Data: {
-        //     ...state.section2Data,
-        //     items: updatedItems
-        // }
+        section2Data: {
+            ...state.section2Data,
+            items: updatedItems
+        }
     };
 }
 
