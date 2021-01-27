@@ -56,23 +56,23 @@ export const CountdownItem = (props) => {
     }, []);
 
     useInterval(() => {
-        props.countdownValue(props.data.key, "seconds", props.data.countdownValue[4].val - 1);
+        props.countdownValue(props.data.key, "seconds");
     }, 1000);
 
     useInterval(() => {
-        props.countdownValue(props.data.key, "minutes", props.data.countdownValue[3].val - 1);
+        props.countdownValue(props.data.key, "minutes");
     }, 60000);
 
     useInterval(() => {
-        props.countdownValue(props.data.key, "hours", props.data.countdownValue[2].val - 1);
+        props.countdownValue(props.data.key, "hours");
     }, 3600000);
 
     useInterval(() => {
-        props.countdownValue(props.data.key, "days", props.data.countdownValue[1].val - 1);
+        props.countdownValue(props.data.key, "days");
     }, 86400000);
 
     useInterval(() => {
-        props.countdownValue(props.data.key, "month", countdownValueDays - 1);
+        props.countdownValue(props.data.key, "month");
     }, props.data.countdownValue[0].val === 0 ? null : 55555);
 
     const renderClassName = (opt, color) => {
