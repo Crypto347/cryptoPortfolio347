@@ -125,7 +125,8 @@ export const CountersPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.countersPage.section2Data.items.length,
+        props.countersPage.section3Data.items.length]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -148,28 +149,36 @@ export const CountersPage = (props) => {
         }else{
             setScrollingUp(true);
         }
-
-        // Render the component only when it appears on the screen
         
-        if(scrollHeight >= countersPageSection2.offsetTop - size.height/2 - 400){
-            setShowComponentSection2(true);
-        }
-        
-        if(scrollHeight >= countersPageSection3.offsetTop - size.height/2 - 400){
-            setShowComponentSection3(true);
-        }
-
-        // Render the component only when it appears on a vertically oriented screen
-        
-        if(size.width - size.height < 0){
-            if(scrollHeight >= countersPageSection2.offsetTop - size.height/2 - 900){
+        if(props.countersPage.section2Data.items.length !== 0){
+            // Render the component only when it appears on the screen
+           
+            if(scrollHeight >= countersPageSection2.offsetTop - size.height/2 - 400){
                 setShowComponentSection2(true);
+            }
+            
+              // Render the component only when it appears on a vertically oriented screen
+            
+              if(size.width - size.height < 0){
+                if(scrollHeight >= countersPageSection2.offsetTop - size.height/2 - 900){
+                    setShowComponentSection2(true);
+                }
             }
         }
 
-        if(size.width - size.height < 0){
-            if(scrollHeight >= countersPageSection3.offsetTop - size.height/2 - 900){
+        if(props.countersPage.section3Data.items.length !== 0){
+            // Render the component only when it appears on the screen
+
+            if(scrollHeight >= countersPageSection3.offsetTop - size.height/2 - 400){
                 setShowComponentSection3(true);
+            }
+
+            // Render the component only when it appears on a vertically oriented screen
+
+            if(size.width - size.height < 0){
+                if(scrollHeight >= countersPageSection3.offsetTop - size.height/2 - 900){
+                    setShowComponentSection3(true);
+                }
             }
         }
     }
@@ -223,6 +232,7 @@ export const CountersPage = (props) => {
                 return 'rgb(239, 239, 239)';
             case 'section2':
                 return 'black';
+            case 'section3':
             default:
                 return 'white';
         }
@@ -231,6 +241,7 @@ export const CountersPage = (props) => {
     const renderLoadingBackgroundColor = (section) => {
         switch(section) {
             case 'section1':
+                case 'section3':
                 return 'black';
             case 'section2':
             default:

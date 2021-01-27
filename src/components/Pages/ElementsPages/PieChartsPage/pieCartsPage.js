@@ -121,7 +121,7 @@ export const PieCartsPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.pieChartsPage.section2Data.items.length]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -144,17 +144,19 @@ export const PieCartsPage = (props) => {
             setScrollingUp(true);
         }
 
-        // Render the component only when it appears on the screen
-        
-        if(scrollHeight >= pieChartsPageSection2.offsetTop - size.height/2 - 400){
-            setShowComponentSection2(true);
-        }
-
-        // Render the component only when it appears on a vertically oriented screen
-        
-        if(size.width - size.height < 0){
-            if(scrollHeight >= pieChartsPageSection2.offsetTop - size.height/2 - 900){
+        if(props.pieChartsPage.section2Data.items.length !== 0){
+            // Render the component only when it appears on the screen
+            
+            if(scrollHeight >= pieChartsPageSection2.offsetTop - size.height/2 - 400){
                 setShowComponentSection2(true);
+            }
+
+            // Render the component only when it appears on a vertically oriented screen
+            
+            if(size.width - size.height < 0){
+                if(scrollHeight >= pieChartsPageSection2.offsetTop - size.height/2 - 900){
+                    setShowComponentSection2(true);
+                }
             }
         }
     }
