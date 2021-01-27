@@ -106,6 +106,54 @@ const fetchCountdownPageSection2DataFailur = (state, action) => {
     };
 }
 
+const countdownValueForCountdownPageSection1 = (state, action) => {
+    let updatedItems = [...state.section1Data.items];
+    let countdownObj = updatedItems.find(item => item.key === action.countdownKey);
+    let countdownIndex = updatedItems.find(item => item.key === action.countdownKey);
+    let countdownOptionObj = countdownObj.countdownValue.find(item => item.key === action.opt);
+    let countdownOptionIndex = countdownObj.countdownValue.findIndex(item => item.key === action.opt);
+    
+    let obj = {
+        ...countdownOptionObj,
+        val: Utility.setCountdownTimeVal(action.opt, countdownOptionObj.val, countdownObj.startMonth, countdownObj.leapYear)
+    }
+    
+    countdownObj.countdownValue.splice(countdownOptionIndex, 1, obj);
+    updatedItems.splice(countdownObj, 1, countdownIndex);
+
+    return {
+        ...state,
+        // section1Data: {
+        //     ...state.section1Data,
+        //     items: updatedItems
+        // }
+    };
+}
+
+const countdownValueForCountdownPageSection2 = (state, action) => {
+    let updatedItems = [...state.section2Data.items];
+    let countdownObj = updatedItems.find(item => item.key === action.countdownKey);
+    let countdownIndex = updatedItems.find(item => item.key === action.countdownKey);
+    let countdownOptionObj = countdownObj.countdownValue.find(item => item.key === action.opt);
+    let countdownOptionIndex = countdownObj.countdownValue.findIndex(item => item.key === action.opt);
+
+    let obj = {
+        ...countdownOptionObj,
+        val: Utility.setCountdownTimeVal(action.opt, countdownOptionObj.val, countdownObj.startMonth, countdownObj.leapYear)
+    }
+    
+    countdownObj.countdownValue.splice(countdownOptionIndex, 1, obj);
+    updatedItems.splice(countdownObj, 1, countdownIndex);
+
+    return {
+        ...state,
+        // section2Data: {
+        //     ...state.section2Data,
+        //     items: updatedItems
+        // }
+    };
+}
+
 const countdownPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_COUNTDOWN_PAGE_SECTION_1_DATA_BEGIN:
@@ -120,6 +168,10 @@ const countdownPageReducer = (state = initialState, action) => {
             return fetchCountdownPageSection2DataSuccess (state, action);
         case actionTypes.FETCH_COUNTDOWN_PAGE_SECTION_2_DATA_FAILURE:
             return fetchCountdownPageSection2DataFailur(state, action);
+        case actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_1:
+            return countdownValueForCountdownPageSection1(state, action);
+        case actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_2:
+            return countdownValueForCountdownPageSection2(state, action);
         default: 
             return state;
     }

@@ -211,6 +211,7 @@ export const CountdownPage = (props) => {
                         data={el}
                         numberColor="black"
                         textColor="nobel"
+                        countdownValue={props.countdownValueForCountdownPageSection1}
                     />
                 )
             })}</div>
@@ -227,6 +228,7 @@ export const CountdownPage = (props) => {
                         data={el}
                         numberColor="white"
                         textColor="white"
+                        countdownValue={props.countdownValueForCountdownPageSection2}
                     />
                 )
             })}</div>
@@ -314,7 +316,9 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            countdownValueForCountdownPageSection1: bindActionCreators(Actions.countdownValueForCountdownPageSection1, dispatch),
+            countdownValueForCountdownPageSection2: bindActionCreators(Actions.countdownValueForCountdownPageSection2, dispatch),
         };
     }
 )(CountdownPage);

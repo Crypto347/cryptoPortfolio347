@@ -30,6 +30,13 @@ import {
     
 } from '../../UtilityComponents';
 
+/**
+ * Hooks
+ */
+
+import {
+    useInterval
+} from '../../../Hooks/useInterval';
 
 /**
  * CountdownItem component definition and export
@@ -41,19 +48,43 @@ export const CountdownItem = (props) => {
      * State
      */
 
-    const [isHovering, setIsHovering] = useState("init");
+    // const [countdownValueSec, setCountdownValueSec] = useState(0);
+    // const [countdownValueMin, setCountdownValueMin] = useState(0);
+    // const [countdownValueHours, setCountdownValueHours] = useState(0);
+    // const [countdownValueDays, setCountdownValueDays] = useState(0);
+    // const [countdownValueMounth, setCountdownValueMounth] = useState(0);
 
     /**
      * Methods
      */
    
     useEffect(() => {
+        // setCountdownValueSec
+        // setCountdownValueMin
+        // setCountdownValueHours
+        // setCountdownValueDays
+        // setCountdownValueMounth
     }, []);
 
+    useInterval(() => {
+        props.countdownValue(props.data.key, "seconds", props.data.countdownValue[4].val - 1);
+    }, 1000);
 
-    /**
-     * Markup
-     */
+    useInterval(() => {
+        props.countdownValue(props.data.key, "minutes", props.data.countdownValue[3].val - 1);
+    }, 60000);
+
+    useInterval(() => {
+        props.countdownValue(props.data.key, "hours", props.data.countdownValue[2].val - 1);
+    }, 3600000);
+
+    useInterval(() => {
+        props.countdownValue(props.data.key, "days", props.data.countdownValue[1].val - 1);
+    }, 86400000);
+
+    useInterval(() => {
+        props.countdownValue(props.data.key, "month", countdownValueDays - 1);
+    }, props.data.countdownValue[0].val === 0 ? null : 55555);
 
     const renderClassName = (opt, color) => {
         if(opt === "countdownValue"){
@@ -82,9 +113,9 @@ export const CountdownItem = (props) => {
         else return val;
     }
 
-    const renderCountdown = (arr) => {
+    const renderCountdown = () => {
         return(
-            <div className="countdown-item-wrapper">{props.data.countdownnValue.map((el, i) => {
+            <div className="countdown-item-wrapper">{props.data.countdownValue.map((el, i) => {
                 return(
                     <div
                         key={i}
@@ -97,6 +128,10 @@ export const CountdownItem = (props) => {
             })}</div>
         )
     }
+
+    /**
+     * Markup
+     */
 
     return(
         <div className="countdown">

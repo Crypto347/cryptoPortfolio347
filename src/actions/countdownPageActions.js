@@ -39,3 +39,21 @@ export function fetchCountdownPageSection2DataFailur(err) {
         err: err
     };
 };
+
+export function countdownValueForCountdownPageSection1(countdownKey, opt, val,) {
+    return { 
+        type: actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_1,
+        countdownKey: countdownKey,
+        opt: opt,
+        val: val
+    };
+};
+
+export function countdownValueForCountdownPageSection2(countdownKey, opt, val) {
+    return { 
+        type: actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_2,
+        countdownKey: countdownKey,
+        opt: opt,
+        val: val
+    };
+};
