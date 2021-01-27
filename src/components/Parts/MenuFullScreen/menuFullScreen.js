@@ -202,7 +202,7 @@ export const MenuFullScreen = (props) => {
                             onMouseEnter={() => props.setIsHoveringMenuFullscreenItem("on", el.id)} 
                             onMouseLeave={() => props.setIsHoveringMenuFullscreenItem("off", el.id)}
                         >
-                            <H70 className="h70-white-poppins">{el.text}</H70>
+                            <H70 className="h70-white-poppins-cursor">{el.text}</H70>
                         </div>
                         {el.active ? renderMenuFullscreenItemOptions(el) : null}
                     </div>

@@ -19950,11 +19950,30 @@ app.get('/api/countdown-page/section1', (req, res) => {
         {
             id: 1,
             key: "countdown1",
-            month: 23,
-            days: 04,
-            hours: 14,
-            minutes: 20,
-            seconds: 51
+            countdownnValue: [
+                {
+                    val: 23,
+                    name: "Month"
+                },
+                {
+                    val: 04,
+                    name: "Days"
+                },
+                {
+                    val: 14,
+                    name: "Hours"
+                },
+                {
+                    val: 56,
+                    name: "Minutes"
+                },
+                {
+                    val: 51,
+                    name: "Seconds"
+                },
+            ],
+            startMonth: "January",
+            leapYear: false
         }
     ]
     res.json(countdownPageSec1);
@@ -19964,12 +19983,31 @@ app.get('/api/countdown-page/section2', (req, res) => {
     const countdownPageSec2 = [
         {
             id: 1,
-            key: "countdown1",
-            month: 23,
-            days: 04,
-            hours: 14,
-            minutes: 20,
-            seconds: 51
+            key: "countdown2",
+            countdownnValue: [
+                {
+                    val: 23,
+                    name: "Month"
+                },
+                {
+                    val: 04,
+                    name: "Days"
+                },
+                {
+                    val: 14,
+                    name: "Hours"
+                },
+                {
+                    val: 56,
+                    name: "Minutes"
+                },
+                {
+                    val: 51,
+                    name: "Seconds"
+                },
+            ],
+            startMonth: "February",
+            leapYear: false
         }
     ]
     res.json(countdownPageSec2);

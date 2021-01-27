@@ -1,0 +1,12 @@
+.countdown {
+    width: 100%;
+    .countdown-item-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

@@ -27,7 +27,7 @@ import './countdownPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import AchievementItem from '../../../SmallParts/AchievementItem/achievementItem';
+import CountdownItem from '../../../SmallParts/CountdownItem/countdownItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -108,7 +108,6 @@ export const CountdownPage = (props) => {
         return () => {
             // Cleaning the unmounted component
 
-            clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
@@ -205,15 +204,15 @@ export const CountdownPage = (props) => {
     const renderCountdownPageSection1Data = (arr) => {
         return(
             <div className="countdown-page-section1-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <AchievementItem
-                //         key={i}
-                //         number={el.number}
-                //         achievement={el.achievement}
-                //         numberColor="rgba(155, 155, 155, 0.4)"
-                //         achievementColor="black"
-                //     />
-                // )
+                return(
+                    <CountdownItem
+                        page="countdownPage"
+                        key={i}
+                        data={el}
+                        numberColor="black"
+                        textColor="nobel"
+                    />
+                )
             })}</div>
         )
     }
@@ -221,15 +220,15 @@ export const CountdownPage = (props) => {
     const renderCountdownPageSection2Data = (arr) => {
         return(
             <div className="countdown-page-section2-data-items">{arr.items.map((el, i) => {
-                // return(
-                //     <AchievementItem
-                //         key={i}
-                //         number={el.number}
-                //         achievement={el.achievement}
-                //         numberColor="rgb(78, 78, 78)"
-                //         achievementColor="white"
-                //     />
-                // )
+                return(
+                    <CountdownItem
+                        page="countdownPage"
+                        key={i}
+                        data={el}
+                        numberColor="white"
+                        textColor="white"
+                    />
+                )
             })}</div>
         )
     }
