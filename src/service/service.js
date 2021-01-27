@@ -2082,6 +2082,42 @@ export function fetchCountersPageSection3Data() {
     };
 }
 
+export function fetchCountdownPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchCountdownPageSection1DataBegin());
+        return fetch("http://localhost:3005/api/countdown-page/section1")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchCountdownPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchCountdownPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchCountdownPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchCountdownPageSection2DataBegin());
+        return fetch("http://localhost:3005/api/countdown-page/section2")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchCountdownPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchCountdownPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

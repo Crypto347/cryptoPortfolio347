@@ -456,3 +456,10 @@ export const getCountersPageState = createSelector(
     [getCountersPage],
     (x) => x
 );
+
+const getCountdownPage = (state) => state.countdownPage;
+
+export const getCountdownPageState = createSelector(
+    [getCountdownPage],
+    (x) => x
+);

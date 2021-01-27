@@ -267,6 +267,7 @@ export const Toolbar = (props) => {
             case 'pricingTablesPage':
             case 'pieChartsPage':
             case 'countersPage':
+            case 'countdownPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':
