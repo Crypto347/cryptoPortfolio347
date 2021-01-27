@@ -105,7 +105,9 @@ export const PieCartsPage = (props) => {
 
         // Scroll to the top of the screen
 
-        window.scrollTo(0, 0);
+        let timeout = setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 100);
 
         // Event Listeners
 
@@ -114,6 +116,7 @@ export const PieCartsPage = (props) => {
         return () => {
             // Cleaning the unmounted component
 
+            clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
