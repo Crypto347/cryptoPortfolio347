@@ -47,10 +47,7 @@ export const CountdownItem = (props) => {
     /**
      * State
      */
-        const [startCountdownMinutes, setStartCountdownMinutes] = useState(false);
-        const [startCountdownHours, setStartCountdownHours] = useState(false);
-        const [startCountdownDays, setStartCountdownDays] = useState(false);
-        const [startCountdownMonth, setStartCountdownMonth] = useState(false);
+    
     /**
      * Methods
      */
