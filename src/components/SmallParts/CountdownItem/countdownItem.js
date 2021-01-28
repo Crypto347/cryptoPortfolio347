@@ -101,7 +101,7 @@ export const CountdownItem = (props) => {
 
         if(!startCountdownMonth && hours === 0){
             setStartCountdownMonth(true);
-            props.countdownValue(props.data.key, "mounth", month);
+            props.countdownValue(props.data.key, "month", month);
         }
     }, props.data.countdownValue[0].val === 0 ? null : (startCountdownDays ? 86400000 : null));
 
