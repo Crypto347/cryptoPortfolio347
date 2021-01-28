@@ -80,6 +80,8 @@ export const findPathOfIds = (path) => {
             return [6, 62, 623];
         case 'countdown':
             return [6, 62, 624];
+        case 'clients':
+            return [6, 62, 625];
     }
 
     //Second element of updatedPath array
