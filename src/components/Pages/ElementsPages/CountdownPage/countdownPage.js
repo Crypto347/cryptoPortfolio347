@@ -222,6 +222,7 @@ export const CountdownPage = (props) => {
                 return(
                     <CountdownItem
                         page="countdownPage"
+                        key={i}
                         data={el}
                         numberColor="white"
                         textColor="white"
