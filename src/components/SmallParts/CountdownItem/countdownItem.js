@@ -124,10 +124,10 @@ export const CountdownItem = (props) => {
         if(opt === "countdownName"){
             switch(color){
                 case 'white':
-                    return "h25-white-lustria";
+                    return "h25-white-lustria-countdown-page";
                 case 'nobel':
                 default:
-                    return "h25-nobel-lustria";
+                    return "h25-nobel-lustria-countdown-page";
             }
         }
      

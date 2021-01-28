@@ -20,7 +20,25 @@
     font-family: 'Lustria', serif;
 }
 
+.h25-white-lustria {
+    font-size: 25px;
+    color: white;
+    font-family: 'Lustria', serif;
+}
+
+.h25-white-lustria-countdown-page {
+    font-size: 25px;
+    color: white;
+    font-family: 'Lustria', serif;
+}
+
 .h25-nobel-lustria {
+    font-size: 25px;
+    color:  rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+}
+
+.h25-nobel-lustria-countdown-page {
     font-size: 25px;
     color:  rgb(155, 155, 155);
     font-family: 'Lustria', serif;
@@ -69,7 +87,6 @@
     .h25-white-lustria {
         font-size: 20px;
     }
-    
 }
 
 @media only screen and (max-width: 530px){
@@ -78,6 +95,12 @@
     }
     .h25-white-lustria {
         font-size: 17px;
+    }
+    .h25-white-lustria-countdown-page {
+        font-size: 20px;
+    }
+    .h25-nobel-lustria-countdown-page {
+        font-size: 20px;
     }
 }
 
