@@ -61,55 +61,81 @@ export const CountdownItem = (props) => {
     useInterval(() => {
         let sec = props.data.countdownValue.find(item => item.key === "seconds").val;
         let min = props.data.countdownValue.find(item => item.key === "minutes").val;
-
-        props.countdownValue(props.data.key, "seconds", sec);
-        if(!startCountdownMinutes && sec === 0){
-            setStartCountdownMinutes(true);
-            props.countdownValue(props.data.key, "minutes", min);
-        }
-    }, props.data.countdownValue[0].val === 0 ? null : 1000);
-
-    useInterval(() => {
-        let min = props.data.countdownValue.find(item => item.key === "minutes").val;
-        let hours = props.data.countdownValue.find(item => item.key === "hours").val;
-
-        props.countdownValue(props.data.key, "minutes", min);
-
-        if(!startCountdownHours && min === 0){
-            setStartCountdownHours(true);
-            props.countdownValue(props.data.key, "hours", hours);
-        }
-    }, props.data.countdownValue[0].val === 0 ? null : (startCountdownMinutes ? 60000 : null));
-
-    useInterval(() => {
         let hours = props.data.countdownValue.find(item => item.key === "hours").val;
         let days = props.data.countdownValue.find(item => item.key === "days").val;
+        let month = props.data.countdownValue.find(item => item.key === "month").val;
 
-        props.countdownValue(props.data.key, "hours", hours);
+        props.countdownValue(props.data.key, "seconds", sec);
+        // if(!startCountdownMinutes && sec === 0){
+        //     setStartCountdownMinutes(true);
+        //     props.countdownValue(props.data.key, "minutes", min);
+        // }
 
-        if(!startCountdownDays && hours === 0){
-            setStartCountdownDays(true);
+        if(sec === 0){
+            // setStartCountdownMinutes(true);
+            props.countdownValue(props.data.key, "minutes", min);
+        }
+
+        if(sec === 0 &&  min === 0){
+            props.countdownValue(props.data.key, "hours", hours);
+        }
+
+        if(sec === 0 &&  min === 0 && hours === 0){
             props.countdownValue(props.data.key, "days", days);
         }
-    }, props.data.countdownValue[0].val === 0 ? null : (startCountdownHours ? 3600000 : null));
 
-    useInterval(() => {
-        let hours = props.data.countdownValue.find(item => item.key === "days").val;
-        let month = props.data.countdownValue.find(item => item.key === "month").val;
-
-        props.countdownValue(props.data.key, "days", days);
-
-        if(!startCountdownMonth && hours === 0){
-            setStartCountdownMonth(true);
+        if(sec === 0 &&  min === 0 && hours === 0 && days === 0){
             props.countdownValue(props.data.key, "month", month);
         }
-    }, props.data.countdownValue[0].val === 0 ? null : (startCountdownDays ? 86400000 : null));
 
-    useInterval(() => {
-        let month = props.data.countdownValue.find(item => item.key === "month").val;
+    }, 
+    props.data.countdownValue[0].val === 0 &&
+    props.data.countdownValue[1].val === 0 &&
+    props.data.countdownValue[2].val === 0 &&
+    props.data.countdownValue[3].val === 0 &&
+    props.data.countdownValue[4].val === 0 ? null : 1000);
 
-        props.countdownValue(props.data.key, "month", month);
-    }, props.data.countdownValue[0].val === 0 ? null : (startCountdownMonth ? 55555 : null));
+    // useInterval(() => {
+    //     let min = props.data.countdownValue.find(item => item.key === "minutes").val;
+    //     let hours = props.data.countdownValue.find(item => item.key === "hours").val;
+
+    //     props.countdownValue(props.data.key, "minutes", min);
+
+    //     if(!startCountdownHours && min === 0){
+    //         setStartCountdownHours(true);
+    //         props.countdownValue(props.data.key, "hours", hours);
+    //     }
+    // }, props.data.countdownValue[0].val === 0 ? null : (startCountdownMinutes ? 1000 : null));
+
+    // useInterval(() => {
+    //     let hours = props.data.countdownValue.find(item => item.key === "hours").val;
+    //     let days = props.data.countdownValue.find(item => item.key === "days").val;
+
+    //     props.countdownValue(props.data.key, "hours", hours);
+
+    //     if(!startCountdownDays && hours === 0){
+    //         setStartCountdownDays(true);
+    //         props.countdownValue(props.data.key, "days", days);
+    //     }
+    // }, props.data.countdownValue[0].val === 0 ? null : (startCountdownHours ? 1000 : null));//3600000 
+
+    // useInterval(() => {
+    //     let hours = props.data.countdownValue.find(item => item.key === "days").val;
+    //     let month = props.data.countdownValue.find(item => item.key === "month").val;
+
+    //     props.countdownValue(props.data.key, "days", days);
+
+    //     if(!startCountdownMonth && hours === 0){
+    //         setStartCountdownMonth(true);
+    //         props.countdownValue(props.data.key, "month", month);
+    //     }
+    // }, props.data.countdownValue[0].val === 0 ? null : (startCountdownDays ? 1000 : null)); //86400000
+
+    // useInterval(() => {
+    //     let month = props.data.countdownValue.find(item => item.key === "month").val;
+
+    //     props.countdownValue(props.data.key, "month", month);
+    // }, props.data.countdownValue[0].val === 0 ? null : (startCountdownMonth ? 1000 : null));
 
     const renderClassName = (opt, color) => {
         if(opt === "countdownValue"){

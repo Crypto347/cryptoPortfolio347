@@ -184,7 +184,6 @@ export const CountdownPage = (props) => {
                 return 'rgb(239, 239, 239)';
             case 'section2':
                 return 'black';
-            case 'section3':
             default:
                 return 'white';
         }
@@ -193,7 +192,6 @@ export const CountdownPage = (props) => {
     const renderLoadingBackgroundColor = (section) => {
         switch(section) {
             case 'section1':
-                case 'section3':
                 return 'black';
             case 'section2':
             default:

@@ -19980,7 +19980,7 @@ app.get('/api/countdown-page/section1', (req, res) => {
                 {
                     id: 5,
                     key: "seconds",
-                    val: 10,
+                    val: 51,
                     name: "Seconds"
                 },
             ]

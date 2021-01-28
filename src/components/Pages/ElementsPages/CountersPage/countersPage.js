@@ -241,7 +241,7 @@ export const CountersPage = (props) => {
     const renderLoadingBackgroundColor = (section) => {
         switch(section) {
             case 'section1':
-                case 'section3':
+            case 'section3':
                 return 'black';
             case 'section2':
             default:
