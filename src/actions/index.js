@@ -43,3 +43,4 @@ export * from './pricingTablesPageActions';
 export * from './pieChartsPageActions';
 export * from './countersPageActions';
 export * from './countdownPageActions';
+export * from './clientsPageActions';

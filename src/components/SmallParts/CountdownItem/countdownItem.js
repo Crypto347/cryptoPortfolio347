@@ -57,7 +57,7 @@ export const CountdownItem = (props) => {
 
         props.setCurrentDateAndNextMonth(props.data.key, currentDate, nextMonth);
 
-        //Get the current date and calculate how many months are left until January 2023. (Optional)
+        // Get the current date and calculate how many months, days, hours, minutes and seconds are left before the specified end time. (Optional)
 
         let distance = new Date(`${props.data.endDate.month}, ${props.data.endDate.day}, ${props.data.endDate.year}`).getTime() - new Date().getTime();
         var monthsLeft = Math.abs((props.data.endDate.year - currentDate.year)*12 - (new Date().getMonth()) + Utility.getMonthId(props.data.endDate.month));

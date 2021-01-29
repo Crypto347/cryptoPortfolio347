@@ -90,11 +90,17 @@ export const ClientsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.countdownPage.section1Data.items.length === 0){
-            props.fetchCountdownPageSection1Data();
+        if(props.clientsPage.section1Data.swiper1.items.length === 0){
+            props.fetchClientsPageSection1Swiper1Data();
         }
-        if(props.countdownPage.section2Data.items.length === 0){
-            props.fetchCountdownPageSection2Data();
+        if(props.clientsPage.section1Data.swiper2.items.length === 0){
+            props.fetchClientsPageSection1Swiper2Data();
+        }
+        if(props.clientsPage.section2Data.swiper1.items.length === 0){
+            props.fetchClientsPageSection2Swiper1Data();
+        }
+        if(props.clientsPage.section2Data.swiper2.items.length === 0){
+            props.fetchClientsPageSection2Swiper2Data();
         }
 
         // Scroll to the top of the screen
@@ -116,7 +122,7 @@ export const ClientsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("countdownPage");
+        let el = document.getElementById("clientsPage");
 
         // Show or hide BackToTop component
 
@@ -150,12 +156,12 @@ export const ClientsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="countdownPage"
+                        page="clientsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="countdownPage"
+                        page="clientsPage"
                     />
                 </>
             )
@@ -166,16 +172,28 @@ export const ClientsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="countdownPage"
+                        page="clientsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="countdownPage"
+                        page="clientsPage"
                     />
                 </>
             )
         }
+    }
+
+    const renderClassName = (opt, section) => {
+        if(opt === "sectionWrapper"){
+            switch(section){
+                case 'section1':
+                    return "clients-page-section1-wrapper";
+                case 'section2':
+                    return "clients-page-section2-wrapper";
+            }
+        }
+       
     }
     
     const renderBackgroundColor = (section) => {
@@ -199,45 +217,30 @@ export const ClientsPage = (props) => {
         }
     }
 
-    const renderCountdownPageSection1Data = (arr) => {
+    const renderClientsPageSwiper1Data = (arr) => {
         return(
-            <div className="countdown-page-section1-data-items">{arr.items.map((el, i) => {
-                return(
-                    <CountdownItem
-                        page="countdownPage"
-                        key={i}
-                        data={el}
-                        numberColor="black"
-                        textColor="nobel"
-                        countdownValue={props.countdownValueForCountdownPageSection1}
-                    />
-                )
+            <div className="clients-page-swiper1-data-items">{arr.items.map((el, i) => {
+                // return(
+                
+                // )
             })}</div>
         )
     }
 
-    const renderCountdownPageSection2Data = (arr) => {
+    const renderClientsPageSwiper2Data = (arr) => {
         return(
-            <div className="countdown-page-section2-data-items">{arr.items.map((el, i) => {
-                return(
-                    <CountdownItem
-                        page="countdownPage"
-                        key={i}
-                        data={el}
-                        numberColor="white"
-                        textColor="white"
-                        countdownValue={props.countdownValueForCountdownPageSection2}
-                    />
-                )
+            <div className="clients-page-swiper2-data-items">{arr.items.map((el, i) => {
+                // return(
+                // )
             })}</div>
         )
     }
 
-    const renderCountdownPageDataContent = (section, arr) => {
+    const renderCountdownDataSectionContent = (section, arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="countdown-page-loading-error" 
+                    className="clients-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
                         background: `${renderBackgroundColor(section)}`
@@ -249,16 +252,16 @@ export const ClientsPage = (props) => {
         }
         if(!arr.loading && !arr.error){
             switch(section){
-                case 'section1':
+                case 'swiper1':
                     return(
                         <>
-                            {renderCountdownPageSection1Data(arr)}
+                            {renderClientsPageSwiper1Data(arr)}
                         </>
                     );
-                case 'section2':
+                case 'swiper2':
                     return(
                         <>
-                            {renderCountdownPageSection2Data(arr)}
+                            {renderClientsPageSwiper2Data(arr)}
                         </>
                     );
             }
@@ -266,7 +269,7 @@ export const ClientsPage = (props) => {
         if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="countdown-page-loading-error" 
+                    className="clients-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
                         background: `${renderBackgroundColor(section)}`
@@ -276,6 +279,15 @@ export const ClientsPage = (props) => {
                 </div>
             )
         }
+    }
+
+    const renderCountdownPageDataContent = (section, obj) => {
+        return(
+            <div className={renderClassName("sectionWrapper",section)}>
+                {renderCountdownDataSectionContent("swiper1", obj.swiper1)}
+                {renderCountdownDataSectionContent("swiper2", obj.swiper2)}
+            </div>
+        )
     } 
 
     /**
@@ -283,15 +295,15 @@ export const ClientsPage = (props) => {
      */
 
     return(
-        <div className="countdown-page" id="countdownPage">
+        <div className="clients-page" id="clientsPage">
             {renderToolbars()}
-            <div className="countdown-page-wrapper">
-                <div className="countdown-page-header">
-                    <H45 className="h45-nero-lustria">Countdown</H45>
+            <div className="clients-page-wrapper">
+                <div className="clients-page-header">
+                    <H45 className="h45-nero-lustria">Clients</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderCountdownPageDataContent("section1", props.countdownPage.section1Data)}
-                {renderCountdownPageDataContent("section2", props.countdownPage.section2Data)}
+                {renderCountdownPageDataContent("section1", props.clientsPage.section1Data)}
+                {renderCountdownPageDataContent("section2", props.clientsPage.section2Data)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -302,15 +314,17 @@ export const ClientsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            countdownPage: Selectors.getCountdownPageState(state),
+            clientsPage: Selectors.getClientsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchCountdownPageSection1Data: bindActionCreators(Services.fetchCountdownPageSection1Data, dispatch),
-            fetchCountdownPageSection2Data: bindActionCreators(Services.fetchCountdownPageSection2Data, dispatch),
+            fetchClientsPageSection1Swiper1Data: bindActionCreators(Services.fetchClientsPageSection1Swiper1Data, dispatch),
+            fetchClientsPageSection1Swiper2Data: bindActionCreators(Services.fetchClientsPageSection1Swiper2Data, dispatch),
+            fetchClientsPageSection2Swiper1Data: bindActionCreators(Services.fetchClientsPageSection2Swiper1Data, dispatch),
+            fetchClientsPageSection2Swiper2Data: bindActionCreators(Services.fetchClientsPageSection2Swiper2Data, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

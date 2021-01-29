@@ -20057,50 +20057,109 @@ app.get('/api/countdown-page/section2', (req, res) => {
     res.json(countdownPageSec2);
 });
 
-// app.get('/api/countdown-page/section2', (req, res) => {
-//     const countdownPageSec2 = [
-//         {
-//             id: 1,
-//             key: "countdown2",
-//             startMonth: "February",
-//             leapYear: false,
-//             countdownValue: [
-//                 {
-//                     id: 1,
-//                     key: "month",
-//                     val: 21,
-//                     name: "Month"
-//                 },
-//                 {
-//                     id: 2,
-//                     key: "days",
-//                     val: 04,
-//                     name: "Days"
-//                 },
-//                 {
-//                     id: 3,
-//                     key: "hours",
-//                     val: 14,
-//                     name: "Hours"
-//                 },
-//                 {
-//                     id: 4,
-//                     key: "minutes",
-//                     val: 56,
-//                     name: "Minutes"
-//                 },
-//                 {
-//                     id: 5,
-//                     key: "seconds",
-//                     val: 51,
-//                     name: "Seconds"
-//                 },
-//             ]            
-//         }
-//     ]
-//     res.json(countdownPageSec2);
-// });
+app.get('/api/clients-page/section1/swiper1', (req, res) => {
+    const countdownPageSec1Swiper1 = [
+        {
+            id: 1,
+            key: "clientsPageSection1Swiper1Id1"
+        },
+        {
+            id: 2,
+            key: "clientsPageSection1Swiper1Id2"
+        },
+        {
+            id: 3,
+            key: "clientsPageSection1Swiper1Id3"
+        },
+        {
+            id: 4,
+            key: "clientsPageSection1Swiper1Id4"
+        },
+        {
+            id: 5,
+            key: "clientsPageSection1Swiper1Id5"
+        }
+    ]
+    res.json(countdownPageSec1Swiper1);
+});
 
+app.get('/api/clients-page/section1/swiper2', (req, res) => {
+    const countdownPageSec1Swiper2 = [
+        {
+            id: 1,
+            key: "clientsPageSection1Swiper2Id1"
+        },
+        {
+            id: 2,
+            key: "clientsPageSection1Swiper2Id2"
+        },
+        {
+            id: 3,
+            key: "clientsPageSection1Swiper2Id3"
+        },
+        {
+            id: 4,
+            key: "clientsPageSection1Swiper2Id4"
+        },
+        {
+            id: 5,
+            key: "clientsPageSection1Swiper2Id5"
+        }
+    ]
+    res.json(countdownPageSec1Swiper2);
+});
+
+app.get('/api/clients-page/section2/swiper1', (req, res) => {
+    const countdownPageSec2Swiper1 = [
+        {
+            id: 1,
+            key: "clientsPageSection2Swiper1Id1"
+        },
+        {
+            id: 2,
+            key: "clientsPageSection2Swiper1Id2"
+        },
+        {
+            id: 3,
+            key: "clientsPageSection2Swiper1Id3"
+        },
+        {
+            id: 4,
+            key: "clientsPageSection2Swiper1Id4"
+        },
+        {
+            id: 5,
+            key: "clientsPageSection2Swiper1Id5"
+        }
+    ]
+    res.json(countdownPageSec2Swiper1);
+});
+
+app.get('/api/clients-page/section2/swiper2', (req, res) => {
+    const countdownPageSec2 = [
+        {
+            id: 1,
+            key: "clientsPageSection2Swiper2Id1"
+        },
+        {
+            id: 2,
+            key: "clientsPageSection2Swiper2Id2"
+        },
+        {
+            id: 3,
+            key: "clientsPageSection2Swiper2Id3"
+        },
+        {
+            id: 4,
+            key: "clientsPageSection2Swiper2Id4"
+        },
+        {
+            id: 5,
+            key: "clientsPageSection21Swiper2Id5"
+        }
+    ]
+    res.json(countdownPageSec2);
+});
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

@@ -1,6 +1,6 @@
-.countdown-page {
+.clients-page {
     width: calc(100% + 18px);
-    .countdown-page-loading-error {
+    .clients-page-loading-error {
         width: calc(100% - 40px);
         display: flex;
         justify-content: center;
@@ -8,10 +8,10 @@
         padding: 0px 20px 0px 20px;
         text-align: center;
     }
-    .countdown-page-wrapper {
+    .clients-page-wrapper {
         display: flex;
         flex-direction: column;
-        .countdown-page-header {
+        .clients-page-header {
             padding: 90px 130px 90px 130px;
         }
         .grey-line {
@@ -19,55 +19,80 @@
             height: 10px;
             background-color: rgb(239, 239, 239);
         }
-        .countdown-page-section1-data-items {
+        .clients-page-section1-wrapper {
             width: calc(100% - 460px);
             // display: flex;
             // flex-wrap: wrap;
             background: rgb(248, 248, 248);
             padding: 120px 230px 120px 230px;
+            .clients-page-swiper1-data-items {
+                display: flex;
+                width: 20px;
+                height: 20px;
+                border: 2px solid red;
+            }
+            .clients-page-swiper2-data-items {
+                display: flex;
+                width: 20px;
+                height: 20px;
+                border: 2px solid green;
+            }
+            
         }
-        .countdown-page-section2-data-items {
+        .clients-page-section2-wrapper {
             width: calc(100% - 460px);
             // display: flex;
             // flex-wrap: wrap;
             background:black;
             padding: 120px 230px 120px 230px;
-        }
-    }
-}
-
-@media only screen and (max-width: 1120px){
-    .countdown-page {
-        .countdown-page-wrapper {
-            .countdown-page-header {
-                padding: 90px 40px 90px 40px;
+            .clients-page-swiper1-data-items {
+                display: flex;
+                width: 20px;
+                height: 20px;
+                border: 2px solid blue;
             }
-            .countdown-page-section1-data-items {
-                width: calc(100% - 240px);
-                padding: 120px;
-            }
-            .countdown-page-section2-data-items {
-                width: calc(100% - 240px);
-                padding: 120px;
+            .clients-page-swiper2-data-items {
+                display: flex;
+                width: 20px;
+                height: 20px;
+                border: 2px solid yellow;
             }
         }
     }
 }
 
-@media only screen and (max-width: 860px){
-    .countdown-page {
-        .countdown-page-wrapper {
-            .countdown-page-header {
-                padding: 90px 40px 90px 40px;
-            }
-            .countdown-page-section1-data-items {
-                width: calc(100% - 80px);
-                padding: 120px 40px 120px 40px;
-            }
-            .countdown-page-section2-data-items {
-                width: calc(100% - 80px);
-                padding: 120px 40px 120px 40px;
-            }
-        }
-    }
-}
+// @media only screen and (max-width: 1120px){
+//     .clients-page {
+//         .clients-page-wrapper {
+//             .clients-page-header {
+//                 padding: 90px 40px 90px 40px;
+//             }
+//             .clients-page-section1-data-items {
+//                 width: calc(100% - 240px);
+//                 padding: 120px;
+//             }
+//             .clients-page-section2-data-items {
+//                 width: calc(100% - 240px);
+//                 padding: 120px;
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 860px){
+//     .clients-page {
+//         .clients-page-wrapper {
+//             .clients-page-header {
+//                 padding: 90px 40px 90px 40px;
+//             }
+//             .clients-page-section1-data-items {
+//                 width: calc(100% - 80px);
+//                 padding: 120px 40px 120px 40px;
+//             }
+//             .clients-page-section2-data-items {
+//                 width: calc(100% - 80px);
+//                 padding: 120px 40px 120px 40px;
+//             }
+//         }
+//     }
+// }

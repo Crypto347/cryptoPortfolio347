@@ -2118,6 +2118,77 @@ export function fetchCountdownPageSection2Data() {
     };
 }
 
+export function fetchClientsPageSection1Swiper1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchClientsPageSection1Swiper1DataBegin());
+        return fetch("http://localhost:3005/api/clients-page/section1/swiper1")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchClientsPageSection1Swiper1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchClientsPageSection1Swiper1DataFailur(error))
+            });
+    };
+}
+
+export function fetchClientsPageSection1Swiper2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchClientsPageSection1Swiper2DataBegin());
+        return fetch("http://localhost:3005/api/clients-page/section1/swiper2")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchClientsPageSection1Swiper2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchClientsPageSection1Swiper2DataFailur(error))
+            });
+    };
+}
+
+export function fetchClientsPageSection2Swiper1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchClientsPageSection2Swiper1DataBegin());
+        return fetch("http://localhost:3005/api/clients-page/section2/swiper1")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchClientsPageSection2Swiper1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchClientsPageSection2Swiper1DataFailur(error))
+            });
+    };
+}
+
+export function fetchClientsPageSection2Swiper2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchClientsPageSection2Swiper2DataBegin());
+        return fetch("http://localhost:3005/api/clients-page/section2/swiper2")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchClientsPageSection2Swiper2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchClientsPageSection2Swiper2DataFailur(error))
+            });
+    };
+}
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

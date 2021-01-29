@@ -463,3 +463,11 @@ export const getCountdownPageState = createSelector(
     [getCountdownPage],
     (x) => x
 );
+
+const getClientsPage = (state) => state.clientsPage;
+
+export const getClientsPageState = createSelector(
+    [getClientsPage],
+    (x) => x
+);
+
