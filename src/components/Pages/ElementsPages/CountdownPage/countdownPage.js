@@ -210,6 +210,7 @@ export const CountdownPage = (props) => {
                         numberColor="black"
                         textColor="nobel"
                         countdownValue={props.countdownValueForCountdownPageSection1}
+                        setCurrentDateAndNextMonth={props.setCurrentDateAndNextMonthForCountdownPageSection1}
                     />
                 )
             })}</div>
@@ -227,6 +228,7 @@ export const CountdownPage = (props) => {
                         numberColor="white"
                         textColor="white"
                         countdownValue={props.countdownValueForCountdownPageSection2}
+                        setCurrentDateAndNextMonth={props.setCurrentDateAndNextMonthForCountdownPageSection2}
                     />
                 )
             })}</div>
@@ -317,6 +319,8 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             countdownValueForCountdownPageSection1: bindActionCreators(Actions.countdownValueForCountdownPageSection1, dispatch),
             countdownValueForCountdownPageSection2: bindActionCreators(Actions.countdownValueForCountdownPageSection2, dispatch),
+            setCurrentDateAndNextMonthForCountdownPageSection1: bindActionCreators(Actions.setCurrentDateAndNextMonthForCountdownPageSection1, dispatch),
+            setCurrentDateAndNextMonthForCountdownPageSection2: bindActionCreators(Actions.setCurrentDateAndNextMonthForCountdownPageSection2, dispatch),
         };
     }
 )(CountdownPage);

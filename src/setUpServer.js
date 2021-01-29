@@ -19950,37 +19950,49 @@ app.get('/api/countdown-page/section1', (req, res) => {
         {
             id: 1,
             key: "countdown1",
-            startMonth: "January",
-            leapYear: false,
+            startDate: {
+                day: "",
+                month: "",
+                year: ""
+            },
+            nextMonth: {
+                month: "",
+                leapYear: false
+            },
+            endDate: {
+                day: "1",
+                month: "January",
+                year: "2023"
+            },
             countdownValue: [
                 {
                     id: 1,
                     key: "month",
-                    val: 23,
+                    val: 0,
                     name: "Month"
                 },
                 {
                     id: 2,
                     key: "days",
-                    val: 04,
+                    val: 0,
                     name: "Days"
                 },
                 {
                     id: 3,
                     key: "hours",
-                    val: 14,
+                    val: 0,
                     name: "Hours"
                 },
                 {
                     id: 4,
                     key: "minutes",
-                    val: 56,
+                    val: 0,
                     name: "Minutes"
                 },
                 {
                     id: 5,
                     key: "seconds",
-                    val: 51,
+                    val: 0,
                     name: "Seconds"
                 },
             ]
@@ -19994,37 +20006,49 @@ app.get('/api/countdown-page/section2', (req, res) => {
         {
             id: 1,
             key: "countdown2",
-            startMonth: "February",
-            leapYear: false,
+            startDate: {
+                day: "",
+                month: "",
+                year: ""
+            },
+            nextMonth: {
+                month: "",
+                leapYear: false
+            },
+            endDate: {
+                day: "1",
+                month: "February",
+                year: "2022"
+            },
             countdownValue: [
                 {
                     id: 1,
                     key: "month",
-                    val: 21,
+                    val: 0,
                     name: "Month"
                 },
                 {
                     id: 2,
                     key: "days",
-                    val: 04,
+                    val: 0,
                     name: "Days"
                 },
                 {
                     id: 3,
                     key: "hours",
-                    val: 14,
+                    val: 0,
                     name: "Hours"
                 },
                 {
                     id: 4,
                     key: "minutes",
-                    val: 56,
+                    val: 0,
                     name: "Minutes"
                 },
                 {
                     id: 5,
                     key: "seconds",
-                    val: 51,
+                    val: 0,
                     name: "Seconds"
                 },
             ]            
@@ -20032,6 +20056,50 @@ app.get('/api/countdown-page/section2', (req, res) => {
     ]
     res.json(countdownPageSec2);
 });
+
+// app.get('/api/countdown-page/section2', (req, res) => {
+//     const countdownPageSec2 = [
+//         {
+//             id: 1,
+//             key: "countdown2",
+//             startMonth: "February",
+//             leapYear: false,
+//             countdownValue: [
+//                 {
+//                     id: 1,
+//                     key: "month",
+//                     val: 21,
+//                     name: "Month"
+//                 },
+//                 {
+//                     id: 2,
+//                     key: "days",
+//                     val: 04,
+//                     name: "Days"
+//                 },
+//                 {
+//                     id: 3,
+//                     key: "hours",
+//                     val: 14,
+//                     name: "Hours"
+//                 },
+//                 {
+//                     id: 4,
+//                     key: "minutes",
+//                     val: 56,
+//                     name: "Minutes"
+//                 },
+//                 {
+//                     id: 5,
+//                     key: "seconds",
+//                     val: 51,
+//                     name: "Seconds"
+//                 },
+//             ]            
+//         }
+//     ]
+//     res.json(countdownPageSec2);
+// });
 
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);

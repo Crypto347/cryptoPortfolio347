@@ -150,6 +150,147 @@ export const setCountdownTimeVal = (opt, val, startMonth, leapYear) => {
     }
 }
 
+const getMonth = (id) => {
+    switch (id){
+        case 0:
+            return "January";
+        case 1:
+            return "February";
+        case 2:
+            return "March";
+        case 3:
+            return "April";
+        case 4:
+            return "May";
+        case 5:
+            return "June";
+        case 6:
+            return "July";
+        case 7:
+            return "August";
+        case 8:
+            return "September";
+        case 9:
+            return "October";
+        case 10:
+            return "November";
+        case 11:
+            return "December";
+        default:
+            return "January";
+    }
+}
+
+export const getMonthId = (month) => {
+    switch (month){
+        case "January":
+            return 0;
+        case "February":
+            return 1;
+        case "March":
+            return 2;
+        case "April":
+            return 3;
+        case "May":
+            return 4;
+        case "June":
+            return 5;
+        case "July":
+            return 6;
+        case "August":
+            return 7;
+        case "September":
+            return 8;
+        case "October":
+            return 9;
+        case "November":
+            return 10;
+        case "December":
+            return 11;
+    }
+}
+
+export const getNextMonth = (month) => {
+    switch (month){
+        case 'January':
+            return "February";
+        case 'February':
+            return "March";
+        case 'March':
+            return "April";
+        case 'April':
+            return "May";
+        case 'May':
+            return "June";
+        case 'June':
+            return "July";
+        case 'July':
+            return "August";
+        case 'August':
+            return "September";
+        case 'September':
+            return "October";
+        case 'October':
+            return "November";
+        case 'November':
+            return "December";
+        case 'December':
+        default:
+            return "January";
+    }
+}
+
+export const getDaysInMonth = (month, leapYear) => {
+    switch (month){
+        case 'January':
+            return 31;
+        case 'February':
+            return leapYear ? 29 : 28;
+        case 'March':
+            return 31;
+        case 'April':
+            return 30;
+        case 'May':
+            return 31;
+        case 'June':
+            return 30;
+        case 'July':
+            return 31;
+        case 'August':
+            return 31;
+        case 'September':
+            return 30;
+        case 'October':
+            return 31;
+        case 'November':
+            return 30;
+        case 'December':
+        default:
+            return 31;
+    }
+}
+
+export const getDateAndTime = (opt) => {
+    let today = new Date();
+
+    switch(opt){
+        case 'day':
+            return String(today.getDate()).padStart(2, '0');
+        case 'month':
+            return getMonth(today.getMonth()); //January is 0!
+        case 'year':
+            return today.getFullYear();
+        case 'hour':
+            return String(today.getHours()).padStart(2, '0');
+        case 'minutes':
+            return String(today.getMinutes()).padStart(2, '0');
+        case 'seconds':
+            return String(today.getSeconds()).padStart(2, '0');
+        default:
+            return "This function takes 1 parameter as a string: day, month, year, hour, minutes, seconds"
+    }
+}
+
 // export const filterObject = (obj, predicate) => 
 //     Object.keys(obj)
 //         .filter(key => predicate(obj[key]))

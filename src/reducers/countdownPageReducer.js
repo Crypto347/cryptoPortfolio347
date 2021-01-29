@@ -119,8 +119,8 @@ const countdownValueForCountdownPageSection1 = (state, action) => {
     }
     
     countdownObj.countdownValue.splice(countdownOptionIndex, 1, obj);
-    updatedItems.splice(countdownObj, 1, countdownIndex);
-
+    updatedItems.splice(countdownIndex, 1, countdownObj);
+    
     return {
         ...state,
         section1Data: {
@@ -143,7 +143,46 @@ const countdownValueForCountdownPageSection2 = (state, action) => {
     }
     
     countdownObj.countdownValue.splice(countdownOptionIndex, 1, obj);
-    updatedItems.splice(countdownObj, 1, countdownIndex);
+    updatedItems.splice(countdownIndex, 1, countdownObj);
+    
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            items: updatedItems
+        }
+    };
+}
+
+const setCurrentDateAndNextMonthForCountdownPageSection1 = (state, action) => {
+    let updatedItems = [...state.section1Data.items];
+    let countdownObj = {
+        ...updatedItems.find(item => item.key === action.countdownKey),
+        startDate: {...action.currentDate},
+        nextMonth: {...action.nextMonth}
+    }
+    let countdownIndex = updatedItems.find(item => item.key === action.countdownKey);
+
+    updatedItems.splice(countdownIndex, 1, countdownObj);
+    return {
+        ...state,
+        section1Data: {
+            ...state.section1Data,
+            items: updatedItems
+        }
+    };
+}
+
+const setCurrentDateAndNextMonthForCountdownPageSection2 = (state, action) => {
+    let updatedItems = [...state.section2Data.items];
+    let countdownObj = {
+        ...updatedItems.find(item => item.key === action.countdownKey),
+        startDate: action.currentDate,
+        nextMonth: action.nextMonth
+    }
+    let countdownIndex = updatedItems.find(item => item.key === action.countdownKey);
+    
+    updatedItems.splice(countdownIndex, 1, countdownObj);
 
     return {
         ...state,
@@ -153,6 +192,7 @@ const countdownValueForCountdownPageSection2 = (state, action) => {
         }
     };
 }
+
 
 const countdownPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -172,6 +212,10 @@ const countdownPageReducer = (state = initialState, action) => {
             return countdownValueForCountdownPageSection1(state, action);
         case actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_2:
             return countdownValueForCountdownPageSection2(state, action);
+        case actionTypes.SET_CURRENT_DATE_AND_NEXT_MONTH_FOR_COUNTDOWN_PAGE_SECTION_1:
+            return setCurrentDateAndNextMonthForCountdownPageSection1(state, action);
+        case actionTypes.SET_CURRENT_DATE_AND_NEXT_MONTH_FOR_COUNTDOWN_PAGE_SECTION_2:
+            return setCurrentDateAndNextMonthForCountdownPageSection2(state, action);
         default: 
             return state;
     }
