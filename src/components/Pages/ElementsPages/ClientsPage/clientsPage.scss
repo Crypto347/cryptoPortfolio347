@@ -50,6 +50,13 @@
                 width: 20px;
                 height: 20px;
                 border: 2px solid blue;
+                .clients-page-swiper1-data-item {
+                    width: 100px;
+                    height: 50px;
+                    >img {
+                        width: 100%
+                    }
+                }
             }
             .clients-page-swiper2-data-items {
                 display: flex;

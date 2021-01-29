@@ -27,7 +27,6 @@ import './clientsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import CountdownItem from '../../../SmallParts/CountdownItem/countdownItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -66,6 +65,11 @@ import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
+/**
+ * Images
+ */
+
+ import * as Images from '../../../../constants/images';
 /**
  * ClientsPage component definition and export
  */
@@ -220,9 +224,14 @@ export const ClientsPage = (props) => {
     const renderClientsPageSwiper1Data = (arr) => {
         return(
             <div className="clients-page-swiper1-data-items">{arr.items.map((el, i) => {
-                // return(
-                
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="clients-page-swiper1-data-item"
+                    >
+                        <img src={Images.CLIENTS_LOGO_2}/>
+                    </div>
+                )
             })}</div>
         )
     }

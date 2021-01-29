@@ -820,3 +820,21 @@ export const BANNER_PAGE_COVER_2 = BannerPageCover2;
 export const BANNER_PAGE_COVER_3 = BannerPageCoved3;
 export const BANNER_PAGE_COVER_4 = BannerPageCover4;
 export const BANNER_PAGE_COVER_5 = BannerPageCoved5;
+
+/**
+ * Clients Logos
+ */
+
+import ClientsLogo1 from '../images/clientsLogos/Health&Co.png';
+import ClientsLogo1Light from '../images/clientsLogos/Health&CoLight.png';
+import ClientsLogo1Black from '../images/clientsLogos/Health&CoBlack.png';
+import ClientsLogo2 from '../images/clientsLogos/Brendster.png';
+import ClientsLogo2Light from '../images/clientsLogos/BrendsterLight.png';
+import ClientsLogo2Black from '../images/clientsLogos/BrendsterBlack.png';
+
+export const CLIENTS_LOGO_1 = ClientsLogo1;
+export const CLIENTS_LOGO_1_LIGHT = ClientsLogo1Light;
+export const CLIENTS_LOGO_1_BLACK = ClientsLogo1Black;
+export const CLIENTS_LOGO_2 = ClientsLogo2;
+export const CLIENTS_LOGO_2_LIGHT = ClientsLogo2Light;
+export const CLIENTS_LOGO_2_BLACK = ClientsLogo2Black;
