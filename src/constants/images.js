@@ -852,7 +852,9 @@ import ClientsLogo8Black from '../images/clientsLogos/HGBlack.png';
 import ClientsLogo9 from '../images/clientsLogos/sun&shine.png';
 import ClientsLogo9Light from '../images/clientsLogos/sun&shineLight.png';
 import ClientsLogo9Black from '../images/clientsLogos/sun&shineBlack.png';
-
+import ClientsLogo10 from '../images/clientsLogos/B&B.png';
+import ClientsLogo10Light from '../images/clientsLogos/B&BLight.png';
+import ClientsLogo10Black from '../images/clientsLogos/B&BBlack.png';
 
 export const CLIENTS_LOGO_1 = ClientsLogo1;
 export const CLIENTS_LOGO_1_LIGHT = ClientsLogo1Light;
@@ -881,3 +883,6 @@ export const CLIENTS_LOGO_8_BLACK = ClientsLogo8Black;
 export const CLIENTS_LOGO_9 = ClientsLogo9;
 export const CLIENTS_LOGO_9_LIGHT = ClientsLogo9Light;
 export const CLIENTS_LOGO_9_BLACK = ClientsLogo9Black;
+export const CLIENTS_LOGO_10 = ClientsLogo10;
+export const CLIENTS_LOGO_10_LIGHT = ClientsLogo10Light;
+export const CLIENTS_LOGO_10_BLACK = ClientsLogo10Black;
