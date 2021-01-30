@@ -242,7 +242,7 @@ export const ClientsPage = (props) => {
                 return(
                     <div 
                         key={i}
-                        className="clients-page-swiper1-data-item"
+                        className="clients-page-swiper2-data-item"
                     >
                         <img src={Images.CLIENTS_LOGO_10_LIGHT}/>
                     </div>
