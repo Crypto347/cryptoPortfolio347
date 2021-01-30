@@ -229,7 +229,7 @@ export const ClientsPage = (props) => {
                         key={i}
                         className="clients-page-swiper1-data-item"
                     >
-                        <img src={Images.CLIENTS_LOGO_2}/>
+                        <img src={Images.CLIENTS_LOGO_4}/>
                     </div>
                 )
             })}</div>
@@ -239,8 +239,14 @@ export const ClientsPage = (props) => {
     const renderClientsPageSwiper2Data = (arr) => {
         return(
             <div className="clients-page-swiper2-data-items">{arr.items.map((el, i) => {
-                // return(
-                // )
+                return(
+                    <div 
+                        key={i}
+                        className="clients-page-swiper1-data-item"
+                    >
+                        {/* <img src={Images.CLIENTS_LOGO_4_LIGHT}/> */}
+                    </div>
+                )
             })}</div>
         )
     }
