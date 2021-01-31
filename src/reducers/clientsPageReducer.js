@@ -269,82 +269,93 @@ const fetchClientsPageSection2Swiper2DataFailur = (state, action) => {
     };
 }
 
-// const setSwiperStateForTestimonialsPageSection1 = (state, action) => {
-//     let updatedSwiper = {
-//         slides: action.slides,
-//         _slides: action._slides,
-//         activeIndex: action.activeIndex,
-//         translate: action.translate,
-//         transition: action.transition,
-//         rerender: action.rerender
-//     };
-//     // console.log("1",action._slides)
-//     return {
-//         ...state,
-//         section1Data: {
-//             ...state.section1Data,
-//             swiper: updatedSwiper
-//         }
-//     };
-// }
+const setSwiperStateForClientsPageSection1Swiper1 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+    };
 
-// const setSwiperStateForTestimonialsPageSection2 = (state, action) => {
-//     let updatedSwiper = {
-//         slides: action.slides,
-//         _slides: action._slides,
-//         activeIndex: action.activeIndex,
-//         translate: action.translate,
-//         transition: action.transition,
-//         rerender: action.rerender
-//     };
-//     // console.log("2",updatedSwiper)
-//     return {
-//         ...state,
-//         section2Data: {
-//             ...state.section2Data,
-//             swiper: updatedSwiper
-//         }
-//     };
-// }
+    return {
+        ...state,
+        section1Data: {
+            ...state.section1Data,
+            swiper1: {
+                ...state.section1Data.swiper1,
+                swiper: updatedSwiper
+            }
+        } 
+    };
+}
 
-// const setSwiperStateForTestimonialsPageSection3 = (state, action) => {
-//     let updatedSwiper = {
-//         slides: action.slides,
-//         _slides: action._slides,
-//         activeIndex: action.activeIndex,
-//         translate: action.translate,
-//         transition: action.transition,
-//         rerender: action.rerender
-//     };
+const setSwiperStateForClientsPageSection1Swiper2 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+    };
+    
+    return {
+        ...state,
+        section1Data: {
+            ...state.section1Data,
+            swiper2: {
+                ...state.section1Data.swiper2,
+                swiper: updatedSwiper
+            }
+        } 
+    };
+}
 
-//     return {
-//         ...state,
-//         section3Data: {
-//             ...state.section3Data,
-//             swiper: updatedSwiper
-//         }
-//     };
-// }
+const setSwiperStateForClientsPageSection2Swiper1 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+    };
+    
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            swiper1: {
+                ...state.section2Data.swiper1,
+                swiper: updatedSwiper
+            }
+        } 
+    };
+}
 
-// const setTestimonialsPageSection1IsHoveringSwiperDot = (state, action) => {
-//     let updatedSwiperSlides = [...state.section1Data.swiper.slides];
-
-//     let slide = {...updatedSwiperSlides.find(item => item.id === action.id), isHover: action.val}
-//     let slideIndex = updatedSwiperSlides.findIndex(item => item.id === action.id);
-
-//     updatedSwiperSlides.splice(slideIndex, 1, slide);
-
-//     return {
-//         ...state,
-//         section1Data: {
-//             ...state.section1Data,
-//             swiper: {
-//                 ...state.section1Data.swiper,
-//                 slides: updatedSwiperSlides,
-//             }
-//         }
-//     };
-// }
+const setSwiperStateForClientsPageSection2Swiper2 = (state, action) => {
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+    };
+    
+    return {
+        ...state,
+        section2Data: {
+            ...state.section2Data,
+            swiper2: {
+                ...state.section2Data.swiper2,
+                swiper: updatedSwiper
+            }
+        } 
+    };
+}
 
 const clientsPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -372,14 +383,14 @@ const clientsPageReducer = (state = initialState, action) => {
             return fetchClientsPageSection2Swiper2DataSuccess (state, action);
         case actionTypes.FETCH_CLIENTS_PAGE_SECTION_2_SWIPER_2_DATA_FAILURE:
             return fetchClientsPageSection2Swiper2DataFailur(state, action);
-        // case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_1:
-        //     return setSwiperStateForTestimonialsPageSection1(state, action); 
-        // case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_2:
-        //     return setSwiperStateForTestimonialsPageSection2(state, action); 
-        // case actionTypes.SET_SWIPER_STATE_FOR_TESTIMONIALS_PAGE_SECTION_3:
-        //     return setSwiperStateForTestimonialsPageSection3(state, action);
-        // case actionTypes.SET_TESTIMONIALS_PAGE_SECTION_1_IS_HOVERING_SWIPER_DOT:
-        //     return setTestimonialsPageSection1IsHoveringSwiperDot(state, action);
+        case actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_1:
+            return setSwiperStateForClientsPageSection1Swiper1(state, action); 
+        case actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_2:
+            return setSwiperStateForClientsPageSection1Swiper2(state, action); 
+        case actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_1:
+            return setSwiperStateForClientsPageSection2Swiper1(state, action);
+        case actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_2:
+            return setSwiperStateForClientsPageSection2Swiper2(state, action);
         default: 
             return state;
     }

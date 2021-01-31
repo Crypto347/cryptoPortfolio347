@@ -27,6 +27,7 @@ import './clientsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Swiper from '../../../../library/Swiper/swiper';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -221,37 +222,74 @@ export const ClientsPage = (props) => {
         }
     }
 
-    const renderClientsPageSwiper1Data = (arr) => {
-        return(
-            <div className="clients-page-swiper1-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="clients-page-swiper1-data-item"
-                    >
-                        <img src={Images.CLIENTS_LOGO_10}/>
-                    </div>
-                )
-            })}</div>
-        )
+    const renderClientsPageSwiperData = (section, swiper, arr) => {
+        if(section === "section1"){
+            switch(swiper) {
+                case 'swiper1':
+                    return(
+                        <Swiper
+                            component="clientsPageSection1Swiper1"
+                            contentArray={arr.items}
+                            content={arr}
+                            translateWidth={size.width - 130}
+                            showNumbersOfSlides={1}
+                            setSwiperState={props.setSwiperStateForClientsPageSection1Swiper1}
+                            swiperData={arr.swiper}
+                            onlyImages
+                            // autoPlay
+                        />
+                    );
+                case 'swiper2':
+                    // return(
+                    //     <Swiper
+                    //         component="clientsPageSection1Swiper2"
+                    //         contentArray={arr.items}
+                    //         content={arr}
+                    //         translateWidth={size.width - 130}
+                    //         showNumbersOfSlides={1}
+                    //         setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
+                    //         swiperData={arr.swiper}
+                    //         onlyImages
+                    //         // autoPlay
+                    //     />
+                    // )
+            }
+        }
+        if(section === "section2"){
+            switch(swiper) {
+                case 'swiper1':
+                    // return(
+                    //     <Swiper
+                    //         component="clientsPageSection2Swiper1"
+                    //         contentArray={arr.items}
+                    //         content={arr}
+                    //         translateWidth={size.width - 130}
+                    //         showNumbersOfSlides={1}
+                    //         setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
+                    //         swiperData={arr.swiper}
+                    //         onlyImages
+                    //         // autoPlay
+                    //     />
+                    // );
+                case 'swiper2':
+                    // return(
+                    //     <Swiper
+                    //         component="clientsPageSection2Swiper2"
+                    //         contentArray={arr.items}
+                    //         content={arr}
+                    //         translateWidth={size.width - 130}
+                    //         showNumbersOfSlides={1}
+                    //         setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
+                    //         swiperData={arr.swiper}
+                    //         onlyImages
+                    //         // autoPlay
+                    //     />
+                    // )
+            }
+        }
     }
 
-    const renderClientsPageSwiper2Data = (arr) => {
-        return(
-            <div className="clients-page-swiper2-data-items">{arr.items.map((el, i) => {
-                return(
-                    <div 
-                        key={i}
-                        className="clients-page-swiper2-data-item"
-                    >
-                        <img src={Images.CLIENTS_LOGO_10_LIGHT}/>
-                    </div>
-                )
-            })}</div>
-        )
-    }
-
-    const renderCountdownDataSectionContent = (section, arr) => {
+    const renderCountdownDataSectionContent = (section, swiper, arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
@@ -266,20 +304,11 @@ export const ClientsPage = (props) => {
             )
         }
         if(!arr.loading && !arr.error){
-            switch(section){
-                case 'swiper1':
-                    return(
-                        <>
-                            {renderClientsPageSwiper1Data(arr)}
-                        </>
-                    );
-                case 'swiper2':
-                    return(
-                        <>
-                            {renderClientsPageSwiper2Data(arr)}
-                        </>
-                    );
-            }
+            return(
+                <>
+                    {renderClientsPageSwiperData(section, swiper, arr)}
+                </>
+            );
         }
         if(!arr.loading && arr.error){
             return(
@@ -299,8 +328,8 @@ export const ClientsPage = (props) => {
     const renderCountdownPageDataContent = (section, obj) => {
         return(
             <div className={renderClassName("sectionWrapper",section)}>
-                {renderCountdownDataSectionContent("swiper1", obj.swiper1)}
-                {renderCountdownDataSectionContent("swiper2", obj.swiper2)}
+                {renderCountdownDataSectionContent(section, "swiper1", obj.swiper1)}
+                {renderCountdownDataSectionContent(section, "swiper2", obj.swiper2)}
             </div>
         )
     } 
@@ -344,8 +373,10 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            countdownValueForCountdownPageSection1: bindActionCreators(Actions.countdownValueForCountdownPageSection1, dispatch),
-            countdownValueForCountdownPageSection2: bindActionCreators(Actions.countdownValueForCountdownPageSection2, dispatch),
+            setSwiperStateForClientsPageSection1Swiper1: bindActionCreators(Actions.setSwiperStateForClientsPageSection1Swiper1, dispatch),
+            setSwiperStateForClientsPageSection1Swiper2: bindActionCreators(Actions.setSwiperStateForClientsPageSection1Swiper2, dispatch),
+            setSwiperStateForClientsPageSection2Swiper1: bindActionCreators(Actions.setSwiperStateForClientsPageSection2Swiper1, dispatch),
+            setSwiperStateForClientsPageSection2Swiper2: bindActionCreators(Actions.setSwiperStateForClientsPageSection2Swiper2, dispatch),
         };
     }
 )(ClientsPage);

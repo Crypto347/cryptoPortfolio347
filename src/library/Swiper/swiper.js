@@ -596,6 +596,27 @@ export const Swiper = (props) => {
                 return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
                 return Images.ID_3_SMALL_SLIDER_4;
+
+            case 'clientsPageSection1Swiper1Id1': 
+                return Images.CLIENTS_LOGO_1;
+            case 'clientsPageSection1Swiper1Id2': 
+                return Images.CLIENTS_LOGO_2;
+            case 'clientsPageSection1Swiper1Id3': 
+                return Images.CLIENTS_LOGO_3;
+            case 'clientsPageSection1Swiper1Id4': 
+                return Images.CLIENTS_LOGO_4;
+            case 'clientsPageSection1Swiper1Id5': 
+                return Images.CLIENTS_LOGO_5;
+            case 'clientsPageSection1Swiper2Id1': 
+                return Images.CLIENTS_LOGO_6;
+            case 'clientsPageSection1Swiper2Id2': 
+                return Images.CLIENTS_LOGO_7;
+            case 'clientsPageSection1Swiper2Id3': 
+                return Images.CLIENTS_LOGO_8;
+            case 'clientsPageSection1Swiper2Id4': 
+                return Images.CLIENTS_LOGO_9;
+            case 'clientsPageSection1Swiper2Id5': 
+                return Images.CLIENTS_LOGO_10;
             default:
                 return ""; 
         }
@@ -712,7 +733,12 @@ export const Swiper = (props) => {
                                 </div>
                             )
                         }
-                        if(props.component === "bigSlider"){
+                        if(['bigSlider', 
+                            'clientsPageSection1Swiper1', 
+                            'clientsPageSection1Swiper2',
+                            'clientsPageSection2Swiper1',
+                            'clientsPageSection2Swiper2'
+                        ].includes(props.component)){
                             return(
                                 <div 
                                     key={i} 
@@ -796,7 +822,12 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(['testimonials','bigSlider','testimonialsPageSection2','testimonialsPageSection3'].includes(props.component)){
+            if([
+                'testimonials',
+                'bigSlider',
+                'testimonialsPageSection2',
+                'testimonialsPageSection3'
+            ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
                         <div 

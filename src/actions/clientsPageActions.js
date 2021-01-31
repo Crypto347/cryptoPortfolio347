@@ -79,3 +79,51 @@ export function fetchClientsPageSection2Swiper2DataFailur(err) {
         err: err
     };
 };
+
+export function setSwiperStateForClientsPageSection1Swiper1(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_1,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
+export function setSwiperStateForClientsPageSection1Swiper2(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_2,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
+export function setSwiperStateForClientsPageSection2Swiper1(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_1,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
+export function setSwiperStateForClientsPageSection2Swiper2(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_2,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};

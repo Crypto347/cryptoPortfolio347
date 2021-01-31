@@ -20061,32 +20061,32 @@ app.get('/api/clients-page/section1/swiper1', (req, res) => {
     const countdownPageSec1Swiper1 = [
         {
             id: 1,
-            imageKey: "clientsPageSection1Swiper1Id1",
-            imagePath: "",
+            key: "clientsPageSection1Swiper1Id1",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 2,
-            imageKey: "clientsPageSection1Swiper1Id2",
-            imagePath: "",
+            key: "clientsPageSection1Swiper1Id2",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 3,
-            imageKey: "clientsPageSection1Swiper1Id3",
-            imagePath: "",
+            key: "clientsPageSection1Swiper1Id3",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 4,
-            imageKey: "clientsPageSection1Swiper1Id4",
-            imagePath: "",
+            key: "clientsPageSection1Swiper1Id4",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 5,
-            imageKey: "clientsPageSection1Swiper1Id5",
-            imagePath: "",
+            key: "clientsPageSection1Swiper1Id5",
+            imageName: "",
             isHover: "init"
         }
     ]
@@ -20097,32 +20097,32 @@ app.get('/api/clients-page/section1/swiper2', (req, res) => {
     const countdownPageSec1Swiper2 = [
         {
             id: 1,
-            imageKey: "clientsPageSection1Swiper2Id1",
-            imagePath: "",
+            key: "clientsPageSection1Swiper2Id1",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 2,
-            imageKey: "clientsPageSection1Swiper2Id2",
-            imagePath: "",
+            key: "clientsPageSection1Swiper2Id2",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 3,
-            imageKey: "clientsPageSection1Swiper2Id3",
-            imagePath: "",
+            key: "clientsPageSection1Swiper2Id3",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 4,
-            imageKey: "clientsPageSection1Swiper2Id4",
-            imagePath: "",
+            key: "clientsPageSection1Swiper2Id4",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 5,
-            imageKey: "clientsPageSection1Swiper2Id5",
-            imagePath: "",
+            key: "clientsPageSection1Swiper2Id5",
+            imageName: "",
             isHover: "init"
         }
     ]
@@ -20133,32 +20133,32 @@ app.get('/api/clients-page/section2/swiper1', (req, res) => {
     const countdownPageSec2Swiper1 = [
         {
             id: 1,
-            imageKey: "clientsPageSection2Swiper1Id1",
-            imagePath: "",
+            key: "clientsPageSection2Swiper1Id1",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 2,
-            imageKey: "clientsPageSection2Swiper1Id2",
-            imagePath: "",
+            key: "clientsPageSection2Swiper1Id2",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 3,
-            imageKey: "clientsPageSection2Swiper1Id3",
-            imagePath: "",
+            key: "clientsPageSection2Swiper1Id3",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 4,
-            imageKey: "clientsPageSection2Swiper1Id4",
-            imagePath: "",
+            key: "clientsPageSection2Swiper1Id4",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 5,
-            imageKey: "clientsPageSection2Swiper1Id5",
-            imagePath: "",
+            key: "clientsPageSection2Swiper1Id5",
+            imageName: "",
             isHover: "init"
         }
     ]
@@ -20169,32 +20169,32 @@ app.get('/api/clients-page/section2/swiper2', (req, res) => {
     const countdownPageSec2 = [
         {
             id: 1,
-            imageKey: "clientsPageSection2Swiper2Id1",
-            imagePath: "",
+            key: "clientsPageSection2Swiper2Id1",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 2,
-            imageKey: "clientsPageSection2Swiper2Id2",
-            imagePath: "",
+            key: "clientsPageSection2Swiper2Id2",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 3,
-            imageKey: "clientsPageSection2Swiper2Id3",
-            imagePath: "",
+            key: "clientsPageSection2Swiper2Id3",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 4,
-            imageKey: "clientsPageSection2Swiper2Id4",
-            imagePath: "",
+            key: "clientsPageSection2Swiper2Id4",
+            imageName: "",
             isHover: "init"
         },
         {
             id: 5,
-            imageKey: "clientsPageSection21Swiper2Id5",
-            imagePath: "",
+            key: "clientsPageSection21Swiper2Id5",
+            imageName: "",
             isHover: "init"
         }
     ]
