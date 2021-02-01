@@ -114,17 +114,17 @@ export const getCurrentDateAndTime = () => {
     return `${month} ${date.getDate()}, ${date.getFullYear()} AT ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
 }
 
-export const setCountdownTimeVal = (opt, val, startMonth, leapYear) => {
+export const setCountdownTimeVal = (opt, val, currentMonth, leapYear) => {
     switch(opt){
         case 'seconds':
-            return val === 0 ? 59 : val - 1;
+            return val === 0 ? 2 : val - 1;
         case 'minutes': 
-            return val === 0 ? 59 : val - 1;
+            return val === 0 ? 2 : val - 1;
         case 'hours': 
-            return val === 0 ? 24 : val - 1;
+            return val === 0 ? 2 : val - 1;
         case 'days': 
         let value;
-            switch(startMonth){
+            switch(currentMonth){
                 case 'January':
                     value = leapYear ? 29 : 28;
                     break;
@@ -291,6 +291,9 @@ export const getDateAndTime = (opt) => {
     }
 }
 
+export const isLeapYear = (year) => {
+    return new Date(year, 1, 29).getDate() === 29;
+}
 // export const filterObject = (obj, predicate) => 
 //     Object.keys(obj)
 //         .filter(key => predicate(obj[key]))

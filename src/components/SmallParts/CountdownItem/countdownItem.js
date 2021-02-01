@@ -52,7 +52,7 @@ export const CountdownItem = (props) => {
 
         let nextMonth = {
             month: Utility.getNextMonth(Utility.getDateAndTime("month")),
-            leapYear: false
+            leapYear: Utility.isLeapYear(Utility.getDateAndTime("year"))
         };
 
         props.setCurrentDateAndNextMonth(props.data.key, currentDate, nextMonth);
@@ -74,6 +74,8 @@ export const CountdownItem = (props) => {
     }, []);
 
     useInterval(() => {
+      
+
         let sec = props.data.countdownValue.find(item => item.key === "seconds").val;
         let min = props.data.countdownValue.find(item => item.key === "minutes").val;
         let hours = props.data.countdownValue.find(item => item.key === "hours").val;
@@ -103,7 +105,7 @@ export const CountdownItem = (props) => {
     
             let nextMonth = {
                 month: Utility.getNextMonth(Utility.getDateAndTime("month")),
-                leapYear: false
+                leapYear: Utility.isLeapYear(Utility.getDateAndTime("year"))
             };
 
             props.setCurrentDateAndNextMonth(props.data.key, currentDate, nextMonth);

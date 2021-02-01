@@ -58,24 +58,6 @@ export function countdownValueForCountdownPageSection2(countdownKey, opt, val) {
     };
 };
 
-export function setCountdownDateForCountdownPageSection1(countdownKey, opt, val) {
-    return { 
-        type: actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_1,
-        countdownKey: countdownKey,
-        opt: opt,
-        val: val
-    };
-};
-
-export function setCountdownDateForCountdownPageSection2(countdownKey, opt, val) {
-    return { 
-        type: actionTypes.COUNTDOWN_VALUE_FOR_COUNTDOWN_PAGE_SECTION_2,
-        countdownKey: countdownKey,
-        opt: opt,
-        val: val
-    };
-};
-
 export function setCurrentDateAndNextMonthForCountdownPageSection1(countdownKey, currentDate, nextMonth) {
     return { 
         type: actionTypes.SET_CURRENT_DATE_AND_NEXT_MONTH_FOR_COUNTDOWN_PAGE_SECTION_1,
