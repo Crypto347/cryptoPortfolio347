@@ -231,8 +231,8 @@ export const ClientsPage = (props) => {
                             component="clientsPageSection1Swiper1"
                             contentArray={arr.items}
                             content={arr}
-                            translateWidth={size.width - 130}
-                            showNumbersOfSlides={1}
+                            translateWidth={(size.width-260)/5}
+                            showNumbersOfSlides={5}
                             setSwiperState={props.setSwiperStateForClientsPageSection1Swiper1}
                             swiperData={arr.swiper}
                             onlyImages

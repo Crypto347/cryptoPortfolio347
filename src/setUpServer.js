@@ -20062,31 +20062,31 @@ app.get('/api/clients-page/section1/swiper1', (req, res) => {
         {
             id: 1,
             key: "clientsPageSection1Swiper1Id1",
-            imageName: "",
+            imageName: "Health&Co",
             isHover: "init"
         },
         {
             id: 2,
             key: "clientsPageSection1Swiper1Id2",
-            imageName: "",
+            imageName: "Brendster",
             isHover: "init"
         },
         {
             id: 3,
             key: "clientsPageSection1Swiper1Id3",
-            imageName: "",
+            imageName: "Technologyify",
             isHover: "init"
         },
         {
             id: 4,
             key: "clientsPageSection1Swiper1Id4",
-            imageName: "",
+            imageName: "DesignAndCo",
             isHover: "init"
         },
         {
             id: 5,
             key: "clientsPageSection1Swiper1Id5",
-            imageName: "",
+            imageName: "ClubyOrg",
             isHover: "init"
         }
     ]
@@ -20134,31 +20134,31 @@ app.get('/api/clients-page/section2/swiper1', (req, res) => {
         {
             id: 1,
             key: "clientsPageSection2Swiper1Id1",
-            imageName: "",
+            imageName: "Health&Co",
             isHover: "init"
         },
         {
             id: 2,
             key: "clientsPageSection2Swiper1Id2",
-            imageName: "",
+            imageName: "Brendster",
             isHover: "init"
         },
         {
             id: 3,
             key: "clientsPageSection2Swiper1Id3",
-            imageName: "",
+            imageName: "Technologyify",
             isHover: "init"
         },
         {
             id: 4,
             key: "clientsPageSection2Swiper1Id4",
-            imageName: "",
+            imageName: "DesignAndCo",
             isHover: "init"
         },
         {
             id: 5,
             key: "clientsPageSection2Swiper1Id5",
-            imageName: "",
+            imageName: "ClubyOrg",
             isHover: "init"
         }
     ]

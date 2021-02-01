@@ -99,13 +99,10 @@ export const Swiper = (props) => {
     const getHeight = () => window.innerHeight;
     const getWidth = () => window.innerWidth;
     
-    // const [slides, setSlides] = useState([])
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
     const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
     // const [mouseDown, setMouseDown] = useState(false)
   
-    // const []
-
     // const [state, setState] = useState({
     //     activeIndex: 0,
     //     translate: 0,
@@ -129,6 +126,7 @@ export const Swiper = (props) => {
         let swiperContent;
         let translateVal;
         let _updatedSlides;
+       
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
@@ -160,10 +158,37 @@ export const Swiper = (props) => {
             //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
-            prop.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
+            props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
             // console.log("con3", props.component)
         }
         
+        if(!props.content.loading && props.showNumbersOfSlides === 5){
+            swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
+            swiperContent = document.getElementById(`swiper-content-${props.component}`);
+            
+            _slides = [
+                slidesArray[slidesArray.length - 3], 
+                slidesArray[slidesArray.length - 2], 
+                slidesArray[slidesArray.length - 1], 
+                slidesArray[0], 
+                slidesArray[1], 
+                slidesArray[2], 
+                slidesArray[3]
+            ];
+           
+            if(props.swiperData.rerender) {
+                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
+                // console.log("con1", props.component)
+                translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+                _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex);
+            }else{
+                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                // console.log("con2", props.component)
+                translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+            }
+            slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
+        }
+
         return () => {
            
             props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
@@ -369,6 +394,7 @@ export const Swiper = (props) => {
                 _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]];
             }
             // console.log("7")
+            // props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
             setState({
                 ...state,
                 _slides,
@@ -376,7 +402,18 @@ export const Swiper = (props) => {
                 translate: getTranslateValue(props.translateWidth, props.translateHeight)
             })
         }
-      
+        if(props.showNumbersOfSlides === 5){
+            _slides = updateSlidesFor5SlidesPerSwiper(slides, activeIndex);
+            
+            // console.log("7")
+            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // setState({
+            //     ...state,
+            //     _slides,
+            //     transition: 0,
+            //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
+            // })
+        }
     }
 
     const updateSlidesFullScreen = (slides, activeIndex) => {
@@ -389,6 +426,28 @@ export const Swiper = (props) => {
         // Create an array of the previous last slide, and the next two slides that follow it.
         else _slides = slides.slice(activeIndex - 1, activeIndex + 2);
 
+        return _slides;
+    }
+
+    const updateSlidesFor5SlidesPerSwiper = (slides, activeIndex) => {
+        let _slides = [];
+        if(activeIndex === slides.length - 3){
+            let first = slides[slides.length - 6] === undefined ? slides[slides.length - 1] : slides[slides.length - 6];
+            _slides = [first, slides[slides.length - 5], slides[slides.length - 4], slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0]];
+        }else if(activeIndex === slides.length - 2){
+            _slides = [slides[slides.length - 5],slides[slides.length - 4], slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1]];
+        }else if(activeIndex === slides.length - 1){
+            _slides = [slides[slides.length - 4], slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
+        }else if(activeIndex === 0){
+            _slides = [slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]];
+        }else if(activeIndex === 1){
+            _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3], slides[4]];
+        }else if(activeIndex === 2){
+            let last = slides[5] === undefined ? slides[slides.length - 1] : slides[5];
+            _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3], slides[4], last];
+        }
+        else _slides = slides.slice(activeIndex - 3, activeIndex + 3);
+console.log(activeIndex, _slides)
         return _slides;
     }
 
@@ -406,7 +465,6 @@ export const Swiper = (props) => {
     }
 
     const nextSlide = (_slides, translateVal) => {
-    
         // setState({
         //     ...state,
         //     translate: translate + getTranslateValue(props.translateWidth, props.translateHeight),
@@ -480,11 +538,14 @@ export const Swiper = (props) => {
         if(opt === 'testimonialsPageSection2'){
             return "swiper-testimonials-page-section-2"
         }
-        if(opt === "bigSlider"){
+        if(opt === 'bigSlider'){
             return "swiper-big-slider"
         }
         if(opt === "smallSlider"){
             return "swiper-small-slider"
+        }
+        if(opt === "clientsPageSection1Swiper1"){
+            return "swiper-clients-page"
         }
         if(opt === "leftArrow"){
             switch(isHovering){
@@ -675,7 +736,7 @@ export const Swiper = (props) => {
                         style={{
                             transform: `translateX(-${props.swiperData.translate}px)`,
                             transition: `transform ${props.swiperData.transition}s ease-out`,
-                            width: `${getTranslateValue(props.translateWidth, props.translateHeight) * props.contentArray.length}px`
+                            width: `${getTranslateValue(props.translateWidth, props.translateHeight) * (props.showNumbersOfSlides + 2)}px`
                         }}
                     >{props.swiperData._slides.map((el, i) => {
                         if(['testimonialsPageSection1'].includes(props.component)){
@@ -733,12 +794,7 @@ export const Swiper = (props) => {
                                 </div>
                             )
                         }
-                        if(['bigSlider', 
-                            'clientsPageSection1Swiper1', 
-                            'clientsPageSection1Swiper2',
-                            'clientsPageSection2Swiper1',
-                            'clientsPageSection2Swiper2'
-                        ].includes(props.component)){
+                        if(['bigSlider'].includes(props.component)){
                             return(
                                 <div 
                                     key={i} 
@@ -768,6 +824,30 @@ export const Swiper = (props) => {
                                         className="slide-image"
                                         // onClick={() => openPhotoViewer(el.id)}
                                     >
+                                        <img src={loadImage(el.key)}/>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        if(['clientsPageSection1Swiper1', 
+                            'clientsPageSection1Swiper2',
+                            'clientsPageSection2Swiper1',
+                            'clientsPageSection2Swiper2'
+                        ].includes(props.component)){
+                            // console.log()
+                            return(
+                                <div 
+                                    key={i} 
+                                    className="slide"
+                                    id="slide"
+                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
+                                >
+                                    <div 
+                                        className="slide-image"
+                                        // style={{height:"auto"}}
+                                        // onClick={() => openPhotoViewer(el.id)}
+                                    >
+                                        {/* <H25 className="h25-black-poppins">{el.imageName}</H25> */}
                                         <img src={loadImage(el.key)}/>
                                     </div>
                                 </div>
@@ -822,8 +902,7 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if([
-                'testimonials',
+            if(['testimonials',
                 'bigSlider',
                 'testimonialsPageSection2',
                 'testimonialsPageSection3'
