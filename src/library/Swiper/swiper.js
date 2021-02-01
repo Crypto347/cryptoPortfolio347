@@ -529,16 +529,16 @@ console.log(activeIndex, _slides)
         if(['testimonials','testimonialsPageSection3'].includes(opt)){
             return "swiper-testimonials"
         }
-        if(opt === 'testimonialsPageSection1'){
+        if(opt === "testimonialsPageSection1"){
             return "swiper-testimonials-page-section-1"
         }
-        if(opt === 'testimonialsPageSection1SwiperDots'){
+        if(opt === "testimonialsPageSection1SwiperDots"){
             return "swiper-testimonials-page-section-1-swiper-dots"
         }
-        if(opt === 'testimonialsPageSection2'){
+        if(opt === "testimonialsPageSection2"){
             return "swiper-testimonials-page-section-2"
         }
-        if(opt === 'bigSlider'){
+        if(opt === "bigSlider"){
             return "swiper-big-slider"
         }
         if(opt === "smallSlider"){
