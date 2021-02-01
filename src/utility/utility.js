@@ -117,11 +117,11 @@ export const getCurrentDateAndTime = () => {
 export const setCountdownTimeVal = (opt, val, currentMonth, leapYear) => {
     switch(opt){
         case 'seconds':
-            return val === 0 ? 2 : val - 1;
+            return val === 0 ? 59 : val - 1;
         case 'minutes': 
-            return val === 0 ? 2 : val - 1;
+            return val === 0 ? 59 : val - 1;
         case 'hours': 
-            return val === 0 ? 2 : val - 1;
+            return val === 0 ? 24 : val - 1;
         case 'days': 
         let value;
             switch(currentMonth){
