@@ -20110,7 +20110,7 @@ app.get('/api/clients-page/section1/swiper2', (req, res) => {
         {
             id: 3,
             key: "clientsPageSection1Swiper2Id3",
-            imageName: "HG",
+            imageName: "OrgBLD",
             isHover: "init"
         },
         {
@@ -20170,7 +20170,7 @@ app.get('/api/clients-page/section2/swiper2', (req, res) => {
         {
             id: 1,
             key: "clientsPageSection2Swiper2Id1",
-            imageName: "HG",
+            imageName: "OrgBLD",
             isHover: "init"
         },
         {

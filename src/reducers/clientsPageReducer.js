@@ -357,6 +357,82 @@ const setSwiperStateForClientsPageSection2Swiper2 = (state, action) => {
     };
 }
 
+const setIsHoverImageForClientsPageSection1Swiper1 = (state, action) => {
+    // let updatedItems = [...state.section1Column2Data.items];
+    // let item = {
+    //     ...updatedItems
+    //     .find(item => item.id === action.id), isHover: action.val};
+
+    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    // updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        // section1Column2Data: {
+        //     ...state.section1Column2Data,
+        //     items: updatedItems
+        // }
+    };
+}
+
+const setIsHoverImageForClientsPageSection1Swiper2 = (state, action) => {
+    // let updatedItems = [...state.section1Column2Data.items];
+    // let item = {
+    //     ...updatedItems
+    //     .find(item => item.id === action.id), isHover: action.val};
+
+    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    // updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        // section1Column2Data: {
+        //     ...state.section1Column2Data,
+        //     items: updatedItems
+        // }
+    };
+}
+
+const setIsHoverImageForClientsPageSection2Swiper1 = (state, action) => {
+    // let updatedItems = [...state.section1Column2Data.items];
+    // let item = {
+    //     ...updatedItems
+    //     .find(item => item.id === action.id), isHover: action.val};
+
+    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    // updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        // section1Column2Data: {
+        //     ...state.section1Column2Data,
+        //     items: updatedItems
+        // }
+    };
+}
+
+const setIsHoverImageForClientsPageSection2Swiper2 = (state, action) => {
+    // let updatedItems = [...state.section1Column2Data.items];
+    // let item = {
+    //     ...updatedItems
+    //     .find(item => item.id === action.id), isHover: action.val};
+
+    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+        
+    // updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        // section1Column2Data: {
+        //     ...state.section1Column2Data,
+        //     items: updatedItems
+        // }
+    };
+}
+
 const clientsPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_CLIENTS_PAGE_SECTION_1_SWIPER_1_DATA_BEGIN:
@@ -391,6 +467,14 @@ const clientsPageReducer = (state = initialState, action) => {
             return setSwiperStateForClientsPageSection2Swiper1(state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_2:
             return setSwiperStateForClientsPageSection2Swiper2(state, action);
+        case actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_1:
+            return setIsHoverImageForClientsPageSection1Swiper1(state, action); 
+        case actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_2:
+            return setIsHoverImageForClientsPageSection1Swiper2(state, action); 
+        case actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_1:
+            return setIsHoverImageForClientsPageSection2Swiper1(state, action);
+        case actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_2:
+            return setIsHoverImageForClientsPageSection2Swiper2(state, action);
         default: 
             return state;
     }

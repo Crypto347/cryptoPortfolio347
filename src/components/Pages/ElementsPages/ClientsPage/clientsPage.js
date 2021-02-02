@@ -237,6 +237,7 @@ export const ClientsPage = (props) => {
                             setSwiperState={props.setSwiperStateForClientsPageSection1Swiper1}
                             swiperData={arr.swiper}
                             onlyImages
+                            setIsHoverImage={props.setIsHoverImageForClientsPageSection1Swiper1}
                             // autoPlay
                         />
                     );
@@ -251,6 +252,7 @@ export const ClientsPage = (props) => {
                             setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
                             swiperData={arr.swiper}
                             onlyImages
+                            setIsHoverImage={props.setIsHoverImageForClientsPageSection1Swiper2}
                             // autoPlay
                         />
                     )
@@ -269,6 +271,7 @@ export const ClientsPage = (props) => {
                             setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
                             swiperData={arr.swiper}
                             onlyImages
+                            setIsHoverImage={props.setIsHoverImageForClientsPageSection2Swiper1}
                             // autoPlay
                         />
                     );
@@ -283,6 +286,7 @@ export const ClientsPage = (props) => {
                             setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
                             swiperData={arr.swiper}
                             onlyImages
+                            setIsHoverImage={props.setIsHoverImageForClientsPageSection2Swiper2}
                             // autoPlay
                         />
                     )
@@ -379,6 +383,10 @@ export default connect(
             setSwiperStateForClientsPageSection1Swiper2: bindActionCreators(Actions.setSwiperStateForClientsPageSection1Swiper2, dispatch),
             setSwiperStateForClientsPageSection2Swiper1: bindActionCreators(Actions.setSwiperStateForClientsPageSection2Swiper1, dispatch),
             setSwiperStateForClientsPageSection2Swiper2: bindActionCreators(Actions.setSwiperStateForClientsPageSection2Swiper2, dispatch),
+            setIsHoverImageForClientsPageSection1Swiper1: bindActionCreators(Actions.setIsHoverImageForClientsPageSection1Swiper1, dispatch),
+            setIsHoverImageForClientsPageSection1Swiper2: bindActionCreators(Actions.setIsHoverImageForClientsPageSection1Swiper2, dispatch),
+            setIsHoverImageForClientsPageSection2Swiper1: bindActionCreators(Actions.setIsHoverImageForClientsPageSection2Swiper1, dispatch),
+            setIsHoverImageForClientsPageSection2Swiper2: bindActionCreators(Actions.setIsHoverImageForClientsPageSection2Swiper2, dispatch)
         };
     }
 )(ClientsPage);

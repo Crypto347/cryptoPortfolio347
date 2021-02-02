@@ -127,3 +127,35 @@ export function setSwiperStateForClientsPageSection2Swiper2(slides, _slides, act
         rerender: rerender
     };
 };
+
+export function setIsHoverImageForClientsPageSection1Swiper1(val, key) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_1,
+        val: val,
+        key: key
+    };
+};
+
+export function setIsHoverImageForClientsPageSection1Swiper2(val, key) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_1_SWIPER_2,
+        val: val,
+        key: key
+    };
+};
+
+export function setIsHoverImageForClientsPageSection2Swiper1(val, key) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_1,
+        val: val,
+        key: key
+    };
+};
+
+export function setIsHoverImageForClientsPageSection2Swiper2(val, key) {
+    return { 
+        type: actionTypes.SET_IS_HOVER_IMAGE_FOR_CLIENTS_PAGE_SECTION_2_SWIPER_2,
+        val: val,
+        key: key
+    };
+};
