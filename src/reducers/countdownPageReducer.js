@@ -115,9 +115,17 @@ const countdownValueForCountdownPageSection1 = (state, action) => {
     
     let obj = {
         ...countdownOptionObj,
-        val: Utility.setCountdownTimeVal(action.opt, action.val, countdownObj.startDate.month, countdownObj.nextMonth.leapYear)
+        val: Utility.setCountdownTimeVal(action.opt, action.val, countdownObj.nextMonth.month, countdownObj.nextMonth.leapYear)
     }
-    
+    if(action.opt === "days" && action.val === 0){
+        countdownObj = {
+            ...countdownObj, 
+            nextMonth: {
+                month: Utility.getNextMonth(countdownObj.nextMonth.month),
+                leapYear: Utility.isLeapYear(Utility.getDateAndTime("year"))
+            }
+        }
+    }
     countdownObj.countdownValue.splice(countdownOptionIndex, 1, obj);
     updatedItems.splice(countdownIndex, 1, countdownObj);
     
@@ -139,7 +147,17 @@ const countdownValueForCountdownPageSection2 = (state, action) => {
 
     let obj = {
         ...countdownOptionObj,
-        val: Utility.setCountdownTimeVal(action.opt, action.val, countdownObj.startDate.month, countdownObj.nextMonth.leapYear)
+        val: Utility.setCountdownTimeVal(action.opt, action.val, countdownObj.nextMonth.month, countdownObj.nextMonth.leapYear)
+    }
+    
+    if(action.opt === "days" && action.val === 0){
+        countdownObj = {
+            ...countdownObj, 
+            nextMonth: {
+                month: Utility.getNextMonth(countdownObj.nextMonth.month),
+                leapYear: Utility.isLeapYear(Utility.getDateAndTime("year"))
+            }
+        }
     }
     
     countdownObj.countdownValue.splice(countdownOptionIndex, 1, obj);

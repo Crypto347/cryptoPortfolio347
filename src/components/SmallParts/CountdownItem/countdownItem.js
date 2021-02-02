@@ -44,6 +44,7 @@ export const CountdownItem = (props) => {
      */
    
     useEffect(() => {
+        // Initialize state with current date and next month
         let currentDate = {
             day: Utility.getDateAndTime("day"),
             month: Utility.getDateAndTime("month"),
@@ -57,7 +58,7 @@ export const CountdownItem = (props) => {
 
         props.setCurrentDateAndNextMonth(props.data.key, currentDate, nextMonth);
 
-        // Get the current date and calculate how many months, days, hours, minutes and seconds are left before the specified end time. (Optional)
+        // Get the current date and calculate how many months, days, hours, minutes and seconds are left before the specified end time. (set specified end date in setServer)
 
         let distance = new Date(`${props.data.endDate.month}, ${props.data.endDate.day}, ${props.data.endDate.year}`).getTime() - new Date().getTime();
         var monthsLeft = Math.abs((props.data.endDate.year - currentDate.year)*12 - (new Date().getMonth()) + Utility.getMonthId(props.data.endDate.month));
@@ -74,7 +75,7 @@ export const CountdownItem = (props) => {
     }, []);
 
     useInterval(() => {
-      
+        // Update all values in counter every second
 
         let sec = props.data.countdownValue.find(item => item.key === "seconds").val;
         let min = props.data.countdownValue.find(item => item.key === "minutes").val;
@@ -97,19 +98,6 @@ export const CountdownItem = (props) => {
         }
 
         if(sec === 0 &&  min === 0 && hours === 0 && days === 0){
-            let currentDate = {
-                day: Utility.getDateAndTime("day"),
-                month: Utility.getDateAndTime("month"),
-                year: Utility.getDateAndTime("year"),
-            }
-    
-            let nextMonth = {
-                month: Utility.getNextMonth(Utility.getDateAndTime("month")),
-                leapYear: Utility.isLeapYear(Utility.getDateAndTime("year"))
-            };
-
-            props.setCurrentDateAndNextMonth(props.data.key, currentDate, nextMonth);
-
             props.countdownValue(props.data.key, "month", month);
         }
 
@@ -143,6 +131,8 @@ export const CountdownItem = (props) => {
     }
 
     const setValue = (val) => {
+        // Add 0 at the beginning of the value if the value is less than 10
+
         if(val < 10) return val.toString().padStart(2, '0');
         else return val;
     }

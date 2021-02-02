@@ -114,7 +114,7 @@ export const getCurrentDateAndTime = () => {
     return `${month} ${date.getDate()}, ${date.getFullYear()} AT ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
 }
 
-export const setCountdownTimeVal = (opt, val, currentMonth, leapYear) => {
+export const setCountdownTimeVal = (opt, val, nextMonth, leapYear) => {
     switch(opt){
         case 'seconds':
             return val === 0 ? 59 : val - 1;
@@ -124,24 +124,24 @@ export const setCountdownTimeVal = (opt, val, currentMonth, leapYear) => {
             return val === 0 ? 24 : val - 1;
         case 'days': 
         let value;
-            switch(currentMonth){
-                case 'January':
+            switch(nextMonth){
+                case 'February':
                     value = leapYear ? 29 : 28;
                     break;
-                case 'February':
                 case 'April':
                 case 'June':
-                case 'July':
                 case 'September':
                 case 'November':
-                case 'December':
-                    value = 31;
+                    value = 30;
                     break;
+                case 'January':
                 case 'March':
                 case 'May':
+                case 'July':
                 case 'August':
                 case 'October':
-                    value = 30;
+                case 'December':
+                    value = 31;
                     break;
             }
             return val === 0 ? value : val - 1;
@@ -150,7 +150,7 @@ export const setCountdownTimeVal = (opt, val, currentMonth, leapYear) => {
     }
 }
 
-const getMonth = (id) => {
+export const getMonth = (id) => {
     switch (id){
         case 0:
             return "January";
@@ -294,6 +294,7 @@ export const getDateAndTime = (opt) => {
 export const isLeapYear = (year) => {
     return new Date(year, 1, 29).getDate() === 29;
 }
+
 // export const filterObject = (obj, predicate) => 
 //     Object.keys(obj)
 //         .filter(key => predicate(obj[key]))
