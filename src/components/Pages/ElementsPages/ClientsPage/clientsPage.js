@@ -55,7 +55,8 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
-    H45
+    H45,
+    EH70
 } from '../../../UtilityComponents';
 
 /**
@@ -240,51 +241,51 @@ export const ClientsPage = (props) => {
                         />
                     );
                 case 'swiper2':
-                    // return(
-                    //     <Swiper
-                    //         component="clientsPageSection1Swiper2"
-                    //         contentArray={arr.items}
-                    //         content={arr}
-                    //         translateWidth={size.width - 130}
-                    //         showNumbersOfSlides={1}
-                    //         setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
-                    //         swiperData={arr.swiper}
-                    //         onlyImages
-                    //         // autoPlay
-                    //     />
-                    // )
+                    return(
+                        <Swiper
+                            component="clientsPageSection1Swiper2"
+                            contentArray={arr.items}
+                            content={arr}
+                            translateWidth={(size.width-260)/5}
+                            showNumbersOfSlides={5}
+                            setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
+                            swiperData={arr.swiper}
+                            onlyImages
+                            // autoPlay
+                        />
+                    )
             }
         }
         if(section === "section2"){
             switch(swiper) {
                 case 'swiper1':
-                    // return(
-                    //     <Swiper
-                    //         component="clientsPageSection2Swiper1"
-                    //         contentArray={arr.items}
-                    //         content={arr}
-                    //         translateWidth={size.width - 130}
-                    //         showNumbersOfSlides={1}
-                    //         setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
-                    //         swiperData={arr.swiper}
-                    //         onlyImages
-                    //         // autoPlay
-                    //     />
-                    // );
+                    return(
+                        <Swiper
+                            component="clientsPageSection2Swiper1"
+                            contentArray={arr.items}
+                            content={arr}
+                            translateWidth={(size.width-260)/5}
+                            showNumbersOfSlides={5}
+                            setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
+                            swiperData={arr.swiper}
+                            onlyImages
+                            // autoPlay
+                        />
+                    );
                 case 'swiper2':
-                    // return(
-                    //     <Swiper
-                    //         component="clientsPageSection2Swiper2"
-                    //         contentArray={arr.items}
-                    //         content={arr}
-                    //         translateWidth={size.width - 130}
-                    //         showNumbersOfSlides={1}
-                    //         setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
-                    //         swiperData={arr.swiper}
-                    //         onlyImages
-                    //         // autoPlay
-                    //     />
-                    // )
+                    return(
+                        <Swiper
+                            component="clientsPageSection2Swiper2"
+                            contentArray={arr.items}
+                            content={arr}
+                            translateWidth={(size.width-260)/5}
+                            showNumbersOfSlides={5}
+                            setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
+                            swiperData={arr.swiper}
+                            onlyImages
+                            // autoPlay
+                        />
+                    )
             }
         }
     }
@@ -329,6 +330,7 @@ export const ClientsPage = (props) => {
         return(
             <div className={renderClassName("sectionWrapper",section)}>
                 {renderCountdownDataSectionContent(section, "swiper1", obj.swiper1)}
+                <EH70/>
                 {renderCountdownDataSectionContent(section, "swiper2", obj.swiper2)}
             </div>
         )

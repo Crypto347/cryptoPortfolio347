@@ -180,7 +180,7 @@ export const Swiper = (props) => {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
                 // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex);
+                _updatedSlides = updateSlidesFor5SlidesPerSwiper(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
                 // console.log("con2", props.component)
@@ -447,7 +447,7 @@ export const Swiper = (props) => {
             _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3], slides[4], last];
         }
         else _slides = slides.slice(activeIndex - 3, activeIndex + 3);
-console.log(activeIndex, _slides)
+        console.log("_slides",_slides)
         return _slides;
     }
 
@@ -472,6 +472,7 @@ console.log(activeIndex, _slides)
         // })
         let activeIndex = props.swiperData.activeIndex === props.swiperData.slides.length - 1 ? 0 : props.swiperData.activeIndex + 1
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
+   
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
         props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
         // console.log("con9", props.component)
@@ -544,7 +545,11 @@ console.log(activeIndex, _slides)
         if(opt === "smallSlider"){
             return "swiper-small-slider"
         }
-        if(opt === "clientsPageSection1Swiper1"){
+        if(['clientsPageSection1Swiper1',
+            'clientsPageSection1Swiper2',
+            'clientsPageSection2Swiper1',
+            'clientsPageSection2Swiper2'
+        ].includes(opt)){
             return "swiper-clients-page"
         }
         if(opt === "leftArrow"){
@@ -657,7 +662,6 @@ console.log(activeIndex, _slides)
                 return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
                 return Images.ID_3_SMALL_SLIDER_4;
-
             case 'clientsPageSection1Swiper1Id1': 
                 return Images.CLIENTS_LOGO_1;
             case 'clientsPageSection1Swiper1Id2': 
@@ -678,6 +682,26 @@ console.log(activeIndex, _slides)
                 return Images.CLIENTS_LOGO_9;
             case 'clientsPageSection1Swiper2Id5': 
                 return Images.CLIENTS_LOGO_10;
+            case 'clientsPageSection2Swiper1Id4': 
+                return Images.CLIENTS_LOGO_1_LIGHT;
+            case 'clientsPageSection2Swiper1Id5': 
+                return Images.CLIENTS_LOGO_2_LIGHT;
+            case 'clientsPageSection2Swiper1Id1': 
+                return Images.CLIENTS_LOGO_3_LIGHT;
+            case 'clientsPageSection2Swiper1Id2': 
+                return Images.CLIENTS_LOGO_4_LIGHT;
+            case 'clientsPageSection2Swiper1Id3': 
+                return Images.CLIENTS_LOGO_5_LIGHT;
+            case 'clientsPageSection2Swiper2Id4': 
+                return Images.CLIENTS_LOGO_6_LIGHT;
+            case 'clientsPageSection2Swiper2Id5': 
+                return Images.CLIENTS_LOGO_7_LIGHT;
+            case 'clientsPageSection2Swiper2Id1': 
+                return Images.CLIENTS_LOGO_8_LIGHT;
+            case 'clientsPageSection2Swiper2Id2': 
+                return Images.CLIENTS_LOGO_9_LIGHT;
+            case 'clientsPageSection2Swiper2Id3': 
+                return Images.CLIENTS_LOGO_10_LIGHT;
             default:
                 return ""; 
         }

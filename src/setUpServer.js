@@ -20098,31 +20098,31 @@ app.get('/api/clients-page/section1/swiper2', (req, res) => {
         {
             id: 1,
             key: "clientsPageSection1Swiper2Id1",
-            imageName: "",
+            imageName: "fivefulTC",
             isHover: "init"
         },
         {
             id: 2,
             key: "clientsPageSection1Swiper2Id2",
-            imageName: "",
+            imageName: "verve_color",
             isHover: "init"
         },
         {
             id: 3,
             key: "clientsPageSection1Swiper2Id3",
-            imageName: "",
+            imageName: "HG",
             isHover: "init"
         },
         {
             id: 4,
             key: "clientsPageSection1Swiper2Id4",
-            imageName: "",
+            imageName: "sun&shine",
             isHover: "init"
         },
         {
             id: 5,
             key: "clientsPageSection1Swiper2Id5",
-            imageName: "",
+            imageName: "B&B",
             isHover: "init"
         }
     ]
@@ -20134,31 +20134,31 @@ app.get('/api/clients-page/section2/swiper1', (req, res) => {
         {
             id: 1,
             key: "clientsPageSection2Swiper1Id1",
-            imageName: "Health&Co",
+            imageName: "Technologyify",
             isHover: "init"
         },
         {
             id: 2,
             key: "clientsPageSection2Swiper1Id2",
-            imageName: "Brendster",
+            imageName: "DesignAndCo",
             isHover: "init"
         },
         {
             id: 3,
             key: "clientsPageSection2Swiper1Id3",
-            imageName: "Technologyify",
+            imageName: "ClubyOrg",
             isHover: "init"
         },
         {
             id: 4,
             key: "clientsPageSection2Swiper1Id4",
-            imageName: "DesignAndCo",
+            imageName: "Health&Co",
             isHover: "init"
         },
         {
             id: 5,
             key: "clientsPageSection2Swiper1Id5",
-            imageName: "ClubyOrg",
+            imageName: "Brendster",
             isHover: "init"
         }
     ]
@@ -20170,31 +20170,31 @@ app.get('/api/clients-page/section2/swiper2', (req, res) => {
         {
             id: 1,
             key: "clientsPageSection2Swiper2Id1",
-            imageName: "",
+            imageName: "HG",
             isHover: "init"
         },
         {
             id: 2,
             key: "clientsPageSection2Swiper2Id2",
-            imageName: "",
+            imageName: "sun&shine",
             isHover: "init"
         },
         {
             id: 3,
             key: "clientsPageSection2Swiper2Id3",
-            imageName: "",
+            imageName: "B&B",
             isHover: "init"
         },
         {
             id: 4,
             key: "clientsPageSection2Swiper2Id4",
-            imageName: "",
+            imageName: "fivefulTC",
             isHover: "init"
         },
         {
             id: 5,
-            key: "clientsPageSection21Swiper2Id5",
-            imageName: "",
+            key: "clientsPageSection2Swiper2Id5",
+            imageName: "verve_color",
             isHover: "init"
         }
     ]
