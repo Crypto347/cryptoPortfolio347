@@ -359,6 +359,13 @@ const setSwiperStateForClientsPageSection2Swiper2 = (state, action) => {
 
 const setIsHoverImageForClientsPageSection1Swiper1 = (state, action) => {
     let updatedItems = [...state.section1Data.swiper1.items];
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            isHover: "off"
+        }
+    });
+
     let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
     let itemIndex = updatedItems.findIndex(item => item.key === action.key);
@@ -390,6 +397,13 @@ const setIsHoverImageForClientsPageSection1Swiper1 = (state, action) => {
 
 const setIsHoverImageForClientsPageSection1Swiper2 = (state, action) => {
     let updatedItems = [...state.section1Data.swiper2.items];
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            isHover: "off"
+        }
+    });
+
     let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
     let itemIndex = updatedItems.findIndex(item => item.key === action.key);
@@ -421,6 +435,13 @@ const setIsHoverImageForClientsPageSection1Swiper2 = (state, action) => {
 
 const setIsHoverImageForClientsPageSection2Swiper1 = (state, action) => {
     let updatedItems = [...state.section2Data.swiper1.items];
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            isHover: "off"
+        }
+    });
+
     let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
     let itemIndex = updatedItems.findIndex(item => item.key === action.key);
@@ -452,6 +473,13 @@ const setIsHoverImageForClientsPageSection2Swiper1 = (state, action) => {
 
 const setIsHoverImageForClientsPageSection2Swiper2 = (state, action) => {
     let updatedItems = [...state.section2Data.swiper2.items];
+    updatedItems = updatedItems.map(el => {
+        return {
+            ...el,
+            isHover: "off"
+        }
+    });
+    
     let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
     let itemIndex = updatedItems.findIndex(item => item.key === action.key);

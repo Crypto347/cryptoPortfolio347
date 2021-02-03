@@ -58,6 +58,7 @@ import {
     EH25,
 } from '../../components/UtilityComponents';
 
+import * as Utility from '../../utility';
 
 /**
  * Hooks
@@ -143,7 +144,7 @@ export const Swiper = (props) => {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
                 // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex);
+                _updatedSlides = Utility.updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex, props.swiperData);
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
                 // console.log("con2", props.component)
@@ -181,7 +182,7 @@ export const Swiper = (props) => {
                 props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
                 // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
-                _updatedSlides = updateSlidesFor5SlidesPerSwiper(props.swiperData.slides, props.swiperData.activeIndex);
+                _updatedSlides = Utility.updateSlidesFor5SlidesPerSwiper(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
                 props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
                 // console.log("con2", props.component)
@@ -362,7 +363,7 @@ export const Swiper = (props) => {
         let slides = [...props.swiperData.slides];
         let activeIndex = props.swiperData.activeIndex;
         if(props.showNumbersOfSlides === 1){
-            _slides = updateSlidesFullScreen(slides, activeIndex);
+            _slides = Utility.updateSlidesFullScreen(slides, activeIndex, props.swiperData);
             // setState({
             //     ...state,
             //     _slides,
@@ -404,7 +405,7 @@ export const Swiper = (props) => {
             })
         }
         if(props.showNumbersOfSlides === 5){
-            _slides = updateSlidesFor5SlidesPerSwiper(slides, activeIndex);
+            _slides = Utility.updateSlidesFor5SlidesPerSwiper(slides, activeIndex);
             
             // console.log("7")
             props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
@@ -415,41 +416,6 @@ export const Swiper = (props) => {
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
             // })
         }
-    }
-
-    const updateSlidesFullScreen = (slides, activeIndex) => {
-        let _slides = [];
-        //We're at the last slides
-        if(activeIndex === slides.length - 1)
-        _slides = [props.swiperData.slides[slides.length - 2], slides[slides.length - 1], slides[0]];
-        //We're back at the first slide. Just reset to how it was on initial render.
-        else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1]]
-        // Create an array of the previous last slide, and the next two slides that follow it.
-        else _slides = slides.slice(activeIndex - 1, activeIndex + 2);
-
-        return _slides;
-    }
-
-    const updateSlidesFor5SlidesPerSwiper = (slides, activeIndex) => {
-        let _slides = [];
-        if(activeIndex === slides.length - 3){
-            let first = slides[slides.length - 6] === undefined ? slides[slides.length - 1] : slides[slides.length - 6];
-            _slides = [first, slides[slides.length - 5], slides[slides.length - 4], slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0]];
-        }else if(activeIndex === slides.length - 2){
-            _slides = [slides[slides.length - 5],slides[slides.length - 4], slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1]];
-        }else if(activeIndex === slides.length - 1){
-            _slides = [slides[slides.length - 4], slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
-        }else if(activeIndex === 0){
-            _slides = [slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]];
-        }else if(activeIndex === 1){
-            _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3], slides[4]];
-        }else if(activeIndex === 2){
-            let last = slides[5] === undefined ? slides[slides.length - 1] : slides[5];
-            _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3], slides[4], last];
-        }
-        else _slides = slides.slice(activeIndex - 3, activeIndex + 3);
-        // console.log("_slides",_slides)
-        return _slides;
     }
 
     const prevSlide = (_slides) => {
@@ -529,16 +495,6 @@ export const Swiper = (props) => {
                 props.setIsHoveringSwipereDot('off', id);
                 break;
             case 'image':
-                // let _slides = [
-                //     props.contentArray[props.contentArray.length - 3], 
-                //     props.contentArray[props.contentArray.length - 2], 
-                //     props.contentArray[props.contentArray.length - 1], 
-                //     props.contentArray[0], 
-                //     props.contentArray[1], 
-                //     props.contentArray[2], 
-                //     props.contentArray[3]
-                // ];
-               
                 props.setIsHoverImage("off", key);
                 props.swiperSetSwiperStateStart(props.component);
                 break;
@@ -1072,7 +1028,7 @@ export const Swiper = (props) => {
         let nextActiveIndex = id - 1;
         if(prevActiveIndex === nextActiveIndex) return;
 
-        let _updatedSlides = updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex);
+        let _updatedSlides = Utility.updateSlidesFullScreen(props.swiperData.slides, nextActiveIndex, props.swiperData);
         let currentObj = props.swiperData.slides.find(item => item.id === prevActiveIndex + 1);
         let nextObj = props.swiperData.slides.find(item => item.id === id);
         _updatedSlides[1] = currentObj

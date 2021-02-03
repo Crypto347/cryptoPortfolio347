@@ -23,6 +23,12 @@ import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
 
 /**
+ * Utility
+ */
+
+import * as Utility from '../utility';
+
+/**
  * Epic
  */
 
@@ -33,15 +39,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
             let _slides = [];
             switch(action.component){
                 case 'clientsPageSection1Swiper1':
-                    _slides = [
-                        state$.value.clientsPage.section1Data.swiper1.items[state$.value.clientsPage.section1Data.swiper1.items.length - 3], 
-                        state$.value.clientsPage.section1Data.swiper1.items[state$.value.clientsPage.section1Data.swiper1.items.length - 2], 
-                        state$.value.clientsPage.section1Data.swiper1.items[state$.value.clientsPage.section1Data.swiper1.items.length - 1], 
-                        state$.value.clientsPage.section1Data.swiper1.items[0], 
-                        state$.value.clientsPage.section1Data.swiper1.items[1], 
-                        state$.value.clientsPage.section1Data.swiper1.items[2], 
-                        state$.value.clientsPage.section1Data.swiper1.items[3]
-                    ]
+                    _slides = Utility.updateSlidesFor5SlidesPerSwiper(state$.value.clientsPage.section1Data.swiper1.swiper.slides, state$.value.clientsPage.section1Data.swiper1.swiper.activeIndex)
                     return of(
                         Actions.setSwiperStateForClientsPageSection1Swiper1(
                             state$.value.clientsPage.section1Data.swiper1.items, 
@@ -53,15 +51,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         )
                     )
                 case 'clientsPageSection1Swiper2':
-                    _slides = [
-                        state$.value.clientsPage.section1Data.swiper2.items[state$.value.clientsPage.section1Data.swiper2.items.length - 3], 
-                        state$.value.clientsPage.section1Data.swiper2.items[state$.value.clientsPage.section1Data.swiper2.items.length - 2], 
-                        state$.value.clientsPage.section1Data.swiper2.items[state$.value.clientsPage.section1Data.swiper2.items.length - 1], 
-                        state$.value.clientsPage.section1Data.swiper2.items[0], 
-                        state$.value.clientsPage.section1Data.swiper2.items[1], 
-                        state$.value.clientsPage.section1Data.swiper2.items[2], 
-                        state$.value.clientsPage.section1Data.swiper2.items[3]
-                    ]
+                    _slides = Utility.updateSlidesFor5SlidesPerSwiper(state$.value.clientsPage.section1Data.swiper2.swiper.slides, state$.value.clientsPage.section1Data.swiper2.swiper.activeIndex)
                     return of(
                         Actions.setSwiperStateForClientsPageSection1Swiper2(
                             state$.value.clientsPage.section1Data.swiper2.items,
@@ -73,15 +63,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         )
                     )
                 case 'clientsPageSection2Swiper1':
-                    _slides = [
-                        state$.value.clientsPage.section2Data.swiper1.items[state$.value.clientsPage.section2Data.swiper1.items.length - 3], 
-                        state$.value.clientsPage.section2Data.swiper1.items[state$.value.clientsPage.section2Data.swiper1.items.length - 2], 
-                        state$.value.clientsPage.section2Data.swiper1.items[state$.value.clientsPage.section2Data.swiper1.items.length - 1], 
-                        state$.value.clientsPage.section2Data.swiper1.items[0], 
-                        state$.value.clientsPage.section2Data.swiper1.items[1], 
-                        state$.value.clientsPage.section2Data.swiper1.items[2], 
-                        state$.value.clientsPage.section2Data.swiper1.items[3]
-                    ]
+                    _slides = Utility.updateSlidesFor5SlidesPerSwiper(state$.value.clientsPage.section2Data.swiper1.swiper.slides, state$.value.clientsPage.section2Data.swiper1.swiper.activeIndex)
                     return of(
                         Actions.setSwiperStateForClientsPageSection2Swiper1(
                             state$.value.clientsPage.section2Data.swiper1.items, 
@@ -93,15 +75,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         )
                     )
                 case 'clientsPageSection2Swiper2':
-                    _slides = [
-                        state$.value.clientsPage.section2Data.swiper2.items[state$.value.clientsPage.section2Data.swiper2.items.length - 3], 
-                        state$.value.clientsPage.section2Data.swiper2.items[state$.value.clientsPage.section2Data.swiper2.items.length - 2], 
-                        state$.value.clientsPage.section2Data.swiper2.items[state$.value.clientsPage.section2Data.swiper2.items.length - 1], 
-                        state$.value.clientsPage.section2Data.swiper2.items[0], 
-                        state$.value.clientsPage.section2Data.swiper2.items[1], 
-                        state$.value.clientsPage.section2Data.swiper2.items[2], 
-                        state$.value.clientsPage.section2Data.swiper2.items[3]
-                    ]
+                    _slides = Utility.updateSlidesFor5SlidesPerSwiper(state$.value.clientsPage.section2Data.swiper2.swiper.slides, state$.value.clientsPage.section2Data.swiper2.swiper.activeIndex)
                     return of(
                         Actions.setSwiperStateForClientsPageSection2Swiper2(
                             state$.value.clientsPage.section2Data.swiper2.items, 
