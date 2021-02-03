@@ -209,7 +209,7 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection1}
                         swiperData={props.testimonialsPage.section1Data.swiper}
-                        setIsHoveringSwipereDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
+                        setIsHoveringSwiperDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
                         autoPlay
                         showDots
                     />

@@ -474,7 +474,7 @@ export const Swiper = (props) => {
                 setIsHoveringRightArrow('on');
                 break;
             case 'swiperDot': 
-                props.setIsHoveringSwipereDot('on', id);
+                props.setIsHoveringSwiperDot('on', id);
                 break;
             case 'image':
                 props.setIsHoverImage("on", key);
@@ -492,7 +492,7 @@ export const Swiper = (props) => {
                 setIsHoveringRightArrow('off');
                 break;
             case 'swiperDot': 
-                props.setIsHoveringSwipereDot('off', id);
+                props.setIsHoveringSwiperDot('off', id);
                 break;
             case 'image':
                 props.setIsHoverImage("off", key);
