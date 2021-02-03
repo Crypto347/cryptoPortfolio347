@@ -43,7 +43,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         state$.value.clientsPage.section1Data.swiper1.items[3]
                     ]
                     return of(
-                        Actions.setIsHoverImageForClientsPageSection1Swiper1(
+                        Actions.setSwiperStateForClientsPageSection1Swiper1(
                             state$.value.clientsPage.section1Data.swiper1.items, 
                             _slides, 
                             state$.value.clientsPage.section1Data.swiper1.swiper.activeIndex, 
@@ -63,7 +63,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         state$.value.clientsPage.section1Data.swiper2.items[3]
                     ]
                     return of(
-                        Actions.setIsHoverImageForClientsPageSection1Swiper2(
+                        Actions.setSwiperStateForClientsPageSection1Swiper2(
                             state$.value.clientsPage.section1Data.swiper2.items,
                             _slides, 
                             state$.value.clientsPage.section1Data.swiper2.swiper.activeIndex, 
@@ -83,7 +83,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         state$.value.clientsPage.section2Data.swiper1.items[3]
                     ]
                     return of(
-                        Actions.setIsHoverImageForClientsPageSection2Swiper1(
+                        Actions.setSwiperStateForClientsPageSection2Swiper1(
                             state$.value.clientsPage.section2Data.swiper1.items, 
                             _slides, 
                             state$.value.clientsPage.section2Data.swiper1.swiper.activeIndex, 
@@ -103,7 +103,7 @@ export const swiperSetSwiperStateEpic = (action$, state$) =>
                         state$.value.clientsPage.section2Data.swiper2.items[3]
                     ]
                     return of(
-                        Actions.setIsHoverImageForClientsPageSection2Swiper2(
+                        Actions.setSwiperStateForClientsPageSection2Swiper2(
                             state$.value.clientsPage.section2Data.swiper2.items, 
                             _slides, 
                             state$.value.clientsPage.section2Data.swiper2.swiper.activeIndex, 

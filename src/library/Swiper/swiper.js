@@ -448,7 +448,7 @@ export const Swiper = (props) => {
             _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3], slides[4], last];
         }
         else _slides = slides.slice(activeIndex - 3, activeIndex + 3);
-        console.log("_slides",_slides)
+        // console.log("_slides",_slides)
         return _slides;
     }
 
@@ -512,7 +512,7 @@ export const Swiper = (props) => {
                 break;
             case 'image':
                 props.setIsHoverImage("on", key);
-                // props.swiperSetSwiperStateStart(props.component);
+                props.swiperSetSwiperStateStart(props.component);
                 break;
         }
     }
@@ -540,7 +540,7 @@ export const Swiper = (props) => {
                 // ];
                
                 props.setIsHoverImage("off", key);
-                // props.swiperSetSwiperStateStart(props.component);
+                props.swiperSetSwiperStateStart(props.component);
                 break;
         }
     }
@@ -573,8 +573,8 @@ export const Swiper = (props) => {
         }
         if(opt === "leftArrow"){
             switch(isHovering){
-                // case 'init':
-                //     return "swiper-arrow-left-wrapper";
+                case 'init':
+                    return "swiper-arrow-left-wrapper";
                 case 'on':
                     return "swiper-arrow-left-wrapper-hover-on";
                 case 'off':
@@ -583,8 +583,8 @@ export const Swiper = (props) => {
         }
         if(opt === "rightArrow"){
             switch(isHovering){
-                // case 'init':
-                //     return "swiper-arrow-right-wrapper";
+                case 'init':
+                    return "swiper-arrow-right-wrapper";
                 case 'on':
                     return "swiper-arrow-right-wrapper-hover-on";
                 case 'off':
@@ -900,7 +900,6 @@ export const Swiper = (props) => {
                             'clientsPageSection2Swiper1',
                             'clientsPageSection2Swiper2'
                         ].includes(props.component)){
-                            console.log(el.isHover)
                             return(
                                 <div 
                                     key={i} 
