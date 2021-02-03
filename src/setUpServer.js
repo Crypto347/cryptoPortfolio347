@@ -20063,31 +20063,31 @@ app.get('/api/clients-page/section1/swiper1', (req, res) => {
             id: 1,
             key: "clientsPageSection1Swiper1Id1",
             imageName: "Health&Co",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 2,
             key: "clientsPageSection1Swiper1Id2",
             imageName: "Brendster",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 3,
             key: "clientsPageSection1Swiper1Id3",
             imageName: "Technologyify",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 4,
             key: "clientsPageSection1Swiper1Id4",
             imageName: "DesignAndCo",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 5,
             key: "clientsPageSection1Swiper1Id5",
             imageName: "ClubyOrg",
-            isHover: "init"
+            isHover: "off"
         }
     ]
     res.json(countdownPageSec1Swiper1);
@@ -20099,31 +20099,31 @@ app.get('/api/clients-page/section1/swiper2', (req, res) => {
             id: 1,
             key: "clientsPageSection1Swiper2Id1",
             imageName: "fivefulTC",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 2,
             key: "clientsPageSection1Swiper2Id2",
             imageName: "verve_color",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 3,
             key: "clientsPageSection1Swiper2Id3",
             imageName: "OrgBLD",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 4,
             key: "clientsPageSection1Swiper2Id4",
             imageName: "sun&shine",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 5,
             key: "clientsPageSection1Swiper2Id5",
             imageName: "B&B",
-            isHover: "init"
+            isHover: "off"
         }
     ]
     res.json(countdownPageSec1Swiper2);
@@ -20135,31 +20135,31 @@ app.get('/api/clients-page/section2/swiper1', (req, res) => {
             id: 1,
             key: "clientsPageSection2Swiper1Id1",
             imageName: "Technologyify",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 2,
             key: "clientsPageSection2Swiper1Id2",
             imageName: "DesignAndCo",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 3,
             key: "clientsPageSection2Swiper1Id3",
             imageName: "ClubyOrg",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 4,
             key: "clientsPageSection2Swiper1Id4",
             imageName: "Health&Co",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 5,
             key: "clientsPageSection2Swiper1Id5",
             imageName: "Brendster",
-            isHover: "init"
+            isHover: "off"
         }
     ]
     res.json(countdownPageSec2Swiper1);
@@ -20171,31 +20171,31 @@ app.get('/api/clients-page/section2/swiper2', (req, res) => {
             id: 1,
             key: "clientsPageSection2Swiper2Id1",
             imageName: "OrgBLD",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 2,
             key: "clientsPageSection2Swiper2Id2",
             imageName: "sun&shine",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 3,
             key: "clientsPageSection2Swiper2Id3",
             imageName: "B&B",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 4,
             key: "clientsPageSection2Swiper2Id4",
             imageName: "fivefulTC",
-            isHover: "init"
+            isHover: "off"
         },
         {
             id: 5,
             key: "clientsPageSection2Swiper2Id5",
             imageName: "verve_color",
-            isHover: "init"
+            isHover: "off"
         }
     ]
     res.json(countdownPageSec2);

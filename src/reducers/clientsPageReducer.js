@@ -437,7 +437,7 @@ const setIsHoverImageForClientsPageSection2Swiper1 = (state, action) => {
     return {
         ...state,
         section2Data: {
-            ...state.section1Data,
+            ...state.section2Data,
             swiper1: {
                 ...state.section2Data.swiper1,
                 items: updatedItems,

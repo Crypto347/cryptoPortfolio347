@@ -512,6 +512,7 @@ export const Swiper = (props) => {
                 break;
             case 'image':
                 props.setIsHoverImage("on", key);
+                // props.swiperSetSwiperStateStart(props.component);
                 break;
         }
     }
@@ -528,7 +529,18 @@ export const Swiper = (props) => {
                 props.setIsHoveringSwipereDot('off', id);
                 break;
             case 'image':
+                // let _slides = [
+                //     props.contentArray[props.contentArray.length - 3], 
+                //     props.contentArray[props.contentArray.length - 2], 
+                //     props.contentArray[props.contentArray.length - 1], 
+                //     props.contentArray[0], 
+                //     props.contentArray[1], 
+                //     props.contentArray[2], 
+                //     props.contentArray[3]
+                // ];
+               
                 props.setIsHoverImage("off", key);
+                // props.swiperSetSwiperStateStart(props.component);
                 break;
         }
     }
@@ -561,8 +573,8 @@ export const Swiper = (props) => {
         }
         if(opt === "leftArrow"){
             switch(isHovering){
-                case 'init':
-                    return "swiper-arrow-left-wrapper";
+                // case 'init':
+                //     return "swiper-arrow-left-wrapper";
                 case 'on':
                     return "swiper-arrow-left-wrapper-hover-on";
                 case 'off':
@@ -571,8 +583,8 @@ export const Swiper = (props) => {
         }
         if(opt === "rightArrow"){
             switch(isHovering){
-                case 'init':
-                    return "swiper-arrow-right-wrapper";
+                // case 'init':
+                //     return "swiper-arrow-right-wrapper";
                 case 'on':
                     return "swiper-arrow-right-wrapper-hover-on";
                 case 'off':
@@ -903,11 +915,11 @@ export const Swiper = (props) => {
                                         // style={{height:"auto"}}
                                         // onClick={() => openPhotoViewer(el.id)}
                                     >
-                                        <img src={loadImage(el.key)}/>
-                                        {/* <SVGLogo
+                                        {/* <img src={loadImage(el.key)}/> */}
+                                        <SVGLogo
                                             svgKey={el.imageName}
                                             color={renderColorForSvg(props.component, el.isHover)}
-                                        /> */}
+                                        />
                                     </div>
                                 </div>
                             )
@@ -1142,6 +1154,7 @@ export default connect(
     (dispatch) => {
         return {
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
+            swiperSetSwiperStateStart: bindActionCreators(Actions.swiperSetSwiperStateStart, dispatch)
         };
     }
 )(Swiper);
