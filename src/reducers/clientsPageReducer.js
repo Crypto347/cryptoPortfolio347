@@ -358,78 +358,126 @@ const setSwiperStateForClientsPageSection2Swiper2 = (state, action) => {
 }
 
 const setIsHoverImageForClientsPageSection1Swiper1 = (state, action) => {
-    // let updatedItems = [...state.section1Column2Data.items];
-    // let item = {
-    //     ...updatedItems
-    //     .find(item => item.id === action.id), isHover: action.val};
+    let updatedItems = [...state.section1Data.swiper1.items];
+    let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
-    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+    let itemIndex = updatedItems.findIndex(item => item.key === action.key);
         
-    // updatedItems.splice(itemIndex, 1, item);
+    updatedItems.splice(itemIndex, 1, item);
+
+    let updatedSwiperSlides = [...state.section1Data.swiper1.swiper.slides];
+    let slideItem = {...updatedSwiperSlides.find(item => item.key === action.key), isHover: action.val};
+
+    let slideItemIndex = updatedSwiperSlides.findIndex(item => item.key === action.key);
+        
+    updatedSwiperSlides.splice(slideItemIndex, 1, slideItem);
 
     return {
         ...state,
-        // section1Column2Data: {
-        //     ...state.section1Column2Data,
-        //     items: updatedItems
-        // }
+        section1Data: {
+            ...state.section1Data,
+            swiper1: {
+                ...state.section1Data.swiper1,
+                items: updatedItems,
+                swiper: {
+                    ...state.section1Data.swiper1.swiper,
+                    slides: updatedSwiperSlides
+                }
+            }
+        } 
     };
 }
 
 const setIsHoverImageForClientsPageSection1Swiper2 = (state, action) => {
-    // let updatedItems = [...state.section1Column2Data.items];
-    // let item = {
-    //     ...updatedItems
-    //     .find(item => item.id === action.id), isHover: action.val};
+    let updatedItems = [...state.section1Data.swiper2.items];
+    let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
-    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+    let itemIndex = updatedItems.findIndex(item => item.key === action.key);
         
-    // updatedItems.splice(itemIndex, 1, item);
+    updatedItems.splice(itemIndex, 1, item);
+
+    let updatedSwiperSlides = [...state.section1Data.swiper2.swiper.slides];
+    let slideItem = {...updatedSwiperSlides.find(item => item.key === action.key), isHover: action.val};
+
+    let slideItemIndex = updatedSwiperSlides.findIndex(item => item.key === action.key);
+        
+    updatedSwiperSlides.splice(slideItemIndex, 1, slideItem);
 
     return {
         ...state,
-        // section1Column2Data: {
-        //     ...state.section1Column2Data,
-        //     items: updatedItems
-        // }
+        section1Data: {
+            ...state.section1Data,
+            swiper2: {
+                ...state.section1Data.swiper2,
+                items: updatedItems,
+                swiper: {
+                    ...state.section1Data.swiper2.swiper,
+                    slides: updatedSwiperSlides
+                }
+            }
+        } 
     };
 }
 
 const setIsHoverImageForClientsPageSection2Swiper1 = (state, action) => {
-    // let updatedItems = [...state.section1Column2Data.items];
-    // let item = {
-    //     ...updatedItems
-    //     .find(item => item.id === action.id), isHover: action.val};
+    let updatedItems = [...state.section2Data.swiper1.items];
+    let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
-    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+    let itemIndex = updatedItems.findIndex(item => item.key === action.key);
         
-    // updatedItems.splice(itemIndex, 1, item);
+    updatedItems.splice(itemIndex, 1, item);
+
+    let updatedSwiperSlides = [...state.section2Data.swiper1.swiper.slides];
+    let slideItem = {...updatedSwiperSlides.find(item => item.key === action.key), isHover: action.val};
+
+    let slideItemIndex = updatedSwiperSlides.findIndex(item => item.key === action.key);
+        
+    updatedSwiperSlides.splice(slideItemIndex, 1, slideItem);
 
     return {
         ...state,
-        // section1Column2Data: {
-        //     ...state.section1Column2Data,
-        //     items: updatedItems
-        // }
+        section2Data: {
+            ...state.section1Data,
+            swiper1: {
+                ...state.section2Data.swiper1,
+                items: updatedItems,
+                swiper: {
+                    ...state.section2Data.swiper1.swiper,
+                    slides: updatedSwiperSlides
+                }
+            }
+        } 
     };
 }
 
 const setIsHoverImageForClientsPageSection2Swiper2 = (state, action) => {
-    // let updatedItems = [...state.section1Column2Data.items];
-    // let item = {
-    //     ...updatedItems
-    //     .find(item => item.id === action.id), isHover: action.val};
+    let updatedItems = [...state.section2Data.swiper2.items];
+    let item = {...updatedItems.find(item => item.key === action.key), isHover: action.val};
 
-    // let itemIndex = updatedItems.findIndex(item => item.id === action.id);
+    let itemIndex = updatedItems.findIndex(item => item.key === action.key);
         
-    // updatedItems.splice(itemIndex, 1, item);
+    updatedItems.splice(itemIndex, 1, item);
+
+    let updatedSwiperSlides = [...state.section2Data.swiper2.swiper.slides];
+    let slideItem = {...updatedSwiperSlides.find(item => item.key === action.key), isHover: action.val};
+
+    let slideItemIndex = updatedSwiperSlides.findIndex(item => item.key === action.key);
+        
+    updatedSwiperSlides.splice(slideItemIndex, 1, slideItem);
 
     return {
         ...state,
-        // section1Column2Data: {
-        //     ...state.section1Column2Data,
-        //     items: updatedItems
-        // }
+        section2Data: {
+            ...state.section2Data,
+            swiper2: {
+                ...state.section2Data.swiper2,
+                items: updatedItems,
+                swiper: {
+                    ...state.section2Data.swiper2.swiper,
+                    slides: updatedSwiperSlides
+                }
+            }
+        } 
     };
 }
 
