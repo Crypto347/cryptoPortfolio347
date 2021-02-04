@@ -196,10 +196,3 @@ export function setInputFiledValueAndCheckValidation(obj, e, id, formName) {
         formName: formName
     };
 };
-
-export function swiperSetSwiperStateStart(component) {
-    return { 
-        type: actionTypes.SWIPER_SET_SWIPER_STATE_START,
-        component: component
-    };
-};

@@ -5,6 +5,5 @@ export const rootEpic = combineEpics(
     Epic.unmountComponentEpic,
     Epic.gotoNewPageEpic,
     Epic.portfolioNavigationOnClickStartEpic,
-    Epic.portfolioNavigationOnClickEpic,
-    Epic.swiperSetSwiperStateEpic
+    Epic.portfolioNavigationOnClickEpic
 );

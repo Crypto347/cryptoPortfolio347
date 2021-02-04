@@ -1075,8 +1075,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
-            swiperSetSwiperStateStart: bindActionCreators(Actions.swiperSetSwiperStateStart, dispatch)
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch)
         };
     }
 )(Swiper);
