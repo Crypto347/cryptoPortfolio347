@@ -295,6 +295,9 @@ export const Swiper = (props) => {
             }
             direction = e.movementX;
             swiperContent.style.transition = (swiperContent.offsetLeft - posX2) + "px";
+            // For sliding visually 
+            // console.log(swiperContent.offsetLeft, posX2)
+            // swiperContent.style.left =(swiperContent.offsetLeft - posX2) + "px";
         }
         
         function dragEnd (e) {
@@ -318,6 +321,8 @@ export const Swiper = (props) => {
             direction = 0;
             document.onmouseup = null;
             document.onmousemove = null;
+
+            // swiperContent.style.left = "0px";
         }
     }
 
@@ -839,6 +844,7 @@ export const Swiper = (props) => {
                                     >
                                         {/* <img src={loadImage(el.key)}/> */}
                                         <SVGLogo
+                                            width={getTranslateValue(props.translateWidth, null)}
                                             svgKey={el.imageName}
                                             component={props.component}
                                         />

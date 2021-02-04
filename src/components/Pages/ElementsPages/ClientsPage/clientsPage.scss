@@ -37,23 +37,23 @@
     }
 }
 
-// @media only screen and (max-width: 1120px){
-//     .clients-page {
-//         .clients-page-wrapper {
-//             .clients-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }
-//             .clients-page-section1-data-items {
-//                 width: calc(100% - 240px);
-//                 padding: 120px;
-//             }
-//             .clients-page-section2-data-items {
-//                 width: calc(100% - 240px);
-//                 padding: 120px;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1410px){
+    .clients-page {
+        .clients-page-wrapper {
+            .clients-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            .clients-page-section1-wrapper {
+                width: calc(100% - 80px);
+                padding: 120px 40px 120px 40px;
+            }
+            .clients-page-section2-wrapper {
+                width: calc(100% - 80px);
+                padding: 120px 40px 120px 40px;
+            }
+        }
+    }
+}
 
 // @media only screen and (max-width: 860px){
 //     .clients-page {

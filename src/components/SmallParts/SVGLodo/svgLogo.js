@@ -68,10 +68,10 @@ export const SVGLogo = (props) => {
             case 'Health&Co':
                 return (
                     <svg 
-                        width="240px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="43.883752441406244 10.748747253417974 412.2324951171875 90.50250549316405" 
+                        viewBox="43.883752441406244 30.748747253417974 412.2324951171875 90.50250549316405" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -139,10 +139,10 @@ export const SVGLogo = (props) => {
             case 'Brendster':
                 return (
                     <svg 
-                        width="280.9975219726562px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="43.883752441406244 20.748747253417974 412.2324951171875 90.50250549316405" 
+                        viewBox="43.883752441406244 30.748747253417974 412.2324951171875 90.50250549316405" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -207,10 +207,10 @@ export const SVGLogo = (props) => {
             case 'Technologyify':
                 return (
                     <svg 
-                        width="250px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="47.676855468750006 5.260020446777347 404.6462890625 129.4799591064453" 
+                        viewBox="67.676855468750006 15.260020446777347 404.6462890625 129.4799591064453" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -279,10 +279,10 @@ export const SVGLogo = (props) => {
             case 'DesignAndCo':
                 return (
                     <svg 
-                        width="250px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="-17.762493896484386 3.5449981689453125 535.5249877929688 142.91000366210938" 
+                        viewBox="-17.762493896484386 17.5449981689453125 535.5249877929688 142.91000366210938" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -347,10 +347,10 @@ export const SVGLogo = (props) => {
             case 'ClubyOrg':
                 return (
                     <svg 
-                        width="200px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="50.55750427246093 10.033729553222656 298.88499145507814 141.9325408935547" 
+                        viewBox="100.55750427246093 17.033729553222656 298.88499145507814 141.9325408935547" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -415,10 +415,10 @@ export const SVGLogo = (props) => {
             case 'fivefulTC':
                 return (
                     <svg 
-                        width="292.3749633789062px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="123.81251831054689 20.193728637695315 332.3749633789062 125.61254272460937" 
+                        viewBox="73.81251831054689 20.193728637695315 332.3749633789062 125.61254272460937" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -483,7 +483,7 @@ export const SVGLogo = (props) => {
             case 'verve_color':
                 return (
                     <svg 
-                        width="230px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
                         viewBox="47.39000244140627 0.571250915527344 405.21999511718747 161.1425018310547" 
@@ -554,10 +554,10 @@ export const SVGLogo = (props) => {
             case 'OrgBLD':
                 return (
                     <svg 
-                        width="250px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="90.82500000000002 18.661247253417969 318.34999999999997 124.67750549316406" 
+                        viewBox="115.82500000000002 18.661247253417969 318.34999999999997 124.67750549316406" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -625,10 +625,10 @@ export const SVGLogo = (props) => {
             case 'sun&shine':
                 return (
                     <svg 
-                        width="285.6100341796875px" 
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="51.694982910156256 0.483750915527338 416.6100341796875 164.96750183105468" 
+                        viewBox="51.694982910156256 -10.483750915527338 416.6100341796875 164.96750183105468" 
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
@@ -693,10 +693,10 @@ export const SVGLogo = (props) => {
             case 'B&B':
                 return (
                     <svg 
-                        width="202.79750366210936px"
+                        width={`${props.width}px`}
                         height="80px" 
                         xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="93.60124816894532 13.435020446777344 232.79750366210936 137.1299591064453"
+                        viewBox="133.60124816894532 5.435020446777344 232.79750366210936 137.1299591064453"
                         style={{background: "rgba(0, 0, 0, 0)"}}
                         preserveAspectRatio="xMidYMid"
                     >
