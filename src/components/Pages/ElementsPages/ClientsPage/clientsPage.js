@@ -278,7 +278,7 @@ export const ClientsPage = (props) => {
                             setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
                             swiperData={arr.swiper}
                             onlyImages
-                            // autoPlay
+                            autoPlay
                         />
                     );
                 case 'swiper2':
@@ -292,7 +292,7 @@ export const ClientsPage = (props) => {
                             setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
                             swiperData={arr.swiper}
                             onlyImages
-                            // autoPlay
+                            autoPlay
                         />
                     )
             }

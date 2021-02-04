@@ -96,7 +96,7 @@ export const Swiper = (props) => {
     const testimonialsPageSection2Content = useRef();
     const testimonialsPageSection3Content = useRef();
     // const [currentSwiper, setCurrentSwiper] = useState('');
-    const [relode, setRelode] = useState(false)
+    // const [relode, setRelode] = useState(false)
 
     const getHeight = () => window.innerHeight;
     const getWidth = () => window.innerWidth;
@@ -361,7 +361,7 @@ export const Swiper = (props) => {
         // })
         props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
         // console.log("con6", props.component)
-        setRelode(!relode)
+        // setRelode(!relode)
     }
 
     const smoothTransition = () => {
