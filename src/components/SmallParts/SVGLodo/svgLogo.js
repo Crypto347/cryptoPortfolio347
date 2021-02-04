@@ -46,7 +46,7 @@ export const SVGLogo = (props) => {
                 case 'init':
                     return "rgb(155, 155, 155)";
                 case 'on':
-                    return "rgb(37, 37, 37)";
+                    return "rgb(75, 75, 75)";
                 case 'off':
                     return "rgb(155, 155, 155)";    
             }
