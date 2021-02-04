@@ -102,6 +102,7 @@ export const Swiper = (props) => {
     const getWidth = () => window.innerWidth;
     
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
+    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
 
     // const [mouseDown, setMouseDown] = useState(false)
   
