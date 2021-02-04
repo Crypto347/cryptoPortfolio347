@@ -102,7 +102,7 @@ export const Swiper = (props) => {
     const getWidth = () => window.innerWidth;
     
     const [isHoveringLeftArrow, setIsHoveringLeftArrow] = useState("init");
-    const [isHoveringRightArrow, setIsHoveringRightArrow] = useState("init");
+
     // const [mouseDown, setMouseDown] = useState(false)
   
     // const [state, setState] = useState({
@@ -476,10 +476,6 @@ export const Swiper = (props) => {
             case 'swiperDot': 
                 props.setIsHoveringSwiperDot('on', id);
                 break;
-            case 'image':
-                props.setIsHoverImage("on", key);
-                props.swiperSetSwiperStateStart(props.component);
-                break;
         }
     }
 
@@ -493,10 +489,6 @@ export const Swiper = (props) => {
                 break;
             case 'swiperDot': 
                 props.setIsHoveringSwiperDot('off', id);
-                break;
-            case 'image':
-                props.setIsHoverImage("off", key);
-                props.swiperSetSwiperStateStart(props.component);
                 break;
         }
     }
@@ -706,29 +698,6 @@ export const Swiper = (props) => {
         }
     } 
 
-    const renderColorForSvg = (opt, isHover) => {
-        if(['clientsPageSection1Swiper1', 'clientsPageSection1Swiper2'].includes(opt)){
-            switch(isHover) {
-                case 'init':
-                    return "rgb(155, 155, 155)";
-                case 'on':
-                    return "rgb(37, 37, 37)";
-                case 'off':
-                    return "rgb(155, 155, 155)";    
-            }
-        }
-        if(['clientsPageSection2Swiper1', 'clientsPageSection2Swiper2'].includes(opt)){
-            switch(isHover) {
-                case 'init':
-                    return "rgb(155, 155, 155)";
-                case 'on':
-                    return "rgb(239, 239, 239)";
-                case 'off':
-                    return "rgb(155, 155, 155)";    
-            }
-        }
-    }
-
     const setRef = (opt) => {
         switch(opt){
             case 'testimonialsContent':
@@ -865,15 +834,13 @@ export const Swiper = (props) => {
                                 >
                                     <div 
                                         className="slide-image"
-                                        onMouseEnter={() => handleMouseEnter("image", null, el.key)} 
-                                        onMouseLeave={() => handleMouseLeave("image", null, el.key)}
                                         // style={{height:"auto"}}
                                         // onClick={() => openPhotoViewer(el.id)}
                                     >
                                         {/* <img src={loadImage(el.key)}/> */}
                                         <SVGLogo
                                             svgKey={el.imageName}
-                                            color={renderColorForSvg(props.component, el.isHover)}
+                                            component={props.component}
                                         />
                                     </div>
                                 </div>

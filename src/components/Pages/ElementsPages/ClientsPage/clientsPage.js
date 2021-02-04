@@ -56,7 +56,7 @@ import * as Selectors from '../../../../reducers/selectors';
 import { 
     H15,
     H45,
-    EH70
+    EH90
 } from '../../../UtilityComponents';
 
 /**
@@ -334,7 +334,7 @@ export const ClientsPage = (props) => {
         return(
             <div className={renderClassName("sectionWrapper",section)}>
                 {renderCountdownDataSectionContent(section, "swiper1", obj.swiper1)}
-                <EH70/>
+                <EH90/>
                 {renderCountdownDataSectionContent(section, "swiper2", obj.swiper2)}
             </div>
         )

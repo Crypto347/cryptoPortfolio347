@@ -300,7 +300,6 @@ const setSwiperStateForClientsPageSection1Swiper2 = (state, action) => {
         transition: action.transition,
         rerender: action.rerender
     };
-    console.log(updatedSwiper)
     return {
         ...state,
         section1Data: {
