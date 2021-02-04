@@ -233,7 +233,6 @@ export const ClientsPage = (props) => {
 
     const renderClientsPageSwiperData = (section, swiper, arr) => {
         let paddingLeftRight = renderSwiperWidth(size.width);
-        console.log(paddingLeftRight)
         if(section === "section1"){
             switch(swiper) {
                 case 'swiper1':
