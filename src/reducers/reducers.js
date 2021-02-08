@@ -51,6 +51,7 @@ import pieChartsPageReducer from './pieChartsPageReducer';
 import countersPageReducer from './countersPageReducer';
 import countdownPageReducer from './countdownPageReducer';
 import clientsPageReducer from './clientsPageReducer';
+import progressBarPageReducer from './progressBarPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -99,5 +100,6 @@ export default (history) => combineReducers({
     pieChartsPage: pieChartsPageReducer,
     countersPage: countersPageReducer,
     countdownPage: countdownPageReducer,
-    clientsPage: clientsPageReducer
+    clientsPage: clientsPageReducer,
+    progressBarPage: progressBarPageReducer
 });

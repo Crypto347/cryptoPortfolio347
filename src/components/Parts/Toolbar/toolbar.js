@@ -269,6 +269,7 @@ export const Toolbar = (props) => {
             case 'countersPage':
             case 'countdownPage':
             case 'clientsPage':
+            case 'progressBarPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':

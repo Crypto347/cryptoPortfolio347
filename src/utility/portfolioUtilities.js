@@ -82,6 +82,8 @@ export const findPathOfIds = (path) => {
             return [6, 62, 624];
         case 'clients':
             return [6, 62, 625];
+        case 'progress-bar':
+            return [6, 62, 626];
     }
 
     //Second element of updatedPath array

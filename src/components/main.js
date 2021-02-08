@@ -75,7 +75,7 @@ import PieChartsPage from './Pages/ElementsPages/PieChartsPage/pieCartsPage';
 import CountersPage from './Pages/ElementsPages/CountersPage/countersPage';
 import CountdownPage from './Pages/ElementsPages/CountdownPage/countdownPage';
 import ClientsPage from './Pages/ElementsPages/ClientsPage/clientsPage';
-
+import ProgressBarPage from './Pages/ElementsPages/ProgressBarPage/progressBarPage';
 
 /**
  * Actions
@@ -158,6 +158,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/progress-bar"}
+                    component={ProgressBarPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/clients"}

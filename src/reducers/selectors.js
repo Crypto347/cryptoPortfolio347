@@ -471,3 +471,9 @@ export const getClientsPageState = createSelector(
     (x) => x
 );
 
+const getProgressBarPage = (state) => state.progressBarPage;
+
+export const getProgressBarPageState = createSelector(
+    [getProgressBarPage],
+    (x) => x
+);

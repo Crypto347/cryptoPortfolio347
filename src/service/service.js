@@ -2189,6 +2189,60 @@ export function fetchClientsPageSection2Swiper2Data() {
             });
     };
 }
+
+export function fetchProgressBarPageSection1Column1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchProgressBarPageSection1Column1DataBegin());
+        return fetch("http://localhost:3005/api/section4/statisticsData")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchProgressBarPageSection1Column1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchProgressBarPageSection1Column1DataFailur(error))
+            });
+    };
+}
+
+export function fetchProgressBarPageSection1Column2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchProgressBarPageSection1Column2DataBegin());
+        return fetch("http://localhost:3005/api/section4/statisticsData")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchProgressBarPageSection1Column2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchProgressBarPageSection1Column2DataFailur(error))
+            });
+    };
+}
+
+export function fetchProgressBarPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchProgressBarPageSection2DataBegin());
+        return fetch("http://localhost:3005/api/section4/statisticsData")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchProgressBarPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchProgressBarPageSection2DataFailur(error))
+            });
+    };
+}
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);
