@@ -155,14 +155,29 @@ export const Swiper = (props) => {
         }
 
         if(!props.content.loading && props.showNumbersOfSlides === 3){
-            _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]]
-            // setState({
-            //     ...state,
-            //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
-            //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
-            // })
-            props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, props.swiperData.rerender);
-            // console.log("con3", props.component)
+
+            swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
+            swiperContent = document.getElementById(`swiper-content-${props.component}`);
+            
+            _slides = [
+                slidesArray[slidesArray.length - 2], 
+                slidesArray[slidesArray.length - 1], 
+                slidesArray[0], 
+                slidesArray[1], 
+                slidesArray[2]
+            ];
+           
+            if(props.swiperData.rerender) {
+                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
+                // console.log("con1", props.component)
+                translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+                _updatedSlides = Utility.updateSlidesFor3SlidesPerSwiper(props.swiperData.slides, props.swiperData.activeIndex);
+            }else{
+                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                // console.log("con2", props.component)
+                translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
+            }
+            slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
         }
         
         if(!props.content.loading && props.showNumbersOfSlides === 5){
@@ -386,29 +401,15 @@ export const Swiper = (props) => {
             // }
         }
         if(props.showNumbersOfSlides === 3){
-            if(activeIndex === slides.length - 1){
-                _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
-            }
-            if (activeIndex === 0){
-                _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]];
-            }
-            if(activeIndex === 1){
-                _slides = slides.slice(activeIndex - 1, activeIndex + 5);
-            }
-            if(activeIndex === 2){
-                _slides = [slides[1], slides[2], slides[3], slides[slides.length - 1], slides[0]];
-            }
-            if(activeIndex === 3){
-                _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]];
-            }
+            _slides = Utility.updateSlidesFor3SlidesPerSwiper(slides, activeIndex);
             // console.log("7")
-            // props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
-            setState({
-                ...state,
-                _slides,
-                transition: 0,
-                translate: getTranslateValue(props.translateWidth, props.translateHeight)
-            })
+            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            // setState({
+            //     ...state,
+            //     _slides,
+            //     transition: 0,
+            //     translate: getTranslateValue(props.translateWidth, props.translateHeight)
+            // })
         }
         if(props.showNumbersOfSlides === 5){
             _slides = Utility.updateSlidesFor5SlidesPerSwiper(slides, activeIndex);
@@ -635,46 +636,46 @@ export const Swiper = (props) => {
                 return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
                 return Images.ID_3_SMALL_SLIDER_4;
-            case 'clientsPageSection1Swiper1Id1': 
-                return Images.CLIENTS_LOGO_1;
-            case 'clientsPageSection1Swiper1Id2': 
-                return Images.CLIENTS_LOGO_2;
-            case 'clientsPageSection1Swiper1Id3': 
-                return Images.CLIENTS_LOGO_3;
-            case 'clientsPageSection1Swiper1Id4': 
-                return Images.CLIENTS_LOGO_4;
-            case 'clientsPageSection1Swiper1Id5': 
-                return Images.CLIENTS_LOGO_5;
-            case 'clientsPageSection1Swiper2Id1': 
-                return Images.CLIENTS_LOGO_6;
-            case 'clientsPageSection1Swiper2Id2': 
-                return Images.CLIENTS_LOGO_7;
-            case 'clientsPageSection1Swiper2Id3': 
-                return Images.CLIENTS_LOGO_8;
-            case 'clientsPageSection1Swiper2Id4': 
-                return Images.CLIENTS_LOGO_9;
-            case 'clientsPageSection1Swiper2Id5': 
-                return Images.CLIENTS_LOGO_10;
-            case 'clientsPageSection2Swiper1Id4': 
-                return Images.CLIENTS_LOGO_1_LIGHT;
-            case 'clientsPageSection2Swiper1Id5': 
-                return Images.CLIENTS_LOGO_2_LIGHT;
-            case 'clientsPageSection2Swiper1Id1': 
-                return Images.CLIENTS_LOGO_3_LIGHT;
-            case 'clientsPageSection2Swiper1Id2': 
-                return Images.CLIENTS_LOGO_4_LIGHT;
-            case 'clientsPageSection2Swiper1Id3': 
-                return Images.CLIENTS_LOGO_5_LIGHT;
-            case 'clientsPageSection2Swiper2Id4': 
-                return Images.CLIENTS_LOGO_6_LIGHT;
-            case 'clientsPageSection2Swiper2Id5': 
-                return Images.CLIENTS_LOGO_7_LIGHT;
-            case 'clientsPageSection2Swiper2Id1': 
-                return Images.CLIENTS_LOGO_8_LIGHT;
-            case 'clientsPageSection2Swiper2Id2': 
-                return Images.CLIENTS_LOGO_9_LIGHT;
-            case 'clientsPageSection2Swiper2Id3': 
-                return Images.CLIENTS_LOGO_10_LIGHT;
+            // case 'clientsPageSection1Swiper1Id1': 
+            //     return Images.CLIENTS_LOGO_1;
+            // case 'clientsPageSection1Swiper1Id2': 
+            //     return Images.CLIENTS_LOGO_2;
+            // case 'clientsPageSection1Swiper1Id3': 
+            //     return Images.CLIENTS_LOGO_3;
+            // case 'clientsPageSection1Swiper1Id4': 
+            //     return Images.CLIENTS_LOGO_4;
+            // case 'clientsPageSection1Swiper1Id5': 
+            //     return Images.CLIENTS_LOGO_5;
+            // case 'clientsPageSection1Swiper2Id1': 
+            //     return Images.CLIENTS_LOGO_6;
+            // case 'clientsPageSection1Swiper2Id2': 
+            //     return Images.CLIENTS_LOGO_7;
+            // case 'clientsPageSection1Swiper2Id3': 
+            //     return Images.CLIENTS_LOGO_8;
+            // case 'clientsPageSection1Swiper2Id4': 
+            //     return Images.CLIENTS_LOGO_9;
+            // case 'clientsPageSection1Swiper2Id5': 
+            //     return Images.CLIENTS_LOGO_10;
+            // case 'clientsPageSection2Swiper1Id4': 
+            //     return Images.CLIENTS_LOGO_1_LIGHT;
+            // case 'clientsPageSection2Swiper1Id5': 
+            //     return Images.CLIENTS_LOGO_2_LIGHT;
+            // case 'clientsPageSection2Swiper1Id1': 
+            //     return Images.CLIENTS_LOGO_3_LIGHT;
+            // case 'clientsPageSection2Swiper1Id2': 
+            //     return Images.CLIENTS_LOGO_4_LIGHT;
+            // case 'clientsPageSection2Swiper1Id3': 
+            //     return Images.CLIENTS_LOGO_5_LIGHT;
+            // case 'clientsPageSection2Swiper2Id4': 
+            //     return Images.CLIENTS_LOGO_6_LIGHT;
+            // case 'clientsPageSection2Swiper2Id5': 
+            //     return Images.CLIENTS_LOGO_7_LIGHT;
+            // case 'clientsPageSection2Swiper2Id1': 
+            //     return Images.CLIENTS_LOGO_8_LIGHT;
+            // case 'clientsPageSection2Swiper2Id2': 
+            //     return Images.CLIENTS_LOGO_9_LIGHT;
+            // case 'clientsPageSection2Swiper2Id3': 
+            //     return Images.CLIENTS_LOGO_10_LIGHT;
             default:
                 return ""; 
         }

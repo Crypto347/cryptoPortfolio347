@@ -11,6 +11,24 @@ export const updateSlidesFullScreen = (slides, activeIndex, swiperData) => {
     return _slides;
 }
 
+export const updateSlidesFor3SlidesPerSwiper = (slides, activeIndex) => {
+    let _slides = [];
+    
+    if(activeIndex === slides.length - 2){
+        let first = slides[slides.length - 4] === undefined ? slides[slides.length - 1] : slides[slides.length - 4];
+        _slides = [first, slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0]];
+    }else if(activeIndex === slides.length - 1){
+        _slides = [slides[slides.length - 3], slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1]];
+    }else if(activeIndex === 0){
+        _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
+    }else if(activeIndex === 1){
+        let last = slides[3] === undefined ? slides[slides.length - 1] : slides[3];
+        _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[1], slides[2], last];
+    }
+    else _slides = slides.slice(activeIndex - 2, activeIndex + 2);
+
+    return _slides;
+}
 
 export const updateSlidesFor5SlidesPerSwiper = (slides, activeIndex) => {
     let _slides = [];

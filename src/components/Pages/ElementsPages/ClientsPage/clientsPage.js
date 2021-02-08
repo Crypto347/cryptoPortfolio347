@@ -231,8 +231,19 @@ export const ClientsPage = (props) => {
         }
     }
 
+    const renderSlidesNumber = (size) => {
+        if(size > 950){
+            return 5;
+        } else if(size <= 950 && size > 530){
+            return 3;
+        } else if(size <= 530){
+            return 1;
+        }
+    }
+
     const renderClientsPageSwiperData = (section, swiper, arr) => {
         let paddingLeftRight = renderSwiperWidth(size.width);
+        let numberOfSlides = renderSlidesNumber(size.width);
         if(section === "section1"){
             switch(swiper) {
                 case 'swiper1':
@@ -241,8 +252,8 @@ export const ClientsPage = (props) => {
                             component="clientsPageSection1Swiper1"
                             contentArray={arr.items}
                             content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/5}
-                            showNumbersOfSlides={5}
+                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                            showNumbersOfSlides={numberOfSlides}
                             setSwiperState={props.setSwiperStateForClientsPageSection1Swiper1}
                             swiperData={arr.swiper}
                             onlyImages
@@ -255,8 +266,8 @@ export const ClientsPage = (props) => {
                             component="clientsPageSection1Swiper2"
                             contentArray={arr.items}
                             content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/5}
-                            showNumbersOfSlides={5}
+                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                            showNumbersOfSlides={numberOfSlides}
                             setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
                             swiperData={arr.swiper}
                             onlyImages
@@ -273,8 +284,8 @@ export const ClientsPage = (props) => {
                             component="clientsPageSection2Swiper1"
                             contentArray={arr.items}
                             content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/5}
-                            showNumbersOfSlides={5}
+                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                            showNumbersOfSlides={numberOfSlides}
                             setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
                             swiperData={arr.swiper}
                             onlyImages
@@ -287,8 +298,8 @@ export const ClientsPage = (props) => {
                             component="clientsPageSection2Swiper2"
                             contentArray={arr.items}
                             content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/5}
-                            showNumbersOfSlides={5}
+                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                            showNumbersOfSlides={numberOfSlides}
                             setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
                             swiperData={arr.swiper}
                             onlyImages
