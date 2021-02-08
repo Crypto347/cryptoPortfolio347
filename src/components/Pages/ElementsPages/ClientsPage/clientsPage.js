@@ -205,7 +205,7 @@ export const ClientsPage = (props) => {
     const renderBackgroundColor = (section) => {
         switch(section) {
             case 'section1':
-                return 'rgb(239, 239, 239)';
+                return 'transparent';
             case 'section2':
                 return 'black';
             default:
@@ -316,7 +316,7 @@ export const ClientsPage = (props) => {
                 <div 
                     className="clients-page-loading-error" 
                     style={{
-                        height: `${size.height/2}px`,
+                        height: `${size.height/4}px`,
                         background: `${renderBackgroundColor(section)}`
                     }}
                 >
@@ -336,7 +336,7 @@ export const ClientsPage = (props) => {
                 <div 
                     className="clients-page-loading-error" 
                     style={{
-                        height: `${size.height/2}px`,
+                        height: `${size.height/4}px`,
                         background: `${renderBackgroundColor(section)}`
                     }}
                 >

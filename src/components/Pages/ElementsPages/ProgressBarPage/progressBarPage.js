@@ -308,7 +308,7 @@ export const ProgressBarPage = (props) => {
             {renderToolbars()}
             <div className="progress-bar-page-wrapper">
                 <div className="progress-bar-page-header">
-                    <H45 className="h45-nero-lustria">Tabs</H45>
+                    <H45 className="h45-nero-lustria">Progress Bar</H45>
                 </div>
                 <div className="grey-line"/>
                 <div className="progress-bar-page-section-1-data-wrapper">
