@@ -316,7 +316,7 @@ export const ClientsPage = (props) => {
                 <div 
                     className="clients-page-loading-error" 
                     style={{
-                        height: `${size.height/4}px`,
+                        height: `${size.height/6}px`,
                         background: `${renderBackgroundColor(section)}`
                     }}
                 >
@@ -336,7 +336,7 @@ export const ClientsPage = (props) => {
                 <div 
                     className="clients-page-loading-error" 
                     style={{
-                        height: `${size.height/4}px`,
+                        height: `${size.height/6}px`,
                         background: `${renderBackgroundColor(section)}`
                     }}
                 >
