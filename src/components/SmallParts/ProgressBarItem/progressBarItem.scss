@@ -1,25 +1,25 @@
-.statistics-item {
-    .statistics-item-wrapper {
+.progress-bar-item {
+    .progress-bar-item-wrapper {
         display: flex;
         justify-content: space-between;
         -webkit-animation: appearPercent 2s ease;
         -moz-animation: appearPercent 2s ease;
         -o-animation: appearPercent 2s ease;
         animation: appearPercent 2s ease;
-        .statistics-item-percent {
+        .progress-bar-item-percent {
             font-size: 25px;
             font-family: 'Teko', sans-serif;
             color: black;
         }
     }
-    .statistics-item-percent-line-wrapper {
+    .progress-bar-item-percent-line-wrapper {
         position: relative;
-        .statistics-item-percent-line-back {
-            width: 450px;
+        .progress-bar-item-percent-line-back {
+            // width: 450px;
             border: 1.5px solid rgba(155, 155, 155, 0.5);
             background: rgba(155, 155, 155, 1);
         }
-        .statistics-item-percent-line-top {
+        .progress-bar-item-percent-line-top {
             position: absolute;
             top: 0%;
             border: 1.5px solid black;
@@ -32,28 +32,13 @@
     }
 }
 
-@media only screen and (max-width: 1120px){
-    .statistics-item {
-        .statistics-item-percent-line-wrapper {
-            .statistics-item-percent-line-back {
-                width: calc(100vw - 160px);
-            }
-        }
-    }
-}
-
 @media only screen and (max-width: 400px){
-    .statistics-item {
-        .statistics-item-wrapper {
+    .progress-bar-item {
+        .progress-bar-item-wrapper {
             -webkit-animation: appearPercentSmallScreen 2s ease;
             -moz-animation: appearPercentSmallScreen 2s ease;
             -o-animation: appearPercentSmallScreen 2s ease;
             animation: appearPercentSmallScreen 2s ease;
-        }
-        .statistics-item-percent-line-wrapper {
-            .statistics-item-percent-line-back {
-                width: calc(100vw - 100px);
-            }
         }
     }
 }

@@ -27,7 +27,7 @@ import './progressBarPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import Tabs from '../../../SmallParts/Tabs/tabs';
+import ProgressBarItem from '../../../SmallParts/ProgressBarItem/progressBarItem';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -185,6 +185,21 @@ export const ProgressBarPage = (props) => {
         }
     }
 
+    const renderProgressBarPageDate = (arr, component) => {
+        return(
+            <>{arr.map((el,i) => {
+                return(
+                    <ProgressBarItem 
+                        key={i}
+                        label={el.label}
+                        percent={el.percent}
+                        component={component}
+                    />
+                )
+            })}</>
+        )
+    }
+
     const renderProgressBarPageSection1Column1DataContent = () => {
         if(props.progressBarPage.section1Column1Data.loading && !props.progressBarPage.section1Column1Data.error){
             return(
@@ -197,19 +212,11 @@ export const ProgressBarPage = (props) => {
             )
         }
         if(!props.progressBarPage.section1Column1Data.loading && !props.progressBarPage.section1Column1Data.error){
-            // return(
-            //     <Tabs
-            //         array={props.tabsPage.section1Column1Data.items}
-            //         page="tabsPage"
-            //         tabsKey="section1Column1"
-            //         setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
-            //         setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
-            //         rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-            //         tabsCoordinateRange={tabsCoordinateRange}
-            //         tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column1}
-            //         updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-            //     />
-            // )
+            return(
+                <div className="progress-bar-page-section1-column1-items">
+                    {renderProgressBarPageDate(props.progressBarPage.section1Column1Data.items, "progressBarPageSection1Column1")}
+                </div>
+            )
         }
         if(!props.progressBarPage.section1Column1Data.loading && props.progressBarPage.section1Column1Data.error){
             return(
@@ -217,7 +224,7 @@ export const ProgressBarPage = (props) => {
                     className="progress-bar-page-loading-error" 
                     // style={{height: `${size.height}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.tabsPage.section1Column1Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${props.progressBarPage.section1Column1Data.error}`}</H15>
                 </div>
             )
         }
@@ -235,19 +242,11 @@ export const ProgressBarPage = (props) => {
             )
         }
         if(!props.progressBarPage.section1Column2Data.loading && !props.progressBarPage.section1Column2Data.error){
-            // return(
-            //     <Tabs
-            //         array={props.tabsPage.section1Column2Data.items}
-            //         page="tabsPage"
-            //         tabsKey="section1Column2"
-            //         setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
-            //         setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
-            //         rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-            //         tabsCoordinateRange={tabsCoordinateRange}
-            //         tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column2}
-            //         updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-            //     />
-            // )
+            return(
+                <div className="progress-bar-page-section1-column2-items">
+                    {renderProgressBarPageDate(props.progressBarPage.section1Column2Data.items, "progressBarPageSection1Column2")}
+                </div>
+            )
         }
         if(!props.progressBarPage.section1Column2Data.loading && props.progressBarPage.section1Column2Data.error){
             return(
@@ -273,19 +272,11 @@ export const ProgressBarPage = (props) => {
             )
         }
         if(!props.progressBarPage.section2Data.loading && !props.progressBarPage.section2Data.error){
-            // return(
-            //     <Tabs
-            //         array={props.tabsPage.section2Data.items}
-            //         page="tabsPage"
-            //         tabsKey="section2"
-            //         setActiveTab={props.setActiveTabOfSection2TabsPage}
-            //         setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
-            //         rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-            //         tabsCoordinateRange={tabsCoordinateRange}
-            //         tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
-            //         updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-            //     />
-            // )
+            return(
+                <div className="progress-bar-page-section2-items">
+                    {renderProgressBarPageDate(props.progressBarPage.section2Data.items, "progressBarPageSection2")}
+                </div>
+            )
         }
         if(!props.progressBarPage.section2Data.loading && props.progressBarPage.section2Data.error){
             return(
@@ -344,15 +335,6 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setIsHoverTabOfSection1Column1TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection1Column1TabsPage, dispatch),
-            setIsHoverTabOfSection1Column2TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection1Column2TabsPage, dispatch),
-            setIsHoverTabOfSection2TabsPage: bindActionCreators(Actions.setIsHoverTabOfSection2TabsPage, dispatch),
-            setActiveTabOfSection1Column1TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column1TabsPage, dispatch),
-            setActiveTabOfSection1Column2TabsPage: bindActionCreators(Actions.setActiveTabOfSection1Column2TabsPage, dispatch),
-            setActiveTabOfSection2TabsPage: bindActionCreators(Actions.setActiveTabOfSection2TabsPage, dispatch),
-            rememberCoordinateRangeForTabsPage: bindActionCreators(Actions.rememberCoordinateRangeForTabsPage, dispatch),
-            initUnderlinesStyleStateForTabsPage: bindActionCreators(Actions.initUnderlinesStyleStateForTabsPage, dispatch),
-            updateTabsUnderlinesStyleValuesForTabsPage: bindActionCreators(Actions.updateTabsUnderlinesStyleValuesForTabsPage, dispatch),
         };
     }
 )(ProgressBarPage);

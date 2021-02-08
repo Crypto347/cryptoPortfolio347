@@ -26,7 +26,7 @@ import './statistics.scss';
  */
 
 import Loading from '../../SmallParts/Loading/loading';
-import StatisticItem from '../../SmallParts/StatisticsItem/statisticsItem';
+import ProgressBarItem from '../../SmallParts/ProgressBarItem/progressBarItem';
 
 /**
  * Services
@@ -114,10 +114,11 @@ export const Statistics = (props) => {
         return(
             <div>{props.statisticsData.items.map((el,i) => {
                 return(
-                    <StatisticItem 
+                    <ProgressBarItem 
                         key={i}
                         label={el.label}
                         percent={el.percent}
+                        component="statistics"
                     />
                 )
             })}</div>
