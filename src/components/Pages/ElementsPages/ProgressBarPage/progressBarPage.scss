@@ -1,7 +1,7 @@
 .progress-bar-page {
     width: calc(100% + 18px);
     .progress-bar-page-loading-error {
-        width: calc(100% - 40px);
+        width: calc(50% - 40px);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -74,6 +74,10 @@
 @media only screen and (max-width: 860px){
     .progress-bar-page {
         .progress-bar-page-wrapper {
+            .progress-bar-page-loading-error {
+                width: calc(100% - 40px);
+                height: 200px;
+            }
             .progress-bar-page-header {
                 padding: 90px 40px 90px 40px;
             }

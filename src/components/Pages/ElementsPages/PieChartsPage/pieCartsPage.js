@@ -78,7 +78,6 @@ export const PieCartsPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [showComponentSection1, setShowComponentSection1] = useState(false);
     const [showComponentSection2, setShowComponentSection2] = useState(false);
     
     /**
@@ -98,10 +97,6 @@ export const PieCartsPage = (props) => {
         if(props.pieChartsPage.section2Data.items.length === 0){
             props.fetchPieChartsPageSection2Data();
         }
-
-        // On init render section 1
-
-        setShowComponentSection1(true);
 
         // Scroll to the top of the screen
 
@@ -217,21 +212,19 @@ export const PieCartsPage = (props) => {
     const renderPieChartsPageSection1Data = (arr) => {
         return(
             <div className="pie-charts-page-section1-data-items">{arr.items.map((el, i) => {
-                if(showComponentSection1){
-                    return(
-                        <div 
-                            key={i}
-                            className="pie-charts-page-section1-data-item"
-                        >
-                            <PieChartItem
-                                chartKey={el.key}
-                                percent={el.percent}
-                                header={el.header}
-                                chartColor="black"
-                            />
-                        </div>
-                    )
-                }
+                return(
+                    <div 
+                        key={i}
+                        className="pie-charts-page-section1-data-item"
+                    >
+                        <PieChartItem
+                            chartKey={el.key}
+                            percent={el.percent}
+                            header={el.header}
+                            chartColor="black"
+                        />
+                    </div>
+                )
             })}</div>
         )
     }

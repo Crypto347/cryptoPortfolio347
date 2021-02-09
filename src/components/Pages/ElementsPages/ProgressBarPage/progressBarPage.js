@@ -80,6 +80,7 @@ export const ProgressBarPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showComponentSection2, setShowComponentSection2] = useState(false);
     
     /**
      * Methods
@@ -119,11 +120,12 @@ export const ProgressBarPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.progressBarPage.section2Data.items.length]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
         let el = document.getElementById("progressBarPage");
+        let progressBarPageSection2 = document.getElementById("progressBarPageSection2");
 
         // Show or hide BackToTop component
 
@@ -139,6 +141,22 @@ export const ProgressBarPage = (props) => {
             setScrollingUp(false);
         }else{
             setScrollingUp(true);
+        }
+        
+        if(props.progressBarPage.section2Data.items.length !== 0){
+            // Render the component only when it appears on the screen
+            
+            if(scrollHeight >= progressBarPageSection2.offsetTop - size.height/2 - 400){
+                setShowComponentSection2(true);
+            }
+
+            // Render the component only when it appears on a vertically oriented screen
+            
+            if(size.width - size.height < 0){
+                if(scrollHeight >= progressBarPageSection2.offsetTop - size.height/2 - 900){
+                    setShowComponentSection2(true);
+                }
+            }
         }
     }
 
@@ -273,9 +291,12 @@ export const ProgressBarPage = (props) => {
         }
         if(!props.progressBarPage.section2Data.loading && !props.progressBarPage.section2Data.error){
             return(
-                <div className="progress-bar-page-section2-items">
-                    {renderProgressBarPageDate(props.progressBarPage.section2Data.items, "progressBarPageSection2")}
-                </div>
+                <>
+                    {showComponentSection2 ? 
+                    <div className="progress-bar-page-section2-items">
+                        {renderProgressBarPageDate(props.progressBarPage.section2Data.items, "progressBarPageSection2")}
+                    </div> : null}
+                </>
             )
         }
         if(!props.progressBarPage.section2Data.loading && props.progressBarPage.section2Data.error){
@@ -308,7 +329,10 @@ export const ProgressBarPage = (props) => {
                     <EH70/> */}
                     {renderProgressBarPageSection1Column2DataContent()}
                 </div>
-                <div className="progress-bar-page-section-2-data-wrapper">
+                <div 
+                    id="progressBarPageSection2"
+                    className="progress-bar-page-section-2-data-wrapper"
+                >
                     {renderProgressBarPageSection2DataContent()}
                 </div>
             </div>
