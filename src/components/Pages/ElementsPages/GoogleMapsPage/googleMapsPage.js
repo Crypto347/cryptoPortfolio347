@@ -174,9 +174,7 @@ export const GoogleMapsPage = (props) => {
     const renderGoogleMapsPageSection1Column1DataContent = () => {
         return(
             <div className="google-maps-page-section1-column1-data">
-                <GoogleMapContainer
-                    mapKey="googleMapSection1Column1"
-                />
+                <GoogleMapContainer/>
             </div>
         )
     } 
@@ -192,9 +190,7 @@ export const GoogleMapsPage = (props) => {
     const renderGoogleMapsPageSection2DataContent = () => {
         return(
             <div className="google-maps-page-section2-data">
-                <GoogleMapContainer
-                    mapKey="googleMapSection2"
-                />
+                <GoogleMapContainer/>
             </div>
         )
     } 
