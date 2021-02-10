@@ -2243,6 +2243,25 @@ export function fetchProgressBarPageSection2Data() {
             });
     };
 }
+
+export function fetchHeadingsPageData() {
+    return dispatch => {
+        dispatch(Actions.fetchHeadingsPageDataBegin());
+        return fetch("http://localhost:3005/api/headings-page")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchHeadingsPageDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchHeadingsPageDataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

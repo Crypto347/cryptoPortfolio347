@@ -9,6 +9,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.h70-black-lustria {
+    font-size: 70px;
+    color: black;
+    font-family: 'Lustria', serif;
+}
+
 .h70-black-poppins {
     font-size: 70px;
     color: black;
@@ -45,14 +51,14 @@
     }
 }
 
-// @media only screen and (max-width: 600px){
-//     .h65-black-teko {
-//         font-size: 50px;
-//     }
-//     .h65-black-lustria {
-//         font-size: 45px;
-//     }
-// }
+@media only screen and (max-width: 480px){
+    .h70-black-lustria {
+        font-size: 50px;
+    }
+    .h70-black-poppins {
+        font-size: 45px;
+    }
+}
 
 // @media only screen and (max-width: 600px){
 //     .h65-black-teko {

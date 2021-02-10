@@ -77,6 +77,7 @@ import CountdownPage from './Pages/ElementsPages/CountdownPage/countdownPage';
 import ClientsPage from './Pages/ElementsPages/ClientsPage/clientsPage';
 import ProgressBarPage from './Pages/ElementsPages/ProgressBarPage/progressBarPage';
 import GoogleMapsPage from './Pages/ElementsPages/GoogleMapsPage/googleMapsPage';
+import HeadingsPage from './Pages/ElementsPages/HeadingsPage/headingsPage';
 
 /**
  * Actions
@@ -159,6 +160,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/headings"}
+                    component={HeadingsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/google-maps"}

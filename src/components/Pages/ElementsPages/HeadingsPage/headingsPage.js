@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './googleMapsPage.scss';
+import './headingsPage.scss';
 
 /**
  * Components
@@ -55,9 +55,14 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import { 
     H15,
+    H17,
+    H19,
+    H22,
+    H35,
     H45,
-    EW30,
-    EH30
+    H65,
+    H70,
+    EH20
 } from '../../../UtilityComponents';
 
 /**
@@ -69,10 +74,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * GoogleMapsPage component definition and export
+ * HeadingsPage component definition and export
  */
 
-export const GoogleMapsPage = (props) => {
+export const HeadingsPage = (props) => {
 
     /**
      * State
@@ -89,6 +94,12 @@ export const GoogleMapsPage = (props) => {
         // Init state for fading effect when component will unmount
 
         props.setUnmountComponentValues(false, "");
+
+        // Fetch data for the component
+
+        if(props.headingsPage.items.length === 0){
+            props.fetchHeadingsPageData();
+        }
 
         // Scroll to the top of the screen
 
@@ -171,28 +182,68 @@ export const GoogleMapsPage = (props) => {
         }
     }
 
-    const renderGoogleMapsPageSection1Column1DataContent = () => {
-        return(
-            <div className="google-maps-page-section1-column1-data">
-                <GoogleMapContainer/>
-            </div>
-        )
-    } 
-    
-    const renderGoogleMapsPageSection1Column2DataContent = () => {
-        return(
-            <div className="google-maps-page-section1-column1-data">
-                <GoogleMapContainer/>
-            </div>
-        )
+    const renderHeadings = (key, heading) => {
+        switch(key){
+            case 'headingsPageHeading1':
+                return <H70 className="h70-black-lustria">{heading}</H70>
+            case 'headingsPageHeading2':
+                return <H70 className="h70-black-poppins">{heading}</H70>
+            case 'headingsPageHeading3':
+                return <H45 className="h45-black-lustria">{heading}</H45>
+            case 'headingsPageHeading4':
+                return <H35 className="h35-black-poppins">{heading}</H35>
+            case 'headingsPageHeading5':
+                return <H22 className="h22-black-lustria">{heading}</H22>
+            case 'headingsPageHeading6':
+                return <H19 className="h19-black-poppins">{heading}</H19>
+        }
     }
 
-    const renderGoogleMapsPageSection2DataContent = () => {
+    const renderHeadingsPageDate = (arr) => {
         return(
-            <div className="google-maps-page-section2-data">
-                <GoogleMapContainer/>
-            </div>
+            <>{arr.map((el,i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="headings-page-item"
+                    >
+                        {renderHeadings(el.key, el.header)}
+                        <EH20/>
+                        <H17 className="h17-nobel-lustria">{el.text}</H17>
+                    </div>
+                )
+            })}</>
         )
+    }
+    
+    const renderHeadingsPageDataContent = () => {
+        if(props.headingsPage.loading && !props.headingsPage.error){
+            return(
+                <div 
+                    className="headings-page-loading-error" 
+                    // style={{height: `${size.height}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!props.headingsPage.loading && !props.headingsPage.error){
+            return(
+                <div className="headings-page-items">
+                    {renderHeadingsPageDate(props.headingsPage.items)}
+                </div>
+            )
+        }
+        if(!props.headingsPage.loading && props.headingsPage.error){
+            return(
+                <div 
+                    className="headings-page-loading-error" 
+                    // style={{height: `${size.height}px`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${props.headingsPage.error}`}</H15>
+                </div>
+            )
+        }
     } 
 
     /**
@@ -200,22 +251,14 @@ export const GoogleMapsPage = (props) => {
      */
 
     return(
-        <div className="google-maps-page" id="googleMapsPage">
+        <div className="headings-page" id="googleMapsPage">
             {renderToolbars()}
-            <div className="google-maps-page-wrapper">
-                <div className="google-maps-page-header">
-                    <H45 className="h45-nero-lustria">Google Maps</H45>
+            <div className="headings-page-wrapper">
+                <div className="headings-page-header">
+                    <H45 className="h45-nero-lustria">Headings</H45>
                 </div>
                 <div className="grey-line"/>
-                <div className="google-maps-page-section-1-data-wrapper">
-                    {renderGoogleMapsPageSection1Column1DataContent()}
-                    <EW30/>
-                    <EH30/>
-                    {renderGoogleMapsPageSection1Column2DataContent()}
-                </div>
-                <div className="google-maps-page-section-2-data-wrapper">
-                    {renderGoogleMapsPageSection2DataContent()}
-                </div>
+                {renderHeadingsPageDataContent()}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -226,17 +269,19 @@ export const GoogleMapsPage = (props) => {
 export default connect(
     (state) => {
         return {
+            headingsPage: Selectors.getHeadingsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
+            fetchHeadingsPageData: bindActionCreators(Services.fetchHeadingsPageData, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
         };
     }
-)(GoogleMapsPage);
+)(HeadingsPage);
  

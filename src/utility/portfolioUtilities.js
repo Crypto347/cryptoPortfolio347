@@ -5,6 +5,7 @@ export const findPathOfIds = (path) => {
     }
 
     //First element of updatedPath array
+    
     switch(updatedPath[0]){
         case 'portfolio-gallery':
             return [];
@@ -86,9 +87,12 @@ export const findPathOfIds = (path) => {
             return [6, 62, 626];
         case 'google-maps':
             return [6, 62, 627];
+        case 'headings':
+            return [6, 63, 631];
     }
 
     //Second element of updatedPath array
+
     switch(updatedPath[1]){
         // case '':
         //     return [1, 11, 111];
