@@ -20243,6 +20243,200 @@ app.get('/api/headings-page', (req, res) => {
     res.json(headingPage);
 });
 
+app.get('/api/lists-page/section1', (req, res) => {
+    const listsPageSec1 = [
+        {
+            id: 1,
+            key: "listPageSec1",
+            listsArr: [
+                {
+                    id: 11,
+                    key: "listId11",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 12,
+                    key: "listId12",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 13,
+                    key: "listId13",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 14,
+                    key: "listId14",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "headingsPageHeading1",
+            listsArr: [
+                {
+                    id: 21,
+                    key: "listId21",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 22,
+                    key: "listId22",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 23,
+                    key: "listId23",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 24,
+                    key: "listId24",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                }
+            ]
+        },
+        {
+            id: 3,
+            key: "headingsPageHeading1",
+            listsArr: [
+                {
+                    id: 31,
+                    key: "listId31",
+                    iconType: "pen",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 32,
+                    key: "listId32",
+                    iconType: "paperclip",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 33,
+                    key: "listId33",
+                    iconType: "laptop",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 34,
+                    key: "listId34",
+                    iconType: "coffee",
+                    text: "Lorem ipsum dolor"
+                }
+            ]
+        },
+        
+    ]
+    res.json(listsPageSec1);
+});
+
+app.get('/api/lists-page/section2', (req, res) => {
+    const listsPageSec2 = [
+        {
+            id: 1,
+            key: "listPageSec2",
+            listsArr: [
+                {
+                    id: 11,
+                    key: "listId11",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 12,
+                    key: "listId12",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 13,
+                    key: "listId13",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 14,
+                    key: "listId14",
+                    iconType: "check",
+                    text: "Lorem ipsum dolor"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "headingsPageHeading1",
+            listsArr: [
+                {
+                    id: 21,
+                    key: "listId21",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 22,
+                    key: "listId22",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 23,
+                    key: "listId23",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 24,
+                    key: "listId24",
+                    iconType: "minus",
+                    text: "Lorem ipsum dolor"
+                }
+            ]
+        },
+        {
+            id: 3,
+            key: "headingsPageHeading1",
+            listsArr: [
+                {
+                    id: 31,
+                    key: "listId31",
+                    iconType: "pen",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 32,
+                    key: "listId32",
+                    iconType: "paperclip",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 33,
+                    key: "listId33",
+                    iconType: "laptop",
+                    text: "Lorem ipsum dolor"
+                },
+                {
+                    id: 34,
+                    key: "listId34",
+                    iconType: "coffee",
+                    text: "Lorem ipsum dolor"
+                }
+            ]
+        },
+        
+    ]
+    res.json(listsPageSec2);
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

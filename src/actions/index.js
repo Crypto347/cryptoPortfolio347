@@ -46,3 +46,4 @@ export * from './countdownPageActions';
 export * from './clientsPageActions';
 export * from './progressBarPageActions';
 export * from './headingsPageActions';
+export * from './listsPageActions';

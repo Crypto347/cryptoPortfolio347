@@ -53,6 +53,7 @@ import countdownPageReducer from './countdownPageReducer';
 import clientsPageReducer from './clientsPageReducer';
 import progressBarPageReducer from './progressBarPageReducer';
 import headingsPageReducer from './headingsPageReducer';
+import listsPageReducer from './listsPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -103,5 +104,6 @@ export default (history) => combineReducers({
     countdownPage: countdownPageReducer,
     clientsPage: clientsPageReducer,
     progressBarPage: progressBarPageReducer,
-    headingsPage: headingsPageReducer
+    headingsPage: headingsPageReducer,
+    listsPage: listsPageReducer
 });

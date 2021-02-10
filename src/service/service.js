@@ -2262,6 +2262,42 @@ export function fetchHeadingsPageData() {
     };
 }
 
+export function fetchListsPageSection1Data() {
+    return dispatch => {
+        dispatch(Actions.fetchListsPageSection1DataBegin());
+        return fetch("http://localhost:3005/api/lists-page/section1")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchListsPageSection1DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchListsPageSection1DataFailur(error))
+            });
+    };
+}
+
+export function fetchListsPageSection2Data() {
+    return dispatch => {
+        dispatch(Actions.fetchListsPageSection2DataBegin());
+        return fetch("http://localhost:3005/api/lists-page/section2")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchListsPageSection2DataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchListsPageSection2DataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

@@ -78,6 +78,7 @@ import ClientsPage from './Pages/ElementsPages/ClientsPage/clientsPage';
 import ProgressBarPage from './Pages/ElementsPages/ProgressBarPage/progressBarPage';
 import GoogleMapsPage from './Pages/ElementsPages/GoogleMapsPage/googleMapsPage';
 import HeadingsPage from './Pages/ElementsPages/HeadingsPage/headingsPage';
+import ListsPage from './Pages/ElementsPages/ListsPage/listsPage';
 
 /**
  * Actions
@@ -160,6 +161,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/lists"}
+                    component={ListsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/headings"}
