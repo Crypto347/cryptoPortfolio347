@@ -67,6 +67,14 @@
     animation: socMedIconHoverOff .3s linear;
 }
 
+.icon-for-lists-page-section-1 {
+    color: black;
+}
+
+.icon-for-lists-page-section-2 {
+    color: rgb(218, 153, 83);
+}
+
 @-webkit-keyframes socMedIconHoverOn {
     from{color: white;}
     to{color: rgb(78, 78, 78);}

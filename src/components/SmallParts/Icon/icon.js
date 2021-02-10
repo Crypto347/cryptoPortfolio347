@@ -28,6 +28,15 @@ import {
     faTumblr
 } from '@fortawesome/free-brands-svg-icons';
 
+import {
+    faCheck,
+    faMinus,
+    faPen,
+    faPaperclip,
+    faLaptop,
+    faCoffee
+} from '@fortawesome/free-solid-svg-icons';
+
 /**
  * Icon component definition and export
  */
@@ -90,6 +99,8 @@ export const Icon = (props) => {
                     return "soc-med-icon-hover-off"
             }
         }
+        if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
+        if(opt === "section2ListsPage") return "icon-for-lists-page-section-2"
     }
 
     const iconOnClick = (e, iconName, instaName) => {
@@ -127,6 +138,18 @@ export const Icon = (props) => {
                 return faFacebookF;
             case 'faTumblr':
                 return faTumblr;
+            case 'faCheck':
+                return faCheck;
+            case 'faMinus':
+                return faMinus;
+            case 'faPen':
+                return faPen;
+            case 'faPaperclip':
+                return faPaperclip;
+            case 'faLaptop':
+                return faLaptop;
+            case 'faCoffee':
+                return faCoffee;
         }
     }
 
@@ -144,10 +167,10 @@ export const Icon = (props) => {
                 <FontAwesomeIcon 
                     icon={setIconName(props.icon)} 
                     size={props.iconSize}
-                    className={renderClassName("socMedIcon", socMedIsHover)}
-                    onMouseEnter={() => handleMouseEnter("socMedIcon")} 
-                    onMouseLeave={() => handleMouseLeave("socMedIcon")}
-                    onMouseDown={(e) => iconOnClick(e, props.iconName, props.instaName)}
+                    className={renderClassName(props.classNameOpt, socMedIsHover)}
+                    onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
+                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt): null}
+                    onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName): null}
                 />
             )
         }

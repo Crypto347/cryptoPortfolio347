@@ -27,7 +27,7 @@ import './listsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import PieChartItem from '../../../SmallParts/PieChartItem/pieChartItem';
+import Icon from '../../../SmallParts/Icon/icon';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -53,9 +53,11 @@ import * as Selectors from '../../../../reducers/selectors';
  * Utility
  */
 
-import { 
+import {
     H15,
-    H45
+    H17,
+    H45,
+    EW10
 } from '../../../UtilityComponents';
 
 /**
@@ -191,25 +193,43 @@ export const ListsPage = (props) => {
         }
     }
 
+    const renderListsPageDataLists = (section, arr) => {
+        return(
+            <>{arr.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="lists-page-data-item"
+                    >
+                        <Icon 
+                            key={i}
+                            iconType="fontAwesome"
+                            icon={el.iconType}
+                            iconSize="1x"
+                            classNameOpt={`${section}ListsPage`}
+                        />
+                        <EW10/>
+                        <H17 className="h17-nobel-lustria">{el.text}</H17>
+                    </div>
+                )
+            })}</>
+        )
+    }
+
     const renderListsPageData = (section, arr) => {
         return(
-            <div 
-                className={`lists-page-${section}-data-items`}
-            >{arr.items.map((el, i) => {
-                // return(
-                    // <div 
-                    //     key={i}
-                    //     className="lists-page-section2-data-item"
-                    // >
-                    //     <PieChartItem
-                    //         chartKey={el.key}
-                    //         percent={el.percent}
-                    //         header={el.header}
-                    //         chartColor="black"
-                    //     />
-                    // </div>
-                // )
-            })}</div>
+            <div className={`lists-page-${section}-data-items`}>
+                {arr.items.map((el, i) => {
+                    return(
+                        <div 
+                            key={i}
+                            className="lists-page-data-items"
+                        >
+                            {renderListsPageDataLists(section, el.listsArr)}
+                        </div>
+                    )
+                })}
+            </div>
         )
     }
     

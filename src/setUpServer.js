@@ -20247,90 +20247,87 @@ app.get('/api/lists-page/section1', (req, res) => {
     const listsPageSec1 = [
         {
             id: 1,
-            key: "listPageSec1",
             listsArr: [
                 {
                     id: 11,
                     key: "listId11",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 12,
                     key: "listId12",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 13,
                     key: "listId13",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 14,
                     key: "listId14",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 }
             ]
         },
         {
             id: 2,
-            key: "headingsPageHeading1",
             listsArr: [
                 {
                     id: 21,
                     key: "listId21",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 22,
                     key: "listId22",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 23,
                     key: "listId23",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 24,
                     key: "listId24",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 }
             ]
         },
         {
             id: 3,
-            key: "headingsPageHeading1",
             listsArr: [
                 {
                     id: 31,
                     key: "listId31",
-                    iconType: "pen",
+                    iconType: "faPen",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 32,
                     key: "listId32",
-                    iconType: "paperclip",
+                    iconType: "faPaperclip",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 33,
                     key: "listId33",
-                    iconType: "laptop",
+                    iconType: "faLaptop",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 34,
                     key: "listId34",
-                    iconType: "coffee",
+                    iconType: "faCoffee",
                     text: "Lorem ipsum dolor"
                 }
             ]
@@ -20344,95 +20341,91 @@ app.get('/api/lists-page/section2', (req, res) => {
     const listsPageSec2 = [
         {
             id: 1,
-            key: "listPageSec2",
             listsArr: [
                 {
                     id: 11,
                     key: "listId11",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 12,
                     key: "listId12",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 13,
                     key: "listId13",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 14,
                     key: "listId14",
-                    iconType: "check",
+                    iconType: "faCheck",
                     text: "Lorem ipsum dolor"
                 }
             ]
         },
         {
             id: 2,
-            key: "headingsPageHeading1",
             listsArr: [
                 {
                     id: 21,
                     key: "listId21",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 22,
                     key: "listId22",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 23,
                     key: "listId23",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 24,
                     key: "listId24",
-                    iconType: "minus",
+                    iconType: "faMinus",
                     text: "Lorem ipsum dolor"
                 }
             ]
         },
         {
             id: 3,
-            key: "headingsPageHeading1",
             listsArr: [
                 {
                     id: 31,
                     key: "listId31",
-                    iconType: "pen",
+                    iconType: "faPen",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 32,
                     key: "listId32",
-                    iconType: "paperclip",
+                    iconType: "faPaperclip",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 33,
                     key: "listId33",
-                    iconType: "laptop",
+                    iconType: "faLaptop",
                     text: "Lorem ipsum dolor"
                 },
                 {
                     id: 34,
                     key: "listId34",
-                    iconType: "coffee",
+                    iconType: "faCoffee",
                     text: "Lorem ipsum dolor"
                 }
             ]
-        },
-        
+        }
     ]
     res.json(listsPageSec2);
 });

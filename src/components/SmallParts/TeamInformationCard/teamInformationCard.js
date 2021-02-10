@@ -205,6 +205,10 @@ export const TeamInformationCard = (props) => {
                             icon={el.iconKey} 
                             iconSize="1x"
                             instaName={props.instaName}
+                            onMouseEnter
+                            onMouseLeave
+                            onMouseDown
+                            classNameOpt="socMedIcon"
                         />
                         <EW20/>
                     </div>

@@ -130,6 +130,9 @@ export const AccordionItem = (props) => {
                     hoverEffect={props.hoverEffect}
                     isHover={props.obj.isHover}
                     isActive={props.obj.active}
+                    onMouseEnter
+                    onMouseLeave
+                    onMouseDown
                 />
             </div>
             <div className={renderClassName(null, "collapsibleArea", null, props.obj.active)}>
