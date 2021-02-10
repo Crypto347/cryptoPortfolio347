@@ -1,12 +1,13 @@
 .headings-page {
     width: calc(100% + 18px);
     .headings-page-loading-error {
-        width: calc(50% - 40px);
+        width: calc(100% - 40px);
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0px 20px 0px 20px;
         text-align: center;
+        background: rgb(248, 248, 248);
     }
     .headings-page-wrapper {
         display: flex;

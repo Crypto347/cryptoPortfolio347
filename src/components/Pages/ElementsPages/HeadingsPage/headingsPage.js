@@ -215,13 +215,13 @@ export const HeadingsPage = (props) => {
             })}</>
         )
     }
-    
+
     const renderHeadingsPageDataContent = () => {
         if(props.headingsPage.loading && !props.headingsPage.error){
             return(
                 <div 
                     className="headings-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{height: `${size.height/2}px`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -238,7 +238,7 @@ export const HeadingsPage = (props) => {
             return(
                 <div 
                     className="headings-page-loading-error" 
-                    // style={{height: `${size.height}px`}}
+                    style={{height: `${size.height/2}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${props.headingsPage.error}`}</H15>
                 </div>
