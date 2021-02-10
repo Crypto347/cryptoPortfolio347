@@ -249,10 +249,7 @@ export const ListsPage = (props) => {
         }
         if(!arr.loading && !arr.error){
             return(
-                <div 
-                    id="pieChartsPageSection2"
-                    className="lists-page-section2-data-wrapper"
-                >
+                <div className="lists-page-section2-data-wrapper">
                     {renderListsPageData(section, arr)}
                 </div>
             )
