@@ -55,10 +55,8 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import {
     H15,
-    H17,
     H45,
-    EH30,
-    EW10
+    EH30
 } from '../../../UtilityComponents';
 
 /**
@@ -137,16 +135,6 @@ export const HighlightsPage = (props) => {
             setScrollingUp(false);
         }else{
             setScrollingUp(true);
-        }
-    }
-
-    const renderBackgroundColor = (section) => {
-        switch(section) {
-            case 'section1':
-                return 'rgb(239, 239, 239)';
-            case 'section2':
-            default:
-                return 'white';
         }
     }
 
@@ -232,7 +220,7 @@ export const HighlightsPage = (props) => {
                             className="highlights-page-data-paragraph"
                         >
                             {renderParagraph(el)}
-                            {i !== arr.length-1 ? 
+                            {i !== arr.length - 1 ? 
                             <EH30/> 
                             : null}
                         </div>
@@ -247,7 +235,7 @@ export const HighlightsPage = (props) => {
             return(
                 <div 
                     className="highlights-page-loading-error" 
-                    style={{height: `${size.height}px`}}
+                    style={{height: `${size.height/2}px`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -256,7 +244,7 @@ export const HighlightsPage = (props) => {
         if(!arr.loading && !arr.error){
             return(
                 <div className="highlights-page-data-wrapper">
-                    {renderHighlightsPageData(arr)}
+                    {renderHighlightsPageData(arr.items)}
                 </div>
             )
         }
@@ -264,7 +252,7 @@ export const HighlightsPage = (props) => {
             return(
                 <div 
                     className="highlights-page-loading-error" 
-                    style={{height: `${size.height}px`,}}
+                    style={{height: `${size.height/2}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
                 </div>
@@ -284,7 +272,7 @@ export const HighlightsPage = (props) => {
                     <H45 className="h45-nero-lustria">Highlights</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderHighlightsPageDataContent(props.highlightsPage.items)}
+                {renderHighlightsPageDataContent(props.highlightsPage)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
