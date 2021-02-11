@@ -182,38 +182,82 @@ export const HighlightsPage = (props) => {
     }
 
     const renderParagraph = (obj) => {
+        const items = []
+        obj.text.map((el, i) => {
+            if(el.highlightedText !== null){
+                items.push(
+                    <React.Fragment key={i}>
+                        {el.normalText}&nbsp;&nbsp;
+                        {<span
+                            className="highlighted-text"
+                            style={{
+                                background: `${el.highlightsBackground}`,
+                                color: `${el.highlightsColor}`
+                            }}
+                        >
+                            {el.highlightedText}
+                        </span>}&nbsp;&nbsp;
+                    </React.Fragment>
+                )
+            }else{
+                items.push(el.normalText)
+            }  
+        })
+        
+        // Example with for loop
+
+        // for(const [index, value] of obj.text.entries()){
+        //     items.push(
+        //         <>
+        //             {value.normalText}&nbsp;&nbsp;
+        //             {<span 
+        //                 className="highlighted-text"
+        //                 style={{
+        //                     background: `${value.highlightsBackground}`,
+        //                     color: `${value.highlightsColor}`
+        //                 }}
+        //             >
+        //                 {value.highlightedText}
+        //             </span>}&nbsp;&nbsp;
+        //         </>
+        //     )
+        // }
+        
         return(
-            <>
-                {obj.text.normalText[0]}&nbsp;&nbsp;
-                {<span 
-                    className="highlighted-text"
-                    style={{
-                        background: `${obj.text.highlightedText[0].highlightsBackground}`,
-                        color: `${obj.text.highlightedText[0].highlightsColor}`
-                    }}
-                >
-                    {obj.text.highlightedText[0].text}
-                </span>}&nbsp;&nbsp;
-                {obj.text.normalText[1]}&nbsp;&nbsp;
-                {<span 
-                    className="highlighted-text"
-                    style={{
-                        background: `${obj.text.highlightedText[1].highlightsBackground}`,
-                        color: `${obj.text.highlightedText[1].highlightsColor}`
-                    }}
-                >
-                    {obj.text.highlightedText[1].text}
-                </span>}&nbsp;&nbsp;
-                {obj.text.normalText[1]}
-            </>
+            <>{items}</>
         )
+
+        // return(
+        //     <>
+        //         {obj.text.normalText[0]}&nbsp;&nbsp;
+        //         {<span 
+        //             className="highlighted-text"
+        //             style={{
+        //                 background: `${obj.text.highlightedText[0].highlightsBackground}`,
+        //                 color: `${obj.text.highlightedText[0].highlightsColor}`
+        //             }}
+        //         >
+        //             {obj.text.highlightedText[0].text}
+        //         </span>}&nbsp;&nbsp;
+        //         {obj.text.normalText[1]}&nbsp;&nbsp;
+        //         {<span 
+        //             className="highlighted-text"
+        //             style={{
+        //                 background: `${obj.text.highlightedText[1].highlightsBackground}`,
+        //                 color: `${obj.text.highlightedText[1].highlightsColor}`
+        //             }}
+        //         >
+        //             {obj.text.highlightedText[1].text}
+        //         </span>}&nbsp;&nbsp;
+        //         {obj.text.normalText[1]}
+        //     </>
+        // )
     }
 
     const renderHighlightsPageData = (arr) => {
         return(
             <div>
                 {arr.map((el, i) => {
-                   
                     return(
                         <div 
                             key={i}
