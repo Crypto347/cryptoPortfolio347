@@ -20474,7 +20474,7 @@ app.get('/api/highlights-page', (req, res) => {
                     id: 22,
                     normalText: "Nec sit ante, amet dictum sem suspendisse mollis magna placerat, sapien arcu non sit mollis quis, praesent maecenas augue tortor parturient integer in, aliquam tempus ultricies elit dis vivamus aut. Ipsum non ut egestas in, suspendisse ut. Sodales sed cras. ",
                     highlightedText: "Et consequat viverra.",
-                    highlightsBackground: "rgb(218, 153, 83)",
+                    highlightsBackground: "rgb(86, 122, 84)",
                     highlightsColor: "white"
                 },
                 {
