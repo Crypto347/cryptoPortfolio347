@@ -79,6 +79,7 @@ import ProgressBarPage from './Pages/ElementsPages/ProgressBarPage/progressBarPa
 import GoogleMapsPage from './Pages/ElementsPages/GoogleMapsPage/googleMapsPage';
 import HeadingsPage from './Pages/ElementsPages/HeadingsPage/headingsPage';
 import ListsPage from './Pages/ElementsPages/ListsPage/listsPage';
+import HighlightsPage from './Pages/ElementsPages/HighlightsPage/highlightsPage';
 
 /**
  * Actions
@@ -161,6 +162,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/highlights"}
+                    component={HighlightsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/lists"}

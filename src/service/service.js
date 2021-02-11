@@ -2298,6 +2298,24 @@ export function fetchListsPageSection2Data() {
     };
 }
 
+export function fetchHighlightsPageData() {
+    return dispatch => {
+        dispatch(Actions.fetchHighlightsPageDataBegin());
+        return fetch("http://localhost:3005/api/highlights-page")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchHighlightsPageDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchHighlightsPageDataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

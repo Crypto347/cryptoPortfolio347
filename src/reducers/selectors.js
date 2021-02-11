@@ -491,3 +491,10 @@ export const getListsPageState = createSelector(
     [getListsPage],
     (x) => x
 );
+
+const getHighlightsPage = (state) => state.highlightsPage;
+
+export const getHighlightsPageState = createSelector(
+    [getHighlightsPage],
+    (x) => x
+);

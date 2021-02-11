@@ -272,6 +272,7 @@ export const Toolbar = (props) => {
             case 'progressBarPage':
             case 'googleMapsPage':
             case 'listsPage':
+            case 'highlightsPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':
