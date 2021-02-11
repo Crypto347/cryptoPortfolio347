@@ -182,7 +182,7 @@ export const HighlightsPage = (props) => {
     }
 
     const renderParagraph = (obj) => {
-        const items = []
+        const items = [];
         obj.text.map((el, i) => {
             if(el.highlightedText !== null){
                 items.push(
@@ -203,7 +203,7 @@ export const HighlightsPage = (props) => {
                 items.push(el.normalText)
             }  
         })
-        
+
         // Example with for loop
 
         // for(const [index, value] of obj.text.entries()){

@@ -20477,13 +20477,13 @@ app.get('/api/highlights-page', (req, res) => {
                     highlightsBackground: "rgb(218, 153, 83)",
                     highlightsColor: "white"
                 },
-                // {
-                //     id: 23,
-                //     normalText: "Orci urna etiam, consequat rhoncus in et.",
-                //     highlightedText: null,
-                //     highlightsBackground: null,
-                //     highlightsColor: null
-                // }
+                {
+                    id: 23,
+                    normalText: "Orci urna etiam, consequat rhoncus in et.",
+                    highlightedText: null,
+                    highlightsBackground: null,
+                    highlightsColor: null
+                }
             ]
         }
         // {
