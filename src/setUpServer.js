@@ -20486,6 +20486,9 @@ app.get('/api/highlights-page', (req, res) => {
                 }
             ]
         }
+
+        //Old version 
+
         // {
         //     id: 1,
         //     key: "highlightsPageParagraph1",

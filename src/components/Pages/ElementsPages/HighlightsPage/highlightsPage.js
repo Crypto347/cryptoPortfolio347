@@ -207,25 +207,31 @@ export const HighlightsPage = (props) => {
         // Example with for loop
 
         // for(const [index, value] of obj.text.entries()){
-        //     items.push(
-        //         <>
-        //             {value.normalText}&nbsp;&nbsp;
-        //             {<span 
-        //                 className="highlighted-text"
-        //                 style={{
-        //                     background: `${value.highlightsBackground}`,
-        //                     color: `${value.highlightsColor}`
-        //                 }}
-        //             >
-        //                 {value.highlightedText}
-        //             </span>}&nbsp;&nbsp;
-        //         </>
-        //     )
+        //     if(value.highlightedText !== null){
+        //         items.push(
+        //             <React.Fragment key={index}>
+        //                 {value.normalText}&nbsp;&nbsp;
+        //                 {<span 
+        //                     className="highlighted-text"
+        //                     style={{
+        //                         background: `${value.highlightsBackground}`,
+        //                         color: `${value.highlightsColor}`
+        //                     }}
+        //                 >
+        //                     {value.highlightedText}
+        //                 </span>}&nbsp;&nbsp;
+        //             </React.Fragment>
+        //         )
+        //     }else{
+        //         items.push(value.normalText)
+        //     }  
         // }
         
         return(
             <>{items}</>
         )
+
+        //Old version
 
         // return(
         //     <>
