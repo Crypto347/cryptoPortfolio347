@@ -182,27 +182,54 @@ export const HighlightsPage = (props) => {
     }
 
     const renderParagraph = (obj) => {
-        const items = [];
-        obj.text.map((el, i) => {
-            if(el.highlightedText !== null){
-                items.push(
-                    <React.Fragment key={i}>
-                        {el.normalText}&nbsp;&nbsp;
-                        {<span
-                            className="highlighted-text"
-                            style={{
-                                background: `${el.highlightsBackground}`,
-                                color: `${el.highlightsColor}`
-                            }}
-                        >
-                            {el.highlightedText}
-                        </span>}&nbsp;&nbsp;
-                    </React.Fragment>
-                )
-            }else{
-                items.push(el.normalText)
-            }  
-        })
+        return(
+            <>
+                {obj.text.map((el, i) => {
+                    if(el.highlightedText !== null){
+                        return(
+                            <React.Fragment key={i}>
+                                {el.normalText}&nbsp;&nbsp;
+                                {<span
+                                    className="highlighted-text"
+                                    style={{
+                                        background: `${el.highlightsBackground}`,
+                                        color: `${el.highlightsColor}`
+                                    }}
+                                >
+                                    {el.highlightedText}
+                                </span>}&nbsp;&nbsp;
+                            </React.Fragment>
+                        )
+                    }else{
+                        return(el.normalText);
+                    }
+                })}
+            </>
+        )
+
+        // Example with items.push 
+
+        // const items = [];
+        // obj.text.map((el, i) => {
+        //     if(el.highlightedText !== null){
+        //         items.push(
+        //             <React.Fragment key={i}>
+        //                 {el.normalText}&nbsp;&nbsp;
+        //                 {<span
+        //                     className="highlighted-text"
+        //                     style={{
+        //                         background: `${el.highlightsBackground}`,
+        //                         color: `${el.highlightsColor}`
+        //                     }}
+        //                 >
+        //                     {el.highlightedText}
+        //                 </span>}&nbsp;&nbsp;
+        //             </React.Fragment>
+        //         )
+        //     }else{
+        //         items.push(el.normalText)
+        //     }  
+        // })
 
         // Example with for loop
 
@@ -226,37 +253,9 @@ export const HighlightsPage = (props) => {
         //         items.push(value.normalText)
         //     }  
         // }
-        
-        return(
-            <>{items}</>
-        )
-
-        //Old version
 
         // return(
-        //     <>
-        //         {obj.text.normalText[0]}&nbsp;&nbsp;
-        //         {<span 
-        //             className="highlighted-text"
-        //             style={{
-        //                 background: `${obj.text.highlightedText[0].highlightsBackground}`,
-        //                 color: `${obj.text.highlightedText[0].highlightsColor}`
-        //             }}
-        //         >
-        //             {obj.text.highlightedText[0].text}
-        //         </span>}&nbsp;&nbsp;
-        //         {obj.text.normalText[1]}&nbsp;&nbsp;
-        //         {<span 
-        //             className="highlighted-text"
-        //             style={{
-        //                 background: `${obj.text.highlightedText[1].highlightsBackground}`,
-        //                 color: `${obj.text.highlightedText[1].highlightsColor}`
-        //             }}
-        //         >
-        //             {obj.text.highlightedText[1].text}
-        //         </span>}&nbsp;&nbsp;
-        //         {obj.text.normalText[1]}
-        //     </>
+        //     <>{items}</>
         // )
     }
 
