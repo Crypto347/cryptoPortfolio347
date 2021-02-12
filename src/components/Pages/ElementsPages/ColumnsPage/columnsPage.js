@@ -183,7 +183,6 @@ export const ColumnsPage = (props) => {
     }
 
     const renderColumns = (arr, key) => {
-       
         return(
             <div className="columns-page-columns-wrapper">
                 {arr.map((el, i) => {
