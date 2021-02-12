@@ -2319,7 +2319,7 @@ export function fetchHighlightsPageData() {
 export function fetchDropcapsPageData() {
     return dispatch => {
         dispatch(Actions.fetchDropcapsPageDataBegin());
-        return fetch("http://localhost:3005/api/dropcaps-page")
+        return fetch("http://localhost:3005/api/dropaps-page")
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {

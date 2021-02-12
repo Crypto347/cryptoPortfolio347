@@ -3,8 +3,8 @@
     .dropcaps-page-loading-error {
         width: calc(100% - 40px);
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
+        place-content: center;
         padding: 0px 20px 0px 20px;
         text-align: center;
         background: rgb(248, 248, 248);
