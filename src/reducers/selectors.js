@@ -505,3 +505,10 @@ export const getDropcapsPageState = createSelector(
     [getDropcapsPage],
     (x) => x
 );
+
+const getColumnsPage = (state) => state.columnsPage;
+
+export const getColumnsPageState = createSelector(
+    [getColumnsPage],
+    (x) => x
+);

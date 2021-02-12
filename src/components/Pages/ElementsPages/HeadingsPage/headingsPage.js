@@ -27,7 +27,6 @@ import './headingsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import GoogleMapContainer from '../../../SmallParts/GoogleMapContainer/googleMapContainer';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -60,7 +59,6 @@ import {
     H22,
     H35,
     H45,
-    H65,
     H70,
     EH20
 } from '../../../UtilityComponents';

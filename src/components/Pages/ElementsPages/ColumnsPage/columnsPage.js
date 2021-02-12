@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './dropcapsPage.scss';
+import './columnsPage.scss';
 
 /**
  * Components
@@ -54,9 +54,12 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import {
     H15,
+    H17,
+    H25,
     H45,
+    EW30,
     EH30,
-    EH80
+    EH60
 } from '../../../UtilityComponents';
 
 /**
@@ -68,10 +71,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * DropcapsPage component definition and export
+ * ColumnsPage component definition and export
  */
 
-export const DropcapsPage = (props) => {
+export const ColumnsPage = (props) => {
 
     /**
      * State
@@ -91,8 +94,8 @@ export const DropcapsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.dropcapsPage.items.length === 0){
-            props.fetchDropcapsPageData();
+        if(props.columnsPage.items.length === 0){
+            props.fetchColumnsPageData();
         }
 
         // Scroll to the top of the screen
@@ -117,7 +120,7 @@ export const DropcapsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("dropcapsPage");
+        let el = document.getElementById("columnsPage");
 
         // Show or hide BackToTop component
 
@@ -151,12 +154,12 @@ export const DropcapsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="dropcapsPage"
+                        page="columnsPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="dropcapsPage"
+                        page="columnsPage"
                     />
                 </>
             )
@@ -167,68 +170,74 @@ export const DropcapsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="dropcapsPage"
+                        page="columnsPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="dropcapsPage"
+                        page="columnsPage"
                     />
                 </>
             )
         }
     }
 
-    const renderParagraph = (obj) => {
-        let firstLetter = obj.text[0];
-        let remainingText = obj.text.substring(1);
-        
+    const renderColumns = (arr, key) => {
+       
         return(
-            <>
-                <span 
-                    className={`dropcaps-style-${obj.dropcapsStyle}`}
-                    style={{
-                        background: `${obj.dropcapsBackground}`,
-                        color: `${obj.dropcapsColor}`,
-                        fontSize: `${obj.dropcapsFontSize}`,
-                    }}
-                >
-                    {firstLetter}
-                </span>
-               {remainingText}
-            </>
-        )
-    }
-    
-    const renderDropcapsPageStyleSection = (arr) => {
-        return(
-            <>
+            <div className="columns-page-columns-wrapper">
                 {arr.map((el, i) => {
+                    let width;
+                    let showEH30;
+                    if(size.width > 1120){
+                        width = el.columnWidth;
+                        showEH30 = false;
+                    }
+                    if(size.width <= 1120 && size.width > 900){
+                        if(key === "columnsPage4ColumnsNormal"){
+                            width = 50;
+                            showEH30 = (i !== arr.length - 1) && (i !== arr.length - 2) ? true : false;
+                        }else{
+                            width = 100;
+                            showEH30 = (i !== arr.length - 1) ? true : false;
+                        }
+                    }
+                    if(size.width <= 900){
+                        showEH30 = (i !== arr.length - 1) ? true : false;
+                        width = 100;
+                    }
                     return(
-                        <div 
+                        <div
                             key={i}
-                            className="dropcaps-page-style"
+                            className="columns-page-column"
+                            style={{
+                                width: `calc(${width}% - 30px)`
+                            }}
                         >
-                            {renderParagraph(el)}
-                            {i !== arr.length - 1 ? 
+                            <H17 className="h17-nobel-lustria">{el.text}</H17>
+                            {showEH30 ? 
                             <EH30/> 
                             : null}
                         </div>
                     )
                 })}
-            </>
+            </div>
         )
     }
-
-    const renderDropcapsPageData = (arr) => {
+    
+    const renderColumnsPageData = (arr) => {
         return(
             <div>
                 {arr.map((el, i) => {
                     return(
-                        <React.Fragment key={i}>
-                            {renderDropcapsPageStyleSection(el.text)}
-                            {i !== arr.length - 1 ? 
-                            <EH80/> 
+                        <React.Fragment
+                            key={i}
+                        >
+                            <H25 className="h25-black-lustria">{el.header}</H25>
+                            <EH30/>
+                            {renderColumns(el.data, el.key)}
+                            {i !== arr.length - 1 ?
+                            <EH60/>
                             : null}
                         </React.Fragment>
                     )
@@ -237,11 +246,11 @@ export const DropcapsPage = (props) => {
         )
     }
     
-    const renderDropcapsPageDataContent = (arr) => {
+    const renderColumnsPageDataContent = (arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="dropcaps-page-loading-error" 
+                    className="columns-page-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
                     <Loading color="black"/>
@@ -250,15 +259,15 @@ export const DropcapsPage = (props) => {
         }
         if(!arr.loading && !arr.error){
             return(
-                <div className="dropcaps-page-data-wrapper">
-                    {renderDropcapsPageData(arr.items)}
+                <div className="columns-page-data-wrapper">
+                    {renderColumnsPageData(arr.items)}
                 </div>
             )
         }
         if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="dropcaps-page-loading-error" 
+                    className="columns-page-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
@@ -272,14 +281,14 @@ export const DropcapsPage = (props) => {
      */
 
     return(
-        <div className="dropcaps-page" id="dropcapsPage">
+        <div className="columns-page" id="columnsPage">
             {renderToolbars()}
-            <div className="dropcaps-page-wrapper">
-                <div className="dropcaps-page-header">
-                    <H45 className="h45-nero-lustria">Dropcaps</H45>
+            <div className="columns-page-wrapper">
+                <div className="columns-page-header">
+                    <H45 className="h45-nero-lustria">Columns</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderDropcapsPageDataContent(props.dropcapsPage)}
+                {renderColumnsPageDataContent(props.columnsPage)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -290,19 +299,19 @@ export const DropcapsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            dropcapsPage: Selectors.getDropcapsPageState(state),
+            columnsPage: Selectors.getColumnsPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchDropcapsPageData: bindActionCreators(Services.fetchDropcapsPageData, dispatch),
+            fetchColumnsPageData: bindActionCreators(Services.fetchColumnsPageData, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(DropcapsPage);
+)(ColumnsPage);
  

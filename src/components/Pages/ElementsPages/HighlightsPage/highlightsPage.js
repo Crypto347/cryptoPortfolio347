@@ -27,7 +27,6 @@ import './highlightsPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
-import Icon from '../../../SmallParts/Icon/icon';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -66,8 +65,6 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
-
-import * as Utility from '../../../../utility';
 
 /**
  * HighlightsPage component definition and export

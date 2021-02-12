@@ -81,6 +81,7 @@ import HeadingsPage from './Pages/ElementsPages/HeadingsPage/headingsPage';
 import ListsPage from './Pages/ElementsPages/ListsPage/listsPage';
 import HighlightsPage from './Pages/ElementsPages/HighlightsPage/highlightsPage';
 import DropcapsPage from './Pages/ElementsPages/DropcapsPage/dropcapsPage';
+import ColumnsPage from './Pages/ElementsPages/ColumnsPage/columnsPage';
 
 /**
  * Actions
@@ -163,6 +164,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/columns"}
+                    component={ColumnsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/dropcaps"}

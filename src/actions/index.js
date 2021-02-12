@@ -49,3 +49,4 @@ export * from './headingsPageActions';
 export * from './listsPageActions';
 export * from './highlightsPageActions';
 export * from './dropcapsPageActions';
+export * from './columnsPageActions';
