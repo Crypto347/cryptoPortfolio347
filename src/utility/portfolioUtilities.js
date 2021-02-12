@@ -93,6 +93,8 @@ export const findPathOfIds = (path) => {
             return [6, 63, 632];
         case 'highlights':
             return [6, 63, 633];
+        case 'dropcaps':
+            return [6, 63, 634];
     }
 
     //Second element of updatedPath array

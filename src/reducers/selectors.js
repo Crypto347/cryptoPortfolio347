@@ -498,3 +498,10 @@ export const getHighlightsPageState = createSelector(
     [getHighlightsPage],
     (x) => x
 );
+
+const getDropcapsPage = (state) => state.dropcapsPage;
+
+export const getDropcapsPageState = createSelector(
+    [getDropcapsPage],
+    (x) => x
+);

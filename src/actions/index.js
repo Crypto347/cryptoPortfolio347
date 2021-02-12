@@ -48,3 +48,4 @@ export * from './progressBarPageActions';
 export * from './headingsPageActions';
 export * from './listsPageActions';
 export * from './highlightsPageActions';
+export * from './dropcapsPageActions';

@@ -2316,6 +2316,24 @@ export function fetchHighlightsPageData() {
     };
 }
 
+export function fetchDropcapsPageData() {
+    return dispatch => {
+        dispatch(Actions.fetchDropcapsPageDataBegin());
+        return fetch("http://localhost:3005/api/dropcaps-page")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchDropcapsPageDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchDropcapsPageDataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

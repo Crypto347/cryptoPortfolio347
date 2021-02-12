@@ -80,6 +80,7 @@ import GoogleMapsPage from './Pages/ElementsPages/GoogleMapsPage/googleMapsPage'
 import HeadingsPage from './Pages/ElementsPages/HeadingsPage/headingsPage';
 import ListsPage from './Pages/ElementsPages/ListsPage/listsPage';
 import HighlightsPage from './Pages/ElementsPages/HighlightsPage/highlightsPage';
+import DropcapsPage from './Pages/ElementsPages/DropcapsPage/dropcapsPage';
 
 /**
  * Actions
@@ -162,6 +163,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/dropcaps"}
+                    component={DropcapsPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/highlights"}

@@ -55,6 +55,7 @@ import progressBarPageReducer from './progressBarPageReducer';
 import headingsPageReducer from './headingsPageReducer';
 import listsPageReducer from './listsPageReducer';
 import highlightsPageReducer from './highlightsPageReducer';
+import dropcapsPageReducer from './dropcapsPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -107,5 +108,6 @@ export default (history) => combineReducers({
     progressBarPage: progressBarPageReducer,
     headingsPage: headingsPageReducer,
     listsPage: listsPageReducer,
-    highlightsPage: highlightsPageReducer
+    highlightsPage: highlightsPageReducer,
+    dropcapsPage: dropcapsPageReducer
 });

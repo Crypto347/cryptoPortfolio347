@@ -273,6 +273,7 @@ export const Toolbar = (props) => {
             case 'googleMapsPage':
             case 'listsPage':
             case 'highlightsPage':
+            case 'dropcapsPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':
