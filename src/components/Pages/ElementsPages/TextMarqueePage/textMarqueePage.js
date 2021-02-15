@@ -83,7 +83,7 @@ export const TextMarqueePage = (props) => {
     const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [translatedX, setTranslatedX] = useState(300);
-    const [fontSize, setFontSize] = useState(0);
+    const [fontSize, setFontSize] = useState(25);
 
     /**
      * Methods
@@ -100,7 +100,7 @@ export const TextMarqueePage = (props) => {
             window.scrollTo(0, 0);
         }, 100);
 
-        // Init text's font size
+        // Initialize the font size of the text
 
         handleResize();
 
@@ -129,13 +129,19 @@ export const TextMarqueePage = (props) => {
     });
 
     const handleResize = (e) => {
+        // Initialize the text position
+
+        setTranslatedX(25);
+
+        // Set the font size of the text relative to the window width
+
         if(size.width > 1120) setFontSize(350);
         if(size.width <= 1120 && size.width > 600) setFontSize(250);
         if(size.width < 600) setFontSize(170);
     }
 
     useInterval(() => {
-        // updated translateX value 
+        // Update translateX value
 
         if(size.width > 1120){
             if(translatedX < -2300) setTranslatedX(size.width);
