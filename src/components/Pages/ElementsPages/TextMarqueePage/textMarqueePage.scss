@@ -23,11 +23,10 @@
         .text-marquee-page-data-wrapper {
             width: 100%;
             background: rgb(248, 248, 248);
-            padding: 90px 0px 90px 0px;
+            padding: 70px 0px 70px 0px;
             overflow: hidden;
             .text-marquee-page-text {
                 width: calc(100% + 1200px);
-                font-size: 350px;
                 font-family: 'Lustria', serif;
             }
         }
@@ -40,11 +39,6 @@
             .text-marquee-page-header {
                 padding: 90px 40px 90px 40px;
             }
-            // .text-marquee-page-text {
-            //     width: calc(100% + 2000px);
-            //     font-size: 350px;
-            //     font-family: 'Lustria', serif;
-            // }
         }
     }
 }

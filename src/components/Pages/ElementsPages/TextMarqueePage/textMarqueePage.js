@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -79,9 +80,11 @@ export const TextMarqueePage = (props) => {
      */
 
     const size = useWindowSize();
+    const resizeRef = useRef();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [translatedX, setTranslatedX] = useState(300);
-    
+    const [fontSize, setFontSize] = useState(0);
+
     /**
      * Methods
      */
@@ -97,26 +100,56 @@ export const TextMarqueePage = (props) => {
             window.scrollTo(0, 0);
         }, 100);
 
+        // Init text's font size
+
+        handleResize();
+
         // Event Listeners
 
+        const resize = () => {
+            resizeRef.current();
+        }
+
+        window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
 
         return () => {
             // Cleaning the unmounted component
 
             clearTimeout(timeout);
+            window.removeEventListener('resize', resize);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
     }, []);
 
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = (e) => {
+        if(size.width > 1120) setFontSize(350);
+        if(size.width <= 1120 && size.width > 600) setFontSize(250);
+        if(size.width < 600) setFontSize(170);
+    }
+
     useInterval(() => {
         // updated translateX value 
 
-        if(translatedX < -2300) setTranslatedX(size.width);
-        else setTranslatedX(translatedX - 1);
-        
+        if(size.width > 1120){
+            if(translatedX < -2300) setTranslatedX(size.width);
+            else setTranslatedX(translatedX - 1);
+        }
+        if(size.width <= 1120 && size.width > 600){
+            if(translatedX < -1650) setTranslatedX(size.width);
+            else setTranslatedX(translatedX - 1);
+        }
+        if(size.width <= 600){
+            if(translatedX < -1100) setTranslatedX(size.width);
+            else setTranslatedX(translatedX - 1);
+        }
+       
     }, 10);
 
     const handleOnWheel = (e) => {
@@ -198,7 +231,10 @@ export const TextMarqueePage = (props) => {
                 <div className="text-marquee-page-data-wrapper">
                     <div 
                         className="text-marquee-page-text"
-                        style={{transform: `translateX(${translatedX}px)`}}
+                        style={{
+                            fontSize: `${fontSize}`,
+                            transform: `translateX(${translatedX}px)`
+                        }}
                     >
                        Agency. Hello
                     </div>
