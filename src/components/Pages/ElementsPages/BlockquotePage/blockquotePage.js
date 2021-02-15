@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './columnsPage.scss';
+import './blockquotePage.scss';
 
 /**
  * Components
@@ -55,10 +55,8 @@ import * as Selectors from '../../../../reducers/selectors';
 import {
     H15,
     H17,
-    H25,
-    H45,
-    EH30,
-    EH60
+    H19,
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -70,10 +68,10 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * ColumnsPage component definition and export
+ * BlockquotePage component definition and export
  */
 
-export const ColumnsPage = (props) => {
+export const BlockquotePage = (props) => {
 
     /**
      * State
@@ -93,8 +91,8 @@ export const ColumnsPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.columnsPage.items.length === 0){
-            props.fetchColumnsPageData();
+        if(props.blockquotePage.items.length === 0){
+            props.fetchBlockquotePageData();
         }
 
         // Scroll to the top of the screen
@@ -119,7 +117,7 @@ export const ColumnsPage = (props) => {
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("columnsPage");
+        let el = document.getElementById("blockquotePage");
 
         // Show or hide BackToTop component
 
@@ -153,12 +151,12 @@ export const ColumnsPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="columnsPage"
+                        page="blockquotePage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="columnsPage"
+                        page="blockquotePage"
                     />
                 </>
             )
@@ -169,74 +167,33 @@ export const ColumnsPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="columnsPage"
+                        page="blockquotePage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="columnsPage"
+                        page="blockquotePage"
                     />
                 </>
             )
         }
     }
-
-    const renderColumns = (arr, key) => {
-        return(
-            <div className="columns-page-columns-wrapper">
-                {arr.map((el, i) => {
-                    let width;
-                    let showEH30;
-                    if(size.width > 1120){
-                        width = el.columnWidth;
-                        showEH30 = false;
-                    }
-                    if(size.width <= 1120 && size.width > 900){
-                        if(key === "columnsPage4ColumnsNormal"){
-                            width = 50;
-                            showEH30 = (i !== arr.length - 1) && (i !== arr.length - 2) ? true : false;
-                        }else{
-                            width = 100;
-                            showEH30 = (i !== arr.length - 1) ? true : false;
-                        }
-                    }
-                    if(size.width <= 900){
-                        showEH30 = (i !== arr.length - 1) ? true : false;
-                        width = 100;
-                    }
-                    return(
-                        <div
-                            key={i}
-                            className="columns-page-column"
-                            style={{
-                                width: `calc(${width}% - 30px)`
-                            }}
-                        >
-                            <H17 className="h17-nobel-lustria">{el.text}</H17>
-                            {showEH30 ? 
-                            <EH30/> 
-                            : null}
-                        </div>
-                    )
-                })}
-            </div>
-        )
-    }
     
-    const renderColumnsPageData = (arr) => {
+    const renderBlockquotePageData = (arr) => {
         return(
-            <div>
+            <div className="blockquote-page-data-items">
                 {arr.map((el, i) => {
                     return(
                         <React.Fragment
                             key={i}
                         >
-                            <H25 className="h25-black-lustria">{el.header}</H25>
-                            <EH30/>
-                            {renderColumns(el.data, el.key)}
-                            {i !== arr.length - 1 ?
-                            <EH60/>
-                            : null}
+                            <H17 className="h17-nobel-lustria">{el.text}</H17>
+                            {el.blockquote !== null ? 
+                            <div className="blockquote-page-blockquote-wrapper">
+                                <blockquote className="blockquote-page-blockquote">
+                                    <H19 className="h19-black-poppins"> {el.blockquote}</H19>
+                                </blockquote>
+                            </div>: null}
                         </React.Fragment>
                     )
                 })}
@@ -244,11 +201,11 @@ export const ColumnsPage = (props) => {
         )
     }
     
-    const renderColumnsPageDataContent = (arr) => {
+    const renderBlockquotePageDataContent = (arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
-                    className="columns-page-loading-error" 
+                    className="blockquote-page-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
                     <Loading color="black"/>
@@ -257,15 +214,15 @@ export const ColumnsPage = (props) => {
         }
         if(!arr.loading && !arr.error){
             return(
-                <div className="columns-page-data-wrapper">
-                    {renderColumnsPageData(arr.items)}
+                <div className="blockquote-page-data-wrapper">
+                    {renderBlockquotePageData(arr.items)}
                 </div>
             )
         }
         if(!arr.loading && arr.error){
             return(
                 <div 
-                    className="columns-page-loading-error" 
+                    className="blockquote-page-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
@@ -279,14 +236,14 @@ export const ColumnsPage = (props) => {
      */
 
     return(
-        <div className="columns-page" id="columnsPage">
+        <div className="blockquote-page" id="blockquotePage">
             {renderToolbars()}
-            <div className="columns-page-wrapper">
-                <div className="columns-page-header">
-                    <H45 className="h45-nero-lustria">Columns</H45>
+            <div className="blockquote-page-wrapper">
+                <div className="blockquote-page-header">
+                    <H45 className="h45-nero-lustria">Blockquote</H45>
                 </div>
                 <div className="grey-line"/>
-                {renderColumnsPageDataContent(props.columnsPage)}
+                {renderBlockquotePageDataContent(props.blockquotePage)}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -297,19 +254,19 @@ export const ColumnsPage = (props) => {
 export default connect(
     (state) => {
         return {
-            columnsPage: Selectors.getColumnsPageState(state),
+            blockquotePage: Selectors.getBlockquotePageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
         return {
-            fetchColumnsPageData: bindActionCreators(Services.fetchColumnsPageData, dispatch),
+            fetchBlockquotePageData: bindActionCreators(Services.fetchBlockquotePageData, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
         };
     }
-)(ColumnsPage);
+)(BlockquotePage);
  

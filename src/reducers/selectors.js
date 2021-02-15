@@ -512,3 +512,10 @@ export const getColumnsPageState = createSelector(
     [getColumnsPage],
     (x) => x
 );
+
+const getBlockquotePage = (state) => state.blockquotePage;
+
+export const getBlockquotePageState = createSelector(
+    [getBlockquotePage],
+    (x) => x
+);

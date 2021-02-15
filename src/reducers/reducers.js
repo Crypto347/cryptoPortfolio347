@@ -57,6 +57,7 @@ import listsPageReducer from './listsPageReducer';
 import highlightsPageReducer from './highlightsPageReducer';
 import dropcapsPageReducer from './dropcapsPageReducer';
 import columnsPageReducer from './columnsPageReducer';
+import blockquotePageReducer from './blockquotePageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -111,5 +112,6 @@ export default (history) => combineReducers({
     listsPage: listsPageReducer,
     highlightsPage: highlightsPageReducer,
     dropcapsPage: dropcapsPageReducer,
-    columnsPage: columnsPageReducer
+    columnsPage: columnsPageReducer,
+    blockquotePage: blockquotePageReducer
 });
