@@ -99,6 +99,8 @@ export const findPathOfIds = (path) => {
             return [6, 63, 635];
         case 'blockquote':
             return [6, 63, 636];
+        case 'text-marquee':
+            return [6, 64, 641];
     }
 
     //Second element of updatedPath array

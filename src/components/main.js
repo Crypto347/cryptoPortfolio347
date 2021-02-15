@@ -83,6 +83,7 @@ import HighlightsPage from './Pages/ElementsPages/HighlightsPage/highlightsPage'
 import DropcapsPage from './Pages/ElementsPages/DropcapsPage/dropcapsPage';
 import ColumnsPage from './Pages/ElementsPages/ColumnsPage/columnsPage';
 import BlockquotePage from './Pages/ElementsPages/BlockquotePage/blockquotePage';
+import TextMarqueePage from './Pages/ElementsPages/TextMarqueePage/textMarqueePage';
 
 /**
  * Actions
@@ -165,6 +166,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/text-marquee"}
+                    component={TextMarqueePage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/blockquote"}

@@ -276,6 +276,7 @@ export const Toolbar = (props) => {
             case 'dropcapsPage':
             case 'columnsPage':
             case 'blockquotePage':
+            case 'textMarqueePage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':
