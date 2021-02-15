@@ -80,7 +80,7 @@ export const TextMarqueePage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [translatedX, setTranslatedX] = useState(size.width);
+    const [translatedX, setTranslatedX] = useState(300);
     
     /**
      * Methods
@@ -114,11 +114,9 @@ export const TextMarqueePage = (props) => {
     useInterval(() => {
         // updated translateX value 
 
-        if(translatedX === -2300) {
-            setTranslatedX(size.width);
-        }else{
-            setTranslatedX(translatedX - 1);
-        }
+        if(translatedX < -2300) setTranslatedX(size.width);
+        else setTranslatedX(translatedX - 1);
+        
     }, 10);
 
     const handleOnWheel = (e) => {

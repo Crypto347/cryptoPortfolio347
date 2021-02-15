@@ -34,17 +34,17 @@
     }
 }
 
-// @media only screen and (max-width: 1120px){
-//     .text-marquee-page {
-//         .text-marquee-page-wrapper {
-//             .text-marquee-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }
-//             .text-marquee-page-text {
-//                 width: calc(100% + 2000px);
-//                 font-size: 350px;
-//                 font-family: 'Lustria', serif;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .text-marquee-page {
+        .text-marquee-page-wrapper {
+            .text-marquee-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            // .text-marquee-page-text {
+            //     width: calc(100% + 2000px);
+            //     font-size: 350px;
+            //     font-family: 'Lustria', serif;
+            // }
+        }
+    }
+}
