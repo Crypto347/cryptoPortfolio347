@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -27,6 +28,7 @@ import './scrollSliderPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import ScrollSlider from '../../../../library/ScrollSlider/scrollSlider';
 import Button from '../../../../library/Button/button';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
@@ -88,8 +90,16 @@ export const ScrollSliderPage = (props) => {
      * State
      */
 
+    const resizeRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [mouseOnSlider, setMouseOnSlider] = useState(false);
+    const initCoordinateRange = [
+        {
+            key: "scrollSliderId1",
+            updated: false
+        }
+    ]
     
     /**
      * Methods
@@ -114,17 +124,74 @@ export const ScrollSliderPage = (props) => {
 
         // Event Listeners
 
-        window.addEventListener('wheel', handleOnWheel);
+        const resize = () => {
+            resizeRef.current();
+        }
 
+        window.addEventListener('wheel', handleOnWheel);
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('resize', resize);
         return () => {
             // Cleaning the unmounted component
-
+            
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('resize', resize);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.scrollSliderPage.sliderContainersCoordinateRange[0].updated]);
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    });
+
+    const handleResize = () => {
+        // props.forgetCoordinateRangeOfScrollSliderForScrollSliderPage(initCoordinateRange);
+    }
+    
+    const handleMouseMove = (e) => {
+
+
+        let mouseOnSlider1 = props.scrollSliderPage.sliderContainersCoordinateRange.find(item => item.key === "scrollSliderId1");
+
+        console.log("ff",mouseOnSlider1)
+
+        // /**
+        //  * Split the image holder into equal parts equal to the number of elements in imagesArray,
+        //  * and remember the coordinates of each part. Then check if the cursor coordinates are 
+        //  * inside the part and then render the corresponding image.
+        //  */
+
+        // let pageX = e.pageX;
+        // let pageY = e.pageY;
+
+        // // Check if inside the image holder
+        // if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
+        //     props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
+        // ){
+        //     let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
+        //     let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
+        //     coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
+        //     coordinatesArray.map((el, i) => {
+        //         if(i !== coordinatesArray.length - 1){
+        //             // Check if inside the calculated corresponding part
+
+        //             if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
+        //                 setImgToLoad(props.imagesArray[i]);
+        //             }
+        //         }else{
+        //             // Check if inside the calculated corresponding part
+
+        //             if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
+        //                 setImgToLoad(props.imagesArray[i]);
+        //             }
+        //         }
+               
+        //     })
+        // }
+    }
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -145,6 +212,7 @@ export const ScrollSliderPage = (props) => {
         }else{
             setScrollingUp(true);
         }
+        console.log(mouseOnSlider)
     }
 
     const renderBackgroundColor = (section) => {
@@ -219,9 +287,30 @@ export const ScrollSliderPage = (props) => {
         }
     }
 
+    // const handleMouseEnter = (opt) => {
+    //     switch(opt){
+    //         case 'scrollSliderPageDataItems': 
+    //             setMouseOnSlider(true);
+    //             break; 
+    //     }
+    // }
+
+    // const handleMouseLeave = (opt) => {
+    //     switch(opt){
+    //         case 'scrollSliderPageDataItems': 
+    //             setMouseOnSlider(false);
+    //             break; 
+    //     }
+    // }
+
     const renderScrollSliderPageData = (arr) => {
         return(
-            <div className="scroll-slider-page-data-items">
+            <div 
+                className="scroll-slider-page-data-items"
+                id="scrollSliderPageDataItems"
+                // onMouseEnter={() => handleMouseEnter(`scrollSliderPageDataItems`)} 
+                // onMouseLeave={() => handleMouseLeave(`scrollSliderPageDataItems`)} 
+            >
                 {arr.map((el, i) => {
                     if(el.option === "text"){
                         return(
@@ -280,7 +369,15 @@ export const ScrollSliderPage = (props) => {
         if(!arr.loading && !arr.error){
             return(
                 <>
-                    {renderScrollSliderPageData(arr)}
+                    {/* {renderScrollSliderPageData(arr)} */}
+                    <ScrollSlider
+                        page="scrollSliderComponent"
+                        sliderKey="scrollSliderId1"
+                        sliderContent={arr}
+                        sliderContainersCoordinateRange={props.scrollSliderPage.sliderContainersCoordinateRange}
+                        orientation="row"
+                        rememberCoordinateRange={props.rememberCoordinateRangeOfScrollSliderForScrollSliderPage}
+                    />
                 </>
             )
         }
@@ -333,7 +430,9 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            rememberCoordinateRangeOfScrollSliderForScrollSliderPage: bindActionCreators(Actions.rememberCoordinateRangeOfScrollSliderForScrollSliderPage, dispatch),
+            forgetCoordinateRangeOfScrollSliderForScrollSliderPage: bindActionCreators(Actions.forgetCoordinateRangeOfScrollSliderForScrollSliderPage, dispatch),
         };
     }
 )(ScrollSliderPage);

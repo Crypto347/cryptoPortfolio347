@@ -19,3 +19,18 @@ export function fetchScrollSliderPageDataFailur(err) {
         err: err
     };
 };
+
+export function rememberCoordinateRangeOfScrollSliderForScrollSliderPage(key, coordinateRange) {
+    return { 
+        type: actionTypes.REMEMBER_COORDINATE_RANGE_OF_SCROLL_SLIDER_FOR_SCROLL_SLIDER_PAGE,
+        key: key,
+        coordinateRange: coordinateRange
+    };
+};
+
+export function forgetCoordinateRangeOfScrollSliderForScrollSliderPage(arr) {
+    return { 
+        type: actionTypes.FORGET_COORDINATE_RANGE_OF_SCROLL_SLIDER_FOR_SCROLL_SLIDER_PAGE,
+        arr: arr
+    };
+};

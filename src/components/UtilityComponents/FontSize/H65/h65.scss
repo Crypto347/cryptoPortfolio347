@@ -9,6 +9,12 @@
     color: black;
 }
 
+.h65-black-lustria-scroll-slider {
+    font-size: 65px;
+    font-family: 'Lustria', serif;
+    color: black;
+}
+
 .h65-white-teko {
     font-size: 65px;
     font-family: 'Teko', sans-serif;
@@ -39,6 +45,12 @@
     color: black;
 }
 
+.h65-black-poppins-scroll-slider {
+    font-size: 65px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
 .h65-white-poppins-centered {
     font-size: 70px;
     font-family: 'Poppins', sans-serif;
@@ -52,20 +64,29 @@
     }
 }
 
+@media only screen and (max-width: 900px){
+    .h65-black-poppins-scroll-slider {
+        font-size: 45px;
+    }
+    .h65-black-lustria-scroll-slider {
+        font-size: 45px;
+    }
+}
+
 @media only screen and (max-width: 870px){
     .h65-white-poppins-centered {
         font-size: 40px;
     }
 }
 
-@media only screen and (max-width: 690px){
-    .h65-black-teko {
-        font-size: 55px;
-    }
-    .h65-black-lustria {
-        font-size: 50px;
-    }
-}
+// @media only screen and (max-width: 690px){
+//     .h65-black-teko {
+//         font-size: 55px;
+//     }
+//     .h65-black-lustria {
+//         font-size: 50px;
+//     }
+// }
 
 
 @media only screen and (max-width: 650px){

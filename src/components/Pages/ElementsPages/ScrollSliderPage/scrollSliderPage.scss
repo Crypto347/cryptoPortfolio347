@@ -21,24 +21,21 @@
             height: 10px;
             background-color: rgb(239, 239, 239);
         }
-        .scroll-slider-page-data-items {
-            width: 5121.43px;
-            display: flex;
-            background: white;
-            .scroll-slider-page-data-item-text {
-                width: 561px;
-                padding: 170px 80px 170px 165px;
-            }
-            .scroll-slider-page-data-item-image {
-                // width: 100%;
-                margin: 0 10px 0 10px;
-                >img {
-                    width: 100%;
-                    filter: grayscale(100%);
-                }
-            }
-        }
-        
+        // .scroll-slider-page-data-items {
+        //     width: 5121.43px;
+        //     display: flex;
+        //     background: white;
+        //     .scroll-slider-page-data-item-text {
+        //         width: 561px;
+        //         padding: 170px 80px 170px 165px;
+        //     }
+        //     .scroll-slider-page-data-item-image {
+        //         >img {
+        //             width: 100%;
+        //             filter: grayscale(100%);
+        //         }
+        //     }
+        // }
     }
 }
 
@@ -60,21 +57,21 @@
     }
 }
 
-@media only screen and (max-width: 760px){
-    .scroll-slider-page {
-        .scroll-slider-page-wrapper {
-            .scroll-slider-page-section1-data-items {
-                flex-direction: column;
-                .scroll-slider-page-data-items {
-                    padding-bottom: 40px;
-                }
-            }
-            .scroll-slider-page-section2-data-items {
-                flex-direction: column;
-                .scroll-slider-page-data-items {
-                    padding-bottom: 40px;
-                }
-            }
-        }
-    }
-}
+// @media only screen and (max-width: 760px){
+//     .scroll-slider-page {
+//         .scroll-slider-page-wrapper {
+//             .scroll-slider-page-section1-data-items {
+//                 flex-direction: column;
+//                 .scroll-slider-page-data-items {
+//                     padding-bottom: 40px;
+//                 }
+//             }
+//             .scroll-slider-page-section2-data-items {
+//                 flex-direction: column;
+//                 .scroll-slider-page-data-items {
+//                     padding-bottom: 40px;
+//                 }
+//             }
+//         }
+//     }
+// }
