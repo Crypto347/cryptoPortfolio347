@@ -519,3 +519,10 @@ export const getBlockquotePageState = createSelector(
     [getBlockquotePage],
     (x) => x
 );
+
+const getScrollSliderPage = (state) => state.scrollSliderPage;
+
+export const getScrollSliderPageState = createSelector(
+    [getScrollSliderPage],
+    (x) => x
+);

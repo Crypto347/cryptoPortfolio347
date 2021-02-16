@@ -2370,6 +2370,24 @@ export function fetchBlockquotePageData() {
     };
 }
 
+export function fetchScrollSliderPageData() {
+    return dispatch => {
+        dispatch(Actions.fetchScrollSliderPageDataBegin());
+        return fetch("http://localhost:3005/api/scroll-slider-page")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchScrollSliderPageDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchScrollSliderPageDataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

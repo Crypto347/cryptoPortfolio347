@@ -51,3 +51,4 @@ export * from './highlightsPageActions';
 export * from './dropcapsPageActions';
 export * from './columnsPageActions';
 export * from './blockquotePageActions';
+export * from './scrollSliderPageActions';

@@ -84,6 +84,7 @@ import DropcapsPage from './Pages/ElementsPages/DropcapsPage/dropcapsPage';
 import ColumnsPage from './Pages/ElementsPages/ColumnsPage/columnsPage';
 import BlockquotePage from './Pages/ElementsPages/BlockquotePage/blockquotePage';
 import TextMarqueePage from './Pages/ElementsPages/TextMarqueePage/textMarqueePage';
+import ScrollSliderPage from './Pages/ElementsPages/ScrollSliderPage/scrollSliderPage';
 
 /**
  * Actions
@@ -166,6 +167,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/scroll-slider"}
+                    component={ScrollSliderPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/text-marquee"}

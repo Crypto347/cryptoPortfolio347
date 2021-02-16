@@ -101,6 +101,8 @@ export const findPathOfIds = (path) => {
             return [6, 63, 636];
         case 'text-marquee':
             return [6, 64, 641];
+        case 'scroll-slider':
+            return [6, 64, 642];
     }
 
     //Second element of updatedPath array
