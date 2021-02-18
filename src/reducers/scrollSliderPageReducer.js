@@ -22,7 +22,8 @@ export const initialState = {
     sliderContainersCoordinateRange: [
         {
             key: "scrollSliderId1",
-            updated: false
+            updated: false,
+            rendered: false
         }
     ],
 }

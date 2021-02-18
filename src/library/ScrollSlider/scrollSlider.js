@@ -87,7 +87,7 @@ export const ScrollSlider = (props) => {
 
     const resizeRef = useRef();
     const size = useWindowSize();
-    const [scrollingUp, setScrollingUp] = useState(false);
+    // const [scrollingUp, setScrollingUp] = useState(false);
     // const [sliderContainerCoordinatesRangeUpdated, setSliderContainerCoordinatesRangeUpdated] = useState(false);
     
     
@@ -96,18 +96,15 @@ export const ScrollSlider = (props) => {
      */
 
     useEffect(() => {
-        let timeout;
-        
-        // Calculate slider container coordinates 
+        // Prevent scrolling y axis on scrolSlider component
 
-        // if(!sliderContainerCoordinateRange.updated){
-            timeout = setTimeout(() => {
-                setSlideContainerCoordinateRange();
-            }, 2000);
-        // }
-        // else{
-            // setSlideContainerCoordinateRange();
-        // }
+        document.getElementById('scrollSlider').onwheel = () => false;
+
+        // Calculate slider container coordinates 
+      
+        let timeout = setTimeout(() => {
+            setSlideContainerCoordinateRange();
+        }, 2000);
 
         // Event Listeners
 
@@ -115,19 +112,24 @@ export const ScrollSlider = (props) => {
             resizeRef.current();
         }
 
-        window.addEventListener('wheel', handleOnWheel);
-        // window.addEventListener('mousemove', handleMouseMove);
+        if(props.mouseOnSlider){
+            window.addEventListener('wheel', handleOnWheel);
+        }else{
+            window.removeEventListener('wheel', handleOnWheel);
+        }
+
         window.addEventListener('resize', resize);
 
         return () => {
             // Cleaning the unmounted component
 
             clearTimeout(timeout);
-            window.removeEventListener('wheel', handleOnWheel);
-            // window.removeEventListener('mousemove', handleMouseMove);
+            if(props.mouseOnSlider){
+                window.removeEventListener('wheel', handleOnWheel);
+            }
             window.removeEventListener('resize', resize);
         }
-    }, []);
+    }, [props.mouseOnSlider]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -135,46 +137,9 @@ export const ScrollSlider = (props) => {
 
     const handleResize = () => {
         // Update slider container coordinates on window resize
-        // console.log("kjh")
+        
         setSlideContainerCoordinateRange();
     }
-    
-    // const handleMouseMove = (e) => {
-
-    //     /**
-    //      * Split the image holder into equal parts equal to the number of elements in imagesArray,
-    //      * and remember the coordinates of each part. Then check if the cursor coordinates are 
-    //      * inside the part and then render the corresponding image.
-    //      */
-
-    //     let pageX = e.pageX;
-    //     let pageY = e.pageY;
-
-    //     // Check if inside the image holder
-    //     if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
-    //         props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
-    //     ){
-    //         let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
-    //         let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
-    //         coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
-    //         coordinatesArray.map((el, i) => {
-    //             if(i !== coordinatesArray.length - 1){
-    //                 // Check if inside the calculated corresponding part
-
-    //                 if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
-    //                     setImgToLoad(props.imagesArray[i]);
-    //                 }
-    //             }else{
-    //                 // Check if inside the calculated corresponding part
-
-    //                 if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
-    //                     setImgToLoad(props.imagesArray[i]);
-    //                 }
-    //             }
-               
-    //         })
-    //     }
-    // }
 
     const setSlideContainerCoordinateRange = () => {
         //Remember slider container coordinates
@@ -198,29 +163,24 @@ export const ScrollSlider = (props) => {
             leftCoordinate: sliderContainer.offsetLeft,
             rightCoordinate: sliderContainer.offsetLeft + sliderContainer.offsetWidth,
             width: sliderContainer.offsetWidth,
-            updated: !sliderContainerCoordinateRange.updated
+            updated: !sliderContainerCoordinateRange.updated,
+            rendered: true
         };
+
+        console.log(sliderContainer.offsetTop + sliderContainer.offsetHeight)
         return updatedSliderCoordinateRange;
     }
 
     const handleOnWheel = (e) => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("scrollSliderPage");
-
-        // Show or hide BackToTop component
-
-        if(scrollHeight > screen.height/2){
-            // props.setShowBackToTopComponent(true);
-        }else{
-            // props.setShowBackToTopComponent(false);
-        }
-    
+        
         // Check scroll direction
 
-        if(!checkScrollDirectionIsUp(e) || scrollHeight < el.offsetTop + 150){
-            setScrollingUp(false);
+        if(!checkScrollDirectionIsUp(e)){
+            console.log("downn")
+            // setScrollingUp(false);
         }else{
-            setScrollingUp(true);
+            console.log("up")
+            // setScrollingUp(true);
         }
     }
 

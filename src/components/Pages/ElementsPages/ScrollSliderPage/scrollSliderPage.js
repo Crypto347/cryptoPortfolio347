@@ -97,7 +97,8 @@ export const ScrollSliderPage = (props) => {
     const initCoordinateRange = [
         {
             key: "scrollSliderId1",
-            updated: false
+            updated: false,
+            rendered: false
         }
     ]
     
@@ -106,6 +107,8 @@ export const ScrollSliderPage = (props) => {
      */
 
     useEffect(() => {
+        let timeout;
+
         // Init state for fading effect when component will unmount
 
         props.setUnmountComponentValues(false, "");
@@ -118,9 +121,11 @@ export const ScrollSliderPage = (props) => {
 
         // Scroll to the top of the screen
 
-        let timeout = setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 100);
+        if(!props.scrollSliderPage.sliderContainersCoordinateRange[0].rendered){
+            timeout = setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+        }
 
         // Event Listeners
 
@@ -153,44 +158,47 @@ export const ScrollSliderPage = (props) => {
     
     const handleMouseMove = (e) => {
 
+        let slider1CoordinateRange = props.scrollSliderPage.sliderContainersCoordinateRange.find(item => item.key === "scrollSliderId1");
 
-        let mouseOnSlider1 = props.scrollSliderPage.sliderContainersCoordinateRange.find(item => item.key === "scrollSliderId1");
+        // console.log("ff",mouseOnSlider1)
 
-        console.log("ff",mouseOnSlider1)
+        /**
+         * Split the image holder into equal parts equal to the number of elements in imagesArray,
+         * and remember the coordinates of each part. Then check if the cursor coordinates are 
+         * inside the part and then render the corresponding image.
+         */
 
-        // /**
-        //  * Split the image holder into equal parts equal to the number of elements in imagesArray,
-        //  * and remember the coordinates of each part. Then check if the cursor coordinates are 
-        //  * inside the part and then render the corresponding image.
-        //  */
+        let pageX = e.pageX;
+        let pageY = e.pageY;
 
-        // let pageX = e.pageX;
-        // let pageY = e.pageY;
+        // Check if inside the image holder
+        if(slider1CoordinateRange.leftCoordinate < pageX && pageX < slider1CoordinateRange.rightCoordinate &&
+            slider1CoordinateRange.topCoordinate < pageY && pageY < slider1CoordinateRange.bottomCoordinate
+        ){
+            setMouseOnSlider(true);
+            // console.log("jjj")
+            // let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
+            // let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
+            // coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
+            // coordinatesArray.map((el, i) => {
+            //     if(i !== coordinatesArray.length - 1){
+            //         // Check if inside the calculated corresponding part
 
-        // // Check if inside the image holder
-        // if(props.imgCoordinateRange.leftCoordinate < pageX && pageX < props.imgCoordinateRange.rightCoordinate &&
-        //     props.imgCoordinateRange.topCoordinate < pageY && pageY < props.imgCoordinateRange.bottomCoordinate
-        // ){
-        //     let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
-        //     let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
-        //     coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
-        //     coordinatesArray.map((el, i) => {
-        //         if(i !== coordinatesArray.length - 1){
-        //             // Check if inside the calculated corresponding part
+            //         if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
+            //             setImgToLoad(props.imagesArray[i]);
+            //         }
+            //     }else{
+            //         // Check if inside the calculated corresponding part
 
-        //             if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
-        //                 setImgToLoad(props.imagesArray[i]);
-        //             }
-        //         }else{
-        //             // Check if inside the calculated corresponding part
-
-        //             if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
-        //                 setImgToLoad(props.imagesArray[i]);
-        //             }
-        //         }
+            //         if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
+            //             setImgToLoad(props.imagesArray[i]);
+            //         }
+            //     }
                
-        //     })
-        // }
+            // })
+        }else{
+            setMouseOnSlider(false);
+        }
     }
 
     const handleOnWheel = (e) => {
@@ -212,7 +220,6 @@ export const ScrollSliderPage = (props) => {
         }else{
             setScrollingUp(true);
         }
-        console.log(mouseOnSlider)
     }
 
     const renderBackgroundColor = (section) => {
@@ -377,6 +384,7 @@ export const ScrollSliderPage = (props) => {
                         sliderContainersCoordinateRange={props.scrollSliderPage.sliderContainersCoordinateRange}
                         orientation="row"
                         rememberCoordinateRange={props.rememberCoordinateRangeOfScrollSliderForScrollSliderPage}
+                        mouseOnSlider={mouseOnSlider}
                     />
                 </>
             )
