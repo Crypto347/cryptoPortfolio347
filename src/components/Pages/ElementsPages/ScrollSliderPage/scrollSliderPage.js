@@ -158,44 +158,18 @@ export const ScrollSliderPage = (props) => {
     
     const handleMouseMove = (e) => {
 
-        let slider1CoordinateRange = props.scrollSliderPage.sliderContainersCoordinateRange.find(item => item.key === "scrollSliderId1");
-
-        // console.log("ff",mouseOnSlider1)
-
         /**
-         * Split the image holder into equal parts equal to the number of elements in imagesArray,
-         * and remember the coordinates of each part. Then check if the cursor coordinates are 
-         * inside the part and then render the corresponding image.
+         * Check if the mouse inside the scroll slider container
          */
 
         let pageX = e.pageX;
         let pageY = e.pageY;
-
-        // Check if inside the image holder
+        let slider1CoordinateRange = props.scrollSliderPage.sliderContainersCoordinateRange.find(item => item.key === "scrollSliderId1");
+      
         if(slider1CoordinateRange.leftCoordinate < pageX && pageX < slider1CoordinateRange.rightCoordinate &&
             slider1CoordinateRange.topCoordinate < pageY && pageY < slider1CoordinateRange.bottomCoordinate
         ){
             setMouseOnSlider(true);
-            // console.log("jjj")
-            // let selectedDivDividedByImagesNumber = Math.round(props.imgCoordinateRange.width / props.imagesArray.length);
-            // let coordinatesArray = Utility.getArrayOfEmptyVal(props.imagesArray.length);
-            // coordinatesArray = coordinatesArray.map((el, i) => props.imgCoordinateRange.leftCoordinate + i * selectedDivDividedByImagesNumber);
-            // coordinatesArray.map((el, i) => {
-            //     if(i !== coordinatesArray.length - 1){
-            //         // Check if inside the calculated corresponding part
-
-            //         if(coordinatesArray[i] < pageX && pageX < coordinatesArray[i + 1]){
-            //             setImgToLoad(props.imagesArray[i]);
-            //         }
-            //     }else{
-            //         // Check if inside the calculated corresponding part
-
-            //         if(coordinatesArray[i] < pageX && pageX < props.imgCoordinateRange.rightCoordinate){
-            //             setImgToLoad(props.imagesArray[i]);
-            //         }
-            //     }
-               
-            // })
         }else{
             setMouseOnSlider(false);
         }
@@ -274,90 +248,6 @@ export const ScrollSliderPage = (props) => {
             )
         }
     }
-
-    const loadImg = (key) => {
-        switch(key) {
-            case 'scrollSliderPageImg1':
-                return Images.SCROLL_SLIDER_IMG_1;
-            case 'scrollSliderPageImg2':
-                return Images.SCROLL_SLIDER_IMG_2;
-            case 'scrollSliderPageImg3':
-                return Images.SCROLL_SLIDER_IMG_3;
-            case 'scrollSliderPageImg4':
-                return Images.SCROLL_SLIDER_IMG_4;
-            case 'scrollSliderPageImg5':
-                return Images.SCROLL_SLIDER_IMG_5;
-            case 'scrollSliderPageImg6':
-                return Images.SCROLL_SLIDER_IMG_6;
-            default:
-                return "";
-        }
-    }
-
-    // const handleMouseEnter = (opt) => {
-    //     switch(opt){
-    //         case 'scrollSliderPageDataItems': 
-    //             setMouseOnSlider(true);
-    //             break; 
-    //     }
-    // }
-
-    // const handleMouseLeave = (opt) => {
-    //     switch(opt){
-    //         case 'scrollSliderPageDataItems': 
-    //             setMouseOnSlider(false);
-    //             break; 
-    //     }
-    // }
-
-    const renderScrollSliderPageData = (arr) => {
-        return(
-            <div 
-                className="scroll-slider-page-data-items"
-                id="scrollSliderPageDataItems"
-                // onMouseEnter={() => handleMouseEnter(`scrollSliderPageDataItems`)} 
-                // onMouseLeave={() => handleMouseLeave(`scrollSliderPageDataItems`)} 
-            >
-                {arr.map((el, i) => {
-                    if(el.option === "text"){
-                        return(
-                            <div 
-                                key={i}
-                                className="scroll-slider-page-data-item-text"
-                            >
-                                <H65 className="h65-black-poppins">{el.header1}</H65>
-                                <H65 className="h65-black-lustria">{el.header2}</H65>
-                                <EH20/>
-                                <H25 className="h25-nobel-lustria">{el.text}</H25>
-                                <EH60/>
-                                <Button
-                                    className="buttons-page-medium"
-                                    text="get direction."
-                                    onMouseDown={(e) => onMouseDownHandler(e)}
-                                />
-                                <EH60/>
-                            </div>
-                        )
-                    }else if(el.option === "image"){
-                        return(
-                            <div 
-                                key={i}
-                                className="scroll-slider-page-data-item-image"
-                                style={{
-                                    margin: `0px ${i === arr.length - 1 ? 0 : 10}px 0px 10px`
-                                }}
-                            >
-                                <img 
-                                    src={loadImg(el.key)}
-                                    alt={el.alt}
-                                />
-                            </div>
-                        )
-                    }
-                })}
-            </div>
-        )
-    }
     
     const renderScrollSliderPageDataContent = (arr) => {
         if(arr.loading && !arr.error){
@@ -375,18 +265,17 @@ export const ScrollSliderPage = (props) => {
         }
         if(!arr.loading && !arr.error){
             return(
-                <>
-                    {/* {renderScrollSliderPageData(arr)} */}
-                    <ScrollSlider
-                        page="scrollSliderComponent"
-                        sliderKey="scrollSliderId1"
-                        sliderContent={arr}
-                        sliderContainersCoordinateRange={props.scrollSliderPage.sliderContainersCoordinateRange}
-                        orientation="row"
-                        rememberCoordinateRange={props.rememberCoordinateRangeOfScrollSliderForScrollSliderPage}
-                        mouseOnSlider={mouseOnSlider}
-                    />
-                </>
+                <ScrollSlider
+                    page="scrollSliderComponent"
+                    sliderKey="scrollSliderId1"
+                    sliderContent={arr}
+                    sliderContainersCoordinateRange={props.scrollSliderPage.sliderContainersCoordinateRange}
+                    orientation="row"
+                    rememberCoordinateRange={props.rememberCoordinateRangeOfScrollSliderForScrollSliderPage}
+                    mouseOnSlider={mouseOnSlider}
+                    updateScrollSlidersStyleValues={props.updateScrollSlidersStyleValuesScrollSliderPage}
+                    scrollSlidersStyleValues={props.scrollSliderPage.scrollSlidersStyleValues}
+                />
             )
         }
         if(!arr.loading && arr.error){
@@ -441,6 +330,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             rememberCoordinateRangeOfScrollSliderForScrollSliderPage: bindActionCreators(Actions.rememberCoordinateRangeOfScrollSliderForScrollSliderPage, dispatch),
             forgetCoordinateRangeOfScrollSliderForScrollSliderPage: bindActionCreators(Actions.forgetCoordinateRangeOfScrollSliderForScrollSliderPage, dispatch),
+            updateScrollSlidersStyleValuesScrollSliderPage: bindActionCreators(Actions.updateScrollSlidersStyleValuesScrollSliderPage, dispatch),
         };
     }
 )(ScrollSliderPage);

@@ -85,8 +85,10 @@ export const ScrollSlider = (props) => {
      * State
      */
 
-    const resizeRef = useRef();
     const size = useWindowSize();
+    const resizeRef = useRef();
+    const transitionRef = useRef();
+    
     // const [scrollingUp, setScrollingUp] = useState(false);
     // const [sliderContainerCoordinatesRangeUpdated, setSliderContainerCoordinatesRangeUpdated] = useState(false);
     
@@ -112,6 +114,10 @@ export const ScrollSlider = (props) => {
             resizeRef.current();
         }
 
+        const smooth = () => {
+            transitionRef.current();
+        }
+
         if(props.mouseOnSlider){
             window.addEventListener('wheel', handleOnWheel);
         }else{
@@ -119,6 +125,7 @@ export const ScrollSlider = (props) => {
         }
 
         window.addEventListener('resize', resize);
+        window.addEventListener('transitionend', smooth);
 
         return () => {
             // Cleaning the unmounted component
@@ -128,12 +135,35 @@ export const ScrollSlider = (props) => {
                 window.removeEventListener('wheel', handleOnWheel);
             }
             window.removeEventListener('resize', resize);
+            window.removeEventListener('transitionend', smooth);
         }
     }, [props.mouseOnSlider]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
+        transitionRef.current = smoothTransition;
     });
+
+    useEffect(() => {
+        // Set the transition property to the initial value if its value is 0
+
+        if(props.scrollSlidersStyleValues.slider1?.transition === 0){
+            props.updateScrollSlidersStyleValues("scrollSlider1",{
+                ...props.scrollSlidersStyleValues.slider1,
+                transition: 0.45
+            });
+        }
+
+    }, [props.scrollSlidersStyleValues.slider1.transition]);
+
+    const smoothTransition = () => {
+        // if(props.scrollSlidersStyleValues.slider1){
+            props.updateScrollSlidersStyleValues("scrollSlider1",{
+                ...props.scrollSlidersStyleValues.slider1,
+                transition: 0
+            });
+        // }
+    }
 
     const handleResize = () => {
         // Update slider container coordinates on window resize
@@ -167,20 +197,28 @@ export const ScrollSlider = (props) => {
             rendered: true
         };
 
-        console.log(sliderContainer.offsetTop + sliderContainer.offsetHeight)
         return updatedSliderCoordinateRange;
     }
 
     const handleOnWheel = (e) => {
-        
         // Check scroll direction
 
+        let scrollSliderWidth = document.getElementById("scrollSlider").offsetWidth;
+
         if(!checkScrollDirectionIsUp(e)){
-            console.log("downn")
-            // setScrollingUp(false);
+            props.updateScrollSlidersStyleValues("scrollSlider1",{
+                translateX: scrollSliderWidth - Math.abs(props.scrollSlidersStyleValues["slider1"].translateX - scrollSliderWidth/props.sliderContent.length) > size.width ? 
+                            props.scrollSlidersStyleValues["slider1"].translateX - scrollSliderWidth/props.sliderContent.length : 
+                            -(scrollSliderWidth-size.width),
+                transition: props.scrollSlidersStyleValues["slider1"].transition,
+                rendered: true
+            });
         }else{
-            console.log("up")
-            // setScrollingUp(true);
+            props.updateScrollSlidersStyleValues("scrollSlider1",{
+                translateX: props.scrollSlidersStyleValues["slider1"].translateX >= 0 ? 0 : props.scrollSlidersStyleValues["slider1"].translateX + scrollSliderWidth/props.sliderContent.length,
+                transition: props.scrollSlidersStyleValues["slider1"].transition,
+                rendered: true
+            });
         }
     }
 
@@ -190,7 +228,6 @@ export const ScrollSlider = (props) => {
         }
         return e.deltaY < 0;
     }
-
   
     const loadImg = (key) => {
         switch(key) {
@@ -219,7 +256,11 @@ export const ScrollSlider = (props) => {
         <div 
             className="scroll-slider" 
             id="scrollSlider"
-            style={{flexDirection: `${props.orientation}`}}
+            style={{
+                flexDirection: `${props.orientation}`,
+                transform: `translateX(${props.scrollSlidersStyleValues.slider1?.translateX}px)`,
+                transition: `transform ${props.scrollSlidersStyleValues.slider1?.transition}s ease-out`,
+            }}
         >
            {props.sliderContent.map((el, i) => {
                 if(el.option === "text"){

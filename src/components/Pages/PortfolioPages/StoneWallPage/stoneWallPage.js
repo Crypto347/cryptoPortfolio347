@@ -116,14 +116,14 @@ export const StoneWallPage = (props) => {
 
         // Event Listeners
         
-        const smooth = () => {
-            transitionRef.current();
-        }
-
         const resize = () => {
             resizeRef.current();
         }
  
+        const smooth = () => {
+            transitionRef.current();
+        }
+
         window.addEventListener('resize', resize);
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('transitionend', smooth);
@@ -141,8 +141,8 @@ export const StoneWallPage = (props) => {
     }, [props.stoneWallPage.itemsStyleValues.img1?.rendered]);
 
     useEffect(() => {
-        transitionRef.current = smoothTransition;
         resizeRef.current = handleResize;
+        transitionRef.current = smoothTransition;
     });
 
     useEffect(() => {

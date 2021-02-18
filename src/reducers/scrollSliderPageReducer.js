@@ -26,6 +26,13 @@ export const initialState = {
             rendered: false
         }
     ],
+    scrollSlidersStyleValues: {
+        slider1: {
+            translateX: 0,
+            transition: 0.45,
+            rendered: true
+        }
+    },
 }
 
 const fetchScrollSliderPageDataBegin = (state, action) => {
@@ -72,6 +79,22 @@ const forgetCoordinateRangeOfScrollSliderForScrollSliderPage = (state, action) =
     };
 }
 
+const updateScrollSlidersStyleValuesScrollSliderPage = (state, action) => {
+    let updatedScrollSlidersStyleValues = {...state.scrollSlidersStyleValues}
+    switch(action.sliderKey) {
+        case 'scrollSlider1':
+            updatedScrollSlidersStyleValues['slider1'].translateX = action.obj.translateX;
+            updatedScrollSlidersStyleValues['slider1'].transition = action.obj.transition;
+            updatedScrollSlidersStyleValues['slider1'].rendered = action.obj.rendered;
+            break;
+    }
+    console.log(updatedScrollSlidersStyleValues.slider1.transition)
+    return {
+        ...state,
+        scrollSlidersStyleValues: updatedScrollSlidersStyleValues
+    };
+}
+
 const scrollSliderPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SCROLL_SLIDER_PAGE_DATA_BEGIN:
@@ -84,6 +107,8 @@ const scrollSliderPageReducer = (state = initialState, action) => {
             return rememberCoordinateRangeOfScrollSliderForScrollSliderPage(state, action);
         case actionTypes.FORGET_COORDINATE_RANGE_OF_SCROLL_SLIDER_FOR_SCROLL_SLIDER_PAGE:
             return forgetCoordinateRangeOfScrollSliderForScrollSliderPage(state, action);
+        case actionTypes.UPDATED_SCROLL_SLIDERS_STYLE_VALUES_SCROLL_SLIDER_PAGE:
+            return updateScrollSlidersStyleValuesScrollSliderPage(state, action);
         default: 
             return state;
     }

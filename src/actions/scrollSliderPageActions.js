@@ -34,3 +34,11 @@ export function forgetCoordinateRangeOfScrollSliderForScrollSliderPage(arr) {
         arr: arr
     };
 };
+
+export function updateScrollSlidersStyleValuesScrollSliderPage(sliderKey, obj) {
+    return { 
+        type: actionTypes.UPDATED_SCROLL_SLIDERS_STYLE_VALUES_SCROLL_SLIDER_PAGE,
+        sliderKey: sliderKey,
+        obj: obj
+    };
+};
