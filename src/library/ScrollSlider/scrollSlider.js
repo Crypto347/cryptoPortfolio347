@@ -204,7 +204,7 @@ export const ScrollSlider = (props) => {
         // Check scroll direction
 
         let scrollSliderWidth = document.getElementById("scrollSlider").offsetWidth;
-
+        
         if(!checkScrollDirectionIsUp(e)){
             props.updateScrollSlidersStyleValues("scrollSlider1",{
                 translateX: scrollSliderWidth - Math.abs(props.scrollSlidersStyleValues["slider1"].translateX - scrollSliderWidth/props.sliderContent.length) > size.width ? 

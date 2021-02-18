@@ -88,7 +88,7 @@ const updateScrollSlidersStyleValuesScrollSliderPage = (state, action) => {
             updatedScrollSlidersStyleValues['slider1'].rendered = action.obj.rendered;
             break;
     }
-    console.log(updatedScrollSlidersStyleValues.slider1.transition)
+    
     return {
         ...state,
         scrollSlidersStyleValues: updatedScrollSlidersStyleValues
