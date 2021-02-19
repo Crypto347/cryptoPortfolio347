@@ -115,6 +115,8 @@ export const Main = (props) => {
      */
 
     useEffect(() => {
+
+        console.log("ENV", process.env.REACT_APP_BASE_URL)
         /**
          * Set all necessary information when initializing the application 
          */

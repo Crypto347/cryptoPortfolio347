@@ -82,8 +82,10 @@ export const Home = (props) => {
 
         // Event Listeners
         
-        window.addEventListener('wheel', checkScrollDirection);
-
+        window.onload = () => {
+            window.addEventListener('wheel', checkScrollDirection);
+        }
+        
         return () => {
             // Cleaning the unmounted component
 
