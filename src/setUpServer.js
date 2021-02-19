@@ -899,7 +899,7 @@ app.get('/api/section2/pictureBoard', (req, res) => {
 });
 
 app.get('/api/section2/ourProcess', (req, res) => {
-    const sec2 = [
+    const ourProcess = [
         {
             id: 1,
             header: "Sketch",
@@ -926,7 +926,7 @@ app.get('/api/section2/ourProcess', (req, res) => {
             img: "evaluationGif"
         },
     ]
-    res.json(sec2);
+    res.json(ourProcess);
 });
 
 app.get('/api/section3/testimonials', (req, res) => {

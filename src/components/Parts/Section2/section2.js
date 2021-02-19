@@ -28,6 +28,12 @@ import PictureBoard from '../../Parts/PictureBoard/pictureBoard';
 import OurProcess from '../../Parts/OurProcess/ourProcess';
 
 /**
+ * Actions
+ */
+
+import * as Actions from "../../../actions";
+
+/**
  * Services
  */
 
@@ -51,6 +57,13 @@ import {
 } from '../../UtilityComponents';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
+
+/**
  * Section2 component definition and export
  */
 
@@ -62,13 +75,21 @@ export const Section2 = (props) => {
 
     useEffect(() => {
         // Fetch data for the component
-
+        
         if(props.pictureBoard.items.length === 0){
-            props.fetchPictureBoard();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                props.fetchPictureBoardSuccess(FakeData.picBoard);
+            }else{
+                props.fetchPictureBoard();
+            }
         }
 
         if(props.ourProcessDate.items.length === 0){
-            props.fetchOurProcessData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                props.fetchOurProcessDataSuccess(FakeData.ourProcess);
+            }else{
+                props.fetchOurProcessData();
+            }
         }
 
     }, []);
@@ -143,6 +164,8 @@ export default connect(
         return {
             fetchPictureBoard: bindActionCreators(Services.fetchPictureBoard, dispatch),
             fetchOurProcessData: bindActionCreators(Services.fetchOurProcessData, dispatch),
+            fetchPictureBoardSuccess: bindActionCreators(Actions.fetchPictureBoardSuccess, dispatch),
+            fetchOurProcessDataSuccess: bindActionCreators(Actions.fetchOurProcessDataSuccess, dispatch),
         };
     }
 )(Section2);

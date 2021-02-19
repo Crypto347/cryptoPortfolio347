@@ -81,6 +81,7 @@ import * as Images from '../../../constants/images';
  */
 
 import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
 
 /**
  * HeaderImages component definition and export
@@ -134,7 +135,7 @@ export const HeaderImages = (props) => {
         // Fetch data for the component
 
         if(props.headerImages.items.length === 0){
-            if(process.env.ENVIRONMENT === "production"){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
                 props.fetchHeaderImagesSuccess(FakeData.headerImg);
             }else{
                 props.fetchHeaderImagesArray();

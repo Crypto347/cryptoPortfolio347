@@ -59,6 +59,7 @@ import {
  */
 
 import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
 
 /**
  * Section1 component definition and export
@@ -74,7 +75,7 @@ export const Section1 = (props) => {
         // Fetch data for the component
 
         if(props.section1Data.items.length === 0){
-            if(process.env.ENVIRONMENT === "production"){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
                 props.fetchSection1DataSuccess(FakeData.sec1);
             }else{
                 props.fetchSection1Data();
