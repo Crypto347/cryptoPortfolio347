@@ -87,7 +87,8 @@ export const ScrollSlider = (props) => {
 
     const size = useWindowSize();
     const resizeRef = useRef();
-    const transitionRef = useRef();    
+    const transitionRef = useRef();
+    const [initHeight, setInitHeight] = useState("350px");       
     const [componentUpdated, setComponentUpdated] = useState(false);    
     
     /**
@@ -145,7 +146,7 @@ export const ScrollSlider = (props) => {
         if(props.scrollSlidersStyleValues.slider1?.transition === 0){
             props.updateScrollSlidersStyleValues("scrollSlider1",{
                 ...props.scrollSlidersStyleValues.slider1,
-                transition: 0.45
+                transition: 2
             });
         }
 
@@ -261,7 +262,7 @@ export const ScrollSlider = (props) => {
                 height: `${initHeight}`,
                 flexDirection: `${props.orientation}`,
                 transform: `translateX(${props.scrollSlidersStyleValues.slider1?.translateX}px)`,
-                transition: `transform ${props.scrollSlidersStyleValues.slider1?.transition}s ease-out`,
+                transition: `transform ${props.scrollSlidersStyleValues.slider1?.transition}s ease`,
             }}
         >
            {props.sliderContent.map((el, i) => {

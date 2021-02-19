@@ -29,7 +29,7 @@ export const initialState = {
     scrollSlidersStyleValues: {
         slider1: {
             translateX: 0,
-            transition: 0.45,
+            transition: 2,
             rendered: true
         }
     },

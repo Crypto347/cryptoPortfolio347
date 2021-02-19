@@ -29,7 +29,6 @@ import './scrollSliderPage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import ScrollSlider from '../../../../library/ScrollSlider/scrollSlider';
-import Button from '../../../../library/Button/button';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -57,13 +56,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import {
     H15,
-    H17,
-    H25,
-    H45,
-    H65,
-    EW10,
-    EH20,
-    EH60
+    H45
 } from '../../../UtilityComponents';
 
 /**
@@ -75,12 +68,6 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * Constants
- */
-
-import * as Images from '../../../../constants/images';
-
-/**
  * ScrollSliderPage component definition and export
  */
 
@@ -90,17 +77,9 @@ export const ScrollSliderPage = (props) => {
      * State
      */
 
-    const resizeRef = useRef();
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [mouseOnSlider, setMouseOnSlider] = useState(false);
-    const initCoordinateRange = [
-        {
-            key: "scrollSliderId1",
-            updated: false,
-            rendered: false
-        }
-    ]
     
     /**
      * Methods
@@ -129,33 +108,20 @@ export const ScrollSliderPage = (props) => {
 
         // Event Listeners
 
-        const resize = () => {
-            resizeRef.current();
-        }
-
         window.addEventListener('wheel', handleOnWheel);
         window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('resize', resize);
+        
         return () => {
             // Cleaning the unmounted component
             
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('resize', resize);
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
     }, [props.scrollSliderPage.sliderContainersCoordinateRange[0].updated]);
 
-    useEffect(() => {
-        resizeRef.current = handleResize;
-    });
-
-    const handleResize = () => {
-        // props.forgetCoordinateRangeOfScrollSliderForScrollSliderPage(initCoordinateRange);
-    }
-    
     const handleMouseMove = (e) => {
 
         /**
