@@ -65,6 +65,13 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
+
+/**
  * Testimonials component definition and export
  */
 
@@ -84,9 +91,14 @@ export const Testimonials = (props) => {
         // Fetch data for the component
         
         if(props.testimonials.items.length === 0){
-            props.fetchTestimonials();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                props.fetchTestimonialsSuccess(FakeData.testimonials);
+            }else{
+                props.fetchTestimonials();
+            }
         }
-    }, []);
+        
+    }, [props.testimonials.items.length]);
 
     /**
      * Markup
@@ -109,6 +121,8 @@ export const Testimonials = (props) => {
                     <EH80/>
                     <H45 className="h45-white-lustria">Testimonials</H45>
                     <EH25/>
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.testimonials.items.length !== 0 ? 
                     <Swiper 
                         component="testimonials"
                         contentArray={props.testimonials.items}
@@ -119,7 +133,7 @@ export const Testimonials = (props) => {
                         swiperData={props.testimonials.swiper}
                         rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForHomePage}
                         autoPlay
-                    />
+                    /> : null} 
                     <EH80/>
                 </>
             )
@@ -155,7 +169,7 @@ export default connect(
             setSwiperStateForHomePage: bindActionCreators(Actions.setSwiperStateForHomePage, dispatch),
             rememberCoordinateRangeOfSwiperForHomePage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForHomePage, dispatch),
             forgetCoordinateRangeOfSwiperForHomePage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForHomePage, dispatch),
-
+            fetchTestimonialsSuccess: bindActionCreators(Actions.fetchTestimonialsSuccess, dispatch),
         };
     }
 )(Testimonials);

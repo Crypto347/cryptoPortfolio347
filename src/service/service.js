@@ -99,7 +99,7 @@ export function fetchTestimonials() {
             });
     };
 }
-
+//
 export function fetchTeamInformation() {
     return dispatch => {
         dispatch(Actions.fetchTeamInformationBegin());
