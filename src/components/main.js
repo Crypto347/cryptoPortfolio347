@@ -20,6 +20,10 @@ import {
     Switch
 } from 'react-router-dom';
 
+import {
+    BASE_URL
+} from '../environments/environments';
+
 /**
  * Styles
  */
@@ -115,12 +119,13 @@ export const Main = (props) => {
      */
 
     useEffect(() => {
-
-        console.log("ENV", process.env.REACT_APP_BASE_URL)
         /**
          * Set all necessary information when initializing the application 
          */
 
+        // Check environment
+
+        console.log("ENV", process.env.ENVIRONMENT)
         // Activate menu item according to the location pathname
         
         let path = props.location.pathname.slice(18);

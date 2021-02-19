@@ -1,10 +1,14 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     template: __dirname + '/src/index.html',
     filename: 'index.html',
     inject: 'body'
 });
+const DotenvPlugin = new Dotenv()
+
 console.log(__dirname)
 module.exports = {
   entry: __dirname + '/src/index.js',
@@ -63,5 +67,8 @@ module.exports = {
     port: 8080,
     historyApiFallback: true
   },
-  plugins: [HTMLWebpackPluginConfig]
+  plugins: [
+    HTMLWebpackPluginConfig,
+    DotenvPlugin
+  ]
 };
