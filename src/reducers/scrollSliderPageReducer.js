@@ -65,7 +65,7 @@ const rememberCoordinateRangeOfScrollSliderForScrollSliderPage = (state, action)
     
     let objIndex = updatedSliderContainersCoordinateRange.findIndex(item => item.key === action.key);
     updatedSliderContainersCoordinateRange.splice(objIndex, 1, action.coordinateRange);
-
+    
     return {
         ...state,
         sliderContainersCoordinateRange: updatedSliderContainersCoordinateRange

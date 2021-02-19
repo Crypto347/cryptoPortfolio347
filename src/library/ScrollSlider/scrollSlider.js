@@ -87,11 +87,8 @@ export const ScrollSlider = (props) => {
 
     const size = useWindowSize();
     const resizeRef = useRef();
-    const transitionRef = useRef();
-    
-    // const [scrollingUp, setScrollingUp] = useState(false);
-    // const [sliderContainerCoordinatesRangeUpdated, setSliderContainerCoordinatesRangeUpdated] = useState(false);
-    
+    const transitionRef = useRef();    
+    const [componentUpdated, setComponentUpdated] = useState(false);    
     
     /**
      * Methods
@@ -104,9 +101,8 @@ export const ScrollSlider = (props) => {
 
         // Calculate slider container coordinates 
       
-        let timeout = setTimeout(() => {
-            setSlideContainerCoordinateRange();
-        }, 2000);
+        setSlideContainerCoordinateRange();
+        setInitHeight("auto");
 
         // Event Listeners
 
@@ -130,14 +126,13 @@ export const ScrollSlider = (props) => {
         return () => {
             // Cleaning the unmounted component
 
-            clearTimeout(timeout);
             if(props.mouseOnSlider){
                 window.removeEventListener('wheel', handleOnWheel);
             }
             window.removeEventListener('resize', resize);
             window.removeEventListener('transitionend', smooth);
         }
-    }, [props.mouseOnSlider]);
+    }, [props.mouseOnSlider, componentUpdated]);
 
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -157,18 +152,24 @@ export const ScrollSlider = (props) => {
     }, [props.scrollSlidersStyleValues.slider1.transition]);
 
     const smoothTransition = () => {
-        // if(props.scrollSlidersStyleValues.slider1){
-            props.updateScrollSlidersStyleValues("scrollSlider1",{
-                ...props.scrollSlidersStyleValues.slider1,
-                transition: 0
-            });
-        // }
+        props.updateScrollSlidersStyleValues("scrollSlider1",{
+            ...props.scrollSlidersStyleValues.slider1,
+            transition: 0
+        });
     }
 
     const handleResize = () => {
         // Update slider container coordinates on window resize
         
         setSlideContainerCoordinateRange();
+
+        props.updateScrollSlidersStyleValues("scrollSlider1",{
+            translateX: 0,
+            transition: props.scrollSlidersStyleValues["slider1"].transition,
+            rendered: true
+        });
+
+        setComponentUpdated(!componentUpdated)
     }
 
     const setSlideContainerCoordinateRange = () => {
@@ -257,6 +258,7 @@ export const ScrollSlider = (props) => {
             className="scroll-slider" 
             id="scrollSlider"
             style={{
+                height: `${initHeight}`,
                 flexDirection: `${props.orientation}`,
                 transform: `translateX(${props.scrollSlidersStyleValues.slider1?.translateX}px)`,
                 transition: `transform ${props.scrollSlidersStyleValues.slider1?.transition}s ease-out`,
