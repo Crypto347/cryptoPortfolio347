@@ -28,6 +28,12 @@ import Loading from '../../SmallParts/Loading/loading';
 import Section1DateItem from '../../SmallParts/Section1DateItem/section1DataItem';
 
 /**
+ * Actions
+ */
+
+import * as Actions from "../../../actions";
+
+/**
  * Services
  */
 
@@ -49,6 +55,12 @@ import {
 } from '../../UtilityComponents';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+
+/**
  * Section1 component definition and export
  */
 
@@ -62,7 +74,11 @@ export const Section1 = (props) => {
         // Fetch data for the component
 
         if(props.section1Data.items.length === 0){
-            props.fetchSection1Data();
+            if(process.env.ENVIRONMENT === "production"){
+                props.fetchSection1DataSuccess(FakeData.sec1);
+            }else{
+                props.fetchSection1Data();
+            }
         }
  
     }, []);
@@ -128,7 +144,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch)
+            fetchSection1Data: bindActionCreators(Services.fetchSection1Data, dispatch),
+            fetchSection1DataSuccess: bindActionCreators(Actions.fetchSection1DataSuccess, dispatch),
         };
     }
 )(Section1);

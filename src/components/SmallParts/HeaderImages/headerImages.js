@@ -33,6 +33,12 @@ import Loading from '../../SmallParts/Loading/loading';
 import Button from '../../../library/Button/button';
 
 /**
+ * Actions
+ */
+
+import * as Actions from "../../../actions";
+
+/**
  * Services
  */
 
@@ -69,6 +75,12 @@ import {
  */
 
 import * as Images from '../../../constants/images';
+
+/**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
 
 /**
  * HeaderImages component definition and export
@@ -121,7 +133,14 @@ export const HeaderImages = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        props.fetchHeaderImagesArray();
+        if(props.headerImages.items.length === 0){
+            if(process.env.ENVIRONMENT === "production"){
+                props.fetchHeaderImagesSuccess(FakeData.headerImg);
+            }else{
+                props.fetchHeaderImagesArray();
+            }
+        }
+
     }, []);
 
     useInterval(() => {
@@ -378,7 +397,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchHeaderImagesArray: bindActionCreators(Services.fetchHeaderImagesArray, dispatch)
+            fetchHeaderImagesArray: bindActionCreators(Services.fetchHeaderImagesArray, dispatch),
+            fetchHeaderImagesSuccess: bindActionCreators(Actions.fetchHeaderImagesSuccess, dispatch),
         };
     }
 )(HeaderImages);
