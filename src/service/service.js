@@ -153,7 +153,7 @@ export function fetchAchievementsData() {
             });
     };
 }
-//
+
 export function fetchBigImagesPortfolio(id) {
     return dispatch => {
         dispatch(Actions.fetchBigImagesPortfolioBegin());
@@ -189,7 +189,7 @@ export function fetchBigSliderPortfolio(id) {
             });
     };
 }
-
+//
 export function fetchSmallImagesPortfolio(id) {
     return dispatch => {
         dispatch(Actions.fetchSmallImagesPortfolioBegin());

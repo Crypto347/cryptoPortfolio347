@@ -32,6 +32,14 @@ export const getRandomAlfa = () => {
     return  Math.random();
 } 
 
+export const isObjEmpty = (obj) => {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+} 
+
 export const getArrayOfDots = (val) => {
     let array = new Array(val).fill(0);
     let updateChosen;

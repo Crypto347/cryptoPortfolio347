@@ -136,8 +136,12 @@ export const HeaderImages = (props) => {
 
         if(props.headerImages.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+                
                 props.fetchHeaderImagesSuccess(FakeData.headerImg);
             }else{
+                // Fetch data (required to run -> npm run server)
+
                 props.fetchHeaderImagesArray();
             }
         }

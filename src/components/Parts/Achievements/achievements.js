@@ -92,8 +92,12 @@ export const Achievements = (props) => {
 
         if(props.achievementsData.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                props.fetchAchievementsDataSuccess(FakeData.headerImg);
+                // Fetch mock data (not required to run -> npm run server)
+                
+                props.fetchAchievementsDataSuccess(FakeData.achievementsData);
             }else{
+               // Fetch data (required to run -> npm run server)
+
                 props.fetchAchievementsData();
             }
         }

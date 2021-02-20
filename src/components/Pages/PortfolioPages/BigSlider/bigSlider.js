@@ -71,6 +71,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments'; 
+
+/**
  * BigSlader component definition and export
  */
 
@@ -90,7 +97,7 @@ export const BigSlader = (props) => {
 
     useEffect(() => {
         // Init state for fading effect when component will unmount
-
+     
         props.setUnmountComponentValues(false, "");
 
         // Scroll to the top of the screen
@@ -99,7 +106,17 @@ export const BigSlader = (props) => {
 
         // Fetch data for the component
 
-        props.fetchBigSliderPortfolio(props.match.params.id);
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            let data = FakeData.bigSlider.find(item => item.id === +props.match.params.id)
+            props.fetchBigSliderPortfolioSuccess(data);
+
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchBigSliderPortfolio(props.match.params.id);
+        }
 
         // Show content after successful data fetch
 
@@ -325,7 +342,7 @@ export const BigSlader = (props) => {
                            rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForBigSliderPage}
                            onlyImages
                         //    autoPlay
-                        />
+                        /> 
                         <EH40/>
                         <div className="big-slider-content-info">
                             <div className="big-slider-text-wrapper">
@@ -385,6 +402,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchBigSliderPortfolio: bindActionCreators(Services.fetchBigSliderPortfolio, dispatch),
+            fetchBigSliderPortfolioSuccess: bindActionCreators(Actions.fetchBigSliderPortfolioSuccess, dispatch),
             setBigSliderIsHoveringCategory: bindActionCreators(Actions.setBigSliderIsHoveringCategory, dispatch),
             setBigSliderIsHoveringTag: bindActionCreators(Actions.setBigSliderIsHoveringTag, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
@@ -393,7 +411,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             setSwiperStateForBigSliderPage: bindActionCreators(Actions.setSwiperStateForBigSliderPage, dispatch),
             rememberCoordinateRangeOfSwiperForBigSliderPage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForBigSliderPage, dispatch),
-            forgetCoordinateRangeOfSwiperForBigSliderPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForBigSliderPage, dispatch),
+            forgetCoordinateRangeOfSwiperForBigSliderPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForBigSliderPage, dispatch)
         };
     }
 )(BigSlader);

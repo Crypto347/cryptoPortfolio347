@@ -78,16 +78,24 @@ export const Section2 = (props) => {
         
         if(props.pictureBoard.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
                 props.fetchPictureBoardSuccess(FakeData.picBoard);
             }else{
+                // Fetch data (required to run -> npm run server)
+
                 props.fetchPictureBoard();
             }
         }
 
         if(props.ourProcessDate.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
                 props.fetchOurProcessDataSuccess(FakeData.ourProcess);
             }else{
+                // Fetch data (required to run -> npm run server)
+                
                 props.fetchOurProcessData();
             }
         }

@@ -123,6 +123,7 @@ export const Swiper = (props) => {
      */
 
     useEffect(() => {
+        console.log(props.contentArray)
         let slidesArray = [...props.contentArray];
         let _slides;
         let swiperWrapper;
@@ -636,46 +637,6 @@ export const Swiper = (props) => {
                 return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
                 return Images.ID_3_SMALL_SLIDER_4;
-            // case 'clientsPageSection1Swiper1Id1': 
-            //     return Images.CLIENTS_LOGO_1;
-            // case 'clientsPageSection1Swiper1Id2': 
-            //     return Images.CLIENTS_LOGO_2;
-            // case 'clientsPageSection1Swiper1Id3': 
-            //     return Images.CLIENTS_LOGO_3;
-            // case 'clientsPageSection1Swiper1Id4': 
-            //     return Images.CLIENTS_LOGO_4;
-            // case 'clientsPageSection1Swiper1Id5': 
-            //     return Images.CLIENTS_LOGO_5;
-            // case 'clientsPageSection1Swiper2Id1': 
-            //     return Images.CLIENTS_LOGO_6;
-            // case 'clientsPageSection1Swiper2Id2': 
-            //     return Images.CLIENTS_LOGO_7;
-            // case 'clientsPageSection1Swiper2Id3': 
-            //     return Images.CLIENTS_LOGO_8;
-            // case 'clientsPageSection1Swiper2Id4': 
-            //     return Images.CLIENTS_LOGO_9;
-            // case 'clientsPageSection1Swiper2Id5': 
-            //     return Images.CLIENTS_LOGO_10;
-            // case 'clientsPageSection2Swiper1Id4': 
-            //     return Images.CLIENTS_LOGO_1_LIGHT;
-            // case 'clientsPageSection2Swiper1Id5': 
-            //     return Images.CLIENTS_LOGO_2_LIGHT;
-            // case 'clientsPageSection2Swiper1Id1': 
-            //     return Images.CLIENTS_LOGO_3_LIGHT;
-            // case 'clientsPageSection2Swiper1Id2': 
-            //     return Images.CLIENTS_LOGO_4_LIGHT;
-            // case 'clientsPageSection2Swiper1Id3': 
-            //     return Images.CLIENTS_LOGO_5_LIGHT;
-            // case 'clientsPageSection2Swiper2Id4': 
-            //     return Images.CLIENTS_LOGO_6_LIGHT;
-            // case 'clientsPageSection2Swiper2Id5': 
-            //     return Images.CLIENTS_LOGO_7_LIGHT;
-            // case 'clientsPageSection2Swiper2Id1': 
-            //     return Images.CLIENTS_LOGO_8_LIGHT;
-            // case 'clientsPageSection2Swiper2Id2': 
-            //     return Images.CLIENTS_LOGO_9_LIGHT;
-            // case 'clientsPageSection2Swiper2Id3': 
-            //     return Images.CLIENTS_LOGO_10_LIGHT;
             default:
                 return ""; 
         }

@@ -76,8 +76,12 @@ export const Section1 = (props) => {
 
         if(props.section1Data.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
                 props.fetchSection1DataSuccess(FakeData.sec1);
             }else{
+                // Fetch data (required to run -> npm run server)
+                
                 props.fetchSection1Data();
             }
         }

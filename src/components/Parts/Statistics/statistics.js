@@ -95,8 +95,12 @@ export const Statistics = (props) => {
 
         if(props.statisticsData.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+                
                 props.fetchStatisticsDataSuccess(FakeData.statisticsData);
             }else{
+                // Fetch data (required to run -> npm run server)
+
                 props.fetchStatisticsData();
             }
         }

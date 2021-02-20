@@ -89,8 +89,12 @@ export const TeamInformation = (props) => {
         
         if(props.teamInformation.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
                 props.fetchTeamInformationSuccess(FakeData.teamInfo);
             }else{
+                // Fetch data (required to run -> npm run server)
+
                 props.fetchTeamInformation();
             }
         }

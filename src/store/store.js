@@ -41,9 +41,9 @@ const epicMiddleware = createEpicMiddleware({
     }
 });
 
-if (process.env.ENVIRONMENT !== 'production') {
-    // middleware.push(logger);
-}
+// if (process.env.ENVIRONMENT === 'production') {
+//     middleware.push(logger);
+// }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

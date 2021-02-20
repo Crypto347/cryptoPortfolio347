@@ -92,8 +92,12 @@ export const Testimonials = (props) => {
         
         if(props.testimonials.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+                
                 props.fetchTestimonialsSuccess(FakeData.testimonials);
             }else{
+                // Fetch data (required to run -> npm run server)
+
                 props.fetchTestimonials();
             }
         }

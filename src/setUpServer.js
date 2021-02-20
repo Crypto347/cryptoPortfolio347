@@ -1062,16 +1062,78 @@ app.get('/api/section4/achievementsData', (req, res) => {
     ]
     res.json(achievementsData);
 });
-//
-app.get('/api/portfolio-item/small-images/:id', (req, res) => {
+
+app.get('/api/portfolio-item/big-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
-    const smallImages = [
+    const bigImages = [
         {
             id: 1,
-            key: "smallImages1",
-            header: "Small images – Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            key: "bigImages1",
+            header: "Welcome! Take a Look at Our Portfolio.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
+                },
+                {
+                    id: 2,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
+                }
+            ],
+            date: "08.17.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1BigImages1",
+                    imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1BigImages2",
+                    imageName: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1BigImages3",
+                    imageName: "lee-campbell-qNPESem_t4I-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1BigImages4",
+                    imageName: "melanie-mauer-x-agyuDQHJA-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1BigImages5",
+                    imageName: "nathan-dumlao-KEniowKfX3k-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "bigImages2",
+            header: "Branding & Website.",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
             categories: [
                 {
                     id: 1,
@@ -1086,9 +1148,16 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
                     key: "design",
                     isHover: "init",
                     path: "portfolio-category/design"
+                },
+                {
+                    id: 3,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
                 }
             ],
-            date: "07.20.2020",
+            date: "07.17.2020",
             tags: [
                 {
                     id: 1,
@@ -1099,179 +1168,43 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    key: "id1SmallImages1",
-                    imageName: "adam-wilson-1QZYZib7eYs-unsplash.png"
+                    key: "id2BigImages1",
+                    imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png"
                 },
                 {
                     id: 2,
-                    key: "id1SmallImages2",
-                    imageName: "jason-blackeye-DKCgibUVLNc-unsplash.png"
+                    key: "id2BigImages2",
+                    imageName: "emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png"
                 },
                 {
                     id: 3,
-                    key: "id1SmallImages3",
-                    imageName: "nordwood-themes-Nv4QHkTVEaI-unsplash.png"
+                    key: "id2BigImages3",
+                    imageName: "uby-yanes-393QQ30ecvQ-updated-unsplash.png"
                 },
                 {
                     id: 4,
-                    key: "id1SmallImages4",
-                    imageName: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.png"
+                    key: "id2BigImages4",
+                    imageName: "stil-flRm0z3MEoA-updated-unsplash.png"
                 },
                 {
                     id: 5,
-                    key: "id1SmallImages5",
-                    imageName: "shelbey-miller-HIQd4db8Kr8-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 2,
-            key: "smallImages2",
-            header: "Small images – Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Art Direction",
-                    key: "artDirection",
-                    isHover: "init",
-                    path: "portfolio-category/art-direction"
+                    key: "id2BigImages5",
+                    imageName: "freestocks-A11MXTzUhLE-updated-unsplash.png"
                 },
                 {
-                    id: 2,
-                    label: "Music",
-                    key: "music",
-                    isHover: "init",
-                    path: "portfolio-category/music"
-                },
-                {
-                    id: 3,
-                    label: "Architecture",
-                    key: "architecture",
-                    isHover: "init",
-                    path: "portfolio-category/architecture"
-                }
-            ],
-            date: "05.13.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id2SmallImages1",
-                    imageName: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id2SmallImages2",
-                    imageName: "paper-3025558_1920-updated.png"
-                }
-            ]
-        },
-        {
-            id: 3,
-            key: "smallImages3",
-            header: "Small images – Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Graphic Design",
-                    key: "graphicDesign",
-                    isHover: "init",
-                    path: "portfolio-category/graphic-design"
-                },
-                {
-                    id: 2,
-                    label: "Art Direction",
-                    key: "artDirection",
-                    isHover: "init",
-                    path: "portfolio-category/art-direction"
-                },
-            ],
-            date: "12.08.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id3SmallImages1",
-                    imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id3SmallImages2",
-                    imageName: "jess-bailey-L71uKsAVo4g-updated-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id3SmallImages3",
-                    imageName: "jess-bailey-z0guTIr_kts-updated-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 4,
-            header: "Small images – Fashion",
-            key: "smallImages4",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Lifestyle",
-                    key: "lifestyle",
-                    isHover: "init",
-                    path: "portfolio-category/lifestyle"
-                }
-            ],
-            date: "26.06.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Coffee",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id4SmallImages1",
-                    imageName: "clay-banks-_wkd7XBRfU4-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id4SmallImages2",
-                    imageName: "marina-zaharkina-TKQXY1dAgjE-updated-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id4SmallImages3",
-                    imageName: "ohmky-lQwWZI_WjSU-updated-unsplash.png"
+                    id: 6,
+                    key: "id2BigImages6",
+                    imageName: "emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png"
                 }
             ]
         }
     ]
 
-    let smallImagesObj = smallImages.find(item => item.id === id);
-    if(!smallImagesObj) {
+    let bigImagesObj = bigImages.find(item => item.id === id);
+    if(!bigImagesObj) {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
-        res.json(smallImagesObj);  
+        res.json(bigImagesObj);  
     }
 });
 
@@ -1486,78 +1419,16 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
         res.json(bigSliderObj);  
     }
 });
-
-app.get('/api/portfolio-item/big-images/:id', (req, res) => {
+//
+app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
-    const bigImages = [
+    const smallImages = [
         {
             id: 1,
-            key: "bigImages1",
-            header: "Welcome! Take a Look at Our Portfolio.",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Art Direction",
-                    key: "artDirection",
-                    isHover: "init",
-                    path: "portfolio-category/art-direction"
-                },
-                {
-                    id: 2,
-                    label: "Lifestyle",
-                    key: "lifestyle",
-                    isHover: "init",
-                    path: "portfolio-category/lifestyle"
-                }
-            ],
-            date: "08.17.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Design",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id1BigImages1",
-                    imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id1BigImages2",
-                    imageName: "lee-campbell-CI-5GwJcVjE-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id1BigImages3",
-                    imageName: "lee-campbell-qNPESem_t4I-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id1BigImages4",
-                    imageName: "melanie-mauer-x-agyuDQHJA-unsplash.png"
-                },
-                {
-                    id: 5,
-                    key: "id1BigImages5",
-                    imageName: "nathan-dumlao-KEniowKfX3k-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 2,
-            key: "bigImages2",
-            header: "Branding & Website.",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam.",
+            key: "smallImages1",
+            header: "Small images – Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
             categories: [
                 {
                     id: 1,
@@ -1572,16 +1443,9 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
                     key: "design",
                     isHover: "init",
                     path: "portfolio-category/design"
-                },
-                {
-                    id: 3,
-                    label: "Editorial",
-                    key: "editorial",
-                    isHover: "init",
-                    path: "portfolio-category/editorial"
                 }
             ],
-            date: "07.17.2020",
+            date: "07.20.2020",
             tags: [
                 {
                     id: 1,
@@ -1592,43 +1456,179 @@ app.get('/api/portfolio-item/big-images/:id', (req, res) => {
             imagesArray: [
                 {
                     id: 1,
-                    key: "id2BigImages1",
-                    imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png"
+                    key: "id1SmallImages1",
+                    imageName: "adam-wilson-1QZYZib7eYs-unsplash.png"
                 },
                 {
                     id: 2,
-                    key: "id2BigImages2",
-                    imageName: "emma-matthews-digital-content-production-vKM1ZdtoBL4-updated-unsplash.png"
+                    key: "id1SmallImages2",
+                    imageName: "jason-blackeye-DKCgibUVLNc-unsplash.png"
                 },
                 {
                     id: 3,
-                    key: "id2BigImages3",
-                    imageName: "uby-yanes-393QQ30ecvQ-updated-unsplash.png"
+                    key: "id1SmallImages3",
+                    imageName: "nordwood-themes-Nv4QHkTVEaI-unsplash.png"
                 },
                 {
                     id: 4,
-                    key: "id2BigImages4",
-                    imageName: "stil-flRm0z3MEoA-updated-unsplash.png"
+                    key: "id1SmallImages4",
+                    imageName: "ruthson-zimmerman-Ws4wd-vJ9M0-unsplash.png"
                 },
                 {
                     id: 5,
-                    key: "id2BigImages5",
-                    imageName: "freestocks-A11MXTzUhLE-updated-unsplash.png"
+                    key: "id1SmallImages5",
+                    imageName: "shelbey-miller-HIQd4db8Kr8-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "smallImages2",
+            header: "Small images – Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
                 },
                 {
-                    id: 6,
-                    key: "id2BigImages6",
-                    imageName: "emma-matthews-digital-content-production-X6M1Ke1o9yI-updated-unsplash.png"
+                    id: 2,
+                    label: "Music",
+                    key: "music",
+                    isHover: "init",
+                    path: "portfolio-category/music"
+                },
+                {
+                    id: 3,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
+                }
+            ],
+            date: "05.13.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2SmallImages1",
+                    imageName: "jess-bailey-MSH3ldaRZsg-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2SmallImages2",
+                    imageName: "paper-3025558_1920-updated.png"
+                }
+            ]
+        },
+        {
+            id: 3,
+            key: "smallImages3",
+            header: "Small images – Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
+                },
+                {
+                    id: 2,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
+                },
+            ],
+            date: "12.08.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3SmallImages1",
+                    imageName: "jess-bailey-dWKqZcPLc8Y-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id3SmallImages2",
+                    imageName: "jess-bailey-L71uKsAVo4g-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3SmallImages3",
+                    imageName: "jess-bailey-z0guTIr_kts-updated-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 4,
+            header: "Small images – Fashion",
+            key: "smallImages4",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Lifestyle",
+                    key: "lifestyle",
+                    isHover: "init",
+                    path: "portfolio-category/lifestyle"
+                }
+            ],
+            date: "26.06.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Coffee",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id4SmallImages1",
+                    imageName: "clay-banks-_wkd7XBRfU4-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id4SmallImages2",
+                    imageName: "marina-zaharkina-TKQXY1dAgjE-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id4SmallImages3",
+                    imageName: "ohmky-lQwWZI_WjSU-updated-unsplash.png"
                 }
             ]
         }
     ]
 
-    let bigImagesObj = bigImages.find(item => item.id === id);
-    if(!bigImagesObj) {
+    let smallImagesObj = smallImages.find(item => item.id === id);
+    if(!smallImagesObj) {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
-        res.json(bigImagesObj);  
+        res.json(smallImagesObj);  
     }
 });
 

@@ -29,7 +29,7 @@ const fetchBigImagesPortfolioBegin = (state, action) => {
     };
 }
 
-const fetchBigImagesPortfolioSuccess = (state, action) => {    
+const fetchBigImagesPortfolioSuccess = (state, action) => {
     return {
         ...state,
         loading: false,
