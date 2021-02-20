@@ -32,6 +32,12 @@ import ProgressBarItem from '../../SmallParts/ProgressBarItem/progressBarItem';
  * Services
  */
 
+import * as Actions from "../../../actions";
+
+/**
+ * Services
+ */
+
 import * as Services from "../../../service";
 
 /**
@@ -61,6 +67,13 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
+
+/**
  * Statistics component definition and export
  */
 
@@ -80,7 +93,13 @@ export const Statistics = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        props.fetchStatisticsData();
+        if(props.statisticsData.items.length === 0){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                props.fetchStatisticsDataSuccess(FakeData.statisticsData);
+            }else{
+                props.fetchStatisticsData();
+            }
+        }
 
         // Event Listeners
 
@@ -183,7 +202,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch)
+            fetchStatisticsData: bindActionCreators(Services.fetchStatisticsData, dispatch),
+            fetchStatisticsDataSuccess: bindActionCreators(Actions.fetchStatisticsDataSuccess, dispatch),
         };
     }
 )(Statistics);

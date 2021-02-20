@@ -99,7 +99,7 @@ export function fetchTestimonials() {
             });
     };
 }
-//
+
 export function fetchTeamInformation() {
     return dispatch => {
         dispatch(Actions.fetchTeamInformationBegin());
@@ -153,7 +153,7 @@ export function fetchAchievementsData() {
             });
     };
 }
-
+//
 export function fetchBigImagesPortfolio(id) {
     return dispatch => {
         dispatch(Actions.fetchBigImagesPortfolioBegin());

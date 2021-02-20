@@ -32,6 +32,12 @@ import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
  * Services
  */
 
+import * as Actions from "../../../actions";
+
+/**
+ * Services
+ */
+
 import * as Services from "../../../service";
 
 /**
@@ -58,6 +64,13 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
+
+/**
  * Achievements component definition and export
  */
 
@@ -78,7 +91,11 @@ export const Achievements = (props) => {
         // Fetch data for the component
 
         if(props.achievementsData.items.length === 0){
-            props.fetchAchievementsData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                props.fetchAchievementsDataSuccess(FakeData.headerImg);
+            }else{
+                props.fetchAchievementsData();
+            }
         }
        
         // Event Listeners
@@ -175,7 +192,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchAchievementsData: bindActionCreators(Services.fetchAchievementsData, dispatch)
+            fetchAchievementsData: bindActionCreators(Services.fetchAchievementsData, dispatch),
+            fetchAchievementsDataSuccess: bindActionCreators(Actions.fetchAchievementsDataSuccess, dispatch),
         };
     }
 )(Achievements);

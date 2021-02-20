@@ -949,7 +949,7 @@ app.get('/api/section3/testimonials', (req, res) => {
     ]
     res.json(testimonials);
 });
-//
+
 app.get('/api/section3/teamInformation', (req, res) => {
     const teamInfo = [
         {
@@ -1062,7 +1062,7 @@ app.get('/api/section4/achievementsData', (req, res) => {
     ]
     res.json(achievementsData);
 });
-
+//
 app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   

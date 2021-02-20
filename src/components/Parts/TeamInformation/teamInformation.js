@@ -31,6 +31,12 @@ import TeamInformationCard from '../../SmallParts/TeamInformationCard/teamInform
  * Services
  */
 
+import * as Actions from "../../../actions";
+
+/**
+ * Services
+ */
+
 import * as Services from "../../../service";
 
 /**
@@ -56,6 +62,13 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments'; 
+
+/**
  * TeamInformation component definition and export
  */
 
@@ -74,7 +87,14 @@ export const TeamInformation = (props) => {
     useEffect(() => {
         // Fetch data for the component
         
-        props.fetchTeamInformation();
+        if(props.teamInformation.items.length === 0){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                props.fetchTeamInformationSuccess(FakeData.teamInfo);
+            }else{
+                props.fetchTeamInformation();
+            }
+        }
+
     }, []);
 
     
@@ -136,7 +156,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchTeamInformation: bindActionCreators(Services.fetchTeamInformation, dispatch)
+            fetchTeamInformation: bindActionCreators(Services.fetchTeamInformation, dispatch),
+            fetchTeamInformationSuccess: bindActionCreators(Actions.fetchTeamInformationSuccess, dispatch),
         };
     }
 )(TeamInformation);
