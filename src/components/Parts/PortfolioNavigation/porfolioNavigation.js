@@ -50,6 +50,13 @@ import * as Selectors from '../../../reducers/selectors';
 import * as Utility from '../../../utility';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments';
+
+/**
  * PorfolioNavigation component definition and export
  */
 
@@ -148,7 +155,15 @@ export const PorfolioNavigation = (props) => {
         switch(page){
             case 'portfolioGallery':
                 if(props.portfolioGalleryPage.items.length === 0){
-                    props.fetchPortfolioGalleryPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+
+                        props.fetchPortfolioGalleryPageSuccess(FakeData.portfolioGallery);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+
+                        props.fetchPortfolioGalleryPage();
+                    }
                 }
                 break;
             case 'archive':
@@ -243,7 +258,15 @@ export const PorfolioNavigation = (props) => {
                 break;
             default:
                 if(props.portfolioGalleryPage.items.length === 0){
-                    props.fetchPortfolioGalleryPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+
+                        props.fetchPortfolioGalleryPageSuccess(FakeData.portfolioGallery);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+
+                        props.fetchPortfolioGalleryPage();
+                    }
                 }
                 break;
         }
@@ -693,6 +716,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
+            fetchPortfolioGalleryPageSuccess: bindActionCreators(Actions.fetchPortfolioGalleryPageSuccess, dispatch),
             fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
             fetchSwitchImagePage: bindActionCreators(Services.fetchSwitchImagePage, dispatch),
             fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),

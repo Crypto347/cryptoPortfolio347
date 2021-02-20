@@ -2250,7 +2250,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
         res.json(smallGalleryObj);  
     }
 });
-//
+
 app.get('/api/portfolio-gallery-page', (req, res) => {
     const portfolioGallery = [
         {
@@ -3398,11 +3398,11 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
                     alt: "image"
                 }
             ]
-        },
+        }
     ]
     res.json(portfolioGallery);
 });
-
+//
 app.post('/api/portfolio-category/:category', (req, res) => {
     let category = req.params.category;
     let categoryToArray = category.split("");

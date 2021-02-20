@@ -261,7 +261,7 @@ export function fetchSmallGalleryPortfolio(id) {
             });
     };
 }
-//
+
 export function fetchPortfolioGalleryPage() {
     return dispatch => {
         dispatch(Actions.fetchPortfolioGalleryPageBegin());
@@ -279,7 +279,7 @@ export function fetchPortfolioGalleryPage() {
             });
     };
 }
-
+//
 export function fetchArchive(category, step) {
     return dispatch => {
         if(step === 1){
