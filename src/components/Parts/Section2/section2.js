@@ -61,7 +61,7 @@ import {
  */
 
 import * as FakeData from '../../../fakeData';
-import * as Environment from '../../../constants/environments'; 
+import * as Environment from '../../../constants/environments';
 
 /**
  * Section2 component definition and export

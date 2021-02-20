@@ -78,6 +78,13 @@ import {
 import * as Images from '../../../../constants/images';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * Gallery component definition and export
  */
 
@@ -106,7 +113,17 @@ export const Gallery = (props) => {
 
         // Fetch data for the component
 
-        props.fetchGalleryPortfolio(props.match.params.id);
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            let data = FakeData.gallery.find(item => item.id === +props.match.params.id)
+            props.fetchGalleryPortfolioSuccess(data);
+
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchGalleryPortfolio(props.match.params.id);
+        }
 
         // Show content after successful data fetch
 
@@ -498,6 +515,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchGalleryPortfolio: bindActionCreators(Services.fetchGalleryPortfolio, dispatch),
+            fetchGalleryPortfolioSuccess: bindActionCreators(Actions.fetchGalleryPortfolioSuccess, dispatch),
             setGalleryIsHoveringCategory: bindActionCreators(Actions.setGalleryIsHoveringCategory, dispatch),
             setGalleryIsHoveringTag: bindActionCreators(Actions.setGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),

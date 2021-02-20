@@ -1419,7 +1419,7 @@ app.get('/api/portfolio-item/big-slider/:id', (req, res) => {
         res.json(bigSliderObj);  
     }
 });
-//
+
 app.get('/api/portfolio-item/small-images/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
@@ -1629,6 +1629,414 @@ app.get('/api/portfolio-item/small-images/:id', (req, res) => {
         res.status(404).send("The portfolio with the given ID was not found")
     }else{
         res.json(smallImagesObj);  
+    }
+});
+
+app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const smallSlider = [
+        {
+            id: 1,
+            key: "smallSlider1",
+            header: "Small slider - Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
+                },
+                {
+                    id: 2,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
+                },
+                {
+                    id: 3,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
+                }
+            ],
+            date: "07.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1SmallSlider1",
+                    isHover: "init",
+                    imageName: "damian-patkowski--pahtnAMuFo-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1SmallSlider2",
+                    isHover: "init",
+                    imageName: "drew-beamer-ehBB9G7qbss-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1SmallSlider3",
+                    isHover: "init",
+                    imageName: "drew-beamer-PL6ClUWwDEw-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1SmallSlider4",
+                    isHover: "init",
+                    imageName: "grovemade-DhZ5BpBeQEM-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1SmallSlider5",
+                    isHover: "init",
+                    imageName: "lee-campbell-gA-km82BywY-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id1SmallSlider6",
+                    isHover: "init",
+                    imageName: "workperch-AiOzVFqlyZI-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "smallSlider2",
+            header: "Small slider - Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Art Direction",
+                    key: "artDirection",
+                    isHover: "init",
+                    path: "portfolio-category/art-direction"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init",
+                    path: "portfolio-category/design"
+                }
+            ],
+            date: "08.20.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2SmallSlider1",
+                    isHover: "init",
+                    imageName: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2SmallSlider2",
+                    isHover: "init",
+                    imageName: "gaelle-marcel-yO9ZVNFbpao-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id2SmallSlider3",
+                    isHover: "init",
+                    imageName: "jane-palash-iaofnd2IdFU-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id2SmallSlider4",
+                    isHover: "init",
+                    imageName: "kara-eads-gVUV7PbSu_0-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id2SmallSlider5",
+                    isHover: "init",
+                    imageName: "siora-photography-G8RdOUjVuJo-updated-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 3,
+            key: "smallSlider3",
+            header: "Small slider - Fashion",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Music",
+                    key: "music",
+                    isHover: "init",
+                    path: "portfolio-category/music"
+                }
+            ],
+            date: "08.20.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3SmallSlider1",
+                    isHover: "init",
+                    imageName: "meghan-schiereck--2eJaLtf_bI-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id3SmallSlider2",
+                    isHover: "init",
+                    imageName: "glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3SmallSlider3",
+                    isHover: "init",
+                    imageName: "marci-angeles-H_pOAqtNVEg-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id3SmallSlider4",
+                    isHover: "init",
+                    imageName: "marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png"
+                }
+            ]
+        }
+    ]
+
+    let smallSliderObj = smallSlider.find(item => item.id === id);
+    if(!smallSliderObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(smallSliderObj);  
+    }
+});
+
+app.get('/api/portfolio-item/gallery/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const gallery = [
+        {
+            id: 1,
+            key: "gallery1",
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Graphic Design",
+                    key: "graphicDesign",
+                    isHover: "init",
+                    path: "portfolio-category/graphic-design"
+                }
+            ],
+            date: "07.18.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Fashion",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id1Gallery1",
+                    isHover: "init",
+                    imageName: "nadine-shaabana-updated2-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id1Gallery2",
+                    isHover: "init",
+                    imageName: "estee-janssens-updated2-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id1Gallery3",
+                    isHover: "init",
+                    imageName: "filip-mroz-updated2-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id1Gallery4",
+                    isHover: "init",
+                    imageName: "georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id1Gallery5",
+                    isHover: "init",
+                    imageName: "laura-chouette-updated2-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id1Gallery6",
+                    isHover: "init",
+                    imageName: "ash-from-modern-afflatus-updated2-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 2,
+            key: "gallery2",
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Architecture",
+                    key: "architecture",
+                    isHover: "init",
+                    path: "portfolio-category/architecture"
+                }
+            ],
+            date: "07.19.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Coffee",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id2Gallery1",
+                    isHover: "init",
+                    imageName: "cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id2Gallery2",
+                    isHover: "init",
+                    imageName: "food-3025556_1920-updated.png"
+                },
+                {
+                    id: 3,
+                    key: "id2Gallery3",
+                    isHover: "init",
+                    imageName: "nathan-dumlao-6VhPY27jdps-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id2Gallery4",
+                    isHover: "init",
+                    imageName: "nathan-dumlao-pMW4jzELQCw-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id2Gallery5",
+                    isHover: "init",
+                    imageName: "nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png"
+                }
+            ]
+        },
+        {
+            id: 3,
+            key: "gallery3",
+            header: "Portfolio gallery",
+            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
+            categories: [
+                {
+                    id: 1,
+                    label: "Design",
+                    key: "design",
+                    isHover: "init",
+                    path: "portfolio-category/design"
+                },
+                {
+                    id: 2,
+                    label: "Editorial",
+                    key: "editorial",
+                    isHover: "init",
+                    path: "portfolio-category/editorial"
+                }
+            ],
+            date: "07.19.2020",
+            tags: [
+                {
+                    id: 1,
+                    label: "Creative",
+                    isHover: "init"
+                }
+            ],
+            imagesArray: [
+                {
+                    id: 1,
+                    key: "id3Gallery1",
+                    isHover: "init",
+                    imageName: "chris-lee-70l1tDAI6rM-updated-unsplash.png"
+                },
+                {
+                    id: 2,
+                    key: "id3Gallery2",
+                    isHover: "init",
+                    imageName: "kara-eads--0eTYFd2pzM-updated-unsplash.png"
+                },
+                {
+                    id: 3,
+                    key: "id3Gallery3",
+                    isHover: "init",
+                    imageName: "kara-eads-Uq9o9uUIT08-updated-unsplash.png"
+                },
+                {
+                    id: 4,
+                    key: "id3Gallery4",
+                    isHover: "init",
+                    imageName: "leone-venter-pVt9j3iWtPM-updated-unsplash.png"
+                },
+                {
+                    id: 5,
+                    key: "id3Gallery5",
+                    isHover: "init",
+                    imageName: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png"
+                },
+                {
+                    id: 6,
+                    key: "id3Gallery6",
+                    isHover: "init",
+                    imageName: "sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png"
+                }
+            ]
+        }
+    ]
+
+    let galleryObj = gallery.find(item => item.id === id);
+    if(!galleryObj) {
+        res.status(404).send("The portfolio with the given ID was not found")
+    }else{
+        res.json(galleryObj);  
     }
 });
 
@@ -1842,415 +2250,7 @@ app.get('/api/portfolio-item/small-gallery/:id', (req, res) => {
         res.json(smallGalleryObj);  
     }
 });
-
-app.get('/api/portfolio-item/gallery/:id', (req, res) => {
-    let id = parseInt(req.params.id);
-  
-    const gallery = [
-        {
-            id: 1,
-            key: "gallery1",
-            header: "Portfolio gallery",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Graphic Design",
-                    key: "graphicDesign",
-                    isHover: "init",
-                    path: "portfolio-category/graphic-design"
-                }
-            ],
-            date: "07.18.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Fashion",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id1Gallery1",
-                    isHover: "init",
-                    imageName: "nadine-shaabana-updated2-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id1Gallery2",
-                    isHover: "init",
-                    imageName: "estee-janssens-updated2-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id1Gallery3",
-                    isHover: "init",
-                    imageName: "filip-mroz-updated2-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id1Gallery4",
-                    isHover: "init",
-                    imageName: "georgie-cobbs-muOHbrFGEQY-updated2-unsplash.png"
-                },
-                {
-                    id: 5,
-                    key: "id1Gallery5",
-                    isHover: "init",
-                    imageName: "laura-chouette-updated2-unsplash.png"
-                },
-                {
-                    id: 6,
-                    key: "id1Gallery6",
-                    isHover: "init",
-                    imageName: "ash-from-modern-afflatus-updated2-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 2,
-            key: "gallery2",
-            header: "Portfolio gallery",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Architecture",
-                    key: "architecture",
-                    isHover: "init",
-                    path: "portfolio-category/architecture"
-                }
-            ],
-            date: "07.19.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    label: "Coffee",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id2Gallery1",
-                    isHover: "init",
-                    imageName: "cristina-matos-albers-WhxeSQ671SM-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id2Gallery2",
-                    isHover: "init",
-                    imageName: "food-3025556_1920-updated.png"
-                },
-                {
-                    id: 3,
-                    key: "id2Gallery3",
-                    isHover: "init",
-                    imageName: "nathan-dumlao-6VhPY27jdps-updated-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id2Gallery4",
-                    isHover: "init",
-                    imageName: "nathan-dumlao-pMW4jzELQCw-updated-unsplash.png"
-                },
-                {
-                    id: 5,
-                    key: "id2Gallery5",
-                    isHover: "init",
-                    imageName: "nathan-dumlao-pnmRtTHWqDM-updated-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 3,
-            key: "gallery3",
-            header: "Portfolio gallery",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat aucto inelit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himena eos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, eratsed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Sednon mauris vitae erat consequat auctoreuin elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Sed non mauris.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Design",
-                    key: "design",
-                    isHover: "init",
-                    path: "portfolio-category/design"
-                },
-                {
-                    id: 2,
-                    label: "Editorial",
-                    key: "editorial",
-                    isHover: "init",
-                    path: "portfolio-category/editorial"
-                }
-            ],
-            date: "07.19.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id3Gallery1",
-                    isHover: "init",
-                    imageName: "chris-lee-70l1tDAI6rM-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id3Gallery2",
-                    isHover: "init",
-                    imageName: "kara-eads--0eTYFd2pzM-updated-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id3Gallery3",
-                    isHover: "init",
-                    imageName: "kara-eads-Uq9o9uUIT08-updated-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id3Gallery4",
-                    isHover: "init",
-                    imageName: "leone-venter-pVt9j3iWtPM-updated-unsplash.png"
-                },
-                {
-                    id: 5,
-                    key: "id3Gallery5",
-                    isHover: "init",
-                    imageName: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png"
-                },
-                {
-                    id: 6,
-                    key: "id3Gallery6",
-                    isHover: "init",
-                    imageName: "sarah-dorweiler-9Z1KRIfpBTM-updated-unsplash.png"
-                }
-            ]
-        }
-    ]
-
-    let galleryObj = gallery.find(item => item.id === id);
-    if(!galleryObj) {
-        res.status(404).send("The portfolio with the given ID was not found")
-    }else{
-        res.json(galleryObj);  
-    }
-});
-
-app.get('/api/portfolio-item/small-slider/:id', (req, res) => {
-    let id = parseInt(req.params.id);
-  
-    const smallSlider = [
-        {
-            id: 1,
-            key: "smallSlider1",
-            header: "Small slider - Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Graphic Design",
-                    key: "graphicDesign",
-                    isHover: "init",
-                    path: "portfolio-category/graphic-design"
-                },
-                {
-                    id: 2,
-                    label: "Editorial",
-                    key: "editorial",
-                    isHover: "init",
-                    path: "portfolio-category/editorial"
-                },
-                {
-                    id: 3,
-                    label: "Architecture",
-                    key: "architecture",
-                    isHover: "init",
-                    path: "portfolio-category/architecture"
-                }
-            ],
-            date: "07.18.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id1SmallSlider1",
-                    isHover: "init",
-                    imageName: "damian-patkowski--pahtnAMuFo-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id1SmallSlider2",
-                    isHover: "init",
-                    imageName: "drew-beamer-ehBB9G7qbss-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id1SmallSlider3",
-                    isHover: "init",
-                    imageName: "drew-beamer-PL6ClUWwDEw-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id1SmallSlider4",
-                    isHover: "init",
-                    imageName: "grovemade-DhZ5BpBeQEM-unsplash.png"
-                },
-                {
-                    id: 5,
-                    key: "id1SmallSlider5",
-                    isHover: "init",
-                    imageName: "lee-campbell-gA-km82BywY-unsplash.png"
-                },
-                {
-                    id: 6,
-                    key: "id1SmallSlider6",
-                    isHover: "init",
-                    imageName: "workperch-AiOzVFqlyZI-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 2,
-            key: "smallSlider2",
-            header: "Small slider - Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Art Direction",
-                    key: "artDirection",
-                    isHover: "init",
-                    path: "portfolio-category/art-direction"
-                },
-                {
-                    id: 2,
-                    label: "Design",
-                    key: "design",
-                    isHover: "init",
-                    path: "portfolio-category/design"
-                }
-            ],
-            date: "08.20.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id2SmallSlider1",
-                    isHover: "init",
-                    imageName: "fallon-michael-_lKsxGjOzk8-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id2SmallSlider2",
-                    isHover: "init",
-                    imageName: "gaelle-marcel-yO9ZVNFbpao-updated-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id2SmallSlider3",
-                    isHover: "init",
-                    imageName: "jane-palash-iaofnd2IdFU-updated-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id2SmallSlider4",
-                    isHover: "init",
-                    imageName: "kara-eads-gVUV7PbSu_0-updated-unsplash.png"
-                },
-                {
-                    id: 5,
-                    key: "id2SmallSlider5",
-                    isHover: "init",
-                    imageName: "siora-photography-G8RdOUjVuJo-updated-unsplash.png"
-                }
-            ]
-        },
-        {
-            id: 3,
-            key: "smallSlider3",
-            header: "Small slider - Fashion",
-            text: "Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit.",
-            categories: [
-                {
-                    id: 1,
-                    label: "Music",
-                    key: "music",
-                    isHover: "init",
-                    path: "portfolio-category/music"
-                }
-            ],
-            date: "08.20.2020",
-            tags: [
-                {
-                    id: 1,
-                    label: "Creative",
-                    isHover: "init"
-                }
-            ],
-            imagesArray: [
-                {
-                    id: 1,
-                    key: "id3SmallSlider1",
-                    isHover: "init",
-                    imageName: "meghan-schiereck--2eJaLtf_bI-updated-unsplash.png"
-                },
-                {
-                    id: 2,
-                    key: "id3SmallSlider2",
-                    isHover: "init",
-                    imageName: "glenn-carstens-peters-RLw-UC03Gwc-updated-unsplash.png"
-                },
-                {
-                    id: 3,
-                    key: "id3SmallSlider3",
-                    isHover: "init",
-                    imageName: "marci-angeles-H_pOAqtNVEg-updated-unsplash.png"
-                },
-                {
-                    id: 4,
-                    key: "id3SmallSlider4",
-                    isHover: "init",
-                    imageName: "marci-angeles-sDmLk4Mf0hQ-updated-unsplash.png"
-                }
-            ]
-        }
-    ]
-
-    let smallSliderObj = smallSlider.find(item => item.id === id);
-    if(!smallSliderObj) {
-        res.status(404).send("The portfolio with the given ID was not found")
-    }else{
-        res.json(smallSliderObj);  
-    }
-});
-
+//
 app.get('/api/portfolio-gallery-page', (req, res) => {
     const portfolioGallery = [
         {

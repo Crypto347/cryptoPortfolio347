@@ -82,7 +82,7 @@ import * as Images from '../../../../constants/images';
  */
 
 import * as FakeData from '../../../../fakeData';
-import * as Environment from '../../../../constants/environments'; 
+import * as Environment from '../../../../constants/environments';
 
 /**
  * BigImages component definition and export

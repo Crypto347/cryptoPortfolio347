@@ -66,7 +66,7 @@ import {
  */
 
 import * as FakeData from '../../../fakeData';
-import * as Environment from '../../../constants/environments'; 
+import * as Environment from '../../../constants/environments';
 
 /**
  * TeamInformation component definition and export

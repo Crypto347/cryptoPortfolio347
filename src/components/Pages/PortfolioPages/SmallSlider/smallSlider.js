@@ -73,6 +73,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * SmallSlider component definition and export
  */
 
@@ -102,8 +109,18 @@ export const SmallSlider = (props) => {
         window.scrollTo(0, 0);
 
         // Fetch data for the component
+        
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
 
-        props.fetchSmallSliderPortfolio(props.match.params.id);
+            let data = FakeData.smallSlider.find(item => item.id === +props.match.params.id)
+            props.fetchSmallSliderPortfolioSuccess(data);
+
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchSmallSliderPortfolio(props.match.params.id);
+        }
 
         // Auxiliary property for swiper to calculate translatedWidth
 
@@ -438,6 +455,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallSliderPortfolio: bindActionCreators(Services.fetchSmallSliderPortfolio, dispatch),
+            fetchSmallSliderPortfolioSuccess: bindActionCreators(Actions.fetchSmallSliderPortfolioSuccess, dispatch),
             setSmallSliderIsHoveringCategory: bindActionCreators(Actions.setSmallSliderIsHoveringCategory, dispatch),
             setSmallSliderIsHoveringTag: bindActionCreators(Actions.setSmallSliderIsHoveringTag, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),

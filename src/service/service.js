@@ -189,7 +189,7 @@ export function fetchBigSliderPortfolio(id) {
             });
     };
 }
-//
+
 export function fetchSmallImagesPortfolio(id) {
     return dispatch => {
         dispatch(Actions.fetchSmallImagesPortfolioBegin());
@@ -261,7 +261,7 @@ export function fetchSmallGalleryPortfolio(id) {
             });
     };
 }
-
+//
 export function fetchPortfolioGalleryPage() {
     return dispatch => {
         dispatch(Actions.fetchPortfolioGalleryPageBegin());

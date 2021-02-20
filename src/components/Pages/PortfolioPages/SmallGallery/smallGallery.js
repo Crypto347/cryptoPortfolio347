@@ -78,6 +78,13 @@ import {
 import * as Images from '../../../../constants/images';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * SmallGallery component definition and export
  */
 
@@ -106,7 +113,17 @@ export const SmallGallery = (props) => {
 
         // Fetch data for the component
 
-        props.fetchSmallGalleryPortfolio(props.match.params.id);
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            let data = FakeData.smallGallery.find(item => item.id === +props.match.params.id)
+            props.fetchSmallGalleryPortfolioSuccess(data);
+
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchSmallGalleryPortfolio(props.match.params.id);
+        }
 
         // Show content after successful data fetch
 
@@ -494,6 +511,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallGalleryPortfolio: bindActionCreators(Services.fetchSmallGalleryPortfolio, dispatch),
+            fetchSmallGalleryPortfolioSuccess: bindActionCreators(Actions.fetchSmallGalleryPortfolioSuccess, dispatch),
             setSmallGalleryIsHoveringCategory: bindActionCreators(Actions.setSmallGalleryIsHoveringCategory, dispatch),
             setSmallGalleryIsHoveringTag: bindActionCreators(Actions.setSmallGalleryIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),

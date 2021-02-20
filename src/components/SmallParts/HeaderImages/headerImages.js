@@ -81,7 +81,7 @@ import * as Images from '../../../constants/images';
  */
 
 import * as FakeData from '../../../fakeData';
-import * as Environment from '../../../constants/environments'; 
+import * as Environment from '../../../constants/environments';
 
 /**
  * HeaderImages component definition and export
@@ -137,7 +137,7 @@ export const HeaderImages = (props) => {
         if(props.headerImages.items.length === 0){
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
                 // Fetch mock data (not required to run -> npm run server)
-                
+
                 props.fetchHeaderImagesSuccess(FakeData.headerImg);
             }else{
                 // Fetch data (required to run -> npm run server)

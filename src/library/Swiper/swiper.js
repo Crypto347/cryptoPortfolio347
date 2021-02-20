@@ -123,7 +123,6 @@ export const Swiper = (props) => {
      */
 
     useEffect(() => {
-        console.log(props.contentArray)
         let slidesArray = [...props.contentArray];
         let _slides;
         let swiperWrapper;

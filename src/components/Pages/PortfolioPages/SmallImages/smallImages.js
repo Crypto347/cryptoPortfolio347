@@ -78,6 +78,13 @@ import {
 import * as Images from '../../../../constants/images';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * SmallImages component definition and export
  */
 
@@ -107,7 +114,17 @@ export const SmallImages = (props) => {
 
         // Fetch data for the component
 
-        props.fetchSmallImagesPortfolio(props.match.params.id);
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            let data = FakeData.smallImages.find(item => item.id === +props.match.params.id)
+            props.fetchSmallImagesPortfolioSuccess(data);
+
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchSmallImagesPortfolio(props.match.params.id);
+        }
 
         // Show content after successful data fetch
 
@@ -494,6 +511,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSmallImagesPortfolio: bindActionCreators(Services.fetchSmallImagesPortfolio, dispatch),
+            fetchSmallImagesPortfolioSuccess: bindActionCreators(Actions.fetchSmallImagesPortfolioSuccess, dispatch),
             setSmallImagesIsHoveringCategory: bindActionCreators(Actions.setSmallImagesIsHoveringCategory, dispatch),
             setSmallImagesIsHoveringTag: bindActionCreators(Actions.setSmallImagesIsHoveringTag, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
