@@ -78,6 +78,13 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments';
+
+/**
  * Archive component definition and export
  */
 
@@ -96,13 +103,43 @@ export const Archive = (props) => {
 
     useEffect(() => {
         // Init state for fading effect when component will unmount
-        
+ 
         props.setUnmountComponentValues(false, "");
 
         // Fetch data for the component
 
         if(props.archive.items.length === 0){
-            props.fetchArchive(props.match.params.category, 1);
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                let category = props.match.params.category;
+                let categoryToArray = category.split("");
+                let indexOfSlash = categoryToArray.findIndex(item => item === "-");
+                if(indexOfSlash !== -1){
+                    categoryToArray.splice(indexOfSlash, 1)
+                    let lowerToUpperCase = categoryToArray[indexOfSlash].toUpperCase();
+                    categoryToArray.splice(indexOfSlash, 1, lowerToUpperCase);
+                    category = categoryToArray.join("");
+                }
+              
+                let archiveObj = {...FakeData.archive.find(item => item.category === category)};
+                let takeItems = 1 * 4;
+                
+                if(takeItems > archiveObj.archiveData.length){
+                    archiveObj.disableLoadMoreButton = true;
+                }else{
+                    archiveObj.archiveData = archiveObj.archiveData.slice(0, takeItems)
+                }
+                
+                props.fetchArchiveSuccess(archiveObj.archiveData);
+                props.setArchiveCategory(archiveObj.category);
+                props.loadMoreDisableButtonStateForArchive(archiveObj.disableLoadMoreButton);
+
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchArchive(props.match.params.category, 1);
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -333,6 +370,39 @@ export const Archive = (props) => {
         props.unmountComponent(key, path, "archive", e.button);
     }
    
+    const loadMoreDataOnClick = (categoryFromParam, step) => {
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            let category = categoryFromParam;
+            let categoryToArray = category.split("");
+            let indexOfSlash = categoryToArray.findIndex(item => item === "-");
+            if(indexOfSlash !== -1){
+                categoryToArray.splice(indexOfSlash, 1)
+                let lowerToUpperCase = categoryToArray[indexOfSlash].toUpperCase();
+                categoryToArray.splice(indexOfSlash, 1, lowerToUpperCase);
+                category = categoryToArray.join("");
+            }
+
+            let archiveObj = {...FakeData.archive.find(item => item.category === category)};
+            let takeItems = step * 4;
+
+            if(takeItems > archiveObj.archiveData.length){
+                archiveObj.disableLoadMoreButton = true;
+            }else{
+                archiveObj.archiveData = archiveObj.archiveData.slice(0, takeItems)
+            }
+            
+            props.loadMoreArchiveDataSuccess(archiveObj.archiveData);
+            props.loadMoreDisableButtonStateForArchive(archiveObj.disableLoadMoreButton);
+
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchArchive(categoryFromParam, 2)
+        }
+    }
+
     const renderCategories = (obj) => {
         return(
             <div className="archive-item-categories">{obj.categories.map((el, i) => {
@@ -404,7 +474,7 @@ export const Archive = (props) => {
                     <Button
                         className="archive-load-more"
                         text="load more."
-                        onClick={() => props.fetchArchive(props.match.params.category, 2)}
+                        onClick={() => loadMoreDataOnClick(props.match.params.category, 2)}
                         disabled={props.archive.disableLoadMoreButton}
                     />
                 </div> 
@@ -480,6 +550,11 @@ export default connect(
     (dispatch) => {
         return {
             fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
+            fetchArchiveSuccess: bindActionCreators(Actions.fetchArchiveSuccess, dispatch),
+            loadMoreDisableButtonStateForArchive: bindActionCreators(Actions.loadMoreDisableButtonStateForArchive, dispatch),
+            loadMoreArchiveDataSuccess: bindActionCreators(Actions.loadMoreArchiveDataSuccess, dispatch),
+            loadMoreDisableButtonStateForArchive: bindActionCreators(Actions.loadMoreDisableButtonStateForArchive, dispatch),
+            setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
             setArchiveIsHoveringImage: bindActionCreators(Actions.setArchiveIsHoveringImage, dispatch),
             setArchiveIsHoveringCategory: bindActionCreators(Actions.setArchiveIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),

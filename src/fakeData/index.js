@@ -5,3 +5,4 @@ export * from './section3Data';
 export * from './section4Data';
 export * from './portfolioItemData';
 export * from './portfolioGalleryData';
+export * from './archiveData';
