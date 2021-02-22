@@ -1666,7 +1666,6 @@ export const ThreeColumnsPage = (props) => {
     const loadMoreOnClick = () => {
         // Fetch more data for the component
 
-
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
             // Fetch mock data (not required to run -> npm run server)
             fetchMockData(props.threeColumnsPage.loadMoreStep, 

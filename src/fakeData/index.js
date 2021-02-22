@@ -24,3 +24,4 @@ export * from './fourColumnsWidePageData';
 export * from './fiveColumnsWidePageData';
 export * from './twoColumnsPageData';
 export * from './threeColumnsPageData';
+export * from './fourColumnsPageData';

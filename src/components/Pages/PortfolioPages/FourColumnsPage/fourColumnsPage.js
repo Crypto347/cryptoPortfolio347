@@ -73,6 +73,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * FourColumnsPage component definition and export
  */
 
@@ -100,7 +107,15 @@ export const FourColumnsPage = (props) => {
         // Fetch data for the component
 
         if(props.fourColumnsPage.items.length === 0){
-            props.fetchFourColumnsPage(props.fourColumnsPage.loadMoreStep);
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                fetchMockData(props.fourColumnsPage.loadMoreStep);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchFourColumnsPage(props.fourColumnsPage.loadMoreStep);
+            }
             props.setLoadMoreStepFourColumnsPage(props.fourColumnsPage.loadMoreStep + 1);
         }
 
@@ -1370,14 +1385,368 @@ export const FourColumnsPage = (props) => {
         }
     }
 
+    const fetchMockData = (step, category, screenWidth, numOfItemsInArray) => {
+        let fourColumnsPageData = [...FakeData.fourColumnsPage];
+
+        let updatedFourColumnsObj = {
+            disableLoadMoreButton: false,
+            fourColumnsData: []
+        };
+        let takeItems = step * 8;
+        if(takeItems >= fourColumnsPageData.length){
+            updatedFourColumnsObj.disableLoadMoreButton = true;
+            updatedFourColumnsObj.fourColumnsData = fourColumnsPageData;
+        }else{
+            updatedFourColumnsObj.fourColumnsData = fourColumnsPageData.slice(0, takeItems)
+        }
+
+        let categories = [];
+        categories = updatedFourColumnsObj.fourColumnsData
+            .map(el => {
+                return el.categories
+            })
+            .flat()
+            .map((el, i) => {
+                return el.key
+            })
+        categories = Utility.removeDublicatesFromArray(categories);
+        categories = categories.map((el, i) => {
+            return {
+                id: i + 2,
+                key: el,
+                label: `${Utility.changeKeyToLabel(el)}.`,
+                isHover: "init",
+                active: false
+            }
+        })
+        categories.unshift({
+            id: 1,
+            key: "showAll",
+            label: "Show all.",
+            isHover: "init",
+            active: true
+        });
+        if(category){
+            categories = categories.map(el => {
+                if(el.key === category){
+                    return {
+                        ...el,
+                        active: true
+                    }
+                }else{
+                    return {
+                        ...el,
+                        active: false
+                    }
+                }
+            })
+        }
+        let itemsState;
+        props.fetchFourColumnsPageSuccess(updatedFourColumnsObj.fourColumnsData);
+        if(step === 1){
+            itemsState = Utility.getArrayOfEmptyVal(updatedFourColumnsObj.fourColumnsData.length);
+            props.initItemsStylesStateForFourColumnsPage(itemsState);
+        }else{
+            itemsState = Utility.getArrayOfEmptyVal(updatedFourColumnsObj.fourColumnsData.length - numOfItemsInArray);
+            props.addMoreItemsStylesStateForFourColumnsPage(itemsState);
+        }
+        props.setCategoriesFourColumnsPage(categories);
+        props.loadMoreFourColumnsPageSuccess();
+        props.loadMoreDisableButtonStateForFourColumnsPage(updatedFourColumnsObj.disableLoadMoreButton);
+        if(step > 1 && category !== "showAll"){
+            let addedElemntsArray = updatedFourColumnsObj.fourColumnsData.slice(updatedFourColumnsObj.fourColumnsData.length-8, updatedFourColumnsObj.fourColumnsData.length);
+            let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(updatedFourColumnsObj.fourColumnsData, category);
+            let updatedTranslateCoordinates = Utility.updateTranslateCoordinatesOfAppearElements("fourColumnsPage", arrayOfAppearAndDisapperElements, screenWidth);
+            
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*8-7}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[0].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*8-7}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*8-7}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-7}`, updatedTranslateCoordinates.find(item => item.key === `img${step*8-7}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*8-6}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[1].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*8-6}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*8-6}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-6}`, updatedTranslateCoordinates.find(item => item.key === `img${step*8-6}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*8-5}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[2].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*8-5}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*8-5}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-5}`, updatedTranslateCoordinates.find(item => item.key === `img${step*8-5}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*8-4}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[3].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*8-4}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*8-4}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-4}`, updatedTranslateCoordinates.find(item => item.key === `img${step*8-4}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*8-3}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[4].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*8-3}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*8-3}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-3}`, updatedTranslateCoordinates.find(item => item.key === `img${step*8-3}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*8-2}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[5].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*8-2}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*8-2}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-2}`, updatedTranslateCoordinates.find(item => item.key === `img${step*8-2}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*6-1}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[4].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*6-1}`, updatedTranslateCoordinates.find(item => item.key === `img${step*6-1}`)?.translateY);
+
+            props.updateItemsStyleValuesFourColumnsPage(`img${step*6}`,{
+                width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                scale: addedElemntsArray[5].categories.some(el => el.key === category) ? 1 : 0,
+                translateX: updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateX,
+                translateY: updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateY,
+                transition: 0.45,
+                zIndex: 0,
+                rendered: true
+            });
+            props.setTopPositionOfTheItemForFourColumnsPage(`img${step*6}`, updatedTranslateCoordinates.find(item => item.key === `img${step*6}`)?.translateY);
+
+        }else if(step > 1 && category === "showAll"){
+            if(screenWidth > 960){
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-7}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-8, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-8),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-7}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-8));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-6}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-7, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-7),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-6}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-7));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-5}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-6, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-6),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-5}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-6));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-4}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-5, "fourthColumn"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-5),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-4}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-5));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-3}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-4, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-4),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-3}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-4));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-2}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-3, "secondColumn"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-3),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-2}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-3));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-1}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-2, "thirdColumn"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-2),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-1}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-2));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "X", step*8-1, "fourthColumn"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-1),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8}`, Utility.calcTranslateCoordinates("fourColumnsPage", screenWidth, "Y", step*8-1));
+            }else if(screenWidth <= 960){
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-7}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-8, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-8),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-7}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-8));
+                
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-6}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-7),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-7),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-6}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-7));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-5}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-6, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-6),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-5}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-6));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-4}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-5),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-5),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-4}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-5));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-3}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-4, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-4),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-3}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-4));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-2}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-3),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-3),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-2}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-3));
+            
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8-1}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-2, "atTheBeginning"),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-2),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8-1}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-2));
+
+                props.updateItemsStyleValuesFourColumnsPage(`img${step*8}`,{
+                    width: Utility.setWidthOfImage("fourColumnsPage", screenWidth),
+                    scale: 1,
+                    translateX: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "X", step*8-1),
+                    translateY: Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-1),
+                    transition: 0.45,
+                    zIndex: 0,
+                    rendered: true
+                });
+                props.setTopPositionOfTheItemForFourColumnsPage(`img${step*8}`, Utility.calcTranslateCoordinates("fourColumnsPageSmallScreen", screenWidth, "Y", step*8-1));
+            }
+        }  
+    }
+
     const loadMoreOnClick = () => {
         // Fetch more data for the component
 
-        props.fetchFourColumnsPage(props.fourColumnsPage.loadMoreStep, 
-                                    categoryFromHeader, 
-                                    size.width, 
-                                    props.fourColumnsPage.items.length, 
-                                    props.fourColumnsPage.itemsStyleValues);
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+            fetchMockData(props.fourColumnsPage.loadMoreStep, 
+                categoryFromHeader, 
+                size.width, 
+                props.fourColumnsPage.items.length, 
+                props.fourColumnsPage.itemsStyleValues);
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchFourColumnsPage(props.fourColumnsPage.loadMoreStep, 
+                categoryFromHeader, 
+                size.width, 
+                props.fourColumnsPage.items.length, 
+                props.fourColumnsPage.itemsStyleValues);
+        }
+
         props.setLoadMoreStepFourColumnsPage(props.fourColumnsPage.loadMoreStep + 1);
 
         // Set height for the fourColumnsPage items div
@@ -1851,6 +2220,14 @@ export default connect(
         return {
             fetchFourColumnsPage: bindActionCreators(Services.fetchFourColumnsPage, dispatch),
             setFourColumnsPageIsHoveringCategoryFromHeader: bindActionCreators(Actions.setFourColumnsPageIsHoveringCategoryFromHeader, dispatch),
+            fetchFourColumnsPageSuccess: bindActionCreators(Actions.fetchFourColumnsPageSuccess, dispatch),
+            initItemsStylesStateForFourColumnsPage: bindActionCreators(Actions.initItemsStylesStateForFourColumnsPage, dispatch),
+            addMoreItemsStylesStateForFourColumnsPage: bindActionCreators(Actions.addMoreItemsStylesStateForFourColumnsPage, dispatch),
+            setCategoriesFourColumnsPage: bindActionCreators(Actions.setCategoriesFourColumnsPage, dispatch),
+            loadMoreFourColumnsPageSuccess: bindActionCreators(Actions.loadMoreFourColumnsPageSuccess, dispatch),
+            loadMoreDisableButtonStateForFourColumnsPage: bindActionCreators(Actions.loadMoreDisableButtonStateForFourColumnsPage, dispatch),
+            updateItemsStyleValuesFourColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesFourColumnsPage, dispatch),
+            setTopPositionOfTheItemForFourColumnsPage: bindActionCreators(Actions.setTopPositionOfTheItemForFourColumnsPage, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

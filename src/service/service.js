@@ -1167,7 +1167,7 @@ export function fetchFourColumnsPage(step, category, screenWidth, numOfItemsInAr
                     dispatch(Actions.initItemsStylesStateForFourColumnsPage(itemsState));
                 }else{
                     // let lengthOfItemsStyleValuesObj = Object.keys(itemsStyleValuesObj).length;
-                    itemsState = Utility.getArrayOfEmptyVal(json.fourColumnsData.length-numOfItemsInArray);
+                    itemsState = Utility.getArrayOfEmptyVal(json.fourColumnsData.length - numOfItemsInArray);
                     // if(lengthOfItemsStyleValuesObj + 4 <= json.fourColumnsData.length){
                     //     itemsState.splice(-(lengthOfItemsStyleValuesObj - json.fourColumnsData.length + 4), lengthOfItemsStyleValuesObj - json.fourColumnsData.length + 4)
                     // }
