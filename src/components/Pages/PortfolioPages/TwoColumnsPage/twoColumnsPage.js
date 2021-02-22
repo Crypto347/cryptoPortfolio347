@@ -1174,7 +1174,6 @@ export const TwoColumnsPage = (props) => {
         if(takeItems >= twoColumnsPageData.length){
             updatedTwoColumnsObj.disableLoadMoreButton = true;
             updatedTwoColumnsObj.twoColumnsData = twoColumnsPageData;
-        
         }else{
             updatedTwoColumnsObj.twoColumnsData = twoColumnsPageData.slice(0, takeItems);
         }
