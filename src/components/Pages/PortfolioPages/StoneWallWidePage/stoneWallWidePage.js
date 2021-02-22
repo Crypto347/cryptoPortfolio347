@@ -61,6 +61,8 @@ import {
     EH30
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
  * Hooks
  */
@@ -68,6 +70,13 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
+
+/**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
 
 /**
  * StoneWallWidePage component definition and export
@@ -96,9 +105,19 @@ export const StoneWallWidePage = (props) => {
         // Fetch data for the component
 
         if(props.stoneWallWidePage.items.length === 0){
-            props.fetchStoneWallWidePage();
-        }
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
 
+                props.fetchStoneWallWidePageSuccess(FakeData.stoneWallWidePage);
+                let itemsState = Utility.getArrayOfEmptyVal(FakeData.stoneWallWidePage.length);
+                props.initItemsStylesStateForStoneWallWidePage(itemsState);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchStoneWallWidePage();
+            }
+        }
+        
         // Return to the part of the screen where the link to the selected item is located (items in absolute position)
 
         let timeout = setTimeout(() => {
@@ -711,6 +730,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchStoneWallWidePage: bindActionCreators(Services.fetchStoneWallWidePage, dispatch),
+            fetchStoneWallWidePageSuccess: bindActionCreators(Actions.fetchStoneWallWidePageSuccess, dispatch),
+            initItemsStylesStateForStoneWallWidePage: bindActionCreators(Actions.initItemsStylesStateForStoneWallWidePage, dispatch),
             setStoneWallWidePageIsHoveringCategory: bindActionCreators(Actions.setStoneWallWidePageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

@@ -10018,7 +10018,7 @@ app.get('/api/gallery-with-space-page', (req, res) => {
     ]
     res.json(galleryWithSpacePage);
 });
-//
+
 app.get('/api/stone-wall-page', (req, res) => {
     const stoneWallPage = [
         {
@@ -10426,7 +10426,7 @@ app.get('/api/stone-wall-wide-page', (req, res) => {
     ]
     res.json(stoneWallWidePage);
 });
-
+//
 app.get('/api/metro-page', (req, res) => {
     const metroPage = [
         {

@@ -466,7 +466,7 @@ export function fetchGalleryWithSpacePage() {
             });
     };
 }
-//
+
 export function fetchStoneWallPage() {
     return dispatch => {
         dispatch(Actions.fetchStoneWallPageBegin());
@@ -506,7 +506,7 @@ export function fetchStoneWallWidePage() {
             });
     };
 }
-
+//
 export function fetchMetroPage() {
     return dispatch => {
         dispatch(Actions.fetchMetroPageBegin());

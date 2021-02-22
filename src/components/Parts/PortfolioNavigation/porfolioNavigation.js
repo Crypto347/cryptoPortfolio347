@@ -307,12 +307,32 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'stoneWallPage':
                 if(props.stoneWallPage.items.length === 0){
-                    props.fetchStoneWallPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchStoneWallPageSuccess(FakeData.stoneWallPage);
+                        let itemsState = Utility.getArrayOfEmptyVal(FakeData.stoneWallPage.length);
+                        props.initItemsStylesStateForStoneWallPage(itemsState);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchStoneWallPage();
+                    }
                 }
                 break;
             case 'stoneWallWidePage':
                 if(props.stoneWallWidePage.items.length === 0){
-                    props.fetchStoneWallWidePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchStoneWallWidePageSuccess(FakeData.stoneWallWidePage);
+                        let itemsState = Utility.getArrayOfEmptyVal(FakeData.stoneWallWidePage.length);
+                        props.initItemsStylesStateForStoneWallWidePage(itemsState);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchStoneWallWidePage();
+                    }
                 }
                 break;
             case 'metroPage':
@@ -832,7 +852,11 @@ export default connect(
             fetchGalleryWithSpacePage: bindActionCreators(Services.fetchGalleryWithSpacePage, dispatch),
             fetchGalleryWithSpacePageSuccess: bindActionCreators(Actions.fetchGalleryWithSpacePageSuccess, dispatch),
             fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
+            fetchStoneWallPageSuccess: bindActionCreators(Actions.fetchStoneWallPageSuccess, dispatch),
+            initItemsStylesStateForStoneWallPage: bindActionCreators(Actions.initItemsStylesStateForStoneWallPage, dispatch),
             fetchStoneWallWidePage: bindActionCreators(Services.fetchStoneWallWidePage, dispatch),
+            fetchStoneWallWidePageSuccess: bindActionCreators(Actions.fetchStoneWallWidePageSuccess, dispatch),
+            initItemsStylesStateForStoneWallWidePage: bindActionCreators(Actions.initItemsStylesStateForStoneWallWidePage, dispatch),
             fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
             fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),

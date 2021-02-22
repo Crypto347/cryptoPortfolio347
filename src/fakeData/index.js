@@ -14,3 +14,5 @@ export * from './overlayWithInfoPageData';
 export * from './standardPageData';
 export * from './galleryPageData';
 export * from './galleryWithSpacePageData';
+export * from './stoneWallPageData';
+export * from './stoneWallWidePageData';

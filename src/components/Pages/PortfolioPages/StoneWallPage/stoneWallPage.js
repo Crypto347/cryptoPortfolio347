@@ -59,6 +59,8 @@ import {
     H65,
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
  * Hooks
  */
@@ -66,6 +68,13 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
+
+/**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
 
 /**
  * StoneWallPage component definition and export
@@ -94,7 +103,17 @@ export const StoneWallPage = (props) => {
         // Fetch data for the component
 
         if(props.stoneWallPage.items.length === 0){
-            props.fetchStoneWallPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchStoneWallPageSuccess(FakeData.stoneWallPage);
+                let itemsState = Utility.getArrayOfEmptyVal(FakeData.stoneWallPage.length);
+                props.initItemsStylesStateForStoneWallPage(itemsState);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchStoneWallPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located (items in absolute position)
@@ -103,7 +122,6 @@ export const StoneWallPage = (props) => {
             if(!props.stoneWallPage.loading && !props.stoneWallPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemsWrapper = document.getElementById("stoneWallPageItems").offsetTop;
                 let itemTopPosition = props.stoneWallPage.itemsTopPosition.find(item => item.key === props.historyPopFromItem).topPosition;
-                console.log(itemTopPosition)
                 window.scrollTo(0, itemTopPosition + itemsWrapper - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -803,6 +821,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
+            fetchStoneWallPageSuccess: bindActionCreators(Actions.fetchStoneWallPageSuccess, dispatch),
+            initItemsStylesStateForStoneWallPage: bindActionCreators(Actions.initItemsStylesStateForStoneWallPage, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
