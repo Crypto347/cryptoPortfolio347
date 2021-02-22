@@ -376,7 +376,7 @@ export function fetchSlideFromImageLeftPage() {
             });
     };
 }
-//
+
 export function fetchOverlayPage() {
     return dispatch => {
         dispatch(Actions.fetchOverlayPageBegin());
@@ -412,7 +412,7 @@ export function fetchOverlayWithInfoPage() {
             });
     };
 }
-
+//
 export function fetchStandardPage() {
     return dispatch => {
         dispatch(Actions.fetchStandardPageBegin());

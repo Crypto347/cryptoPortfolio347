@@ -6420,7 +6420,7 @@ app.get('/api/simple-overlay-page', (req, res) => {
 });
 
 app.get('/api/slide-from-image-left-page', (req, res) => {
-    const slideFromImageLeft = [
+    const slideFromImageLeftPage = [
         {
             id: 1,
             key: "smallImages1",
@@ -7016,9 +7016,9 @@ app.get('/api/slide-from-image-left-page', (req, res) => {
             }
         },
     ]
-    res.json(slideFromImageLeft);
+    res.json(slideFromImageLeftPage);
 });
-//
+
 app.get('/api/overlay-page', (req, res) => {
     const overlayPage = [
         {
@@ -8218,7 +8218,7 @@ app.get('/api/overlay-with-info-page', (req, res) => {
     ]
     res.json(overlayWithInfoPage);
 });
-
+//
 app.get('/api/standard-page', (req, res) => {
     const standardPage = [
         {

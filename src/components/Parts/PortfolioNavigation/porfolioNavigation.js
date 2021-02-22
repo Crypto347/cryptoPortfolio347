@@ -232,7 +232,7 @@ export const PorfolioNavigation = (props) => {
                     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
                         // Fetch mock data (not required to run -> npm run server)
         
-                        props.fetchSlideFromImageLeftPageSuccess(FakeData.slideFromImageLeft);
+                        props.fetchSlideFromImageLeftPageSuccess(FakeData.slideFromImageLeftPage);
                     }else{
                         // Fetch data (required to run -> npm run server)
         
@@ -242,12 +242,28 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'overlayPage':
                 if(props.overlayPage.items.length === 0){
-                    props.fetchOverlayPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchOverlayPageSuccess(FakeData.overlayPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchOverlayPage();
+                    }
                 }
                 break;
             case 'overlayWithInfoPage':
                 if(props.overlayWithInfoPage.items.length === 0){
-                    props.fetchOverlayWithInfoPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchOverlayWithInfoPageSuccess(FakeData.overlayWithInfoPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchOverlayWithInfoPage();
+                    }
                 }
                 break;
             case 'standardPage':
@@ -782,7 +798,9 @@ export default connect(
             fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
             fetchSlideFromImageLeftPageSuccess: bindActionCreators(Actions.fetchSlideFromImageLeftPageSuccess, dispatch),
             fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
+            fetchOverlayPageSuccess: bindActionCreators(Actions.fetchOverlayPageSuccess, dispatch),
             fetchOverlayWithInfoPage: bindActionCreators(Services.fetchOverlayWithInfoPage, dispatch),
+            fetchOverlayWithInfoPageSuccess: bindActionCreators(Actions.fetchOverlayWithInfoPageSuccess, dispatch),
             fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
             fetchGalleryPage: bindActionCreators(Services.fetchGalleryPage, dispatch),
             fetchGalleryWithSpacePage: bindActionCreators(Services.fetchGalleryWithSpacePage, dispatch),

@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * OverlayPage component definition and export
  */
 
@@ -91,7 +98,15 @@ export const OverlayPage = (props) => {
         // Fetch data for the component
 
         if(props.overlayPage.items.length === 0){
-            props.fetchOverlayPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchOverlayPageSuccess(FakeData.overlayPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchOverlayPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -264,6 +279,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
+            fetchOverlayPageSuccess: bindActionCreators(Actions.fetchOverlayPageSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

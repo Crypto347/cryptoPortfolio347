@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * OverlayWithInfoPage component definition and export
  */
 
@@ -91,7 +98,15 @@ export const OverlayWithInfoPage = (props) => {
         // Fetch data for the component
 
         if(props.overlayWithInfoPage.items.length === 0){
-            props.fetchOverlayWithInfoPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchOverlayWithInfoPageSuccess(FakeData.overlayWithInfoPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchOverlayWithInfoPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -267,6 +282,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchOverlayWithInfoPage: bindActionCreators(Services.fetchOverlayWithInfoPage, dispatch),
+            fetchOverlayWithInfoPageSuccess: bindActionCreators(Actions.fetchOverlayWithInfoPageSuccess, dispatch),
             setOverlayWithInfoPageIsHoveringCategory: bindActionCreators(Actions.setOverlayWithInfoPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

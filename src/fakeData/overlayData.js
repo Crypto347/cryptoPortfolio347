@@ -1,4 +1,4 @@
-export const slideFromImageLeftPage = [
+export const overlayPage = [
     {
         id: 1,
         key: "smallImages1",

@@ -9,3 +9,5 @@ export * from './archiveData';
 export * from './switchImageData';
 export * from './simpleOverlayData';
 export * from './slideFromImageLeftData';
+export * from './overlayData';
+export * from './overlayWithInfoData';
