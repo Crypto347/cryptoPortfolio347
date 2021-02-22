@@ -337,12 +337,32 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'metroPage':
                 if(props.metroPage.items.length === 0){
-                    props.fetchMetroPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchMetroPageSuccess(FakeData.metroPage);
+                        let itemsState = Utility.getArrayOfEmptyVal(FakeData.metroPage.length);
+                        props.initItemsStylesStateForMetroPage(itemsState);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchMetroPage();
+                    }
                 }
                 break;
             case 'pinterest3ColumnsPage':
                 if(props.pinterest3ColumnsPage.items.length === 0){
-                    props.fetchPinterest3ColumnsPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchPinterest3ColumnsPageSuccess(FakeData.pinterest3ColumnsPage);
+                        let itemsState = Utility.getArrayOfEmptyVal(FakeData.pinterest3ColumnsPage.length);
+                        props.initItemsStylesStateForPinterest3ColumnsPage(itemsState);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchPinterest3ColumnsPage();
+                    }
                 }
                 break;
             case 'twoColumnsWidePage':
@@ -858,7 +878,11 @@ export default connect(
             fetchStoneWallWidePageSuccess: bindActionCreators(Actions.fetchStoneWallWidePageSuccess, dispatch),
             initItemsStylesStateForStoneWallWidePage: bindActionCreators(Actions.initItemsStylesStateForStoneWallWidePage, dispatch),
             fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
+            fetchMetroPageSuccess: bindActionCreators(Actions.fetchMetroPageSuccess, dispatch),
+            initItemsStylesStateForMetroPage: bindActionCreators(Actions.initItemsStylesStateForMetroPage, dispatch),
             fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
+            fetchPinterest3ColumnsPageSuccess: bindActionCreators(Actions.fetchPinterest3ColumnsPageSuccess, dispatch),
+            initItemsStylesStateForPinterest3ColumnsPage: bindActionCreators(Actions.initItemsStylesStateForPinterest3ColumnsPage, dispatch),
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
             fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
             fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),

@@ -59,6 +59,8 @@ import {
     H65
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
  * Hooks
  */
@@ -66,6 +68,13 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
+
+/**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
 
 /**
  * MetroPage component definition and export
@@ -94,7 +103,17 @@ export const MetroPage = (props) => {
         // Fetch data for the component
 
         if(props.metroPage.items.length === 0){
-            props.fetchMetroPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchMetroPageSuccess(FakeData.metroPage);
+                let itemsState = Utility.getArrayOfEmptyVal(FakeData.metroPage.length);
+                props.initItemsStylesStateForMetroPage(itemsState);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchMetroPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located (items in absolute position)
@@ -103,7 +122,6 @@ export const MetroPage = (props) => {
             if(!props.metroPage.loading && !props.metroPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemsWrapper = document.getElementById("metroPageItems").offsetTop;
                 let itemTopPosition = props.metroPage.itemsTopPosition.find(item => item.key === props.historyPopFromItem).topPosition;
-                console.log(itemTopPosition)
                 window.scrollTo(0, itemTopPosition + itemsWrapper - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -1171,6 +1189,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),
+            fetchMetroPageSuccess: bindActionCreators(Actions.fetchMetroPageSuccess, dispatch),
+            initItemsStylesStateForMetroPage: bindActionCreators(Actions.initItemsStylesStateForMetroPage, dispatch),
             setMetroPageIsHoveringCategory: bindActionCreators(Actions.setMetroPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

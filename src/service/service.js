@@ -506,7 +506,7 @@ export function fetchStoneWallWidePage() {
             });
     };
 }
-//
+
 export function fetchMetroPage() {
     return dispatch => {
         dispatch(Actions.fetchMetroPageBegin());
@@ -546,7 +546,7 @@ export function fetchPinterest3ColumnsPage() {
             });
     };
 }
-
+//
 export function fetchTwoColumnsWidePage() {
     return dispatch => {
         dispatch(Actions.fetchTwoColumnsWidePageBegin());

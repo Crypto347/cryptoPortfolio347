@@ -10426,7 +10426,7 @@ app.get('/api/stone-wall-wide-page', (req, res) => {
     ]
     res.json(stoneWallWidePage);
 });
-//
+
 app.get('/api/metro-page', (req, res) => {
     const metroPage = [
         {
@@ -11275,7 +11275,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
     ]
     res.json(pinterest3ColumnsPage);
 });
-
+//
 app.get('/api/two-columns-wide-page', (req, res) => {
     const twoColumnsWidePage = [
         {

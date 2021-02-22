@@ -67,6 +67,15 @@ import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
 
+import * as Utility from '../../../../utility';
+
+/**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
 /**
  * Pinterest3ColumnsPage component definition and export
  */
@@ -94,7 +103,17 @@ export const Pinterest3ColumnsPage = (props) => {
         // Fetch data for the component
 
         if(props.pinterest3ColumnsPage.items.length === 0){
-            props.fetchPinterest3ColumnsPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchPinterest3ColumnsPageSuccess(FakeData.pinterest3ColumnsPage);
+                let itemsState = Utility.getArrayOfEmptyVal(FakeData.pinterest3ColumnsPage.length);
+                props.initItemsStylesStateForPinterest3ColumnsPage(itemsState);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchPinterest3ColumnsPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located (items in absolute position)
@@ -1492,6 +1511,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchPinterest3ColumnsPage: bindActionCreators(Services.fetchPinterest3ColumnsPage, dispatch),
+            fetchPinterest3ColumnsPageSuccess: bindActionCreators(Actions.fetchPinterest3ColumnsPageSuccess, dispatch),
+            initItemsStylesStateForPinterest3ColumnsPage: bindActionCreators(Actions.initItemsStylesStateForPinterest3ColumnsPage, dispatch),
             setPinterest3ColumnsPageIsHoveringCategory: bindActionCreators(Actions.setPinterest3ColumnsPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

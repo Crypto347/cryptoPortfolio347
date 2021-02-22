@@ -16,3 +16,5 @@ export * from './galleryPageData';
 export * from './galleryWithSpacePageData';
 export * from './stoneWallPageData';
 export * from './stoneWallWidePageData';
+export * from './metroPageData';
+export * from './pinterest3ColumnsPageData';
