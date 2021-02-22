@@ -21,3 +21,4 @@ export * from './pinterest3ColumnsPageData';
 export * from './twoColumnsWidePageData';
 export * from './threeColumnsWidePageData';
 export * from './fourColumnsWidePageData';
+export * from './fiveColumnsWidePageData';

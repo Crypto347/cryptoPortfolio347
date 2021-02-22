@@ -406,7 +406,15 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'fiveColumnsWidePage':
                 if(props.fiveColumnsWidePage.items.length === 0){
-                    props.fetchFiveColumnsWidePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchFiveColumnsWidePageSuccess(FakeData.fiveColumnsWidePage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchFiveColumnsWidePage();
+                    }
                 }
                 break;
             case 'twoColumnsPage':
@@ -914,6 +922,7 @@ export default connect(
             fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
             fetchFourColumnsWidePageSuccess: bindActionCreators(Actions.fetchFourColumnsWidePageSuccess, dispatch),
             fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
+            fetchFiveColumnsWidePageSuccess: bindActionCreators(Actions.fetchFiveColumnsWidePageSuccess, dispatch),
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
             fetchThreeColumnsPage: bindActionCreators(Services.fetchThreeColumnsPage, dispatch),
             fetchFourColumnsPage: bindActionCreators(Services.fetchFourColumnsPage, dispatch),
