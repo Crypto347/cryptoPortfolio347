@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * StandardPage component definition and export
  */
 
@@ -91,7 +98,15 @@ export const StandardPage = (props) => {
         // Fetch data for the component
 
         if(props.standardPage.items.length === 0){
-            props.fetchStandardPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchStandardPageSuccess(FakeData.standardPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchStandardPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -268,6 +283,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
+            fetchStandardPageSuccess: bindActionCreators(Actions.fetchStandardPageSuccess, dispatch),
             setStandardPageIsHoveringCategory: bindActionCreators(Actions.setStandardPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

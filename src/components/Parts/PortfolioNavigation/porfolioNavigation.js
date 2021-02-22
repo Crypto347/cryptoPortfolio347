@@ -268,17 +268,41 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'standardPage':
                 if(props.standardPage.items.length === 0){
-                    props.fetchStandardPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchStandardPageSuccess(FakeData.standardPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchStandardPage();
+                    }
                 }
                 break;
             case 'galleryPage':
                 if(props.galleryPage.items.length === 0){
-                    props.fetchGalleryPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchGalleryPageSuccess(FakeData.galleryPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchGalleryPage();
+                    }
                 }
                 break;
             case 'galleryWithSpacePage':
                 if(props.galleryWithSpacePage.items.length === 0){
-                    props.fetchGalleryWithSpacePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchGalleryWithSpacePageSuccess(FakeData.galleryWithSpacePage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchGalleryWithSpacePage();
+                    }
                 }
                 break;
             case 'stoneWallPage':
@@ -802,8 +826,11 @@ export default connect(
             fetchOverlayWithInfoPage: bindActionCreators(Services.fetchOverlayWithInfoPage, dispatch),
             fetchOverlayWithInfoPageSuccess: bindActionCreators(Actions.fetchOverlayWithInfoPageSuccess, dispatch),
             fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),
+            fetchStandardPageSuccess: bindActionCreators(Actions.fetchStandardPageSuccess, dispatch),
             fetchGalleryPage: bindActionCreators(Services.fetchGalleryPage, dispatch),
+            fetchGalleryPageSuccess: bindActionCreators(Actions.fetchGalleryPageSuccess, dispatch),
             fetchGalleryWithSpacePage: bindActionCreators(Services.fetchGalleryWithSpacePage, dispatch),
+            fetchGalleryWithSpacePageSuccess: bindActionCreators(Actions.fetchGalleryWithSpacePageSuccess, dispatch),
             fetchStoneWallPage: bindActionCreators(Services.fetchStoneWallPage, dispatch),
             fetchStoneWallWidePage: bindActionCreators(Services.fetchStoneWallWidePage, dispatch),
             fetchMetroPage: bindActionCreators(Services.fetchMetroPage, dispatch),

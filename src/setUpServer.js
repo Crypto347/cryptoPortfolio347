@@ -8218,7 +8218,7 @@ app.get('/api/overlay-with-info-page', (req, res) => {
     ]
     res.json(overlayWithInfoPage);
 });
-//
+
 app.get('/api/standard-page', (req, res) => {
     const standardPage = [
         {
@@ -10018,7 +10018,7 @@ app.get('/api/gallery-with-space-page', (req, res) => {
     ]
     res.json(galleryWithSpacePage);
 });
-
+//
 app.get('/api/stone-wall-page', (req, res) => {
     const stoneWallPage = [
         {

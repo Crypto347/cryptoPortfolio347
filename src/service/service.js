@@ -466,7 +466,7 @@ export function fetchGalleryWithSpacePage() {
             });
     };
 }
-
+//
 export function fetchStoneWallPage() {
     return dispatch => {
         dispatch(Actions.fetchStoneWallPageBegin());
