@@ -68,6 +68,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * SwitchImagePage component definition and export
  */
 
@@ -168,7 +175,15 @@ export const SwitchImagePage = (props) => {
         // Fetch data for the component
 
         if(props.switchImagePage.items.length === 0){
-            props.fetchSwitchImagePage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchSwitchImagePageSuccess(FakeData.switchImagePage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchSwitchImagePage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -361,6 +376,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSwitchImagePage: bindActionCreators(Services.fetchSwitchImagePage, dispatch),
+            fetchSwitchImagePageSuccess: bindActionCreators(Actions.fetchSwitchImagePageSuccess, dispatch),
             rememberCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.rememberCoordinateRangeForSwitchImagePage, dispatch),
             forgetCoordinateRangeForSwitchImagePage: bindActionCreators(Actions.forgetCoordinateRangeForSwitchImagePage, dispatch),
             setSwitchImagePageIsHoveringCategory: bindActionCreators(Actions.setSwitchImagePageIsHoveringCategory, dispatch),

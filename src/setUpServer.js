@@ -3402,7 +3402,7 @@ app.get('/api/portfolio-gallery-page', (req, res) => {
     ]
     res.json(portfolioGallery);
 });
-//
+
 app.post('/api/portfolio-category/:category', (req, res) => {
     let category = req.params.category;
     let categoryToArray = category.split("");
@@ -7018,7 +7018,7 @@ app.get('/api/slide-from-image-left-page', (req, res) => {
     ]
     res.json(slideFromImageLeft);
 });
-
+//
 app.get('/api/overlay-page', (req, res) => {
     const overlayPage = [
         {

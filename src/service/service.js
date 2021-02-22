@@ -279,7 +279,7 @@ export function fetchPortfolioGalleryPage() {
             });
     };
 }
-//
+
 export function fetchArchive(category, step) {
     return dispatch => {
         if(step === 1){
@@ -376,7 +376,7 @@ export function fetchSlideFromImageLeftPage() {
             });
     };
 }
-
+//
 export function fetchOverlayPage() {
     return dispatch => {
         dispatch(Actions.fetchOverlayPageBegin());

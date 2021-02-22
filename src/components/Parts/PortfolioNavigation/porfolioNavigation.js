@@ -168,22 +168,76 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'archive':
                 if(props.archive.items.length === 0){
-                    props.fetchArchive(category, 1);
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        let updatedCategory = category;
+                        let categoryToArray = updatedCategory.split("");
+                        let indexOfSlash = categoryToArray.findIndex(item => item === "-");
+                        if(indexOfSlash !== -1){
+                            categoryToArray.splice(indexOfSlash, 1)
+                            let lowerToUpperCase = categoryToArray[indexOfSlash].toUpperCase();
+                            categoryToArray.splice(indexOfSlash, 1, lowerToUpperCase);
+                            updatedCategory = categoryToArray.join("");
+                        }
+                      
+                        let archiveObj = {...FakeData.archive.find(item => item.category === updatedCategory)};
+                        let takeItems = 1 * 4;
+                        
+                        if(takeItems > archiveObj.archiveData.length){
+                            archiveObj.disableLoadMoreButton = true;
+                        }else{
+                            archiveObj.archiveData = archiveObj.archiveData.slice(0, takeItems)
+                        }
+                        
+                        props.fetchArchiveSuccess(archiveObj.archiveData);
+                        props.setArchiveCategory(archiveObj.category);
+                        props.loadMoreDisableButtonStateForArchive(archiveObj.disableLoadMoreButton);
+        
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchArchive(category, 1);
+                    }
                 }
                 break;
             case 'switchImagePage':
                 if(props.switchImagePage.items.length === 0){
-                    props.fetchSwitchImagePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchSwitchImagePageSuccess(FakeData.switchImagePage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchSwitchImagePage();
+                    }
                 }
                 break;
             case 'simpleOverlayPage':
                 if(props.simpleOverlayPage.items.length === 0){
-                    props.fetchSimpleOverlayPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchSimpleOverlayPageSuccess(FakeData.simpleOverlayPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchSimpleOverlayPage();
+                    }
                 }
                 break;
             case 'slideFromImageLeftPage':
                 if(props.slideFromImageLeftPage.items.length === 0){
-                    props.fetchSlideFromImageLeftPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchSlideFromImageLeftPageSuccess(FakeData.slideFromImageLeft);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchSlideFromImageLeftPage();
+                    }
                 }
                 break;
             case 'overlayPage':
@@ -718,9 +772,15 @@ export default connect(
             fetchPortfolioGalleryPage: bindActionCreators(Services.fetchPortfolioGalleryPage, dispatch),
             fetchPortfolioGalleryPageSuccess: bindActionCreators(Actions.fetchPortfolioGalleryPageSuccess, dispatch),
             fetchArchive: bindActionCreators(Services.fetchArchive, dispatch),
+            fetchArchiveSuccess: bindActionCreators(Actions.fetchArchiveSuccess, dispatch),
+            setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
+            loadMoreDisableButtonStateForArchive: bindActionCreators(Actions.loadMoreDisableButtonStateForArchive, dispatch),
             fetchSwitchImagePage: bindActionCreators(Services.fetchSwitchImagePage, dispatch),
+            fetchSwitchImagePageSuccess: bindActionCreators(Actions.fetchSwitchImagePageSuccess, dispatch),
             fetchSimpleOverlayPage: bindActionCreators(Services.fetchSimpleOverlayPage, dispatch),
+            fetchSimpleOverlayPageSuccess: bindActionCreators(Actions.fetchSimpleOverlayPageSuccess, dispatch),
             fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
+            fetchSlideFromImageLeftPageSuccess: bindActionCreators(Actions.fetchSlideFromImageLeftPageSuccess, dispatch),
             fetchOverlayPage: bindActionCreators(Services.fetchOverlayPage, dispatch),
             fetchOverlayWithInfoPage: bindActionCreators(Services.fetchOverlayWithInfoPage, dispatch),
             fetchStandardPage: bindActionCreators(Services.fetchStandardPage, dispatch),

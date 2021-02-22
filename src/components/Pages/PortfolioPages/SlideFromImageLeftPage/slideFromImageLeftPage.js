@@ -67,6 +67,14 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+
+/**
  * SlideFromImageLeftPage component definition and export
  */
 
@@ -91,7 +99,15 @@ export const SlideFromImageLeftPage = (props) => {
         // Fetch data for the component
 
         if(props.slideFromImageLeftPage.items.length === 0){
-            props.fetchSlideFromImageLeftPage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchSlideFromImageLeftPageSuccess(FakeData.slideFromImageLeft);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchSlideFromImageLeftPage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -99,7 +115,6 @@ export const SlideFromImageLeftPage = (props) => {
         let timeout = setTimeout(() => {
             if(!props.slideFromImageLeftPage.loading && !props.slideFromImageLeftPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);
@@ -268,6 +283,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchSlideFromImageLeftPage: bindActionCreators(Services.fetchSlideFromImageLeftPage, dispatch),
+            fetchSlideFromImageLeftPageSuccess: bindActionCreators(Actions.fetchSlideFromImageLeftPageSuccess, dispatch),
             setSlideFromImageLeftPageIsHoveringCategory: bindActionCreators(Actions.setSlideFromImageLeftPageIsHoveringCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

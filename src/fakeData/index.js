@@ -6,3 +6,6 @@ export * from './section4Data';
 export * from './portfolioItemData';
 export * from './portfolioGalleryData';
 export * from './archiveData';
+export * from './switchImageData';
+export * from './simpleOverlayData';
+export * from './slideFromImageLeftData';
