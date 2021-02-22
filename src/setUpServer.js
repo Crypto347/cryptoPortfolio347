@@ -11275,7 +11275,7 @@ app.get('/api/pinterest-3-columns-page', (req, res) => {
     ]
     res.json(pinterest3ColumnsPage);
 });
-//
+
 app.get('/api/two-columns-wide-page', (req, res) => {
     const twoColumnsWidePage = [
         {
@@ -15163,7 +15163,7 @@ app.get('/api/four-columns-wide-page', (req, res) => {
     ]
     res.json(fourColumnsWidePage);
 });
-
+//
 app.get('/api/five-columns-wide-page', (req, res) => {
     const fiveColumnsWidePage = [
         {

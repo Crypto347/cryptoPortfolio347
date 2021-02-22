@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * FourColumnsWidePage component definition and export
  */
 
@@ -91,7 +98,15 @@ export const FourColumnsWidePage = (props) => {
         // Fetch data for the component
 
         if(props.fourColumnsWidePage.items.length === 0){
-            props.fetchFourColumnsWidePage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchFourColumnsWidePageSuccess(FakeData.fourColumnsWidePage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchFourColumnsWidePage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -264,6 +279,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
+            fetchFourColumnsWidePageSuccess: bindActionCreators(Actions.fetchFourColumnsWidePageSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

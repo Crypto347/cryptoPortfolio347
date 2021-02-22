@@ -546,7 +546,7 @@ export function fetchPinterest3ColumnsPage() {
             });
     };
 }
-//
+
 export function fetchTwoColumnsWidePage() {
     return dispatch => {
         dispatch(Actions.fetchTwoColumnsWidePageBegin());
@@ -600,7 +600,7 @@ export function fetchFourColumnsWidePage() {
             });
     };
 }
-
+//
 export function fetchFiveColumnsWidePage() {
     return dispatch => {
         dispatch(Actions.fetchFiveColumnsWidePageBegin());

@@ -367,17 +367,41 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'twoColumnsWidePage':
                 if(props.twoColumnsWidePage.items.length === 0){
-                    props.fetchTwoColumnsWidePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchTwoColumnsWidePageSuccess(FakeData.twoColumnsWidePage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchTwoColumnsWidePage();
+                    }
                 }
                 break;
             case 'threeColumnsWidePage':
                 if(props.threeColumnsWidePage.items.length === 0){
-                    props.fetchThreeColumnsWidePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchThreeColumnsWidePageSuccess(FakeData.threeColumnsWidePage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchThreeColumnsWidePage();
+                    }
                 }
                 break;
             case 'fourColumnsWidePage':
                 if(props.fourColumnsWidePage.items.length === 0){
-                    props.fetchFourColumnsWidePage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchFourColumnsWidePageSuccess(FakeData.fourColumnsWidePage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchFourColumnsWidePage();
+                    }
                 }
                 break;
             case 'fiveColumnsWidePage':
@@ -884,8 +908,11 @@ export default connect(
             fetchPinterest3ColumnsPageSuccess: bindActionCreators(Actions.fetchPinterest3ColumnsPageSuccess, dispatch),
             initItemsStylesStateForPinterest3ColumnsPage: bindActionCreators(Actions.initItemsStylesStateForPinterest3ColumnsPage, dispatch),
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
+            fetchTwoColumnsWidePageSuccess: bindActionCreators(Actions.fetchTwoColumnsWidePageSuccess, dispatch),
             fetchThreeColumnsWidePage: bindActionCreators(Services.fetchThreeColumnsWidePage, dispatch),
+            fetchThreeColumnsWidePageSuccess: bindActionCreators(Actions.fetchThreeColumnsWidePageSuccess, dispatch),
             fetchFourColumnsWidePage: bindActionCreators(Services.fetchFourColumnsWidePage, dispatch),
+            fetchFourColumnsWidePageSuccess: bindActionCreators(Actions.fetchFourColumnsWidePageSuccess, dispatch),
             fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
             fetchThreeColumnsPage: bindActionCreators(Services.fetchThreeColumnsPage, dispatch),

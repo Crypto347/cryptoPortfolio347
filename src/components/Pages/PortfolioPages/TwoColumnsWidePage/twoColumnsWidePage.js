@@ -58,6 +58,8 @@ import {
     H45
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
  * Hooks
  */
@@ -65,6 +67,13 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
+
+/**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
 
 /**
  * TwoColumnsWidePage component definition and export
@@ -91,7 +100,15 @@ export const TwoColumnsWidePage = (props) => {
         // Fetch data for the component
 
         if(props.twoColumnsWidePage.items.length === 0){
-            props.fetchTwoColumnsWidePage();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTwoColumnsWidePageSuccess(FakeData.twoColumnsWidePage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTwoColumnsWidePage();
+            }
         }
 
         // Return to the part of the screen where the link to the selected item is located
@@ -264,6 +281,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchTwoColumnsWidePage: bindActionCreators(Services.fetchTwoColumnsWidePage, dispatch),
+            fetchTwoColumnsWidePageSuccess: bindActionCreators(Actions.fetchTwoColumnsWidePageSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
