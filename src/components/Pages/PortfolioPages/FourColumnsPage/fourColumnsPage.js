@@ -1784,7 +1784,7 @@ export const FourColumnsPage = (props) => {
         }
     }
     
-    const renderFourCloumnsPageItemStyle = (id) => {
+    const renderFourColumnsPageItemStyle = (id) => {
         switch(id){
             case 1:
                 return {
@@ -2104,7 +2104,7 @@ export const FourColumnsPage = (props) => {
                         <div 
                             key={i} 
                             id={el.key}
-                            style={renderFourCloumnsPageItemStyle(el.id)}
+                            style={renderFourColumnsPageItemStyle(el.id)}
                         >
                             <OverlayImage
                                 page="fourColumnsPage"

@@ -15163,7 +15163,7 @@ app.get('/api/four-columns-wide-page', (req, res) => {
     ]
     res.json(fourColumnsWidePage);
 });
-//
+
 app.get('/api/five-columns-wide-page', (req, res) => {
     const fiveColumnsWidePage = [
         {
@@ -18413,7 +18413,7 @@ app.get('/api/accordions-page/section2', (req, res) => {
     ]
     res.json(accordionsPageSection2Data);
 });
-
+//
 app.get('/api/tabs-page/section1/column1', (req, res) => {
     const tabsPageSection1Column2Data = [
         {

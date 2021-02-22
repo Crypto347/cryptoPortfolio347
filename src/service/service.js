@@ -600,7 +600,7 @@ export function fetchFourColumnsWidePage() {
             });
     };
 }
-//
+
 export function fetchFiveColumnsWidePage() {
     return dispatch => {
         dispatch(Actions.fetchFiveColumnsWidePageBegin());
@@ -1496,7 +1496,7 @@ export function fetchAccordionsPageSection2Data() {
             });
     };
 }
-
+//
 export function fetchTabsPageSection1Column1Data() {
     return dispatch => {
         dispatch(Actions.fetchTabsPageSection1Column1DataBegin());

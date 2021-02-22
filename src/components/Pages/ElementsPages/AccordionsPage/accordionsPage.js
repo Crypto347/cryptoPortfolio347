@@ -68,6 +68,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * AccordionsPage component definition and export
  */
 
@@ -92,10 +99,27 @@ export const AccordionsPage = (props) => {
         // Fetch data for the component
 
         if(props.accordionsPage.section1Data.itemsLeftColumn.length === 0){
-            props.fetchAccordionsPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchAccordionsPageSection1DataSuccess(FakeData.accordionsPageSection1Data);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchAccordionsPageSection1Data();
+            }
         }
+
         if(props.accordionsPage.section2Data.items.length === 0){
-            props.fetchAccordionsPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchAccordionsPageSection2DataSuccess(FakeData.accordionsPageSection2Data);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchAccordionsPageSection2Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -317,7 +341,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchAccordionsPageSection1Data: bindActionCreators(Services.fetchAccordionsPageSection1Data, dispatch),
+            fetchAccordionsPageSection1DataSuccess: bindActionCreators(Actions.fetchAccordionsPageSection1DataSuccess, dispatch),
             fetchAccordionsPageSection2Data: bindActionCreators(Services.fetchAccordionsPageSection2Data, dispatch),
+            fetchAccordionsPageSection2DataSuccess: bindActionCreators(Actions.fetchAccordionsPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
