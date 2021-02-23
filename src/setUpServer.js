@@ -18413,9 +18413,9 @@ app.get('/api/accordions-page/section2', (req, res) => {
     ]
     res.json(accordionsPageSection2Data);
 });
-//
+
 app.get('/api/tabs-page/section1/column1', (req, res) => {
-    const tabsPageSection1Column2Data = [
+    const tabsPageSection1Column1Data = [
         {
             id: 1,
             key: "section1Column1Id1",
@@ -18441,7 +18441,7 @@ app.get('/api/tabs-page/section1/column1', (req, res) => {
             active: "init"
         }
     ]
-    res.json(tabsPageSection1Column2Data);
+    res.json(tabsPageSection1Column1Data);
 });
 
 app.get('/api/tabs-page/section1/column2', (req, res) => {
@@ -18556,7 +18556,6 @@ app.get('/api/testimonials-page/section2', (req, res) => {
             feedback: "Id rebum dolor petentium vis, wisi dissen tias. Quo option integre sensibus in. Noster mnesarchum ne usu habemus. Vix in verterem scribentur. An idque possim facilisis mea vim. Vix tale ludus persius cu. In qui meis munere ea evertitur.",
             author: "Paul Macha"
         }
-      
     ]
     res.json(testimonialsPageSection2);
 });
@@ -18581,7 +18580,7 @@ app.get('/api/testimonials-page/section3', (req, res) => {
     ]
     res.json(testimonialsPageSection3);
 });
-
+//
 app.get('/api/team-page/section1', (req, res) => {
     const teamPageSection1 = [
         {

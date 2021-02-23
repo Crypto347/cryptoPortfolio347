@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * TestimonialsPage component definition and export
  */
 
@@ -91,17 +98,41 @@ export const TestimonialsPage = (props) => {
         // Fetch data for the component
 
         if(props.testimonialsPage.section1Data.items.length === 0){
-            props.fetchTestimonialsPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTestimonialsPageSection1DataSuccess(FakeData.testimonialsPageSection1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTestimonialsPageSection1Data();
+            }
         }
 
         if(props.testimonialsPage.section2Data.items.length === 0){
-            props.fetchTestimonialsPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTestimonialsPageSection2DataSuccess(FakeData.testimonialsPageSection2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTestimonialsPageSection2Data();
+            }
         }
 
         if(props.testimonialsPage.section3Data.items.length === 0){
-            props.fetchTestimonialsPageSection3Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTestimonialsPageSection3DataSuccess(FakeData.testimonialsPageSection3);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTestimonialsPageSection3Data();
+            }
         }
-        
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -201,6 +232,8 @@ export const TestimonialsPage = (props) => {
             return(
                 <div className="testimonials-page-section-1-data">
                     <H45 className="h45-white-lustria">Testimonials</H45>
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.testimonialsPage.section1Data.items.length !== 0 ? 
                     <Swiper
                         component="testimonialsPageSection1"
                         contentArray={props.testimonialsPage.section1Data.items}
@@ -212,7 +245,7 @@ export const TestimonialsPage = (props) => {
                         setIsHoveringSwiperDot={props.setTestimonialsPageSection1IsHoveringSwiperDot}
                         autoPlay
                         showDots
-                    />
+                    /> : null}
                 </div>
             )
         }
@@ -248,6 +281,8 @@ export const TestimonialsPage = (props) => {
         if(!props.testimonialsPage.section2Data.loading && !props.testimonialsPage.section2Data.error){
             return(
                 <div className="testimonials-page-section-2-data">
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.testimonialsPage.section2Data.items.length !== 0 ? 
                     <Swiper 
                         component="testimonialsPageSection2"
                         contentArray={props.testimonialsPage.section2Data.items}
@@ -257,7 +292,7 @@ export const TestimonialsPage = (props) => {
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection2}
                         swiperData={props.testimonialsPage.section2Data.swiper}
                         autoPlay
-                    />
+                    /> : null}
                 </div>
             )
         }
@@ -293,6 +328,8 @@ export const TestimonialsPage = (props) => {
         if(!props.testimonialsPage.section3Data.loading && !props.testimonialsPage.section3Data.error){
             return(
                 <div className="testimonials-page-section-3-data">
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.testimonialsPage.section2Data.items.length !== 0 ? 
                     <Swiper 
                         component="testimonialsPageSection3"
                         contentArray={props.testimonialsPage.section3Data.items}
@@ -303,7 +340,7 @@ export const TestimonialsPage = (props) => {
                         swiperData={props.testimonialsPage.section3Data.swiper}
                         coordinateRange={props.testimonialsPage.section3Data.itemsCoordinateRange}
                         autoPlay
-                    />
+                    /> : null}
                 </div>
             )
         }
@@ -355,8 +392,11 @@ export default connect(
     (dispatch) => {
         return {
             fetchTestimonialsPageSection1Data: bindActionCreators(Services.fetchTestimonialsPageSection1Data, dispatch),
+            fetchTestimonialsPageSection1DataSuccess: bindActionCreators(Actions.fetchTestimonialsPageSection1DataSuccess, dispatch),
             fetchTestimonialsPageSection2Data: bindActionCreators(Services.fetchTestimonialsPageSection2Data, dispatch),
+            fetchTestimonialsPageSection2DataSuccess: bindActionCreators(Actions.fetchTestimonialsPageSection2DataSuccess, dispatch),
             fetchTestimonialsPageSection3Data: bindActionCreators(Services.fetchTestimonialsPageSection3Data, dispatch),
+            fetchTestimonialsPageSection3DataSuccess: bindActionCreators(Actions.fetchTestimonialsPageSection3DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

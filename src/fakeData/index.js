@@ -26,3 +26,5 @@ export * from './twoColumnsPageData';
 export * from './threeColumnsPageData';
 export * from './fourColumnsPageData';
 export * from './accordionsPageData';
+export * from './tabsPageData';
+export * from './testimonialsPageData';

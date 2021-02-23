@@ -69,6 +69,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * TabsPage component definition and export
  */
 
@@ -93,15 +100,39 @@ export const TabsPage = (props) => {
         // Fetch data for the component
 
         if(props.tabsPage.section1Column1Data.items.length === 0){
-            props.fetchTabsPageSection1Column1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTabsPageSection1Column1DataSuccess(FakeData.tabsPageSection1Column1Data);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTabsPageSection1Column1Data();
+            }
         }
 
         if(props.tabsPage.section1Column2Data.items.length === 0){
-            props.fetchTabsPageSection1Column2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTabsPageSection1Column2DataSuccess(FakeData.tabsPageSection1Column2Data);
+            }else{
+                // Fetch data (required to run -> npm run server)
+             
+                props.fetchTabsPageSection1Column2Data();
+            }
         }
 
         if(props.tabsPage.section2Data.items.length === 0){
-            props.fetchTabsPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTabsPageSection2DataSuccess(FakeData.tabsPageSection2Data);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTabsPageSection2Data();
+            }
         }
         
         // Initialize the lines style for 3 containers with tabs
@@ -204,17 +235,21 @@ export const TabsPage = (props) => {
         if(!props.tabsPage.section1Column1Data.loading && !props.tabsPage.section1Column1Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column1");
             return(
-                <Tabs
-                    array={props.tabsPage.section1Column1Data.items}
-                    page="tabsPage"
-                    tabsKey="section1Column1"
-                    setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
-                    setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
-                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                    tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column1}
-                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                />
+                <>
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.tabsPage.section1Column1Data.items.length !== 0 ? 
+                    <Tabs
+                        array={props.tabsPage.section1Column1Data.items}
+                        page="tabsPage"
+                        tabsKey="section1Column1"
+                        setActiveTab={props.setActiveTabOfSection1Column1TabsPage}
+                        setIsHoverTab={props.setIsHoverTabOfSection1Column1TabsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                        tabsCoordinateRange={tabsCoordinateRange}
+                        tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column1}
+                        updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
+                    /> : null}
+                </>
             )
         }
         if(!props.tabsPage.section1Column1Data.loading && props.tabsPage.section1Column1Data.error){
@@ -243,17 +278,21 @@ export const TabsPage = (props) => {
         if(!props.tabsPage.section1Column2Data.loading && !props.tabsPage.section1Column2Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section1Column2");
             return(
-                <Tabs
-                    array={props.tabsPage.section1Column2Data.items}
-                    page="tabsPage"
-                    tabsKey="section1Column2"
-                    setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
-                    setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
-                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                    tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column2}
-                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                />
+                <>
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.tabsPage.section1Column2Data.items.length !== 0 ? 
+                    <Tabs
+                        array={props.tabsPage.section1Column2Data.items}
+                        page="tabsPage"
+                        tabsKey="section1Column2"
+                        setActiveTab={props.setActiveTabOfSection1Column2TabsPage}
+                        setIsHoverTab={props.setIsHoverTabOfSection1Column2TabsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                        tabsCoordinateRange={tabsCoordinateRange}
+                        tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section1Column2}
+                        updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
+                    /> : null}
+                </>
             )
         }
         if(!props.tabsPage.section1Column2Data.loading && props.tabsPage.section1Column2Data.error){
@@ -282,17 +321,21 @@ export const TabsPage = (props) => {
         if(!props.tabsPage.section2Data.loading && !props.tabsPage.section2Data.error){
             let tabsCoordinateRange = props.tabsPage.itemsCooradinatesRanges.find(item => item.tabKey === "section2");
             return(
-                <Tabs
-                    array={props.tabsPage.section2Data.items}
-                    page="tabsPage"
-                    tabsKey="section2"
-                    setActiveTab={props.setActiveTabOfSection2TabsPage}
-                    setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
-                    rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
-                    tabsCoordinateRange={tabsCoordinateRange}
-                    tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
-                    updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
-                />
+                <>
+                    {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                    process.env.ENVIRONMENT === Environment.PRODUCTION && props.tabsPage.section2Data.items.length !== 0 ? 
+                    <Tabs
+                        array={props.tabsPage.section2Data.items}
+                        page="tabsPage"
+                        tabsKey="section2"
+                        setActiveTab={props.setActiveTabOfSection2TabsPage}
+                        setIsHoverTab={props.setIsHoverTabOfSection2TabsPage}
+                        rememberCoordinateRange={props.rememberCoordinateRangeForTabsPage}
+                        tabsCoordinateRange={tabsCoordinateRange}
+                        tabsUnderlineStyleValues={props.tabsPage.tabsUnderlinesStyleValues.section2}
+                        updateTabsUnderlinesStyleValues={props.updateTabsUnderlinesStyleValuesForTabsPage}
+                    /> : null}
+                </>
             )
         }
         if(!props.tabsPage.section2Data.loading && props.tabsPage.section2Data.error){
@@ -346,8 +389,11 @@ export default connect(
     (dispatch) => {
         return {
             fetchTabsPageSection1Column1Data: bindActionCreators(Services.fetchTabsPageSection1Column1Data, dispatch),
+            fetchTabsPageSection1Column1DataSuccess: bindActionCreators(Actions.fetchTabsPageSection1Column1DataSuccess, dispatch),
             fetchTabsPageSection1Column2Data: bindActionCreators(Services.fetchTabsPageSection1Column2Data, dispatch),
+            fetchTabsPageSection1Column2DataSuccess: bindActionCreators(Actions.fetchTabsPageSection1Column2DataSuccess, dispatch),
             fetchTabsPageSection2Data: bindActionCreators(Services.fetchTabsPageSection2Data, dispatch),
+            fetchTabsPageSection2DataSuccess: bindActionCreators(Actions.fetchTabsPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

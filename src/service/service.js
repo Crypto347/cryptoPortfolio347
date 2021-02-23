@@ -1496,7 +1496,7 @@ export function fetchAccordionsPageSection2Data() {
             });
     };
 }
-//
+
 export function fetchTabsPageSection1Column1Data() {
     return dispatch => {
         dispatch(Actions.fetchTabsPageSection1Column1DataBegin());
@@ -1604,7 +1604,7 @@ export function fetchTestimonialsPageSection3Data() {
             });
     };
 }
-
+//
 export function fetchTeamPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchTeamPageSection1DataBegin());
