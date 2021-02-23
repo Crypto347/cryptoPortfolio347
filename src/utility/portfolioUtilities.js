@@ -520,7 +520,7 @@ const calculateTranslateXForFourColumnsPage = (page, i, screenWidth) => {
         case 7:
         case 11:
         case 15:
-            return 2 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
+            return 3 * setWidthOfImage(page, screenWidth, "widthWithPaddingRight");
         default:
             return 0;
     }
