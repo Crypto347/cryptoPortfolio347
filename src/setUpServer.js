@@ -19697,7 +19697,7 @@ app.get('/api/buttons-page/section2', (req, res) => {
     ]
     res.json(buttonsPageSec2);
 });
-//
+
 app.get('/api/pricing-tables-page/section1', (req, res) => {
     const pricingTablesPageSec1 = [
         {
@@ -19941,7 +19941,7 @@ app.get('/api/counters-page/section3', (req, res) => {
     ]
     res.json(countersPageSec3);
 });
-
+//
 app.get('/api/countdown-page/section1', (req, res) => {
     const countdownPageSec1 = [
         {

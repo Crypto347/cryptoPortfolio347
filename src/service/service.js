@@ -1955,7 +1955,7 @@ export function fetchButtonsPageSection2Data() {
             });
     };
 }
-//
+
 export function fetchPricingTablesPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchPricingTablesPageSection1DataBegin());
@@ -2081,7 +2081,7 @@ export function fetchCountersPageSection3Data() {
             });
     };
 }
-
+//
 export function fetchCountdownPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchCountdownPageSection1DataBegin());

@@ -32,3 +32,6 @@ export * from './teamPageData';
 export * from './iconWithTextPageData';
 export * from './bannerPageData';
 export * from './buttonsPageData';
+export * from './pricingTablesPageData';
+export * from './pieChartsPageData';
+export * from './countersPageData';

@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * PricingTablesPage component definition and export
  */
 
@@ -91,12 +98,29 @@ export const PricingTablesPage = (props) => {
         // Fetch data for the component
 
         if(props.pricingTablesPage.section1Data.items.length === 0){
-            props.fetchPricingTablesPageSection1Data();
-        }
-        if(props.pricingTablesPage.section2Data.items.length === 0){
-            props.fetchPricingTablesPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchPricingTablesPageSection1DataSuccess(FakeData.pricingTablesPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchPricingTablesPageSection1Data();
+            }
         }
 
+        if(props.pricingTablesPage.section2Data.items.length === 0){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchPricingTablesPageSection2DataSuccess(FakeData.pricingTablesPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchPricingTablesPageSection2Data();
+            }
+        }
+     
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -318,7 +342,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchPricingTablesPageSection1Data: bindActionCreators(Services.fetchPricingTablesPageSection1Data, dispatch),
+            fetchPricingTablesPageSection1DataSuccess: bindActionCreators(Actions.fetchPricingTablesPageSection1DataSuccess, dispatch),
             fetchPricingTablesPageSection2Data: bindActionCreators(Services.fetchPricingTablesPageSection2Data, dispatch),
+            fetchPricingTablesPageSection2DataSuccess: bindActionCreators(Actions.fetchPricingTablesPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

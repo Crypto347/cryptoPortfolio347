@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * CountersPage component definition and export
  */
 
@@ -94,13 +101,39 @@ export const CountersPage = (props) => {
         // Fetch data for the component
 
         if(props.countersPage.section1Data.items.length === 0){
-            props.fetchCountersPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchCountersPageSection1DataSuccess(FakeData.countersPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchCountersPageSection1Data();
+            }
         }
+
         if(props.countersPage.section2Data.items.length === 0){
-            props.fetchCountersPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchCountersPageSection2DataSuccess(FakeData.countersPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchCountersPageSection2Data();
+            }
         }
+
         if(props.countersPage.section3Data.items.length === 0){
-            props.fetchCountersPageSection3Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchCountersPageSection3DataSuccess(FakeData.countersPageSec3);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchCountersPageSection3Data();
+            }
         }
 
         // On init render section 1
@@ -394,8 +427,11 @@ export default connect(
     (dispatch) => {
         return {
             fetchCountersPageSection1Data: bindActionCreators(Services.fetchCountersPageSection1Data, dispatch),
+            fetchCountersPageSection1DataSuccess: bindActionCreators(Actions.fetchCountersPageSection1DataSuccess, dispatch),
             fetchCountersPageSection2Data: bindActionCreators(Services.fetchCountersPageSection2Data, dispatch),
+            fetchCountersPageSection2DataSuccess: bindActionCreators(Actions.fetchCountersPageSection2DataSuccess, dispatch),
             fetchCountersPageSection3Data: bindActionCreators(Services.fetchCountersPageSection3Data, dispatch),
+            fetchCountersPageSection3DataSuccess: bindActionCreators(Actions.fetchCountersPageSection3DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

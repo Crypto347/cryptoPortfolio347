@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * PieCartsPage component definition and export
  */
 
@@ -92,10 +99,27 @@ export const PieCartsPage = (props) => {
         // Fetch data for the component
 
         if(props.pieChartsPage.section1Data.items.length === 0){
-            props.fetchPieChartsPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchPieChartsPageSection1DataSuccess(FakeData.pieChartsPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchPieChartsPageSection1Data();
+            }
         }
+
         if(props.pieChartsPage.section2Data.items.length === 0){
-            props.fetchPieChartsPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchPieChartsPageSection2DataSuccess(FakeData.pieChartsPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchPieChartsPageSection2Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -336,7 +360,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchPieChartsPageSection1Data: bindActionCreators(Services.fetchPieChartsPageSection1Data, dispatch),
+            fetchPieChartsPageSection1DataSuccess: bindActionCreators(Actions.fetchPieChartsPageSection1DataSuccess, dispatch),
             fetchPieChartsPageSection2Data: bindActionCreators(Services.fetchPieChartsPageSection2Data, dispatch),
+            fetchPieChartsPageSection2DataSuccess: bindActionCreators(Actions.fetchPieChartsPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
