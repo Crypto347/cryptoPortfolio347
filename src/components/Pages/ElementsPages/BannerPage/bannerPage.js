@@ -71,6 +71,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * BannerPage component definition and export
  */
 
@@ -95,35 +102,99 @@ export const BannerPage = (props) => {
         // Fetch data for the component
 
         if(props.bannerPage.section1Data.items.length === 0){
-            props.fetchBannerPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection1DataSuccess(FakeData.bannerPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection1Data();
+            }
         }
 
         if(props.bannerPage.section2Data.items.length === 0){
-            props.fetchBannerPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection2DataSuccess(FakeData.bannerPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection2Data();
+            }
         }
 
         if(props.bannerPage.section3Data.items.length === 0){
-            props.fetchBannerPageSection3Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection3DataSuccess(FakeData.bannerPageSec3);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection3Data();
+            }
         }
-        
+
         if(props.bannerPage.section4Data.items.length === 0){
-            props.fetchBannerPageSection4Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection4DataSuccess(FakeData.bannerPageSec4);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection4Data();
+            }
         }
 
         if(props.bannerPage.section5Data.items.length === 0){
-            props.fetchBannerPageSection5Data();
-        }
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
 
+                props.fetchBannerPageSection5DataSuccess(FakeData.bannerPageSec5);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection5Data();
+            }
+        }
+        
         if(props.bannerPage.section6Data.items.length === 0){
-            props.fetchBannerPageSection6Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection6DataSuccess(FakeData.bannerPageSec6);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection6Data();
+            }
         }
 
         if(props.bannerPage.section7Data.items.length === 0){
-            props.fetchBannerPageSection7Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection7DataSuccess(FakeData.bannerPageSec7);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection7Data();
+            }
         }
 
         if(props.bannerPage.section8Data.items.length === 0){
-            props.fetchBannerPageSection8Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBannerPageSection8DataSuccess(FakeData.bannerPageSec8);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBannerPageSection8Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -663,13 +734,21 @@ export default connect(
     (dispatch) => {
         return {
             fetchBannerPageSection1Data: bindActionCreators(Services.fetchBannerPageSection1Data, dispatch),
+            fetchBannerPageSection1DataSuccess: bindActionCreators(Actions.fetchBannerPageSection1DataSuccess, dispatch),
             fetchBannerPageSection2Data: bindActionCreators(Services.fetchBannerPageSection2Data, dispatch),
+            fetchBannerPageSection2DataSuccess: bindActionCreators(Actions.fetchBannerPageSection2DataSuccess, dispatch),
             fetchBannerPageSection3Data: bindActionCreators(Services.fetchBannerPageSection3Data, dispatch),
+            fetchBannerPageSection3DataSuccess: bindActionCreators(Actions.fetchBannerPageSection3DataSuccess, dispatch),
             fetchBannerPageSection4Data: bindActionCreators(Services.fetchBannerPageSection4Data, dispatch),
+            fetchBannerPageSection4DataSuccess: bindActionCreators(Actions.fetchBannerPageSection4DataSuccess, dispatch),
             fetchBannerPageSection5Data: bindActionCreators(Services.fetchBannerPageSection5Data, dispatch),
+            fetchBannerPageSection5DataSuccess: bindActionCreators(Actions.fetchBannerPageSection5DataSuccess, dispatch),
             fetchBannerPageSection6Data: bindActionCreators(Services.fetchBannerPageSection6Data, dispatch),
+            fetchBannerPageSection6DataSuccess: bindActionCreators(Actions.fetchBannerPageSection6DataSuccess, dispatch),
             fetchBannerPageSection7Data: bindActionCreators(Services.fetchBannerPageSection7Data, dispatch),
+            fetchBannerPageSection7DataSuccess: bindActionCreators(Actions.fetchBannerPageSection7DataSuccess, dispatch),
             fetchBannerPageSection8Data: bindActionCreators(Services.fetchBannerPageSection8Data, dispatch),
+            fetchBannerPageSection8DataSuccess: bindActionCreators(Actions.fetchBannerPageSection8DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

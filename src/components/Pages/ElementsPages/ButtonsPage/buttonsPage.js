@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * ButtonsPage component definition and export
  */
 
@@ -91,12 +98,29 @@ export const ButtonsPage = (props) => {
         // Fetch data for the component
 
         if(props.buttonsPage.section1Data.items.length === 0){
-            props.fetchButtonsPageSection1Data();
-        }
-        if(props.buttonsPage.section2Data.items.length === 0){
-            props.fetchButtonsPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchButtonsPageSection1DataSuccess(FakeData.buttonsPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchButtonsPageSection1Data();
+            }
         }
 
+        if(props.buttonsPage.section2Data.items.length === 0){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchButtonsPageSection2DataSuccess(FakeData.buttonsPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchButtonsPageSection2Data();
+            }
+        }
+       
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -307,7 +331,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchButtonsPageSection1Data: bindActionCreators(Services.fetchButtonsPageSection1Data, dispatch),
+            fetchButtonsPageSection1DataSuccess: bindActionCreators(Actions.fetchButtonsPageSection1DataSuccess, dispatch),
             fetchButtonsPageSection2Data: bindActionCreators(Services.fetchButtonsPageSection2Data, dispatch),
+            fetchButtonsPageSection2DataSuccess: bindActionCreators(Actions.fetchButtonsPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

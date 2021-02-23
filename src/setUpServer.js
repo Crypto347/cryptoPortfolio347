@@ -18914,7 +18914,7 @@ app.get('/api/icon-with-text/section2', (req, res) => {
     ]
     res.json(iconWithTextPageSec2);
 });
-//
+
 app.get('/api/banner-page/section1', (req, res) => {
     const bannerPageSec1 = [
         {
@@ -19697,7 +19697,7 @@ app.get('/api/buttons-page/section2', (req, res) => {
     ]
     res.json(buttonsPageSec2);
 });
-
+//
 app.get('/api/pricing-tables-page/section1', (req, res) => {
     const pricingTablesPageSec1 = [
         {

@@ -30,3 +30,5 @@ export * from './tabsPageData';
 export * from './testimonialsPageData';
 export * from './teamPageData';
 export * from './iconWithTextPageData';
+export * from './bannerPageData';
+export * from './buttonsPageData';

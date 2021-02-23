@@ -1775,7 +1775,7 @@ export function fetchIconWithTextPageSection2Data() {
             });
     };
 }
-//
+
 export function fetchBannerPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchBannerPageSection1DataBegin());
@@ -1955,7 +1955,7 @@ export function fetchButtonsPageSection2Data() {
             });
     };
 }
-
+//
 export function fetchPricingTablesPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchPricingTablesPageSection1DataBegin());
