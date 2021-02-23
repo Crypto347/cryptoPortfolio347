@@ -82,6 +82,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * ContactFormPage component definition and export
  */
 
@@ -215,8 +222,16 @@ export const ContactFormPage = (props) => {
 
                 // Post the information
 
-                props.fetchGetDirectionContactFormPage(info);
-
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+    
+                    props.fetchGetDirectionContactFormPageSuccess(info);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+    
+                    props.fetchGetDirectionContactFormPage(info);
+                }
+               
                 // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section1.inputForm.formIsValid){
@@ -254,7 +269,15 @@ export const ContactFormPage = (props) => {
                
                 // Post the information
 
-                props.fetchSubscribeContactFormPage(info);
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+    
+                    props.fetchSubscribeContactFormPageSuccess(info);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+
+                    props.fetchSubscribeContactFormPage(info);
+                }            
 
                 // Clear input fields (visually) if the form is valid
 
@@ -289,7 +312,15 @@ export const ContactFormPage = (props) => {
 
                 // Post the information
 
-                props.fetchSubmitContactFormPage(info);
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+    
+                    props.fetchSubmitContactFormPageSuccess(info);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+
+                    props.fetchSubmitContactFormPage(info);
+                }
 
                 // Clear input fields (visually) if the form is valid
 
@@ -588,8 +619,11 @@ export default connect(
             subscribeContactFormPage: bindActionCreators(Actions.subscribeContactFormPage, dispatch),
             submitContactFormPage: bindActionCreators(Actions.submitContactFormPage, dispatch),
             fetchGetDirectionContactFormPage: bindActionCreators(Services.fetchGetDirectionContactFormPage, dispatch),
+            fetchGetDirectionContactFormPageSuccess: bindActionCreators(Actions.fetchGetDirectionContactFormPageSuccess, dispatch),
             fetchSubscribeContactFormPage: bindActionCreators(Services.fetchSubscribeContactFormPage, dispatch),
+            fetchSubscribeContactFormPageSuccess: bindActionCreators(Actions.fetchSubscribeContactFormPageSuccess, dispatch),
             fetchSubmitContactFormPage: bindActionCreators(Services.fetchSubmitContactFormPage, dispatch),
+            fetchSubmitContactFormPageSuccess: bindActionCreators(Actions.fetchSubmitContactFormPageSuccess, dispatch),
         };
     }
 )(ContactFormPage);

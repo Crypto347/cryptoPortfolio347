@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * TeamPage component definition and export
  */
 
@@ -91,17 +98,41 @@ export const TeamPage = (props) => {
         // Fetch data for the component
 
         if(props.teamPage.section1Data.items.length === 0){
-            props.fetchTeamPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTeamPageSection1DataSuccess(FakeData.teamPageSection1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTeamPageSection1Data();
+            }
         }
 
         if(props.teamPage.section2Data.items.length === 0){
-            props.fetchTeamPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTeamPageSection2DataSuccess(FakeData.teamPageSection2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTeamPageSection2Data();
+            }
         }
 
         if(props.teamPage.section3Data.items.length === 0){
-            props.fetchTeamPageSection3Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchTeamPageSection3DataSuccess(FakeData.teamPageSection3);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchTeamPageSection3Data();
+            }
         }
-        
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -372,8 +403,11 @@ export default connect(
     (dispatch) => {
         return {
             fetchTeamPageSection1Data: bindActionCreators(Services.fetchTeamPageSection1Data, dispatch),
+            fetchTeamPageSection1DataSuccess: bindActionCreators(Actions.fetchTeamPageSection1DataSuccess, dispatch),
             fetchTeamPageSection2Data: bindActionCreators(Services.fetchTeamPageSection2Data, dispatch),
+            fetchTeamPageSection2DataSuccess: bindActionCreators(Actions.fetchTeamPageSection2DataSuccess, dispatch),
             fetchTeamPageSection3Data: bindActionCreators(Services.fetchTeamPageSection3Data, dispatch),
+            fetchTeamPageSection3DataSuccess: bindActionCreators(Actions.fetchTeamPageSection3DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

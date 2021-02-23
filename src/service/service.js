@@ -1604,7 +1604,7 @@ export function fetchTestimonialsPageSection3Data() {
             });
     };
 }
-//
+
 export function fetchTeamPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchTeamPageSection1DataBegin());
@@ -1775,7 +1775,7 @@ export function fetchIconWithTextPageSection2Data() {
             });
     };
 }
-
+//
 export function fetchBannerPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchBannerPageSection1DataBegin());

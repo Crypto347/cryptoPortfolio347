@@ -73,6 +73,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * IconWithTextPage component definition and export
  */
 
@@ -97,11 +104,27 @@ export const IconWithTextPage = (props) => {
         // Fetch data for the component
 
         if(props.iconWithTextPage.section1Data.items.length === 0){
-            props.fetchIconWithTextPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchIconWithTextPageSection1DataSuccess(FakeData.iconWithTextPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchIconWithTextPageSection1Data();
+            }
         }
 
         if(props.iconWithTextPage.section2Data.items.length === 0){
-            props.fetchIconWithTextPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchIconWithTextPageSection2DataSuccess(FakeData.iconWithTextPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchIconWithTextPageSection2Data();
+            }
         }
         
         // Scroll to the top of the screen
@@ -239,7 +262,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchIconWithTextPageSection1Data: bindActionCreators(Services.fetchIconWithTextPageSection1Data, dispatch),
+            fetchIconWithTextPageSection1DataSuccess: bindActionCreators(Actions.fetchIconWithTextPageSection1DataSuccess, dispatch),
             fetchIconWithTextPageSection2Data: bindActionCreators(Services.fetchIconWithTextPageSection2Data, dispatch),
+            fetchIconWithTextPageSection2DataSuccess: bindActionCreators(Actions.fetchIconWithTextPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

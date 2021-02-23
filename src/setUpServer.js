@@ -18580,7 +18580,7 @@ app.get('/api/testimonials-page/section3', (req, res) => {
     ]
     res.json(testimonialsPageSection3);
 });
-//
+
 app.get('/api/team-page/section1', (req, res) => {
     const teamPageSection1 = [
         {
@@ -18670,7 +18670,7 @@ app.get('/api/team-page/section1', (req, res) => {
             path: "sung-wang-g4DgCF90EM4-unsplash.png",
             hover: false,
             alt: "image"
-        },
+        }
     ]
     res.json(teamPageSection1);
 });
@@ -18731,7 +18731,7 @@ app.get('/api/team-page/section2', (req, res) => {
             path: "zoe-fernandez--zqoE7jnQgw-unsplash.png",
             hover: false,
             alt: "image"
-        },
+        }
     ]
     res.json(teamPageSection2);
 });
@@ -18760,7 +18760,6 @@ app.get('/api/team-page/section3', (req, res) => {
             hover: false,
             alt: "image"
         },
-       
         {
             id: 2,
             key: "teamMember21",
@@ -18826,8 +18825,7 @@ app.get('/api/team-page/section3', (req, res) => {
             path: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
             hover: false,
             alt: "image"
-        },
-     
+        }
     ]
     res.json(teamPageSection3);
 });
@@ -18851,7 +18849,7 @@ app.post('/api/submit-contact-form-page', (req, res) => {
 });
 
 app.get('/api/icon-with-text/section1', (req, res) => {
-    const sec1 = [
+    const iconWithTextPageSec1 = [
         {
             id: 1,
             header: "Sketch",
@@ -18878,11 +18876,11 @@ app.get('/api/icon-with-text/section1', (req, res) => {
             img: "evaluationGif"
         },
     ]
-    res.json(sec1);
+    res.json(iconWithTextPageSec1);
 });
 
 app.get('/api/icon-with-text/section2', (req, res) => {
-    const sec2 = [
+    const iconWithTextPageSec2 = [
         {
             id: 1,
             header: "Sketch",
@@ -18914,9 +18912,9 @@ app.get('/api/icon-with-text/section2', (req, res) => {
             text: "Lorem ipsum dolor sit amet, nam propriae ei"
         },
     ]
-    res.json(sec2);
+    res.json(iconWithTextPageSec2);
 });
-
+//
 app.get('/api/banner-page/section1', (req, res) => {
     const bannerPageSec1 = [
         {
