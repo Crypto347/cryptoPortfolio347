@@ -68,10 +68,12 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
- * Images
+ * Constants
  */
 
- import * as Images from '../../../../constants/images';
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
 /**
  * ClientsPage component definition and export
  */
@@ -97,16 +99,51 @@ export const ClientsPage = (props) => {
         // Fetch data for the component
 
         if(props.clientsPage.section1Data.swiper1.items.length === 0){
-            props.fetchClientsPageSection1Swiper1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchClientsPageSection1Swiper1DataSuccess(FakeData.clientsPageSec1Swiper1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchClientsPageSection1Swiper1Data();
+            }
         }
+
         if(props.clientsPage.section1Data.swiper2.items.length === 0){
-            props.fetchClientsPageSection1Swiper2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchClientsPageSection1Swiper2DataSuccess(FakeData.clientsPageSec1Swiper2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchClientsPageSection1Swiper2Data();
+            }
         }
+
         if(props.clientsPage.section2Data.swiper1.items.length === 0){
-            props.fetchClientsPageSection2Swiper1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchClientsPageSection2Swiper1DataSuccess(FakeData.clientsPageSec2Swiper1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchClientsPageSection2Swiper1Data();
+            }
         }
+
         if(props.clientsPage.section2Data.swiper2.items.length === 0){
-            props.fetchClientsPageSection2Swiper2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchClientsPageSection2Swiper2DataSuccess(FakeData.clientsPageSec2Swiper2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchClientsPageSection2Swiper2Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -248,31 +285,39 @@ export const ClientsPage = (props) => {
             switch(swiper) {
                 case 'swiper1':
                     return(
-                        <Swiper
-                            component="clientsPageSection1Swiper1"
-                            contentArray={arr.items}
-                            content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
-                            showNumbersOfSlides={numberOfSlides}
-                            setSwiperState={props.setSwiperStateForClientsPageSection1Swiper1}
-                            swiperData={arr.swiper}
-                            onlyImages
-                            // autoPlay
-                        />
+                        <>
+                            {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                            process.env.ENVIRONMENT === Environment.PRODUCTION && props.clientsPage.section1Data.swiper1.items.length !== 0 ? 
+                            <Swiper
+                                component="clientsPageSection1Swiper1"
+                                contentArray={arr.items}
+                                content={arr}
+                                translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                                showNumbersOfSlides={numberOfSlides}
+                                setSwiperState={props.setSwiperStateForClientsPageSection1Swiper1}
+                                swiperData={arr.swiper}
+                                onlyImages
+                                // autoPlay
+                            /> : null}
+                        </>
                     );
                 case 'swiper2':
                     return(
-                        <Swiper
-                            component="clientsPageSection1Swiper2"
-                            contentArray={arr.items}
-                            content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
-                            showNumbersOfSlides={numberOfSlides}
-                            setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
-                            swiperData={arr.swiper}
-                            onlyImages
-                            // autoPlay
-                        />
+                        <>
+                            {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                            process.env.ENVIRONMENT === Environment.PRODUCTION && props.clientsPage.section1Data.swiper2.items.length !== 0 ? 
+                            <Swiper
+                                component="clientsPageSection1Swiper2"
+                                contentArray={arr.items}
+                                content={arr}
+                                translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                                showNumbersOfSlides={numberOfSlides}
+                                setSwiperState={props.setSwiperStateForClientsPageSection1Swiper2}
+                                swiperData={arr.swiper}
+                                onlyImages
+                                // autoPlay
+                            /> : null}
+                        </>
                     )
             }
         }
@@ -280,31 +325,39 @@ export const ClientsPage = (props) => {
             switch(swiper) {
                 case 'swiper1':
                     return(
-                        <Swiper
-                            component="clientsPageSection2Swiper1"
-                            contentArray={arr.items}
-                            content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
-                            showNumbersOfSlides={numberOfSlides}
-                            setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
-                            swiperData={arr.swiper}
-                            onlyImages
-                            autoPlay
-                        />
+                        <>
+                            {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                            process.env.ENVIRONMENT === Environment.PRODUCTION && props.clientsPage.section2Data.swiper1.items.length !== 0 ? 
+                            <Swiper
+                                component="clientsPageSection2Swiper1"
+                                contentArray={arr.items}
+                                content={arr}
+                                translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                                showNumbersOfSlides={numberOfSlides}
+                                setSwiperState={props.setSwiperStateForClientsPageSection2Swiper1}
+                                swiperData={arr.swiper}
+                                onlyImages
+                                autoPlay
+                            /> : null} 
+                        </>
                     );
                 case 'swiper2':
                     return(
-                        <Swiper
-                            component="clientsPageSection2Swiper2"
-                            contentArray={arr.items}
-                            content={arr}
-                            translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
-                            showNumbersOfSlides={numberOfSlides}
-                            setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
-                            swiperData={arr.swiper}
-                            onlyImages
-                            autoPlay
-                        />
+                        <>
+                            {process.env.ENVIRONMENT !== Environment.PRODUCTION ||
+                            process.env.ENVIRONMENT === Environment.PRODUCTION && props.clientsPage.section2Data.swiper2.items.length !== 0 ? 
+                            <Swiper
+                                component="clientsPageSection2Swiper2"
+                                contentArray={arr.items}
+                                content={arr}
+                                translateWidth={(size.width-paddingLeftRight)/numberOfSlides}
+                                showNumbersOfSlides={numberOfSlides}
+                                setSwiperState={props.setSwiperStateForClientsPageSection2Swiper2}
+                                swiperData={arr.swiper}
+                                onlyImages
+                                autoPlay
+                            /> : null} 
+                        </>
                     )
             }
         }
@@ -388,9 +441,13 @@ export default connect(
     (dispatch) => {
         return {
             fetchClientsPageSection1Swiper1Data: bindActionCreators(Services.fetchClientsPageSection1Swiper1Data, dispatch),
+            fetchClientsPageSection1Swiper1DataSuccess: bindActionCreators(Actions.fetchClientsPageSection1Swiper1DataSuccess, dispatch),
             fetchClientsPageSection1Swiper2Data: bindActionCreators(Services.fetchClientsPageSection1Swiper2Data, dispatch),
+            fetchClientsPageSection1Swiper2DataSuccess: bindActionCreators(Actions.fetchClientsPageSection1Swiper2DataSuccess, dispatch),
             fetchClientsPageSection2Swiper1Data: bindActionCreators(Services.fetchClientsPageSection2Swiper1Data, dispatch),
+            fetchClientsPageSection2Swiper1DataSuccess: bindActionCreators(Actions.fetchClientsPageSection2Swiper1DataSuccess, dispatch),
             fetchClientsPageSection2Swiper2Data: bindActionCreators(Services.fetchClientsPageSection2Swiper2Data, dispatch),
+            fetchClientsPageSection2Swiper2DataSuccess: bindActionCreators(Actions.fetchClientsPageSection2Swiper2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

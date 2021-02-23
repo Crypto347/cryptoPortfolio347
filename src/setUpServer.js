@@ -19941,7 +19941,7 @@ app.get('/api/counters-page/section3', (req, res) => {
     ]
     res.json(countersPageSec3);
 });
-//
+
 app.get('/api/countdown-page/section1', (req, res) => {
     const countdownPageSec1 = [
         {
@@ -20055,7 +20055,7 @@ app.get('/api/countdown-page/section2', (req, res) => {
 });
 
 app.get('/api/clients-page/section1/swiper1', (req, res) => {
-    const countdownPageSec1Swiper1 = [
+    const clientsPageSec1Swiper1 = [
         {
             id: 1,
             key: "clientsPageSection1Swiper1Id1",
@@ -20087,11 +20087,11 @@ app.get('/api/clients-page/section1/swiper1', (req, res) => {
             isHover: "init"
         }
     ]
-    res.json(countdownPageSec1Swiper1);
+    res.json(clientsPageSec1Swiper1);
 });
 
 app.get('/api/clients-page/section1/swiper2', (req, res) => {
-    const countdownPageSec1Swiper2 = [
+    const clientsPageSec1Swiper2 = [
         {
             id: 1,
             key: "clientsPageSection1Swiper2Id1",
@@ -20123,11 +20123,11 @@ app.get('/api/clients-page/section1/swiper2', (req, res) => {
             isHover: "init"
         }
     ]
-    res.json(countdownPageSec1Swiper2);
+    res.json(clientsPageSec1Swiper2);
 });
 
 app.get('/api/clients-page/section2/swiper1', (req, res) => {
-    const countdownPageSec2Swiper1 = [
+    const clientsPageSec2Swiper1 = [
         {
             id: 1,
             key: "clientsPageSection2Swiper1Id1",
@@ -20159,11 +20159,11 @@ app.get('/api/clients-page/section2/swiper1', (req, res) => {
             isHover: "init"
         }
     ]
-    res.json(countdownPageSec2Swiper1);
+    res.json(clientsPageSec2Swiper1);
 });
 
 app.get('/api/clients-page/section2/swiper2', (req, res) => {
-    const countdownPageSec2 = [
+    const clientsPageSec2Swiper2 = [
         {
             id: 1,
             key: "clientsPageSection2Swiper2Id1",
@@ -20195,9 +20195,9 @@ app.get('/api/clients-page/section2/swiper2', (req, res) => {
             isHover: "init"
         }
     ]
-    res.json(countdownPageSec2);
+    res.json(clientsPageSec2Swiper2);
 });
-
+//
 app.get('/api/headings-page', (req, res) => {
     const headingPage = [
         {

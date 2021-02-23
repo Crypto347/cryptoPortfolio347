@@ -35,3 +35,5 @@ export * from './buttonsPageData';
 export * from './pricingTablesPageData';
 export * from './pieChartsPageData';
 export * from './countersPageData';
+export * from './countdownPageData';
+export * from './clientsPageData';

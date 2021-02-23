@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * CountdownPage component definition and export
  */
 
@@ -89,12 +96,29 @@ export const CountdownPage = (props) => {
         props.setUnmountComponentValues(false, "");
 
         // Fetch data for the component
-
+        
         if(props.countdownPage.section1Data.items.length === 0){
-            props.fetchCountdownPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchCountdownPageSection1DataSuccess(FakeData.countdownPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchCountdownPageSection1Data();
+            }
         }
+
         if(props.countdownPage.section2Data.items.length === 0){
-            props.fetchCountdownPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchCountdownPageSection2DataSuccess(FakeData.countdownPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchCountdownPageSection2Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -312,7 +336,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchCountdownPageSection1Data: bindActionCreators(Services.fetchCountdownPageSection1Data, dispatch),
+            fetchCountdownPageSection1DataSuccess: bindActionCreators(Actions.fetchCountdownPageSection1DataSuccess, dispatch),
             fetchCountdownPageSection2Data: bindActionCreators(Services.fetchCountdownPageSection2Data, dispatch),
+            fetchCountdownPageSection2DataSuccess: bindActionCreators(Actions.fetchCountdownPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

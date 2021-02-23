@@ -2081,7 +2081,7 @@ export function fetchCountersPageSection3Data() {
             });
     };
 }
-//
+
 export function fetchCountdownPageSection1Data() {
     return dispatch => {
         dispatch(Actions.fetchCountdownPageSection1DataBegin());
@@ -2189,7 +2189,7 @@ export function fetchClientsPageSection2Swiper2Data() {
             });
     };
 }
-
+//
 export function fetchProgressBarPageSection1Column1Data() {
     return dispatch => {
         dispatch(Actions.fetchProgressBarPageSection1Column1DataBegin());
