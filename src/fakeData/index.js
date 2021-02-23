@@ -37,3 +37,6 @@ export * from './pieChartsPageData';
 export * from './countersPageData';
 export * from './countdownPageData';
 export * from './clientsPageData';
+export * from './headingsPageData';
+export * from './listsPageData';
+export * from './highlightsPageData';

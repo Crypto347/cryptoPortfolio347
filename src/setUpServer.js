@@ -20197,9 +20197,9 @@ app.get('/api/clients-page/section2/swiper2', (req, res) => {
     ]
     res.json(clientsPageSec2Swiper2);
 });
-//
+
 app.get('/api/headings-page', (req, res) => {
-    const headingPage = [
+    const headingsPage = [
         {
             id: 1,
             key: "headingsPageHeading1",
@@ -20237,7 +20237,7 @@ app.get('/api/headings-page', (req, res) => {
             text: "Lorem ipsum dolor sit amet, an ius enim decore abhorreant. Audire deterruisset ne pro. No dicta debitis eum. No vel liber prompta laoreet. Nam minim noluisse periculis no. An nemore pertinax vel, sed in tale probo voluptatum, et tantas gubergren pro. Et primis oportere sea, delenit instructior vis ea. Aeterno accusamus iracundia an has. Oportere voluptaria ut sit, dolore percipit per in. Adhuc consequat scribentur quo ut."
         }
     ]
-    res.json(headingPage);
+    res.json(headingsPage);
 });
 
 app.get('/api/lists-page/section1', (req, res) => {
@@ -20328,8 +20328,7 @@ app.get('/api/lists-page/section1', (req, res) => {
                     text: "Lorem ipsum dolor"
                 }
             ]
-        },
-        
+        }
     ]
     res.json(listsPageSec1);
 });
@@ -20486,7 +20485,7 @@ app.get('/api/highlights-page', (req, res) => {
     ]
     res.json(highlightsPage);
 });
-
+//
 app.get('/api/dropcaps-page', (req, res) => {
     const dropcapsPage = [
         {

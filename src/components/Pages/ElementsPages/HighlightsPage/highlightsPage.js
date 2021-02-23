@@ -67,6 +67,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * HighlightsPage component definition and export
  */
 
@@ -91,7 +98,15 @@ export const HighlightsPage = (props) => {
         // Fetch data for the component
 
         if(props.highlightsPage.items.length === 0){
-            props.fetchHighlightsPageData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchHighlightsPageDataSuccess(FakeData.highlightsPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchHighlightsPageData();
+            }
         }
 
         // Scroll to the top of the screen
@@ -337,6 +352,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchHighlightsPageData: bindActionCreators(Services.fetchHighlightsPageData, dispatch),
+            fetchHighlightsPageDataSuccess: bindActionCreators(Actions.fetchHighlightsPageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

@@ -69,6 +69,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * ListsPage component definition and export
  */
 
@@ -93,10 +100,27 @@ export const ListsPage = (props) => {
         // Fetch data for the component
 
         if(props.listsPage.section1Data.items.length === 0){
-            props.fetchListsPageSection1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchListsPageSection1DataSuccess(FakeData.listsPageSec1);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchListsPageSection1Data();
+            }
         }
+
         if(props.listsPage.section2Data.items.length === 0){
-            props.fetchListsPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchListsPageSection2DataSuccess(FakeData.listsPageSec2);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchListsPageSection2Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -301,7 +325,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchListsPageSection1Data: bindActionCreators(Services.fetchListsPageSection1Data, dispatch),
+            fetchListsPageSection1DataSuccess: bindActionCreators(Actions.fetchListsPageSection1DataSuccess, dispatch),
             fetchListsPageSection2Data: bindActionCreators(Services.fetchListsPageSection2Data, dispatch),
+            fetchListsPageSection2DataSuccess: bindActionCreators(Actions.fetchListsPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

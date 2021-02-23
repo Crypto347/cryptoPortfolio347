@@ -72,6 +72,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * HeadingsPage component definition and export
  */
 
@@ -96,7 +103,15 @@ export const HeadingsPage = (props) => {
         // Fetch data for the component
 
         if(props.headingsPage.items.length === 0){
-            props.fetchHeadingsPageData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchHeadingsPageDataSuccess(FakeData.headingsPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchHeadingsPageData();
+            }
         }
 
         // Scroll to the top of the screen
@@ -275,6 +290,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchHeadingsPageData: bindActionCreators(Services.fetchHeadingsPageData, dispatch),
+            fetchHeadingsPageDataSuccess: bindActionCreators(Actions.fetchHeadingsPageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

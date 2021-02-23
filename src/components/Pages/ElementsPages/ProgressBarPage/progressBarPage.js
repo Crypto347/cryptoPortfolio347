@@ -69,6 +69,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * ProgressBarPage component definition and export
  */
 
@@ -94,15 +101,39 @@ export const ProgressBarPage = (props) => {
         // Fetch data for the component
 
         if(props.progressBarPage.section1Column1Data.items.length === 0){
-            props.fetchProgressBarPageSection1Column1Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchProgressBarPageSection1Column1DataSuccess(FakeData.statisticsData);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchProgressBarPageSection1Column1Data();
+            }
         }
 
         if(props.progressBarPage.section1Column2Data.items.length === 0){
-            props.fetchProgressBarPageSection1Column2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchProgressBarPageSection1Column2DataSuccess(FakeData.statisticsData);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchProgressBarPageSection1Column2Data();
+            }
         }
 
         if(props.progressBarPage.section2Data.items.length === 0){
-            props.fetchProgressBarPageSection2Data();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchProgressBarPageSection2DataSuccess(FakeData.statisticsData);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchProgressBarPageSection2Data();
+            }
         }
 
         // Scroll to the top of the screen
@@ -353,8 +384,11 @@ export default connect(
     (dispatch) => {
         return {
             fetchProgressBarPageSection1Column1Data: bindActionCreators(Services.fetchProgressBarPageSection1Column1Data, dispatch),
+            fetchProgressBarPageSection1Column1DataSuccess: bindActionCreators(Actions.fetchProgressBarPageSection1Column1DataSuccess, dispatch),
             fetchProgressBarPageSection1Column2Data: bindActionCreators(Services.fetchProgressBarPageSection1Column2Data, dispatch),
+            fetchProgressBarPageSection1Column2DataSuccess: bindActionCreators(Actions.fetchProgressBarPageSection1Column2DataSuccess, dispatch),
             fetchProgressBarPageSection2Data: bindActionCreators(Services.fetchProgressBarPageSection2Data, dispatch),
+            fetchProgressBarPageSection2DataSuccess: bindActionCreators(Actions.fetchProgressBarPageSection2DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
