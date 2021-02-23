@@ -14,9 +14,7 @@ export const ScrollToTop = (props) => {
      */
 
     useEffect(() => {
-        console.log("props.scrollToPosition",props.scrollToPosition)
         window.scrollTo(0, props.scrollToPosition);
-        debugger
     }, [props.location]);
 
     /**

@@ -215,7 +215,7 @@ export const Carousel = (props) => {
                 slides={slides} 
                 activeIndex={activeIndex}
             />
-            {console.log(_slides.length)}
+            {/* {console.log(_slides.length)} */}
         </div>
     );
 }

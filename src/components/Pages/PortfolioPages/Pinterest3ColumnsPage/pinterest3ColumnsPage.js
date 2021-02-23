@@ -122,7 +122,6 @@ export const Pinterest3ColumnsPage = (props) => {
             if(!props.pinterest3ColumnsPage.loading && !props.pinterest3ColumnsPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemsWrapper = document.getElementById("pinterest3ColumnsPageItems").offsetTop;
                 let itemTopPosition = props.pinterest3ColumnsPage.itemsTopPosition.find(item => item.key === props.historyPopFromItem).topPosition;
-                console.log(itemTopPosition)
                 window.scrollTo(0, itemTopPosition + itemsWrapper - 30);
             }else{
                 window.scrollTo(0, 0);

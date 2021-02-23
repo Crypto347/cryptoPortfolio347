@@ -877,7 +877,7 @@ export const FourColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
-                        console.log(translateCoordinatesObj)
+                        // console.log(translateCoordinatesObj)
                         props.setTopPositionOfTheItemForFourColumnsPage("img17", translateCoordinatesObj.translateY);
                     }
                     return;

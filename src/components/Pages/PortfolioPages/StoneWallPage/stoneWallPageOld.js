@@ -105,7 +105,6 @@ export const StoneWallPageOld = (props) => {
         let timeout = setTimeout(() => {
             if(!props.stoneWallPage.loading && !props.stoneWallPage.error && props.historyPopFromItem !== "scrollToTop"){
                 let itemOffsetTop = document.getElementById(props.historyPopFromItem) ? document.getElementById(props.historyPopFromItem).offsetTop : 0;
-                console.log("PPP",itemOffsetTop)
                 window.scrollTo(0, itemOffsetTop - 30);
             }else{
                 window.scrollTo(0, 0);

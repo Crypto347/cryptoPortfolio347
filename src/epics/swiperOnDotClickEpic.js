@@ -37,7 +37,7 @@ export const swiperOnDotClickEpic = (action$, state$) =>
             // if(action.opt === "prev"){
             //     translate = 0;
             // }
-            console.log("S",state$.value.testimonialsPage.section1Data.swiper._slides)
+            // console.log("S",state$.value.testimonialsPage.section1Data.swiper._slides)
             if(action.opt === "testimonialsPageSection1"){
                 return of(
                     Actions.setSwiperStateForTestimonialsPageSection1(action.slides, action._updatedSlides, action.activeIndex, action.translate, action.transition, true)

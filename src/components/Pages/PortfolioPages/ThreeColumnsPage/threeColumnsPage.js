@@ -879,7 +879,7 @@ export const ThreeColumnsPage = (props) => {
                             zIndex: 20,
                             rendered: true
                         });
-                        console.log(translateCoordinatesObj)
+                        // console.log(translateCoordinatesObj)
                         props.setTopPositionOfTheItemForThreeColumnsPage("img17", translateCoordinatesObj.translateY);
                     }
                     return;
