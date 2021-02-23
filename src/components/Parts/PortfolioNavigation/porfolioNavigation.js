@@ -419,7 +419,15 @@ export const PorfolioNavigation = (props) => {
                 break;
             case 'twoColumnsPage':
                 if(props.twoColumnsPage.items.length === 0){
-                    props.fetchTwoColumnsPage();
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        props.fetchTwoColumnsPageSuccess(FakeData.twoColumnsPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchTwoColumnsPage(props.twoColumnsPage.loadMoreStep);
+                    }
                 }
                 break;
             default:
@@ -440,6 +448,9 @@ export const PorfolioNavigation = (props) => {
 
     const setContentItems = () => {
         // Set data according to the page we came from
+
+        let itemsFromLocalStorage;
+        let updatedItems;
 
         switch(page){
             case 'portfolioGallery':
@@ -479,7 +490,14 @@ export const PorfolioNavigation = (props) => {
             case 'fiveColumnsWidePage':
                 return [...props.fiveColumnsWidePage.items];
             case 'twoColumnsPage':
-                return [...props.twoColumnsPage.items];
+                itemsFromLocalStorage = JSON.parse(localStorage.getItem("twoColumnsPageHG"));
+                
+                if(itemsFromLocalStorage !== null){
+                    updatedItems = Utility.updateArrayOfTwoColumnsData(props.twoColumnsPage.items, itemsFromLocalStorage.activeCategoryFromHeader)
+                }else{
+                    updatedItems = [...props.twoColumnsPage.items];
+                }
+                return updatedItems;
             case 'threeColumnsPage':
                 return [...props.threeColumnsPage.items];
             case 'fourColumnsPage':
@@ -924,6 +942,7 @@ export default connect(
             fetchFiveColumnsWidePage: bindActionCreators(Services.fetchFiveColumnsWidePage, dispatch),
             fetchFiveColumnsWidePageSuccess: bindActionCreators(Actions.fetchFiveColumnsWidePageSuccess, dispatch),
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
+            fetchTwoColumnsPageSuccess: bindActionCreators(Actions.fetchTwoColumnsPageSuccess, dispatch),
             fetchThreeColumnsPage: bindActionCreators(Services.fetchThreeColumnsPage, dispatch),
             fetchFourColumnsPage: bindActionCreators(Services.fetchFourColumnsPage, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),

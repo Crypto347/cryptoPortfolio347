@@ -118,9 +118,6 @@ export const TwoColumnsPage = (props) => {
             }
             props.setLoadMoreStepTwoColumnsPage(props.twoColumnsPage.loadMoreStep + 1);
         }
-
-   
-
         
         // Return to the part of the screen where the link to the selected item is located (items in absolute position)
 
