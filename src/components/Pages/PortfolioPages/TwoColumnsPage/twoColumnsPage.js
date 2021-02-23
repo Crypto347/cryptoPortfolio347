@@ -119,6 +119,9 @@ export const TwoColumnsPage = (props) => {
             props.setLoadMoreStepTwoColumnsPage(props.twoColumnsPage.loadMoreStep + 1);
         }
 
+   
+
+        
         // Return to the part of the screen where the link to the selected item is located (items in absolute position)
 
         let timeout = setTimeout(() => {
@@ -131,21 +134,35 @@ export const TwoColumnsPage = (props) => {
             }
         }, 2);
 
-        if(props.twoColumnsPage.categories.length !== 0){
-            
+        //Init active category from the header if it exists
+
+        let twoColumnsPageLocalStorage = JSON.parse(localStorage.getItem("twoColumnsPageHG"));
+
+        if(twoColumnsPageLocalStorage !== null){
             /**
              * Set appear and disappear images width, height, transition
-             * and translate coordinates according to the category selected from the header
+             * and translate coordinates according to the category selected 
+             * from the header (local storage)
              */
 
-            let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
-            categoryFromHeaderOnClickHandler(categeryKey);
+            categoryFromHeaderOnClickHandler(twoColumnsPageLocalStorage.activeCategoryFromHeader);
         }else{
-            // Set all images width, height, transition and translate coordinates 
-
-            setImagesState("onInit");
+            if(props.twoColumnsPage.categories.length !== 0){
+            
+                /**
+                 * Set appear and disappear images width, height, transition
+                 * and translate coordinates according to the category selected from the header
+                 */
+    
+                let categeryKey = props.twoColumnsPage.categories.find(item => item.active === true).key;
+                categoryFromHeaderOnClickHandler(categeryKey);
+            }else{
+                // Set all images width, height, transition and translate coordinates 
+    
+                setImagesState("onInit");
+            }
         }
-
+        
         // Event Listeners
 
         const smooth = e => {
@@ -1601,7 +1618,10 @@ export const TwoColumnsPage = (props) => {
 
         if(key !== "showAll"){
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(props.twoColumnsPage.items, key);
-            props.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(arrayOfAppearAndDisapperElements)
+            props.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage(arrayOfAppearAndDisapperElements);
+
+            localStorage.setItem("twoColumnsPageHG", JSON.stringify({activeCategoryFromHeader: key}));
+
             props.twoColumnsPage.items.map(el => {
                 let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === key);
                 if(checkIfElementHasSelectedCategory){
@@ -1612,6 +1632,7 @@ export const TwoColumnsPage = (props) => {
             })
         }
         else{
+            localStorage.setItem("twoColumnsPageHG", JSON.stringify({activeCategoryFromHeader: "showAll"}));
             setImagesState("showAllCategories", -1);
         }
        

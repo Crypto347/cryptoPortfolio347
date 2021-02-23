@@ -302,7 +302,29 @@ export const setArrayOfAppearAndDisapperElements = (itemsArray, category) => {
     })
     return arrayOfAppearAndDisapperElements;
 }
-
+export const updateArrayOfTwoColumnsData = (itemsArray, category) => {
+    if(category === "showAll") return itemsArray
+    let updatedItemsArray = [];
+    itemsArray.map((el, i) => {
+        let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === category);
+        if(checkIfElementHasSelectedCategory){
+            updatedItemsArray.push({
+               ...el,
+            })
+        }else{
+            updatedItemsArray.push(false)
+        }
+    })
+    updatedItemsArray = updatedItemsArray
+                        .filter(item => item !== false)
+                        // .map((el, i) => {
+                        //     return{
+                        //         ...el,
+                        //         id: i+1
+                        //     }
+                        // });
+    return updatedItemsArray;
+}
 export const updateTranslateCoordinatesOfAppearElements = (page, arrayOfDisappearAndAppearElements, screenWidth) => {
     let appearElementsArray = [];
     arrayOfDisappearAndAppearElements.map(el => {
