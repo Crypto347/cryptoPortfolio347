@@ -40,3 +40,7 @@ export * from './clientsPageData';
 export * from './headingsPageData';
 export * from './listsPageData';
 export * from './highlightsPageData';
+export * from './dropcapsPageData';
+export * from './columnsPageData';
+export * from './blockquotePageData';
+export * from './scrollSliderPageData';

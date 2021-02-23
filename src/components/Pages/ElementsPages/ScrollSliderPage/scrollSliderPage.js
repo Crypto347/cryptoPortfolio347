@@ -68,6 +68,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * ScrollSliderPage component definition and export
  */
 
@@ -95,7 +102,15 @@ export const ScrollSliderPage = (props) => {
         // Fetch data for the component
 
         if(props.scrollSliderPage.items.length === 0){
-            props.fetchScrollSliderPageData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchScrollSliderPageDataSuccess(FakeData.scrollSliderPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchScrollSliderPageData();
+            }
         }
 
         // Scroll to the top of the screen
@@ -290,6 +305,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchScrollSliderPageData: bindActionCreators(Services.fetchScrollSliderPageData, dispatch),
+            fetchScrollSliderPageDataSuccess: bindActionCreators(Actions.fetchScrollSliderPageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

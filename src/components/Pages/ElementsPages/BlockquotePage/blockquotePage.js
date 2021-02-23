@@ -68,6 +68,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * BlockquotePage component definition and export
  */
 
@@ -92,7 +99,15 @@ export const BlockquotePage = (props) => {
         // Fetch data for the component
 
         if(props.blockquotePage.items.length === 0){
-            props.fetchBlockquotePageData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchBlockquotePageDataSuccess(FakeData.blockquotePage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchBlockquotePageData();
+            }
         }
 
         // Scroll to the top of the screen
@@ -262,6 +277,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchBlockquotePageData: bindActionCreators(Services.fetchBlockquotePageData, dispatch),
+            fetchBlockquotePageDataSuccess: bindActionCreators(Actions.fetchBlockquotePageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

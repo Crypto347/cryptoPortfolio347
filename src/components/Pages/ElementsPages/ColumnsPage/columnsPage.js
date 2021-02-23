@@ -70,6 +70,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * ColumnsPage component definition and export
  */
 
@@ -94,7 +101,15 @@ export const ColumnsPage = (props) => {
         // Fetch data for the component
 
         if(props.columnsPage.items.length === 0){
-            props.fetchColumnsPageData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchColumnsPageDataSuccess(FakeData.columnsPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchColumnsPageData();
+            }
         }
 
         // Scroll to the top of the screen
@@ -305,6 +320,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchColumnsPageData: bindActionCreators(Services.fetchColumnsPageData, dispatch),
+            fetchColumnsPageDataSuccess: bindActionCreators(Actions.fetchColumnsPageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

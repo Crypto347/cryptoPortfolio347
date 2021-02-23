@@ -68,6 +68,13 @@ import {
 } from '../../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+import * as FakeData from '../../../../fakeData';
+import * as Environment from '../../../../constants/environments';
+
+/**
  * DropcapsPage component definition and export
  */
 
@@ -92,7 +99,15 @@ export const DropcapsPage = (props) => {
         // Fetch data for the component
 
         if(props.dropcapsPage.items.length === 0){
-            props.fetchDropcapsPageData();
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchDropcapsPageDataSuccess(FakeData.dropcapsPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
+
+                props.fetchDropcapsPageData();
+            }
         }
 
         // Scroll to the top of the screen
@@ -298,6 +313,7 @@ export default connect(
     (dispatch) => {
         return {
             fetchDropcapsPageData: bindActionCreators(Services.fetchDropcapsPageData, dispatch),
+            fetchDropcapsPageDataSuccess: bindActionCreators(Actions.fetchDropcapsPageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

@@ -2189,7 +2189,7 @@ export function fetchClientsPageSection2Swiper2Data() {
             });
     };
 }
-//
+
 export function fetchProgressBarPageSection1Column1Data() {
     return dispatch => {
         dispatch(Actions.fetchProgressBarPageSection1Column1DataBegin());
@@ -2315,7 +2315,7 @@ export function fetchHighlightsPageData() {
             });
     };
 }
-
+//
 export function fetchDropcapsPageData() {
     return dispatch => {
         dispatch(Actions.fetchDropcapsPageDataBegin());
