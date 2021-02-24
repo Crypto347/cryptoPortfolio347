@@ -114,7 +114,7 @@ export const ThreeColumnsPage = (props) => {
                 fetchMockData(props.threeColumnsPage.loadMoreStep);
             }else{
                 // Fetch data (required to run -> npm run server)
-
+             
                 props.fetchThreeColumnsPage(props.threeColumnsPage.loadMoreStep);
             }
             props.setLoadMoreStepThreeColumnsPage(props.threeColumnsPage.loadMoreStep + 1);
@@ -1954,8 +1954,8 @@ export const ThreeColumnsPage = (props) => {
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(props.threeColumnsPage.items, key);
             props.disappearenceAndAppearanceOfElementsDueToTheCategoryThreeColumnsPage(arrayOfAppearAndDisapperElements);
 
-            localStorage.setItem("threeColumnsPageHG", JSON.stringify({activeCategoryFromHeader: key}));
-
+            localStorage.setItem("threeColumnsPageHG", JSON.stringify({activeCategoryFromHeader: key}))
+            
             props.threeColumnsPage.items.map(el => {
                 let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === key);
                 if(checkIfElementHasSelectedCategory){
