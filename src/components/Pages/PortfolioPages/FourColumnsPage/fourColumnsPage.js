@@ -131,20 +131,37 @@ export const FourColumnsPage = (props) => {
             }
         }, 2);
 
-        if(props.fourColumnsPage.categories.length !== 0){
-            
+
+        //Init active category from the header if it exists
+
+        let fourColumnsPageLocalStorage = JSON.parse(localStorage.getItem("fourColumnsPageHG"));
+
+        if(fourColumnsPageLocalStorage !== null){
             /**
              * Set appear and disappear images width, height, transition
-             * and translate coordinates according to the category selected from the header
+             * and translate coordinates according to the category selected 
+             * from the header (local storage)
              */
 
-            let categeryKey = props.fourColumnsPage.categories.find(item => item.active === true).key;
-            categoryFromHeaderOnClickHandler(categeryKey);
+            categoryFromHeaderOnClickHandler(fourColumnsPageLocalStorage.activeCategoryFromHeader);
         }else{
-            // Set all images width, height, transition and translate coordinates 
-
-            setImagesState("onInit");
+            if(props.fourColumnsPage.categories.length !== 0){
+            
+                /**
+                 * Set appear and disappear images width, height, transition
+                 * and translate coordinates according to the category selected from the header
+                 */
+    
+                let categeryKey = props.fourColumnsPage.categories.find(item => item.active === true).key;
+                categoryFromHeaderOnClickHandler(categeryKey);
+            }else{
+                // Set all images width, height, transition and translate coordinates 
+    
+                setImagesState("onInit");
+            }
         }
+
+       
 
         // Event Listeners
 
@@ -2001,7 +2018,10 @@ export const FourColumnsPage = (props) => {
 
         if(key !== "showAll"){
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(props.fourColumnsPage.items, key);
-            props.disappearenceAndAppearanceOfElementsDueToTheCategoryFourColumnsPage(arrayOfAppearAndDisapperElements)
+            props.disappearenceAndAppearanceOfElementsDueToTheCategoryFourColumnsPage(arrayOfAppearAndDisapperElements);
+
+            localStorage.setItem("fourColumnsPageHG", JSON.stringify({activeCategoryFromHeader: key}));
+
             props.fourColumnsPage.items.map(el => {
                 let checkIfElementHasSelectedCategory = el.categories.some(item => item.key === key);
                 if(checkIfElementHasSelectedCategory){
@@ -2012,6 +2032,7 @@ export const FourColumnsPage = (props) => {
             })
         }
         else{
+            localStorage.setItem("fourColumnsPageHG", JSON.stringify({activeCategoryFromHeader: "showAll"}));
             setImagesState("showAllCategories", -1);
         }
        
