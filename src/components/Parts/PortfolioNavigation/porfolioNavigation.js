@@ -430,6 +430,19 @@ export const PorfolioNavigation = (props) => {
                     }
                 }
                 break;
+            case 'threeColumnsPage':
+                if(props.threeColumnsPage.items.length === 0){
+                    if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // Fetch mock data (not required to run -> npm run server)
+        
+                        fetchThreeColumnsPageSuccess(FakeData.threeColumnsPage);
+                    }else{
+                        // Fetch data (required to run -> npm run server)
+        
+                        props.fetchThreeColumnsPage(props.threeColumnsPage.loadMoreStep);
+                    }
+                }
+                break;
             default:
                 if(props.portfolioGalleryPage.items.length === 0){
                     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
@@ -499,7 +512,14 @@ export const PorfolioNavigation = (props) => {
                 }
                 return updatedItems;
             case 'threeColumnsPage':
-                return [...props.threeColumnsPage.items];
+                itemsFromLocalStorage = JSON.parse(localStorage.getItem("threeColumnsPageHG"));
+                
+                if(itemsFromLocalStorage !== null){
+                    updatedItems = Utility.updateArrayOfTwoColumnsData(props.threeColumnsPage.items, itemsFromLocalStorage.activeCategoryFromHeader)
+                }else{
+                    updatedItems = [...props.threeColumnsPage.items];
+                }
+                return updatedItems;
             case 'fourColumnsPage':
                 return [...props.fourColumnsPage.items];
             default:
@@ -944,6 +964,7 @@ export default connect(
             fetchTwoColumnsPage: bindActionCreators(Services.fetchTwoColumnsPage, dispatch),
             fetchTwoColumnsPageSuccess: bindActionCreators(Actions.fetchTwoColumnsPageSuccess, dispatch),
             fetchThreeColumnsPage: bindActionCreators(Services.fetchThreeColumnsPage, dispatch),
+            fetchThreeColumnsPageSuccess: bindActionCreators(Actions.fetchThreeColumnsPageSuccess, dispatch),
             fetchFourColumnsPage: bindActionCreators(Services.fetchFourColumnsPage, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
             portfolioNavigationOnClickStart: bindActionCreators(Actions.portfolioNavigationOnClickStart, dispatch),
