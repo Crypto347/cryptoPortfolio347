@@ -59,6 +59,7 @@ import dropcapsPageReducer from './dropcapsPageReducer';
 import columnsPageReducer from './columnsPageReducer';
 import blockquotePageReducer from './blockquotePageReducer';
 import scrollSliderPageReducer from './scrollSliderPageReducer';
+import portfolioProjectShowcasePageReducer from './portfolioProjectShowcasePageReducer'
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -115,5 +116,6 @@ export default (history) => combineReducers({
     dropcapsPage: dropcapsPageReducer,
     columnsPage: columnsPageReducer,
     blockquotePage: blockquotePageReducer,
-    scrollSliderPage: scrollSliderPageReducer
+    scrollSliderPage: scrollSliderPageReducer,
+    portfolioProjectShowcasePage: portfolioProjectShowcasePageReducer
 });

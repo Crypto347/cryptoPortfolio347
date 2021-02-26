@@ -526,3 +526,10 @@ export const getScrollSliderPageState = createSelector(
     [getScrollSliderPage],
     (x) => x
 );
+
+const getPortfolioProjectShowcasePage = (state) => state.portfolioProjectShowcasePage;
+
+export const getPortfolioProjectShowcasePageState = createSelector(
+    [getPortfolioProjectShowcasePage],
+    (x) => x
+);

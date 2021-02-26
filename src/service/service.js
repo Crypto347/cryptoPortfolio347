@@ -2388,6 +2388,24 @@ export function fetchScrollSliderPageData() {
     };
 }
 
+export function fetchPortfolioProjectShowcasePageData() {
+    return dispatch => {
+        dispatch(Actions.fetchPortfolioProjectShowcasePageDataBegin());
+        return fetch("http://localhost:3005/api/portfolio-project-showcase-page")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                dispatch(Actions.fetchPortfolioProjectShowcasePageDataSuccess(json));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                dispatch(Actions.fetchPortfolioProjectShowcasePageDataFailur(error))
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

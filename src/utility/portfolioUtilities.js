@@ -103,6 +103,8 @@ export const findPathOfIds = (path) => {
             return [6, 64, 641];
         case 'scroll-slider':
             return [6, 64, 642];
+        case 'portfolio-project-showcase':
+            return [6, 64, 644];
     }
 
     //Second element of updatedPath array

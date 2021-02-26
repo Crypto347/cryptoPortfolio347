@@ -1,0 +1,72 @@
+.project-showcase {
+    .project-showcase-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .project-showcase-text-wrapper {
+            width: calc(70% - 60px);
+            padding-right: 60px;
+            line-height: 1.6;
+        }
+        .project-showcase-category-date-tags-wrapper {
+            width: 30%;
+            flex-direction: column;
+            .project-showcase-categories-wrapper {
+                display: flex;
+                align-items: center;
+                .project-showcase-categories {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .project-showcase-category {
+                        padding-left: 10px;
+                    }
+                }
+            }
+            .project-showcase-date-wrapper {
+                display: flex;
+                align-items: center;
+            }
+            .project-showcase-tags-wrapper {
+                display: flex;
+                align-items: center;
+                .project-showcase-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .project-showcase-tag {
+                        padding-left: 10px;
+                    }
+                }
+            }          
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 1030px){
+    .project-showcase {
+        .project-showcase-wrapper {
+            .project-showcase-content {
+                .project-showcase-content-info {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .project-showcase-text-wrapper {
+                        width: calc(100% - 60px);
+                        padding-right: 60px;
+                    }
+                    .project-showcase-category-date-tags-wrapper {
+                        width: 100%;
+                        flex-direction: column;
+                        padding-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .project-showcase {
+        .project-showcase-wrapper {
+            padding: 70px 30px 70px 30px;
+        }
+    }
+}

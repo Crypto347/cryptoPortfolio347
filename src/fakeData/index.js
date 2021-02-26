@@ -44,3 +44,4 @@ export * from './dropcapsPageData';
 export * from './columnsPageData';
 export * from './blockquotePageData';
 export * from './scrollSliderPageData';
+export * from './portfolioProjectShowcasePageData';

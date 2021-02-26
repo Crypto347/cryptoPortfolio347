@@ -20,7 +20,6 @@ export function fetchPortfolioGalleryPageFailur(err) {
     };
 };
 
-
 export function rememberCoordinateRangeForPortfolioGalleryPage(id, coordinateRange) {
     return { 
         type: actionTypes.REMEMBER_COORDINATE_RANGE_FOR_PORTFOLIO_GALLERY_PAGE,
