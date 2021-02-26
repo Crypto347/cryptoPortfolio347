@@ -24,10 +24,6 @@
             width: calc(100% - 260px);
             background: rgb(248, 248, 248);
             padding: 90px 130px 90px 130px;
-            .portfolio-project-showcase-page-item {
-                line-height: 1.6;
-                padding-bottom: 70px;
-            }
         }
     }
 }
@@ -38,10 +34,10 @@
             .portfolio-project-showcase-page-header {
                 padding: 90px 40px 90px 40px;
             }
-            // .portfolio-project-showcase-page-items {
-            //     width: calc(100% - 80px);
-            //     padding: 90px 40px 90px 40px;
-            // } 
+            .portfolio-project-showcase-page-items {
+                width: calc(100% - 80px);
+                padding: 90px 40px 90px 40px;
+            } 
         }
     }
 }

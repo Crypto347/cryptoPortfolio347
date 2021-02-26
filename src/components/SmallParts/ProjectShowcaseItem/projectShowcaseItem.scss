@@ -1,4 +1,7 @@
 .project-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .project-showcase-info-wrapper {
         display: flex;
         flex-wrap: wrap;

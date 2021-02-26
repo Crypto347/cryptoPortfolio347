@@ -82,6 +82,24 @@ const setPortfolioProjectShowcasePageIsHoveringTag = (state, action) => {
     };
 }
 
+const updateStyleValuesPortfolioProjectShowcasePage = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let updatedItem = {...updatedItems.find(item => item.key === action.key)};
+    let updatedItemIndex = updatedItems.findIndex(item => item.key === action.key);
+
+    updatedItem.backgroundImage.style.width = action.obj.width;
+    updatedItem.backgroundImage.style.transition = action.obj.transition;
+    updatedItem.backgroundImage.style.rendered = action.obj.rendered;
+
+    updatedItems.splice(updatedItemIndex, 1, updatedItem);
+    
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const portfolioProjectShowcasePageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PORTFOLIO_PROJECT_SHOWCASE_PAGE_DATA_BEGIN:
@@ -94,6 +112,8 @@ const portfolioProjectShowcasePageReducer = (state = initialState, action) => {
             return setPortfolioProjectShowcasePageIsHoveringCategory(state, action);
         case actionTypes.SET_PORTFOLIO_PROJECT_SHOWCASE_PAGE_IS_HOVERING_TAG:
             return setPortfolioProjectShowcasePageIsHoveringTag(state, action);
+        case actionTypes.UPDATED_STYLE_VALUES_PORTFOLIO_PROJECT_SHOWCASE_PAGE:
+            return updateStyleValuesPortfolioProjectShowcasePage(state, action);
         default: 
             return state;
     }

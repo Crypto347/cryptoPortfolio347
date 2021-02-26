@@ -34,6 +34,14 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
+ * Hooks
+ */
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
+/**
  * ProjectShowcaseItem component definition and export
  */
 
@@ -43,9 +51,10 @@ export const ProjectShowcaseItem = (props) => {
      * State
      */
 
+    const size = useWindowSize();
     const resizeRef = useRef();
-    const [isHovering, setIsHovering] = useState("init");
-    const [cardHeight, setCardHeight] = useState(0);
+    const transitionRef = useRef();
+    const [scrollingUp, setScrollingUp] = useState(false);
  
     /**
      * Methods
@@ -58,59 +67,80 @@ export const ProjectShowcaseItem = (props) => {
             resizeRef.current();
         }
 
+        const smooth = () => {
+            transitionRef.current();
+        }
+
         window.addEventListener('resize', resize);
+        window.addEventListener('transitionend', smooth);
+        window.addEventListener('wheel', handleOnWheel);
 
-        // Cleaning the unmounted component
-        return () =>  window.removeEventListener('resize', resize);
+        return () =>  {
+            // Cleaning the unmounted component
+
+            window.removeEventListener('resize', resize);
+            window.removeEventListener('transitionend', smooth);
+            window.removeEventListener('wheel', handleOnWheel);
+        }
     }, []);
-
+    
     useEffect(() => {
         resizeRef.current = handleResize;
+        transitionRef.current = smoothTransition;
     });
+
+    useEffect(() => {
+        // Set the transition property to the initial value if its value is 0
+
+        if(props.data.backgroundImage.style.width.transition === 0){
+            props.updateStyleValues(props.data.key,{
+                ...props.data.backgroundImage.style,
+                transition: 0.45
+            });
+        }
+
+    }, [props.data.backgroundImage.style.transition]);
+
+    const smoothTransition = () => {
+        props.updateStyleValues(props.data.key,{
+            ...props.data.backgroundImage.style,
+            transition: 0
+        });
+    }
+    
+    const handleOnWheel = (e) => {
+        let scrollHeight = document.body.scrollTop;
+        // let el = document.getElementById("smallImages");
+
+        // Show or hide BackToTop component
+
+        // if(scrollHeight > screen.height/2){
+        //     props.setShowBackToTopComponent(true);
+        // }else{
+        //     props.setShowBackToTopComponent(false);
+        // }
+    
+        // Check scroll direction
+
+        if(!checkScrollDirectionIsUp(e)){
+            setScrollingUp(false);
+            console.log("down")
+        }else{
+            setScrollingUp(true);
+            console.log("up")
+        }
+    }
+
+    const checkScrollDirectionIsUp = (e)  => {
+        if (e.wheelDelta) {
+          return e.wheelDelta > 0;
+        }
+        return e.deltaY < 0;
+    }
 
     const handleResize = () => {
         // Set the height of the curtain on window resize
 
-        let obj = {
-            img1: {
-                // width: document.getElementById("stoneWallItemId1").clientWidth,
-                height: document.getElementById("stoneWallItemId1").clientHeight,
-            }, 
-            img2: {
-                // width: document.getElementById("stoneWallItemId2").clientWidth,
-                height: document.getElementById("stoneWallItemId2").clientHeight,
-            }, 
-            img3: {
-                // width: document.getElementById("stoneWallItemId3").clientWidth,
-                height: document.getElementById("stoneWallItemId3").clientHeight,
-            },
-            img4: {
-                // width: document.getElementById("stoneWallItemId4").clientWidth,
-                height: document.getElementById("stoneWallItemId4").clientHeight,
-            },
-            img5: {
-                // width: document.getElementById("stoneWallItemId5").clientWidth,
-                height: document.getElementById("stoneWallItemId5").clientHeight,
-            }
-        }
-        
-        switch(props.obj.id){
-            case 1:
-                setCardHeight(obj.img1.height - 40);
-                break;
-            case 2:
-                setCardHeight(obj.img2.height - 40);
-                break;
-            case 3:
-                setCardHeight(obj.img3.height - 40);
-                break;
-            case 4:
-                setCardHeight(obj.img4.height - 40);
-                break;
-            case 5:
-                setCardHeight(obj.img5.height - 40);
-                break;
-        }
     }
 
     const handleMouseEnter = (opt, key, id) => {
@@ -160,31 +190,31 @@ export const ProjectShowcaseItem = (props) => {
         }
     }
 
-    const stoneWallOnClick = (e, path) => {
-        // Do nothing on right mouse click
+    // const stoneWallOnClick = (e, path) => {
+    //     // Do nothing on right mouse click
 
-        if(e.button === 2) return;
+    //     if(e.button === 2) return;
 
-        // Storing data in local storage
+    //     // Storing data in local storage
 
-        localStorage.setItem("page", props.page);
+    //     localStorage.setItem("page", props.page);
 
-        if(e.button !== 1){
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */
+    //     if(e.button !== 1){
+    //         /**
+    //          * Add fading effect on the unmounted component and remember 
+    //          * information of the unmounted component on left mouse click 
+    //          */
 
-            props.setUnmountComponentValues(true, path);
-        }else{
-            // Remember information of the unmounted component on scroll wheel click
+    //         props.setUnmountComponentValues(true, path);
+    //     }else{
+    //         // Remember information of the unmounted component on scroll wheel click
 
-            props.setUnmountComponentValues(false, path);
-        }
-        // Fire up unmountComponent epic
+    //         props.setUnmountComponentValues(false, path);
+    //     }
+    //     // Fire up unmountComponent epic
         
-        props.unmountComponent(null, null,  props.page, e.button);
-    }
+    //     props.unmountComponent(null, null,  props.page, e.button);
+    // }
 
     const renderClassName = (opt, isHovering) => {
         if(opt === "projectShowcaseCategory"){
@@ -308,11 +338,11 @@ export const ProjectShowcaseItem = (props) => {
             <div 
                 className="project-showcase-background"
                 style={{
-                    backgroundImage: `url(${loadBackgroundImage(props.data.backgroundImage.key)})`
+                    backgroundImage: `url(${loadBackgroundImage(props.data.backgroundImage.key)})`,
+                    width: `${props.data.backgroundImage.style.width}%`,
+                    transition: `width ${props.data.backgroundImage.style.transition}s ease-out`,
                 }}
-            >
-
-            </div>
+            />
         </div>
     );
 }

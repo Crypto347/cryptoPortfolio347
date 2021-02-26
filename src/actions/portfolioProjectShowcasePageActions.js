@@ -37,3 +37,11 @@ export function setPortfolioProjectShowcasePageIsHoveringTag(val, key, id) {
         id: id
     };
 };
+
+export function updateStyleValuesPortfolioProjectShowcasePage(key, obj) {
+    return { 
+        type: actionTypes.UPDATED_STYLE_VALUES_PORTFOLIO_PROJECT_SHOWCASE_PAGE,
+        key: key,
+        obj: obj
+    };
+};

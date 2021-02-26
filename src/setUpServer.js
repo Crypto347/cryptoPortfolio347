@@ -20807,7 +20807,11 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
             backgroundImage: {
                 id: 1,
                 key: "portfolioProjectShowcasePageId1BackgroundImg1",
-                imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png"
+                imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png",
+                style: {
+                    width: 70,
+                    transition: 0
+                }
             }
         },
         {
@@ -20852,7 +20856,11 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
             backgroundImage: {
                 id: 1,
                 key: "portfolioProjectShowcasePageId2BackgroundImg1",
-                imageName: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png"
+                imageName: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png",
+                style: {
+                    width: 70,
+                    transition: 0
+                }
             }
         },
         {
@@ -20897,7 +20905,11 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
             backgroundImage: {
                 id: 1,
                 key: "portfolioProjectShowcasePageId3BackgroundImg1",
-                imageName: "workperch-AiOzVFqlyZI-unsplash.png"
+                imageName: "workperch-AiOzVFqlyZI-unsplash.png",
+                style: {
+                    width: 70,
+                    transition: 0
+                }
             }
         }
     ]
