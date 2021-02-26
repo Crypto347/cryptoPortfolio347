@@ -23,7 +23,8 @@ import {
     H22,
     H65,
     EH10,
-    EH20
+    EH20,
+    EH30
 } from '../../UtilityComponents';
 
 /**
@@ -136,16 +137,24 @@ export const ProjectShowcaseItem = (props) => {
 
     const loadImg = (key) => {
         switch(key) {
-            case 'stoneWallCover1':
-                return Images.STONE_WALL_PAGE_COVER_PIC_1;
-            case 'stoneWallCover2':
-                return Images.STONE_WALL_PAGE_COVER_PIC_2;
-            case 'stoneWallCover3':
-                return Images.STONE_WALL_PAGE_COVER_PIC_3;
-            case 'stoneWallCover4':
-                return Images.STONE_WALL_PAGE_COVER_PIC_4;
-            case 'stoneWallCover5':
-                return Images.STONE_WALL_PAGE_COVER_PIC_5;
+            case 'portfolioProjectShowcasePageId1Img1':
+                return Images.ID_2_BIG_IMAGES_5;
+            case 'portfolioProjectShowcasePageId1Img2':
+                return Images.ID_2_BIG_IMAGES_4;
+            case 'portfolioProjectShowcasePageId1Img3':
+                return Images.ID_2_BIG_IMAGES_3;
+            case 'portfolioProjectShowcasePageId2Img1':
+                return Images.ID_3_GALLERY_1;
+            case 'portfolioProjectShowcasePageId2Img2':
+                return Images.ID_3_GALLERY_3;
+            case 'portfolioProjectShowcasePageId2Img3':
+                return Images.ID_3_GALLERY_4;
+            case 'portfolioProjectShowcasePageId3Img1':
+                return Images.ID_1_SMALL_SLIDER_2;
+            case 'portfolioProjectShowcasePageId3Img2':
+                return Images.ID_1_SMALL_SLIDER_5;
+            case 'portfolioProjectShowcasePageId3Img3':
+                return Images.ID_1_SMALL_SLIDER_1;
             default:
                 return "";
         }
@@ -200,6 +209,37 @@ export const ProjectShowcaseItem = (props) => {
         }
     }
 
+    const loadBackgroundImage = (key) => {
+        switch(key){
+            case 'portfolioProjectShowcasePageId1BackgroundImg1':
+                return Images.ID_2_BIG_IMAGES_1;
+            case 'portfolioProjectShowcasePageId2BackgroundImg1':
+                return Images.ID_3_GALLERY_5;
+            case 'portfolioProjectShowcasePageId3BackgroundImg1':
+                return Images.ID_1_SMALL_SLIDER_6;
+            default:
+                return "";
+        }
+    }
+
+    const renderProjectShowcaseImages = (imagesArray) => {
+        return(
+            <div className="project-showcase-images">{imagesArray.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="project-showcase-image"
+                    >
+                        <img 
+                            src={loadImg(el.key)}
+                            // onClick={() => openPhotoViewer(imagesArray, i)}
+                        />
+                        <EH30/>
+                    </div>
+                )
+            })}</div>
+        )
+    }
 
     const renderCategories = (categories, key) => {
         return(
@@ -244,7 +284,7 @@ export const ProjectShowcaseItem = (props) => {
         <div className="project-showcase">
             <H65 className="h65-nero-poppins">{props.data.header}</H65>
             <EH10/>
-            <div className="project-showcase-wrapper">
+            <div className="project-showcase-info-wrapper">
                 <div className="project-showcase-text-wrapper">
                     <H22 className="h22-nobel-lustria">{props.data.text}</H22>
                 </div>
@@ -253,20 +293,26 @@ export const ProjectShowcaseItem = (props) => {
                         <H22 className="h22-nero-poppins">Category:</H22>
                         {renderCategories(props.data.categories, props.data.key)}
                     </div>
-                    <EH20/>
                     <div className="project-showcase-date-wrapper">
                         <H22 className="h22-nero-poppins">Date:</H22>&nbsp;&nbsp;
                         <H19 className="h19-nobel-lustria">{props.data.date}</H19>
                     </div>
-                    <EH20/>
                     <div className="project-showcase-tags-wrapper">
                         <H22 className="h22-nero-poppins">Tags:</H22>
                         {renderTags(props.data.tags, props.data.key)}
                     </div>
                 </div>
             </div>
-            <div></div>
-            <div></div>
+            <EH30/>
+            {renderProjectShowcaseImages(props.data.imagesArray)}
+            <div 
+                className="project-showcase-background"
+                style={{
+                    backgroundImage: `url(${loadBackgroundImage(props.data.backgroundImage.key)})`
+                }}
+            >
+
+            </div>
         </div>
     );
 }

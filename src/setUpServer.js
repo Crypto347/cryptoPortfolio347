@@ -20791,23 +20791,23 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
                 {
                     id: 1,
                     key: "portfolioProjectShowcasePageId1Img1",
-                    imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                    imageName: "freestocks-A11MXTzUhLE-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "portfolioProjectShowcasePageId1Img2",
-                    imageName: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                    imageName: "stil-flRm0z3MEoA-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "portfolioProjectShowcasePageId1Img3",
-                    imageName: "lee-campbell-qNPESem_t4I-unsplash.png"
+                    imageName: "uby-yanes-393QQ30ecvQ-updated-unsplash.png"
                 }
             ],
             backgroundImage: {
                 id: 1,
                 key: "portfolioProjectShowcasePageId1BackgroundImg1",
-                imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png"
             }
         },
         {
@@ -20836,23 +20836,23 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
                 {
                     id: 1,
                     key: "portfolioProjectShowcasePageId2Img1",
-                    imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                    imageName: "chris-lee-70l1tDAI6rM-updated-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "portfolioProjectShowcasePageId2Img2",
-                    imageName: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                    imageName: "kara-eads-Uq9o9uUIT08-updated-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "portfolioProjectShowcasePageId2Img3",
-                    imageName: "lee-campbell-qNPESem_t4I-unsplash.png"
+                    imageName: "leone-venter-pVt9j3iWtPM-updated-unsplash.png"
                 }
             ],
             backgroundImage: {
                 id: 1,
                 key: "portfolioProjectShowcasePageId2BackgroundImg1",
-                imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                imageName: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png"
             }
         },
         {
@@ -20881,23 +20881,23 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
                 {
                     id: 1,
                     key: "portfolioProjectShowcasePageId3Img1",
-                    imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                    imageName: "drew-beamer-ehBB9G7qbss-unsplash.png"
                 },
                 {
                     id: 2,
                     key: "portfolioProjectShowcasePageId3Img2",
-                    imageName: "lee-campbell-CI-5GwJcVjE-unsplash.png"
+                    imageName: "lee-campbell-gA-km82BywY-unsplash.png"
                 },
                 {
                     id: 3,
                     key: "portfolioProjectShowcasePageId3Img3",
-                    imageName: "lee-campbell-qNPESem_t4I-unsplash.png"
+                    imageName: "damian-patkowski--pahtnAMuFo-unsplash.png"
                 }
             ],
             backgroundImage: {
                 id: 1,
                 key: "portfolioProjectShowcasePageId3BackgroundImg1",
-                imageName: "joshua-reddekopp-cNe8GsQR-OQ-unsplash.png"
+                imageName: "workperch-AiOzVFqlyZI-unsplash.png"
             }
         }
     ]

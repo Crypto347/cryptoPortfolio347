@@ -1,5 +1,5 @@
 .project-showcase {
-    .project-showcase-wrapper {
+    .project-showcase-info-wrapper {
         display: flex;
         flex-wrap: wrap;
         .project-showcase-text-wrapper {
@@ -37,36 +37,54 @@
                 }
             }          
         }
-        
     }
-}
-
-@media only screen and (max-width: 1030px){
-    .project-showcase {
-        .project-showcase-wrapper {
-            .project-showcase-content {
-                .project-showcase-content-info {
-                    display: flex;
-                    flex-wrap: wrap;
-                    .project-showcase-text-wrapper {
-                        width: calc(100% - 60px);
-                        padding-right: 60px;
-                    }
-                    .project-showcase-category-date-tags-wrapper {
-                        width: 100%;
-                        flex-direction: column;
-                        padding-top: 40px;
-                    }
-                }
+    .project-showcase-images {
+        width: 100%;
+        .project-showcase-image {
+            cursor: pointer;
+            >img {
+                width: 100%;
             }
         }
     }
-}
-
-@media only screen and (max-width: 800px){
-    .project-showcase {
-        .project-showcase-wrapper {
-            padding: 70px 30px 70px 30px;
-        }
+    .project-showcase-background {
+        position: relative;
+        height: 800px;
+        // background-image: url('../../../images/');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-attachment: fixed;
+        overflow: hidden;
     }
 }
+
+// @media only screen and (max-width: 1030px){
+//     .project-showcase {
+//         .project-showcase-wrapper {
+//             .project-showcase-content {
+//                 .project-showcase-content-info {
+//                     display: flex;
+//                     flex-wrap: wrap;
+//                     .project-showcase-text-wrapper {
+//                         width: calc(100% - 60px);
+//                         padding-right: 60px;
+//                     }
+//                     .project-showcase-category-date-tags-wrapper {
+//                         width: 100%;
+//                         flex-direction: column;
+//                         padding-top: 40px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 800px){
+//     .project-showcase {
+//         .project-showcase-wrapper {
+//             padding: 70px 30px 70px 30px;
+//         }
+//     }
+// }
