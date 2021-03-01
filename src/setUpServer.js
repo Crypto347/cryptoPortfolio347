@@ -20810,8 +20810,10 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
                 imageName: "uby-yanes-LMwW0ARHc4o-updated-unsplash.png",
                 style: {
                     width: 70,
-                    transition: 0
-                }
+                    transition: 0,
+                    rendered: false
+                },
+                animation: false
             }
         },
         {
@@ -20859,8 +20861,10 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
                 imageName: "olena-sergienko-dIMJWLx1YbE-updated-unsplash.png",
                 style: {
                     width: 70,
-                    transition: 0
-                }
+                    transition: 0,
+                    rendered: false
+                },
+                animation: false
             }
         },
         {
@@ -20908,8 +20912,10 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
                 imageName: "workperch-AiOzVFqlyZI-unsplash.png",
                 style: {
                     width: 70,
-                    transition: 0
-                }
+                    transition: 0,
+                    rendered: false
+                },
+                animation: false
             }
         }
     ]

@@ -100,6 +100,22 @@ const updateStyleValuesPortfolioProjectShowcasePage = (state, action) => {
     };
 }
 
+const allowAnimationForPortfolioProjectShowcasePage = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let updatedItem = {...updatedItems.find(item => item.key === action.key)};
+    let updatedItemIndex = updatedItems.findIndex(item => item.key === action.key);
+
+    updatedItem.backgroundImage.animation = action.val;
+    
+    updatedItems.splice(updatedItemIndex, 1, updatedItem);
+    
+    return {
+        ...state,
+        items: updatedItems
+    };
+}
+
 const portfolioProjectShowcasePageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_PORTFOLIO_PROJECT_SHOWCASE_PAGE_DATA_BEGIN:
@@ -114,6 +130,8 @@ const portfolioProjectShowcasePageReducer = (state = initialState, action) => {
             return setPortfolioProjectShowcasePageIsHoveringTag(state, action);
         case actionTypes.UPDATED_STYLE_VALUES_PORTFOLIO_PROJECT_SHOWCASE_PAGE:
             return updateStyleValuesPortfolioProjectShowcasePage(state, action);
+        case actionTypes.ALLOW_ANIMATION_FOR_PORTFOLIO_PROJECT_SHOWCASE_PAGE:
+            return allowAnimationForPortfolioProjectShowcasePage(state, action);
         default: 
             return state;
     }

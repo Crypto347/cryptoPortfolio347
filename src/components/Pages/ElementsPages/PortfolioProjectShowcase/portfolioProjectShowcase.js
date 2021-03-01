@@ -206,6 +206,7 @@ export const PortfolioProjectShowcase = (props) => {
                             setProjectShowcaseIsHoveringCategory={props.setPortfolioProjectShowcasePageIsHoveringCategory}
                             setProjectShowcaseIsHoveringTag={props.setPortfolioProjectShowcasePageIsHoveringTag}
                             updateStyleValues={props.updateStyleValuesPortfolioProjectShowcasePage}
+                            allowAnimation={props.allowAnimationForPortfolioProjectShowcasePage}
                         />
                     </React.Fragment >
                 )
@@ -282,6 +283,7 @@ export default connect(
             setPortfolioProjectShowcasePageIsHoveringCategory: bindActionCreators(Actions.setPortfolioProjectShowcasePageIsHoveringCategory, dispatch),
             setPortfolioProjectShowcasePageIsHoveringTag: bindActionCreators(Actions.setPortfolioProjectShowcasePageIsHoveringTag, dispatch),
             updateStyleValuesPortfolioProjectShowcasePage: bindActionCreators(Actions.updateStyleValuesPortfolioProjectShowcasePage, dispatch),
+            allowAnimationForPortfolioProjectShowcasePage: bindActionCreators(Actions.allowAnimationForPortfolioProjectShowcasePage, dispatch),
         };
     }
 )(PortfolioProjectShowcase);

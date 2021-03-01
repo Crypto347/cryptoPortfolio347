@@ -54,7 +54,7 @@ export const ProjectShowcaseItem = (props) => {
     const size = useWindowSize();
     const resizeRef = useRef();
     const transitionRef = useRef();
-    const [scrollingUp, setScrollingUp] = useState(false);
+    // const [scrollingUp, setScrollingUp] = useState(false);
  
     /**
      * Methods
@@ -74,7 +74,6 @@ export const ProjectShowcaseItem = (props) => {
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
         window.addEventListener('wheel', handleOnWheel);
-
         return () =>  {
             // Cleaning the unmounted component
 
@@ -82,7 +81,10 @@ export const ProjectShowcaseItem = (props) => {
             window.removeEventListener('transitionend', smooth);
             window.removeEventListener('wheel', handleOnWheel);
         }
-    }, []);
+       
+    }, [props.data.backgroundImage.animation,
+        props.data.backgroundImage.style.rendered
+    ]);
     
     useEffect(() => {
         resizeRef.current = handleResize;
@@ -91,51 +93,148 @@ export const ProjectShowcaseItem = (props) => {
 
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
-
-        if(props.data.backgroundImage.style.width.transition === 0){
-            props.updateStyleValues(props.data.key,{
-                ...props.data.backgroundImage.style,
-                transition: 0.45
-            });
+        console.log("useEffect",props.data.backgroundImage.style.width)
+        if(props.data.backgroundImage.animation){
+            if(props.data.backgroundImage.style.transition === 0){
+                props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                    ...props.data.backgroundImage.style,
+                    transition: 0.45
+                });
+            }
         }
+        // if(portfolioProjectShowcasePageId2BackgroundImg1OnScreen){
+        //     if(props.data.backgroundImage.style.transition === 0){
+        //         props.updateStyleValues("portfolioProjectShowcasePageId2",{
+        //             ...props.data.backgroundImage.style,
+        //             transition: 0.45
+        //         });
+        //     }
+        // }
+        // if(portfolioProjectShowcasePageId3BackgroundImg1OnScreen){
+        //     if(props.data.backgroundImage.style.transition === 0){
+        //         props.updateStyleValues("portfolioProjectShowcasePageId3",{
+        //             ...props.data.backgroundImage.style,
+        //             transition: 0.45
+        //         });
+        //     }
+        // }
 
     }, [props.data.backgroundImage.style.transition]);
 
     const smoothTransition = () => {
-        props.updateStyleValues(props.data.key,{
-            ...props.data.backgroundImage.style,
-            transition: 0
-        });
+        console.log("smooth",props.data.backgroundImage.width)
+        // if(props.data.backgroundImage.animation){
+            props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                ...props.data.backgroundImage.style,
+                transition: 0
+            })
+        // }
+        // if(props.data.backgroundImage.animation){
+        //     props.updateStyleValues("portfolioProjectShowcasePageId2",{
+        //         ...props.data.backgroundImage.style,
+        //         transition: 0
+        //     })
+        // }
+        // if(props.data.backgroundImage.animation){
+        //     props.updateStyleValues("portfolioProjectShowcasePageId3",{
+        //         ...props.data.backgroundImage.style,
+        //         transition: 0
+        //     })
+        // }
+        // props.updateStyleValues(props.data.key,{
+     
+        // });
     }
     
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        // let el = document.getElementById("smallImages");
+        let portfolioProjectShowcasePageId1BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId1BackgroundImg1");
+        let portfolioProjectShowcasePageId2BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId2BackgroundImg1");
+        let portfolioProjectShowcasePageId3BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId3BackgroundImg1");
 
-        // Show or hide BackToTop component
+        // if(props.data.items.length !== 0){
+            // Start transition effect only when it appears on the screen
 
-        // if(scrollHeight > screen.height/2){
-        //     props.setShowBackToTopComponent(true);
-        // }else{
-        //     props.setShowBackToTopComponent(false);
+            if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3 - size.height){
+                    console.log("11")
+                    if(props.data.backgroundImage.animation){
+                        props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                            width: 80,
+                            transition: 0,
+                            rendered: !props.data.backgroundImage.style.rendered
+                        })
+                    }
+                props.allowAnimation("portfolioProjectShowcasePageId1", true);
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+
+                console.log("22")
+                if(props.data.backgroundImage.animation){
+                    props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                        width: 90,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    })
+                }
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop){
+                    
+                console.log("33")
+                if(props.data.backgroundImage.animation){
+                    props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                        width: 100,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    })
+                }
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + portfolioProjectShowcasePageId1BackgroundImg1.offsetHeight){
+                console.log("44")
+                props.allowAnimation("portfolioProjectShowcasePageId1", false);
+            }
+
+            if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop && 
+                scrollHeight <= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + portfolioProjectShowcasePageId2BackgroundImg1.offsetHeight){
+                props.allowAnimation("portfolioProjectShowcasePageId2", true);
+            }else{
+                props.allowAnimation("portfolioProjectShowcasePageId2", false);
+            }
+
+            if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop && 
+                scrollHeight <= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + portfolioProjectShowcasePageId3BackgroundImg1.offsetHeight){
+                props.allowAnimation("portfolioProjectShowcasePageId3", true);
+            }else{
+                props.allowAnimation("portfolioProjectShowcasePageId3", false);
+            }
+
+            // Render the component only when it appears on a vertically oriented screen
+            
+            // if(size.width - size.height < 0){
+            //     if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height/2 - 900){
+            //         setPortfolioProjectShowcasePageId1BackgroundImg1OnScreen(true);
+            //     }
+            // }else{
+
+            // }
+
+            // if(size.width - size.height < 0){
+            //     if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop - size.height/2 - 900){
+            //         setPortfolioProjectShowcasePageId2BackgroundImg1OnScreen(true);
+            //     }
+            // }else{
+
+            // }
+
+            // if(size.width - size.height < 0){
+            //     if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop - size.height/2 - 900){
+            //         setPortfolioProjectShowcasePageId3BackgroundImg1OnScreen(true);
+            //     }
+            // }else{
+
+            // }
         // }
-    
-        // Check scroll direction
 
-        if(!checkScrollDirectionIsUp(e)){
-            setScrollingUp(false);
-            console.log("down")
-        }else{
-            setScrollingUp(true);
-            console.log("up")
-        }
-    }
-
-    const checkScrollDirectionIsUp = (e)  => {
-        if (e.wheelDelta) {
-          return e.wheelDelta > 0;
-        }
-        return e.deltaY < 0;
     }
 
     const handleResize = () => {
@@ -306,6 +405,15 @@ export const ProjectShowcaseItem = (props) => {
         )
     }
 
+    const setLeftAndRightPadding = (windowWidth) => {
+        if(windowWidth > 1120){
+            return 260;
+        }
+        if(windowWidth <= 1120){
+            return 80;
+        }
+    }
+
     /**
      * Markup
      */
@@ -337,9 +445,10 @@ export const ProjectShowcaseItem = (props) => {
             {renderProjectShowcaseImages(props.data.imagesArray)}
             <div 
                 className="project-showcase-background"
+                id={props.data.backgroundImage.key}
                 style={{
                     backgroundImage: `url(${loadBackgroundImage(props.data.backgroundImage.key)})`,
-                    width: `${props.data.backgroundImage.style.width}%`,
+                    width: `calc(${props.data.backgroundImage.style.width}% + ${setLeftAndRightPadding(size.width)}px)`,
                     transition: `width ${props.data.backgroundImage.style.transition}s ease-out`,
                 }}
             />

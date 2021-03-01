@@ -45,3 +45,11 @@ export function updateStyleValuesPortfolioProjectShowcasePage(key, obj) {
         obj: obj
     };
 };
+
+export function allowAnimationForPortfolioProjectShowcasePage(key, val) {
+    return { 
+        type: actionTypes.ALLOW_ANIMATION_FOR_PORTFOLIO_PROJECT_SHOWCASE_PAGE,
+        key: key,
+        val: val
+    };
+};
