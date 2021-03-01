@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 90px;
+    .project-showcase-haeder {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
     .project-showcase-info-wrapper {
         display: flex;
         flex-wrap: wrap;

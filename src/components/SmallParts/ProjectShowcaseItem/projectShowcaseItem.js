@@ -70,10 +70,11 @@ export const ProjectShowcaseItem = (props) => {
         const smooth = () => {
             transitionRef.current();
         }
-
+        
         window.addEventListener('resize', resize);
         window.addEventListener('transitionend', smooth);
         window.addEventListener('wheel', handleOnWheel);
+
         return () =>  {
             // Cleaning the unmounted component
 
@@ -82,8 +83,12 @@ export const ProjectShowcaseItem = (props) => {
             window.removeEventListener('wheel', handleOnWheel);
         }
        
-    }, [props.data.backgroundImage.animation,
-        props.data.backgroundImage.style.rendered
+    }, [
+        // props.data.backgroundImage.animation,
+        props.items[0].backgroundImage.animation,
+        // props.items[1].backgroundImage.animation,
+        // props.items[2].backgroundImage.animation
+        // props.data.backgroundImage.style.rendered
     ]);
     
     useEffect(() => {
@@ -93,15 +98,27 @@ export const ProjectShowcaseItem = (props) => {
 
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
-        console.log("useEffect",props.data.backgroundImage.style.width)
-        if(props.data.backgroundImage.animation){
-            if(props.data.backgroundImage.style.transition === 0){
+        // console.log(props.data.backgroundImage.style.transition)
+        // if(props.data.backgroundImage.animation){
+            if(props.data.key === "portfolioProjectShowcasePageId1" && props.data.backgroundImage.style.transition === 0){
                 props.updateStyleValues("portfolioProjectShowcasePageId1",{
                     ...props.data.backgroundImage.style,
                     transition: 0.45
                 });
             }
-        }
+            if(props.data.key === "portfolioProjectShowcasePageId2" && props.data.backgroundImage.style.transition === 0){
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    ...props.data.backgroundImage.style,
+                    transition: 0.45
+                });
+            }
+            if(props.data.key === "portfolioProjectShowcasePageId3" && props.data.backgroundImage.style.transition === 0){
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    ...props.data.backgroundImage.style,
+                    transition: 0.45
+                });
+            }
+        // }
         // if(portfolioProjectShowcasePageId2BackgroundImg1OnScreen){
         //     if(props.data.backgroundImage.style.transition === 0){
         //         props.updateStyleValues("portfolioProjectShowcasePageId2",{
@@ -118,32 +135,33 @@ export const ProjectShowcaseItem = (props) => {
         //         });
         //     }
         // }
-
-    }, [props.data.backgroundImage.style.transition]);
+    }, [
+        // props.data.backgroundImage.style.transition
+        props.items[0].backgroundImage.style.transition,
+        // props.items[1].backgroundImage.style.transition,
+        // props.items[2].backgroundImage.style.transition
+    ]);
 
     const smoothTransition = () => {
-        console.log("smooth",props.data.backgroundImage.width)
-        // if(props.data.backgroundImage.animation){
+        console.log("smooth",props.data.backgroundImage.animation)
+        if(props.data.key === "portfolioProjectShowcasePageId1" && props.data.backgroundImage.animation){
             props.updateStyleValues("portfolioProjectShowcasePageId1",{
                 ...props.data.backgroundImage.style,
                 transition: 0
-            })
-        // }
-        // if(props.data.backgroundImage.animation){
-        //     props.updateStyleValues("portfolioProjectShowcasePageId2",{
-        //         ...props.data.backgroundImage.style,
-        //         transition: 0
-        //     })
-        // }
-        // if(props.data.backgroundImage.animation){
-        //     props.updateStyleValues("portfolioProjectShowcasePageId3",{
-        //         ...props.data.backgroundImage.style,
-        //         transition: 0
-        //     })
-        // }
-        // props.updateStyleValues(props.data.key,{
-     
-        // });
+            });
+        }
+        if(props.data.key === "portfolioProjectShowcasePageId2" && props.data.backgroundImage.animation){
+            props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                ...props.data.backgroundImage.style,
+                transition: 0
+            });
+        }
+        if(props.data.key === "portfolioProjectShowcasePageId3" && props.data.backgroundImage.animation){
+            props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                ...props.data.backgroundImage.style,
+                transition: 0
+            });
+        }
     }
     
     const handleOnWheel = (e) => {
@@ -152,62 +170,146 @@ export const ProjectShowcaseItem = (props) => {
         let portfolioProjectShowcasePageId2BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId2BackgroundImg1");
         let portfolioProjectShowcasePageId3BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId3BackgroundImg1");
 
-        // if(props.data.items.length !== 0){
+        if(props.data.key === "portfolioProjectShowcasePageId1"){
             // Start transition effect only when it appears on the screen
-
-            if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height && 
+            if(scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height){
+                console.log("11")
+                    // if(props.data.backgroundImage.animation){
+                        props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                            width: 70,
+                            transition: 0,
+                            rendered: !props.data.backgroundImage.style.rendered
+                        });
+                    // }
+                props.allowAnimation("portfolioProjectShowcasePageId1", false);
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height && 
                 scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3 - size.height){
-                    console.log("11")
-                    if(props.data.backgroundImage.animation){
+                    console.log("22")
+                    // if(props.data.backgroundImage.animation){
                         props.updateStyleValues("portfolioProjectShowcasePageId1",{
                             width: 80,
                             transition: 0,
                             rendered: !props.data.backgroundImage.style.rendered
-                        })
-                    }
+                        });
+                    // }
                 props.allowAnimation("portfolioProjectShowcasePageId1", true);
             }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3 - size.height && 
                 scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+                    console.log("33")
 
-                console.log("22")
-                if(props.data.backgroundImage.animation){
+                // if(props.data.backgroundImage.animation){
                     props.updateStyleValues("portfolioProjectShowcasePageId1",{
                         width: 90,
                         transition: 0,
                         rendered: !props.data.backgroundImage.style.rendered
-                    })
-                }
+                    });
+                // }
             }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
                 scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop){
+                    console.log("44")
                     
-                console.log("33")
-                if(props.data.backgroundImage.animation){
+                // if(props.data.backgroundImage.animation){
                     props.updateStyleValues("portfolioProjectShowcasePageId1",{
                         width: 100,
                         transition: 0,
                         rendered: !props.data.backgroundImage.style.rendered
-                    })
-                }
+                    });
 
-            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + portfolioProjectShowcasePageId1BackgroundImg1.offsetHeight){
-                console.log("44")
+            }
+            else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + portfolioProjectShowcasePageId1BackgroundImg1.offsetHeight){
+                // console.log("44")
                 props.allowAnimation("portfolioProjectShowcasePageId1", false);
             }
+        }
 
-            if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop && 
-                scrollHeight <= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + portfolioProjectShowcasePageId2BackgroundImg1.offsetHeight){
-                props.allowAnimation("portfolioProjectShowcasePageId2", true);
-            }else{
+        if(props.data.key === "portfolioProjectShowcasePageId2"){
+            if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop - size.height){
+                    
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    width: 70,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.allowAnimation("portfolioProjectShowcasePageId2", false);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3 - size.height){
+                    
+                    props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                        width: 80,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    });
+                    props.allowAnimation("portfolioProjectShowcasePageId2", true);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+
+                    props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                        width: 90,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    });
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop){
+
+                    props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                        width: 100,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    });
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + portfolioProjectShowcasePageId1BackgroundImg1.offsetHeight){
+                // console.log("44")
                 props.allowAnimation("portfolioProjectShowcasePageId2", false);
             }
+        }
 
-            if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop && 
-                scrollHeight <= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + portfolioProjectShowcasePageId3BackgroundImg1.offsetHeight){
-                props.allowAnimation("portfolioProjectShowcasePageId3", true);
-            }else{
+        if(props.data.key === "portfolioProjectShowcasePageId3"){
+            if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop - size.height){
+                    
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    width: 70,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+
+                props.allowAnimation("portfolioProjectShowcasePageId3", false);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3 - size.height){
+                    
+                    props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                        width: 80,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    });
+
+                    props.allowAnimation("portfolioProjectShowcasePageId3", true);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+
+                    props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                        width: 90,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    });
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop){
+
+                    props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                        width: 100,
+                        transition: 0,
+                        rendered: !props.data.backgroundImage.style.rendered
+                    });
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + portfolioProjectShowcasePageId1BackgroundImg1.offsetHeight){
+                // console.log("44")
                 props.allowAnimation("portfolioProjectShowcasePageId3", false);
             }
-
+        }
             // Render the component only when it appears on a vertically oriented screen
             
             // if(size.width - size.height < 0){
@@ -420,7 +522,9 @@ export const ProjectShowcaseItem = (props) => {
 
     return(
         <div className="project-showcase">
-            <H65 className="h65-nero-poppins">{props.data.header}</H65>
+            <div className="project-showcase-haeder">
+                <H65 className="h65-nero-poppins">{props.data.header}</H65>
+            </div>
             <EH10/>
             <div className="project-showcase-info-wrapper">
                 <div className="project-showcase-text-wrapper">

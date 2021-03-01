@@ -93,6 +93,7 @@ const updateStyleValuesPortfolioProjectShowcasePage = (state, action) => {
     updatedItem.backgroundImage.style.rendered = action.obj.rendered;
 
     updatedItems.splice(updatedItemIndex, 1, updatedItem);
+    console.log(updatedItem)
     
     return {
         ...state,

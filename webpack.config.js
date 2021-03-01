@@ -7,7 +7,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     filename: 'index.html',
     inject: 'body'
 });
-const DotenvPlugin = new Dotenv()
+const DotenvPlugin = new Dotenv();
 
 console.log(__dirname)
 module.exports = {

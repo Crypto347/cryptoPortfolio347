@@ -207,6 +207,7 @@ export const PortfolioProjectShowcase = (props) => {
                             setProjectShowcaseIsHoveringTag={props.setPortfolioProjectShowcasePageIsHoveringTag}
                             updateStyleValues={props.updateStyleValuesPortfolioProjectShowcasePage}
                             allowAnimation={props.allowAnimationForPortfolioProjectShowcasePage}
+                            items={arr}
                         />
                     </React.Fragment >
                 )
