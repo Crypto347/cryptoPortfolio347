@@ -98,7 +98,7 @@ export const ProjectShowcaseItem = (props) => {
 
     useEffect(() => {
         // Set the transition property to the initial value if its value is 0
-        // console.log(props.data.backgroundImage.style.transition)
+        console.log(props.data.backgroundImage.style.transition)
         // if(props.data.backgroundImage.animation){
             if(props.data.key === "portfolioProjectShowcasePageId1" && props.data.backgroundImage.style.transition === 0){
                 props.updateStyleValues("portfolioProjectShowcasePageId1",{

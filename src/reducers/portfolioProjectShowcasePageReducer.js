@@ -88,13 +88,24 @@ const updateStyleValuesPortfolioProjectShowcasePage = (state, action) => {
     let updatedItem = {...updatedItems.find(item => item.key === action.key)};
     let updatedItemIndex = updatedItems.findIndex(item => item.key === action.key);
 
-    updatedItem.backgroundImage.style.width = action.obj.width;
-    updatedItem.backgroundImage.style.transition = action.obj.transition;
-    updatedItem.backgroundImage.style.rendered = action.obj.rendered;
+    let obj = {
+        ...updatedItem, 
+        backgroundImage: {
+            ...updatedItem.backgroundImage,
+            style: {
+                width: action.obj.width,
+                transition: action.obj.transition,
+                rendered: action.obj.rendered
+            }
+        }
+    }
+    updatedItem = {...updatedItem, backgroundImage: obj}
+    // updatedItem.backgroundImage.style.width = action.obj.width;
+    // updatedItem.backgroundImage.style.transition = action.obj.transition;
+    // updatedItem.backgroundImage.style.rendered = action.obj.rendered;
 
-    updatedItems.splice(updatedItemIndex, 1, updatedItem);
-    console.log(updatedItem)
-    
+    updatedItems.splice(updatedItemIndex, 1, obj);
+    console.log(updatedItems)
     return {
         ...state,
         items: updatedItems
