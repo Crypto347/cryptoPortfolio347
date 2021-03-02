@@ -32,6 +32,7 @@ import {
  */
 
 import * as Images from '../../../constants/images';
+import PhotoViewer from '../../Parts/PhotoViewer/photoViewer';
 
 /**
  * Hooks
@@ -514,6 +515,49 @@ export const ProjectShowcaseItem = (props) => {
             }
     }
 
+    const openPhotoViewer = (items, activeKey) => {
+
+        let array = [];
+       
+        items.map((el, i) => {
+            el.imagesArray.map(el => array.push(el))
+        })
+        array = array.map((el, i) => {
+            return{
+                ...el,
+                id: i + 1
+            }
+        });
+
+        let activeIndex = array.find(item => item.key === activeKey).id - 1;
+        let slidesForPhotoViewer = [...array];
+        let removedSlides = [];
+        
+        /**
+         * Rearrange the elements in array so that the element
+         * with active index becomes first and the rest are
+         * lined up in the correct order
+         */
+
+        slidesForPhotoViewer.map((el, i) => {
+            if(i < activeIndex){
+                removedSlides.push(el);
+            }
+        })
+        slidesForPhotoViewer.splice(0, activeIndex)
+      
+        if(removedSlides.length !== 0){
+            slidesForPhotoViewer.push(removedSlides);
+        }
+
+        slidesForPhotoViewer = slidesForPhotoViewer.flat();
+        
+
+        // Open photo viewer for the component
+
+        props.photoViewerOpen(props.component, true, slidesForPhotoViewer);
+    }
+
     const renderProjectShowcaseImages = (imagesArray) => {
         return(
             <div className="project-showcase-images">{imagesArray.map((el, i) => {
@@ -524,7 +568,7 @@ export const ProjectShowcaseItem = (props) => {
                     >
                         <img 
                             src={loadImg(el.key)}
-                            // onClick={() => openPhotoViewer(imagesArray, i)}
+                            onClick={() => openPhotoViewer(props.items, el.key)}
                         />
                         <EH30/>
                     </div>
@@ -616,8 +660,13 @@ export const ProjectShowcaseItem = (props) => {
                     width: `calc(${props.data.backgroundImage.style.width}% + ${setLeftAndRightPadding(size.width)}px)`,
                     transition: `width ${props.data.backgroundImage.style.transition}s ease-out`,
                 }}
-                
             />
+            {props.photoViewerForProjectShowcaseItemOpen ? 
+            <PhotoViewer
+                width={700}
+                height={457}
+                component={props.component}
+            /> : null}
         </div>
     );
 }

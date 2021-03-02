@@ -202,12 +202,15 @@ export const PortfolioProjectShowcase = (props) => {
                 return(
                     <React.Fragment key={i}>
                         <ProjectShowcaseItem 
+                            component="portfolioProjectShowcase"
                             data={el}
                             setProjectShowcaseIsHoveringCategory={props.setPortfolioProjectShowcasePageIsHoveringCategory}
                             setProjectShowcaseIsHoveringTag={props.setPortfolioProjectShowcasePageIsHoveringTag}
                             updateStyleValues={props.updateStyleValuesPortfolioProjectShowcasePage}
                             updateAnimation={props.updateAnimationForPortfolioProjectShowcasePage}
                             items={arr}
+                            photoViewerForProjectShowcaseItemOpen={props.photoViewerForPortfolioProjectShowcaseOpen}
+                            photoViewerOpen={props.photoViewerOpen}
                         />
                     </React.Fragment >
                 )
@@ -270,6 +273,7 @@ export default connect(
         return {
             portfolioProjectShowcasePage: Selectors.getPortfolioProjectShowcasePageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
+            photoViewerForPortfolioProjectShowcaseOpen: Selectors.getPhotoViewerForPortfolioProjectShowcaseOpenState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
@@ -285,6 +289,7 @@ export default connect(
             setPortfolioProjectShowcasePageIsHoveringTag: bindActionCreators(Actions.setPortfolioProjectShowcasePageIsHoveringTag, dispatch),
             updateStyleValuesPortfolioProjectShowcasePage: bindActionCreators(Actions.updateStyleValuesPortfolioProjectShowcasePage, dispatch),
             updateAnimationForPortfolioProjectShowcasePage: bindActionCreators(Actions.updateAnimationForPortfolioProjectShowcasePage, dispatch),
+            photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
         };
     }
 )(PortfolioProjectShowcase);

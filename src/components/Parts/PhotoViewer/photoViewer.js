@@ -336,10 +336,13 @@ export const PhotoViewer = (props) => {
             case 'id2BigImages2':
                 return Images.ID_2_BIG_IMAGES_2;
             case 'id2BigImages3':
+            case 'portfolioProjectShowcasePageId1Img3':
                 return Images.ID_2_BIG_IMAGES_3;
             case 'id2BigImages4':
+            case 'portfolioProjectShowcasePageId1Img2':
                 return Images.ID_2_BIG_IMAGES_4;
             case 'id2BigImages5':
+            case 'portfolioProjectShowcasePageId1Img1':
                 return Images.ID_2_BIG_IMAGES_5;
             case 'id2BigImages6':
                 return Images.ID_2_BIG_IMAGES_6;
@@ -398,26 +401,32 @@ export const PhotoViewer = (props) => {
             case 'id2Gallery5':
                 return Images.ID_2_GALLERY_5;
             case 'id3Gallery1':
+            case 'portfolioProjectShowcasePageId2Img1':
                 return Images.ID_3_GALLERY_1;
             case 'id3Gallery2':
                 return Images.ID_3_GALLERY_2;
             case 'id3Gallery3':
+            case 'portfolioProjectShowcasePageId2Img2':
                 return Images.ID_3_GALLERY_3;
             case 'id3Gallery4':
+            case 'portfolioProjectShowcasePageId2Img3':
                 return Images.ID_3_GALLERY_4;
             case 'id3Gallery5':
                 return Images.ID_3_GALLERY_5;
             case 'id3Gallery6':
                 return Images.ID_3_GALLERY_6;
-            case 'id1SmallSlider1': 
+            case 'id1SmallSlider1':
+            case 'portfolioProjectShowcasePageId3Img3':
                 return Images.ID_1_SMALL_SLIDER_1;
-            case 'id1SmallSlider2': 
+            case 'id1SmallSlider2':
+            case 'portfolioProjectShowcasePageId3Img1':
                 return Images.ID_1_SMALL_SLIDER_2;
             case 'id1SmallSlider3': 
                 return Images.ID_1_SMALL_SLIDER_3;
             case 'id1SmallSlider4': 
                 return Images.ID_1_SMALL_SLIDER_4;
-            case 'id1SmallSlider5': 
+            case 'id1SmallSlider5':
+            case 'portfolioProjectShowcasePageId3Img2':
                 return Images.ID_1_SMALL_SLIDER_5;
             case 'id1SmallSlider6': 
                 return Images.ID_1_SMALL_SLIDER_6;

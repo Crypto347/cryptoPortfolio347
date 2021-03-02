@@ -533,3 +533,10 @@ export const getPortfolioProjectShowcasePageState = createSelector(
     [getPortfolioProjectShowcasePage],
     (x) => x
 );
+
+const getPhotoViewerForPortfolioProjectShowcaseOpen = (state) => state.home.photoViewerForPortfolioProjectShowcaseOpen;
+
+export const getPhotoViewerForPortfolioProjectShowcaseOpenState = createSelector(
+    [getPhotoViewerForPortfolioProjectShowcaseOpen],
+    (x) => x
+);
