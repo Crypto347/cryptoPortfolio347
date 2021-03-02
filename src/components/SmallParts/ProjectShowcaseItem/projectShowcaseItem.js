@@ -139,40 +139,58 @@ export const ProjectShowcaseItem = (props) => {
         let portfolioProjectShowcasePageId1BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId1BackgroundImg1");
         let portfolioProjectShowcasePageId2BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId2BackgroundImg1");
         let portfolioProjectShowcasePageId3BackgroundImg1 = document.getElementById("portfolioProjectShowcasePageId3BackgroundImg1");
-        
-        if(props.data.key === "portfolioProjectShowcasePageId1"){
-            // Start transition effect only when it appears on the screen
-            if(scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height){
-           console.log("11")
 
+        // Start transition effect only when it appears on the screen
+
+        if(props.data.key === "portfolioProjectShowcasePageId1"){
+            if(scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height){
+                
                 props.updateStyleValues("portfolioProjectShowcasePageId1",{
-                    width: 70,
+                    width: 60,
                     transition: 0,
                     rendered: !props.data.backgroundImage.style.rendered
                 });
                 props.updateAnimation("portfolioProjectShowcasePageId1", false);
 
             }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop - size.height && 
-                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3 - size.height){
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5 - size.height){
            
                 props.updateStyleValues("portfolioProjectShowcasePageId1",{
-                    width: 80,
+                    width: 75,
                     transition: 0,
                     rendered: !props.data.backgroundImage.style.rendered
                 });
                 props.updateAnimation("portfolioProjectShowcasePageId1", true);
 
-            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3 - size.height && 
-                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5*2 - size.height){
              
+                props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                    width: 80,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId1", false);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5*2 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5*3 - size.height){
+            
+                props.updateStyleValues("portfolioProjectShowcasePageId1",{
+                    width: 85,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId1", true);
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5*3 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5*4 - size.height){
+            
                 props.updateStyleValues("portfolioProjectShowcasePageId1",{
                     width: 90,
                     transition: 0,
                     rendered: !props.data.backgroundImage.style.rendered
                 });
                 props.updateAnimation("portfolioProjectShowcasePageId1", false);
-
-            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
+            }else if(scrollHeight >= portfolioProjectShowcasePageId1BackgroundImg1.offsetTop + size.height/5*4 - size.height && 
                 scrollHeight < portfolioProjectShowcasePageId1BackgroundImg1.offsetTop){
             
                 props.updateStyleValues("portfolioProjectShowcasePageId1",{
@@ -188,44 +206,65 @@ export const ProjectShowcaseItem = (props) => {
         }
 
         if(props.data.key === "portfolioProjectShowcasePageId2"){
-            console.log(scrollHeight, portfolioProjectShowcasePageId2BackgroundImg1.offsetTop - size.height)
             if(scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop - size.height){
                 
                 props.updateStyleValues("portfolioProjectShowcasePageId2",{
-                    width: 70,
+                    width: 60,
                     transition: 0,
                     rendered: !props.data.backgroundImage.style.rendered
                 });
                 props.updateAnimation("portfolioProjectShowcasePageId2", false);
 
             }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop - size.height && 
-                scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3 - size.height){
+                scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5 - size.height){
                     
-                    props.updateStyleValues("portfolioProjectShowcasePageId2",{
-                        width: 80,
-                        transition: 0,
-                        rendered: !props.data.backgroundImage.style.rendered
-                    });
-                    props.updateAnimation("portfolioProjectShowcasePageId2", true);
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    width: 75,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId2", true);
 
-            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3 - size.height && 
-                    scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5*2 - size.height){
                         
-                    props.updateStyleValues("portfolioProjectShowcasePageId2",{
-                        width: 90,
-                        transition: 0,
-                        rendered: !props.data.backgroundImage.style.rendered
-                    });
-                    props.updateAnimation("portfolioProjectShowcasePageId2", false);
-            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
-                    scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop){
-                        
-                    props.updateStyleValues("portfolioProjectShowcasePageId2",{
-                        width: 100,
-                        transition: 0,
-                        rendered: !props.data.backgroundImage.style.rendered
-                    });
-                    props.updateAnimation("portfolioProjectShowcasePageId2", true);
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    width: 80,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId2", false);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5*2 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5*3 - size.height){
+                    
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    width: 85,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId2", true);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5*3 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5*4 - size.height){
+                    
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    width: 90,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId2", false);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + size.height/5*4 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId2BackgroundImg1.offsetTop){
+                    
+                props.updateStyleValues("portfolioProjectShowcasePageId2",{
+                    width: 100,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId2", true);
+                
             }else if(scrollHeight >= portfolioProjectShowcasePageId2BackgroundImg1.offsetTop + portfolioProjectShowcasePageId2BackgroundImg1.offsetHeight){
                 props.updateAnimation("portfolioProjectShowcasePageId2", false);
             }
@@ -235,42 +274,62 @@ export const ProjectShowcaseItem = (props) => {
             if(scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop - size.height){
                     
                 props.updateStyleValues("portfolioProjectShowcasePageId3",{
-                    width: 70,
+                    width: 60,
                     transition: 0,
                     rendered: !props.data.backgroundImage.style.rendered
                 });
-
                 props.updateAnimation("portfolioProjectShowcasePageId3", false);
 
             }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop - size.height && 
-                scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3 - size.height){
+                scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5 - size.height){
                     
-                    props.updateStyleValues("portfolioProjectShowcasePageId3",{
-                        width: 80,
-                        transition: 0,
-                        rendered: !props.data.backgroundImage.style.rendered
-                    });
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    width: 75,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId3", true);
 
-                    props.updateAnimation("portfolioProjectShowcasePageId3", true);
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5*2 - size.height){
 
-            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3 - size.height && 
-                    scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3*2 - size.height){
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    width: 80,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId3", false);
 
-                    props.updateStyleValues("portfolioProjectShowcasePageId3",{
-                        width: 90,
-                        transition: 0,
-                        rendered: !props.data.backgroundImage.style.rendered
-                    });
-                    props.updateAnimation("portfolioProjectShowcasePageId3", false);
-            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/3*2 - size.height && 
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5*2 - size.height && 
+                    scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5*3 - size.height){
+
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    width: 85,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId3", true);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5*3 - size.height && 
+                scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5*4 - size.height){
+
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    width: 90,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId3", false);
+
+            }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + size.height/5*4 - size.height && 
                     scrollHeight < portfolioProjectShowcasePageId3BackgroundImg1.offsetTop){
 
-                    props.updateStyleValues("portfolioProjectShowcasePageId3",{
-                        width: 100,
-                        transition: 0,
-                        rendered: !props.data.backgroundImage.style.rendered
-                    });
-                    props.updateAnimation("portfolioProjectShowcasePageId3", true);
+                props.updateStyleValues("portfolioProjectShowcasePageId3",{
+                    width: 100,
+                    transition: 0,
+                    rendered: !props.data.backgroundImage.style.rendered
+                });
+                props.updateAnimation("portfolioProjectShowcasePageId3", true);
+                
             }else if(scrollHeight >= portfolioProjectShowcasePageId3BackgroundImg1.offsetTop + portfolioProjectShowcasePageId3BackgroundImg1.offsetHeight){
                 props.updateAnimation("portfolioProjectShowcasePageId3", false);
             }
