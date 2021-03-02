@@ -517,6 +517,7 @@ export const PorfolioNavigation = (props) => {
             twoColumnsData: []
         };
         let takeItems = step * 4;
+
         if(takeItems >= twoColumnsPageData.length){
             updatedTwoColumnsObj.disableLoadMoreButton = true;
             updatedTwoColumnsObj.twoColumnsData = twoColumnsPageData;
@@ -525,6 +526,7 @@ export const PorfolioNavigation = (props) => {
         }
 
         let categories = [];
+
         categories = updatedTwoColumnsObj.twoColumnsData
             .map(el => {
                 return el.categories
@@ -532,7 +534,7 @@ export const PorfolioNavigation = (props) => {
             .flat()
             .map((el, i) => {
                 return el.key
-            })
+            });
         categories = Utility.removeDublicatesFromArray(categories);
         categories = categories.map((el, i) => {
             return {
@@ -542,7 +544,7 @@ export const PorfolioNavigation = (props) => {
                 isHover: "init",
                 active: false
             }
-        })
+        });
         categories.unshift({
             id: 1,
             key: "showAll",
@@ -550,6 +552,7 @@ export const PorfolioNavigation = (props) => {
             isHover: "init",
             active: true
         });
+
         if(category){
             categories = categories.map(el => {
                 if(el.key === category){
@@ -565,8 +568,11 @@ export const PorfolioNavigation = (props) => {
                 }
             })
         }
+
         let itemsState;
+
         props.fetchTwoColumnsPageSuccess(updatedTwoColumnsObj.twoColumnsData);
+
         if(step === 1){
             itemsState = Utility.getArrayOfEmptyVal(updatedTwoColumnsObj.twoColumnsData.length);
             props.initItemsStylesStateForTwoColumnsPage(itemsState);
@@ -574,9 +580,11 @@ export const PorfolioNavigation = (props) => {
             itemsState = Utility.getArrayOfEmptyVal(updatedTwoColumnsObj.twoColumnsData.length - numOfItemsInArray);
             props.addMoreItemsStylesStateForTwoColumnsPage(itemsState);
         }
+
         props.setCategoriesTwoColumnsPage(categories);
         props.loadMoreTwoColumnsPageSuccess();
         props.loadMoreDisableButtonStateForTwoColumnsPage(updatedTwoColumnsObj.disableLoadMoreButton);
+
         if(step > 1 && category !== "showAll"){
             let addedElemntsArray = updatedTwoColumnsObj.twoColumnsData.slice(updatedTwoColumnsObj.twoColumnsData.length-4, updatedTwoColumnsObj.twoColumnsData.length);
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(updatedTwoColumnsObj.twoColumnsData, category);
@@ -675,12 +683,12 @@ export const PorfolioNavigation = (props) => {
 
     const fetchThreeColumnsPageMockData = (step, category, screenWidth, numOfItemsInArray) => {
         let threeColumnsPageData = [...FakeData.threeColumnsPage];
-        
         let updatedThreeColumnsObj = {
             disableLoadMoreButton: false,
             threeColumnsData: []
         };
         let takeItems = step * 6;
+
         if(takeItems >= threeColumnsPageData.length){
             updatedThreeColumnsObj.disableLoadMoreButton = true;
             updatedThreeColumnsObj.threeColumnsData = threeColumnsPageData;
@@ -689,6 +697,7 @@ export const PorfolioNavigation = (props) => {
         }
 
         let categories = [];
+
         categories = updatedThreeColumnsObj.threeColumnsData
             .map(el => {
                 return el.categories
@@ -696,7 +705,7 @@ export const PorfolioNavigation = (props) => {
             .flat()
             .map((el, i) => {
                 return el.key
-            })
+            });
         categories = Utility.removeDublicatesFromArray(categories);
         categories = categories.map((el, i) => {
             return {
@@ -706,7 +715,7 @@ export const PorfolioNavigation = (props) => {
                 isHover: "init",
                 active: false
             }
-        })
+        });
         categories.unshift({
             id: 1,
             key: "showAll",
@@ -714,6 +723,7 @@ export const PorfolioNavigation = (props) => {
             isHover: "init",
             active: true
         });
+
         if(category){
             categories = categories.map(el => {
                 if(el.key === category){
@@ -729,8 +739,11 @@ export const PorfolioNavigation = (props) => {
                 }
             })
         }
+
         let itemsState;
+
         props.fetchThreeColumnsPageSuccess(updatedThreeColumnsObj.threeColumnsData);
+
         if(step === 1){
             itemsState = Utility.getArrayOfEmptyVal(updatedThreeColumnsObj.threeColumnsData.length);
             props.initItemsStylesStateForThreeColumnsPage(itemsState);
@@ -738,9 +751,11 @@ export const PorfolioNavigation = (props) => {
             itemsState = Utility.getArrayOfEmptyVal(updatedThreeColumnsObj.threeColumnsData.length - numOfItemsInArray);
             props.addMoreItemsStylesStateForThreeColumnsPage(itemsState);
         }
+
         props.setCategoriesThreeColumnsPage(categories);
         props.loadMoreThreeColumnsPageSuccess();
         props.loadMoreDisableButtonStateForThreeColumnsPage(updatedThreeColumnsObj.disableLoadMoreButton);
+
         if(step > 1 && category !== "showAll"){
             let addedElemntsArray = updatedThreeColumnsObj.threeColumnsData.slice(updatedThreeColumnsObj.threeColumnsData.length-6, updatedThreeColumnsObj.threeColumnsData.length);
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(updatedThreeColumnsObj.threeColumnsData, category);
@@ -951,12 +966,12 @@ export const PorfolioNavigation = (props) => {
 
     const fetchFourColumnsPageMockData = (step, category, screenWidth, numOfItemsInArray) => {
         let fourColumnsPageData = [...FakeData.fourColumnsPage];
-
         let updatedFourColumnsObj = {
             disableLoadMoreButton: false,
             fourColumnsData: []
         };
         let takeItems = step * 8;
+
         if(takeItems >= fourColumnsPageData.length){
             updatedFourColumnsObj.disableLoadMoreButton = true;
             updatedFourColumnsObj.fourColumnsData = fourColumnsPageData;
@@ -965,6 +980,7 @@ export const PorfolioNavigation = (props) => {
         }
 
         let categories = [];
+
         categories = updatedFourColumnsObj.fourColumnsData
             .map(el => {
                 return el.categories
@@ -972,7 +988,7 @@ export const PorfolioNavigation = (props) => {
             .flat()
             .map((el, i) => {
                 return el.key
-            })
+            });
         categories = Utility.removeDublicatesFromArray(categories);
         categories = categories.map((el, i) => {
             return {
@@ -982,7 +998,7 @@ export const PorfolioNavigation = (props) => {
                 isHover: "init",
                 active: false
             }
-        })
+        });
         categories.unshift({
             id: 1,
             key: "showAll",
@@ -990,6 +1006,7 @@ export const PorfolioNavigation = (props) => {
             isHover: "init",
             active: true
         });
+
         if(category){
             categories = categories.map(el => {
                 if(el.key === category){
@@ -1005,8 +1022,11 @@ export const PorfolioNavigation = (props) => {
                 }
             })
         }
+
         let itemsState;
+
         props.fetchFourColumnsPageSuccess(updatedFourColumnsObj.fourColumnsData);
+
         if(step === 1){
             itemsState = Utility.getArrayOfEmptyVal(updatedFourColumnsObj.fourColumnsData.length);
             props.initItemsStylesStateForFourColumnsPage(itemsState);
@@ -1014,9 +1034,11 @@ export const PorfolioNavigation = (props) => {
             itemsState = Utility.getArrayOfEmptyVal(updatedFourColumnsObj.fourColumnsData.length - numOfItemsInArray);
             props.addMoreItemsStylesStateForFourColumnsPage(itemsState);
         }
+
         props.setCategoriesFourColumnsPage(categories);
         props.loadMoreFourColumnsPageSuccess();
         props.loadMoreDisableButtonStateForFourColumnsPage(updatedFourColumnsObj.disableLoadMoreButton);
+
         if(step > 1 && category !== "showAll"){
             let addedElemntsArray = updatedFourColumnsObj.fourColumnsData.slice(updatedFourColumnsObj.fourColumnsData.length-8, updatedFourColumnsObj.fourColumnsData.length);
             let arrayOfAppearAndDisapperElements = Utility.setArrayOfAppearAndDisapperElements(updatedFourColumnsObj.fourColumnsData, category);
