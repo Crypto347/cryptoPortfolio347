@@ -99,20 +99,17 @@ const updateStyleValuesPortfolioProjectShowcasePage = (state, action) => {
             }
         }
     }
+    
     updatedItem = {...updatedItem, backgroundImage: obj}
-    // updatedItem.backgroundImage.style.width = action.obj.width;
-    // updatedItem.backgroundImage.style.transition = action.obj.transition;
-    // updatedItem.backgroundImage.style.rendered = action.obj.rendered;
-
     updatedItems.splice(updatedItemIndex, 1, obj);
-    console.log(updatedItems)
+    
     return {
         ...state,
         items: updatedItems
     };
 }
 
-const allowAnimationForPortfolioProjectShowcasePage = (state, action) => {
+const updateAnimationForPortfolioProjectShowcasePage = (state, action) => {
     let updatedItems = [...state.items];
 
     let updatedItem = {...updatedItems.find(item => item.key === action.key)};
@@ -142,8 +139,8 @@ const portfolioProjectShowcasePageReducer = (state = initialState, action) => {
             return setPortfolioProjectShowcasePageIsHoveringTag(state, action);
         case actionTypes.UPDATED_STYLE_VALUES_PORTFOLIO_PROJECT_SHOWCASE_PAGE:
             return updateStyleValuesPortfolioProjectShowcasePage(state, action);
-        case actionTypes.ALLOW_ANIMATION_FOR_PORTFOLIO_PROJECT_SHOWCASE_PAGE:
-            return allowAnimationForPortfolioProjectShowcasePage(state, action);
+        case actionTypes.UPDATE_ANIMATION_FOR_PORTFOLIO_PROJECT_SHOWCASE_PAGE:
+            return updateAnimationForPortfolioProjectShowcasePage(state, action);
         default: 
             return state;
     }
