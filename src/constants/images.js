@@ -838,3 +838,28 @@ export const SCROLL_SLIDER_IMG_3 = ScrollSliderImg3;
 export const SCROLL_SLIDER_IMG_4 = ScrollSliderImg4;
 export const SCROLL_SLIDER_IMG_5 = ScrollSliderImg5;
 export const SCROLL_SLIDER_IMG_6 = ScrollSliderImg6;
+
+/**
+ * Project Showcase images
+ */
+
+import ProjectShowcaseBackgroundMidScreenImg1 from '../images/projectShowcaseBackgroundImages/uby-yanes-LMwW0ARHc4o-unsplash-projShowcaseBackground-midScreen.png';
+import ProjectShowcaseBackgroundMidScreenImg2 from '../images/projectShowcaseBackgroundImages/olena-sergienko-dIMJWLx1YbE-unsplash-projShowcaseBackground-midScreen.png';
+import ProjectShowcaseBackgroundMidScreenImg3 from '../images/projectShowcaseBackgroundImages/workperch-AiOzVFqlyZI-unsplash-projShowcaseBackground-midScreen.png';
+import ProjectShowcaseBackgroundSmallScreenImg1 from '../images/projectShowcaseBackgroundImages/uby-yanes-LMwW0ARHc4o-unsplash-projShowcaseBackground-smallScreen.png';
+import ProjectShowcaseBackgroundSmallScreenImg2 from '../images/projectShowcaseBackgroundImages/olena-sergienko-dIMJWLx1YbE-unsplash-projShowcaseBackground-smallScreen.png';
+import ProjectShowcaseBackgroundSmallScreenImg3 from '../images/projectShowcaseBackgroundImages/workperch-AiOzVFqlyZI-unsplash-projShowcaseBackground-smallScreen.png';
+import ProjectShowcaseBackgroundSuperSmallScreenImg1 from '../images/projectShowcaseBackgroundImages/uby-yanes-LMwW0ARHc4o-unsplash-projShowcaseBackground-superSmallScreen.png';
+import ProjectShowcaseBackgroundSuperSmallScreenImg2 from '../images/projectShowcaseBackgroundImages/olena-sergienko-dIMJWLx1YbE-unsplash-projShowcaseBackground-superSmallScreen.png';
+import ProjectShowcaseBackgroundSuperSmallScreenImg3 from '../images/projectShowcaseBackgroundImages/workperch-AiOzVFqlyZI-unsplash-projShowcaseBackground-superSmallScreen.png';
+
+export const PROJECT_SHOWCASE_BACKGROUND_MID_SCREEN_IMG_1 = ProjectShowcaseBackgroundMidScreenImg1;
+export const PROJECT_SHOWCASE_BACKGROUND_MID_SCREEN_IMG_2 = ProjectShowcaseBackgroundMidScreenImg2;
+export const PROJECT_SHOWCASE_BACKGROUND_MID_SCREEN_IMG_3 = ProjectShowcaseBackgroundMidScreenImg3;
+export const PROJECT_SHOWCASE_BACKGROUND_SMALL_SCREEN_IMG_1 = ProjectShowcaseBackgroundSmallScreenImg1;
+export const PROJECT_SHOWCASE_BACKGROUND_SMALL_SCREEN_IMG_2 = ProjectShowcaseBackgroundSmallScreenImg2;
+export const PROJECT_SHOWCASE_BACKGROUND_SMALL_SCREEN_IMG_3 = ProjectShowcaseBackgroundSmallScreenImg3;
+export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_1 = ProjectShowcaseBackgroundSuperSmallScreenImg1;
+export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_2 = ProjectShowcaseBackgroundSuperSmallScreenImg2;
+export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_3 = ProjectShowcaseBackgroundSuperSmallScreenImg3;
+

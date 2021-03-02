@@ -465,16 +465,53 @@ export const ProjectShowcaseItem = (props) => {
     }
 
     const loadBackgroundImage = (key) => {
+        let img;
         switch(key){
             case 'portfolioProjectShowcasePageId1BackgroundImg1':
-                return Images.ID_2_BIG_IMAGES_1;
+                if(size.width > 1180){
+                    img = Images.ID_2_BIG_IMAGES_1;
+                }
+                if(size.width <= 1180 && size.width > 790){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_MID_SCREEN_IMG_1;
+                }
+                if(size.width <= 790 && size.width > 520){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_SMALL_SCREEN_IMG_1;
+                }
+                if(size.width <= 520){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_1;
+                }
+                return img;
             case 'portfolioProjectShowcasePageId2BackgroundImg1':
-                return Images.ID_3_GALLERY_5;
+                if(size.width > 1180){
+                    img = Images.ID_3_GALLERY_5;
+                }
+                if(size.width <= 1180 && size.width > 790){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_MID_SCREEN_IMG_2;
+                }
+                if(size.width <= 790 && size.width > 520){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_SMALL_SCREEN_IMG_2;
+                }
+                if(size.width <= 520){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_2;
+                }
+                return img;
             case 'portfolioProjectShowcasePageId3BackgroundImg1':
-                return Images.ID_1_SMALL_SLIDER_6;
+                if(size.width > 1180){
+                    img = Images.ID_1_SMALL_SLIDER_6;
+                }
+                if(size.width <= 1180 && size.width > 790){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_MID_SCREEN_IMG_3;
+                }
+                if(size.width <= 790 && size.width > 520){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_SMALL_SCREEN_IMG_3;
+                }
+                if(size.width <= 520){
+                    img = Images.PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_3;
+                }
+                return img;
             default:
                 return "";
-        }
+            }
     }
 
     const renderProjectShowcaseImages = (imagesArray) => {
