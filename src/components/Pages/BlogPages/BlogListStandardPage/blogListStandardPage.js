@@ -224,11 +224,8 @@ export const BlogListStandardPage = (props) => {
             <>
                 {categoriesListForBlog.map((el, i) => {
                     return(
-                        <div 
-                            key={i}
-                            className="blog-list-standard-page-category"
-                        >
-                            <H17 className="h17-black-lustria-cursor">{el.categoryName}</H17>
+                        <div key={i}>
+                            <H17 className="h17-black-lustria-cursor-animation">{el.categoryName}</H17>
                         </div>
                     )
                 })}
@@ -241,11 +238,11 @@ export const BlogListStandardPage = (props) => {
             <>
                 {tagsListForBlog.map((el, i) => {
                     return(
-                        <div 
+                        <div
                             key={i}
-                            className="blog-list-standard-page-category"
+                            // className="blog-list-standard-page-tag"
                         >
-                            <H17 className="h17-black-lustria-cursor">{el.tagName}</H17>
+                            <H17 className="h17-black-lustria">{el.tagName}</H17>
                         </div>
                     )
                 })}
@@ -269,46 +266,13 @@ export const BlogListStandardPage = (props) => {
         //     </>
         // )
     }
-    const handleMouseEnter = (opt) => {
-        switch(opt){
-            case 'socialMediaBackgroundCurtain':
-                setSocMedIsHover("on")
-                break;
-        }
-    }
-
-    const handleMouseLeave = (opt) => {
-        switch(opt){
-            case 'socialMediaBackgroundCurtain':
-                setSocMedIsHover("off")
-                break;
-    
-        }
-    }
-
-    const renderClassName = (opt, isHovering, isActive) => {
-        if(opt === "socialMediaBackgroundCurtain"){
-            switch(isHovering){
-                case 'init':
-                    return "soc-med-icon-for-blog";
-                case 'on':
-                    return "soc-med-icon-for-blog-hover-on";
-                case 'off':
-                    return "soc-med-icon-for-blog-hover-off"
-            }
-        }
-    }
-
 
     const renderSocialMedia = () => {
         return(
             <div className="blog-list-standard-page-icons">
                 {socialMediaIcons.map((el, i) => {
                     return(
-                        <React.Fragment 
-                            key={i}
-                            // className="blog-list-standard-page-icon"
-                        >
+                        <React.Fragment key={i}>
                             <Icon 
                                 key={i}
                                 iconType="fontAwesomeWithAnimatedBackground"
@@ -403,7 +367,6 @@ export const BlogListStandardPage = (props) => {
                             <H17 className="h17-black-lustria">Naomi Hernandez</H17>
                             <EH10/>
                             <H15 className="h15-nobel-lustria">Associate Director, SEO</H15>
-                            <div className="blog-list-standard-page-info-person-position"></div>
                         </div>
                         <EH40/>
                         <div className="blog-list-standard-page-recent-post-wrapper">
@@ -412,19 +375,19 @@ export const BlogListStandardPage = (props) => {
                             {renderRecentPosts()}
                         </div>
                         <EH40/>
-                        <div className="blog-list-standard-page-recent-categories-wrapper">
+                        <div className="blog-list-standard-page-categories-wrapper">
                             <H22 className="h22-black-poppins">Categories</H22>
                             <EH20/>
                             {renderCategoriesList()}
                         </div>
                         <EH40/>
-                        <div className="blog-list-standard-page-recent-follow-us">
+                        <div className="blog-list-standard-page-follow-us">
                             <H22 className="h22-black-poppins">Follow us</H22>
                             <EH20/>
                             {renderSocialMedia()}
                         </div>
                         <EH40/>
-                        <div className="blog-list-standard-page-recent-tags-wrapper">
+                        <div className="blog-list-standard-page-tags-wrapper">
                             <H22 className="h22-black-poppins">Tags</H22>
                             <EH20/>
                             {renderTagsList()}

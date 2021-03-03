@@ -21,11 +21,15 @@
     font-family: 'Lustria', serif;
 }
 
-.h17-black-lustria-cursor {
+.h17-black-lustria-cursor-animation {
     font-size: 17px;
     color: black;
     font-family: 'Lustria', serif;
+    display: inline-flex;
     cursor: pointer;
+    &:hover {
+        border-bottom: 1px solid black;
+    }
 }
 
 .h17-nobel-lustria-animation {
