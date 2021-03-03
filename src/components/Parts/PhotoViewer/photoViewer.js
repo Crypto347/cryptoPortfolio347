@@ -26,6 +26,12 @@ import {
 import './photoViewer.scss';
 
 /**
+ * Components
+ */
+
+import Backdrop from '../../../library/Backdrop/backdrop';
+
+/**
  * Actions
  */
 
@@ -616,6 +622,11 @@ export const PhotoViewer = (props) => {
                         </div>
                     </div>
                 </div>
+                <Backdrop
+                   show
+                   onClick={() => props.photoViewerOpen(props.component, false, [])}
+                   className="backdrop-photo-viewer"
+                />
             </div> :
             <div className="fullscreen-outer-wrapper">
                 <div className="fullscreen-close-button">
