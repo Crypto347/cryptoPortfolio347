@@ -27,6 +27,7 @@ import './blogListStandardPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Icon from '../../../SmallParts/Icon/icon';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -58,6 +59,7 @@ import {
     H22,
     H35,
     H45,
+    EW20,
     EH10,
     EH20,
     EH30,
@@ -92,6 +94,10 @@ import {
 import {
     tagsListForBlog
 } from '../../../../constants/tagsListForBlog';
+
+import {
+    socialMediaIcons
+} from '../../../../constants/socialMediaIcons';
 
 /**
  * BlogListStandardPage component definition and export
@@ -247,84 +253,82 @@ export const BlogListStandardPage = (props) => {
         )
     }
 
-    const renderParagraph = (obj) => {
-        return(
-            <>
-                {obj.text.map((el, i) => {
-                    if(el.highlightedText !== null){
-                        return(
-                            <React.Fragment key={i}>
-                                {el.normalText}&nbsp;&nbsp;
-                                {<span
-                                    className="highlighted-text"
-                                    style={{
-                                        background: `${el.highlightsBackground}`,
-                                        color: `${el.highlightsColor}`
-                                    }}
-                                >
-                                    {el.highlightedText}
-                                </span>}&nbsp;&nbsp;
-                            </React.Fragment>
-                        )
-                    }else{
-                        return(el.normalText);
-                    }
-                })}
-            </>
-        )
-
-        // Example with items.push 
-
-        // const items = [];
-        // obj.text.map((el, i) => {
-        //     if(el.highlightedText !== null){
-        //         items.push(
-        //             <React.Fragment key={i}>
-        //                 {el.normalText}&nbsp;&nbsp;
-        //                 {<span
-        //                     className="highlighted-text"
-        //                     style={{
-        //                         background: `${el.highlightsBackground}`,
-        //                         color: `${el.highlightsColor}`
-        //                     }}
-        //                 >
-        //                     {el.highlightedText}
-        //                 </span>}&nbsp;&nbsp;
-        //             </React.Fragment>
-        //         )
-        //     }else{
-        //         items.push(el.normalText)
-        //     }  
-        // })
-
-        // Example with for loop
-
-        // for(const [index, value] of obj.text.entries()){
-        //     if(value.highlightedText !== null){
-        //         items.push(
-        //             <React.Fragment key={index}>
-        //                 {value.normalText}&nbsp;&nbsp;
-        //                 {<span 
-        //                     className="highlighted-text"
-        //                     style={{
-        //                         background: `${value.highlightsBackground}`,
-        //                         color: `${value.highlightsColor}`
-        //                     }}
-        //                 >
-        //                     {value.highlightedText}
-        //                 </span>}&nbsp;&nbsp;
-        //             </React.Fragment>
-        //         )
-        //     }else{
-        //         items.push(value.normalText)
-        //     }  
-        // }
-
+    const renderRecentPosts = () => {
         // return(
-        //     <>{items}</>
+        //     <>
+        //         {socialMediaIcons.map((el, i) => {
+        //             return(
+        //                 <div 
+        //                     key={i}
+        //                     className="blog-list-standard-page-category"
+        //                 >
+        //                     <H17 className="h17-black-lustria-cursor">{el.tagName}</H17>
+        //                 </div>
+        //             )
+        //         })}
+        //     </>
         // )
     }
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'socialMediaBackgroundCurtain':
+                setSocMedIsHover("on")
+                break;
+        }
+    }
 
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'socialMediaBackgroundCurtain':
+                setSocMedIsHover("off")
+                break;
+    
+        }
+    }
+
+    const renderClassName = (opt, isHovering, isActive) => {
+        if(opt === "socialMediaBackgroundCurtain"){
+            switch(isHovering){
+                case 'init':
+                    return "soc-med-icon-for-blog";
+                case 'on':
+                    return "soc-med-icon-for-blog-hover-on";
+                case 'off':
+                    return "soc-med-icon-for-blog-hover-off"
+            }
+        }
+    }
+
+
+    const renderSocialMedia = () => {
+        return(
+            <div className="blog-list-standard-page-icons">
+                {socialMediaIcons.map((el, i) => {
+                    return(
+                        <React.Fragment 
+                            key={i}
+                            // className="blog-list-standard-page-icon"
+                        >
+                            <Icon 
+                                key={i}
+                                iconType="fontAwesomeWithAnimatedBackground"
+                                iconName={el.name} 
+                                icon={el.iconKey} 
+                                iconSize="1x"
+                                instaName={props.instaName}
+                                onMouseEnter
+                                onMouseLeave
+                                onMouseDown
+                                classNameOpt="socMedIconForBlog"
+                                classNameBackground="background-for-blog-list-standard-page-icon"
+                            />
+                        </React.Fragment>
+                    )
+                })}
+            </div>
+        )
+    }
+    
     const renderHighlightsPageData = (arr) => {
         return(
             <div>
@@ -402,17 +406,27 @@ export const BlogListStandardPage = (props) => {
                             <div className="blog-list-standard-page-info-person-position"></div>
                         </div>
                         <EH40/>
-                        <div className="blog-list-standard-page-recent-post-wrapper"></div>
+                        <div className="blog-list-standard-page-recent-post-wrapper">
+                            <H22 className="h22-black-poppins">Recent posts</H22>
+                            <EH20/>
+                            {renderRecentPosts()}
+                        </div>
                         <EH40/>
                         <div className="blog-list-standard-page-recent-categories-wrapper">
                             <H22 className="h22-black-poppins">Categories</H22>
+                            <EH20/>
                             {renderCategoriesList()}
                         </div>
                         <EH40/>
-                        <div className="blog-list-standard-page-recent-follow-us"></div>
+                        <div className="blog-list-standard-page-recent-follow-us">
+                            <H22 className="h22-black-poppins">Follow us</H22>
+                            <EH20/>
+                            {renderSocialMedia()}
+                        </div>
                         <EH40/>
                         <div className="blog-list-standard-page-recent-tags-wrapper">
                             <H22 className="h22-black-poppins">Tags</H22>
+                            <EH20/>
                             {renderTagsList()}
                         </div>
                     </div>

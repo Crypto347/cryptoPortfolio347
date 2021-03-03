@@ -42,9 +42,10 @@ import * as Images from '../../../constants/images';
  * Constants
  */
 
- import {
+import {
     socialMediaIcons
- } from '../../../constants/socialMediaIcons';
+} from '../../../constants/socialMediaIcons';
+
 /**
  * TeamInformationCard component definition and export
  */

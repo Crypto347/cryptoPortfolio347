@@ -67,6 +67,65 @@
     animation: socMedIconHoverOff .3s linear;
 }
 
+.background-for-blog-list-standard-page-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    .blog-list-standard-page-icon-background-curtain {
+        position: absolute;
+        width: 30px;
+        height: 0px;
+        z-index: -1;
+    }
+    .blog-list-standard-page-icon-background-curtain-hover-on {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: black;
+        z-index: -1;
+        -webkit-animation: blogListStandardPageIconBackgroundCurtainHoverOn .2s ease;
+        -moz-animation: blogListStandardPageIconBackgroundCurtainHoverOn .2s ease;
+        -o-animation: blogListStandardPageIconBackgroundCurtainHoverOn .2s ease;
+        animation: blogListStandardPageIconBackgroundCurtainHoverOn .2s ease;
+    }
+    .blog-list-standard-page-icon-background-curtain-hover-off {
+        position: absolute;
+        width: 30px;
+        height: 0px;
+        z-index: -1;
+        background: black;
+        -webkit-animation: blogListStandardPageIconBackgroundCurtainHoverOff .2s ease;
+        -moz-animation: blogListStandardPageIconBackgroundCurtainHoverOff .2s ease;
+        -o-animation: blogListStandardPageIconBackgroundCurtainHoverOff .2s ease;
+        animation: blogListStandardPageIconBackgroundCurtainHoverOff .2s ease;
+    }
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        .soc-med-icon-for-blog {
+            color: black;
+        }
+        .soc-med-icon-for-blog-hover-on {
+            color: rgb(248, 248, 248);
+            -webkit-animation: socMedIconForBlogHoverOn .2s linear;
+            -moz-animation: socMedIconForBlogHoverOn .2s linear;
+            -o-animation: socMedIconForBlogHoverOn .2s linear;
+            animation: socMedIconForBlogHoverOn .2s linear;
+        }
+        .soc-med-icon-for-blog-hover-off {
+            color: black;
+            -webkit-animation: socMedIconForBlogHoverOff .2s linear;
+            -moz-animation: socMedIconForBlogHoverOff .2s linear;
+            -o-animation: socMedIconForBlogHoverOff .2s linear;
+            animation: socMedIconForBlogHoverOff .2s linear;
+        }
+    }
+}
+
 .icon-for-lists-page-section-1 {
     color: black;
 }
@@ -107,4 +166,104 @@
 @keyframes socMedIconHoverOff {
     from{color: rgb(78, 78, 78);}
     to{color: white;}
+}
+
+@-webkit-keyframes socMedIconForBlogHoverOn {
+    from{color: black;}
+    to{color: rgb(248, 248, 248);}
+}
+@-moz-keyframes socMedIconForBlogHoverOn {
+    from{color: black;}
+    to{color: rgb(248, 248, 248);}
+}
+@-o-keyframes socMedIconForBlogHoverOn {
+    from{color: black;}
+    to{color: rgb(248, 248, 248);}
+}
+@keyframes socMedIconForBlogHoverOn {
+    from{color: black;}
+    to{color: rgb(248, 248, 248);}
+}
+
+@-webkit-keyframes socMedIconForBlogHoverOff {
+    from{color: rgb(248, 248, 248);}
+    to{color: black;}
+}
+@-moz-keyframes socMedIconForBlogHoverOff {
+    from{color: rgb(248, 248, 248);}
+    to{color: black;}
+}
+@-o-keyframes socMedIconForBlogHoverOff {
+    from{color: rgb(248, 248, 248);}
+    to{color: black;}
+}
+@keyframes socMedIconForBlogHoverOff {
+    from{color: rgb(248, 248, 248);}
+    to{color: black;}
+}
+
+@-webkit-keyframes blogListStandardPageIconBackgroundCurtainHoverOn {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 30px;
+    }
+}
+@-moz-keyframes blogListStandardPageIconBackgroundCurtainHoverOn {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 30px;
+    }
+}
+@-o-keyframes blogListStandardPageIconBackgroundCurtainHoverOn {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 30px;
+    }
+}
+@keyframes blogListStandardPageIconBackgroundCurtainHoverOn {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 30px;
+    }
+}
+
+@-webkit-keyframes blogListStandardPageIconBackgroundCurtainHoverOff {
+    from{
+        height: 30px;
+    }
+    to{
+        height: 0px;
+    }
+}
+@-moz-keyframes blogListStandardPageIconBackgroundCurtainHoverOff {
+    from{
+        height: 30px;
+    }
+    to{
+        height: 0px;
+    }
+}
+@-o-keyframes blogListStandardPageIconBackgroundCurtainHoverOff {
+    from{
+        height: 30px;
+    }
+    to{
+        height: 0px;
+    }
+}
+@keyframes blogListStandardPageIconBackgroundCurtainHoverOff {
+    from{
+        height: 30px;
+    }
+    to{
+        height: 0px;
+    }
 }

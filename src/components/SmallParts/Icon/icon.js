@@ -59,6 +59,7 @@ export const Icon = (props) => {
     const handleMouseEnter = (opt) => {
         switch(opt){
             case 'socMedIcon':
+            case 'socMedIconForBlog':
                 setSocMedIsHover("on")
                 break;
         }
@@ -67,8 +68,10 @@ export const Icon = (props) => {
     const handleMouseLeave = (opt) => {
         switch(opt){
             case 'socMedIcon':
+            case 'socMedIconForBlog':
                 setSocMedIsHover("off")
                 break;
+    
         }
     }
 
@@ -97,6 +100,26 @@ export const Icon = (props) => {
                     return "soc-med-icon-hover-on";
                 case 'off':
                     return "soc-med-icon-hover-off"
+            }
+        }
+        if(opt === "socMedIconForBlog"){
+            switch(isHovering){
+                case 'init':
+                    return "soc-med-icon-for-blog";
+                case 'on':
+                    return "soc-med-icon-for-blog-hover-on";
+                case 'off':
+                    return "soc-med-icon-for-blog-hover-off"
+            }
+        }
+        if(opt === "socialMediaBackgroundCurtain"){
+            switch(isHovering){
+                case 'init':
+                    return "blog-list-standard-page-icon-background-curtain";
+                case 'on':
+                    return "blog-list-standard-page-icon-background-curtain-hover-on";
+                case 'off':
+                    return "blog-list-standard-page-icon-background-curtain-hover-off"
             }
         }
         if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
@@ -169,9 +192,28 @@ export const Icon = (props) => {
                     size={props.iconSize}
                     className={renderClassName(props.classNameOpt, socMedIsHover)}
                     onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
-                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt): null}
-                    onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName): null}
+                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
+                    onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}
                 />
+            )
+        }
+        if(iconType === "fontAwesomeWithAnimatedBackground"){
+            return(
+                <div 
+                    className={props.classNameBackground}
+                    onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
+                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
+                    onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}
+                >
+                    <div className={renderClassName("socialMediaBackgroundCurtain", socMedIsHover)}/>
+                    <div className="icon-wrapper">
+                        <FontAwesomeIcon 
+                            icon={setIconName(props.icon)} 
+                            size={props.iconSize}
+                            className={renderClassName(props.classNameOpt, socMedIsHover)}
+                        />
+                    </div>
+                </div>
             )
         }
     }
