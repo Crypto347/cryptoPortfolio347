@@ -90,6 +90,7 @@ import BlockquotePage from './Pages/ElementsPages/BlockquotePage/blockquotePage'
 import TextMarqueePage from './Pages/ElementsPages/TextMarqueePage/textMarqueePage';
 import ScrollSliderPage from './Pages/ElementsPages/ScrollSliderPage/scrollSliderPage';
 import PortfolioProjectShowcase from './Pages/ElementsPages/PortfolioProjectShowcase/portfolioProjectShowcase';
+import BlogListStandardPage from './Pages/BlogPages/BlogListStandardPage/blogListStandardPage';
 
 /**
  * Actions
@@ -175,6 +176,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route
+                    exact 
+                    path={props.match.url + "/blog-list-standard"}
+                    component={BlogListStandardPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/portfolio-project-showcase"}

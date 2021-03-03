@@ -55,6 +55,8 @@ export const findPathOfIds = (path) => {
             return [2, 24, 246];
         case 'pinterest-3-columns':
             return [2, 24, 247];
+        case 'blog-list-standard':
+            return [4, 41, 411];
         case 'accordions':
             return [6, 61, 611];
         case 'tabs':
@@ -105,6 +107,7 @@ export const findPathOfIds = (path) => {
             return [6, 64, 642];
         case 'portfolio-project-showcase':
             return [6, 64, 644];
+
     }
 
     //Second element of updatedPath array
