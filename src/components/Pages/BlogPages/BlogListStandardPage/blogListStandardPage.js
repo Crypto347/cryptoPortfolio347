@@ -27,6 +27,7 @@ import './blogListStandardPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import Input from '../../../../library/Input/input';
 import TagItem from '../../../SmallParts/TagItem/tagItem';
 import Icon from '../../../SmallParts/Icon/icon';
 import Footer from '../../../Parts/Footer/footer';
@@ -100,6 +101,11 @@ import {
     socialMediaIcons
 } from '../../../../constants/socialMediaIcons';
 
+import {
+    blogListStandardInputForm
+} from '../../../../constants/inputForm';
+
+
 /**
  * BlogListStandardPage component definition and export
  */
@@ -122,19 +128,23 @@ export const BlogListStandardPage = (props) => {
 
         props.setUnmountComponentValues(false, "");
 
+        // Init imput forms
+
+        props.initInputFormForBlogListStandardPage(blogListStandardInputForm);
+
         // Fetch data for the component
 
-        if(props.highlightsPage.items.length === 0){
-            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                // Fetch mock data (not required to run -> npm run server)
+        // if(props.blogListStandardPage.items.length === 0){
+        //     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+        //         // Fetch mock data (not required to run -> npm run server)
 
-                props.fetchHighlightsPageDataSuccess(FakeData.highlightsPage);
-            }else{
-                // Fetch data (required to run -> npm run server)
+        //         props.fetchHighlightsPageDataSuccess(FakeData.highlightsPage);
+        //     }else{
+        //         // Fetch data (required to run -> npm run server)
 
-                props.fetchHighlightsPageData();
-            }
-        }
+        //         props.fetchHighlightsPageData();
+        //     }
+        // }
 
         // Scroll to the top of the screen
 
@@ -218,6 +228,16 @@ export const BlogListStandardPage = (props) => {
                 </>
             )
         }
+    }
+
+    const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
+        // Uppercase first letter of the input form name
+
+        let updatedInputForm = inputForm.charAt(0).toUpperCase() + inputForm.slice(1);
+
+        // Set input value and check validation
+
+        // props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
     }
 
     const renderCategoriesList = () => {
@@ -362,7 +382,21 @@ export const BlogListStandardPage = (props) => {
                 <div className="blog-list-standard-page-content-info-wrapper">
                     <div className="blog-list-standard-page-content"></div>
                     <div className="blog-list-standard-page-info">
-                        <div className="blog-list-standard-page-info-search"></div>
+                        <div className="blog-list-standard-page-info-search">
+                            {/* <Input
+                                className="blog-list-standard-search"
+                                onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
+                                elementType={el.elementType}
+                                rows={el.elementConfig.rows}
+                                validField={el.validField}
+                                touched={el.touched}
+                                erroeMessages={el.errorMessage}
+                                inputID={el.inputID}
+                                textareaID={el.textareaID}
+                                placeholder={el.elementConfig.placeholder}
+                                options={el.elementConfig.options}
+                            /> */}
+                        </div>
                         <div className="blog-list-standard-page-info-person-info-wrapper">
                             <div className="blog-list-standard-page-info-person-image">
                                 <img src={Images.PHOTO_19}/>
@@ -408,7 +442,7 @@ export const BlogListStandardPage = (props) => {
 export default connect(
     (state) => {
         return {
-            highlightsPage: Selectors.getHighlightsPageState(state),
+            blogListStandardPage: Selectors.getBlogListStandardPageState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };
@@ -420,7 +454,8 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch)
+            setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
         };
     }
 )(BlogListStandardPage);

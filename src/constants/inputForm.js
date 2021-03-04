@@ -160,3 +160,26 @@ export const getContactFormPageSection3InputForm = {
         }
     ]
 }
+
+export const blogListStandardInputForm = {
+    formIsValid: false,
+    inputsArray: [
+        { 
+            id: 1,
+            inputFieldName: "Search",
+            elementType: 'input',
+            elementConfig: {
+                type: 'email',
+                placeholder: ' Search...'
+            },
+            value: '',
+            validation: [],
+            validField: false,
+            touched: false,
+            errorMessage: [],
+            type: "text",
+            inputID: 'input1',
+            controlName: "search"
+        }
+    ]
+}

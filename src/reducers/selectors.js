@@ -540,3 +540,10 @@ export const getPhotoViewerForPortfolioProjectShowcaseOpenState = createSelector
     [getPhotoViewerForPortfolioProjectShowcaseOpen],
     (x) => x
 );
+
+const getBlogListStandardPage = (state) => state.blogListStandardPage;
+
+export const getBlogListStandardPageState = createSelector(
+    [getBlogListStandardPage],
+    (x) => x
+);

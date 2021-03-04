@@ -59,7 +59,8 @@ import dropcapsPageReducer from './dropcapsPageReducer';
 import columnsPageReducer from './columnsPageReducer';
 import blockquotePageReducer from './blockquotePageReducer';
 import scrollSliderPageReducer from './scrollSliderPageReducer';
-import portfolioProjectShowcasePageReducer from './portfolioProjectShowcasePageReducer'
+import portfolioProjectShowcasePageReducer from './portfolioProjectShowcasePageReducer';
+import blogListStandardPageReducer from './blogListStandardPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -117,5 +118,6 @@ export default (history) => combineReducers({
     columnsPage: columnsPageReducer,
     blockquotePage: blockquotePageReducer,
     scrollSliderPage: scrollSliderPageReducer,
-    portfolioProjectShowcasePage: portfolioProjectShowcasePageReducer
+    portfolioProjectShowcasePage: portfolioProjectShowcasePageReducer,
+    blogListStandardPage: blogListStandardPageReducer,
 });

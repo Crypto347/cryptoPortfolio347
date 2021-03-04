@@ -63,16 +63,7 @@ import {
     EH20,
     EH30
 } from '../../../UtilityComponents';
-
-/**
- * Constants
- */
-
- import {
-    getContactFormPageSection1InputForm,
-    getContactFormPageSection2InputForm,
-    getContactFormPageSection3InputForm
- } from '../../../../constants/inputForm';
+ 
 /**
  * Hooks
  */
@@ -80,6 +71,16 @@ import {
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
+
+/**
+ * Constants
+ */
+
+import {
+    getContactFormPageSection1InputForm,
+    getContactFormPageSection2InputForm,
+    getContactFormPageSection3InputForm
+} from '../../../../constants/inputForm';
 
 /**
  * Constants
