@@ -269,7 +269,7 @@ export const BlogListStandardPage = (props) => {
 
     const onClickCategory = (key, path, e) => {
 // console.log(props.match.url)
-        props.history.push(`/crypto-portfolio/blog-list-standard/blog-category/${key}`);
+        props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
         // // Do nothing on right mouse click 
 
         // if(e.button === 2) return;
@@ -494,7 +494,7 @@ export const BlogListStandardPage = (props) => {
                         <Switch>
                             <Route 
                                 exact 
-                                path={props.match.url + "/blog-category/:category"}
+                                path={props.match.url + "/list-standard-blog-category/:category"}
                                 render={(props) => (
                                     <Archive key={props.match.params.category} {...props} />)
                                 }

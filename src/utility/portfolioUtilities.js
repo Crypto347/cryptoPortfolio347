@@ -8,14 +8,11 @@ export const findPathOfIds = (path) => {
     
     switch(updatedPath[0]){
         case 'portfolio-gallery':
-            return [];
         case 'portfolio-category':
-            return [];
         case 'about-us':
-            return [];
         case 'process':
-            return [];
         case 'happy-team':
+        case 'list-standard-blog-category':
             return [];
         case 'two-columns':
             return [2, 22, 221];
@@ -56,7 +53,6 @@ export const findPathOfIds = (path) => {
         case 'pinterest-3-columns':
             return [2, 24, 247];
         case 'blog-list-standard':
-        case 'blog-category':
             return [4, 41, 411];
         case 'accordions':
             return [6, 61, 611];
