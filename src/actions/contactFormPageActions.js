@@ -1,8 +1,8 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function initInputForm(opt, obj) {
+export function initInputFormForContactFormPage(opt, obj) {
     return { 
-        type: actionTypes.INIT_INPUT_FORM,
+        type: actionTypes.INIT_INPUT_FORM_FOR_CONTACT_FORM_PAGE,
         opt: opt,
         obj: obj
     };

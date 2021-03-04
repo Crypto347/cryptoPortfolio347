@@ -113,9 +113,9 @@ export const ContactFormPage = (props) => {
         
         // Init imput forms
 
-        props.initInputForm("section1InputForm", getContactFormPageSection1InputForm);
-        props.initInputForm("section2InputForm", getContactFormPageSection2InputForm);
-        props.initInputForm("section3InputForm", getContactFormPageSection3InputForm);
+        props.initInputFormForContactFormPage("section1InputForm", getContactFormPageSection1InputForm);
+        props.initInputFormForContactFormPage("section2InputForm", getContactFormPageSection2InputForm);
+        props.initInputFormForContactFormPage("section3InputForm", getContactFormPageSection3InputForm);
         
         // Scroll to the top of the screen
 
@@ -614,7 +614,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            initInputForm: bindActionCreators(Actions.initInputForm, dispatch),
+            initInputFormForContactFormPage: bindActionCreators(Actions.initInputFormForContactFormPage, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
             getDirectionContactFormPage: bindActionCreators(Actions.getDirectionContactFormPage, dispatch),
             subscribeContactFormPage: bindActionCreators(Actions.subscribeContactFormPage, dispatch),
