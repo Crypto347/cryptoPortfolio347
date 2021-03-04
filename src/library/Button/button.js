@@ -74,7 +74,7 @@ class Button extends Component {
                     // ref={this.buttonRef}
                     id={this.props.id}
                     // style={{ width: `${this.props.width}`, height: `${this.props.height}`, borderRadius: `${this.props.borderRadius}`}}
-                    >
+                >
                         {this.props.text}
                         {this.props.children}
                 </button>

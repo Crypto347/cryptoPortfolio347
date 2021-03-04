@@ -129,6 +129,26 @@
     }
 }
 
+.blog-list-standard-page-search-icon {
+    color: rgb(155, 155, 155);
+}
+
+.blog-list-standard-page-search-icon-hover-on {
+    color: black;
+    -webkit-animation: blogListStandardPageSearchIconHoverOn .3s linear;
+    -moz-animation: blogListStandardPageSearchIconHoverOn .3s linear;
+    -o-animation: blogListStandardPageSearchIconHoverOn .3s linear;
+    animation: blogListStandardPageSearchIconHoverOn .3s linear;
+}
+
+.blog-list-standard-page-search-icon-hover-off {
+    color: rgb(155, 155, 155);
+    -webkit-animation: blogListStandardPageSearchIconHoverOff .3s linear;
+    -moz-animation: blogListStandardPageSearchIconHoverOff .3s linear;
+    -o-animation: blogListStandardPageSearchIconHoverOff .3s linear;
+    animation: blogListStandardPageSearchIconHoverOff .3s linear;
+}
+
 .icon-for-lists-page-section-1 {
     color: black;
 }
@@ -203,6 +223,40 @@
 @keyframes socMedIconForBlogHoverOff {
     from{color: rgb(248, 248, 248);}
     to{color: black;}
+}
+
+@-webkit-keyframes blogListStandardPageSearchIconHoverOn {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+@-moz-keyframes blogListStandardPageSearchIconHoverOn {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+@-o-keyframes blogListStandardPageSearchIconHoverOn {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+@keyframes blogListStandardPageSearchIconHoverOn {
+    from{color: rgb(155, 155, 155);}
+    to{color: black;}
+}
+
+@-webkit-keyframes blogListStandardPageSearchIconHoverOff {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+@-moz-keyframes blogListStandardPageSearchIconHoverOff {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+@-o-keyframes blogListStandardPageSearchIconHoverOff {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
+}
+@keyframes blogListStandardPageSearchIconHoverOff {
+    from{color: black;}
+    to{color: rgb(155, 155, 155);}
 }
 
 @-webkit-keyframes blogListStandardPageIconBackgroundCurtainHoverOn {

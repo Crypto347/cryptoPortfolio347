@@ -177,7 +177,7 @@ export const blogListStandardInputForm = {
             validField: false,
             touched: false,
             errorMessage: [],
-            type: "text",
+            type: "search",
             inputID: 'input1',
             controlName: "search"
         }

@@ -118,6 +118,7 @@ export const BlogListStandardPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [searchIsHover, setSearchIsHover] = useState("init");
     
     /**
      * Methods
@@ -230,6 +231,22 @@ export const BlogListStandardPage = (props) => {
         }
     }
 
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'searchIcon':
+                setSearchIsHover("on")
+                break;
+        }
+    }
+
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'searchIcon':
+                setSearchIsHover("off")
+                break;
+        }
+    }
+
     const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
         // Uppercase first letter of the input form name
 
@@ -238,6 +255,51 @@ export const BlogListStandardPage = (props) => {
         // Set input value and check validation
 
         // props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
+    }
+
+    const renderSearchForm = () => {
+        console.log(props.blogListStandardPage.inputForm)
+        if(props.blogListStandardPage.inputForm.inputsArray){
+            return(
+                <>{props.blogListStandardPage.inputForm.inputsArray.map((el, i)=>{
+                    return(
+                        <div 
+                            key={i} 
+                            className="blog-list-standard-page-search-wrapper"
+                        >
+                            <Input
+                                className="blog-list-standard-search-input"
+                                onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
+                                elementType={el.elementType}
+                                rows={el.elementConfig.rows}
+                                validField={el.validField}
+                                touched={el.touched}
+                                erroeMessages={el.errorMessage}
+                                inputID={el.inputID}
+                                textareaID={el.textareaID}
+                                placeholder={el.elementConfig.placeholder}
+                                options={el.elementConfig.options}
+                            />
+                            <div
+                                className="blog-list-standard-page-search-button"
+                                onMouseEnter={() => handleMouseEnter("searchIcon")} 
+                                onMouseLeave={() => handleMouseLeave("searchIcon")}
+                            >
+                                <Icon 
+                                    iconType="fontAwesome"
+                                    // iconName={el.name} 
+                                    icon="faSearch"
+                                    iconSize="1x"
+                                    classNameOpt="searchIcon"
+                                    isHover={searchIsHover}
+                                />
+                            </div>
+                        </div>
+                    )
+                })}
+            </>
+            )
+        }
     }
 
     const renderCategoriesList = () => {
@@ -383,20 +445,9 @@ export const BlogListStandardPage = (props) => {
                     <div className="blog-list-standard-page-content"></div>
                     <div className="blog-list-standard-page-info">
                         <div className="blog-list-standard-page-info-search">
-                            {/* <Input
-                                className="blog-list-standard-search"
-                                onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
-                                elementType={el.elementType}
-                                rows={el.elementConfig.rows}
-                                validField={el.validField}
-                                touched={el.touched}
-                                erroeMessages={el.errorMessage}
-                                inputID={el.inputID}
-                                textareaID={el.textareaID}
-                                placeholder={el.elementConfig.placeholder}
-                                options={el.elementConfig.options}
-                            /> */}
+                            {renderSearchForm()}
                         </div>
+                        <EH40/>
                         <div className="blog-list-standard-page-info-person-info-wrapper">
                             <div className="blog-list-standard-page-info-person-image">
                                 <img src={Images.PHOTO_19}/>

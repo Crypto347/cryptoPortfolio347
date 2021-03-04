@@ -34,7 +34,8 @@ import {
     faPen,
     faPaperclip,
     faLaptop,
-    faCoffee
+    faCoffee,
+    faSearch
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -122,6 +123,16 @@ export const Icon = (props) => {
                     return "blog-list-standard-page-icon-background-curtain-hover-off"
             }
         }
+        if(opt === "searchIcon"){
+            switch(isHovering){
+                case 'init':
+                    return "blog-list-standard-page-search-icon";
+                case 'on':
+                    return "blog-list-standard-page-search-icon-hover-on";
+                case 'off':
+                    return "blog-list-standard-page-search-icon-hover-off"
+            }
+        }
         if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
         if(opt === "section2ListsPage") return "icon-for-lists-page-section-2"
     }
@@ -173,6 +184,8 @@ export const Icon = (props) => {
                 return faLaptop;
             case 'faCoffee':
                 return faCoffee;
+            case 'faSearch':
+                return faSearch;
         }
     }
 
@@ -190,7 +203,7 @@ export const Icon = (props) => {
                 <FontAwesomeIcon 
                     icon={setIconName(props.icon)} 
                     size={props.iconSize}
-                    className={renderClassName(props.classNameOpt, socMedIsHover)}
+                    className={renderClassName(props.classNameOpt, props.isHover ? props.isHover : socMedIsHover)}
                     onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
                     onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
                     onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}

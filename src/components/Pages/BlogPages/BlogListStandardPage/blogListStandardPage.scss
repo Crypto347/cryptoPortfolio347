@@ -36,9 +36,16 @@
                 flex-direction: column;
                 padding-left: 40px;
                 // border: 2px solid red;
-                .blog-list-standard-page-info-search {
-                    // border: 2px solid red;
-                }
+                // .blog-list-standard-page-search {
+                    .blog-list-standard-page-search-wrapper {
+                        background: white;
+                        display: flex;
+                        align-items: center;
+                        .blog-list-standard-page-search-button {
+                            cursor: pointer;
+                        }
+                    }
+                // }
                 .blog-list-standard-page-info-person-info-wrapper {
                     .blog-list-standard-page-info-person-image {
                         width: 140px;
