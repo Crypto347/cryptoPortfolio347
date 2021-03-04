@@ -56,6 +56,7 @@ export const findPathOfIds = (path) => {
         case 'pinterest-3-columns':
             return [2, 24, 247];
         case 'blog-list-standard':
+        case 'blog-category':
             return [4, 41, 411];
         case 'accordions':
             return [6, 61, 611];

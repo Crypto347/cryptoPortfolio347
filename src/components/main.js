@@ -178,6 +178,11 @@ export const Main = (props) => {
             <Switch>
                 <Route
                     exact 
+                    path={props.match.url + "/blog-list-standard/blog-category/:category"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
                     path={props.match.url + "/blog-list-standard"}
                     component={BlogListStandardPage}
                 />

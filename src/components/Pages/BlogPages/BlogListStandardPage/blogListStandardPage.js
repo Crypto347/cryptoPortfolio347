@@ -15,6 +15,16 @@ import {
     connect
 } from 'react-redux';
 
+import {
+    Route,
+    Switch,
+    Redirect
+} from 'react-router-dom';
+
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
  * Styles
  */
@@ -257,6 +267,41 @@ export const BlogListStandardPage = (props) => {
         // props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
     }
 
+    const onClickCategory = (key, path, e) => {
+// console.log(props.match.url)
+        props.history.push(`/crypto-portfolio/blog-list-standard/blog-category/${key}`);
+        // // Do nothing on right mouse click 
+
+        // if(e.button === 2) return;
+
+        // // Storing data in local storage 
+
+        // localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
+        // localStorage.setItem("page", "archive");
+        
+        // // Clear archive data 
+
+        // if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
+        //     props.clearArchiveData();
+        // }
+
+        // if(e.button !== 1){
+        //     /**
+        //      * Add fading effect on the unmounted component and remember 
+        //      * information of the unmounted component on left mouse click 
+        //      */ 
+
+        //     props.setUnmountComponentValues(true, path);
+        // }else{
+        //     // Remember information of the unmounted component on scroll wheel click 
+            
+        //     props.setUnmountComponentValues(false, path);
+        // }
+        // // Fire up unmountComponent epic
+
+        // props.unmountComponent(key, path, "archive", e.button);
+    }
+
     const renderSearchForm = () => {
         console.log(props.blogListStandardPage.inputForm)
         if(props.blogListStandardPage.inputForm.inputsArray){
@@ -307,7 +352,10 @@ export const BlogListStandardPage = (props) => {
             <>
                 {categoriesListForBlog.map((el, i) => {
                     return(
-                        <div key={i}>
+                        <div 
+                            key={i}
+                            onMouseDown={(e) => onClickCategory(el.key)}
+                        >
                             <H17 className="h17-black-lustria-cursor-animation">{el.categoryName}</H17>
                             {i !== categoriesListForBlog.length - 1 ? <EH10/> : null}
                         </div>
@@ -442,7 +490,18 @@ export const BlogListStandardPage = (props) => {
                 </div>
                 <div className="grey-line"/>
                 <div className="blog-list-standard-page-content-info-wrapper">
-                    <div className="blog-list-standard-page-content"></div>
+                    <div className="blog-list-standard-page-content">
+                        <Switch>
+                            <Route 
+                                exact 
+                                path={props.match.url + "/blog-category/:category"}
+                                render={(props) => (
+                                    <Archive key={props.match.params.category} {...props} />)
+                                }
+                            />
+                            {/* <Redirect exact from={`${props.match.url + "/blog-category/:category"}`} to={`${props.match.url + "/blog-category/:category"}`}/> */}
+                        </Switch>
+                    </div>
                     <div className="blog-list-standard-page-info">
                         <div className="blog-list-standard-page-info-search">
                             {renderSearchForm()}
@@ -509,5 +568,5 @@ export default connect(
             initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
         };
     }
-)(BlogListStandardPage);
+)(withRouter(BlogListStandardPage));
  
