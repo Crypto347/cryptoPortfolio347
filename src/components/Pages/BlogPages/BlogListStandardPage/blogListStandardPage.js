@@ -289,7 +289,7 @@ export const BlogListStandardPage = (props) => {
                                     iconType="fontAwesome"
                                     // iconName={el.name} 
                                     icon="faSearch"
-                                    iconSize="1x"
+                                    iconSize="lg"
                                     classNameOpt="searchIcon"
                                     isHover={searchIsHover}
                                 />

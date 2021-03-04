@@ -204,26 +204,6 @@
     }
 }
 
-.blog-list-standard-search-button {
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: black;
-    color: white;
-    border: none;
-    width: 225px;
-    height: 60px;
-    z-index: 500;
-    animation-delay: 4s;
-    animation-fill-mode: both;
-    cursor: pointer;
-    &:hover {
-        background: transparent;
-        border: 2px solid black;
-        color: black;
-    }
-}
-
 .header-get-direction:focus {
     outline: none; 
 }
