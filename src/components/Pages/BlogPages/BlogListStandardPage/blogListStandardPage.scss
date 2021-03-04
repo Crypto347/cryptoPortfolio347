@@ -25,15 +25,17 @@
             display: flex;
             flex-wrap: wrap;
             padding: 90px 130px 90px 130px;
+            background: rgb(248, 248, 248);
             .blog-list-standard-page-content {
                 width: calc(75% - 4px);
                 border: 2px solid red;
             }
             .blog-list-standard-page-info {
-                width: calc(25% - 50px);
+                width: calc(25% - 44px);
                 display: flex;
                 flex-direction: column;
-                padding-left: 50px;
+                padding-left: 40px;
+                // border: 2px solid red;
                 .blog-list-standard-page-info-search {
                     // border: 2px solid red;
                 }
@@ -63,7 +65,9 @@
                     }
                 }
                 .blog-list-standard-page-tags-wrapper {
-
+                    .blog-list-standard-page-tag {
+                        display: inline-flex;
+                    }
                 }
             }
         }

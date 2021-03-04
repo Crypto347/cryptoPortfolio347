@@ -27,6 +27,7 @@ import './blogListStandardPage.scss';
 
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
+import TagItem from '../../../SmallParts/TagItem/tagItem';
 import Icon from '../../../SmallParts/Icon/icon';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
@@ -226,6 +227,7 @@ export const BlogListStandardPage = (props) => {
                     return(
                         <div key={i}>
                             <H17 className="h17-black-lustria-cursor-animation">{el.categoryName}</H17>
+                            {i !== categoriesListForBlog.length - 1 ? <EH10/> : null}
                         </div>
                     )
                 })}
@@ -240,9 +242,11 @@ export const BlogListStandardPage = (props) => {
                     return(
                         <div
                             key={i}
-                            // className="blog-list-standard-page-tag"
+                            className="blog-list-standard-page-tag"
                         >
-                            <H17 className="h17-black-lustria">{el.tagName}</H17>
+                            <TagItem
+                               tagName={el.tagName} 
+                            />
                         </div>
                     )
                 })}
