@@ -198,7 +198,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-sub-option-item"
-                            onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e)}
+                            onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e, props.data.id)}
                         >
                             <div 
                                 className={renderClassName("text", el.isHover, el.active)}

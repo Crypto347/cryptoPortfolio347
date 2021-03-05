@@ -153,7 +153,7 @@ export const Toolbar = (props) => {
         }
     }
 
-    const itemOnClick = (opt, path, pathOfIds, e) => {
+    const itemOnClick = (opt, path, pathOfIds, e, idOfFirstObj) => {
         // Do nothing on right mouse click
 
         if(e.button === 2) return;
@@ -172,7 +172,7 @@ export const Toolbar = (props) => {
              */
 
             switch(opt){
-                case 'optionItem': 
+                case 'optionItem':
                     currentItemId = props.menuItems
                         .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
@@ -188,21 +188,30 @@ export const Toolbar = (props) => {
                         }
                     break;
                 case 'subOptionItem': 
-                // !!!need to updated portfolioUtility
-                    // currentItemId = props.menuItems
-                    //     .find(item => item.active === true)?.options
-                    //     .find(item => item.active === true).array
-                    //     .find(item => item.active === true).subOptions
-                    //     .find(item => item.active === true).id;
-                     
-                    //     if(currentItemId === pathOfIds[2]){
-                    //         return;
-                    //     }else{
+                    let updatedPathOfIds = [...pathOfIds];
+                    let currentItemId;
+                    updatedPathOfIds.unshift(idOfFirstObj);
+                    // !!!need to updated portfolioUtility
+                    // let obj = props.menuItems
+                        // .find(item => item.active === true)?.options
+                        // .find(item => item.active === true).array
+                        // .find(item => item.active === true).subOptions
+                    // 
+                    let suboptions = props.menuItems
+                        .find(item => item.active === true)?.options
+                        .find(item => item.active === true).array
+                        .find(item => item.active === true).subOptions;
+
+                        if(suboptions.length !== 0) currentItemId = suboptions.find(item => item.active === true).id
+                        
+                        if(currentItemId === updatedPathOfIds[3]){
+                            return;
+                        }else{
                             props.setUnmountComponentValues(true, path);
                             props.setHistoryPopFromPortfolioItem("scrollToTop");
                             props.clearActivityOfMenuItems();
                             props.setActivityOfToolbarSubOptionItem(pathOfIds);
-                        // }
+                        }
                     break;
             }
         }else{
@@ -632,7 +641,7 @@ export const Toolbar = (props) => {
                         showOptionsRegular={showOptionsLessThan3Regular}
                         onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                         onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                        itemOnClick={(opt, path, pathOfIds, e) => itemOnClick(opt, path, pathOfIds, e)}
+                        itemOnClick={(opt, path, pathOfIds, e, idOfFirstObj) => itemOnClick(opt, path, pathOfIds, e, idOfFirstObj)}
                         renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                         data={el}
                     />

@@ -669,6 +669,8 @@ const activateMenuItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[1]).array
             .find(item => item.id === action.pathOfIds[2]).subOptions
             .splice(subOptionItemIndex, 1, subOptionItem);
+
+            console.log("reducer",updatedMenuItems)
     }
    
     return {
