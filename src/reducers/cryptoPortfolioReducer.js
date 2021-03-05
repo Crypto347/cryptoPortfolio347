@@ -669,8 +669,6 @@ const activateMenuItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[1]).array
             .find(item => item.id === action.pathOfIds[2]).subOptions
             .splice(subOptionItemIndex, 1, subOptionItem);
-
-            console.log("reducer",updatedMenuItems)
     }
    
     return {
@@ -690,6 +688,7 @@ const clearActivityOfMenuItems = (state, action) => {
                 updatedMenuItems[i].options[i2].array[i3].active = false;
                 updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
                     updatedMenuItems[i].options[i2].array[i3].subOptions[i4].active = false;
+                    // debugger
                 })
             })
         })

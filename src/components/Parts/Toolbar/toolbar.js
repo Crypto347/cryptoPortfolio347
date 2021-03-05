@@ -161,8 +161,6 @@ export const Toolbar = (props) => {
         if(e.button !== 1){
             // Menu option or suboption on left mouse click
 
-            let currentItemId;
-
             /**
              * Check if the menu option or suboption is active. If it is active,
              * do nothing, and if it is inactive, initialize and clean some
@@ -191,19 +189,14 @@ export const Toolbar = (props) => {
                     let updatedPathOfIds = [...pathOfIds];
                     let currentItemId;
                     updatedPathOfIds.unshift(idOfFirstObj);
-                    // !!!need to updated portfolioUtility
-                    // let obj = props.menuItems
-                        // .find(item => item.active === true)?.options
-                        // .find(item => item.active === true).array
-                        // .find(item => item.active === true).subOptions
-                    // 
+                    
                     let suboptions = props.menuItems
                         .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
                         .find(item => item.active === true).subOptions;
 
                         if(suboptions.length !== 0) currentItemId = suboptions.find(item => item.active === true).id
-                        
+
                         if(currentItemId === updatedPathOfIds[3]){
                             return;
                         }else{
