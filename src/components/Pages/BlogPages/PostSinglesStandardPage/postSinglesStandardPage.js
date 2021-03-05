@@ -29,7 +29,7 @@ import {
  * Styles
  */
 
-import './blogListStandardPage.scss';
+import './postSinglesStandardPage.scss';
 
 /**
  * Components
@@ -117,10 +117,10 @@ import {
 
 
 /**
- * BlogListStandardPage component definition and export
+ * PostSinglesStandardPage component definition and export
  */
 
-export const BlogListStandardPage = (props) => {
+export const PostSinglesStandardPage = (props) => {
 
     /**
      * State
@@ -567,5 +567,5 @@ export default connect(
             initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
         };
     }
-)(withRouter(BlogListStandardPage));
+)(withRouter(PostSinglesStandardPage));
  

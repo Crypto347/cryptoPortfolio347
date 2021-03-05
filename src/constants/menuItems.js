@@ -684,7 +684,7 @@ export const menuItemsArray = [
                                 id: 4151,
                                 text: "Standard",
                                 itemId: "standard",
-                                path: "empowering-leaders-to-live-life-on-purpose",
+                                path: "blog-item/standard-post/1",
                                 active: false,
                                 isHover: "init",
                                 subOptions: []

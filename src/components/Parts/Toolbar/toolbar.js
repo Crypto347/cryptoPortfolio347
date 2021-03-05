@@ -189,19 +189,20 @@ export const Toolbar = (props) => {
                     break;
                 case 'subOptionItem': 
                 // !!!need to updated portfolioUtility
-                    currentItemId = props.menuItems
-                        .find(item => item.active === true)?.options
-                        .find(item => item.active === true).array
-                        .find(item => item.active === true).subOptions
-                        .find(item => item.active === true).id;
-                        if(currentItemId === pathOfIds[2]){
-                            return;
-                        }else{
+                    // currentItemId = props.menuItems
+                    //     .find(item => item.active === true)?.options
+                    //     .find(item => item.active === true).array
+                    //     .find(item => item.active === true).subOptions
+                    //     .find(item => item.active === true).id;
+                     
+                    //     if(currentItemId === pathOfIds[2]){
+                    //         return;
+                    //     }else{
                             props.setUnmountComponentValues(true, path);
                             props.setHistoryPopFromPortfolioItem("scrollToTop");
                             props.clearActivityOfMenuItems();
                             props.setActivityOfToolbarSubOptionItem(pathOfIds);
-                        }
+                        // }
                     break;
             }
         }else{
