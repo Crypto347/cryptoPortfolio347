@@ -114,6 +114,7 @@ import {
 import {
     blogListStandardInputForm
 } from '../../../../constants/inputForm';
+import { iif } from 'rxjs';
 
 
 /**
@@ -171,7 +172,7 @@ export const BlogListStandardPage = (props) => {
         // Event Listeners
 
         window.addEventListener('wheel', handleOnWheel);
-
+        
         return () => {
             // Cleaning the unmounted component
 
@@ -305,7 +306,7 @@ export const BlogListStandardPage = (props) => {
   
         //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
           
-        props.activateListStandardBlogCategory(true, key)
+        props.activateListStandardBlogCategory("active", key)
         props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
 
     }
@@ -355,7 +356,6 @@ export const BlogListStandardPage = (props) => {
     }
 
     const renderClassName = (opt, isHovering, active) => {
-        console.log(active)
         if(opt === "blogCategory"){
             if(active === "on"){
                 return "blog-list-standard-page-active-category";

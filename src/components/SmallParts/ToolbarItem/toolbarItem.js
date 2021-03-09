@@ -112,7 +112,7 @@ export const ToolbarItem = (props) => {
                             <div 
                                 key={i} 
                                 className="toolbar-option-item"
-                                onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e)}
+                                onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e, null, el.itemId)}
                             >
                                 <div 
                                     className={renderClassName("text", el.isHover, el.active)}

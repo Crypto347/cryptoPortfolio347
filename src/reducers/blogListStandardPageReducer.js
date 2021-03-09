@@ -26,7 +26,7 @@ export const initialState = {
         error: null
     },
     activeCategory: {
-        activated: false,
+        activated: "init",
         categoryName: ""
     },
     categoriesList: [],

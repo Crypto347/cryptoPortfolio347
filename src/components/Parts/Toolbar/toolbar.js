@@ -153,7 +153,7 @@ export const Toolbar = (props) => {
         }
     }
 
-    const itemOnClick = (opt, path, pathOfIds, e, idOfFirstObj) => {
+    const itemOnClick = (opt, path, pathOfIds, e, idOfFirstObj, itemId) => {
         // Do nothing on right mouse click
 
         if(e.button === 2) return;
@@ -175,11 +175,18 @@ export const Toolbar = (props) => {
                         .find(item => item.active === true)?.options
                         .find(item => item.active === true).array
                         .find(item => item.active === true).id;
-
+                       
+                        
+                        console.log("JJ",pathOfIds)
                         if(currentItemId === pathOfIds[1]){
                             return;
                         }else{
-                            props.setUnmountComponentValues(true, path);
+                            if(itemId === "blogListStandard" && props.blogListStandardPage.activeCategory.activated === "active"){
+                                props.activateListStandardBlogCategory("deactive", "");
+                                props.setUnmountComponentValues(false, path);
+                            }else{
+                                props.setUnmountComponentValues(true, path);
+                            }
                             props.setHistoryPopFromPortfolioItem("scrollToTop");
                             props.clearActivityOfMenuItems();
                             props.setActivityOfToolbarOptionItem(pathOfIds);
@@ -639,7 +646,7 @@ export const Toolbar = (props) => {
                         showOptionsRegular={showOptionsLessThan3Regular}
                         onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                         onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                        itemOnClick={(opt, path, pathOfIds, e, idOfFirstObj) => itemOnClick(opt, path, pathOfIds, e, idOfFirstObj)}
+                        itemOnClick={(opt, path, pathOfIds, e, idOfFirstObj, itemId) => itemOnClick(opt, path, pathOfIds, e, idOfFirstObj, itemId)}
                         renderClassName={(opt, isHover) => handleMouseLeaveToolbarOptionItem(opt, isHover)}
                         data={el}
                     />
@@ -730,7 +737,8 @@ export default connect(
     (state) => {
         return {
             menuItems: Selectors.getMenuItemsState(state),
-            sidebarState: Selectors.getSidebarStateState(state)
+            sidebarState: Selectors.getSidebarStateState(state),
+            blogListStandardPage: Selectors.getBlogListStandardPageState(state),
         };
     },
     (dispatch) => {
@@ -746,7 +754,8 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
+            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
         };
     }
 )(withRouter(Toolbar));
