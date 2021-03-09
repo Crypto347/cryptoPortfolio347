@@ -186,25 +186,30 @@ export const Toolbar = (props) => {
                         }
                     break;
                 case 'subOptionItem': 
-                    let updatedPathOfIds = [...pathOfIds];
                     let currentItemId;
+                    let updatedPathOfIds = [...pathOfIds];
+
                     updatedPathOfIds.unshift(idOfFirstObj);
-                    
-                    let suboptions = props.menuItems
-                        .find(item => item.active === true)?.options
-                        .find(item => item.active === true).array
-                        .find(item => item.active === true).subOptions;
 
-                        if(suboptions.length !== 0) currentItemId = suboptions.find(item => item.active === true).id
+                    let menuItemIsActive = props.menuItems.filter(item => item.active === true);
 
-                        if(currentItemId === updatedPathOfIds[3]){
-                            return;
-                        }else{
-                            props.setUnmountComponentValues(true, path);
-                            props.setHistoryPopFromPortfolioItem("scrollToTop");
-                            props.clearActivityOfMenuItems();
-                            props.setActivityOfToolbarSubOptionItem(pathOfIds);
-                        }
+                    if(menuItemIsActive.length !== 0){
+                        let suboptions = props.menuItems
+                            .find(item => item.active === true)?.options
+                            .find(item => item.active === true).array
+                            .find(item => item.active === true).subOptions;
+
+                        if(suboptions.length !== 0) currentItemId = suboptions.find(item => item.active === true).id;
+                    }              
+                  
+                    if(currentItemId === updatedPathOfIds[3]){
+                        return;
+                    }else{
+                        props.setUnmountComponentValues(true, path);
+                        props.setHistoryPopFromPortfolioItem("scrollToTop");
+                        props.clearActivityOfMenuItems();
+                        props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                    }
                     break;
             }
         }else{

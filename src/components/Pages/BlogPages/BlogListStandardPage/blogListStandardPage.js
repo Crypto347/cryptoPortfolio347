@@ -143,6 +143,11 @@ export const BlogListStandardPage = (props) => {
 
         props.initInputFormForBlogListStandardPage(blogListStandardInputForm);
 
+        // Init blog categories and tags lists
+
+        props.initCategoriesForBlogListStandardPage(categoriesListForBlog);
+        props.initTagsForBlogListStandardPage(tagsListForBlog);
+
         // Fetch data for the component
 
         // if(props.blogListStandardPage.items.length === 0){
@@ -268,38 +273,41 @@ export const BlogListStandardPage = (props) => {
     }
 
     const onClickCategory = (key, path, e) => {
-// console.log(props.match.url)
+
+          // Do nothing on right mouse click 
+
+          if(e.button === 2) return;
+
+          // Storing data in local storage 
+  
+        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
+        //   localStorage.setItem("page", "archive");
+          
+          // Clear archive data 
+  
+        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
+        //       props.clearArchiveData();
+        //   }
+  
+          if(e.button !== 1){
+              /**
+               * Add fading effect on the unmounted component and remember 
+               * information of the unmounted component on left mouse click 
+               */ 
+  
+            //   props.setUnmountComponentValues(true, path);
+          }else{
+              // Remember information of the unmounted component on scroll wheel click 
+              
+            //   props.setUnmountComponentValues(false, path);
+          }
+          // Fire up unmountComponent epic
+  
+        //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
+          
+        props.activateListStandardBlogCategory(true, key)
         props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
-        // // Do nothing on right mouse click 
 
-        // if(e.button === 2) return;
-
-        // // Storing data in local storage 
-
-        // localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
-        // localStorage.setItem("page", "archive");
-        
-        // // Clear archive data 
-
-        // if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
-        //     props.clearArchiveData();
-        // }
-
-        // if(e.button !== 1){
-        //     /**
-        //      * Add fading effect on the unmounted component and remember 
-        //      * information of the unmounted component on left mouse click 
-        //      */ 
-
-        //     props.setUnmountComponentValues(true, path);
-        // }else{
-        //     // Remember information of the unmounted component on scroll wheel click 
-            
-        //     props.setUnmountComponentValues(false, path);
-        // }
-        // // Fire up unmountComponent epic
-
-        // props.unmountComponent(key, path, "archive", e.button);
     }
 
     const renderSearchForm = () => {
@@ -346,16 +354,27 @@ export const BlogListStandardPage = (props) => {
         }
     }
 
+    const renderClassName = (opt, isHovering, active) => {
+        console.log(active)
+        if(opt === "blogCategory"){
+            if(active === "on"){
+                return "blog-list-standard-page-active-category";
+            }else{
+                return "h17-black-lustria-cursor-animation";
+            }
+        }
+    }
+
     const renderCategoriesList = () => {
         return(
             <>
-                {categoriesListForBlog.map((el, i) => {
+                {props.blogListStandardPage.categoriesList.map((el, i) => {
                     return(
                         <div 
                             key={i}
-                            onMouseDown={(e) => onClickCategory(el.key)}
+                            onMouseDown={(e) => onClickCategory(el.key, null, e)}
                         >
-                            <H17 className="h17-black-lustria-cursor-animation">{el.categoryName}</H17>
+                            <H17 className={renderClassName("blogCategory", el.isHover, el.active)}>{el.categoryName}</H17>
                             {i !== categoriesListForBlog.length - 1 ? <EH10/> : null}
                         </div>
                     )
@@ -367,7 +386,7 @@ export const BlogListStandardPage = (props) => {
     const renderTagsList = () => {
         return(
             <>
-                {tagsListForBlog.map((el, i) => {
+                {props.blogListStandardPage.tagsList.map((el, i) => {
                     return(
                         <div
                             key={i}
@@ -565,6 +584,9 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
+            initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

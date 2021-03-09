@@ -64,7 +64,14 @@
 
                 }
                 .blog-list-standard-page-categories-wrapper {
-
+                    .blog-list-standard-page-active-category {
+                        font-size: 17px;
+                        color: black;
+                        border-bottom: 1px solid black;
+                        font-family: 'Lustria', serif;
+                        display: inline-flex;
+                        cursor: pointer;
+                    }
                 }
                 .blog-list-standard-page-follow-us {
                     .blog-list-standard-page-icons {

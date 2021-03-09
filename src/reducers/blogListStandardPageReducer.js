@@ -24,7 +24,13 @@ export const initialState = {
         item: {},
         loading: false,
         error: null
-    }
+    },
+    activeCategory: {
+        activated: false,
+        categoryName: ""
+    },
+    categoriesList: [],
+    tagsList: []
 }
 
 const initInputFormForBlogListStandardPage = (state, action) => {
@@ -34,375 +40,59 @@ const initInputFormForBlogListStandardPage = (state, action) => {
     }
 } 
 
-const setInputFiledValueAndCheckValidation = (state, action) => {
-    let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
-    let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
-    let inputFieldIndex = updatedInputFieldObj.inputsArray.findIndex(x => x.id === action.inputFieldId);
-    inputField = {
-        ...inputField, 
-        value: action.event.target.value,
-        validation: Utility.checkValidity(action.event.target.value, inputField.validation),
-        touched: true
+const activateListStandardBlogCategory = (state, action) => {
+    let updatedActiveCategory = {
+        ...state.activeCategory,
+        activated: action.categoryIsActive,
+        categoryName: action.categoryName
     };
 
-    inputField = {
-        ...inputField, 
-        errorMessage: Utility.errorMessages(inputField.inputFieldName, inputField.validation),
-        validField: Utility.checkValidityOfField(inputField.validation),
-    }
-   
-    updatedInputFieldObj.inputsArray.splice(inputFieldIndex, 1, inputField)
+    let updatedCategoryList = [...state.categoriesList];
 
-    let checkIfFormIsValid = updatedInputFieldObj.inputsArray.map(el => el.validField === true);
-    updatedInputFieldObj = {...updatedInputFieldObj, formIsValid: checkIfFormIsValid.every(x => x === true)};
-
-    switch(action.formName) {
-        case 'section1InputForm':
-            return {
-                ...state,
-                section1: {
-                    ...state.section1,
-                    inputForm: updatedInputFieldObj
-                }
-            };
-        case 'section2InputForm':
-            return {
-                ...state,
-                section2: {
-                    ...state.section2,
-                    inputForm: updatedInputFieldObj
-                }
-            };
-        case 'section3InputForm':
-            return {
-                ...state,
-                section3: {
-                    ...state.section3,
-                    inputForm: updatedInputFieldObj
-                }
-            };
-        default:
-            return {...state}
-    }
-}
-
-const getDirectionContactFormPage = (state, action) => {
-    let updatedSection1InputForm = {...state.section1.inputForm, inputsArray: [...state.section1.inputForm.inputsArray]};
-
-    if(state.section1.inputForm.formIsValid && state.section1.inputForm.inputsArray){
-        // let info = {
-        //     id: uuid(),
-        //     fullName: `${state.section1.inputForm.inputsArray.find(x => x.controlName === "fullName").value}`,
-        //     company: `${state.section1.inputForm.inputsArray.find(x => x.controlName === "company").value}`,
-        //     email: `${state.section1.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-        //     // date: Utility.getCurrentDateAndTime(),
-        //     phone: `${state.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
-        // }
-        // updatedSingleStory.comments.push(comment);
-        // updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
-        
-        updatedSection1InputForm.formIsValid = false;
-        updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {
-            return {
-                ...el, 
-                value: '', 
-                validField: el.validation.length !== 0 ? false : true, 
-                touched: false,
-                validation: el.validation.map(el2 => {
-                    return{
-                        ...el2,
-                        valid: false
-                    }
-                })
-            }
-        });
-    }else{
-        updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map((el, i) => {
-            if(Utility.checkValidityOfField(el.validation)){
-                return {
-                    ...el, 
-                    touched: false,
-                    errorMessage: []
-                }
-            }else{
-                return {
-                    ...el, 
-                    touched: true,
-                    errorMessage: ["Fill the field"]
-                }
-            }
-        })
-    }
-    return {
-        ...state,
-        section1: {
-            ...state.section1,
-            inputForm: updatedSection1InputForm
+    updatedCategoryList = updatedCategoryList.map(el => {
+        return {
+            ...el,
+            active: "off"
         }
-    }; 
-}
+    })
 
-const subscribeContactFormPage = (state, action) => {
-    let updatedSection2InputForm = {...state.section2.inputForm, inputsArray: [...state.section2.inputForm.inputsArray]};
-
-    if(state.section2.inputForm.formIsValid && state.section2.inputForm.inputsArray){
-        // let info = {
-        //     id: uuid(),
-        //     email: `${state.section2.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-        //     // date: Utility.getCurrentDateAndTime(),t
-        // }
-        // updatedSingleStory.comments.push(comment);
-        // updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
-        
-        updatedSection2InputForm.formIsValid = false;
-        updatedSection2InputForm.inputsArray = updatedSection2InputForm.inputsArray.map(el => {
-            return {
-                ...el, 
-                value: '', 
-                validField: el.validation.length !== 0 ? false : true, 
-                touched: false,
-                validation: el.validation.map(el2 => {
-                    return{
-                        ...el2,
-                        valid: false
-                    }
-                })
-            }
-        });
-    }else{
-        updatedSection2InputForm.inputsArray = updatedSection2InputForm.inputsArray.map((el, i) => {
-            if(Utility.checkValidityOfField(el.validation)){
-                return {
-                    ...el, 
-                    touched: false,
-                    errorMessage: []
-                }
-            }else{
-                return {
-                    ...el, 
-                    touched: true,
-                    errorMessage: ["Fill the field"]
-                }
-            }
-        })
-    }
-    return {
-        ...state,
-        section2: {
-            ...state.section2,
-            inputForm: updatedSection2InputForm
-        }
-    }; 
-}
-
-const submitContactFormPage = (state, action) => {
-    let updatedSection3InputForm = {...state.section3.inputForm, inputsArray: [...state.section3.inputForm.inputsArray]};
+    let category = {...updatedCategoryList.find(item => item.key === action.categoryName), active: "on"};
+    let categoryIndex = updatedCategoryList.findIndex(item => item.key === action.categoryName);
     
-    if(state.section3.inputForm.formIsValid && state.section3.inputForm.inputsArray){
-        // let info = {
-        //     id: uuid(),
-        //     email: `${state.section3.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-        //     // date: Utility.getCurrentDateAndTime(),t
-        // }
-        // updatedSingleStory.comments.push(comment);
-        // updatedSection1InputForm.inputsArray = updatedSection1InputForm.inputsArray.map(el => {return {...el, value: ''}});
-        
-        updatedSection3InputForm.formIsValid = false;
-        updatedSection3InputForm.inputsArray = updatedSection3InputForm.inputsArray.map(el => {
-            return {
-                ...el, 
-                value: '', 
-                validField: el.validation.length !== 0 ? false : true, 
-                touched: false,
-                validation: el.validation.map(el2 => {
-                    return{
-                        ...el2,
-                        valid: false
-                    }
-                })
-            }
-        });
-    }else{
-        updatedSection3InputForm.inputsArray = updatedSection3InputForm.inputsArray.map((el, i) => {
-            if(Utility.checkValidityOfField(el.validation)){
-                return {
-                    ...el, 
-                    touched: false,
-                    errorMessage: []
-                }
-            }else{
-                return {
-                    ...el, 
-                    touched: true,
-                    errorMessage: ["Fill the field"]
-                }
-            }
-        })
+    updatedCategoryList.splice(categoryIndex, 1, category)
+    console.log(updatedCategoryList)
+
+    return {
+        ...state,
+        activeCategory: updatedActiveCategory,
+        categoriesList: updatedCategoryList
     }
+} 
+
+const initCategoriesForBlogListStandardPage = (state, action) => {
     return {
         ...state,
-        section3: {
-            ...state.section3,
-            inputForm: updatedSection3InputForm
-        }
-    }; 
+        categoriesList: action.array
+    }
 }
 
-const fetchGetDirectionContactFormPageBegin = (state, action) => {
-    let updateSection1Data = {
-        ...state.section1,
-        getDirectionResponse: {
-            ...state.section1.getDirectionResponse,
-            loading: true,
-            error: null
-        }
-    };
-
+const initTagsForBlogListStandardPage = (state, action) => {
     return {
         ...state,
-        section1: updateSection1Data
-    };
-}
-
-const fetchGetDirectionContactFormPageSuccess = (state, action) => {
-    let updateSection1Data = {
-        ...state.section1,
-        getDirectionResponse: {
-            ...state.section1.getDirectionResponse,
-            loading: false,
-            item: action.obj
-        }
-    };
-    
-    return {
-        ...state,
-        section1: updateSection1Data
-    };
-}
-
-const fetchGetDirectionContactFormPageFailur = (state, action) => {
-    let updateSection1Data = {
-        ...state.section1,
-        getDirectionResponse: {
-            ...state.section1.getDirectionResponse,
-            loading: false,
-            error: action.err,
-            item: {}
-        }
-    };
-
-    return {
-        ...state,
-        section1: updateSection1Data
-    };
-}
-
-const fetchSubscribeContactFormPageBegin = (state, action) => {
-    let updateSection2Data = {
-        ...state.section2,
-        subscribeResponse: {
-            ...state.section2.subscribeResponse,
-            loading: true,
-            error: null
-        }
-    };
-
-    return {
-        ...state,
-        section2: updateSection2Data
-    };
-}
-
-const fetchSubscribeContactFormPageSuccess = (state, action) => {
-    let updateSection2Data = {
-        ...state.section2,
-        subscribeResponse: {
-            ...state.section2.subscribeResponse,
-            loading: false,
-            item: action.obj
-        }
-    };
-
-    return {
-        ...state,
-        section2: updateSection2Data
-    };
-}
-
-const fetchSubscribeContactFormPageFailur = (state, action) => {
-    let updateSection2Data = {
-        ...state.section2,
-        subscribeResponse: {
-            ...state.section2.subscribeResponse,
-            loading: false,
-            error: action.err,
-            item: {}
-        }
-    };
-    return {
-        ...state,
-        section2: updateSection2Data
-    };
-}
-
-const fetchSubmitContactFormPageBegin = (state, action) => {
-    let updateSection3Data = {
-        ...state.section3,
-        submitResponse: {
-            ...state.section3.submitResponse,
-            loading: true,
-            error: null
-        }
-    };
-
-    return {
-        ...state,
-        section3: updateSection3Data
-    };
-}
-
-const fetchSubmitContactFormPageSuccess = (state, action) => {
-    let updateSection3Data = {
-        ...state.section3,
-        submitResponse: {
-            ...state.section3.submitResponse,
-            loading: false,
-            item: action.obj
-        }
-    };
-
-    return {
-        ...state,
-        section3: updateSection3Data
-    };
-}
-
-const fetchSubmitContactFormPageFailur = (state, action) => {
-    let updateSection3Data = {
-        ...state.section3,
-        submitResponse: {
-            ...state.section3.submitResponse,
-            loading: false,
-            error: action.err,
-            item: {}
-        }
-    };
-    return {
-        ...state,
-        section3: updateSection3Data
-    };
+        tagsList: action.array
+    }
 }
 
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
             return initInputFormForBlogListStandardPage (state, action);
-        // case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
-        //     return setInputFiledValueAndCheckValidation (state, action);
-        // case actionTypes.GET_DIRECTION_CONTACT_FORM_PAGE:
-        //     return getDirectionContactFormPage (state, action);
-        // case actionTypes.SUBSCRIBE_CONTACT_FORM_PAGE:
-        //     return subscribeContactFormPage (state, action);
+        case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_CATEGORY:
+            return activateListStandardBlogCategory (state, action);
+        case actionTypes.INIT_CATEGORIES_FOR_BLOG_LISTS_STANDARD_PAGE:
+            return initCategoriesForBlogListStandardPage (state, action);
+        case actionTypes.INIT_TAGS_FOR_BLOG_LISTS_STANDARD_PAGE:
+            return initTagsForBlogListStandardPage (state, action);
         // case actionTypes.SUBMIT_CONTACT_FORM_PAGE:
         //     return submitContactFormPage (state, action);
         // case actionTypes.FETCH_GET_DIRECTION_CONTACT_FORM_PAGE_BEGIN:

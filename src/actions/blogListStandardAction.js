@@ -7,22 +7,24 @@ export function initInputFormForBlogListStandardPage(obj) {
     };
 };
 
-// export function fetchBlockquotePageDataBegin() {
-//     return { 
-//         type: actionTypes.FETCH_BLOCKQUOTE_PAGE_DATA_BEGIN
-//     };
-// };
+export function activateListStandardBlogCategory(categoryIsActive, categoryName) {
+    return { 
+        type: actionTypes.ACTIVATE_LIST_STANDARD_BLOG_CATEGORY,
+        categoryIsActive: categoryIsActive,
+        categoryName: categoryName
+    };
+};
 
-// export function fetchBlockquotePageDataSuccess(array) {
-//     return { 
-//         type: actionTypes.FETCH_BLOCKQUOTE_PAGE_DATA_SUCCESS,
-//         array: array
-//     };
-// };
+export function initCategoriesForBlogListStandardPage(array) {
+    return { 
+        type: actionTypes.INIT_CATEGORIES_FOR_BLOG_LISTS_STANDARD_PAGE,
+        array: array
+    };
+};
 
-// export function fetchBlockquotePageDataFailur(err) {
-//     return { 
-//         type: actionTypes.FETCH_BLOCKQUOTE_PAGE_DATA_FAILURE,
-//         err: err
-//     };
-// };
+export function initTagsForBlogListStandardPage(array) {
+    return { 
+        type: actionTypes.INIT_TAGS_FOR_BLOG_LISTS_STANDARD_PAGE,
+        array: array
+    };
+};
