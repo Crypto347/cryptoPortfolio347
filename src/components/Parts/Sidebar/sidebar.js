@@ -72,7 +72,7 @@ export const Sidebar = (props) => {
         setShowOptions(false);
     }
 
-    const itemOnClick = (opt, path, pathOfIds, e) => {
+    const itemOnClick = (opt, path, pathOfIds, e, idOfFirstObj, itemId) => {
         // Do nothing on right mouse click
 
         if(e.button === 2) return;
@@ -101,29 +101,45 @@ export const Sidebar = (props) => {
                             return;
                         }else{
                             props.setSidebarState("init");
-                            props.setUnmountComponentValues(true, path);
+                    
+                            if(itemId === "blogListStandard" && props.blogListStandardPage.activeCategory.activated === "active"){
+                                props.activateListStandardBlogCategory("deactive", "");
+                                props.setUnmountComponentValues(false, path);
+                            }else{
+                                props.setUnmountComponentValues(true, path);
+                            }
                             props.setHistoryPopFromPortfolioItem("scrollToTop");
                             props.clearActivityOfMenuItems();
                             props.setActivityOfToolbarOptionItem(pathOfIds);
                         }
                     break;
                 case 'subOptionItem': 
-                // !!!!need to updated portfolioUtility
-                    currentItemId = props.menuItems
-                        .find(item => item.active === true)?.options
-                        .find(item => item.active === true).array
-                        .find(item => item.active === true).subOptions
-                        .find(item => item.active === true).id;
-                        if(currentItemId === pathOfIds[2]){
-                            return;
-                        }else{
-                            props.setSidebarState("init");
-                            props.setUnmountComponentValues(true, path);
-                            props.setHistoryPopFromPortfolioItem("scrollToTop");
-                            props.clearActivityOfMenuItems();
-                            props.setActivityOfToolbarSubOptionItem(pathOfIds);
-                        }
-                    break;
+                    let currentItemId;
+                    let updatedPathOfIds = [...pathOfIds];
+
+                    updatedPathOfIds.unshift(idOfFirstObj);
+
+                    let menuItemIsActive = props.menuItems.filter(item => item.active === true);
+
+                    if(menuItemIsActive.length !== 0){
+                        let suboptions = props.menuItems
+                            .find(item => item.active === true)?.options
+                            .find(item => item.active === true).array
+                            .find(item => item.active === true).subOptions;
+
+                        if(suboptions.length !== 0) currentItemId = suboptions.find(item => item.active === true).id;
+                    }
+
+                    if(currentItemId === updatedPathOfIds[3]){
+                        return;
+                    }else{
+                        props.setSidebarState("init");
+                        props.setUnmountComponentValues(true, path);
+                        props.setHistoryPopFromPortfolioItem("scrollToTop");
+                        props.clearActivityOfMenuItems();
+                        props.setActivityOfToolbarSubOptionItem(pathOfIds);
+                    }
+                    break;                    
             }
         }else{
             // Remember information of unmounted component on scroll wheel click
@@ -148,7 +164,7 @@ export const Sidebar = (props) => {
                             showOptions={showOptions}
                             onMouseEnterAndLeaveOptionItem={props.setIsHoveringToolbarOptionItem} 
                             onMouseEnterAndLeaveSubOptionItem={props.setIsHoveringToolbarSubOptionItem}
-                            itemOnClick={(opt, path, pathOfIds, e) => itemOnClick(opt, path, pathOfIds, e)}
+                            itemOnClick={(opt, path, pathOfIds, e, idOfFirstObj, itemId) => itemOnClick(opt, path, pathOfIds, e, idOfFirstObj, itemId)}
                         />
                     )
             })}</div>
@@ -186,7 +202,8 @@ export const Sidebar = (props) => {
 export default connect(
     (state) => {
         return {
-            menuItems: Selectors.getMenuItemsState(state)
+            menuItems: Selectors.getMenuItemsState(state),
+            blogListStandardPage: Selectors.getBlogListStandardPageState(state)
         };
     },
     (dispatch) => {
@@ -200,7 +217,8 @@ export default connect(
             setSidebarState: bindActionCreators(Actions.setSidebarState, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
-            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch)
+            setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch)
         };
     }
 )(withRouter(Sidebar));

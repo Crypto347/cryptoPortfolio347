@@ -176,8 +176,6 @@ export const Toolbar = (props) => {
                         .find(item => item.active === true).array
                         .find(item => item.active === true).id;
                        
-                        
-                        console.log("JJ",pathOfIds)
                         if(currentItemId === pathOfIds[1]){
                             return;
                         }else{

@@ -114,8 +114,6 @@ import {
 import {
     blogListStandardInputForm
 } from '../../../../constants/inputForm';
-import { iif } from 'rxjs';
-
 
 /**
  * BlogListStandardPage component definition and export

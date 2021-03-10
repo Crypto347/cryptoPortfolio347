@@ -94,7 +94,7 @@ export const SidebarItem = (props) => {
                         <div 
                             key={i} 
                             className="sidebar-option-item"
-                            onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e)}
+                            onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e, null, el.itemId)}
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
@@ -184,7 +184,7 @@ export const SidebarItem = (props) => {
                             <div 
                                 key={i} 
                                 className="sidebar-sub-option-item"
-                                onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e)}
+                                onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e, props.data.id)}
                             >
                                 {el.active ? 
                                 <div className="arrow-wrapper-active">
