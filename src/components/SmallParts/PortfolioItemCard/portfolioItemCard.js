@@ -101,8 +101,8 @@ export const PortfolioItemCard = (props) => {
 
         // Storing data in local storage 
 
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", props.component);
+        localStorage.setItem("archiveCategoryHG", key);
+        localStorage.setItem("pageHG", props.component);
 
         // Clear archive data
         

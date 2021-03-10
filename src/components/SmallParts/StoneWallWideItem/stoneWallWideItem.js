@@ -217,7 +217,7 @@ export const StoneWallWideItem = (props) => {
 
     const stoneWallWideItemOnClick = (e, path) => {
         if(e.button === 2) return;
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("pageHG", props.page);
         if(e.button !== 1){
             props.setUnmountComponentValues(true, path);
         }else{
@@ -229,8 +229,8 @@ export const StoneWallWideItem = (props) => {
     const onClickHandler = (e, path, key) => {
         if(e.button === 2) return;
         e.stopPropagation();       
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("archiveCategoryHG", key);
+        localStorage.setItem("pageHG", props.page);
         props.clearArchiveData();
         if(e.button !== 1){
             props.setUnmountComponentValues(true, path);

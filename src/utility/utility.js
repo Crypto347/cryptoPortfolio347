@@ -303,6 +303,13 @@ export const isLeapYear = (year) => {
     return new Date(year, 1, 29).getDate() === 29;
 }
 
+export const firstLetterToUppercase = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export const firstLetterToLowercase = (string) => {
+    return string.charAt(0).toLowerCase() + string.slice(1);
+}
 // export const filterObject = (obj, predicate) => 
 //     Object.keys(obj)
 //         .filter(key => predicate(obj[key]))

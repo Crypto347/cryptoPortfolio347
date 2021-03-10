@@ -168,7 +168,7 @@ export const StandardPortfolioItem = (props) => {
 
         // Storing data in local storage
 
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("pageHG", props.page);
 
         if(e.button !== 1){
             // If template page do nothing on left mouse click 
@@ -212,8 +212,8 @@ export const StandardPortfolioItem = (props) => {
 
         // Storing data in local storage
 
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("archiveCategoryHG", key);
+        localStorage.setItem("pageHG", props.page);
 
         // Clear archive data
 

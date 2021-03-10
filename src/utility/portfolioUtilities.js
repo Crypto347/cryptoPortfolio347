@@ -1,3 +1,5 @@
+import * as Utility from './';
+
 export const findPathOfIds = (path) => {
     let updatedPath = path.split("/");
     if(path === ""){
@@ -129,7 +131,24 @@ export const findPathOfIds = (path) => {
         // default:
         //     return [];
     }
+}
 
+export const activateBlogCategory = (path) => {
+    let updatedPath = path.split("/");
+    return {
+        page: pathToKey(updatedPath[0]),
+        categoryName: updatedPath[1]
+    }
+}
+
+export const pathToKey = (path) => {
+    let _path = path;
+    let _pathToArray = _path.split("-");
+    _pathToArray = _pathToArray
+                    .map(el => Utility.firstLetterToUppercase(el))
+                    .join("");
+
+    return Utility.firstLetterToLowercase(_pathToArray);
 }
 
 export const categoryPathToKey = (path) => {

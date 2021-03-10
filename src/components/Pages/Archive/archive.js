@@ -344,8 +344,8 @@ export const Archive = (props) => {
 
         // Storing data in local storage 
 
-        localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
-        localStorage.setItem("page", "archive");
+        localStorage.setItem("archiveCategoryHG", opt === "goToArchive" ? key : props.archive.category);
+        localStorage.setItem("pageHG", "archive");
         
         // Clear archive data 
 

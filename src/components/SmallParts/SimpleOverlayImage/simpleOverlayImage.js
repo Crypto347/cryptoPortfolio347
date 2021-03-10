@@ -129,7 +129,7 @@ export const SimpleOverlayImage = (props) => {
 
         // Storing data in local storage
 
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("pageHG", props.page);
 
         if(e.button !== 1){
             if(['bannerPageSection5'].includes(props.page)){

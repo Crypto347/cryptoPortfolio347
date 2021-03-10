@@ -278,8 +278,8 @@ export const SmallImages = (props) => {
 
         // Storing data in local storage 
 
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", localStorage.getItem("page"));
+        localStorage.setItem("archiveCategoryHG", key);
+        localStorage.setItem("pageHG", localStorage.getItem("pageHG"));
 
         // Clear archive data 
 

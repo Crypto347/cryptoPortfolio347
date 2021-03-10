@@ -114,7 +114,7 @@ export const MenuFullScreen = (props) => {
 
         // Storing data in local storage 
 
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("pageHG", props.page);
 
         // Close menu
 
@@ -146,7 +146,7 @@ export const MenuFullScreen = (props) => {
         if(!hasOptions){
             // Storing data in local storage
 
-            localStorage.setItem("page", props.page);
+            localStorage.setItem("pageHG", props.page);
 
             if(e.button !== 1){
                 /**

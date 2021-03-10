@@ -150,7 +150,7 @@ export const StoneWallItem = (props) => {
 
         // Storing data in local storage
 
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("pageHG", props.page);
 
         if(e.button !== 1){
             /**

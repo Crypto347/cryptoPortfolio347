@@ -310,7 +310,7 @@ export const OverlayImage = (props) => {
 
         // Storing data in local storage 
 
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("pageHG", props.page);
         
         if(e.button !== 1){
             if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)){
@@ -357,8 +357,8 @@ export const OverlayImage = (props) => {
 
         // Storing data in local storage 
 
-        localStorage.setItem("archiveCategory", key);
-        localStorage.setItem("page", props.page);
+        localStorage.setItem("archiveCategoryHG", key);
+        localStorage.setItem("pageHG", props.page);
 
         // Clear archive data
 

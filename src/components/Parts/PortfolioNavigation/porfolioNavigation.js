@@ -1428,7 +1428,7 @@ export const PorfolioNavigation = (props) => {
 
         // Storing data in local storage
 
-        localStorage.setItem("page", page);
+        localStorage.setItem("pageHG", page);
 
         // Return to the page we came from
 
@@ -1645,7 +1645,7 @@ export const PorfolioNavigation = (props) => {
        
         // Storing data in local storage
 
-        localStorage.setItem("page", page);
+        localStorage.setItem("pageHG", page);
 
         /**
          * Navigate to the prev or next element in

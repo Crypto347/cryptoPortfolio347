@@ -162,12 +162,15 @@ export const BlogInfoBoard = (props) => {
 
     const onClickCategory = (key, path, e) => {
 
-          // Do nothing on right mouse click 
+        // Do nothing on right mouse click 
 
-          if(e.button === 2) return;
+        if(e.button === 2) return;
 
-          // Storing data in local storage 
-  
+        // Storing data in local storage 
+
+        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
+        //   localStorage.setItem("pageHG", "blogListStandardPage");
+
         //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
         //   localStorage.setItem("page", "blogListStandardPage");
           

@@ -132,9 +132,16 @@ export const Main = (props) => {
         // Activate menu item according to the location pathname
         
         let path = props.location.pathname.slice(18);
+        console.log(path)
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
+
+        let blogCategory = Utility.activateBlogCategory(path);
+
+        if(blogCategory.page === "listStandardBlogCategory"){
+            props.activateListStandardBlogCategory("active", blogCategory.categoryName);
+        }
 
         // Init state for fading effect and remember all necessary information
 
@@ -503,7 +510,8 @@ export default connect(
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
-            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch)
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
         };
     }
 )(Main);

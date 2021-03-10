@@ -321,14 +321,13 @@ export const BlogListStandardPage = (props) => {
                             {/* <Redirect exact from={`${props.match.url + "/blog-category/:category"}`} to={`${props.match.url + "/blog-category/:category"}`}/> */}
                         </Switch>
                     </div>
-                    {/* <div className="blog-list-standard-page-content-info-wrapper"> */}
-                        <BlogInfoBoard
-                            searchFormInputsArray={props.blogListStandardPage.inputForm.inputsArray}
-                            categoryList={props.blogListStandardPage.categoriesList}
-                            tagsList={props.blogListStandardPage.tagsList}
-                            activateBlogCategory={props.activateListStandardBlogCategory}
-                        />
-                    {/* </div> */}
+                    <BlogInfoBoard
+                        page="blogListStandardPage"
+                        searchFormInputsArray={props.blogListStandardPage.inputForm.inputsArray}
+                        categoryList={props.blogListStandardPage.categoriesList}
+                        tagsList={props.blogListStandardPage.tagsList}
+                        activateBlogCategory={props.activateListStandardBlogCategory}
+                    />
                 </div>
             </div>
             <Footer/>

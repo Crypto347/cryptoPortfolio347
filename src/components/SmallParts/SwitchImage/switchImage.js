@@ -481,7 +481,7 @@ export const SwitchImage = (props) => {
 
         // Storing data in local storage
 
-        localStorage.setItem("page", props.component);
+        localStorage.setItem("pageHG", props.component);
 
         if(e.button !== 1){
             /**
