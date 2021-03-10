@@ -30,53 +30,6 @@
                 width: calc(75% - 4px);
                 border: 2px solid red;
             }
-            .blog-list-standard-page-info {
-                width: calc(25% - 44px);
-                display: flex;
-                flex-direction: column;
-                padding-left: 40px;
-                .blog-list-standard-page-search-wrapper {
-                    width: 100%;
-                    background: white;
-                    display: flex;
-                    align-items: center;
-                    .blog-list-standard-page-search-button {
-                        padding: 15px;
-                        height: 100%;
-                        cursor: pointer;
-                    }
-                }
-                .blog-list-standard-page-info-person-info-wrapper {
-                    .blog-list-standard-page-info-person-image {
-                        width: 140px;
-                        height: 140px;
-                        background: rgb(54, 32, 20);
-                        border-radius: 50%;
-                        >img {
-                            filter: contrast(160%);
-                            width: 100%;
-                            border-radius: 50%;
-                            opacity: 0.8;
-                        }
-                    }
-                }
-                .blog-list-standard-page-recent-post-wrapper {
-
-                }
-                .blog-list-standard-page-categories-wrapper {
-
-                }
-                .blog-list-standard-page-follow-us {
-                    .blog-list-standard-page-icons {
-                        display: flex;
-                    }
-                }
-                .blog-list-standard-page-tags-wrapper {
-                    .blog-list-standard-page-tag {
-                        display: inline-flex;
-                    }
-                }
-            }
         }
     }
 }

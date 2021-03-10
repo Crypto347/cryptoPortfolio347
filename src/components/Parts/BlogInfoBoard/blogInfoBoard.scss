@@ -1,0 +1,55 @@
+
+.blog-info-board {
+    width: calc(25% - 44px);
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    .blog-info-board-search-wrapper {
+        width: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        .blog-info-board-search-button {
+            padding: 15px;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+    .blog-info-board-person-info-wrapper {
+        .blog-info-board-person-image {
+            width: 140px;
+            height: 140px;
+            background: rgb(54, 32, 20);
+            border-radius: 50%;
+            >img {
+                filter: contrast(160%);
+                width: 100%;
+                border-radius: 50%;
+                opacity: 0.8;
+            }
+        }
+    }
+    .blog-info-board-recent-post-wrapper {
+
+    }
+    .blog-info-board-categories-wrapper {
+        .blog-info-board-active-category {
+            font-size: 17px;
+            color: black;
+            border-bottom: 1px solid black;
+            font-family: 'Lustria', serif;
+            display: inline-flex;
+            cursor: pointer;
+        }
+    }
+    .blog-info-board-follow-us-wrapper {
+        .blog-info-board-icons {
+            display: flex;
+        }
+    }
+    .blog-info-board-tags-wrapper {
+        .blog-info-board-tag {
+            display: inline-flex;
+        }
+    }
+}
