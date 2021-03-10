@@ -132,7 +132,6 @@ export const Main = (props) => {
         // Activate menu item according to the location pathname
         
         let path = props.location.pathname.slice(18);
-        console.log(path)
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
