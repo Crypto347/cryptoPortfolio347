@@ -21,12 +21,19 @@ import {
     H19
 } from '../../UtilityComponents';
 
+
+/**
+ * Video
+ */
+
+import * as Images from '../../../constants/images';
+
 /**
  * Video
  */
 
 import vid1 from '../../../videos/team_work.mp4';
-import vidCover from '../../../videos/john-schnobrich-unsplash.jpg';
+
 
 /**
  * Video component definition and export
@@ -115,7 +122,7 @@ export const Video = () => {
         <div className="video">
             {!videoShown ? 
             <div className="video-wrapper">
-                <img src={vidCover}/>
+                <img src={Images.VIDEO_COVER_IMG_1}/>
                 <div className="video-play-button-wrapper">
                     <div 
                         className={renderClassName(isHoveringPlayButton)}

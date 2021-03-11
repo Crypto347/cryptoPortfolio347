@@ -935,12 +935,16 @@ export const BLOG_CARD_STANDARD_POST_COVER_IMG_1 = BlogCardStandardPostCoverImg1
 export const BLOG_CARD_STANDARD_POST_COVER_IMG_2 = BlogCardStandardPostCoverImg2;
 export const BLOG_CARD_STANDARD_POST_COVER_IMG_3 = BlogCardStandardPostCoverImg3;
 
-// Video post
+/**
+ * Video covers
+ */
 
-import BlogCardVideoPostCoverImg1 from '../images/blogCards/videoPost/bench-accounting-C3V88BOoRoM-unsplash-blog-card.png';
-import BlogCardVideoPostCoverImg2 from '../images/blogCards/videoPost/fabian-irsara-67l-QujB14w-unsplash-blog-card.png';
-import BlogCardVideoPostCoverImg3 from '../images/blogCards/videoPost/timothy-buck-psrloDbaZc8-unsplash-blog-card.png';
+import VideoCoverImg1 from '../videos/john-schnobrich-unsplash.jpg';
+import VideoCoverImg2 from '../videos/bench-accounting-C3V88BOoRoM-unsplash-blog-card.png';
+import VideoCoverImg3 from '../videos/fabian-irsara-67l-QujB14w-unsplash-blog-card.png';
+import VideoCoverImg4 from '../videos/timothy-buck-psrloDbaZc8-unsplash-blog-card.png';
 
-export const BLOG_CARD_VIDEO_POST_COVER_IMG_1 = BlogCardVideoPostCoverImg1;
-export const BLOG_CARD_VIDEO_POST_COVER_IMG_2 = BlogCardVideoPostCoverImg2;
-export const BLOG_CARD_VIDEO_POST_COVER_IMG_3 = BlogCardVideoPostCoverImg3;
+export const VIDEO_COVER_IMG_1 = VideoCoverImg1;
+export const VIDEO_COVER_IMG_2 = VideoCoverImg2;
+export const VIDEO_COVER_IMG_3 = VideoCoverImg3;
+export const VIDEO_COVER_IMG_4 = VideoCoverImg4;
