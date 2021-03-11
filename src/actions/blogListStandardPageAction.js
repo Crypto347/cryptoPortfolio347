@@ -1,5 +1,25 @@
 import * as actionTypes from '../constants/actionTypes';
 
+export function fetchBlogListStandardPageDataBegin() {
+    return { 
+        type: actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN
+    };
+};
+
+export function fetchBlogListStandardPageDataSuccess(array) {
+    return { 
+        type: actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS,
+        array: array
+    };
+};
+
+export function fetchBlogListStandardPageDataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE,
+        err: err
+    };
+};
+
 export function initInputFormForBlogListStandardPage(obj) {
     return { 
         type: actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,
@@ -28,3 +48,4 @@ export function initTagsForBlogListStandardPage(array) {
         array: array
     };
 };
+

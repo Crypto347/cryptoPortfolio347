@@ -53,4 +53,4 @@ export * from './columnsPageActions';
 export * from './blockquotePageActions';
 export * from './scrollSliderPageActions';
 export * from './portfolioProjectShowcasePageActions';
-export * from './blogListStandardAction';
+export * from './blogListStandardPageAction';

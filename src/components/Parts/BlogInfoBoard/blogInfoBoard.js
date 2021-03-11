@@ -18,7 +18,8 @@ import {
 import {
     Route,
     Switch,
-    Redirect
+    Redirect,
+    Link
 } from 'react-router-dom';
 
 import {
@@ -197,6 +198,7 @@ export const BlogInfoBoard = (props) => {
         //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
           
         props.activateBlogCategory("active", key)
+        console.log("KKK",key)
         props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
 
     }
@@ -260,6 +262,12 @@ export const BlogInfoBoard = (props) => {
             <>
                 {props.categoryList.map((el, i) => {
                     return(
+                        // <li key={i}>
+                        //     <Link to={`/crypto-portfolio/list-standard-blog-category/${el.key}`}>
+                        //         <H17 className={renderClassName("blogCategory", el.isHover, el.active)}>{el.categoryName}</H17>
+                        //     </Link>
+                        // </li>
+
                         <div 
                             key={i}
                             onMouseDown={(e) => onClickCategory(el.key, null, e)}

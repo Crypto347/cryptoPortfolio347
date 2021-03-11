@@ -17,8 +17,10 @@ import {
 
 import {
     Route,
+    BrowserRouter as Router,
     Switch,
-    Redirect
+    Redirect,
+    Link
 } from 'react-router-dom';
 
 import {
@@ -38,7 +40,7 @@ import './blogListStandardPage.scss';
 import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import BlogInfoBoard from '../../../Parts/BlogInfoBoard/blogInfoBoard';
-import Input from '../../../../library/Input/input';
+import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostCard';
 import TagItem from '../../../SmallParts/TagItem/tagItem';
 import Icon from '../../../SmallParts/Icon/icon';
 import Footer from '../../../Parts/Footer/footer';
@@ -150,17 +152,17 @@ export const BlogListStandardPage = (props) => {
 
         // Fetch data for the component
 
-        // if(props.blogListStandardPage.items.length === 0){
-        //     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-        //         // Fetch mock data (not required to run -> npm run server)
+        if(props.blogListStandardPage.items.length === 0){
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
 
-        //         props.fetchHighlightsPageDataSuccess(FakeData.highlightsPage);
-        //     }else{
-        //         // Fetch data (required to run -> npm run server)
+                props.fetchBlogListStandardPageDataSuccess(FakeData.blogListStandardPage);
+            }else{
+                // Fetch data (required to run -> npm run server)
 
-        //         props.fetchHighlightsPageData();
-        //     }
-        // }
+                props.fetchBlogListStandardPageData(1);
+            }
+        }
 
         // Scroll to the top of the screen
 
@@ -303,33 +305,38 @@ export const BlogListStandardPage = (props) => {
     return(
         <div className="blog-list-standard-page" id="blogListStandardPage">
             {renderToolbars()}
-            <div className="blog-list-standard-page-wrapper">
-                <div className="blog-list-standard-page-header">
-                    <H45 className="h45-nero-lustria">Blog List Standard</H45>
-                </div>
-                <div className="grey-line"/>
-                <div className="blog-list-standard-page-content-info-wrapper">
-                    <div className="blog-list-standard-page-content">
-                        <Switch>
-                            <Route 
-                                exact 
-                                path={props.match.url + "/list-standard-blog-category/:category"}
+            <Router>
+                <div className="blog-list-standard-page-wrapper">
+                    <div className="blog-list-standard-page-header">
+                        <H45 className="h45-nero-lustria">Blog List Standard</H45>
+                    </div>
+                    <div className="grey-line"/>
+                    <div className="blog-list-standard-page-content-info-wrapper">
+                        <div className="blog-list-standard-page-content">
+                            <Route exact path="/crypto-portfolio/blog-list-standard"
                                 render={(props) => (
-                                    <Archive key={props.match.params.category} {...props} />)
+                                    <div className="blog-list-standard-page-posts-list"></div>)
                                 }
                             />
-                            {/* <Redirect exact from={`${props.match.url + "/blog-category/:category"}`} to={`${props.match.url + "/blog-category/:category"}`}/> */}
-                        </Switch>
+                            <Route exact path="/crypto-portfolio/list-standard-blog-category/:category"
+                                render={(props) => (
+                                    <BlogListPostCard 
+                                        // key={props.match.params.category} 
+                                        {...props} 
+                                    />)
+                                }
+                            />
+                        </div>
+                        <BlogInfoBoard
+                            page="blogListStandardPage"
+                            searchFormInputsArray={props.blogListStandardPage.inputForm.inputsArray}
+                            categoryList={props.blogListStandardPage.categoriesList}
+                            tagsList={props.blogListStandardPage.tagsList}
+                            activateBlogCategory={props.activateListStandardBlogCategory}
+                        />
                     </div>
-                    <BlogInfoBoard
-                        page="blogListStandardPage"
-                        searchFormInputsArray={props.blogListStandardPage.inputForm.inputsArray}
-                        categoryList={props.blogListStandardPage.categoriesList}
-                        tagsList={props.blogListStandardPage.tagsList}
-                        activateBlogCategory={props.activateListStandardBlogCategory}
-                    />
                 </div>
-            </div>
+            </Router>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
         </div>   
@@ -346,8 +353,8 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchHighlightsPageData: bindActionCreators(Services.fetchHighlightsPageData, dispatch),
-            fetchHighlightsPageDataSuccess: bindActionCreators(Actions.fetchHighlightsPageDataSuccess, dispatch),
+            fetchBlogListStandardPageData: bindActionCreators(Services.fetchBlogListStandardPageData, dispatch),
+            fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

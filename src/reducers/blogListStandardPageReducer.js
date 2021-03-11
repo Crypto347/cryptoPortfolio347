@@ -33,6 +33,32 @@ export const initialState = {
     tagsList: []
 }
 
+
+const fetchBlogListStandardPageDataBegin = (state, action) => {
+    return {
+        ...state,
+        loading: true,
+        error: null
+    };
+}
+
+const fetchBlogListStandardPageDataSuccess = (state, action) => {    
+    return {
+        ...state,
+        loading: false,
+        items: action.array
+    };
+}
+
+const fetchBlogListStandardPageDataFailur = (state, action) => {
+    return {
+        ...state,
+        loading: false,
+        error: action.err,
+        items: []
+    };
+}
+
 const initInputFormForBlogListStandardPage = (state, action) => {
     return {
         ...state,
@@ -93,12 +119,13 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return initCategoriesForBlogListStandardPage (state, action);
         case actionTypes.INIT_TAGS_FOR_BLOG_LISTS_STANDARD_PAGE:
             return initTagsForBlogListStandardPage (state, action);
-        // case actionTypes.SUBMIT_CONTACT_FORM_PAGE:
-        //     return submitContactFormPage (state, action);
-        // case actionTypes.FETCH_GET_DIRECTION_CONTACT_FORM_PAGE_BEGIN:
-        //     return fetchGetDirectionContactFormPageBegin (state, action); 
-        // case actionTypes.FETCH_GET_DIRECTION_CONTACT_FORM_PAGE_SUCCESS:
-        //     return fetchGetDirectionContactFormPageSuccess (state, action);
+        case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN:
+            return fetchBlogListStandardPageDataBegin (state, action);
+        case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS:
+            return fetchBlogListStandardPageDataSuccess (state, action); 
+        case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
+            return fetchBlogListStandardPageDataFailur (state, action);
+
         // case actionTypes.FETCH_GET_DIRECTION_CONTACT_FORM_PAGE_FAILURE:
         //     return fetchGetDirectionContactFormPageFailur(state, action);
         // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_BEGIN:

@@ -20922,191 +20922,288 @@ app.get('/api/portfolio-project-showcase-page', (req, res) => {
     res.json(portfolioProjectShowcasePage);
 });
 
-// app.post('/api/blog-list-standard', (req, res) => {
-//     const blogListStandard = [
-//         {
-//             id: 1,
-//             key: "smallImages4",
-//             header: "Small Images",
-//             option: "blackAndWhite",
-//             categories: [
-//                 {
-//                     id: 1,
-//                     label: "Lifestyle",
-//                     key: "lifestyle",
-//                     path: "portfolio-category/lifestyle",
-//                     isHover: "init"
-//                 }
-//             ],
-//             portfolioType: "Small Images",
-//             arrowIsHovering: "init",
-//             path: "portfolio-item/small-images/4",
-//             coverImage: {
-//                 id: 1,
-//                 key: "stoneWallCover1",
-//                 isHover: "init",
-//                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-//                 folderName: "colorful",
-//                 alt: "image"
-//             }
-//         },
-//         {
-//             id: 2,
-//             key: "gallery2",
-//             header: "Gallery",
-//             option: "colorful",
-//             categories: [
-//                 {
-//                     id: 1,
-//                     label: "Architecture",
-//                     key: "architecture",
-//                     path: "portfolio-category/architecture",
-//                     isHover: "init"
-//                 }
-//             ],
-//             portfolioType: "Gallery",
-//             arrowIsHovering: "init",
-//             path: "portfolio-item/gallery/2",
-//             coverImage: {
-//                 id: 1,
-//                 key: "stoneWallCover2",
-//                 isHover: "init",
-//                 imageName: "nathan-dumlao-pMW4jzELQCw-stone-wall-unsplash.png",
-//                 folderName: "colorful",
-//                 alt: "image"
-//             }
-//         },
-//         {
-//             id: 3,
-//             key: "bigSlider3",
-//             header: "Big Slider",
-//             option: "colorful",
-//             categories: [
-//                 {
-//                     id: 1,
-//                     label: "Graphic Design",
-//                     key: "graphicDesign",
-//                     path: "portfolio-category/graphic-design",
-//                     isHover: "init"
-//                 },
-//                 {
-//                     id: 2,
-//                     label: "Design",
-//                     key: "design",
-//                     path: "portfolio-category/design",
-//                     isHover: "init"
-//                 },
-//                 {
-//                     id: 3,
-//                     label: "Music",
-//                     key: "music",
-//                     path: "portfolio-category/music",
-//                     isHover: "init"
-//                 }
-//             ],
-//             portfolioType: "Big Slider",
-//             arrowIsHovering: "init",
-//             path: "portfolio-item/big-slider/3",
-//             coverImage: {
-//                 id: 1,
-//                 key: "stoneWallCover3",
-//                 isHover: "init",
-//                 imageName: "daily-nouri-E5Oo4nENq2M-stone-wall-unsplash.png",
-//                 folderName: "colorful",
-//                 alt: "image"
-//             }
-//         },
-//         {
-//             id: 4,
-//             key: "smallGallery2",
-//             header: "Small Gallery",
-//             option: "blackAndWhite",
-//             categories: [
-//                 {
-//                     id: 1,
-//                     label: "Design",
-//                     key: "design",
-//                     path: "portfolio-category/design",
-//                     isHover: "init"
-//                 },
-//                 {
-//                     id: 2,
-//                     label: "Lifestyle",
-//                     key: "lifestyle",
-//                     path: "portfolio-category/lifestyle",
-//                     isHover: "init"
-//                 }
-//             ],
-//             portfolioType: "Small Gallery",
-//             arrowIsHovering: "init",
-//             path: "portfolio-item/small-gallery/2",
-//             coverImage: {
-//                 id: 1,
-//                 key: "stoneWallCover4",
-//                 isHover: "init",
-//                 imageName: "nahuel-hawkes-Ki6JO9sraB8-stone-wall-unsplash.png",
-//                 folderName: "colorful",
-//                 alt: "image"
-//             }
-//         },
-//         {
-//             id: 5,
-//             key: "gallery3",
-//             header: "Gallery",
-//             option: "colorful",
-//             categories: [
-//                 {
-//                     id: 1,
-//                     label: "Design",
-//                     key: "design",
-//                     path: "portfolio-category/design",
-//                     isHover: "init"
-//                 },
-//                 {
-//                     id: 2,
-//                     label: "Editorial",
-//                     key: "editorial",
-//                     path: "portfolio-category/editorial",
-//                     isHover: "init"
-//                 }
-//             ],
-//             portfolioType: "Gallery",
-//             arrowIsHovering: "init",
-//             path: "portfolio-item/gallery/3",
-//             coverImage: {
-//                 id: 1,
-//                 key: "stoneWallCover5",
-//                 isHover: "init",
-//                 imageName: "leone-venter-pVt9j3iWtPM-stone-wall-unsplash.png",
-//                 folderName: "colorful",
-//                 alt: "image"
-//             }
-//         },
-//     ]
+app.post('/api/blog-list-standard', (req, res) => {
+    const blogListStandardPage = [
+        {
+            id: 1,
+            key: "blogListStandardPageCardId1",
+            cardType: "standardPost",
+            header: "Standard Post.",
+            data: "11.03.2021",
+            numberOfLikes: 9,
+            numberOfComments: 3,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/standard-post/1",
+            coverImage: {
+                id: 1,
+                key: "stoneWallCover1",
+                isHover: "init",
+                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 2,
+            key: "blogListStandardPageCardId2",
+            cardType: "galleryPost",
+            header: "Gallery Post.",
+            data: "11.03.2021",
+            numberOfLikes: 3,
+            numberOfComments: 2,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/gallery-post/1",
+            coverImage: {
+                id: 1,
+                key: "stoneWallCover1",
+                isHover: "init",
+                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 3,
+            key: "blogListStandardPageCardId3",
+            cardType: "linkPost",
+            header: "Link Post.",
+            data: "11.03.2021",
+            numberOfLikes: 3,
+            numberOfComments: 2,
+            linkText: "Document everything. What helps people, helps business.",
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/link-post/1",
+            coverImage: {
+                id: 1,
+                key: "stoneWallCover1",
+                isHover: "init",
+                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 4,
+            key: "blogListStandardPageCardId4",
+            cardType: "quotePost",
+            header: "Quote Post.",
+            data: "11.03.2021",
+            numberOfLikes: 8,
+            numberOfComments: 2,
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seasing your competitive advane by aligning strateg.",
+            quoteAuthor: "James Newbie",
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/quote-post/1",
+            coverImage: {
+                id: 1,
+                key: "stoneWallCover1",
+                isHover: "init",
+                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 5,
+            key: "blogListStandardPageCardId5",
+            cardType: "audioPost",
+            header: "The best way out is always through.",
+            data: "11.03.2021",
+            numberOfLikes: 3,
+            numberOfComments: 2,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/audio-post/1",
+            coverImage: {
+                id: 1,
+                key: "stoneWallCover1",
+                isHover: "init",
+                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 6,
+            key: "blogListStandardPageCardId6",
+            cardType: "videoPost",
+            header: "Video Post.",
+            data: "11.03.2021",
+            numberOfLikes: 8,
+            numberOfComments: 6,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/audio-post/1",
+            coverImage: {
+                id: 1,
+                key: "stoneWallCover1",
+                isHover: "init",
+                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+    ]
 
-//     let updatedBlogListStandard = {
-//         disableLoadMoreButton: false,
-//         twoColumnsData: []
-//     };
+    // let updatedBlogListStandard = {
+    //     disableLoadMoreButton: false,
+    //     twoColumnsData: []
+    // };
 
-//     // let updatedThreeColumnsObj = {
-//     //     disableLoadMoreButton: false,
-//     //     threeColumnsData: []
-//     // };
-//     // let takeItems = req.body.step * 6;
-//     // if(takeItems >= threeColumnsPage.length){
-//     //     updatedThreeColumnsObj.disableLoadMoreButton = true;
-//     //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage;
-//     // }else{
-//     //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage.slice(0, takeItems)
-//     // }
+    // let updatedThreeColumnsObj = {
+    //     disableLoadMoreButton: false,
+    //     threeColumnsData: []
+    // };
+    // let takeItems = req.body.step * 6;
+    // if(takeItems >= threeColumnsPage.length){
+    //     updatedThreeColumnsObj.disableLoadMoreButton = true;
+    //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage;
+    // }else{
+    //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage.slice(0, takeItems)
+    // }
     
-//     if(!updatedBlogListStandard) {
-//         res.status(404).send("The blog data was not found");
-//     }else{
-//         res.json(blogListStandard);  
-//     }
-// });
+    // if(!updatedBlogListStandard) {
+    //     res.status(404).send("The blog data was not found");
+    // }else{
+        res.json(blogListStandardPage);  
+    // }
+});
 
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
