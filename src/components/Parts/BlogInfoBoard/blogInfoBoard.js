@@ -197,8 +197,7 @@ export const BlogInfoBoard = (props) => {
   
         //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
           
-        props.activateBlogCategory("active", key)
-        console.log("KKK",key)
+        props.activateBlogCategory("active", key);
         props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
 
     }

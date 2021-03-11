@@ -20999,14 +20999,17 @@ app.post('/api/blog-list-standard', (req, res) => {
                 }
             ],
             path: "blog-list-standard/gallery-post/1",
-            coverImage: {
-                id: 1,
-                key: "stoneWallCover1",
-                isHover: "init",
-                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-                folderName: "colorful",
-                alt: "image"
-            }
+            imagesArray: [
+                    { 
+                        id: 1,
+                        key: "stoneWallCover1",
+                        isHover: "init",
+                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    }
+            ]
+               
         },
         {
             id: 3,

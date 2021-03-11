@@ -248,27 +248,24 @@ export const BlogListStandardPage = (props) => {
         }
     }
     
-    const renderHighlightsPageData = (arr) => {
+    const renderBlogListStandardPageData = (arr) => {
         return(
             <div>
                 {arr.map((el, i) => {
                     return(
-                        <div 
-                            key={i}
-                            className="blog-list-standard-page-data-paragraph"
-                        >
-                            {renderParagraph(el)}
-                            {i !== arr.length - 1 ? 
-                            <EH30/> 
-                            : null}
-                        </div>
+                        <React.Fragment key={i}>
+                            <BlogListPostCard 
+                                page="blogListStandardPage"
+                                cardType={el.cardType}
+                            />
+                        </React.Fragment>
                     )
                 })}
             </div>
         )
     }
     
-    const renderHighlightsPageDataContent = (arr) => {
+    const renderBlogListStandardPageDataContent = (arr) => {
         if(arr.loading && !arr.error){
             return(
                 <div 
@@ -282,7 +279,7 @@ export const BlogListStandardPage = (props) => {
         if(!arr.loading && !arr.error){
             return(
                 <div className="blog-list-standard-page-data-wrapper">
-                    {renderHighlightsPageData(arr.items)}
+                    {renderBlogListStandardPageData(arr)}
                 </div>
             )
         }
@@ -313,18 +310,13 @@ export const BlogListStandardPage = (props) => {
                     <div className="grey-line"/>
                     <div className="blog-list-standard-page-content-info-wrapper">
                         <div className="blog-list-standard-page-content">
-                            <Route exact path="/crypto-portfolio/blog-list-standard"
-                                render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>)
-                                }
-                            />
+                            <Route exact path="/crypto-portfolio/blog-list-standard">
+                                {renderBlogListStandardPageDataContent(props.blogListStandardPage.items)}
+                            </Route>
                             <Route exact path="/crypto-portfolio/list-standard-blog-category/:category"
                                 render={(props) => (
-                                    <BlogListPostCard 
-                                        // key={props.match.params.category} 
-                                        {...props} 
-                                    />)
-                                }
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
                             />
                         </div>
                         <BlogInfoBoard

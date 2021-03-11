@@ -863,3 +863,84 @@ export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_1 = ProjectShowc
 export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_2 = ProjectShowcaseBackgroundSuperSmallScreenImg2;
 export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_3 = ProjectShowcaseBackgroundSuperSmallScreenImg3;
 
+/**
+ * Blog cards
+ */
+
+// Audio post
+
+import BlogCardAudioPostCoverImg1 from '../images/blogCards/audioPost/pineapple-supply-co-J3odfo3m7g0-unsplash-blog-card.png';
+import BlogCardAudioPostCoverImg2 from '../images/blogCards/audioPost/pure-julia-3vVMl4--mNI-unsplash-blog-card.png';
+import BlogCardAudioPostCoverImg3 from '../images/blogCards/audioPost/ryan-pang-M5BxrU2nSTM-unsplash-blog-card.png';
+
+export const BLOG_CARD_AUDIO_POST_COVER_IMG_1 = BlogCardAudioPostCoverImg1;
+export const BLOG_CARD_AUDIO_POST_COVER_IMG_2 = BlogCardAudioPostCoverImg2;
+export const BLOG_CARD_AUDIO_POST_COVER_IMG_3 = BlogCardAudioPostCoverImg3;
+
+// Gallery post
+
+import BlogCardGalleryPostID1 from '../images/blogCards/galleryPost/andrew-neel-cckf4TsHAuw-unsplash-blog-card.png';
+import BlogCardGalleryPostID2 from '../images/blogCards/galleryPost/artem-sapegin-b18TRXc8UPQ-unsplash-blog-card.png';
+import BlogCardGalleryPostID3 from '../images/blogCards/galleryPost/christin-hume-mfB1B1s4sMc-unsplash-blog-card.png';
+import BlogCardGalleryPostID4 from '../images/blogCards/galleryPost/drew-beamer-PL6ClUWwDEw-unsplash-blog-card.png';
+import BlogCardGalleryPostID5 from '../images/blogCards/galleryPost/green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png';
+import BlogCardGalleryPostID6 from '../images/blogCards/galleryPost/grovemade-DhZ5BpBeQEM-unsplash-blog-card.png';
+import BlogCardGalleryPostID7 from '../images/blogCards/galleryPost/grovemade-RvPDe41lYBA-unsplash-blog-card.png';
+import BlogCardGalleryPostID8 from '../images/blogCards/galleryPost/kari-shea-pSmD3L7z8hs-unsplash-blog-card.png';
+import BlogCardGalleryPostID9 from '../images/blogCards/galleryPost/kari-shea-tOVmshavtoo-unsplash-blog-card.png';
+import BlogCardGalleryPostID10 from '../images/blogCards/galleryPost/markus-spiske-SRNKol31s64-unsplash-blog-card.png';
+import BlogCardGalleryPostID11 from '../images/blogCards/galleryPost/workperch-AiOzVFqlyZI-unsplash-blog-card.png';
+
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_1 = BlogCardGalleryPostID1;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_2 = BlogCardGalleryPostID2;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_3 = BlogCardGalleryPostID3;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_4 = BlogCardGalleryPostID4;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_5 = BlogCardGalleryPostID5;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_6 = BlogCardGalleryPostID6;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_7 = BlogCardGalleryPostID7;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_8 = BlogCardGalleryPostID8;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_9 = BlogCardGalleryPostID9;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_10 = BlogCardGalleryPostID10;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_11 = BlogCardGalleryPostID11;
+
+// Link post
+
+import BlogCardLinkPostCoverImg1 from '../images/blogCards/linkPost/patrick-perkins-3wylDrjxH-E-unsplash-blog-card.png';
+import BlogCardLinkPostCoverImg2 from '../images/blogCards/linkPost/simon-hattinga-verschure-WNevBlZWCKA-unsplash-blog-card.png';
+import BlogCardLinkPostCoverImg3 from '../images/blogCards/linkPost/tanya-pro-ebERv1EhWoU-unsplash-blog-card.png';
+
+export const BLOG_CARD_LINK_POST_COVER_IMG_1 = BlogCardLinkPostCoverImg1;
+export const BLOG_CARD_LINK_POST_COVER_IMG_2 = BlogCardLinkPostCoverImg2;
+export const BLOG_CARD_LINK_POST_COVER_IMG_3 = BlogCardLinkPostCoverImg3;
+
+// Quote post
+
+import BlogCardQuotePostCoverImg1 from '../images/blogCards/quotePost/ducminh-nguyen-hG3H6N6VwCY-unsplash-blog-card.png';
+import BlogCardQuotePostCoverImg2 from '../images/blogCards/quotePost/elena-mozhvilo-girJ8wuVrCA-unsplash-blog-card.png';
+import BlogCardQuotePostCoverImg3 from '../images/blogCards/quotePost/fernando-lavin-fi5YSQfxbVk-unsplash-blog-card.png';
+import BlogCardQuotePostCoverImg4 from '../images/blogCards/quotePost/francesco-gallarotti-ruQHpukrN7c-unsplash-blog-card.png';
+
+export const BLOG_CARD_QUOTE_POST_COVER_IMG_1 = BlogCardQuotePostCoverImg1;
+export const BLOG_CARD_QUOTE_POST_COVER_IMG_2 = BlogCardQuotePostCoverImg2;
+export const BLOG_CARD_QUOTE_POST_COVER_IMG_3 = BlogCardQuotePostCoverImg3;
+export const BLOG_CARD_QUOTE_POST_COVER_IMG_4 = BlogCardQuotePostCoverImg4;
+
+// Standard post
+
+import BlogCardStandardPostCoverImg1 from '../images/blogCards/standardPost/kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png';
+import BlogCardStandardPostCoverImg2 from '../images/blogCards/standardPost/olena-sergienko-J49JddA5H04-unsplash-blog-card.png';
+import BlogCardStandardPostCoverImg3 from '../images/blogCards/standardPost/sincerely-media-rogLvqMp9jA-unsplash-blog-card.png';
+
+export const BLOG_CARD_STANDARD_POST_COVER_IMG_1 = BlogCardStandardPostCoverImg1;
+export const BLOG_CARD_STANDARD_POST_COVER_IMG_2 = BlogCardStandardPostCoverImg2;
+export const BLOG_CARD_STANDARD_POST_COVER_IMG_3 = BlogCardStandardPostCoverImg3;
+
+// Video post
+
+import BlogCardVideoPostCoverImg1 from '../images/blogCards/videoPost/bench-accounting-C3V88BOoRoM-unsplash-blog-card.png';
+import BlogCardVideoPostCoverImg2 from '../images/blogCards/videoPost/fabian-irsara-67l-QujB14w-unsplash-blog-card.png';
+import BlogCardVideoPostCoverImg3 from '../images/blogCards/videoPost/timothy-buck-psrloDbaZc8-unsplash-blog-card.png';
+
+export const BLOG_CARD_VIDEO_POST_COVER_IMG_1 = BlogCardVideoPostCoverImg1;
+export const BLOG_CARD_VIDEO_POST_COVER_IMG_2 = BlogCardVideoPostCoverImg2;
+export const BLOG_CARD_VIDEO_POST_COVER_IMG_3 = BlogCardVideoPostCoverImg3;

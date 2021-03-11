@@ -76,7 +76,33 @@ export const BlogListPostCard = (props) => {
         else return val;
     }
 
-    const renderCountdown = () => {
+    const renderBlogCard = (type) => {
+        switch(type){
+            case 'standardPost':
+                return (
+                    <div></div>
+                )
+            case 'galleryPost':
+                return (
+                    <div></div>
+                )
+            case 'linkPost':
+                return (
+                    <div></div>
+                )
+            case 'quotePost':
+                return (
+                    <div></div>
+                )
+            case 'audioPost':
+                return (
+                    <div></div>
+                )
+            case 'videoPost':
+                return (
+                    <div></div>
+                )
+        }
         return(
             <div className="countdown-item-wrapper">{props.data.countdownValue.map((el, i) => {
                 return(
@@ -98,7 +124,7 @@ export const BlogListPostCard = (props) => {
 
     return(
         <div className="blog-list-post-card">
-            {/* {renderCountdown()} */}
+            {renderBlogCard(props.cardType)}
         </div>
     );
 }
