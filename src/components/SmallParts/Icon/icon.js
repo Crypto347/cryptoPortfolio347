@@ -38,6 +38,10 @@ import {
     faSearch
 } from '@fortawesome/free-solid-svg-icons';
 
+import {
+  faHeart
+} from '@fortawesome/free-regular-svg-icons';
+
 /**
  * Icon component definition and export
  */
@@ -133,6 +137,16 @@ export const Icon = (props) => {
                     return "blog-list-standard-page-search-icon-hover-off"
             }
         }
+        if(opt === "blogCardLikes"){
+            switch(isHovering){
+                case 'init':
+                    return "blog-card-likes-icon";
+                case 'on':
+                    return "blog-card-likes-icon-hover-on";
+                case 'off':
+                    return "blog-card-likes-icon-hover-off"
+            }
+        }
         if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
         if(opt === "section2ListsPage") return "icon-for-lists-page-section-2"
     }
@@ -186,6 +200,8 @@ export const Icon = (props) => {
                 return faCoffee;
             case 'faSearch':
                 return faSearch;
+            case 'faHeart':
+                return faHeart;
         }
     }
 

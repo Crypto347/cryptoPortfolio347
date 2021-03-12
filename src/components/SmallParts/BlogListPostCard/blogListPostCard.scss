@@ -10,5 +10,11 @@
     .blog-list-post-card-text {
         line-height: 1.6;
     }
+    .blog-list-post-card-info-wrapper {
+        .blog-list-post-card-info-likes {
+            display: inline-flex;
+            cursor: pointer;
+        }
+    }
    
 }

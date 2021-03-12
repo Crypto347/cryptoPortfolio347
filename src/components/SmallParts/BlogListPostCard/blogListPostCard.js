@@ -14,6 +14,12 @@ import React, {
 import './blogListPostCard.scss';
 
 /**
+ * Components
+ */
+
+import Icon from '../../SmallParts/Icon/icon';
+
+/**
  * Utility
  */
 
@@ -41,7 +47,8 @@ export const BlogListPostCard = (props) => {
      * State
      */
 
-    const [isHovering, setIsHovering] = useState("init");
+    const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
+    const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
 
     /**
      * Methods
@@ -54,7 +61,10 @@ export const BlogListPostCard = (props) => {
     const handleMouseEnter = (opt) => {
         switch(opt){
             case 'blogCardDate': 
-                setIsHovering("on");
+                setIsHoveringBlogCardDate("on");
+                break;
+            case 'blogCardLikes': 
+                setIsHoveringBlogCardLikes("on");
                 break;
         }
     }
@@ -62,7 +72,10 @@ export const BlogListPostCard = (props) => {
     const handleMouseLeave = (opt) => {
         switch(opt){
             case 'blogCardDate': 
-                setIsHovering("off");
+                setIsHoveringBlogCardDate("off");
+                break;
+            case 'blogCardLikes': 
+                setIsHoveringBlogCardLikes("off");
                 break;
         }
     }
@@ -103,29 +116,64 @@ export const BlogListPostCard = (props) => {
         }
     }
 
+    const renderBlogCardMainBody = () => {
+        return(
+            <>
+                <img src={loadImg(props.data.coverImage.key)}/>
+                <EH60/>
+                <div
+                    className="blog-list-post-card-date"
+                    onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                >
+                    <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.data.date}</H15>
+                </div>
+                <H35 className="H35-black-poppins">{props.data.header}</H35>
+                <EH20/>
+                <div className="blog-list-post-card-text">
+                    <H17 className="h17-black-lustria">{props.data.text + " ..."}</H17>
+                </div>
+                <EH20/>
+                {renderBlogCardInfo()}
+            </>
+        )
+    }
+
+    const renderBlogCardInfo = () => {
+        return(
+            <div className="blog-list-post-card-info-wrapper">
+                <div 
+                    className="blog-list-post-card-info-likes"
+                    onMouseEnter={() => handleMouseEnter(`blogCardLikes`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardLikes`)} 
+                >
+                    <Icon 
+                        iconType="fontAwesome"
+                        icon="faHeart"
+                        iconSize="1x"
+                        isHover={isHoveringBlogCardLikes}
+                        classNameOpt="blogCardLikes"
+                    />
+                </div>
+                <div className="blog-list-post-card-info-comments">
+                    
+                </div>
+                <div className="blog-list-post-card-info-tags">
+                
+                </div>
+                <div className="blog-list-post-card-info-soc-med">
+                
+                </div>
+            </div>
+        )
+    }
+
     const renderBlogCard = (type) => {
         switch(type){
             case 'standardPost':
                 return (
                     <>
-                        <img src={loadImg(props.data.coverImage.key)}/>
-                        <EH60/>
-                        <div
-                            className="blog-list-post-card-date"
-                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
-                        >
-                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
-                        </div>
-                        <H35 className="H35-black-poppins">{props.data.header}</H35>
-                        <EH20/>
-                        <div className="blog-list-post-card-text">
-                            <H17 className="h17-black-lustria">{props.data.text + " ..."}</H17>
-                        </div>
-                        <EH20/>
-                        <div className="blog-list-post-card-info-wrapper">
-
-                        </div>
+                        {renderBlogCardMainBody()}
                     </>
                 )
             case 'galleryPost':
@@ -137,61 +185,25 @@ export const BlogListPostCard = (props) => {
             case 'linkPost':
                 return (
                     <>
-                        <img src={loadImg(props.data.coverImage.key)}/>
-                        <EH60/>
-                        <div
-                            className="blog-list-post-card-date"
-                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
-                        >
-                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
-                        </div>
-                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                        {renderBlogCardMainBody()}
                     </>
                 )
             case 'quotePost':
                 return (
                     <>
-                        <img src={loadImg(props.data.coverImage.key)}/>
-                        <EH60/>
-                        <div
-                            className="blog-list-post-card-date"
-                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
-                        >
-                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
-                        </div>
-                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                        {renderBlogCardMainBody()}
                     </>
                 )
             case 'audioPost':
                 return (
                     <>
-                        <img src={loadImg(props.data.coverImage.key)}/>
-                        <EH60/>
-                        <div
-                            className="blog-list-post-card-date"
-                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
-                        >
-                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
-                        </div>
-                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                        {renderBlogCardMainBody()}
                     </>
                 )
             case 'videoPost':
                 return (
                     <>
-                        <img src={loadImg(props.data.coverImage.key)}/>
-                        <EH60/>
-                        <div
-                            className="blog-list-post-card-date"
-                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
-                        >
-                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
-                        </div>
-                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                        {renderBlogCardMainBody()}
                     </>
                 )
         }
