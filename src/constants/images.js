@@ -869,8 +869,8 @@ export const PROJECT_SHOWCASE_BACKGROUND_SUPER_SMALL_SCREEN_IMG_3 = ProjectShowc
 
 // Audio post
 
-import BlogCardAudioPostCoverImg1 from '../images/blogCards/audioPost/pineapple-supply-co-J3odfo3m7g0-unsplash-blog-card.png';
-import BlogCardAudioPostCoverImg2 from '../images/blogCards/audioPost/pure-julia-3vVMl4--mNI-unsplash-blog-card.png';
+import BlogCardAudioPostCoverImg1 from '../images/blogCards/audioPost/pure-julia-3vVMl4--mNI-unsplash-blog-card.png';
+import BlogCardAudioPostCoverImg2 from '../images/blogCards/audioPost/pineapple-supply-co-J3odfo3m7g0-unsplash-blog-card.png';
 import BlogCardAudioPostCoverImg3 from '../images/blogCards/audioPost/ryan-pang-M5BxrU2nSTM-unsplash-blog-card.png';
 
 export const BLOG_CARD_AUDIO_POST_COVER_IMG_1 = BlogCardAudioPostCoverImg1;
@@ -905,9 +905,9 @@ export const BLOG_CARD_GALLERY_POST_COVER_IMG_11 = BlogCardGalleryPostID11;
 
 // Link post
 
-import BlogCardLinkPostCoverImg1 from '../images/blogCards/linkPost/patrick-perkins-3wylDrjxH-E-unsplash-blog-card.png';
+import BlogCardLinkPostCoverImg1 from '../images/blogCards/linkPost/tanya-pro-ebERv1EhWoU-unsplash-blog-card.png';
 import BlogCardLinkPostCoverImg2 from '../images/blogCards/linkPost/simon-hattinga-verschure-WNevBlZWCKA-unsplash-blog-card.png';
-import BlogCardLinkPostCoverImg3 from '../images/blogCards/linkPost/tanya-pro-ebERv1EhWoU-unsplash-blog-card.png';
+import BlogCardLinkPostCoverImg3 from '../images/blogCards/linkPost/ducminh-nguyen-hG3H6N6VwCY-unsplash-blog-card.png';
 
 export const BLOG_CARD_LINK_POST_COVER_IMG_1 = BlogCardLinkPostCoverImg1;
 export const BLOG_CARD_LINK_POST_COVER_IMG_2 = BlogCardLinkPostCoverImg2;
@@ -915,7 +915,7 @@ export const BLOG_CARD_LINK_POST_COVER_IMG_3 = BlogCardLinkPostCoverImg3;
 
 // Quote post
 
-import BlogCardQuotePostCoverImg1 from '../images/blogCards/quotePost/ducminh-nguyen-hG3H6N6VwCY-unsplash-blog-card.png';
+import BlogCardQuotePostCoverImg1 from '../images/blogCards/quotePost/patrick-perkins-3wylDrjxH-E-unsplash-blog-card.png';
 import BlogCardQuotePostCoverImg2 from '../images/blogCards/quotePost/elena-mozhvilo-girJ8wuVrCA-unsplash-blog-card.png';
 import BlogCardQuotePostCoverImg3 from '../images/blogCards/quotePost/fernando-lavin-fi5YSQfxbVk-unsplash-blog-card.png';
 import BlogCardQuotePostCoverImg4 from '../images/blogCards/quotePost/francesco-gallarotti-ruQHpukrN7c-unsplash-blog-card.png';
@@ -940,8 +940,8 @@ export const BLOG_CARD_STANDARD_POST_COVER_IMG_3 = BlogCardStandardPostCoverImg3
  */
 
 import VideoCoverImg1 from '../videos/john-schnobrich-unsplash.jpg';
-import VideoCoverImg2 from '../videos/bench-accounting-C3V88BOoRoM-unsplash-blog-card.png';
-import VideoCoverImg3 from '../videos/fabian-irsara-67l-QujB14w-unsplash-blog-card.png';
+import VideoCoverImg2 from '../videos/fabian-irsara-67l-QujB14w-unsplash-blog-card.png';
+import VideoCoverImg3 from '../videos/bench-accounting-C3V88BOoRoM-unsplash-blog-card.png';
 import VideoCoverImg4 from '../videos/timothy-buck-psrloDbaZc8-unsplash-blog-card.png';
 
 export const VIDEO_COVER_IMG_1 = VideoCoverImg1;

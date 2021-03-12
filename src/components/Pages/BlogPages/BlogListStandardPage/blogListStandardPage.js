@@ -256,7 +256,7 @@ export const BlogListStandardPage = (props) => {
                         <React.Fragment key={i}>
                             <BlogListPostCard 
                                 page="blogListStandardPage"
-                                cardType={el.cardType}
+                                data={el}
                             />
                         </React.Fragment>
                     )

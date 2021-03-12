@@ -3,6 +3,7 @@
  */
 
 import React, {
+    useState,
     useEffect
 } from 'react';
 
@@ -17,27 +18,30 @@ import './blogListPostCard.scss';
  */
 
 import {
-    H19,
-    H22,
-    H70,
-    
+    H15,
+    H17,
+    H35,
+    EH20,
+    EH60
 } from '../../UtilityComponents';
 
-import * as Utility from '../../../utility';
-
 /**
- * Hooks
+ * Constants
  */
 
-import {
-    useInterval
-} from '../../../Hooks/useInterval';
+import * as Images from '../../../constants/images';
 
 /**
  * BlogListPostCard component definition and export
  */
 
 export const BlogListPostCard = (props) => {
+
+    /**
+     * State
+     */
+
+    const [isHovering, setIsHovering] = useState("init");
 
     /**
      * Methods
@@ -47,75 +51,150 @@ export const BlogListPostCard = (props) => {
      
     }, []);
 
-    const renderClassName = (opt, color) => {
-        if(opt === "countdownValue"){
-            switch(color){
-                case 'white':
-                    return "h70-white-poppins";
-                case 'black':
-                default:
-                    return "h70-black-poppins";
-            }
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'blogCardDate': 
+                setIsHovering("on");
+                break;
         }
-        if(opt === "countdownName"){
-            switch(color){
-                case 'white':
-                    return "h25-white-lustria-countdown-page";
-                case 'nobel':
-                default:
-                    return "h25-nobel-lustria-countdown-page";
-            }
-        }
-     
     }
 
-    const setValue = (val) => {
-        // Add 0 at the beginning of the value if the value is less than 10
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'blogCardDate': 
+                setIsHovering("off");
+                break;
+        }
+    }
 
-        if(val < 10) return val.toString().padStart(2, '0');
-        else return val;
+    const renderClassName = (opt, isHovering) => {
+        if(opt === "blogCardDate"){
+            switch(isHovering){
+                case 'init':
+                    return "h15-nobel-lustria-animated";
+                case 'on':
+                    return "h15-nobel-lustria-nero-hover-on";
+                case 'off':
+                    return "h15-nobel-lustria-nero-hover-off"
+            }
+        }     
+    }
+
+    const loadImg = (imgKey) => {
+        switch(imgKey){
+            case 'blogCardStandardPostCoverImg1':
+                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_1;
+            case 'blogCardGalleryPostCoverImg1':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
+            case 'blogCardGalleryPostCoverImg2':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_2;
+            case 'blogCardGalleryPostCoverImg3':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
+            case 'blogCardLinkPostCoverImg1':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_1;
+            case 'blogCardQuotePostCoverImg1':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
+            case 'blogCardAudioPostCoverImg1':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_1;
+            case 'blogCardVideoPostCoverImg1':
+                return Images.VIDEO_COVER_IMG_2;
+            default:
+                return "";
+        }
     }
 
     const renderBlogCard = (type) => {
         switch(type){
             case 'standardPost':
                 return (
-                    <div></div>
+                    <>
+                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <EH60/>
+                        <div
+                            className="blog-list-post-card-date"
+                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                        >
+                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
+                        </div>
+                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                        <EH20/>
+                        <div className="blog-list-post-card-text">
+                            <H17 className="h17-black-lustria">{props.data.text + " ..."}</H17>
+                        </div>
+                        <EH20/>
+                        <div className="blog-list-post-card-info-wrapper">
+
+                        </div>
+                    </>
                 )
             case 'galleryPost':
                 return (
-                    <div></div>
+                    <>
+                        {/* <img src={loadImg(props.data.coverImage.key)}/> */}
+                    </>
                 )
             case 'linkPost':
                 return (
-                    <div></div>
+                    <>
+                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <EH60/>
+                        <div
+                            className="blog-list-post-card-date"
+                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                        >
+                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
+                        </div>
+                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                    </>
                 )
             case 'quotePost':
                 return (
-                    <div></div>
+                    <>
+                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <EH60/>
+                        <div
+                            className="blog-list-post-card-date"
+                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                        >
+                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
+                        </div>
+                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                    </>
                 )
             case 'audioPost':
                 return (
-                    <div></div>
+                    <>
+                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <EH60/>
+                        <div
+                            className="blog-list-post-card-date"
+                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                        >
+                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
+                        </div>
+                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                    </>
                 )
             case 'videoPost':
                 return (
-                    <div></div>
+                    <>
+                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <EH60/>
+                        <div
+                            className="blog-list-post-card-date"
+                            onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                        >
+                            <H15 className={renderClassName("blogCardDate", isHovering)}>{props.data.date}</H15>
+                        </div>
+                        <H35 className="H35-black-poppins">{props.data.header}</H35>
+                    </>
                 )
         }
-        return(
-            <div className="countdown-item-wrapper">{props.data.countdownValue.map((el, i) => {
-                return(
-                    <div
-                        key={i}
-                        className="countdown-item"
-                    >
-                        <H70 className={renderClassName("countdownValue", props.numberColor)}>{setValue(el.val)}</H70>
-                        <H22 className={renderClassName("countdownName", props.textColor)}>{el.name}</H22>
-                   </div>
-                )
-            })}</div>
-        )
     }
 
     /**
@@ -124,7 +203,7 @@ export const BlogListPostCard = (props) => {
 
     return(
         <div className="blog-list-post-card">
-            {renderBlogCard(props.cardType)}
+            {renderBlogCard(props.data.cardType)}
         </div>
     );
 }

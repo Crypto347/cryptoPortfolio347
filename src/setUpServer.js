@@ -20929,7 +20929,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId1",
             cardType: "standardPost",
             header: "Standard Post.",
-            data: "11.03.2021",
+            date: "11.03.2021",
             numberOfLikes: 9,
             numberOfComments: 3,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -20959,9 +20959,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             path: "blog-list-standard/standard-post/1",
             coverImage: {
                 id: 1,
-                key: "stoneWallCover1",
+                key: "blogCardStandardPostCoverImg1",
                 isHover: "init",
-                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -20971,7 +20971,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId2",
             cardType: "galleryPost",
             header: "Gallery Post.",
-            data: "11.03.2021",
+            date: "11.03.2021",
             numberOfLikes: 3,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -21002,7 +21002,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             imagesArray: [
                     { 
                         id: 1,
-                        key: "stoneWallCover1",
+                        key: "blogCardGalleryPostCoverImg1",
+                        isHover: "init",
+                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 2,
+                        key: "blogCardGalleryPostCoverImg2",
+                        isHover: "init",
+                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 3,
+                        key: "blogCardGalleryPostCoverImg3",
                         isHover: "init",
                         imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
                         folderName: "colorful",
@@ -21016,7 +21032,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId3",
             cardType: "linkPost",
             header: "Link Post.",
-            data: "11.03.2021",
+            date: "11.03.2021",
             numberOfLikes: 3,
             numberOfComments: 2,
             linkText: "Document everything. What helps people, helps business.",
@@ -21047,9 +21063,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             path: "blog-list-standard/link-post/1",
             coverImage: {
                 id: 1,
-                key: "stoneWallCover1",
+                key: "blogCardLinkPostCoverImg1",
                 isHover: "init",
-                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                imageName: "tanya-pro-ebERv1EhWoU-unsplash-blog-card.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -21059,7 +21075,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId4",
             cardType: "quotePost",
             header: "Quote Post.",
-            data: "11.03.2021",
+            date: "11.03.2021",
             numberOfLikes: 8,
             numberOfComments: 2,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seasing your competitive advane by aligning strateg.",
@@ -21091,9 +21107,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             path: "blog-list-standard/quote-post/1",
             coverImage: {
                 id: 1,
-                key: "stoneWallCover1",
+                key: "blogCardQuotePostCoverImg1",
                 isHover: "init",
-                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                imageName: "patrick-perkins-3wylDrjxH-E-unsplash-blog-card.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -21103,7 +21119,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId5",
             cardType: "audioPost",
             header: "The best way out is always through.",
-            data: "11.03.2021",
+            date: "11.03.2021",
             numberOfLikes: 3,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -21133,9 +21149,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             path: "blog-list-standard/audio-post/1",
             coverImage: {
                 id: 1,
-                key: "stoneWallCover1",
+                key: "blogCardAudioPostCoverImg1",
                 isHover: "init",
-                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                imageName: "pure-julia-3vVMl4--mNI-unsplash-blog-card.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -21145,7 +21161,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId6",
             cardType: "videoPost",
             header: "Video Post.",
-            data: "11.03.2021",
+            date: "11.03.2021",
             numberOfLikes: 8,
             numberOfComments: 6,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -21172,12 +21188,12 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/audio-post/1",
+            path: "blog-list-standard/video-post/1",
             coverImage: {
                 id: 1,
-                key: "stoneWallCover1",
+                key: "blogCardVideoPostCoverImg1",
                 isHover: "init",
-                imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
                 folderName: "colorful",
                 alt: "image"
             }
