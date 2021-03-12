@@ -13,6 +13,12 @@
     .blog-list-post-card-info-wrapper {
         .blog-list-post-card-info-likes {
             display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .blog-list-post-card-info-comments {
+            display: inline-flex;
+            align-items: center;
             cursor: pointer;
         }
     }

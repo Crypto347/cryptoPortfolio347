@@ -39,7 +39,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
-  faHeart
+  faHeart,
+  faComment
 } from '@fortawesome/free-regular-svg-icons';
 
 /**
@@ -137,14 +138,14 @@ export const Icon = (props) => {
                     return "blog-list-standard-page-search-icon-hover-off"
             }
         }
-        if(opt === "blogCardLikes"){
+        if(['blogCardLikes','blogCardComments'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-card-likes-icon";
+                    return "icon-color-from-nobel-to-black";
                 case 'on':
-                    return "blog-card-likes-icon-hover-on";
+                    return "icon-color-from-nobel-to-black-hover-on";
                 case 'off':
-                    return "blog-card-likes-icon-hover-off"
+                    return "icon-color-from-nobel-to-black-hover-off"
             }
         }
         if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
@@ -202,6 +203,8 @@ export const Icon = (props) => {
                 return faSearch;
             case 'faHeart':
                 return faHeart;
+            case 'faComment':
+                return faComment;
         }
     }
 

@@ -157,25 +157,25 @@
     color: rgb(218, 153, 83);
 }
 
-.blog-card-likes-icon {
+.icon-color-from-nobel-to-black {
     color: rgb(155, 155, 155);
     cursor: pointer;
 }
-.blog-card-likes-icon-hover-on {
+.icon-color-from-nobel-to-black-hover-on {
     color: black;
     cursor: pointer;
-    -webkit-animation: blogCardLikesIconHoverOn .3s linear;
-    -moz-animation: blogCardLikesIconHoverOn .3s linear;
-    -o-animation: blogCardLikesIconHoverOn .3s linear;
-    animation: blogCardLikesIconHoverOn .3s linear;
+    -webkit-animation: iconColorFromNobelToBlackHoverOn .3s linear;
+    -moz-animation: iconColorFromNobelToBlackHoverOn .3s linear;
+    -o-animation: iconColorFromNobelToBlackHoverOn .3s linear;
+    animation: iconColorFromNobelToBlackHoverOn .3s linear;
 }
-.blog-card-likes-icon-hover-off {
+.icon-color-from-nobel-to-black-hover-off {
     color: rgb(155, 155, 155);
     cursor: pointer;
-    -webkit-animation: blogCardLikesIconHoverOff .3s linear;
-    -moz-animation: blogCardLikesIconHoverOff .3s linear;
-    -o-animation: blogCardLikesIconHoverOff .3s linear;
-    animation: blogCardLikesIconHoverOff .3s linear;
+    -webkit-animation: iconColorFromNobelToBlackHoverOff .3s linear;
+    -moz-animation: iconColorFromNobelToBlackHoverOff .3s linear;
+    -o-animation: iconColorFromNobelToBlackHoverOff .3s linear;
+    animation: iconColorFromNobelToBlackHoverOff .3s linear;
 }
 
 @-webkit-keyframes socMedIconHoverOn {
@@ -246,36 +246,36 @@
     to{color: black;}
 }
 
-@-webkit-keyframes blogCardLikesIconHoverOn {
+@-webkit-keyframes iconColorFromNobelToBlackHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: black;}
 }
-@-moz-keyframes blogCardLikesIconHoverOn {
+@-moz-keyframes iconColorFromNobelToBlackHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: black;}
 }
-@-o-keyframes blogCardLikesIconHoverOn {
+@-o-keyframes iconColorFromNobelToBlackHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: black;}
 }
-@keyframes blogCardLikesIconHoverOn {
+@keyframes iconColorFromNobelToBlackHoverOn {
     from{color: rgb(155, 155, 155);}
     to{color: black;}
 }
 
-@-webkit-keyframes blogCardLikesIconHoverOff {
+@-webkit-keyframes iconColorFromNobelToBlackHoverOff {
     from{color: black;}
     to{color: rgb(155, 155, 155);}
 }
-@-moz-keyframes blogCardLikesIconHoverOff {
+@-moz-keyframes iconColorFromNobelToBlackHoverOff {
     from{color: black;}
     to{color: rgb(155, 155, 155);}
 }
-@-o-keyframes blogCardLikesIconHoverOff {
+@-o-keyframes iconColorFromNobelToBlackHoverOff {
     from{color: black;}
     to{color: rgb(155, 155, 155);}
 }
-@keyframes blogCardLikesIconHoverOff {
+@keyframes iconColorFromNobelToBlackHoverOff {
     from{color: black;}
     to{color: rgb(155, 155, 155);}
 }

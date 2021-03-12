@@ -27,6 +27,7 @@ import {
     H15,
     H17,
     H35,
+    EW10,
     EH20,
     EH60
 } from '../../UtilityComponents';
@@ -49,6 +50,7 @@ export const BlogListPostCard = (props) => {
 
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
+    const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
 
     /**
      * Methods
@@ -66,6 +68,9 @@ export const BlogListPostCard = (props) => {
             case 'blogCardLikes': 
                 setIsHoveringBlogCardLikes("on");
                 break;
+            case 'blogCardComments': 
+                setIsHoveringBlogCardComments("on");
+                break;
         }
     }
 
@@ -77,11 +82,14 @@ export const BlogListPostCard = (props) => {
             case 'blogCardLikes': 
                 setIsHoveringBlogCardLikes("off");
                 break;
+            case 'blogCardComments': 
+                setIsHoveringBlogCardComments("off");
+                break;
         }
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "blogCardDate"){
+        if(['blogCardDate','blogCardLikes','blogCardComments'].includes(opt)){
             switch(isHovering){
                 case 'init':
                     return "h15-nobel-lustria-animated";
@@ -154,9 +162,23 @@ export const BlogListPostCard = (props) => {
                         isHover={isHoveringBlogCardLikes}
                         classNameOpt="blogCardLikes"
                     />
+                    &nbsp;
+                    <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.data.numberOfLikes}</H15>
                 </div>
-                <div className="blog-list-post-card-info-comments">
-                    
+                <div 
+                    className="blog-list-post-card-info-comments"
+                    onMouseEnter={() => handleMouseEnter(`blogCardComments`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardComments`)} 
+                >
+                    <Icon 
+                        iconType="fontAwesome"
+                        icon="faComment"
+                        iconSize="1x"
+                        isHover={isHoveringBlogCardComments}
+                        classNameOpt="blogCardComments"
+                    />
+                    &nbsp;
+                    <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.data.numberOfComments}</H15>
                 </div>
                 <div className="blog-list-post-card-info-tags">
                 
