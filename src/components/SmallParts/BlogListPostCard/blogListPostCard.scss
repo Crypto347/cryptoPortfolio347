@@ -29,4 +29,20 @@
             }
         }
     }
+
+    .blog-list-post-card-link {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: rgb(37, 37, 37);
+        line-height: 1.5;
+        .blog-list-post-card-link-icon-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transform: rotate(90deg);
+        }
+    }
 }

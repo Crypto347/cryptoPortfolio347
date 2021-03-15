@@ -99,6 +99,35 @@
     animation: h22NeroNobelHoverOff .5s linear;
 }
 
+.h22-white-lustria-cursor {
+    font-size: 22px;
+    color: white;
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+}
+
+.h22-white-lustoria-nobel-hover-on {
+    font-size: 22px;
+    color: rgb(155, 155, 155);
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h22WhiteNobelHoverOn .5s linear;
+    -moz-animation: h22WhiteNobelHoverOn .5s linear;
+    -o-animation: h22WhiteNobelHoverOn .5s linear;
+    animation: h22WhiteNobelHoverOn .5s linear;
+}
+
+.h22-white-lustoria-nobel-hover-off {
+    font-size: 22px;
+    color: white;
+    font-family: 'Lustria', serif;
+    cursor: pointer;
+    -webkit-animation: h22WhiteNobelHoverOff .5s linear;
+    -moz-animation: h22WhiteNobelHoverOff .5s linear;
+    -o-animation: h22WhiteNobelHoverOff .5s linear;
+    animation: h22WhiteNobelHoverOff .5s linear;
+}
+
 @media only screen and (max-width: 870px){
     .h22-nobel-lustria-centered {
         font-size: 19px;
@@ -171,4 +200,38 @@
 @keyframes h22NeroNobelHoverOff {
     from{color: rgb(155, 155, 155);}
     to{color: rgb(37, 37, 37);}
+}
+
+@-webkit-keyframes h22WhiteNobelHoverOn {
+    from{color: white;}
+    to{color: rgb(155, 155, 155);}
+}
+@-moz-keyframes h22WhiteNobelHoverOn {
+    from{color: white;}
+    to{color: rgb(155, 155, 155);}
+}
+@-o-keyframes h22WhiteNobelHoverOn {
+    from{color: white;}
+    to{color: rgb(155, 155, 155);}
+}
+@keyframes h22WhiteNobelHoverOn {
+    from{color: white;}
+    to{color: rgb(155, 155, 155);}
+}
+
+@-webkit-keyframes h22WhiteNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: white;}
+}
+@-moz-keyframes h22WhiteNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: white;}
+}
+@-o-keyframes h22WhiteNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: white;}
+}
+@keyframes h22WhiteNobelHoverOff {
+    from{color: rgb(155, 155, 155);}
+    to{color: white;}
 }

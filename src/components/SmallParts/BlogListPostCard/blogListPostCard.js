@@ -26,6 +26,7 @@ import Icon from '../../SmallParts/Icon/icon';
 import {
     H15,
     H17,
+    H22,
     H35,
     EW10,
     EH20,
@@ -38,6 +39,7 @@ import {
  */
 
 import * as Images from '../../../constants/images';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 /**
  * BlogListPostCard component definition and export
@@ -53,6 +55,7 @@ export const BlogListPostCard = (props) => {
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
     const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
     const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
+    const [isHoveringBlogCardLink, setIsHoveringBlogCardLink] = useState("init");
 
     /**
      * Methods
@@ -79,6 +82,9 @@ export const BlogListPostCard = (props) => {
             case 'blogCardTags': 
                 props.blogListCardTagIsHover("on", props.data.key, key);
                 break;
+            case 'blogCardLink': 
+                setIsHoveringBlogCardLink("on");
+                break;
         }
     }
 
@@ -99,6 +105,9 @@ export const BlogListPostCard = (props) => {
             case 'blogCardTags': 
                 props.blogListCardTagIsHover("off", props.data.key, key);
                 break;
+            case 'blogCardLink': 
+                setIsHoveringBlogCardLink("off");
+                break;
         }
     }
 
@@ -117,7 +126,17 @@ export const BlogListPostCard = (props) => {
                 case 'off':
                     return "h15-nobel-lustria-nero-hover-off"
             }
-        }     
+        }
+        if(opt === "blogCardLink"){
+            switch(isHovering){
+                case 'init':
+                    return "h22-white-lustria-cursor";
+                case 'on':
+                    return "h22-white-lustoria-nobel-hover-on";
+                case 'off':
+                    return "h22-white-lustoria-nobel-hover-off"
+            }
+        }
     }
 
     const loadImg = (imgKey) => {
@@ -226,6 +245,7 @@ export const BlogListPostCard = (props) => {
                             iconSize="1x"
                             classNameOpt="blogCardTag"
                         />
+                         &nbsp;
                         {renderTags(props.data.tags)}
                     </div>
                 </div>              
@@ -263,6 +283,22 @@ export const BlogListPostCard = (props) => {
             case 'linkPost':
                 return (
                     <>
+                        <div 
+                            className="blog-list-post-card-link"
+                            onMouseEnter={() => handleMouseEnter(`blogCardLink`)} 
+                            onMouseLeave={() => handleMouseLeave(`blogCardLink`)} 
+                        >
+                            <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.data.linkText}</H22>
+                            <div className="blog-list-post-card-link-icon-wrapper">
+                                <Icon
+                                    iconType="fontAwesome"
+                                    icon="faLink"
+                                    iconSize="2x"
+                                    classNameOpt="blogCardLink"
+                                />
+                            </div>
+                        </div>
+                        <EH60/>
                         {renderBlogCardMainBody()}
                     </>
                 )
