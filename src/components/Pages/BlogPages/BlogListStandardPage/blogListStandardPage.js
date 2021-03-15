@@ -257,6 +257,7 @@ export const BlogListStandardPage = (props) => {
                             <BlogListPostCard 
                                 page="blogListStandardPage"
                                 data={el}
+                                blogListCardTagIsHover={props.blogListCardTagIsHoverForBlogListStandardPage}
                             />
                         </React.Fragment>
                     )
@@ -355,6 +356,7 @@ export default connect(
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
+            blogListCardTagIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardTagIsHoverForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

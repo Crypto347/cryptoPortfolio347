@@ -49,3 +49,11 @@ export function initTagsForBlogListStandardPage(array) {
     };
 };
 
+export function blogListCardTagIsHoverForBlogListStandardPage(val, cardKey, tagKey) {
+    return { 
+        type: actionTypes.BLOG_LIST_CARD_TAG_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE,
+        val: val,
+        cardKey: cardKey,
+        tagKey: tagKey
+    };
+};

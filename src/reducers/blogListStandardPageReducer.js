@@ -86,7 +86,6 @@ const activateListStandardBlogCategory = (state, action) => {
     let categoryIndex = updatedCategoryList.findIndex(item => item.key === action.categoryName);
     
     updatedCategoryList.splice(categoryIndex, 1, category)
-    console.log(updatedCategoryList)
 
     return {
         ...state,
@@ -109,6 +108,27 @@ const initTagsForBlogListStandardPage = (state, action) => {
     }
 }
 
+const blogListCardTagIsHoverForBlogListStandardPage = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let card = {...updatedItems.find(item => item.key === action.cardKey)};
+    let cardIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+
+    let updatedTags = [...card.tags];
+    let tag = {...updatedTags.find(item => item.key === action.tagKey), isHover: action.val};
+    let tagIndex = updatedTags.findIndex(item => item.key === action.tagKey);
+
+    updatedTags.splice(tagIndex, 1, tag);
+
+    card = {...card, tags: updatedTags}
+    updatedItems.splice(cardIndex, 1, card)
+
+    return {
+        ...state,
+        items: updatedItems
+    }
+}
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -126,8 +146,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
         case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
             return fetchBlogListStandardPageDataFailur (state, action);
 
-        // case actionTypes.FETCH_GET_DIRECTION_CONTACT_FORM_PAGE_FAILURE:
-        //     return fetchGetDirectionContactFormPageFailur(state, action);
+        case actionTypes.BLOG_LIST_CARD_TAG_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
+            return blogListCardTagIsHoverForBlogListStandardPage(state, action);
         // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_BEGIN:
         //     return fetchSubscribeContactFormPageBegin (state, action); 
         // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_SUCCESS:

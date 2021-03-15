@@ -1,8 +1,6 @@
 .blog-list-post-card {
     >img {
         width: 100%;
-        // height: 250px;
-        // opacity: 0.9;
     }
     .blog-list-post-card-date {
         display: inline-flex;
@@ -11,16 +9,24 @@
         line-height: 1.6;
     }
     .blog-list-post-card-info-wrapper {
-        .blog-list-post-card-info-likes {
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .blog-list-post-card-info-comments {
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        .blog-list-post-card-info-left-part-wrapper {
+            display: flex;
+            .blog-list-post-card-info-likes {
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            .blog-list-post-card-info-comments {
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            .blog-list-post-card-info-tags {
+                display: inline-flex;
+                align-items: center;
+            }
         }
     }
-   
 }

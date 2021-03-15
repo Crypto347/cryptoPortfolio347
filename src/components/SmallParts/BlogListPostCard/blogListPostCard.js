@@ -29,7 +29,8 @@ import {
     H35,
     EW10,
     EH20,
-    EH60
+    EH60,
+    EH70
 } from '../../UtilityComponents';
 
 /**
@@ -51,6 +52,7 @@ export const BlogListPostCard = (props) => {
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
     const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
+    const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
 
     /**
      * Methods
@@ -60,7 +62,7 @@ export const BlogListPostCard = (props) => {
      
     }, []);
 
-    const handleMouseEnter = (opt) => {
+    const handleMouseEnter = (opt, key) => {
         switch(opt){
             case 'blogCardDate': 
                 setIsHoveringBlogCardDate("on");
@@ -71,10 +73,16 @@ export const BlogListPostCard = (props) => {
             case 'blogCardComments': 
                 setIsHoveringBlogCardComments("on");
                 break;
+            case 'blogCardShare': 
+                setIsHoveringBlogCardShare("on");
+                break;
+            case 'blogCardTags': 
+                props.blogListCardTagIsHover("on", props.data.key, key);
+                break;
         }
     }
 
-    const handleMouseLeave = (opt) => {
+    const handleMouseLeave = (opt, key) => {
         switch(opt){
             case 'blogCardDate': 
                 setIsHoveringBlogCardDate("off");
@@ -85,11 +93,22 @@ export const BlogListPostCard = (props) => {
             case 'blogCardComments': 
                 setIsHoveringBlogCardComments("off");
                 break;
+            case 'blogCardShare': 
+                setIsHoveringBlogCardShare("off");
+                break;
+            case 'blogCardTags': 
+                props.blogListCardTagIsHover("off", props.data.key, key);
+                break;
         }
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(['blogCardDate','blogCardLikes','blogCardComments'].includes(opt)){
+        if([
+            'blogCardDate',
+            'blogCardLikes',
+            'blogCardComments',
+            'blogCardTags'
+        ].includes(opt)){
             switch(isHovering){
                 case 'init':
                     return "h15-nobel-lustria-animated";
@@ -143,48 +162,85 @@ export const BlogListPostCard = (props) => {
                 </div>
                 <EH20/>
                 {renderBlogCardInfo()}
+                <EH70/>
             </>
+        )
+    }
+
+    const renderTags = (arr) => {
+        return(
+            <>{arr.map((el, i) => {
+                return(
+                    <div
+                        key={i}
+                        onMouseEnter={() => handleMouseEnter(`blogCardTags`, el.key)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardTags`, el.key)} 
+                    >
+                        <H15 className={renderClassName("blogCardTags", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
+                    </div>
+                )
+            })}</>
         )
     }
 
     const renderBlogCardInfo = () => {
         return(
             <div className="blog-list-post-card-info-wrapper">
+                <div className="blog-list-post-card-info-left-part-wrapper">
+                    <div 
+                        className="blog-list-post-card-info-likes"
+                        onMouseEnter={() => handleMouseEnter(`blogCardLikes`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardLikes`)} 
+                    >
+                        <Icon 
+                            iconType="fontAwesome"
+                            icon="faHeart"
+                            iconSize="1x"
+                            isHover={isHoveringBlogCardLikes}
+                            classNameOpt="blogCardLike"
+                        />
+                        &nbsp;
+                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.data.numberOfLikes}</H15>
+                    </div>
+                    <EW10/>
+                    <div 
+                        className="blog-list-post-card-info-comments"
+                        onMouseEnter={() => handleMouseEnter(`blogCardComments`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardComments`)} 
+                    >
+                        <Icon 
+                            iconType="fontAwesome"
+                            icon="faComment"
+                            iconSize="1x"
+                            isHover={isHoveringBlogCardComments}
+                            classNameOpt="blogCardComment"
+                        />
+                        &nbsp;
+                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.data.numberOfComments}</H15>
+                    </div>
+                    <EW10/>
+                    <div className="blog-list-post-card-info-tags">
+                        <Icon
+                            iconType="fontAwesome"
+                            icon="faBookmark"
+                            iconSize="1x"
+                            classNameOpt="blogCardTag"
+                        />
+                        {renderTags(props.data.tags)}
+                    </div>
+                </div>              
                 <div 
-                    className="blog-list-post-card-info-likes"
-                    onMouseEnter={() => handleMouseEnter(`blogCardLikes`)} 
-                    onMouseLeave={() => handleMouseLeave(`blogCardLikes`)} 
+                    className="blog-list-post-card-info-soc-med"
+                    onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
                 >
-                    <Icon 
+                    <Icon
                         iconType="fontAwesome"
-                        icon="faHeart"
+                        icon="faShareAlt"
                         iconSize="1x"
-                        isHover={isHoveringBlogCardLikes}
-                        classNameOpt="blogCardLikes"
+                        isHover={isHoveringBlogCardShare}
+                        classNameOpt="blogCardShare"
                     />
-                    &nbsp;
-                    <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.data.numberOfLikes}</H15>
-                </div>
-                <div 
-                    className="blog-list-post-card-info-comments"
-                    onMouseEnter={() => handleMouseEnter(`blogCardComments`)} 
-                    onMouseLeave={() => handleMouseLeave(`blogCardComments`)} 
-                >
-                    <Icon 
-                        iconType="fontAwesome"
-                        icon="faComment"
-                        iconSize="1x"
-                        isHover={isHoveringBlogCardComments}
-                        classNameOpt="blogCardComments"
-                    />
-                    &nbsp;
-                    <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.data.numberOfComments}</H15>
-                </div>
-                <div className="blog-list-post-card-info-tags">
-                
-                </div>
-                <div className="blog-list-post-card-info-soc-med">
-                
                 </div>
             </div>
         )

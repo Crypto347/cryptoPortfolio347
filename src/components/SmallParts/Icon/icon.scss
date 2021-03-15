@@ -177,6 +177,9 @@
     -o-animation: iconColorFromNobelToBlackHoverOff .3s linear;
     animation: iconColorFromNobelToBlackHoverOff .3s linear;
 }
+.icon-color-nobel {
+    color: rgb(155, 155, 155);
+}
 
 @-webkit-keyframes socMedIconHoverOn {
     from{color: white;}

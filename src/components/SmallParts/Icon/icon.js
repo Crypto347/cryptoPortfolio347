@@ -35,12 +35,14 @@ import {
     faPaperclip,
     faLaptop,
     faCoffee,
-    faSearch
+    faSearch,
+    faShareAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
   faHeart,
-  faComment
+  faComment,
+  faBookmark
 } from '@fortawesome/free-regular-svg-icons';
 
 /**
@@ -138,7 +140,7 @@ export const Icon = (props) => {
                     return "blog-list-standard-page-search-icon-hover-off"
             }
         }
-        if(['blogCardLikes','blogCardComments'].includes(opt)){
+        if(['blogCardLike','blogCardComment','blogCardShare'].includes(opt)){
             switch(isHovering){
                 case 'init':
                     return "icon-color-from-nobel-to-black";
@@ -148,6 +150,7 @@ export const Icon = (props) => {
                     return "icon-color-from-nobel-to-black-hover-off"
             }
         }
+        if(opt === "blogCardTag") return "icon-color-nobel"
         if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
         if(opt === "section2ListsPage") return "icon-for-lists-page-section-2"
     }
@@ -205,6 +208,10 @@ export const Icon = (props) => {
                 return faHeart;
             case 'faComment':
                 return faComment;
+            case 'faBookmark':
+                return faBookmark;
+            case 'faShareAlt':
+                return faShareAlt;
         }
     }
 
