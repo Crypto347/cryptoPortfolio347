@@ -11,7 +11,7 @@ import React, {
  * Styles
  */
 
-import './video.scss';
+import './audio.scss';
 
 /**
  * Utility
@@ -29,16 +29,16 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
- * Video
+ * Audio
  */
 
-import vid1 from '../../../videos/team_work.mp4';
+import audio1 from '../../../audio/bensound-ukulele.mp3';
 
 /**
- * Video component definition and export
+ * Audio component definition and export
  */
 
-export const Video = () => {
+export const Audio = () => {
 
     /**
      * State
@@ -118,31 +118,12 @@ export const Video = () => {
     }
 
     return(
-        <div className="video">
-            {!videoShown ? 
-            <div className="video-wrapper">
-                <img src={Images.VIDEO_COVER_IMG_1}/>
-                <div className="video-play-button-wrapper">
-                    <div 
-                        className={renderClassName(isHoveringPlayButton)}
-                        onMouseDown={(e) => showVideo(e)}
-                        onMouseEnter={() => handleMouseEnter('expand')} 
-                        onMouseLeave={() => handleMouseLeave('expand')}
-                    >
-                    </div>
-                </div>
-            </div> : null}
-            {videoShown ?
-            <div className="video-copyrights-wrapper">
-                <H19 className="h19-nobel-lora">Video by cottonbro from Pexels</H19> 
-                <video id="video" controls>
-                    <source src={vid1} type="video/mp4"/>
-                </video> 
-            </div> : null}
-       
-        </div>
+        <audio className="audio" controls>
+            <source src={audio1} type="audio/mp3"/>
+            Your browser does not support the audio element.
+        </audio>
     );
 }
-
-export default Video;
+// Music: https://www.bensound.com
+export default Audio;
  

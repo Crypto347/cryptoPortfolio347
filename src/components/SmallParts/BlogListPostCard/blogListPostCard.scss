@@ -75,4 +75,16 @@
             right: 20px;
         }
     }
+    .blog-list-post-card-audio-wrapper {
+        width: 100%;
+        position: relative;
+        >img {
+            width: 100%;
+        }
+        .blog-list-post-card-audio {
+            position: absolute;
+            width: 100%;
+            bottom: 0%;
+        }
+    }
 }

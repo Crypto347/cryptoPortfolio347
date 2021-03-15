@@ -18,6 +18,7 @@ import './blogListPostCard.scss';
  */
 
 import Icon from '../../SmallParts/Icon/icon';
+import Audio from '../../Parts/Audio/audio';
 
 /**
  * Utility
@@ -177,10 +178,17 @@ export const BlogListPostCard = (props) => {
         }
     }
 
-    const renderBlogCardMainBody = () => {
+    const renderBlogCardMainBody = (type) => {
         return(
             <>
-                <img src={loadImg(props.data.coverImage.key)}/>
+                {type === "audioPost" ? 
+                <div className="blog-list-post-card-audio-wrapper">
+                    <img src={loadImg(props.data.coverImage.key)}/>
+                    <div className="blog-list-post-card-audio">
+                        <Audio/>
+                    </div>
+                </div>
+                : <img src={loadImg(props.data.coverImage.key)}/>}
                 <EH60/>
                 <div
                     className="blog-list-post-card-date"
@@ -353,7 +361,7 @@ export const BlogListPostCard = (props) => {
             case 'audioPost':
                 return (
                     <>
-                        {renderBlogCardMainBody()}
+                        {renderBlogCardMainBody(type)}
                     </>
                 )
             case 'videoPost':

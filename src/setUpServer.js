@@ -21118,7 +21118,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             id: 5,
             key: "blogListStandardPageCardId5",
             cardType: "audioPost",
-            header: "The best way out is always through.",
+            header: "Audio Post.",
             date: "11.03.2021",
             numberOfLikes: 3,
             numberOfComments: 2,
