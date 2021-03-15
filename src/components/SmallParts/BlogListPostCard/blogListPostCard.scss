@@ -37,12 +37,42 @@
         align-items: center;
         padding: 50px;
         background-color: rgb(37, 37, 37);
-        line-height: 1.5;
+        .blog-list-post-card-link-text-wrapper {
+            line-height: 1.5;
+            padding-right: 30px;
+        }
         .blog-list-post-card-link-icon-wrapper {
             position: absolute;
             top: 20px;
             right: 20px;
             transform: rotate(90deg);
+        }
+    }
+    .blog-list-post-card-quote {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: white;
+        .blog-list-post-card-quote-text-wrapper {
+            line-height: 1.5;
+            padding-right: 30px;
+        }
+        .blog-list-post-card-quote-author-name-wrapper {
+            display: flex;
+            align-items: center;
+            .slide-dash {
+                border: 1.5px solid rgb(37, 37, 37);
+                background: rgb(37, 37, 37);
+                width: 10px;
+                margin-right: 5px;
+            }
+        }
+        .blog-list-post-card-quote-icon-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
     }
 }

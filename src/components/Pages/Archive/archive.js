@@ -292,11 +292,11 @@ export const Archive = (props) => {
         if(opt === "archiveCategory"){
             switch(isHovering){
                 case 'init':
-                    return "h22-nero-lustria-animated";
+                    return "h22-nero-lustria-cursor";
                 case 'on':
-                    return "h22-nero-lora-nobel-hover-on";
+                    return "h22-nero-lustria-nobel-hover-on";
                 case 'off':
-                    return "h22-nero-lora-nobel-hover-off"
+                    return "h22-nero-lustria-nobel-hover-off"
             }
         }
     }

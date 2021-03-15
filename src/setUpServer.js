@@ -21078,7 +21078,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             date: "11.03.2021",
             numberOfLikes: 8,
             numberOfComments: 2,
-            quoteText: "Increasing your competitive advantage by aligning strategy with people Seasing your competitive advane by aligning strateg.",
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             tags: [

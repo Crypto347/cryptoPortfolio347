@@ -37,7 +37,8 @@ import {
     faCoffee,
     faSearch,
     faShareAlt,
-    faLink
+    faLink,
+    faQuoteLeft
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -151,10 +152,11 @@ export const Icon = (props) => {
                     return "icon-color-from-nobel-to-black-hover-off"
             }
         }
-        if(['blogCardTag'].includes(opt)) return "icon-color-nobel"
-        if(['blogCardLink'].includes(opt)) return "icon-color-white"
-        if(opt === "section1ListsPage") return "icon-for-lists-page-section-1"
-        if(opt === "section2ListsPage") return "icon-for-lists-page-section-2"
+        if(['blogCardTag'].includes(opt)) return "icon-color-nobel";
+        if(['blogCardQuote'].includes(opt)) return "icon-color-white-smoke";
+        if(['blogCardLink'].includes(opt)) return "icon-color-white-smoke-2";
+        if(opt === "section1ListsPage") return "icon-for-lists-page-section-1";
+        if(opt === "section2ListsPage") return "icon-for-lists-page-section-2";
     }
 
     const iconOnClick = (e, iconName, instaName) => {
@@ -216,6 +218,8 @@ export const Icon = (props) => {
                 return faShareAlt;
             case 'faLink':
                 return faLink;
+            case 'faQuoteLeft':
+                return faQuoteLeft;
         }
     }
 

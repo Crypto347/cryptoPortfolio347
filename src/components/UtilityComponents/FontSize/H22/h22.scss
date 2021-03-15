@@ -70,14 +70,14 @@
     animation: h22OpacityHoverOff .1s linear;
 }
 
-.h22-nero-lustria-animated {
+.h22-nero-lustria-cursor {
     font-size: 22px;
     color: rgb(37, 37, 37);
     font-family: 'Lustria', serif;
     cursor: pointer;
 }
 
-.h22-nero-lora-nobel-hover-on {
+.h22-nero-lustria-nobel-hover-on {
     font-size: 22px;
     color: rgb(155, 155, 155);
     font-family: 'Lustria', serif;
@@ -88,7 +88,7 @@
     animation: h22NeroNobelHoverOn .5s linear;
 }
 
-.h22-nero-lora-nobel-hover-off {
+.h22-nero-lustria-nobel-hover-off {
     font-size: 22px;
     color: rgb(37, 37, 37);
     font-family: 'Lustria', serif;
@@ -99,33 +99,33 @@
     animation: h22NeroNobelHoverOff .5s linear;
 }
 
-.h22-white-lustria-cursor {
+.h22-white-smoke-2-lustria-cursor {
     font-size: 22px;
-    color: white;
+    color: rgb(248, 248, 248);
     font-family: 'Lustria', serif;
     cursor: pointer;
 }
 
-.h22-white-lustoria-nobel-hover-on {
+.h22-white-smoke-2-lustoria-nobel-hover-on {
     font-size: 22px;
     color: rgb(155, 155, 155);
     font-family: 'Lustria', serif;
     cursor: pointer;
-    -webkit-animation: h22WhiteNobelHoverOn .5s linear;
-    -moz-animation: h22WhiteNobelHoverOn .5s linear;
-    -o-animation: h22WhiteNobelHoverOn .5s linear;
-    animation: h22WhiteNobelHoverOn .5s linear;
+    -webkit-animation: h22WhiteSmoke2NobelHoverOn .5s linear;
+    -moz-animation: h22WhiteSmoke2NobelHoverOn .5s linear;
+    -o-animation: h22WhiteSmoke2NobelHoverOn .5s linear;
+    animation: h22WhiteSmoke2NobelHoverOn .5s linear;
 }
 
-.h22-white-lustoria-nobel-hover-off {
+.h22-white-smoke-2-lustoria-nobel-hover-off {
     font-size: 22px;
-    color: white;
+    color: rgb(248, 248, 248);
     font-family: 'Lustria', serif;
     cursor: pointer;
-    -webkit-animation: h22WhiteNobelHoverOff .5s linear;
-    -moz-animation: h22WhiteNobelHoverOff .5s linear;
-    -o-animation: h22WhiteNobelHoverOff .5s linear;
-    animation: h22WhiteNobelHoverOff .5s linear;
+    -webkit-animation: h22WhiteSmoke2NobelHoverOff .5s linear;
+    -moz-animation: h22WhiteSmoke2NobelHoverOff .5s linear;
+    -o-animation: h22WhiteSmoke2NobelHoverOff .5s linear;
+    animation: h22WhiteSmoke2NobelHoverOff .5s linear;
 }
 
 @media only screen and (max-width: 870px){
@@ -202,36 +202,36 @@
     to{color: rgb(37, 37, 37);}
 }
 
-@-webkit-keyframes h22WhiteNobelHoverOn {
-    from{color: white;}
+@-webkit-keyframes h22WhiteSmoke2NobelHoverOn {
+    from{color: rgb(248, 248, 248);}
     to{color: rgb(155, 155, 155);}
 }
-@-moz-keyframes h22WhiteNobelHoverOn {
-    from{color: white;}
+@-moz-keyframes h22WhiteSmoke2NobelHoverOn {
+    from{color: rgb(248, 248, 248);}
     to{color: rgb(155, 155, 155);}
 }
-@-o-keyframes h22WhiteNobelHoverOn {
-    from{color: white;}
+@-o-keyframes h22WhiteSmoke2NobelHoverOn {
+    from{color: rgb(248, 248, 248);}
     to{color: rgb(155, 155, 155);}
 }
-@keyframes h22WhiteNobelHoverOn {
-    from{color: white;}
+@keyframes h22WhiteSmoke2NobelHoverOn {
+    from{color: rgb(248, 248, 248);}
     to{color: rgb(155, 155, 155);}
 }
 
-@-webkit-keyframes h22WhiteNobelHoverOff {
+@-webkit-keyframes h22WhiteSmoke2NobelHoverOff {
     from{color: rgb(155, 155, 155);}
-    to{color: white;}
+    to{color: rgb(248, 248, 248);}
 }
-@-moz-keyframes h22WhiteNobelHoverOff {
+@-moz-keyframes h22WhiteSmoke2NobelHoverOff {
     from{color: rgb(155, 155, 155);}
-    to{color: white;}
+    to{color: rgb(248, 248, 248);}
 }
-@-o-keyframes h22WhiteNobelHoverOff {
+@-o-keyframes h22WhiteSmoke2NobelHoverOff {
     from{color: rgb(155, 155, 155);}
-    to{color: white;}
+    to{color: rgb(248, 248, 248);}
 }
-@keyframes h22WhiteNobelHoverOff {
+@keyframes h22WhiteSmoke2NobelHoverOff {
     from{color: rgb(155, 155, 155);}
-    to{color: white;}
+    to{color: rgb(248, 248, 248);}
 }

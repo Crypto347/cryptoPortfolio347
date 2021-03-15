@@ -39,7 +39,6 @@ import {
  */
 
 import * as Images from '../../../constants/images';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 /**
  * BlogListPostCard component definition and export
@@ -56,7 +55,8 @@ export const BlogListPostCard = (props) => {
     const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
     const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
     const [isHoveringBlogCardLink, setIsHoveringBlogCardLink] = useState("init");
-
+    const [isHoveringBlogCardQuote, setIsHoveringBlogCardQuote] = useState("init");
+    
     /**
      * Methods
      */
@@ -85,6 +85,9 @@ export const BlogListPostCard = (props) => {
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("on");
                 break;
+            case 'blogCardQuote': 
+                setIsHoveringBlogCardQuote("on");
+                break;
         }
     }
 
@@ -107,6 +110,8 @@ export const BlogListPostCard = (props) => {
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("off");
+            case 'blogCardQuote': 
+                setIsHoveringBlogCardQuote("off");
                 break;
         }
     }
@@ -127,14 +132,24 @@ export const BlogListPostCard = (props) => {
                     return "h15-nobel-lustria-nero-hover-off"
             }
         }
-        if(opt === "blogCardLink"){
+        if(['blogCardLink'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "h22-white-lustria-cursor";
+                    return "h22-white-smoke-2-lustria-cursor";
                 case 'on':
-                    return "h22-white-lustoria-nobel-hover-on";
+                    return "h22-white-smoke-2-lustoria-nobel-hover-on";
                 case 'off':
-                    return "h22-white-lustoria-nobel-hover-off"
+                    return "h22-white-smoke-2-lustoria-nobel-hover-off"
+            }
+        }
+        if(['blogCardQuote'].includes(opt)){
+            switch(isHovering){
+                case 'init':
+                    return "h22-nero-lustria-cursor";
+                case 'on':
+                    return "h22-nero-lustria-nobel-hover-on";
+                case 'off':
+                    return "h22-nero-lustria-nobel-hover-off"
             }
         }
     }
@@ -283,12 +298,14 @@ export const BlogListPostCard = (props) => {
             case 'linkPost':
                 return (
                     <>
-                        <div 
-                            className="blog-list-post-card-link"
-                            onMouseEnter={() => handleMouseEnter(`blogCardLink`)} 
-                            onMouseLeave={() => handleMouseLeave(`blogCardLink`)} 
-                        >
-                            <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.data.linkText}</H22>
+                        <div className="blog-list-post-card-link">
+                            <div
+                                className="blog-list-post-card-link-text-wrapper"
+                                onMouseEnter={() => handleMouseEnter(`blogCardLink`)} 
+                                onMouseLeave={() => handleMouseLeave(`blogCardLink`)} 
+                            >
+                                <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.data.linkText}</H22>
+                            </div>
                             <div className="blog-list-post-card-link-icon-wrapper">
                                 <Icon
                                     iconType="fontAwesome"
@@ -305,6 +322,31 @@ export const BlogListPostCard = (props) => {
             case 'quotePost':
                 return (
                     <>
+                        <div className="blog-list-post-card-quote">
+                            <div>
+                                <div
+                                    className="blog-list-post-card-quote-text-wrapper"
+                                    onMouseEnter={() => handleMouseEnter(`blogCardQuote`)} 
+                                    onMouseLeave={() => handleMouseLeave(`blogCardQuote`)} 
+                                >
+                                    <H22 className={renderClassName("blogCardQuote", isHoveringBlogCardQuote)}>{props.data.quoteText}</H22>
+                                </div>
+                                <EH20/>
+                                <div className="blog-list-post-card-quote-author-name-wrapper">
+                                    <div className="slide-dash"/>
+                                    <H17 className="h17-nero-poppins">{props.data.quoteAuthor}</H17>
+                                </div>
+                            </div>
+                            <div className="blog-list-post-card-quote-icon-wrapper">
+                                <Icon
+                                    iconType="fontAwesome"
+                                    icon="faQuoteLeft"
+                                    iconSize="2x"
+                                    classNameOpt="blogCardQuote"
+                                />
+                            </div>
+                        </div>
+                        <EH60/>
                         {renderBlogCardMainBody()}
                     </>
                 )
