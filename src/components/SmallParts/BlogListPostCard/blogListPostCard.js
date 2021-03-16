@@ -229,19 +229,19 @@ export const BlogListPostCard = (props) => {
             <>
                 {renderCardCover(type)}
                 <EH60/>
-                <div
-                    className="blog-list-post-card-date"
-                    onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                    onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
-                >
-                    <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.data.date}</H15>
-                </div>
-                <div  
-                    className="blog-list-post-card-header"
-                    onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
-                    onMouseLeave={() => handleMouseLeave(`blogCardHeader`)} 
-                >
-                    <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.data.header}</H35>
+                <div className="blog-list-post-card-date-and-header-wrapper">
+                    <div
+                        onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                    >
+                        <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.data.date}</H15>
+                    </div>
+                    <div
+                        onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardHeader`)} 
+                    >
+                        <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.data.header}</H35>
+                    </div>
                 </div>
                 <EH20/>
                 <div className="blog-list-post-card-text">
