@@ -18,16 +18,8 @@ import './video.scss';
  */
 
 import {
-    H17,
-    H19
+    H17
 } from '../../UtilityComponents';
-
-
-/**
- * Video
- */
-
-import * as Images from '../../../constants/images';
 
 /**
  * Video
@@ -45,68 +37,40 @@ export const Video = (props) => {
      * State
      */
 
-    const [isHoveringPlayButton, setIsHoveringPlayButton] = useState("init");
-    const [videoShown, setVideoShown] = useState(false);
+    const [videoIsPlaying, setVideoIsPlaying] = useState(false);
 
     /**
      * Methods
      */
 
     useEffect(() => {
-        let video;
-
+        let video = document.getElementById(`${props.videoKey}Video`);
+        
         // Play video
 
-        if(videoShown){
-            video = document.getElementById(`${props.videoKey}Video`);
+        if(props.playVideo){
             video.play();
-
-            // Event Listeners
-
-            video.addEventListener('ended', videoOnFinish);
         }
+
+        // Event Listeners
+
+        video.addEventListener('ended', videoOnFinish);
+        video.addEventListener('play', videoOnPlay);
 
         return () =>  {
             // Cleaning the unmounted component
 
-            if(videoShown){
-                video.removeEventListener('ended', videoOnFinish);
-            }
+            video.removeEventListener('ended', videoOnFinish);
+            video.removeEventListener('play', videoOnPlay);
         }
-    }, [videoShown]);
+    }, []);
 
     /**
      * Markup
      */
 
-    const renderClassName = (isHovering) => {
-        switch(isHovering){
-            case 'init':
-                return "video-play-button";
-            case 'on':
-                return "video-play-button-hover-on";
-            case 'off':
-                return "video-play-button-hover-off"
-        }       
-    }
-
-    const handleMouseEnter = () => {
-        setIsHoveringPlayButton("on")
-    }
-
-    const handleMouseLeave = () => {
-        setIsHoveringPlayButton("off")
-    }
-
-    const loadImg = (imgKey) => {
-        switch(imgKey){
-            case 'teamWorkImg':
-                return Images.VIDEO_COVER_IMG_1;
-            case 'blogCardVideoPostCoverImg1':
-                return Images.VIDEO_COVER_IMG_2;
-            default:
-                return "";
-        }
+    const videoOnPlay = () => {
+        setVideoIsPlaying(true);
     }
 
     const loadVideo = (videoKey) => {
@@ -120,72 +84,33 @@ export const Video = (props) => {
         }
     }
 
-    const showVideo = (e) => {
-        switch(e.button){
-            case 0: 
-                // Play video on left mouse click
-                setVideoShown(true);
-                return;
-            case 1:
-                // Open the website (from which the vidoe was downloaded) in a new window on scroll wheel click
-                window.open("https://www.pexels.com/", "_blank");
-                return;
-            case 2:
-                // Do nothing on right mouse click
-                return;
-        }      
-    }
-
     const videoOnFinish = () => {
-        // When the video is over, hide the video itself and show the video cover
+        
+        setVideoIsPlaying(false);
+        
+        /**
+         * When the video is over, hide the video itself and show
+         * the video cover (for videoWithCover component)
+         */
 
-        setVideoShown(false);
-    }
-
-    const renderVideo = (opt) => {
-        switch(opt){
-            case 'simple':
-                return(
-                    <div className="video-simple">
-                        <video id={`${props.videoKey}Video`} controls>
-                            <source src={loadVideo(props.videoKey)} type="video/mp4"/>
-                        </video>
-                        <div className="video-copyrights">
-                            <H17 className="h17-nobel-lora">Video by cottonbro from Pexels</H17>
-                        </div>
-                    </div>
-                );
-            case 'videoWithCover':
-                return(
-                    <div className="video-with-cover">
-                        {!videoShown ? 
-                        <div className="video-wrapper">
-                            <img src={loadImg(props.coverImageKey)}/>
-                            <div className="video-play-button-wrapper">
-                                <div 
-                                    className={renderClassName(isHoveringPlayButton)}
-                                    onMouseDown={(e) => showVideo(e)}
-                                    onMouseEnter={() => handleMouseEnter('expand')} 
-                                    onMouseLeave={() => handleMouseLeave('expand')}
-                                >
-                                </div>
-                            </div>
-                        </div> : null}
-                        {videoShown ?
-                        <div className="video-copyrights-wrapper">
-                            <H19 className="h19-nobel-lora">Video by cottonbro from Pexels</H19> 
-                            <video id={`${props.videoKey}Video`} controls>
-                                <source src={loadVideo(props.videoKey)} type="video/mp4"/>
-                            </video> 
-                        </div> : null}
-                    </div>
-                )
-        }
+        props.videoOnFinish(false);
     }
 
     return(
-        renderVideo(props.videoType)
-    );
+        <div className="video">
+            <video 
+                id={`${props.videoKey}Video`} 
+                controls
+                style={props.videoHeight ? {height: props.videoHeight} : null}
+            >
+                <source src={loadVideo(props.videoKey)} type="video/mp4"/>
+            </video>
+            {videoIsPlaying ? 
+            <div className="video-copyrights">
+                <H17 className="h17-nobel-lora">Video by cottonbro from Pexels</H17>
+            </div> : null}
+        </div>
+    )
 }
 
 export default Video;

@@ -195,8 +195,6 @@ export const BlogListPostCard = (props) => {
                     <div className="blog-list-post-card-video-wrapper">
                         {/* <img src={loadImg(props.data.coverImage.key)}/> */}
                         <Video
-                            videoType="simple"
-                            coverImageKey={props.data.coverImage.key}
                             videoKey={props.data.videoKey}
                         />
                     </div>

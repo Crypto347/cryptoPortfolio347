@@ -20,7 +20,7 @@ import './section5.scss';
  * Components
  */
 
-import Video from '../Video/video';
+import VideoWithCover from '../VideoWithCover/videoWithCover';
 
 /**
  * Section5 component definition and export
@@ -41,8 +41,7 @@ export const Section5 = () => {
 
     return(
         <div className="section-5">
-            <Video
-                videoType="videoWithCover"
+            <VideoWithCover
                 coverImageKey="teamWorkImg"
                 videoKey="teamWorkMp4"
             />
