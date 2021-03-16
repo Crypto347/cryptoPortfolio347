@@ -53,6 +53,7 @@ export const BlogListPostCard = (props) => {
      */
 
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
+    const [isHoveringBlogCardHeader, setIsHoveringBlogCardHeader] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
     const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
     const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
@@ -71,6 +72,9 @@ export const BlogListPostCard = (props) => {
         switch(opt){
             case 'blogCardDate': 
                 setIsHoveringBlogCardDate("on");
+                break;
+            case 'blogCardHeader': 
+                setIsHoveringBlogCardHeader("on");
                 break;
             case 'blogCardLikes': 
                 setIsHoveringBlogCardLikes("on");
@@ -98,6 +102,9 @@ export const BlogListPostCard = (props) => {
             case 'blogCardDate': 
                 setIsHoveringBlogCardDate("off");
                 break;
+            case 'blogCardHeader': 
+                setIsHoveringBlogCardHeader("off");
+                break;
             case 'blogCardLikes': 
                 setIsHoveringBlogCardLikes("off");
                 break;
@@ -112,6 +119,7 @@ export const BlogListPostCard = (props) => {
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("off");
+                break;
             case 'blogCardQuote': 
                 setIsHoveringBlogCardQuote("off");
                 break;
@@ -152,6 +160,16 @@ export const BlogListPostCard = (props) => {
                     return "h22-nero-lustria-nobel-hover-on";
                 case 'off':
                     return "h22-nero-lustria-nobel-hover-off"
+            }
+        }
+        if(['blogCardHeader'].includes(opt)){
+            switch(isHovering){
+                case 'init':
+                    return "h35-black-poppins-cursor";
+                case 'on':
+                    return "h35-black-poppins-nobel-cursor-hover-on";
+                case 'off':
+                    return "h35-black-poppins-nobel-cursor-hover-off"
             }
         }
     }
@@ -218,7 +236,13 @@ export const BlogListPostCard = (props) => {
                 >
                     <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.data.date}</H15>
                 </div>
-                <H35 className="H35-black-poppins">{props.data.header}</H35>
+                <div  
+                    className="blog-list-post-card-header"
+                    onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardHeader`)} 
+                >
+                    <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.data.header}</H35>
+                </div>
                 <EH20/>
                 <div className="blog-list-post-card-text">
                     <H17 className="h17-black-lustria">{props.data.text + " ..."}</H17>

@@ -1,8 +1,13 @@
 .blog-list-post-card {
+    display: flex;
+    flex-direction: column;
     >img {
         width: 100%;
     }
     .blog-list-post-card-date {
+        display: inline-flex;
+    }
+    .blog-list-post-card-header {
         display: inline-flex;
     }
     .blog-list-post-card-text {
