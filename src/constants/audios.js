@@ -4,8 +4,8 @@
 
 import CreativeMindsMp3 from '../audio/bensound-creativeminds.mp3';
 import UkuleleMp3 from '../audio/bensound-ukulele.mp3';
-import ADayToRememberMp3 from '../audio/bensound-adventure.mp3';
-import AdventureMp3 from '../audio/bensound-ukulele.mp3';
+import ADayToRememberMp3 from '../audio/bensound-adaytoremember.mp3';
+import AdventureMp3 from '../audio/bensound-adventure.mp3';
 import InspireMp3 from '../audio/bensound-inspire.mp3';
 
 export const CREATIVE_MIND_MP3 = CreativeMindsMp3;
