@@ -184,9 +184,9 @@ export const BlogListPostCard = (props) => {
                 {type === "audioPost" ? 
                 <div className="blog-list-post-card-audio-wrapper">
                     <img src={loadImg(props.data.coverImage.key)}/>
-                    <div className="blog-list-post-card-audio">
-                        <Audio/>
-                    </div>
+                    <Audio
+                        audioKey={props.data.audioKey}
+                    />
                 </div>
                 : <img src={loadImg(props.data.coverImage.key)}/>}
                 <EH60/>

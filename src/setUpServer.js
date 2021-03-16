@@ -21119,6 +21119,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             key: "blogListStandardPageCardId5",
             cardType: "audioPost",
             header: "Audio Post.",
+            audioKey: "ukulele",
             date: "11.03.2021",
             numberOfLikes: 3,
             numberOfComments: 2,

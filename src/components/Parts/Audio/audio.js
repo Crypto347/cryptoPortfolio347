@@ -18,7 +18,7 @@ import './audio.scss';
  */
 
 import {
-    H19
+    H17
 } from '../../UtilityComponents';
 
 
@@ -32,98 +32,77 @@ import * as Images from '../../../constants/images';
  * Audio
  */
 
-import audio1 from '../../../audio/bensound-ukulele.mp3';
+import * as Audios from '../../../constants/audios';
 
 /**
  * Audio component definition and export
  */
 
-export const Audio = () => {
+export const Audio = (props) => {
 
     /**
      * State
      */
 
-    const [isHoveringPlayButton, setIsHoveringPlayButton] = useState("init");
-    const [videoShown, setVideoShown] = useState(false);
+    const [audioIsPlaying, setAudioIsPlaying] = useState(false);
 
     /**
      * Methods
      */
 
     useEffect(() => {
-        let video;
+        let audio = document.getElementById(`${props.audioKey}Audio`);
+        
+        // Event Listeners
 
-        // Play video
-
-        if(videoShown){
-            video = document.getElementById("video");
-            video.play();
-
-            // When the video ends, hide the video itself and show the video cover
-
-            video.addEventListener('ended', videoOnFinish);
-        }
+        audio.addEventListener('play', audioOnPlay);
+        audio.addEventListener('ended', audioOnFinish);
 
         return () =>  {
             // Cleaning the unmounted component
 
-            if(videoShown){
-                video.removeEventListener('ended', videoOnFinish);
-            }
+            audio.removeEventListener('play', audioOnPlay);
+            audio.removeEventListener('ended', audioOnFinish);
         }
-    }, [videoShown]);
+    }, []);
+
+    const loadAudio = (opt) => {
+        switch(opt){
+            case 'ukulele':
+                return Audios.UKULELE;
+            case 'creativeMinds':
+                return Audios.CREATIVE_MIND;
+        }
+    }
+
+    const audioOnPlay = () => {
+        setAudioIsPlaying(true);
+    }
+
+    const audioOnFinish = () => {
+        setAudioIsPlaying(false);
+    }
 
     /**
      * Markup
      */
 
-    const renderClassName = (isHovering) => {
-        switch(isHovering){
-            case 'init':
-                return "video-play-button";
-            case 'on':
-                return "video-play-button-hover-on";
-            case 'off':
-                return "video-play-button-hover-off"
-        }       
-    }
-
-    const handleMouseEnter = () => {
-        setIsHoveringPlayButton("on")
-    }
-
-    const handleMouseLeave = () => {
-        setIsHoveringPlayButton("off")
-    }
-
-    const showVideo = (e) => {
-        switch(e.button){
-            case 0: 
-                // Play video on left mouse click
-                setVideoShown(true);
-                return;
-            case 1:
-                // Open the website (from which the vidoe was downloaded) in a new window on scroll wheel click
-                window.open("https://www.pexels.com/", "_blank");
-                return;
-            case 2:
-                // Do nothing on right mouse click
-                return;
-        }      
-    }
-
-    const videoOnFinish = () => {
-        setVideoShown(false);
-    }
-
     return(
-        <audio className="audio" controls>
-            <source src={audio1} type="audio/mp3"/>
-            Your browser does not support the audio element.
-        </audio>
+        <div className="audio-wrapper">
+            <audio 
+                className="audio"
+                controls 
+                id={`${props.audioKey}Audio`}
+            >
+                <source src={loadAudio(props.audioKey)} type="audio/mp3"/>
+                Your browser does not support the audio element.
+            </audio>
+            {audioIsPlaying ? <div className="audio-copyrights">
+                <H17 className="h17-black-lustria">Music: https://www.bensound.com</H17>
+            </div> : null}
+        </div>
     );
 }
-// Music: https://www.bensound.com
+
 export default Audio;
  

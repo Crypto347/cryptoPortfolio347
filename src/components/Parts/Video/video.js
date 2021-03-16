@@ -60,7 +60,7 @@ export const Video = () => {
             video = document.getElementById("video");
             video.play();
 
-            // When the video ends, hide the video itself and show the video cover
+            // Event Listeners
 
             video.addEventListener('ended', videoOnFinish);
         }
@@ -114,6 +114,8 @@ export const Video = () => {
     }
 
     const videoOnFinish = () => {
+        // When the video is over, hide the video itself and show the video cover
+        
         setVideoShown(false);
     }
 
