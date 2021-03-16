@@ -18,6 +18,7 @@ import './video.scss';
  */
 
 import {
+    H17,
     H19
 } from '../../UtilityComponents';
 
@@ -32,13 +33,13 @@ import * as Images from '../../../constants/images';
  * Video
  */
 
-import vid1 from '../../../videos/team_work.mp4';
+import * as Videos from'../../../constants/videos';
 
 /**
  * Video component definition and export
  */
 
-export const Video = () => {
+export const Video = (props) => {
 
     /**
      * State
@@ -57,7 +58,7 @@ export const Video = () => {
         // Play video
 
         if(videoShown){
-            video = document.getElementById("video");
+            video = document.getElementById(`${props.videoKey}Video`);
             video.play();
 
             // Event Listeners
@@ -97,6 +98,28 @@ export const Video = () => {
         setIsHoveringPlayButton("off")
     }
 
+    const loadImg = (imgKey) => {
+        switch(imgKey){
+            case 'teamWorkImg':
+                return Images.VIDEO_COVER_IMG_1;
+            case 'blogCardVideoPostCoverImg1':
+                return Images.VIDEO_COVER_IMG_2;
+            default:
+                return "";
+        }
+    }
+
+    const loadVideo = (videoKey) => {
+        switch(videoKey){
+            case 'teamWorkMp4':
+                return Videos.TEAM_WORK;
+            case 'blogListVideo1':
+                return Videos.BLOG_LIST_VIDEO_1;
+            default:
+                return "";
+        }
+    }
+
     const showVideo = (e) => {
         switch(e.button){
             case 0: 
@@ -115,34 +138,53 @@ export const Video = () => {
 
     const videoOnFinish = () => {
         // When the video is over, hide the video itself and show the video cover
-        
+
         setVideoShown(false);
     }
 
-    return(
-        <div className="video">
-            {!videoShown ? 
-            <div className="video-wrapper">
-                <img src={Images.VIDEO_COVER_IMG_1}/>
-                <div className="video-play-button-wrapper">
-                    <div 
-                        className={renderClassName(isHoveringPlayButton)}
-                        onMouseDown={(e) => showVideo(e)}
-                        onMouseEnter={() => handleMouseEnter('expand')} 
-                        onMouseLeave={() => handleMouseLeave('expand')}
-                    >
+    const renderVideo = (opt) => {
+        switch(opt){
+            case 'simple':
+                return(
+                    <div className="video-simple">
+                        <video id={`${props.videoKey}Video`} controls>
+                            <source src={loadVideo(props.videoKey)} type="video/mp4"/>
+                        </video>
+                        <div className="video-copyrights">
+                            <H17 className="h17-nobel-lora">Video by cottonbro from Pexels</H17>
+                        </div>
                     </div>
-                </div>
-            </div> : null}
-            {videoShown ?
-            <div className="video-copyrights-wrapper">
-                <H19 className="h19-nobel-lora">Video by cottonbro from Pexels</H19> 
-                <video id="video" controls>
-                    <source src={vid1} type="video/mp4"/>
-                </video> 
-            </div> : null}
-       
-        </div>
+                );
+            case 'videoWithCover':
+                return(
+                    <div className="video-with-cover">
+                        {!videoShown ? 
+                        <div className="video-wrapper">
+                            <img src={loadImg(props.coverImageKey)}/>
+                            <div className="video-play-button-wrapper">
+                                <div 
+                                    className={renderClassName(isHoveringPlayButton)}
+                                    onMouseDown={(e) => showVideo(e)}
+                                    onMouseEnter={() => handleMouseEnter('expand')} 
+                                    onMouseLeave={() => handleMouseLeave('expand')}
+                                >
+                                </div>
+                            </div>
+                        </div> : null}
+                        {videoShown ?
+                        <div className="video-copyrights-wrapper">
+                            <H19 className="h19-nobel-lora">Video by cottonbro from Pexels</H19> 
+                            <video id={`${props.videoKey}Video`} controls>
+                                <source src={loadVideo(props.videoKey)} type="video/mp4"/>
+                            </video> 
+                        </div> : null}
+                    </div>
+                )
+        }
+    }
+
+    return(
+        renderVideo(props.videoType)
     );
 }
 

@@ -1,4 +1,19 @@
-.video {
+.video-simple {
+    width: 100%;
+    >video {
+        width: 100%;  
+        // height: 400px;
+    }
+    .video-copyrights {
+        position: absolute;
+        background-color: rgba(37, 37, 37, 0.8);
+        padding: 3px 10px 3px 10px;
+        top: 0%;
+        left: 0%;
+    }
+}
+
+.video-with-cover {
     height: 100px;
     width: 100%;
     .video-wrapper {

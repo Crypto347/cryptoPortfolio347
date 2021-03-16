@@ -19,6 +19,7 @@ import './blogListPostCard.scss';
 
 import Icon from '../../SmallParts/Icon/icon';
 import Audio from '../../Parts/Audio/audio';
+import Video from '../../Parts/Video/video'
 
 /**
  * Utility
@@ -178,17 +179,39 @@ export const BlogListPostCard = (props) => {
         }
     }
 
+    const renderCardCover = (type) => {
+        switch(type){
+            case 'audioPost':
+                return(
+                    <div className="blog-list-post-card-audio-wrapper">
+                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <Audio
+                            audioKey={props.data.audioKey}
+                        />
+                    </div>
+                );
+            case 'videoPost':
+                return(
+                    <div className="blog-list-post-card-video-wrapper">
+                        {/* <img src={loadImg(props.data.coverImage.key)}/> */}
+                        <Video
+                            videoType="simple"
+                            coverImageKey={props.data.coverImage.key}
+                            videoKey={props.data.videoKey}
+                        />
+                    </div>
+                );
+            default: 
+                return(
+                    <img src={loadImg(props.data.coverImage.key)}/>
+                );
+        }
+    }
+
     const renderBlogCardMainBody = (type) => {
         return(
             <>
-                {type === "audioPost" ? 
-                <div className="blog-list-post-card-audio-wrapper">
-                    <img src={loadImg(props.data.coverImage.key)}/>
-                    <Audio
-                        audioKey={props.data.audioKey}
-                    />
-                </div>
-                : <img src={loadImg(props.data.coverImage.key)}/>}
+                {renderCardCover(type)}
                 <EH60/>
                 <div
                     className="blog-list-post-card-date"
@@ -367,7 +390,7 @@ export const BlogListPostCard = (props) => {
             case 'videoPost':
                 return (
                     <>
-                        {renderBlogCardMainBody()}
+                        {renderBlogCardMainBody(type)}
                     </>
                 )
         }

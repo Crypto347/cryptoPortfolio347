@@ -21,7 +21,6 @@ import {
     H17
 } from '../../UtilityComponents';
 
-
 /**
  * Video
  */
@@ -68,9 +67,9 @@ export const Audio = (props) => {
 
     const loadAudio = (opt) => {
         switch(opt){
-            case 'ukulele':
+            case 'ukuleleMp3':
                 return Audios.UKULELE;
-            case 'creativeMinds':
+            case 'creativeMindsMp3':
                 return Audios.CREATIVE_MIND;
         }
     }
@@ -98,7 +97,7 @@ export const Audio = (props) => {
                 Your browser does not support the audio element.
             </audio>
             {audioIsPlaying ? <div className="audio-copyrights">
-                <H17 className="h17-black-lustria">Music: https://www.bensound.com</H17>
+                <H17 className="h17-nobel-lora">Music: https://www.bensound.com</H17>
             </div> : null}
         </div>
     );

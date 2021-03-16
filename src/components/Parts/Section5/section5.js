@@ -41,7 +41,11 @@ export const Section5 = () => {
 
     return(
         <div className="section-5">
-            <Video/>
+            <Video
+                videoType="videoWithCover"
+                coverImageKey="teamWorkImg"
+                videoKey="teamWorkMp4"
+            />
         </div>
     );
 }

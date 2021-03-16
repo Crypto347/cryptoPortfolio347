@@ -8,8 +8,10 @@
     }
     .audio-copyrights {
         position: absolute;
-        top: 1%;
-        left: 1%;
+        background-color: rgba(37, 37, 37, 0.8);
+        padding: 3px 10px 3px 10px;
+        top: 0%;
+        left: 0%;
     }
     audio:focus {
         border-radius: 0px;
