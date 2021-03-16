@@ -68,9 +68,15 @@ export const Audio = (props) => {
     const loadAudio = (opt) => {
         switch(opt){
             case 'ukuleleMp3':
-                return Audios.UKULELE;
+                return Audios.UKULELE_MP3;
             case 'creativeMindsMp3':
-                return Audios.CREATIVE_MIND;
+                return Audios.CREATIVE_MIND_MP3;
+            case 'aDayToRememberMp3':
+                return Audios.A_DAY_TO_REMEMBER_MP3;
+            case 'adventureMp3':
+                return Audios.ADVENTURE_MP3;
+            case 'inspireMp3':
+                return Audios.INSPIRE_MP3;
         }
     }
 
