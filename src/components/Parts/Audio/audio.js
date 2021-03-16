@@ -22,12 +22,6 @@ import {
 } from '../../UtilityComponents';
 
 /**
- * Video
- */
-
-import * as Images from '../../../constants/images';
-
-/**
  * Audio
  */
 
