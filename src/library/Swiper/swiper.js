@@ -127,13 +127,13 @@ export const Swiper = (props) => {
     useEffect(() => {
         let slidesArray = [...props.contentArray];
         let _slides;
-        let swiperWrapper;
+        // let swiperWrapper;
         let swiperContent;
         let translateVal;
         let _updatedSlides;
-       console.log(props.component)
+        
         if(!props.content.loading && props.showNumbersOfSlides === 1){
-            swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
+
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
      
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]];
@@ -154,13 +154,12 @@ export const Swiper = (props) => {
                 // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
-            slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
+            slide(swiperContent, translateVal, _updatedSlides);
            
         }
 
         if(!props.content.loading && props.showNumbersOfSlides === 3){
 
-            swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
             
             _slides = [
@@ -181,11 +180,11 @@ export const Swiper = (props) => {
                 // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
-            slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
+            slide(swiperContent, translateVal, _updatedSlides);
         }
         
         if(!props.content.loading && props.showNumbersOfSlides === 5){
-            swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
+             
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
             
             _slides = [
@@ -208,7 +207,7 @@ export const Swiper = (props) => {
                 // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
-            slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
+            slide(swiperContent, translateVal, _updatedSlides);
         }
 
         return () => {
@@ -281,7 +280,7 @@ export const Swiper = (props) => {
         
     },props.autoPlay ? 7000 : null)
 
-    const slide = (swiperWrapper, swiperContent, translateVal, _slides) => {
+    const slide = (swiperContent, translateVal, _slides) => {
         let posX1 = 0;
         let posX2 = 0;
         let posInitial;
@@ -1055,7 +1054,7 @@ export const Swiper = (props) => {
         <>
             <div 
                 className={renderClassName(props.component)} 
-                id={`${props.component}Swiper`}
+                // id={`${props.component}Swiper`}
                 ref={setRef(`${props.component}Content`)}
             >
                 {renderFirstArrow()}
