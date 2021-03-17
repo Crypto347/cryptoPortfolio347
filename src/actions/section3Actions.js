@@ -51,18 +51,3 @@ export function setSwiperStateForHomePage(slides, _slides, activeIndex, translat
         rerender: rerender
     };
 };
-
-export function rememberCoordinateRangeOfSwiperForHomePage(key, coordinateRange) {
-    return { 
-        type: actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_HOME_PAGE,
-        key: key,
-        coordinateRange: coordinateRange
-    };
-};
-
-export function forgetCoordinateRangeOfSwiperForHomePage(arr) {
-    return { 
-        type: actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_HOME_PAGE,
-        arr: arr
-    };
-};

@@ -135,7 +135,6 @@ export const Testimonials = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForHomePage}
                         swiperData={props.testimonials.swiper}
-                        // rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForHomePage}
                         autoPlay
                     /> : null} 
                     <EH80/>
@@ -170,10 +169,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchTestimonials: bindActionCreators(Services.fetchTestimonials, dispatch),
-            setSwiperStateForHomePage: bindActionCreators(Actions.setSwiperStateForHomePage, dispatch),
-            rememberCoordinateRangeOfSwiperForHomePage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForHomePage, dispatch),
-            forgetCoordinateRangeOfSwiperForHomePage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForHomePage, dispatch),
             fetchTestimonialsSuccess: bindActionCreators(Actions.fetchTestimonialsSuccess, dispatch),
+            setSwiperStateForHomePage: bindActionCreators(Actions.setSwiperStateForHomePage, dispatch),
         };
     }
 )(Testimonials);

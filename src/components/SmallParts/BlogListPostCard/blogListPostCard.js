@@ -222,20 +222,18 @@ export const BlogListPostCard = (props) => {
                 return(
                     <div className="blog-list-post-card-gallery-wrapper">
                         {cardWidth !== 0 ? 
-                          <Swiper
-                          component={props.page}
-                          contentArray={props.elData.imagesArray}
-                          content={props.pageData}
-                          translateWidth={cardWidth}
-                          showNumbersOfSlides={1}
-                          setSwiperState={props.setSwiperStateForBlogListStandardPage}
-                          swiperData={props.elData.swiper}
-                          onlyImages
-                          pathToFindSwiper={props.elData.key}
-                       //    autoPlay
-                       /> : null
-                    }
-                      
+                        <Swiper
+                            component={props.page}
+                            contentArray={props.elData.imagesArray}
+                            content={props.pageData}
+                            translateWidth={cardWidth}
+                            showNumbersOfSlides={1}
+                            setSwiperState={props.setSwiperStateForBlogListStandardPage}
+                            swiperData={props.elData.swiper}
+                            onlyImages
+                            pathToFindSwiper={props.elData.key}
+                        //    autoPlay
+                        /> : null}
                     </div>
                 );
             default: 
