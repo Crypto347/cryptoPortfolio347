@@ -230,7 +230,6 @@ export const BlogListPostCard = (props) => {
                           showNumbersOfSlides={1}
                           setSwiperState={props.setSwiperStateForBlogListStandardPage}
                           swiperData={props.elData.swiper}
-                       //    rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForBigSliderPage}
                           onlyImages
                           pathToFindSwiper={props.elData.key}
                        //    autoPlay

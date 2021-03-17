@@ -338,7 +338,6 @@ export const TestimonialsPage = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForTestimonialsPageSection3}
                         swiperData={props.testimonialsPage.section3Data.swiper}
-                        coordinateRange={props.testimonialsPage.section3Data.itemsCoordinateRange}
                         autoPlay
                     /> : null}
                 </div>

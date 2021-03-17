@@ -135,7 +135,7 @@ export const Testimonials = (props) => {
                         showNumbersOfSlides={1}
                         setSwiperState={props.setSwiperStateForHomePage}
                         swiperData={props.testimonials.swiper}
-                        rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForHomePage}
+                        // rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForHomePage}
                         autoPlay
                     /> : null} 
                     <EH80/>

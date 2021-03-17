@@ -387,7 +387,7 @@ export const SmallSlider = (props) => {
                                 showNumbersOfSlides={1}
                                 setSwiperState={props.setSwiperStateForSmallSliderPage}
                                 swiperData={props.smallSliderPortfolio.swiper}
-                                rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForSmallSliderPage}
+                                // rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForSmallSliderPage}
                                 onlyImages
                                 autoPlay
                             />
