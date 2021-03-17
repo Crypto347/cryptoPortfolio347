@@ -21371,93 +21371,93 @@ app.post('/api/blog-list-standard', (req, res) => {
                 alt: "image"
             }
         },
-        // {
-        //     id: 10,
-        //     key: "blogListStandardPageCardId10",
-        //     cardType: "quotePost",
-        //     header: "Quote Post 2.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 4,
-        //     numberOfComments: 2,
-        //     quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
-        //     quoteAuthor: "James Newbie",
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/quote-post/2",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardQuotePostCoverImg2",
-        //         isHover: "init",
-        //         imageName: "patrick-perkins-3wylDrjxH-E-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // },
-        // {
-        //     id: 11,
-        //     key: "blogListStandardPageCardId11",
-        //     cardType: "audioPost",
-        //     header: "Audio Post 2.",
-        //     audioKey: "ukuleleMp3",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 3,
-        //     numberOfComments: 8,
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //        },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/audio-post/2",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardAudioPostCoverImg2",
-        //         isHover: "init",
-        //         imageName: "pure-julia-3vVMl4--mNI-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // },
+        {
+            id: 10,
+            key: "blogListStandardPageCardId10",
+            cardType: "quotePost",
+            header: "Quote Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 4,
+            numberOfComments: 2,
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
+            quoteAuthor: "James Newbie",
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/quote-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardQuotePostCoverImg2",
+                isHover: "init",
+                imageName: "elena-mozhvilo-girJ8wuVrCA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 11,
+            key: "blogListStandardPageCardId11",
+            cardType: "audioPost",
+            header: "Audio Post 2.",
+            audioKey: "creativeMindsMp3",
+            date: "17.03.2021",
+            numberOfLikes: 3,
+            numberOfComments: 8,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+               },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/audio-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardAudioPostCoverImg2",
+                isHover: "init",
+                imageName: "pineapple-supply-co-J3odfo3m7g0-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
         // {
         //     id: 12,
         //     key: "blogListStandardPageCardId12",

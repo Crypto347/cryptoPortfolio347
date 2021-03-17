@@ -194,8 +194,12 @@ export const BlogListPostCard = (props) => {
                 return Images.BLOG_CARD_LINK_POST_COVER_IMG_2;   
             case 'blogCardQuotePostCoverImg1':
                 return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
+            case 'blogCardQuotePostCoverImg2':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_2;
             case 'blogCardAudioPostCoverImg1':
                 return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_1;
+            case 'blogCardAudioPostCoverImg2':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_2;
             default:
                 return "";
         }
