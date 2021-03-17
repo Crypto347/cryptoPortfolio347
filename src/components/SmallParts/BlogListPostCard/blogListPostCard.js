@@ -38,14 +38,6 @@ import {
 } from '../../UtilityComponents';
 
 /**
- * Hooks
- */
-
-import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-/**
  * Constants
  */
 
@@ -61,7 +53,6 @@ export const BlogListPostCard = (props) => {
      * State
      */
 
-    const size = useWindowSize();
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
     const [isHoveringBlogCardHeader, setIsHoveringBlogCardHeader] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
@@ -214,7 +205,7 @@ export const BlogListPostCard = (props) => {
                     <div className="blog-list-post-card-audio-wrapper">
                         <img 
                             src={loadImg(props.elData.coverImage.key)}
-                            onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
+                            onMouseDown={(e) => onClickHandler(e)}
                         />
                         <Audio
                             audioKey={props.elData.audioKey}
