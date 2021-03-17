@@ -20,6 +20,7 @@ import './blogListPostCard.scss';
 import Icon from '../../SmallParts/Icon/icon';
 import Audio from '../../Parts/Audio/audio';
 import Video from '../../Parts/Video/video'
+import Swiper from '../../../library/Swiper/swiper';
 
 /**
  * Utility
@@ -37,6 +38,14 @@ import {
 } from '../../UtilityComponents';
 
 /**
+ * Hooks
+ */
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
+/**
  * Constants
  */
 
@@ -52,6 +61,7 @@ export const BlogListPostCard = (props) => {
      * State
      */
 
+    const size = useWindowSize();
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
     const [isHoveringBlogCardHeader, setIsHoveringBlogCardHeader] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
@@ -59,13 +69,15 @@ export const BlogListPostCard = (props) => {
     const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
     const [isHoveringBlogCardLink, setIsHoveringBlogCardLink] = useState("init");
     const [isHoveringBlogCardQuote, setIsHoveringBlogCardQuote] = useState("init");
+    const [cardWidth, setCardWidth] = useState(0);
     
     /**
      * Methods
      */
    
     useEffect(() => {
-     
+        let blogListPostCard = document.getElementById("blogListPostCard");
+        setCardWidth(blogListPostCard.offsetWidth);
     }, []);
 
     const handleMouseEnter = (opt, key) => {
@@ -86,7 +98,7 @@ export const BlogListPostCard = (props) => {
                 setIsHoveringBlogCardShare("on");
                 break;
             case 'blogCardTags': 
-                props.blogListCardTagIsHover("on", props.data.key, key);
+                props.blogListCardTagIsHover("on", props.elData.key, key);
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("on");
@@ -115,7 +127,7 @@ export const BlogListPostCard = (props) => {
                 setIsHoveringBlogCardShare("off");
                 break;
             case 'blogCardTags': 
-                props.blogListCardTagIsHover("off", props.data.key, key);
+                props.blogListCardTagIsHover("off", props.elData.key, key);
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("off");
@@ -190,8 +202,6 @@ export const BlogListPostCard = (props) => {
                 return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
             case 'blogCardAudioPostCoverImg1':
                 return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_1;
-            case 'blogCardVideoPostCoverImg1':
-                return Images.VIDEO_COVER_IMG_2;
             default:
                 return "";
         }
@@ -202,24 +212,48 @@ export const BlogListPostCard = (props) => {
             case 'audioPost':
                 return(
                     <div className="blog-list-post-card-audio-wrapper">
-                        <img src={loadImg(props.data.coverImage.key)}/>
+                        <img 
+                            src={loadImg(props.elData.coverImage.key)}
+                            onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
+                        />
                         <Audio
-                            audioKey={props.data.audioKey}
+                            audioKey={props.elData.audioKey}
                         />
                     </div>
                 );
             case 'videoPost':
                 return(
                     <div className="blog-list-post-card-video-wrapper">
-                        {/* <img src={loadImg(props.data.coverImage.key)}/> */}
-                        <Video
-                            videoKey={props.data.videoKey}
-                        />
+                        <Video videoKey={props.elData.videoKey}/>
+                    </div>
+                );
+            case 'galleryPost':
+                return(
+                    <div className="blog-list-post-card-gallery-wrapper">
+                        {cardWidth !== 0 ? 
+                          <Swiper
+                          component={props.page}
+                          contentArray={props.elData.imagesArray}
+                          content={props.pageData}
+                          translateWidth={cardWidth}
+                          showNumbersOfSlides={1}
+                          setSwiperState={props.setSwiperStateForBlogListStandardPage}
+                          swiperData={props.elData.swiper}
+                       //    rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForBigSliderPage}
+                          onlyImages
+                          pathToFindSwiper={props.elData.key}
+                       //    autoPlay
+                       /> : null
+                    }
+                      
                     </div>
                 );
             default: 
                 return(
-                    <img src={loadImg(props.data.coverImage.key)}/>
+                    <img 
+                        src={loadImg(props.elData.coverImage.key)}
+                        onMouseDown={(e) => onClickHandler(e)}
+                    />              
                 );
         }
     }
@@ -234,18 +268,18 @@ export const BlogListPostCard = (props) => {
                         onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
                     >
-                        <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.data.date}</H15>
+                        <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.elData.date}</H15>
                     </div>
                     <div
                         onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardHeader`)} 
                     >
-                        <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.data.header}</H35>
+                        <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.elData.header}</H35>
                     </div>
                 </div>
                 <EH20/>
                 <div className="blog-list-post-card-text">
-                    <H17 className="h17-black-lustria">{props.data.text + " ..."}</H17>
+                    <H17 className="h17-black-lustria">{props.elData.text + " ..."}</H17>
                 </div>
                 <EH20/>
                 {renderBlogCardInfo()}
@@ -287,7 +321,7 @@ export const BlogListPostCard = (props) => {
                             classNameOpt="blogCardLike"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.data.numberOfLikes}</H15>
+                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.elData.numberOfLikes}</H15>
                     </div>
                     <EW10/>
                     <div 
@@ -303,7 +337,7 @@ export const BlogListPostCard = (props) => {
                             classNameOpt="blogCardComment"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.data.numberOfComments}</H15>
+                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.elData.numberOfComments}</H15>
                     </div>
                     <EW10/>
                     <div className="blog-list-post-card-info-tags">
@@ -314,7 +348,7 @@ export const BlogListPostCard = (props) => {
                             classNameOpt="blogCardTag"
                         />
                          &nbsp;
-                        {renderTags(props.data.tags)}
+                        {renderTags(props.elData.tags)}
                     </div>
                 </div>              
                 <div 
@@ -339,13 +373,13 @@ export const BlogListPostCard = (props) => {
             case 'standardPost':
                 return (
                     <>
-                        {renderBlogCardMainBody()}
+                        {renderBlogCardMainBody(type)}
                     </>
                 )
             case 'galleryPost':
                 return (
                     <>
-                        {/* <img src={loadImg(props.data.coverImage.key)}/> */}
+                        {renderBlogCardMainBody(type)}
                     </>
                 )
             case 'linkPost':
@@ -357,7 +391,7 @@ export const BlogListPostCard = (props) => {
                                 onMouseEnter={() => handleMouseEnter(`blogCardLink`)} 
                                 onMouseLeave={() => handleMouseLeave(`blogCardLink`)} 
                             >
-                                <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.data.linkText}</H22>
+                                <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.elData.linkText}</H22>
                             </div>
                             <div className="blog-list-post-card-link-icon-wrapper">
                                 <Icon
@@ -369,7 +403,7 @@ export const BlogListPostCard = (props) => {
                             </div>
                         </div>
                         <EH60/>
-                        {renderBlogCardMainBody()}
+                        {renderBlogCardMainBody(type)}
                     </>
                 )
             case 'quotePost':
@@ -382,12 +416,12 @@ export const BlogListPostCard = (props) => {
                                     onMouseEnter={() => handleMouseEnter(`blogCardQuote`)} 
                                     onMouseLeave={() => handleMouseLeave(`blogCardQuote`)} 
                                 >
-                                    <H22 className={renderClassName("blogCardQuote", isHoveringBlogCardQuote)}>{props.data.quoteText}</H22>
+                                    <H22 className={renderClassName("blogCardQuote", isHoveringBlogCardQuote)}>{props.elData.quoteText}</H22>
                                 </div>
                                 <EH20/>
                                 <div className="blog-list-post-card-quote-author-name-wrapper">
                                     <div className="slide-dash"/>
-                                    <H17 className="h17-nero-poppins">{props.data.quoteAuthor}</H17>
+                                    <H17 className="h17-nero-poppins">{props.elData.quoteAuthor}</H17>
                                 </div>
                             </div>
                             <div className="blog-list-post-card-quote-icon-wrapper">
@@ -400,7 +434,7 @@ export const BlogListPostCard = (props) => {
                             </div>
                         </div>
                         <EH60/>
-                        {renderBlogCardMainBody()}
+                        {renderBlogCardMainBody(type)}
                     </>
                 )
             case 'audioPost':
@@ -418,13 +452,49 @@ export const BlogListPostCard = (props) => {
         }
     }
 
+    const onClickHandler = (e) => {
+        // // Do nothing on right mouse click
+
+        // if(e.button === 2) return;
+        // if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
+
+        // // Prevent function overlayImageItemOnClick from running
+
+        // e.stopPropagation();
+
+        // // Storing data in local storage 
+
+        // localStorage.setItem("archiveCategoryHG", key);
+        // localStorage.setItem("pageHG", props.page);
+
+        // // Clear archive data
+
+        // props.clearArchiveData();
+    
+        // if(e.button !== 1){
+        //     /**
+        //      * Add fading effect on the unmounted component and remember 
+        //      * information of the unmounted component on left mouse click 
+        //      */ 
+
+        //     props.setUnmountComponentValues(true, path);
+        // }else{
+        //     // Remember information of the unmounted component on scroll wheel click
+        
+        //     props.setUnmountComponentValues(false, path);
+        // }
+        // // Fire up unmountComponent epic
+
+        // props.unmountComponent(null, null,  props.page, e.button);
+    }
+
     /**
      * Markup
      */
 
     return(
-        <div className="blog-list-post-card">
-            {renderBlogCard(props.data.cardType)}
+        <div className="blog-list-post-card" id="blogListPostCard">
+            {renderBlogCard(props.elData.cardType)}
         </div>
     );
 }

@@ -88,12 +88,14 @@ export const Video = (props) => {
         
         setVideoIsPlaying(false);
         
-        /**
-         * When the video is over, hide the video itself and show
-         * the video cover (for videoWithCover component)
-         */
+        if(props.videoOnFinish){
+            /**
+             * When the video is over, hide the video itself and show
+             * the video cover (for videoWithCover component)
+             */
 
-        props.videoOnFinish(false);
+            props.videoOnFinish(false);
+        }
     }
 
     return(

@@ -121,12 +121,36 @@ const blogListCardTagIsHoverForBlogListStandardPage = (state, action) => {
     updatedTags.splice(tagIndex, 1, tag);
 
     card = {...card, tags: updatedTags}
-    updatedItems.splice(cardIndex, 1, card)
+    updatedItems.splice(cardIndex, 1, card);
 
     return {
         ...state,
         items: updatedItems
     }
+}
+
+const setSwiperStateForBlogListStandardPage = (state, action) => {
+
+    let updatedItems = [...state.items];
+
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+    };
+    
+    let card = {...updatedItems.find(item => item.key === action.cardKey), swiper: updatedSwiper};
+    let cardIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+
+    updatedItems.splice(cardIndex, 1, card);
+    
+    return {
+        ...state,
+        items: updatedItems
+    };
 }
 
 const blogListStandardPageReducer = (state = initialState, action) => {
@@ -145,11 +169,10 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchBlogListStandardPageDataSuccess (state, action); 
         case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
             return fetchBlogListStandardPageDataFailur (state, action);
-
         case actionTypes.BLOG_LIST_CARD_TAG_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
             return blogListCardTagIsHoverForBlogListStandardPage(state, action);
-        // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_BEGIN:
-        //     return fetchSubscribeContactFormPageBegin (state, action); 
+        case actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
+            return setSwiperStateForBlogListStandardPage(state, action);
         // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_SUCCESS:
         //     return fetchSubscribeContactFormPageSuccess (state, action);
         // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_FAILURE:

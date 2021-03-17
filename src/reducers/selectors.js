@@ -198,6 +198,13 @@ export const getPhotoViewerForSmallSliderOpenState = createSelector(
     (x) => x
 );
 
+const getPhotoViewerForBlogListStandardPageOpen = (state) => state.home.photoViewerForBlogListStandardPageOpen;
+
+export const getPhotoViewerForBlogListStandardPageOpenState = createSelector(
+    [getPhotoViewerForBlogListStandardPageOpen],
+    (x) => x
+);
+
 const getPortfolioGalleryPage = (state) => state.portfolioGalleryPage;
 
 export const getPortfolioGalleryPageState = createSelector(

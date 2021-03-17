@@ -26,6 +26,7 @@ export const initialState = {
     photoViewerForGalleryOpen: false,
     photoViewerForSmallGalleryOpen: false,
     photoViewerForPortfolioProjectShowcaseOpen: false,
+    photoViewerForBlogListStandardPageOpen: false,
     photoViewerImagesArray: [],
     // swiper: {
     //     slides: [],
@@ -120,6 +121,12 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForPortfolioProjectShowcaseOpen: action.val,
                 photoViewerImagesArray: action.array
             };
+        case 'blogListStandardPage':
+            return {
+                ...state,
+                photoViewerForBlogListStandardPageOpen: action.val,
+                photoViewerImagesArray: action.array
+            };
         case 'all':
             return {
                 ...state,
@@ -131,6 +138,7 @@ const photoViewerOpen = (state, action) => {
                 photoViewerForGalleryOpen: action.val,
                 photoViewerForSmallGalleryOpen: action.val,
                 photoViewerForPortfolioProjectShowcaseOpen: action.val,
+                photoViewerForBlogListStandardPageOpen: action.val,
                 photoViewerImagesArray: action.array
             }
         default:

@@ -72,8 +72,6 @@ export const VideoWithCover = (props) => {
         switch(imgKey){
             case 'teamWorkImg':
                 return Images.VIDEO_COVER_IMG_1;
-            case 'blogCardVideoPostCoverImg1':
-                return Images.VIDEO_COVER_IMG_2;
             default:
                 return "";
         }

@@ -1,6 +1,7 @@
 .blog-list-post-card {
     >img {
         width: 100%;
+        cursor: pointer;
     }
     .blog-list-post-card-date-and-header-wrapper {
         display: flex;
@@ -82,13 +83,11 @@
         position: relative;
         >img {
             width: 100%;
+            cursor: pointer;
         }
     }
     .blog-list-post-card-video-wrapper {
         width: 100%;
         position: relative;
-        >img {
-            width: 100%;
-        }
     }
 }

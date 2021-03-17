@@ -108,7 +108,7 @@ export const PhotoViewer = (props) => {
         // Set windth and height of photoViwer and fullScreen photoViwer for different pages
 
         renderStyle(size.width, props.width, props.height);
-
+        
         // Event Listeners
 
         document.addEventListener('fullscreenchange', fullScreenOnChange);
@@ -454,6 +454,14 @@ export const PhotoViewer = (props) => {
                 return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
                 return Images.ID_3_SMALL_SLIDER_4;
+            case 'blogCardGalleryPostCoverImg1':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
+            case 'blogCardGalleryPostCoverImg2':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_2;
+            case 'blogCardGalleryPostCoverImg3':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
+            case 'blogCardGalleryPostCoverImg4':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_4;
             default:
                 return "";
         }
@@ -545,7 +553,7 @@ export const PhotoViewer = (props) => {
         props.setFullScreenState(true);
     }
 
-    function closeFullscreen() {
+    const closeFullscreen = () => {
         props.setFullScreenState(false);
 
         if (document.exitFullscreen) {

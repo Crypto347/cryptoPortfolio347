@@ -95,6 +95,7 @@ export const Swiper = (props) => {
     const testimonialsPageSection1Content = useRef();
     const testimonialsPageSection2Content = useRef();
     const testimonialsPageSection3Content = useRef();
+    const blogListStandardPageContent = useRef();
     // const [currentSwiper, setCurrentSwiper] = useState('');
     // const [relode, setRelode] = useState(false)
 
@@ -133,25 +134,27 @@ export const Swiper = (props) => {
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
-       
+     
             _slides = [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]];
             // setState({
             //     ...state,
             //     _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1]],
             //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
             // })
-            
+             
+             
             if(props.swiperData.rerender) {
-                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
+                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true, props.pathToFindSwiper);
                 // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = Utility.updateSlidesFullScreen(props.swiperData.slides, props.swiperData.activeIndex, props.swiperData);
             }else{
-                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false, props.pathToFindSwiper);
                 // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
             slide(swiperWrapper, swiperContent, translateVal, _updatedSlides);
+           
         }
 
         if(!props.content.loading && props.showNumbersOfSlides === 3){
@@ -168,12 +171,12 @@ export const Swiper = (props) => {
             ];
            
             if(props.swiperData.rerender) {
-                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
+                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true, props.pathToFindSwiper);
                 // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = Utility.updateSlidesFor3SlidesPerSwiper(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
-                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false, props.pathToFindSwiper);
                 // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
@@ -195,12 +198,12 @@ export const Swiper = (props) => {
             ];
            
             if(props.swiperData.rerender) {
-                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true);
+                props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, props.swiperData.transition, true, props.pathToFindSwiper);
                 // console.log("con1", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
                 _updatedSlides = Utility.updateSlidesFor5SlidesPerSwiper(props.swiperData.slides, props.swiperData.activeIndex);
             }else{
-                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+                props.setSwiperState(slidesArray, _slides, 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false, props.pathToFindSwiper);
                 // console.log("con2", props.component)
                 translateVal =  getTranslateValue(props.translateWidth, props.translateHeight);
             }
@@ -209,7 +212,7 @@ export const Swiper = (props) => {
 
         return () => {
            
-            props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false);
+            props.setSwiperState([], [], 0, getTranslateValue(props.translateWidth, props.translateHeight), 0.45, false, props.pathToFindSwiper);
             // console.log("con4", props.component)
             if(swiperContent){
                 swiperContent.removeEventListener('mousedown', handleMouseDown);
@@ -239,7 +242,7 @@ export const Swiper = (props) => {
             //     transition: 0.45
             // })
            
-            props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, 0.45, props.swiperData.rerender);
+            props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, props.swiperData.translate, 0.45, props.swiperData.rerender, props.pathToFindSwiper);
             // console.log("con5", props.component)
         }
     }, [props.swiperData.transition])
@@ -318,7 +321,7 @@ export const Swiper = (props) => {
         
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
-            if(['bigSlider', 'smallSlider'].includes(props.component) && direction === 0){
+            if(['bigSlider', 'smallSlider','blogListStandardPage'].includes(props.component) && direction === 0){
                 // console.log(props.component)
                 openPhotoViewer(props.component, props.swiperData.activeIndex);
             }else if(direction > 0){
@@ -374,7 +377,7 @@ export const Swiper = (props) => {
         //     translate: getTranslateValue(props.translateWidth, props.translateHeight),
         //     transition: 0
         // })
-        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true);
+        props.setSwiperState(props.swiperData.slides, props.swiperData._slides, props.swiperData.activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, true, props.pathToFindSwiper);
         // console.log("con6", props.component)
         // setRelode(!relode)
     }
@@ -397,13 +400,13 @@ export const Swiper = (props) => {
             //     console.log("con7", props.component)
             // }
             // else{
-                props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+                props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender, props.pathToFindSwiper);
             // }
         }
         if(props.showNumbersOfSlides === 3){
             _slides = Utility.updateSlidesFor3SlidesPerSwiper(slides, activeIndex);
             // console.log("7")
-            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender, props.pathToFindSwiper);
             // setState({
             //     ...state,
             //     _slides,
@@ -415,7 +418,7 @@ export const Swiper = (props) => {
             _slides = Utility.updateSlidesFor5SlidesPerSwiper(slides, activeIndex);
             
             // console.log("7")
-            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender);
+            props.setSwiperState(props.swiperData.slides, _slides, activeIndex, getTranslateValue(props.translateWidth, props.translateHeight), 0, props.swiperData.rerender, props.pathToFindSwiper);
             // setState({
             //     ...state,
             //     _slides,
@@ -434,7 +437,7 @@ export const Swiper = (props) => {
         let activeIndex = props.swiperData.activeIndex === 0 ? props.swiperData.slides.length - 1 : props.swiperData.activeIndex - 1;
         let translate = 0;
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);
+        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true, props.pathToFindSwiper);
         // console.log("con8", props.component)
     }
 
@@ -448,7 +451,7 @@ export const Swiper = (props) => {
         let translate = translateVal ? translateVal + getTranslateValue(props.translateWidth, props.translateHeight) : props.swiperData.translate + getTranslateValue(props.translateWidth, props.translateHeight);
    
         let _updatedSlides = _slides ? _slides : props.swiperData._slides;
-        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true);   
+        props.setSwiperState(props.swiperData.slides, _updatedSlides, activeIndex, translate, props.swiperData.transition, true, props.pathToFindSwiper);   
         // console.log("con9", props.component)
     }
 
@@ -513,7 +516,7 @@ export const Swiper = (props) => {
         if(opt === "testimonialsPageSection2"){
             return "swiper-testimonials-page-section-2"
         }
-        if(opt === "bigSlider"){
+        if(['bigSlider','blogListStandardPage'].includes(opt)){
             return "swiper-big-slider"
         }
         if(opt === "smallSlider"){
@@ -636,6 +639,14 @@ export const Swiper = (props) => {
                 return Images.ID_3_SMALL_SLIDER_3;
             case 'id3SmallSlider4': 
                 return Images.ID_3_SMALL_SLIDER_4;
+            case 'blogCardGalleryPostCoverImg1': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
+            case 'blogCardGalleryPostCoverImg2': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_2;
+            case 'blogCardGalleryPostCoverImg3': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
+            case 'blogCardGalleryPostCoverImg4': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_4;
             default:
                 return ""; 
         }
@@ -679,6 +690,8 @@ export const Swiper = (props) => {
                 return testimonialsPageSection2Content;
             case 'testimonialsPageSection3Content':
                 return testimonialsPageSection3Content;
+            case 'blogListStandardPageContent':
+                return blogListStandardPageContent;
         }
     }
 
@@ -752,7 +765,7 @@ export const Swiper = (props) => {
                                 </div>
                             )
                         }
-                        if(['bigSlider'].includes(props.component)){
+                        if(['bigSlider','blogListStandardPage'].includes(props.component)){
                             return(
                                 <div 
                                     key={i} 
@@ -866,7 +879,8 @@ export const Swiper = (props) => {
             if(['testimonials',
                 'bigSlider',
                 'testimonialsPageSection2',
-                'testimonialsPageSection3'
+                'testimonialsPageSection3',
+                'blogListStandardPage'
             ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
@@ -921,7 +935,12 @@ export const Swiper = (props) => {
                     </div>
                 )
             }
-            if(['testimonials','bigSlider','testimonialsPageSection2','testimonialsPageSection3'].includes(props.component)){
+            if(['testimonials',
+                'bigSlider',
+                'testimonialsPageSection2',
+                'testimonialsPageSection3',
+                'blogListStandardPage'
+            ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-right">
                         <div 
@@ -970,11 +989,11 @@ export const Swiper = (props) => {
     
         if(nextActiveIndex - prevActiveIndex > 0){
             _updatedSlides[2] = nextObj
-            props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, translate,  props.swiperData.transition, true);
+            props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, translate,  props.swiperData.transition, true, props.pathToFindSwiper);
             
         }else{
             _updatedSlides[0] = nextObj
-            props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, 0, props.swiperData.transition, true);
+            props.setSwiperState(props.swiperData.slides, _updatedSlides, nextActiveIndex, 0, props.swiperData.transition, true, props.pathToFindSwiper);
         }
     }
 
@@ -1030,6 +1049,12 @@ export const Swiper = (props) => {
                 height={457}
                 component="smallSlider"
             /> : null}
+            {props.photoViewerForBlogListStandardPageOpen ? 
+            <PhotoViewer
+                width={700}
+                height={457}
+                component="blogListStandardPage"
+            /> : null}
         </>
     );
 }
@@ -1039,6 +1064,7 @@ export default connect(
         return {
             photoViewerForBigSliderOpen: Selectors.getPhotoViewerForBigSliderOpenState(state),
             photoViewerForSmallSliderOpen: Selectors.getPhotoViewerForSmallSliderOpenState(state),
+            photoViewerForBlogListStandardPageOpen: Selectors.getPhotoViewerForBlogListStandardPageOpenState(state),
         };
     },
     (dispatch) => {
