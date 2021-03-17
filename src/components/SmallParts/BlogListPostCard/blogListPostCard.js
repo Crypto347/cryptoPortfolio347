@@ -67,8 +67,13 @@ export const BlogListPostCard = (props) => {
      */
    
     useEffect(() => {
+
+        //Set width of swiper
+
         let blogListPostCard = document.getElementById("blogListPostCard");
         setCardWidth(blogListPostCard.offsetWidth);
+
+        
     }, []);
 
     const handleMouseEnter = (opt, key) => {
@@ -181,12 +186,14 @@ export const BlogListPostCard = (props) => {
         switch(imgKey){
             case 'blogCardStandardPostCoverImg1':
                 return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_1;
-            case 'blogCardGalleryPostCoverImg1':
-                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
-            case 'blogCardGalleryPostCoverImg2':
-                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_2;
-            case 'blogCardGalleryPostCoverImg3':
-                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
+            case 'blogCardStandardPostCoverImg2':
+                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_2;
+            // case 'blogCardGalleryPostCoverImg1':
+            //     return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
+            // case 'blogCardGalleryPostCoverImg2':
+            //     return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_2;
+            // case 'blogCardGalleryPostCoverImg3':
+            //     return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
             case 'blogCardLinkPostCoverImg1':
                 return Images.BLOG_CARD_LINK_POST_COVER_IMG_1;
             case 'blogCardQuotePostCoverImg1':
@@ -223,7 +230,7 @@ export const BlogListPostCard = (props) => {
                     <div className="blog-list-post-card-gallery-wrapper">
                         {cardWidth !== 0 ? 
                         <Swiper
-                            component={props.page}
+                            component={props.elData.key}
                             contentArray={props.elData.imagesArray}
                             content={props.pageData}
                             translateWidth={cardWidth}
@@ -232,7 +239,7 @@ export const BlogListPostCard = (props) => {
                             swiperData={props.elData.swiper}
                             onlyImages
                             pathToFindSwiper={props.elData.key}
-                        //    autoPlay
+                            // autoPlay
                         /> : null}
                     </div>
                 );

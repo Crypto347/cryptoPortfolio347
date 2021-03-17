@@ -20972,6 +20972,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             cardType: "galleryPost",
             header: "Gallery Post.",
             date: "11.03.2021",
+            loading: false,
             numberOfLikes: 3,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -21216,108 +21217,117 @@ app.post('/api/blog-list-standard', (req, res) => {
                 alt: "image"
             }
         },
-        // {
-        //     id: 7,
-        //     key: "blogListStandardPageCardId7",
-        //     cardType: "standardPost",
-        //     header: "Standard Post 2.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 4,
-        //     numberOfComments: 2,
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/standard-post/2",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardStandardPostCoverImg2",
-        //         isHover: "init",
-        //         imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // },
-        // {
-        //     id: 8,
-        //     key: "blogListStandardPageCardId8",
-        //     cardType: "galleryPost",
-        //     header: "Gallery Post 2.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 8,
-        //     numberOfComments: 8,
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/gallery-post/2",
-        //     imagesArray: [
-        //             { 
-        //                 id: 1,
-        //                 key: "blogCardGalleryPostCoverImg5",
-        //                 isHover: "init",
-        //                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-        //                 folderName: "colorful",
-        //                 alt: "image"
-        //             },
-        //             { 
-        //                 id: 2,
-        //                 key: "blogCardGalleryPostCoverImg6",
-        //                 isHover: "init",
-        //                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-        //                 folderName: "colorful",
-        //                 alt: "image"
-        //             },
-        //             { 
-        //                 id: 3,
-        //                 key: "blogCardGalleryPostCoverImg7",
-        //                 isHover: "init",
-        //                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-        //                 folderName: "colorful",
-        //                 alt: "image"
-        //             }
-        //     ]
-        // },
+        {
+            id: 7,
+            key: "blogListStandardPageCardId7",
+            cardType: "standardPost",
+            header: "Standard Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 4,
+            numberOfComments: 2,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/standard-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardStandardPostCoverImg2",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 8,
+            key: "blogListStandardPageCardId8",
+            cardType: "galleryPost",
+            header: "Gallery Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 8,
+            numberOfComments: 8,
+            loading: false,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/gallery-post/2",
+            imagesArray: [
+                    { 
+                        id: 1,
+                        key: "blogCardGalleryPostCoverImg5",
+                        isHover: "init",
+                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 2,
+                        key: "blogCardGalleryPostCoverImg6",
+                        isHover: "init",
+                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 3,
+                        key: "blogCardGalleryPostCoverImg7",
+                        isHover: "init",
+                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    }
+            ],
+            swiper: {
+                slides: [],
+                _slides: [],
+                activeIndex: 0,
+                translate: 0,
+                transition: 0.45,
+                rerender: false
+            }
+        },
         // {
         //     id: 9,
         //     key: "blogListStandardPageCardId9",

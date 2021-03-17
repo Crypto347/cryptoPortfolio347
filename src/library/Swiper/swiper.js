@@ -95,7 +95,8 @@ export const Swiper = (props) => {
     const testimonialsPageSection1Content = useRef();
     const testimonialsPageSection2Content = useRef();
     const testimonialsPageSection3Content = useRef();
-    const blogListStandardPageContent = useRef();
+    const blogListStandardPageCardId2Content = useRef();
+    const blogListStandardPageCardId8Content = useRef();
     // const [currentSwiper, setCurrentSwiper] = useState('');
     // const [relode, setRelode] = useState(false)
 
@@ -130,7 +131,7 @@ export const Swiper = (props) => {
         let swiperContent;
         let translateVal;
         let _updatedSlides;
-       
+       console.log(props.component)
         if(!props.content.loading && props.showNumbersOfSlides === 1){
             swiperWrapper = document.getElementById(`swiper-wrapper-${props.component}`);   
             swiperContent = document.getElementById(`swiper-content-${props.component}`);
@@ -228,7 +229,8 @@ export const Swiper = (props) => {
         };
     }, [props.content.loading, 
         props.swiperData.slides.length, 
-        props.swiperData.activeIndex]);
+        props.swiperData.activeIndex
+    ]);
 
     useEffect(() => {
         transitionRef.current = smoothTransition;
@@ -321,7 +323,12 @@ export const Swiper = (props) => {
         
         function dragEnd (e) {
             // posFinal = swiperContent.offsetLeft;
-            if(['bigSlider', 'smallSlider','blogListStandardPage'].includes(props.component) && direction === 0){
+            if([
+                'bigSlider',
+                'smallSlider',
+                'blogListStandardPageCardId2',
+                'blogListStandardPageCardId8'
+            ].includes(props.component) && direction === 0){
                 // console.log(props.component)
                 openPhotoViewer(props.component, props.swiperData.activeIndex);
             }else if(direction > 0){
@@ -456,6 +463,7 @@ export const Swiper = (props) => {
     }
 
     const openPhotoViewer = (component, activeIndex) => {
+        let _component = component
         let slidesForPhotoViewer = [...props.swiperData.slides];
         let removedSlides = [];
         // let currentSlideIndex = slidesForPhotoViewer.findIndex(item => item.id === id);
@@ -472,7 +480,12 @@ export const Swiper = (props) => {
         }
 
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
-        props.photoViewerOpen(component, true, slidesForPhotoViewer);
+        if(['blogListStandardPageCardId2',
+            'blogListStandardPageCardId8'
+        ].includes(props.component)){
+            _component = "blogListStandardPage";
+        }
+        props.photoViewerOpen(_component, true, slidesForPhotoViewer);
     }
 
     const handleMouseEnter = (opt, id, key) => {
@@ -516,7 +529,10 @@ export const Swiper = (props) => {
         if(opt === "testimonialsPageSection2"){
             return "swiper-testimonials-page-section-2"
         }
-        if(['bigSlider','blogListStandardPage'].includes(opt)){
+        if(['bigSlider',
+            'blogListStandardPageCardId2',
+            'blogListStandardPageCardId8'
+        ].includes(opt)){
             return "swiper-big-slider"
         }
         if(opt === "smallSlider"){
@@ -647,6 +663,12 @@ export const Swiper = (props) => {
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
             case 'blogCardGalleryPostCoverImg4': 
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_4;
+            case 'blogCardGalleryPostCoverImg5': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_5;
+            case 'blogCardGalleryPostCoverImg6': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_6;
+            case 'blogCardGalleryPostCoverImg7': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_7;
             default:
                 return ""; 
         }
@@ -690,8 +712,10 @@ export const Swiper = (props) => {
                 return testimonialsPageSection2Content;
             case 'testimonialsPageSection3Content':
                 return testimonialsPageSection3Content;
-            case 'blogListStandardPageContent':
-                return blogListStandardPageContent;
+            case 'blogListStandardPageCardId2':
+                return blogListStandardPageCardId2Content;
+            case 'blogListStandardPageCardId8':
+                return blogListStandardPageCardId8Content;
         }
     }
 
@@ -718,7 +742,6 @@ export const Swiper = (props) => {
                                     id="slide"
                                     style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                                 >
-                              
                                     <EH25/>
                                     <H25 className="h25-white-lustria">{el.feedback}</H25>
                                     <EH25/>
@@ -765,23 +788,26 @@ export const Swiper = (props) => {
                                 </div>
                             )
                         }
-                        if(['bigSlider','blogListStandardPage'].includes(props.component)){
-                            return(
-                                <div 
-                                    key={i} 
-                                    className="slide"
-                                    id="slide"
-                                    style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
-                                >
+                        if(['bigSlider',
+                            'blogListStandardPageCardId2',
+                            'blogListStandardPageCardId8'
+                            ].includes(props.component)){
+                                return(
                                     <div 
-                                        className="slide-image"
-                                        // style={{height:"auto"}}
-                                        // onClick={() => openPhotoViewer(el.id)}
+                                        key={i} 
+                                        className="slide"
+                                        id="slide"
+                                        style={{width: `${getTranslateValue(props.translateWidth, props.translateHeight)}px`}}
                                     >
-                                        <img src={loadImage(el.key)}/>
+                                        <div 
+                                            className="slide-image"
+                                            // style={{height:"auto"}}
+                                            // onClick={() => openPhotoViewer(el.id)}
+                                        >
+                                            <img src={loadImage(el.key)}/>
+                                        </div>
                                     </div>
-                                </div>
-                            )
+                                )
                         }
                         if(props.component === "smallSlider"){
                             return(
@@ -880,7 +906,8 @@ export const Swiper = (props) => {
                 'bigSlider',
                 'testimonialsPageSection2',
                 'testimonialsPageSection3',
-                'blogListStandardPage'
+                'blogListStandardPageCardId2',
+                'blogListStandardPageCardId8'
             ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
@@ -939,7 +966,8 @@ export const Swiper = (props) => {
                 'bigSlider',
                 'testimonialsPageSection2',
                 'testimonialsPageSection3',
-                'blogListStandardPage'
+                'blogListStandardPageCardId2',
+                'blogListStandardPageCardId8'
             ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-right">

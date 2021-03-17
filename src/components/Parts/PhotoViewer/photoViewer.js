@@ -462,6 +462,12 @@ export const PhotoViewer = (props) => {
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
             case 'blogCardGalleryPostCoverImg4':
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_4;
+            case 'blogCardGalleryPostCoverImg5':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_5;
+            case 'blogCardGalleryPostCoverImg6': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_6;
+            case 'blogCardGalleryPostCoverImg7': 
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_7;
             default:
                 return "";
         }
