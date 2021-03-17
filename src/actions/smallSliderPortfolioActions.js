@@ -47,18 +47,3 @@ export function setSwiperStateForSmallSliderPage(slides, _slides, activeIndex, t
         rerender: rerender
     };
 };
-
-export function rememberCoordinateRangeOfSwiperForSmallSliderPage(key, coordinateRange) {
-    return { 
-        type: actionTypes.REMEMBER_COORDINATE_RANGE_OF_SWIPER_FOR_SMALL_SLIDER_PAGE,
-        key: key,
-        coordinateRange: coordinateRange
-    };
-};
-
-export function forgetCoordinateRangeOfSwiperForSmallSliderPage(arr) {
-    return { 
-        type: actionTypes.FORGET_COORDINATE_RANGE_OF_SWIPER_FOR_SMALL_SLIDER_PAGE,
-        arr: arr
-    };
-};

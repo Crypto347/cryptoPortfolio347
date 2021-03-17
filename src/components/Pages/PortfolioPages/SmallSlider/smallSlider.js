@@ -387,7 +387,6 @@ export const SmallSlider = (props) => {
                                 showNumbersOfSlides={1}
                                 setSwiperState={props.setSwiperStateForSmallSliderPage}
                                 swiperData={props.smallSliderPortfolio.swiper}
-                                // rememberCoordinateRange={props.rememberCoordinateRangeOfSwiperForSmallSliderPage}
                                 onlyImages
                                 autoPlay
                             />
@@ -462,9 +461,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearArchiveData: bindActionCreators(Actions.clearArchiveData, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setSwiperStateForSmallSliderPage: bindActionCreators(Actions.setSwiperStateForSmallSliderPage, dispatch),
-            rememberCoordinateRangeOfSwiperForSmallSliderPage: bindActionCreators(Actions.rememberCoordinateRangeOfSwiperForSmallSliderPage, dispatch),
-            forgetCoordinateRangeOfSwiperForSmallSliderPage: bindActionCreators(Actions.forgetCoordinateRangeOfSwiperForSmallSliderPage, dispatch),
+            setSwiperStateForSmallSliderPage: bindActionCreators(Actions.setSwiperStateForSmallSliderPage, dispatch)
         };
     }
 )(SmallSlider);
