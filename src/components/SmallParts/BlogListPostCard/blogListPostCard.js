@@ -188,14 +188,10 @@ export const BlogListPostCard = (props) => {
                 return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_1;
             case 'blogCardStandardPostCoverImg2':
                 return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_2;
-            // case 'blogCardGalleryPostCoverImg1':
-            //     return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
-            // case 'blogCardGalleryPostCoverImg2':
-            //     return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_2;
-            // case 'blogCardGalleryPostCoverImg3':
-            //     return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_3;
             case 'blogCardLinkPostCoverImg1':
                 return Images.BLOG_CARD_LINK_POST_COVER_IMG_1;
+            case 'blogCardLinkPostCoverImg2':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_2;   
             case 'blogCardQuotePostCoverImg1':
                 return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
             case 'blogCardAudioPostCoverImg1':

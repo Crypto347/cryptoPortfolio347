@@ -21006,7 +21006,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 1,
                         key: "blogCardGalleryPostCoverImg1",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "christin-hume-mfB1B1s4sMc-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -21014,7 +21014,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 2,
                         key: "blogCardGalleryPostCoverImg2",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "drew-beamer-PL6ClUWwDEw-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -21022,7 +21022,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 3,
                         key: "blogCardGalleryPostCoverImg3",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "andrew-neel-cckf4TsHAuw-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -21030,7 +21030,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 4,
                         key: "blogCardGalleryPostCoverImg4",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "markus-spiske-SRNKol31s64-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     }
@@ -21254,7 +21254,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                 id: 1,
                 key: "blogCardStandardPostCoverImg2",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "olena-sergienko-J49JddA5H04-unsplash-blog-card.png",
                 folderName: "colorful",
                 alt: "image"
             }
@@ -21298,7 +21298,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 1,
                         key: "blogCardGalleryPostCoverImg5",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -21306,7 +21306,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 2,
                         key: "blogCardGalleryPostCoverImg6",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "grovemade-DhZ5BpBeQEM-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     },
@@ -21314,7 +21314,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         id: 3,
                         key: "blogCardGalleryPostCoverImg7",
                         isHover: "init",
-                        imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
+                        imageName: "workperch-AiOzVFqlyZI-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     }
@@ -21328,49 +21328,49 @@ app.post('/api/blog-list-standard', (req, res) => {
                 rerender: false
             }
         },
-        // {
-        //     id: 9,
-        //     key: "blogListStandardPageCardId9",
-        //     cardType: "linkPost",
-        //     header: "Link Post 2.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 2,
-        //     numberOfComments: 4,
-        //     linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/link-post/2",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardLinkPostCoverImg2",
-        //         isHover: "init",
-        //         imageName: "tanya-pro-ebERv1EhWoU-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // },
+        {
+            id: 9,
+            key: "blogListStandardPageCardId9",
+            cardType: "linkPost",
+            header: "Link Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 2,
+            numberOfComments: 4,
+            linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/link-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardLinkPostCoverImg2",
+                isHover: "init",
+                imageName: "simon-hattinga-verschure-WNevBlZWCKA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
         // {
         //     id: 10,
         //     key: "blogListStandardPageCardId10",

@@ -883,29 +883,29 @@ export const BLOG_CARD_AUDIO_POST_COVER_IMG_5 = BlogCardAudioPostCoverImg5;
 
 // Gallery post
 
-import BlogCardGalleryPostID1 from '../images/blogCards/galleryPost/christin-hume-mfB1B1s4sMc-unsplash-blog-card.png';
-import BlogCardGalleryPostID2 from '../images/blogCards/galleryPost/drew-beamer-PL6ClUWwDEw-unsplash-blog-card.png';
-import BlogCardGalleryPostID3 from '../images/blogCards/galleryPost/andrew-neel-cckf4TsHAuw-unsplash-blog-card.png';
-import BlogCardGalleryPostID4 from '../images/blogCards/galleryPost/markus-spiske-SRNKol31s64-unsplash-blog-card.png';
-import BlogCardGalleryPostID5 from '../images/blogCards/galleryPost/green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png';
-import BlogCardGalleryPostID6 from '../images/blogCards/galleryPost/grovemade-DhZ5BpBeQEM-unsplash-blog-card.png';
-import BlogCardGalleryPostID7 from '../images/blogCards/galleryPost/workperch-AiOzVFqlyZI-unsplash-blog-card.png';
-import BlogCardGalleryPostID8 from '../images/blogCards/galleryPost/grovemade-RvPDe41lYBA-unsplash-blog-card.png';
-import BlogCardGalleryPostID9 from '../images/blogCards/galleryPost/kari-shea-pSmD3L7z8hs-unsplash-blog-card.png';
-import BlogCardGalleryPostID10 from '../images/blogCards/galleryPost/kari-shea-tOVmshavtoo-unsplash-blog-card.png';
-import BlogCardGalleryPostID11 from '../images/blogCards/galleryPost/artem-sapegin-b18TRXc8UPQ-unsplash-blog-card.png';
+import BlogCardGalleryPostImg1 from '../images/blogCards/galleryPost/christin-hume-mfB1B1s4sMc-unsplash-blog-card.png';
+import BlogCardGalleryPostImg2 from '../images/blogCards/galleryPost/drew-beamer-PL6ClUWwDEw-unsplash-blog-card.png';
+import BlogCardGalleryPostImg3 from '../images/blogCards/galleryPost/andrew-neel-cckf4TsHAuw-unsplash-blog-card.png';
+import BlogCardGalleryPostImg4 from '../images/blogCards/galleryPost/markus-spiske-SRNKol31s64-unsplash-blog-card.png';
+import BlogCardGalleryPostImg5 from '../images/blogCards/galleryPost/green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png';
+import BlogCardGalleryPostImg6 from '../images/blogCards/galleryPost/grovemade-DhZ5BpBeQEM-unsplash-blog-card.png';
+import BlogCardGalleryPostImg7 from '../images/blogCards/galleryPost/workperch-AiOzVFqlyZI-unsplash-blog-card.png';
+import BlogCardGalleryPostImg8 from '../images/blogCards/galleryPost/grovemade-RvPDe41lYBA-unsplash-blog-card.png';
+import BlogCardGalleryPostImg9 from '../images/blogCards/galleryPost/kari-shea-pSmD3L7z8hs-unsplash-blog-card.png';
+import BlogCardGalleryPostImg10 from '../images/blogCards/galleryPost/kari-shea-tOVmshavtoo-unsplash-blog-card.png';
+import BlogCardGalleryPostImg11 from '../images/blogCards/galleryPost/artem-sapegin-b18TRXc8UPQ-unsplash-blog-card.png';
 
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_1 = BlogCardGalleryPostID1;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_2 = BlogCardGalleryPostID2;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_3 = BlogCardGalleryPostID3;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_4 = BlogCardGalleryPostID4;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_5 = BlogCardGalleryPostID5;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_6 = BlogCardGalleryPostID6;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_7 = BlogCardGalleryPostID7;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_8 = BlogCardGalleryPostID8;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_9 = BlogCardGalleryPostID9;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_10 = BlogCardGalleryPostID10;
-export const BLOG_CARD_GALLERY_POST_COVER_IMG_11 = BlogCardGalleryPostID11;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_1 = BlogCardGalleryPostImg1;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_2 = BlogCardGalleryPostImg2;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_3 = BlogCardGalleryPostImg3;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_4 = BlogCardGalleryPostImg4;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_5 = BlogCardGalleryPostImg5;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_6 = BlogCardGalleryPostImg6;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_7 = BlogCardGalleryPostImg7;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_8 = BlogCardGalleryPostImg8;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_9 = BlogCardGalleryPostImg9;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_10 = BlogCardGalleryPostImg10;
+export const BLOG_CARD_GALLERY_POST_COVER_IMG_11 = BlogCardGalleryPostImg11;
 
 // Link post
 
