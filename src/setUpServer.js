@@ -21975,6 +21975,7 @@ app.post('/api/blog-list-standard', (req, res) => {
         numberOfPages: !Number.isInteger(blogListStandardPage.length/6) ? Math.floor(blogListStandardPage.length/6) + 1 : Math.floor(blogListStandardPage.length/6),
         blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
     };
+    
     // let takeItems = req.body.step * 6;
     // if(takeItems >= threeColumnsPage.length){
     //     updatedThreeColumnsObj.disableLoadMoreButton = true;

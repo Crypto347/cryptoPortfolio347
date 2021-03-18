@@ -161,7 +161,7 @@ export const BlogListStandardPage = (props) => {
                
             }else{
                 // Fetch data (required to run -> npm run server)
-                console.log("JJJJ")
+                
                 props.fetchBlogListStandardPageData(props.blogListStandardPage.activePageId);
             }
         }
@@ -287,6 +287,7 @@ export const BlogListStandardPage = (props) => {
                     {renderBlogListStandardPageData(arr)}
                     <BlogPagination
                         page="blogListStandardPage"
+                        activePageNumber={props.blogListStandardPage.activePageId}
                         pagesArray={props.blogListStandardPage.pagesArray}
                         fetchPageData={props.fetchBlogListStandardPageData}
                         activatePageNumber={props.activatePageNumberForBlogListStandardPage}

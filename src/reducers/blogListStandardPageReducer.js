@@ -144,10 +144,14 @@ const setSwiperStateForBlogListStandardPage = (state, action) => {
         rerender: action.rerender
     };
     
-    let card = {...updatedItems.find(item => item.key === action.cardKey), swiper: updatedSwiper};
-    let cardIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+    let card = updatedItems.filter(item => item.key === action.cardKey);
 
-    updatedItems.splice(cardIndex, 1, card);
+    if(card.length !== 0){
+        card = {...card[0], swiper: updatedSwiper};
+        let cardIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+        
+        updatedItems.splice(cardIndex, 1, card);
+    }
     
     return {
         ...state,

@@ -100,9 +100,9 @@ export const BlogPagination = (props) => {
         }
     }
 
-    const onPageClickHandler = (e, pageID) => {
+    const onPageClickHandler = (e, opt, pageID) => {
         // Do nothing on right mouse click
-
+        
         if(e.button === 2) return;
 
         // Storing data in local storage 
@@ -114,11 +114,24 @@ export const BlogPagination = (props) => {
             /**
              * Add fading effect on the unmounted component and remember 
              * information of the unmounted component on left mouse click 
-             */ 
-
-            props.fetchPageData(pageID);
-            props.activatePageNumber(pageID);
-
+             */
+            let _pageId;
+            switch(opt){
+                case 'pageNumber':
+                    _pageId = pageID;
+                    break;
+                case 'leftArrow':
+                    _pageId = pageID - 1;
+                    break;
+                case 'rightArrow':
+                    _pageId = pageID + 1;
+                    break;
+            }
+     
+            props.fetchPageData(_pageId);
+            props.activatePageNumber(_pageId);
+            
+            window.scrollTo(0, 0);
             // props.setUnmountComponentValues(true, path);
         }else{
             // Remember information of the unmounted component on scroll wheel click
@@ -138,7 +151,7 @@ export const BlogPagination = (props) => {
                         <div 
                             key={i}
                             className="page"
-                            onMouseDown={(e) => onPageClickHandler(e, el.id)}
+                            onMouseDown={(e) => onPageClickHandler(e, "pageNumber", el.id)}
                         >
                             <H15 className={renderClassName("page", null, el.active)}>{el.id}</H15>
                         </div>
@@ -154,32 +167,34 @@ export const BlogPagination = (props) => {
 
     return(
         <div className="pagination">
-            <div 
+            {props.activePageNumber !== 1 ? 
+              <div 
                 className={renderClassName("leftArrowPaginatio", leftArrowIsHovering)}
                 onMouseEnter={() => handleMouseEnter("leftArrowPaginatio")} 
                 onMouseLeave={() => handleMouseLeave("leftArrowPaginatio")}
                 style={{transform: "rotate(180deg)"}}
-                // onMouseDown={(e) => onMouseDownHandler(e)}
+                onMouseDown={(e) => onPageClickHandler(e, "leftArrow", props.activePageNumber)}
             >
                 <div className="arrow-horizontal-line"/>
                 <div className="arrow-wrapper2">
                     <div className="arrow-top-line"></div>
                     <div className="arrow-bottom-line"></div>
                 </div>
-            </div>
+            </div> : null}          
             {renderPages()}
-            <div 
-                className={renderClassName("rightArrowPaginatio", rightArrowIsHovering)}
-                onMouseEnter={() => handleMouseEnter("rightArrowPaginatio")} 
-                onMouseLeave={() => handleMouseLeave("rightArrowPaginatio")}
-                // onMouseDown={(e) => onMouseDownHandler(e)}
-            >
-                <div className="arrow-horizontal-line"/>
-                <div className="arrow-wrapper2">
-                    <div className="arrow-top-line"></div>
-                    <div className="arrow-bottom-line"></div>
-                </div>
-            </div>
+            {props.activePageNumber !== props.pagesArray.length ? 
+                <div 
+                    className={renderClassName("rightArrowPaginatio", rightArrowIsHovering)}
+                    onMouseEnter={() => handleMouseEnter("rightArrowPaginatio")} 
+                    onMouseLeave={() => handleMouseLeave("rightArrowPaginatio")}
+                    onMouseDown={(e) => onPageClickHandler(e, "rightArrow", props.activePageNumber)}
+                >
+                    <div className="arrow-horizontal-line"/>
+                    <div className="arrow-wrapper2">
+                        <div className="arrow-top-line"></div>
+                        <div className="arrow-bottom-line"></div>
+                    </div>
+                </div> : null}
         </div>
     );
 }
