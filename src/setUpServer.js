@@ -21208,14 +21208,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
             ],
             path: "blog-list-standard/video-post/1",
-            coverImage: {
-                id: 1,
-                key: "blogCardVideoPostCoverImg1",
-                isHover: "init",
-                imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
-                folderName: "colorful",
-                alt: "image"
-            }
+            // coverImage: {
+            //     id: 1,
+            //     key: "blogCardVideoPostCoverImg1",
+            //     isHover: "init",
+            //     imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
+            //     folderName: "colorful",
+            //     alt: "image"
+            // }
         },
         {
             id: 7,
@@ -21315,6 +21315,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         key: "blogCardGalleryPostCoverImg7",
                         isHover: "init",
                         imageName: "workperch-AiOzVFqlyZI-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 4,
+                        key: "blogCardGalleryPostCoverImg8",
+                        isHover: "init",
+                        imageName: "artem-sapegin-b18TRXc8UPQ-unsplash-blog-card.png",
                         folderName: "colorful",
                         alt: "image"
                     }
@@ -21458,194 +21466,202 @@ app.post('/api/blog-list-standard', (req, res) => {
                 alt: "image"
             }
         },
-        // {
-        //     id: 12,
-        //     key: "blogListStandardPageCardId12",
-        //     cardType: "videoPost",
-        //     header: "Video Post 2.",
-        //     videoKey: "blogListVideo2",
-        //     date: "11.03.2021",
-        //     numberOfLikes: 5,
-        //     numberOfComments: 12,
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/video-post/2",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardVideoPostCoverImg2",
-        //         isHover: "init",
-        //         imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // }, 
-        // {
-        //     id: 13,
-        //     key: "blogListStandardPageCardId13",
-        //     cardType: "standardPost",
-        //     header: "Standard Post 3.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 2,
-        //     numberOfComments: 5,
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/standard-post/3",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardStandardPostCoverImg3",
-        //         isHover: "init",
-        //         imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // },
-        // {
-        //     id: 14,
-        //     key: "blogListStandardPageCardId14",
-        //     cardType: "galleryPost",
-        //     header: "Gallery Post 3.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 6,
-        //     numberOfComments: 4,
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/gallery-post/3",
-        //     imagesArray: [
-        //             { 
-        //                 id: 1,
-        //                 key: "blogCardGalleryPostCoverImg8",
-        //                 isHover: "init",
-        //                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-        //                 folderName: "colorful",
-        //                 alt: "image"
-        //             },
-        //             { 
-        //                 id: 2,
-        //                 key: "blogCardGalleryPostCoverImg9",
-        //                 isHover: "init",
-        //                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-        //                 folderName: "colorful",
-        //                 alt: "image"
-        //             },
-        //             { 
-        //                 id: 3,
-        //                 key: "blogCardGalleryPostCoverImg10",
-        //                 isHover: "init",
-        //                 imageName: "ohmky-lQwWZI_WjSU-stone-wall-unsplash.png",
-        //                 folderName: "colorful",
-        //                 alt: "image"
-        //             }
-        //     ]
-        // },
-        // {
-        //     id: 15,
-        //     key: "blogListStandardPageCardId15",
-        //     cardType: "linkPost",
-        //     header: "Link Post 3.",
-        //     date: "17.03.2021",
-        //     numberOfLikes: 7,
-        //     numberOfComments: 4,
-        //     linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
-        //     text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-        //     tags: [
-        //         {
-        //             id: 1,
-        //             label: "Business",
-        //             key: "business",
-        //             path: "list-standard-blog-tags/business",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 2,
-        //             label: "Design",
-        //             key: "design",
-        //             path: "list-standard-blog-tags/design",
-        //             isHover: "init"
-        //         },
-        //         {
-        //             id: 3,
-        //             label: "Fashion",
-        //             key: "fashion",
-        //             path: "list-standard-blog-tags/fashion",
-        //             isHover: "init"
-        //         }
-        //     ],
-        //     path: "blog-list-standard/link-post/3",
-        //     coverImage: {
-        //         id: 1,
-        //         key: "blogCardLinkPostCoverImg3",
-        //         isHover: "init",
-        //         imageName: "tanya-pro-ebERv1EhWoU-unsplash-blog-card.png",
-        //         folderName: "colorful",
-        //         alt: "image"
-        //     }
-        // },
+        {
+            id: 12,
+            key: "blogListStandardPageCardId12",
+            cardType: "videoPost",
+            header: "Video Post 2.",
+            videoKey: "blogListVideo2",
+            date: "11.03.2021",
+            numberOfLikes: 5,
+            numberOfComments: 12,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/video-post/2",
+            // coverImage: {
+            //     id: 1,
+            //     key: "blogCardVideoPostCoverImg2",
+            //     isHover: "init",
+            //     imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
+            //     folderName: "colorful",
+            //     alt: "image"
+            // }
+        }, 
+        {
+            id: 13,
+            key: "blogListStandardPageCardId13",
+            cardType: "standardPost",
+            header: "Standard Post 3.",
+            date: "17.03.2021",
+            numberOfLikes: 2,
+            numberOfComments: 5,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/standard-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardStandardPostCoverImg3",
+                isHover: "init",
+                imageName: "sincerely-media-rogLvqMp9jA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 14,
+            key: "blogListStandardPageCardId14",
+            cardType: "galleryPost",
+            header: "Gallery Post 3.",
+            date: "17.03.2021",
+            numberOfLikes: 6,
+            numberOfComments: 4,
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/gallery-post/3",
+            imagesArray: [
+                    { 
+                        id: 1,
+                        key: "blogCardGalleryPostCoverImg9",
+                        isHover: "init",
+                        imageName: "grovemade-RvPDe41lYBA-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 2,
+                        key: "blogCardGalleryPostCoverImg10",
+                        isHover: "init",
+                        imageName: "kari-shea-pSmD3L7z8hs-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 3,
+                        key: "blogCardGalleryPostCoverImg11",
+                        isHover: "init",
+                        imageName: "kari-shea-tOVmshavtoo-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    }
+            ],
+            swiper: {
+                slides: [],
+                _slides: [],
+                activeIndex: 0,
+                translate: 0,
+                transition: 0.45,
+                rerender: false
+            }
+        },
+        {
+            id: 15,
+            key: "blogListStandardPageCardId15",
+            cardType: "linkPost",
+            header: "Link Post 3.",
+            date: "17.03.2021",
+            numberOfLikes: 7,
+            numberOfComments: 4,
+            linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
+            text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
+            tags: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard/link-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardLinkPostCoverImg3",
+                isHover: "init",
+                imageName: "ducminh-nguyen-hG3H6N6VwCY-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
         // {
         //     id: 16,
         //     key: "blogListStandardPageCardId16",

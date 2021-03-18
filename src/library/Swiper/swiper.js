@@ -97,6 +97,7 @@ export const Swiper = (props) => {
     const testimonialsPageSection3Content = useRef();
     const blogListStandardPageCardId2Content = useRef();
     const blogListStandardPageCardId8Content = useRef();
+    const blogListStandardPageCardId14Content = useRef();
     // const [currentSwiper, setCurrentSwiper] = useState('');
     // const [relode, setRelode] = useState(false)
 
@@ -326,7 +327,8 @@ export const Swiper = (props) => {
                 'bigSlider',
                 'smallSlider',
                 'blogListStandardPageCardId2',
-                'blogListStandardPageCardId8'
+                'blogListStandardPageCardId8',
+                'blogListStandardPageCardId14'
             ].includes(props.component) && direction === 0){
                 // console.log(props.component)
                 openPhotoViewer(props.component, props.swiperData.activeIndex);
@@ -480,7 +482,8 @@ export const Swiper = (props) => {
 
         slidesForPhotoViewer = slidesForPhotoViewer.flat();
         if(['blogListStandardPageCardId2',
-            'blogListStandardPageCardId8'
+            'blogListStandardPageCardId8',
+            'blogListStandardPageCardId14'
         ].includes(props.component)){
             _component = "blogListStandardPage";
         }
@@ -530,7 +533,8 @@ export const Swiper = (props) => {
         }
         if(['bigSlider',
             'blogListStandardPageCardId2',
-            'blogListStandardPageCardId8'
+            'blogListStandardPageCardId8',
+            'blogListStandardPageCardId14'
         ].includes(opt)){
             return "swiper-big-slider"
         }
@@ -668,6 +672,14 @@ export const Swiper = (props) => {
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_6;
             case 'blogCardGalleryPostCoverImg7': 
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_7;
+            case 'blogCardGalleryPostCoverImg8':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_8;
+            case 'blogCardGalleryPostCoverImg9':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_9;
+            case 'blogCardGalleryPostCoverImg10':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_10;
+            case 'blogCardGalleryPostCoverImg11':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_11;
             default:
                 return ""; 
         }
@@ -715,6 +727,8 @@ export const Swiper = (props) => {
                 return blogListStandardPageCardId2Content;
             case 'blogListStandardPageCardId8':
                 return blogListStandardPageCardId8Content;
+            case 'blogListStandardPageCardId14Content':
+                return blogListStandardPageCardId14Content;
         }
     }
 
@@ -789,7 +803,8 @@ export const Swiper = (props) => {
                         }
                         if(['bigSlider',
                             'blogListStandardPageCardId2',
-                            'blogListStandardPageCardId8'
+                            'blogListStandardPageCardId8',
+                            'blogListStandardPageCardId14'
                             ].includes(props.component)){
                                 return(
                                     <div 
@@ -906,7 +921,8 @@ export const Swiper = (props) => {
                 'testimonialsPageSection2',
                 'testimonialsPageSection3',
                 'blogListStandardPageCardId2',
-                'blogListStandardPageCardId8'
+                'blogListStandardPageCardId8',
+                'blogListStandardPageCardId14'
             ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-left">
@@ -966,7 +982,8 @@ export const Swiper = (props) => {
                 'testimonialsPageSection2',
                 'testimonialsPageSection3',
                 'blogListStandardPageCardId2',
-                'blogListStandardPageCardId8'
+                'blogListStandardPageCardId8',
+                'blogListStandardPageCardId14'
             ].includes(props.component)){
                 return(
                     <div className="swiper-arrow-right">
