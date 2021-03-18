@@ -158,9 +158,10 @@ export const BlogListStandardPage = (props) => {
                 // Fetch mock data (not required to run -> npm run server)
 
                 props.fetchBlogListStandardPageDataSuccess(FakeData.blogListStandardPage);
+               
             }else{
                 // Fetch data (required to run -> npm run server)
-
+                console.log("JJJJ")
                 props.fetchBlogListStandardPageData(props.blogListStandardPage.activePageId);
             }
         }
@@ -287,6 +288,8 @@ export const BlogListStandardPage = (props) => {
                     <BlogPagination
                         page="blogListStandardPage"
                         pagesArray={props.blogListStandardPage.pagesArray}
+                        fetchPageData={props.fetchBlogListStandardPageData}
+                        activatePageNumber={props.activatePageNumberForBlogListStandardPage}
                     />
                 </div>
             )
@@ -365,6 +368,7 @@ export default connect(
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
             blogListCardTagIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardTagIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
+            activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

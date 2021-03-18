@@ -77,3 +77,10 @@ export function initBlogPagination(numOfPages) {
         numOfPages: numOfPages
     };
 };
+
+export function activatePageNumberForBlogListStandardPage(activePageId) {
+    return { 
+        type: actionTypes.ACTIVATE_PAGE_NUMBER_FOR_BLOG_LIST_STANDARD_PAGE,
+        activePageId: activePageId
+    };
+};

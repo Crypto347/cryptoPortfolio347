@@ -157,17 +157,37 @@ const setSwiperStateForBlogListStandardPage = (state, action) => {
 
 
 const initBlogPagination = (state, action) => {
-
     let updatedPagesArray = Utility.getArrayOfEmptyVal(action.numOfPages);
     updatedPagesArray = updatedPagesArray.map((el, i) => {
         return {
             id: i + 1,
-            active: false
+            active: i + 1 === state.activePageId ? true : false
         }
     })
 
     return {
         ...state,
+        pagesArray: updatedPagesArray
+    };
+}
+
+const activatePageNumberForBlogListStandardPage = (state, action) => {
+    let updatedPagesArray = [...state.pagesArray];
+    updatedPagesArray = updatedPagesArray.map((el, i) => {
+        return {
+            ...el,
+            active: false
+        }
+    })
+
+    let page = {...updatedPagesArray.find(item => item.id === action.activePageId), active: true};
+    let pageIndex = updatedPagesArray.findIndex(item => item.id === action.activePageId);
+
+    updatedPagesArray.splice(pageIndex, 1, page);
+    console.log(updatedPagesArray)
+    return {
+        ...state,
+        activePageId: action.activePageId,
         pagesArray: updatedPagesArray
     };
 }
@@ -194,8 +214,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return setSwiperStateForBlogListStandardPage(state, action);
         case actionTypes.INIT_BLOG_PAGINATION:
             return initBlogPagination (state, action);
-        // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_FAILURE:
-        //     return fetchSubscribeContactFormPageFailur(state, action);
+        case actionTypes.ACTIVATE_PAGE_NUMBER_FOR_BLOG_LIST_STANDARD_PAGE:
+            return activatePageNumberForBlogListStandardPage(state, action);
         // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_BEGIN:
         //     return fetchSubmitContactFormPageBegin (state, action); 
         // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_SUCCESS:

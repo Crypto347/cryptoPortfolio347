@@ -100,6 +100,36 @@ export const BlogPagination = (props) => {
         }
     }
 
+    const onPageClickHandler = (e, pageID) => {
+        // Do nothing on right mouse click
+
+        if(e.button === 2) return;
+
+        // Storing data in local storage 
+
+        // localStorage.setItem("archiveCategoryHG", key);
+        // localStorage.setItem("pageHG", props.page);
+
+        if(e.button !== 1){
+            /**
+             * Add fading effect on the unmounted component and remember 
+             * information of the unmounted component on left mouse click 
+             */ 
+
+            props.fetchPageData(pageID);
+            props.activatePageNumber(pageID);
+
+            // props.setUnmountComponentValues(true, path);
+        }else{
+            // Remember information of the unmounted component on scroll wheel click
+        
+            // props.setUnmountComponentValues(false, path);
+        }
+        // Fire up unmountComponent epic
+
+        // props.unmountComponent(null, null,  props.page, e.button);
+    }
+
     const renderPages = () => {
         return(
             <div className="pages-wrapper">
@@ -108,6 +138,7 @@ export const BlogPagination = (props) => {
                         <div 
                             key={i}
                             className="page"
+                            onMouseDown={(e) => onPageClickHandler(e, el.id)}
                         >
                             <H15 className={renderClassName("page", null, el.active)}>{el.id}</H15>
                         </div>
