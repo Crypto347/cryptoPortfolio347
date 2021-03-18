@@ -30,7 +30,9 @@ export const initialState = {
         categoryName: ""
     },
     categoriesList: [],
-    tagsList: []
+    tagsList: [],
+    activePageId: 1,
+    pagesArray: []
 }
 
 
@@ -153,6 +155,23 @@ const setSwiperStateForBlogListStandardPage = (state, action) => {
     };
 }
 
+
+const initBlogPagination = (state, action) => {
+
+    let updatedPagesArray = Utility.getArrayOfEmptyVal(action.numOfPages);
+    updatedPagesArray = updatedPagesArray.map((el, i) => {
+        return {
+            id: i + 1,
+            active: false
+        }
+    })
+
+    return {
+        ...state,
+        pagesArray: updatedPagesArray
+    };
+}
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -173,8 +192,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return blogListCardTagIsHoverForBlogListStandardPage(state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return setSwiperStateForBlogListStandardPage(state, action);
-        // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_SUCCESS:
-        //     return fetchSubscribeContactFormPageSuccess (state, action);
+        case actionTypes.INIT_BLOG_PAGINATION:
+            return initBlogPagination (state, action);
         // case actionTypes.FETCH_SUBSCRIBE_CONTACT_FORM_PAGE_FAILURE:
         //     return fetchSubscribeContactFormPageFailur(state, action);
         // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_BEGIN:

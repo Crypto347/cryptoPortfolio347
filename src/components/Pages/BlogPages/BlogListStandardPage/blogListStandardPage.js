@@ -43,6 +43,7 @@ import BlogInfoBoard from '../../../Parts/BlogInfoBoard/blogInfoBoard';
 import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostCard';
 import TagItem from '../../../SmallParts/TagItem/tagItem';
 import Icon from '../../../SmallParts/Icon/icon';
+import BlogPagination from '../../../Parts/BlogPagination/blogPagination';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -160,7 +161,7 @@ export const BlogListStandardPage = (props) => {
             }else{
                 // Fetch data (required to run -> npm run server)
 
-                props.fetchBlogListStandardPageData(1);
+                props.fetchBlogListStandardPageData(props.blogListStandardPage.activePageId);
             }
         }
 
@@ -283,6 +284,10 @@ export const BlogListStandardPage = (props) => {
             return(
                 <div className="blog-list-standard-page-data-wrapper">
                     {renderBlogListStandardPageData(arr)}
+                    <BlogPagination
+                        page="blogListStandardPage"
+                        pagesArray={props.blogListStandardPage.pagesArray}
+                    />
                 </div>
             )
         }

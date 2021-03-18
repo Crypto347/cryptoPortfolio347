@@ -35,10 +35,24 @@
     cursor: context-menu;
 }
 
+.h15-nobel-poppins-cursor {
+    font-size: 15px;
+    color: rgb(155, 155, 155);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
 .h15-black-poppins {
     font-size: 15px;
     color: black;
     font-family: 'Poppins', sans-serif;
+}
+
+.h15-black-poppins-cursor {
+    font-size: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 
 .h15-nobel-lustria-nero-hover-on {

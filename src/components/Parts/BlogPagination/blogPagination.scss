@@ -1,13 +1,10 @@
-.arrow-with-text {
-    width: 125px;
+.pagination {
     display: flex;
-    // justify-content: flex-start;
-    margin-top: 40px;
-    padding: 5px 20px 5px 5px;
-    cursor: pointer;
+    justify-content: center;
     .arrow-wrapper {
         display: flex;
         align-items: center;
+        width: 50px;
         cursor: pointer;
         .arrow-horizontal-line {
             height: 1.5px;
@@ -23,18 +20,19 @@
             .arrow-top-line {
                 border: 1px solid transparent;
                 height: 0px;
-                transform: translate(-1px, 1px) rotate(-45deg);
+                transform: translate(-1px, 1px) rotate(45deg);
             }
             .arrow-bottom-line {
                 border: 1px solid transparent;
                 height: 0px;
-                transform: translate(-1px, -1px) rotate(45deg);
+                transform: translate(-1px, -1px) rotate(-45deg);
             }
         }
     }
     .arrow-wrapper-hover-on {
         display: flex;
         align-items: center;
+        width: 50px;
         cursor: pointer;
         .arrow-horizontal-line {
             height: 1.5px;
@@ -80,6 +78,7 @@
     .arrow-wrapper-hover-off {
         display: flex;
         align-items: center;
+        width: 50px;
         cursor: pointer;
         .arrow-horizontal-line {
             height: 1.5px;
@@ -118,24 +117,15 @@
             }
         }
     }
-    .text {
-        transform: translateX(10px);
-    }
-    .text-hover-on {
-        transform: translateX(15px);
-        -webkit-animation: buttonTextHoverOn .4s ease;
-        -moz-animation: buttonTextHoverOn .4s ease;
-        -o-animation: buttonTextHoverOn .4s ease;
-        animation: buttonTextHoverOn .4s ease;
-    }
-    .text-hover-off {
-        transform: translateX(10px);
-        -webkit-animation: buttonTextHoverOff .4s ease;
-        -moz-animation: buttonTextHoverOff .4s ease;
-        -o-animation: buttonTextHoverOff .4s ease;
-        animation: buttonTextHoverOff .4s ease;
+    .pages-wrapper {
+        display: flex;
+        padding: 0 20px 0 20px;
+        .page {
+            padding: 0 10px 0 10px;
+        }
     }
 }
+
 
 @-webkit-keyframes lengthenHorizontalLineButtonWithText {
     from{width: 15px;}
@@ -259,38 +249,4 @@
         background: black;
         height: 0px;
     }
-}
-
-@-webkit-keyframes buttonTextHoverOn {
-    from{transform: translateX(10px);}
-    to{transform: translateX(15px);}
-}
-@-moz-keyframes buttonTextHoverOn {
-    from{transform: translateX(10px);}
-    to{transform: translateX(15px);}
-}
-@-o-keyframes buttonTextHoverOn {
-    from{transform: translateX(10px);}
-    to{transform: translateX(15px);}
-}
-@keyframes buttonTextHoverOn {
-    from{transform: translateX(10px);}
-    to{transform: translateX(15px);}
-}
-
-@-webkit-keyframes buttonTextHoverOff {
-    from{transform: translateX(15px);}
-    to{transform: translateX(10px);}
-}
-@-moz-keyframes buttonTextHoverOff {
-    from{transform: translateX(15px);}
-    to{transform: translateX(10px);}
-}
-@-o-keyframes buttonTextHoverOff {
-    from{transform: translateX(15px);}
-    to{transform: translateX(10px);}
-}
-@keyframes buttonTextHoverOff {
-    from{transform: translateX(15px);}
-    to{transform: translateX(10px);}
 }

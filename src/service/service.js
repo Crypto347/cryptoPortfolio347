@@ -2406,7 +2406,7 @@ export function fetchPortfolioProjectShowcasePageData() {
     };
 }
 
-export function fetchBlogListStandardPageData(page) {
+export function fetchBlogListStandardPageData(activePageId) {
     return dispatch => {
         dispatch(Actions.fetchBlogListStandardPageDataBegin());
         return fetch(`http://localhost:3005/api/blog-list-standard`, {
@@ -2416,14 +2416,15 @@ export function fetchBlogListStandardPageData(page) {
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify({
-                page: page
+                activePageId: activePageId
             })
         })
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchBlogListStandardPageDataSuccess(json));
+                dispatch(Actions.fetchBlogListStandardPageDataSuccess(json.blogListStandardPage));
+                dispatch(Actions.initBlogPagination(json.numberOfPages));
                 // return json;
             })
             .catch(error => {

@@ -92,7 +92,11 @@ export const ButtonWithText = (props) => {
      */
 
     return(
-        <div className="arrow-with-text">
+        <div 
+            className="arrow-with-text"
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
+        >
             <div className={renderClassName("arrowWithTextPartArrow", isHovering)}>
                 <div className="arrow-horizontal-line"/>
                 <div className="arrow-wrapper2">
@@ -102,8 +106,6 @@ export const ButtonWithText = (props) => {
             </div>
             <div 
                 className={renderClassName("arrowWithTextPartText", isHovering)}
-                onMouseEnter={handleMouseEnter} 
-                onMouseLeave={handleMouseLeave}
                 onMouseDown={(e) => onMouseDownHandler(e)}
             >
                 <H15 className="h15-black-poppins">{props.buttonText}</H15>

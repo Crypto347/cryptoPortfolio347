@@ -21967,15 +21967,14 @@ app.post('/api/blog-list-standard', (req, res) => {
         }
     ]
 
-    // let updatedBlogListStandard = {
-    //     disableLoadMoreButton: false,
-    //     twoColumnsData: []
-    // };
-
-    // let updatedThreeColumnsObj = {
-    //     disableLoadMoreButton: false,
-    //     threeColumnsData: []
-    // };
+    
+    let firstIndex =  req.body.activePageId * 6 - 5;
+    let lastIndex =  req.body.activePageId * 6 - 1;
+ 
+    let updatedBlogListStandard = {
+        numberOfPages: !Number.isInteger(blogListStandardPage.length/6) ? Math.floor(blogListStandardPage.length/6) + 1 : Math.floor(blogListStandardPage.length/6),
+        blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
+    };
     // let takeItems = req.body.step * 6;
     // if(takeItems >= threeColumnsPage.length){
     //     updatedThreeColumnsObj.disableLoadMoreButton = true;
@@ -21984,11 +21983,11 @@ app.post('/api/blog-list-standard', (req, res) => {
     //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage.slice(0, takeItems)
     // }
     
-    // if(!updatedBlogListStandard) {
-    //     res.status(404).send("The blog data was not found");
-    // }else{
-        res.json(blogListStandardPage);  
-    // }
+    if(!updatedBlogListStandard) {
+        res.status(404).send("The blog data was not found");
+    }else{
+        res.json(updatedBlogListStandard);  
+    }
 });
 
 // app.get('/api/posts/:year/:month', (req, res) => {

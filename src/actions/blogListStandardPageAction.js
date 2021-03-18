@@ -70,3 +70,10 @@ export function setSwiperStateForBlogListStandardPage(slides, _slides, activeInd
         cardKey: cardKey
     };
 };
+
+export function initBlogPagination(numOfPages) {
+    return { 
+        type: actionTypes.INIT_BLOG_PAGINATION,
+        numOfPages: numOfPages
+    };
+};
