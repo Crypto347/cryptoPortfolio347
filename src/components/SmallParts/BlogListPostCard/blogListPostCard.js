@@ -196,14 +196,26 @@ export const BlogListPostCard = (props) => {
                 return Images.BLOG_CARD_LINK_POST_COVER_IMG_2;
             case 'blogCardLinkPostCoverImg3':
                 return Images.BLOG_CARD_LINK_POST_COVER_IMG_3;
+            case 'blogCardLinkPostCoverImg4':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_4;
             case 'blogCardQuotePostCoverImg1':
                 return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
             case 'blogCardQuotePostCoverImg2':
                 return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_2;
+            case 'blogCardQuotePostCoverImg3':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_3;
+            case 'blogCardQuotePostCoverImg4':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_4;
             case 'blogCardAudioPostCoverImg1':
                 return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_1;
             case 'blogCardAudioPostCoverImg2':
                 return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_2;
+            case 'blogCardAudioPostCoverImg3':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_3;
+            case 'blogCardAudioPostCoverImg4':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_4;
+            case 'blogCardAudioPostCoverImg5':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_5;
             default:
                 return "";
         }

@@ -81,6 +81,8 @@ export const Video = (props) => {
                 return Videos.BLOG_LIST_VIDEO_1;
             case 'blogListVideo2':
                 return Videos.BLOG_LIST_VIDEO_2;
+            case 'blogListVideo3':
+                return Videos.BLOG_LIST_VIDEO_3;
             default:
                 return "";
         }
