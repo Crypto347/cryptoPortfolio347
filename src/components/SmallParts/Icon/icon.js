@@ -142,7 +142,14 @@ export const Icon = (props) => {
                     return "blog-list-standard-page-search-icon-hover-off"
             }
         }
-        if(['blogCardLike','blogCardComment','blogCardShare'].includes(opt)){
+        if(['blogCardLike',
+            'blogCardComment',
+            'blogCardShare',
+            'blogCardSocMedInstagram',
+            'blogCardSocMedTwitter',
+            'blogCardSocMedFacebook',
+            'blogCardSocMedTumblr'
+        ].includes(opt)){
             switch(isHovering){
                 case 'init':
                     return "icon-color-from-nobel-to-black";

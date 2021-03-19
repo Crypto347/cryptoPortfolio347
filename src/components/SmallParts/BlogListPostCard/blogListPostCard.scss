@@ -31,6 +31,102 @@
                 align-items: center;
             }
         }
+        .blog-list-post-card-info-soc-med-wrapper {
+            display: flex;
+            .blog-list-post-card-info-soc-med-icons {
+                display: flex;
+                margin-right: 5px;
+                .blog-list-post-card-info-soc-med-Instagram {
+                    display: flex;
+                    opacity: 0;
+                }
+                .blog-list-post-card-info-soc-med-Instagram-hover-on {
+                    display: flex;
+                    opacity: 1;
+                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
+                    -o-animation: blogListPostCardShareHoverOn .2s linear;
+                    animation: blogListPostCardShareHoverOn .2s linear;
+                    animation-delay: .6s;
+                    animation-fill-mode: both;
+                }
+                .blog-list-post-card-info-soc-med-Instagram-hover-off {
+                    display: flex;
+                    opacity: 0;
+                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
+                    -o-animation: blogListPostCardShareHoverOff .2s linear;
+                    animation: blogListPostCardShareHoverOff .2s linear;
+                }
+
+                .blog-list-post-card-info-soc-med-Twitter {
+                    display: flex;
+                    opacity: 0;
+                }
+                .blog-list-post-card-info-soc-med-Twitter-hover-on {
+                    display: flex;
+                    opacity: 1;
+                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
+                    -o-animation: blogListPostCardShareHoverOn .2s linear;
+                    animation: blogListPostCardShareHoverOn .2s linear;
+                    animation-delay: .5s;
+                    animation-fill-mode: both;         
+                }
+                .blog-list-post-card-info-soc-med-Twitter-hover-off {
+                    display: flex;
+                    opacity: 0;
+                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
+                    -o-animation: blogListPostCardShareHoverOff .2s linear;
+                    animation: blogListPostCardShareHoverOff .2s linear;
+                }
+
+                .blog-list-post-card-info-soc-med-Facebook {
+                    display: flex;
+                    opacity: 0;
+                }
+                .blog-list-post-card-info-soc-med-Facebook-hover-on {
+                    display: flex;
+                    opacity: 1;
+                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
+                    -o-animation: blogListPostCardShareHoverOn .2s linear;
+                    animation: blogListPostCardShareHoverOn .2s linear;
+                    animation-delay: .3s;
+                    animation-fill-mode: both;
+                }
+                .blog-list-post-card-info-soc-med-Facebook-hover-off {
+                    display: flex;
+                    opacity: 0;
+                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
+                    -o-animation: blogListPostCardShareHoverOff .2s linear;
+                    animation: blogListPostCardShareHoverOff .2s linear;
+                }
+
+                .blog-list-post-card-info-soc-med-Tumblr {
+                    display: flex;
+                    opacity: 0;
+                }
+                .blog-list-post-card-info-soc-med-Tumblr-hover-on {
+                    display: flex;
+                    opacity: 1;
+                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
+                    -o-animation: blogListPostCardShareHoverOn .2s linear;
+                    animation: blogListPostCardShareHoverOn .2s linear;
+                }
+                .blog-list-post-card-info-soc-med-Tumblr-hover-off {
+                    display: flex;
+                    opacity: 0;
+                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
+                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
+                    -o-animation: blogListPostCardShareHoverOff .2s linear;
+                    animation: blogListPostCardShareHoverOff .2s linear;
+                }
+            }
+        }
     }
 
     .blog-list-post-card-link {
@@ -90,4 +186,38 @@
         width: 100%;
         position: relative;
     }
+}
+
+@-webkit-keyframes blogListPostCardShareHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-moz-keyframes blogListPostCardShareHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@-o-keyframes blogListPostCardShareHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes blogListPostCardShareHoverOn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@-webkit-keyframes blogListPostCardShareHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-moz-keyframes blogListPostCardShareHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@-o-keyframes blogListPostCardShareHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+@keyframes blogListPostCardShareHoverOff {
+    from{opacity: 1;}
+    to{opacity: 0;}
 }

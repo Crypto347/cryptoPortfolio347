@@ -43,6 +43,10 @@ import {
 
 import * as Images from '../../../constants/images';
 
+import {
+    socialMediaIcons
+} from '../../../constants/socialMediaIcons';
+
 /**
  * BlogListPostCard component definition and export
  */
@@ -60,6 +64,10 @@ export const BlogListPostCard = (props) => {
     const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
     const [isHoveringBlogCardLink, setIsHoveringBlogCardLink] = useState("init");
     const [isHoveringBlogCardQuote, setIsHoveringBlogCardQuote] = useState("init");
+    const [isHoveringBlogCardSocMedInstagram, setIsHoveringBlogCardSocMedInstagram] = useState("init");
+    const [isHoveringBlogCardSocMedTwitter, setIsHoveringBlogCardSocMedTwitter] = useState("init");
+    const [isHoveringBlogCardSocMedFacebook, setIsHoveringBlogCardSocMedFacebook] = useState("init");
+    const [isHoveringBlogCardSocMedTumblr, setIsHoveringBlogCardSocMedTumblr] = useState("init");
     const [cardWidth, setCardWidth] = useState(0);
     
     /**
@@ -72,8 +80,7 @@ export const BlogListPostCard = (props) => {
 
         let blogListPostCard = document.getElementById("blogListPostCard");
         setCardWidth(blogListPostCard.offsetWidth);
-
-        
+       
     }, []);
 
     const handleMouseEnter = (opt, key) => {
@@ -101,6 +108,18 @@ export const BlogListPostCard = (props) => {
                 break;
             case 'blogCardQuote': 
                 setIsHoveringBlogCardQuote("on");
+                break;
+            case 'blogCardSocMedInstagram': 
+                setIsHoveringBlogCardSocMedInstagram("on");
+                break;
+            case 'blogCardSocMedTwitter': 
+                setIsHoveringBlogCardSocMedTwitter("on");
+                break;
+            case 'blogCardSocMedFacebook': 
+                setIsHoveringBlogCardSocMedFacebook("on");
+                break;
+            case 'blogCardSocMedTumblr': 
+                setIsHoveringBlogCardSocMedTumblr("on");
                 break;
         }
     }
@@ -130,6 +149,18 @@ export const BlogListPostCard = (props) => {
                 break;
             case 'blogCardQuote': 
                 setIsHoveringBlogCardQuote("off");
+                break;
+            case 'blogCardSocMedInstagram': 
+                setIsHoveringBlogCardSocMedInstagram("off");
+                break;
+            case 'blogCardSocMedTwitter': 
+                setIsHoveringBlogCardSocMedTwitter("off");
+                break;
+            case 'blogCardSocMedFacebook': 
+                setIsHoveringBlogCardSocMedFacebook("off");
+                break;
+            case 'blogCardSocMedTumblr': 
+                setIsHoveringBlogCardSocMedTumblr("off");
                 break;
         }
     }
@@ -178,6 +209,46 @@ export const BlogListPostCard = (props) => {
                     return "h35-black-poppins-nobel-cursor-hover-on";
                 case 'off':
                     return "h35-black-poppins-nobel-cursor-hover-off"
+            }
+        }
+        if(['blogCardSocMedInstagram'].includes(opt)){
+            switch(isHovering){
+                case 'init':
+                    return "blog-list-post-card-info-soc-med-Instagram";
+                case 'on':
+                    return "blog-list-post-card-info-soc-med-Instagram-hover-on";
+                case 'off':
+                    return "blog-list-post-card-info-soc-med-Instagram-hover-off"
+            }
+        }
+        if(['blogCardSocMedTwitter'].includes(opt)){
+            switch(isHovering){
+                case 'init':
+                    return "blog-list-post-card-info-soc-med-Twitter";
+                case 'on':
+                    return "blog-list-post-card-info-soc-med-Twitter-hover-on";
+                case 'off':
+                    return "blog-list-post-card-info-soc-med-Twitter-hover-off"
+            }
+        }
+        if(['blogCardSocMedFacebook'].includes(opt)){
+            switch(isHovering){
+                case 'init':
+                    return "blog-list-post-card-info-soc-med-Facebook";
+                case 'on':
+                    return "blog-list-post-card-info-soc-med-Facebook-hover-on";
+                case 'off':
+                    return "blog-list-post-card-info-soc-med-Facebook-hover-off"
+            }
+        }
+        if(['blogCardSocMedTumblr'].includes(opt)){
+            switch(isHovering){
+                case 'init':
+                    return "blog-list-post-card-info-soc-med-Tumblr";
+                case 'on':
+                    return "blog-list-post-card-info-soc-med-Tumblr-hover-on";
+                case 'off':
+                    return "blog-list-post-card-info-soc-med-Tumblr-hover-off"
             }
         }
     }
@@ -315,6 +386,45 @@ export const BlogListPostCard = (props) => {
         )
     }
 
+    const renderIsHoveringForSocMed = (opt) => {
+        switch(opt){
+            case 'isHoveringBlogCardSocMedInstagram':
+                return isHoveringBlogCardSocMedInstagram;
+            case 'isHoveringBlogCardSocMedTwitter':
+                return isHoveringBlogCardSocMedTwitter;
+            case 'isHoveringBlogCardSocMedFacebook':
+                return isHoveringBlogCardSocMedFacebook;
+            case 'isHoveringBlogCardSocMedTumblr':
+                return isHoveringBlogCardSocMedTumblr;
+        }
+    }
+
+    const renderSocialMediaIcons = () => {
+        return(
+            <div className="blog-list-post-card-info-soc-med-icons">{socialMediaIcons.map((el, i) => {
+               return(
+                    <div 
+                        key={i}
+                        className={renderClassName(`blogCardSocMed${el.name}`, isHoveringBlogCardShare)}
+                        onMouseEnter={() => handleMouseEnter(`blogCardSocMed${el.name}`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardSocMed${el.name}`)} 
+                    >
+                        <Icon 
+                            key={i}
+                            iconType="fontAwesome"
+                            icon={el.iconKey} 
+                            iconSize="1x"
+                            isHover={renderIsHoveringForSocMed(`isHoveringBlogCardSocMed${el.name}`)}
+                            classNameOpt={`blogCardSocMed${el.name}`}
+                        />
+                        <EW10/>
+                    </div>
+               ) 
+            })}
+            </div>
+        )
+    }
+
     const renderBlogCardInfo = () => {
         return(
             <div className="blog-list-post-card-info-wrapper">
@@ -363,10 +473,11 @@ export const BlogListPostCard = (props) => {
                     </div>
                 </div>              
                 <div 
-                    className="blog-list-post-card-info-soc-med"
+                    className="blog-list-post-card-info-soc-med-wrapper"
                     onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
                     onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
                 >
+                    {renderSocialMediaIcons()}
                     <Icon
                         iconType="fontAwesome"
                         icon="faShareAlt"
