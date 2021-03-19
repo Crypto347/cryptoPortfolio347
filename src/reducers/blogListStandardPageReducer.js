@@ -29,6 +29,10 @@ export const initialState = {
         activated: "init",
         categoryName: ""
     },
+    activeItem: {
+        activated: "init",
+        itemName: ""
+    },
     categoriesList: [],
     tagsList: [],
     activePageId: 1,
@@ -196,6 +200,33 @@ const activatePageNumberForBlogListStandardPage = (state, action) => {
     };
 }
 
+const activateListStandardBlogItem = (state, action) => {
+    let updatedActiveItem = {
+        ...state.activeItem,
+        activated: action.itemIsActive,
+        itemName: action.itemName
+    };
+
+    // let updatedCategoryList = [...state.categoriesList];
+
+    // updatedCategoryList = updatedCategoryList.map(el => {
+    //     return {
+    //         ...el,
+    //         active: "off"
+    //     }
+    // })
+
+    // let category = {...updatedCategoryList.find(item => item.key === action.categoryName), active: "on"};
+    // let categoryIndex = updatedCategoryList.findIndex(item => item.key === action.categoryName);
+    
+    // updatedCategoryList.splice(categoryIndex, 1, category)
+
+    return {
+        ...state,
+        activeItem: updatedActiveItem
+    }
+} 
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -220,8 +251,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return initBlogPagination (state, action);
         case actionTypes.ACTIVATE_PAGE_NUMBER_FOR_BLOG_LIST_STANDARD_PAGE:
             return activatePageNumberForBlogListStandardPage(state, action);
-        // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_BEGIN:
-        //     return fetchSubmitContactFormPageBegin (state, action); 
+        case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_ITEM:
+            return activateListStandardBlogItem (state, action); 
         // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_SUCCESS:
         //     return fetchSubmitContactFormPageSuccess (state, action);
         // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_FAILURE:

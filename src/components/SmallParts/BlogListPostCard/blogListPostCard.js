@@ -268,7 +268,7 @@ export const BlogListPostCard = (props) => {
         }
     }
 
-    const onClickHandler = (e, path) => {
+    const onClickHandler = (e, path, key) => {
 
         // Do nothing on right mouse click 
 
@@ -304,7 +304,8 @@ export const BlogListPostCard = (props) => {
   
         //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
           
-        // props.activateBlogCategory("active", key);
+        props.activateBlogItem("active", key);
+        props.clearActivityOfMenuItems();
         props.history.push(`/crypto-portfolio/${path}`);
 
     }
@@ -316,7 +317,7 @@ export const BlogListPostCard = (props) => {
                     <div className="blog-list-post-card-audio-wrapper">
                         <img 
                             src={loadImg(props.elData.coverImage.key)}
-                            onMouseDown={(e) => onClickHandler(e)}
+                            // onMouseDown={(e) => onClickHandler(e)}
                         />
                         <Audio
                             audioKey={props.elData.audioKey}
@@ -351,7 +352,7 @@ export const BlogListPostCard = (props) => {
                 return(
                     <img 
                         src={loadImg(props.elData.coverImage.key)}
-                        onMouseDown={(e) => onClickHandler(e)}
+                        onMouseDown={(e) => onClickHandler(e, props.elData.path, props.elData.key)}
                     />              
                 );
         }
@@ -372,7 +373,7 @@ export const BlogListPostCard = (props) => {
                     <div
                         onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardHeader`)}
-                        onMouseDown={(e) => onClickHandler(e, props.elData.path)}
+                        onMouseDown={(e) => onClickHandler(e, props.elData.path, props.elData.key)}
                     >
                         <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.elData.header}</H35>
                     </div>

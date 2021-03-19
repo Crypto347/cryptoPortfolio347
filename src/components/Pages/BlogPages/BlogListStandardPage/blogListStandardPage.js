@@ -262,6 +262,8 @@ export const BlogListStandardPage = (props) => {
                                 blogListCardTagIsHover={props.blogListCardTagIsHoverForBlogListStandardPage}
                                 setSwiperStateForBlogListStandardPage={props.setSwiperStateForBlogListStandardPage}
                                 pageData={props.blogListStandardPage}
+                                clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                                activateBlogItem={props.activateListStandardBlogItem}
                             />
                         </React.Fragment>
                     )
@@ -402,6 +404,7 @@ export default connect(
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

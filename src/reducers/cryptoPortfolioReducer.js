@@ -723,14 +723,14 @@ const clearActivityOfMenuItems = (state, action) => {
         
         let item2 = item.options.filter(item => item.id === +activeItemPath[1]);
         if(item2.length !== 0){
-            let itemIndex2 = item.options.find(item => item.id === +activeItemPath[1]);
+            let itemIndex2 = item.options.findIndex(item => item.id === +activeItemPath[1]);
             item2 = {...item2[0], active: false}
         
             item.options.splice(itemIndex2, 1, item2);
         }
         let item3 = item2.array.filter(item => item.id === +activeItemPath[2]);
         if(item3.length !== 0){
-            let itemIndex3 = item2.array.find(item => item.id === +activeItemPath[2]);
+            let itemIndex3 = item2.array.findIndex(item => item.id === +activeItemPath[2]);
             item3 = {...item3[0], active: false}
     
             item2.array.splice(itemIndex3, 1, item3);
@@ -738,7 +738,7 @@ const clearActivityOfMenuItems = (state, action) => {
 
         let item4 = item3.subOptions.filter(item => item.id === +activeItemPath[3]);
         if(item4.length !== 0){
-            let itemIndex4 = item3.subOptions.find(item => item.id === +activeItemPath[3]);
+            let itemIndex4 = item3.subOptions.findIndex(item => item.id === +activeItemPath[3]);
             item4 = {...item4[0], active: false}
         
             item3.subOptions.splice(itemIndex4, 1, item4);
