@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 /**
@@ -37,23 +38,32 @@ export const Video = (props) => {
      * State
      */
 
+    const videoRef = useRef();
+    const previousUrl = useRef(url);
     const [videoIsPlaying, setVideoIsPlaying] = useState(false);
-
+    const [url, setUrl] = useState("");
+ 
     /**
      * Methods
      */
 
     useEffect(() => {
         let video = document.getElementById(`${props.videoKey}Video`);
-        
+        setUrl(loadVideo(props.videoKey));
+
         // Play video
 
         if(props.playVideo){
             video.play();
         }
+        
+        if (previousUrl.current !== url && videoRef.current) {
+            videoRef.current.load();
+            previousUrl.current = url;
+        }
 
         // Event Listeners
-
+        
         video.addEventListener('ended', videoOnFinish);
         video.addEventListener('play', videoOnPlay);
 
@@ -63,7 +73,7 @@ export const Video = (props) => {
             video.removeEventListener('ended', videoOnFinish);
             video.removeEventListener('play', videoOnPlay);
         }
-    }, []);
+    }, [props.videoKey]);
 
     /**
      * Markup
@@ -105,7 +115,8 @@ export const Video = (props) => {
     return(
         <div className="video">
             <video 
-                id={`${props.videoKey}Video`} 
+                id={`${props.videoKey}Video`}
+                ref={videoRef}
                 controls
                 style={props.videoHeight ? {height: props.videoHeight} : null}
             >

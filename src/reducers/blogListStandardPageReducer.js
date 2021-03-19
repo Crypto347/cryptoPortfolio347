@@ -188,7 +188,7 @@ const activatePageNumberForBlogListStandardPage = (state, action) => {
     let pageIndex = updatedPagesArray.findIndex(item => item.id === action.activePageId);
 
     updatedPagesArray.splice(pageIndex, 1, page);
-    console.log(updatedPagesArray)
+    
     return {
         ...state,
         activePageId: action.activePageId,
