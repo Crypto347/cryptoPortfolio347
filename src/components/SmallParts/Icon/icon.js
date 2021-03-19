@@ -57,7 +57,7 @@ export const Icon = (props) => {
      * State
      */
  
-    const [socMedIsHover, setSocMedIsHover] = useState("init");
+    const [iconIsHover, setIconIsHover] = useState("init");
 
     /**
      * Methods
@@ -67,22 +67,11 @@ export const Icon = (props) => {
     }, []);
     
     const handleMouseEnter = (opt) => {
-        switch(opt){
-            case 'socMedIcon':
-            case 'socMedIconForBlog':
-                setSocMedIsHover("on")
-                break;
-        }
+        setIconIsHover("on")
     }
 
     const handleMouseLeave = (opt) => {
-        switch(opt){
-            case 'socMedIcon':
-            case 'socMedIconForBlog':
-                setSocMedIsHover("off")
-                break;
-    
-        }
+        setIconIsHover("off");
     }
 
     const renderClassName = (opt, isHovering, isActive) => {
@@ -244,7 +233,7 @@ export const Icon = (props) => {
                 <FontAwesomeIcon 
                     icon={setIconName(props.icon)} 
                     size={props.iconSize}
-                    className={renderClassName(props.classNameOpt, props.isHover ? props.isHover : socMedIsHover)}
+                    className={renderClassName(props.classNameOpt, props.isHover ? props.isHover : iconIsHover)}
                     onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
                     onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
                     onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}
@@ -259,12 +248,12 @@ export const Icon = (props) => {
                     onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
                     onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}
                 >
-                    <div className={renderClassName("socialMediaBackgroundCurtain", socMedIsHover)}/>
+                    <div className={renderClassName("socialMediaBackgroundCurtain", iconIsHover)}/>
                     <div className="icon-wrapper">
                         <FontAwesomeIcon 
                             icon={setIconName(props.icon)} 
                             size={props.iconSize}
-                            className={renderClassName(props.classNameOpt, socMedIsHover)}
+                            className={renderClassName(props.classNameOpt, iconIsHover)}
                         />
                     </div>
                 </div>
