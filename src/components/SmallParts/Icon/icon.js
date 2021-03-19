@@ -163,7 +163,7 @@ export const Icon = (props) => {
                 // Open social media in a new window on scroll wheel click
 
                 if(iconName === "Instagram"){
-                    return window.open(`https://www.instagram.com/${instaName}`);
+                    return window.open(`https://www.instagram.com/${instaName ? instaName : ''}`);
                 }
                 if(iconName === "Twitter"){
                     return window.open(`https://www.twitter.com`);

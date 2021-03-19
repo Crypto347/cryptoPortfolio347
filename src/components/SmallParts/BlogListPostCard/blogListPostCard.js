@@ -369,11 +369,13 @@ export const BlogListPostCard = (props) => {
                         <Icon 
                             key={i}
                             iconType="fontAwesome"
+                            iconName={el.name} 
                             icon={el.iconKey} 
                             iconSize="1x"
-                            classNameOpt={`blogCardSocMed${el.name}`}
                             onMouseEnter
                             onMouseLeave
+                            onMouseDown
+                            classNameOpt={`blogCardSocMed${el.name}`}
                         />
                         <EW10/>
                     </div>
