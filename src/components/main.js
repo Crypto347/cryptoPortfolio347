@@ -185,6 +185,36 @@ export const Main = (props) => {
             <Switch>
                 <Route
                     exact 
+                    path={props.match.url + "/blog-list-standard-item/video-post/:id"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
+                    path={props.match.url + "/blog-list-standard-item/audio-post/:id"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
+                    path={props.match.url + "/blog-list-standard-item/quote-post/:id"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
+                    path={props.match.url + "/blog-list-standard-item/link-post/:id"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
+                    path={props.match.url + "/blog-list-standard-item/gallery-post/:id"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
+                    path={props.match.url + "/blog-list-standard-item/standard-post/:id"}
+                    component={BlogListStandardPage}
+                />
+                <Route
+                    exact 
                     path={props.match.url + "/blog-item/standard-post/:id"}
                     component={PostSinglesStandardPage}
                 />

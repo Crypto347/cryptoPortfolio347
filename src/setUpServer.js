@@ -20956,7 +20956,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/standard-post/1",
+            path: "blog-list-standard-item/standard-post/1",
             coverImage: {
                 id: 1,
                 key: "blogCardStandardPostCoverImg1",
@@ -21000,7 +21000,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 
             ],
-            path: "blog-list-standard/gallery-post/1",
+            path: "blog-list-standard-item/gallery-post/1",
             imagesArray: [
                     { 
                         id: 1,
@@ -21077,7 +21077,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/link-post/1",
+            path: "blog-list-standard-item/link-post/1",
             coverImage: {
                 id: 1,
                 key: "blogCardLinkPostCoverImg1",
@@ -21121,7 +21121,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/quote-post/1",
+            path: "blog-list-standard-item/quote-post/1",
             coverImage: {
                 id: 1,
                 key: "blogCardQuotePostCoverImg1",
@@ -21164,7 +21164,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/audio-post/1",
+            path: "blog-list-standard-item/audio-post/1",
             coverImage: {
                 id: 1,
                 key: "blogCardAudioPostCoverImg1",
@@ -21207,7 +21207,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 },
             ],
-            path: "blog-list-standard/video-post/1",
+            path: "blog-list-standard-item/video-post/1",
             // coverImage: {
             //     id: 1,
             //     key: "blogCardVideoPostCoverImg1",
@@ -21249,7 +21249,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/standard-post/2",
+            path: "blog-list-standard-item/standard-post/2",
             coverImage: {
                 id: 1,
                 key: "blogCardStandardPostCoverImg2",
@@ -21292,7 +21292,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/gallery-post/2",
+            path: "blog-list-standard-item/gallery-post/2",
             imagesArray: [
                     { 
                         id: 1,
@@ -21369,7 +21369,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/link-post/2",
+            path: "blog-list-standard-item/link-post/2",
             coverImage: {
                 id: 1,
                 key: "blogCardLinkPostCoverImg2",
@@ -21413,7 +21413,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/quote-post/2",
+            path: "blog-list-standard-item/quote-post/2",
             coverImage: {
                 id: 1,
                 key: "blogCardQuotePostCoverImg2",
@@ -21456,7 +21456,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/audio-post/2",
+            path: "blog-list-standard-item/audio-post/2",
             coverImage: {
                 id: 1,
                 key: "blogCardAudioPostCoverImg2",
@@ -21499,7 +21499,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/video-post/2",
+            path: "blog-list-standard-item/video-post/2",
             // coverImage: {
             //     id: 1,
             //     key: "blogCardVideoPostCoverImg2",
@@ -21541,7 +21541,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/standard-post/3",
+            path: "blog-list-standard-item/standard-post/3",
             coverImage: {
                 id: 1,
                 key: "blogCardStandardPostCoverImg3",
@@ -21583,7 +21583,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/gallery-post/3",
+            path: "blog-list-standard-item/gallery-post/3",
             imagesArray: [
                     { 
                         id: 1,
@@ -21652,7 +21652,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/link-post/3",
+            path: "blog-list-standard-item/link-post/3",
             coverImage: {
                 id: 1,
                 key: "blogCardLinkPostCoverImg3",
@@ -21696,7 +21696,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/quote-post/3",
+            path: "blog-list-standard-item/quote-post/3",
             coverImage: {
                 id: 1,
                 key: "blogCardQuotePostCoverImg3",
@@ -21739,7 +21739,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/audio-post/3",
+            path: "blog-list-standard-item/audio-post/3",
             coverImage: {
                 id: 1,
                 key: "blogCardAudioPostCoverImg3",
@@ -21782,7 +21782,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/video-post/3",
+            path: "blog-list-standard-item/video-post/3",
             // coverImage: {
             //     id: 1,
             //     key: "blogCardVideoPostCoverImg3",
@@ -21825,7 +21825,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/audio-post/4",
+            path: "blog-list-standard-item/audio-post/4",
             coverImage: {
                 id: 1,
                 key: "blogCardAudioPostCoverImg4",
@@ -21868,7 +21868,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/link-post/4",
+            path: "blog-list-standard-item/link-post/4",
             coverImage: {
                 id: 1,
                 key: "blogCardLinkPostCoverImg4",
@@ -21912,7 +21912,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/quote-post/4",
+            path: "blog-list-standard-item/quote-post/4",
             coverImage: {
                 id: 1,
                 key: "blogCardQuotePostCoverImg4",
@@ -21955,7 +21955,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
-            path: "blog-list-standard/audio-post/5",
+            path: "blog-list-standard-item/audio-post/5",
             coverImage: {
                 id: 1,
                 key: "blogCardAudioPostCoverImg5",

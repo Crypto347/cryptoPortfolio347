@@ -330,6 +330,36 @@ export const BlogListStandardPage = (props) => {
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
                             />
+                            <Route exact path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
+                                render={(props) => (
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
+                            />
+                            <Route exact path="/crypto-portfolio/blog-list-standard-item/gallery-post/:id"
+                                render={(props) => (
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
+                            />
+                            <Route exact path="/crypto-portfolio/blog-list-standard-item/link-post/:id"
+                                render={(props) => (
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
+                            />
+                            <Route exact path="/crypto-portfolio/blog-list-standard-item/quote-post/:id"
+                                render={(props) => (
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
+                            />
+                            <Route exact path="/crypto-portfolio/blog-list-standard-item/audio-post/:id"
+                                render={(props) => (
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
+                            />
+                            <Route exact path="/crypto-portfolio/blog-list-standard-item/video-post/:id"
+                                render={(props) => (
+                                    <div className="blog-list-standard-page-posts-list"></div>
+                                )}
+                            />
                         </div>
                         <BlogInfoBoard
                             page="blogListStandardPage"

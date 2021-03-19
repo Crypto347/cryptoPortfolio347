@@ -15,6 +15,7 @@ export const findPathOfIds = (path) => {
         case 'process':
         case 'happy-team':
         case 'list-standard-blog-category':
+        case 'blog-list-standard-item':
             return [];
         case 'two-columns':
             return [2, 22, 221];

@@ -7,6 +7,10 @@ import React, {
     useEffect
 } from 'react';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
  * Styles
  */
@@ -264,6 +268,47 @@ export const BlogListPostCard = (props) => {
         }
     }
 
+    const onClickHandler = (e, path) => {
+
+        // Do nothing on right mouse click 
+
+        if(e.button === 2) return;
+
+        // Storing data in local storage 
+
+        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
+        //   localStorage.setItem("pageHG", "blogListStandardPage");
+
+        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
+        //   localStorage.setItem("page", "blogListStandardPage");
+          
+          // Clear archive data 
+  
+        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
+        //       props.clearArchiveData();
+        //   }
+  
+          if(e.button !== 1){
+              /**
+               * Add fading effect on the unmounted component and remember 
+               * information of the unmounted component on left mouse click 
+               */ 
+  
+            //   props.setUnmountComponentValues(true, path);
+          }else{
+              // Remember information of the unmounted component on scroll wheel click 
+              
+            //   props.setUnmountComponentValues(false, path);
+          }
+          // Fire up unmountComponent epic
+  
+        //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
+          
+        // props.activateBlogCategory("active", key);
+        props.history.push(`/crypto-portfolio/${path}`);
+
+    }
+
     const renderCardCover = (type) => {
         switch(type){
             case 'audioPost':
@@ -326,7 +371,8 @@ export const BlogListPostCard = (props) => {
                     </div>
                     <div
                         onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardHeader`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardHeader`)}
+                        onMouseDown={(e) => onClickHandler(e, props.elData.path)}
                     >
                         <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.elData.header}</H35>
                     </div>
@@ -534,42 +580,6 @@ export const BlogListPostCard = (props) => {
         }
     }
 
-    const onClickHandler = (e) => {
-        // // Do nothing on right mouse click
-
-        // if(e.button === 2) return;
-        // if(['bannerPageSection3','bannerPageSection4','bannerPageSection8'].includes(props.page)) return;
-
-        // // Prevent function overlayImageItemOnClick from running
-
-        // e.stopPropagation();
-
-        // // Storing data in local storage 
-
-        // localStorage.setItem("archiveCategoryHG", key);
-        // localStorage.setItem("pageHG", props.page);
-
-        // // Clear archive data
-
-        // props.clearArchiveData();
-    
-        // if(e.button !== 1){
-        //     /**
-        //      * Add fading effect on the unmounted component and remember 
-        //      * information of the unmounted component on left mouse click 
-        //      */ 
-
-        //     props.setUnmountComponentValues(true, path);
-        // }else{
-        //     // Remember information of the unmounted component on scroll wheel click
-        
-        //     props.setUnmountComponentValues(false, path);
-        // }
-        // // Fire up unmountComponent epic
-
-        // props.unmountComponent(null, null,  props.page, e.button);
-    }
-
     /**
      * Markup
      */
@@ -581,5 +591,5 @@ export const BlogListPostCard = (props) => {
     );
 }
 
-export default BlogListPostCard;
+export default withRouter(BlogListPostCard);
  
