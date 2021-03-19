@@ -196,7 +196,7 @@ export const BlogInfoBoard = (props) => {
           // Fire up unmountComponent epic
   
         //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
-          
+        props.clearActivityOfMenuItems();
         props.activateBlogCategory("active", key);
         props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
 

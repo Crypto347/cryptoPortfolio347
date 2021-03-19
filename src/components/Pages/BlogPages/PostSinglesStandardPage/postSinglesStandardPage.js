@@ -326,6 +326,7 @@ export const PostSinglesStandardPage = (props) => {
                         categoryList={props.blogListStandardPage.categoriesList}
                         tagsList={props.blogListStandardPage.tagsList}
                         activateBlogCategory={props.activateListStandardBlogCategory}
+                        clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                     />
                 </div>
             </div>
@@ -355,6 +356,7 @@ export default connect(
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
         };
     }
 )(withRouter(PostSinglesStandardPage));

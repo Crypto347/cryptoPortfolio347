@@ -367,6 +367,7 @@ export const BlogListStandardPage = (props) => {
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
                             activateBlogCategory={props.activateListStandardBlogCategory}
+                            clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                         />
                     </div>
                 </div>
@@ -400,6 +401,7 @@ export default connect(
             blogListCardTagIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardTagIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));
