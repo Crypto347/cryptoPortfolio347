@@ -105,7 +105,12 @@ export const Sidebar = (props) => {
                             if(itemId === "blogListStandard" && props.blogListStandardPage.activeCategory.activated === "active"){
                                 props.activateListStandardBlogCategory("deactive", "");
                                 props.setUnmountComponentValues(false, path);
-                            }else{
+                            }
+                            else if(itemId === "blogListStandard" && props.blogListStandardPage.activeItem.activated === "active"){
+                                props.activateListStandardBlogItem("deactive", "");
+                                props.setUnmountComponentValues(false, path);
+                            }
+                            else{
                                 props.setUnmountComponentValues(true, path);
                             }
                             props.setHistoryPopFromPortfolioItem("scrollToTop");
@@ -218,7 +223,8 @@ export default connect(
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
-            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch)
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(Sidebar));
