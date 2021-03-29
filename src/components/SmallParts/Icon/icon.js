@@ -148,7 +148,7 @@ export const Icon = (props) => {
                     return "icon-color-from-nobel-to-black-hover-off"
             }
         }
-        if(['blogCardTag'].includes(opt)) return "icon-color-nobel";
+        if(['blogCardCategory'].includes(opt)) return "icon-color-nobel";
         if(['blogCardQuote'].includes(opt)) return "icon-color-white-smoke";
         if(['blogCardLink'].includes(opt)) return "icon-color-white-smoke-2";
         if(opt === "section1ListsPage") return "icon-for-lists-page-section-1";

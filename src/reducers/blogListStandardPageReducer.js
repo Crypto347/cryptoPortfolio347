@@ -114,19 +114,19 @@ const initTagsForBlogListStandardPage = (state, action) => {
     }
 }
 
-const blogListCardTagIsHoverForBlogListStandardPage = (state, action) => {
+const blogListCardCategoryIsHoverForBlogListStandardPage = (state, action) => {
     let updatedItems = [...state.items];
 
     let card = {...updatedItems.find(item => item.key === action.cardKey)};
     let cardIndex = updatedItems.findIndex(item => item.key === action.cardKey);
 
-    let updatedTags = [...card.tags];
-    let tag = {...updatedTags.find(item => item.key === action.tagKey), isHover: action.val};
-    let tagIndex = updatedTags.findIndex(item => item.key === action.tagKey);
+    let updatedCategories = [...card.categories];
+    let category = {...updatedCategories.find(item => item.key === action.categoryKey), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.key === action.categoryKey);
 
-    updatedTags.splice(tagIndex, 1, tag);
+    updatedCategories.splice(categoryIndex, 1, category);
 
-    card = {...card, tags: updatedTags}
+    card = {...card, categories: updatedCategories}
     updatedItems.splice(cardIndex, 1, card);
 
     return {
@@ -243,8 +243,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchBlogListStandardPageDataSuccess (state, action); 
         case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
             return fetchBlogListStandardPageDataFailur (state, action);
-        case actionTypes.BLOG_LIST_CARD_TAG_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
-            return blogListCardTagIsHoverForBlogListStandardPage(state, action);
+        case actionTypes.BLOG_LIST_CARD_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
+            return blogListCardCategoryIsHoverForBlogListStandardPage(state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return setSwiperStateForBlogListStandardPage(state, action);
         case actionTypes.INIT_BLOG_PAGINATION:

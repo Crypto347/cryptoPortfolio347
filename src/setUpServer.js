@@ -20933,7 +20933,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 9,
             numberOfComments: 3,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -20976,7 +20976,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 3,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21054,7 +21054,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfComments: 2,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21098,7 +21098,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21141,7 +21141,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 3,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21184,7 +21184,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 8,
             numberOfComments: 6,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21226,7 +21226,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 4,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21269,7 +21269,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfComments: 8,
             loading: false,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21346,7 +21346,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfComments: 4,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21390,7 +21390,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21433,7 +21433,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 3,
             numberOfComments: 8,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21476,7 +21476,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 5,
             numberOfComments: 12,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21518,7 +21518,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 2,
             numberOfComments: 5,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21560,7 +21560,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 6,
             numberOfComments: 4,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21629,7 +21629,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfComments: 4,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21673,7 +21673,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21716,7 +21716,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 3,
             numberOfComments: 8,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21759,7 +21759,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 3,
             numberOfComments: 10,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21802,7 +21802,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 5,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21845,7 +21845,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfComments: 2,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21889,7 +21889,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21932,7 +21932,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             numberOfLikes: 3,
             numberOfComments: 6,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
-            tags: [
+            categories: [
                 {
                     id: 1,
                     label: "Business",
@@ -21966,7 +21966,6 @@ app.post('/api/blog-list-standard', (req, res) => {
             }
         }
     ]
-
     
     let firstIndex =  req.body.activePageId * 6 - 5;
     let lastIndex =  req.body.activePageId * 6 - 1;
@@ -21976,18 +21975,279 @@ app.post('/api/blog-list-standard', (req, res) => {
         blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
     };
     
-    // let takeItems = req.body.step * 6;
-    // if(takeItems >= threeColumnsPage.length){
-    //     updatedThreeColumnsObj.disableLoadMoreButton = true;
-    //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage;
-    // }else{
-    //     updatedThreeColumnsObj.threeColumnsData = threeColumnsPage.slice(0, takeItems)
-    // }
-    
     if(!updatedBlogListStandard) {
         res.status(404).send("The blog data was not found");
     }else{
         res.json(updatedBlogListStandard);  
+    }
+});
+
+app.get('/api/blog-list-standard-item/standard-post/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const standardPost = [
+        {
+            id: 1,
+            key: "standardPostId1",
+            cardType: "standardPost",
+            header: "Standard Post.",
+            date: "11.03.2021",
+            numberOfLikes: 9,
+            numberOfComments: 3,
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "quote",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    label: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    label: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/standard-post/1",
+            coverImage: {
+                id: 1,
+                key: "blogCardStandardPostCoverImg1",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 2,
+            key: "standardPostId2",
+            cardType: "standardPost",
+            header: "Standard Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 4,
+            numberOfComments: 2,
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "quote",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    label: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    label: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/standard-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardStandardPostCoverImg2",
+                isHover: "init",
+                imageName: "olena-sergienko-J49JddA5H04-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 3,
+            key: "standardPostId3",
+            cardType: "standardPost",
+            header: "Standard Post 3.",
+            date: "17.03.2021",
+            numberOfLikes: 2,
+            numberOfComments: 5,
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "quote",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    label: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    label: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/standard-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardStandardPostCoverImg3",
+                isHover: "init",
+                imageName: "sincerely-media-rogLvqMp9jA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        }
+    ]
+
+    let standardPostObj = standardPost.find(item => item.id === id);
+    if(!standardPostObj) {
+        res.status(404).send("The blog post with the given ID was not found")
+    }else{
+        res.json(standardPostObj);  
     }
 });
 

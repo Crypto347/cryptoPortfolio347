@@ -100,8 +100,8 @@ export const BlogListPostCard = (props) => {
             case 'blogCardShare': 
                 setIsHoveringBlogCardShare("on");
                 break;
-            case 'blogCardTags': 
-                props.blogListCardTagIsHover("on", props.elData.key, key);
+            case 'blogCardCategories': 
+                props.blogListCardCategoryIsHover("on", props.elData.key, key);
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("on");
@@ -129,8 +129,8 @@ export const BlogListPostCard = (props) => {
             case 'blogCardShare': 
                 setIsHoveringBlogCardShare("off");
                 break;
-            case 'blogCardTags': 
-                props.blogListCardTagIsHover("off", props.elData.key, key);
+            case 'blogCardCategories': 
+                props.blogListCardCategoryIsHover("off", props.elData.key, key);
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("off");
@@ -146,7 +146,7 @@ export const BlogListPostCard = (props) => {
             'blogCardDate',
             'blogCardLikes',
             'blogCardComments',
-            'blogCardTags'
+            'blogCardCategories'
         ].includes(opt)){
             switch(isHovering){
                 case 'init':
@@ -390,16 +390,16 @@ export const BlogListPostCard = (props) => {
         )
     }
 
-    const renderTags = (arr) => {
+    const renderCategories = (arr) => {
         return(
             <>{arr.map((el, i) => {
                 return(
                     <div
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`blogCardTags`, el.key)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardTags`, el.key)} 
+                        onMouseEnter={() => handleMouseEnter(`blogCardCategories`, el.key)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)} 
                     >
-                        <H15 className={renderClassName("blogCardTags", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
+                        <H15 className={renderClassName("blogCardCategories", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
                     </div>
                 )
             })}</>
@@ -469,15 +469,15 @@ export const BlogListPostCard = (props) => {
                         <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.elData.numberOfComments}</H15>
                     </div>
                     <EW10/>
-                    <div className="blog-list-post-card-info-tags">
+                    <div className="blog-list-post-card-info-categories">
                         <Icon
                             iconType="fontAwesome"
                             icon="faBookmark"
                             iconSize="1x"
-                            classNameOpt="blogCardTag"
+                            classNameOpt="blogCardCategory"
                         />
-                         &nbsp;
-                        {renderTags(props.elData.tags)}
+                        &nbsp;
+                        {renderCategories(props.elData.categories)}
                     </div>
                 </div>              
                 <div 

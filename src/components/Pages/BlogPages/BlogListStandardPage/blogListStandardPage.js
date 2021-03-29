@@ -264,7 +264,7 @@ export const BlogListStandardPage = (props) => {
                             <BlogListPostCard 
                                 page="blogListStandardPage"
                                 elData={el}
-                                blogListCardTagIsHover={props.blogListCardTagIsHoverForBlogListStandardPage}
+                                blogListCardCategoryIsHover={props.blogListCardCategoryIsHoverForBlogListStandardPage}
                                 setSwiperStateForBlogListStandardPage={props.setSwiperStateForBlogListStandardPage}
                                 pageData={props.blogListStandardPage}
                                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
@@ -410,7 +410,7 @@ export default connect(
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
-            blogListCardTagIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardTagIsHoverForBlogListStandardPage, dispatch),
+            blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
