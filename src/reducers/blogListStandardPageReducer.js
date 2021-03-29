@@ -17,6 +17,7 @@ import uuid from "uuid";
 
 export const initialState = {
     items: [],
+    postBlogContent: {},
     loading: false,
     error: null,
     inputForm: {},
@@ -38,7 +39,6 @@ export const initialState = {
     activePageId: 1,
     pagesArray: []
 }
-
 
 const fetchBlogListStandardPageDataBegin = (state, action) => {
     return {
@@ -62,6 +62,31 @@ const fetchBlogListStandardPageDataFailur = (state, action) => {
         loading: false,
         error: action.err,
         items: []
+    };
+}
+
+const fetchPostBlogDataBegin = (state, action) => {
+    return {
+        ...state,
+        loading: true,
+        error: null
+    };
+}
+
+const fetchPostBlogDataSuccess = (state, action) => {    
+    return {
+        ...state,
+        loading: false,
+        postBlogContent: action.obj
+    };
+}
+
+const fetchPostBlogDataFailur = (state, action) => {
+    return {
+        ...state,
+        loading: false,
+        error: action.err,
+        postBlogContent: {}
     };
 }
 
@@ -243,6 +268,12 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchBlogListStandardPageDataSuccess (state, action); 
         case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
             return fetchBlogListStandardPageDataFailur (state, action);
+        case actionTypes.FETCH_POST_BLOG_DATA_BEGIN:
+            return fetchPostBlogDataBegin (state, action);
+        case actionTypes.FETCH_POST_BLOG_DATA_SUCCESS:
+            return fetchPostBlogDataSuccess (state, action); 
+        case actionTypes.FETCH_POST_BLOG_DATA_FAILURE:
+            return fetchPostBlogDataFailur (state, action);
         case actionTypes.BLOG_LIST_CARD_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
             return blogListCardCategoryIsHoverForBlogListStandardPage(state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -253,10 +284,6 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return activatePageNumberForBlogListStandardPage(state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_ITEM:
             return activateListStandardBlogItem (state, action); 
-        // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_SUCCESS:
-        //     return fetchSubmitContactFormPageSuccess (state, action);
-        // case actionTypes.FETCH_SUBMIT_CONTACT_FORM_PAGE_FAILURE:
-        //     return fetchSubmitContactFormPageFailur(state, action);
         default: 
             return state;
     }

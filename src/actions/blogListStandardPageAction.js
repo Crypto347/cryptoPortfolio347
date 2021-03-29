@@ -20,6 +20,33 @@ export function fetchBlogListStandardPageDataFailur(err) {
     };
 };
 
+export function startFetchingPostBlogData(cardType) {
+    return { 
+        type: actionTypes.START_FETCHING_POST_BLOG_DATA,
+        cardType: cardType
+    };
+};
+
+export function fetchPostBlogDataBegin() {
+    return { 
+        type: actionTypes.FETCH_POST_BLOG_DATA_BEGIN
+    };
+};
+
+export function fetchPostBlogDataSuccess(obj) {
+    return { 
+        type: actionTypes.FETCH_POST_BLOG_DATA_SUCCESS,
+        obj: obj
+    };
+};
+
+export function fetchPostBlogDataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_POST_BLOG_DATA_FAILURE,
+        err: err
+    };
+};
+
 export function initInputFormForBlogListStandardPage(obj) {
     return { 
         type: actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,
