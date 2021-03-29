@@ -187,7 +187,7 @@ export const BlogInfoBoard = (props) => {
                * information of the unmounted component on left mouse click 
                */ 
   
-            //   props.setUnmountComponentValues(true, path);
+            //   props.setUnmountComponentValues(false, path);
           }else{
               // Remember information of the unmounted component on scroll wheel click 
               
@@ -195,9 +195,10 @@ export const BlogInfoBoard = (props) => {
           }
           // Fire up unmountComponent epic
   
-        //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
+        // props.unmountComponent(null, null, "blogInfoBoard", e.button);
         props.clearActivityOfMenuItems();
         props.activateBlogCategory("active", key);
+        props.activateBlogItem("deactive", "");
         props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
 
     }

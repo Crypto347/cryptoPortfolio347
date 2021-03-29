@@ -179,7 +179,7 @@ export const Toolbar = (props) => {
                         if(currentItemId === pathOfIds[1]){
                             return;
                         }else{
-                            console.log(itemId)
+                            console.log(itemId);
                             if(itemId === "blogListStandard" && props.blogListStandardPage.activeCategory.activated === "active"){
                                 props.activateListStandardBlogCategory("deactive", "");
                                 props.setUnmountComponentValues(false, path);
@@ -743,6 +743,7 @@ export default connect(
             menuItems: Selectors.getMenuItemsState(state),
             sidebarState: Selectors.getSidebarStateState(state),
             blogListStandardPage: Selectors.getBlogListStandardPageState(state),
+            unmountComp: Selectors.getUnmountComponentState(state)
         };
     },
     (dispatch) => {

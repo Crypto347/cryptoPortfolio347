@@ -20,7 +20,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Redirect,
-    Link
 } from 'react-router-dom';
 
 import {
@@ -41,6 +40,7 @@ import Loading from '../../../SmallParts/Loading/loading';
 import Toolbar from '../../../Parts/Toolbar/toolbar';
 import BlogInfoBoard from '../../../Parts/BlogInfoBoard/blogInfoBoard';
 import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostCard';
+import BlogPostSingleItem from '../../../SmallParts/BlogPostSingleItem/blogPostSingleItem';
 import TagItem from '../../../SmallParts/TagItem/tagItem';
 import Icon from '../../../SmallParts/Icon/icon';
 import BlogPagination from '../../../Parts/BlogPagination/blogPagination';
@@ -140,7 +140,7 @@ export const BlogListStandardPage = (props) => {
     useEffect(() => {
         // Init state for fading effect when component will unmount
 
-        props.setUnmountComponentValues(false, "");
+            props.setUnmountComponentValues(false, "");
 
         // Init imput forms
 
@@ -150,6 +150,11 @@ export const BlogListStandardPage = (props) => {
 
         props.initCategoriesForBlogListStandardPage(categoriesListForBlog);
         props.initTagsForBlogListStandardPage(tagsListForBlog);
+
+        // Set activity of initial category and item
+
+        props.activateListStandardBlogCategory("deactive", "");
+        props.activateListStandardBlogItem("deactive", "");
 
         // Fetch data for the component
 
@@ -178,7 +183,7 @@ export const BlogListStandardPage = (props) => {
         
         return () => {
             // Cleaning the unmounted component
-
+            
             clearTimeout(timeout);
             window.removeEventListener('wheel', handleOnWheel);
             props.setMenuDotsState("init", "");
@@ -264,6 +269,9 @@ export const BlogListStandardPage = (props) => {
                                 pageData={props.blogListStandardPage}
                                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                                 activateBlogItem={props.activateListStandardBlogItem}
+                                activateBlogCategory={props.activateListStandardBlogCategory}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
                             />
                         </React.Fragment>
                     )
@@ -325,7 +333,7 @@ export const BlogListStandardPage = (props) => {
                     <div className="blog-list-standard-page-content-info-wrapper">
                         <div className="blog-list-standard-page-content">
                             <Route exact path="/crypto-portfolio/blog-list-standard">
-                                {renderBlogListStandardPageDataContent(props.blogListStandardPage.items)}
+                                {renderBlogListStandardPageDataContent(props.blogListStandardPage.items)} 
                             </Route>
                             <Route exact path="/crypto-portfolio/list-standard-blog-category/:category"
                                 render={(props) => (
@@ -333,9 +341,7 @@ export const BlogListStandardPage = (props) => {
                                 )}
                             />
                             <Route exact path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
-                                render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
-                                )}
+                                component={BlogPostSingleItem}
                             />
                             <Route exact path="/crypto-portfolio/blog-list-standard-item/gallery-post/:id"
                                 render={(props) => (
@@ -370,6 +376,9 @@ export const BlogListStandardPage = (props) => {
                             tagsList={props.blogListStandardPage.tagsList}
                             activateBlogCategory={props.activateListStandardBlogCategory}
                             clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            activateBlogItem={props.activateListStandardBlogItem}
+                            setUnmountComponentValues={props.setUnmountComponentValues}
+                            unmountComponent={props.unmountComponent}
                         />
                     </div>
                 </div>
@@ -384,6 +393,7 @@ export default connect(
     (state) => {
         return {
             blogListStandardPage: Selectors.getBlogListStandardPageState(state),
+            unmountComp: Selectors.getUnmountComponentState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
         };

@@ -158,8 +158,15 @@ export const Main = (props) => {
              */
             
             let category = Utility.categoryFromLocationPathname(location.pathname);
+
             if(action === "POP" && category){
                 props.setArchiveCategory(category);
+                window.location.reload();
+            }
+            
+            if(location.state?.blogItem?.activated === "deactive" 
+            // ||location.state?.blogCategory?.activated === "deactive"
+            ){
                 window.location.reload();
             }
 
@@ -530,7 +537,8 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            unmountComp: Selectors.getUnmountComponentState(state)
+            unmountComp: Selectors.getUnmountComponentState(state),
+            blogListStandardPage: Selectors.getBlogListStandardPageState(state),
         };
     },
     (dispatch) => {

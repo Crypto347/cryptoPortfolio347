@@ -15,13 +15,13 @@ import {
  * Styles
  */
 
-import './blogListPostCard.scss';
+import './blogPostSingleItem.scss';
 
 /**
  * Components
  */
 
-import Icon from '../../SmallParts/Icon/icon';
+import Icon from '../Icon/icon';
 import Audio from '../../Parts/Audio/audio';
 import Video from '../../Parts/Video/video'
 import Swiper from '../../../library/Swiper/swiper';
@@ -52,10 +52,10 @@ import {
 } from '../../../constants/socialMediaIcons';
 
 /**
- * BlogListPostCard component definition and export
+ * BlogPostSingleItem component definition and export
  */
 
-export const BlogListPostCard = (props) => {
+export const BlogPostSingleItem = (props) => {
 
     /**
      * State
@@ -78,8 +78,8 @@ export const BlogListPostCard = (props) => {
 
         //Set width of swiper
 
-        let blogListPostCard = document.getElementById("blogListPostCard");
-        setCardWidth(blogListPostCard.offsetWidth);
+        // let blogListPostCard = document.getElementById("blogListPostCard");
+        // setCardWidth(blogListPostCard.offsetWidth);
        
     }, []);
 
@@ -294,18 +294,17 @@ export const BlogListPostCard = (props) => {
                * information of the unmounted component on left mouse click 
                */ 
   
-              props.setUnmountComponentValues(false, path);
+            //   props.setUnmountComponentValues(true, path);
           }else{
               // Remember information of the unmounted component on scroll wheel click 
               
-              props.setUnmountComponentValues(false, path);
+            //   props.setUnmountComponentValues(false, path);
           }
           // Fire up unmountComponent epic
   
-          props.unmountComponent(null, null, "blogListPostCard", e.button);
+        //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
           
         props.activateBlogItem("active", key);
-        props.activateBlogCategory("deactive", "");
         props.clearActivityOfMenuItems();
         props.history.push(`/crypto-portfolio/${path}`);
 
@@ -587,11 +586,11 @@ export const BlogListPostCard = (props) => {
      */
 
     return(
-        <div className="blog-list-post-card" id="blogListPostCard">
-            {renderBlogCard(props.elData.cardType)}
+        <div className="blog-post-single-item" id="blogPostSingleItem">
+            {/* {renderBlogCard(props.elData.cardType)} */}
         </div>
     );
 }
 
-export default withRouter(BlogListPostCard);
+export default withRouter(BlogPostSingleItem);
  
