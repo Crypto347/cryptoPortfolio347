@@ -309,7 +309,11 @@ export const BlogListPostCard = (props) => {
         props.clearActivityOfMenuItems();
         props.history.push(`/crypto-portfolio/${path}`);
     
-        props.startFetchingPostBlogData(props.elData.cardType)
+        let pathArray = path.split("/")
+        let id = +pathArray[pathArray.length - 1]
+        // console.log(+param[param.length - 1])
+        props.fetchPostBlogDataFunction(id)
+        // props.startFetchingPostBlogData(props.elData.cardType)
     }
 
     const renderCardCover = (type) => {

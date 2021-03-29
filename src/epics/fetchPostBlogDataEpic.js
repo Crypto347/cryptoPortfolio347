@@ -47,7 +47,7 @@ export const fetchPostBlogDataEpic = (action$, state$, dependencies$) =>
     action$.pipe(
         ofType(actionTypes.START_FETCHING_POST_BLOG_DATA),
         mergeMap(action => {
-            console.log(dependencies$)
+         
             switch(action.cardType){
                 case 'standardPost':
                     return of(

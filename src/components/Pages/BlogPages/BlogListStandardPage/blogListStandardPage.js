@@ -259,6 +259,14 @@ export const BlogListStandardPage = (props) => {
         return(
             <div>
                 {arr.map((el, i) => {
+                    let fetchPostBlogDataFunction;
+                    switch(el.cardType){
+                        case 'standardPost':
+                            fetchPostBlogDataFunction = props.fetchStandardPostBlogData;
+                            break;
+                       
+                    }
+                     
                     return(
                         <React.Fragment key={i}>
                             <BlogListPostCard 
@@ -272,7 +280,8 @@ export const BlogListStandardPage = (props) => {
                                 activateBlogCategory={props.activateListStandardBlogCategory}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
-                                startFetchingPostBlogData={props.startFetchingPostBlogData}
+                                fetchPostBlogDataFunction={fetchPostBlogDataFunction}
+                                // startFetchingPostBlogData={props.startFetchingPostBlogData}
                             />
                         </React.Fragment>
                     )
