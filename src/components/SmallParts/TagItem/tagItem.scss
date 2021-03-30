@@ -10,10 +10,10 @@
     padding: 7px 19px 7px 19px;
     margin: 0 10px 10px 0;
     cursor: pointer;
-    -webkit-animation: tagItemBackgroundHoverOn 0.5s linear;
-    -moz-animation: tagItemBackgroundHoverOn 0.5s linear;
-    -o-animation: tagItemBackgroundHoverOn 0.5s linear;
-    animation: tagItemBackgroundHoverOn 0.5s linear;
+    -webkit-animation: tagItemBackgroundHoverOn .1s linear;
+    -moz-animation: tagItemBackgroundHoverOn .1s linear;
+    -o-animation: tagItemBackgroundHoverOn .1s linear;
+    animation: tagItemBackgroundHoverOn .1s linear;
 }
 
 .tag-item-hover-off {
@@ -21,10 +21,10 @@
     padding: 7px 19px 7px 19px;
     margin: 0 10px 10px 0;
     cursor: pointer;
-    -webkit-animation: tagItemBackgroundHoverOff 0.5s linear;
-    -moz-animation: tagItemBackgroundHoverOff 0.5s linear;
-    -o-animation: tagItemBackgroundHoverOff 0.5s linear;
-    animation: tagItemBackgroundHoverOff 0.5s linear;
+    -webkit-animation: tagItemBackgroundHoverOff .1s linear;
+    -moz-animation: tagItemBackgroundHoverOff .1s linear;
+    -o-animation: tagItemBackgroundHoverOff .1s linear;
+    animation: tagItemBackgroundHoverOff .1s linear;
 }
 
 @-webkit-keyframes tagItemBackgroundHoverOn {

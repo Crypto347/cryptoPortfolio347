@@ -42,99 +42,109 @@
                 align-items: center;
             }
         }
-        .blog-post-single-item-info-soc-med-wrapper {
+    }
+
+    .blog-post-single-item-tags-and-soc-media-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .blog-post-single-item-tags-part-wrapper {
+            .blog-post-single-item-tag {
+                display: inline-flex;
+            }
+        }
+        .blog-post-single-item-soc-med-part-wrapper {
             display: flex;
-            .blog-post-single-item-info-soc-med-icons {
+            .blog-post-single-item-soc-med-icons {
                 display: flex;
                 margin-right: 5px;
-                .blog-post-single-item-info-soc-med-Instagram {
+                .blog-post-single-item-soc-med-Instagram {
                     display: flex;
                     opacity: 0;
                 }
-                .blog-post-single-item-info-soc-med-Instagram-hover-on {
+                .blog-post-single-item-soc-med-Instagram-hover-on {
                     display: flex;
                     opacity: 1;
-                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
-                    -o-animation: blogListPostCardShareHoverOn .2s linear;
-                    animation: blogListPostCardShareHoverOn .2s linear;
+                    -webkit-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -moz-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -o-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    animation: blogPostSingleItemShareHoverOn .2s linear;
                     animation-delay: .6s;
                     animation-fill-mode: both;
                 }
-                .blog-post-single-item-info-soc-med-Instagram-hover-off {
+                .blog-post-single-item-soc-med-Instagram-hover-off {
                     display: flex;
                     opacity: 0;
-                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
-                    -o-animation: blogListPostCardShareHoverOff .2s linear;
-                    animation: blogListPostCardShareHoverOff .2s linear;
+                    -webkit-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -moz-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -o-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    animation: blogPostSingleItemCardShareHoverOff .2s linear;
                 }
 
-                .blog-post-single-item-info-soc-med-Twitter {
+                .blog-post-single-item-soc-med-Twitter {
                     display: flex;
                     opacity: 0;
                 }
-                .blog-post-single-item-info-soc-med-Twitter-hover-on {
+                .blog-post-single-item-soc-med-Twitter-hover-on {
                     display: flex;
                     opacity: 1;
-                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
-                    -o-animation: blogListPostCardShareHoverOn .2s linear;
-                    animation: blogListPostCardShareHoverOn .2s linear;
+                    -webkit-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -moz-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -o-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    animation: blogPostSingleItemShareHoverOn .2s linear;
                     animation-delay: .5s;
                     animation-fill-mode: both;         
                 }
-                .blog-post-single-item-info-soc-med-Twitter-hover-off {
+                .blog-post-single-item-soc-med-Twitter-hover-off {
                     display: flex;
                     opacity: 0;
-                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
-                    -o-animation: blogListPostCardShareHoverOff .2s linear;
-                    animation: blogListPostCardShareHoverOff .2s linear;
+                    -webkit-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -moz-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -o-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    animation: blogPostSingleItemCardShareHoverOff .2s linear;
                 }
 
-                .blog-post-single-item-info-soc-med-Facebook {
+                .blog-post-single-item-soc-med-Facebook {
                     display: flex;
                     opacity: 0;
                 }
-                .blog-post-single-item-info-soc-med-Facebook-hover-on {
+                .blog-post-single-item-soc-med-Facebook-hover-on {
                     display: flex;
                     opacity: 1;
-                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
-                    -o-animation: blogListPostCardShareHoverOn .2s linear;
-                    animation: blogListPostCardShareHoverOn .2s linear;
+                    -webkit-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -moz-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -o-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    animation: blogPostSingleItemShareHoverOn .2s linear;
                     animation-delay: .3s;
                     animation-fill-mode: both;
                 }
-                .blog-post-single-item-info-soc-med-Facebook-hover-off {
+                .blog-post-single-item-soc-med-Facebook-hover-off {
                     display: flex;
                     opacity: 0;
-                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
-                    -o-animation: blogListPostCardShareHoverOff .2s linear;
-                    animation: blogListPostCardShareHoverOff .2s linear;
+                    -webkit-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -moz-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -o-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    animation: blogPostSingleItemCardShareHoverOff .2s linear;
                 }
 
-                .blog-post-single-item-info-soc-med-Tumblr {
+                .blog-post-single-item-soc-med-Tumblr {
                     display: flex;
                     opacity: 0;
                 }
-                .blog-post-single-item-info-soc-med-Tumblr-hover-on {
+                .blog-post-single-item-soc-med-Tumblr-hover-on {
                     display: flex;
                     opacity: 1;
-                    -webkit-animation: blogListPostCardShareHoverOn .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOn .2s linear;
-                    -o-animation: blogListPostCardShareHoverOn .2s linear;
-                    animation: blogListPostCardShareHoverOn .2s linear;
+                    -webkit-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -moz-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    -o-animation: blogPostSingleItemShareHoverOn .2s linear;
+                    animation: blogPostSingleItemShareHoverOn .2s linear;
                 }
-                .blog-post-single-item-info-soc-med-Tumblr-hover-off {
+                .blog-post-single-item-soc-med-Tumblr-hover-off {
                     display: flex;
                     opacity: 0;
-                    -webkit-animation: blogListPostCardShareHoverOff .2s linear;
-                    -moz-animation: blogListPostCardShareHoverOff .2s linear;
-                    -o-animation: blogListPostCardShareHoverOff .2s linear;
-                    animation: blogListPostCardShareHoverOff .2s linear;
+                    -webkit-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -moz-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    -o-animation: blogPostSingleItemCardShareHoverOff .2s linear;
+                    animation: blogPostSingleItemCardShareHoverOff .2s linear;
                 }
             }
         }
@@ -199,36 +209,36 @@
     }
 }
 
-@-webkit-keyframes blogListPostCardShareHoverOn {
+@-webkit-keyframes blogPostSingleItemShareHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@-moz-keyframes blogListPostCardShareHoverOn {
+@-moz-keyframes blogPostSingleItemShareHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@-o-keyframes blogListPostCardShareHoverOn {
+@-o-keyframes blogPostSingleItemShareHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@keyframes blogListPostCardShareHoverOn {
+@keyframes blogPostSingleItemShareHoverOn {
     from{opacity: 0;}
     to{opacity: 1;}
 }
 
-@-webkit-keyframes blogListPostCardShareHoverOff {
+@-webkit-keyframes blogPostSingleItemCardShareHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@-moz-keyframes blogListPostCardShareHoverOff {
+@-moz-keyframes blogPostSingleItemCardShareHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@-o-keyframes blogListPostCardShareHoverOff {
+@-o-keyframes blogPostSingleItemCardShareHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@keyframes blogListPostCardShareHoverOff {
+@keyframes blogPostSingleItemCardShareHoverOff {
     from{opacity: 1;}
     to{opacity: 0;}
 }

@@ -22034,28 +22034,28 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    label: "Art",
+                    tagName: "Art",
                     key: "art",
                     path: "list-standard-blog-tags/business",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
+                    tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Graphic",
+                    tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
                     id: 4,
-                    label: "New",
+                    tagName: "New",
                     key: "new",
                     path: "list-standard-blog-tags/fashion",
                     isHover: "init"
@@ -22119,28 +22119,28 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    label: "Art",
+                    tagName: "Art",
                     key: "art",
                     path: "list-standard-blog-tags/business",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
+                    tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Graphic",
+                    tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
                     id: 4,
-                    label: "New",
+                    tagName: "New",
                     key: "new",
                     path: "list-standard-blog-tags/fashion",
                     isHover: "init"
@@ -22204,28 +22204,28 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    label: "Art",
+                    tagName: "Art",
                     key: "art",
                     path: "list-standard-blog-tags/business",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
+                    tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Graphic",
+                    tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
                     id: 4,
-                    label: "New",
+                    tagName: "New",
                     key: "new",
                     path: "list-standard-blog-tags/fashion",
                     isHover: "init"

@@ -30,10 +30,10 @@ import './blogPostSingleItem.scss';
  */
 
 import Icon from '../Icon/icon';
+import TagItem from '../../SmallParts/TagItem/tagItem';
 import Audio from '../../Parts/Audio/audio';
 import Video from '../../Parts/Video/video'
 import Swiper from '../../../library/Swiper/swiper';
-
 
 /**
  * Actions
@@ -244,41 +244,41 @@ export const BlogPostSingleItem = (props) => {
         if(['blogCardSocMedInstagram'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-post-single-item-info-soc-med-Instagram";
+                    return "blog-post-single-item-soc-med-Instagram";
                 case 'on':
-                    return "blog-post-single-item-info-soc-med-Instagram-hover-on";
+                    return "blog-post-single-item-soc-med-Instagram-hover-on";
                 case 'off':
-                    return "blog-post-single-item-info-soc-med-Instagram-hover-off"
+                    return "blog-post-single-item-soc-med-Instagram-hover-off"
             }
         }
         if(['blogCardSocMedTwitter'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-post-single-item-info-soc-med-Twitter";
+                    return "blog-post-single-item-soc-med-Twitter";
                 case 'on':
-                    return "blog-post-single-item-info-soc-med-Twitter-hover-on";
+                    return "blog-post-single-item-soc-med-Twitter-hover-on";
                 case 'off':
-                    return "blog-post-single-item-info-soc-med-Twitter-hover-off"
+                    return "blog-post-single-item-soc-med-Twitter-hover-off"
             }
         }
         if(['blogCardSocMedFacebook'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-post-single-item-info-soc-med-Facebook";
+                    return "blog-post-single-item-soc-med-Facebook";
                 case 'on':
-                    return "blog-post-single-item-info-soc-med-Facebook-hover-on";
+                    return "blog-post-single-item-soc-med-Facebook-hover-on";
                 case 'off':
-                    return "blog-post-single-item-info-soc-med-Facebook-hover-off"
+                    return "blog-post-single-item-soc-med-Facebook-hover-off"
             }
         }
         if(['blogCardSocMedTumblr'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-post-single-item-info-soc-med-Tumblr";
+                    return "blog-post-single-item-soc-med-Tumblr";
                 case 'on':
-                    return "blog-post-single-item-info-soc-med-Tumblr-hover-on";
+                    return "blog-post-single-item-soc-med-Tumblr-hover-on";
                 case 'off':
-                    return "blog-post-single-item-info-soc-med-Tumblr-hover-off"
+                    return "blog-post-single-item-soc-med-Tumblr-hover-off"
             }
         }
     }
@@ -457,9 +457,10 @@ export const BlogPostSingleItem = (props) => {
                 </div>
                 <EH20/>
                 {renderBlogCardInfo()}
-                <EH20/>
+                <EH30/>
                 {renderParagraphs(props.blogListStandardPage.postBlogContent.text)}
                 <EH70/>
+                {renderTagsAndSocMedia()}
             </>
         )
     }
@@ -480,9 +481,52 @@ export const BlogPostSingleItem = (props) => {
         )
     }
 
+    const renderTags = (arr) => {
+        return(
+            <>
+                {arr.map((el, i) => {
+                    return(
+                        <div
+                            key={i}
+                            className="blog-post-single-item-tag"
+                        >
+                            <TagItem
+                               tagName={el.tagName} 
+                            />
+                        </div>
+                    )
+                })}
+            </>
+        )
+    }
+
+    const renderTagsAndSocMedia = () => {
+        return(
+            <div className="blog-post-single-item-tags-and-soc-media-wrapper">
+                <div className="blog-post-single-item-tags-part-wrapper">
+                   {renderTags(props.blogListStandardPage.postBlogContent.tags)}
+                </div>              
+                <div 
+                    className="blog-post-single-item-soc-med-part-wrapper"
+                    onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
+                >
+                    {renderSocialMediaIcons()}
+                    <Icon
+                        iconType="fontAwesome"
+                        icon="faShareAlt"
+                        iconSize="1x"
+                        isHover={isHoveringBlogCardShare}
+                        classNameOpt="blogCardShare"
+                    />
+                </div>
+            </div>
+        )
+    }
+
     const renderSocialMediaIcons = () => {
         return(
-            <div className="blog-post-single-item-info-soc-med-icons">{socialMediaIcons.map((el, i) => {
+            <div className="blog-post-single-item-soc-med-icons">{socialMediaIcons.map((el, i) => {
                return(
                     <div 
                         key={i}
@@ -553,21 +597,7 @@ export const BlogPostSingleItem = (props) => {
                         &nbsp;
                         {renderCategories(props.blogListStandardPage.postBlogContent.categories)}
                     </div>
-                </div>              
-                {/* <div 
-                    className="blog-post-single-item-info-soc-med-wrapper"
-                    onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
-                    onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
-                >
-                    {renderSocialMediaIcons()}
-                    <Icon
-                        iconType="fontAwesome"
-                        icon="faShareAlt"
-                        iconSize="1x"
-                        isHover={isHoveringBlogCardShare}
-                        classNameOpt="blogCardShare"
-                    />
-                </div> */}
+                </div>
             </div>
         )
     }
