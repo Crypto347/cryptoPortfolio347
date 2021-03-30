@@ -281,7 +281,6 @@ export const BlogListStandardPage = (props) => {
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
                                 fetchPostBlogDataFunction={fetchPostBlogDataFunction}
-                                // startFetchingPostBlogData={props.startFetchingPostBlogData}
                             />
                         </React.Fragment>
                     )
@@ -414,7 +413,6 @@ export default connect(
             fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
             fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
             
-            startFetchingPostBlogData: bindActionCreators(Actions.startFetchingPostBlogData, dispatch),
             
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),

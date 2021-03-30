@@ -164,7 +164,7 @@ export const Main = (props) => {
                 window.location.reload();
             }
 
-            // Relode window when path is blog-list-standard and selected from the toolbar (nested react-router)
+            // Relode window when path is blog-list-standard and selected from the toolbar (nested routes -> react-router)
           
             if (action !== "POP" && location.pathname === "/crypto-portfolio/blog-list-standard"){
                 window.location.reload();
