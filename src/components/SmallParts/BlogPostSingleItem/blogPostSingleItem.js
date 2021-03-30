@@ -588,7 +588,11 @@ export const BlogPostSingleItem = (props) => {
                 <div className="blog-post-single-item-name-and-note-wrapper">
                     <H17 className="h17-black-poppins">Naomi Hernandez</H17>
                     <EH10/>
-                    <H15 className="h15-black-lustria">Cum offendit repudiandae ut, eam alii magna falli ne. Duo utinam consequat ei, eum cetero atomorum ne, dictas bonorum vel cu. Lorem eloquentiam ea pri sit.</H15>
+                    <H15 className="h15-black-lustria">
+                        Cum offendit repudiandae ut, eam alii magna falli ne. 
+                        Duo utinam consequat ei, eum cetero atomorum ne, dictas bonorum vel cu. 
+                        Lorem eloquentiam ea pri sit.
+                    </H15>
                 </div>
             </div>
         )
