@@ -302,7 +302,7 @@ export const BlogListPostCard = (props) => {
           }
           // Fire up unmountComponent epic
   
-          props.unmountComponent(null, null, "blogListPostCard", e.button);
+        //   props.unmountComponent(null, null, "blogListPostCard", e.button);
           
         props.activateBlogItem("active", key);
         props.activateBlogCategory("deactive", "");

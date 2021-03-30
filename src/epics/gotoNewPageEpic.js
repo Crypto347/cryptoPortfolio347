@@ -37,8 +37,6 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
         ofType(actionTypes.GO_TO_NEW_PAGE),
         mergeMap(action => {
             let category = state$.value.archive.category;
-            let blogItem = {...state$.value.blogListStandardPage.activeItem}
-            let blogCategory = {...state$.value.blogListStandardPage.activeCategory}
             let categoryToPath;
             if(state$.value.archive.category){
                 categoryToPath = Utility.categoryKeyToPath(category);
@@ -56,7 +54,10 @@ export const gotoNewPageEpic = (action$, state$, dependencies$) =>
             }else{
                 console.log(action.page)
                 if(action.button === 0){
-                    dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, {page: action.page, category: categoryToPath, blogItem: blogItem, blogCategory: blogCategory});
+                    dependencies$.history.push(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, {
+                                                                                                                        page: action.page, 
+                                                                                                                        category: categoryToPath
+                                                                                                                    });
                 }
                 if(action.button === 1){
                     window.open(`/crypto-portfolio/${state$.value.home.unmountComponent.gotoPage}`, "_blank");

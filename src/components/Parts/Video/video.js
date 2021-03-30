@@ -39,10 +39,10 @@ export const Video = (props) => {
      */
 
     const videoRef = useRef();
+    const [url, setUrl] = useState("");
     const previousUrl = useRef(url);
     const [videoIsPlaying, setVideoIsPlaying] = useState(false);
-    const [url, setUrl] = useState("");
- 
+   
     /**
      * Methods
      */

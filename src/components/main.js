@@ -163,10 +163,10 @@ export const Main = (props) => {
                 props.setArchiveCategory(category);
                 window.location.reload();
             }
-            
-            if(location.state?.blogItem?.activated === "deactive" 
-            // ||location.state?.blogCategory?.activated === "deactive"
-            ){
+
+            // Relode window when path is blog-list-standard and selected from the toolbar (nested react-router)
+          
+            if (action !== "POP" && location.pathname === "/crypto-portfolio/blog-list-standard"){
                 window.location.reload();
             }
 
