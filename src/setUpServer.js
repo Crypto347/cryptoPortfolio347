@@ -22004,7 +22004,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                     textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
                 },
                 {
-                    type: "quote",
+                    type: "text",
                     textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
                 }
             ],
@@ -22174,7 +22174,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                     textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
                 },
                 {
-                    type: "quote",
+                    type: "text",
                     textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
                 }
             ],
