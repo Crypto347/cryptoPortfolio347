@@ -21989,6 +21989,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
         {
             id: 1,
             key: "standardPostId1",
+            cardId: "blogListStandardPageCardId1",
             cardType: "standardPost",
             header: "Standard Post.",
             date: "11.03.2021",
@@ -22074,6 +22075,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
         {
             id: 2,
             key: "standardPostId2",
+            cardId: "blogListStandardPageCardId7",
             cardType: "standardPost",
             header: "Standard Post 2.",
             date: "17.03.2021",
@@ -22159,6 +22161,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
         {
             id: 3,
             key: "standardPostId3",
+            cardId: "blogListStandardPageCardId13",
             cardType: "standardPost",
             header: "Standard Post 3.",
             date: "17.03.2021",

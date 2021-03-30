@@ -64,6 +64,7 @@ import {
     H22,
     H35,
     EW10,
+    EH10,
     EH20,
     EH30,
     EH60,
@@ -412,145 +413,6 @@ export const BlogPostSingleItem = (props) => {
         }
     }
 
-    const renderParagraphs = (arr) => {
-        return(
-            <div className="blog-post-single-item-paragraphs">
-                {arr.map((el, i) => {
-                    if(el.type === "quote"){
-                        return(
-                            <React.Fragment key={i}>
-                                <EH30/>
-                                <div className="blog-post-single-item-blockquote-wrapper">
-                                    <blockquote className="blog-post-single-item-blockquote">
-                                        <H19 className="h19-black-poppins"> {el.textPart}</H19>
-                                    </blockquote>
-                                </div>
-                                <EH30/>
-                            </React.Fragment>
-                        )
-                    }else{
-                        return(
-                            <React.Fragment key={i}>
-                                <H15 className="h15-black-lustria">{el.textPart}</H15>
-                            </React.Fragment>
-                        )
-                    }
-                    
-                })}
-            </div>
-        )
-    }
-
-    const renderBlogCardMainBody = (type) => {
-        return(
-            <>
-                {renderCardCover(type)}
-                <EH60/>
-                <div className="blog-post-single-item-date-and-header-wrapper">
-                    <div
-                        onMouseEnter={() => handleMouseEnter(`blogPostItemDate`)} 
-                        onMouseLeave={() => handleMouseLeave(`blogPostItemDate`)} 
-                    >
-                        <H15 className={renderClassName("blogPostItemDate", isHoveringBlogPostItemDate)}>{props.blogListStandardPage.postBlogContent.date}</H15>
-                    </div>
-                    <H35 className="h35-black-poppins">{props.blogListStandardPage.postBlogContent.header}</H35>
-                </div>
-                <EH20/>
-                {renderBlogCardInfo()}
-                <EH30/>
-                {renderParagraphs(props.blogListStandardPage.postBlogContent.text)}
-                <EH70/>
-                {renderTagsAndSocMedia()}
-            </>
-        )
-    }
-
-    const renderCategories = (arr) => {
-        return(
-            <>{arr.map((el, i) => {
-                return(
-                    <div
-                        key={i}
-                        onMouseEnter={() => handleMouseEnter(`blogCardCategories`, el.key)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)} 
-                    >
-                        <H15 className={renderClassName("blogCardCategories", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
-                    </div>
-                )
-            })}</>
-        )
-    }
-
-    const renderTags = (arr) => {
-        return(
-            <>
-                {arr.map((el, i) => {
-                    return(
-                        <div
-                            key={i}
-                            className="blog-post-single-item-tag"
-                        >
-                            <TagItem
-                               tagName={el.tagName} 
-                            />
-                        </div>
-                    )
-                })}
-            </>
-        )
-    }
-
-    const renderTagsAndSocMedia = () => {
-        return(
-            <div className="blog-post-single-item-tags-and-soc-media-wrapper">
-                <div className="blog-post-single-item-tags-part-wrapper">
-                   {renderTags(props.blogListStandardPage.postBlogContent.tags)}
-                </div>              
-                <div 
-                    className="blog-post-single-item-soc-med-part-wrapper"
-                    onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
-                    onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
-                >
-                    {renderSocialMediaIcons()}
-                    <Icon
-                        iconType="fontAwesome"
-                        icon="faShareAlt"
-                        iconSize="1x"
-                        isHover={isHoveringBlogCardShare}
-                        classNameOpt="blogCardShare"
-                    />
-                </div>
-            </div>
-        )
-    }
-
-    const renderSocialMediaIcons = () => {
-        return(
-            <div className="blog-post-single-item-soc-med-icons">{socialMediaIcons.map((el, i) => {
-               return(
-                    <div 
-                        key={i}
-                        className={renderClassName(`blogCardSocMed${el.name}`, isHoveringBlogCardShare)}
-                    >
-                        <Icon 
-                            key={i}
-                            iconType="fontAwesome"
-                            iconName={el.name} 
-                            icon={el.iconKey} 
-                            iconSize="1x"
-                            onMouseEnter
-                            onMouseLeave
-                            onMouseDown
-                            classNameOpt={`blogCardSocMed${el.name}`}
-                        />
-                        <EW10/>
-                    </div>
-               ) 
-            })}
-            </div>
-        )
-    }
-
     const renderBlogCardInfo = () => {
         return(
             <div className="blog-post-single-item-info-wrapper">
@@ -599,6 +461,162 @@ export const BlogPostSingleItem = (props) => {
                     </div>
                 </div>
             </div>
+        )
+    }
+
+    const renderCategories = (arr) => {
+        return(
+            <>{arr.map((el, i) => {
+                return(
+                    <div
+                        key={i}
+                        onMouseEnter={() => handleMouseEnter(`blogCardCategories`, el.key)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)} 
+                    >
+                        <H15 className={renderClassName("blogCardCategories", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
+                    </div>
+                )
+            })}</>
+        )
+    }
+
+    const renderParagraphs = (arr) => {
+        return(
+            <div className="blog-post-single-item-paragraphs">
+                {arr.map((el, i) => {
+                    if(el.type === "quote"){
+                        return(
+                            <React.Fragment key={i}>
+                                <EH30/>
+                                <div className="blog-post-single-item-blockquote-wrapper">
+                                    <blockquote className="blog-post-single-item-blockquote">
+                                        <H19 className="h19-black-poppins"> {el.textPart}</H19>
+                                    </blockquote>
+                                </div>
+                                <EH30/>
+                            </React.Fragment>
+                        )
+                    }else{
+                        return(
+                            <React.Fragment key={i}>
+                                <H15 className="h15-black-lustria">{el.textPart}</H15>
+                            </React.Fragment>
+                        )
+                    }
+                    
+                })}
+            </div>
+        )
+    }
+
+    const renderTagsAndSocMedia = () => {
+        return(
+            <div className="blog-post-single-item-tags-and-soc-media-wrapper">
+                <div className="blog-post-single-item-tags-part-wrapper">
+                   {renderTags(props.blogListStandardPage.postBlogContent.tags)}
+                </div>              
+                <div 
+                    className="blog-post-single-item-soc-med-part-wrapper"
+                    onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
+                    onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
+                >
+                    {renderSocialMediaIcons()}
+                    <Icon
+                        iconType="fontAwesome"
+                        icon="faShareAlt"
+                        iconSize="1x"
+                        isHover={isHoveringBlogCardShare}
+                        classNameOpt="blogCardShare"
+                    />
+                </div>
+            </div>
+        )
+    }
+
+    const renderTags = (arr) => {
+        return(
+            <>
+                {arr.map((el, i) => {
+                    return(
+                        <div
+                            key={i}
+                            className="blog-post-single-item-tag"
+                        >
+                            <TagItem
+                               tagName={el.tagName} 
+                            />
+                        </div>
+                    )
+                })}
+            </>
+        )
+    }
+
+    const renderSocialMediaIcons = () => {
+        return(
+            <div className="blog-post-single-item-soc-med-icons">{socialMediaIcons.map((el, i) => {
+               return(
+                    <div 
+                        key={i}
+                        className={renderClassName(`blogCardSocMed${el.name}`, isHoveringBlogCardShare)}
+                    >
+                        <Icon 
+                            key={i}
+                            iconType="fontAwesome"
+                            iconName={el.name} 
+                            icon={el.iconKey} 
+                            iconSize="1x"
+                            onMouseEnter
+                            onMouseLeave
+                            onMouseDown
+                            classNameOpt={`blogCardSocMed${el.name}`}
+                        />
+                        <EW10/>
+                    </div>
+               ) 
+            })}
+            </div>
+        )
+    }
+
+    const renderAuthorNote = () => {
+        return(
+            <div className="blog-post-single-item-author-note-wrapper">
+                <div className="blog-post-single-item-author-image">
+                    <img src={Images.PHOTO_19}/>
+                </div>
+                <div className="blog-post-single-item-name-and-note-wrapper">
+                    <H17 className="h17-black-poppins">Naomi Hernandez</H17>
+                    <EH10/>
+                    <H15 className="h15-black-lustria">Cum offendit repudiandae ut, eam alii magna falli ne. Duo utinam consequat ei, eum cetero atomorum ne, dictas bonorum vel cu. Eros eloquentiam ea pri sit.</H15>
+                </div>
+            </div>
+        )
+    }
+
+    const renderBlogCardMainBody = (type) => {
+        return(
+            <>
+                {renderCardCover(type)}
+                <EH60/>
+                <div className="blog-post-single-item-date-and-header-wrapper">
+                    <div
+                        onMouseEnter={() => handleMouseEnter(`blogPostItemDate`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogPostItemDate`)} 
+                    >
+                        <H15 className={renderClassName("blogPostItemDate", isHoveringBlogPostItemDate)}>{props.blogListStandardPage.postBlogContent.date}</H15>
+                    </div>
+                    <H35 className="h35-black-poppins">{props.blogListStandardPage.postBlogContent.header}</H35>
+                </div>
+                <EH20/>
+                {renderBlogCardInfo()}
+                <EH30/>
+                {renderParagraphs(props.blogListStandardPage.postBlogContent.text)}
+                <EH70/>
+                {renderTagsAndSocMedia()}
+                <EH70/>
+                {renderAuthorNote()}
+            </>
         )
     }
 
