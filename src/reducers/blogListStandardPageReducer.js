@@ -160,6 +160,23 @@ const blogListCardCategoryIsHoverForBlogListStandardPage = (state, action) => {
     }
 }
 
+const blogPostSingleItemCategoryIsHoverForBlogListStandardPage = (state, action) => {
+    let updatedCategories = [...state.postBlogContent.categories];
+
+    let category = {...updatedCategories.find(item => item.key === action.categoryKey), isHover: action.val};
+    let categoryIndex = updatedCategories.findIndex(item => item.key === action.categoryKey);
+
+    updatedCategories.splice(categoryIndex, 1, category);
+    
+    return {
+        ...state,
+        postBlogContent: {
+            ...state.postBlogContent,
+            categories: updatedCategories
+        }
+    }
+}
+
 const setSwiperStateForBlogListStandardPage = (state, action) => {
 
     let updatedItems = [...state.items];
@@ -276,6 +293,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchPostBlogDataFailur (state, action);
         case actionTypes.BLOG_LIST_CARD_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
             return blogListCardCategoryIsHoverForBlogListStandardPage(state, action);
+        case actionTypes.BLOG_POST_SINGLE_ITEM_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
+            return blogPostSingleItemCategoryIsHoverForBlogListStandardPage (state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return setSwiperStateForBlogListStandardPage(state, action);
         case actionTypes.INIT_BLOG_PAGINATION:
@@ -283,7 +302,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
         case actionTypes.ACTIVATE_PAGE_NUMBER_FOR_BLOG_LIST_STANDARD_PAGE:
             return activatePageNumberForBlogListStandardPage(state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_ITEM:
-            return activateListStandardBlogItem (state, action); 
+            return activateListStandardBlogItem (state, action);
+
         default: 
             return state;
     }

@@ -231,7 +231,7 @@ export const Main = (props) => {
                     component={BlogListStandardPage}
                 />
                 <Route
-                    exact 
+                    exact
                     path={props.match.url + "/blog-list-standard"}
                     component={BlogListStandardPage}
                 />

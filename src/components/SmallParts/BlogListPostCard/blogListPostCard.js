@@ -308,11 +308,6 @@ export const BlogListPostCard = (props) => {
         props.activateBlogCategory("deactive", "");
         props.clearActivityOfMenuItems();
         props.history.push(`/crypto-portfolio/${path}`);
-    
-        let pathArray = path.split("/")
-        let id = +pathArray[pathArray.length - 1]
-        // console.log(+param[param.length - 1])
-        props.fetchPostBlogDataFunction(id)
     }
 
     const renderCardCover = (type) => {

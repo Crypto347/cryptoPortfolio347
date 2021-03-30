@@ -78,6 +78,14 @@ export function blogListCardCategoryIsHoverForBlogListStandardPage(val, cardKey,
     };
 };
 
+export function blogPostSingleItemCategoryIsHoverForBlogListStandardPage(val, categoryKey) {
+    return { 
+        type: actionTypes.BLOG_POST_SINGLE_ITEM_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE,
+        val: val,
+        categoryKey: categoryKey
+    };
+};
+
 export function setSwiperStateForBlogListStandardPage(slides, _slides, activeIndex, translate, transition, rerender, cardKey) {
     return { 
         type: actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE,

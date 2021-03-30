@@ -8,6 +8,14 @@ import React, {
 } from 'react';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
+    connect
+} from 'react-redux';
+
+import {
     withRouter
 } from 'react-router-dom';
 
@@ -26,6 +34,25 @@ import Audio from '../../Parts/Audio/audio';
 import Video from '../../Parts/Video/video'
 import Swiper from '../../../library/Swiper/swiper';
 
+
+/**
+ * Actions
+ */
+
+import * as Actions from '../../../actions';
+
+/**
+ * Services
+ */
+
+import * as Services from "../../../service";
+
+/**
+ * Selectors
+ */
+
+import * as Selectors from '../../../reducers/selectors';
+
 /**
  * Utility
  */
@@ -33,13 +60,17 @@ import Swiper from '../../../library/Swiper/swiper';
 import {
     H15,
     H17,
+    H19,
     H22,
     H35,
     EW10,
     EH20,
+    EH30,
     EH60,
     EH70
 } from '../../UtilityComponents';
+
+import * as Utility from '../../../utility';
 
 /**
  * Constants
@@ -60,9 +91,7 @@ export const BlogPostSingleItem = (props) => {
     /**
      * State
      */
-
-    const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
-    const [isHoveringBlogCardHeader, setIsHoveringBlogCardHeader] = useState("init");
+    const [isHoveringBlogPostItemDate, setIsHoveringBlogPostItemDate] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
     const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
     const [isHoveringBlogCardShare, setIsHoveringBlogCardShare] = useState("init");
@@ -75,18 +104,35 @@ export const BlogPostSingleItem = (props) => {
      */
    
     useEffect(() => {
+       
+        // Set width of swiper
 
-        //Set width of swiper
+        let blogPostSingleItem = document.getElementById("blogPostSingleItem");
+        setCardWidth(blogPostSingleItem.offsetWidth);
 
-        // let blogListPostCard = document.getElementById("blogListPostCard");
-        // setCardWidth(blogListPostCard.offsetWidth);
+        // Init blog post element data
+
+        let pathNameArray = props.location.pathname.split("/");
+        let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
+        let cardId = +pathNameArray[pathNameArray.length-1];
+
+        switch(cardType){
+            case 'standardPost':
+                props.fetchStandardPostBlogData(cardId);
+                break;
+            default:
+                props.fetchStandardPostBlogData(cardId);
+                break;
+        }
+
+        
        
     }, []);
 
     const handleMouseEnter = (opt, key) => {
         switch(opt){
-            case 'blogCardDate': 
-                setIsHoveringBlogCardDate("on");
+            case 'blogPostItemDate': 
+                setIsHoveringBlogPostItemDate("on");
                 break;
             case 'blogCardHeader': 
                 setIsHoveringBlogCardHeader("on");
@@ -100,8 +146,17 @@ export const BlogPostSingleItem = (props) => {
             case 'blogCardShare': 
                 setIsHoveringBlogCardShare("on");
                 break;
-            case 'blogCardTags': 
-                props.blogListCardTagIsHover("on", props.elData.key, key);
+            case 'blogCardCategories':
+                // Depending on the page set function to hover categories
+
+                switch(props.page){
+                    case 'standardPost':
+                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("on", key);
+                        break;
+                    default:
+                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("on", key);
+                        break;
+                }
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("on");
@@ -114,8 +169,8 @@ export const BlogPostSingleItem = (props) => {
 
     const handleMouseLeave = (opt, key) => {
         switch(opt){
-            case 'blogCardDate': 
-                setIsHoveringBlogCardDate("off");
+            case 'blogPostItemDate': 
+                setIsHoveringBlogPostItemDate("off");
                 break;
             case 'blogCardHeader': 
                 setIsHoveringBlogCardHeader("off");
@@ -129,8 +184,17 @@ export const BlogPostSingleItem = (props) => {
             case 'blogCardShare': 
                 setIsHoveringBlogCardShare("off");
                 break;
-            case 'blogCardTags': 
-                props.blogListCardTagIsHover("off", props.elData.key, key);
+            case 'blogCardCategories':
+                // Depending on the page set function to hover categories
+
+                switch(props.page){
+                    case 'standardPost':
+                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("off", key);
+                        break;
+                    default:
+                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("off", key);
+                        break;
+                }
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("off");
@@ -143,10 +207,10 @@ export const BlogPostSingleItem = (props) => {
 
     const renderClassName = (opt, isHovering) => {
         if([
-            'blogCardDate',
+            'blogPostItemDate',
             'blogCardLikes',
             'blogCardComments',
-            'blogCardTags'
+            'blogCardCategories'
         ].includes(opt)){
             switch(isHovering){
                 case 'init':
@@ -177,54 +241,44 @@ export const BlogPostSingleItem = (props) => {
                     return "h22-nero-lustria-nobel-hover-off"
             }
         }
-        if(['blogCardHeader'].includes(opt)){
-            switch(isHovering){
-                case 'init':
-                    return "h35-black-poppins-cursor";
-                case 'on':
-                    return "h35-black-poppins-nobel-cursor-hover-on";
-                case 'off':
-                    return "h35-black-poppins-nobel-cursor-hover-off"
-            }
-        }
         if(['blogCardSocMedInstagram'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-list-post-card-info-soc-med-Instagram";
+                    return "blog-post-single-item-info-soc-med-Instagram";
                 case 'on':
-                    return "blog-list-post-card-info-soc-med-Instagram-hover-on";
+                    return "blog-post-single-item-info-soc-med-Instagram-hover-on";
                 case 'off':
-                    return "blog-list-post-card-info-soc-med-Instagram-hover-off"
+                    return "blog-post-single-item-info-soc-med-Instagram-hover-off"
             }
         }
         if(['blogCardSocMedTwitter'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-list-post-card-info-soc-med-Twitter";
+                    return "blog-post-single-item-info-soc-med-Twitter";
                 case 'on':
-                    return "blog-list-post-card-info-soc-med-Twitter-hover-on";
+                    return "blog-post-single-item-info-soc-med-Twitter-hover-on";
                 case 'off':
-                    return "blog-list-post-card-info-soc-med-Twitter-hover-off"
+                    return "blog-post-single-item-info-soc-med-Twitter-hover-off"
             }
         }
         if(['blogCardSocMedFacebook'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-list-post-card-info-soc-med-Facebook";
+                    return "blog-post-single-item-info-soc-med-Facebook";
                 case 'on':
-                    return "blog-list-post-card-info-soc-med-Facebook-hover-on";
+                    return "blog-post-single-item-info-soc-med-Facebook-hover-on";
                 case 'off':
-                    return "blog-list-post-card-info-soc-med-Facebook-hover-off"
+                    return "blog-post-single-item-info-soc-med-Facebook-hover-off"
             }
         }
         if(['blogCardSocMedTumblr'].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "blog-list-post-card-info-soc-med-Tumblr";
+                    return "blog-post-single-item-info-soc-med-Tumblr";
                 case 'on':
-                    return "blog-list-post-card-info-soc-med-Tumblr-hover-on";
+                    return "blog-post-single-item-info-soc-med-Tumblr-hover-on";
                 case 'off':
-                    return "blog-list-post-card-info-soc-med-Tumblr-hover-off"
+                    return "blog-post-single-item-info-soc-med-Tumblr-hover-off"
             }
         }
     }
@@ -314,36 +368,36 @@ export const BlogPostSingleItem = (props) => {
         switch(type){
             case 'audioPost':
                 return(
-                    <div className="blog-list-post-card-audio-wrapper">
+                    <div className="blog-post-single-item-audio-wrapper">
                         <img 
-                            src={loadImg(props.elData.coverImage.key)}
+                            src={loadImg(props.blogListStandardPage.postBlogContent.coverImage.key)}
                             // onMouseDown={(e) => onClickHandler(e)}
                         />
                         <Audio
-                            audioKey={props.elData.audioKey}
+                            audioKey={props.blogListStandardPage.postBlogContent.audioKey}
                         />
                     </div>
                 );
             case 'videoPost':
                 return(
-                    <div className="blog-list-post-card-video-wrapper">
-                        <Video videoKey={props.elData.videoKey}/>
+                    <div className="blog-post-single-item-video-wrapper">
+                        <Video videoKey={props.blogListStandardPage.postBlogContent.videoKey}/>
                     </div>
                 );
             case 'galleryPost':
                 return(
-                    <div className="blog-list-post-card-gallery-wrapper">
+                    <div className="blog-post-single-item-gallery-wrapper">
                         {cardWidth !== 0 ? 
                         <Swiper
-                            component={props.elData.key}
-                            contentArray={props.elData.imagesArray}
+                            component={props.blogListStandardPage.postBlogContent.key}
+                            contentArray={props.blogListStandardPage.postBlogContent.imagesArray}
                             content={props.pageData}
                             translateWidth={cardWidth}
                             showNumbersOfSlides={1}
                             setSwiperState={props.setSwiperStateForBlogListStandardPage}
-                            swiperData={props.elData.swiper}
+                            swiperData={props.blogListStandardPage.postBlogContent.swiper}
                             onlyImages
-                            pathToFindSwiper={props.elData.key}
+                            pathToFindSwiper={props.blogListStandardPage.postBlogContent.key}
                             // autoPlay
                         /> : null}
                     </div>
@@ -351,11 +405,40 @@ export const BlogPostSingleItem = (props) => {
             default: 
                 return(
                     <img 
-                        src={loadImg(props.elData.coverImage.key)}
-                        onMouseDown={(e) => onClickHandler(e, props.elData.path, props.elData.key)}
+                        src={loadImg(props.blogListStandardPage.postBlogContent.coverImage.key)}
+                        onMouseDown={(e) => onClickHandler(e, props.blogListStandardPage.postBlogContent.path, props.blogListStandardPage.postBlogContent.key)}
                     />              
                 );
         }
+    }
+
+    const renderParagraphs = (arr) => {
+        return(
+            <div className="blog-post-single-item-paragraphs">
+                {arr.map((el, i) => {
+                    if(el.type === "quote"){
+                        return(
+                            <React.Fragment key={i}>
+                                <EH30/>
+                                <div className="blog-post-single-item-blockquote-wrapper">
+                                    <blockquote className="blog-post-single-item-blockquote">
+                                        <H19 className="h19-black-poppins"> {el.textPart}</H19>
+                                    </blockquote>
+                                </div>
+                                <EH30/>
+                            </React.Fragment>
+                        )
+                    }else{
+                        return(
+                            <React.Fragment key={i}>
+                                <H15 className="h15-black-lustria">{el.textPart}</H15>
+                            </React.Fragment>
+                        )
+                    }
+                    
+                })}
+            </div>
+        )
     }
 
     const renderBlogCardMainBody = (type) => {
@@ -363,42 +446,34 @@ export const BlogPostSingleItem = (props) => {
             <>
                 {renderCardCover(type)}
                 <EH60/>
-                <div className="blog-list-post-card-date-and-header-wrapper">
+                <div className="blog-post-single-item-date-and-header-wrapper">
                     <div
-                        onMouseEnter={() => handleMouseEnter(`blogCardDate`)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardDate`)} 
+                        onMouseEnter={() => handleMouseEnter(`blogPostItemDate`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogPostItemDate`)} 
                     >
-                        <H15 className={renderClassName("blogCardDate", isHoveringBlogCardDate)}>{props.elData.date}</H15>
+                        <H15 className={renderClassName("blogPostItemDate", isHoveringBlogPostItemDate)}>{props.blogListStandardPage.postBlogContent.date}</H15>
                     </div>
-                    <div
-                        onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardHeader`)}
-                        onMouseDown={(e) => onClickHandler(e, props.elData.path, props.elData.key)}
-                    >
-                        <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.elData.header}</H35>
-                    </div>
-                </div>
-                <EH20/>
-                <div className="blog-list-post-card-text">
-                    <H17 className="h17-black-lustria">{props.elData.text + " ..."}</H17>
+                    <H35 className="h35-black-poppins">{props.blogListStandardPage.postBlogContent.header}</H35>
                 </div>
                 <EH20/>
                 {renderBlogCardInfo()}
+                <EH20/>
+                {renderParagraphs(props.blogListStandardPage.postBlogContent.text)}
                 <EH70/>
             </>
         )
     }
 
-    const renderTags = (arr) => {
+    const renderCategories = (arr) => {
         return(
             <>{arr.map((el, i) => {
                 return(
                     <div
                         key={i}
-                        onMouseEnter={() => handleMouseEnter(`blogCardTags`, el.key)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardTags`, el.key)} 
+                        onMouseEnter={() => handleMouseEnter(`blogCardCategories`, el.key)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)} 
                     >
-                        <H15 className={renderClassName("blogCardTags", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
+                        <H15 className={renderClassName("blogCardCategories", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
                     </div>
                 )
             })}</>
@@ -407,7 +482,7 @@ export const BlogPostSingleItem = (props) => {
 
     const renderSocialMediaIcons = () => {
         return(
-            <div className="blog-list-post-card-info-soc-med-icons">{socialMediaIcons.map((el, i) => {
+            <div className="blog-post-single-item-info-soc-med-icons">{socialMediaIcons.map((el, i) => {
                return(
                     <div 
                         key={i}
@@ -434,10 +509,10 @@ export const BlogPostSingleItem = (props) => {
 
     const renderBlogCardInfo = () => {
         return(
-            <div className="blog-list-post-card-info-wrapper">
-                <div className="blog-list-post-card-info-left-part-wrapper">
+            <div className="blog-post-single-item-info-wrapper">
+                <div className="blog-post-single-item-info-left-part-wrapper">
                     <div 
-                        className="blog-list-post-card-info-likes"
+                        className="blog-post-single-item-info-likes"
                         onMouseEnter={() => handleMouseEnter(`blogCardLikes`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardLikes`)} 
                     >
@@ -449,11 +524,11 @@ export const BlogPostSingleItem = (props) => {
                             classNameOpt="blogCardLike"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.elData.numberOfLikes}</H15>
+                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.blogListStandardPage.postBlogContent.numberOfLikes}</H15>
                     </div>
                     <EW10/>
                     <div 
-                        className="blog-list-post-card-info-comments"
+                        className="blog-post-single-item-info-comments"
                         onMouseEnter={() => handleMouseEnter(`blogCardComments`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardComments`)} 
                     >
@@ -465,22 +540,22 @@ export const BlogPostSingleItem = (props) => {
                             classNameOpt="blogCardComment"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.elData.numberOfComments}</H15>
+                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.blogListStandardPage.postBlogContent.numberOfComments}</H15>
                     </div>
                     <EW10/>
-                    <div className="blog-list-post-card-info-tags">
+                    <div className="blog-post-single-item-info-categories">
                         <Icon
                             iconType="fontAwesome"
                             icon="faBookmark"
                             iconSize="1x"
-                            classNameOpt="blogCardTag"
+                            classNameOpt="blogCardCategory"
                         />
-                         &nbsp;
-                        {renderTags(props.elData.tags)}
+                        &nbsp;
+                        {renderCategories(props.blogListStandardPage.postBlogContent.categories)}
                     </div>
                 </div>              
-                <div 
-                    className="blog-list-post-card-info-soc-med-wrapper"
+                {/* <div 
+                    className="blog-post-single-item-info-soc-med-wrapper"
                     onMouseEnter={() => handleMouseEnter(`blogCardShare`)} 
                     onMouseLeave={() => handleMouseLeave(`blogCardShare`)} 
                 >
@@ -492,12 +567,12 @@ export const BlogPostSingleItem = (props) => {
                         isHover={isHoveringBlogCardShare}
                         classNameOpt="blogCardShare"
                     />
-                </div>
+                </div> */}
             </div>
         )
     }
 
-    const renderBlogCard = (type) => {
+    const renderBlogPostSingleItem = (type) => {
         switch(type){
             case 'standardPost':
                 return (
@@ -514,15 +589,15 @@ export const BlogPostSingleItem = (props) => {
             case 'linkPost':
                 return (
                     <>
-                        <div className="blog-list-post-card-link">
+                        <div className="blog-post-single-item-link">
                             <div
-                                className="blog-list-post-card-link-text-wrapper"
+                                className="blog-post-single-item-link-text-wrapper"
                                 onMouseEnter={() => handleMouseEnter(`blogCardLink`)} 
                                 onMouseLeave={() => handleMouseLeave(`blogCardLink`)} 
                             >
-                                <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.elData.linkText}</H22>
+                                <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.blogListStandardPage.postBlogContent.linkText}</H22>
                             </div>
-                            <div className="blog-list-post-card-link-icon-wrapper">
+                            <div className="blog-post-single-item-link-icon-wrapper">
                                 <Icon
                                     iconType="fontAwesome"
                                     icon="faLink"
@@ -538,22 +613,22 @@ export const BlogPostSingleItem = (props) => {
             case 'quotePost':
                 return (
                     <>
-                        <div className="blog-list-post-card-quote">
+                        <div className="blog-post-single-item-quote">
                             <div>
                                 <div
-                                    className="blog-list-post-card-quote-text-wrapper"
+                                    className="blog-post-single-item-quote-text-wrapper"
                                     onMouseEnter={() => handleMouseEnter(`blogCardQuote`)} 
                                     onMouseLeave={() => handleMouseLeave(`blogCardQuote`)} 
                                 >
-                                    <H22 className={renderClassName("blogCardQuote", isHoveringBlogCardQuote)}>{props.elData.quoteText}</H22>
+                                    <H22 className={renderClassName("blogCardQuote", isHoveringBlogCardQuote)}>{props.blogListStandardPage.postBlogContent.quoteText}</H22>
                                 </div>
                                 <EH20/>
-                                <div className="blog-list-post-card-quote-author-name-wrapper">
+                                <div className="blog-post-single-item-quote-author-name-wrapper">
                                     <div className="slide-dash"/>
-                                    <H17 className="h17-nero-poppins">{props.elData.quoteAuthor}</H17>
+                                    <H17 className="h17-nero-poppins">{props.blogListStandardPage.postBlogContent.quoteAuthor}</H17>
                                 </div>
                             </div>
-                            <div className="blog-list-post-card-quote-icon-wrapper">
+                            <div className="blog-post-single-item-quote-icon-wrapper">
                                 <Icon
                                     iconType="fontAwesome"
                                     icon="faQuoteLeft"
@@ -587,10 +662,39 @@ export const BlogPostSingleItem = (props) => {
 
     return(
         <div className="blog-post-single-item" id="blogPostSingleItem">
-            {/* {renderBlogCard(props.elData.cardType)} */}
+            {renderBlogPostSingleItem(props.blogListStandardPage.postBlogContent.cardType)}
         </div>
     );
 }
 
-export default withRouter(BlogPostSingleItem);
+export default connect(
+    (state) => {
+        return {
+            blogListStandardPage: Selectors.getBlogListStandardPageState(state),
+            // unmountComp: Selectors.getUnmountComponentState(state),
+            // menuDotsState: Selectors.getMenuDotsStateState(state),
+            // showBackToTop: Selectors.getShowBackToTopState(state),
+        };
+    },
+    (dispatch) => {
+        return {
+            fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
+            
+            blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
+            // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            // unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            // setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
+            // setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
+            // initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
+            // activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            // initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
+       
+            // blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
+            // setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
+            // activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
+            // clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            // activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
+        };
+    }
+)(withRouter(BlogPostSingleItem));
  

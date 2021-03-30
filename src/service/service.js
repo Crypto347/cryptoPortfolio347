@@ -2437,7 +2437,7 @@ export function fetchBlogListStandardPageData(activePageId) {
 export function fetchStandardPostBlogData(id) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-list-standard-item/standard-post/${id}`)
+        return fetch(`http://localhost:3005/api/blog-item/standard-post/${id}`)
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {

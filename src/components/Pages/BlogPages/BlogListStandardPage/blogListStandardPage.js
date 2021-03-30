@@ -140,7 +140,7 @@ export const BlogListStandardPage = (props) => {
     useEffect(() => {
         // Init state for fading effect when component will unmount
 
-            props.setUnmountComponentValues(false, "");
+        props.setUnmountComponentValues(false, "");
 
         // Init imput forms
 
@@ -258,15 +258,7 @@ export const BlogListStandardPage = (props) => {
     const renderBlogListStandardPageData = (arr) => {
         return(
             <div>
-                {arr.map((el, i) => {
-                    let fetchPostBlogDataFunction;
-                    switch(el.cardType){
-                        case 'standardPost':
-                            fetchPostBlogDataFunction = props.fetchStandardPostBlogData;
-                            break;
-                       
-                    }
-                     
+                {arr.map((el, i) => {                     
                     return(
                         <React.Fragment key={i}>
                             <BlogListPostCard 
@@ -280,7 +272,6 @@ export const BlogListStandardPage = (props) => {
                                 activateBlogCategory={props.activateListStandardBlogCategory}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
-                                fetchPostBlogDataFunction={fetchPostBlogDataFunction}
                             />
                         </React.Fragment>
                     )
@@ -341,38 +332,57 @@ export const BlogListStandardPage = (props) => {
                     <div className="grey-line"/>
                     <div className="blog-list-standard-page-content-info-wrapper">
                         <div className="blog-list-standard-page-content">
-                            <Route exact path="/crypto-portfolio/blog-list-standard">
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard"
+                            >
                                 {renderBlogListStandardPageDataContent(props.blogListStandardPage.items)} 
                             </Route>
-                            <Route exact path="/crypto-portfolio/list-standard-blog-category/:category"
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/list-standard-blog-category/:category"
                                 render={(props) => (
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
                             />
-                            <Route exact path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
-                                component={BlogPostSingleItem}
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
+                                render={(props) => (
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                )}
                             />
-                            <Route exact path="/crypto-portfolio/blog-list-standard-item/gallery-post/:id"
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard-item/gallery-post/:id"
                                 render={(props) => (
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
                             />
-                            <Route exact path="/crypto-portfolio/blog-list-standard-item/link-post/:id"
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard-item/link-post/:id"
                                 render={(props) => (
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
                             />
-                            <Route exact path="/crypto-portfolio/blog-list-standard-item/quote-post/:id"
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard-item/quote-post/:id"
                                 render={(props) => (
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
                             />
-                            <Route exact path="/crypto-portfolio/blog-list-standard-item/audio-post/:id"
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard-item/audio-post/:id"
                                 render={(props) => (
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
                             />
-                            <Route exact path="/crypto-portfolio/blog-list-standard-item/video-post/:id"
+                            <Route 
+                                exact 
+                                path="/crypto-portfolio/blog-list-standard-item/video-post/:id"
                                 render={(props) => (
                                     <div className="blog-list-standard-page-posts-list"></div>
                                 )}
@@ -411,7 +421,6 @@ export default connect(
         return {
             fetchBlogListStandardPageData: bindActionCreators(Services.fetchBlogListStandardPageData, dispatch),
             fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
-            fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
             
             
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
@@ -423,6 +432,7 @@ export default connect(
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
             blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
+
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),

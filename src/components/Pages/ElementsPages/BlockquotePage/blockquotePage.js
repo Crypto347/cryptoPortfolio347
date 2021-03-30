@@ -199,9 +199,7 @@ export const BlockquotePage = (props) => {
             <div className="blockquote-page-data-items">
                 {arr.map((el, i) => {
                     return(
-                        <React.Fragment
-                            key={i}
-                        >
+                        <React.Fragment key={i}>
                             <H17 className="h17-nobel-lustria">{el.text}</H17>
                             {el.blockquote !== null ? 
                             <div className="blockquote-page-blockquote-wrapper">
