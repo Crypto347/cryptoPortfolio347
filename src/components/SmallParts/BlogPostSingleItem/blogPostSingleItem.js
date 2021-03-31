@@ -155,11 +155,10 @@ export const BlogPostSingleItem = (props) => {
                 break;
         }
 
-          // Show content after successful data fetch
+        // Show content after successful data fetch
 
-          setShowContent(true);
+        setShowContent(true);
 
-       
     }, []);
 
     const handleMouseEnter = (opt, key) => {
@@ -709,9 +708,6 @@ export default connect(
     (state) => {
         return {
             blogListStandardPage: Selectors.getBlogListStandardPageState(state),
-            // unmountComp: Selectors.getUnmountComponentState(state),
-            // menuDotsState: Selectors.getMenuDotsStateState(state),
-            // showBackToTop: Selectors.getShowBackToTopState(state),
         };
     },
     (dispatch) => {
@@ -724,19 +720,6 @@ export default connect(
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
-            // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            // unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
-            // setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
-            // setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            // initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
-            // activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
-            // initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
-       
-            // blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
-            // setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
-            // activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
-            // clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
-            // activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));
