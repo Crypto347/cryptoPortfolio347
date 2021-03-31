@@ -40,6 +40,26 @@ export function fetchPostBlogDataFailur(err) {
     };
 };
 
+export function fetchBlogNavigationForBlogListStandardPageDataBegin() {
+    return { 
+        type: actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN
+    };
+};
+
+export function fetchBlogNavigationForBlogListStandardPageDataSuccess(array) {
+    return { 
+        type: actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS,
+        array: array
+    };
+};
+
+export function fetchBlogNavigationForBlogListStandardPageDataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE,
+        err: err
+    };
+};
+
 export function initInputFormForBlogListStandardPage(obj) {
     return { 
         type: actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,

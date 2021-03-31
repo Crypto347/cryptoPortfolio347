@@ -2554,12 +2554,15 @@ export function fetchPrevAndNextPostForBlogListItem(page, currentPostKey) {
         case 'blogListStandardPage':
             _page = "blog-list-standard"
             break;
-        default:
-            _page = "blog-list-standard";
-            break;
     }
     return dispatch => {
-        // dispatch(Actions.fetchBlogListStandardPageDataBegin());
+
+        switch(page){
+            case 'blogListStandardPage':
+                dispatch(Actions.fetchBlogNavigationForBlogListStandardPageDataBegin());
+                break;
+        }
+        
         return fetch(`http://localhost:3005/api/${_page}`, {
             method: 'POST',
             headers: {
@@ -2573,14 +2576,22 @@ export function fetchPrevAndNextPostForBlogListItem(page, currentPostKey) {
             // .then(handleErrors)
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
-                console.log("JSON",json)
-                // dispatch(Actions.fetchBlogListStandardPageDataSuccess(json.blogListStandardPage));
-                // dispatch(Actions.initBlogPagination(json.numberOfPages));
+                // console.log(json)
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogNavigationForBlogListStandardPageDataSuccess(json));
+                        break;
+                }
                 // return json;
             })
             .catch(error => {
-                console.log("error",error)
-                // dispatch(Actions.fetchBlogListStandardPageDataFailur(error))
+                console.log("error",error);
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogNavigationForBlogListStandardPageDataFailur(error))
+                        break;
+                }
+               
             });
     };
 }

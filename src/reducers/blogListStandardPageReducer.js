@@ -37,7 +37,12 @@ export const initialState = {
     categoriesList: [],
     tagsList: [],
     activePageId: 1,
-    pagesArray: []
+    pagesArray: [],
+    navigation: {
+        items: [],
+        loading: false,
+        error: null,
+    }
 }
 
 const fetchBlogListStandardPageDataBegin = (state, action) => {
@@ -87,6 +92,40 @@ const fetchPostBlogDataFailur = (state, action) => {
         loading: false,
         error: action.err,
         postBlogContent: {}
+    };
+}
+
+const fetchBlogNavigationForBlogListStandardPageDataBegin = (state, action) => {
+    return {
+        ...state,
+        navigation:{
+            ...state.navigation,
+            loading: true,
+            error: null
+        }
+    };
+}
+
+const fetchBlogNavigationForBlogListStandardPageDataSuccess = (state, action) => {    
+    return {
+        ...state,
+        navigation:{
+            ...state.navigation, 
+            loading: false,
+            items: action.array
+        }
+    };
+}
+
+const fetchBlogNavigationForBlogListStandardPageDataFailur = (state, action) => {
+    return {
+        ...state,
+        navigation:{
+            ...state.navigation, 
+            loading: false,
+            error: action.err,
+            items: []
+        }
     };
 }
 
@@ -311,6 +350,12 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchBlogListStandardPageDataSuccess (state, action); 
         case actionTypes.FETCH_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
             return fetchBlogListStandardPageDataFailur (state, action);
+        case actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN:
+            return fetchBlogNavigationForBlogListStandardPageDataBegin (state, action);
+        case actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS:
+            return fetchBlogNavigationForBlogListStandardPageDataSuccess (state, action); 
+        case actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
+            return fetchBlogNavigationForBlogListStandardPageDataFailur (state, action);
         case actionTypes.FETCH_POST_BLOG_DATA_BEGIN:
             return fetchPostBlogDataBegin (state, action);
         case actionTypes.FETCH_POST_BLOG_DATA_SUCCESS:
