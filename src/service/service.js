@@ -2591,7 +2591,6 @@ export function fetchPrevAndNextPostForBlogListItem(page, currentPostKey) {
                         dispatch(Actions.fetchBlogNavigationForBlogListStandardPageDataFailur(error))
                         break;
                 }
-               
             });
     };
 }
