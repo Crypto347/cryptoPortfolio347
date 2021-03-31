@@ -135,7 +135,10 @@ export const BlogPostSingleItem = (props) => {
                 props.fetchStandardPostBlogData(cardId);
                 break;
             case 'galleryPost':
-                props.fetchGalleryPostBlogData(cardId)
+                props.fetchGalleryPostBlogData(cardId);
+                break;
+            case 'linkPost':
+                props.fetchLinkPostBlogData(cardId);
                 break;
             default:
                 props.fetchStandardPostBlogData(cardId);
@@ -705,6 +708,7 @@ export default connect(
         return {
             fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
             fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
+            fetchLinkPostBlogData: bindActionCreators(Services.fetchLinkPostBlogData, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
             // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
