@@ -130,7 +130,7 @@ export const BlogPostSingleItem = (props) => {
         let cardId = +pathNameArray[pathNameArray.length-1];
 
         // Fetch data for the component
-        
+
         switch(cardType){
             case 'standardPost':
                 props.fetchStandardPostBlogData(cardId);
@@ -143,6 +143,9 @@ export const BlogPostSingleItem = (props) => {
                 break;
             case 'quotePost':
                 props.fetchQuotePostBlogData(cardId);
+                break;
+            case 'audioPost':
+                props.fetchAudioPostBlogData(cardId);
                 break;
             default:
                 props.fetchStandardPostBlogData(cardId);
@@ -714,6 +717,7 @@ export default connect(
             fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
             fetchLinkPostBlogData: bindActionCreators(Services.fetchLinkPostBlogData, dispatch),
             fetchQuotePostBlogData: bindActionCreators(Services.fetchQuotePostBlogData, dispatch),
+            fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
             // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
