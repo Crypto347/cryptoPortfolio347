@@ -147,6 +147,9 @@ export const BlogPostSingleItem = (props) => {
             case 'audioPost':
                 props.fetchAudioPostBlogData(cardId);
                 break;
+            case 'videoPost':
+                props.fetchVideoPostBlogData(cardId);
+                break;
             default:
                 props.fetchStandardPostBlogData(cardId);
                 break;
@@ -718,6 +721,7 @@ export default connect(
             fetchLinkPostBlogData: bindActionCreators(Services.fetchLinkPostBlogData, dispatch),
             fetchQuotePostBlogData: bindActionCreators(Services.fetchQuotePostBlogData, dispatch),
             fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
+            fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
             // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
