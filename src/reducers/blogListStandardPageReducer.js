@@ -32,7 +32,7 @@ export const initialState = {
     },
     activeItem: {
         activated: "init",
-        itemName: ""
+        itemKey: ""
     },
     categoriesList: [],
     tagsList: [],
@@ -265,7 +265,7 @@ const activateListStandardBlogItem = (state, action) => {
     let updatedActiveItem = {
         ...state.activeItem,
         activated: action.itemIsActive,
-        itemName: action.itemName
+        itemKey: action.itemKey
     };
 
     // let updatedCategoryList = [...state.categoriesList];

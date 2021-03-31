@@ -132,31 +132,31 @@ export const BlogPostSingleItem = (props) => {
 
         let pathNameArray = props.location.pathname.split("/");
         let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
-        let cardId = +pathNameArray[pathNameArray.length-1];
+        let cardIdFromPathname = +pathNameArray[pathNameArray.length-1];
 
         // Fetch data for the component
 
         switch(cardType){
             case 'standardPost':
-                props.fetchStandardPostBlogData(cardId);
+                props.fetchStandardPostBlogData(cardIdFromPathname);
                 break;
             case 'galleryPost':
-                props.fetchGalleryPostBlogData(cardId);
+                props.fetchGalleryPostBlogData(cardIdFromPathname);
                 break;
             case 'linkPost':
-                props.fetchLinkPostBlogData(cardId);
+                props.fetchLinkPostBlogData(cardIdFromPathname);
                 break;
             case 'quotePost':
-                props.fetchQuotePostBlogData(cardId);
+                props.fetchQuotePostBlogData(cardIdFromPathname);
                 break;
             case 'audioPost':
-                props.fetchAudioPostBlogData(cardId);
+                props.fetchAudioPostBlogData(cardIdFromPathname);
                 break;
             case 'videoPost':
-                props.fetchVideoPostBlogData(cardId);
+                props.fetchVideoPostBlogData(cardIdFromPathname);
                 break;
             default:
-                props.fetchStandardPostBlogData(cardId);
+                // props.fetchStandardPostBlogData(cardIdFromPathname);
                 break;
         }
 
@@ -435,7 +435,7 @@ export const BlogPostSingleItem = (props) => {
                     <div className="blog-post-single-item-gallery-wrapper">
                         {cardWidth !== 0 ? 
                         <Swiper
-                            component={props.blogListStandardPage.postBlogContent.key}
+                            component={props.blogListStandardPage.postBlogContent.cardId}
                             contentArray={props.blogListStandardPage.postBlogContent.imagesArray}
                             content={props.blogListStandardPage}
                             translateWidth={cardWidth}
@@ -665,7 +665,11 @@ export const BlogPostSingleItem = (props) => {
                 <EH70/>
                 {renderAuthorNote()}
                 <EH70/>
-                <BlogNavigation/>
+                <BlogNavigation
+                    page={props.page}
+                    itemKey={props.blogListStandardPage.activeItem.itemKey}
+                    fetchPrevAndNextPostForBlogListItem={props.fetchPrevAndNextPostForBlogListItem}
+                />
             </>
         )
     }
@@ -725,6 +729,7 @@ export default connect(
             fetchQuotePostBlogData: bindActionCreators(Services.fetchQuotePostBlogData, dispatch),
             fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
+            fetchPrevAndNextPostForBlogListItem: bindActionCreators(Services.fetchPrevAndNextPostForBlogListItem, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
         };

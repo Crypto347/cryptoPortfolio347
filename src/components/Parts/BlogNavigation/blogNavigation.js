@@ -46,14 +46,16 @@ export const BlogNavigation = (props) => {
      */
 
     useEffect(() => {
-      
+        // Fetch previous and next post using the current post key
+
+        if(props.itemKey !== ""){
+            props.fetchPrevAndNextPostForBlogListItem(props.page, props.itemKey)
+        }
 
         return () =>  {
             // Cleaning the unmounted component
-
-
         }
-    }, []);
+    }, [props.itemKey]);
 
     const handleMouseEnter = (opt, key) => {
         switch(opt){
@@ -165,7 +167,7 @@ export const BlogNavigation = (props) => {
                     <img src={Images.PHOTO_19}/>
                 </div>
                 <div className="blog-navigation-info-wrapper">
-                    <H15 className="h15-black-lustria"> Cum offendit </H15>
+                    <H15 className="h15-black-lustria">Cum offendit</H15>
                     <EH10/>
                     <div
                         onMouseEnter={() => handleMouseEnter(`navigationPrevDate`)} 
@@ -177,7 +179,7 @@ export const BlogNavigation = (props) => {
             </div>
             <div className="blog-navigation-next">
                 <div className="blog-navigation-info-wrapper">
-                    <H15 className="h15-black-lustria"> Cum offendit</H15>
+                    <H15 className="h15-black-lustria">Cum offendit</H15>
                     <EH10/>
                     <div
                         onMouseEnter={() => handleMouseEnter(`navigationNextDate`)} 

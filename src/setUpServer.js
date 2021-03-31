@@ -21975,10 +21975,24 @@ app.post('/api/blog-list-standard', (req, res) => {
         blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
     };
     
-    if(!updatedBlogListStandard) {
-        res.status(404).send("The blog data was not found");
+    let currentPostKey = req.body.currentPostKey;
+
+    if(currentPostKey){
+        let navigationArray = [];
+
+        let currentPostIndex = blogListStandardPage.findIndex(item => item.key === currentPostKey);
+        let prevPost = currentPostIndex === 0 ? blogListStandardPage[blogListStandardPage.length-1] : blogListStandardPage[currentPostIndex-1];
+        let nextPost = currentPostIndex === blogListStandardPage.length - 1 ? blogListStandardPage[0] : blogListStandardPage[currentPostIndex+1];
+        
+        navigationArray.push(prevPost, nextPost);
+        
+        res.json(navigationArray);
     }else{
-        res.json(updatedBlogListStandard);  
+        if(!updatedBlogListStandard) {
+            res.status(404).send("The blog data was not found");
+        }else{
+            res.json(updatedBlogListStandard);  
+        }
     }
 });
 

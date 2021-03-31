@@ -125,11 +125,11 @@ export function activatePageNumberForBlogListStandardPage(activePageId) {
     };
 };
 
-export function activateListStandardBlogItem(itemIsActive, itemName) {
+export function activateListStandardBlogItem(itemIsActive, itemKey) {
     return { 
         type: actionTypes.ACTIVATE_LIST_STANDARD_BLOG_ITEM,
         itemIsActive: itemIsActive,
-        itemName: itemName
+        itemKey: itemKey
     };
 };
 

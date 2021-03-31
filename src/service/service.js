@@ -2443,6 +2443,7 @@ export function fetchStandardPostBlogData(id) {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPostBlogDataSuccess(json));
+                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
                 // return json;
             })
             .catch(error => {
@@ -2461,6 +2462,7 @@ export function fetchGalleryPostBlogData(id) {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPostBlogDataSuccess(json));
+                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
                 // return json;
             })
             .catch(error => {
@@ -2479,6 +2481,7 @@ export function fetchLinkPostBlogData(id) {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPostBlogDataSuccess(json));
+                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
                 // return json;
             })
             .catch(error => {
@@ -2497,6 +2500,7 @@ export function fetchQuotePostBlogData(id) {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPostBlogDataSuccess(json));
+                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
                 // return json;
             })
             .catch(error => {
@@ -2515,6 +2519,7 @@ export function fetchAudioPostBlogData(id) {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPostBlogDataSuccess(json));
+                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
                 // return json;
             })
             .catch(error => {
@@ -2533,11 +2538,49 @@ export function fetchVideoPostBlogData(id) {
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchPostBlogDataSuccess(json));
+                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
                 // return json;
             })
             .catch(error => {
                 console.log("error",error)
                 dispatch(Actions.fetchPostBlogDataFailur(error))
+            });
+    };
+}
+
+export function fetchPrevAndNextPostForBlogListItem(page, currentPostKey) {
+    let _page;
+    switch(page){
+        case 'blogListStandardPage':
+            _page = "blog-list-standard"
+            break;
+        default:
+            _page = "blog-list-standard";
+            break;
+    }
+    return dispatch => {
+        // dispatch(Actions.fetchBlogListStandardPageDataBegin());
+        return fetch(`http://localhost:3005/api/${_page}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                currentPostKey: currentPostKey
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                console.log("JSON",json)
+                // dispatch(Actions.fetchBlogListStandardPageDataSuccess(json.blogListStandardPage));
+                // dispatch(Actions.initBlogPagination(json.numberOfPages));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error)
+                // dispatch(Actions.fetchBlogListStandardPageDataFailur(error))
             });
     };
 }
