@@ -272,6 +272,7 @@ export const BlogListStandardPage = (props) => {
                                 activateBlogCategory={props.activateListStandardBlogCategory}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
+                                clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                             />
                         </React.Fragment>
                     )
@@ -280,8 +281,8 @@ export const BlogListStandardPage = (props) => {
         )
     }
     
-    const renderBlogListStandardPageDataContent = (arr) => {
-        if(arr.loading && !arr.error){
+    const renderBlogListStandardPageDataContent = (data) => {
+        if(data.loading && !data.error){
             return(
                 <div 
                     className="blog-list-standard-page-loading-error" 
@@ -291,10 +292,10 @@ export const BlogListStandardPage = (props) => {
                 </div>
             )
         }
-        if(!arr.loading && !arr.error){
+        if(!data.loading && !data.error){
             return(
                 <div className="blog-list-standard-page-data-wrapper">
-                    {renderBlogListStandardPageData(arr)}
+                    {renderBlogListStandardPageData(data.items)}
                     <BlogPagination
                         page="blogListStandardPage"
                         activePageNumber={props.blogListStandardPage.activePageId}
@@ -305,13 +306,13 @@ export const BlogListStandardPage = (props) => {
                 </div>
             )
         }
-        if(!arr.loading && arr.error){
+        if(!data.loading && data.error){
             return(
                 <div 
                     className="blog-list-standard-page-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
-                    <H15 className="h19-nobel-lora">{`${arr.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>
             )
         }
@@ -336,7 +337,7 @@ export const BlogListStandardPage = (props) => {
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard"
                             >
-                                {renderBlogListStandardPageDataContent(props.blogListStandardPage.items)} 
+                                {renderBlogListStandardPageDataContent(props.blogListStandardPage)} 
                             </Route>
                             <Route 
                                 exact 
@@ -356,35 +357,35 @@ export const BlogListStandardPage = (props) => {
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/gallery-post/:id"
                                 render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/link-post/:id"
                                 render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/quote-post/:id"
                                 render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/audio-post/:id"
                                 render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/video-post/:id"
                                 render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
                                 )}
                             />
                         </div>
@@ -437,6 +438,7 @@ export default connect(
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
+            clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

@@ -29,6 +29,7 @@ import './blogPostSingleItem.scss';
  * Components
  */
 
+import Loading from '../../SmallParts/Loading/loading';
 import Icon from '../Icon/icon';
 import TagItem from '../../SmallParts/TagItem/tagItem';
 import Audio from '../../Parts/Audio/audio';
@@ -84,6 +85,14 @@ import {
 } from '../../../constants/socialMediaIcons';
 
 /**
+ * Hooks
+ */
+
+ import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
+/**
  * BlogPostSingleItem component definition and export
  */
 
@@ -92,6 +101,9 @@ export const BlogPostSingleItem = (props) => {
     /**
      * State
      */
+
+    const size = useWindowSize();
+    const [showContent, setShowContent] = useState(false);
     const [isHoveringBlogPostItemDate, setIsHoveringBlogPostItemDate] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
     const [isHoveringBlogCardComments, setIsHoveringBlogCardComments] = useState("init");
@@ -117,16 +129,23 @@ export const BlogPostSingleItem = (props) => {
         let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
         let cardId = +pathNameArray[pathNameArray.length-1];
 
+        // Fetch data for the component
         switch(cardType){
             case 'standardPost':
                 props.fetchStandardPostBlogData(cardId);
+                break;
+            case 'galleryPost':
+                props.fetchGalleryPostBlogData(cardId)
                 break;
             default:
                 props.fetchStandardPostBlogData(cardId);
                 break;
         }
 
-        
+          // Show content after successful data fetch
+
+          setShowContent(true);
+
        
     }, []);
 
@@ -388,7 +407,7 @@ export const BlogPostSingleItem = (props) => {
             case 'galleryPost':
                 return(
                     <div className="blog-post-single-item-gallery-wrapper">
-                        {cardWidth !== 0 ? 
+                        {/* {cardWidth !== 0 ? 
                         <Swiper
                             component={props.blogListStandardPage.postBlogContent.key}
                             contentArray={props.blogListStandardPage.postBlogContent.imagesArray}
@@ -400,7 +419,7 @@ export const BlogPostSingleItem = (props) => {
                             onlyImages
                             pathToFindSwiper={props.blogListStandardPage.postBlogContent.key}
                             // autoPlay
-                        /> : null}
+                        /> : null} */}
                     </div>
                 );
             default: 
@@ -598,7 +617,7 @@ export const BlogPostSingleItem = (props) => {
         )
     }
 
-    const renderBlogCardMainBody = (type) => {
+    const renderBlogPostSingleItem = (type) => {
         return(
             <>
                 {renderCardCover(type)}
@@ -624,89 +643,35 @@ export const BlogPostSingleItem = (props) => {
         )
     }
 
-    const renderBlogPostSingleItem = (type) => {
-        switch(type){
-            case 'standardPost':
-                return (
-                    <>
-                        {renderBlogCardMainBody(type)}
-                    </>
-                )
-            case 'galleryPost':
-                return (
-                    <>
-                        {renderBlogCardMainBody(type)}
-                    </>
-                )
-            case 'linkPost':
-                return (
-                    <>
-                        <div className="blog-post-single-item-link">
-                            <div
-                                className="blog-post-single-item-link-text-wrapper"
-                                onMouseEnter={() => handleMouseEnter(`blogCardLink`)} 
-                                onMouseLeave={() => handleMouseLeave(`blogCardLink`)} 
-                            >
-                                <H22 className={renderClassName("blogCardLink", isHoveringBlogCardLink)}>{props.blogListStandardPage.postBlogContent.linkText}</H22>
-                            </div>
-                            <div className="blog-post-single-item-link-icon-wrapper">
-                                <Icon
-                                    iconType="fontAwesome"
-                                    icon="faLink"
-                                    iconSize="2x"
-                                    classNameOpt="blogCardLink"
-                                />
-                            </div>
-                        </div>
-                        <EH60/>
-                        {renderBlogCardMainBody(type)}
-                    </>
-                )
-            case 'quotePost':
-                return (
-                    <>
-                        <div className="blog-post-single-item-quote">
-                            <div>
-                                <div
-                                    className="blog-post-single-item-quote-text-wrapper"
-                                    onMouseEnter={() => handleMouseEnter(`blogCardQuote`)} 
-                                    onMouseLeave={() => handleMouseLeave(`blogCardQuote`)} 
-                                >
-                                    <H22 className={renderClassName("blogCardQuote", isHoveringBlogCardQuote)}>{props.blogListStandardPage.postBlogContent.quoteText}</H22>
-                                </div>
-                                <EH20/>
-                                <div className="blog-post-single-item-quote-author-name-wrapper">
-                                    <div className="slide-dash"/>
-                                    <H17 className="h17-nero-poppins">{props.blogListStandardPage.postBlogContent.quoteAuthor}</H17>
-                                </div>
-                            </div>
-                            <div className="blog-post-single-item-quote-icon-wrapper">
-                                <Icon
-                                    iconType="fontAwesome"
-                                    icon="faQuoteLeft"
-                                    iconSize="2x"
-                                    classNameOpt="blogCardQuote"
-                                />
-                            </div>
-                        </div>
-                        <EH60/>
-                        {renderBlogCardMainBody(type)}
-                    </>
-                )
-            case 'audioPost':
-                return (
-                    <>
-                        {renderBlogCardMainBody(type)}
-                    </>
-                )
-            case 'videoPost':
-                return (
-                    <>
-                        {renderBlogCardMainBody(type)}
-                    </>
-                )
+    const renderBlogPostSingleItemDataContent = (data) => {
+        if(data.loading && !data.error){
+            return(
+                <div 
+                    className="blog-post-single-item-loading-error" 
+                    style={{height: `${size.height/2}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
         }
-    }
+        if(!data.loading && !data.error){
+            return(
+                <>
+                    {renderBlogPostSingleItem(data.postBlogContent?.cardType)}
+                </>
+            )
+        }
+        if(!data.loading && data.error){
+            return(
+                <div 
+                    className="blog-post-single-item-loading-error" 
+                    style={{height: `${size.height/2}px`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
+                </div>
+            )
+        }
+    } 
 
     /**
      * Markup
@@ -714,7 +679,7 @@ export const BlogPostSingleItem = (props) => {
 
     return(
         <div className="blog-post-single-item" id="blogPostSingleItem">
-            {renderBlogPostSingleItem(props.blogListStandardPage.postBlogContent.cardType)}
+            {showContent ? renderBlogPostSingleItemDataContent(props.blogListStandardPage) : null}{}
         </div>
     );
 }
@@ -731,8 +696,9 @@ export default connect(
     (dispatch) => {
         return {
             fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
-            
+            fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
+            
             // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             // unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             // setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

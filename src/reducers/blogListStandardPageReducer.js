@@ -267,7 +267,14 @@ const activateListStandardBlogItem = (state, action) => {
         ...state,
         activeItem: updatedActiveItem
     }
-} 
+}
+
+const clearBlogListSingleItemStateForBlogListStandardPage = (state, action) => {
+    return {
+        ...state,
+        postBlogContent: {}
+    }
+}
 
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -303,7 +310,9 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return activatePageNumberForBlogListStandardPage(state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_ITEM:
             return activateListStandardBlogItem (state, action);
-
+        case actionTypes.CLEAR_BLOG_LIST_SINGLE_ITEM_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
+            return clearBlogListSingleItemStateForBlogListStandardPage (state, action);
+    
         default: 
             return state;
     }

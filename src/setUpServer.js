@@ -22254,6 +22254,375 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
     }
 });
 
+app.get('/api/blog-item/gallery-post/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const galleryPost = [
+        {
+            id: 1,
+            key: "blogListStandardPageCardId2",
+            cardId: "blogListStandardPageCardId2",
+            cardType: "galleryPost",
+            header: "Gallery Post.",
+            date: "11.03.2021",
+            loading: false,
+            numberOfLikes: 3,
+            numberOfComments: 2,
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/gallery-post/1",
+            imagesArray: [
+                    { 
+                        id: 1,
+                        key: "blogCardGalleryPostCoverImg1",
+                        isHover: "init",
+                        imageName: "christin-hume-mfB1B1s4sMc-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 2,
+                        key: "blogCardGalleryPostCoverImg2",
+                        isHover: "init",
+                        imageName: "drew-beamer-PL6ClUWwDEw-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 3,
+                        key: "blogCardGalleryPostCoverImg3",
+                        isHover: "init",
+                        imageName: "andrew-neel-cckf4TsHAuw-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 4,
+                        key: "blogCardGalleryPostCoverImg4",
+                        isHover: "init",
+                        imageName: "markus-spiske-SRNKol31s64-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    }
+            ],
+            swiper: {
+                slides: [],
+                _slides: [],
+                activeIndex: 0,
+                translate: 0,
+                transition: 0.45,
+                rerender: false
+            },
+        },
+        {
+            id: 2,
+            key: "blogListStandardPageCardId8",
+            cardId: "blogListStandardPageCardId8",
+            cardType: "galleryPost",
+            header: "Gallery Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 8,
+            numberOfComments: 8,
+            loading: false,
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/gallery-post/2",
+            imagesArray: [
+                    { 
+                        id: 1,
+                        key: "blogCardGalleryPostCoverImg5",
+                        isHover: "init",
+                        imageName: "green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 2,
+                        key: "blogCardGalleryPostCoverImg6",
+                        isHover: "init",
+                        imageName: "grovemade-DhZ5BpBeQEM-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 3,
+                        key: "blogCardGalleryPostCoverImg7",
+                        isHover: "init",
+                        imageName: "workperch-AiOzVFqlyZI-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 4,
+                        key: "blogCardGalleryPostCoverImg8",
+                        isHover: "init",
+                        imageName: "artem-sapegin-b18TRXc8UPQ-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    }
+            ],
+            swiper: {
+                slides: [],
+                _slides: [],
+                activeIndex: 0,
+                translate: 0,
+                transition: 0.45,
+                rerender: false
+            }
+        },
+        {
+            id: 3,
+            key: "blogListStandardPageCardId14",
+            cardId: "blogListStandardPageCardId14",
+            cardType: "galleryPost",
+            header: "Gallery Post 3.",
+            date: "17.03.2021",
+            numberOfLikes: 6,
+            numberOfComments: 4,
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/gallery-post/3",
+            imagesArray: [
+                    { 
+                        id: 1,
+                        key: "blogCardGalleryPostCoverImg9",
+                        isHover: "init",
+                        imageName: "grovemade-RvPDe41lYBA-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 2,
+                        key: "blogCardGalleryPostCoverImg10",
+                        isHover: "init",
+                        imageName: "kari-shea-pSmD3L7z8hs-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    },
+                    { 
+                        id: 3,
+                        key: "blogCardGalleryPostCoverImg11",
+                        isHover: "init",
+                        imageName: "kari-shea-tOVmshavtoo-unsplash-blog-card.png",
+                        folderName: "colorful",
+                        alt: "image"
+                    }
+            ],
+            swiper: {
+                slides: [],
+                _slides: [],
+                activeIndex: 0,
+                translate: 0,
+                transition: 0.45,
+                rerender: false
+            }
+        }
+    ]
+
+    let galleryPostObj = galleryPost.find(item => item.id === id);
+    if(!galleryPostObj) {
+        res.status(404).send("The blog post with the given ID was not found")
+    }else{
+        res.json(galleryPostObj);  
+    }
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

@@ -120,3 +120,9 @@ export function activateListStandardBlogItem(itemIsActive, itemName) {
         itemName: itemName
     };
 };
+
+export function clearBlogListSingleItemStateForBlogListStandardPage () {
+    return { 
+        type: actionTypes.CLEAR_BLOG_LIST_SINGLE_ITEM_STATE_FOR_BLOG_LIST_STANDARD_PAGE
+    };
+};

@@ -304,6 +304,10 @@ export const BlogListPostCard = (props) => {
   
         //   props.unmountComponent(null, null, "blogListPostCard", e.button);
           
+        // Clear Blog Post Single Item state
+
+        props.clearState();
+
         props.activateBlogItem("active", key);
         props.activateBlogCategory("deactive", "");
         props.clearActivityOfMenuItems();
