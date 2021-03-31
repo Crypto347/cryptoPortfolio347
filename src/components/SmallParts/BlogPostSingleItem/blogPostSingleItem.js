@@ -405,21 +405,29 @@ export const BlogPostSingleItem = (props) => {
                     </div>
                 );
             case 'galleryPost':
+                let setSwiperState;
+                switch(props.page){
+                    case 'blogListStandardPage':
+                        setSwiperState = props.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage;
+                        break;
+                    default:
+                        setSwiperState = props.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage;
+                        break;
+                }
                 return(
                     <div className="blog-post-single-item-gallery-wrapper">
-                        {/* {cardWidth !== 0 ? 
+                        {cardWidth !== 0 ? 
                         <Swiper
                             component={props.blogListStandardPage.postBlogContent.key}
                             contentArray={props.blogListStandardPage.postBlogContent.imagesArray}
-                            content={props.pageData}
+                            content={props.blogListStandardPage}
                             translateWidth={cardWidth}
                             showNumbersOfSlides={1}
-                            setSwiperState={props.setSwiperStateForBlogListStandardPage}
+                            setSwiperState={setSwiperState}
                             swiperData={props.blogListStandardPage.postBlogContent.swiper}
                             onlyImages
-                            pathToFindSwiper={props.blogListStandardPage.postBlogContent.key}
                             // autoPlay
-                        /> : null} */}
+                        /> : null}
                     </div>
                 );
             default: 
@@ -679,7 +687,7 @@ export const BlogPostSingleItem = (props) => {
 
     return(
         <div className="blog-post-single-item" id="blogPostSingleItem">
-            {showContent ? renderBlogPostSingleItemDataContent(props.blogListStandardPage) : null}{}
+            {showContent ? renderBlogPostSingleItemDataContent(props.blogListStandardPage) : null}
         </div>
     );
 }
@@ -698,7 +706,7 @@ export default connect(
             fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
             fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
-            
+            setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
             // setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             // unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             // setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),

@@ -99,6 +99,18 @@ export function setSwiperStateForBlogListStandardPage(slides, _slides, activeInd
     };
 };
 
+export function setSwiperStateOfBlogPostSingleItemForBlogListStandardPage(slides, _slides, activeIndex, translate, transition, rerender) {
+    return { 
+        type: actionTypes.SET_SWIPER_STATE_OF_BLOG_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE,
+        slides: slides,
+        _slides: _slides,
+        activeIndex: activeIndex,
+        translate: translate,
+        transition: transition,
+        rerender: rerender
+    };
+};
+
 export function initBlogPagination(numOfPages) {
     return { 
         type: actionTypes.INIT_BLOG_PAGINATION,

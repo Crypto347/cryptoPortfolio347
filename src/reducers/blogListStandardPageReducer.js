@@ -205,6 +205,25 @@ const setSwiperStateForBlogListStandardPage = (state, action) => {
     };
 }
 
+const setSwiperStateOfBlogPostSingleItemForBlogListStandardPage = (state, action) => {
+
+    let updatedSwiper = {
+        slides: action.slides,
+        _slides: action._slides,
+        activeIndex: action.activeIndex,
+        translate: action.translate,
+        transition: action.transition,
+        rerender: action.rerender
+    };
+    
+    return {
+        ...state,
+        postBlogContent: {
+            ...state.postBlogContent,
+            swiper: updatedSwiper
+        }
+    };
+}
 
 const initBlogPagination = (state, action) => {
     let updatedPagesArray = Utility.getArrayOfEmptyVal(action.numOfPages);
@@ -304,6 +323,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return blogPostSingleItemCategoryIsHoverForBlogListStandardPage (state, action);
         case actionTypes.SET_SWIPER_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return setSwiperStateForBlogListStandardPage(state, action);
+        case actionTypes.SET_SWIPER_STATE_OF_BLOG_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE:
+            return setSwiperStateOfBlogPostSingleItemForBlogListStandardPage (state, action);
         case actionTypes.INIT_BLOG_PAGINATION:
             return initBlogPagination (state, action);
         case actionTypes.ACTIVATE_PAGE_NUMBER_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -312,7 +333,7 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return activateListStandardBlogItem (state, action);
         case actionTypes.CLEAR_BLOG_LIST_SINGLE_ITEM_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return clearBlogListSingleItemStateForBlogListStandardPage (state, action);
-    
+
         default: 
             return state;
     }
