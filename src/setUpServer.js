@@ -22629,8 +22629,8 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
     const linkPost = [
         {
             id: 1,
-            key: "blogListStandardPageCardId3",
-            cardId: "linkPostId1",
+            key: "linkPostId1",
+            cardId: "blogListStandardPageCardId3",
             cardType: "linkPost",
             header: "Link Post.",
             date: "11.03.2021",
@@ -22984,6 +22984,373 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
         res.json(linkPostObj);  
     }
 });
+
+app.get('/api/blog-item/quote-post/:id', (req, res) => {
+    let id = parseInt(req.params.id);
+  
+    const quotePost = [
+        {
+            id: 1,
+            key: "quotePostId4",
+            cardId: "blogListStandardPageCardId4",
+            cardType: "quotePost",
+            header: "Quote Post.",
+            date: "11.03.2021",
+            numberOfLikes: 8,
+            numberOfComments: 2,
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
+            quoteAuthor: "James Newbie",
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/quote-post/1",
+            coverImage: {
+                id: 1,
+                key: "blogCardQuotePostCoverImg1",
+                isHover: "init",
+                imageName: "patrick-perkins-3wylDrjxH-E-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 2,
+            key: "quotePostId10",
+            cardId: "blogListStandardPageCardId4",
+            cardType: "quotePost",
+            header: "Quote Post 2.",
+            date: "17.03.2021",
+            numberOfLikes: 4,
+            numberOfComments: 2,
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
+            quoteAuthor: "James Newbie",
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/quote-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardQuotePostCoverImg2",
+                isHover: "init",
+                imageName: "elena-mozhvilo-girJ8wuVrCA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 3,
+            key: "quotePostId3",
+            cardId: "blogListStandardPageCardId4",
+            cardType: "quotePost",
+            header: "Quote Post 3.",
+            date: "17.03.2021",
+            numberOfLikes: 1,
+            numberOfComments: 1,
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
+            quoteAuthor: "James Newbie",
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/quote-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardQuotePostCoverImg3",
+                isHover: "init",
+                imageName: "fernando-lavin-fi5YSQfxbVk-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        },
+        {
+            id: 4,
+            key: "quotePostId3",
+            cardId: "blogListStandardPageCardId21",
+            cardType: "quotePost",
+            header: "Quote Post 4.",
+            date: "17.03.2021",
+            numberOfLikes: 7,
+            numberOfComments: 3,
+            quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
+            quoteAuthor: "James Newbie",
+            text: [
+                {
+                    type: "text",
+                    textPart: "Lorem ipsum dolor sit amet, ea his salutandi elaboraret repudiandae, ei sea utinam omittam voluptatibus. Qui dicta scaevola petentium ut. Eu eam laoreet vituperata, vim ex everti pertinacia vituperata. Offendit epicurei atomorum ut duo. Quod choro te quo, quodsi molestiae te cum. Ludus reformidans deterruisset eu mel. Ex tamquam euripidis vix. Autem harum habemus id eam. Eu cum natum etiam. No nam facilisi oportere vulputate. Causae splendide adipiscing et pri, ne pri alii neglegentur. Atomorum gubergren id vel, vitae ponderum intellegam no quo. Pro ne lorem labitur legendos, ad sed aeque audire, ex consul lucilius quo. Ea usu libris suscipit detraxit. Lorem epicurei consequat vim te. Has ad alia semper laboramus. Duo posse fastidii persequeris in, mel solum legendos in. Eum wisi utamur inciderint te, eum no apeirian lobortis. Zril exerci ne nec, duo prima possim apeirian id. Vix maiorum voluptua petentium et, vis at posse mnesarchum. Tollit melius numquam no pri. Vel ex audiam scripserit complectitur, duis tempor id vel. Sed primis vivendo definiebas ex, ne magna brute per. Nec et aliquando temporibus adversarium, per in mnesarchum quaerendum dissentiunt, eam ex veri error deserunt. Ne diam decore voluptaria duo, ad esse ludus nec. An vis movet expetendis definitionem, pro an liber iudicabit splendide, evertitur reformidans ius no. Meliore convenire cu pri. Esse laoreet imperdiet qui ad, per ex reque verear."
+                },
+                {
+                    type: "quote",
+                    textPart: "Productivity is being able to do things that you were never able to do before. Be the best that you can be. Think of many things, do one."
+                },
+                {
+                    type: "text",
+                    textPart: "Ut vim illud senserit partiendo, ex legere liberavisse pro. No verear aperiri vix. Graeco sadipscing philosophia sed ne, vivendum recteque intellegam ex mei. Sonet scripta eum ne. Vocent gubergren et vis, vis eu dicant exerci nostrud, no tota recusabo sed. Ne omnes quidam nec. Est eu sint natum scaevola, cu nisl partem officiis vel. Liber evertitur et per, vel ut iusto deserunt. Atqui laboramus te pri. Mundi quodsi lucilius ne vim. Eu hinc quaeque moderatius eam, ipsum omnium eu eum. Mei putent utamur ea. Quod quando prompta ea cum. Solet doming ornatus quo et, cu oratio legere everti qui. Sea eros solet ut, et amet nominati pri. Perfecto vituperata sed in, ne sea mutat denique interesset. Nec et purto modus suavitate. Ea nemore antiopam sententiae his, sed te purto moderatius, pri hinc eligendi consequuntur ne eum ne facilisis."
+                }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            path: "blog-list-standard-item/quote-post/4",
+            coverImage: {
+                id: 1,
+                key: "blogCardQuotePostCoverImg4",
+                isHover: "init",
+                imageName: "francesco-gallarotti-ruQHpukrN7c-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            }
+        }
+    ]
+
+    let quotePostObj = quotePost.find(item => item.id === id);
+    if(!quotePostObj) {
+        res.status(404).send("The blog post with the given ID was not found")
+    }else{
+        res.json(quotePostObj);  
+    }
+});
+
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
