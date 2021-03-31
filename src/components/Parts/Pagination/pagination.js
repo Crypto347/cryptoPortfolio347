@@ -11,7 +11,7 @@ import React, {
  * Styles
  */
 
-import './blogPagination.scss';
+import './pagination.scss';
 
 /**
  * Utility
@@ -22,10 +22,10 @@ import {
 } from '../../UtilityComponents';
 
 /**
- * BlogPagination component definition and export
+ * Pagination component definition and export
  */
 
-export const BlogPagination = (props) => {
+export const Pagination = (props) => {
 
     /**
      * State
@@ -199,5 +199,5 @@ export const BlogPagination = (props) => {
     );
 }
 
-export default BlogPagination;
+export default Pagination;
  

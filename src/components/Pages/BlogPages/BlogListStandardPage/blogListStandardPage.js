@@ -43,7 +43,7 @@ import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostC
 import BlogPostSingleItem from '../../../SmallParts/BlogPostSingleItem/blogPostSingleItem';
 import TagItem from '../../../SmallParts/TagItem/tagItem';
 import Icon from '../../../SmallParts/Icon/icon';
-import BlogPagination from '../../../Parts/BlogPagination/blogPagination';
+import Pagination from '../../../Parts/Pagination/pagination';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
 
@@ -296,7 +296,7 @@ export const BlogListStandardPage = (props) => {
             return(
                 <div className="blog-list-standard-page-data-wrapper">
                     {renderBlogListStandardPageData(data.items)}
-                    <BlogPagination
+                    <Pagination
                         page="blogListStandardPage"
                         activePageNumber={props.blogListStandardPage.activePageId}
                         pagesArray={props.blogListStandardPage.pagesArray}

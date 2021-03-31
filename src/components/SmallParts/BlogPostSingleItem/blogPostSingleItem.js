@@ -35,6 +35,7 @@ import TagItem from '../../SmallParts/TagItem/tagItem';
 import Audio from '../../Parts/Audio/audio';
 import Video from '../../Parts/Video/video'
 import Swiper from '../../../library/Swiper/swiper';
+import BlogNavigation from '../../Parts/BlogNavigation/blogNavigation';
 
 /**
  * Actions
@@ -75,22 +76,26 @@ import {
 import * as Utility from '../../../utility';
 
 /**
- * Constants
- */
-
-import * as Images from '../../../constants/images';
-
-import {
-    socialMediaIcons
-} from '../../../constants/socialMediaIcons';
-
-/**
  * Hooks
  */
 
  import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
+
+/**
+ * Images
+ */
+
+ import * as Images from '../../../constants/images';
+
+/**
+ * Constants
+ */
+
+import {
+    socialMediaIcons
+} from '../../../constants/socialMediaIcons';
 
 /**
  * BlogPostSingleItem component definition and export
@@ -659,6 +664,8 @@ export const BlogPostSingleItem = (props) => {
                 {renderTagsAndSocMedia()}
                 <EH70/>
                 {renderAuthorNote()}
+                <EH70/>
+                <BlogNavigation/>
             </>
         )
     }
