@@ -21216,14 +21216,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
             ],
             path: "blog-list-standard-item/video-post/1",
-            // coverImage: {
-            //     id: 1,
-            //     key: "blogCardVideoPostCoverImg1",
-            //     isHover: "init",
-            //     imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
-            //     folderName: "colorful",
-            //     alt: "image"
-            // }
+            coverImage: {
+                id: 1,
+                key: "blogCardVideoPostCoverImg1",
+                isHover: "init",
+                imageName: "videoCover_2.png",
+                folderName: "colorful",
+                alt: "image"
+            }
         },
         {
             id: 7,
@@ -21516,14 +21516,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/video-post/2",
-            // coverImage: {
-            //     id: 1,
-            //     key: "blogCardVideoPostCoverImg2",
-            //     isHover: "init",
-            //     imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
-            //     folderName: "colorful",
-            //     alt: "image"
-            // }
+            coverImage: {
+                id: 1,
+                key: "blogCardVideoPostCoverImg2",
+                isHover: "init",
+                imageName: "videoCover_3.png",
+                folderName: "colorful",
+                alt: "image"
+            }
         }, 
         {
             id: 13,
@@ -21807,14 +21807,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/video-post/3",
-            // coverImage: {
-            //     id: 1,
-            //     key: "blogCardVideoPostCoverImg3",
-            //     isHover: "init",
-            //     imageName: "fabian-irsara-67l-QujB14w-unsplash-blog-card.png",
-            //     folderName: "colorful",
-            //     alt: "image"
-            // }
+            coverImage: {
+                id: 1,
+                key: "blogCardVideoPostCoverImg3",
+                isHover: "init",
+                imageName: "videoCover_4.png",
+                folderName: "colorful",
+                alt: "image"
+            }
         },
         {
             id: 19,
@@ -23944,6 +23944,14 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/video-post/1",
+            coverImage: {
+                id: 1,
+                key: "blogCardVideoPostCoverImg1",
+                isHover: "init",
+                imageName: "videoCover_2.png",
+                folderName: "colorful",
+                alt: "image"
+            }
         },
         {
             id: 2,
@@ -24023,6 +24031,14 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/video-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardVideoPostCoverImg2",
+                isHover: "init",
+                imageName: "videoCover_3.png",
+                folderName: "colorful",
+                alt: "image"
+            }
         }, 
         {
             id: 3,
@@ -24102,6 +24118,14 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/video-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardVideoPostCoverImg3",
+                isHover: "init",
+                imageName: "videoCover_4.png",
+                folderName: "colorful",
+                alt: "image"
+            }
         }
     ]
 

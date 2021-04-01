@@ -946,6 +946,11 @@ export const BLOG_CARD_STANDARD_POST_COVER_IMG_3 = BlogCardStandardPostCoverImg3
  */
 
 import VideoCoverImg1 from '../videos/john-schnobrich-unsplash.jpg';
-
+import VideoCoverImg2 from '../videos/videoCover_2.png';
+import VideoCoverImg3 from '../videos/videoCover_3.png';
+import VideoCoverImg4 from '../videos/videoCover_4.png';
 
 export const VIDEO_COVER_IMG_1 = VideoCoverImg1;
+export const VIDEO_COVER_IMG_2 = VideoCoverImg2;
+export const VIDEO_COVER_IMG_3 = VideoCoverImg3;
+export const VIDEO_COVER_IMG_4 = VideoCoverImg4;

@@ -165,9 +165,9 @@ export const BlogNavigation = (props) => {
                 return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_3;
             case 'blogCardGalleryPostCoverImg1':
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
-            case 'blogCardAudioPostCoverImg5':
+            case 'blogCardGalleryPostCoverImg5':
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_5;
-            case 'blogCardAudioPostCoverImg9':
+            case 'blogCardGalleryPostCoverImg9':
                 return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_9;
             case 'blogCardLinkPostCoverImg1':
                 return Images.BLOG_CARD_LINK_POST_COVER_IMG_1;
@@ -195,6 +195,13 @@ export const BlogNavigation = (props) => {
                 return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_4;
             case 'blogCardAudioPostCoverImg5':
                 return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_5;
+            case 'blogCardVideoPostCoverImg1':
+                return Images.VIDEO_COVER_IMG_2;
+            case 'blogCardVideoPostCoverImg2':
+                return Images.VIDEO_COVER_IMG_3;
+            case 'blogCardVideoPostCoverImg3':
+                return Images.VIDEO_COVER_IMG_4;
+                
             default:
                 return "";
         }
