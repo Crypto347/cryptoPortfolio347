@@ -76,14 +76,6 @@ import {
 import * as Utility from '../../../utility';
 
 /**
- * Hooks
- */
-
- import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-/**
  * Images
  */
 
@@ -107,7 +99,6 @@ export const BlogPostSingleItem = (props) => {
      * State
      */
 
-    const size = useWindowSize();
     const [showContent, setShowContent] = useState(false);
     const [isHoveringBlogPostItemDate, setIsHoveringBlogPostItemDate] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
@@ -116,6 +107,7 @@ export const BlogPostSingleItem = (props) => {
     const [isHoveringBlogCardLink, setIsHoveringBlogCardLink] = useState("init");
     const [isHoveringBlogCardQuote, setIsHoveringBlogCardQuote] = useState("init");
     const [cardWidth, setCardWidth] = useState(0);
+    // const [heightOfContent, setHeightOfContent] = useState(0);
     
     /**
      * Methods
@@ -130,11 +122,12 @@ export const BlogPostSingleItem = (props) => {
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
-
-        // Set width of swiper
+     
+        // Set width of swiper and height of the content
 
         let blogPostSingleItem = document.getElementById("blogPostSingleItem");
         setCardWidth(blogPostSingleItem.offsetWidth);
+        // setHeightOfContent(blogPostSingleItem.offsetWidth);
 
         // Init blog post element data
 
@@ -171,6 +164,9 @@ export const BlogPostSingleItem = (props) => {
         // Show content after successful data fetch
 
         setShowContent(true);
+        return () =>  {
+            // Cleaning the unmounted component
+        }
 
     }, []);
 
@@ -373,18 +369,18 @@ export const BlogPostSingleItem = (props) => {
                 return(
                     <div className="blog-post-single-item-audio-wrapper">
                         <img 
-                            src={loadImg(props.blogListStandardPage.postBlogContent.coverImage.key)}
+                            src={loadImg(props.blogListStandardPage.postBlogContent.item.coverImage.key)}
                             // onMouseDown={(e) => onClickHandler(e)}
                         />
                         <Audio
-                            audioKey={props.blogListStandardPage.postBlogContent.audioKey}
+                            audioKey={props.blogListStandardPage.postBlogContent.item.audioKey}
                         />
                     </div>
                 );
             case 'videoPost':
                 return(
                     <div className="blog-post-single-item-video-wrapper">
-                        <Video videoKey={props.blogListStandardPage.postBlogContent.videoKey}/>
+                        <Video videoKey={props.blogListStandardPage.postBlogContent.item.videoKey}/>
                     </div>
                 );
             case 'galleryPost':
@@ -401,13 +397,13 @@ export const BlogPostSingleItem = (props) => {
                     <div className="blog-post-single-item-gallery-wrapper">
                         {cardWidth !== 0 ? 
                         <Swiper
-                            component={props.blogListStandardPage.postBlogContent.cardId}
-                            contentArray={props.blogListStandardPage.postBlogContent.imagesArray}
-                            content={props.blogListStandardPage}
+                            component={props.blogListStandardPage.postBlogContent.item.cardId}
+                            contentArray={props.blogListStandardPage.postBlogContent.item.imagesArray}
+                            content={props.blogListStandardPage.postBlogContent.item}
                             translateWidth={cardWidth}
                             showNumbersOfSlides={1}
                             setSwiperState={setSwiperState}
-                            swiperData={props.blogListStandardPage.postBlogContent.swiper}
+                            swiperData={props.blogListStandardPage.postBlogContent.item.swiper}
                             onlyImages
                             // autoPlay
                         /> : null}
@@ -415,7 +411,7 @@ export const BlogPostSingleItem = (props) => {
                 );
             default: 
                 return(
-                    <img src={loadImg(props.blogListStandardPage.postBlogContent.coverImage.key)}/>              
+                    <img src={loadImg(props.blogListStandardPage.postBlogContent.item.coverImage.key)}/>              
                 );
         }
     }
@@ -437,7 +433,7 @@ export const BlogPostSingleItem = (props) => {
                             classNameOpt="blogCardLike"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.blogListStandardPage.postBlogContent.numberOfLikes}</H15>
+                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.blogListStandardPage.postBlogContent.item.numberOfLikes}</H15>
                     </div>
                     <EW10/>
                     <div 
@@ -453,7 +449,7 @@ export const BlogPostSingleItem = (props) => {
                             classNameOpt="blogCardComment"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.blogListStandardPage.postBlogContent.numberOfComments}</H15>
+                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.blogListStandardPage.postBlogContent.item.numberOfComments}</H15>
                     </div>
                     <EW10/>
                     <div className="blog-post-single-item-info-categories">
@@ -464,7 +460,7 @@ export const BlogPostSingleItem = (props) => {
                             classNameOpt="blogCardCategory"
                         />
                         &nbsp;
-                        {renderCategories(props.blogListStandardPage.postBlogContent.categories)}
+                        {renderCategories(props.blogListStandardPage.postBlogContent.item.categories)}
                     </div>
                 </div>
             </div>
@@ -520,7 +516,7 @@ export const BlogPostSingleItem = (props) => {
         return(
             <div className="blog-post-single-item-tags-and-soc-media-wrapper">
                 <div className="blog-post-single-item-tags-part-wrapper">
-                   {renderTags(props.blogListStandardPage.postBlogContent.tags)}
+                   {renderTags(props.blogListStandardPage.postBlogContent.item.tags)}
                 </div>              
                 <div 
                     className="blog-post-single-item-soc-med-part-wrapper"
@@ -605,24 +601,24 @@ export const BlogPostSingleItem = (props) => {
         )
     }
 
-    const renderBlogPostSingleItem = (type) => {
+    const renderBlogPostSingleItem = (data) => {
         return(
             <>
-                {renderCardCover(type)}
+                {renderCardCover(data.cardType)}
                 <EH60/>
                 <div className="blog-post-single-item-date-and-header-wrapper">
                     <div
                         onMouseEnter={() => handleMouseEnter(`blogPostItemDate`)} 
                         onMouseLeave={() => handleMouseLeave(`blogPostItemDate`)} 
                     >
-                        <H15 className={renderClassName("blogPostItemDate", isHoveringBlogPostItemDate)}>{props.blogListStandardPage.postBlogContent.date}</H15>
+                        <H15 className={renderClassName("blogPostItemDate", isHoveringBlogPostItemDate)}>{data.date}</H15>
                     </div>
-                    <H35 className="h35-black-poppins">{props.blogListStandardPage.postBlogContent.header}</H35>
+                    <H35 className="h35-black-poppins">{data.header}</H35>
                 </div>
                 <EH20/>
                 {renderBlogCardInfo()}
                 <EH30/>
-                {renderParagraphs(props.blogListStandardPage.postBlogContent.text)}
+                {renderParagraphs(data.text)}
                 <EH70/>
                 {renderTagsAndSocMedia()}
                 <EH70/>
@@ -638,7 +634,6 @@ export const BlogPostSingleItem = (props) => {
                     clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                     activateBlogItem={props.activateListStandardBlogItem}
                     activateBlogCategory={props.activateListStandardBlogCategory}
-
                 />
             </>
         )
@@ -649,7 +644,7 @@ export const BlogPostSingleItem = (props) => {
             return(
                 <div 
                     className="blog-post-single-item-loading-error" 
-                    style={{height: `${size.height/2}px`}}
+                    style={{height: `100%`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -658,7 +653,7 @@ export const BlogPostSingleItem = (props) => {
         if(!data.loading && !data.error){
             return(
                 <>
-                    {renderBlogPostSingleItem(data.postBlogContent?.cardType)}
+                    {renderBlogPostSingleItem(data.item)}
                 </>
             )
         }
@@ -666,7 +661,7 @@ export const BlogPostSingleItem = (props) => {
             return(
                 <div 
                     className="blog-post-single-item-loading-error" 
-                    style={{height: `${size.height/2}px`}}
+                    style={{height: `100%`}}
                 >
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>
@@ -680,7 +675,7 @@ export const BlogPostSingleItem = (props) => {
 
     return(
         <div className="blog-post-single-item" id="blogPostSingleItem">
-            {showContent ? renderBlogPostSingleItemDataContent(props.blogListStandardPage) : null}
+            {showContent ? renderBlogPostSingleItemDataContent(props.blogListStandardPage.postBlogContent) : null}
         </div>
     );
 }

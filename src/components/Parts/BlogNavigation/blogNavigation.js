@@ -74,7 +74,9 @@ export const BlogNavigation = (props) => {
 
         return () =>  {
             // Cleaning the unmounted component
+
         }
+
     }, [props.itemKey,
         props.data.items.length]);
 

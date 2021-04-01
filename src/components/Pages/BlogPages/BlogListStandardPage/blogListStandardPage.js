@@ -286,7 +286,7 @@ export const BlogListStandardPage = (props) => {
             return(
                 <div 
                     className="blog-list-standard-page-loading-error" 
-                    style={{height: `${size.height/2}px`}}
+                    style={{height: `100%`}}
                 >
                     <Loading color="black"/>
                 </div>
@@ -310,7 +310,7 @@ export const BlogListStandardPage = (props) => {
             return(
                 <div 
                     className="blog-list-standard-page-loading-error" 
-                    style={{height: `${size.height/2}px`}}
+                    style={{height: `100%`}}
                 >
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>

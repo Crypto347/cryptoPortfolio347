@@ -17,7 +17,16 @@ import uuid from "uuid";
 
 export const initialState = {
     items: [],
-    postBlogContent: {},
+    postBlogContent: {
+        item: {},
+        loading: false,
+        error: null,
+    },
+    navigation: {
+        items: [],
+        loading: false,
+        error: null,
+    },
     loading: false,
     error: null,
     inputForm: {},
@@ -38,11 +47,7 @@ export const initialState = {
     tagsList: [],
     activePageId: 1,
     pagesArray: [],
-    navigation: {
-        items: [],
-        loading: false,
-        error: null,
-    }
+   
 }
 
 const fetchBlogListStandardPageDataBegin = (state, action) => {
@@ -73,25 +78,34 @@ const fetchBlogListStandardPageDataFailur = (state, action) => {
 const fetchPostBlogDataBegin = (state, action) => {
     return {
         ...state,
-        loading: true,
-        error: null
+        postBlogContent: {
+            ...state.postBlogContent,
+            loading: true,
+            error: null
+        }
     };
 }
 
 const fetchPostBlogDataSuccess = (state, action) => {    
     return {
         ...state,
-        loading: false,
-        postBlogContent: action.obj
+        postBlogContent: {
+            ...state.postBlogContent,
+            loading: false,
+            item: action.obj
+        }
     };
 }
 
 const fetchPostBlogDataFailur = (state, action) => {
     return {
         ...state,
-        loading: false,
-        error: action.err,
-        postBlogContent: {}
+        postBlogContent: {
+            ...state.postBlogContent,
+            loading: false,
+            error: action.err,
+            item: {}
+        }
     };
 }
 
@@ -200,7 +214,7 @@ const blogListCardCategoryIsHoverForBlogListStandardPage = (state, action) => {
 }
 
 const blogPostSingleItemCategoryIsHoverForBlogListStandardPage = (state, action) => {
-    let updatedCategories = [...state.postBlogContent.categories];
+    let updatedCategories = [...state.postBlogContent.item.categories];
 
     let category = {...updatedCategories.find(item => item.key === action.categoryKey), isHover: action.val};
     let categoryIndex = updatedCategories.findIndex(item => item.key === action.categoryKey);
@@ -211,7 +225,10 @@ const blogPostSingleItemCategoryIsHoverForBlogListStandardPage = (state, action)
         ...state,
         postBlogContent: {
             ...state.postBlogContent,
-            categories: updatedCategories
+            item: {
+                ...state.postBlogContent.item,
+                categories: updatedCategories
+            }
         }
     }
 }
@@ -259,7 +276,10 @@ const setSwiperStateOfBlogPostSingleItemForBlogListStandardPage = (state, action
         ...state,
         postBlogContent: {
             ...state.postBlogContent,
-            swiper: updatedSwiper
+            item: {
+                ...state.postBlogContent.item,
+                swiper: updatedSwiper
+            }
         }
     };
 }
@@ -330,7 +350,11 @@ const activateListStandardBlogItem = (state, action) => {
 const clearBlogListSingleItemStateForBlogListStandardPage = (state, action) => {
     return {
         ...state,
-        postBlogContent: {}
+        postBlogContent: {
+            item: {},
+            loading: false,
+            error: null,    
+        }
     }
 }
 
