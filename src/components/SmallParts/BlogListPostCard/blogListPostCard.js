@@ -274,44 +274,23 @@ export const BlogListPostCard = (props) => {
 
         if(e.button === 2) return;
 
-        // Storing data in local storage 
+        if(e.button !== 1){
+            /**
+             *  Clear unnecessary information of the unmounted component, 
+             *  and render the data of the selected blog item on left mouse click 
+             */ 
 
-        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
-        //   localStorage.setItem("pageHG", "blogListStandardPage");
+            props.clearState();
+            props.clearActivityOfMenuItems();
+            props.activateBlogItem("active", key);
+            props.activateBlogCategory("deactive", "");
+            props.history.push(`/crypto-portfolio/${path}`);
 
-        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
-        //   localStorage.setItem("page", "blogListStandardPage");
-          
-          // Clear archive data 
-  
-        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
-        //       props.clearArchiveData();
-        //   }
-  
-          if(e.button !== 1){
-              /**
-               * Add fading effect on the unmounted component and remember 
-               * information of the unmounted component on left mouse click 
-               */ 
-  
-              props.setUnmountComponentValues(false, path);
-          }else{
-              // Remember information of the unmounted component on scroll wheel click 
-              
-              props.setUnmountComponentValues(false, path);
-          }
-          // Fire up unmountComponent epic
-  
-        //   props.unmountComponent(null, null, "blogListPostCard", e.button);
-          
-        // Clear Blog Post Single Item state
+        }else{
+            // Open selected blog item in a new window on scroll wheel click
 
-        props.clearState();
-
-        props.activateBlogItem("active", key);
-        props.activateBlogCategory("deactive", "");
-        props.clearActivityOfMenuItems();
-        props.history.push(`/crypto-portfolio/${path}`);
+            window.open(`/crypto-portfolio/${path}` , "_blank");
+        }   
     }
 
     const renderCardCover = (type) => {
