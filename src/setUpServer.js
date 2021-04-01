@@ -21001,6 +21001,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                 
             ],
             path: "blog-list-standard-item/gallery-post/1",
+            coverImage: {
+                id: 1,
+                key: "blogCardGalleryPostCoverImg1",
+                isHover: "init",
+                imageName: "christin-hume-mfB1B1s4sMc-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            },
             imagesArray: [
                     { 
                         id: 1,
@@ -21293,6 +21301,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/gallery-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardGalleryPostCoverImg5",
+                isHover: "init",
+                imageName: "green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            },
             imagesArray: [
                     { 
                         id: 1,
@@ -21584,31 +21600,39 @@ app.post('/api/blog-list-standard', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/gallery-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardGalleryPostCoverImg9",
+                isHover: "init",
+                imageName: "grovemade-RvPDe41lYBA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            },
             imagesArray: [
-                    { 
-                        id: 1,
-                        key: "blogCardGalleryPostCoverImg9",
-                        isHover: "init",
-                        imageName: "grovemade-RvPDe41lYBA-unsplash-blog-card.png",
-                        folderName: "colorful",
-                        alt: "image"
-                    },
-                    { 
-                        id: 2,
-                        key: "blogCardGalleryPostCoverImg10",
-                        isHover: "init",
-                        imageName: "kari-shea-pSmD3L7z8hs-unsplash-blog-card.png",
-                        folderName: "colorful",
-                        alt: "image"
-                    },
-                    { 
-                        id: 3,
-                        key: "blogCardGalleryPostCoverImg11",
-                        isHover: "init",
-                        imageName: "kari-shea-tOVmshavtoo-unsplash-blog-card.png",
-                        folderName: "colorful",
-                        alt: "image"
-                    }
+                { 
+                    id: 1,
+                    key: "blogCardGalleryPostCoverImg9",
+                    isHover: "init",
+                    imageName: "grovemade-RvPDe41lYBA-unsplash-blog-card.png",
+                    folderName: "colorful",
+                    alt: "image"
+                },
+                { 
+                    id: 2,
+                    key: "blogCardGalleryPostCoverImg10",
+                    isHover: "init",
+                    imageName: "kari-shea-pSmD3L7z8hs-unsplash-blog-card.png",
+                    folderName: "colorful",
+                    alt: "image"
+                },
+                { 
+                    id: 3,
+                    key: "blogCardGalleryPostCoverImg11",
+                    isHover: "init",
+                    imageName: "kari-shea-tOVmshavtoo-unsplash-blog-card.png",
+                    folderName: "colorful",
+                    alt: "image"
+                }
             ],
             swiper: {
                 slides: [],
@@ -22351,6 +22375,14 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/gallery-post/1",
+            coverImage: {
+                id: 1,
+                key: "blogCardGalleryPostCoverImg1",
+                isHover: "init",
+                imageName: "christin-hume-mfB1B1s4sMc-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            },
             imagesArray: [
                     { 
                         id: 1,
@@ -22472,6 +22504,14 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/gallery-post/2",
+            coverImage: {
+                id: 1,
+                key: "blogCardGalleryPostCoverImg5",
+                isHover: "init",
+                imageName: "green-chameleon-WvuTnXz1hSc-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            },
             imagesArray: [
                     { 
                         id: 1,
@@ -22592,6 +22632,14 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
                 }
             ],
             path: "blog-list-standard-item/gallery-post/3",
+            coverImage: {
+                id: 1,
+                key: "blogCardGalleryPostCoverImg9",
+                isHover: "init",
+                imageName: "grovemade-RvPDe41lYBA-unsplash-blog-card.png",
+                folderName: "colorful",
+                alt: "image"
+            },
             imagesArray: [
                     { 
                         id: 1,

@@ -64,8 +64,7 @@ export const BlogNavigation = (props) => {
     useEffect(() => {
         // Fetch previous and next post using the current post key
 
-        // if(props.itemKey !== "")
-         props.fetchPrevAndNextPostForBlogListItem(props.page,"blogListStandardPageCardId1");
+        if(props.itemKey !== "") props.fetchPrevAndNextPostForBlogListItem(props.page, props.itemKey);
 
         if(props.data.items.length !== 0) setShowComponent(true);
 
@@ -156,6 +155,51 @@ export const BlogNavigation = (props) => {
         // props.unmountComponent(null, null,  props.page, e.button);
     }
 
+    const loadImg = (imgKey) => {
+        switch(imgKey){
+            case 'blogCardStandardPostCoverImg1':
+                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_1;
+            case 'blogCardStandardPostCoverImg2':
+                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_2;
+            case 'blogCardStandardPostCoverImg3':
+                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_3;
+            case 'blogCardGalleryPostCoverImg1':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
+            case 'blogCardAudioPostCoverImg5':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_5;
+            case 'blogCardAudioPostCoverImg9':
+                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_9;
+            case 'blogCardLinkPostCoverImg1':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_1;
+            case 'blogCardLinkPostCoverImg2':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_2;
+            case 'blogCardLinkPostCoverImg3':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_3;
+            case 'blogCardLinkPostCoverImg4':
+                return Images.BLOG_CARD_LINK_POST_COVER_IMG_4;
+            case 'blogCardQuotePostCoverImg1':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
+            case 'blogCardQuotePostCoverImg2':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_2;
+            case 'blogCardQuotePostCoverImg3':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_3;
+            case 'blogCardQuotePostCoverImg4':
+                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_4;
+            case 'blogCardAudioPostCoverImg1':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_1;
+            case 'blogCardAudioPostCoverImg2':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_2;
+            case 'blogCardAudioPostCoverImg3':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_3;
+            case 'blogCardAudioPostCoverImg4':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_4;
+            case 'blogCardAudioPostCoverImg5':
+                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_5;
+            default:
+                return "";
+        }
+    }
+
     const updateHeader = (str) => {
         let _str = str.split("");
         if(_str[_str.length-1] === "."){
@@ -165,12 +209,11 @@ export const BlogNavigation = (props) => {
     }
 
     const renderBlogNavigationContent = (arr) => {
-        
         return(
             <>
                 <div className="blog-navigation-prev">
                     <div className="blog-navigation-image">
-                        <img src={Images.PHOTO_19}/>
+                        <img src={loadImg(arr[0].coverImage?.key)}/>
                     </div>
                     <div className="blog-navigation-info-wrapper">
                         <H15 className="h15-black-lustria">{updateHeader(arr[0].header)}</H15>
@@ -195,7 +238,7 @@ export const BlogNavigation = (props) => {
                         </div>
                     </div>
                     <div className="blog-navigation-image">
-                        <img src={Images.PHOTO_19}/>
+                        <img src={loadImg(arr[1].coverImage?.key)}/>
                     </div>
                 </div>
             </>
