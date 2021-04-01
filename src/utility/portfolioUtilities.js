@@ -9,7 +9,7 @@ export const findPathOfIds = (path) => {
     //First element of updatedPath array
     
     switch(updatedPath[0]){
-        case 'portfolio-gallery':
+        // case 'portfolio-gallery':
         case 'portfolio-category':
         case 'about-us':
         case 'process':
@@ -17,6 +17,8 @@ export const findPathOfIds = (path) => {
         case 'list-standard-blog-category':
         case 'blog-list-standard-item':
             return [];
+        case 'portfolio-gallery':
+            return [1, 12, 125];
         case 'two-columns':
             return [2, 22, 221];
         case 'two-columns-wide':

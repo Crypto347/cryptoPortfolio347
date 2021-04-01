@@ -135,7 +135,7 @@ export const Main = (props) => {
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
-
+        
         let blogCategory = Utility.activateBlogCategory(path);
 
         if(blogCategory.page === "listStandardBlogCategory"){
@@ -144,8 +144,13 @@ export const Main = (props) => {
 
         // Init state for fading effect and remember all necessary information
 
-        props.setArchiveCategory(localStorage.getItem('archiveCategory'));
-        props.setUnmountComponentValues(false, '', localStorage.getItem('page'));
+        props.setArchiveCategory(localStorage.getItem('archiveCategoryHG'));
+        props.setUnmountComponentValues(false, '', localStorage.getItem('pageHG'));
+
+
+        // Previous location pathname
+
+        let prevLocation = props.location.pathname;
 
         /**
          * Set all necessary information when changing location
@@ -171,15 +176,25 @@ export const Main = (props) => {
             }
 
             // Activate menu item according to the location pathname
+            let prevLocationPathOfIds;
 
+            if(action === "POP"){
+                prevLocationPathOfIds = Utility.findPathOfIds(prevLocation.slice(18));
+            }
             path = location.pathname.slice(18);
             pathOfIds = Utility.findPathOfIds(path);
-            props.clearActivityOfMenuItems();
+            props.clearActivityOfMenuItems(prevLocationPathOfIds); // to clear nested active properties in menuItems array
             props.activateMenuItem(pathOfIds);
             console.log("activateMenuItem", pathOfIds);
-            
+
             // Close photoViewer for all pages
             props.photoViewerOpen("all", false, []);
+
+            /** 
+             * Remember previous pathname
+             */
+
+            prevLocation = location.pathname;
         });
     }, []);
 

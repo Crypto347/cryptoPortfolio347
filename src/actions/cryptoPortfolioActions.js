@@ -112,9 +112,10 @@ export function activateMenuItem(pathOfIds) {
     };
 };
 
-export function clearActivityOfMenuItems() {
+export function clearActivityOfMenuItems(prevLocationPathOfIds) {
     return { 
-        type: actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS
+        type: actionTypes.CLEAR_ACTIVITY_OF_MENU_ITEMS,
+        prevLocationPathOfIds: prevLocationPathOfIds
     };
 };
 

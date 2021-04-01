@@ -179,7 +179,7 @@ export const Toolbar = (props) => {
                         if(currentItemId === pathOfIds[1]){
                             return;
                         }else{
-                            console.log(itemId);
+                            console.log("itemId",itemId);
                             if(itemId === "blogListStandard" && props.blogListStandardPage.activeCategory.activated === "active"){
                                 props.activateListStandardBlogCategory("deactive", "");
                                 props.setUnmountComponentValues(false, path);

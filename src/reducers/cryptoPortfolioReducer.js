@@ -570,7 +570,7 @@ const activateMenuItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[0]),
             active: true
         }
-        
+    
         let itemIndex = updatedMenuItems
             .findIndex(item => item.id === action.pathOfIds[0]);
             
@@ -610,7 +610,7 @@ const activateMenuItem = (state, action) => {
             .find(item => item.id === action.pathOfIds[1]).array
             .splice(optionItemIndex, 1, optionItem);
     }
- 
+    
     if(action.pathOfIds.length === 4){
         let item = {
             ...updatedMenuItems
@@ -688,40 +688,30 @@ const activateMenuItem = (state, action) => {
 const clearActivityOfMenuItems = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
 
-    let activeItemPath = [];
-    // updatedMenuItems.map((el, i) => {
-    //     updatedMenuItems[i].active = false;
-    //     updatedMenuItems[i].options.map((el2, i2) => {
-    //         updatedMenuItems[i].options[i2].active = false;
-    //         updatedMenuItems[i].options[i2].array.map((el3, i3) => {
-    //             updatedMenuItems[i].options[i2].array[i3].active = false;
-    //             updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
-    //                 updatedMenuItems[i].options[i2].array[i3].subOptions[i4].active = false;
-    //             })
-    //         })
-    //     })
-    // })
+    let activeItemPath = action.prevLocationPathOfIds ? action.prevLocationPathOfIds : [];
 
-    updatedMenuItems.map((el, i) => {
-        if(el.active === true){
-            activeItemPath.push(el.id);
-            updatedMenuItems[i].options.map((el2, i2) => {
-                if(el2.active === true){
-                    activeItemPath.push(el2.id);
-                    updatedMenuItems[i].options[i2].array.map((el3, i3) => {
-                        if(el3.active === true){
-                            activeItemPath.push(el3.id);
-                            updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
-                                if(el4.active === true){
-                                    activeItemPath.push(el4.id);
-                                }
-                            })
-                        }
-                    })
-                }
-            })
-        }
-    });
+    if(activeItemPath.length === 0){
+        updatedMenuItems.map((el, i) => {
+            if(el.active === true){
+                activeItemPath.push(el.id);
+                updatedMenuItems[i].options.map((el2, i2) => {
+                    if(el2.active === true){
+                        activeItemPath.push(el2.id);
+                        updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+                            if(el3.active === true){
+                                activeItemPath.push(el3.id);
+                                updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+                                    if(el4.active === true){
+                                        activeItemPath.push(el4.id);
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        });
+    }
     
     if(activeItemPath.length !== 0){
         let item = updatedMenuItems.filter(item => item.id === +activeItemPath[0]);
