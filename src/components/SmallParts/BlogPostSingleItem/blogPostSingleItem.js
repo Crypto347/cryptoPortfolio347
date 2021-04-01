@@ -669,6 +669,7 @@ export const BlogPostSingleItem = (props) => {
                     page={props.page}
                     itemKey={props.blogListStandardPage.activeItem.itemKey}
                     fetchPrevAndNextPostForBlogListItem={props.fetchPrevAndNextPostForBlogListItem}
+                    data={props.blogListStandardPage.navigation}
                 />
             </>
         )

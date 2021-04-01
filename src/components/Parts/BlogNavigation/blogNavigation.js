@@ -13,6 +13,13 @@ import React, {
 
 import './blogNavigation.scss';
 
+
+/**
+ * Components
+ */
+
+import Loading from '../../SmallParts/Loading/loading';
+
 /**
  * Utility
  */
@@ -21,6 +28,14 @@ import {
     H15,
     EH10
 } from '../../UtilityComponents';
+
+/**
+ * Hooks
+ */
+
+ import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
  * Images
@@ -38,9 +53,10 @@ export const BlogNavigation = (props) => {
      * State
      */
 
+    const size = useWindowSize();
     const [isHoveringNavigationPrevDate, setIsHoveringNavigationPrevDate] = useState("init");
     const [isHoveringNavigationNextDate, setIsHoveringNavigationNextDate] = useState("init");
-
+    const [showComponent, setShowComponent] = useState(false);
     /**
      * Methods
      */
@@ -48,14 +64,16 @@ export const BlogNavigation = (props) => {
     useEffect(() => {
         // Fetch previous and next post using the current post key
 
-        if(props.itemKey !== ""){
-            props.fetchPrevAndNextPostForBlogListItem(props.page, props.itemKey)
-        }
+        // if(props.itemKey !== "")
+         props.fetchPrevAndNextPostForBlogListItem(props.page,"blogListStandardPageCardId1");
+
+        if(props.data.items.length !== 0) setShowComponent(true);
 
         return () =>  {
             // Cleaning the unmounted component
         }
-    }, [props.itemKey]);
+    }, [props.itemKey,
+        props.data.items.length]);
 
     const handleMouseEnter = (opt, key) => {
         switch(opt){
@@ -138,23 +156,81 @@ export const BlogNavigation = (props) => {
         // props.unmountComponent(null, null,  props.page, e.button);
     }
 
-    const renderPages = () => {
+    const updateHeader = (str) => {
+        let _str = str.split("");
+        if(_str[_str.length-1] === "."){
+            _str.pop();
+        }
+        return _str.join("")
+    }
+
+    const renderBlogNavigationContent = (arr) => {
+        
         return(
-            <div className="pages-wrapper">
-                {props.pagesArray.map((el, i) => {
-                    return(
-                        <div 
-                            key={i}
-                            className="page"
-                            onMouseDown={(e) => onPageClickHandler(e, "pageNumber", el.id)}
+            <>
+                <div className="blog-navigation-prev">
+                    <div className="blog-navigation-image">
+                        <img src={Images.PHOTO_19}/>
+                    </div>
+                    <div className="blog-navigation-info-wrapper">
+                        <H15 className="h15-black-lustria">{updateHeader(arr[0].header)}</H15>
+                        <EH10/>
+                        <div
+                            onMouseEnter={() => handleMouseEnter(`navigationPrevDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`navigationPrevDate`)}
                         >
-                            <H15 className={renderClassName("page", null, el.active)}>{el.id}</H15>
+                            <H15 className={renderClassName("navigationPrevDate", isHoveringNavigationPrevDate)}>{arr[0].date}</H15>
                         </div>
-                    )
-                })}
-            </div>
+                    </div>
+                </div>
+                <div className="blog-navigation-next">
+                    <div className="blog-navigation-info-wrapper">
+                        <H15 className="h15-black-lustria">{updateHeader(arr[1].header)}</H15>
+                        <EH10/>
+                        <div
+                            onMouseEnter={() => handleMouseEnter(`navigationNextDate`)} 
+                            onMouseLeave={() => handleMouseLeave(`navigationNextDate`)}
+                        >
+                            <H15 className={renderClassName("navigationNextDate", isHoveringNavigationNextDate)}>{arr[1].date}</H15>
+                        </div>
+                    </div>
+                    <div className="blog-navigation-image">
+                        <img src={Images.PHOTO_19}/>
+                    </div>
+                </div>
+            </>
         )
     }
+
+    const renderBlogNavigationDataContent = (data) => {
+        if(data.loading && !data.error){
+            return(
+                <div 
+                    className="blog-post-single-item-loading-error" 
+                    style={{height: `${size.height/2}px`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!data.loading && !data.error){
+            return(
+                <>
+                    {renderBlogNavigationContent(data.items)}
+                </>
+            )
+        }
+        if(!data.loading && data.error){
+            return(
+                <div 
+                    className="blog-post-single-item-loading-error" 
+                    style={{height: `${size.height/2}px`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
+                </div>
+            )
+        }
+    } 
     
     /**
      * Markup
@@ -162,36 +238,7 @@ export const BlogNavigation = (props) => {
 
     return(
         <div className="blog-navigation">
-            <div className="blog-navigation-prev">
-                <div className="blog-navigation-image">
-                    <img src={Images.PHOTO_19}/>
-                </div>
-                <div className="blog-navigation-info-wrapper">
-                    <H15 className="h15-black-lustria">Cum offendit</H15>
-                    <EH10/>
-                    <div
-                        onMouseEnter={() => handleMouseEnter(`navigationPrevDate`)} 
-                        onMouseLeave={() => handleMouseLeave(`navigationPrevDate`)}
-                    >
-                        <H15 className={renderClassName("navigationPrevDate", isHoveringNavigationPrevDate)}>11.11.1111</H15>
-                    </div>
-                </div>
-            </div>
-            <div className="blog-navigation-next">
-                <div className="blog-navigation-info-wrapper">
-                    <H15 className="h15-black-lustria">Cum offendit</H15>
-                    <EH10/>
-                    <div
-                        onMouseEnter={() => handleMouseEnter(`navigationNextDate`)} 
-                        onMouseLeave={() => handleMouseLeave(`navigationNextDate`)}
-                    >
-                        <H15 className={renderClassName("navigationNextDate", isHoveringNavigationNextDate)}>11.11.1111</H15>
-                    </div>
-                </div>
-                <div className="blog-navigation-image">
-                    <img src={Images.PHOTO_19}/>
-                </div>
-            </div>
+            {showComponent ? renderBlogNavigationDataContent(props.data) : null}
         </div>
     );
 }
