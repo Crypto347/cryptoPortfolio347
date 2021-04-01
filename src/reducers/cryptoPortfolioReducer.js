@@ -689,6 +689,18 @@ const clearActivityOfMenuItems = (state, action) => {
     let updatedMenuItems = [...state.menuItems];
 
     let activeItemPath = [];
+    // updatedMenuItems.map((el, i) => {
+    //     updatedMenuItems[i].active = false;
+    //     updatedMenuItems[i].options.map((el2, i2) => {
+    //         updatedMenuItems[i].options[i2].active = false;
+    //         updatedMenuItems[i].options[i2].array.map((el3, i3) => {
+    //             updatedMenuItems[i].options[i2].array[i3].active = false;
+    //             updatedMenuItems[i].options[i2].array[i3].subOptions.map((el4, i4) => {
+    //                 updatedMenuItems[i].options[i2].array[i3].subOptions[i4].active = false;
+    //             })
+    //         })
+    //     })
+    // })
 
     updatedMenuItems.map((el, i) => {
         if(el.active === true){
@@ -710,7 +722,7 @@ const clearActivityOfMenuItems = (state, action) => {
             })
         }
     });
-
+    
     if(activeItemPath.length !== 0){
         let item = updatedMenuItems.filter(item => item.id === +activeItemPath[0]);
         if(item.length !== 0){
@@ -720,7 +732,6 @@ const clearActivityOfMenuItems = (state, action) => {
             updatedMenuItems.splice(itemIndex, 1, item);
           
         }
-        
         let item2 = item.options.filter(item => item.id === +activeItemPath[1]);
         if(item2.length !== 0){
             let itemIndex2 = item.options.findIndex(item => item.id === +activeItemPath[1]);
@@ -735,7 +746,6 @@ const clearActivityOfMenuItems = (state, action) => {
     
             item2.array.splice(itemIndex3, 1, item3);
         }
-
         let item4 = item3.subOptions.filter(item => item.id === +activeItemPath[3]);
         if(item4.length !== 0){
             let itemIndex4 = item3.subOptions.findIndex(item => item.id === +activeItemPath[3]);

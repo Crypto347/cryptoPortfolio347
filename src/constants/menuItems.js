@@ -23,7 +23,7 @@ export const menuItemsArray = [
                         text: "Main Home",
                         itemId: "mainHome",
                         path: "",
-                        active: true,
+                        active: false,
                         isHover: "init",
                         subOptions: []
         
