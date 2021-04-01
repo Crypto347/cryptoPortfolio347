@@ -122,7 +122,15 @@ export const BlogPostSingleItem = (props) => {
      */
    
     useEffect(() => {
-       
+
+        // Init state for fading effect when component will unmount
+
+        // props.setUnmountComponentValues(false, "");
+
+        // Scroll to the top of the screen
+
+        window.scrollTo(0, 0);
+
         // Set width of swiper
 
         let blogPostSingleItem = document.getElementById("blogPostSingleItem");
@@ -359,48 +367,6 @@ export const BlogPostSingleItem = (props) => {
         }
     }
 
-    const onClickHandler = (e, path, key) => {
-
-        // Do nothing on right mouse click 
-
-        if(e.button === 2) return;
-
-        // Storing data in local storage 
-
-        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
-        //   localStorage.setItem("pageHG", "blogListStandardPage");
-
-        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
-        //   localStorage.setItem("page", "blogListStandardPage");
-          
-          // Clear archive data 
-  
-        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
-        //       props.clearArchiveData();
-        //   }
-  
-          if(e.button !== 1){
-              /**
-               * Add fading effect on the unmounted component and remember 
-               * information of the unmounted component on left mouse click 
-               */ 
-  
-            //   props.setUnmountComponentValues(true, path);
-          }else{
-              // Remember information of the unmounted component on scroll wheel click 
-              
-            //   props.setUnmountComponentValues(false, path);
-          }
-          // Fire up unmountComponent epic
-  
-        //   props.unmountComponent(key, "list-standard-blog-category", "blogCategory", e.button);
-          
-        props.activateBlogItem("active", key);
-        props.clearActivityOfMenuItems();
-        props.history.push(`/crypto-portfolio/${path}`);
-
-    }
-
     const renderCardCover = (type) => {
         switch(type){
             case 'audioPost':
@@ -449,10 +415,7 @@ export const BlogPostSingleItem = (props) => {
                 );
             default: 
                 return(
-                    <img 
-                        src={loadImg(props.blogListStandardPage.postBlogContent.coverImage.key)}
-                        onMouseDown={(e) => onClickHandler(e, props.blogListStandardPage.postBlogContent.path, props.blogListStandardPage.postBlogContent.key)}
-                    />              
+                    <img src={loadImg(props.blogListStandardPage.postBlogContent.coverImage.key)}/>              
                 );
         }
     }
@@ -670,6 +633,12 @@ export const BlogPostSingleItem = (props) => {
                     itemKey={props.blogListStandardPage.activeItem.itemKey}
                     fetchPrevAndNextPostForBlogListItem={props.fetchPrevAndNextPostForBlogListItem}
                     data={props.blogListStandardPage.navigation}
+                    setUnmountComponentValues={props.setUnmountComponentValues}
+                    unmountComponent={props.unmountComponent}
+                    clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
+                    activateBlogItem={props.activateListStandardBlogItem}
+                    activateBlogCategory={props.activateListStandardBlogCategory}
+
                 />
             </>
         )
@@ -733,6 +702,12 @@ export default connect(
             fetchPrevAndNextPostForBlogListItem: bindActionCreators(Services.fetchPrevAndNextPostForBlogListItem, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
+
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));

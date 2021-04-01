@@ -7,12 +7,15 @@ import React, {
     useEffect
 } from 'react';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 /**
  * Styles
  */
 
 import './blogNavigation.scss';
-
 
 /**
  * Components
@@ -57,6 +60,7 @@ export const BlogNavigation = (props) => {
     const [isHoveringNavigationPrevDate, setIsHoveringNavigationPrevDate] = useState("init");
     const [isHoveringNavigationNextDate, setIsHoveringNavigationNextDate] = useState("init");
     const [showComponent, setShowComponent] = useState(false);
+    
     /**
      * Methods
      */
@@ -112,47 +116,50 @@ export const BlogNavigation = (props) => {
         }
     }
 
-    const onPageClickHandler = (e, opt, pageID) => {
-        // Do nothing on right mouse click
-        
+    const onClickHandler = (e, path, key) => {
+
+        // Do nothing on right mouse click 
+
         if(e.button === 2) return;
 
         // Storing data in local storage 
 
-        // localStorage.setItem("archiveCategoryHG", key);
-        // localStorage.setItem("pageHG", props.page);
+        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
+        //   localStorage.setItem("pageHG", "blogListStandardPage");
 
-        if(e.button !== 1){
-            /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */
-            let _pageId;
-            switch(opt){
-                case 'pageNumber':
-                    _pageId = pageID;
-                    break;
-                case 'leftArrow':
-                    _pageId = pageID - 1;
-                    break;
-                case 'rightArrow':
-                    _pageId = pageID + 1;
-                    break;
-            }
-     
-            props.fetchPageData(_pageId);
-            props.activatePageNumber(_pageId);
-            
-            window.scrollTo(0, 0);
-            // props.setUnmountComponentValues(true, path);
-        }else{
-            // Remember information of the unmounted component on scroll wheel click
-        
-            // props.setUnmountComponentValues(false, path);
-        }
-        // Fire up unmountComponent epic
+        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
+        //   localStorage.setItem("page", "blogListStandardPage");
+          
+          // Clear archive data 
+  
+        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
+        //       props.clearArchiveData();
+        //   }
+  
+          if(e.button !== 1){
+              /**
+               * Add fading effect on the unmounted component and remember 
+               * information of the unmounted component on left mouse click 
+               */ 
+  
+            //   props.setUnmountComponentValues(true, path);
+          }else{
+              // Remember information of the unmounted component on scroll wheel click 
+              
+            //   props.setUnmountComponentValues(false, path);
+          }
+          // Fire up unmountComponent epic
+  
+        //   props.unmountComponent(null, null, "blogListPostCard", e.button);
+          
+        // Clear Blog Post Single Item state
 
-        // props.unmountComponent(null, null,  props.page, e.button);
+        props.clearState();
+
+        props.activateBlogItem("active", key);
+        props.activateBlogCategory("deactive", "");
+        // props.clearActivityOfMenuItems();
+        props.history.push(`/crypto-portfolio/${path}`);
     }
 
     const loadImg = (imgKey) => {
@@ -218,7 +225,10 @@ export const BlogNavigation = (props) => {
     const renderBlogNavigationContent = (arr) => {
         return(
             <>
-                <div className="blog-navigation-prev">
+                <div 
+                    className="blog-navigation-prev"
+                    onMouseDown={(e) => onClickHandler(e, arr[0].path, arr[0].key)}
+                >
                     <div className="blog-navigation-image">
                         <img src={loadImg(arr[0].coverImage?.key)}/>
                     </div>
@@ -233,7 +243,10 @@ export const BlogNavigation = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="blog-navigation-next">
+                <div 
+                    className="blog-navigation-next"
+                    onMouseDown={(e) => onClickHandler(e, arr[1].path, arr[1].key)}
+                >
                     <div className="blog-navigation-info-wrapper">
                         <H15 className="h15-black-lustria">{updateHeader(arr[1].header)}</H15>
                         <EH10/>
@@ -293,5 +306,5 @@ export const BlogNavigation = (props) => {
     );
 }
 
-export default BlogNavigation;
+export default withRouter(BlogNavigation);
  
