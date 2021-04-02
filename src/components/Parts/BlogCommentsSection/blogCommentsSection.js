@@ -192,14 +192,20 @@ export const BlogCommentsSection = (props) => {
     }
 
     const renderComments = (arr) => {
+        let iteration = 0;
         return(
             <>
                 {arr.map((el, i) => {
+                    iteration ++;
                     return(
-                        <BlogComment
-                            key={i}
-                            data={el}
-                        />
+                        <React.Fragment key={el.id}>
+                            <BlogComment
+                                data={el}
+                            />
+                            <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>
+                                {el.repliesArray.length !== 0 ? renderComments(el.repliesArray) : null}
+                            </div>
+                        </React.Fragment>
                     )
                 })}
             </>
