@@ -1,5 +1,6 @@
 export * from './FontSize/H1/h1';
 export * from './FontSize/H5/h5';
+export * from './FontSize/H13/h13';
 export * from './FontSize/H15/h15';
 export * from './FontSize/H17/h17';
 export * from './FontSize/H19/h19';
@@ -18,6 +19,7 @@ export * from './EmptyDivs/EH20/eh20';
 export * from './EmptyDivs/EH25/eh25';
 export * from './EmptyDivs/EH30/eh30';
 export * from './EmptyDivs/EH40/eh40';
+export * from './EmptyDivs/EH50/eh50';
 export * from './EmptyDivs/EH60/eh60';
 export * from './EmptyDivs/EH70/eh70';
 export * from './EmptyDivs/EH80/eh80';

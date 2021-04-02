@@ -46,6 +46,7 @@ import Icon from '../../../SmallParts/Icon/icon';
 import Pagination from '../../../Parts/Pagination/pagination';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
+import BlogCommentsSection from '../../../Parts/BlogCommentsSection/blogCommentsSection';
 
 /**
  * Actions
@@ -401,6 +402,10 @@ export const BlogListStandardPage = (props) => {
                             unmountComponent={props.unmountComponent}
                         />
                     </div>
+                    {props.blogListStandardPage.activeItem.activated === "active" ?
+                    <BlogCommentsSection
+                        data={props.blogListStandardPage.postBlogContent}
+                    /> : null} 
                 </div>
             </Router>
             <Footer/>

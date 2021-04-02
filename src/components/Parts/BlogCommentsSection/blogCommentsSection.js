@@ -15,21 +15,22 @@ import {
  * Styles
  */
 
-import './blogNavigation.scss';
+import './blogCommentsSection.scss';
 
 /**
  * Components
  */
 
 import Loading from '../../SmallParts/Loading/loading';
+import BlogComment from '../../SmallParts/BlogComment/blogComment';
 
 /**
  * Utility
  */
 
 import {
-    H13,
     H15,
+    H22,
     EH10
 } from '../../UtilityComponents';
 
@@ -48,10 +49,10 @@ import {
 import * as Images from '../../../constants/images';
 
 /**
- * BlogNavigation component definition and export
+ * BlogCommentsSection component definition and export
  */
 
-export const BlogNavigation = (props) => {
+export const BlogCommentsSection = (props) => {
 
     /**
      * State
@@ -69,17 +70,12 @@ export const BlogNavigation = (props) => {
     useEffect(() => {
         // Fetch previous and next post using the current post key
 
-        if(props.itemKey !== "") props.fetchPrevAndNextPostForBlogListItem(props.page, props.itemKey);
-
-        if(props.data.items.length !== 0) setShowComponent(true);
-
         return () =>  {
             // Cleaning the unmounted component
 
         }
 
-    }, [props.itemKey,
-        props.data.items.length]);
+    }, []);
 
     const handleMouseEnter = (opt, key) => {
         switch(opt){
@@ -110,11 +106,11 @@ export const BlogNavigation = (props) => {
         ].includes(opt)){
             switch(isHovering){
                 case 'init':
-                    return "h13-nobel-lustria-animated";
+                    return "h15-nobel-lustria-animated";
                 case 'on':
-                    return "h13-nobel-lustria-nero-hover-on";
+                    return "h15-nobel-lustria-nero-hover-on";
                 case 'off':
-                    return "h13-nobel-lustria-nero-hover-off"
+                    return "h15-nobel-lustria-nero-hover-off"
             }
         }
     }
@@ -135,7 +131,7 @@ export const BlogNavigation = (props) => {
             props.activateBlogItem("active", key);
             props.activateBlogCategory("deactive", "");
             props.history.push(`/crypto-portfolio/${path}`);
-
+            
         }else{
             // Open selected blog item in a new window on scroll wheel click
 
@@ -195,62 +191,26 @@ export const BlogNavigation = (props) => {
         }
     }
 
-    const updateHeader = (str) => {
-        let _str = str.split("");
-        if(_str[_str.length-1] === "."){
-            _str.pop();
-        }
-        return _str.join("")
-    }
-
-    const renderBlogNavigationContent = (arr) => {
+    const renderComments = (arr) => {
         return(
             <>
-                <div 
-                    className="blog-navigation-prev"
-                    onMouseDown={(e) => onClickHandler(e, arr[0].path, arr[0].key)}
-                >
-                    <div className="blog-navigation-image">
-                        <img src={loadImg(arr[0].coverImage?.key)}/>
-                    </div>
-                    <div className="blog-navigation-info-wrapper">
-                        <H15 className="h15-black-lustria">{updateHeader(arr[0].header)}</H15>
-                        <EH10/>
-                        <div
-                            onMouseEnter={() => handleMouseEnter(`navigationPrevDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`navigationPrevDate`)}
-                        >
-                            <H13 className={renderClassName("navigationPrevDate", isHoveringNavigationPrevDate)}>{arr[0].date}</H13>
-                        </div>
-                    </div>
-                </div>
-                <div 
-                    className="blog-navigation-next"
-                    onMouseDown={(e) => onClickHandler(e, arr[1].path, arr[1].key)}
-                >
-                    <div className="blog-navigation-info-wrapper">
-                        <H15 className="h15-black-lustria">{updateHeader(arr[1].header)}</H15>
-                        <EH10/>
-                        <div
-                            onMouseEnter={() => handleMouseEnter(`navigationNextDate`)} 
-                            onMouseLeave={() => handleMouseLeave(`navigationNextDate`)}
-                        >
-                            <H13 className={renderClassName("navigationNextDate", isHoveringNavigationNextDate)}>{arr[1].date}</H13>
-                        </div>
-                    </div>
-                    <div className="blog-navigation-image">
-                        <img src={loadImg(arr[1].coverImage?.key)}/>
-                    </div>
-                </div>
+                {arr.map((el, i) => {
+                    return(
+                        <BlogComment
+                            key={i}
+                            data={el}
+                        />
+                    )
+                })}
             </>
         )
     }
 
-    const renderBlogNavigationDataContent = (data) => {
+    const renderBlogPostSingleItemComments = (data) => {
         if(data.loading && !data.error){
             return(
                 <div 
-                    className="blog-post-single-item-loading-error" 
+                    className="blog-comments-section-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
                     <Loading color="black"/>
@@ -259,15 +219,16 @@ export const BlogNavigation = (props) => {
         }
         if(!data.loading && !data.error){
             return(
-                <>
-                    {renderBlogNavigationContent(data.items)}
-                </>
+                <div className="blog-comments-section-wrapper">
+                    <H22 className="h22-black-lustria">Comments</H22>
+                    {renderComments(data.item.comments)}
+                </div>
             )
         }
         if(!data.loading && data.error){
             return(
                 <div 
-                    className="blog-post-single-item-loading-error" 
+                    className="blog-comments-section-loading-error" 
                     style={{height: `${size.height/2}px`}}
                 >
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
@@ -281,11 +242,11 @@ export const BlogNavigation = (props) => {
      */
 
     return(
-        <div className="blog-navigation">
-            {showComponent ? renderBlogNavigationDataContent(props.data) : null}
+        <div className="blog-comments-section">
+          {renderBlogPostSingleItemComments(props.data)}
         </div>
     );
 }
 
-export default withRouter(BlogNavigation);
+export default BlogCommentsSection;
  

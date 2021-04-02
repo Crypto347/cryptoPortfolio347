@@ -67,6 +67,7 @@ import * as Selectors from '../../../reducers/selectors';
  */
 
 import {
+    H13,
     H15,
     H17,
     H22,
@@ -360,7 +361,7 @@ export const BlogInfoBoard = (props) => {
                 <EH20/>
                 <H17 className="h17-black-lustria">Naomi Hernandez</H17>
                 <EH10/>
-                <H15 className="h15-nobel-lustria">Associate Director, SEO</H15>
+                <H13 className="h13-nobel-lustria">Associate Director, SEO</H13>
             </div>
             <EH40/>
             <div className="blog-info-board-recent-post-wrapper">
