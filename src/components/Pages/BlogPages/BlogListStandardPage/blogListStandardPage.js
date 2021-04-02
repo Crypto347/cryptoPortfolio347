@@ -83,6 +83,8 @@ import {
     EH40
 } from '../../../UtilityComponents';
 
+import * as Utility from '../../../../utility';
+
 /**
  * Hooks
  */
@@ -402,7 +404,7 @@ export const BlogListStandardPage = (props) => {
                             unmountComponent={props.unmountComponent}
                         />
                     </div>
-                    {props.blogListStandardPage.activeItem.activated === "active" ?
+                    {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
                     <BlogCommentsSection
                         data={props.blogListStandardPage.postBlogContent}
                     /> : null} 

@@ -7,10 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    withRouter
-} from 'react-router-dom';
-
 /**
  * Styles
  */
@@ -30,8 +26,7 @@ import BlogComment from '../../SmallParts/BlogComment/blogComment';
 
 import {
     H15,
-    H22,
-    EH10
+    H22
 } from '../../UtilityComponents';
 
 /**
@@ -41,12 +36,6 @@ import {
  import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
-
-/**
- * Images
- */
-
-import * as Images from '../../../constants/images';
 
 /**
  * BlogCommentsSection component definition and export
@@ -59,137 +48,13 @@ export const BlogCommentsSection = (props) => {
      */
 
     const size = useWindowSize();
-    const [isHoveringNavigationPrevDate, setIsHoveringNavigationPrevDate] = useState("init");
-    const [isHoveringNavigationNextDate, setIsHoveringNavigationNextDate] = useState("init");
-    const [showComponent, setShowComponent] = useState(false);
     
     /**
      * Methods
      */
 
     useEffect(() => {
-        // Fetch previous and next post using the current post key
-
-        return () =>  {
-            // Cleaning the unmounted component
-
-        }
-
     }, []);
-
-    const handleMouseEnter = (opt, key) => {
-        switch(opt){
-            case 'navigationPrevDate': 
-                setIsHoveringNavigationPrevDate("on");
-                break;
-            case 'navigationNextDate': 
-                setIsHoveringNavigationNextDate("on");
-                break;
-        }
-    }
-
-    const handleMouseLeave = (opt, key) => {
-        switch(opt){
-            case 'navigationPrevDate': 
-                setIsHoveringNavigationPrevDate("off");
-                break;
-            case 'navigationNextDate': 
-                setIsHoveringNavigationNextDate("off");
-                break;
-        }
-    }
-
-    const renderClassName = (opt, isHovering) => {
-        if([
-            'navigationPrevDate',
-            'navigationNextDate'
-        ].includes(opt)){
-            switch(isHovering){
-                case 'init':
-                    return "h15-nobel-lustria-animated";
-                case 'on':
-                    return "h15-nobel-lustria-nero-hover-on";
-                case 'off':
-                    return "h15-nobel-lustria-nero-hover-off"
-            }
-        }
-    }
-
-    const onClickHandler = (e, path, key) => {
-
-        // Do nothing on right mouse click 
-
-        if(e.button === 2) return;
-  
-        if(e.button !== 1){
-            /**
-             *  Clear unnecessary information of the unmounted component, 
-             *  and render the data of the selected blog item on left mouse click 
-             */
-
-            props.clearState();
-            props.activateBlogItem("active", key);
-            props.activateBlogCategory("deactive", "");
-            props.history.push(`/crypto-portfolio/${path}`);
-            
-        }else{
-            // Open selected blog item in a new window on scroll wheel click
-
-            window.open(`/crypto-portfolio/${path}` , "_blank");
-        }
-    }
-
-    const loadImg = (imgKey) => {
-        switch(imgKey){
-            case 'blogCardStandardPostCoverImg1':
-                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_1;
-            case 'blogCardStandardPostCoverImg2':
-                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_2;
-            case 'blogCardStandardPostCoverImg3':
-                return Images.BLOG_CARD_STANDARD_POST_COVER_IMG_3;
-            case 'blogCardGalleryPostCoverImg1':
-                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_1;
-            case 'blogCardGalleryPostCoverImg5':
-                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_5;
-            case 'blogCardGalleryPostCoverImg9':
-                return Images.BLOG_CARD_GALLERY_POST_COVER_IMG_9;
-            case 'blogCardLinkPostCoverImg1':
-                return Images.BLOG_CARD_LINK_POST_COVER_IMG_1;
-            case 'blogCardLinkPostCoverImg2':
-                return Images.BLOG_CARD_LINK_POST_COVER_IMG_2;
-            case 'blogCardLinkPostCoverImg3':
-                return Images.BLOG_CARD_LINK_POST_COVER_IMG_3;
-            case 'blogCardLinkPostCoverImg4':
-                return Images.BLOG_CARD_LINK_POST_COVER_IMG_4;
-            case 'blogCardQuotePostCoverImg1':
-                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_1;
-            case 'blogCardQuotePostCoverImg2':
-                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_2;
-            case 'blogCardQuotePostCoverImg3':
-                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_3;
-            case 'blogCardQuotePostCoverImg4':
-                return Images.BLOG_CARD_QUOTE_POST_COVER_IMG_4;
-            case 'blogCardAudioPostCoverImg1':
-                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_1;
-            case 'blogCardAudioPostCoverImg2':
-                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_2;
-            case 'blogCardAudioPostCoverImg3':
-                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_3;
-            case 'blogCardAudioPostCoverImg4':
-                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_4;
-            case 'blogCardAudioPostCoverImg5':
-                return Images.BLOG_CARD_AUDIO_POST_COVER_IMG_5;
-            case 'blogCardVideoPostCoverImg1':
-                return Images.VIDEO_COVER_IMG_2;
-            case 'blogCardVideoPostCoverImg2':
-                return Images.VIDEO_COVER_IMG_3;
-            case 'blogCardVideoPostCoverImg3':
-                return Images.VIDEO_COVER_IMG_4;
-                
-            default:
-                return "";
-        }
-    }
 
     const renderComments = (arr) => {
         let iteration = 0;
@@ -249,7 +114,7 @@ export const BlogCommentsSection = (props) => {
 
     return(
         <div className="blog-comments-section">
-          {renderBlogPostSingleItemComments(props.data)}
+            {renderBlogPostSingleItemComments(props.data)}
         </div>
     );
 }
