@@ -43,7 +43,7 @@ import * as Images from '../../../constants/images';
 
 export const BlogComment = (props) => {
 
-    const [isHovering, setIsHovering] = useState("init");
+    const [isHoveringReplyButton, setIsHoveringReplyButton] = useState("init");
 
     /**
      * Methods
@@ -59,33 +59,41 @@ export const BlogComment = (props) => {
         }
     },[])
 
-    const handleMouseEnter = () => {
-       setIsHovering("on");
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'replyButton':
+                setIsHoveringReplyButton("on");
+                break;
+        }
     }
 
-    const handleMouseLeave = () => {
-        setIsHovering("off");
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'replyButton':
+                setIsHoveringReplyButton("off");
+                break;
+        }
     }
 
     const renderClassName = (opt, isHovering) => {
-        if(opt === "text"){
+        if(opt === "replyButtonLine"){
             switch(isHovering){
                 case 'init':
-                    return "back-to-top-text";
+                    return "blog-comment-reply-button-line";
                 case 'on':
-                    return "back-to-top-text-hover-on";
+                    return "blog-comment-reply-button-line-hover-on";
                 case 'off':
-                    return "back-to-top-text-hover-off"
+                    return "blog-comment-reply-button-line-hover-off"
             }
         }
-        if(opt === "line"){
+        if(opt === "replyButtonText"){
             switch(isHovering){
                 case 'init':
-                    return "back-to-top-line";
+                    return "h13-black-poppins";
                 case 'on':
-                    return "back-to-top-line-hover-on";
+                    return "h13-black-poppins-nobel-hover-on";
                 case 'off':
-                    return "back-to-top-line-hover-off"
+                    return "h13-black-poppins-nobel-hover-off"
             }
         }
     }
@@ -113,9 +121,7 @@ export const BlogComment = (props) => {
     return(
         <div 
             className="blog-comment"
-            // onMouseDown={(e) => arrowOnClick(e, location.pathname)}
-            // onMouseEnter={handleMouseEnter} 
-            // onMouseLeave={handleMouseLeave}
+
         >
             <div className="grey-line-comment"/>
             <EH50/>
@@ -125,10 +131,22 @@ export const BlogComment = (props) => {
                 </div>
                 <div className="blog-comment-info-text-wrapper">
                     <div className="blog-comment-info-wrapper">
-                        <H17 className="h17-black-poppins">{props.data.authorName}</H17>
-                        <EW10/>
-                        <H13 className="h13-nobel-lustria">{props.data.date}</H13>
-                        <div className="blog-comment-button"></div>
+                        <div className="blog-comment-info-author-name-and-date-wrapper">
+                            <H17 className="h17-black-poppins">{props.data.authorName}</H17>
+                            <EW10/>
+                            <div className="blog-comment-info-date-wrapper">
+                                <H13 className="h13-nobel-lustria">{props.data.date}</H13>
+                            </div>
+                        </div>
+                        <div 
+                            className="blog-comment-reply-button"
+                            onMouseEnter={() => handleMouseEnter("replyButton")} 
+                            onMouseLeave={() => handleMouseLeave("replyButton")}
+                               // onMouseDown={(e) => arrowOnClick(e, location.pathname)}
+                        >
+                            <div className={renderClassName("replyButtonLine", isHoveringReplyButton)}/>
+                            <H13 className={renderClassName("replyButtonText", isHoveringReplyButton)}>reply</H13>
+                        </div>
                     </div>
                     <EH20/>
                     <H15 className="h15-black-lustria">{props.data.text}</H15>

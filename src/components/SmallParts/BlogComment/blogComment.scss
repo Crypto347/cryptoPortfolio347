@@ -25,7 +25,81 @@
             .blog-comment-info-wrapper {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                .blog-comment-info-author-name-and-date-wrapper {
+                    display: flex;
+                    align-items: center;
+                    .blog-comment-info-date-wrapper {
+                        transform: translateY(2px);
+                    }
+                }
+                .blog-comment-reply-button {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    .blog-comment-reply-button-line {
+                        width: 15px;
+                        height: 2px;
+                        margin-right: 10px;
+                        background: black;
+                    }
+                    .blog-comment-reply-button-line-hover-on {
+                        width: 15px;
+                        height: 2px;
+                        margin-right: 10px;
+                        background: rgb(155, 155, 155);
+                        -webkit-animation: blogCmmentReplyButtonLineHoverOn .2s linear;
+                        -moz-animation: blogCmmentReplyButtonLineHoverOn .2s linear;
+                        -o-animation: blogCmmentReplyButtonLineHoverOn .2s linear;
+                        animation: blogCmmentReplyButtonLineHoverOn .2s linear;
+                    }
+                    .blog-comment-reply-button-line-hover-off {
+                        width: 15px;
+                        height: 2px;
+                        margin-right: 10px;
+                        background: black;
+                        -webkit-animation: blogCmmentReplyButtonLineHoverOff .2s linear;
+                        -moz-animation: blogCmmentReplyButtonLineHoverOff .2s linear;
+                        -o-animation: blogCmmentReplyButtonLineHoverOff .2s linear;
+                        animation: blogCmmentReplyButtonLineHoverOff .2s linear;
+                    }
+                }
             }
         }        
     }
+}
+
+
+@-webkit-keyframes blogCmmentReplyButtonLineHoverOn {
+    from{background: black;}
+    to{background: rgb(155, 155, 155);}
+}
+@-moz-keyframes blogCmmentReplyButtonLineHoverOn {
+    from{background: black;}
+    to{background: rgb(155, 155, 155);}
+}
+@-o-keyframes blogCmmentReplyButtonLineHoverOn {
+    from{background: black;}
+    to{background: rgb(155, 155, 155);}
+}
+@keyframes blogCmmentReplyButtonLineHoverOn {
+    from{background: black;}
+    to{background: rgb(155, 155, 155);}
+}
+
+@-webkit-keyframes blogCmmentReplyButtonLineHoverOff {
+    from{background: rgb(155, 155, 155);}
+    to{background: black;}
+}
+@-moz-keyframes blogCmmentReplyButtonLineHoverOff {
+    from{background: rgb(155, 155, 155);}
+    to{background: black;}
+}
+@-o-keyframes blogCmmentReplyButtonLineHoverOff {
+    from{background: rgb(155, 155, 155);}
+    to{background: black;}
+}
+@keyframes blogCmmentReplyButtonLineHoverOff {
+    from{background: rgb(155, 155, 155);}
+    to{background: black;}
 }
