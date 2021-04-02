@@ -290,7 +290,7 @@ export const BlogListPostCard = (props) => {
             // Open selected blog item in a new window on scroll wheel click
 
             window.open(`/crypto-portfolio/${path}` , "_blank");
-        }   
+        }
     }
 
     const renderCardCover = (type) => {
