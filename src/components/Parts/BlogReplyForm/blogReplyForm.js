@@ -11,7 +11,7 @@ import React, {
  * Styles
  */
 
-import './blogCommentsSection.scss';
+import './blogReplyForm.scss';
 
 /**
  * Components
@@ -38,10 +38,10 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
- * BlogCommentsSection component definition and export
+ * BlogReplyForm component definition and export
  */
 
-export const BlogCommentsSection = (props) => {
+export const BlogReplyForm = (props) => {
 
     /**
      * State
@@ -66,8 +66,6 @@ export const BlogCommentsSection = (props) => {
                         <React.Fragment key={el.id}>
                             <BlogComment
                                 data={el}
-                                itemContent={props.data.item}
-                                triggerCommentReplyButton={props.triggerCommentReplyButton}
                             />
                             <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>
                                 {el.repliesArray.length !== 0 ? renderComments(el.repliesArray) : null}
@@ -115,11 +113,11 @@ export const BlogCommentsSection = (props) => {
      */
 
     return(
-        <div className="blog-comments-section">
-            {renderBlogPostSingleItemComments(props.data)}
+        <div className="blog-reply-form">
+            {/* {renderBlogPostSingleItemComments(props.data)} */}
         </div>
     );
 }
 
-export default BlogCommentsSection;
+export default BlogReplyForm;
  

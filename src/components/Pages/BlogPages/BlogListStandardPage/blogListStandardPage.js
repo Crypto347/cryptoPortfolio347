@@ -407,6 +407,7 @@ export const BlogListStandardPage = (props) => {
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
                     <BlogCommentsSection
                         data={props.blogListStandardPage.postBlogContent}
+                        triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
                     /> : null} 
                 </div>
             </Router>
@@ -446,6 +447,7 @@ export default connect(
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
+            triggerCommentReplyButtonForBlogListStandardPage: bindActionCreators(Actions.triggerCommentReplyButtonForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

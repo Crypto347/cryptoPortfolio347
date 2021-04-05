@@ -4,7 +4,8 @@
 
 import React, {
     useEffect,
-    useState
+    useState,
+    useRef
 } from 'react';
 
 import {
@@ -16,6 +17,12 @@ import {
  */
 
 import './blogComment.scss';
+
+/**
+ * Components
+ */
+
+import BlogReplyForm from '../../Parts/BlogReplyForm/blogReplyForm';
 
 /**
  * Utility
@@ -43,15 +50,23 @@ import * as Images from '../../../constants/images';
 
 export const BlogComment = (props) => {
 
+
     const [isHoveringReplyButton, setIsHoveringReplyButton] = useState("init");
     const [showReplyForm, setShowReplyForm] = useState(false);
+    const previousShowReplyFormVal = useRef(showReplyForm);
 
     /**
      * Methods
      */
 
     useEffect(()=>{
-    },[])
+        if(previousShowReplyFormVal.current === true){
+            setShowReplyForm(true);
+            previousShowReplyFormVal.current = false;
+        }else{
+            setShowReplyForm(false);
+        }
+    },[props.itemContent.triggerCommentReplyButton])
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -96,7 +111,9 @@ export const BlogComment = (props) => {
         switch(e.button){
             case 0: 
                 // Show reply form
-                setShowReplyForm(true);
+                // setShowReplyForm(true);
+                props.triggerCommentReplyButton();
+                previousShowReplyFormVal.current = true;
                 return;
             case 1:
                 // Open the current page in a new window on scroll wheel click
@@ -114,10 +131,7 @@ export const BlogComment = (props) => {
 
     return(
         <>
-            <div 
-                className="blog-comment"
-
-            >
+            <div className="blog-comment">
                 <div className="grey-line-comment"/>
                 <EH50/>
                 <div className="blog-comment-wrapper">
@@ -145,14 +159,12 @@ export const BlogComment = (props) => {
                         </div>
                         <EH20/>
                         <H15 className="h15-black-lustria">{props.data.text}</H15>
+                        {showReplyForm ? <BlogReplyForm/> : null}
                     </div>
                 </div>
                 <EH30/>
             </div>
-            {showReplyForm ? 
-            <div className="blog-comment-reply-form">
 
-            </div> : null}
         </>
     );
 }

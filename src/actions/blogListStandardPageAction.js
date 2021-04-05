@@ -158,3 +158,10 @@ export function clearBlogListSingleItemStateForBlogListStandardPage () {
         type: actionTypes.CLEAR_BLOG_LIST_SINGLE_ITEM_STATE_FOR_BLOG_LIST_STANDARD_PAGE
     };
 };
+
+export function triggerCommentReplyButtonForBlogListStandardPage () {
+    return { 
+        type: actionTypes.TRIGGER_COMMENT_REPLY_BUTTON_FOR_BLOG_LIST_STANDARD_PAGE
+    };
+};
+

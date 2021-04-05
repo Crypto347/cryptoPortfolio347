@@ -358,6 +358,20 @@ const clearBlogListSingleItemStateForBlogListStandardPage = (state, action) => {
     }
 }
 
+const triggerCommentReplyButtonForBlogListStandardPage = (state, action) => {
+
+    return {
+        ...state,
+        postBlogContent: {
+            ...state.postBlogContent,
+            item: {
+                ...state.postBlogContent.item,
+                triggerCommentReplyButton: !state.postBlogContent.item.triggerCommentReplyButton
+            }   
+        }
+    }
+}
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -402,7 +416,9 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return activateListStandardBlogItem (state, action);
         case actionTypes.CLEAR_BLOG_LIST_SINGLE_ITEM_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return clearBlogListSingleItemStateForBlogListStandardPage (state, action);
-
+            case actionTypes.TRIGGER_COMMENT_REPLY_BUTTON_FOR_BLOG_LIST_STANDARD_PAGE:
+                return triggerCommentReplyButtonForBlogListStandardPage (state, action);
+            
         default: 
             return state;
     }
