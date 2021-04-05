@@ -66,7 +66,7 @@ export const BlogComment = (props) => {
         }else{
             setShowReplyForm(false);
         }
-    },[props.itemContent.triggerCommentReplyButton])
+    },[props.triggerCommentReplyButtonVal])
 
     const handleMouseEnter = (opt) => {
         switch(opt){
@@ -159,7 +159,11 @@ export const BlogComment = (props) => {
                         </div>
                         <EH20/>
                         <H15 className="h15-black-lustria">{props.data.text}</H15>
-                        {showReplyForm ? <BlogReplyForm/> : null}
+                        {showReplyForm ? 
+                        <BlogReplyForm
+                            initInputForm={props.initInputForm}
+                        /> 
+                        : null}
                     </div>
                 </div>
                 <EH30/>

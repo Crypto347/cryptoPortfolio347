@@ -119,7 +119,7 @@ import {
 } from '../../../../constants/socialMediaIcons';
 
 import {
-    blogListStandardInputForm
+    blogListStandardSearchInputForm
 } from '../../../../constants/inputForm';
 
 /**
@@ -147,7 +147,7 @@ export const BlogListStandardPage = (props) => {
 
         // Init imput forms
 
-        props.initInputFormForBlogListStandardPage(blogListStandardInputForm);
+        props.initSearchInputFormForBlogListStandardPage(blogListStandardSearchInputForm);
 
         // Init blog categories and tags lists
 
@@ -394,7 +394,7 @@ export const BlogListStandardPage = (props) => {
                         </div>
                         <BlogInfoBoard
                             page="blogListStandardPage"
-                            searchFormInputsArray={props.blogListStandardPage.inputForm.inputsArray}
+                            searchFormInputsArray={props.blogListStandardPage.searchInputForm.inputsArray}
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
                             activateBlogCategory={props.activateListStandardBlogCategory}
@@ -407,7 +407,9 @@ export const BlogListStandardPage = (props) => {
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
                     <BlogCommentsSection
                         data={props.blogListStandardPage.postBlogContent}
+                        triggerCommentReplyButtonVal={props.blogListStandardPage.triggerCommentReplyButtonVal}
                         triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
+                        initInputForm={props.initInputFormOfBlogCommentReplyForBlogListStandardPage}
                     /> : null} 
                 </div>
             </Router>
@@ -436,7 +438,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            initInputFormForBlogListStandardPage: bindActionCreators(Actions.initInputFormForBlogListStandardPage, dispatch),
+            initSearchInputFormForBlogListStandardPage: bindActionCreators(Actions.initSearchInputFormForBlogListStandardPage, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
@@ -448,6 +450,7 @@ export default connect(
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
             triggerCommentReplyButtonForBlogListStandardPage: bindActionCreators(Actions.triggerCommentReplyButtonForBlogListStandardPage, dispatch),
+            initInputFormOfBlogCommentReplyForBlogListStandardPage: bindActionCreators(Actions.initInputFormOfBlogCommentReplyForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

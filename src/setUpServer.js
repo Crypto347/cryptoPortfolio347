@@ -21053,8 +21053,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -21229,8 +21228,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 3,
@@ -21362,8 +21360,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 4,
@@ -21496,8 +21493,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 5,
@@ -21629,8 +21625,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 6,
@@ -21762,8 +21757,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 7,
@@ -21894,8 +21888,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 8,
@@ -22069,8 +22062,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 9,
@@ -22202,8 +22194,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 10,
@@ -22336,8 +22327,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 11,
@@ -22469,8 +22459,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 12,
@@ -22602,8 +22591,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }, 
         {
             id: 13,
@@ -22734,8 +22722,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 14,
@@ -22900,8 +22887,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 15,
@@ -23033,8 +23019,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 16,
@@ -23167,8 +23152,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 17,
@@ -23300,8 +23284,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 18,
@@ -23433,8 +23416,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 19,
@@ -23566,8 +23548,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 20,
@@ -23699,8 +23680,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 21,
@@ -23833,8 +23813,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 22,
@@ -23966,8 +23945,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
     
@@ -24177,8 +24155,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -24353,8 +24330,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 3,
@@ -24529,8 +24505,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
 
@@ -24763,8 +24738,7 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -24982,8 +24956,7 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 3,
@@ -25192,8 +25165,7 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
 
@@ -25383,8 +25355,7 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -25560,8 +25531,7 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 3,
@@ -25737,8 +25707,7 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 4,
@@ -25914,8 +25883,7 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
 
@@ -26106,8 +26074,7 @@ app.get('/api/blog-item/quote-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -26284,8 +26251,7 @@ app.get('/api/blog-item/quote-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 3,
@@ -26462,8 +26428,7 @@ app.get('/api/blog-item/quote-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 4,
@@ -26640,8 +26605,7 @@ app.get('/api/blog-item/quote-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
 
@@ -26831,8 +26795,7 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -27008,8 +26971,7 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 3,
@@ -27185,8 +27147,7 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 4,
@@ -27362,8 +27323,7 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 5,
@@ -27539,8 +27499,7 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
 
@@ -27730,8 +27689,7 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         },
         {
             id: 2,
@@ -27907,8 +27865,7 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }, 
         {
             id: 3,
@@ -28084,8 +28041,7 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
                         }
                     ]
                 }
-            ],
-            triggerCommentReplyButton: false
+            ]
         }
     ]
 

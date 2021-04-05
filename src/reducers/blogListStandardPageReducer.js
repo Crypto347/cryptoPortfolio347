@@ -29,8 +29,8 @@ export const initialState = {
     },
     loading: false,
     error: null,
-    inputForm: {},
-    inputFormResponse: {
+    searchInputForm: {},
+    searchInputFormResponse: {
         item: {},
         loading: false,
         error: null
@@ -47,6 +47,8 @@ export const initialState = {
     tagsList: [],
     activePageId: 1,
     pagesArray: [],
+    triggerCommentReplyButtonVal: false,
+    commentReplyInputForm: {}
    
 }
 
@@ -143,10 +145,10 @@ const fetchBlogNavigationForBlogListStandardPageDataFailur = (state, action) => 
     };
 }
 
-const initInputFormForBlogListStandardPage = (state, action) => {
+const initSearchInputFormForBlogListStandardPage = (state, action) => {
     return {
         ...state,
-        inputForm: action.obj
+        searchInputForm: action.obj
     }
 } 
 
@@ -362,20 +364,21 @@ const triggerCommentReplyButtonForBlogListStandardPage = (state, action) => {
 
     return {
         ...state,
-        postBlogContent: {
-            ...state.postBlogContent,
-            item: {
-                ...state.postBlogContent.item,
-                triggerCommentReplyButton: !state.postBlogContent.item.triggerCommentReplyButton
-            }   
-        }
+        triggerCommentReplyButtonVal: !state.triggerCommentReplyButtonVal
     }
 }
 
+const initInputFormOfBlogCommentReplyForBlogListStandardPage = (state, action) => {
+    return {
+        ...state,
+        commentReplyInputForm: action.obj
+    }
+} 
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
-            return initInputFormForBlogListStandardPage (state, action);
+        case actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
+            return initSearchInputFormForBlogListStandardPage (state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_CATEGORY:
             return activateListStandardBlogCategory (state, action);
         case actionTypes.INIT_CATEGORIES_FOR_BLOG_LISTS_STANDARD_PAGE:
@@ -416,9 +419,10 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return activateListStandardBlogItem (state, action);
         case actionTypes.CLEAR_BLOG_LIST_SINGLE_ITEM_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return clearBlogListSingleItemStateForBlogListStandardPage (state, action);
-            case actionTypes.TRIGGER_COMMENT_REPLY_BUTTON_FOR_BLOG_LIST_STANDARD_PAGE:
-                return triggerCommentReplyButtonForBlogListStandardPage (state, action);
-            
+        case actionTypes.TRIGGER_COMMENT_REPLY_BUTTON_FOR_BLOG_LIST_STANDARD_PAGE:
+            return triggerCommentReplyButtonForBlogListStandardPage (state, action);
+        case actionTypes.INIT_INPUT_FORM_OF_BLOG_COMMENT_REPLY_FOR_BLOG_LIST_STANDARD_PAGE:
+            return initInputFormOfBlogCommentReplyForBlogListStandardPage (state, action);   
         default: 
             return state;
     }

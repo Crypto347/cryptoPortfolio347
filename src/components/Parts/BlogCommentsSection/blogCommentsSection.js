@@ -66,8 +66,9 @@ export const BlogCommentsSection = (props) => {
                         <React.Fragment key={el.id}>
                             <BlogComment
                                 data={el}
-                                itemContent={props.data.item}
+                                triggerCommentReplyButtonVal={props.triggerCommentReplyButtonVal}
                                 triggerCommentReplyButton={props.triggerCommentReplyButton}
+                                initInputForm={props.initInputForm}
                             />
                             <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>
                                 {el.repliesArray.length !== 0 ? renderComments(el.repliesArray) : null}

@@ -60,9 +60,9 @@ export function fetchBlogNavigationForBlogListStandardPageDataFailur(err) {
     };
 };
 
-export function initInputFormForBlogListStandardPage(obj) {
+export function initSearchInputFormForBlogListStandardPage(obj) {
     return { 
-        type: actionTypes.INIT_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,
+        type: actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,
         obj: obj
     };
 };
@@ -165,3 +165,9 @@ export function triggerCommentReplyButtonForBlogListStandardPage () {
     };
 };
 
+export function initInputFormOfBlogCommentReplyForBlogListStandardPage (obj) {
+    return { 
+        type: actionTypes.INIT_INPUT_FORM_OF_BLOG_COMMENT_REPLY_FOR_BLOG_LIST_STANDARD_PAGE,
+        obj: obj
+    };
+};

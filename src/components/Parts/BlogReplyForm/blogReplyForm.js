@@ -38,6 +38,14 @@ import {
 } from '../../../Hooks/useWindowSize';
 
 /**
+ * Constants
+ */
+
+ import {
+    blogListCommentReplyInputForm,
+} from '../../../constants/inputForm';
+
+/**
  * BlogReplyForm component definition and export
  */
 
@@ -54,55 +62,68 @@ export const BlogReplyForm = (props) => {
      */
 
     useEffect(() => {
+        // Init imput forms
+
+        props.initInputForm(blogListCommentReplyInputForm);
+
     }, []);
 
-    const renderComments = (arr) => {
-        let iteration = 0;
-        return(
-            <>
-                {arr.map((el, i) => {
-                    iteration ++;
-                    return(
-                        <React.Fragment key={el.id}>
-                            <BlogComment
-                                data={el}
-                            />
-                            <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>
-                                {el.repliesArray.length !== 0 ? renderComments(el.repliesArray) : null}
-                            </div>
-                        </React.Fragment>
-                    )
-                })}
-            </>
-        )
+    const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
+        // Uppercase first letter of the input form name
+
+        let updatedInputForm = inputForm.charAt(0).toUpperCase() + inputForm.slice(1);
+
+        // Set input value and check validation
+
+        props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
     }
 
-    const renderBlogPostSingleItemComments = (data) => {
-        if(data.loading && !data.error){
+    const clearInputValue = (fieldId) => {
+        document.getElementById(fieldId).value = '';
+    }
+
+    const renderContactFormContent = () => {
+        if(props.contactFormPage.section1.inputForm.inputsArray){
             return(
-                <div 
-                    className="blog-comments-section-loading-error" 
-                    style={{height: `${size.height/2}px`}}
-                >
-                    <Loading color="black"/>
-                </div>
-            )
-        }
-        if(!data.loading && !data.error){
-            return(
-                <div className="blog-comments-section-wrapper">
-                    <H22 className="h22-black-lustria">Comments</H22>
-                    {renderComments(data.item.comments)}
-                </div>
-            )
-        }
-        if(!data.loading && data.error){
-            return(
-                <div 
-                    className="blog-comments-section-loading-error" 
-                    style={{height: `${size.height/2}px`}}
-                >
-                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
+                <div className="contact-form-page-section-1-data">
+                    <div className="contact-form-page-section-1-data-inputs-wrapper">
+                        {props.contactFormPage.section1.inputForm.inputsArray.map((el, i)=>{
+                            return(
+                                <div 
+                                    key={i} 
+                                    className="contact-form-page-section-1-form"
+                                    style={{
+                                        width: `calc(50% - ${i%2 === 0 ? 20 : 0}px)`,
+                                        marginRight: `${i%2 === 0 ? 20 : 0}px`
+                                    }}
+                                >
+                                    <Input
+                                        className="contact-form-page-section-1-input"
+                                        invalidClassName="invalid-contact-form-page-section-1-input"
+                                        onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
+                                        elementType={el.elementType}
+                                        rows={el.elementConfig.rows}
+                                        validField={el.validField}
+                                        touched={el.touched}
+                                        erroeMessages={el.errorMessage}
+                                        inputID={el.inputID}
+                                        textareaID={el.textareaID}
+                                        placeholder={el.elementConfig.placeholder}
+                                        options={el.elementConfig.options}
+                                    />
+                                    <EH20/>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <EH30/>
+                    <Button
+                        className="call-to-action-get-direction-black"
+                        text="get direction."
+                        onClick={() => onClickHandler('section1InputForm')}
+                    />
+                    <EH20/>
+                    {loadingOnButtonClick("getDirection")}
                 </div>
             )
         }
@@ -114,7 +135,7 @@ export const BlogReplyForm = (props) => {
 
     return(
         <div className="blog-reply-form">
-            {/* {renderBlogPostSingleItemComments(props.data)} */}
+            {/* {renderContactFormContent()} */}
         </div>
     );
 }
