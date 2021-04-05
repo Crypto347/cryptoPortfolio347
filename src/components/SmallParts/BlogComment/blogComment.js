@@ -34,6 +34,7 @@ import {
     H17,
     EW10,
     EH20,
+    EH10,
     EH30,
     EH50
 } from '../../UtilityComponents';
@@ -159,10 +160,22 @@ export const BlogComment = (props) => {
                         </div>
                         <EH20/>
                         <H15 className="h15-black-lustria">{props.data.text}</H15>
-                        {showReplyForm ? 
-                        <BlogReplyForm
-                            initInputForm={props.initInputForm}
-                        /> 
+                        {showReplyForm ?
+                        <>
+                            <EH10/>
+                            <div 
+                                className="blog-comment-cancel-reply-button"
+                                onClick={() => setShowReplyForm(false)}
+                            >
+                                <H13 className="h13-black-poppins">cancel reply</H13>
+                            </div>
+                            <EH10/>
+                            <BlogReplyForm
+                                // inputFieldNameBold
+                                initInputForm={props.initInputForm}
+                                inputFormFieldsArray={props.inputFormFieldsArray}
+                            />
+                        </>
                         : null}
                     </div>
                 </div>

@@ -189,11 +189,12 @@ export const blogListCommentReplyInputForm = {
     inputsArray: [
         {
             id: 1,
-            inputFieldName: "Full Name",
-            elementType: 'input',
+            inputFieldName: "Add comment*",
+            elementType: 'textarea',
             elementConfig: {
                 type: 'text',
-                placeholder: 'Full Name'
+                placeholder: ' Write comment...',
+                rows: "10"
             },
             value: '',
             validation: [
@@ -207,37 +208,37 @@ export const blogListCommentReplyInputForm = {
             errorMessage: [],
             type: "text",
             inputID: 'input1',
-            controlName: "fullName"
+            controlName: "comment"
         },
         {
             id: 2,
-            inputFieldName: "Company",
+            inputFieldName: "Name*",
             elementType: 'input',
             elementConfig: {
                 type: 'text',
-                placeholder: 'Company'
+                placeholder: ' Your Full Name'
             },
             value: '',
             validation: [
-                // {
-                //     required: true,
-                //     valid: false
-                // }
+                {
+                    required: true,
+                    valid: false
+                }
             ],
             validField: true,
             touched: false,
             errorMessage: [],
             type: "text",
             inputID: 'input2',
-            controlName: "company"
+            controlName: "fullName"
         },
         { 
             id: 3,
-            inputFieldName: "Email",
+            inputFieldName: "Email*",
             elementType: 'input',
             elementConfig: {
                 type: 'email',
-                placeholder: ' Email'
+                placeholder: ' Your email address'
             },
             value: '',
             validation: [
@@ -259,12 +260,11 @@ export const blogListCommentReplyInputForm = {
         },
         {
             id: 4,
-            inputFieldName: "Telephone",
+            inputFieldName: "Website",
             elementType: 'input',
             elementConfig: {
-                type: 'number',
-                placeholder: ' Telephone',
-                // options: [...countriesArray]
+                type: 'text',
+                placeholder: ' Your Website',
             },
             value: '',
             validation: [
@@ -278,7 +278,7 @@ export const blogListCommentReplyInputForm = {
             errorMessage: [],
             type: "number",
             inputID: 'input4',
-            controlName: "phone"
+            controlName: "website"
         }
     ]
 }

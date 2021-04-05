@@ -410,6 +410,7 @@ export const BlogListStandardPage = (props) => {
                         triggerCommentReplyButtonVal={props.blogListStandardPage.triggerCommentReplyButtonVal}
                         triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
                         initInputForm={props.initInputFormOfBlogCommentReplyForBlogListStandardPage}
+                        inputFormFieldsArray={props.blogListStandardPage.commentReplyInputForm}
                     /> : null} 
                 </div>
             </Router>

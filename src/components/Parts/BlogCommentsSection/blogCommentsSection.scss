@@ -1,9 +1,8 @@
 .blog-comments-section {
-    border: 2px solid red;
     display: flex;
     flex-wrap: wrap;
-    width: calc(75% - 130px);
-    padding: 90px 0px 90px 130px;
+    width: calc(100% - 260px);
+    padding: 90px 130px 90px 130px;
     .blog-comments-section-loading-error {
         width: calc(100% - 40px);
         display: flex;
@@ -14,10 +13,6 @@
         background: rgb(248, 248, 248);
     }
     .blog-comments-section-wrapper {
-        width: 100%;
-        // .blog-comments-section-reply {
-        //     border: 2px solid red;
-        // }
+        width: 75%;
     }
-   
 }
