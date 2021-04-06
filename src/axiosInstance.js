@@ -13,14 +13,16 @@ export default (history = null) => {
     
     const axiosInstance = axios.create({
         baseYRL: baseURL,
-        headers
+        headers: {
+            TOKEN: "TOKENTOKEN" // header add here
+        }
     });
     
     axiosInstance.interceptors.response.use(
         (response) => 
         new Promise((resolve, reject) => {
-            console.log("History", history)
-            response.headers.Authorization = "Bearer TOKEN_EXAMPLE"
+            console.log("response", response)
+            response.headers.Authorization = "Bearer TOKEN_EXAMPLE"; // in response obj
             resolve(response);
         }),
         (error) => {

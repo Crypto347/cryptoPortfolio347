@@ -4,7 +4,7 @@
 
 import * as Actions from "../actions";
 import axiosInstance from "../axiosInstance";
-import axios from "axios"
+import axios from "axios";
 
 /**
  * Utility
@@ -1702,7 +1702,7 @@ export function fetchSubscribeContactFormPage(info, history) {
 //     })
 // })
 
-        axios.post(
+        axiosInstance(history).post(
             `http://localhost:3005/api/subscribe-contact-form-page`,
              {
                 info
