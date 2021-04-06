@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export default (history = null) => {
-    const baseUrl = process.env.REACT_APP_BACKEND_URL;
-
+    // const baseUrl = "process.env.REACT_APP_BACKEND_URL";
+    const baseURL = process.env.REACT_APP_BACKEND_URL;
     console.log("BASEURL", baseURL);
     
     let headers = {};
@@ -18,7 +18,9 @@ export default (history = null) => {
     
     axiosInstance.interceptors.response.use(
         (response) => 
-        new Promise((response, reject) => {
+        new Promise((resolve, reject) => {
+            console.log("History", history)
+            response.headers.Authorization = "Bearer TOKEN_EXAMPLE"
             resolve(response);
         }),
         (error) => {
@@ -28,7 +30,7 @@ export default (history = null) => {
                 })
             }
     
-            if(error.response.status === 403){
+            if(error.response.status === 404){
                 localStorage.removeItem("token");
                 if(history){
                     history.push("auth/login")

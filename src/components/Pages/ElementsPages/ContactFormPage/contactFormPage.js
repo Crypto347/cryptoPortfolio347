@@ -88,6 +88,7 @@ import {
 
 import * as FakeData from '../../../../fakeData';
 import * as Environment from '../../../../constants/environments';
+import { useHistory } from 'react-router';
 
 /**
  * ContactFormPage component definition and export
@@ -101,7 +102,7 @@ export const ContactFormPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    
+    const history = useHistory()
     /**
      * Methods
      */
@@ -277,7 +278,7 @@ export const ContactFormPage = (props) => {
                 }else{
                     // Fetch data (required to run -> npm run server)
 
-                    props.fetchSubscribeContactFormPage(info);
+                    props.fetchSubscribeContactFormPage(info, history);
                 }            
 
                 // Clear input fields (visually) if the form is valid

@@ -3,6 +3,8 @@
  */
 
 import * as Actions from "../actions";
+import axiosInstance from "../axiosInstance";
+import axios from "axios"
 
 /**
  * Utility
@@ -1686,21 +1688,28 @@ export function fetchGetDirectionContactFormPage(info) {
     };
 }
 
-export function fetchSubscribeContactFormPage(info) {
+export function fetchSubscribeContactFormPage(info, history) {
     return dispatch => {
         dispatch(Actions.fetchSubscribeContactFormPageBegin());
-        return fetch(`http://localhost:3005/api/subscribe-contact-form-page`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: JSON.stringify({
-                info: info
-            })
-        })
+// return fetch(`http://localhost:3005/api/subscribe-contact-form-page`, {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json'
+//         // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     body: JSON.stringify({
+//         info: info
+//     })
+// })
+
+        axios.post(
+            `http://localhost:3005/api/subscribe-contact-form-page`,
+             {
+                info
+             }
+        )
             // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
+// .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
                 dispatch(Actions.fetchSubscribeContactFormPageSuccess(json));
