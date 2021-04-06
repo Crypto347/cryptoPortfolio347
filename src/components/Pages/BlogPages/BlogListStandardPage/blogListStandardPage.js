@@ -411,6 +411,7 @@ export const BlogListStandardPage = (props) => {
                         triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
                         initInputForm={props.initInputFormOfBlogCommentReplyForBlogListStandardPage}
                         inputFormFieldsArray={props.blogListStandardPage.commentReplyInputForm}
+                        setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
                     /> : null} 
                 </div>
             </Router>
@@ -452,6 +453,7 @@ export default connect(
             clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
             triggerCommentReplyButtonForBlogListStandardPage: bindActionCreators(Actions.triggerCommentReplyButtonForBlogListStandardPage, dispatch),
             initInputFormOfBlogCommentReplyForBlogListStandardPage: bindActionCreators(Actions.initInputFormOfBlogCommentReplyForBlogListStandardPage, dispatch),
+            setInputFiledValueAndCheckValidationForBlogListStandardPage: bindActionCreators(Actions.setInputFiledValueAndCheckValidationForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

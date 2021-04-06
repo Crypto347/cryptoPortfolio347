@@ -48,7 +48,7 @@ export const initialState = {
     activePageId: 1,
     pagesArray: [],
     triggerCommentReplyButtonVal: false,
-    commentReplyInputForm: {}
+    commentReplyInputForm: {},
    
 }
 
@@ -373,7 +373,36 @@ const initInputFormOfBlogCommentReplyForBlogListStandardPage = (state, action) =
         ...state,
         commentReplyInputForm: action.obj
     }
-} 
+}
+
+const setInputFiledValueAndCheckValidationForBlogListStandardPage = (state, action) => {
+    let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
+    let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
+    let inputFieldIndex = updatedInputFieldObj.inputsArray.findIndex(x => x.id === action.inputFieldId);
+    inputField = {
+        ...inputField, 
+        value: action.event.target.value,
+        validation: Utility.checkValidity(action.event.target.value, inputField.validation),
+        touched: true
+    };
+
+    inputField = {
+        ...inputField, 
+        errorMessage: Utility.errorMessages(inputField.inputFieldName, inputField.validation),
+        validField: Utility.checkValidityOfField(inputField.validation),
+    }
+   
+    updatedInputFieldObj.inputsArray.splice(inputFieldIndex, 1, inputField)
+
+    let checkIfFormIsValid = updatedInputFieldObj.inputsArray.map(el => el.validField === true);
+    updatedInputFieldObj = {...updatedInputFieldObj, formIsValid: checkIfFormIsValid.every(x => x === true)};
+
+
+    return {
+        ...state,
+        commentReplyInputForm: updatedInputFieldObj
+    };
+}
 
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
@@ -422,7 +451,9 @@ const blogListStandardPageReducer = (state = initialState, action) => {
         case actionTypes.TRIGGER_COMMENT_REPLY_BUTTON_FOR_BLOG_LIST_STANDARD_PAGE:
             return triggerCommentReplyButtonForBlogListStandardPage (state, action);
         case actionTypes.INIT_INPUT_FORM_OF_BLOG_COMMENT_REPLY_FOR_BLOG_LIST_STANDARD_PAGE:
-            return initInputFormOfBlogCommentReplyForBlogListStandardPage (state, action);   
+            return initInputFormOfBlogCommentReplyForBlogListStandardPage (state, action);
+        case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHECK_VALIDATION_FOR_BLOG_LIST_STANDARD_PAGE:
+            return setInputFiledValueAndCheckValidationForBlogListStandardPage (state, action);
         default: 
             return state;
     }

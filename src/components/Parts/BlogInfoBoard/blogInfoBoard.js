@@ -215,7 +215,7 @@ export const BlogInfoBoard = (props) => {
                         >
                             <Input
                                 className="blog-list-standard-search-input"
-                                onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
+                                // onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
                                 elementType={el.elementType}
                                 rows={el.elementConfig.rows}
                                 validField={el.validField}

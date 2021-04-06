@@ -73,154 +73,60 @@ export const BlogReplyForm = (props) => {
 
     const onClickHandler = (opt) => {
         let info;
-        switch(opt){
-            case 'section1InputForm':
-                /**
-                 * Check if the input form is valid, if it is valid 
-                 * then initialize input fields (state), if it is not valid
-                 * then show needed error messages
-                 */
-            
-                props.getDirectionContactFormPage();
 
-                // Collect all the information you neet to post
-
-                info = {
-                    id: uuid(),
-                    fullName: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "fullName").value}`,
-                    company: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "company").value}`,
-                    email: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-                    // date: Utility.getCurrentDateAndTime(),
-                    phone: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
-                }
-
-                // Post the information
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
+        /**
+         * Check if the input form is valid, if it is valid 
+         * then initialize input fields (state), if it is not valid
+         * then show needed error messages
+         */
     
-                    props.fetchGetDirectionContactFormPageSuccess(info);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-    
-                    props.fetchGetDirectionContactFormPage(info);
-                }
-               
-                // Clear input fields (visually) if the form is valid
+        props.getDirectionContactFormPage();
 
-                if(props.contactFormPage.section1.inputForm.formIsValid){
-                    clearInputValue("input1");
-                    clearInputValue("input2");
-                    clearInputValue("input3");
-                    clearInputValue("input4");
-                }
+        // Collect all the information you neet to post
 
-                // Clear input field (visually) if the entered value does not match to the rules of that field
-
-                props.contactFormPage.section1.inputForm.inputsArray.map(el => {
-                    if(!el.validField){
-                        clearInputValue(el.inputID);
-                    }
-                })
-
-                break;
-            case 'section2InputForm':
-                /**
-                 * Check if the input form is valid, if it is valid 
-                 * then initialize input fields (state), if it is not valid
-                 * then show needed error messages
-                 */
-
-                props.subscribeContactFormPage();
-
-                // Collect all the information you neet to post
-
-                info = {
-                    id: uuid(),
-                    email: `${props.contactFormPage.section2.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-                    // date: Utility.getCurrentDateAndTime(),t
-                }
-               
-                // Post the information
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-    
-                    props.fetchSubscribeContactFormPageSuccess(info);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-
-                    props.fetchSubscribeContactFormPage(info);
-                }            
-
-                // Clear input fields (visually) if the form is valid
-
-                if(props.contactFormPage.section2.inputForm.formIsValid){
-                    clearInputValue("input5");
-                }
-
-                // Clear input field (visually) if the entered value does not match to the rules of that field
-
-                props.contactFormPage.section2.inputForm.inputsArray.map(el => {
-                    if(!el.validField){
-                        clearInputValue(el.inputID);
-                    }
-                })
-                break;
-            case 'section3InputForm':
-                /**
-                 * Check if the input form is valid, if it is valid 
-                 * then initialize input fields (state), if it is not valid
-                 * then show needed error messages
-                 */
-
-                props.submitContactFormPage();
-
-                // Collect all the information you neet to post
-
-                info = {
-                    id: uuid(),
-                    email: `${props.contactFormPage.section3.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-                    // date: Utility.getCurrentDateAndTime(),t
-                }
-
-                // Post the information
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-    
-                    props.fetchSubmitContactFormPageSuccess(info);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-
-                    props.fetchSubmitContactFormPage(info);
-                }
-
-                // Clear input fields (visually) if the form is valid
-
-                if(props.contactFormPage.section3.inputForm.formIsValid){
-                    clearInputValue("input6");
-                }
-
-                // Clear input field (visually) if the entered value does not match to the rules of that field
-
-                props.contactFormPage.section3.inputForm.inputsArray.map(el => {
-                    if(!el.validField){
-                        clearInputValue(el.inputID);
-                    }
-                })
-                break;
+        info = {
+            id: uuid(),
+            fullName: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "fullName").value}`,
+            company: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "company").value}`,
+            email: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
+            // date: Utility.getCurrentDateAndTime(),
+            phone: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
         }
+
+        // Post the information
+
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            props.fetchGetDirectionContactFormPageSuccess(info);
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchGetDirectionContactFormPage(info);
+        }
+        
+        // Clear input fields (visually) if the form is valid
+
+        if(props.contactFormPage.section1.inputForm.formIsValid){
+            clearInputValue("input1");
+            clearInputValue("input2");
+            clearInputValue("input3");
+            clearInputValue("input4");
+        }
+
+        // Clear input field (visually) if the entered value does not match to the rules of that field
+
+        props.contactFormPage.section1.inputForm.inputsArray.map(el => {
+            if(!el.validField){
+                clearInputValue(el.inputID);
+            }
+        });
     }
 
-    const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
-        // Uppercase first letter of the input form name
-
-        let updatedInputForm = inputForm.charAt(0).toUpperCase() + inputForm.slice(1);
-
+    const inputChangeHandler = (e, inputFieldId) => {
         // Set input value and check validation
 
-        props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
+        props.setInputFiledValueAndCheckValidation(props.inputFormFieldsArray, e, inputFieldId, `commentReplyInputForm`);
     }
 
     const clearInputValue = (fieldId) => {

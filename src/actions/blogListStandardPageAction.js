@@ -171,3 +171,13 @@ export function initInputFormOfBlogCommentReplyForBlogListStandardPage (obj) {
         obj: obj
     };
 };
+
+export function setInputFiledValueAndCheckValidationForBlogListStandardPage(obj, e, id, formName) {
+    return { 
+        type: actionTypes.SET_INPUT_FIELD_VALUE_AND_CHECK_VALIDATION_FOR_BLOG_LIST_STANDARD_PAGE,
+        obj: obj,
+        event: e,
+        inputFieldId: id,
+        formName: formName
+    };
+};

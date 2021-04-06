@@ -123,7 +123,7 @@ export const Toolbar = (props) => {
         switch(opt){
             case 'regular':
                 /**
-                 *  For the regular version of toolbar, display the menu
+                 * For the regular version of toolbar, display the menu
                  * item options box depending on the number of elements
                  * in the menu item options array and remember the
                  * necessary data
@@ -246,7 +246,7 @@ export const Toolbar = (props) => {
     }
 
     const menuDotsOnClick = (page) => {
-        // in progeres...
+        // in progress...
         switch(page){
             case 'home':
             case 'bigImages':

@@ -248,7 +248,7 @@ export const ContactFormPage = (props) => {
                     if(!el.validField){
                         clearInputValue(el.inputID);
                     }
-                })
+                });
 
                 break;
             case 'section2InputForm':
@@ -292,7 +292,7 @@ export const ContactFormPage = (props) => {
                     if(!el.validField){
                         clearInputValue(el.inputID);
                     }
-                })
+                });
                 break;
             case 'section3InputForm':
                 /**
@@ -335,7 +335,7 @@ export const ContactFormPage = (props) => {
                     if(!el.validField){
                         clearInputValue(el.inputID);
                     }
-                })
+                });
                 break;
         }
     }

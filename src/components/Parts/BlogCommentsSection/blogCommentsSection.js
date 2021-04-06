@@ -70,6 +70,7 @@ export const BlogCommentsSection = (props) => {
                                 triggerCommentReplyButton={props.triggerCommentReplyButton}
                                 initInputForm={props.initInputForm}
                                 inputFormFieldsArray={props.inputFormFieldsArray}
+                                setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
                             />
                             <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>
                                 {el.repliesArray.length !== 0 ? renderComments(el.repliesArray) : null}

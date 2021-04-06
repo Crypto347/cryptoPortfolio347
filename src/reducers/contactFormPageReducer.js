@@ -436,7 +436,7 @@ const contactFormPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_INPUT_FORM_FOR_CONTACT_FORM_PAGE:
             return initInputFormForContactFormPage (state, action);
-        case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
+        case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHECK_VALIDATION:
             return setInputFiledValueAndCheckValidation (state, action);
         case actionTypes.GET_DIRECTION_CONTACT_FORM_PAGE:
             return getDirectionContactFormPage (state, action);

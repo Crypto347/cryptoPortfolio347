@@ -174,6 +174,7 @@ export const BlogComment = (props) => {
                                 // inputFieldNameBold
                                 initInputForm={props.initInputForm}
                                 inputFormFieldsArray={props.inputFormFieldsArray}
+                                setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
                             />
                         </>
                         : null}
