@@ -20,7 +20,7 @@ export const getContactFormPageSection1InputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input1',
+            inputID: 'getContactFormPageSection1InputFormFullName',
             controlName: "fullName"
         },
         {
@@ -42,7 +42,7 @@ export const getContactFormPageSection1InputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input2',
+            inputID: 'getContactFormPageSection1InputFormCompany',
             controlName: "company"
         },
         { 
@@ -68,7 +68,7 @@ export const getContactFormPageSection1InputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input3',
+            inputID: 'getContactFormPageSection1InputFormEmail',
             controlName: "email"
         },
         {
@@ -91,7 +91,7 @@ export const getContactFormPageSection1InputForm = {
             touched: false,
             errorMessage: [],
             type: "number",
-            inputID: 'input4',
+            inputID: 'getContactFormPageSection1InputFormPhone',
             controlName: "phone"
         }
     ]
@@ -123,7 +123,7 @@ export const getContactFormPageSection2InputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input5',
+            inputID: 'getContactFormPageSection2InputFormEmail',
             controlName: "email"
         }
     ]
@@ -155,7 +155,7 @@ export const getContactFormPageSection3InputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input6',
+            inputID: 'getContactFormPageSection3InputFormEmail',
             controlName: "email"
         }
     ]

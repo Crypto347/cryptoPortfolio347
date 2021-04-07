@@ -237,10 +237,10 @@ export const ContactFormPage = (props) => {
                 // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section1.inputForm.formIsValid){
-                    clearInputValue("input1");
-                    clearInputValue("input2");
-                    clearInputValue("input3");
-                    clearInputValue("input4");
+                    clearInputValue("getContactFormPageSection1InputFormFullName");
+                    clearInputValue("getContactFormPageSection1InputFormCompany");
+                    clearInputValue("getContactFormPageSection1InputFormEmail");
+                    clearInputValue("getContactFormPageSection1InputFormPhone");
                 }
 
                 // Clear input field (visually) if the entered value does not match to the rules of that field
@@ -284,7 +284,7 @@ export const ContactFormPage = (props) => {
                 // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section2.inputForm.formIsValid){
-                    clearInputValue("input5");
+                    clearInputValue("getContactFormPageSection2InputFormEmail");
                 }
 
                 // Clear input field (visually) if the entered value does not match to the rules of that field
@@ -327,7 +327,7 @@ export const ContactFormPage = (props) => {
                 // Clear input fields (visually) if the form is valid
 
                 if(props.contactFormPage.section3.inputForm.formIsValid){
-                    clearInputValue("input6");
+                    clearInputValue("getContactFormPageSection3InputFormEmail");
                 }
 
                 // Clear input field (visually) if the entered value does not match to the rules of that field
