@@ -72,7 +72,7 @@ export const BlogCommentsSection = (props) => {
         return(
             <>
                 {arr.map((el, i) => {
-                    iteration ++;                  
+                    iteration ++;
                     return(
                         <React.Fragment key={el.id}>
                             <BlogComment
@@ -84,6 +84,8 @@ export const BlogCommentsSection = (props) => {
                                 setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
                                 replyComment={props.replyComment}
                                 pathOfIdsToComment={pathOfIds}
+                                postReply={props.postReply}
+                                cardIdFromPathname={props.cardIdFromPathname}
                             />
                             {el.repliesArray.length !== 0 ? 
                             <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>

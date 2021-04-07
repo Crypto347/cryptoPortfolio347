@@ -141,6 +141,7 @@ export const BlogListStandardPage = (props) => {
      */
 
     useEffect(() => {
+
         // Init state for fading effect when component will unmount
 
         props.setUnmountComponentValues(false, "");
@@ -284,6 +285,52 @@ export const BlogListStandardPage = (props) => {
         )
     }
     
+    const renderBlogCommentsSection = () => {
+         
+        let pathNameArray = props.location.pathname.split("/");
+        let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
+        let cardIdFromPathname = +pathNameArray[pathNameArray.length-1];
+        let postReply;
+ 
+        switch(cardType){
+            case 'standardPost':
+                postReply = props.fetchStandardPostBlogData;
+                break;
+            case 'galleryPost':
+                postReply = props.fetchGalleryPostBlogData;
+                break;
+            case 'linkPost':
+                postReply = props.fetchLinkPostBlogData;
+                break;
+            case 'quotePost':
+                postReply = props.fetchQuotePostBlogData;
+                break;
+            case 'audioPost':
+                postReply = props.fetchAudioPostBlogData;
+                break;
+            case 'videoPost':
+                postReply = props.fetchVideoPostBlogData;
+                break;
+            default:
+                // props.fetchStandardPostBlogData(cardIdFromPathname);
+                break;
+        }
+
+        return(
+            <BlogCommentsSection
+                data={props.blogListStandardPage.postBlogContent}
+                triggerCommentReplyButtonVal={props.blogListStandardPage.triggerCommentReplyButtonVal}
+                triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
+                initInputForm={props.initInputFormOfBlogCommentReplyForBlogListStandardPage}
+                inputFormFieldsArray={props.blogListStandardPage.commentReplyInputForm}
+                setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
+                replyComment={props.replyCommentBlogListStandardPage}
+                postReply={postReply}
+                cardIdFromPathname={cardIdFromPathname}
+            />
+        )
+    }
+
     const renderBlogListStandardPageDataContent = (data) => {
         if(data.loading && !data.error){
             return(
@@ -405,15 +452,9 @@ export const BlogListStandardPage = (props) => {
                         />
                     </div>
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
-                    <BlogCommentsSection
-                        data={props.blogListStandardPage.postBlogContent}
-                        triggerCommentReplyButtonVal={props.blogListStandardPage.triggerCommentReplyButtonVal}
-                        triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
-                        initInputForm={props.initInputFormOfBlogCommentReplyForBlogListStandardPage}
-                        inputFormFieldsArray={props.blogListStandardPage.commentReplyInputForm}
-                        setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
-                        replyComment={props.replyCommentBlogListStandardPage}
-                    /> : null} 
+                    <> 
+                        {renderBlogCommentsSection()}
+                    </>: null} 
                 </div>
             </Router>
             <Footer/>
@@ -456,6 +497,12 @@ export default connect(
             initInputFormOfBlogCommentReplyForBlogListStandardPage: bindActionCreators(Actions.initInputFormOfBlogCommentReplyForBlogListStandardPage, dispatch),
             setInputFiledValueAndCheckValidationForBlogListStandardPage: bindActionCreators(Actions.setInputFiledValueAndCheckValidationForBlogListStandardPage, dispatch),
             replyCommentBlogListStandardPage: bindActionCreators(Actions.replyCommentBlogListStandardPage, dispatch),
+            fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
+            fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
+            fetchLinkPostBlogData: bindActionCreators(Services.fetchLinkPostBlogData, dispatch),
+            fetchQuotePostBlogData: bindActionCreators(Services.fetchQuotePostBlogData, dispatch),
+            fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
+            fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

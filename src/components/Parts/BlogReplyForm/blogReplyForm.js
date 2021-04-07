@@ -106,9 +106,9 @@ export const BlogReplyForm = (props) => {
 
         //     props.fetchGetDirectionContactFormPageSuccess(info);
         // }else{
-        //     // Fetch data (required to run -> npm run server)
+            // Fetch data (required to run -> npm run server)
 
-        //     props.fetchGetDirectionContactFormPage(info);
+            props.postReply(props.cardIdFromPathname, info);
         // }
         
         // Clear input fields (visually) if the form is valid

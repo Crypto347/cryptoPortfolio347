@@ -2443,117 +2443,171 @@ export function fetchBlogListStandardPageData(activePageId) {
     };
 }
 
-export function fetchStandardPostBlogData(id) {
+export function fetchStandardPostBlogData(id, info) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-item/standard-post/${id}`)
-            // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
-            .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchPostBlogDataSuccess(json));
-                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
-                // return json;
+        return fetch(`http://localhost:3005/api/blog-item/standard-post/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
             })
-            .catch(error => {
-                console.log("error",error)
-                dispatch(Actions.fetchPostBlogDataFailur(error))
-            });
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            dispatch(Actions.fetchPostBlogDataSuccess(json));
+            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchPostBlogDataFailur(error))
+        });
     };
 }
 
-export function fetchGalleryPostBlogData(id) {
+export function fetchGalleryPostBlogData(id, info) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-item/gallery-post/${id}`)
-            // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
-            .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchPostBlogDataSuccess(json));
-                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
-                // return json;
+        return fetch(`http://localhost:3005/api/blog-item/gallery-post/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
             })
-            .catch(error => {
-                console.log("error",error)
-                dispatch(Actions.fetchPostBlogDataFailur(error))
-            });
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            dispatch(Actions.fetchPostBlogDataSuccess(json));
+            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchPostBlogDataFailur(error))
+        });
     };
 }
 
-export function fetchLinkPostBlogData(id) {
+export function fetchLinkPostBlogData(id, info) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-item/link-post/${id}`)
-            // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
-            .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchPostBlogDataSuccess(json));
-                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
-                // return json;
+        return fetch(`http://localhost:3005/api/blog-item/link-post/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
             })
-            .catch(error => {
-                console.log("error",error)
-                dispatch(Actions.fetchPostBlogDataFailur(error))
-            });
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            dispatch(Actions.fetchPostBlogDataSuccess(json));
+            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchPostBlogDataFailur(error))
+        });
     };
 }
 
-export function fetchQuotePostBlogData(id) {
+export function fetchQuotePostBlogData(id, info) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-item/quote-post/${id}`)
-            // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
-            .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchPostBlogDataSuccess(json));
-                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
-                // return json;
+        return fetch(`http://localhost:3005/api/blog-item/quote-post/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
             })
-            .catch(error => {
-                console.log("error",error)
-                dispatch(Actions.fetchPostBlogDataFailur(error))
-            });
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            dispatch(Actions.fetchPostBlogDataSuccess(json));
+            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchPostBlogDataFailur(error))
+        });
     };
 }
 
-export function fetchAudioPostBlogData(id) {
+export function fetchAudioPostBlogData(id, info) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-item/audio-post/${id}`)
-            // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
-            .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchPostBlogDataSuccess(json));
-                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
-                // return json;
+        return fetch(`http://localhost:3005/api/blog-item/audio-post/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
             })
-            .catch(error => {
-                console.log("error",error)
-                dispatch(Actions.fetchPostBlogDataFailur(error))
-            });
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            dispatch(Actions.fetchPostBlogDataSuccess(json));
+            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchPostBlogDataFailur(error))
+        });
     };
 }
 
-export function fetchVideoPostBlogData(id) {
+export function fetchVideoPostBlogData(id, info) {
     return dispatch => {
         dispatch(Actions.fetchPostBlogDataBegin());
-        return fetch(`http://localhost:3005/api/blog-item/video-post/${id}`)
-            // .then(handleErrors)
-            .then(res => res.json()) // to debug instead of json write text
-            .then(json => {
-                // console.log(json)
-                dispatch(Actions.fetchPostBlogDataSuccess(json));
-                dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
-                // return json;
+        return fetch(`http://localhost:3005/api/blog-item/video-post/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
             })
-            .catch(error => {
-                console.log("error",error)
-                dispatch(Actions.fetchPostBlogDataFailur(error))
-            });
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            dispatch(Actions.fetchPostBlogDataSuccess(json));
+            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchPostBlogDataFailur(error))
+        });
     };
 }
 

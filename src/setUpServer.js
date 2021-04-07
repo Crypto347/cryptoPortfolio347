@@ -24008,7 +24008,7 @@ app.post('/api/blog-list-standard', (req, res) => {
     }
 });
 
-app.get('/api/blog-item/standard-post/:id', (req, res) => {
+app.post('/api/blog-item/standard-post/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
     const standardPost = [
@@ -24570,6 +24570,46 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
     ]
 
     let standardPostObj = standardPost.find(item => item.id === id);
+
+    let replyInfo = req.body.info;
+    if(replyInfo){
+        let obj = {
+            id: replyInfo.id,
+            authorName: replyInfo.fullName,
+            date: replyInfo.date,
+            text: replyInfo.comment,
+            authorImage: {
+                id: `imageId${replyInfo.id}`,
+                key: "blogPostSingleItemAuthorImg12",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                alt: "image"
+            },
+            repliesArray: []
+        }
+        if(replyInfo.pathOfIds.length === 1){
+            standardPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+        }
+        if(replyInfo.pathOfIds.length === 2){
+            standardPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 3){
+            standardPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 4){
+            standardPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+        }
+    }
     if(!standardPostObj) {
         res.status(404).send("The blog post with the given ID was not found")
     }else{
@@ -24577,7 +24617,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
     }
 });
 
-app.get('/api/blog-item/gallery-post/:id', (req, res) => {
+app.post('/api/blog-item/gallery-post/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
     const galleryPost = [
@@ -25230,6 +25270,47 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
     ]
 
     let galleryPostObj = galleryPost.find(item => item.id === id);
+
+    let replyInfo = req.body.info;
+    if(replyInfo){
+        let obj = {
+            id: replyInfo.id,
+            authorName: replyInfo.fullName,
+            date: replyInfo.date,
+            text: replyInfo.comment,
+            authorImage: {
+                id: `imageId${replyInfo.id}`,
+                key: "blogPostSingleItemAuthorImg12",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                alt: "image"
+            },
+            repliesArray: []
+        }
+        if(replyInfo.pathOfIds.length === 1){
+            galleryPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+        }
+        if(replyInfo.pathOfIds.length === 2){
+            galleryPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 3){
+            galleryPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 4){
+            galleryPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+        }
+    }
+
     if(!galleryPostObj) {
         res.status(404).send("The blog post with the given ID was not found")
     }else{
@@ -25237,7 +25318,7 @@ app.get('/api/blog-item/gallery-post/:id', (req, res) => {
     }
 });
 
-app.get('/api/blog-item/link-post/:id', (req, res) => {
+app.post('/api/blog-item/link-post/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
     const linkPost = [
@@ -25948,6 +26029,47 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
     ]
 
     let linkPostObj = linkPost.find(item => item.id === id);
+
+    let replyInfo = req.body.info;
+    if(replyInfo){
+        let obj = {
+            id: replyInfo.id,
+            authorName: replyInfo.fullName,
+            date: replyInfo.date,
+            text: replyInfo.comment,
+            authorImage: {
+                id: `imageId${replyInfo.id}`,
+                key: "blogPostSingleItemAuthorImg12",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                alt: "image"
+            },
+            repliesArray: []
+        }
+        if(replyInfo.pathOfIds.length === 1){
+            linkPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+        }
+        if(replyInfo.pathOfIds.length === 2){
+            linkPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 3){
+            linkPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 4){
+            linkPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+        }
+    }
+
     if(!linkPostObj) {
         res.status(404).send("The blog post with the given ID was not found")
     }else{
@@ -25955,7 +26077,7 @@ app.get('/api/blog-item/link-post/:id', (req, res) => {
     }
 });
 
-app.get('/api/blog-item/quote-post/:id', (req, res) => {
+app.post('/api/blog-item/quote-post/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
     const quotePost = [
@@ -26670,6 +26792,47 @@ app.get('/api/blog-item/quote-post/:id', (req, res) => {
     ]
 
     let quotePostObj = quotePost.find(item => item.id === id);
+
+    let replyInfo = req.body.info;
+    if(replyInfo){
+        let obj = {
+            id: replyInfo.id,
+            authorName: replyInfo.fullName,
+            date: replyInfo.date,
+            text: replyInfo.comment,
+            authorImage: {
+                id: `imageId${replyInfo.id}`,
+                key: "blogPostSingleItemAuthorImg12",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                alt: "image"
+            },
+            repliesArray: []
+        }
+        if(replyInfo.pathOfIds.length === 1){
+            quotePostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+        }
+        if(replyInfo.pathOfIds.length === 2){
+            quotePostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 3){
+            quotePostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 4){
+            quotePostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+        }
+    }
+
     if(!quotePostObj) {
         res.status(404).send("The blog post with the given ID was not found")
     }else{
@@ -26677,7 +26840,7 @@ app.get('/api/blog-item/quote-post/:id', (req, res) => {
     }
 });
 
-app.get('/api/blog-item/audio-post/:id', (req, res) => {
+app.post('/api/blog-item/audio-post/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
     const audioPost = [
@@ -27564,6 +27727,47 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
     ]
 
     let audioPostObj = audioPost.find(item => item.id === id);
+
+    let replyInfo = req.body.info;
+    if(replyInfo){
+        let obj = {
+            id: replyInfo.id,
+            authorName: replyInfo.fullName,
+            date: replyInfo.date,
+            text: replyInfo.comment,
+            authorImage: {
+                id: `imageId${replyInfo.id}`,
+                key: "blogPostSingleItemAuthorImg12",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                alt: "image"
+            },
+            repliesArray: []
+        }
+        if(replyInfo.pathOfIds.length === 1){
+            audioPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+        }
+        if(replyInfo.pathOfIds.length === 2){
+            audioPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 3){
+            audioPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 4){
+            audioPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+        }
+    }
+    
     if(!audioPostObj) {
         res.status(404).send("The blog post with the given ID was not found")
     }else{
@@ -27571,7 +27775,7 @@ app.get('/api/blog-item/audio-post/:id', (req, res) => {
     }
 });
 
-app.get('/api/blog-item/video-post/:id', (req, res) => {
+app.post('/api/blog-item/video-post/:id', (req, res) => {
     let id = parseInt(req.params.id);
   
     const videoPost = [
@@ -28106,6 +28310,47 @@ app.get('/api/blog-item/video-post/:id', (req, res) => {
     ]
 
     let videoPostObj = videoPost.find(item => item.id === id);
+
+    let replyInfo = req.body.info;
+    if(replyInfo){
+        let obj = {
+            id: replyInfo.id,
+            authorName: replyInfo.fullName,
+            date: replyInfo.date,
+            text: replyInfo.comment,
+            authorImage: {
+                id: `imageId${replyInfo.id}`,
+                key: "blogPostSingleItemAuthorImg12",
+                isHover: "init",
+                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                alt: "image"
+            },
+            repliesArray: []
+        }
+        if(replyInfo.pathOfIds.length === 1){
+            videoPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+        }
+        if(replyInfo.pathOfIds.length === 2){
+            videoPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 3){
+            videoPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+        }
+        if(replyInfo.pathOfIds.length === 4){
+            videoPostObj.comments
+            .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+            .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+        }
+    }
+
     if(!videoPostObj) {
         res.status(404).send("The blog post with the given ID was not found")
     }else{

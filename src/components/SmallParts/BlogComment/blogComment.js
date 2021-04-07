@@ -137,6 +137,8 @@ export const BlogComment = (props) => {
                 setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
                 replyComment={props.replyComment}
                 pathOfIdsToComment={pathOfIdsToComment}
+                postReply={props.postReply}
+                cardIdFromPathname={props.cardIdFromPathname}
             />
         )
     }
