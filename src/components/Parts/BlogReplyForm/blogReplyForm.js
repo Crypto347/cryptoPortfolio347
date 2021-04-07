@@ -114,10 +114,10 @@ export const BlogReplyForm = (props) => {
         // Clear input fields (visually) if the form is valid
 
         if(props.inputFormFieldsArray.formIsValid){
-            clearInputValue("input1");
-            clearInputValue("input2");
-            clearInputValue("input3");
-            clearInputValue("input4");
+            clearInputValue("blogListCommentReplyInputFormComment");
+            clearInputValue("blogListCommentReplyInputFormFullName");
+            clearInputValue("blogListCommentReplyInputFormEmail");
+            clearInputValue("blogListCommentReplyInputFormWebsite");
         }
 
         // Clear input field (visually) if the entered value does not match to the rules of that field
@@ -136,6 +136,7 @@ export const BlogReplyForm = (props) => {
     }
 
     const clearInputValue = (fieldId) => {
+     
         document.getElementById(fieldId).value = '';
     }
 

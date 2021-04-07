@@ -178,7 +178,7 @@ export const blogListStandardSearchInputForm = {
             touched: false,
             errorMessage: [],
             type: "search",
-            inputID: 'input1',
+            inputID: 'blogListCommentReplyInputFormSearch',
             controlName: "search"
         }
     ]
@@ -207,7 +207,7 @@ export const blogListCommentReplyInputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input1',
+            inputID: 'blogListCommentReplyInputFormComment',
             controlName: "comment"
         },
         {
@@ -229,7 +229,7 @@ export const blogListCommentReplyInputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input2',
+            inputID: 'blogListCommentReplyInputFormFullName',
             controlName: "fullName"
         },
         { 
@@ -255,7 +255,7 @@ export const blogListCommentReplyInputForm = {
             touched: false,
             errorMessage: [],
             type: "text",
-            inputID: 'input3',
+            inputID: 'blogListCommentReplyInputFormEmail',
             controlName: "email"
         },
         {
@@ -277,7 +277,7 @@ export const blogListCommentReplyInputForm = {
             touched: false,
             errorMessage: [],
             type: "number",
-            inputID: 'input4',
+            inputID: 'blogListCommentReplyInputFormWebsite',
             controlName: "website"
         }
     ]
