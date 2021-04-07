@@ -126,6 +126,21 @@ export const BlogComment = (props) => {
         }
     }
 
+    const renderBlogReplyForm = () => {
+        let pathOfIdsToComment = [...props.pathOfIdsToComment];
+        pathOfIdsToComment.push(props.data.id);
+        return(
+            <BlogReplyForm
+                // inputFieldNameBold
+                initInputForm={props.initInputForm}
+                inputFormFieldsArray={props.inputFormFieldsArray}
+                setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
+                replyComment={props.replyComment}
+                pathOfIdsToComment={pathOfIdsToComment}
+            />
+        )
+    }
+
     /**
      * Markup
      */
@@ -170,12 +185,7 @@ export const BlogComment = (props) => {
                                 <H13 className="h13-black-poppins">cancel reply</H13>
                             </div>
                             <EH10/>
-                            <BlogReplyForm
-                                // inputFieldNameBold
-                                initInputForm={props.initInputForm}
-                                inputFormFieldsArray={props.inputFormFieldsArray}
-                                setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
-                            />
+                            {renderBlogReplyForm()}
                         </>
                         : null}
                     </div>

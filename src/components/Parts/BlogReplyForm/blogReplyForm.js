@@ -7,6 +7,8 @@ import React, {
     useEffect
 } from 'react';
 
+import uuid from "uuid";
+
 /**
  * Styles
  */
@@ -31,6 +33,8 @@ import {
     EH20,
     EH30
 } from '../../UtilityComponents';
+
+import * as Utility from '../../../utility';
 
 /**
  * Hooks
@@ -71,7 +75,7 @@ export const BlogReplyForm = (props) => {
 
     }, []);
 
-    const onClickHandler = (opt) => {
+    const onClickHandler = () => {
         let info;
 
         /**
@@ -80,34 +84,36 @@ export const BlogReplyForm = (props) => {
          * then show needed error messages
          */
     
-        props.getDirectionContactFormPage();
+        props.replyComment();
 
         // Collect all the information you neet to post
 
         info = {
             id: uuid(),
-            fullName: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "fullName").value}`,
-            company: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "company").value}`,
-            email: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "email").value}`,
-            // date: Utility.getCurrentDateAndTime(),
-            phone: `${props.contactFormPage.section1.inputForm.inputsArray.find(x => x.controlName === "phone").value}`,
+            pathOfIds: props.pathOfIdsToComment,
+            comment: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "comment").value}`,
+            fullName: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "fullName").value}`,
+            email: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "email").value}`,
+            date: Utility.getCurrentDateAndTime(),
+            website: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "website").value}`,
         }
 
+        console.log("Form", info)
         // Post the information
 
-        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-            // Fetch mock data (not required to run -> npm run server)
+        // if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+        //     // Fetch mock data (not required to run -> npm run server)
 
-            props.fetchGetDirectionContactFormPageSuccess(info);
-        }else{
-            // Fetch data (required to run -> npm run server)
+        //     props.fetchGetDirectionContactFormPageSuccess(info);
+        // }else{
+        //     // Fetch data (required to run -> npm run server)
 
-            props.fetchGetDirectionContactFormPage(info);
-        }
+        //     props.fetchGetDirectionContactFormPage(info);
+        // }
         
         // Clear input fields (visually) if the form is valid
 
-        if(props.contactFormPage.section1.inputForm.formIsValid){
+        if(props.inputFormFieldsArray.formIsValid){
             clearInputValue("input1");
             clearInputValue("input2");
             clearInputValue("input3");
@@ -116,7 +122,7 @@ export const BlogReplyForm = (props) => {
 
         // Clear input field (visually) if the entered value does not match to the rules of that field
 
-        props.contactFormPage.section1.inputForm.inputsArray.map(el => {
+        props.inputFormFieldsArray.inputsArray.map(el => {
             if(!el.validField){
                 clearInputValue(el.inputID);
             }
@@ -167,7 +173,7 @@ export const BlogReplyForm = (props) => {
                     <Button
                         className="buttons-page-small"
                         text="post comment."
-                        // onClick={() => onClickHandler('section1InputForm')}
+                        onClick={onClickHandler}
                     />
                     <EH20/>
                     {/* {loadingOnButtonClick("getDirection")} */}

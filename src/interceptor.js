@@ -1,5 +1,6 @@
 // 2nd way of interceptor. Use it in index.js (instead of axiosInstance)
 import axios from 'axios';
+
 axios.interceptors.request.use(request => {
     // req.headers.Authroization = "Bearer jjjjj"
     console.log("APP",request);

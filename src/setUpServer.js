@@ -21040,7 +21040,7 @@ app.post('/api/blog-list-standard', (req, res) => {
                         {
                             id: 21,
                             authorName: "John Williams",
-                            date: "02.04.2021",
+                            date: "05.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
@@ -21049,7 +21049,37 @@ app.post('/api/blog-list-standard', (req, res) => {
                                 imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
                                 alt: "image"
                             },
-                            repliesArray: []
+                            repliesArray: [
+                                {
+                                    id: 212,
+                                    authorName: "Amelia Garcia",
+                                    date: "06.04.2021",
+                                    text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
+                                    authorImage: {
+                                        id: "image212",
+                                        key: "blogPostSingleItemAuthorImg212",
+                                        isHover: "init",
+                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        alt: "image"
+                                    },
+                                    repliesArray: [
+                                        {
+                                            id: 2121,
+                                            authorName: "John Williams",
+                                            date: "07.04.2021",
+                                            text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
+                                            authorImage: {
+                                                id: "image2121",
+                                                key: "blogPostSingleItemAuthorImg2121",
+                                                isHover: "init",
+                                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                                alt: "image"
+                                            },
+                                            repliesArray: []
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -24142,7 +24172,7 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                         {
                             id: 21,
                             authorName: "John Williams",
-                            date: "02.04.2021",
+                            date: "05.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
@@ -24151,7 +24181,37 @@ app.get('/api/blog-item/standard-post/:id', (req, res) => {
                                 imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
                                 alt: "image"
                             },
-                            repliesArray: []
+                            repliesArray: [
+                                {
+                                    id: 212,
+                                    authorName: "Amelia Garcia",
+                                    date: "06.04.2021",
+                                    text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
+                                    authorImage: {
+                                        id: "image212",
+                                        key: "blogPostSingleItemAuthorImg212",
+                                        isHover: "init",
+                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        alt: "image"
+                                    },
+                                    repliesArray: [
+                                        {
+                                            id: 2121,
+                                            authorName: "John Williams",
+                                            date: "07.04.2021",
+                                            text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
+                                            authorImage: {
+                                                id: "image2121",
+                                                key: "blogPostSingleItemAuthorImg2121",
+                                                isHover: "init",
+                                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                                alt: "image"
+                                            },
+                                            repliesArray: []
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

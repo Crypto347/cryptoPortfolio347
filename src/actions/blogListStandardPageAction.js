@@ -181,3 +181,9 @@ export function setInputFiledValueAndCheckValidationForBlogListStandardPage(obj,
         formName: formName
     };
 };
+
+export function replyCommentBlogListStandardPage() {
+    return { 
+        type: actionTypes.REPLY_COMMENT_BLOG_LIST_STANDARD_PAGE
+    };
+};

@@ -404,6 +404,60 @@ const setInputFiledValueAndCheckValidationForBlogListStandardPage = (state, acti
     };
 }
 
+const replyCommentBlogListStandardPage = (state, action) => {
+    let updatedReplyInputForm = {...state.commentReplyInputForm, inputsArray: [...state.commentReplyInputForm.inputsArray]};
+
+    if(state.commentReplyInputForm.formIsValid && state.commentReplyInputForm.inputsArray){
+        // info = {
+        //     id: uuid(),
+        //     pathOfIds: props.pathOfIdsToComment,
+        //     comment: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "comment").value}`,
+        //     fullName: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "fullName").value}`,
+        //     email: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "email").value}`,
+        //     date: Utility.getCurrentDateAndTime(),
+        //     website: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "website").value}`,
+        // }
+        // updatedSingleStory.comments.push(comment);
+        // updatedReplyInputForm.inputsArray = updatedReplyInputForm.inputsArray.map(el => {return {...el, value: ''}});
+        
+        updatedReplyInputForm.formIsValid = false;
+        updatedReplyInputForm.inputsArray = updatedReplyInputForm.inputsArray.map(el => {
+            return {
+                ...el, 
+                value: '', 
+                validField: el.validation.length !== 0 ? false : true, 
+                touched: false,
+                validation: el.validation.map(el2 => {
+                    return{
+                        ...el2,
+                        valid: false
+                    }
+                })
+            }
+        });
+    }else{
+        updatedReplyInputForm.inputsArray = updatedReplyInputForm.inputsArray.map((el, i) => {
+            if(Utility.checkValidityOfField(el.validation)){
+                return {
+                    ...el, 
+                    touched: false,
+                    errorMessage: []
+                }
+            }else{
+                return {
+                    ...el, 
+                    touched: true,
+                    errorMessage: ["Fill the field"]
+                }
+            }
+        })
+    }
+    return {
+        ...state,
+        commentReplyInputForm: updatedReplyInputForm
+    }; 
+}
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -454,6 +508,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return initInputFormOfBlogCommentReplyForBlogListStandardPage (state, action);
         case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHECK_VALIDATION_FOR_BLOG_LIST_STANDARD_PAGE:
             return setInputFiledValueAndCheckValidationForBlogListStandardPage (state, action);
+        case actionTypes.REPLY_COMMENT_BLOG_LIST_STANDARD_PAGE:
+            return replyCommentBlogListStandardPage (state, action);
         default: 
             return state;
     }

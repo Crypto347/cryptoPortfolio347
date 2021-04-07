@@ -147,7 +147,6 @@ export const Main = (props) => {
         props.setArchiveCategory(localStorage.getItem('archiveCategoryHG'));
         props.setUnmountComponentValues(false, '', localStorage.getItem('pageHG'));
 
-
         // Previous location pathname
 
         let prevLocation = props.location.pathname;

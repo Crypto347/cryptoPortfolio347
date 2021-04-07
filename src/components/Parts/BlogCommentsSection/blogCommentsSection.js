@@ -48,6 +48,7 @@ export const BlogCommentsSection = (props) => {
      */
 
     const size = useWindowSize();
+    const [pathOfIdsToComment, setPathOfIdsToComment] = useState([])
     
     /**
      * Methods
@@ -56,12 +57,22 @@ export const BlogCommentsSection = (props) => {
     useEffect(() => {
     }, []);
 
-    const renderComments = (arr) => {
+    const renderComments = (arr, id, _pathOfIds = []) => {
         let iteration = 0;
+        let pathOfIds = [...pathOfIdsToComment];
+       
+        if(id && _pathOfIds.length === 0){
+            // pathOfIdsToComment = Array.isArray(pathOfIdsToComment) ? [...pathOfIdsToComment] : new Array();
+            pathOfIds.push(id)
+        }else if(id && _pathOfIds.length !== 0){
+            pathOfIds=[..._pathOfIds];
+            pathOfIds.push(id)
+        }
+
         return(
             <>
                 {arr.map((el, i) => {
-                    iteration ++;
+                    iteration ++;                  
                     return(
                         <React.Fragment key={el.id}>
                             <BlogComment
@@ -71,10 +82,13 @@ export const BlogCommentsSection = (props) => {
                                 initInputForm={props.initInputForm}
                                 inputFormFieldsArray={props.inputFormFieldsArray}
                                 setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidation}
+                                replyComment={props.replyComment}
+                                pathOfIdsToComment={pathOfIds}
                             />
+                            {el.repliesArray.length !== 0 ? 
                             <div className="blog-comments-section-reply" style={{paddingLeft: `${iteration * 75}px`}}>
-                                {el.repliesArray.length !== 0 ? renderComments(el.repliesArray) : null}
-                            </div>
+                                {renderComments(el.repliesArray, el.id, pathOfIds)}
+                            </div> : null}
                         </React.Fragment>
                     )
                 })}
