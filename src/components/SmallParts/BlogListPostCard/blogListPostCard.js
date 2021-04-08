@@ -294,21 +294,23 @@ export const BlogListPostCard = (props) => {
     }
 
     const onLikesClickHandler = () => {
-        // Remember posts that user liked and icrease the number of likes
+        // Remember posts that user liked
 
         if(!props.elData.userLikedThePost){
+            // Icrease the number of likes
+
             props.increaseTheNumberOfLikes(props.elData.key);
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
             userLikedPosts.push(props.elData.key);
             localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts));
-        }else {
+        }else{
+            // Decrease the number of likes
+            
             props.decreaseTheNumberOfLikes(props.elData.key);
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
             userLikedPosts = userLikedPosts.filter(item => item !== props.elData.key);
-           
-
             localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts))
         }
     }

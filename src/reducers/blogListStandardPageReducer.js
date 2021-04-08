@@ -458,7 +458,7 @@ const replyCommentBlogListStandardPage = (state, action) => {
     }; 
 }
 
-const increaseTheNumberOfLikesForBlogListStandardPage = (state, action) => {
+const increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage = (state, action) => {
     let updatedItems = [...state.items];
 
     let item = updatedItems.find(item => item.key === action.cardKey);
@@ -477,7 +477,7 @@ const increaseTheNumberOfLikesForBlogListStandardPage = (state, action) => {
     }; 
 }
 
-const decreaseTheNumberOfLikesForBlogListStandardPage = (state, action) => {
+const decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage = (state, action) => {
     let updatedItems = [...state.items];
 
     let item = updatedItems.find(item => item.key === action.cardKey);
@@ -493,6 +493,38 @@ const decreaseTheNumberOfLikesForBlogListStandardPage = (state, action) => {
     return {
         ...state,
         items: updatedItems
+    }; 
+}
+
+const increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage = (state, action) => {
+    let updatedItem = {
+        ...state.postBlogContent.item,
+        numberOfLikes: state.postBlogContent.item.numberOfLikes + 1,
+        userLikedThePost: true
+    };
+
+    return {
+        ...state,
+        postBlogContent: {
+            ...state.postBlogContent,
+            item: updatedItem
+        }
+    }; 
+}
+
+const decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage = (state, action) => {
+    let updatedItem = {
+        ...state.postBlogContent.item,
+        numberOfLikes: state.postBlogContent.item.numberOfLikes - 1,
+        userLikedThePost: false
+    };
+    
+    return {
+        ...state,
+        postBlogContent: {
+            ...state.postBlogContent,
+            item: updatedItem
+        }
     }; 
 }
 
@@ -548,10 +580,14 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return setInputFiledValueAndCheckValidationForBlogListStandardPage (state, action);
         case actionTypes.REPLY_COMMENT_BLOG_LIST_STANDARD_PAGE:
             return replyCommentBlogListStandardPage (state, action);
-        case actionTypes.INCREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE:
-            return increaseTheNumberOfLikesForBlogListStandardPage (state, action);
-        case actionTypes.DECREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE:
-            return decreaseTheNumberOfLikesForBlogListStandardPage (state, action);            
+        case actionTypes.INCREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_CARD_FOR_BLOG_LIST_STANDARD_PAGE:
+            return increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage (state, action);
+        case actionTypes.DECREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_CARD_FOR_BLOG_LIST_STANDARD_PAGE:
+            return decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage (state, action);
+        case actionTypes.INCREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE:
+            return increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage (state, action);
+        case actionTypes.DECREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE:
+            return decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage (state, action);            
         default: 
             return state;
     }

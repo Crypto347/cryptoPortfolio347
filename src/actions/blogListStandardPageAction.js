@@ -188,17 +188,30 @@ export function replyCommentBlogListStandardPage() {
     };
 };
 
-export function increaseTheNumberOfLikesForBlogListStandardPage(cardKey) {
+export function increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage(cardKey) {
     return { 
-        type: actionTypes.INCREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE,
+        type: actionTypes.INCREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_CARD_FOR_BLOG_LIST_STANDARD_PAGE,
         cardKey: cardKey
     };
 };
 
-export function decreaseTheNumberOfLikesForBlogListStandardPage(cardKey) {
+export function decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage(cardKey) {
     return { 
-        type: actionTypes.DECREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE,
+        type: actionTypes.DECREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_CARD_FOR_BLOG_LIST_STANDARD_PAGE,
         cardKey: cardKey
     };
 };
 
+export function increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage(cardKey) {
+    return { 
+        type: actionTypes.INCREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE,
+        cardKey: cardKey
+    };
+};
+
+export function decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage(cardKey) {
+    return { 
+        type: actionTypes.DECREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE,
+        cardKey: cardKey
+    };
+};

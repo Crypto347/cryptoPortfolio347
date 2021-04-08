@@ -2478,8 +2478,23 @@ export function fetchStandardPostBlogData(id, info) {
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
             // console.log(json)
-            dispatch(Actions.fetchPostBlogDataSuccess(json));
-            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+
+            // Update userLikedThePost property, according to the posts that user liked
+
+            let updatedJson = {...json};
+            let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userPostsLikedArray.map((el, i) => {
+                if(updatedJson.cardId === el){
+                    updatedJson = {
+                        ...updatedJson,
+                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        userLikedThePost: true
+                    }
+                }
+            });
+
+            dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
         })
         .catch(error => {
@@ -2534,8 +2549,22 @@ export function fetchLinkPostBlogData(id, info) {
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
             // console.log(json)
-            dispatch(Actions.fetchPostBlogDataSuccess(json));
-            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+
+            // Update userLikedThePost property, according to the posts that user liked
+
+            let updatedJson = {...json};
+            let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userPostsLikedArray.map((el, i) => {
+                if(updatedJson.cardId === el){
+                    updatedJson = {
+                        ...updatedJson,
+                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        userLikedThePost: true
+                    }
+                }
+            });
+            dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
         })
         .catch(error => {
@@ -2562,8 +2591,23 @@ export function fetchQuotePostBlogData(id, info) {
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
             // console.log(json)
-            dispatch(Actions.fetchPostBlogDataSuccess(json));
-            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+
+            // Update userLikedThePost property, according to the posts that user liked
+
+            let updatedJson = {...json};
+            let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userPostsLikedArray.map((el, i) => {
+                if(updatedJson.cardId === el){
+                    updatedJson = {
+                        ...updatedJson,
+                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        userLikedThePost: true
+                    }
+                }
+            });
+
+            dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
         })
         .catch(error => {
@@ -2590,8 +2634,23 @@ export function fetchAudioPostBlogData(id, info) {
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
             // console.log(json)
-            dispatch(Actions.fetchPostBlogDataSuccess(json));
-            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+
+            // Update userLikedThePost property, according to the posts that user liked
+
+            let updatedJson = {...json};
+            let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userPostsLikedArray.map((el, i) => {
+                if(updatedJson.cardId === el){
+                    updatedJson = {
+                        ...updatedJson,
+                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        userLikedThePost: true
+                    }
+                }
+            });
+
+            dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
         })
         .catch(error => {
@@ -2618,8 +2677,23 @@ export function fetchVideoPostBlogData(id, info) {
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
             // console.log(json)
-            dispatch(Actions.fetchPostBlogDataSuccess(json));
-            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+
+            // Update userLikedThePost property, according to the posts that user liked
+
+            let updatedJson = {...json};
+            let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userPostsLikedArray.map((el, i) => {
+                if(updatedJson.cardId === el){
+                    updatedJson = {
+                        ...updatedJson,
+                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        userLikedThePost: true
+                    }
+                }
+            });
+
+            dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
         })
         .catch(error => {
