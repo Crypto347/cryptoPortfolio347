@@ -301,6 +301,14 @@ export const BlogListPostCard = (props) => {
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
             userLikedPosts.push(props.elData.key);
+            localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts));
+        }else {
+            props.decreaseTheNumberOfLikes(props.elData.key);
+
+            let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userLikedPosts = userLikedPosts.filter(item => item !== props.elData.key);
+           
+
             localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts))
         }
     }

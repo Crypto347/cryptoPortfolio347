@@ -194,3 +194,11 @@ export function increaseTheNumberOfLikesForBlogListStandardPage(cardKey) {
         cardKey: cardKey
     };
 };
+
+export function decreaseTheNumberOfLikesForBlogListStandardPage(cardKey) {
+    return { 
+        type: actionTypes.DECREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE,
+        cardKey: cardKey
+    };
+};
+

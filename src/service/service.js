@@ -2432,8 +2432,10 @@ export function fetchBlogListStandardPageData(activePageId) {
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
+
+                // Update userLikedThePost property, according to the posts that user liked
+
                 let updatedJson = [...json.blogListStandardPage];
-                console.log(updatedJson)
                 let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
                 userPostsLikedArray.map((el, i) => {
                     let item = updatedJson.filter(item => item.key === el);
@@ -2441,14 +2443,13 @@ export function fetchBlogListStandardPageData(activePageId) {
                         let itemIndex = updatedJson.findIndex(item => item.key === el);
                         let obj = {
                             ...item[0],
-                            numberOfComments: item[0].numberOfComments + 1,
+                            numberOfLikes: item[0].numberOfLikes + 1,
                             userLikedThePost: true
                         }
                         updatedJson.splice(itemIndex, 1, obj);
                     }
-                })
-            
-                console.log(updatedJson)
+                });
+
                 dispatch(Actions.fetchBlogListStandardPageDataSuccess(updatedJson));
                 dispatch(Actions.initBlogPagination(json.numberOfPages));
                 // return json;

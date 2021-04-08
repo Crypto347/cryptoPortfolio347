@@ -278,6 +278,7 @@ export const BlogListStandardPage = (props) => {
                                 unmountComponent={props.unmountComponent}
                                 clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                                 increaseTheNumberOfLikes={props.increaseTheNumberOfLikesForBlogListStandardPage}
+                                decreaseTheNumberOfLikes={props.decreaseTheNumberOfLikesForBlogListStandardPage}
                             />
                         </React.Fragment>
                     )
@@ -505,6 +506,7 @@ export default connect(
             fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
             increaseTheNumberOfLikesForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesForBlogListStandardPage, dispatch),
+            decreaseTheNumberOfLikesForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));
