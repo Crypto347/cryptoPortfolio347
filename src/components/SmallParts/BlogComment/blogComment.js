@@ -141,52 +141,6 @@ export const BlogComment = (props) => {
         }
     }
 
-//     {
-//         id: 4,
-//         key: "teamMember22",
-//         name: "Kevin Jones",
-//         position: "Developer",
-//         photo: "Photo17",
-//         instaName: "KevinJones",
-//         path: "ian-dooley-d1UPkiFd04A-unsplash.png",
-//         hover: false,
-//         alt: "image"
-//     },
-//     {
-//         id: 5,
-//         key: "teamMember23",
-//         name: "Joseph Gonzalez",
-//         position: "UX Designer",
-//         photo: "Photo18",
-//         instaName: "JosephGonzalez",
-//         path: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
-//         hover: false,
-//         alt: "image"
-//     },
-// {
-//         id: 6,
-//         key: "teamMember24",
-//         name: "Naomi Hernandez",
-//         position: "Copywriter",
-//         photo: "Photo19",
-//         instaName: "NaomiHernandez",
-//         path: "christian-acosta-w1yTGE0mDwE-unsplash.png",
-//         hover: false,
-//         alt: "image"
-//     },
-// {
-//         id: 8,
-//         key: "teamMember26",
-//         name: "Emery Lee",
-//         position: "Developer",
-//         photo: "Photo21",
-//         instaName: "EmeryLee",
-//         path: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
-//         hover: false,
-//         alt: "image"
-//     }
-
-
     const renderBlogReplyForm = () => {
         let pathOfIdsToComment = [...props.pathOfIdsToComment];
         pathOfIdsToComment.push(props.data.id);
