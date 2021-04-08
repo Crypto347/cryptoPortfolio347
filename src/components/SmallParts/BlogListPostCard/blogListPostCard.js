@@ -268,7 +268,7 @@ export const BlogListPostCard = (props) => {
         }
     }
 
-    const onClickHandler = (e, path, key) => {
+    const onCardClickHandler = (e, path, key) => {
 
         // Do nothing on right mouse click 
 
@@ -293,6 +293,18 @@ export const BlogListPostCard = (props) => {
         }
     }
 
+    const onLikesClickHandler = () => {
+        // Remember posts that user liked and icrease the number of likes
+
+        if(!props.elData.userLikedThePost){
+            props.increaseTheNumberOfLikes(props.elData.key);
+
+            let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userLikedPosts.push(props.elData.key);
+            localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts))
+        }
+    }
+
     const renderCardCover = (type) => {
         switch(type){
             case 'audioPost':
@@ -300,7 +312,7 @@ export const BlogListPostCard = (props) => {
                     <div className="blog-list-post-card-audio-wrapper">
                         <img 
                             src={loadImg(props.elData.coverImage.key)}
-                            // onMouseDown={(e) => onClickHandler(e)}
+                            // onMouseDown={(e) => onCardClickHandler(e)}
                         />
                         <Audio
                             audioKey={props.elData.audioKey}
@@ -335,7 +347,7 @@ export const BlogListPostCard = (props) => {
                 return(
                     <img 
                         src={loadImg(props.elData.coverImage.key)}
-                        onMouseDown={(e) => onClickHandler(e, props.elData.path, props.elData.key)}
+                        onMouseDown={(e) => onCardClickHandler(e, props.elData.path, props.elData.key)}
                     />              
                 );
         }
@@ -356,7 +368,7 @@ export const BlogListPostCard = (props) => {
                     <div
                         onMouseEnter={() => handleMouseEnter(`blogCardHeader`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardHeader`)}
-                        onMouseDown={(e) => onClickHandler(e, props.elData.path, props.elData.key)}
+                        onMouseDown={(e) => onCardClickHandler(e, props.elData.path, props.elData.key)}
                     >
                         <H35 className={renderClassName("blogCardHeader", isHoveringBlogCardHeader)}>{props.elData.header}</H35>
                     </div>
@@ -422,11 +434,12 @@ export const BlogListPostCard = (props) => {
                     <div 
                         className="blog-list-post-card-info-likes"
                         onMouseEnter={() => handleMouseEnter(`blogCardLikes`)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardLikes`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardLikes`)}
+                        onClick={onLikesClickHandler}
                     >
                         <Icon 
                             iconType="fontAwesome"
-                            icon="faHeart"
+                            icon={props.elData.userLikedThePost ? "faHeartSolid" : "faHeart"}
                             iconSize="1x"
                             isHover={isHoveringBlogCardLikes}
                             classNameOpt="blogCardLike"

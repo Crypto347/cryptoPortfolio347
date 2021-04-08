@@ -458,6 +458,25 @@ const replyCommentBlogListStandardPage = (state, action) => {
     }; 
 }
 
+const increaseTheNumberOfLikesForBlogListStandardPage = (state, action) => {
+    let updatedItems = [...state.items];
+
+    let item = updatedItems.find(item => item.key === action.cardKey);
+    item = {
+        ...item,
+       numberOfLikes: item.numberOfLikes + 1,
+       userLikedThePost: true
+    }
+    let itemIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+
+    updatedItems.splice(itemIndex, 1, item);
+
+    return {
+        ...state,
+        items: updatedItems
+    }; 
+}
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -510,6 +529,9 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return setInputFiledValueAndCheckValidationForBlogListStandardPage (state, action);
         case actionTypes.REPLY_COMMENT_BLOG_LIST_STANDARD_PAGE:
             return replyCommentBlogListStandardPage (state, action);
+        case actionTypes.INCREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE:
+            return increaseTheNumberOfLikesForBlogListStandardPage (state, action);
+            
         default: 
             return state;
     }

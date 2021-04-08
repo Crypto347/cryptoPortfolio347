@@ -38,7 +38,8 @@ import {
     faSearch,
     faShareAlt,
     faLink,
-    faQuoteLeft
+    faQuoteLeft,
+    faHeart as faHeartSolid
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -206,6 +207,8 @@ export const Icon = (props) => {
                 return faSearch;
             case 'faHeart':
                 return faHeart;
+            case 'faHeartSolid':
+                return faHeartSolid;
             case 'faComment':
                 return faComment;
             case 'faBookmark':

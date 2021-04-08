@@ -187,3 +187,10 @@ export function replyCommentBlogListStandardPage() {
         type: actionTypes.REPLY_COMMENT_BLOG_LIST_STANDARD_PAGE
     };
 };
+
+export function increaseTheNumberOfLikesForBlogListStandardPage(cardKey) {
+    return { 
+        type: actionTypes.INCREASE_THE_NUMBER_OF_LIKES_FOR_BLOG_LIST_STANDARD_PAGE,
+        cardKey: cardKey
+    };
+};

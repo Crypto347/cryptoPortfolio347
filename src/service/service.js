@@ -2432,7 +2432,24 @@ export function fetchBlogListStandardPageData(activePageId) {
             .then(res => res.json()) // to debug instead of json write text
             .then(json => {
                 // console.log(json)
-                dispatch(Actions.fetchBlogListStandardPageDataSuccess(json.blogListStandardPage));
+                let updatedJson = [...json.blogListStandardPage];
+                console.log(updatedJson)
+                let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+                userPostsLikedArray.map((el, i) => {
+                    let item = updatedJson.filter(item => item.key === el);
+                    if(item.length !== 0){
+                        let itemIndex = updatedJson.findIndex(item => item.key === el);
+                        let obj = {
+                            ...item[0],
+                            numberOfComments: item[0].numberOfComments + 1,
+                            userLikedThePost: true
+                        }
+                        updatedJson.splice(itemIndex, 1, obj);
+                    }
+                })
+            
+                console.log(updatedJson)
+                dispatch(Actions.fetchBlogListStandardPageDataSuccess(updatedJson));
                 dispatch(Actions.initBlogPagination(json.numberOfPages));
                 // return json;
             })

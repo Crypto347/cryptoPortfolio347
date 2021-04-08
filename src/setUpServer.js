@@ -20931,6 +20931,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Standard Post.",
             date: "11.03.2021",
             numberOfLikes: 9,
+            userLikedThePost: false,
             numberOfComments: 3,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -21093,6 +21094,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             date: "11.03.2021",
             loading: false,
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -21267,6 +21269,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Link Post.",
             date: "11.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 2,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -21399,6 +21402,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Quote Post.",
             date: "11.03.2021",
             numberOfLikes: 8,
+            userLikedThePost: false,
             numberOfComments: 2,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -21533,6 +21537,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             audioKey: "ukuleleMp3",
             date: "11.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -21665,6 +21670,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             videoKey: "blogListVideo1",
             date: "11.03.2021",
             numberOfLikes: 8,
+            userLikedThePost: false,
             numberOfComments: 6,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -21796,6 +21802,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Standard Post 2.",
             date: "17.03.2021",
             numberOfLikes: 4,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -21927,6 +21934,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Gallery Post 2.",
             date: "17.03.2021",
             numberOfLikes: 8,
+            userLikedThePost: false,
             numberOfComments: 8,
             loading: false,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -22101,6 +22109,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Link Post 2.",
             date: "17.03.2021",
             numberOfLikes: 2,
+            userLikedThePost: false,
             numberOfComments: 4,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -22233,6 +22242,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Quote Post 2.",
             date: "17.03.2021",
             numberOfLikes: 4,
+            userLikedThePost: false,
             numberOfComments: 2,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -22367,6 +22377,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             audioKey: "creativeMindsMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 8,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -22499,6 +22510,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             videoKey: "blogListVideo2",
             date: "11.03.2021",
             numberOfLikes: 5,
+            userLikedThePost: false,
             numberOfComments: 12,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -22630,6 +22642,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Standard Post 3.",
             date: "17.03.2021",
             numberOfLikes: 2,
+            userLikedThePost: false,
             numberOfComments: 5,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -22761,6 +22774,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Gallery Post 3.",
             date: "17.03.2021",
             numberOfLikes: 6,
+            userLikedThePost: false,
             numberOfComments: 4,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -22926,6 +22940,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Link Post 3.",
             date: "17.03.2021",
             numberOfLikes: 7,
+            userLikedThePost: false,
             numberOfComments: 4,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -23058,6 +23073,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Quote Post 3.",
             date: "17.03.2021",
             numberOfLikes: 1,
+            userLikedThePost: false,
             numberOfComments: 1,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -23192,6 +23208,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             audioKey: "aDayToRememberMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 8,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -23324,6 +23341,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             videoKey: "blogListVideo3",
             date: "11.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 10,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -23456,6 +23474,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             audioKey: "adventureMp3",
             date: "17.03.2021",
             numberOfLikes: 5,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -23587,6 +23606,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Link Post 4.",
             date: "17.03.2021",
             numberOfLikes: 1,
+            userLikedThePost: false,
             numberOfComments: 2,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
@@ -23719,6 +23739,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             header: "Quote Post 4.",
             date: "17.03.2021",
             numberOfLikes: 7,
+            userLikedThePost: false,
             numberOfComments: 3,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -23853,6 +23874,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             audioKey: "inspireMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 6,
             text: "Cibo euripidis ut qui, sumo mnesarchum no his. Ius magna pertinax cu, cu cum summo erant, percipit adipisci nam an. Eu vim delectus tractatos sapientem, mel te nullam dicunt epicurei. Eligendi appetere et mei, ex nec aeterno nominavi consetetur. Recusabo salutatus vel an, ius copiosae sadipscing in. Eius salutandi repudiandae cu pri, deleniti comprehensam ei mel. Error laudem eos ut, cu lucilius",
             categories: [
@@ -24020,6 +24042,7 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             header: "Standard Post.",
             date: "11.03.2021",
             numberOfLikes: 9,
+            userLikedThePost: false,
             numberOfComments: 3,
             text: [
                 {
@@ -24225,6 +24248,7 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             header: "Standard Post 2.",
             date: "17.03.2021",
             numberOfLikes: 4,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: [
                 {
@@ -24400,6 +24424,7 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             header: "Standard Post 3.",
             date: "17.03.2021",
             numberOfLikes: 2,
+            userLikedThePost: false,
             numberOfComments: 5,
             text: [
                 {
@@ -24630,6 +24655,7 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             date: "11.03.2021",
             loading: false,
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: [
                 {
@@ -24848,6 +24874,7 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             header: "Gallery Post 2.",
             date: "17.03.2021",
             numberOfLikes: 8,
+            userLikedThePost: false,
             numberOfComments: 8,
             loading: false,
             text: [
@@ -25066,6 +25093,7 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             header: "Gallery Post 3.",
             date: "17.03.2021",
             numberOfLikes: 6,
+            userLikedThePost: false,
             numberOfComments: 4,
             text: [
                 {
@@ -25330,6 +25358,7 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             header: "Link Post.",
             date: "11.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 2,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: [
@@ -25506,6 +25535,7 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             header: "Link Post 2.",
             date: "17.03.2021",
             numberOfLikes: 2,
+            userLikedThePost: false,
             numberOfComments: 4,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: [
@@ -25682,6 +25712,7 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             header: "Link Post 3.",
             date: "17.03.2021",
             numberOfLikes: 7,
+            userLikedThePost: false,
             numberOfComments: 4,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: [
@@ -25858,6 +25889,7 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             header: "Link Post 4.",
             date: "17.03.2021",
             numberOfLikes: 1,
+            userLikedThePost: false,
             numberOfComments: 2,
             linkText: "Document everything. Productivity is being able to do things that you were never able to do.",
             text: [
@@ -26089,6 +26121,7 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             header: "Quote Post.",
             date: "11.03.2021",
             numberOfLikes: 8,
+            userLikedThePost: false,
             numberOfComments: 2,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -26266,6 +26299,7 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             header: "Quote Post 2.",
             date: "17.03.2021",
             numberOfLikes: 4,
+            userLikedThePost: false,
             numberOfComments: 2,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -26443,6 +26477,7 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             header: "Quote Post 3.",
             date: "17.03.2021",
             numberOfLikes: 1,
+            userLikedThePost: false,
             numberOfComments: 1,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -26620,6 +26655,7 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             header: "Quote Post 4.",
             date: "17.03.2021",
             numberOfLikes: 7,
+            userLikedThePost: false,
             numberOfComments: 3,
             quoteText: "Increasing your competitive advantage by aligning strategy with people Seeing your competitive advantage by aligning strategy.",
             quoteAuthor: "James Newbie",
@@ -26853,6 +26889,7 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             audioKey: "ukuleleMp3",
             date: "11.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: [
                 {
@@ -27029,6 +27066,7 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             audioKey: "creativeMindsMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 8,
             text: [
                 {
@@ -27205,6 +27243,7 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             audioKey: "aDayToRememberMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 8,
             text: [
                 {
@@ -27381,6 +27420,7 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             audioKey: "adventureMp3",
             date: "17.03.2021",
             numberOfLikes: 5,
+            userLikedThePost: false,
             numberOfComments: 2,
             text: [
                 {
@@ -27557,6 +27597,7 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             audioKey: "inspireMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 6,
             text: [
                 {
@@ -27788,6 +27829,7 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             videoKey: "blogListVideo1",
             date: "11.03.2021",
             numberOfLikes: 8,
+            userLikedThePost: false,
             numberOfComments: 6,
             text: [
                 {
@@ -27964,6 +28006,7 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             videoKey: "blogListVideo2",
             date: "11.03.2021",
             numberOfLikes: 5,
+            userLikedThePost: false,
             numberOfComments: 12,
             text: [
                 {
@@ -28140,6 +28183,7 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             videoKey: "blogListVideo3",
             date: "11.03.2021",
             numberOfLikes: 3,
+            userLikedThePost: false,
             numberOfComments: 10,
             text: [
                 {
