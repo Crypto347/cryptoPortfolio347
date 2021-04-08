@@ -126,6 +126,67 @@ export const BlogComment = (props) => {
         }
     }
 
+    const loadImg = (key) => {
+        switch(key) {
+            case 'Photo17':
+                return Images.PHOTO_17;
+            case 'Photo18':
+                return Images.PHOTO_18;
+            case 'Photo19':
+                return Images.PHOTO_19;
+            case 'Photo21':
+                return Images.PHOTO_21;
+            default:
+                return "";
+        }
+    }
+
+//     {
+//         id: 4,
+//         key: "teamMember22",
+//         name: "Kevin Jones",
+//         position: "Developer",
+//         photo: "Photo17",
+//         instaName: "KevinJones",
+//         path: "ian-dooley-d1UPkiFd04A-unsplash.png",
+//         hover: false,
+//         alt: "image"
+//     },
+//     {
+//         id: 5,
+//         key: "teamMember23",
+//         name: "Joseph Gonzalez",
+//         position: "UX Designer",
+//         photo: "Photo18",
+//         instaName: "JosephGonzalez",
+//         path: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
+//         hover: false,
+//         alt: "image"
+//     },
+// {
+//         id: 6,
+//         key: "teamMember24",
+//         name: "Naomi Hernandez",
+//         position: "Copywriter",
+//         photo: "Photo19",
+//         instaName: "NaomiHernandez",
+//         path: "christian-acosta-w1yTGE0mDwE-unsplash.png",
+//         hover: false,
+//         alt: "image"
+//     },
+// {
+//         id: 8,
+//         key: "teamMember26",
+//         name: "Emery Lee",
+//         position: "Developer",
+//         photo: "Photo21",
+//         instaName: "EmeryLee",
+//         path: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
+//         hover: false,
+//         alt: "image"
+//     }
+
+
     const renderBlogReplyForm = () => {
         let pathOfIdsToComment = [...props.pathOfIdsToComment];
         pathOfIdsToComment.push(props.data.id);
@@ -154,7 +215,7 @@ export const BlogComment = (props) => {
                 <EH50/>
                 <div className="blog-comment-wrapper">
                     <div className="blog-comment-author-image">
-                        <img src={Images.PHOTO_19}/>
+                        <img src={loadImg(props.data.authorImage.key)}/>
                     </div>
                     <div className="blog-comment-info-text-wrapper">
                         <div className="blog-comment-info-wrapper">
@@ -188,8 +249,7 @@ export const BlogComment = (props) => {
                             </div>
                             <EH10/>
                             {renderBlogReplyForm()}
-                        </>
-                        : null}
+                        </> : null}
                     </div>
                 </div>
                 <EH30/>

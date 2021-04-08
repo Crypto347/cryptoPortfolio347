@@ -20968,40 +20968,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Kevin Jones",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo17",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -21010,14 +21010,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Emery Lee",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo21",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21026,53 +21026,53 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Naomi Hernandez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo19",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Kevin Jones",
                             date: "05.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 212,
-                                    authorName: "Amelia Garcia",
+                                    authorName: "Emery Lee",
                                     date: "06.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image212",
-                                        key: "blogPostSingleItemAuthorImg212",
+                                        key: "Photo21",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: [
                                         {
                                             id: 2121,
-                                            authorName: "John Williams",
+                                            authorName: "Naomi Hernandez",
                                             date: "07.04.2021",
                                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                             authorImage: {
                                                 id: "image2121",
-                                                key: "blogPostSingleItemAuthorImg2121",
+                                                key: "Photo19",
                                                 isHover: "init",
-                                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                                 alt: "image"
                                             },
                                             repliesArray: []
@@ -21173,40 +21173,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -21215,14 +21215,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21231,27 +21231,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21305,40 +21305,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -21347,14 +21347,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21363,27 +21363,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21570,40 +21570,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -21612,14 +21612,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21628,27 +21628,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21702,40 +21702,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -21744,14 +21744,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21760,27 +21760,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21833,40 +21833,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -21875,14 +21875,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -21891,27 +21891,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22007,40 +22007,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22049,14 +22049,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22065,27 +22065,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22139,40 +22139,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22181,14 +22181,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22197,27 +22197,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22272,40 +22272,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22314,14 +22314,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22330,27 +22330,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22404,40 +22404,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22446,14 +22446,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22462,27 +22462,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22536,40 +22536,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22578,14 +22578,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22594,27 +22594,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22667,40 +22667,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22709,14 +22709,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22725,27 +22725,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22832,40 +22832,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -22874,14 +22874,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22890,27 +22890,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -22964,40 +22964,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23006,14 +23006,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23022,27 +23022,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23097,40 +23097,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23139,14 +23139,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23155,27 +23155,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23229,40 +23229,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23271,14 +23271,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23287,27 +23287,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23361,40 +23361,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23403,14 +23403,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23419,27 +23419,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23493,40 +23493,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23535,14 +23535,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23551,27 +23551,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23625,40 +23625,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23667,14 +23667,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23683,27 +23683,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23758,40 +23758,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23800,14 +23800,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23816,27 +23816,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23890,40 +23890,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -23932,14 +23932,14 @@ app.post('/api/blog-list-standard', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -23948,27 +23948,27 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24100,40 +24100,40 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Kevin Jones",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo17",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -24142,14 +24142,14 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Emery Lee",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo21",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24158,53 +24158,53 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Naomi Hernandez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo19",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Kevin Jones",
                             date: "05.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 212,
-                                    authorName: "Amelia Garcia",
+                                    authorName: "Emery Lee",
                                     date: "06.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image212",
-                                        key: "blogPostSingleItemAuthorImg212",
+                                        key: "Photo21",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: [
                                         {
                                             id: 2121,
-                                            authorName: "John Williams",
+                                            authorName: "Naomi Hernandez",
                                             date: "07.04.2021",
                                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                             authorImage: {
                                                 id: "image2121",
-                                                key: "blogPostSingleItemAuthorImg2121",
+                                                key: "Photo19",
                                                 isHover: "init",
-                                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                                 alt: "image"
                                             },
                                             repliesArray: []
@@ -24305,40 +24305,40 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -24347,14 +24347,14 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24363,27 +24363,27 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24480,40 +24480,40 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -24522,14 +24522,14 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24538,27 +24538,27 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24580,9 +24580,9 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             text: replyInfo.comment,
             authorImage: {
                 id: `imageId${replyInfo.id}`,
-                key: "blogPostSingleItemAuthorImg12",
+                key: "Photo19",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                 alt: "image"
             },
             repliesArray: []
@@ -24753,40 +24753,40 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -24795,14 +24795,14 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24811,27 +24811,27 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -24971,40 +24971,40 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -25013,14 +25013,14 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25029,27 +25029,27 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25180,40 +25180,40 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -25222,14 +25222,14 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25238,27 +25238,27 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25280,9 +25280,9 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             text: replyInfo.comment,
             authorImage: {
                 id: `imageId${replyInfo.id}`,
-                key: "blogPostSingleItemAuthorImg12",
+                key: "Photo19",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                 alt: "image"
             },
             repliesArray: []
@@ -25411,40 +25411,40 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -25453,14 +25453,14 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25469,27 +25469,27 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25587,40 +25587,40 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -25629,14 +25629,14 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25645,27 +25645,27 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25763,40 +25763,40 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -25805,14 +25805,14 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25821,27 +25821,27 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25939,40 +25939,40 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -25981,14 +25981,14 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -25997,27 +25997,27 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26039,9 +26039,9 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             text: replyInfo.comment,
             authorImage: {
                 id: `imageId${replyInfo.id}`,
-                key: "blogPostSingleItemAuthorImg12",
+                key: "Photo19",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                 alt: "image"
             },
             repliesArray: []
@@ -26171,40 +26171,40 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -26213,14 +26213,14 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26229,27 +26229,27 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26348,40 +26348,40 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -26390,14 +26390,14 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26406,27 +26406,27 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26525,40 +26525,40 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -26567,14 +26567,14 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26583,27 +26583,27 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26702,40 +26702,40 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -26744,14 +26744,14 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26760,27 +26760,27 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26802,9 +26802,9 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             text: replyInfo.comment,
             authorImage: {
                 id: `imageId${replyInfo.id}`,
-                key: "blogPostSingleItemAuthorImg12",
+                key: "Photo19",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                 alt: "image"
             },
             repliesArray: []
@@ -26933,40 +26933,40 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -26975,14 +26975,14 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -26991,27 +26991,27 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27109,40 +27109,40 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -27151,14 +27151,14 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27167,27 +27167,27 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27285,40 +27285,40 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -27327,14 +27327,14 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27343,27 +27343,27 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27461,40 +27461,40 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -27503,14 +27503,14 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27519,27 +27519,27 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27637,40 +27637,40 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -27679,14 +27679,14 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27695,27 +27695,27 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27737,9 +27737,9 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             text: replyInfo.comment,
             authorImage: {
                 id: `imageId${replyInfo.id}`,
-                key: "blogPostSingleItemAuthorImg12",
+                key: "Photo19",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                 alt: "image"
             },
             repliesArray: []
@@ -27868,40 +27868,40 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -27910,14 +27910,14 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -27926,27 +27926,27 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -28044,40 +28044,40 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -28086,14 +28086,14 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -28102,27 +28102,27 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -28220,40 +28220,40 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             comments: [
                 {
                     id: 1,
-                    authorName: "John Williams",
+                    authorName: "Emery Lee",
                     date: "01.04.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image1",
-                        key: "blogPostSingleItemAuthorImg1",
+                        key: "Photo21",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "vinicius-wiesehofer-UOavP_Z38lE-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 11,
-                            authorName: "Olivia Jones",
+                            authorName: "Kevin Jones",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image11",
-                                key: "blogPostSingleItemAuthorImg11",
+                                key: "Photo17",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "ian-dooley-d1UPkiFd04A-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: [
                                 {
                                     id: 111,
-                                    authorName: "Olivia Jones",
+                                    authorName: "Joseph Gonzalez",
                                     date: "02.04.2021",
                                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                                     authorImage: {
                                         id: "image111",
-                                        key: "blogPostSingleItemAuthorImg111",
+                                        key: "Photo18",
                                         isHover: "init",
-                                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                                         alt: "image"
                                     },
                                     repliesArray: []
@@ -28262,14 +28262,14 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                         },
                         {
                             id: 12,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image12",
-                                key: "blogPostSingleItemAuthorImg12",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -28278,27 +28278,27 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    authorName: "Amelia Garcia",
+                    authorName: "Joseph Gonzalez",
                     date: "29.03.2021",
                     text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                     authorImage: {
                         id: "image2",
-                        key: "blogPostSingleItemAuthorImg2",
+                        key: "Photo18",
                         isHover: "init",
-                        imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                        imageName: "joseph-gonzalez-iFgRcqHznqg-unsplash.png",
                         alt: "image"
                     },
                     repliesArray: [
                         {
                             id: 21,
-                            authorName: "John Williams",
+                            authorName: "Naomi Hernandez",
                             date: "02.04.2021",
                             text: "Cu mel percipit assentior, autem molestiae mea et, dolores liberavisse in mei. Ex dolorum noluisse scriptorem eum, pri tota dicunt et. Dicta aeque pro id. Mel et soleat facilisis salutatus. Animal assentior percipitur te his, habeo omittam cum id. Autem iracundia.",
                             authorImage: {
                                 id: "image21",
-                                key: "blogPostSingleItemAuthorImg21",
+                                key: "Photo19",
                                 isHover: "init",
-                                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                                 alt: "image"
                             },
                             repliesArray: []
@@ -28320,9 +28320,9 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             text: replyInfo.comment,
             authorImage: {
                 id: `imageId${replyInfo.id}`,
-                key: "blogPostSingleItemAuthorImg12",
+                key: "Photo19",
                 isHover: "init",
-                imageName: "kari-shea-Dn-BqRT9RBk-unsplash-blog-card.png",
+                imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
                 alt: "image"
             },
             repliesArray: []
