@@ -2487,12 +2487,12 @@ export function fetchStandardPostBlogData(id, info) {
                 if(updatedJson.cardId === el){
                     updatedJson = {
                         ...updatedJson,
-                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        numberOfLikes: json.numberOfLikes + 1,
                         userLikedThePost: true
                     }
                 }
             });
-
+            
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
             dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
@@ -2521,8 +2521,23 @@ export function fetchGalleryPostBlogData(id, info) {
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
             // console.log(json)
-            dispatch(Actions.fetchPostBlogDataSuccess(json));
-            dispatch(Actions.activateListStandardBlogItem("active", json.cardId));
+
+            // Update userLikedThePost property, according to the posts that user liked
+
+            let updatedJson = {...json};
+            let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+            userPostsLikedArray.map((el, i) => {
+                if(updatedJson.cardId === el){
+                    updatedJson = {
+                        ...updatedJson,
+                        numberOfLikes: json.numberOfLikes + 1,
+                        userLikedThePost: true
+                    }
+                }
+            });
+
+            dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
         })
         .catch(error => {
@@ -2558,11 +2573,12 @@ export function fetchLinkPostBlogData(id, info) {
                 if(updatedJson.cardId === el){
                     updatedJson = {
                         ...updatedJson,
-                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        numberOfLikes: json.numberOfLikes + 1,
                         userLikedThePost: true
                     }
                 }
             });
+
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
             dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
             // return json;
@@ -2600,7 +2616,7 @@ export function fetchQuotePostBlogData(id, info) {
                 if(updatedJson.cardId === el){
                     updatedJson = {
                         ...updatedJson,
-                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        numberOfLikes: json.numberOfLikes + 1,
                         userLikedThePost: true
                     }
                 }
@@ -2643,7 +2659,7 @@ export function fetchAudioPostBlogData(id, info) {
                 if(updatedJson.cardId === el){
                     updatedJson = {
                         ...updatedJson,
-                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        numberOfLikes: json.numberOfLikes + 1,
                         userLikedThePost: true
                     }
                 }
@@ -2686,7 +2702,7 @@ export function fetchVideoPostBlogData(id, info) {
                 if(updatedJson.cardId === el){
                     updatedJson = {
                         ...updatedJson,
-                        numberOfLikes: updatedJson.numberOfLikes + 1,
+                        numberOfLikes: json.numberOfLikes + 1,
                         userLikedThePost: true
                     }
                 }

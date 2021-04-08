@@ -107,7 +107,6 @@ export const BlogPostSingleItem = (props) => {
     const [isHoveringBlogCardLink, setIsHoveringBlogCardLink] = useState("init");
     const [isHoveringBlogCardQuote, setIsHoveringBlogCardQuote] = useState("init");
     const [cardWidth, setCardWidth] = useState(0);
-    const [cardType, setCardType] = useState(0);
     
     /**
      * Methods
@@ -134,8 +133,6 @@ export const BlogPostSingleItem = (props) => {
         let pathNameArray = props.location.pathname.split("/");
         let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
         let cardIdFromPathname = +pathNameArray[pathNameArray.length-1];
-
-        setCardType(cardType);
 
         // Fetch data for the component
 
@@ -420,13 +417,17 @@ export const BlogPostSingleItem = (props) => {
 
     const onLikesClickHandler = (postData) => {
 
-        let increaseFunc;
-        let decreaseFunc;
+        let increasePostSingleItemLikesFunc;
+        let decreasePostSingleItemLikesFunc;
+        let increasePostCardLikesFunc;
+        let decreasePostCardLikesFunc;
 
         switch(props.page){
             case 'blogListStandardPage':
-                increaseFunc = props.increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage;
-                decreaseFunc = props.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage;
+                increasePostSingleItemLikesFunc = props.increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage;
+                decreasePostSingleItemLikesFunc = props.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage;
+                increasePostCardLikesFunc = props.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage;
+                decreasePostCardLikesFunc = props.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage;
                 break;
            
             default:
@@ -439,15 +440,20 @@ export const BlogPostSingleItem = (props) => {
         if(!postData.userLikedThePost){
             // Icrease the number of likes
 
-            increaseFunc(postData.cardId);
+            increasePostSingleItemLikesFunc(postData.cardId);
+            increasePostCardLikesFunc(postData.cardId);
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
-            userLikedPosts.push(postData.cardId);
+            if(!userLikedPosts.includes(postData.cardId)){
+                userLikedPosts.push(postData.cardId);
+            }
+         
             localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts));
         }else{
             // Decrease the number of likes
             
-            decreaseFunc(postData.cardId);
+            decreasePostSingleItemLikesFunc(postData.cardId);
+            decreasePostCardLikesFunc(postData.cardId);
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
             userLikedPosts = userLikedPosts.filter(item => item !== postData.cardId);
@@ -745,6 +751,8 @@ export default connect(
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
+            increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
+            decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));

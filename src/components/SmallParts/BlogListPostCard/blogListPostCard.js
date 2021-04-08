@@ -302,11 +302,13 @@ export const BlogListPostCard = (props) => {
             props.increaseTheNumberOfLikes(props.elData.key);
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
-            userLikedPosts.push(props.elData.key);
+            if(!userLikedPosts.includes(props.elData.key)){
+                userLikedPosts.push(props.elData.key);
+            }
             localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts));
         }else{
             // Decrease the number of likes
-            
+
             props.decreaseTheNumberOfLikes(props.elData.key);
 
             let userLikedPosts = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
