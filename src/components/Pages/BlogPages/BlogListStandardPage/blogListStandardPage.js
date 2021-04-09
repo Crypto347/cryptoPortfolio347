@@ -279,6 +279,7 @@ export const BlogListStandardPage = (props) => {
                                 clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                                 increaseTheNumberOfLikes={props.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage}
                                 decreaseTheNumberOfLikes={props.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage}
+                                setCommentsButtonClickedState={props.setCommentsButtonClickedStateForBlogListStandardPage}
                             />
                         </React.Fragment>
                     )
@@ -319,6 +320,7 @@ export const BlogListStandardPage = (props) => {
         }
         return(
             <BlogCommentsSection
+                page="blogListStandardPage"
                 data={props.blogListStandardPage.postBlogContent}
                 triggerCommentReplyButtonVal={props.blogListStandardPage.triggerCommentReplyButtonVal}
                 triggerCommentReplyButton={props.triggerCommentReplyButtonForBlogListStandardPage}
@@ -328,6 +330,8 @@ export const BlogListStandardPage = (props) => {
                 replyComment={props.replyCommentBlogListStandardPage}
                 postReply={postReply}
                 cardIdFromPathname={cardIdFromPathname}
+                commentsIconClicked={props.blogListStandardPage.commentsIconCicked}
+                setCommentsButtonClickedState={props.setCommentsButtonClickedStateForBlogListStandardPage}
             />
         )
     }
@@ -506,6 +510,7 @@ export default connect(
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
+            setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch)
         };
     }
 )(withRouter(BlogListStandardPage));

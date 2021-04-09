@@ -216,3 +216,10 @@ export function decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPa
         cardKey: cardKey
     };
 };
+
+export function setCommentsButtonClickedStateForBlogListStandardPage(val) {
+    return { 
+        type: actionTypes.SET_COMMENTS_BUTTON_CLICKED_STATE_FOR_BLOG_LIST_STANDARD_PAGE,
+        val: val
+    };
+};

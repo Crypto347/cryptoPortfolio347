@@ -126,7 +126,7 @@ export const BlogPostSingleItem = (props) => {
         // Init state for fading effect when component will unmount
 
         // props.setUnmountComponentValues(false, "");
-
+        
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -172,10 +172,12 @@ export const BlogPostSingleItem = (props) => {
         // Show content after successful data fetch
 
         setShowContent(true);
+
         return () =>  {
             // Cleaning the unmounted component
-        }
 
+            props.activateListStandardBlogItem("deactive", "", "");
+        }
     }, []);
 
     const handleMouseEnter = (opt, key) => {
@@ -773,6 +775,7 @@ export default connect(
             decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));

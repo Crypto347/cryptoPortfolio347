@@ -50,7 +50,7 @@ export const initialState = {
     pagesArray: [],
     triggerCommentReplyButtonVal: false,
     commentReplyInputForm: {},
-   
+    commentsIconCicked: false
 }
 
 const fetchBlogListStandardPageDataBegin = (state, action) => {
@@ -530,6 +530,13 @@ const decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage = (stat
     }; 
 }
 
+const setCommentsButtonClickedStateForBlogListStandardPage = (state, action) => {    
+    return {
+        ...state,
+        commentsIconCicked: action.val
+    }; 
+}
+
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
@@ -589,7 +596,9 @@ const blogListStandardPageReducer = (state = initialState, action) => {
         case actionTypes.INCREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE:
             return increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage (state, action);
         case actionTypes.DECREASE_THE_NUMBER_OF_LIKES_OF_THE_POST_SINGLE_ITEM_FOR_BLOG_LIST_STANDARD_PAGE:
-            return decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage (state, action);            
+            return decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage (state, action);
+        case actionTypes.SET_COMMENTS_BUTTON_CLICKED_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
+            return setCommentsButtonClickedStateForBlogListStandardPage (state, action);
         default: 
             return state;
     }

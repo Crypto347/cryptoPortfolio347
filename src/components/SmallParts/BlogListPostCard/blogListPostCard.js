@@ -328,6 +328,31 @@ export const BlogListPostCard = (props) => {
         }
     }
     
+    const onCommentsClickHandler = (e) => {
+
+        // Do nothing on right mouse click 
+
+        if(e.button === 2) return;
+
+        if(e.button !== 1){
+            /**
+             *  Clear unnecessary information of the unmounted component, 
+             *  and render the data of the selected blog item on left mouse click 
+             */
+            
+            props.setCommentsButtonClickedState(true);
+            onCardClickHandler(e, props.elData.path, props.elData.key);
+          
+            // let blogCommentsSection = document.getElementById("blogCommentsSection");
+            // console.log(blogCommentsSection)
+            // window.scroll()
+        }else{
+            // Open selected blog item in a new window on scroll wheel click
+
+            // window.open(`/crypto-portfolio/${path}` , "_blank");
+        }
+    }
+
     const renderCardCover = (type) => {
         switch(type){
             case 'audioPost':
@@ -484,7 +509,8 @@ export const BlogListPostCard = (props) => {
                     <div 
                         className="blog-list-post-card-info-comments"
                         onMouseEnter={() => handleMouseEnter(`blogCardComments`)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardComments`)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardComments`)}
+                        onMouseDown={(e) => onCommentsClickHandler(e)}
                     >
                         <Icon 
                             iconType="fontAwesome"

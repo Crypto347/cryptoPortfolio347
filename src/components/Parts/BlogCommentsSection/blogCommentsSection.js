@@ -55,6 +55,12 @@ export const BlogCommentsSection = (props) => {
      */
 
     useEffect(() => {
+        let commentsSection = document.getElementById(`${props.page}CommentsSection`);
+
+        if(props.commentsIconClicked){
+            window.scroll(0, commentsSection.offsetTop);
+            props.setCommentsButtonClickedState(false);
+        }
     }, []);
 
     const renderComments = (arr, id, _pathOfIds = []) => {
@@ -134,7 +140,10 @@ export const BlogCommentsSection = (props) => {
      */
 
     return(
-        <div className="blog-comments-section">
+        <div 
+            className="blog-comments-section" 
+            id={`${props.page}CommentsSection`}
+        >
             {renderBlogPostSingleItemComments(props.data)}
         </div>
     );
