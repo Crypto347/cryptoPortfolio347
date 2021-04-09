@@ -107,7 +107,7 @@ export const Sidebar = (props) => {
                                 props.setUnmountComponentValues(false, path);
                             }
                             else if(itemId === "blogListStandard" && props.blogListStandardPage.activeItem.activated === "active"){
-                                props.activateListStandardBlogItem("deactive", "");
+                                props.activateListStandardBlogItem("deactive", "", "");
                                 props.setUnmountComponentValues(false, path);
                             }
                             else{

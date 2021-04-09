@@ -158,7 +158,7 @@ export const BlogListStandardPage = (props) => {
         // Set activity of initial category and item
 
         props.activateListStandardBlogCategory("deactive", "");
-        props.activateListStandardBlogItem("deactive", "");
+        props.activateListStandardBlogItem("deactive", "", "");
 
         // Fetch data for the component
 
@@ -288,12 +288,12 @@ export const BlogListStandardPage = (props) => {
     }
     
     const renderBlogCommentsSection = () => {
-         
-        let pathNameArray = props.location.pathname.split("/");
+
+        let pathNameArray = props.blogListStandardPage.postBlogContent.item.path.split("/");
         let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
         let cardIdFromPathname = +pathNameArray[pathNameArray.length-1];
         let postReply;
- 
+
         switch(cardType){
             case 'standardPost':
                 postReply = props.fetchStandardPostBlogData;
@@ -317,7 +317,6 @@ export const BlogListStandardPage = (props) => {
                 // props.fetchStandardPostBlogData(cardIdFromPathname);
                 break;
         }
-
         return(
             <BlogCommentsSection
                 data={props.blogListStandardPage.postBlogContent}

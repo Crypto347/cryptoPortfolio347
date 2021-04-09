@@ -129,6 +129,7 @@ export const Main = (props) => {
         // Check environment
 
         console.log("ENV", process.env.ENVIRONMENT)
+        
         // Activate menu item according to the location pathname
         
         let path = props.location.pathname.slice(18);

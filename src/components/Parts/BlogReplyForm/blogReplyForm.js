@@ -52,6 +52,8 @@ import * as Utility from '../../../utility';
     blogListCommentReplyInputForm,
 } from '../../../constants/inputForm';
 
+import * as Environment from '../../../constants/environments';
+
 /**
  * BlogReplyForm component definition and export
  */
@@ -100,16 +102,16 @@ export const BlogReplyForm = (props) => {
 
         console.log("Form", info)
         // Post the information
-
-        // if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+        
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
         //     // Fetch mock data (not required to run -> npm run server)
 
         //     props.fetchGetDirectionContactFormPageSuccess(info);
-        // }else{
+        }else{
             // Fetch data (required to run -> npm run server)
 
             props.postReply(props.cardIdFromPathname, info);
-        // }
+        }
         
         // Clear input fields (visually) if the form is valid
 

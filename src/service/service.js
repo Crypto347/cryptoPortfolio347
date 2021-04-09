@@ -2494,7 +2494,7 @@ export function fetchStandardPostBlogData(id, info) {
             });
             
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
-            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType));
             // return json;
         })
         .catch(error => {
@@ -2537,7 +2537,7 @@ export function fetchGalleryPostBlogData(id, info) {
             });
 
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
-            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType));
             // return json;
         })
         .catch(error => {
@@ -2580,7 +2580,7 @@ export function fetchLinkPostBlogData(id, info) {
             });
 
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
-            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType));
             // return json;
         })
         .catch(error => {
@@ -2623,7 +2623,7 @@ export function fetchQuotePostBlogData(id, info) {
             });
 
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
-            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType));
             // return json;
         })
         .catch(error => {
@@ -2666,7 +2666,7 @@ export function fetchAudioPostBlogData(id, info) {
             });
 
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
-            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType));
             // return json;
         })
         .catch(error => {
@@ -2709,7 +2709,7 @@ export function fetchVideoPostBlogData(id, info) {
             });
 
             dispatch(Actions.fetchPostBlogDataSuccess(updatedJson));
-            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId));
+            dispatch(Actions.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType));
             // return json;
         })
         .catch(error => {
