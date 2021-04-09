@@ -56,17 +56,27 @@ export const BlogCommentsSection = (props) => {
 
     useEffect(() => {
         let commentsSection = document.getElementById(`${props.page}CommentsSection`);
+        let timeout;
 
         if(props.commentsIconClicked){
             // Component rendered on left mouse click
 
             window.scroll(0, commentsSection.offsetTop);
             props.setCommentsButtonClickedState(false);
-        }else if(localStorage.getItem("commentsIconCickedHG")){
+        }
+        else if(JSON.parse(localStorage.getItem("commentsIconCickedHG"))){
             // Component rendered on scroll wheel click
+            
+            timeout = setTimeout(() => {
+                window.scroll(0, commentsSection.offsetTop);
+            }, 500);
 
-            window.scroll(0, commentsSection.offsetTop);
             localStorage.setItem("commentsIconCickedHG",false);
+        }
+        return () => {
+            // Cleaning the unmounted component
+
+            clearTimeout(timeout);
         }
     }, []);
 
