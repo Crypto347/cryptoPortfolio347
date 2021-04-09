@@ -38,16 +38,28 @@
     }
 }
 
-// @media only screen and (max-width: 1120px){
-//     .blog-list-standard-page {
-//         .blog-list-standard-page-wrapper {
-//             .blog-list-standard-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }
-//             .blog-list-standard-page-data-wrapper {
-//                 width: calc(100% - 80px);
-//                 padding: 90px 40px 90px 40px;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .blog-list-standard-page {
+        .blog-list-standard-page-wrapper {
+            .blog-list-standard-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            .blog-list-standard-page-content-info-wrapper {
+                width: calc(100% - 80px);
+                padding: 90px 40px 90px 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 830px){
+    .blog-list-standard-page {
+        .blog-list-standard-page-wrapper {
+            .blog-list-standard-page-content-info-wrapper {
+                .blog-list-standard-page-content {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

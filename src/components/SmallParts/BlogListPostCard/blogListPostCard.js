@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -42,6 +43,14 @@ import {
 } from '../../UtilityComponents';
 
 /**
+ * Hooks
+ */
+
+ import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
+
+/**
  * Constants
  */
 
@@ -61,6 +70,8 @@ export const BlogListPostCard = (props) => {
      * State
      */
 
+    const size = useWindowSize();
+    const resizeRef = useRef();
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
     const [isHoveringBlogCardHeader, setIsHoveringBlogCardHeader] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
@@ -80,7 +91,7 @@ export const BlogListPostCard = (props) => {
 
         let blogListPostCard = document.getElementById("blogListPostCard");
         setCardWidth(blogListPostCard.offsetWidth);
-       
+
     }, []);
 
     const handleMouseEnter = (opt, key) => {
@@ -316,7 +327,7 @@ export const BlogListPostCard = (props) => {
             localStorage.setItem("userLikedPostsHG", JSON.stringify(userLikedPosts))
         }
     }
-
+    
     const renderCardCover = (type) => {
         switch(type){
             case 'audioPost':
@@ -338,14 +349,24 @@ export const BlogListPostCard = (props) => {
                     </div>
                 );
             case 'galleryPost':
+                let translatedValue;
+
+                // Calculate translatedWidth property for different screen widths
+
+                if(size.width > 830){
+                    translatedValue = cardWidth;
+                }else{
+                    translatedValue = size.width;
+                }
+
                 return(
                     <div className="blog-list-post-card-gallery-wrapper">
-                        {cardWidth !== 0 ? 
+                        {cardWidth !== 0 ?
                         <Swiper
                             component={props.elData.key}
                             contentArray={props.elData.imagesArray}
                             content={props.pageData}
-                            translateWidth={cardWidth}
+                            translateWidth={translatedValue}
                             showNumbersOfSlides={1}
                             setSwiperState={props.setSwiperStateForBlogListStandardPage}
                             swiperData={props.elData.swiper}

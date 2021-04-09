@@ -300,39 +300,39 @@ export const PostSinglesStandardPage = (props) => {
      * Markup
      */
 
-    return(
-        <div className="blog-list-standard-page" id="blogListStandardPage">
-            {renderToolbars()}
-            <div className="blog-list-standard-page-wrapper">
-                <div className="blog-list-standard-page-header">
-                    <H45 className="h45-nero-lustria">Blog List Standard</H45>
-                </div>
-                <div className="grey-line"/>
-                <div className="blog-list-standard-page-content-info-wrapper">
-                    <div className="blog-list-standard-page-content">
-                        <Switch>
-                            <Route 
-                                exact 
-                                path={props.match.url + "/list-standard-blog-category/:category"}
-                                render={(props) => (
-                                    <Archive key={props.match.params.category} {...props} />)
-                                }
-                            />
-                            {/* <Redirect exact from={`${props.match.url + "/blog-category/:category"}`} to={`${props.match.url + "/blog-category/:category"}`}/> */}
-                        </Switch>
-                    </div>
-                    <BlogInfoBoard
-                        searchFormInputsArray={props.blogListStandardPage.searchInputForm.inputsArray}
-                        categoryList={props.blogListStandardPage.categoriesList}
-                        tagsList={props.blogListStandardPage.tagsList}
-                        activateBlogCategory={props.activateListStandardBlogCategory}
-                        clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                    />
-                </div>
-            </div>
-            <Footer/>
-            {props.showBackToTop ? <BackToTop/> : null}
-        </div>   
+    return(<></>
+        // <div className="blog-list-standard-page" id="blogListStandardPage">
+        //     {renderToolbars()}
+        //     <div className="blog-list-standard-page-wrapper">
+        //         <div className="blog-list-standard-page-header">
+        //             <H45 className="h45-nero-lustria">Blog List Standard</H45>
+        //         </div>
+        //         <div className="grey-line"/>
+        //         <div className="blog-list-standard-page-content-info-wrapper">
+        //             <div className="blog-list-standard-page-content">
+        //                 <Switch>
+        //                     <Route 
+        //                         exact 
+        //                         path={props.match.url + "/list-standard-blog-category/:category"}
+        //                         render={(props) => (
+        //                             <Archive key={props.match.params.category} {...props} />)
+        //                         }
+        //                     />
+        //                     {/* <Redirect exact from={`${props.match.url + "/blog-category/:category"}`} to={`${props.match.url + "/blog-category/:category"}`}/> */}
+        //                 </Switch>
+        //             </div>
+        //             <BlogInfoBoard
+        //                 searchFormInputsArray={props.blogListStandardPage.searchInputForm.inputsArray}
+        //                 categoryList={props.blogListStandardPage.categoriesList}
+        //                 tagsList={props.blogListStandardPage.tagsList}
+        //                 activateBlogCategory={props.activateListStandardBlogCategory}
+        //                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+        //             />
+        //         </div>
+        //     </div>
+        //     <Footer/>
+        //     {props.showBackToTop ? <BackToTop/> : null}
+        // </div>   
     );
 }
 
