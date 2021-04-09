@@ -79,7 +79,15 @@ import * as Utility from '../../../utility';
  * Images
  */
 
- import * as Images from '../../../constants/images';
+import * as Images from '../../../constants/images';
+
+/**
+ * Hooks
+ */
+
+import {
+    useWindowSize
+} from '../../../Hooks/useWindowSize';
 
 /**
  * Constants
@@ -99,6 +107,7 @@ export const BlogPostSingleItem = (props) => {
      * State
      */
 
+    const size = useWindowSize();
     const [showContent, setShowContent] = useState(false);
     const [isHoveringBlogPostItemDate, setIsHoveringBlogPostItemDate] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
@@ -383,7 +392,9 @@ export const BlogPostSingleItem = (props) => {
                     </div>
                 );
             case 'galleryPost':
+                let translatedValue;
                 let setSwiperState;
+
                 switch(props.page){
                     case 'blogListStandardPage':
                         setSwiperState = props.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage;
@@ -392,6 +403,15 @@ export const BlogPostSingleItem = (props) => {
                         setSwiperState = props.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage;
                         break;
                 }
+            
+                // Calculate translatedWidth property for different screen widths
+
+                if(size.width > 830){
+                    translatedValue = cardWidth;
+                }else{
+                    translatedValue = size.width;
+                }
+
                 return(
                     <div className="blog-post-single-item-gallery-wrapper">
                         {cardWidth !== 0 ? 
@@ -399,7 +419,7 @@ export const BlogPostSingleItem = (props) => {
                             component={props.blogListStandardPage.postBlogContent.item.cardId}
                             contentArray={props.blogListStandardPage.postBlogContent.item.imagesArray}
                             content={props.blogListStandardPage.postBlogContent.item}
-                            translateWidth={cardWidth}
+                            translateWidth={translatedValue}
                             showNumbersOfSlides={1}
                             setSwiperState={setSwiperState}
                             swiperData={props.blogListStandardPage.postBlogContent.item.swiper}
