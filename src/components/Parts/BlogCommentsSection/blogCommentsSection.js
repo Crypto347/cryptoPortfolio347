@@ -58,8 +58,15 @@ export const BlogCommentsSection = (props) => {
         let commentsSection = document.getElementById(`${props.page}CommentsSection`);
 
         if(props.commentsIconClicked){
+            // Component rendered on left mouse click
+
             window.scroll(0, commentsSection.offsetTop);
             props.setCommentsButtonClickedState(false);
+        }else if(localStorage.getItem("commentsIconCickedHG")){
+            // Component rendered on scroll wheel click
+
+            window.scroll(0, commentsSection.offsetTop);
+            localStorage.setItem("commentsIconCickedHG",false);
         }
     }, []);
 

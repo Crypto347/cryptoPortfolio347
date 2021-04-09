@@ -126,7 +126,7 @@ export const BlogPostSingleItem = (props) => {
         // Init state for fading effect when component will unmount
 
         // props.setUnmountComponentValues(false, "");
-        
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
@@ -135,7 +135,6 @@ export const BlogPostSingleItem = (props) => {
 
         let blogPostSingleItem = document.getElementById("blogPostSingleItem");
         setCardWidth(blogPostSingleItem.offsetWidth);
-        // setHeightOfContent(blogPostSingleItem.offsetWidth);
 
         // Init blog post element data
 
