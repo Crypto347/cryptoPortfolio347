@@ -238,21 +238,21 @@ export const BlogNavigation = (props) => {
     }
 
     const renderBlogNavigationDataContent = (data) => {
-        if(data.loading && data.error === null){
+        if(data.loading && !data.error){
             return(
                 <div className="blog-navigation-loading-error">
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!data.loading && data.error === null){
+        if(!data.loading && !data.error){
             return(
                 <>
                     {showComponent ? renderBlogNavigationContent(data.items): null}
                 </>
             )
         }
-        if(!data.loading && data.error !== null){
+        if(!data.loading && data.error){
             return(
                 <div className="blog-navigation-loading-error">
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
