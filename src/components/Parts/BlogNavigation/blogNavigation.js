@@ -34,14 +34,6 @@ import {
 } from '../../UtilityComponents';
 
 /**
- * Hooks
- */
-
- import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-/**
  * Images
  */
 
@@ -57,7 +49,6 @@ export const BlogNavigation = (props) => {
      * State
      */
 
-    const size = useWindowSize();
     const [isHoveringNavigationPrevDate, setIsHoveringNavigationPrevDate] = useState("init");
     const [isHoveringNavigationNextDate, setIsHoveringNavigationNextDate] = useState("init");
     const [showComponent, setShowComponent] = useState(false);
@@ -247,29 +238,23 @@ export const BlogNavigation = (props) => {
     }
 
     const renderBlogNavigationDataContent = (data) => {
-        if(data.loading && !data.error){
+        if(data.loading && data.error === null){
             return(
-                <div 
-                    className="blog-post-single-item-loading-error" 
-                    style={{height: `${size.height/2}px`}}
-                >
+                <div className="blog-navigation-loading-error">
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!data.loading && !data.error){
+        if(!data.loading && data.error === null){
             return(
                 <>
-                    {renderBlogNavigationContent(data.items)}
+                    {showComponent ? renderBlogNavigationContent(data.items): null}
                 </>
             )
         }
-        if(!data.loading && data.error){
+        if(!data.loading && data.error !== null){
             return(
-                <div 
-                    className="blog-post-single-item-loading-error" 
-                    style={{height: `${size.height/2}px`}}
-                >
+                <div className="blog-navigation-loading-error">
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>
             )
@@ -282,7 +267,7 @@ export const BlogNavigation = (props) => {
 
     return(
         <div className="blog-navigation">
-            {showComponent ? renderBlogNavigationDataContent(props.data) : null}
+            {renderBlogNavigationDataContent(props.data)}
         </div>
     );
 }

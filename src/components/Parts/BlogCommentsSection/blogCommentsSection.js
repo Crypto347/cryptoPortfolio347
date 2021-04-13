@@ -122,34 +122,34 @@ export const BlogCommentsSection = (props) => {
     }
 
     const renderBlogPostSingleItemComments = (data) => {
-        if(data.loading && !data.error){
-            return(
-                <div 
-                    className="blog-comments-section-loading-error" 
-                    style={{height: `${size.height/2}px`}}
-                >
-                    <Loading color="black"/>
-                </div>
-            )
-        }
-        if(!data.loading && !data.error){
+        // if(data.loading && !data.error){
+        //     return(
+        //         <div 
+        //             className="blog-comments-section-loading-error" 
+        //             style={{height: `${size.height/2}px`}}
+        //         >
+        //             <Loading color="black"/>
+        //         </div>
+        //     )
+        // }
+        // if(!data.loading && !data.error){
             return(
                 <div className="blog-comments-section-wrapper">
                     <H22 className="h22-black-lustria">Comments</H22>
                     {renderComments(data.item.comments)}
                 </div>
             )
-        }
-        if(!data.loading && data.error){
-            return(
-                <div 
-                    className="blog-comments-section-loading-error" 
-                    style={{height: `${size.height/2}px`}}
-                >
-                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
-                </div>
-            )
-        }
+        // }
+        // if(!data.loading && data.error){
+        //     return(
+        //         <div 
+        //             className="blog-comments-section-loading-error" 
+        //             style={{height: `${size.height/2}px`}}
+        //         >
+        //             <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
+        //         </div>
+        //     )
+        // }
     } 
     
     /**
