@@ -22,6 +22,12 @@ import {
 } from '../../UtilityComponents';
 
 /**
+ * Constants
+ */
+
+import * as Environment from '../../../constants/environments';
+
+/**
  * Pagination component definition and export
  */
 
@@ -128,7 +134,19 @@ export const Pagination = (props) => {
                     break;
             }
      
-            props.fetchPageData(_pageId);
+            // Fetch data for the component
+
+            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                // Fetch mock data (not required to run -> npm run server)
+
+                props.fetchFakeData(props.fakeData, _pageId);
+            
+            }else{
+                // Fetch data (required to run -> npm run server)
+                
+                props.fetchPageData(_pageId);
+            }
+
             props.activatePageNumber(_pageId);
             
             window.scrollTo(0, 0);

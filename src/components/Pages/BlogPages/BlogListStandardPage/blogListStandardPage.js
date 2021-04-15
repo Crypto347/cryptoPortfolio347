@@ -397,7 +397,8 @@ export const BlogListStandardPage = (props) => {
                         activePageNumber={props.blogListStandardPage.activePageId}
                         pagesArray={props.blogListStandardPage.pagesArray}
                         fetchPageData={props.fetchBlogListStandardPageData}
-
+                        fakeData={FakeData.blogListStandardPage}
+                        fetchFakeData={(fakeData, activePageId) => fetchFakeData(fakeData, activePageId)}
                         activatePageNumber={props.activatePageNumberForBlogListStandardPage}
                     />
                 </div>
