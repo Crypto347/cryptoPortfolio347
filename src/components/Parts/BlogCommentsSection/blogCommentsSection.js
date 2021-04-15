@@ -108,6 +108,9 @@ export const BlogCommentsSection = (props) => {
                                 replyComment={props.replyComment}
                                 pathOfIdsToComment={pathOfIds}
                                 postReply={props.postReply}
+                                fakeData={props.fakeData}
+                                postReplyFakeData={props.postReplyFakeData}
+                                activateBlogItem={props.activateBlogItem}
                                 cardIdFromPathname={props.cardIdFromPathname}
                             />
                             {el.repliesArray.length !== 0 ? 

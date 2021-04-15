@@ -104,9 +104,9 @@ export const BlogReplyForm = (props) => {
         // Post the information
         
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-        //     // Fetch mock data (not required to run -> npm run server)
+        // Fetch mock data (not required to run -> npm run server)
 
-        //     props.fetchGetDirectionContactFormPageSuccess(info);
+            fetchFakeData(props.fakeData, props.cardIdFromPathname, info);
         }else{
             // Fetch data (required to run -> npm run server)
 
@@ -129,6 +129,64 @@ export const BlogReplyForm = (props) => {
                 clearInputValue(el.inputID);
             }
         });
+    }
+
+    const fetchFakeData = (fakeData, cardIdFromPathname, info) => {
+        let postObj = fakeData.find(item => item.id === cardIdFromPathname);
+        let replyInfo = info;
+        if(replyInfo){
+            let obj = {
+                id: replyInfo.id,
+                authorName: replyInfo.fullName,
+                date: replyInfo.date,
+                text: replyInfo.comment,
+                authorImage: {
+                    id: `imageId${replyInfo.id}`,
+                    key: "Photo19",
+                    isHover: "init",
+                    imageName: "christian-acosta-w1yTGE0mDwE-unsplash.png",
+                    alt: "image"
+                },
+                repliesArray: []
+            }
+            if(replyInfo.pathOfIds.length === 1){
+                postObj.comments
+                .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray.push(obj);
+            }
+            if(replyInfo.pathOfIds.length === 2){
+                postObj.comments
+                .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+                .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray.push(obj)
+            }
+            if(replyInfo.pathOfIds.length === 3){
+                postObj.comments
+                .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+                .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+                .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray.push(obj)
+            }
+            if(replyInfo.pathOfIds.length === 4){
+                postObj.comments
+                .find(item => item.id === replyInfo.pathOfIds[0]).repliesArray
+                .find(item => item.id === replyInfo.pathOfIds[1]).repliesArray
+                .find(item => item.id === replyInfo.pathOfIds[2]).repliesArray
+                .find(item => item.id === replyInfo.pathOfIds[3]).repliesArray.push(obj)
+            }
+        }
+
+        let updatedJson = {...postObj};
+        let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+        userPostsLikedArray.map((el, i) => {
+            if(updatedJson.cardId === el){
+                updatedJson = {
+                    ...updatedJson,
+                    numberOfLikes: updatedJson.numberOfLikes + 1,
+                    userLikedThePost: true
+                }
+            }
+        });
+        
+        props.postReplyFakeData(updatedJson);
+        props.activateBlogItem("active", updatedJson.cardId, updatedJson.cardType);
     }
 
     const inputChangeHandler = (e, inputFieldId) => {

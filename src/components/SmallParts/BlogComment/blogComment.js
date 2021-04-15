@@ -153,6 +153,9 @@ export const BlogComment = (props) => {
                 replyComment={props.replyComment}
                 pathOfIdsToComment={pathOfIdsToComment}
                 postReply={props.postReply}
+                fakeData={props.fakeData}
+                postReplyFakeData={props.postReplyFakeData}
+                activateBlogItem={props.activateBlogItem}
                 cardIdFromPathname={props.cardIdFromPathname}
             />
         )

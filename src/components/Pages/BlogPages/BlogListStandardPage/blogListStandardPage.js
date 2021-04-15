@@ -294,25 +294,32 @@ export const BlogListStandardPage = (props) => {
         let cardType = Utility.categoryPathToKey(pathNameArray[pathNameArray.length-2]);
         let cardIdFromPathname = +pathNameArray[pathNameArray.length-1];
         let postReply;
+        let fakeData = [];
 
         switch(cardType){
             case 'standardPost':
                 postReply = props.fetchStandardPostBlogData;
+                fakeData = FakeData.standardPost;
                 break;
             case 'galleryPost':
                 postReply = props.fetchGalleryPostBlogData;
+                fakeData = FakeData.galleryPost;
                 break;
             case 'linkPost':
                 postReply = props.fetchLinkPostBlogData;
+                fakeData = FakeData.linkPost;
                 break;
             case 'quotePost':
                 postReply = props.fetchQuotePostBlogData;
+                fakeData = FakeData.quotePost;
                 break;
             case 'audioPost':
                 postReply = props.fetchAudioPostBlogData;
+                fakeData = FakeData.audioPost;
                 break;
             case 'videoPost':
                 postReply = props.fetchVideoPostBlogData;
+                fakeData = FakeData.videoPost;
                 break;
             default:
                 // props.fetchStandardPostBlogData(cardIdFromPathname);
@@ -329,6 +336,9 @@ export const BlogListStandardPage = (props) => {
                 setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
                 replyComment={props.replyCommentBlogListStandardPage}
                 postReply={postReply}
+                postReplyFakeData={props.fetchPostBlogDataSuccess}
+                activateBlogItem={props.activateListStandardBlogItem}
+                fakeData={fakeData}
                 cardIdFromPathname={cardIdFromPathname}
                 commentsIconClicked={props.blogListStandardPage.commentsIconCicked}
                 setCommentsButtonClickedState={props.setCommentsButtonClickedStateForBlogListStandardPage}
@@ -508,6 +518,7 @@ export default connect(
             fetchQuotePostBlogData: bindActionCreators(Services.fetchQuotePostBlogData, dispatch),
             fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
+            fetchPostBlogDataSuccess: bindActionCreators(Actions.fetchPostBlogDataSuccess, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch)
