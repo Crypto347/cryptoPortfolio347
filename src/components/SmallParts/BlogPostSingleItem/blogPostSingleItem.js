@@ -93,6 +93,9 @@ import {
  * Constants
  */
 
+import * as FakeData from '../../../fakeData';
+import * as Environment from '../../../constants/environments';
+
 import {
     socialMediaIcons
 } from '../../../constants/socialMediaIcons';
@@ -146,22 +149,82 @@ export const BlogPostSingleItem = (props) => {
 
         switch(cardType){
             case 'standardPost':
-                props.fetchStandardPostBlogData(cardIdFromPathname);
+                // Fetch data for the component
+
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+
+                    fetchFakeData(FakeData.standardPost, cardIdFromPathname);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+                    
+                    props.fetchStandardPostBlogData(cardIdFromPathname);
+                }
                 break;
             case 'galleryPost':
-                props.fetchGalleryPostBlogData(cardIdFromPathname);
+                // Fetch data for the component
+
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+
+                    fetchFakeData(FakeData.galleryPost, cardIdFromPathname);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+                    
+                    props.fetchGalleryPostBlogData(cardIdFromPathname);
+                }
                 break;
             case 'linkPost':
-                props.fetchLinkPostBlogData(cardIdFromPathname);
+                // Fetch data for the component
+
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+
+                    fetchFakeData(FakeData.linkPost, cardIdFromPathname);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+                    
+                    props.fetchLinkPostBlogData(cardIdFromPathname);
+                }
                 break;
             case 'quotePost':
-                props.fetchQuotePostBlogData(cardIdFromPathname);
+                // Fetch data for the component
+                
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+
+                    fetchFakeData(FakeData.quotePost, cardIdFromPathname);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+                    
+                    props.fetchQuotePostBlogData(cardIdFromPathname);
+                }
                 break;
             case 'audioPost':
-                props.fetchAudioPostBlogData(cardIdFromPathname);
+                // Fetch data for the component
+
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+
+                    fetchFakeData(FakeData.audioPost, cardIdFromPathname);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+                    
+                    props.fetchAudioPostBlogData(cardIdFromPathname);
+                }
                 break;
             case 'videoPost':
-                props.fetchVideoPostBlogData(cardIdFromPathname);
+                // Fetch data for the component
+
+                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                    // Fetch mock data (not required to run -> npm run server)
+
+                    fetchFakeData(FakeData.videoPost, cardIdFromPathname);
+                }else{
+                    // Fetch data (required to run -> npm run server)
+                    
+                    props.fetchVideoPostBlogData(cardIdFromPathname);
+                }
                 break;
             default:
                 // props.fetchStandardPostBlogData(cardIdFromPathname);
@@ -178,6 +241,25 @@ export const BlogPostSingleItem = (props) => {
             props.activateListStandardBlogItem("deactive", "", "");
         }
     }, []);
+
+    const fetchFakeData = (fakeData, cardIdFromPathname) => {
+        let postObj = fakeData.find(item => item.id === cardIdFromPathname);
+
+        let updatedJson = {...postObj};
+        let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+        userPostsLikedArray.map((el, i) => {
+            if(updatedJson.cardId === el){
+                updatedJson = {
+                    ...updatedJson,
+                    numberOfLikes: updatedJson.numberOfLikes + 1,
+                    userLikedThePost: true
+                }
+            }
+        });
+
+        props.fetchPostBlogDataSuccess(updatedJson);
+        props.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType);
+    }
 
     const handleMouseEnter = (opt, key) => {
         switch(opt){
@@ -761,6 +843,7 @@ export default connect(
             fetchQuotePostBlogData: bindActionCreators(Services.fetchQuotePostBlogData, dispatch),
             fetchAudioPostBlogData: bindActionCreators(Services.fetchAudioPostBlogData, dispatch),
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
+            fetchPostBlogDataSuccess: bindActionCreators(Actions.fetchPostBlogDataSuccess, dispatch),
             fetchPrevAndNextPostForBlogListItem: bindActionCreators(Services.fetchPrevAndNextPostForBlogListItem, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
@@ -774,7 +857,6 @@ export default connect(
             decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
-            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));
