@@ -24001,8 +24001,8 @@ app.post('/api/blog-list-standard', (req, res) => {
         }
     ]
     
-    let firstIndex =  req.body.activePageId * 6 - 5;
-    let lastIndex =  req.body.activePageId * 6 - 1;
+    let firstIndex = req.body.activePageId * 6 - 5;
+    let lastIndex = req.body.activePageId * 6 - 1;
  
     let updatedBlogListStandard = {
         numberOfPages: !Number.isInteger(blogListStandardPage.length/6) ? Math.floor(blogListStandardPage.length/6) + 1 : Math.floor(blogListStandardPage.length/6),

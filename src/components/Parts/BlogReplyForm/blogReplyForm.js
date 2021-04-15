@@ -106,7 +106,7 @@ export const BlogReplyForm = (props) => {
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
         // Fetch mock data (not required to run -> npm run server)
 
-            fetchFakeData(props.fakeData, props.cardIdFromPathname, info);
+            postReplyFakeData(props.fakeData, props.cardIdFromPathname, info);
         }else{
             // Fetch data (required to run -> npm run server)
 
@@ -131,7 +131,7 @@ export const BlogReplyForm = (props) => {
         });
     }
 
-    const fetchFakeData = (fakeData, cardIdFromPathname, info) => {
+    const postReplyFakeData = (fakeData, cardIdFromPathname, info) => {
         let postObj = fakeData.find(item => item.id === cardIdFromPathname);
         let replyInfo = info;
         if(replyInfo){

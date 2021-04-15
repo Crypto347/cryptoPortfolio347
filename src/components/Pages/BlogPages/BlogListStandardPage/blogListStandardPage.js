@@ -166,7 +166,7 @@ export const BlogListStandardPage = (props) => {
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
                 // Fetch mock data (not required to run -> npm run server)
 
-                props.fetchBlogListStandardPageDataSuccess(FakeData.blogListStandardPage);
+                fetchFakeData(FakeData.blogListStandardPage, props.blogListStandardPage.activePageId);
                
             }else{
                 // Fetch data (required to run -> npm run server)
@@ -194,6 +194,37 @@ export const BlogListStandardPage = (props) => {
             props.setShowBackToTopComponent(false);
         }
     }, []);
+
+
+    const fetchFakeData = (fakeData, activePageId) => {
+        let blogListStandardPage = [...fakeData];
+
+        let firstIndex = activePageId * 6 - 5;
+        let lastIndex = activePageId * 6 - 1;
+    
+        let updatedBlogListStandard = {
+            numberOfPages: !Number.isInteger(blogListStandardPage.length/6) ? Math.floor(blogListStandardPage.length/6) + 1 : Math.floor(blogListStandardPage.length/6),
+            blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
+        };
+
+        let updatedJson = [...updatedBlogListStandard.blogListStandardPage];
+        let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+        userPostsLikedArray.map((el, i) => {
+            let item = updatedJson.filter(item => item.key === el);
+            if(item.length !== 0){
+                let itemIndex = updatedJson.findIndex(item => item.key === el);
+                let obj = {
+                    ...item[0],
+                    numberOfLikes: item[0].numberOfLikes + 1,
+                    userLikedThePost: true
+                }
+                updatedJson.splice(itemIndex, 1, obj);
+            }
+        });
+
+        props.fetchBlogListStandardPageDataSuccess(updatedJson);
+        props.initBlogPagination(updatedBlogListStandard.numberOfPages);
+    }
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
@@ -336,9 +367,9 @@ export const BlogListStandardPage = (props) => {
                 setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
                 replyComment={props.replyCommentBlogListStandardPage}
                 postReply={postReply}
+                fakeData={fakeData}
                 postReplyFakeData={props.fetchPostBlogDataSuccess}
                 activateBlogItem={props.activateListStandardBlogItem}
-                fakeData={fakeData}
                 cardIdFromPathname={cardIdFromPathname}
                 commentsIconClicked={props.blogListStandardPage.commentsIconCicked}
                 setCommentsButtonClickedState={props.setCommentsButtonClickedStateForBlogListStandardPage}
@@ -366,6 +397,7 @@ export const BlogListStandardPage = (props) => {
                         activePageNumber={props.blogListStandardPage.activePageId}
                         pagesArray={props.blogListStandardPage.pagesArray}
                         fetchPageData={props.fetchBlogListStandardPageData}
+
                         activatePageNumber={props.activatePageNumberForBlogListStandardPage}
                     />
                 </div>
@@ -491,7 +523,7 @@ export default connect(
         return {
             fetchBlogListStandardPageData: bindActionCreators(Services.fetchBlogListStandardPageData, dispatch),
             fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
-            
+            initBlogPagination: bindActionCreators(Actions.initBlogPagination, dispatch),
             
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
