@@ -564,6 +564,13 @@ export const BlogPostSingleItem = (props) => {
         }
     }
 
+    const setFakeData = (page) => {
+        switch(page){
+            case 'blogListStandardPage':
+                return FakeData.blogListStandardPage;
+        }
+    }
+
     const renderBlogCardInfo = () => {
         return(
             <div className="blog-post-single-item-info-wrapper">
@@ -777,6 +784,8 @@ export const BlogPostSingleItem = (props) => {
                     page={props.page}
                     itemKey={props.blogListStandardPage.activeItem.itemKey}
                     fetchPrevAndNextPostForBlogListItem={props.fetchPrevAndNextPostForBlogListItem}
+                    fakeData={setFakeData(props.page)}
+                    fetchBlogNavigationForBlogListStandardPageDataSuccess={props.fetchBlogNavigationForBlogListStandardPageDataSuccess}
                     data={props.blogListStandardPage.navigation}
                     setUnmountComponentValues={props.setUnmountComponentValues}
                     unmountComponent={props.unmountComponent}
@@ -845,6 +854,7 @@ export default connect(
             fetchVideoPostBlogData: bindActionCreators(Services.fetchVideoPostBlogData, dispatch),
             fetchPostBlogDataSuccess: bindActionCreators(Actions.fetchPostBlogDataSuccess, dispatch),
             fetchPrevAndNextPostForBlogListItem: bindActionCreators(Services.fetchPrevAndNextPostForBlogListItem, dispatch),
+            fetchBlogNavigationForBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogNavigationForBlogListStandardPageDataSuccess, dispatch),
             blogPostSingleItemCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogPostSingleItemCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateOfBlogPostSingleItemForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateOfBlogPostSingleItemForBlogListStandardPage, dispatch),
 

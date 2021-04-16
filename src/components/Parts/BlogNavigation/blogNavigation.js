@@ -34,6 +34,12 @@ import {
 } from '../../UtilityComponents';
 
 /**
+ * Constants
+ */
+
+import * as Environment from '../../../constants/environments';
+
+/**
  * Images
  */
 
@@ -60,7 +66,15 @@ export const BlogNavigation = (props) => {
     useEffect(() => {
         // Fetch previous and next post using the current post key
 
-        if(props.itemKey !== "") props.fetchPrevAndNextPostForBlogListItem(props.page, props.itemKey);
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            if(props.itemKey !== "") fetchFakeData(props.fakeData, props.page, props.itemKey);           
+        }else{
+            // Fetch data (required to run -> npm run server)
+            
+            if(props.itemKey !== "") props.fetchPrevAndNextPostForBlogListItem(props.page, props.itemKey);
+        }
 
         if(props.data.items.length !== 0) setShowComponent(true);
 
@@ -71,6 +85,24 @@ export const BlogNavigation = (props) => {
 
     }, [props.itemKey,
         props.data.items.length]);
+
+    const fetchFakeData = (_fakeData, page, _currentPostKey) => {
+        let currentPostKey = _currentPostKey;        
+        let fakeData = [..._fakeData];
+        let navigationArray = [];
+
+        let currentPostIndex = fakeData.findIndex(item => item.key === currentPostKey);
+        let prevPost = currentPostIndex === 0 ? fakeData[fakeData.length-1] : fakeData[currentPostIndex-1];
+        let nextPost = currentPostIndex === fakeData.length - 1 ? fakeData[0] : fakeData[currentPostIndex+1];
+        
+        navigationArray.push(prevPost, nextPost);
+
+        switch(page){
+            case 'blogListStandardPage':
+                props.fetchBlogNavigationForBlogListStandardPageDataSuccess(navigationArray)
+                break;  
+        }
+    }
 
     const handleMouseEnter = (opt, key) => {
         switch(opt){
