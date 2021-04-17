@@ -143,7 +143,7 @@ export const BlogListStandardPage = (props) => {
     useEffect(() => {
 
         // Init state for fading effect when component will unmount
-
+        
         props.setUnmountComponentValues(false, "");
 
         // Init imput forms
@@ -154,11 +154,6 @@ export const BlogListStandardPage = (props) => {
 
         props.initCategoriesForBlogListStandardPage(categoriesListForBlog);
         props.initTagsForBlogListStandardPage(tagsListForBlog);
-
-        // Set activity of initial category and item
-
-        props.activateListStandardBlogCategory("deactive", "");
-        props.activateListStandardBlogItem("deactive", "", "");
 
         // Fetch data for the component
 
@@ -172,6 +167,11 @@ export const BlogListStandardPage = (props) => {
                 // Fetch data (required to run -> npm run server)
                 
                 props.fetchBlogListStandardPageData(props.blogListStandardPage.activePageId);
+
+                // Set activity of initial category and item
+
+                props.activateListStandardBlogCategory("deactive", "");
+                props.activateListStandardBlogItem("deactive", "", "");
             }
         }
 
