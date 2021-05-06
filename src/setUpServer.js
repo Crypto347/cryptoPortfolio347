@@ -21107,19 +21107,18 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
-                
             ],
             path: "blog-list-standard-item/gallery-post/1",
             coverImage: {
@@ -21276,9 +21275,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
@@ -21290,9 +21289,9 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Shoppimg",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 }
             ],
@@ -21410,23 +21409,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
                     isHover: "init"
                 }
             ],
@@ -21543,23 +21542,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -21676,9 +21675,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
@@ -21690,9 +21689,9 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Shopping",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 },
             ],
@@ -21808,23 +21807,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 }
             ],
@@ -21941,23 +21940,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
                     label: "Business",
                     key: "business",
                     path: "list-standard-blog-tags/business",
                     isHover: "init"
                 },
                 {
-                    id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -22116,16 +22115,16 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
@@ -22383,9 +22382,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
@@ -22397,9 +22396,9 @@ app.post('/api/blog-list-standard', (req, res) => {
                },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 }
             ],
@@ -22516,9 +22515,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
@@ -22648,16 +22647,16 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Shopping",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 },
                 {
@@ -22780,9 +22779,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
@@ -22794,9 +22793,9 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
                     isHover: "init"
                 }
             ],
@@ -22947,23 +22946,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 }
             ],
@@ -23081,9 +23080,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Fashin",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
@@ -23095,9 +23094,9 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -23204,7 +23203,7 @@ app.post('/api/blog-list-standard', (req, res) => {
             id: 17,
             key: "blogListStandardPageCardId17",
             cardType: "audioPost",
-            header: "Audio Post 2.",
+            header: "Audio Post 3.",
             audioKey: "aDayToRememberMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
@@ -23221,16 +23220,16 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 }
             ],
@@ -23347,23 +23346,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
                     label: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
-                    id: 3,
+                    id: 2,
                     label: "Fashion",
                     key: "fashion",
                     path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -23480,16 +23479,16 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                },
                 {
@@ -23613,9 +23612,9 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
@@ -23754,16 +23753,16 @@ app.post('/api/blog-list-standard', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Shopping",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -23880,23 +23879,23 @@ app.post('/api/blog-list-standard', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 }
             ],
@@ -24267,23 +24266,23 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 }
             ],
@@ -24443,16 +24442,16 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Shopping",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 },
                 {
@@ -24681,19 +24680,18 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
-                
             ],
             tags: [
                 {
@@ -24894,23 +24892,23 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
                     label: "Business",
                     key: "business",
                     path: "list-standard-blog-tags/business",
                     isHover: "init"
                 },
                 {
-                    id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -25112,9 +25110,9 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
@@ -25126,9 +25124,9 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
                     isHover: "init"
                 }
             ],
@@ -25378,9 +25376,9 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
@@ -25392,9 +25390,9 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Shoppimg",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 }
             ],
@@ -25555,16 +25553,16 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
@@ -25732,23 +25730,23 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 }
             ],
@@ -25909,9 +25907,9 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
@@ -26142,23 +26140,23 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Business",
+                    key: "business",
+                    path: "list-standard-blog-tags/business",
                     isHover: "init"
                 }
             ],
@@ -26498,9 +26496,9 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Fashin",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
@@ -26512,9 +26510,9 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -26683,16 +26681,16 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Shopping",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -26908,23 +26906,23 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
@@ -27085,9 +27083,9 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
@@ -27099,9 +27097,9 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 }
             ],
@@ -27239,7 +27237,7 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             key: "audioPostId3",
             cardId: "blogListStandardPageCardId17",
             cardType: "audioPost",
-            header: "Audio Post 2.",
+            header: "Audio Post 3.",
             audioKey: "aDayToRememberMp3",
             date: "17.03.2021",
             numberOfLikes: 3,
@@ -27269,16 +27267,16 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Photography",
+                    key: "photography",
+                    path: "list-standard-blog-tags/photography",
                     isHover: "init"
                 }
             ],
@@ -27439,16 +27437,16 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                },
                 {
@@ -27616,23 +27614,23 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Education",
+                    key: "education",
+                    path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    label: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tags/design",
                     isHover: "init"
                 }
             ],
@@ -27848,9 +27846,9 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Fashion",
+                    key: "fashion",
+                    path: "list-standard-blog-tags/fashion",
                     isHover: "init"
                 },
                 {
@@ -27862,9 +27860,9 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                 },
                 {
                     id: 3,
-                    label: "Fashion",
-                    key: "fashion",
-                    path: "list-standard-blog-tags/fashion",
+                    label: "Shopping",
+                    key: "shopping",
+                    path: "list-standard-blog-tags/shopping",
                     isHover: "init"
                 },
             ],
@@ -28025,9 +28023,9 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
+                    label: "Finance",
+                    key: "finance",
+                    path: "list-standard-blog-tags/finance",
                     isHover: "init"
                 },
                 {
@@ -28202,23 +28200,23 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             categories: [
                 {
                     id: 1,
-                    label: "Business",
-                    key: "business",
-                    path: "list-standard-blog-tags/business",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
                     label: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
                     isHover: "init"
                 },
                 {
-                    id: 3,
+                    id: 2,
                     label: "Fashion",
                     key: "fashion",
                     path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    label: "News",
+                    key: "news",
+                    path: "list-standard-blog-tags/news",
                     isHover: "init"
                 }
             ],
