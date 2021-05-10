@@ -127,7 +127,7 @@ export const BlogPostSingleItem = (props) => {
     useEffect(() => {
 
         // Init state for fading effect when component will unmount
-
+console.log("JJJ", props.props1)
         // props.setUnmountComponentValues(false, "");
 
         // Scroll to the top of the screen

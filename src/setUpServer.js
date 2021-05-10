@@ -24010,6 +24010,10 @@ app.post('/api/blog-list-standard', (req, res) => {
     
     let currentPostKey = req.body.currentPostKey;
 
+    let category = req.body.category;
+
+    console.log("category",category)
+
     if(currentPostKey){
         let navigationArray = [];
 
@@ -24020,6 +24024,19 @@ app.post('/api/blog-list-standard', (req, res) => {
         navigationArray.push(prevPost, nextPost);
         
         res.json(navigationArray);
+    }else if(category){
+
+        let categoriesArray = [];
+
+        blogListStandardPage.map((el, i) => {
+            el.categories.map((el2, i2) => {
+                if(el2.key === category){
+                    categoriesArray.push(el)
+                }
+            })
+        })
+
+        res.json(categoriesArray);  
     }else{
         if(!updatedBlogListStandard) {
             res.status(404).send("The blog data was not found");

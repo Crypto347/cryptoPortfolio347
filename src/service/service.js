@@ -2766,6 +2766,53 @@ export function fetchPrevAndNextPostForBlogListItem(page, currentPostKey) {
     };
 }
 
+export function fetchBlogCategoriesContentData(page, category) {
+    let _page;
+    switch(page){
+        case 'blogListStandardPage':
+            _page = "blog-list-standard"
+            break;
+    }
+    return dispatch => {
+
+        switch(page){
+            case 'blogListStandardPage':
+                dispatch(Actions.fetchBlogCategoriesContentForBlogListStandardPageDataBegin());
+                break;
+        }
+        
+        return fetch(`http://localhost:3005/api/${_page}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                category: category
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogCategoriesContentForBlogListStandardPageDataSuccess(json));
+                        break;
+                }
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error);
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogCategoriesContentForBlogListStandardPageDataFailur(error))
+                        break;
+                }
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

@@ -41,7 +41,7 @@ import Toolbar from '../../../Parts/Toolbar/toolbar';
 import BlogInfoBoard from '../../../Parts/BlogInfoBoard/blogInfoBoard';
 import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostCard';
 import BlogPostSingleItem from '../../../SmallParts/BlogPostSingleItem/blogPostSingleItem';
-import TagItem from '../../../SmallParts/TagItem/tagItem';
+import BlogCategoriesContent from '../../../Parts/BlogCategoriesContent/blogCategoriesContent';
 import Icon from '../../../SmallParts/Icon/icon';
 import Pagination from '../../../Parts/Pagination/pagination';
 import Footer from '../../../Parts/Footer/footer';
@@ -170,8 +170,8 @@ export const BlogListStandardPage = (props) => {
 
                 // Set activity of initial category and item
 
-                props.activateListStandardBlogCategory("deactive", "");
-                props.activateListStandardBlogItem("deactive", "", "");
+                // props.activateListStandardBlogCategory("deactive", "");
+                // props.activateListStandardBlogItem("deactive", "", "");
             }
         }
 
@@ -441,14 +441,17 @@ export const BlogListStandardPage = (props) => {
                                 exact 
                                 path="/crypto-portfolio/list-standard-blog-category/:category"
                                 render={(props) => (
-                                    <div className="blog-list-standard-page-posts-list"></div>
+                                    <BlogCategoriesContent blogCategoriesContentProps={props} page='blogListStandardPage'/>
+                                    // <div className="blog-list-standard-page-posts-list">
+                                    //     {console.log(props)}
+                                    // </div>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem props1={props} page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 

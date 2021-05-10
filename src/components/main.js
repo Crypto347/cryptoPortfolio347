@@ -138,7 +138,7 @@ export const Main = (props) => {
         props.activateMenuItem(pathOfIds);
         
         let blogCategory = Utility.activateBlogCategory(path);
-
+        
         if(blogCategory.page === "listStandardBlogCategory"){
             props.activateListStandardBlogCategory("active", blogCategory.categoryName);
         }
@@ -563,7 +563,7 @@ export default connect(
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch)
         };
     }
 )(Main);
