@@ -27,11 +27,11 @@ export const initialState = {
         loading: false,
         error: null,
     },
-    blogCategoriesContent: {
-        item: [],
-        loading: false,
-        error: null,
-    },
+    // blogCategoriesContent: {
+    //     items: [],
+    //     loading: false,
+    //     error: null,
+    // },
     loading: false,
     error: null,
     searchInputForm: {},
@@ -151,39 +151,30 @@ const fetchBlogNavigationForBlogListStandardPageDataFailur = (state, action) => 
     };
 }
 
-const fetchBlogCategoriesContentForBlogListStandardPageDataBegin = (state, action) => {
-    return {
-        ...state,
-        blogCategoriesContent: {
-            ...state.blogCategoriesContent,
-            loading: true,
-            error: null
-        }
-    };
-}
+// const fetchBlogCategoriesContentForBlogListStandardPageDataBegin = (state, action) => {
+//     return {
+//         ...state,
+//         loading: true,
+//         error: null
+//     };
+// }
 
-const fetchBlogCategoriesContentForBlogListStandardPageDataSuccess = (state, action) => {    
-    return {
-        ...state,
-        blogCategoriesContent: {
-            ...state.blogCategoriesContent,
-            loading: false,
-            item: action.array
-        }
-    };
-}
+// const fetchBlogCategoriesContentForBlogListStandardPageDataSuccess = (state, action) => {    
+//     return {
+//         ...state,
+//         loading: false,
+//         items: action.array
+//     };
+// }
 
-const fetchBlogCategoriesContentForBlogListStandardPageDataFailur = (state, action) => {
-    return {
-        ...state,
-        blogCategoriesContent: {
-            ...state.blogCategoriesContent,
-            loading: false,
-            error: action.err,
-            item: []
-        }
-    };
-}
+// const fetchBlogCategoriesContentForBlogListStandardPageDataFailur = (state, action) => {
+//     return {
+//         ...state,
+//         loading: false,
+//         error: action.err,
+//         items: []
+//     };
+// }
 
 const initSearchInputFormForBlogListStandardPage = (state, action) => {
     return {
@@ -604,12 +595,12 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchPostBlogDataSuccess (state, action); 
         case actionTypes.FETCH_POST_BLOG_DATA_FAILURE:
             return fetchPostBlogDataFailur (state, action);
-        case actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN:
-            return fetchBlogCategoriesContentForBlogListStandardPageDataBegin (state, action);
-        case actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS:
-            return fetchBlogCategoriesContentForBlogListStandardPageDataSuccess (state, action); 
-        case actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
-            return fetchBlogCategoriesContentForBlogListStandardPageDataFailur (state, action);
+        // case actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN:
+        //     return fetchBlogCategoriesContentForBlogListStandardPageDataBegin (state, action);
+        // case actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS:
+        //     return fetchBlogCategoriesContentForBlogListStandardPageDataSuccess (state, action); 
+        // case actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
+        //     return fetchBlogCategoriesContentForBlogListStandardPageDataFailur (state, action);
         case actionTypes.BLOG_LIST_CARD_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:
             return blogListCardCategoryIsHoverForBlogListStandardPage(state, action);
         case actionTypes.BLOG_POST_SINGLE_ITEM_CATEGORY_IS_HOVER_FOR_BLOG_LIST_STANDARD_PAGE:

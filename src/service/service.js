@@ -2777,7 +2777,7 @@ export function fetchBlogCategoriesContentData(page, category) {
 
         switch(page){
             case 'blogListStandardPage':
-                dispatch(Actions.fetchBlogCategoriesContentForBlogListStandardPageDataBegin());
+                dispatch(Actions.fetchBlogListStandardPageDataBegin());
                 break;
         }
         
@@ -2797,7 +2797,7 @@ export function fetchBlogCategoriesContentData(page, category) {
                 // console.log(json)
                 switch(page){
                     case 'blogListStandardPage':
-                        dispatch(Actions.fetchBlogCategoriesContentForBlogListStandardPageDataSuccess(json));
+                        dispatch(Actions.fetchBlogListStandardPageDataSuccess(json));
                         break;
                 }
                 // return json;
@@ -2806,7 +2806,7 @@ export function fetchBlogCategoriesContentData(page, category) {
                 console.log("error",error);
                 switch(page){
                     case 'blogListStandardPage':
-                        dispatch(Actions.fetchBlogCategoriesContentForBlogListStandardPageDataFailur(error))
+                        dispatch(Actions.fetchBlogListStandardPageDataFailur(error))
                         break;
                 }
             });

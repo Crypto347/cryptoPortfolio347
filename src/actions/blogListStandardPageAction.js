@@ -60,25 +60,25 @@ export function fetchBlogNavigationForBlogListStandardPageDataFailur(err) {
     };
 };
 
-export function fetchBlogCategoriesContentForBlogListStandardPageDataBegin() {
-    return { 
-        type: actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN
-    };
-};
+// export function fetchBlogCategoriesContentForBlogListStandardPageDataBegin() {
+//     return { 
+//         type: actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN
+//     };
+// };
 
-export function fetchBlogCategoriesContentForBlogListStandardPageDataSuccess(array) {
-    return { 
-        type: actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS,
-        array: array
-    };
-};
+// export function fetchBlogCategoriesContentForBlogListStandardPageDataSuccess(array) {
+//     return { 
+//         type: actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS,
+//         array: array
+//     };
+// };
 
-export function fetchBlogCategoriesContentForBlogListStandardPageDataFailur(err) {
-    return { 
-        type: actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE,
-        err: err
-    };
-};
+// export function fetchBlogCategoriesContentForBlogListStandardPageDataFailur(err) {
+//     return { 
+//         type: actionTypes.FETCH_BLOG_CATEGORIES_CONTENT_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE,
+//         err: err
+//     };
+// };
 
 
 export function initSearchInputFormForBlogListStandardPage(obj) {

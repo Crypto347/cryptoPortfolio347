@@ -24034,8 +24034,8 @@ app.post('/api/blog-list-standard', (req, res) => {
                     categoriesArray.push(el)
                 }
             })
-        })
-
+        });
+        
         res.json(categoriesArray);  
     }else{
         if(!updatedBlogListStandard) {

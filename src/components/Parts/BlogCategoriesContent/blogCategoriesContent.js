@@ -26,7 +26,7 @@ import './blogCategoriesContent.scss';
  */
 
 import Loading from '../../SmallParts/Loading/loading';
-import AchievementItem from '../../SmallParts/AchievementItem/achievementItem';
+import BlogListPostCard from '../../SmallParts/BlogListPostCard/blogListPostCard';
 
 /**
  * Services
@@ -90,7 +90,17 @@ export const BlogCategoriesContent = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        props.fetchBlogCategoriesContentData(props.page, props.blogListStandardPage.activeCategory.categoryName);
+        let categoryName;
+        switch(props.page){
+            case 'blogListStandardPage':
+                categoryName = props.blogListStandardPage.activeCategory.categoryName;
+                break;
+        }
+      
+        if(!!categoryName){
+            props.fetchBlogCategoriesContentData(props.page, categoryName);
+        }
+        
         // if(props.achievementsData.items.length === 0){
         //     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
         //         // Fetch mock data (not required to run -> npm run server)
@@ -110,64 +120,76 @@ export const BlogCategoriesContent = (props) => {
         // Cleaning the unmounted component
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [props.blogListStandardPage.activeCategory.categoryName]);
-    
-
-    const handleScroll = () => {
-        let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("achievements")
-
-        // Render the component only when it appears on the screen
-
-        if(scrollHeight >= el.offsetTop - window.innerHeight/2 - 400){
-            setShowComponent(true);
-        }
-
-        // Render the component only when it appears on a vertically oriented screen
-
-        if(size.width - size.height < 0){
-            if(scrollHeight >= el.offsetTop - size.height/2 - 900){
-                setShowComponent(true);
-            }
-        }
-    }
-
-    const renderAchievementsData = () => {
-        if(!props.achievementsData.loading && !props.achievementsData.error){
-            return(
-                <div className="achievements-data-items">{props.achievementsData.items.map((el,i) => {
+ 
+    const renderBlogListStandardPageData = (arr) => {
+        return(
+            <div>
+                {arr.map((el, i) => {                     
                     return(
-                        <AchievementItem
-                            key={i}
-                            number={el.number}
-                            achievement={el.achievement}
-                            numberColor="rgb(239, 239, 239)"
-                            achievementColor="black"
-                        />
+                        <React.Fragment key={i}>
+                            <BlogListPostCard 
+                                page={props.page}
+                                elData={el}
+                                blogListCardCategoryIsHover={props.blogListCardCategoryIsHoverForBlogListStandardPage}
+                                setSwiperStateForBlogListStandardPage={props.setSwiperStateForBlogListStandardPage}
+                                pageData={props.blogListStandardPage}
+                                clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                                activateBlogItem={props.activateListStandardBlogItem}
+                                activateBlogCategory={props.activateListStandardBlogCategory}
+                                setUnmountComponentValues={props.setUnmountComponentValues}
+                                unmountComponent={props.unmountComponent}
+                                clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
+                                increaseTheNumberOfLikes={props.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage}
+                                decreaseTheNumberOfLikes={props.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage}
+                                setCommentsButtonClickedState={props.setCommentsButtonClickedStateForBlogListStandardPage}
+                            />
+                        </React.Fragment>
                     )
-                })}</div>
-            )
-        }
+                })}
+            </div>
+        )
     }
 
-    const renderAchievements = () => {
-        if(props.achievementsData.loading && !props.achievementsData.error){
+    const renderBlogListStandardPageDataContent = () => {
+        let data;
+        switch(props.page){
+            case 'blogListStandardPage':
+                data = props.blogListStandardPage;
+                break;
+        }
+        if(data.loading && !data.error){
             return(
-                <div className="achievements-loading-error">
+                <div 
+                    className="blog-categories-content-loading-error" 
+                    style={{height: `100%`}}
+                >
                     <Loading color="black"/>
                 </div>
             )
         }
-        if(!props.achievementsData.loading && !props.achievementsData.error){
+        if(!data.loading && !data.error){
             return(
-                <>
-                   {showComponent ? renderAchievementsData() : null}
-                </>
+                <div className="blog-categories-content-data-wrapper">
+                    {renderBlogListStandardPageData(data.items)}
+                    {/* <Pagination
+                        page="blogListStandardPage"
+                        activePageNumber={props.blogListStandardPage.activePageId}
+                        pagesArray={props.blogListStandardPage.pagesArray}
+                        fetchPageData={props.fetchBlogListStandardPageData}
+                        fakeData={FakeData.blogListStandardPage}
+                        fetchFakeData={(fakeData, activePageId) => fetchFakeData(fakeData, activePageId)}
+                        activatePageNumber={props.activatePageNumberForBlogListStandardPage}
+                    /> */}
+                </div>
             )
         }
-        if(!props.achievementsData.loading && props.achievementsData.error){
+        if(!data.loading && data.error){
             return(
-                <div className="achievements-loading-error">
-                    <H19 className="h19-nobel-lora">{`${props.achievementsData.error}`}</H19>
+                <div 
+                    className="blog-categories-content-loading-error" 
+                    style={{height: `100%`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>
             )
         }
@@ -179,9 +201,7 @@ export const BlogCategoriesContent = (props) => {
 
     return(
         <div className="blog-categories-content">
-            {/* <EH80/>
-            {renderAchievements()}
-            <EH80/> */}
+            {renderBlogListStandardPageDataContent()}
         </div>
     );
 }
@@ -195,6 +215,17 @@ export default connect(
     (dispatch) => {
         return {
             fetchBlogCategoriesContentData: bindActionCreators(Services.fetchBlogCategoriesContentData, dispatch),
+            blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
+            setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
+            unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
+            clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
+            increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
+            decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
+            setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch),
             // fetchAchievementsDataSuccess: bindActionCreators(Actions.fetchAchievementsDataSuccess, dispatch),
         };
     }
