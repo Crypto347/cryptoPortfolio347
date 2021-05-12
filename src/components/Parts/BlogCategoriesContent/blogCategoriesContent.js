@@ -90,12 +90,7 @@ export const BlogCategoriesContent = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        let categoryName;
-        switch(props.page){
-            case 'blogListStandardPage':
-                categoryName = props.blogListStandardPage.activeCategory.categoryName;
-                break;
-        }
+        let categoryName = setPageData(props.page, "categoryName");
       
         if(!!categoryName){
             props.fetchBlogCategoriesContentData(props.page, categoryName);
@@ -121,6 +116,72 @@ export const BlogCategoriesContent = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [props.blogListStandardPage.activeCategory.categoryName]);
  
+
+    const setPageData = (page, opt) => {
+        switch(opt){
+            case 'pageData':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogListStandardPage;
+                }
+            return;
+            case 'categoryName':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogListStandardPage.activeCategory.categoryName;
+                }
+            return;
+            case 'blogListCardCategoryIsHover':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogListCardCategoryIsHoverForBlogListStandardPage;
+                }
+            return;
+            case 'setSwiperStateForBlogListStandardPage':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.setSwiperStateForBlogListStandardPage;
+                }
+            return;
+            case 'activateBlogItem':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogItem;
+                }
+            return;
+            case 'activateBlogCategory':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogCategory;
+                }
+            return;
+            case 'clearState':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.clearBlogListSingleItemStateForBlogListStandardPage;
+                }
+            return;
+            case 'increaseTheNumberOfLikes':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage;
+                }
+            return;
+            case 'decreaseTheNumberOfLikes':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage;
+                }
+            return;
+            case 'setCommentsButtonClickedState':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.setCommentsButtonClickedStateForBlogListStandardPage;
+                }
+            return;
+        }
+    }
+
     const renderBlogListStandardPageData = (arr) => {
         return(
             <div>
@@ -130,18 +191,18 @@ export const BlogCategoriesContent = (props) => {
                             <BlogListPostCard 
                                 page={props.page}
                                 elData={el}
-                                blogListCardCategoryIsHover={props.blogListCardCategoryIsHoverForBlogListStandardPage}
-                                setSwiperStateForBlogListStandardPage={props.setSwiperStateForBlogListStandardPage}
-                                pageData={props.blogListStandardPage}
+                                blogListCardCategoryIsHover={setPageData(props.page, "blogListCardCategoryIsHover")}
+                                setSwiperStateForBlogListStandardPage={setPageData(props.page, "setSwiperStateForBlogListStandardPage")}
+                                pageData={setPageData(props.page, "pageData")}
                                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                                activateBlogItem={props.activateListStandardBlogItem}
-                                activateBlogCategory={props.activateListStandardBlogCategory}
+                                activateBlogItem={setPageData(props.page, "activateBlogItem")}
+                                activateBlogCategory={setPageData(props.page, "activateBlogCategory")}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
-                                clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
-                                increaseTheNumberOfLikes={props.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage}
-                                decreaseTheNumberOfLikes={props.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage}
-                                setCommentsButtonClickedState={props.setCommentsButtonClickedStateForBlogListStandardPage}
+                                clearState={setPageData(props.page, "clearState")}
+                                increaseTheNumberOfLikes={setPageData(props.page, "increaseTheNumberOfLikes")}
+                                decreaseTheNumberOfLikes={setPageData(props.page, "decreaseTheNumberOfLikes")}
+                                setCommentsButtonClickedState={setPageData(props.page, "setCommentsButtonClickedState")}
                             />
                         </React.Fragment>
                     )
@@ -151,12 +212,8 @@ export const BlogCategoriesContent = (props) => {
     }
 
     const renderBlogListStandardPageDataContent = () => {
-        let data;
-        switch(props.page){
-            case 'blogListStandardPage':
-                data = props.blogListStandardPage;
-                break;
-        }
+        let data = setPageData(props.page, "pageData");
+
         if(data.loading && !data.error){
             return(
                 <div 

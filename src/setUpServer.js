@@ -21427,6 +21427,13 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "business",
                     path: "list-standard-blog-tags/business",
                     isHover: "init"
+                },
+                {
+                    id: 4,
+                    label: "Uncategorized",
+                    key: "uncategorized",
+                    path: "list-standard-blog-tags/uncategorized",
+                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/quote-post/1",
@@ -26174,6 +26181,13 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                     label: "Business",
                     key: "business",
                     path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    label: "Uncategorized",
+                    key: "uncategorized",
+                    path: "list-standard-blog-tags/uncategorized",
                     isHover: "init"
                 }
             ],

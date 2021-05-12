@@ -62,7 +62,7 @@ export const categoriesListForBlog = [
     {
         id: 9,
         categoryName: "Uncategorized",
-        key: "nncategorized",
+        key: "uncategorized",
         isHover: "init",
         active: "init"
     }
