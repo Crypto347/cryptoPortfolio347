@@ -168,12 +168,12 @@ const activateListStandardBlogCategory = (state, action) => {
             active: "off"
         }
     });
-    
+
     if(!!action.categoryName){
         let category = {...updatedCategoryList.find(item => item.key === action.categoryName), active: "on"};
         let categoryIndex = updatedCategoryList.findIndex(item => item.key === action.categoryName);
         
-        updatedCategoryList.splice(categoryIndex, 1, category)
+        updatedCategoryList.splice(categoryIndex, 1, category);
     }
   
     return {

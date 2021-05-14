@@ -144,7 +144,7 @@ export const Pagination = (props) => {
             }else{
                 // Fetch data (required to run -> npm run server)
                 
-                props.fetchPageData(_pageId);
+                props.fetchPageData(_pageId, props.page, props.categoryName);
             }
 
             props.activatePageNumber(_pageId);

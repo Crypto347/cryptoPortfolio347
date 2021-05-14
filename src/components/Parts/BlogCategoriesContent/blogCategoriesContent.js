@@ -27,6 +27,7 @@ import './blogCategoriesContent.scss';
 
 import Loading from '../../SmallParts/Loading/loading';
 import BlogListPostCard from '../../SmallParts/BlogListPostCard/blogListPostCard';
+import Pagination from '../../Parts/Pagination/pagination';
 
 /**
  * Services
@@ -51,6 +52,7 @@ import * as Selectors from '../../../reducers/selectors';
  */
 
 import {
+    H15,
     H19,
     EH80
 } from '../../UtilityComponents';
@@ -91,9 +93,9 @@ export const BlogCategoriesContent = (props) => {
         // Fetch data for the component
 
         let categoryName = setPageData(props.page, "categoryName");
-      
+     
         if(!!categoryName){
-            props.fetchBlogCategoriesContentData(props.page, categoryName);
+            props.fetchBlogCategoriesContentData(setPageData(props.page, "activePageNumber"), props.page, categoryName);
         }
         
         // if(props.achievementsData.items.length === 0){
@@ -179,6 +181,30 @@ export const BlogCategoriesContent = (props) => {
                         return props.setCommentsButtonClickedStateForBlogListStandardPage;
                 }
             return;
+            case 'activePageNumber':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogListStandardPage.activePageId;
+                }
+            return;
+            case 'activatePageNumber':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activatePageNumberForBlogListStandardPage;
+                }
+            return;
+            case 'pagesArray':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogListStandardPage.pagesArray;
+                }
+            return;
+            case 'fakeData':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return FakeData.blogListStandardPage;
+                }
+            return;
         }
     }
 
@@ -228,15 +254,16 @@ export const BlogCategoriesContent = (props) => {
             return(
                 <div className="blog-categories-content-data-wrapper">
                     {renderBlogListStandardPageData(data.items)}
-                    {/* <Pagination
-                        page="blogListStandardPage"
-                        activePageNumber={props.blogListStandardPage.activePageId}
-                        pagesArray={props.blogListStandardPage.pagesArray}
-                        fetchPageData={props.fetchBlogListStandardPageData}
-                        fakeData={FakeData.blogListStandardPage}
-                        fetchFakeData={(fakeData, activePageId) => fetchFakeData(fakeData, activePageId)}
-                        activatePageNumber={props.activatePageNumberForBlogListStandardPage}
-                    /> */}
+                    <Pagination
+                        page={props.page}
+                        activePageNumber={setPageData(props.page, "activePageNumber")}
+                        pagesArray={setPageData(props.page, "pagesArray")}
+                        fetchPageData={props.fetchBlogCategoriesContentData}
+                        fakeData={setPageData(props.page, "fakeData")}
+                        // fetchFakeData={(fakeData, activePageId) => fetchFakeData(fakeData, activePageId)}
+                        activatePageNumber={setPageData(props.page, "activatePageNumber")}
+                        categoryName={setPageData(props.page, "categoryName")}
+                    />
                 </div>
             )
         }
@@ -283,6 +310,7 @@ export default connect(
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch),
+            activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
             // fetchAchievementsDataSuccess: bindActionCreators(Actions.fetchAchievementsDataSuccess, dispatch),
         };
     }

@@ -24006,21 +24006,40 @@ app.post('/api/blog-list-standard', (req, res) => {
             ]
         }
     ]
-    
-    let firstIndex = req.body.activePageId * 6 - 5;
-    let lastIndex = req.body.activePageId * 6 - 1;
- 
-    let updatedBlogListStandard = {
-        numberOfPages: !Number.isInteger(blogListStandardPage.length/6) ? Math.floor(blogListStandardPage.length/6) + 1 : Math.floor(blogListStandardPage.length/6),
-        blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
-    };
-    
-    let currentPostKey = req.body.currentPostKey;
 
     let category = req.body.category;
 
-    console.log("category",category)
+    let categoriesArray = [];
 
+    if(category){
+        blogListStandardPage.map(el => {
+            el.categories.map(el2 => {
+                if(el2.key === category){
+                    categoriesArray.push(el)
+                }
+            })
+        });
+    }
+
+    let firstIndex = req.body.activePageId * 6 - 5;
+    let lastIndex = req.body.activePageId * 6 - 1;
+    
+    let updatedBlogListStandard;
+
+    if(categoriesArray.length !== 0){
+        updatedBlogListStandard = {
+            numberOfPages: !Number.isInteger(categoriesArray.length/6) ? Math.floor(categoriesArray.length/6) + 1 : Math.floor(categoriesArray.length/6),
+            blogListStandardPage: categoriesArray.slice(firstIndex - 1, lastIndex + 1)
+        };
+    }else{
+        updatedBlogListStandard = {
+            numberOfPages: !Number.isInteger(blogListStandardPage.length/6) ? Math.floor(blogListStandardPage.length/6) + 1 : Math.floor(blogListStandardPage.length/6),
+            blogListStandardPage: blogListStandardPage.slice(firstIndex - 1, lastIndex + 1)
+        };
+    }
+    
+    let currentPostKey = req.body.currentPostKey;
+    
     if(currentPostKey){
         let navigationArray = [];
 
@@ -24031,19 +24050,6 @@ app.post('/api/blog-list-standard', (req, res) => {
         navigationArray.push(prevPost, nextPost);
         
         res.json(navigationArray);
-    }else if(category){
-
-        let categoriesArray = [];
-
-        blogListStandardPage.map((el, i) => {
-            el.categories.map((el2, i2) => {
-                if(el2.key === category){
-                    categoriesArray.push(el)
-                }
-            })
-        });
-        
-        res.json(categoriesArray);  
     }else{
         if(!updatedBlogListStandard) {
             res.status(404).send("The blog data was not found");
