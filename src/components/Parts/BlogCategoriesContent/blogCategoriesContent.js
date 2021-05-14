@@ -93,22 +93,18 @@ export const BlogCategoriesContent = (props) => {
         // Fetch data for the component
 
         let categoryName = setPageData(props.page, "categoryName");
-     
-        if(!!categoryName){
-            props.fetchBlogCategoriesContentData(setPageData(props.page, "activePageNumber"), props.page, categoryName);
-        }
         
-        // if(props.achievementsData.items.length === 0){
-        //     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-        //         // Fetch mock data (not required to run -> npm run server)
-                
-        //         props.fetchAchievementsDataSuccess(FakeData.achievementsData);
-        //     }else{
-        //        // Fetch data (required to run -> npm run server)
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+            
+            fetchFakeData(setPageData(props.page, "fakeData"), setPageData(props.page, "activePageNumber"), props.page, categoryName);
+        }else{
+            // Fetch data (required to run -> npm run server)
 
-        //         props.fetchAchievementsData();
-        //     }
-        // }
+            if(!!categoryName){
+                props.fetchBlogCategoriesContentData(setPageData(props.page, "activePageNumber"), props.page, categoryName);
+            }
+        }
        
         // Event Listeners
         
@@ -118,6 +114,45 @@ export const BlogCategoriesContent = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [props.blogListStandardPage.activeCategory.categoryName]);
  
+    const fetchFakeData = (fakeData, activePageId, page, categoryName) => {
+        let blogListPage = [...fakeData];
+        let categoriesArray = [];
+
+        blogListPage.map(el => {
+            el.categories.map(el2 => {
+                if(el2.key === categoryName){
+                    categoriesArray.push(el)
+                }
+            })
+        });
+
+        let firstIndex = activePageId * 6 - 5;
+        let lastIndex = activePageId * 6 - 1;
+    
+        let updatedBlogList = {
+            numberOfPages: !Number.isInteger(categoriesArray.length/6) ? Math.floor(categoriesArray.length/6) + 1 : Math.floor(categoriesArray.length/6),
+            blogListPage: categoriesArray.slice(firstIndex - 1, lastIndex + 1)
+        };
+
+        let updatedJson = [...updatedBlogList.blogListPage];
+        let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+        userPostsLikedArray.map((el, i) => {
+            let item = updatedJson.filter(item => item.key === el);
+            if(item.length !== 0){
+                let itemIndex = updatedJson.findIndex(item => item.key === el);
+                let obj = {
+                    ...item[0],
+                    numberOfLikes: item[0].numberOfLikes + 1,
+                    userLikedThePost: true
+                }
+                updatedJson.splice(itemIndex, 1, obj);
+            }
+        });
+        if(page === 'blogListStandardPage'){
+            props.fetchBlogListStandardPageDataSuccess(updatedJson);
+        }
+        props.initBlogPagination(updatedBlogList.numberOfPages);
+    }
 
     const setPageData = (page, opt) => {
         switch(opt){
@@ -299,6 +334,8 @@ export default connect(
     (dispatch) => {
         return {
             fetchBlogCategoriesContentData: bindActionCreators(Services.fetchBlogCategoriesContentData, dispatch),
+            fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
+            initBlogPagination: bindActionCreators(Actions.initBlogPagination, dispatch),
             blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
