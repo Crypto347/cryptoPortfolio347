@@ -571,10 +571,43 @@ const decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage = (stat
     }; 
 }
 
-const setCommentsButtonClickedStateForBlogListStandardPage = (state, action) => {    
+const setCommentsButtonClickedStateForBlogListStandardPage = (state, action) => {
     return {
         ...state,
         commentsIconCicked: action.val
+    }; 
+}
+
+
+const activateRecentPostForBlogListStandardPage = (state, action) => {
+    let updatedRecentPosts = [...state.recentPosts.items];
+    let recentPost;
+    let recentPostIndex;
+
+    updatedRecentPosts = updatedRecentPosts.map(el => {
+        return({
+            ...el,
+            active: false
+        })
+    });
+
+    if(action.postKey){
+        recentPost = {...updatedRecentPosts.find(item => item.key === action.postKey), active: action.val};
+        recentPostIndex = updatedRecentPosts.findIndex(item => item.key === action.postKey);
+
+    }else if(action.postPath){
+        recentPost = {...updatedRecentPosts.find(item => item.path === action.postPath), active: action.val};
+        recentPostIndex = updatedRecentPosts.findIndex(item => item.path === action.postPath);
+    }
+  
+    updatedRecentPosts.splice(recentPostIndex, 1, recentPost)
+
+    return {
+        ...state,
+        recentPosts: {
+            ...state.recentPosts,
+            items: updatedRecentPosts
+        }
     }; 
 }
 
@@ -646,6 +679,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage (state, action);
         case actionTypes.SET_COMMENTS_BUTTON_CLICKED_STATE_FOR_BLOG_LIST_STANDARD_PAGE:
             return setCommentsButtonClickedStateForBlogListStandardPage (state, action);
+        case actionTypes.ACTIVATE_RECENT_POST_FOR_BLOG_LIST_STANDARD_PAGE:
+            return activateRecentPostForBlogListStandardPage (state, action);
         default: 
             return state;
     }

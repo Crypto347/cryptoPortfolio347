@@ -307,6 +307,7 @@ export const BlogInfoBoard = (props) => {
                                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                                 activateBlogCategory={props.activateBlogCategory}
                                 activateBlogItem={props.activateBlogItem}
+                                activateRecentPost={props.activateRecentPost}
                             />
                             {i !== arr.length - 1 ? <EH10/> : null}
                         </React.Fragment>

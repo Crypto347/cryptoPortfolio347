@@ -43,6 +43,11 @@ export const BlogRecentPostItem = (props) => {
      */
    
     useEffect(() => {
+        // Activate the recent post on browser refresh
+        
+        let activePostPath = props.location.pathname.slice(18);
+        
+        props.activateRecentPost(null, activePostPath, true);
     }, []);
 
     const handleMouseEnter = (opt) => {
@@ -61,10 +66,15 @@ export const BlogRecentPostItem = (props) => {
         }
     }
 
-    const renderClassName = (opt, isHovering) => {
+    const renderClassName = (opt, isHovering, active) => {
         if(opt === "blogRecentPostHeader"){
-            return "h17-black-lustria-cursor-animation";
+            if(active){
+                return "blog-recent-post-header-active";
+            }else{
+                return "h17-black-lustria-cursor-animation";
+            }
         }
+        
         if(['blogRecentPostDate'].includes(opt)){
             switch(isHovering){
                 case 'init':
@@ -94,6 +104,7 @@ export const BlogRecentPostItem = (props) => {
             props.activateBlogItem("active", key);
             props.activateBlogCategory("deactive", "");
             props.history.push(`/crypto-portfolio/${path}`);
+            props.activateRecentPost(key, null, true);
 
         }else{
             // Open selected blog item in a new window on scroll wheel click
@@ -110,9 +121,9 @@ export const BlogRecentPostItem = (props) => {
         <div className="blog-recent-post-item">
             <div 
                 className="blog-recent-post-header"
-                onMouseDown={(e) => onCardClickHandler(e, props.elData.path, props.elData.key)}
+                onMouseDown={props.elData.active ? null : (e) => onCardClickHandler(e, props.elData.path, props.elData.key)}
             >
-                <H17 className={renderClassName("blogRecentPostHeader")}>{props.elData.header}</H17>
+                <H17 className={renderClassName("blogRecentPostHeader", null, props.elData.active)}>{props.elData.header}</H17>
             </div>
             <div 
                 className="blog-recent-post-date"

@@ -243,3 +243,12 @@ export function setCommentsButtonClickedStateForBlogListStandardPage(val) {
         val: val
     };
 };
+
+export function activateRecentPostForBlogListStandardPage(postKey, postPath, val) {
+    return { 
+        type: actionTypes.ACTIVATE_RECENT_POST_FOR_BLOG_LIST_STANDARD_PAGE,
+        postKey: postKey,
+        postPath: postPath,
+        val: val
+    };
+};
