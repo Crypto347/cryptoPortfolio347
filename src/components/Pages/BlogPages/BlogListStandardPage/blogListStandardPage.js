@@ -451,7 +451,7 @@ export const BlogListStandardPage = (props) => {
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem props1={props} page='blogListStandardPage'/>
+                                    <BlogPostSingleItem page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 

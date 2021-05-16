@@ -127,7 +127,7 @@ export const BlogPostSingleItem = (props) => {
     useEffect(() => {
 
         // Init state for fading effect when component will unmount
-console.log("JJJ", props.props1)
+        
         // props.setUnmountComponentValues(false, "");
 
         // Scroll to the top of the screen
@@ -147,88 +147,14 @@ console.log("JJJ", props.props1)
 
         // Fetch data for the component
 
-        switch(cardType){
-            case 'standardPost':
-                // Fetch data for the component
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
 
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-
-                    fetchFakeData(FakeData.standardPost, cardIdFromPathname);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-                    
-                    props.fetchStandardPostBlogData(cardIdFromPathname);
-                }
-                break;
-            case 'galleryPost':
-                // Fetch data for the component
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-
-                    fetchFakeData(FakeData.galleryPost, cardIdFromPathname);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-                    
-                    props.fetchGalleryPostBlogData(cardIdFromPathname);
-                }
-                break;
-            case 'linkPost':
-                // Fetch data for the component
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-
-                    fetchFakeData(FakeData.linkPost, cardIdFromPathname);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-                    
-                    props.fetchLinkPostBlogData(cardIdFromPathname);
-                }
-                break;
-            case 'quotePost':
-                // Fetch data for the component
-                
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-
-                    fetchFakeData(FakeData.quotePost, cardIdFromPathname);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-                    
-                    props.fetchQuotePostBlogData(cardIdFromPathname);
-                }
-                break;
-            case 'audioPost':
-                // Fetch data for the component
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-
-                    fetchFakeData(FakeData.audioPost, cardIdFromPathname);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-                    
-                    props.fetchAudioPostBlogData(cardIdFromPathname);
-                }
-                break;
-            case 'videoPost':
-                // Fetch data for the component
-
-                if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                    // Fetch mock data (not required to run -> npm run server)
-
-                    fetchFakeData(FakeData.videoPost, cardIdFromPathname);
-                }else{
-                    // Fetch data (required to run -> npm run server)
-                    
-                    props.fetchVideoPostBlogData(cardIdFromPathname);
-                }
-                break;
-            default:
-                // props.fetchStandardPostBlogData(cardIdFromPathname);
-                break;
+            fetchFakeData(setPageData(null, "fakeData", cardType), cardIdFromPathname);
+        }else{
+            // Fetch data (required to run -> npm run server)
+            
+            setPageData(null, "fetchData", cardType)(cardIdFromPathname);
         }
 
         // Show content after successful data fetch
@@ -238,7 +164,7 @@ console.log("JJJ", props.props1)
         return () =>  {
             // Cleaning the unmounted component
 
-            props.activateListStandardBlogItem("deactive", "", "");
+            setPageData(props.page, "activateBlogItem")("deactive", "", "");
         }
     }, []);
 
@@ -258,7 +184,7 @@ console.log("JJJ", props.props1)
         });
 
         props.fetchPostBlogDataSuccess(updatedJson);
-        props.activateListStandardBlogItem("active", updatedJson.cardId, updatedJson.cardType);
+        setPageData(props.page, "activateBlogItem")("active", updatedJson.cardId, updatedJson.cardType);
     }
 
     const handleMouseEnter = (opt, key) => {
@@ -279,16 +205,7 @@ console.log("JJJ", props.props1)
                 setIsHoveringBlogCardShare("on");
                 break;
             case 'blogCardCategories':
-                // Depending on the page set function to hover categories
-
-                switch(props.page){
-                    case 'standardPost':
-                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("on", key);
-                        break;
-                    default:
-                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("on", key);
-                        break;
-                }
+                setPageData(props.page, "blogPostSingleItemCategoryIsHover")("on", key);
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("on");
@@ -317,16 +234,7 @@ console.log("JJJ", props.props1)
                 setIsHoveringBlogCardShare("off");
                 break;
             case 'blogCardCategories':
-                // Depending on the page set function to hover categories
-
-                switch(props.page){
-                    case 'standardPost':
-                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("off", key);
-                        break;
-                    default:
-                        props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage("off", key);
-                        break;
-                }
+                setPageData(props.page, "blogPostSingleItemCategoryIsHover")("off", key);
                 break;
             case 'blogCardLink': 
                 setIsHoveringBlogCardLink("off");
@@ -564,10 +472,69 @@ console.log("JJJ", props.props1)
         }
     }
 
-    const setFakeData = (page) => {
-        switch(page){
-            case 'blogListStandardPage':
-                return FakeData.blogListStandardPage;
+    const setPageData = (page, opt, cardType) => {
+        switch(opt){
+            case 'pageData':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogListStandardPage;
+                }
+            return;
+            case 'fakeData':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return FakeData.blogListStandardPage;
+                }
+                switch(cardType){
+                    case 'standardPost':
+                        return FakeData.standardPost;
+                    case 'galleryPost':
+                        return FakeData.galleryPost;
+                    case 'linkPost':
+                        return FakeData.linkPost;
+                    case 'quotePost':
+                        return FakeData.quotePost;
+                    case 'audioPost':
+                        return FakeData.audioPost;
+                    case 'videoPost':
+                        return FakeData.videoPost;
+                }
+            return;
+            case 'activateBlogCategory':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogCategory;
+                }
+            return;
+            case 'activateBlogItem':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogItem;
+                }
+            return;
+            case 'fetchData':
+                switch(cardType){
+                    case 'standardPost':
+                        return props.fetchStandardPostBlogData;
+                    case 'galleryPost':
+                        return props.fetchGalleryPostBlogData;
+                    case 'linkPost':
+                        return props.fetchLinkPostBlogData;
+                    case 'quotePost':
+                        return props.fetchQuotePostBlogData;
+                    case 'audioPost':
+                        return props.fetchAudioPostBlogData;
+                    case 'videoPost':
+                        return props.fetchVideoPostBlogData;
+                }
+            return;
+            case 'blogPostSingleItemCategoryIsHover':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage;
+                }
+            return;
+            
         }
     }
 
@@ -579,17 +546,17 @@ console.log("JJJ", props.props1)
                         className="blog-post-single-item-info-likes"
                         onMouseEnter={() => handleMouseEnter(`blogCardLikes`)} 
                         onMouseLeave={() => handleMouseLeave(`blogCardLikes`)}
-                        onClick={() => onLikesClickHandler(props.blogListStandardPage.postBlogContent.item)}
+                        onClick={() => onLikesClickHandler(setPageData(props.page, "pageData").postBlogContent.item)}
                     >
                         <Icon 
                             iconType="fontAwesome"
-                            icon={props.blogListStandardPage.postBlogContent.item.userLikedThePost ? "faHeartSolid" : "faHeart"}
+                            icon={setPageData(props.page, "pageData").postBlogContent.item.userLikedThePost ? "faHeartSolid" : "faHeart"}
                             iconSize="1x"
                             isHover={isHoveringBlogCardLikes}
                             classNameOpt="blogCardLike"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{props.blogListStandardPage.postBlogContent.item.numberOfLikes}</H15>
+                        <H15 className={renderClassName("blogCardLikes", isHoveringBlogCardLikes)}>{setPageData(props.page, "pageData").postBlogContent.item.numberOfLikes}</H15>
                     </div>
                     <EW10/>
                     <div 
@@ -605,7 +572,7 @@ console.log("JJJ", props.props1)
                             classNameOpt="blogCardComment"
                         />
                         &nbsp;
-                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{props.blogListStandardPage.postBlogContent.item.numberOfComments}</H15>
+                        <H15 className={renderClassName("blogCardComments", isHoveringBlogCardComments)}>{setPageData(props.page, "pageData").postBlogContent.item.numberOfComments}</H15>
                     </div>
                     <EW10/>
                     <div className="blog-post-single-item-info-categories">
@@ -616,11 +583,52 @@ console.log("JJJ", props.props1)
                             classNameOpt="blogCardCategory"
                         />
                         &nbsp;
-                        {renderCategories(props.blogListStandardPage.postBlogContent.item.categories)}
+                        {renderCategories(setPageData(props.page, "pageData").postBlogContent.item.categories)}
                     </div>
                 </div>
             </div>
         )
+    }
+
+    const onClickCategory = (key, path, e) => {
+        // Do nothing on right mouse click 
+
+        if(e.button === 2) return;
+
+        // Storing data in local storage 
+
+        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
+        //   localStorage.setItem("pageHG", "blogListStandardPage");
+
+        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
+        //   localStorage.setItem("page", "blogListStandardPage");
+          
+          // Clear archive data 
+  
+        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
+        //       props.clearArchiveData();
+        //   }
+  
+        if(e.button !== 1){
+            /**
+             * Add fading effect on the unmounted component and remember 
+             * information of the unmounted component on left mouse click 
+             */ 
+
+        //   props.setUnmountComponentValues(false, path);
+        }else{
+            // Remember information of the unmounted component on scroll wheel click 
+            
+        //   props.setUnmountComponentValues(false, path);
+        }
+          // Fire up unmountComponent epic
+  
+        // props.unmountComponent(null, null, "blogInfoBoard", e.button);
+        props.clearActivityOfMenuItems();
+        setPageData(props.page, "activateBlogCategory")("active", key);
+        setPageData(props.page, "activateBlogItem")("deactive", "");
+        props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
+
     }
 
     const renderCategories = (arr) => {
@@ -630,7 +638,8 @@ console.log("JJJ", props.props1)
                     <div
                         key={i}
                         onMouseEnter={() => handleMouseEnter(`blogCardCategories`, el.key)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)}
+                        onMouseDown={(e) => onClickCategory(el.key, null, e)}
                     >
                         <H15 className={renderClassName("blogCardCategories", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
                     </div>
@@ -662,7 +671,6 @@ console.log("JJJ", props.props1)
                             </React.Fragment>
                         )
                     }
-                    
                 })}
             </div>
         )
@@ -672,7 +680,7 @@ console.log("JJJ", props.props1)
         return(
             <div className="blog-post-single-item-tags-and-soc-media-wrapper">
                 <div className="blog-post-single-item-tags-part-wrapper">
-                   {renderTags(props.blogListStandardPage.postBlogContent.item.tags)}
+                   {renderTags(setPageData(props.page, "pageData").postBlogContent.item.tags)}
                 </div>              
                 <div 
                     className="blog-post-single-item-soc-med-part-wrapper"
@@ -782,11 +790,11 @@ console.log("JJJ", props.props1)
                 <EH70/>
                 <BlogNavigation
                     page={props.page}
-                    itemKey={props.blogListStandardPage.activeItem.itemKey}
+                    itemKey={setPageData(props.page, "pageData").activeItem.itemKey}
                     fetchPrevAndNextPostForBlogListItem={props.fetchPrevAndNextPostForBlogListItem}
-                    fakeData={setFakeData(props.page)}
+                    fakeData={setPageData(props.page, "fakeData")}
                     fetchBlogNavigationForBlogListStandardPageDataSuccess={props.fetchBlogNavigationForBlogListStandardPageDataSuccess}
-                    data={props.blogListStandardPage.navigation}
+                    data={setPageData(props.page, "pageData").navigation}
                     setUnmountComponentValues={props.setUnmountComponentValues}
                     unmountComponent={props.unmountComponent}
                     clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
@@ -833,7 +841,7 @@ console.log("JJJ", props.props1)
 
     return(
         <div className="blog-post-single-item" id="blogPostSingleItem">
-            {showContent ? renderBlogPostSingleItemDataContent(props.blogListStandardPage.postBlogContent) : null}
+            {showContent ? renderBlogPostSingleItemDataContent(setPageData(props.page, "pageData").postBlogContent) : null}
         </div>
     );
 }
@@ -867,6 +875,9 @@ export default connect(
             decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));
