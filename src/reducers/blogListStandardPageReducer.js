@@ -605,10 +605,6 @@ const activateRecentPostForBlogListStandardPage = (state, action) => {
             updatedRecentPosts.splice(recentPostIndex, 1, recentPost);
         }
     }
-
-    // if(){
-    //     
-    // }
    
     return {
         ...state,
