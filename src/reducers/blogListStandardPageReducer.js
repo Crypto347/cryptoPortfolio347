@@ -503,16 +503,19 @@ const replyCommentBlogListStandardPage = (state, action) => {
 
 const increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage = (state, action) => {
     let updatedItems = [...state.items];
-
+    
     let item = updatedItems.find(item => item.key === action.cardKey);
-    item = {
-        ...item,
-       numberOfLikes: item.numberOfLikes + 1,
-       userLikedThePost: true
-    }
-    let itemIndex = updatedItems.findIndex(item => item.key === action.cardKey);
 
-    updatedItems.splice(itemIndex, 1, item);
+    if(!!item){
+        item = {
+            ...item,
+           numberOfLikes: item.numberOfLikes + 1,
+           userLikedThePost: true
+        }
+        let itemIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+    
+        updatedItems.splice(itemIndex, 1, item);
+    }
 
     return {
         ...state,
@@ -524,14 +527,17 @@ const decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage = (state, act
     let updatedItems = [...state.items];
 
     let item = updatedItems.find(item => item.key === action.cardKey);
-    item = {
-        ...item,
-       numberOfLikes: item.numberOfLikes - 1,
-       userLikedThePost: false
-    }
-    let itemIndex = updatedItems.findIndex(item => item.key === action.cardKey);
 
-    updatedItems.splice(itemIndex, 1, item);
+    if(!!item){
+        item = {
+            ...item,
+           numberOfLikes: item.numberOfLikes - 1,
+           userLikedThePost: false
+        }
+        let itemIndex = updatedItems.findIndex(item => item.key === action.cardKey);
+    
+        updatedItems.splice(itemIndex, 1, item);
+    }
 
     return {
         ...state,
@@ -597,9 +603,10 @@ const activateRecentPostForBlogListStandardPage = (state, action) => {
 
         updatedRecentPosts.splice(recentPostIndex, 1, recentPost);
     }else if(action.postPath){
-        recentPost = updatedRecentPosts.filter(item => item.path === action.postPath);
-        if(!!recentPost[0]){
-            recentPost = {...updatedRecentPosts.find(item => item.path === action.postPath), active: action.val};
+        recentPost = updatedRecentPosts.find(item => item.path === action.postPath);
+
+        if(!!recentPost){
+            recentPost = {...recentPost, active: action.val};
             recentPostIndex = updatedRecentPosts.findIndex(item => item.path === action.postPath);
 
             updatedRecentPosts.splice(recentPostIndex, 1, recentPost);
