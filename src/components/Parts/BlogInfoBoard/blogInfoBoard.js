@@ -134,6 +134,18 @@ export const BlogInfoBoard = (props) => {
      */
 
     useEffect(() => {
+        // Fetch data for the component
+
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+            // Fetch mock data (not required to run -> npm run server)
+
+            // fetchFakeData(FakeData.blogListStandardPage, props.blogListStandardPage.activePageId);
+            
+        }else{
+            // Fetch data (required to run -> npm run server)
+            
+            props.fetchBlogRecentPostsData(props.page);
+        }
     }, []);
 
     const handleMouseEnter = (opt) => {

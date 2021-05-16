@@ -500,6 +500,7 @@ export const BlogListStandardPage = (props) => {
                             activateBlogItem={props.activateListStandardBlogItem}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
+                            fetchBlogRecentPostsData={props.fetchBlogRecentPostsData}
                         />
                     </div>
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
@@ -557,7 +558,8 @@ export default connect(
             fetchPostBlogDataSuccess: bindActionCreators(Actions.fetchPostBlogDataSuccess, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
-            setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch)
+            setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch),
+            fetchBlogRecentPostsData: bindActionCreators(Services.fetchBlogRecentPostsData, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));

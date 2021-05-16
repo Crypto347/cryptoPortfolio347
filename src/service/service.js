@@ -2833,6 +2833,36 @@ export function fetchBlogCategoriesContentData(activePageId, page, category) {
     };
 }
 
+export function fetchBlogRecentPostsData(page) {
+    return dispatch => {
+        switch(page){
+            case 'blogListStandardPage':
+                dispatch(Actions.fetchBlogRecentPostsForBlogListStandardPageDataBegin());
+                break;
+        }
+        return fetch("http://localhost:3005/api/blog-recent-posts")
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogRecentPostsForBlogListStandardPageDataSuccess(json));
+                        break;
+                }
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error);
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogRecentPostsForBlogListStandardPageDataFailur(error));
+                        break;
+                }
+            });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

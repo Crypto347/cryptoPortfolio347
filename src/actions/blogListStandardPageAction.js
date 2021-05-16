@@ -60,6 +60,26 @@ export function fetchBlogNavigationForBlogListStandardPageDataFailur(err) {
     };
 };
 
+export function fetchBlogRecentPostsForBlogListStandardPageDataBegin() {
+    return { 
+        type: actionTypes.FETCH_BLOG_RECENT_POSTS_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN
+    };
+};
+
+export function fetchBlogRecentPostsForBlogListStandardPageDataSuccess(array) {
+    return { 
+        type: actionTypes.FETCH_BLOG_RECENT_POSTS_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS,
+        array: array
+    };
+};
+
+export function fetchBlogRecentPostsForBlogListStandardPageDataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_BLOG_RECENT_POSTS_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE,
+        err: err
+    };
+};
+
 export function initSearchInputFormForBlogListStandardPage(obj) {
     return { 
         type: actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,

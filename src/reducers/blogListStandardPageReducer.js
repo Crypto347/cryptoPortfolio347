@@ -27,6 +27,11 @@ export const initialState = {
         loading: false,
         error: null,
     },
+    recentPosts: {
+        items: [],
+        loading: false,
+        error: null,
+    },
     loading: false,
     error: null,
     searchInputForm: {},
@@ -115,7 +120,7 @@ const fetchPostBlogDataFailur = (state, action) => {
 const fetchBlogNavigationForBlogListStandardPageDataBegin = (state, action) => {
     return {
         ...state,
-        navigation:{
+        navigation: {
             ...state.navigation,
             loading: true,
             error: null
@@ -126,7 +131,7 @@ const fetchBlogNavigationForBlogListStandardPageDataBegin = (state, action) => {
 const fetchBlogNavigationForBlogListStandardPageDataSuccess = (state, action) => {    
     return {
         ...state,
-        navigation:{
+        navigation: {
             ...state.navigation, 
             loading: false,
             items: action.array
@@ -137,8 +142,42 @@ const fetchBlogNavigationForBlogListStandardPageDataSuccess = (state, action) =>
 const fetchBlogNavigationForBlogListStandardPageDataFailur = (state, action) => {
     return {
         ...state,
-        navigation:{
+        navigation: {
             ...state.navigation, 
+            loading: false,
+            error: action.err,
+            items: []
+        }
+    };
+}
+
+const fetchBlogRecentPostsForBlogListStandardPageDataBegin = (state, action) => {
+    return {
+        ...state,
+        recentPosts: {
+            ...state.recentPosts,
+            loading: true,
+            error: null
+        }
+    };
+}
+
+const fetchBlogRecentPostsForBlogListStandardPageDataSuccess = (state, action) => {    
+    return {
+        ...state,
+        recentPosts: {
+            ...state.recentPosts, 
+            loading: false,
+            items: action.array
+        }
+    };
+}
+
+const fetchBlogRecentPostsForBlogListStandardPageDataFailur = (state, action) => {
+    return {
+        ...state,
+        recentPosts: {
+            ...state.recentPosts, 
             loading: false,
             error: action.err,
             items: []
@@ -561,6 +600,12 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return fetchBlogNavigationForBlogListStandardPageDataSuccess (state, action); 
         case actionTypes.FETCH_BLOG_NAVIGATION_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
             return fetchBlogNavigationForBlogListStandardPageDataFailur (state, action);
+        case actionTypes.FETCH_BLOG_RECENT_POSTS_FOR_BLOG_LIST_STANDARD_PAGE_DATA_BEGIN:
+            return fetchBlogRecentPostsForBlogListStandardPageDataBegin (state, action);
+        case actionTypes.FETCH_BLOG_RECENT_POSTS_FOR_BLOG_LIST_STANDARD_PAGE_DATA_SUCCESS:
+            return fetchBlogRecentPostsForBlogListStandardPageDataSuccess (state, action); 
+        case actionTypes.FETCH_BLOG_RECENT_POSTS_FOR_BLOG_LIST_STANDARD_PAGE_DATA_FAILURE:
+            return fetchBlogRecentPostsForBlogListStandardPageDataFailur (state, action);
         case actionTypes.FETCH_POST_BLOG_DATA_BEGIN:
             return fetchPostBlogDataBegin (state, action);
         case actionTypes.FETCH_POST_BLOG_DATA_SUCCESS:
