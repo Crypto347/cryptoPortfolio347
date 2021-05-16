@@ -168,40 +168,21 @@ export const BlogInfoBoard = (props) => {
 
         if(e.button === 2) return;
 
-        // Storing data in local storage 
+        if(e.button !== 1){
+            /**
+             * Show filtered items on left mouse click 
+             */
 
-        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
-        //   localStorage.setItem("pageHG", "blogListStandardPage");
+            props.clearActivityOfMenuItems();
+            props.activateBlogCategory("active", key);
+            props.activateBlogItem("deactive", "");
+            props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
+        }else{
+            // Show filtered items on scroll wheel click
 
-        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
-        //   localStorage.setItem("page", "blogListStandardPage");
-          
-          // Clear archive data 
-  
-        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
-        //       props.clearArchiveData();
-        //   }
-  
-          if(e.button !== 1){
-              /**
-               * Add fading effect on the unmounted component and remember 
-               * information of the unmounted component on left mouse click 
-               */ 
-  
-            //   props.setUnmountComponentValues(false, path);
-          }else{
-              // Remember information of the unmounted component on scroll wheel click 
-              
-            //   props.setUnmountComponentValues(false, path);
-          }
-          // Fire up unmountComponent epic
-  
-        // props.unmountComponent(null, null, "blogInfoBoard", e.button);
-        props.clearActivityOfMenuItems();
-        props.activateBlogCategory("active", key);
-        props.activateBlogItem("deactive", "");
-        props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
-
+            props.activateBlogCategory("active", key);
+            window.open(`/crypto-portfolio/list-standard-blog-category/${key}`, "_blank");
+        }
     }
 
     const renderSearchForm = () => {

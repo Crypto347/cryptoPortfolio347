@@ -591,44 +591,25 @@ export const BlogPostSingleItem = (props) => {
     }
 
     const onClickCategory = (key, path, e) => {
-        // Do nothing on right mouse click 
+       // Do nothing on right mouse click 
 
         if(e.button === 2) return;
 
-        // Storing data in local storage 
-
-        // localStorage.setItem("blogCategoryHG", {page: props.page, activeCategory: key});
-        //   localStorage.setItem("pageHG", "blogListStandardPage");
-
-        //   localStorage.setItem("archiveCategory", opt === "goToArchive" ? key : props.archive.category);
-        //   localStorage.setItem("page", "blogListStandardPage");
-          
-          // Clear archive data 
-  
-        //   if(opt === 'goToArchive' && props.archive.category !== key && e.button !== 1){
-        //       props.clearArchiveData();
-        //   }
-  
         if(e.button !== 1){
             /**
-             * Add fading effect on the unmounted component and remember 
-             * information of the unmounted component on left mouse click 
-             */ 
+            * Show filtered items on left mouse click 
+            */
 
-        //   props.setUnmountComponentValues(false, path);
+            props.clearActivityOfMenuItems();
+            setPageData(props.page, "activateBlogCategory")("active", key);
+            setPageData(props.page, "activateBlogItem")("deactive", "");
+            props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
         }else{
-            // Remember information of the unmounted component on scroll wheel click 
-            
-        //   props.setUnmountComponentValues(false, path);
-        }
-          // Fire up unmountComponent epic
-  
-        // props.unmountComponent(null, null, "blogInfoBoard", e.button);
-        props.clearActivityOfMenuItems();
-        setPageData(props.page, "activateBlogCategory")("active", key);
-        setPageData(props.page, "activateBlogItem")("deactive", "");
-        props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
+            // Show filtered items on scroll wheel click
 
+            setPageData(props.page, "activateBlogCategory")("active", key);
+            window.open(`/crypto-portfolio/list-standard-blog-category/${key}`, "_blank");
+        }
     }
 
     const renderCategories = (arr) => {

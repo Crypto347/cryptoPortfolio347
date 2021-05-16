@@ -442,6 +442,29 @@ export const BlogListPostCard = (props) => {
         )
     }
 
+    const onClickCategory = (key, path, e) => {
+
+        // Do nothing on right mouse click 
+
+        if(e.button === 2) return;
+
+        if(e.button !== 1){
+            /**
+             * Show filtered items on left mouse click 
+             */
+
+            props.clearActivityOfMenuItems();
+            props.activateBlogCategory("active", key);
+            props.activateBlogItem("deactive", "");
+            props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
+        }else{
+            // Show filtered items on scroll wheel click
+
+            props.activateBlogCategory("active", key);
+            window.open(`/crypto-portfolio/list-standard-blog-category/${key}`, "_blank");
+        }
+    }
+
     const renderCategories = (arr) => {
         return(
             <>{arr.map((el, i) => {
@@ -449,7 +472,8 @@ export const BlogListPostCard = (props) => {
                     <div
                         key={i}
                         onMouseEnter={() => handleMouseEnter(`blogCardCategories`, el.key)} 
-                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)} 
+                        onMouseLeave={() => handleMouseLeave(`blogCardCategories`, el.key)}
+                        onMouseDown={(e) => onClickCategory(el.key, null, e)}
                     >
                         <H15 className={renderClassName("blogCardCategories", el.isHover)}>{el.label + `${i !== arr.length - 1 ? "," : ""}`}&nbsp;</H15>
                     </div>
