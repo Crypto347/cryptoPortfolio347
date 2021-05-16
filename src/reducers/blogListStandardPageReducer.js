@@ -595,13 +595,21 @@ const activateRecentPostForBlogListStandardPage = (state, action) => {
         recentPost = {...updatedRecentPosts.find(item => item.key === action.postKey), active: action.val};
         recentPostIndex = updatedRecentPosts.findIndex(item => item.key === action.postKey);
 
+        updatedRecentPosts.splice(recentPostIndex, 1, recentPost);
     }else if(action.postPath){
-        recentPost = {...updatedRecentPosts.find(item => item.path === action.postPath), active: action.val};
-        recentPostIndex = updatedRecentPosts.findIndex(item => item.path === action.postPath);
-    }
-  
-    updatedRecentPosts.splice(recentPostIndex, 1, recentPost)
+        recentPost = updatedRecentPosts.filter(item => item.path === action.postPath);
+        if(!!recentPost[0]){
+            recentPost = {...updatedRecentPosts.find(item => item.path === action.postPath), active: action.val};
+            recentPostIndex = updatedRecentPosts.findIndex(item => item.path === action.postPath);
 
+            updatedRecentPosts.splice(recentPostIndex, 1, recentPost);
+        }
+    }
+
+    // if(){
+    //     
+    // }
+   
     return {
         ...state,
         recentPosts: {
