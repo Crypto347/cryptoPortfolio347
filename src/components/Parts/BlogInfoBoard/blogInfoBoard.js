@@ -41,6 +41,7 @@ import Toolbar from '../../Parts/Toolbar/toolbar';
 import Input from '../../../library/Input/input';
 import TagItem from '../../SmallParts/TagItem/tagItem';
 import Icon from '../../SmallParts/Icon/icon';
+import BlogRecentPostItem from '../../SmallParts/BlogRecentPostItem/blogRecentPostItem';
 import Footer from '../../Parts/Footer/footer';
 import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
@@ -294,21 +295,55 @@ export const BlogInfoBoard = (props) => {
         )
     }
 
-    const renderRecentPosts = () => {
-        // return(
-        //     <>
-        //         {socialMediaIcons.map((el, i) => {
-        //             return(
-        //                 <div 
-        //                     key={i}
-        //                     className="blog-list-standard-page-category"
-        //                 >
-        //                     <H17 className="h17-black-lustria-cursor">{el.tagName}</H17>
-        //                 </div>
-        //             )
-        //         })}
-        //     </>
-        // )
+    const renderRecentPosts = (arr) => {
+        return(
+            <>
+                {arr.map((el, i) => {
+                    return(
+                        <React.Fragment key={i}>
+                            <BlogRecentPostItem
+                                elData={el}
+                                clearState={props.clearState}
+                                clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                                activateBlogCategory={props.activateBlogCategory}
+                                activateBlogItem={props.activateBlogItem}
+                            />
+                            {i !== arr.length - 1 ? <EH10/> : null}
+                        </React.Fragment>
+                    )
+                })}
+            </>
+        )
+    }
+
+    const renderRecentPostsDataContent = (data) => {
+        if(data.loading && !data.error){
+            return(
+                <div 
+                    className="blog-info-board-loading-error" 
+                    style={{height: `100%`}}
+                >
+                    <Loading color="black"/>
+                </div>
+            )
+        }
+        if(!data.loading && !data.error){
+            return(
+                <>
+                    {renderRecentPosts(data.items)}
+                </>
+            )
+        }
+        if(!data.loading && data.error){
+            return(
+                <div 
+                    className="blog-info-board-loading-error" 
+                    style={{height: `100%`}}
+                >
+                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
+                </div>
+            )
+        }
     }
 
     const renderSocialMedia = () => {
@@ -360,7 +395,7 @@ export const BlogInfoBoard = (props) => {
             <div className="blog-info-board-recent-post-wrapper">
                 <H22 className="h22-black-poppins">Recent posts</H22>
                 <EH20/>
-                {renderRecentPosts()}
+                {renderRecentPostsDataContent(props.recentPostsList)}
             </div>
             <EH40/>
             <div className="blog-info-board-categories-wrapper">

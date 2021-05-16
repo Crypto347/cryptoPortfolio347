@@ -495,12 +495,14 @@ export const BlogListStandardPage = (props) => {
                             searchFormInputsArray={props.blogListStandardPage.searchInputForm.inputsArray}
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
-                            activateBlogCategory={props.activateListStandardBlogCategory}
+                            recentPostsList={props.blogListStandardPage.recentPosts}
                             clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            activateBlogCategory={props.activateListStandardBlogCategory}
                             activateBlogItem={props.activateListStandardBlogItem}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             fetchBlogRecentPostsData={props.fetchBlogRecentPostsData}
+                            clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                         />
                     </div>
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
