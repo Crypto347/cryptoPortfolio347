@@ -295,7 +295,7 @@ export const BlogCategoriesContent = (props) => {
                         pagesArray={setPageData(props.page, "pagesArray")}
                         fetchPageData={props.fetchBlogCategoriesContentData}
                         fakeData={setPageData(props.page, "fakeData")}
-                        // fetchFakeData={(fakeData, activePageId) => fetchFakeData(fakeData, activePageId)}
+                        fetchFakeData={(fakeData, activePageId, page, categoryName) => fetchFakeData(fakeData, activePageId, page, categoryName)}
                         activatePageNumber={setPageData(props.page, "activatePageNumber")}
                         categoryName={setPageData(props.page, "categoryName")}
                     />

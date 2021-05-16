@@ -139,7 +139,7 @@ export const Pagination = (props) => {
             if(process.env.ENVIRONMENT === Environment.PRODUCTION){
                 // Fetch mock data (not required to run -> npm run server)
 
-                props.fetchFakeData(props.fakeData, _pageId);
+                props.fetchFakeData(props.fakeData, _pageId, props.page, props.categoryName);
             
             }else{
                 // Fetch data (required to run -> npm run server)

@@ -182,19 +182,18 @@ export const blogListStandardPage = [
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Finance",
+                key: "finance",
+                path: "list-standard-blog-tags/finance",
                 isHover: "init"
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
                 isHover: "init"
             },
-            
         ],
         path: "blog-list-standard-item/gallery-post/1",
         coverImage: {
@@ -351,9 +350,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             },
             {
@@ -365,9 +364,9 @@ export const blogListStandardPage = [
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Shoppimg",
+                key: "shopping",
+                path: "list-standard-blog-tags/shopping",
                 isHover: "init"
             }
         ],
@@ -485,23 +484,30 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
+                label: "Finance",
+                key: "finance",
+                path: "list-standard-blog-tags/finance",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                label: "Photography",
+                key: "photography",
+                path: "list-standard-blog-tags/photography",
+                isHover: "init"
+            },
+            {
+                id: 3,
                 label: "Business",
                 key: "business",
                 path: "list-standard-blog-tags/business",
                 isHover: "init"
             },
             {
-                id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                id: 4,
+                label: "Uncategorized",
+                key: "uncategorized",
+                path: "list-standard-blog-tags/uncategorized",
                 isHover: "init"
             }
         ],
@@ -618,23 +624,23 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Finance",
+                key: "finance",
+                path: "list-standard-blog-tags/finance",
                 isHover: "init"
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             }
         ],
@@ -751,9 +757,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Fashion",
+                key: "fashion",
+                path: "list-standard-blog-tags/fashion",
                 isHover: "init"
             },
             {
@@ -765,9 +771,9 @@ export const blogListStandardPage = [
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Shopping",
+                key: "shopping",
+                path: "list-standard-blog-tags/shopping",
                 isHover: "init"
             },
         ],
@@ -883,23 +889,23 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Photography",
+                key: "photography",
+                path: "list-standard-blog-tags/photography",
                 isHover: "init"
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Design",
+                key: "design",
+                path: "list-standard-blog-tags/design",
                 isHover: "init"
             }
         ],
@@ -1016,23 +1022,23 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
+                isHover: "init"
+            },
+            {
+                id: 2,
                 label: "Business",
                 key: "business",
                 path: "list-standard-blog-tags/business",
                 isHover: "init"
             },
             {
-                id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             }
         ],
@@ -1191,16 +1197,16 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Finance",
+                key: "finance",
+                path: "list-standard-blog-tags/finance",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Photography",
+                key: "photography",
+                path: "list-standard-blog-tags/photography",
                 isHover: "init"
             },
             {
@@ -1458,9 +1464,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
                 isHover: "init"
             },
             {
@@ -1472,9 +1478,9 @@ export const blogListStandardPage = [
            },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Photography",
+                key: "photography",
+                path: "list-standard-blog-tags/photography",
                 isHover: "init"
             }
         ],
@@ -1591,9 +1597,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Finance",
+                key: "finance",
+                path: "list-standard-blog-tags/finance",
                 isHover: "init"
             },
             {
@@ -1723,16 +1729,16 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Design",
+                key: "design",
+                path: "list-standard-blog-tags/design",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Shopping",
+                key: "shopping",
+                path: "list-standard-blog-tags/shopping",
                 isHover: "init"
             },
             {
@@ -1855,9 +1861,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             },
             {
@@ -1869,9 +1875,9 @@ export const blogListStandardPage = [
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Business",
+                key: "business",
+                path: "list-standard-blog-tags/business",
                 isHover: "init"
             }
         ],
@@ -2022,23 +2028,23 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Finance",
+                key: "finance",
+                path: "list-standard-blog-tags/finance",
                 isHover: "init"
             }
         ],
@@ -2156,9 +2162,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Fashin",
+                key: "fashion",
+                path: "list-standard-blog-tags/fashion",
                 isHover: "init"
             },
             {
@@ -2170,9 +2176,9 @@ export const blogListStandardPage = [
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             }
         ],
@@ -2279,7 +2285,7 @@ export const blogListStandardPage = [
         id: 17,
         key: "blogListStandardPageCardId17",
         cardType: "audioPost",
-        header: "Audio Post 2.",
+        header: "Audio Post 3.",
         audioKey: "aDayToRememberMp3",
         date: "17.03.2021",
         numberOfLikes: 3,
@@ -2296,16 +2302,16 @@ export const blogListStandardPage = [
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
                 isHover: "init"
            },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Photography",
+                key: "photography",
+                path: "list-standard-blog-tags/photography",
                 isHover: "init"
             }
         ],
@@ -2422,23 +2428,23 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
-                isHover: "init"
-            },
-            {
-                id: 2,
                 label: "Design",
                 key: "design",
                 path: "list-standard-blog-tags/design",
                 isHover: "init"
             },
             {
-                id: 3,
+                id: 2,
                 label: "Fashion",
                 key: "fashion",
                 path: "list-standard-blog-tags/fashion",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             }
         ],
@@ -2555,16 +2561,16 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Design",
+                key: "design",
+                path: "list-standard-blog-tags/design",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
            },
             {
@@ -2688,9 +2694,9 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Photography",
+                key: "photography",
+                path: "list-standard-blog-tags/photography",
                 isHover: "init"
             },
             {
@@ -2829,16 +2835,16 @@ export const blogListStandardPage = [
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "Shopping",
+                key: "shopping",
+                path: "list-standard-blog-tags/shopping",
                 isHover: "init"
             },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
             }
         ],
@@ -2955,23 +2961,23 @@ export const blogListStandardPage = [
         categories: [
             {
                 id: 1,
-                label: "Business",
-                key: "business",
-                path: "list-standard-blog-tags/business",
+                label: "Education",
+                key: "education",
+                path: "list-standard-blog-tags/education",
                 isHover: "init"
             },
             {
                 id: 2,
-                label: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                label: "News",
+                key: "news",
+                path: "list-standard-blog-tags/news",
                 isHover: "init"
            },
             {
                 id: 3,
-                label: "Fashion",
-                key: "fashion",
-                path: "list-standard-blog-tags/fashion",
+                label: "Design",
+                key: "design",
+                path: "list-standard-blog-tags/design",
                 isHover: "init"
             }
         ],
