@@ -625,6 +625,7 @@ export const BlogPostSingleItem = (props) => {
 
             props.clearActivityOfMenuItems();
             setPageData(props.page, "activateBlogCategory")("active", key);
+            setPageData(props.page, "activateBlogTag")("deactive", "");
             setPageData(props.page, "activateBlogItem")("deactive", "");
             props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
         }else{
@@ -704,6 +705,30 @@ export const BlogPostSingleItem = (props) => {
         )
     }
 
+    const onClickTag = (key, path, e) => {
+
+        // Do nothing on right mouse click 
+
+        if(e.button === 2) return;
+
+        if(e.button !== 1){
+            /**
+             * Show filtered items on left mouse click 
+             */
+
+            props.clearActivityOfMenuItems();
+            setPageData(props.page, "activateBlogTag")("active", key);
+            setPageData(props.page, "activateBlogCategory")("deactive", "");
+            setPageData(props.page, "activateBlogItem")("deactive", "");
+            props.history.push(`/crypto-portfolio/list-standard-blog-tag/${key}`);
+        }else{
+            // Show filtered items on scroll wheel click
+
+            setPageData(props.page, "activateBlogTag")("active", key);
+            window.open(`/crypto-portfolio/list-standard-blog-tag/${key}`, "_blank");
+        }
+    }
+
     const renderTags = (arr) => {
         return(
             <>
@@ -712,6 +737,7 @@ export const BlogPostSingleItem = (props) => {
                         <div
                             key={i}
                             className="blog-post-single-item-tag"
+                            onMouseDown={(e) => onClickTag(el.key, null, e)}
                         >
                             <TagItem
                                tagName={el.tagName}
