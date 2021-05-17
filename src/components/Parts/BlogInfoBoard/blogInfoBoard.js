@@ -272,7 +272,8 @@ export const BlogInfoBoard = (props) => {
                             onMouseDown={(e) => onClickTag(el.key, null, e)}
                         >
                             <TagItem
-                               tagName={el.tagName} 
+                               tagName={el.tagName}
+                               active={el.active}
                             />
                         </div>
                     )

@@ -57,8 +57,9 @@ export const TagItem = (props) => {
         }
     }
 
-    const renderClassName = (opt, isHovering) => {
+    const renderClassName = (opt, isHovering, active) => {
         if(opt === "tagItem"){
+            if(active === "on") return "tag-item-active";
             switch(isHovering){
                 case 'init':
                     return "tag-item";
@@ -69,6 +70,7 @@ export const TagItem = (props) => {
             }
         }
         if(opt === "tagName"){
+            if(active === "on") return "h15-white-smoke-2-lustria";
             switch(isHovering){
                 case 'init':
                     return "h15-black-lustria";
@@ -111,12 +113,12 @@ export const TagItem = (props) => {
 
     return(
         <div 
-            className={renderClassName("tagItem", tagIsHover)}
+            className={renderClassName("tagItem", tagIsHover, props.active)}
             onMouseEnter={() => handleMouseEnter("tagItem")} 
             onMouseLeave={() => handleMouseLeave("tagItem")}
             // onMouseDown={(e) => iconOnClick(e, props.iconName, props.instaName)}
         >
-            <H15 className={renderClassName("tagName", tagIsHover)}>{props.tagName}</H15>
+            <H15 className={renderClassName("tagName", tagIsHover, props.active)}>{props.tagName}</H15>
         </div>
     );
 }

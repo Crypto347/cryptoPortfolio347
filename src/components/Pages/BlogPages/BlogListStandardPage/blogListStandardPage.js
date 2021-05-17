@@ -445,7 +445,7 @@ export const BlogListStandardPage = (props) => {
                                 render={(props) => (
                                     // <BlogTagsContent page='blogListStandardPage'/>
                                     <div className="blog-list-standard-page-posts-list">
-                                        {console.log(props)}
+                                        {/* {console.log(props)} */}
                                     </div>
                                 )}
                             />

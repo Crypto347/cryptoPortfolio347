@@ -5,6 +5,12 @@
     cursor: pointer;
 }
 
+.tag-item-active {
+    background: black;
+    padding: 7px 19px 7px 19px;
+    margin: 0 10px 10px 0;
+}
+
 .tag-item-hover-on {
     background: black;
     padding: 7px 19px 7px 19px;

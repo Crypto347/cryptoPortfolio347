@@ -714,7 +714,8 @@ export const BlogPostSingleItem = (props) => {
                             className="blog-post-single-item-tag"
                         >
                             <TagItem
-                               tagName={el.tagName} 
+                               tagName={el.tagName}
+                               active={el.active}
                             />
                         </div>
                     )

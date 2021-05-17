@@ -252,7 +252,7 @@ const activateListStandardBlogTag = (state, action) => {
     return {
         ...state,
         activeTag: updatedActiveTag,
-        tagList: updatedTagsList
+        tagsList: updatedTagsList
     }
 } 
 
