@@ -36,7 +36,7 @@ import './blogInfoBoard.scss';
  * Components
  */
 
-import Loading from '../../SmallParts/Loading/loading';
+import LoadingVersion2 from '../../SmallParts/LoadingVersion2/loadingVersion2';
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import Input from '../../../library/Input/input';
 import TagItem from '../../SmallParts/TagItem/tagItem';
@@ -300,9 +300,13 @@ export const BlogInfoBoard = (props) => {
             return(
                 <div 
                     className="blog-info-board-loading-error" 
-                    style={{height: `100%`}}
+                    // style={{height: `100%`}}
                 >
-                    <Loading color="black"/>
+                    <LoadingVersion2         
+                        color="black"
+                        width={14}
+                        height={14}
+                    />
                 </div>
             )
         }
@@ -324,7 +328,7 @@ export const BlogInfoBoard = (props) => {
             return(
                 <div 
                     className="blog-info-board-loading-error" 
-                    style={{height: `100%`}}
+                    // style={{height: `100%`}}
                 >
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>
