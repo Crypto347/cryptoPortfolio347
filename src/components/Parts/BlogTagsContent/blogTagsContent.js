@@ -19,7 +19,7 @@ import {
  * Styles
  */
 
-import './blogCategoriesContent.scss';
+import './blogTagsContent.scss';
 
 /**
  * Components
@@ -27,7 +27,7 @@ import './blogCategoriesContent.scss';
 
 import Loading from '../../SmallParts/Loading/loading';
 import BlogListPostCard from '../../SmallParts/BlogListPostCard/blogListPostCard';
-import Pagination from '../../Parts/Pagination/pagination';
+import Pagination from '../Pagination/pagination';
 
 /**
  * Services
@@ -73,10 +73,10 @@ import * as FakeData from '../../../fakeData';
 import * as Environment from '../../../constants/environments';
 
 /**
- * BlogCategoriesContent component definition and export
+ * BlogTagsContent component definition and export
  */
 
-export const BlogCategoriesContent = (props) => {
+export const BlogTagsContent = (props) => {
 
     /**
      * State
@@ -359,5 +359,5 @@ export default connect(
             // fetchAchievementsDataSuccess: bindActionCreators(Actions.fetchAchievementsDataSuccess, dispatch),
         };
     }
-)(BlogCategoriesContent);
+)(BlogTagsContent);
  

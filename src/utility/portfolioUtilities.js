@@ -15,6 +15,7 @@ export const findPathOfIds = (path) => {
         case 'process':
         case 'happy-team':
         case 'list-standard-blog-category':
+        case 'list-standard-blog-tag':
         case 'blog-list-standard-item':
             return [];
         case 'portfolio-gallery':
@@ -141,6 +142,14 @@ export const activateBlogCategory = (path) => {
     return {
         page: pathToKey(updatedPath[0]),
         categoryName: updatedPath[1]
+    }
+}
+
+export const activateBlogTag = (path) => {
+    let updatedPath = path.split("/");
+    return {
+        page: pathToKey(updatedPath[0]),
+        tagName: updatedPath[1]
     }
 }
 

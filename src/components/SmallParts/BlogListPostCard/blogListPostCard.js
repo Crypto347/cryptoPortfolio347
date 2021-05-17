@@ -295,6 +295,7 @@ export const BlogListPostCard = (props) => {
             props.clearActivityOfMenuItems();
             props.activateBlogItem("active", key);
             props.activateBlogCategory("deactive", "");
+            props.activateBlogTag("deactive", "");
             props.history.push(`/crypto-portfolio/${path}`);
 
         }else{
@@ -455,6 +456,7 @@ export const BlogListPostCard = (props) => {
 
             props.clearActivityOfMenuItems();
             props.activateBlogCategory("active", key);
+            props.activateBlogTag("deactive", "");
             props.activateBlogItem("deactive", "");
             props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
         }else{

@@ -157,6 +157,7 @@ export const BlogNavigation = (props) => {
             props.clearState();
             props.activateBlogItem("active", key);
             props.activateBlogCategory("deactive", "");
+            props.activateBlogTag("deactive", "");
             props.history.push(`/crypto-portfolio/${path}`);
 
         }else{

@@ -98,6 +98,7 @@ export const BlogRecentPostItem = (props) => {
             props.clearActivityOfMenuItems();
             props.activateBlogItem("active", key);
             props.activateBlogCategory("deactive", "");
+            props.activateBlogTag("deactive", "");
             props.history.push(`/crypto-portfolio/${path}`);
             props.activateRecentPost(key, null, true);
 

@@ -71,8 +71,9 @@ export const BlogRecentPosts = (props) => {
                                 elData={el}
                                 clearState={props.clearState}
                                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                                activateBlogCategory={props.activateBlogCategory}
                                 activateBlogItem={props.activateBlogItem}
+                                activateBlogCategory={props.activateBlogCategory}
+                                activateBlogTag={props.activateBlogTag}
                                 activateRecentPost={props.activateRecentPost}
                             />
                             {i !== arr.length - 1 ? <EH10/> : null}

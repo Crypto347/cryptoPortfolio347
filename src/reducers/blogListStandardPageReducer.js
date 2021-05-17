@@ -40,14 +40,18 @@ export const initialState = {
         loading: false,
         error: null
     },
-    activeCategory: {
-        activated: "init",
-        categoryName: ""
-    },
     activeItem: {
         activated: "init",
         itemKey: "",
         cardType: ""
+    },
+    activeCategory: {
+        activated: "init",
+        categoryName: ""
+    },
+    activeTag: {
+        activated: "init",
+        tagName: ""
     },
     categoriesList: [],
     tagsList: [],
@@ -199,9 +203,9 @@ const activateListStandardBlogCategory = (state, action) => {
         categoryName: action.categoryName
     };
 
-    let updatedCategoryList = [...state.categoriesList];
+    let updatedCategoriesList = [...state.categoriesList];
 
-    updatedCategoryList = updatedCategoryList.map(el => {
+    updatedCategoriesList = updatedCategoriesList.map(el => {
         return {
             ...el,
             active: "off"
@@ -209,16 +213,46 @@ const activateListStandardBlogCategory = (state, action) => {
     });
 
     if(!!action.categoryName){
-        let category = {...updatedCategoryList.find(item => item.key === action.categoryName), active: "on"};
-        let categoryIndex = updatedCategoryList.findIndex(item => item.key === action.categoryName);
+        let category = {...updatedCategoriesList.find(item => item.key === action.categoryName), active: "on"};
+        let categoryIndex = updatedCategoriesList.findIndex(item => item.key === action.categoryName);
         
-        updatedCategoryList.splice(categoryIndex, 1, category);
+        updatedCategoriesList.splice(categoryIndex, 1, category);
     }
   
     return {
         ...state,
         activeCategory: updatedActiveCategory,
-        categoriesList: updatedCategoryList
+        categoriesList: updatedCategoriesList
+    }
+} 
+
+const activateListStandardBlogTag = (state, action) => {
+    let updatedActiveTag = {
+        ...state.activeTag,
+        activated: action.tagIsActive,
+        tagName: action.tagName
+    };
+
+    let updatedTagsList = [...state.tagsList];
+
+    updatedTagsList = updatedTagsList.map(el => {
+        return {
+            ...el,
+            active: "off"
+        }
+    });
+
+    if(!!action.tagName){
+        let tag = {...updatedTagsList.find(item => item.key === action.tagName), active: "on"};
+        let tagIndex = updatedTagsList.findIndex(item => item.key === action.tagName);
+        
+        updatedTagsList.splice(tagIndex, 1, tag);
+    }
+  
+    return {
+        ...state,
+        activeTag: updatedActiveTag,
+        tagList: updatedTagsList
     }
 } 
 
@@ -628,6 +662,8 @@ const blogListStandardPageReducer = (state = initialState, action) => {
             return initSearchInputFormForBlogListStandardPage (state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_CATEGORY:
             return activateListStandardBlogCategory (state, action);
+        case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_TAG:
+            return activateListStandardBlogTag (state, action);
         case actionTypes.INIT_CATEGORIES_FOR_BLOG_LISTS_STANDARD_PAGE:
             return initCategoriesForBlogListStandardPage (state, action);
         case actionTypes.INIT_TAGS_FOR_BLOG_LISTS_STANDARD_PAGE:

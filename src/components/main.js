@@ -136,11 +136,21 @@ export const Main = (props) => {
         let pathOfIds = Utility.findPathOfIds(path);
         props.clearActivityOfMenuItems();
         props.activateMenuItem(pathOfIds);
-        
+
+        // Activate blog category
+
         let blogCategory = Utility.activateBlogCategory(path);
         
         if(blogCategory.page === "listStandardBlogCategory"){
             props.activateListStandardBlogCategory("active", blogCategory.categoryName);
+        }
+
+        // Activate blog tag
+
+        let blogTag = Utility.activateBlogTag(path);
+
+        if(blogCategory.page === "listStandardBlogTag"){
+            props.activateListStandardBlogTag("active", blogTag.tagName);
         }
 
         // Init state for fading effect and remember all necessary information
@@ -239,6 +249,11 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/blog-item/standard-post/:id"}
                     component={PostSinglesStandardPage}
+                />
+                <Route
+                    exact 
+                    path={props.match.url + "/list-standard-blog-tag/:tag"}
+                    component={BlogListStandardPage}
                 />
                 <Route
                     exact 
@@ -563,7 +578,8 @@ export default connect(
             photoViewerOpen: bindActionCreators(Actions.photoViewerOpen, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
-            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch)
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
         };
     }
 )(Main);

@@ -42,6 +42,7 @@ import BlogInfoBoard from '../../../Parts/BlogInfoBoard/blogInfoBoard';
 import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostCard';
 import BlogPostSingleItem from '../../../SmallParts/BlogPostSingleItem/blogPostSingleItem';
 import BlogCategoriesContent from '../../../Parts/BlogCategoriesContent/blogCategoriesContent';
+import BlogTagsContent from '../../../Parts/BlogTagsContent/blogTagsContent';
 import Icon from '../../../SmallParts/Icon/icon';
 import Pagination from '../../../Parts/Pagination/pagination';
 import Footer from '../../../Parts/Footer/footer';
@@ -305,6 +306,7 @@ export const BlogListStandardPage = (props) => {
                                 clearActivityOfMenuItems={props.clearActivityOfMenuItems}
                                 activateBlogItem={props.activateListStandardBlogItem}
                                 activateBlogCategory={props.activateListStandardBlogCategory}
+                                activateBlogTag={props.activateListStandardBlogTag}
                                 setUnmountComponentValues={props.setUnmountComponentValues}
                                 unmountComponent={props.unmountComponent}
                                 clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
@@ -439,9 +441,19 @@ export const BlogListStandardPage = (props) => {
                             </Route>
                             <Route 
                                 exact 
+                                path="/crypto-portfolio/list-standard-blog-tag/:tag"
+                                render={(props) => (
+                                    // <BlogTagsContent page='blogListStandardPage'/>
+                                    <div className="blog-list-standard-page-posts-list">
+                                        {console.log(props)}
+                                    </div>
+                                )}
+                            />
+                            <Route 
+                                exact 
                                 path="/crypto-portfolio/list-standard-blog-category/:category"
                                 render={(props) => (
-                                    <BlogCategoriesContent blogCategoriesContentProps={props} page='blogListStandardPage'/>
+                                    <BlogCategoriesContent page='blogListStandardPage'/>
                                     // <div className="blog-list-standard-page-posts-list">
                                     //     {console.log(props)}
                                     // </div>
@@ -497,8 +509,9 @@ export const BlogListStandardPage = (props) => {
                             tagsList={props.blogListStandardPage.tagsList}
                             recentPostsList={props.blogListStandardPage.recentPosts}
                             clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                            activateBlogCategory={props.activateListStandardBlogCategory}
                             activateBlogItem={props.activateListStandardBlogItem}
+                            activateBlogCategory={props.activateListStandardBlogCategory}
+                            activateBlogTag={props.activateListStandardBlogTag}
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             fetchBlogRecentPostsData={props.fetchBlogRecentPostsData}
@@ -540,6 +553,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             initSearchInputFormForBlogListStandardPage: bindActionCreators(Actions.initSearchInputFormForBlogListStandardPage, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
             blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),

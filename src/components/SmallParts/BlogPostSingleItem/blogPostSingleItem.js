@@ -512,6 +512,12 @@ export const BlogPostSingleItem = (props) => {
                         return props.activateListStandardBlogCategory;
                 }
             return;
+            case 'activateBlogTag':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogTag;
+                }
+            return;
             case 'activateBlogItem':
                 switch(page){
                     case 'blogListStandardPage':
@@ -538,6 +544,12 @@ export const BlogPostSingleItem = (props) => {
                 switch(page){
                     case 'blogListStandardPage':
                         return props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage;
+                }
+            return;
+            case 'clearState':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.clearBlogListSingleItemStateForBlogListStandardPage;
                 }
             return;
             case 'activateRecentPost':
@@ -789,9 +801,10 @@ export const BlogPostSingleItem = (props) => {
                     data={setPageData(props.page, "pageData").navigation}
                     setUnmountComponentValues={props.setUnmountComponentValues}
                     unmountComponent={props.unmountComponent}
-                    clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
-                    activateBlogItem={props.activateListStandardBlogItem}
-                    activateBlogCategory={props.activateListStandardBlogCategory}
+                    clearState={setPageData(props.page, "clearState")}
+                    activateBlogItem={setPageData(props.page, "activateBlogItem")}
+                    activateBlogCategory={setPageData(props.page, "activateBlogCategory")}
+                    activateBlogTag={setPageData(props.page, "activateBlogTag")}
                 />
             </>
         )
@@ -862,13 +875,13 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostSingleItemForBlogListStandardPage, dispatch),
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
-            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             activateRecentPostForBlogListStandardPage: bindActionCreators(Actions.activateRecentPostForBlogListStandardPage, dispatch),
         };

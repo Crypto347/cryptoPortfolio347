@@ -155,6 +155,7 @@ export const BlogInfoBoard = (props) => {
 
             props.clearActivityOfMenuItems();
             props.activateBlogCategory("active", key);
+            props.activateBlogTag("deactive", "");
             props.activateBlogItem("deactive", "");
             props.history.push(`/crypto-portfolio/list-standard-blog-category/${key}`);
         }else{
@@ -162,6 +163,29 @@ export const BlogInfoBoard = (props) => {
 
             props.activateBlogCategory("active", key);
             window.open(`/crypto-portfolio/list-standard-blog-category/${key}`, "_blank");
+        }
+    }
+
+    const onClickTag = (key, path, e) => {
+
+        // Do nothing on right mouse click 
+
+        if(e.button === 2) return;
+
+        if(e.button !== 1){
+            /**
+             * Show filtered items on left mouse click 
+             */
+
+            props.clearActivityOfMenuItems();
+            props.activateBlogTag("active", key);
+            props.activateBlogItem("deactive", "");
+            props.history.push(`/crypto-portfolio/list-standard-blog-tag/${key}`);
+        }else{
+            // Show filtered items on scroll wheel click
+
+            props.activateBlogTag("active", key);
+            window.open(`/crypto-portfolio/list-standard-blog-tag/${key}`, "_blank");
         }
     }
 
@@ -224,12 +248,6 @@ export const BlogInfoBoard = (props) => {
             <>
                 {props.categoryList.map((el, i) => {
                     return(
-                        // <li key={i}>
-                        //     <Link to={`/crypto-portfolio/list-standard-blog-category/${el.key}`}>
-                        //         <H17 className={renderClassName("blogCategory", el.isHover, el.active)}>{el.categoryName}</H17>
-                        //     </Link>
-                        // </li>
-
                         <div 
                             key={i}
                             onMouseDown={(e) => onClickCategory(el.key, null, e)}
@@ -251,6 +269,7 @@ export const BlogInfoBoard = (props) => {
                         <div
                             key={i}
                             className="blog-info-board-tag"
+                            onMouseDown={(e) => onClickTag(el.key, null, e)}
                         >
                             <TagItem
                                tagName={el.tagName} 
@@ -284,8 +303,9 @@ export const BlogInfoBoard = (props) => {
                         recentPostsArray={data.items}
                         clearState={props.clearState}
                         clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                        activateBlogCategory={props.activateBlogCategory}
                         activateBlogItem={props.activateBlogItem}
+                        activateBlogCategory={props.activateBlogCategory}
+                        activateBlogTag={props.activateBlogTag}
                         activateRecentPost={props.activateRecentPost}
                     />
                 </>

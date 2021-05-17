@@ -95,6 +95,14 @@ export function activateListStandardBlogCategory(categoryIsActive, categoryName)
     };
 };
 
+export function activateListStandardBlogTag(tagIsActive, tagName) {
+    return { 
+        type: actionTypes.ACTIVATE_LIST_STANDARD_BLOG_TAG,
+        tagIsActive: tagIsActive,
+        tagName: tagName
+    };
+};
+
 export function initCategoriesForBlogListStandardPage(array) {
     return { 
         type: actionTypes.INIT_CATEGORIES_FOR_BLOG_LISTS_STANDARD_PAGE,

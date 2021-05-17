@@ -188,6 +188,10 @@ export const Toolbar = (props) => {
                                 props.activateListStandardBlogItem("deactive", "", "");
                                 props.setUnmountComponentValues(false, path);
                             }
+                            else if(itemId === "blogListStandard" && props.blogListStandardPage.activeTag.activated === "active"){
+                                props.activateListStandardBlogTag("deactive", "", "");
+                                props.setUnmountComponentValues(false, path);
+                            }
                             else{
                                 props.setUnmountComponentValues(true, path);
                             }
@@ -761,6 +765,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setHistoryPopFromPortfolioItem: bindActionCreators(Actions.setHistoryPopFromPortfolioItem, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
         };
     }
