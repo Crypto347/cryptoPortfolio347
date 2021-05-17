@@ -161,6 +161,12 @@ export const BlogPostSingleItem = (props) => {
 
         setShowContent(true);
 
+        // Activate the recent post on browser refresh
+
+        let activePostPath = props.location.pathname.slice(18);
+
+        setPageData(props.page, "activateRecentPost")(null, activePostPath, true);
+
         return () =>  {
             // Cleaning the unmounted component
 
@@ -534,7 +540,12 @@ export const BlogPostSingleItem = (props) => {
                         return props.blogPostSingleItemCategoryIsHoverForBlogListStandardPage;
                 }
             return;
-            
+            case 'activateRecentPost':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateRecentPostForBlogListStandardPage;
+                }
+            return;
         }
     }
 
@@ -859,6 +870,7 @@ export default connect(
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
+            activateRecentPostForBlogListStandardPage: bindActionCreators(Actions.activateRecentPostForBlogListStandardPage, dispatch),
         };
     }
 )(withRouter(BlogPostSingleItem));

@@ -37,31 +37,10 @@ import './blogInfoBoard.scss';
  */
 
 import LoadingVersion2 from '../../SmallParts/LoadingVersion2/loadingVersion2';
-import Toolbar from '../../Parts/Toolbar/toolbar';
 import Input from '../../../library/Input/input';
 import TagItem from '../../SmallParts/TagItem/tagItem';
 import Icon from '../../SmallParts/Icon/icon';
 import BlogRecentPosts from '../../SmallParts/BlogRecentPosts/blogRecentPosts';
-import Footer from '../../Parts/Footer/footer';
-import BackToTop from '../../SmallParts/BackToTop/backToTop';
-
-/**
- * Actions
- */
-
-import * as Actions from '../../../actions';
-
-/**
- * Services
- */
-
-import * as Services from "../../../service";
-
-/**
- * Selectors
- */
-
-import * as Selectors from '../../../reducers/selectors';
 
 /**
  * Utility
@@ -72,22 +51,10 @@ import {
     H15,
     H17,
     H22,
-    H35,
-    H45,
-    EW20,
     EH10,
     EH20,
-    EH30,
     EH40
 } from '../../UtilityComponents';
-
-/**
- * Hooks
- */
-
-import {
-    useWindowSize
-} from '../../../Hooks';
 
 /**
  * Images

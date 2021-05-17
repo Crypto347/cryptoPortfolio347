@@ -26329,7 +26329,7 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
         {
             id: 2,
             key: "quotePostId2",
-            cardId: "blogListStandardPageCardId4",
+            cardId: "blogListStandardPageCardId10",
             cardType: "quotePost",
             header: "Quote Post 2.",
             date: "17.03.2021",
@@ -26507,7 +26507,7 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
         {
             id: 3,
             key: "quotePostId3",
-            cardId: "blogListStandardPageCardId4",
+            cardId: "blogListStandardPageCardId16",
             cardType: "quotePost",
             header: "Quote Post 3.",
             date: "17.03.2021",
