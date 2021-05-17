@@ -266,13 +266,6 @@ export const standardPost = [
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
                 isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
-                isHover: "init"
             }
         ],
         path: "blog-list-standard-item/standard-post/2",
@@ -434,13 +427,6 @@ export const standardPost = [
                 tagName: "Design",
                 key: "design",
                 path: "list-standard-blog-tag/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -607,13 +593,6 @@ export const galleryPost = [
                 tagName: "Design",
                 key: "design",
                 path: "list-standard-blog-tag/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -826,13 +805,6 @@ export const galleryPost = [
                 tagName: "Graphic",
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1401,13 +1373,6 @@ export const linkPost = [
                 key: "design",
                 path: "list-standard-blog-tag/design",
                 isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
-                isHover: "init"
             }
         ],
         path: "blog-list-standard-item/link-post/2",
@@ -1563,13 +1528,6 @@ export const linkPost = [
                 tagName: "Design",
                 key: "design",
                 path: "list-standard-blog-tag/design",
-                isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1894,13 +1852,6 @@ export const quotePost = [
                 key: "art",
                 path: "list-standard-blog-tag/art",
                 isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
-                isHover: "init"
             }
         ],
         path: "blog-list-standard-item/quote-post/1",
@@ -2215,13 +2166,6 @@ export const quotePost = [
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
                 isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
-                isHover: "init"
             }
         ],
         path: "blog-list-standard-item/quote-post/3",
@@ -2378,13 +2322,6 @@ export const quotePost = [
                 tagName: "Graphic",
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
-                isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3034,13 +2971,6 @@ export const audioPost = [
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
                 isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
-                isHover: "init"
             }
         ],
         path: "blog-list-standard-item/audio-post/4",
@@ -3196,13 +3126,6 @@ export const audioPost = [
                 tagName: "Art",
                 key: "art",
                 path: "list-standard-blog-tag/art",
-                isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3362,13 +3285,6 @@ export const videoPost = [
                 tagName: "Design",
                 key: "design",
                 path: "list-standard-blog-tag/design",
-                isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3532,13 +3448,6 @@ export const videoPost = [
                 tagName: "Graphic",
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3709,13 +3618,6 @@ export const videoPost = [
                 tagName: "Graphic",
                 key: "graphic",
                 path: "list-standard-blog-tag/graphic",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],

@@ -2833,6 +2833,73 @@ export function fetchBlogCategoriesContentData(activePageId, page, category) {
     };
 }
 
+export function fetchBlogTagsContentData(activePageId, page, tag) {
+    let _page;
+    let _pageKey;
+    switch(page){
+        case 'blogListStandardPage':
+            _page = "blog-list-standard";
+            _pageKey="blogListStandardPage";
+            break;
+    }
+    return dispatch => {
+
+        switch(page){
+            case 'blogListStandardPage':
+                dispatch(Actions.fetchBlogListStandardPageDataBegin());
+                break;
+        }
+        
+        return fetch(`http://localhost:3005/api/${_page}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                tag: tag,
+                activePageId: activePageId
+            })
+        })
+            // .then(handleErrors)
+            .then(res => res.json()) // to debug instead of json write text
+            .then(json => {
+                // console.log(json)
+
+                let updatedJson = [...json[_pageKey]];
+                let userPostsLikedArray = JSON.parse(localStorage.getItem("userLikedPostsHG")) !== null ? [...JSON.parse(localStorage.getItem("userLikedPostsHG"))] : [];
+                userPostsLikedArray.map((el, i) => {
+                    let item = updatedJson.filter(item => item.key === el);
+                    if(item.length !== 0){
+                        let itemIndex = updatedJson.findIndex(item => item.key === el);
+                        let obj = {
+                            ...item[0],
+                            numberOfLikes: item[0].numberOfLikes + 1,
+                            userLikedThePost: true
+                        }
+                        updatedJson.splice(itemIndex, 1, obj);
+                    }
+                });
+
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogListStandardPageDataSuccess(updatedJson));
+                        break;
+                }
+                dispatch(Actions.initBlogPagination(json.numberOfPages));
+                // return json;
+            })
+            .catch(error => {
+                console.log("error",error);
+                switch(page){
+                    case 'blogListStandardPage':
+                        dispatch(Actions.fetchBlogListStandardPageDataFailur(error))
+                        break;
+                }
+            });
+    };
+}
+
 export function fetchBlogRecentPostsData(page) {
     return dispatch => {
         switch(page){

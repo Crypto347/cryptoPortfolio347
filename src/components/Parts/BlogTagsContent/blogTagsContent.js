@@ -92,17 +92,17 @@ export const BlogTagsContent = (props) => {
     useEffect(() => {
         // Fetch data for the component
 
-        let categoryName = setPageData(props.page, "categoryName");
+        let tagName = setPageData(props.page, "tagName");
         
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
             // Fetch mock data (not required to run -> npm run server)
             
-            fetchFakeData(setPageData(props.page, "fakeData"), setPageData(props.page, "activePageNumber"), props.page, categoryName);
+            // fetchFakeData(setPageData(props.page, "fakeData"), setPageData(props.page, "activePageNumber"), props.page, categoryName);
         }else{
             // Fetch data (required to run -> npm run server)
 
-            if(!!categoryName){
-                props.fetchBlogCategoriesContentData(setPageData(props.page, "activePageNumber"), props.page, categoryName);
+            if(!!tagName){
+                props.fetchBlogTagsContentData(setPageData(props.page, "activePageNumber"), props.page, tagName);
             }
         }
        
@@ -112,7 +112,7 @@ export const BlogTagsContent = (props) => {
 
         // Cleaning the unmounted component
         // return () => window.removeEventListener('scroll', handleScroll);
-    }, [props.blogListStandardPage.activeCategory.categoryName]);
+    }, [props.blogListStandardPage.activeTag.tagName]);
  
     const fetchFakeData = (fakeData, activePageId, page, categoryName) => {
         let blogListPage = [...fakeData];
@@ -162,10 +162,10 @@ export const BlogTagsContent = (props) => {
                         return props.blogListStandardPage;
                 }
             return;
-            case 'categoryName':
+            case 'tagName':
                 switch(page){
                     case 'blogListStandardPage':
-                        return props.blogListStandardPage.activeCategory.categoryName;
+                        return props.blogListStandardPage.activeTag.tagName;
                 }
             return;
             case 'blogListCardCategoryIsHover':
@@ -285,7 +285,7 @@ export const BlogTagsContent = (props) => {
         if(data.loading && !data.error){
             return(
                 <div 
-                    className="blog-categories-content-loading-error" 
+                    className="blog-tags-content-loading-error" 
                     style={{height: `100%`}}
                 >
                     <Loading color="black"/>
@@ -294,17 +294,17 @@ export const BlogTagsContent = (props) => {
         }
         if(!data.loading && !data.error){
             return(
-                <div className="blog-categories-content-data-wrapper">
+                <div className="blog-tags-content-data-wrapper">
                     {renderBlogListStandardPageData(data.items)}
                     <Pagination
                         page={props.page}
                         activePageNumber={setPageData(props.page, "activePageNumber")}
                         pagesArray={setPageData(props.page, "pagesArray")}
-                        fetchPageData={props.fetchBlogCategoriesContentData}
+                        fetchPageData={props.fetchBlogTagsContentData}
                         fakeData={setPageData(props.page, "fakeData")}
                         fetchFakeData={(fakeData, activePageId, page, categoryName) => fetchFakeData(fakeData, activePageId, page, categoryName)}
                         activatePageNumber={setPageData(props.page, "activatePageNumber")}
-                        categoryName={setPageData(props.page, "categoryName")}
+                        filterParam={setPageData(props.page, "tagName")}
                     />
                 </div>
             )
@@ -312,7 +312,7 @@ export const BlogTagsContent = (props) => {
         if(!data.loading && data.error){
             return(
                 <div 
-                    className="blog-categories-content-loading-error" 
+                    className="blog-tags-content-loading-error" 
                     style={{height: `100%`}}
                 >
                     <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
@@ -326,7 +326,7 @@ export const BlogTagsContent = (props) => {
      */
 
     return(
-        <div className="blog-categories-content">
+        <div className="blog-tags-content">
             {renderBlogListStandardPageDataContent()}
         </div>
     );
@@ -340,7 +340,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchBlogCategoriesContentData: bindActionCreators(Services.fetchBlogCategoriesContentData, dispatch),
+            fetchBlogTagsContentData: bindActionCreators(Services.fetchBlogTagsContentData, dispatch),
             fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
             initBlogPagination: bindActionCreators(Actions.initBlogPagination, dispatch),
             blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
@@ -356,7 +356,6 @@ export default connect(
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch),
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
-            // fetchAchievementsDataSuccess: bindActionCreators(Actions.fetchAchievementsDataSuccess, dispatch),
         };
     }
 )(BlogTagsContent);

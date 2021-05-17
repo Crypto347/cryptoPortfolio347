@@ -443,10 +443,10 @@ export const BlogListStandardPage = (props) => {
                                 exact 
                                 path="/crypto-portfolio/list-standard-blog-tag/:tag"
                                 render={(props) => (
-                                    // <BlogTagsContent page='blogListStandardPage'/>
-                                    <div className="blog-list-standard-page-posts-list">
-                                        {/* {console.log(props)} */}
-                                    </div>
+                                    <BlogTagsContent page='blogListStandardPage'/>
+                                    // <div className="blog-list-standard-page-posts-list">
+                                    //     {/* {console.log(props)} */}
+                                    // </div>
                                 )}
                             />
                             <Route 

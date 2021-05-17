@@ -21164,13 +21164,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "design",
                     path: "list-standard-blog-tag/design",
                     isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/gallery-post/1",
@@ -21512,13 +21505,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "art",
                     path: "list-standard-blog-tag/art",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/quote-post/1",
@@ -21817,13 +21803,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "design",
                     path: "list-standard-blog-tag/design",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/video-post/1",
@@ -21971,13 +21950,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -22134,13 +22106,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -22332,13 +22297,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tag/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -22774,13 +22732,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
                     isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/video-post/2",
@@ -22928,13 +22879,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tag/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -23260,13 +23204,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "design",
                     path: "list-standard-blog-tag/design",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/link-post/3",
@@ -23409,13 +23346,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -23715,13 +23645,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
                     isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/video-post/3",
@@ -23870,13 +23793,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -24163,13 +24079,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/quote-post/4",
@@ -24312,13 +24221,6 @@ app.post('/api/blog-list-standard', (req, res) => {
                     key: "art",
                     path: "list-standard-blog-tag/art",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/audio-post/5",
@@ -24436,6 +24338,20 @@ app.post('/api/blog-list-standard', (req, res) => {
         });
     }
 
+    let tag = req.body.tag;
+
+    let tagsArray = [];
+
+    if(tag){
+        blogListStandardPage.map(el => {
+            el.tags.map(el2 => {
+                if(el2.key === tag){
+                    tagsArray.push(el)
+                }
+            })
+        });
+    }
+
     let firstIndex = req.body.activePageId * 6 - 5;
     let lastIndex = req.body.activePageId * 6 - 1;
     
@@ -24445,6 +24361,11 @@ app.post('/api/blog-list-standard', (req, res) => {
         updatedBlogListStandard = {
             numberOfPages: !Number.isInteger(categoriesArray.length/6) ? Math.floor(categoriesArray.length/6) + 1 : Math.floor(categoriesArray.length/6),
             blogListStandardPage: categoriesArray.slice(firstIndex - 1, lastIndex + 1)
+        };
+    }else if(tagsArray.length !== 0){
+        updatedBlogListStandard = {
+            numberOfPages: !Number.isInteger(tagsArray.length/6) ? Math.floor(tagsArray.length/6) + 1 : Math.floor(tagsArray.length/6),
+            blogListStandardPage: tagsArray.slice(firstIndex - 1, lastIndex + 1)
         };
     }else{
         updatedBlogListStandard = {
@@ -24745,13 +24666,6 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
                     isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/standard-post/2",
@@ -24913,13 +24827,6 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                     tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tag/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -25138,13 +25045,6 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                     key: "design",
                     path: "list-standard-blog-tag/design",
                     isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/gallery-post/1",
@@ -25356,13 +25256,6 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -25983,13 +25876,6 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                     key: "design",
                     path: "list-standard-blog-tag/design",
                     isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/link-post/2",
@@ -26145,13 +26031,6 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                     tagName: "Design",
                     key: "design",
                     path: "list-standard-blog-tag/design",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -26528,13 +26407,6 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                     key: "art",
                     path: "list-standard-blog-tag/art",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/quote-post/1",
@@ -26849,13 +26721,6 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/quote-post/3",
@@ -27012,13 +26877,6 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -27720,13 +27578,6 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
                     isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/audio-post/4",
@@ -27882,13 +27733,6 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                     tagName: "Art",
                     key: "art",
                     path: "list-standard-blog-tag/art",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -28101,13 +27945,6 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                     key: "design",
                     path: "list-standard-blog-tag/design",
                     isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
-                    isHover: "init"
                 }
             ],
             path: "blog-list-standard-item/video-post/1",
@@ -28270,13 +28107,6 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -28447,13 +28277,6 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                     tagName: "Graphic",
                     key: "graphic",
                     path: "list-standard-blog-tag/graphic",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
