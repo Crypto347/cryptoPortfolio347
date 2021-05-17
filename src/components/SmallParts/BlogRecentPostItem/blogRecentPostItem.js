@@ -43,11 +43,6 @@ export const BlogRecentPostItem = (props) => {
      */
    
     useEffect(() => {
-        // Activate the recent post on browser refresh
-        
-        let activePostPath = props.location.pathname.slice(18);
-        
-        props.activateRecentPost(null, activePostPath, true);
     }, []);
 
     const handleMouseEnter = (opt) => {

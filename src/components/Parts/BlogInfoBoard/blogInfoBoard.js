@@ -41,7 +41,7 @@ import Toolbar from '../../Parts/Toolbar/toolbar';
 import Input from '../../../library/Input/input';
 import TagItem from '../../SmallParts/TagItem/tagItem';
 import Icon from '../../SmallParts/Icon/icon';
-import BlogRecentPostItem from '../../SmallParts/BlogRecentPostItem/blogRecentPostItem';
+import BlogRecentPosts from '../../SmallParts/BlogRecentPosts/blogRecentPosts';
 import Footer from '../../Parts/Footer/footer';
 import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
@@ -295,28 +295,6 @@ export const BlogInfoBoard = (props) => {
         )
     }
 
-    const renderRecentPosts = (arr) => {
-        return(
-            <>
-                {arr.map((el, i) => {
-                    return(
-                        <React.Fragment key={i}>
-                            <BlogRecentPostItem
-                                elData={el}
-                                clearState={props.clearState}
-                                clearActivityOfMenuItems={props.clearActivityOfMenuItems}
-                                activateBlogCategory={props.activateBlogCategory}
-                                activateBlogItem={props.activateBlogItem}
-                                activateRecentPost={props.activateRecentPost}
-                            />
-                            {i !== arr.length - 1 ? <EH10/> : null}
-                        </React.Fragment>
-                    )
-                })}
-            </>
-        )
-    }
-
     const renderRecentPostsDataContent = (data) => {
         if(data.loading && !data.error){
             return(
@@ -331,7 +309,14 @@ export const BlogInfoBoard = (props) => {
         if(!data.loading && !data.error){
             return(
                 <>
-                    {renderRecentPosts(data.items)}
+                    <BlogRecentPosts
+                        recentPostsArray={data.items}
+                        clearState={props.clearState}
+                        clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                        activateBlogCategory={props.activateBlogCategory}
+                        activateBlogItem={props.activateBlogItem}
+                        activateRecentPost={props.activateRecentPost}
+                    />
                 </>
             )
         }
