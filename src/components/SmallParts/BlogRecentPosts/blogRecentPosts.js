@@ -53,9 +53,12 @@ export const BlogRecentPosts = (props) => {
         // Activate the recent post on browser refresh
         
         let activePostPath = props.location.pathname.slice(18);
-        
-        props.activateRecentPost(null, activePostPath, true);
-    }, []);
+
+        if(props.recentPostsArray.length !== 0){
+            props.activateRecentPost(null, activePostPath, true);
+        }
+     
+    }, [props.recentPostsArray.length]);
 
 
     const renderRecentPosts = (arr) => {

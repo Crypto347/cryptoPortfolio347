@@ -502,6 +502,7 @@ export const BlogListStandardPage = (props) => {
                             setUnmountComponentValues={props.setUnmountComponentValues}
                             unmountComponent={props.unmountComponent}
                             fetchBlogRecentPostsData={props.fetchBlogRecentPostsData}
+                            fetchFakeData={props.fetchBlogRecentPostsForBlogListStandardPageDataSuccess}
                             clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                             activateRecentPost={props.activateRecentPostForBlogListStandardPage}
                         />
@@ -563,6 +564,7 @@ export default connect(
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             setCommentsButtonClickedStateForBlogListStandardPage: bindActionCreators(Actions.setCommentsButtonClickedStateForBlogListStandardPage, dispatch),
             fetchBlogRecentPostsData: bindActionCreators(Services.fetchBlogRecentPostsData, dispatch),
+            fetchBlogRecentPostsForBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogRecentPostsForBlogListStandardPageDataSuccess, dispatch),
             activateRecentPostForBlogListStandardPage: bindActionCreators(Actions.activateRecentPostForBlogListStandardPage, dispatch),
         };
     }

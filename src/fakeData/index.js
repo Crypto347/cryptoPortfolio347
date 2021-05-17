@@ -47,3 +47,4 @@ export * from './scrollSliderPageData';
 export * from './portfolioProjectShowcasePageData';
 export * from './blogListStandardPageData';
 export * from './blogPostSingleItemData';
+export * from './blogRecentPosts';

@@ -107,7 +107,7 @@ export const BlogInfoBoard = (props) => {
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
             // Fetch mock data (not required to run -> npm run server)
 
-            // fetchFakeData(FakeData.blogListStandardPage, props.blogListStandardPage.activePageId);
+            props.fetchFakeData(FakeData.blogRecentPosts);
             
         }else{
             // Fetch data (required to run -> npm run server)
