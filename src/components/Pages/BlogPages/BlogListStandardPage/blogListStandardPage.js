@@ -463,42 +463,42 @@ export const BlogListStandardPage = (props) => {
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/standard-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem key={props.match.params.id} page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/gallery-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem key={props.match.params.id} page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/link-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem key={props.match.params.id} page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/quote-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem key={props.match.params.id} page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/audio-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem key={props.match.params.id} page='blogListStandardPage'/>
                                 )}
                             />
                             <Route 
                                 exact 
                                 path="/crypto-portfolio/blog-list-standard-item/video-post/:id"
                                 render={(props) => (
-                                    <BlogPostSingleItem page='blogListStandardPage'/>
+                                    <BlogPostSingleItem key={props.match.params.id} page='blogListStandardPage'/>
                                 )}
                             />
                         </div>
