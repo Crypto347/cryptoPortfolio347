@@ -20957,6 +20957,36 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/standard-post/1",
             coverImage: {
                 id: 1,
@@ -21119,6 +21149,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     path: "list-standard-blog-tags/education",
                     isHover: "init"
                 },
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
             ],
             path: "blog-list-standard-item/gallery-post/1",
             coverImage: {
@@ -21295,6 +21348,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/link-post/1",
             coverImage: {
                 id: 1,
@@ -21436,6 +21505,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/quote-post/1",
             coverImage: {
                 id: 1,
@@ -21566,6 +21651,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "News",
                     key: "news",
                     path: "list-standard-blog-tags/news",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 }
             ],
@@ -21702,6 +21810,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 },
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/video-post/1",
             coverImage: {
                 id: 1,
@@ -21831,6 +21955,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -21964,6 +22111,36 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "News",
                     key: "news",
                     path: "list-standard-blog-tags/news",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -22142,6 +22319,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/link-post/2",
             coverImage: {
                 id: 1,
@@ -22273,6 +22473,15 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "Fashion",
                     key: "fashion",
                     path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -22409,6 +22618,15 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/audio-post/2",
             coverImage: {
                 id: 1,
@@ -22539,6 +22757,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "Fashion",
                     key: "fashion",
                     path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -22674,6 +22915,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/standard-post/3",
             coverImage: {
                 id: 1,
@@ -22803,6 +23067,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "Business",
                     key: "business",
                     path: "list-standard-blog-tags/business",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 }
             ],
@@ -22973,6 +23253,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/link-post/3",
             coverImage: {
                 id: 1,
@@ -23104,6 +23400,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "News",
                     key: "news",
                     path: "list-standard-blog-tags/news",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -23240,6 +23552,15 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/audio-post/3",
             coverImage: {
                 id: 1,
@@ -23370,6 +23691,36 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "News",
                     key: "news",
                     path: "list-standard-blog-tags/news",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 4,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -23506,6 +23857,29 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 3,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/audio-post/4",
             coverImage: {
                 id: 1,
@@ -23636,6 +24010,15 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "Fashion",
                     key: "fashion",
                     path: "list-standard-blog-tags/fashion",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 }
             ],
@@ -23773,6 +24156,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     isHover: "init"
                 }
             ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
+                    isHover: "init"
+                }
+            ],
             path: "blog-list-standard-item/quote-post/4",
             coverImage: {
                 id: 1,
@@ -23903,6 +24302,22 @@ app.post('/api/blog-list-standard', (req, res) => {
                     label: "Design",
                     key: "design",
                     path: "list-standard-blog-tags/design",
+                    isHover: "init"
+                }
+            ],
+            tags: [
+                {
+                    id: 1,
+                    tagName: "Art",
+                    key: "art",
+                    path: "list-standard-blog-tag/art",
+                    isHover: "init"
+                },
+                {
+                    id: 2,
+                    tagName: "New",
+                    key: "new",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -24115,28 +24530,28 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     tagName: "Graphic",
                     key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -24321,28 +24736,21 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -24497,28 +24905,21 @@ app.post('/api/blog-item/standard-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -24728,28 +25129,21 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -24947,28 +25341,28 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     tagName: "Graphic",
                     key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -25165,28 +25559,14 @@ app.post('/api/blog-item/gallery-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
                     tagName: "Graphic",
                     key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 }
             ],
@@ -25429,30 +25809,16 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -25608,28 +25974,21 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -25783,30 +26142,16 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -25960,30 +26305,9 @@ app.post('/api/blog-item/link-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 }
             ],
@@ -26202,28 +26526,14 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -26378,30 +26688,9 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -26556,30 +26845,16 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -26734,30 +27009,16 @@ app.post('/api/blog-item/quote-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -26968,28 +27229,21 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     tagName: "Graphic",
                     key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 }
             ],
@@ -27143,30 +27397,9 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
                     tagName: "Graphic",
                     key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 }
             ],
@@ -27320,30 +27553,9 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
-                    isHover: "init"
-                },
-                {
-                    id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
-                    tagName: "New",
-                    key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 }
             ],
@@ -27499,28 +27711,21 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -27676,28 +27881,14 @@ app.post('/api/blog-item/audio-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -27906,30 +28097,16 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
-                    isHover: "init"
-                },
-                {
-                    id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -28083,30 +28260,23 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
             tags: [
                 {
                     id: 1,
-                    tagName: "Art",
-                    key: "art",
-                    path: "list-standard-blog-tags/business",
+                    tagName: "Design",
+                    key: "design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 2,
-                    tagName: "Design",
-                    key: "design",
-                    path: "list-standard-blog-tags/design",
+                    tagName: "Graphic",
+                    key: "graphic",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 3,
-                    tagName: "Graphic",
-                    key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
-                    isHover: "init"
-                },
-                {
-                    id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],
@@ -28262,28 +28432,28 @@ app.post('/api/blog-item/video-post/:id', (req, res) => {
                     id: 1,
                     tagName: "Art",
                     key: "art",
-                    path: "list-standard-blog-tags/business",
+                    path: "list-standard-blog-tag/art",
                     isHover: "init"
                 },
                 {
                     id: 2,
                     tagName: "Design",
                     key: "design",
-                    path: "list-standard-blog-tags/design",
+                    path: "list-standard-blog-tag/design",
                     isHover: "init"
                 },
                 {
                     id: 3,
                     tagName: "Graphic",
                     key: "graphic",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tag/graphic",
                     isHover: "init"
                 },
                 {
                     id: 4,
                     tagName: "New",
                     key: "new",
-                    path: "list-standard-blog-tags/fashion",
+                    path: "list-standard-blog-tas/new",
                     isHover: "init"
                 }
             ],

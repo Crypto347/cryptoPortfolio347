@@ -32,6 +32,36 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 4,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/standard-post/1",
         coverImage: {
             id: 1,
@@ -195,6 +225,29 @@ export const blogListStandardPage = [
                 isHover: "init"
             },
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/gallery-post/1",
         coverImage: {
             id: 1,
@@ -341,7 +394,7 @@ export const blogListStandardPage = [
         key: "blogListStandardPageCardId3",
         cardType: "linkPost",
         header: "Link Post.",
-        date: "11.03.2021",
+        date: "16.05.2021",
         numberOfLikes: 3,
         userLikedThePost: false,
         numberOfComments: 2,
@@ -367,6 +420,22 @@ export const blogListStandardPage = [
                 label: "Shoppimg",
                 key: "shopping",
                 path: "list-standard-blog-tags/shopping",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -511,6 +580,22 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/quote-post/1",
         coverImage: {
             id: 1,
@@ -641,6 +726,29 @@ export const blogListStandardPage = [
                 label: "News",
                 key: "news",
                 path: "list-standard-blog-tags/news",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             }
         ],
@@ -777,6 +885,22 @@ export const blogListStandardPage = [
                 isHover: "init"
             },
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/video-post/1",
         coverImage: {
             id: 1,
@@ -906,6 +1030,29 @@ export const blogListStandardPage = [
                 label: "Design",
                 key: "design",
                 path: "list-standard-blog-tags/design",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1039,6 +1186,36 @@ export const blogListStandardPage = [
                 label: "News",
                 key: "news",
                 path: "list-standard-blog-tags/news",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 4,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1217,6 +1394,29 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/link-post/2",
         coverImage: {
             id: 1,
@@ -1348,6 +1548,15 @@ export const blogListStandardPage = [
                 label: "Fashion",
                 key: "fashion",
                 path: "list-standard-blog-tags/fashion",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1484,6 +1693,15 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/audio-post/2",
         coverImage: {
             id: 1,
@@ -1614,6 +1832,29 @@ export const blogListStandardPage = [
                 label: "Fashion",
                 key: "fashion",
                 path: "list-standard-blog-tags/fashion",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1749,6 +1990,29 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/standard-post/3",
         coverImage: {
             id: 1,
@@ -1878,6 +2142,22 @@ export const blogListStandardPage = [
                 label: "Business",
                 key: "business",
                 path: "list-standard-blog-tags/business",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             }
         ],
@@ -2048,6 +2328,22 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/link-post/3",
         coverImage: {
             id: 1,
@@ -2179,6 +2475,22 @@ export const blogListStandardPage = [
                 label: "News",
                 key: "news",
                 path: "list-standard-blog-tags/news",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -2315,6 +2627,15 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/audio-post/3",
         coverImage: {
             id: 1,
@@ -2445,6 +2766,36 @@ export const blogListStandardPage = [
                 label: "News",
                 key: "news",
                 path: "list-standard-blog-tags/news",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 4,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -2581,6 +2932,29 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 3,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/audio-post/4",
         coverImage: {
             id: 1,
@@ -2711,6 +3085,15 @@ export const blogListStandardPage = [
                 label: "Fashion",
                 key: "fashion",
                 path: "list-standard-blog-tags/fashion",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             }
         ],
@@ -2848,6 +3231,22 @@ export const blogListStandardPage = [
                 isHover: "init"
             }
         ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
+                isHover: "init"
+            }
+        ],
         path: "blog-list-standard-item/quote-post/4",
         coverImage: {
             id: 1,
@@ -2953,7 +3352,7 @@ export const blogListStandardPage = [
         cardType: "audioPost",
         header: "Audio Post 5.",
         audioKey: "inspireMp3",
-        date: "17.03.2021",
+        date: "20.03.2021",
         numberOfLikes: 3,
         userLikedThePost: false,
         numberOfComments: 6,
@@ -2978,6 +3377,22 @@ export const blogListStandardPage = [
                 label: "Design",
                 key: "design",
                 path: "list-standard-blog-tags/design",
+                isHover: "init"
+            }
+        ],
+        tags: [
+            {
+                id: 1,
+                tagName: "Art",
+                key: "art",
+                path: "list-standard-blog-tag/art",
+                isHover: "init"
+            },
+            {
+                id: 2,
+                tagName: "New",
+                key: "new",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],

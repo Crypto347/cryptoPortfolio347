@@ -51,28 +51,28 @@ export const standardPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
                 tagName: "Graphic",
                 key: "graphic",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -257,28 +257,21 @@ export const standardPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -433,28 +426,21 @@ export const standardPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -613,28 +599,21 @@ export const galleryPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -832,28 +811,28 @@ export const galleryPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
                 tagName: "Graphic",
                 key: "graphic",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1050,28 +1029,14 @@ export const galleryPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
                 tagName: "Graphic",
                 key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             }
         ],
@@ -1217,7 +1182,7 @@ export const linkPost = [
         cardId: "blogListStandardPageCardId3",
         cardType: "linkPost",
         header: "Link Post.",
-        date: "11.03.2021",
+        date: "16.05.2021",
         numberOfLikes: 3,
         userLikedThePost: false,
         numberOfComments: 2,
@@ -1262,30 +1227,16 @@ export const linkPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1441,28 +1392,21 @@ export const linkPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1616,30 +1560,16 @@ export const linkPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -1793,30 +1723,9 @@ export const linkPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
-                isHover: "init"
-            },
-            {
-                id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             }
         ],
@@ -1983,28 +1892,14 @@ export const quotePost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -2159,30 +2054,9 @@ export const quotePost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
-                isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -2337,30 +2211,16 @@ export const quotePost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -2515,30 +2375,16 @@ export const quotePost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -2697,28 +2543,21 @@ export const audioPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
                 tagName: "Graphic",
                 key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             }
         ],
@@ -2872,30 +2711,9 @@ export const audioPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
-                isHover: "init"
-            },
-            {
-                id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
                 tagName: "Graphic",
                 key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             }
         ],
@@ -3049,30 +2867,9 @@ export const audioPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
-                isHover: "init"
-            },
-            {
-                id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
-                tagName: "New",
-                key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             }
         ],
@@ -3228,28 +3025,21 @@ export const audioPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3359,7 +3149,7 @@ export const audioPost = [
         cardType: "audioPost",
         header: "Audio Post 5.",
         audioKey: "inspireMp3",
-        date: "17.03.2021",
+        date: "20.03.2021",
         numberOfLikes: 3,
         userLikedThePost: false,
         numberOfComments: 6,
@@ -3405,28 +3195,14 @@ export const audioPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3583,30 +3359,16 @@ export const videoPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
-                isHover: "init"
-            },
-            {
-                id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3760,30 +3522,23 @@ export const videoPost = [
         tags: [
             {
                 id: 1,
-                tagName: "Art",
-                key: "art",
-                path: "list-standard-blog-tags/business",
+                tagName: "Design",
+                key: "design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 2,
-                tagName: "Design",
-                key: "design",
-                path: "list-standard-blog-tags/design",
+                tagName: "Graphic",
+                key: "graphic",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 3,
-                tagName: "Graphic",
-                key: "graphic",
-                path: "list-standard-blog-tags/fashion",
-                isHover: "init"
-            },
-            {
-                id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
@@ -3939,28 +3694,28 @@ export const videoPost = [
                 id: 1,
                 tagName: "Art",
                 key: "art",
-                path: "list-standard-blog-tags/business",
+                path: "list-standard-blog-tag/art",
                 isHover: "init"
             },
             {
                 id: 2,
                 tagName: "Design",
                 key: "design",
-                path: "list-standard-blog-tags/design",
+                path: "list-standard-blog-tag/design",
                 isHover: "init"
             },
             {
                 id: 3,
                 tagName: "Graphic",
                 key: "graphic",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tag/graphic",
                 isHover: "init"
             },
             {
                 id: 4,
                 tagName: "New",
                 key: "new",
-                path: "list-standard-blog-tags/fashion",
+                path: "list-standard-blog-tas/new",
                 isHover: "init"
             }
         ],
