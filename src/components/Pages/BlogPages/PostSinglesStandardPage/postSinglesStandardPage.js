@@ -141,7 +141,7 @@ export const PostSinglesStandardPage = (props) => {
 
         // Init imput forms
 
-        props.initSearchInputFormForBlogListStandardPage(blogListStandardSearchInputForm);
+        props.initSearchInputFormThroughWebsite(blogListStandardSearchInputForm);
 
         // Init blog categories and tags lists
 
@@ -352,7 +352,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            initSearchInputFormForBlogListStandardPage: bindActionCreators(Actions.initSearchInputFormForBlogListStandardPage, dispatch),
+            initSearchInputFormThroughWebsite: bindActionCreators(Actions.initSearchInputFormThroughWebsite, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),

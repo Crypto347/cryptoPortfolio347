@@ -127,7 +127,7 @@ export const BlogListStandardPage = (props) => {
 
         // Init imput forms
 
-        props.initSearchInputFormForBlogListStandardPage(blogListStandardSearchInputForm);
+        props.initSearchInputFormThroughWebsite(blogListStandardSearchInputForm);
 
         // Init blog categories and tags lists
 
@@ -476,8 +476,8 @@ export const BlogListStandardPage = (props) => {
                         </div>
                         <BlogInfoBoard
                             page="blogListStandardPage"
-                            searchFormInputsArray={props.blogListStandardPage.searchInputForm.inputsArray}
-                            searchInputForm={props.blogListStandardPage.searchInputForm}
+                            searchFormInputsArray={props.searchData.searchInputForm.inputsArray}
+                            searchInputForm={props.searchData.searchInputForm}
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
                             recentPostsList={props.blogListStandardPage.recentPosts}
@@ -491,8 +491,8 @@ export const BlogListStandardPage = (props) => {
                             fetchFakeData={props.fetchBlogRecentPostsForBlogListStandardPageDataSuccess}
                             clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                             activateRecentPost={props.activateRecentPostForBlogListStandardPage}
-                            setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
-                            search={props.searchBlogListStandardPage}
+                            setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationThroughWebsite}
+                            search={props.searchThroughWebsite}
                         />
                     </div>
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
@@ -511,6 +511,7 @@ export default connect(
     (state) => {
         return {
             blogListStandardPage: Selectors.getBlogListStandardPageState(state),
+            searchData: Selectors.getSearchDataState(state),
             unmountComp: Selectors.getUnmountComponentState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),
@@ -525,7 +526,7 @@ export default connect(
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            initSearchInputFormForBlogListStandardPage: bindActionCreators(Actions.initSearchInputFormForBlogListStandardPage, dispatch),
+            initSearchInputFormThroughWebsite: bindActionCreators(Actions.initSearchInputFormThroughWebsite, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
@@ -539,8 +540,9 @@ export default connect(
             triggerCommentReplyButtonForBlogListStandardPage: bindActionCreators(Actions.triggerCommentReplyButtonForBlogListStandardPage, dispatch),
             initInputFormOfBlogCommentReplyForBlogListStandardPage: bindActionCreators(Actions.initInputFormOfBlogCommentReplyForBlogListStandardPage, dispatch),
             setInputFiledValueAndCheckValidationForBlogListStandardPage: bindActionCreators(Actions.setInputFiledValueAndCheckValidationForBlogListStandardPage, dispatch),
+            setInputFiledValueAndCheckValidationThroughWebsite: bindActionCreators(Actions.setInputFiledValueAndCheckValidationThroughWebsite, dispatch),
             replyCommentBlogListStandardPage: bindActionCreators(Actions.replyCommentBlogListStandardPage, dispatch),
-            searchBlogListStandardPage: bindActionCreators(Actions.searchBlogListStandardPage, dispatch),
+            searchThroughWebsite: bindActionCreators(Actions.searchThroughWebsite, dispatch),
             fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
             fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
             fetchLinkPostBlogData: bindActionCreators(Services.fetchLinkPostBlogData, dispatch),

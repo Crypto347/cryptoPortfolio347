@@ -53,12 +53,14 @@ export const initialState = {
     historyPopFromItem: "scrollToTop",
     showBackToTop: false,
     fullScreenState: false,
-    searchInputForm: {},
-    searchInputFormResponse: {
-        item: {},
-        loading: false,
-        error: null
-    },
+    searchData: {
+        searchInputForm: {},
+        searchInputFormResponse: {
+            item: {},
+            loading: false,
+            error: null
+        },
+    }
 }
 
 const initMenuItems = (state, action) => {
@@ -802,7 +804,10 @@ const setFullScreenState = (state, action) => {
 const initSearchInputFormThroughWebsite = (state, action) => {
     return {
         ...state,
-        searchInputForm: action.obj
+        searchData: {
+            ...state.searchData,
+            searchInputForm: action.obj
+        } 
     }
 } 
 
@@ -829,15 +834,13 @@ const setInputFiledValueAndCheckValidationThroughWebsite = (state, action) => {
     updatedInputFieldObj = {...updatedInputFieldObj, formIsValid: checkIfFormIsValid.every(x => x === true)};
 
     switch(action.formName) {
-        case 'commentReplyInputForm':
-            return {
-                ...state,
-                commentReplyInputForm: updatedInputFieldObj
-            };
         case 'searchInputForm':
             return {
                 ...state,
-                searchInputForm: updatedInputFieldObj
+                searchData: {
+                    ...state.searchData,
+                    searchInputForm: updatedInputFieldObj
+                }               
             };
         default:
             return {...state}
@@ -845,9 +848,9 @@ const setInputFiledValueAndCheckValidationThroughWebsite = (state, action) => {
 }
 
 const searchThroughWebsite = (state, action) => {
-    let updatedSearchInputForm = {...state.searchInputForm, inputsArray: [...state.searchInputForm.inputsArray]};
+    let updatedSearchInputForm = {...state.searchData.searchInputForm, inputsArray: [...state.searchData.searchInputForm.inputsArray]};
 
-    if(state.searchInputForm.formIsValid && state.searchInputForm.inputsArray){
+    if(state.searchData.searchInputForm.formIsValid && state.searchData.searchInputForm.inputsArray){
         // info = {
         //     id: uuid(),
         //     pathOfIds: props.pathOfIdsToComment,
@@ -894,7 +897,10 @@ const searchThroughWebsite = (state, action) => {
     }
     return {
         ...state,
-        searchInputForm: updatedSearchInputForm
+        searchData: {
+            ...state.searchData,
+            searchInputForm: updatedSearchInputForm
+        }
     }; 
 }
 

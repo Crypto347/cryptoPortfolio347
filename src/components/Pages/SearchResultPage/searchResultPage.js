@@ -245,7 +245,6 @@ export const SearchResultPage = (props) => {
         }
     } 
     
-
     /**
      * Markup
      */
