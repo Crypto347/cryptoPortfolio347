@@ -101,19 +101,7 @@ const setInputFiledValueAndCheckValidationThroughWebsite = (state, action) => {
 const searchThroughWebsite = (state, action) => {
     let updatedSearchInputForm = {...state.searchInputForm, inputsArray: [...state.searchInputForm.inputsArray]};
 
-    if(state.searchInputForm.formIsValid && state.searchInputForm.inputsArray){
-        // info = {
-        //     id: uuid(),
-        //     pathOfIds: props.pathOfIdsToComment,
-        //     comment: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "comment").value}`,
-        //     fullName: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "fullName").value}`,
-        //     email: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "email").value}`,
-        //     date: Utility.getCurrentDateAndTime(),
-        //     website: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "website").value}`,
-        // }
-        // updatedSingleStory.comments.push(comment);
-        // updatedSearchInputForm.inputsArray = updatedSearchInputForm.inputsArray.map(el => {return {...el, value: ''}});
-        
+    if(state.searchInputForm.formIsValid && state.searchInputForm.inputsArray){        
         updatedSearchInputForm.formIsValid = false;
         updatedSearchInputForm.inputsArray = updatedSearchInputForm.inputsArray.map(el => {
             return {

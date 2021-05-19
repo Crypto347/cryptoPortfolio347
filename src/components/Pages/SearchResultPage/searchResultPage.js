@@ -91,6 +91,7 @@ export const SearchResultPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
+    const [showComponent, setShowComponent] = useState(false);
     
     /**
      * Methods
@@ -101,23 +102,11 @@ export const SearchResultPage = (props) => {
 
         props.setUnmountComponentValues(false, "");
 
-        // Fetch data for the component
-
-        // if(props.bannerPage.section1Data.items.length === 0){
-        //     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-        //         // Fetch mock data (not required to run -> npm run server)
-
-        //         props.fetchBannerPageSection1DataSuccess(FakeData.bannerPageSec1);
-        //     }else{
-        //         // Fetch data (required to run -> npm run server)
-
-        //         props.fetchBannerPageSection1Data();
-        //     }
-        // }
-
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
+
+        setComponentData();
 
         // Event Listeners
 
@@ -196,19 +185,33 @@ export const SearchResultPage = (props) => {
         }
     }
 
-    const showSearchValue = () => {
+    const setComponentData = () => {
         if(!Utility.isObjEmpty(props.searchResultPage.searchInputFormResponse.item)){
-            return props.searchResultPage.searchInputFormResponse.item?.searchInfo.searchValue;
+            setShowComponent(true);
         }else{
-            return "";
+            setShowComponent(false);
         }
     }
 
-    const rendeSearchResultDataContent = () => {
-        if(props.bannerPage.section1Data.loading && !props.bannerPage.section1Data.error){
+    const renderResult = (arr) => {
+        return(
+            <div className="search-result-page-result-wrapper">{arr.map((el, i) => {
+                return(
+                    <div 
+                        key={i}
+                        className="search-result-page-section-1-item"
+                    >jkl
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
+    const rendeSearchResultDataContent = (data) => {
+        if(data.loading && !data.error){
             return(
                 <div 
-                    className="banner-page-loading-error" 
+                    className="search-result-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
                         background: 'white'
@@ -218,38 +221,21 @@ export const SearchResultPage = (props) => {
                 </div>
             )
         }
-        if(!props.bannerPage.section1Data.loading && !props.bannerPage.section1Data.error){
+        if(!data.loading && !data.error){
             return(
-                <div className="banner-page-section-1-data">{props.bannerPage.section1Data.items.map((el, i) => {
-                    return(
-                        <div 
-                            key={i} 
-                            id={el.key}
-                            className="banner-page-section-1-item"
-                        >
-                            <BannerImage
-                                page="bannerPageSection1"
-                                obj={el}
-                                setUnmountComponentValues={props.setUnmountComponentValues}
-                                unmountComponent={props.unmountComponent}
-                                currentPagePathName="banner"
-                            />
-                        </div>
-                    )
-                })}
-                </div>
+                <>{renderResult(data.item.searchResult)}</>
             )
         }
-        if(!props.bannerPage.section1Data.loading && props.bannerPage.section1Data.error){
+        if(!data.loading && data.error){
             return(
                 <div 
-                    className="banner-page-loading-error" 
+                    className="search-result-page-loading-error" 
                     style={{
                         height: `${size.height/2}px`,
                         background: 'white'
                     }}
                 >
-                    <H15 className="h19-nobel-lora">{`${props.bannerPage.section1Data.error}`}</H15>
+                    <H15 className="h19-nobel-lora">{`${data.error}`}</H15>
                 </div>
             )
         }
@@ -264,10 +250,10 @@ export const SearchResultPage = (props) => {
             {renderToolbars()}
             <div className="search-result-page-wrapper">
                 <div className="search-result-page-header">
-                    <H45 className="h45-nero-lustria">Search results for: {showSearchValue()}</H45>
+                    <H45 className="h45-nero-lustria">Search results for: {showComponent ? props.searchResultPage.searchInputFormResponse.item?.searchInfo.searchValue : ""}</H45>
                 </div>
                 <div className="grey-line"/>
-                {/* {rendeSearchResultDataContent()} */}
+                {showComponent ? rendeSearchResultDataContent(props.searchResultPage.searchInputFormResponse) : null}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -305,8 +291,7 @@ export default connect(
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             setBannerPageSection4IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection4IsHoveringCategory, dispatch),
             setBannerPageSection6IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection6IsHoveringCategory, dispatch),
-            setBannerPageSection7IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection7IsHoveringCategory, dispatch),
-        };
+            setBannerPageSection7IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection7IsHoveringCategory, dispatch),        };
     }
 )(SearchResultPage);
  
