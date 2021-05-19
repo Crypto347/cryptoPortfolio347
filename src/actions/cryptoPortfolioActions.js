@@ -211,3 +211,23 @@ export function searchThroughWebsite() {
         type: actionTypes.SEARCH_THROUGH_WEBSITE
     };
 };
+
+export function fetchSearchThroughWebsiteResutDataBegin() {
+    return { 
+        type: actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_BEGIN
+    };
+};
+
+export function fetchSearchThroughWebsiteResutDataSuccess(obj) {
+    return { 
+        type: actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_SUCCESS,
+        obj: obj
+    };
+};
+
+export function fetchSearchThroughWebsiteResutDataFailur(err) {
+    return { 
+        type: actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_FAILURE,
+        err: err
+    };
+};

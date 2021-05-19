@@ -2930,6 +2930,34 @@ export function fetchBlogRecentPostsData(page) {
     };
 }
 
+export function fetchSearchThroughWebsiteResutData(info) {
+    return dispatch => {
+        dispatch(Actions.fetchSearchThroughWebsiteResutDataBegin());
+        return fetch(`http://localhost:3005/api/search-result-through-website`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                info: info
+            })
+        })
+        // .then(handleErrors)
+        .then(res => res.json()) // to debug instead of json write text
+        .then(json => {
+            // console.log(json)
+            
+            dispatch(Actions.fetchSearchThroughWebsiteResutDataSuccess(json));
+            // return json;
+        })
+        .catch(error => {
+            console.log("error",error)
+            dispatch(Actions.fetchSearchThroughWebsiteResutDataFailur(error))
+        });
+    };
+}
+
 function handleErrors(response) {
     if (!response.ok) {
       throw Error(response.statusText);

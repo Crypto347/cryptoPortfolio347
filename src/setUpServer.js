@@ -28836,6 +28836,12 @@ app.get('/api/blog-recent-posts', (req, res) => {
     ]
     res.json(blogRecentPosts);
 });
+
+app.post('/api/search-result-through-website', (req, res) => {
+    let info = req.body.info;
+
+    res.json(info);
+});
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });

@@ -904,6 +904,49 @@ const searchThroughWebsite = (state, action) => {
     }; 
 }
 
+const fetchSearchThroughWebsiteResutDataBegin = (state, action) => {
+    return {
+        ...state,
+        searchData: {
+            ...state.searchData,
+            searchInputFormResponse: {
+                ...state.searchData.searchInputFormResponse,
+                loading: true,
+                error: null
+            },
+        }
+    };
+}
+
+const fetchSearchThroughWebsiteResutDataSuccess = (state, action) => {
+    return {
+        ...state,
+        searchData: {
+            ...state.searchData,
+            searchInputFormResponse: {
+                ...state.searchData.searchInputFormResponse,
+                loading: false,
+                item: action.obj
+            },
+        }
+    };
+}
+
+const fetchSearchThroughWebsiteResutDataFailur = (state, action) => {
+    return {
+        ...state,
+        searchData: {
+            ...state.searchData,
+            searchInputFormResponse: {
+                ...state.searchData.searchInputFormResponse,
+                loading: false,
+                error: action.err,
+                item: {}
+            },
+        }
+    };
+}
+
 const cryptoPortfolioReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -954,6 +997,12 @@ const cryptoPortfolioReducer = (state = initialState, action) => {
             return setInputFiledValueAndCheckValidationThroughWebsite (state, action);
         case actionTypes.SEARCH_THROUGH_WEBSITE:
             return searchThroughWebsite (state, action);
+        case actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_BEGIN:
+            return fetchSearchThroughWebsiteResutDataBegin (state, action);
+        case actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_SUCCESS:
+            return fetchSearchThroughWebsiteResutDataSuccess (state, action);
+        case actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_FAILURE:
+            return fetchSearchThroughWebsiteResutDataFailur (state, action);
         default: 
             return state;
     }

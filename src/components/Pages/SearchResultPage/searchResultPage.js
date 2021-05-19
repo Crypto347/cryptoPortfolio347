@@ -101,17 +101,17 @@ export const SearchResultPage = (props) => {
 
         // Fetch data for the component
 
-        if(props.bannerPage.section1Data.items.length === 0){
-            if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                // Fetch mock data (not required to run -> npm run server)
+        // if(props.bannerPage.section1Data.items.length === 0){
+        //     if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+        //         // Fetch mock data (not required to run -> npm run server)
 
-                props.fetchBannerPageSection1DataSuccess(FakeData.bannerPageSec1);
-            }else{
-                // Fetch data (required to run -> npm run server)
+        //         props.fetchBannerPageSection1DataSuccess(FakeData.bannerPageSec1);
+        //     }else{
+        //         // Fetch data (required to run -> npm run server)
 
-                props.fetchBannerPageSection1Data();
-            }
-        }
+        //         props.fetchBannerPageSection1Data();
+        //     }
+        // }
 
         // Scroll to the top of the screen
 
@@ -254,7 +254,7 @@ export const SearchResultPage = (props) => {
             {renderToolbars()}
             <div className="banner-page-wrapper">
                 <div className="banner-page-header">
-                    <H45 className="h45-nero-lustria">Search results for: {}</H45>
+                    <H45 className="h45-nero-lustria">Search results for: {props.searchData.searchInputFormResponse.item.searchValue}</H45>
                 </div>
                 <div className="grey-line"/>
                 {/* {renderBannerPageSection1DataContent()} */}
@@ -268,9 +268,7 @@ export const SearchResultPage = (props) => {
 export default connect(
     (state) => {
         return {
-            bannerPage: Selectors.getBannerPageState(state),
-            menuDotsState: Selectors.getMenuDotsStateState(state),
-            showBackToTop: Selectors.getShowBackToTopState(state),
+            searchData: Selectors.getSearchDataState(state),
         };
     },
     (dispatch) => {

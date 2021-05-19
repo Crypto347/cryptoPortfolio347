@@ -181,7 +181,7 @@ export const BlogInfoBoard = (props) => {
     }
 
     const searchHandler = () => {
-        console.log(props.searchInputForm)
+        
         let info;
 
         /**
@@ -196,26 +196,21 @@ export const BlogInfoBoard = (props) => {
 
         info = {
             id: uuid(),
-            // pathOfIds: props.pathOfIdsToComment,
             searchValue: `${props.searchInputForm.inputsArray.find(x => x.controlName === "search").value}`,
-            // fullName: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "fullName").value}`,
-            // email: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "email").value}`,
-            // date: Utility.getCurrentDateAndTime(),
-            // website: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "website").value}`,
         }
 
         console.log("Form", info)
-        // Post the information
+        // Search the information
         
-                        // if(process.env.ENVIRONMENT === Environment.PRODUCTION){
-                        // // Fetch mock data (not required to run -> npm run server)
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+        // Fetch mock data (not required to run -> npm run server)
 
-                        //     postReplyFakeData(props.fakeData, props.cardIdFromPathname, info);
-                        // }else{
-                        //     // Fetch data (required to run -> npm run server)
+            // postReplyFakeData(props.fakeData, props.cardIdFromPathname, info);
+        }else{
+            // Fetch data (required to run -> npm run server)
 
-                        //     props.postReply(props.cardIdFromPathname, info);
-                        // }
+            props.fetchSearchThroughWebsiteResutData(info);
+        }
         
         // Clear input fields (visually) if the form is valid
 
@@ -240,7 +235,7 @@ export const BlogInfoBoard = (props) => {
 
     const clearInputValue = (fieldId) => {
         // Clear input value
-        
+
         document.getElementById(fieldId).value = '';
     }
 
