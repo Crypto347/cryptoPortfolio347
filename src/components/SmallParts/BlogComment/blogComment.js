@@ -211,7 +211,6 @@ export const BlogComment = (props) => {
                 </div>
                 <EH30/>
             </div>
-
         </>
     );
 }

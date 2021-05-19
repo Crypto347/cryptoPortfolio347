@@ -8,21 +8,6 @@ import React, {
 } from 'react';
 
 import {
-    bindActionCreators
-} from 'redux';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    Route,
-    Switch,
-    Redirect,
-    Link
-} from 'react-router-dom';
-
-import {
     withRouter
 } from 'react-router-dom';
 
@@ -74,16 +59,8 @@ import {
 } from '../../../constants/categoriesListForBlog';
 
 import {
-    tagsListForBlog
-} from '../../../constants/tagsListForBlog';
-
-import {
     socialMediaIcons
 } from '../../../constants/socialMediaIcons';
-
-import {
-    blogListStandardInputForm
-} from '../../../constants/inputForm';
 
 /**
  * BlogInfoBoard component definition and export
@@ -142,7 +119,7 @@ export const BlogInfoBoard = (props) => {
         // props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
     }
 
-    const onClickCategory = (key, path, e) => {
+    const onClickCategory = (key, e) => {
 
         // Do nothing on right mouse click 
 
@@ -250,7 +227,7 @@ export const BlogInfoBoard = (props) => {
                     return(
                         <div 
                             key={i}
-                            onMouseDown={(e) => onClickCategory(el.key, null, e)}
+                            onMouseDown={(e) => onClickCategory(el.key, e)}
                         >
                             <H17 className={renderClassName("blogCategory", el.isHover, el.active)}>{el.categoryName}</H17>
                             {i !== categoriesListForBlog.length - 1 ? <EH10/> : null}

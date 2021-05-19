@@ -17,9 +17,7 @@ import {
 
 import {
     Route,
-    BrowserRouter as Router,
-    Switch,
-    Redirect,
+    BrowserRouter as Router
 } from 'react-router-dom';
 
 import {
@@ -43,7 +41,6 @@ import BlogListPostCard from '../../../SmallParts/BlogListPostCard/blogListPostC
 import BlogPostSingleItem from '../../../SmallParts/BlogPostSingleItem/blogPostSingleItem';
 import BlogCategoriesContent from '../../../Parts/BlogCategoriesContent/blogCategoriesContent';
 import BlogTagsContent from '../../../Parts/BlogTagsContent/blogTagsContent';
-import Icon from '../../../SmallParts/Icon/icon';
 import Pagination from '../../../Parts/Pagination/pagination';
 import Footer from '../../../Parts/Footer/footer';
 import BackToTop from '../../../SmallParts/BackToTop/backToTop';
@@ -73,15 +70,7 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import {
     H15,
-    H17,
-    H22,
-    H35,
-    H45,
-    EW20,
-    EH10,
-    EH20,
-    EH30,
-    EH40
+    H45
 } from '../../../UtilityComponents';
 
 import * as Utility from '../../../../utility';
@@ -93,12 +82,6 @@ import * as Utility from '../../../../utility';
 import {
     useWindowSize
 } from '../../../../Hooks/useWindowSize';
-
-/**
- * Images
- */
-
-import * as Images from '../../../../constants/images';
 
 /**
  * Constants
@@ -116,10 +99,6 @@ import {
 } from '../../../../constants/tagsListForBlog';
 
 import {
-    socialMediaIcons
-} from '../../../../constants/socialMediaIcons';
-
-import {
     blogListStandardSearchInputForm
 } from '../../../../constants/inputForm';
 
@@ -135,7 +114,6 @@ export const BlogListStandardPage = (props) => {
 
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
-    const [searchIsHover, setSearchIsHover] = useState("init");
     
     /**
      * Methods
@@ -444,9 +422,6 @@ export const BlogListStandardPage = (props) => {
                                 path="/crypto-portfolio/list-standard-blog-tag/:tag"
                                 render={(props) => (
                                     <BlogTagsContent page='blogListStandardPage'/>
-                                    // <div className="blog-list-standard-page-posts-list">
-                                    //     {/* {console.log(props)} */}
-                                    // </div>
                                 )}
                             />
                             <Route 
@@ -454,9 +429,6 @@ export const BlogListStandardPage = (props) => {
                                 path="/crypto-portfolio/list-standard-blog-category/:category"
                                 render={(props) => (
                                     <BlogCategoriesContent page='blogListStandardPage'/>
-                                    // <div className="blog-list-standard-page-posts-list">
-                                    //     {console.log(props)}
-                                    // </div>
                                 )}
                             />
                             <Route 
@@ -546,7 +518,6 @@ export default connect(
             fetchBlogListStandardPageData: bindActionCreators(Services.fetchBlogListStandardPageData, dispatch),
             fetchBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogListStandardPageDataSuccess, dispatch),
             initBlogPagination: bindActionCreators(Actions.initBlogPagination, dispatch),
-            
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
@@ -557,7 +528,6 @@ export default connect(
             initCategoriesForBlogListStandardPage: bindActionCreators(Actions.initCategoriesForBlogListStandardPage, dispatch),
             initTagsForBlogListStandardPage: bindActionCreators(Actions.initTagsForBlogListStandardPage, dispatch),
             blogListCardCategoryIsHoverForBlogListStandardPage: bindActionCreators(Actions.blogListCardCategoryIsHoverForBlogListStandardPage, dispatch),
-
             setSwiperStateForBlogListStandardPage: bindActionCreators(Actions.setSwiperStateForBlogListStandardPage, dispatch),
             activatePageNumberForBlogListStandardPage: bindActionCreators(Actions.activatePageNumberForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),

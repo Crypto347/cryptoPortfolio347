@@ -3,7 +3,6 @@
  */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
 
@@ -37,14 +36,6 @@ import {
 import * as Utility from '../../../utility';
 
 /**
- * Hooks
- */
-
- import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-/**
  * Constants
  */
 
@@ -60,12 +51,6 @@ import * as Environment from '../../../constants/environments';
 
 export const BlogReplyForm = (props) => {
 
-    /**
-     * State
-     */
-
-    const size = useWindowSize();
-    
     /**
      * Methods
      */
@@ -237,7 +222,6 @@ export const BlogReplyForm = (props) => {
                         onClick={onClickHandler}
                     />
                     <EH20/>
-                    {/* {loadingOnButtonClick("getDirection")} */}
                 </>
             )
         }

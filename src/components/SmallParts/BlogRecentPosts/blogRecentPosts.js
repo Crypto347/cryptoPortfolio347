@@ -28,8 +28,6 @@ import BlogRecentPostItem from '../../SmallParts/BlogRecentPostItem/blogRecentPo
  */
 
 import {
-    H15,
-    H17,
     EH10
 } from '../../UtilityComponents';
 
@@ -38,12 +36,6 @@ import {
  */
 
 export const BlogRecentPosts = (props) => {
-
-    /**
-     * State
-     */
-
-    const [recentPostDateIsHover, setRecentPostDateIsHover] = useState("init");
     
     /**
      * Methods
@@ -53,7 +45,7 @@ export const BlogRecentPosts = (props) => {
         // Activate the recent post on browser refresh
         
         let activePostPath = props.location.pathname.slice(18);
-console.log(activePostPath)
+        
         if(props.recentPostsArray.length !== 0){
             props.activateRecentPost(null, activePostPath, true);
         }

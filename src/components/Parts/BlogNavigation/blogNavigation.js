@@ -78,11 +78,6 @@ export const BlogNavigation = (props) => {
 
         if(props.data.items.length !== 0) setShowComponent(true);
 
-        return () =>  {
-            // Cleaning the unmounted component
-
-        }
-
     }, [props.itemKey,
         props.data.items.length]);
 

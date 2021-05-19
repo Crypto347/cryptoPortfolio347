@@ -46,7 +46,7 @@ import {
  * Hooks
  */
 
- import {
+import {
     useWindowSize
 } from '../../../Hooks/useWindowSize';
 
@@ -71,7 +71,6 @@ export const BlogListPostCard = (props) => {
      */
 
     const size = useWindowSize();
-    const resizeRef = useRef();
     const [isHoveringBlogCardDate, setIsHoveringBlogCardDate] = useState("init");
     const [isHoveringBlogCardHeader, setIsHoveringBlogCardHeader] = useState("init");
     const [isHoveringBlogCardLikes, setIsHoveringBlogCardLikes] = useState("init");
@@ -350,8 +349,6 @@ export const BlogListPostCard = (props) => {
             localStorage.setItem("commentsIconCickedHG",true);
             window.open(`/crypto-portfolio/${props.elData.path}` , "_blank");
         }
-
-       
     }
 
     const renderCardCover = (type) => {

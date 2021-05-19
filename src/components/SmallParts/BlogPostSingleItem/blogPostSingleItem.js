@@ -63,7 +63,6 @@ import {
     H15,
     H17,
     H19,
-    H22,
     H35,
     EW10,
     EH10,
@@ -772,8 +771,7 @@ export const BlogPostSingleItem = (props) => {
                         <EW10/>
                     </div>
                ) 
-            })}
-            </div>
+            })}</div>
         )
     }
 

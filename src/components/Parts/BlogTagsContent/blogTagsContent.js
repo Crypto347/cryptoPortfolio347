@@ -52,18 +52,8 @@ import * as Selectors from '../../../reducers/selectors';
  */
 
 import {
-    H15,
-    H19,
-    EH80
+    H15
 } from '../../UtilityComponents';
-
-/**
- * Hooks
- */
-
-import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
 
 /**
  * Constants
@@ -77,13 +67,6 @@ import * as Environment from '../../../constants/environments';
  */
 
 export const BlogTagsContent = (props) => {
-
-    /**
-     * State
-     */
-
-    const size = useWindowSize();
-    const [showComponent, setShowComponent] = useState(false);
 
     /**
      * Methods
@@ -106,12 +89,6 @@ export const BlogTagsContent = (props) => {
             }
         }
        
-        // Event Listeners
-        
-        // window.addEventListener('scroll', handleScroll);
-
-        // Cleaning the unmounted component
-        // return () => window.removeEventListener('scroll', handleScroll);
     }, [props.blogListStandardPage.activeTag.tagName]);
  
     const fetchFakeData = (fakeData, activePageId, page, tagName) => {
