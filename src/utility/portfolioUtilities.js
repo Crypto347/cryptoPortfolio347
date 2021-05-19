@@ -17,6 +17,7 @@ export const findPathOfIds = (path) => {
         case 'list-standard-blog-category':
         case 'list-standard-blog-tag':
         case 'blog-list-standard-item':
+        case 'search-result':
             return [];
         case 'portfolio-gallery':
             return [1, 12, 125];

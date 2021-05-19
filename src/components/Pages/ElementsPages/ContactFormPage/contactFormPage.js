@@ -352,6 +352,8 @@ export const ContactFormPage = (props) => {
     }
 
     const clearInputValue = (fieldId) => {
+        // Clear input value
+
         document.getElementById(fieldId).value = '';
     }
 

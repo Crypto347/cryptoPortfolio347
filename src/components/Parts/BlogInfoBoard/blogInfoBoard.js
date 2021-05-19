@@ -41,6 +41,8 @@ import {
     EH40
 } from '../../UtilityComponents';
 
+import uuid from "uuid";
+
 /**
  * Images
  */
@@ -109,16 +111,6 @@ export const BlogInfoBoard = (props) => {
         }
     }
 
-    const inputChangeHandler = (e, inputFieldId, opt, inputForm) => {
-        // Uppercase first letter of the input form name
-
-        let updatedInputForm = inputForm.charAt(0).toUpperCase() + inputForm.slice(1);
-
-        // Set input value and check validation
-
-        // props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
-    }
-
     const onClickCategory = (key, e) => {
 
         // Do nothing on right mouse click 
@@ -166,6 +158,92 @@ export const BlogInfoBoard = (props) => {
         }
     }
 
+    const onSearchClick = (e) => {
+        // Do nothing on right mouse click
+
+        if(e.button === 2) return;
+
+        if(e.button !== 1){
+
+            searchHandler();
+
+            /**
+             * Add fading effect on the unmounted component and remember 
+             * information of the unmounted component on left mouse click 
+             */
+
+            props.setUnmountComponentValues(true, "search-result");
+
+            // Fire up unmountComponent epic
+        
+            props.unmountComponent(null, null,  props.page, e.button);
+        }
+    }
+
+    const searchHandler = () => {
+        console.log(props.searchInputForm)
+        let info;
+
+        /**
+         * Check if the input form is valid, if it is valid 
+         * then initialize input fields (state), if it is not valid
+         * then show needed error messages
+         */
+    
+        props.search();
+
+        // Collect all the information you neet to post
+
+        info = {
+            id: uuid(),
+            // pathOfIds: props.pathOfIdsToComment,
+            searchValue: `${props.searchInputForm.inputsArray.find(x => x.controlName === "search").value}`,
+            // fullName: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "fullName").value}`,
+            // email: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "email").value}`,
+            // date: Utility.getCurrentDateAndTime(),
+            // website: `${props.inputFormFieldsArray.inputsArray.find(x => x.controlName === "website").value}`,
+        }
+
+        console.log("Form", info)
+        // Post the information
+        
+                        // if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+                        // // Fetch mock data (not required to run -> npm run server)
+
+                        //     postReplyFakeData(props.fakeData, props.cardIdFromPathname, info);
+                        // }else{
+                        //     // Fetch data (required to run -> npm run server)
+
+                        //     props.postReply(props.cardIdFromPathname, info);
+                        // }
+        
+        // Clear input fields (visually) if the form is valid
+
+        if(props.searchInputForm.formIsValid){
+            clearInputValue("blogListCommentReplyInputFormSearch");
+        }
+
+        // Clear input field (visually) if the entered value does not match to the rules of that field
+
+        props.searchInputForm.inputsArray.map(el => {
+            if(!el.validField){
+                clearInputValue(el.inputID);
+            }
+        });
+    }
+
+    const inputChangeHandler = (e, inputFieldId, inputForm) => {
+        // Set input value and check validation
+
+        props.setInputFiledValueAndCheckValidation(props.searchInputForm, e, inputFieldId, `${inputForm}`);
+    }
+
+    const clearInputValue = (fieldId) => {
+        // Clear input value
+        
+        document.getElementById(fieldId).value = '';
+    }
+
     const renderSearchForm = () => {
         if(props.searchFormInputsArray){
             return(
@@ -177,7 +255,7 @@ export const BlogInfoBoard = (props) => {
                         >
                             <Input
                                 className="blog-list-standard-search-input"
-                                // onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
+                                onChange={(event) => inputChangeHandler(event, el.id, 'searchInputForm')}
                                 elementType={el.elementType}
                                 rows={el.elementConfig.rows}
                                 validField={el.validField}
@@ -190,8 +268,9 @@ export const BlogInfoBoard = (props) => {
                             />
                             <div
                                 className="blog-info-board-search-button"
-                                onMouseEnter={() => handleMouseEnter("searchIcon")} 
+                                onMouseEnter={() => handleMouseEnter("searchIcon")}
                                 onMouseLeave={() => handleMouseLeave("searchIcon")}
+                                onMouseDown={(e) => onSearchClick(e)}
                             >
                                 <Icon 
                                     iconType="fontAwesome"

@@ -34,12 +34,6 @@ export const initialState = {
     },
     loading: false,
     error: null,
-    searchInputForm: {},
-    searchInputFormResponse: {
-        item: {},
-        loading: false,
-        error: null
-    },
     activeItem: {
         activated: "init",
         itemKey: "",
@@ -188,13 +182,6 @@ const fetchBlogRecentPostsForBlogListStandardPageDataFailur = (state, action) =>
         }
     };
 }
-
-const initSearchInputFormForBlogListStandardPage = (state, action) => {
-    return {
-        ...state,
-        searchInputForm: action.obj
-    }
-} 
 
 const activateListStandardBlogCategory = (state, action) => {
     let updatedActiveCategory = {
@@ -474,11 +461,15 @@ const setInputFiledValueAndCheckValidationForBlogListStandardPage = (state, acti
     let checkIfFormIsValid = updatedInputFieldObj.inputsArray.map(el => el.validField === true);
     updatedInputFieldObj = {...updatedInputFieldObj, formIsValid: checkIfFormIsValid.every(x => x === true)};
 
-
-    return {
-        ...state,
-        commentReplyInputForm: updatedInputFieldObj
-    };
+    switch(action.formName) {
+        case 'commentReplyInputForm':
+            return {
+                ...state,
+                commentReplyInputForm: updatedInputFieldObj
+            };
+        default:
+            return {...state}
+    }
 }
 
 const replyCommentBlogListStandardPage = (state, action) => {
@@ -618,7 +609,6 @@ const setCommentsButtonClickedStateForBlogListStandardPage = (state, action) => 
     }; 
 }
 
-
 const activateRecentPostForBlogListStandardPage = (state, action) => {
     let updatedRecentPosts = [...state.recentPosts.items];
     let recentPost;
@@ -658,8 +648,6 @@ const activateRecentPostForBlogListStandardPage = (state, action) => {
 
 const blogListStandardPageReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE:
-            return initSearchInputFormForBlogListStandardPage (state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_CATEGORY:
             return activateListStandardBlogCategory (state, action);
         case actionTypes.ACTIVATE_LIST_STANDARD_BLOG_TAG:

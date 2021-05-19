@@ -477,6 +477,7 @@ export const BlogListStandardPage = (props) => {
                         <BlogInfoBoard
                             page="blogListStandardPage"
                             searchFormInputsArray={props.blogListStandardPage.searchInputForm.inputsArray}
+                            searchInputForm={props.blogListStandardPage.searchInputForm}
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
                             recentPostsList={props.blogListStandardPage.recentPosts}
@@ -490,6 +491,8 @@ export const BlogListStandardPage = (props) => {
                             fetchFakeData={props.fetchBlogRecentPostsForBlogListStandardPageDataSuccess}
                             clearState={props.clearBlogListSingleItemStateForBlogListStandardPage}
                             activateRecentPost={props.activateRecentPostForBlogListStandardPage}
+                            setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationForBlogListStandardPage}
+                            search={props.searchBlogListStandardPage}
                         />
                     </div>
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
@@ -537,6 +540,7 @@ export default connect(
             initInputFormOfBlogCommentReplyForBlogListStandardPage: bindActionCreators(Actions.initInputFormOfBlogCommentReplyForBlogListStandardPage, dispatch),
             setInputFiledValueAndCheckValidationForBlogListStandardPage: bindActionCreators(Actions.setInputFiledValueAndCheckValidationForBlogListStandardPage, dispatch),
             replyCommentBlogListStandardPage: bindActionCreators(Actions.replyCommentBlogListStandardPage, dispatch),
+            searchBlogListStandardPage: bindActionCreators(Actions.searchBlogListStandardPage, dispatch),
             fetchStandardPostBlogData: bindActionCreators(Services.fetchStandardPostBlogData, dispatch),
             fetchGalleryPostBlogData: bindActionCreators(Services.fetchGalleryPostBlogData, dispatch),
             fetchLinkPostBlogData: bindActionCreators(Services.fetchLinkPostBlogData, dispatch),

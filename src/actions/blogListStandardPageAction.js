@@ -80,13 +80,6 @@ export function fetchBlogRecentPostsForBlogListStandardPageDataFailur(err) {
     };
 };
 
-export function initSearchInputFormForBlogListStandardPage(obj) {
-    return { 
-        type: actionTypes.INIT_SEARCH_INPUT_FORM_FOR_BLOG_LIST_STANDARD_PAGE,
-        obj: obj
-    };
-};
-
 export function activateListStandardBlogCategory(categoryIsActive, categoryName) {
     return { 
         type: actionTypes.ACTIVATE_LIST_STANDARD_BLOG_CATEGORY,

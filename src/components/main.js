@@ -92,6 +92,7 @@ import ScrollSliderPage from './Pages/ElementsPages/ScrollSliderPage/scrollSlide
 import PortfolioProjectShowcase from './Pages/ElementsPages/PortfolioProjectShowcase/portfolioProjectShowcase';
 import BlogListStandardPage from './Pages/BlogPages/BlogListStandardPage/blogListStandardPage';
 import PostSinglesStandardPage from './Pages/BlogPages/PostSinglesStandardPage/postSinglesStandardPage';
+import SearchResultPage from './Pages/SearchResultPage/searchResultPage';
 
 /**
  * Actions
@@ -215,6 +216,11 @@ export const Main = (props) => {
     return(
         <div className={props.unmountComp.state ? "main-unmount" : "main"}>
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/search-result"}
+                    component={SearchResultPage}
+                />
                 <Route
                     exact 
                     path={props.match.url + "/blog-list-standard-item/video-post/:id"}

@@ -187,3 +187,27 @@ export function setFullScreenState(val) {
         val: val
     };
 };
+
+
+export function initSearchInputFormThroughWebsite(obj) {
+    return { 
+        type: actionTypes.INIT_SEARCH_INPUT_FORM_THROUGH_WEBSITE,
+        obj: obj
+    };
+};
+
+export function setInputFiledValueAndCheckValidationThroughWebsite(obj, e, id, formName) {
+    return { 
+        type: actionTypes.SET_INPUT_FIELD_VALUE_AND_CHECK_VALIDATION_THROUGH_WEBSITE,
+        obj: obj,
+        event: e,
+        inputFieldId: id,
+        formName: formName
+    };
+};
+
+export function searchThroughWebsite() {
+    return { 
+        type: actionTypes.SEARCH_THROUGH_WEBSITE
+    };
+};
