@@ -27,11 +27,8 @@ import './searchResultPage.scss';
 
 import Loading from '../../SmallParts/Loading/loading';
 import Toolbar from '../../Parts/Toolbar/toolbar';
-import BannerImage from '../../SmallParts/BannerImage/bannerImage';
-import OverlayImage from '../../SmallParts/OverlayImage/overlayImage';
-import SimpleOverlayImage from '../../SmallParts/SimpleOverlayImage/simpleOverlayImage';
-import SlideFromImageLeft from '../../SmallParts/SlideFromImageLeft/slideFromImageLeft';
-import StandardPortfolioItem from '../../SmallParts/StandardPortfolioItem/standardPortfolioItem';
+import Input from '../../../library/Input/input';
+import Icon from '../../SmallParts/Icon/icon';
 import Footer from '../../Parts/Footer/footer';
 import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
@@ -59,10 +56,13 @@ import * as Selectors from '../../../reducers/selectors';
 
 import { 
     H15,
-    H45
+    H45,
+    H65
 } from '../../UtilityComponents';
 
 import * as Utility from '../../../utility';
+
+import uuid from "uuid";
 
 /**
  * Hooks
@@ -79,6 +79,10 @@ import {
 import * as FakeData from '../../../fakeData';
 import * as Environment from '../../../constants/environments';
 
+import {
+    searchThroughWebsiteSearchInputForm
+} from '../../../constants/inputForm';
+
 /**
  * SearchResultPage component definition and export
  */
@@ -92,6 +96,7 @@ export const SearchResultPage = (props) => {
     const size = useWindowSize();
     const [scrollingUp, setScrollingUp] = useState(false);
     const [showComponent, setShowComponent] = useState(false);
+    const [searchIsHover, setSearchIsHover] = useState("init");
     
     /**
      * Methods
@@ -102,9 +107,15 @@ export const SearchResultPage = (props) => {
 
         props.setUnmountComponentValues(false, "");
 
+        // Init imput forms
+
+        props.initSearchInputFormThroughWebsite(searchThroughWebsiteSearchInputForm);
+
         // Scroll to the top of the screen
 
         window.scrollTo(0, 0);
+
+        // Show Component data if the search value exists
 
         setComponentData();
 
@@ -185,11 +196,152 @@ export const SearchResultPage = (props) => {
         }
     }
 
+    const handleMouseEnter = (opt) => {
+        switch(opt){
+            case 'searchIcon':
+                setSearchIsHover("on")
+                break;
+        }
+    }
+
+    const handleMouseLeave = (opt) => {
+        switch(opt){
+            case 'searchIcon':
+                setSearchIsHover("off")
+                break;
+        }
+    }
+
     const setComponentData = () => {
         if(!Utility.isObjEmpty(props.searchResultPage.searchInputFormResponse.item)){
             setShowComponent(true);
         }else{
             setShowComponent(false);
+        }
+    }
+    const onSearchClick = (e) => {
+        // Do nothing on right mouse click
+
+        if(e.button === 2) return;
+
+        if(e.button !== 1){
+
+            searchHandler();
+
+            /**
+             * Add fading effect on the unmounted component and remember 
+             * information of the unmounted component on left mouse click 
+             */
+
+            // props.setUnmountComponentValues(true, "search-result");
+
+            // Fire up unmountComponent epic
+        
+            // props.unmountComponent(null, null,  props.page, e.button);
+        }
+    }
+
+    const searchHandler = () => {
+        
+        let info;
+
+        /**
+         * Check if the input form is valid, if it is valid 
+         * then initialize input fields (state), if it is not valid
+         * then show needed error messages
+         */
+    
+        props.searchThroughWebsite();
+
+        // Collect all the information you neet to post
+
+        info = {
+            id: uuid(),
+            searchValue: `${props.searchResultPage.searchInputForm.inputsArray.find(x => x.controlName === "search").value}`,
+        }
+
+        console.log("Form", info)
+        // Search the information
+        
+        if(process.env.ENVIRONMENT === Environment.PRODUCTION){
+        // Fetch mock data (not required to run -> npm run server)
+
+            // postReplyFakeData(props.fakeData, props.cardIdFromPathname, info);
+        }else{
+            // Fetch data (required to run -> npm run server)
+
+            props.fetchSearchThroughWebsiteResutData(info);
+        }
+        
+        // Clear input fields (visually) if the form is valid
+
+        if(props.searchResultPage.searchInputForm.formIsValid){
+            clearInputValue("searchThroughWebsiteInputFormSearch");
+        }
+
+        // Clear input field (visually) if the entered value does not match to the rules of that field
+
+        props.searchResultPage.searchInputForm.inputsArray.map(el => {
+            if(!el.validField){
+                clearInputValue(el.inputID);
+            }
+        });
+    }
+
+    const inputChangeHandler = (e, inputFieldId, inputForm) => {
+        // Set input value and check validation
+
+        props.setInputFiledValueAndCheckValidationThroughWebsite(props.searchResultPage.searchInputForm, e, inputFieldId, `${inputForm}`);
+    }
+
+    const clearInputValue = (fieldId) => {
+        // Clear input value
+
+        document.getElementById(fieldId).value = '';
+    }
+
+    const renderSearchForm = (searchInputForm) => {
+        if(searchInputForm.inputsArray){
+            return(
+                <>{searchInputForm.inputsArray.map((el, i)=>{
+                    return(
+                        <div 
+                            key={i} 
+                            className="search-result-page-search-wrapper"
+                        >
+                            <Input
+                                className="search-result-page-search-input"
+                                onChange={(event) => inputChangeHandler(event, el.id, 'searchInputForm')}
+                                elementType={el.elementType}
+                                rows={el.elementConfig.rows}
+                                validField={el.validField}
+                                touched={el.touched}
+                                erroeMessages={el.errorMessage}
+                                inputID={el.inputID}
+                                textareaID={el.textareaID}
+                                placeholder={el.elementConfig.placeholder}
+                                options={el.elementConfig.options}
+                            />
+                            <div
+                                className="search-result-page-search-button"
+                                onMouseEnter={() => handleMouseEnter("searchIcon")}
+                                onMouseLeave={() => handleMouseLeave("searchIcon")}
+                                onMouseDown={(e) => onSearchClick(e)}
+                            >
+                                <Icon 
+                                    iconType="fontAwesome"
+                                    // iconName={el.name} 
+                                    icon="faSearch"
+                                    iconSize="lg"
+                                    classNameOpt="searchIcon"
+                                    isHover={searchIsHover}
+                                />
+                            </div>
+                        </div>
+                    )
+                })}
+            </>
+            )
         }
     }
 
@@ -199,8 +351,9 @@ export const SearchResultPage = (props) => {
                 return(
                     <div 
                         key={i}
-                        className="search-result-page-section-1-item"
-                    >jkl
+                        // className="search-result-page-item"
+                    >
+                        
                     </div>
                 )
             })}</div>
@@ -253,7 +406,11 @@ export const SearchResultPage = (props) => {
                     <H45 className="h45-nero-lustria">Search results for: {showComponent ? props.searchResultPage.searchInputFormResponse.item?.searchInfo.searchValue : ""}</H45>
                 </div>
                 <div className="grey-line"/>
-                {showComponent ? rendeSearchResultDataContent(props.searchResultPage.searchInputFormResponse) : null}
+                <div className="search-result-page-data">
+                    <H65 className="h65-black-poppins">New search:</H65>
+                    {renderSearchForm(props.searchResultPage.searchInputForm)}
+                    {showComponent ? rendeSearchResultDataContent(props.searchResultPage.searchInputFormResponse) : null}
+                </div>
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -269,29 +426,15 @@ export default connect(
     },
     (dispatch) => {
         return {
-            fetchBannerPageSection1Data: bindActionCreators(Services.fetchBannerPageSection1Data, dispatch),
-            fetchBannerPageSection1DataSuccess: bindActionCreators(Actions.fetchBannerPageSection1DataSuccess, dispatch),
-            fetchBannerPageSection2Data: bindActionCreators(Services.fetchBannerPageSection2Data, dispatch),
-            fetchBannerPageSection2DataSuccess: bindActionCreators(Actions.fetchBannerPageSection2DataSuccess, dispatch),
-            fetchBannerPageSection3Data: bindActionCreators(Services.fetchBannerPageSection3Data, dispatch),
-            fetchBannerPageSection3DataSuccess: bindActionCreators(Actions.fetchBannerPageSection3DataSuccess, dispatch),
-            fetchBannerPageSection4Data: bindActionCreators(Services.fetchBannerPageSection4Data, dispatch),
-            fetchBannerPageSection4DataSuccess: bindActionCreators(Actions.fetchBannerPageSection4DataSuccess, dispatch),
-            fetchBannerPageSection5Data: bindActionCreators(Services.fetchBannerPageSection5Data, dispatch),
-            fetchBannerPageSection5DataSuccess: bindActionCreators(Actions.fetchBannerPageSection5DataSuccess, dispatch),
-            fetchBannerPageSection6Data: bindActionCreators(Services.fetchBannerPageSection6Data, dispatch),
-            fetchBannerPageSection6DataSuccess: bindActionCreators(Actions.fetchBannerPageSection6DataSuccess, dispatch),
-            fetchBannerPageSection7Data: bindActionCreators(Services.fetchBannerPageSection7Data, dispatch),
-            fetchBannerPageSection7DataSuccess: bindActionCreators(Actions.fetchBannerPageSection7DataSuccess, dispatch),
-            fetchBannerPageSection8Data: bindActionCreators(Services.fetchBannerPageSection8Data, dispatch),
-            fetchBannerPageSection8DataSuccess: bindActionCreators(Actions.fetchBannerPageSection8DataSuccess, dispatch),
             setUnmountComponentValues: bindActionCreators(Actions.setUnmountComponentValues, dispatch),
             unmountComponent: bindActionCreators(Actions.unmountComponent, dispatch),
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            setBannerPageSection4IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection4IsHoveringCategory, dispatch),
-            setBannerPageSection6IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection6IsHoveringCategory, dispatch),
-            setBannerPageSection7IsHoveringCategory: bindActionCreators(Actions.setBannerPageSection7IsHoveringCategory, dispatch),        };
+            initSearchInputFormThroughWebsite: bindActionCreators(Actions.initSearchInputFormThroughWebsite, dispatch),
+            fetchSearchThroughWebsiteResutData: bindActionCreators(Services.fetchSearchThroughWebsiteResutData, dispatch),
+            setInputFiledValueAndCheckValidationThroughWebsite: bindActionCreators(Actions.setInputFiledValueAndCheckValidationThroughWebsite, dispatch),
+            searchThroughWebsite: bindActionCreators(Actions.searchThroughWebsite, dispatch),
+        };
     }
 )(SearchResultPage);
  

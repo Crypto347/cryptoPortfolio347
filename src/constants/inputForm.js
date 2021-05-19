@@ -169,7 +169,7 @@ export const blogListStandardSearchInputForm = {
             inputFieldName: "Search",
             elementType: 'input',
             elementConfig: {
-                type: 'email',
+                type: 'text',
                 placeholder: ' Search...'
             },
             value: '',
@@ -178,7 +178,30 @@ export const blogListStandardSearchInputForm = {
             touched: false,
             errorMessage: [],
             type: "search",
-            inputID: 'blogListCommentReplyInputFormSearch',
+            inputID: 'blogListStandardInputFormSearch',
+            controlName: "search"
+        }
+    ]
+}
+
+export const searchThroughWebsiteSearchInputForm = {
+    formIsValid: false,
+    inputsArray: [
+        { 
+            id: 1,
+            inputFieldName: "Search",
+            elementType: 'input',
+            elementConfig: {
+                type: 'text',
+                placeholder: ' Type here'
+            },
+            value: '',
+            validation: [],
+            validField: false,
+            touched: false,
+            errorMessage: [],
+            type: "search",
+            inputID: 'searchThroughWebsiteInputFormSearch',
             controlName: "search"
         }
     ]

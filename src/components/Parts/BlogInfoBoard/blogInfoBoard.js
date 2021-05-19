@@ -215,7 +215,7 @@ export const BlogInfoBoard = (props) => {
         // Clear input fields (visually) if the form is valid
 
         if(props.searchInputForm.formIsValid){
-            clearInputValue("blogListCommentReplyInputFormSearch");
+            clearInputValue("blogListStandardInputFormSearch");
         }
 
         // Clear input field (visually) if the entered value does not match to the rules of that field
