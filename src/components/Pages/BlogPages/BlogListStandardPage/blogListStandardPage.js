@@ -476,8 +476,8 @@ export const BlogListStandardPage = (props) => {
                         </div>
                         <BlogInfoBoard
                             page="blogListStandardPage"
-                            searchFormInputsArray={props.searchData.searchInputForm.inputsArray}
-                            searchInputForm={props.searchData.searchInputForm}
+                            searchFormInputsArray={props.searchResultPage.searchInputForm.inputsArray}
+                            searchInputForm={props.searchResultPage.searchInputForm}
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
                             recentPostsList={props.blogListStandardPage.recentPosts}
@@ -512,7 +512,7 @@ export default connect(
     (state) => {
         return {
             blogListStandardPage: Selectors.getBlogListStandardPageState(state),
-            searchData: Selectors.getSearchDataState(state),
+            searchResultPage: Selectors.getSearchResultPageState(state),
             unmountComp: Selectors.getUnmountComponentState(state),
             menuDotsState: Selectors.getMenuDotsStateState(state),
             showBackToTop: Selectors.getShowBackToTopState(state),

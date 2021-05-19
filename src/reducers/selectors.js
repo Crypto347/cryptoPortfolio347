@@ -16,13 +16,6 @@ export const getMenuFullScreenItemsState = createSelector(
     (x) => x
 );
 
-const getSearchData = (state) => state.home.searchData;
-
-export const getSearchDataState = createSelector(
-    [getSearchData],
-    (x) => x
-);
-
 const getHeaderImages = (state) => state.headerImages;
 
 export const getHeaderImagesState = createSelector(
@@ -559,5 +552,12 @@ const getBlogListStandardPage = (state) => state.blogListStandardPage;
 
 export const getBlogListStandardPageState = createSelector(
     [getBlogListStandardPage],
+    (x) => x
+);
+
+const getSearchResultPage = (state) => state.searchResultPage;
+
+export const getSearchResultPageState = createSelector(
+    [getSearchResultPage],
     (x) => x
 );

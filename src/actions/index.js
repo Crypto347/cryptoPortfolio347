@@ -54,3 +54,4 @@ export * from './blockquotePageActions';
 export * from './scrollSliderPageActions';
 export * from './portfolioProjectShowcasePageActions';
 export * from './blogListStandardPageAction';
+export * from './searchResultPageActions';

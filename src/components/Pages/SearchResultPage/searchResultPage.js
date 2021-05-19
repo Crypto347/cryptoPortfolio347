@@ -62,6 +62,8 @@ import {
     H45
 } from '../../UtilityComponents';
 
+import * as Utility from '../../../utility';
+
 /**
  * Hooks
  */
@@ -194,7 +196,15 @@ export const SearchResultPage = (props) => {
         }
     }
 
-    const renderBannerPageSection1DataContent = () => {
+    const showSearchValue = () => {
+        if(!Utility.isObjEmpty(props.searchResultPage.searchInputFormResponse.item)){
+            return props.searchResultPage.searchInputFormResponse.item?.searchInfo.searchValue;
+        }else{
+            return "";
+        }
+    }
+
+    const rendeSearchResultDataContent = () => {
         if(props.bannerPage.section1Data.loading && !props.bannerPage.section1Data.error){
             return(
                 <div 
@@ -250,14 +260,14 @@ export const SearchResultPage = (props) => {
      */
 
     return(
-        <div className="banner-page" id="bannerPage">
+        <div className="search-result-page" id="searchResultPage">
             {renderToolbars()}
-            <div className="banner-page-wrapper">
-                <div className="banner-page-header">
-                    <H45 className="h45-nero-lustria">Search results for: {props.searchData.searchInputFormResponse.item.searchValue}</H45>
+            <div className="search-result-page-wrapper">
+                <div className="search-result-page-header">
+                    <H45 className="h45-nero-lustria">Search results for: {showSearchValue()}</H45>
                 </div>
                 <div className="grey-line"/>
-                {/* {renderBannerPageSection1DataContent()} */}
+                {/* {rendeSearchResultDataContent()} */}
             </div>
             <Footer/>
             {props.showBackToTop ? <BackToTop/> : null}
@@ -268,7 +278,7 @@ export const SearchResultPage = (props) => {
 export default connect(
     (state) => {
         return {
-            searchData: Selectors.getSearchDataState(state),
+            searchResultPage: Selectors.getSearchResultPageState(state),
         };
     },
     (dispatch) => {

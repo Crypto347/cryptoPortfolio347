@@ -61,6 +61,7 @@ import blockquotePageReducer from './blockquotePageReducer';
 import scrollSliderPageReducer from './scrollSliderPageReducer';
 import portfolioProjectShowcasePageReducer from './portfolioProjectShowcasePageReducer';
 import blogListStandardPageReducer from './blogListStandardPageReducer';
+import searchResultPageReducer from './searchResultPageReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -120,4 +121,5 @@ export default (history) => combineReducers({
     scrollSliderPage: scrollSliderPageReducer,
     portfolioProjectShowcasePage: portfolioProjectShowcasePageReducer,
     blogListStandardPage: blogListStandardPageReducer,
+    searchResultPage: searchResultPageReducer
 });
