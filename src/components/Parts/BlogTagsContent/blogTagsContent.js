@@ -97,7 +97,7 @@ export const BlogTagsContent = (props) => {
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
             // Fetch mock data (not required to run -> npm run server)
             
-            // fetchFakeData(setPageData(props.page, "fakeData"), setPageData(props.page, "activePageNumber"), props.page, categoryName);
+            fetchFakeData(setPageData(props.page, "fakeData"), setPageData(props.page, "activePageNumber"), props.page, tagName);
         }else{
             // Fetch data (required to run -> npm run server)
 
@@ -114,14 +114,14 @@ export const BlogTagsContent = (props) => {
         // return () => window.removeEventListener('scroll', handleScroll);
     }, [props.blogListStandardPage.activeTag.tagName]);
  
-    const fetchFakeData = (fakeData, activePageId, page, categoryName) => {
+    const fetchFakeData = (fakeData, activePageId, page, tagName) => {
         let blogListPage = [...fakeData];
-        let categoriesArray = [];
+        let tagsArray = [];
 
         blogListPage.map(el => {
-            el.categories.map(el2 => {
-                if(el2.key === categoryName){
-                    categoriesArray.push(el)
+            el.tags.map(el2 => {
+                if(el2.key === tagName){
+                    tagsArray.push(el);
                 }
             })
         });
@@ -130,8 +130,8 @@ export const BlogTagsContent = (props) => {
         let lastIndex = activePageId * 6 - 1;
     
         let updatedBlogList = {
-            numberOfPages: !Number.isInteger(categoriesArray.length/6) ? Math.floor(categoriesArray.length/6) + 1 : Math.floor(categoriesArray.length/6),
-            blogListPage: categoriesArray.slice(firstIndex - 1, lastIndex + 1)
+            numberOfPages: !Number.isInteger(tagsArray.length/6) ? Math.floor(tagsArray.length/6) + 1 : Math.floor(tagsArray.length/6),
+            blogListPage: tagsArray.slice(firstIndex - 1, lastIndex + 1)
         };
 
         let updatedJson = [...updatedBlogList.blogListPage];
