@@ -414,6 +414,7 @@ const activateListStandardBlogItem = (state, action) => {
 }
 
 const clearBlogListSingleItemStateForBlogListStandardPage = (state, action) => {
+    console.log("CLEARSTATE")
     return {
         ...state,
         postBlogContent: {

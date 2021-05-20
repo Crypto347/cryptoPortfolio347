@@ -210,7 +210,7 @@ export const BlogInfoBoard = (props) => {
         }else{
             // Fetch data (required to run -> npm run server)
 
-            props.fetchSearchThroughWebsiteResutData(info);
+            props.fetchSearchThroughWebsiteResutData(info, props.searchResultPagePaginationActivePageId);
         }
         
         // Clear input fields (visually) if the form is valid

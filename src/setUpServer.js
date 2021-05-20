@@ -30016,7 +30016,6 @@ app.post('/api/search-result-through-website', (req, res) => {
         searchResultData: searchResult.slice(firstIndex - 1, lastIndex + 1)
     };
 
-    
     let obj = {
         searchInfo: info,
         searchResult: updatedSearchResult

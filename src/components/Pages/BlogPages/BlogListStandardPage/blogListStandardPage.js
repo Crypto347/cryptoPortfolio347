@@ -478,6 +478,7 @@ export const BlogListStandardPage = (props) => {
                             page="blogListStandardPage"
                             searchFormInputsArray={props.searchResultPage.searchInputForm.inputsArray}
                             searchInputForm={props.searchResultPage.searchInputForm}
+                            searchResultPagePaginationActivePageId={props.searchResultPage.activePageId}
                             categoryList={props.blogListStandardPage.categoriesList}
                             tagsList={props.blogListStandardPage.tagsList}
                             recentPostsList={props.blogListStandardPage.recentPosts}
