@@ -302,6 +302,7 @@ export const Toolbar = (props) => {
             case 'textMarqueePage':
             case 'scrollSliderPage':
             case 'portfolioProjectShowcasePage':
+            case 'searchResultPage':
                 // props.setMenuDotsState("on", page)
                 // return;
             case 'portfolioGallery':

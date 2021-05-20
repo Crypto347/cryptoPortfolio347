@@ -29,6 +29,7 @@ import Loading from '../../SmallParts/Loading/loading';
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import Input from '../../../library/Input/input';
 import Icon from '../../SmallParts/Icon/icon';
+import SearchItem from '../../SmallParts/SearchItem/searchItem';
 import Footer from '../../Parts/Footer/footer';
 import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
@@ -57,7 +58,9 @@ import * as Selectors from '../../../reducers/selectors';
 import { 
     H15,
     H45,
-    H65
+    H65,
+    EH10,
+    EH50
 } from '../../UtilityComponents';
 
 import * as Utility from '../../../utility';
@@ -130,11 +133,11 @@ export const SearchResultPage = (props) => {
             props.setMenuDotsState("init", "");
             props.setShowBackToTopComponent(false);
         }
-    }, []);
+    }, [props.searchResultPage.searchInputFormResponse.loading]);
 
     const handleOnWheel = (e) => {
         let scrollHeight = document.body.scrollTop;
-        let el = document.getElementById("bannerPage");
+        let el = document.getElementById("searchResultPage");
 
         // Show or hide BackToTop component
 
@@ -168,12 +171,12 @@ export const SearchResultPage = (props) => {
                         style="smallScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bannerPage"
+                        page="searchResultPage"
                     />
                     <Toolbar 
                         style="smallScreen"
                         toolbarMainColor="regular"
-                        page="bannerPage"
+                        page="searchResultPage"
                     />
                 </>
             )
@@ -184,12 +187,12 @@ export const SearchResultPage = (props) => {
                         style="regularScreenAnimated" 
                         scrollingUp={scrollingUp}
                         toolbarMainColor="white"
-                        page="bannerPage"
+                        page="searchResultPage"
                     />
                     <Toolbar 
                         style="regularScreenWhite"
                         toolbarMainColor="white"
-                        page="bannerPage"
+                        page="searchResultPage"
                     />
                 </>
             )
@@ -219,6 +222,7 @@ export const SearchResultPage = (props) => {
             setShowComponent(false);
         }
     }
+
     const onSearchClick = (e) => {
         // Do nothing on right mouse click
 
@@ -227,7 +231,7 @@ export const SearchResultPage = (props) => {
         if(e.button !== 1){
 
             searchHandler();
-
+            
             /**
              * Add fading effect on the unmounted component and remember 
              * information of the unmounted component on left mouse click 
@@ -258,6 +262,7 @@ export const SearchResultPage = (props) => {
         info = {
             id: uuid(),
             searchValue: `${props.searchResultPage.searchInputForm.inputsArray.find(x => x.controlName === "search").value}`,
+            page: "blogListStandardPage" //by default
         }
 
         console.log("Form", info)
@@ -345,6 +350,35 @@ export const SearchResultPage = (props) => {
         }
     }
 
+    const setPageData = (page, opt) => {
+        switch(opt){
+            case 'clearState':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.clearBlogListSingleItemStateForBlogListStandardPage;
+                }
+            return;
+            case 'activateBlogItem':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogItem;
+                }
+            return;
+            case 'activateBlogCategory':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogCategory;
+                }
+            return;
+            case 'activateBlogTag':
+                switch(page){
+                    case 'blogListStandardPage':
+                        return props.activateListStandardBlogTag;
+                }
+            return;
+        }
+    }
+
     const renderResult = (arr) => {
         return(
             <div className="search-result-page-result-wrapper">{arr.map((el, i) => {
@@ -353,14 +387,21 @@ export const SearchResultPage = (props) => {
                         key={i}
                         // className="search-result-page-item"
                     >
-                        
+                        <SearchItem
+                            elData={el}
+                            clearActivityOfMenuItems={props.clearActivityOfMenuItems}
+                            clearState={setPageData(props.searchResultPage.searchInputFormResponse.item.searchInfo.page, "clearState")}
+                            activateBlogItem={setPageData(props.searchResultPage.searchInputFormResponse.item.searchInfo.page, "activateBlogItem")}
+                            activateBlogCategory={setPageData(props.searchResultPage.searchInputFormResponse.item.searchInfo.page, "activateBlogCategory")}
+                            activateBlogTag={setPageData(props.searchResultPage.searchInputFormResponse.item.searchInfo.page, "activateBlogTag")}
+                        />
                     </div>
                 )
             })}</div>
         )
     }
 
-    const rendeSearchResultDataContent = (data) => {
+    const renderSearchResultDataContent = (data) => {
         if(data.loading && !data.error){
             return(
                 <div 
@@ -409,7 +450,10 @@ export const SearchResultPage = (props) => {
                 <div className="search-result-page-data">
                     <H65 className="h65-black-poppins">New search:</H65>
                     {renderSearchForm(props.searchResultPage.searchInputForm)}
-                    {showComponent ? rendeSearchResultDataContent(props.searchResultPage.searchInputFormResponse) : null}
+                    <EH10/>
+                    <H15 className="h13-nobel-lustria-animated">If you are not happy with the results below please do another search</H15>
+                    <EH50/>
+                    {showComponent ? renderSearchResultDataContent(props.searchResultPage.searchInputFormResponse) : null}
                 </div>
             </div>
             <Footer/>
@@ -434,6 +478,11 @@ export default connect(
             fetchSearchThroughWebsiteResutData: bindActionCreators(Services.fetchSearchThroughWebsiteResutData, dispatch),
             setInputFiledValueAndCheckValidationThroughWebsite: bindActionCreators(Actions.setInputFiledValueAndCheckValidationThroughWebsite, dispatch),
             searchThroughWebsite: bindActionCreators(Actions.searchThroughWebsite, dispatch),
+            clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
+            clearBlogListSingleItemStateForBlogListStandardPage: bindActionCreators(Actions.clearBlogListSingleItemStateForBlogListStandardPage, dispatch),
+            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
+            activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
+            activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
         };
     }
 )(SearchResultPage);

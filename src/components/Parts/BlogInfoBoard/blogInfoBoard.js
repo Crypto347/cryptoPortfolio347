@@ -197,6 +197,7 @@ export const BlogInfoBoard = (props) => {
         info = {
             id: uuid(),
             searchValue: `${props.searchInputForm.inputsArray.find(x => x.controlName === "search").value}`,
+            page: props.page
         }
 
         console.log("Form", info)

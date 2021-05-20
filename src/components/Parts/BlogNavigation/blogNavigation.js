@@ -208,7 +208,6 @@ export const BlogNavigation = (props) => {
                 return Images.VIDEO_COVER_IMG_3;
             case 'blogCardVideoPostCoverImg3':
                 return Images.VIDEO_COVER_IMG_4;
-                
             default:
                 return "";
         }
