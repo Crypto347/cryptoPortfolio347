@@ -946,11 +946,18 @@ export const BLOG_CARD_STANDARD_POST_COVER_IMG_3 = BlogCardStandardPostCoverImg3
 import SearchResultImg1 from '../images/searchResult/ducminh-nguyen-hG3H6N6VwCY-unsplash-search-result.png';
 import SearchResultImg2 from '../images/searchResult/fabian-irsara-67l-QujB14w-unsplash-search-result.png';
 import SearchResultImg3 from '../images/searchResult/sincerely-media-rogLvqMp9jA-unsplash-search-result.png';
+import SearchResultImg4 from '../images/searchResult/videoCover_2_search-result.png';
+import SearchResultImg5 from '../images/searchResult/francesco-gallarotti-ruQHpukrN7c-unsplash-blog-card-search-result.png';
+import SearchResultImg6 from '../images/searchResult/green-chameleon-WvuTnXz1hSc-unsplash-blog-card-search-result.png';
+import SearchResultImg7 from '../images/searchResult/fernando-lavin-fi5YSQfxbVk-unsplash-blog-card-search-result.png';
 
 export const SEARCH_RESULT_IMG_1 = SearchResultImg1;
 export const SEARCH_RESULT_IMG_2 = SearchResultImg2;
 export const SEARCH_RESULT_IMG_3 = SearchResultImg3;
-
+export const SEARCH_RESULT_IMG_4 = SearchResultImg4;
+export const SEARCH_RESULT_IMG_5 = SearchResultImg5;
+export const SEARCH_RESULT_IMG_6 = SearchResultImg6;
+export const SEARCH_RESULT_IMG_7 = SearchResultImg7;
 
 /**
  * Video covers

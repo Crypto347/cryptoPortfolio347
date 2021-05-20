@@ -60,6 +60,14 @@ export const SearchItem = (props) => {
                 return Images.SEARCH_RESULT_IMG_2;
             case 'blogCardStandardPostCoverImg3':
                 return Images.SEARCH_RESULT_IMG_3;
+            case 'blogCardVideoPostCoverImg1':
+                return Images.SEARCH_RESULT_IMG_4;
+            case 'blogCardQuotePostCoverImg4':
+                return Images.SEARCH_RESULT_IMG_5;
+            case 'blogCardGalleryPostCoverImg5':
+                return Images.SEARCH_RESULT_IMG_6;
+            case 'blogCardQuotePostCoverImg3':
+                return Images.SEARCH_RESULT_IMG_7;
             default:
                 return "";
         }
