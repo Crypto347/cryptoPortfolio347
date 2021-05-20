@@ -143,8 +143,11 @@ export const Pagination = (props) => {
             
             }else{
                 // Fetch data (required to run -> npm run server)
-                
-                props.fetchPageData(_pageId, props.page, props.filterParam);
+                if(props.page === "searchResultPage"){
+                    props.fetchPageData(props.infoFromSearch, _pageId);
+                }else{
+                    props.fetchPageData(_pageId, props.page, props.filterParam);
+                }
             }
 
             props.activatePageNumber(_pageId);

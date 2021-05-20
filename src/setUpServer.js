@@ -30006,11 +30006,27 @@ app.post('/api/search-result-through-website', (req, res) => {
         },
     ]
 
+    let firstIndex = req.body.activePageId * 6 - 5;
+    let lastIndex = req.body.activePageId * 6 - 1;
+    
+    let updatedSearchResult;
+
+    updatedSearchResult = {
+        numberOfPages: !Number.isInteger(searchResult.length/6) ? Math.floor(searchResult.length/6) + 1 : Math.floor(searchResult.length/6),
+        searchResultData: searchResult.slice(firstIndex - 1, lastIndex + 1)
+    };
+
+    
     let obj = {
         searchInfo: info,
-        searchResult: searchResult
+        searchResult: updatedSearchResult
     }
-    res.json(obj);
+
+    if(!updatedSearchResult) {
+        res.status(404).send("The search data was not found");
+    }else{
+        res.json(obj);
+    }
 });
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);

@@ -42,3 +42,17 @@ export function searchThroughWebsite() {
         type: actionTypes.SEARCH_THROUGH_WEBSITE
     };
 };
+
+export function initSearchResultPagePagination(numOfPages) {
+    return { 
+        type: actionTypes.INIT_SEARCH_RESULT_PAGE_PAGINATION,
+        numOfPages: numOfPages
+    };
+};
+
+export function activatePageNumberForSearchResultPage(activePageId) {
+    return { 
+        type: actionTypes.ACTIVATE_PAGE_NUMBER_FOR_SEARCH_RESULT_PAGE,
+        activePageId: activePageId
+    };
+};

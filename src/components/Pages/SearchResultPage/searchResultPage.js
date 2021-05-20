@@ -30,6 +30,7 @@ import Toolbar from '../../Parts/Toolbar/toolbar';
 import Input from '../../../library/Input/input';
 import Icon from '../../SmallParts/Icon/icon';
 import SearchItem from '../../SmallParts/SearchItem/searchItem';
+import Pagination from '../../Parts/Pagination/pagination';
 import Footer from '../../Parts/Footer/footer';
 import BackToTop from '../../SmallParts/BackToTop/backToTop';
 
@@ -275,7 +276,7 @@ export const SearchResultPage = (props) => {
         }else{
             // Fetch data (required to run -> npm run server)
 
-            props.fetchSearchThroughWebsiteResutData(info);
+            props.fetchSearchThroughWebsiteResutData(info, props.searchResultPage.activePageId);
         }
         
         // Clear input fields (visually) if the form is valid
@@ -417,7 +418,19 @@ export const SearchResultPage = (props) => {
         }
         if(!data.loading && !data.error){
             return(
-                <>{renderResult(data.item.searchResult)}</>
+                <>
+                    {renderResult(data.item.searchResult.searchResultData)}
+                    <Pagination
+                        page="searchResultPage"
+                        infoFromSearch={props.searchResultPage.searchInputFormResponse.item}
+                        activePageNumber={props.searchResultPage.activePageId}
+                        pagesArray={props.searchResultPage.pagesArray}
+                        fetchPageData={props.fetchSearchThroughWebsiteResutData}
+                        // fakeData={FakeData.blogListStandardPage}
+                        // fetchFakeData={(fakeData, activePageId) => fetchFakeData(fakeData, activePageId)}
+                        activatePageNumber={props.activatePageNumberForSearchResultPage}
+                    />
+                </>
             )
         }
         if(!data.loading && data.error){
@@ -483,6 +496,7 @@ export default connect(
             activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             activateListStandardBlogCategory: bindActionCreators(Actions.activateListStandardBlogCategory, dispatch),
             activateListStandardBlogTag: bindActionCreators(Actions.activateListStandardBlogTag, dispatch),
+            activatePageNumberForSearchResultPage: bindActionCreators(Actions.activatePageNumberForSearchResultPage, dispatch),
         };
     }
 )(SearchResultPage);

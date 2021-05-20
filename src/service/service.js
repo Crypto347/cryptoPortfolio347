@@ -2930,7 +2930,7 @@ export function fetchBlogRecentPostsData(page) {
     };
 }
 
-export function fetchSearchThroughWebsiteResutData(info) {
+export function fetchSearchThroughWebsiteResutData(info, activePageId) {
     return dispatch => {
         dispatch(Actions.fetchSearchThroughWebsiteResutDataBegin());
         return fetch(`http://localhost:3005/api/search-result-through-website`, {
@@ -2940,15 +2940,17 @@ export function fetchSearchThroughWebsiteResutData(info) {
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify({
-                info: info
+                info: info,
+                activePageId
             })
         })
         // .then(handleErrors)
         .then(res => res.json()) // to debug instead of json write text
         .then(json => {
-            // console.log(json)
+            console.log(json)
             
             dispatch(Actions.fetchSearchThroughWebsiteResutDataSuccess(json));
+            dispatch(Actions.initSearchResultPagePagination(json.searchResult.numberOfPages));
             // return json;
         })
         .catch(error => {

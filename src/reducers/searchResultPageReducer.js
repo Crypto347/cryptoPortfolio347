@@ -22,6 +22,8 @@ export const initialState = {
         loading: false,
         error: null
     },
+    activePageId: 1,
+    pagesArray: [],
 }
 
 const fetchSearchThroughWebsiteResutDataBegin = (state, action) => {
@@ -140,6 +142,42 @@ const searchThroughWebsite = (state, action) => {
     }; 
 }
 
+const initSearchResultPagePagination = (state, action) => {
+    let updatedPagesArray = Utility.getArrayOfEmptyVal(action.numOfPages);
+    updatedPagesArray = updatedPagesArray.map((el, i) => {
+        return {
+            id: i + 1,
+            active: i + 1 === state.activePageId ? true : false
+        }
+    })
+
+    return {
+        ...state,
+        pagesArray: updatedPagesArray
+    };
+}
+
+const activatePageNumberForSearchResultPage = (state, action) => {
+    let updatedPagesArray = [...state.pagesArray];
+    updatedPagesArray = updatedPagesArray.map((el, i) => {
+        return {
+            ...el,
+            active: false
+        }
+    })
+
+    let page = {...updatedPagesArray.find(item => item.id === action.activePageId), active: true};
+    let pageIndex = updatedPagesArray.findIndex(item => item.id === action.activePageId);
+
+    updatedPagesArray.splice(pageIndex, 1, page);
+    
+    return {
+        ...state,
+        activePageId: action.activePageId,
+        pagesArray: updatedPagesArray
+    };
+}
+
 const searchResultPageReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.FETCH_SEARCH_THROUGH_WEBSITE_DATA_BEGIN:
@@ -154,6 +192,10 @@ const searchResultPageReducer = (state = initialState, action) => {
             return setInputFiledValueAndCheckValidationThroughWebsite (state, action);
         case actionTypes.SEARCH_THROUGH_WEBSITE:
             return searchThroughWebsite (state, action);
+        case actionTypes.INIT_SEARCH_RESULT_PAGE_PAGINATION:
+            return initSearchResultPagePagination (state, action);
+        case actionTypes.ACTIVATE_PAGE_NUMBER_FOR_SEARCH_RESULT_PAGE:
+            return activatePageNumberForSearchResultPage(state, action);
         default: 
             return state;
     }
