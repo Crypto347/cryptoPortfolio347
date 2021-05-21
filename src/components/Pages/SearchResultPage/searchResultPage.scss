@@ -40,44 +40,16 @@
     }
 }
 
-// @media only screen and (max-width: 1120px){
-//     .search-result-page {
-//         .search-result-page-wrapper {
-//             .search-result-page-header {
-//                 padding: 90px 40px 90px 40px;
-//             }
-//             .search-result-page-section-1-data {
-//                 padding: 70px 40px 70px 40px;
-//                 width: calc(100% - 80px);
-//             }
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 860px){
-//     .search-result-page {
-//         .search-result-page-wrapper {
-//             .search-result-page-section-1-data {
-//                 padding: 70px 150px 70px 150px;
-//                 width: calc(100% - 300px);
-//                 .search-result-page-section-1-item {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 580px){
-//     .search-result-page {
-//         .search-result-page-wrapper {
-//             .search-result-page-section-1-data {
-//                 padding: 70px 40px 70px 40px;
-//                 width: calc(100% - 80px);
-//                 .search-result-page-section-1-item {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1120px){
+    .search-result-page {
+        .search-result-page-wrapper {
+            .search-result-page-header {
+                padding: 90px 40px 90px 40px;
+            }
+            .search-result-page-data {
+                padding: 70px 40px 70px 40px;
+                width: calc(100% - 80px);
+            }
+        }
+    }
+}

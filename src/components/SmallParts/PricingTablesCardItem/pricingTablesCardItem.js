@@ -24,6 +24,7 @@ import ButtonWithText from '../../../library/ButtonWithText/buttonWithText';
  */
 
 import {
+    H17,
     H19,
     H35,
     H65
@@ -75,7 +76,9 @@ export const PricingTablesCardItem = (props) => {
                 <H19 className="h19-black-poppins">/</H19>
                 <H19 className="h19-black-poppins">{props.data.price.option}</H19>
             </div>
-            <H19 className="h19-black-poppins">{props.data.price.option}</H19>
+            <div className="pricing-tables-page-card-item-description">
+                <H17 className="h17-nobel-lustria">for the new users</H17>
+            </div>
             <ButtonWithText
                 buttonText={props.data.buttonText}
                 setUnmountComponentValues={props.setUnmountComponentValues}
