@@ -422,7 +422,7 @@ export const SearchResultPage = (props) => {
                     {renderResult(data.item.searchResult.searchResultData)}
                     <Pagination
                         page="searchResultPage"
-                        infoFromSearch={props.searchResultPage.searchInputFormResponse.item}
+                        infoFromSearch={props.searchResultPage.searchInputFormResponse.item.searchInfo}
                         activePageNumber={props.searchResultPage.activePageId}
                         pagesArray={props.searchResultPage.pagesArray}
                         fetchPageData={props.fetchSearchThroughWebsiteResutData}
