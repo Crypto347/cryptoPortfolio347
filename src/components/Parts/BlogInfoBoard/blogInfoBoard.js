@@ -266,7 +266,7 @@ export const BlogInfoBoard = (props) => {
                                 className="blog-info-board-search-button"
                                 onMouseEnter={() => handleMouseEnter("searchIcon")}
                                 onMouseLeave={() => handleMouseLeave("searchIcon")}
-                                onMouseDown={(e) => onSearchClick(e)}
+                                onMouseDown={el.value !== "" ? (e) => onSearchClick(e) : null}
                             >
                                 <Icon 
                                     iconType="fontAwesome"

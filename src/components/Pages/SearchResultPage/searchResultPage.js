@@ -332,7 +332,7 @@ export const SearchResultPage = (props) => {
                                 className="search-result-page-search-button"
                                 onMouseEnter={() => handleMouseEnter("searchIcon")}
                                 onMouseLeave={() => handleMouseLeave("searchIcon")}
-                                onMouseDown={(e) => onSearchClick(e)}
+                                onMouseDown={el.value !== "" ? (e) => onSearchClick(e) : null}
                             >
                                 <Icon 
                                     iconType="fontAwesome"
