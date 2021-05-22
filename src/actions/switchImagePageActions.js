@@ -51,9 +51,9 @@ export function setSwitchImagePageIsHoveringCategory(val, pathOfIds) {
 //     };
 // };
 
-export function setHistoryPopFromPortfolioItem(val) {
-    return { 
-        type: actionTypes.SET_HISTORY_POP_FROM_PORTFOLIO_ITEM,
-        val: val
-    };
-};
+// export function setHistoryPopFromPortfolioItem(val) {
+//     return { 
+//         type: actionTypes.SET_HISTORY_POP_FROM_PORTFOLIO_ITEM,
+//         val: val
+//     };
+// };

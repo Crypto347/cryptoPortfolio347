@@ -22,7 +22,7 @@ import './blogListPostCard.scss';
  * Components
  */
 
-import Icon from '../../SmallParts/Icon/icon';
+import Icon from '../Icon/icon';
 import Audio from '../../Parts/Audio/audio';
 import Video from '../../Parts/Video/video'
 import Swiper from '../../../library/Swiper/swiper';

@@ -272,7 +272,7 @@ export const BlogListStandardPage = (props) => {
     const renderBlogListStandardPageData = (arr) => {
         return(
             <div>
-                {arr.map((el, i) => {                     
+                {arr.map((el, i) => {
                     return(
                         <React.Fragment key={i}>
                             <BlogListPostCard 
