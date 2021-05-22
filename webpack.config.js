@@ -12,6 +12,7 @@ const DotenvPlugin = new Dotenv();
 console.log(__dirname)
 module.exports = {
   entry: __dirname + '/src/index.js',
+  // devtool: 'inline-source-map',
   module: {
     rules:[
       {
@@ -54,7 +55,12 @@ module.exports = {
             loader: "sass-loader", // compiles Sass to CSS
           }
         ]
-      }
+      },
+      // {
+      //   test: /\.tsx?$/,
+      //   use: 'ts-loader',
+      //   exclude: /node_modules/,
+      // },
     ]
   },
   output: {
@@ -62,6 +68,9 @@ module.exports = {
     path: __dirname + '/dist',
     publicPath: '/' //reload page when refresh browser (react-router /ex/ex)
   },
+  // resolve: {
+  //   extensions: [ '.tsx', '.ts', '.js' ],
+  // },
   devServer: {
     contentBase: './dist',
     port: 8080,

@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack server",
     "build": "webpack",
     "deploy:firebase": "npm run build && firebase deploy",
     "test": "jest --config ./jest.config.json",
@@ -16,9 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.14.2",
+    "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/plugin-transform-runtime": "^7.14.2",
+    "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
     "babel-jest": "^24.9.0",
@@ -30,7 +30,7 @@
     "file-loader": "^3.0.1",
     "history": "^4.10.1",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.3.1",
     "node-sass": "^4.14.1",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.2.0",
@@ -39,8 +39,10 @@
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
     "three": "^0.111.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
+    "ts-loader": "^9.2.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
@@ -51,6 +53,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "awesome-typescript-loader": "^5.2.1",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "connected-react-router": "^6.9.1",
@@ -72,6 +75,7 @@
     "reselect": "^4.0.0",
     "rxjs": "^6.6.7",
     "rxjs-compat": "^6.6.7",
+    "source-map-loader": "^3.0.0",
     "uuid": "^3.4.0"
   }
 }
