@@ -553,7 +553,6 @@ export default connect(
             fetchArchiveSuccess: bindActionCreators(Actions.fetchArchiveSuccess, dispatch),
             loadMoreDisableButtonStateForArchive: bindActionCreators(Actions.loadMoreDisableButtonStateForArchive, dispatch),
             loadMoreArchiveDataSuccess: bindActionCreators(Actions.loadMoreArchiveDataSuccess, dispatch),
-            loadMoreDisableButtonStateForArchive: bindActionCreators(Actions.loadMoreDisableButtonStateForArchive, dispatch),
             setArchiveCategory: bindActionCreators(Actions.setArchiveCategory, dispatch),
             setArchiveIsHoveringImage: bindActionCreators(Actions.setArchiveIsHoveringImage, dispatch),
             setArchiveIsHoveringCategory: bindActionCreators(Actions.setArchiveIsHoveringCategory, dispatch),
