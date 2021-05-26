@@ -1752,8 +1752,7 @@ export const FourColumnsPage = (props) => {
             fetchMockData(props.fourColumnsPage.loadMoreStep, 
                 categoryFromHeader, 
                 size.width, 
-                props.fourColumnsPage.items.length, 
-                props.fourColumnsPage.itemsStyleValues);
+                props.fourColumnsPage.items.length);
         }else{
             // Fetch data (required to run -> npm run server)
 
@@ -2118,7 +2117,7 @@ export const FourColumnsPage = (props) => {
                     style={{
                         position: "relative",
                         width: `${renderFourColumnsPageStyleWidth()}px`,
-                        height: `${renderFourColumnsPageStyleHeight("onInit")}px`
+                        height: `${renderFourColumnsPageStyleHeight()}px`
                     }}
                 >{props.fourColumnsPage.items.map((el, i) => {
                     return(
@@ -2254,10 +2253,8 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setLoadMoreStepFourColumnsPage: bindActionCreators(Actions.setLoadMoreStepFourColumnsPage, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            updateItemsStyleValuesFourColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesFourColumnsPage, dispatch),
             setActivityOfFourColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfFourColumnsPageCategoriesFromHeader, dispatch),
-            disappearenceAndAppearanceOfElementsDueToTheCategoryFourColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryFourColumnsPage, dispatch),
-            setTopPositionOfTheItemForFourColumnsPage: bindActionCreators(Actions.setTopPositionOfTheItemForFourColumnsPage, dispatch),
+            disappearenceAndAppearanceOfElementsDueToTheCategoryFourColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryFourColumnsPage, dispatch)
         };
     }
 )(FourColumnsPage);

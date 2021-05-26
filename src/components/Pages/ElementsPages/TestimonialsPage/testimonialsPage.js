@@ -403,8 +403,6 @@ export default connect(
             setSwiperStateForTestimonialsPageSection1: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection1, dispatch),
             setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
             setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
-            setSwiperStateForTestimonialsPageSection2: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection2, dispatch),
-            setSwiperStateForTestimonialsPageSection3: bindActionCreators(Actions.setSwiperStateForTestimonialsPageSection3, dispatch),
             setTestimonialsPageSection1IsHoveringSwiperDot: bindActionCreators(Actions.setTestimonialsPageSection1IsHoveringSwiperDot, dispatch)
         };
     }
