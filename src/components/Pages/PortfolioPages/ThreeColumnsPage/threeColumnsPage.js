@@ -2052,7 +2052,7 @@ export const ThreeColumnsPage = (props) => {
                     style={{
                         position: "relative",
                         width: `${renderThreeColumnsPageStyleWidth()}px`,
-                        height: `${renderThreeColumnsPageStyleHeight("onInit")}px`
+                        height: `${renderThreeColumnsPageStyleHeight()}px`
                     }}
                 >{props.threeColumnsPage.items.map((el, i) => {
                     return(
