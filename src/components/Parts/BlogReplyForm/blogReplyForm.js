@@ -200,7 +200,7 @@ export const BlogReplyForm = (props) => {
                                 <Input
                                     className="blog-comment-reply-input"
                                     invalidClassName="invalid-blog-comment-reply-input"
-                                    onChange={(event) => inputChangeHandler(event, el.id, 'section1','inputForm')}
+                                    onChange={(event) => inputChangeHandler(event, el.id)}
                                     elementType={el.elementType}
                                     rows={el.elementConfig.rows}
                                     validField={el.validField}

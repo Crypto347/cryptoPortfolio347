@@ -1349,8 +1349,7 @@ export const TwoColumnsPage = (props) => {
             fetchMockData(props.twoColumnsPage.loadMoreStep, 
                 categoryFromHeader, 
                 size.width, 
-                props.twoColumnsPage.items.length, 
-                props.twoColumnsPage.itemsStyleValues);
+                props.twoColumnsPage.items.length);
         }else{
             // Fetch data (required to run -> npm run server)
 
@@ -1672,7 +1671,7 @@ export const TwoColumnsPage = (props) => {
             }
         })
         numOfAppearElements = objToArray.filter(item => item === true).length;
-        return (+numOfAppearElements/2).toFixed()* Utility.setWidthOfImage("twoColumnsPage", size.width) + +(numOfAppearElements/2).toFixed() * 30;
+        return +(numOfAppearElements/2).toFixed()* Utility.setWidthOfImage("twoColumnsPage", size.width) + +(numOfAppearElements/2).toFixed() * 30;
     }
 
     const renderTwoColumnsPageData = () => {
@@ -1702,7 +1701,7 @@ export const TwoColumnsPage = (props) => {
                     style={{
                         position: "relative",
                         width: `${renderTwoColumnsPageStyleWidth()}px`,
-                        height: `${renderTwoColumnsPageStyleHeight("onInit")}px`
+                        height: `${renderTwoColumnsPageStyleHeight()}px`
                     }}
                 >{props.twoColumnsPage.items.map((el, i) => {
                     return(
@@ -1838,10 +1837,8 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setLoadMoreStepTwoColumnsPage: bindActionCreators(Actions.setLoadMoreStepTwoColumnsPage, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
-            updateItemsStyleValuesTwoColumnsPage: bindActionCreators(Actions.updateItemsStyleValuesTwoColumnsPage, dispatch),
             setActivityOfTwoColumnsPageCategoriesFromHeader: bindActionCreators(Actions.setActivityOfTwoColumnsPageCategoriesFromHeader, dispatch),
-            disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage, dispatch),
-            setTopPositionOfTheItemForTwoColumnsPage: bindActionCreators(Actions.setTopPositionOfTheItemForTwoColumnsPage, dispatch),
+            disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage: bindActionCreators(Actions.disappearenceAndAppearanceOfElementsDueToTheCategoryTwoColumnsPage, dispatch)
         };
     }
 )(TwoColumnsPage);

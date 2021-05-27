@@ -99,7 +99,7 @@ export const BlogNavigation = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, key) => {
+    const handleMouseEnter = (opt) => {
         switch(opt){
             case 'navigationPrevDate': 
                 setIsHoveringNavigationPrevDate("on");
@@ -110,7 +110,7 @@ export const BlogNavigation = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, key) => {
+    const handleMouseLeave = (opt) => {
         switch(opt){
             case 'navigationPrevDate': 
                 setIsHoveringNavigationPrevDate("off");

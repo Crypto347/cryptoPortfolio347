@@ -1686,8 +1686,7 @@ export const ThreeColumnsPage = (props) => {
             fetchMockData(props.threeColumnsPage.loadMoreStep, 
                 categoryFromHeader, 
                 size.width, 
-                props.threeColumnsPage.items.length, 
-                props.threeColumnsPage.itemsStyleValues);
+                props.threeColumnsPage.items.length);
         }else{
             // Fetch data (required to run -> npm run server)
 

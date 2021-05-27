@@ -596,7 +596,6 @@ export const PhotoViewer = (props) => {
                             icon={faExpand} 
                             size="lg" 
                             color={isHoveringExpand ? "white" : "rgb(155, 155, 155)"}
-                            onClick={() => setFullScreen(true)}
                             onClick={openFullScreen}
                             onMouseEnter={() => handleMouseEnter('expand')} 
                             onMouseLeave={() => handleMouseLeave('expand')}
