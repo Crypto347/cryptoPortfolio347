@@ -130,7 +130,7 @@ export const PorfolioNavigation = (props) => {
         setKey(key);
     }, []);
 
-    const handleMouseEnter = (opt, id) => {
+    const handleMouseEnter = (opt) => {
         switch(opt){
             case 'leftArrow': 
                 setIsHoveringLeftArrow("on");
@@ -144,7 +144,7 @@ export const PorfolioNavigation = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id) => {
+    const handleMouseLeave = (opt) => {
         switch(opt){
             case 'leftArrow': 
                 setIsHoveringLeftArrow("off");
@@ -439,8 +439,7 @@ export const PorfolioNavigation = (props) => {
                             props.twoColumnsPage.loadMoreStep - 1, 
                             itemsFromLocalStorage !== null ? itemsFromLocalStorage.activeCategoryFromHeader : "showAll", 
                             size.width, 
-                            props.twoColumnsPage.items.length, 
-                            props.twoColumnsPage.itemsStyleValues
+                            props.twoColumnsPage.items.length
                         );
                     }else{
                         // Fetch data (required to run -> npm run server)
@@ -460,8 +459,7 @@ export const PorfolioNavigation = (props) => {
                             props.threeColumnsPage.loadMoreStep - 1, 
                             itemsFromLocalStorage !== null ? itemsFromLocalStorage.activeCategoryFromHeader : "showAll", 
                             size.width, 
-                            props.threeColumnsPage.items.length, 
-                            props.threeColumnsPage.itemsStyleValues
+                            props.threeColumnsPage.items.length
                         );
 
                         // props.fetchThreeColumnsPageSuccess(FakeData.threeColumnsPage);
@@ -483,8 +481,7 @@ export const PorfolioNavigation = (props) => {
                             props.fourColumnsPage.loadMoreStep - 1, 
                             itemsFromLocalStorage !== null ? itemsFromLocalStorage.activeCategoryFromHeader : "showAll", 
                             size.width, 
-                            props.fourColumnsPage.items.length, 
-                            props.fourColumnsPage.itemsStyleValues
+                            props.fourColumnsPage.items.length
                         );
 
                     }else{
