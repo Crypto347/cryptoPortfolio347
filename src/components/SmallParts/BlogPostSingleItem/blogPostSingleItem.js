@@ -197,9 +197,6 @@ export const BlogPostSingleItem = (props) => {
             case 'blogPostItemDate': 
                 setIsHoveringBlogPostItemDate("on");
                 break;
-            case 'blogCardHeader': 
-                setIsHoveringBlogCardHeader("on");
-                break;
             case 'blogCardLikes': 
                 setIsHoveringBlogCardLikes("on");
                 break;
@@ -225,9 +222,6 @@ export const BlogPostSingleItem = (props) => {
         switch(opt){
             case 'blogPostItemDate': 
                 setIsHoveringBlogPostItemDate("off");
-                break;
-            case 'blogCardHeader': 
-                setIsHoveringBlogCardHeader("off");
                 break;
             case 'blogCardLikes': 
                 setIsHoveringBlogCardLikes("off");
@@ -906,7 +900,6 @@ export default connect(
             increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.increaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage: bindActionCreators(Actions.decreaseTheNumberOfLikesOfThePostCardForBlogListStandardPage, dispatch),
             clearActivityOfMenuItems: bindActionCreators(Actions.clearActivityOfMenuItems, dispatch),
-            activateListStandardBlogItem: bindActionCreators(Actions.activateListStandardBlogItem, dispatch),
             activateRecentPostForBlogListStandardPage: bindActionCreators(Actions.activateRecentPostForBlogListStandardPage, dispatch),
         };
     }

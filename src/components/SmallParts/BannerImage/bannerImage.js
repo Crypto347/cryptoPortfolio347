@@ -208,8 +208,8 @@ export const BannerImage = (props) => {
     return(
         <div 
             className="banner-image"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain")} 
+            onMouseLeave={() => handleMouseLeave("curtain")}
         >
             <div className={renderClassName("bannerImage", isHovering)}>
                 <img 

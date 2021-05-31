@@ -102,8 +102,8 @@ export const VideoWithCover = (props) => {
                     <div 
                         className={renderClassName(isHoveringPlayButton)}
                         onMouseDown={(e) => showVideo(e)}
-                        onMouseEnter={() => handleMouseEnter('expand')} 
-                        onMouseLeave={() => handleMouseLeave('expand')}
+                        onMouseEnter={() => handleMouseEnter()} 
+                        onMouseLeave={() => handleMouseLeave()}
                     >
                     </div>
                 </div>
