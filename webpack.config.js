@@ -29,10 +29,10 @@ module.exports = {
           },
         ]
       },
-      {
-        test: /\.(png|gif|jpg|jpeg|svg|ico|mp4|mp3)$/,
-        use:  'file-loader?name=[name].[ext]'
-      },
+      // {
+      //   test: /\.(png|gif|jpg|jpeg|svg|ico|mp4|mp3)$/,
+      //   use:  'file-loader?name=[name].[ext]'
+      // },
       // {
       //   test: /\.(jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
       //   use: 'base64-inline-loader'
@@ -54,6 +54,10 @@ module.exports = {
             loader: "sass-loader", // compiles Sass to CSS
           }
         ]
+      },
+      {
+        test: /\.(png|gif|jpg|jpeg|svg|ico|mp4|mp3)$/,
+        type: "asset/resource",
       },
     ]
   },
