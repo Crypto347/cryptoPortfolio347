@@ -12,7 +12,7 @@ export default (history = null) => {
     }
     
     const axiosInstance = axios.create({
-        baseYRL: baseURL,
+        baseURL: baseURL,
         headers: {
             TOKEN: "TOKENTOKEN" // header add here
         }
