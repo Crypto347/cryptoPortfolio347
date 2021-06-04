@@ -1702,7 +1702,7 @@ export function fetchSubscribeContactFormPage(info, history) {
 //     })
 // })
 
-        axiosInstance(history).post( //axios.post if in index.js //axiosInstance(history).post for interceptor
+        axiosInstance(history).post( //axios.post if in index.js for interceptor //axiosInstance(history).post for axiosInstance
             `http://localhost:3005/api/subscribe-contact-form-page`,
              {
                 info
