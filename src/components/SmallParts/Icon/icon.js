@@ -67,11 +67,11 @@ export const Icon = (props) => {
     useEffect(() => {
     }, []);
     
-    const handleMouseEnter = (opt) => {
+    const handleMouseEnter = () => {
         setIconIsHover("on")
     }
 
-    const handleMouseLeave = (opt) => {
+    const handleMouseLeave = () => {
         setIconIsHover("off");
     }
 
@@ -237,8 +237,8 @@ export const Icon = (props) => {
                     icon={setIconName(props.icon)} 
                     size={props.iconSize}
                     className={renderClassName(props.classNameOpt, props.isHover ? props.isHover : iconIsHover)}
-                    onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
-                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
+                    onMouseEnter={props.onMouseEnter ? () => handleMouseEnter() : null} 
+                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave() : null}
                     onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}
                 />
             )
@@ -247,8 +247,8 @@ export const Icon = (props) => {
             return(
                 <div 
                     className={props.classNameBackground}
-                    onMouseEnter={props.onMouseEnter ? () => handleMouseEnter(props.classNameOpt) : null} 
-                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave(props.classNameOpt) : null}
+                    onMouseEnter={props.onMouseEnter ? () => handleMouseEnter() : null} 
+                    onMouseLeave={props.onMouseLeave ? () => handleMouseLeave() : null}
                     onMouseDown={props.onMouseDown ? (e) => iconOnClick(e, props.iconName, props.instaName) : null}
                 >
                     <div className={renderClassName("socialMediaBackgroundCurtain", iconIsHover)}/>
