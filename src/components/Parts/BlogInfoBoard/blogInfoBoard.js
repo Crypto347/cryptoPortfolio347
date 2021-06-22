@@ -206,7 +206,7 @@ export const BlogInfoBoard = (props) => {
         if(process.env.ENVIRONMENT === Environment.PRODUCTION){
         // Fetch mock data (not required to run -> npm run server)
 
-            // postReplyFakeData(props.fakeData, props.cardIdFromPathname, info);
+            fetchFakeData(FakeData.searchResultPage, info, props.searchResultPagePaginationActivePageId);
         }else{
             // Fetch data (required to run -> npm run server)
 
@@ -226,6 +226,28 @@ export const BlogInfoBoard = (props) => {
                 clearInputValue(el.inputID);
             }
         });
+    }
+
+    const fetchFakeData = (fakeData, infoFromSearch, activePageId) => {
+        let info = infoFromSearch;
+
+        let searchResultPage = [...fakeData];
+
+        let firstIndex = activePageId * 6 - 5;
+        let lastIndex = activePageId * 6 - 1;
+    
+        let updatedSearchResult = {
+            numberOfPages: !Number.isInteger(searchResultPage.length/6) ? Math.floor(searchResultPage.length/6) + 1 : Math.floor(searchResultPage.length/6),
+            searchResultData: searchResultPage.slice(firstIndex - 1, lastIndex + 1)
+        };
+
+        let updatedJson = {
+            searchInfo: info,
+            searchResult: updatedSearchResult
+        }      
+        
+        props.fetchSearchThroughWebsiteResutDataSuccess(updatedJson);
+        props.initSearchResultPagePagination(updatedJson.searchResult.numberOfPages);
     }
 
     const inputChangeHandler = (e, inputFieldId, inputForm) => {

@@ -495,6 +495,8 @@ export const BlogListStandardPage = (props) => {
                             setInputFiledValueAndCheckValidation={props.setInputFiledValueAndCheckValidationThroughWebsite}
                             search={props.searchThroughWebsite}
                             fetchSearchThroughWebsiteResutData={props.fetchSearchThroughWebsiteResutData}
+                            fetchSearchThroughWebsiteResutDataSuccess={props.fetchSearchThroughWebsiteResutDataSuccess}
+                            initSearchResultPagePagination={props.initSearchResultPagePagination}
                         />
                     </div>
                     {props.blogListStandardPage.activeItem.activated === "active" && !Utility.isObjEmpty(props.blogListStandardPage.postBlogContent.item) ?
@@ -559,6 +561,8 @@ export default connect(
             fetchBlogRecentPostsForBlogListStandardPageDataSuccess: bindActionCreators(Actions.fetchBlogRecentPostsForBlogListStandardPageDataSuccess, dispatch),
             activateRecentPostForBlogListStandardPage: bindActionCreators(Actions.activateRecentPostForBlogListStandardPage, dispatch),
             fetchSearchThroughWebsiteResutData: bindActionCreators(Services.fetchSearchThroughWebsiteResutData, dispatch),
+            fetchSearchThroughWebsiteResutDataSuccess: bindActionCreators(Actions.fetchSearchThroughWebsiteResutDataSuccess, dispatch),
+            initSearchResultPagePagination: bindActionCreators(Actions.initSearchResultPagePagination, dispatch),
         };
     }
 )(withRouter(BlogListStandardPage));
