@@ -151,7 +151,7 @@ export const MetroItem = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("on");
@@ -163,7 +163,7 @@ export const MetroItem = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
@@ -316,8 +316,8 @@ export const MetroItem = (props) => {
                         key={i}
                         className="metro-item-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`metroItemCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`metroItemCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`metroItemCategory`, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`metroItemCategory`, pathOfIds)} 
                     >
                         <H17 className={renderClassName("metroItemCategory", el.isHover)}>{el.label}</H17>
                         {i !== obj.categories.length-1 ? <div className="metro-item-category-slash">/</div> : null}
@@ -334,8 +334,8 @@ export const MetroItem = (props) => {
     return(
         <div 
             className="metro-item"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain", isHovering)} 
+            onMouseLeave={() => handleMouseLeave("curtain", isHovering)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
             id={`metroItemId${props.obj.id}`}
         >

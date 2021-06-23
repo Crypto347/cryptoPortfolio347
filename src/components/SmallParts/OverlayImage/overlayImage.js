@@ -99,7 +99,7 @@ export const OverlayImage = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("on");
@@ -111,7 +111,7 @@ export const OverlayImage = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
@@ -390,8 +390,8 @@ export const OverlayImage = (props) => {
                         key={i}
                         className="overlay-with-info-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`overlayWithInfoCategory`, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`overlayWithInfoCategory`, pathOfIds)} 
                     >
                         <H17 className={renderClassName("overlayWithInfoCategory", el.isHover)}>{el.label}</H17>
                         {i !== obj.categories.length-1 ? <div className="overlay-with-info-category-slash">/</div> : null}
@@ -408,8 +408,8 @@ export const OverlayImage = (props) => {
     return(
         <div 
             className="overlay-image"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain")} 
+            onMouseLeave={() => handleMouseLeave("curtain")}
             style={{marginBottom: `${['galleryPage',
                                         'twoColumnsWidePage',
                                         'threeColumnsWidePage',
