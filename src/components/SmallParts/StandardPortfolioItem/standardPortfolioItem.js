@@ -72,7 +72,7 @@ export const StandardPortfolioItem = (props) => {
         setCardHeight(cardHeight);
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("on");
@@ -84,7 +84,7 @@ export const StandardPortfolioItem = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
@@ -265,8 +265,8 @@ export const StandardPortfolioItem = (props) => {
                         key={i}
                         className="standard-portfolio-item-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`standardPortfolioItemCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`standardPortfolioItemCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`standardPortfolioItemCategory`, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`standardPortfolioItemCategory`, pathOfIds)} 
                     >
                         <H22 className={renderClassName("standardPortfolioItemCategory", el.isHover)}>{el.label}</H22>
                         {i !== obj.categories.length-1 ? <div className="standard-portfolio-item-category-slash">/</div> : null}
@@ -283,8 +283,8 @@ export const StandardPortfolioItem = (props) => {
     return(
         <div 
             className="standard-portfolio-item"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain")} 
+            onMouseLeave={() => handleMouseLeave("curtain")}
         >
             <img 
                 id={`${props.obj.coverImage.key}Img`}

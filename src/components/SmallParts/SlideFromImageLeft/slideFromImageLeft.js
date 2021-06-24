@@ -71,7 +71,7 @@ export const SlideFromImageLeft = (props) => {
         setCardHeight(cardHeight - 80);
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("on");
@@ -83,7 +83,7 @@ export const SlideFromImageLeft = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
@@ -271,8 +271,8 @@ export const SlideFromImageLeft = (props) => {
                         key={i}
                         className="slide-from-image-left-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`slideFromImageLeftCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`slideFromImageLeftCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`slideFromImageLeftCategory`, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`slideFromImageLeftCategory`, pathOfIds)} 
                     >
                         <H17 className={renderClassName("slideFromImageLeftCategory", el.isHover)}>{el.label}</H17>
                         {i !== obj.categories.length-1 ? <div className="slide-from-image-left-category-slash">/</div> : null}
@@ -289,8 +289,8 @@ export const SlideFromImageLeft = (props) => {
     return(
         <div 
             className="slide-from-image-left"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain")} 
+            onMouseLeave={() => handleMouseLeave("curtain")}
             style={{marginBottom: `${['bannerPageSection6'].includes(props.page) ? 0 : 30}px`}}
         >
             <div 

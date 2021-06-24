@@ -49,7 +49,7 @@ export const PortfolioItemCard = (props) => {
     useEffect(() => {
     }, []);
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt, pathOfIds) => {
         switch(opt){
             case 'portfolioItemCategory': 
                 props.setIsHoveringCategory("on", pathOfIds);
@@ -60,7 +60,7 @@ export const PortfolioItemCard = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt, pathOfIds) => {
         switch(opt){
             case 'portfolioItemCategory': 
                 props.setIsHoveringCategory("off", pathOfIds);
@@ -134,8 +134,8 @@ export const PortfolioItemCard = (props) => {
                         key={i}
                         className="portfolio-item-card-category"
                         onMouseDown={(e) => onClickHandler(el.path, el.key, e)}
-                        onMouseEnter={() => handleMouseEnter(`portfolioItemCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`portfolioItemCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`portfolioItemCategory`, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`portfolioItemCategory`, pathOfIds)} 
                     >
                         {i !== 0 ? <div className="portfolio-item-card-category-slash">/</div> : null}
                         <H15 className={renderClassName("portfolioItemCategory", el.isHover)}>{el.label}</H15>
