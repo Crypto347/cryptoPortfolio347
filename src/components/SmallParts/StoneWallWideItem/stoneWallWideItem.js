@@ -171,7 +171,7 @@ export const StoneWallWideItem = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("on");
@@ -183,7 +183,7 @@ export const StoneWallWideItem = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt, pathOfIds) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
@@ -293,8 +293,8 @@ export const StoneWallWideItem = (props) => {
                         key={i}
                         className="stone-wall-wide-item-category"
                         onMouseDown={(e) => onClickHandler(e, el.path, el.key)}
-                        onMouseEnter={() => handleMouseEnter(`stoneWallWideItemCategory`, null, pathOfIds)} 
-                        onMouseLeave={() => handleMouseLeave(`stoneWallWideItemCategory`, null, pathOfIds)} 
+                        onMouseEnter={() => handleMouseEnter(`stoneWallWideItemCategory`, pathOfIds)} 
+                        onMouseLeave={() => handleMouseLeave(`stoneWallWideItemCategory`, pathOfIds)} 
                     >
                         <H17 className={renderClassName("stoneWallWideItemCategory", el.isHover)}>{el.label}</H17>
                         {i !== obj.categories.length-1 ? <div className="stone-wall-wide-item-category-slash">/</div> : null}
@@ -311,8 +311,8 @@ export const StoneWallWideItem = (props) => {
     return(
         <div 
             className="stone-wall-wide-item"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain", null)} 
+            onMouseLeave={() => handleMouseLeave("curtain", null)}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
             id={`stoneWallWideItemId${props.obj.id}`}
         >
