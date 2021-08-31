@@ -148,6 +148,7 @@ export const BlogInfoBoard = (props) => {
 
             props.clearActivityOfMenuItems();
             props.activateBlogTag("active", key);
+            props.activateBlogCategory("deactive", "");
             props.activateBlogItem("deactive", "");
             props.history.push(`/crypto-portfolio/list-standard-blog-tag/${key}`);
         }else{

@@ -186,6 +186,22 @@ export const Main = (props) => {
                 window.location.reload();
             }
 
+            // Activate blog category on page POP
+
+            blogCategory = Utility.activateBlogCategory(location.pathname.slice(18));
+        
+            if(action === "POP" && blogCategory.page === "listStandardBlogCategory"){
+                props.activateListStandardBlogCategory("active", blogCategory.categoryName);
+            }
+
+            // Activate blog tag on page POP
+
+            blogTag = Utility.activateBlogTag(location.pathname.slice(18));
+
+            if(action === "POP" && blogCategory.page === "listStandardBlogTag"){
+                props.activateListStandardBlogTag("active", blogTag.tagName);
+            }
+
             // Activate menu item according to the location pathname
             let prevLocationPathOfIds;
 
