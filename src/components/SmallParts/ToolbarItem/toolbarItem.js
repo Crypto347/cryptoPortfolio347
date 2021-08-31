@@ -79,7 +79,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-option-item"
-                            onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e)}
+                            onMouseDown={(e) => props.itemOnClick("optionItem", el.path, pathOfIds, e, null, null)}
                         >
                             {el.active ? 
                             <div className="arrow-wrapper-active">
@@ -198,7 +198,7 @@ export const ToolbarItem = (props) => {
                         <div 
                             key={i} 
                             className="toolbar-sub-option-item"
-                            onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e, props.data.id)}
+                            onMouseDown={(e) => props.itemOnClick("subOptionItem", el.path, updatedPathOfIds, e, props.data.id, null)}
                         >
                             <div 
                                 className={renderClassName("text", el.isHover, el.active)}
