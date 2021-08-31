@@ -109,7 +109,7 @@ export const StoneWallItem = (props) => {
         }
     }
 
-    const handleMouseEnter = (opt, id, pathOfIds) => {
+    const handleMouseEnter = (opt) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("on");
@@ -118,7 +118,7 @@ export const StoneWallItem = (props) => {
         }
     }
 
-    const handleMouseLeave = (opt, id, pathOfIds) => {
+    const handleMouseLeave = (opt) => {
         switch(opt){
             case 'curtain': 
                 setIsHovering("off");
@@ -219,8 +219,8 @@ export const StoneWallItem = (props) => {
     return(
         <div 
             className="stone-wall-item"
-            onMouseEnter={() => handleMouseEnter("curtain", null, isHovering)} 
-            onMouseLeave={() => handleMouseLeave("curtain", null, isHovering)}
+            onMouseEnter={() => handleMouseEnter("curtain")} 
+            onMouseLeave={() => handleMouseLeave("curtain")}
             style={{marginBottom: `${props.page === "galleryPage" ? 0 : 30}px`}}
             id={`stoneWallItemId${props.obj.id}`}
         >
