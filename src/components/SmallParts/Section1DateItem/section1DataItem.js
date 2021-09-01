@@ -54,11 +54,11 @@ export const Section1DataItem = (props) => {
         switch(e.button){
             case 0:
                 // Open the link on left mouse click
-                props.history.push(props.match.url + path)
+                props.history.push(props.match.url + `/${path}`)
                 return;
             case 1:
                 // Open the link in a new window on scroll wheel click
-                window.open(props.match.url + path, "_blank");
+                window.open(props.match.url + `/${path}`, "_blank");
                 return;
             case 2:
                 // Do nothing on right mouse click 
