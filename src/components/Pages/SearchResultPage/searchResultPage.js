@@ -505,6 +505,7 @@ export default connect(
     (state) => {
         return {
             searchResultPage: Selectors.getSearchResultPageState(state),
+            showBackToTop: Selectors.getShowBackToTopState(state)
         };
     },
     (dispatch) => {
