@@ -348,7 +348,7 @@ export const ContactFormPage = (props) => {
 
         // Set input value and check validation
 
-        props.setInputFiledValueAndCheckValidation(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
+        props.setInputFiledValueAndCheckValidationForContactFormPage(props.contactFormPage[opt][inputForm], e, inputFieldId, `${opt}${updatedInputForm}`);
     }
 
     const clearInputValue = (fieldId) => {
@@ -618,7 +618,7 @@ export default connect(
             setMenuDotsState: bindActionCreators(Actions.setMenuDotsState, dispatch),
             setShowBackToTopComponent: bindActionCreators(Actions.setShowBackToTopComponent, dispatch),
             initInputFormForContactFormPage: bindActionCreators(Actions.initInputFormForContactFormPage, dispatch),
-            setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
+            setInputFiledValueAndCheckValidationForContactFormPage: bindActionCreators(Actions.setInputFiledValueAndCheckValidationForContactFormPage, dispatch),
             getDirectionContactFormPage: bindActionCreators(Actions.getDirectionContactFormPage, dispatch),
             subscribeContactFormPage: bindActionCreators(Actions.subscribeContactFormPage, dispatch),
             submitContactFormPage: bindActionCreators(Actions.submitContactFormPage, dispatch),
